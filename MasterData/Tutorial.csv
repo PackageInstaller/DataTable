@@ -1,0 +1,12 @@
+﻿Id,,Order,Type,TriggerType,TriggerParam,UiName,ButtonStart,ButtonEnd,Rate,Desc
+1,进入游戏引导,1,1,1,0,UIMain,MainlineBtn,0,100,tutorial_1
+2,,1,1,1,0,StageChapter_Main,View/Content/ChapterItem1001,0,150,tutorial_2
+3,,1,1,1,0,Stage_Main,StageList/Container/StageItem0,0,100,tutorial_3
+4,,1,3,1,0,PVEEmbattle_Main,MainBattle_New/I-Role-10001,MainBattle_New/GridI/Grid_2,150,tutorial_4
+5,,1,1,1,0,PVEEmbattle_Main,StartBattleBtn,0,150,tutorial_5
+101,奇物上阵引导,3,1,2,1003,PVEEmbattle_Main,Bottom/EditCardBtn,0,150,tutorial_101
+102,,3,1,0,0,CardList_Main,AllCardList/Container/CardItem0,0,100,tutorial_102
+103,,3,1,0,0,CardList_Main,Bottom/ConfirmBtn,0,100,tutorial_103
+104,,3,1,0,0,PVEEmbattle_Main,StartBattleBtn,0,150,tutorial_104
+201,新角色上阵引导,2,1,2,1002,PVEEmbattle_Main,RoleList/Container/RoleItem0,0,150,tutorial_201
+202,,2,1,0,0,PVEEmbattle_Main,StartBattleBtn,0,150,tutorial_202
