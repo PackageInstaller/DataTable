@@ -1,0 +1,81 @@
+local avg_1010204Table = {
+                [1] = {
+                        id = 1,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = "重庆_笑",
+                        content = "已确认攻击到敌方防守弱点！成功了呢，指挥官！",
+                        voice = nil,
+                },
+
+                [2] = {
+                        id = 2,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = "重庆_闭眼",
+                        content = "不过这样一来……敌人可能会对同样的战斗方法提高警惕。",
+                        voice = 106059,
+                },
+
+                [3] = {
+                        id = 3,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = "重庆_生气",
+                        content = "让我们尝试一下别的战斗策略吧，指挥官。",
+                        voice = nil,
+                },
+
+                [4] = {
+                        id = 4,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = nil,
+                        content = "不同类型的<ruby=战舰少女>我们</ruby>掌握着多种攻击模式，您可以切换指令让我们应对各种状态的敌人。",
+                        voice = nil,
+                },
+
+                [5] = {
+                        id = 5,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = nil,
+                        content = "身为<color=#FFDA4D>巡洋舰</color>的我，同时拥有<color=#FFDA4D>主炮攻击</color>和<color=#FFDA4D>鱼雷攻击</color>两种战斗方式。",
+                        voice = nil,
+                },
+
+                [6] = {
+                        id = 6,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = 10006,
+                        center = nil,
+                        right = nil,
+                        action = nil,
+                        content = "在鱼雷攻击状态下，我能够对机动较低的敌人造成更严重的打击。",
+                        voice = nil,
+                },
+
+}
+return avg_1010204Table

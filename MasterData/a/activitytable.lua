@@ -1,0 +1,243 @@
+---@class ActivityTable
+---@field public id integer
+---@field public nameKey LocalStrEnum
+---@field public index integer
+---@field public Content table
+---@field public Icon string
+---@field public Type integer
+---@field public FunctionType integer
+---@field public panelName string
+---@field public activityPara table
+---@field public TaskGroup table
+---@field public StartTime string
+---@field public EndTime string
+---@field public BgName string
+
+---@type ActivityTable[]
+local ActivityTable = {
+                [1] = {
+                        id = 1,
+                        nameKey = LocalStrEnum.ActivityName_1,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 1,
+                        FunctionType = 0,
+                        panelName = "",
+                        activityPara = nil,
+                        TaskGroup = {},
+                        StartTime = "2025-12-22 05:00:00",
+                        EndTime = "",
+                        BgName = "",
+                },
+
+                [20001] = {
+                        id = 20001,
+                        nameKey = LocalStrEnum.ActivityName_20001,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 2,
+                        FunctionType = 1,
+                        panelName = "",
+                        activityPara = {20001},
+                        TaskGroup = {1},
+                        StartTime = "2026-07-09 11:00:00",
+                        EndTime = "2026-08-20 10:00:00",
+                        BgName = "",
+                },
+
+                [20002] = {
+                        id = 20002,
+                        nameKey = LocalStrEnum.ActivityName_20002,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 2,
+                        FunctionType = 1,
+                        panelName = "",
+                        activityPara = {20002},
+                        TaskGroup = {1},
+                        StartTime = "2027-02-01 05:00:00",
+                        EndTime = "2027-02-10 10:00:00",
+                        BgName = "",
+                },
+
+                [30001] = {
+                        id = 30001,
+                        nameKey = LocalStrEnum.ActivityName_30001,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 3,
+                        FunctionType = 0,
+                        panelName = "",
+                        activityPara = nil,
+                        TaskGroup = {},
+                        StartTime = "2025-12-22 05:00:00",
+                        EndTime = "",
+                        BgName = "",
+                },
+
+                [40001] = {
+                        id = 40001,
+                        nameKey = LocalStrEnum.ActivityName_40001,
+                        index = 10,
+                        Content = nil,
+                        Icon = "",
+                        Type = 4,
+                        FunctionType = 3,
+                        panelName = "ActivitySignPanel",
+                        activityPara = {2001},
+                        TaskGroup = {},
+                        StartTime = "2026-02-01 05:00:00",
+                        EndTime = "2026-08-10 05:00:00",
+                        BgName = "activity_loginbonus_7day_shadow",
+                },
+
+                [40002] = {
+                        id = 40002,
+                        nameKey = LocalStrEnum.ActivityName_40002,
+                        index = 11,
+                        Content = nil,
+                        Icon = "",
+                        Type = 4,
+                        FunctionType = 3,
+                        panelName = "ActivitySignPanel",
+                        activityPara = {2002},
+                        TaskGroup = {},
+                        StartTime = "2025-10-20 11:00:00",
+                        EndTime = "2026-01-10 10:00:00",
+                        BgName = "activity_loginbonus_7day_shadow",
+                },
+
+                [40003] = {
+                        id = 40003,
+                        nameKey = LocalStrEnum.ActivityName_40003,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 4,
+                        FunctionType = 0,
+                        panelName = "",
+                        activityPara = {1001},
+                        TaskGroup = {},
+                        StartTime = "2025-10-20 11:00:00",
+                        EndTime = "",
+                        BgName = "",
+                },
+
+                [50001] = {
+                        id = 50001,
+                        nameKey = LocalStrEnum.ActivityName_50001,
+                        index = 12,
+                        Content = nil,
+                        Icon = "",
+                        Type = 5,
+                        FunctionType = 3,
+                        panelName = "ActivityFirstChargePanel",
+                        activityPara = {1310002,1910001},
+                        TaskGroup = {1},
+                        StartTime = "2027-02-01 05:00:00",
+                        EndTime = "",
+                        BgName = "activity_firstrecharge_shadow",
+                },
+
+                [60001] = {
+                        id = 60001,
+                        nameKey = LocalStrEnum.ActivityName_60001,
+                        index = 13,
+                        Content = nil,
+                        Icon = "",
+                        Type = 6,
+                        FunctionType = 3,
+                        panelName = "ActivityRoleExchange",
+                        activityPara = nil,
+                        TaskGroup = {1},
+                        StartTime = "2026-02-01 05:00:00",
+                        EndTime = "",
+                        BgName = "activity_optional_bj",
+                },
+
+                [70001] = {
+                        id = 70001,
+                        nameKey = LocalStrEnum.ActivityName_70001,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 7,
+                        FunctionType = 1,
+                        panelName = "",
+                        activityPara = nil,
+                        TaskGroup = {1,2},
+                        StartTime = "2026-02-01 05:00:00",
+                        EndTime = "",
+                        BgName = "",
+                },
+
+                [80001] = {
+                        id = 80001,
+                        nameKey = LocalStrEnum.ActivityName_80001,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 8,
+                        FunctionType = 3,
+                        panelName = "ActivityCommanderRankPanel",
+                        activityPara = {5001},
+                        TaskGroup = {1},
+                        StartTime = "2026-02-01 05:00:00",
+                        EndTime = "",
+                        BgName = "activity_growthreward_bj",
+                },
+
+                [90001] = {
+                        id = 90001,
+                        nameKey = LocalStrEnum.ActivityName_90001,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 9,
+                        FunctionType = 0,
+                        panelName = "",
+                        activityPara = {{10007,1}},
+                        TaskGroup = {},
+                        StartTime = "2026-02-01 05:00:00",
+                        EndTime = "2026-08-10 05:00:00",
+                        BgName = "",
+                },
+
+                [100001] = {
+                        id = 100001,
+                        nameKey = LocalStrEnum.ActivityName_100001,
+                        index = 0,
+                        Content = nil,
+                        Icon = "",
+                        Type = 10,
+                        FunctionType = 0,
+                        panelName = "AS06MainPanel",
+                        activityPara = {1001},
+                        TaskGroup = {},
+                        StartTime = "2027-02-01 05:00:00",
+                        EndTime = "2027-02-10 10:00:00",
+                        BgName = "",
+                },
+
+                [110001] = {
+                        id = 110001,
+                        nameKey = LocalStrEnum.ActivityName_110001,
+                        index = 14,
+                        Content = nil,
+                        Icon = "",
+                        Type = 11,
+                        FunctionType = 3,
+                        panelName = "ActivityPortConstructionPanel",
+                        activityPara = nil,
+                        TaskGroup = {1},
+                        StartTime = "2026-02-01 05:00:00",
+                        EndTime = "",
+                        BgName = "activity_construction_img_bg",
+                },
+
+}
+return ActivityTable

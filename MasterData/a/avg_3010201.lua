@@ -1,0 +1,111 @@
+local avg_3010201Table = {
+                [1] = {
+                        id = 1,
+                        type = 1,
+                        title = "吕佐夫",
+                        showCharacter = 10003,
+                        left = 10003,
+                        center = nil,
+                        right = nil,
+                        action = "吕佐夫_默认",
+                        content = "那是？",
+                },
+
+                [2] = {
+                        id = 2,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "那是深海的管眼鱼型<color=#FFDA4D>潜艇</color>。",
+                },
+
+                [3] = {
+                        id = 3,
+                        type = 1,
+                        title = "吕佐夫",
+                        showCharacter = 10003,
+                        left = 10003,
+                        center = nil,
+                        right = nil,
+                        action = "吕佐夫_默认",
+                        content = "<color=#FFDA4D>潜艇</color>？",
+                },
+
+                [4] = {
+                        id = 4,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "是的，<color=#FFDA4D>潜艇</color>拥有<color=#FFDA4D>下潜</color>的特性。潜艇在行动结束时，如果没有使用过技能或攻击时，则会进入<color=#FFDA4D>下潜</color>状态。",
+                },
+
+                [5] = {
+                        id = 5,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "<color=#FFDA4D>下潜</color>状态下的单位，受到的单体伤害降低30%，受到的范围伤害额外降低20%。",
+                },
+
+                [6] = {
+                        id = 6,
+                        type = 1,
+                        title = "吕佐夫",
+                        showCharacter = 10003,
+                        left = 10003,
+                        center = nil,
+                        right = nil,
+                        action = "吕佐夫_默认",
+                        content = "那要如何应对呢？",
+                },
+
+                [7] = {
+                        id = 7,
+                        type = 1,
+                        title = "基德",
+                        showCharacter = 10002,
+                        left = nil,
+                        center = nil,
+                        right = 10002,
+                        action = "基德_笑",
+                        content = "面对潜艇，那当然是使用<color=#FFDA4D>驱逐舰</color>进行克制了。",
+                },
+
+                [8] = {
+                        id = 8,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "没错！当然，还可以使用一些<color=#FFDA4D>反潜</color>技能消除<color=#FFDA4D>下潜</color>效果。",
+                },
+
+                [9] = {
+                        id = 9,
+                        type = 1,
+                        title = "重庆",
+                        showCharacter = 10006,
+                        left = nil,
+                        center = nil,
+                        right = 10006,
+                        action = "重庆_默认",
+                        content = "在实战中体会吧。",
+                },
+
+}
+return avg_3010201Table
