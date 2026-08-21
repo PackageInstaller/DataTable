@@ -1,0 +1,193 @@
+﻿-- chunkname: @E:/AntMan/AntMan_Android_pub1/Assets/Code/.LuaCode/ClientData\\ResBusinessDetail.lua
+
+local RT = {}
+
+RT[1] = {
+	10001,
+	10011,
+	10021,
+	10032,
+	10041,
+	10061,
+	10071,
+	10081
+}
+RT[2] = {
+	{
+		id = 510455
+	},
+	{
+		id = 510456
+	},
+	{
+		id = 510457
+	},
+	{
+		id = 510458
+	}
+}
+RT[3] = {
+	1,
+	2,
+	3
+}
+
+local Data = {
+	[37001] = {
+		exp_altas = "CommonAtlas/IconAtlas/ItemBagAtlas/ManagementAtlas/Management3",
+		max_order_num = 3,
+		lucky_value_limit = 500,
+		stamina_num_red = 120,
+		pet_info_tip = 395,
+		breakOut_max_times = 6,
+		exp_icon2 = "222",
+		pet_icon_name = "ImgPet02",
+		pet_icon_path = "ActivityAtlas/ActivityManagement1/ActivityManagement3",
+		product_use_stamina = 10,
+		grid_num = 25,
+		related_pet_id = 900004,
+		stamina_donated_day_limit = 30,
+		exp_icon = "39",
+		str_lv_max = "<size=46>M</size><size=24>ax</size>",
+		stamina_receive_day_limit = 6,
+		exp_altas2 = "CommonAtlas/IconAtlas/ItemBagAtlas/14",
+		base_lucky_value = 10,
+		once_receive_stamina_value = 10,
+		stamina_recover_interval = 360,
+		detail_id = 37001,
+		assign_toy_type_stage = RT[3],
+		improve_toy_quality_stage = RT[3],
+		init_permission = RT[1],
+		order_list = RT[2],
+		pet_name = Lang.get(81142),
+		stamina_recovery_format = Lang.get(80872),
+		stamina_recovery_format2 = Lang.get(80659),
+		str_lv_format = Lang.get(80873)
+	},
+	[37003] = {
+		exp_altas = "CommonAtlas/IconAtlas/ItemBagAtlas/ManagementAtlas/Management3",
+		max_order_num = 3,
+		lucky_value_limit = 500,
+		stamina_num_red = 120,
+		pet_info_tip = 395,
+		breakOut_max_times = 6,
+		exp_icon2 = "222",
+		pet_icon_name = "ImgPet04",
+		pet_icon_path = "ActivityAtlas/ActivityManagement1/ActivityManagement3",
+		product_use_stamina = 10,
+		grid_num = 25,
+		related_pet_id = 900005,
+		stamina_donated_day_limit = 30,
+		exp_icon = "39",
+		str_lv_max = "<size=46>M</size><size=24>ax</size>",
+		stamina_receive_day_limit = 6,
+		exp_altas2 = "CommonAtlas/IconAtlas/ItemBagAtlas/14",
+		base_lucky_value = 10,
+		once_receive_stamina_value = 10,
+		stamina_recover_interval = 360,
+		detail_id = 37003,
+		assign_toy_type_stage = RT[3],
+		improve_toy_quality_stage = RT[3],
+		init_permission = RT[1],
+		order_list = RT[2],
+		pet_name = Lang.get(84618),
+		stamina_recovery_format = Lang.get(80872),
+		stamina_recovery_format2 = Lang.get(80659),
+		str_lv_format = Lang.get(80873)
+	},
+	[37004] = {
+		exp_altas = "CommonAtlas/IconAtlas/ItemBagAtlas/ManagementAtlas/Management3",
+		max_order_num = 3,
+		lucky_value_limit = 500,
+		stamina_num_red = 120,
+		pet_info_tip = 395,
+		breakOut_max_times = 6,
+		exp_icon2 = "222",
+		pet_icon_name = "ImgPet05",
+		pet_icon_path = "ActivityAtlas/ActivityManagement1/ActivityManagement8",
+		product_use_stamina = 10,
+		grid_num = 25,
+		related_pet_id = 900006,
+		stamina_donated_day_limit = 30,
+		exp_icon = "39",
+		str_lv_max = "<size=46>M</size><size=24>ax</size>",
+		stamina_receive_day_limit = 6,
+		exp_altas2 = "CommonAtlas/IconAtlas/ItemBagAtlas/14",
+		base_lucky_value = 10,
+		once_receive_stamina_value = 10,
+		stamina_recover_interval = 360,
+		detail_id = 37004,
+		assign_toy_type_stage = RT[3],
+		improve_toy_quality_stage = RT[3],
+		init_permission = RT[1],
+		order_list = RT[2],
+		pet_name = Lang.get(90662),
+		stamina_recovery_format = Lang.get(80872),
+		stamina_recovery_format2 = Lang.get(80659),
+		str_lv_format = Lang.get(80873)
+	},
+	[37005] = {
+		exp_altas = "CommonAtlas/IconAtlas/ItemBagAtlas/ManagementAtlas/Management3",
+		max_order_num = 3,
+		lucky_value_limit = 500,
+		stamina_num_red = 120,
+		pet_info_tip = 395,
+		breakOut_max_times = 6,
+		exp_icon2 = "222",
+		pet_icon_name = "ImgPet07",
+		pet_icon_path = "ActivityAtlas/ActivityManagement1/ActivityManagement8",
+		product_use_stamina = 10,
+		grid_num = 25,
+		related_pet_id = 900007,
+		stamina_donated_day_limit = 30,
+		exp_icon = "39",
+		str_lv_max = "<size=46>M</size><size=24>ax</size>",
+		stamina_receive_day_limit = 6,
+		exp_altas2 = "CommonAtlas/IconAtlas/ItemBagAtlas/14",
+		base_lucky_value = 10,
+		once_receive_stamina_value = 10,
+		stamina_recover_interval = 360,
+		detail_id = 37005,
+		assign_toy_type_stage = RT[3],
+		improve_toy_quality_stage = RT[3],
+		init_permission = RT[1],
+		order_list = RT[2],
+		pet_name = Lang.get(105348),
+		stamina_recovery_format = Lang.get(80872),
+		stamina_recovery_format2 = Lang.get(80659),
+		str_lv_format = Lang.get(80873)
+	},
+	[37006] = {
+		exp_altas = "CommonAtlas/IconAtlas/ItemBagAtlas/ManagementAtlas/Management3",
+		max_order_num = 3,
+		lucky_value_limit = 500,
+		stamina_num_red = 120,
+		pet_info_tip = 395,
+		breakOut_max_times = 6,
+		exp_icon2 = "222",
+		pet_icon_name = "ImgPet09",
+		pet_icon_path = "ActivityAtlas/ActivityManagement1/ActivityManagement8",
+		product_use_stamina = 10,
+		grid_num = 25,
+		related_pet_id = 900008,
+		stamina_donated_day_limit = 30,
+		exp_icon = "39",
+		str_lv_max = "<size=46>M</size><size=24>ax</size>",
+		stamina_receive_day_limit = 6,
+		exp_altas2 = "CommonAtlas/IconAtlas/ItemBagAtlas/14",
+		base_lucky_value = 10,
+		once_receive_stamina_value = 10,
+		stamina_recover_interval = 360,
+		detail_id = 37006,
+		assign_toy_type_stage = RT[3],
+		improve_toy_quality_stage = RT[3],
+		init_permission = RT[1],
+		order_list = RT[2],
+		pet_name = Lang.get(114924),
+		stamina_recovery_format = Lang.get(80872),
+		stamina_recovery_format2 = Lang.get(80659),
+		str_lv_format = Lang.get(80873)
+	}
+}
+
+return Data
