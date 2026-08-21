@@ -1,0 +1,115 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000001
+L1_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "THEMA_COFFIN_FULL"
+L1_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_START@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000001
+L2_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "<color=#ffd34c>ARC-CS1 도시관리국 행정 2부 비서관의 비공식 의뢰입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>ARC-CS1都市管理局行政2部の秘書官から非公式依頼です。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>An unofficial request from ARC-CS1 City Managements' 2nd Division Secretary.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>來自ARC-CS1城市管理局行政2部秘書長的非正式委託。</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>งานจ้างอย่างไม่ทางการจากเลขานุการประจำกองพลลำดับที่ 2 ของสำนักบริหารเมือง ARC-CS1</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Yêu cầu không chính thức từ thư ký trưởng bộ 2 của Cục Quản Lý Thành Phố ARC-CS1. </color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>来自ARC-CS1城市管理局行政2部秘书长的非正式委托。</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Eine inoffizielle Anfrage des 2. Divisionssekretärs der Stadtverwaltung von ARC-CS1.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Une demande officieuse de la part du secrétaire de la seconde division de la direction des cités de CRA-CS1.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_START@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000001
+L3_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "관리국 시범 사업이 진행 중이던 ARC-CS1 도심부에 급격한 침식 현상이 발생했습니다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "管理局のモデル事業が行われていたARC-CS1都心部に急激な侵食現象が発生しました。"
+L3_1.m_Talk_ENG = "A rapid Counterside Effect appeared at the center of ARC-CS1 where an Administration pilot project was in progress."
+L3_1.m_Talk_TWN = "管理局正在進行的實驗的ARC-CS1都市發生了急劇的侵蝕現象。"
+L3_1.m_Talk_THA = "ปรากฏการณ์เคาน์เตอร์ไซด์ปรากฏขึ้นอย่างรวดเร็ว ณ ใจกลางเมือง ARC-CS1 ซึ่งเป็นที่ตั้งของโปรเจ็กต์นำร่องที่องค์การบริหารโลกกำลังดำเนินงานอยู่"
+L3_1.m_Talk_VTN = "Hiệu Ứng Counterside tốc độ cao đang xuất hiện tại trung tâm ARC-CS1, địa điểm là nơi Cục Quản Lý đang tiến hành một thử nghiệm làm mẫu."
+L3_1.m_Talk_SCN = "管理局正在进行的示范事业ARC-CS1都市发生了急剧的侵蚀现象。"
+L3_1.m_Talk_DEU = "Im Zentrum von ARC-CS1 trat während eines Pilotprojekts der Administration ein rapider Counterside-Effekt auf."
+L3_1.m_Talk_FRA = "Un effet du Contremonde s'est soudainement produit au centre de la cité pendant l'exécution d'un projet pilote de l'Administration."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_START@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000001
+L4_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "현재 도시 경비대가 사태 진화에 힘쓰고 있지만, 규모가 급속도로 확대되고 있어 증원이 필요합니다."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "現在、都市警備隊が事態の収拾を図っていますが\n規模が急速に拡大しており、増員が必要です。"
+L4_1.m_Talk_ENG = "The city guards are doing their best to deal with the situation, but the Corruption is expanding fast and they require reinforcements."
+L4_1.m_Talk_TWN = "雖然目前城市守衛隊正努力平息此次的災害，但由於侵蝕規模急遽擴大，有必要進行增援。"
+L4_1.m_Talk_THA = "กองกำลังพิทักษ์เมืองพยายามอย่างเต็มที่เพื่อรับมือกับสถานการณ์ แต่คอร์รัปชั่นก็ลุกลามอย่างรวดเร็ว และพวกเขาก็ต้องการกำลังเสริม"
+L4_1.m_Talk_VTN = "Lực lượng Hộ Thành đang cố gắng hết sức để đối phó tình hình, nhưng tình trạng Ăn Mòn đang lan rộng nhanh chóng và họ yêu cầu tăng thêm quân tiếp viện."
+L4_1.m_Talk_SCN = "虽然现在城市守卫正努力平息此次的事态，但侵蚀的规模扩大的太快了，需要增加后援。"
+L4_1.m_Talk_DEU = "Die Stadtwache tut alles, um die Situation unter Kontrolle zu bekommen, doch die Verderbnis breitet sich rasant aus und sie benötigen Verstärkung."
+L4_1.m_Talk_FRA = "La garde civile fait tout son possible pour maîtriser la situation, mais la corruption se répand bien trop vite et nous allons avoir besoin de renforts."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_START@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000001
+L5_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "따라서 ARC-CS1 도시 관리국은 코핀 컴퍼니에 대 침식전을 의뢰하기를 희망합니다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "そのため、ARC-CS1都市管理局はコフィンカンパニーに対侵食戦を依頼します。"
+L5_1.m_Talk_ENG = "Therefore, the ARC-CS1 City Managements request the Coffin Company to engage in an anti-Corruption battle."
+L5_1.m_Talk_TWN = "因此，ARC-CS1城市管理局希望委託科芬公司參與侵蝕戰。"
+L5_1.m_Talk_THA = "ดังนั้น สำนักบริหารเมือง ARC-CS1 จึงขอให้บริษัทคอฟฟินร่วมต่อสู้ในศึกต่อต้านคอร์รัปชั่น"
+L5_1.m_Talk_VTN = "Do đó, Cục Quản Lý Thành Phố ARC-CS1 hy vọng Công Ty Coffin tham gia vào cuộc chiến chống Ăn Mòn này."
+L5_1.m_Talk_SCN = "所以ARC-CS1城市管理局希望委托科芬公司参与侵蚀战。"
+L5_1.m_Talk_DEU = "Daher bittet die Stadtverwaltung von ARC-CS1 darum, dass die Coffin Company den Kampf gegen die Verderbnis aufnimmt."
+L5_1.m_Talk_FRA = "La direction des cités de CRA-CS1 souhaiterait donc l'intervention de la Compagnie Coffin dans cette bataille anticorruption."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_START@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000001
+L6_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "도심부에 출몰한 침식체 군집을 신속히 제압해서 중요 시설물의 안전을 확보하여 주십시오."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "都心部に出没した侵食体の群れを迅速に制圧し、重要施設の安全を確保してください。"
+L6_1.m_Talk_ENG = "Please secure the safety of key facilities by quickly subduing the group of Corrupted Objects."
+L6_1.m_Talk_TWN = "請盡快鎮壓出沒在都市內的侵蝕體，確保重要設施的安全。"
+L6_1.m_Talk_THA = "โปรดรักษาความปลอดภัยของสิ่งปลูกสร้างสำคัญโดยกำจัดฝูงวัตถุคอร์รัปต์ให้เร็วที่สุด"
+L6_1.m_Talk_VTN = "Hãy đảm bảo an toàn cho các cơ sở trọng yếu bằng cách nhanh chóng thu phục nhóm các Vật Thể Bị Ăn Mòn."
+L6_1.m_Talk_SCN = "请快速镇压出没在都市内的侵蚀体，以保障重要设施的安全。"
+L6_1.m_Talk_DEU = "Bitte sichern Sie die zentralen Einrichtungen, indem Sie die Counterside-Objekte rasch bezwingen."
+L6_1.m_Talk_FRA = "Éliminez au plus vite les objets corrompus qui menacent la sécurité de nos installations les plus importantes."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000001
+L7_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_START"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

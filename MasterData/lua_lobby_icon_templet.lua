@@ -1,0 +1,13 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.IDX = 1
+L1_1.m_ShortCutType = "SHORTCUT_MISSION"
+L1_1.m_ShortCut = "2"
+L1_1.m_LobbyIconName = "NKM_UI_LOBBY_ICON_GROWTHMISSION"
+L1_1.m_LobbyIconDesc = "SI_LOBBY_ICON_DESC_MISSION_UNIT_GROWTH"
+L1_1.m_StartTime = 43862
+L1_1.m_EndTime = 43862
+L1_1.m_OrderList = 1
+L0_1[1] = L1_1
+LOBBY_ICON_TEMPLET = L0_1

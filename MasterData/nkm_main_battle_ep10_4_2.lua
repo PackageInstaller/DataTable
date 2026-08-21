@@ -1,0 +1,20 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1
+L0_1 = {}
+L1_1 = {}
+L2_1 = {}
+L2_1.m_WaveID = 1
+L2_1.m_fNextWavetime = 90
+L3_1 = {}
+L4_1 = {}
+L4_1.m_UnitStrID = "NKM_MOB_BOSS_EP10_KNIGHT_CA_SAVIOR_H"
+L4_1.m_bShowGage = true
+L5_1 = {}
+L5_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_ONE_TIME"
+L5_1.m_fEventTimeStart = 0
+L5_1.m_fEventPos = 0.01
+L4_1.m_NKMDungeonEventTiming = L5_1
+L3_1[1] = L4_1
+L2_1.m_listDungeonUnitRespawnB = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonWave = L1_1
+NKMDungeonTemplet = L0_1

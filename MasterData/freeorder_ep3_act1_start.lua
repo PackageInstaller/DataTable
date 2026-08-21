@@ -1,0 +1,115 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000107
+L1_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "THEMA_COFFIN_FULL"
+L1_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP3_ACT1_START@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000107
+L2_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "<color=#ffd34c>관리국 행정부로부터의 의뢰요청입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>管理局行政部からの依頼要請です。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>A request came in from the Administration Executive.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>來自管理局行政部的委託。</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>มีงานจ้างส่งมาจากผู้บริหารขององค์การบริหารโลก</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Yêu cầu đến từ Bộ Hành Chính Cục Quản Lý.</color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>来自管理局行政部的委托邀请。</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Anfrage von der Führungsebene der Administration.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Vous avez reçu une requête du gestionnaire de l'Administration.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP3_ACT1_START@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000107
+L3_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "방금 전, 구시가지 내 상권밀집지역에서 리플레이서의 주도로 추정되는 테러가 발생했습니다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "先ほど、市街地の店舗密集地で\nリプレイサーの主導によるテロが発生しました。"
+L3_1.m_Talk_ENG = "Just now, a terrorist attack, assumed to be the act of the Replacer, occurred at the marketplace of the old city district."
+L3_1.m_Talk_TWN = "就在剛才，舊城區內的商圈密集地發生了疑似是克隆集團主導的恐怖襲擊事件。"
+L3_1.m_Talk_THA = "เมื่อครู่นี้ มีเหตุก่อการร้ายที่คาดว่าเป็นฝีมือของรีเพลสเซอร์เกิดขึ้นในตลาดของเขตเมืองเก่า"
+L3_1.m_Talk_VTN = "Mới đây, một cuộc tấn công khủng bố, được cho là hành động của Người Nhân Bản, đã xảy ra tại vòng tròn kinh doanh tập trung của thành phố cũ."
+L3_1.m_Talk_SCN = "就在刚刚，老城区内商圈密集地发生了疑似是克隆集团主导的恐怖袭击事件。"
+L3_1.m_Talk_DEU = "Soeben hat sich auf dem Marktplatz in der Altstadt ein Terroranschlag ereignet, der vermutlich von Replacern verübt wurde."
+L3_1.m_Talk_FRA = "Une attaque terroriste que nous imputons aux substituts vient de se produire au marché de la vieille ville."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP3_ACT1_START@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000107
+L4_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "현재 데이터베이스에 매칭되지 않는 정체불명의 유독성 가스가 살포된 상태이며,"
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "現在データベースにマッチングしない\n正体不明の有毒性ガスが散布されており、"
+L4_1.m_Talk_ENG = "Currently there is toxic gas, which is unidentified from our database, scattered across the area."
+L4_1.m_Talk_TWN = "目前他們散佈了無法在資料庫中查找到的不明有毒氣體，"
+L4_1.m_Talk_THA = "ในขณะนี้ยังมีก๊าซพิษบางอย่างแพร่กระจายอยู่ทั่วบริเวณ ซึ่งเป็นก๊าซที่ไม่มีข้อมูลในฐานข้อมูลของเรา"
+L4_1.m_Talk_VTN = "Hiện tại đang có một loại khí độc chưa xác định được từ cơ sở dữ liệu của chúng tôi, đang lan tràn khắp khu vực."
+L4_1.m_Talk_SCN = "目前状况是他们散布了无法在数据库中查找到的不明有毒气体，"
+L4_1.m_Talk_DEU = "Aktuell befindet sich Giftgas in dem Bereich, das wir nicht in unserer Datenbank haben."
+L4_1.m_Talk_FRA = "Un gaz toxique inconnu de nos bases de données s'est répandu dans la zone."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP3_ACT1_START@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000107
+L5_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "이는 수 시간 내에 구시가지 전역을 뒤덮을 것으로 예상됩니다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "これによって数時間以内に旧市街地の全域が覆われると予想されます。"
+L5_1.m_Talk_ENG = "We expect this gas to cover up the entire old city district within a few hours."
+L5_1.m_Talk_TWN = "毒氣預計在數小時內籠罩舊城區全域。"
+L5_1.m_Talk_THA = "เราคาดว่าก๊าซจะแพร่กระจายปกคลุมทั่วเขตเมืองเก่าภายในไม่กี่ชั่วโมง"
+L5_1.m_Talk_VTN = "Chúng tôi dự đoán lượng khí này sẽ bao phủ toàn bộ địa hạt thành phố cũ trong vòng vài giờ tới."
+L5_1.m_Talk_SCN = "预计将在数小时内覆盖老城区全部地带。"
+L5_1.m_Talk_DEU = "Wir gehen davon aus, dass sich das Gas in den nächsten Stunden in der ganzen Altstadt ausbreitet."
+L5_1.m_Talk_FRA = "Nos pronostics indiquent que ce gaz couvrira la totalité de la vieille ville d'ici quelques heures."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP3_ACT1_START@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000107
+L6_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "저희 측에선 투입 가능한 인력을 시민구조에 최대한 가용하고 있는 상황이므로, 태스크포스가 리플레이서의 견제를 막아주셨으면 합니다."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "こちらでは投入できる人員を市民救助に最大限に充てている状況ですので、タスクフォースカンパニーはリプレイサーのけん制を防いでいただきたいです。"
+L6_1.m_Talk_ENG = "We have already deployed all available personnel to rescue civilians. Our request is for the TASKFORCE to deter any Replacer activities."
+L6_1.m_Talk_TWN = "我方正將一切可動員的人力派去進行市民救援，希望各特遣勢力公司能來阻止克隆集團的妨礙行動。"
+L6_1.m_Talk_THA = "ขณะนี้เราได้ส่งเจ้าหน้าที่ทุกคนที่พร้อมปฏิบัติการออกไปช่วยชีวิตพลเรือนแล้ว และต้องการให้ทาสก์ฟอร์สยับยั้งกิจกรรมของรีเพลสเซอร์ที่อาจมีเพิ่มเติม"
+L6_1.m_Talk_VTN = "Chúng tôi đã triển khai tất cả nhân viên hiện có để giải cứu thường dân. Chúng tôi yêu cầu TASKFORCE ngăn chặn bất kỳ hoạt động nào của Người Nhân Bản."
+L6_1.m_Talk_SCN = "我方正在将一切可动员的人力去进行市民救援，希望特遣势力公司来阻挡一下克隆集团的牵制。"
+L6_1.m_Talk_DEU = "Wir haben sämtliches verfügbare Personal mit der Rettung von Zivilisten betraut. Die TASKFORCE soll in der Zwischenzeit etwaige Replacer-Aktivitäten unterbinden."
+L6_1.m_Talk_FRA = "Nous avons déjà envoyé tous les effectifs disponibles sur place pour secourir la population civile. Nous souhaitons que les TASKFORCE s'occupent des éventuels substituts encore dans la zone."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000107
+L7_1.m_CutScenStrID = "FREEORDER_EP3_ACT1_START"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

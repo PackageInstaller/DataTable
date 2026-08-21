@@ -1,0 +1,14 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_MONSTER_BOSS_BASIC_TOMBSTONE_MINI_VALENTINE_N"
+L1_1 = {}
+L2_1 = {}
+L2_1.m_StateName = "USN_PATTERN1"
+L3_1 = {}
+L4_1 = {}
+L4_1.m_UnitStrID = "NKM_MONSTER_ELITE_BASIC_NEEDLER_VALENTINE_H"
+L3_1[1] = L4_1
+L2_1.m_listNKMEventRespawn = L3_1
+L1_1[1] = L2_1
+L0_1.m_dicNKMUnitState = L1_1
+NKMUnitTemplet = L0_1

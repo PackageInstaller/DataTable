@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1
+L0_1 = {}
+L1_1 = {}
+L2_1 = "SI_EVENT_BUFF_TITLE_CHARGE_001"
+L3_1 = "경험치 보너스 프리미엄 계정"
+L1_1[1] = L2_1
+L1_1[2] = L3_1
+L2_1 = {}
+L3_1 = "SI_EVENT_BUFF_TITLE_HOTTIME_001"
+L4_1 = "1월의 주말 특근 이벤트"
+L2_1[1] = L3_1
+L2_1[2] = L4_1
+L3_1 = {}
+L4_1 = "SI_EVENT_BUFF_TITLE_HOTTIME_002"
+L5_1 = "1월의 주말 특근 이벤트"
+L3_1[1] = L4_1
+L3_1[2] = L5_1
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+m_dicString = L0_1

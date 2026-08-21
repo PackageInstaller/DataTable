@@ -1,0 +1,114 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000006
+L1_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "THEMA_COFFIN_FULL"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_END@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000006
+L2_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "<color=#ffd34c>익명으로 수신한 메일입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>匿名の送信者から受信したメールです。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>An anonymous mail arrived.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>匿名收取的郵件</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>มีจดหมายส่งมาจากบุคคลไม่ประสงค์ออกนาม</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Thư đến từ người gửi ẩn danh.</color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>匿名收取的邮件</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Aus einer anonymen E-Mail.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Vous avez reçu un e-mail anonyme.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_END@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000006
+L3_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "조사대가 연구를 마치고 복귀했다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "調査隊が研究を終えて戻ってきた。"
+L3_1.m_Talk_ENG = "Our investigation team returned safely after finishing up their research."
+L3_1.m_Talk_TWN = "調查隊完成調查後回去了。"
+L3_1.m_Talk_THA = "ทีมตรวจสอบของเรากลับมาได้อย่างปลอดภัยหลังจากทำการวิจัยแล้วเสร็จ"
+L3_1.m_Talk_VTN = "Đội điều tra của chúng tôi đã trở về an toàn sau khi kết thúc điều tra của họ."
+L3_1.m_Talk_SCN = "调查队在完成了调查后回归了。"
+L3_1.m_Talk_DEU = "Unser Untersuchungsteam hat seine Nachforschungen abgeschlossen und ist sicher zurückgekehrt."
+L3_1.m_Talk_FRA = "Notre équipe de recherche a pu terminer sa mission sans encombre."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_END@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000006
+L4_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "다만, 귀사의 직원이 우리 측 인력과 접촉을 시도했다는 보고를 받았다."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "ただ、そちらの社員が、こちらの人員と接触しようとしたという報告を受けた。"
+L4_1.m_Talk_ENG = "However, I received a report that one of your employees tried to get in contact with our men."
+L4_1.m_Talk_TWN = "只是，我們收到了貴公司的員工試圖和我們的人員進行接觸的報告。"
+L4_1.m_Talk_THA = "อย่างไรก็ตาม ผมได้รับรายงานว่าพนักงานของคุณคนหนึ่งพยายามจะติดต่อกับบุคลากรของเรา"
+L4_1.m_Talk_VTN = "Tuy nhiên, tôi đã nhậh được báo cáo là một trong những nhân viên của bạn đã thử cố liên hệ với người của chúng tôi."
+L4_1.m_Talk_SCN = "只是，我们收到了贵社的员工试图跟我们的人力进行接触的报告。"
+L4_1.m_Talk_DEU = "Allerdings habe ich Meldung erhalten, dass einer Ihrer Mitarbeiter unsere Männer kontaktieren wollte."
+L4_1.m_Talk_FRA = "J'ai cependant cru comprendre que l'un de vos employés a tenté d'entrer en contact avec nos hommes."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_END@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000006
+L5_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "귀하가 의도한 일은 아니겠지만, 다음부터는 사전에 직원들을 단속해 주길 바란다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "そちらが意図したことではないだろうが、今後は社員管理の徹底をお願いしたい。"
+L5_1.m_Talk_ENG = "I'm sure you did not intend for this to happen, but please try to keep your people under control next time."
+L5_1.m_Talk_TWN = "雖然這可能不是閣下的意圖，但希望下次你能事前管教好你的員工們。"
+L5_1.m_Talk_THA = "ผมมั่นใจว่านี่เป็นเรื่องที่คุณไม่ได้ตั้งใจให้เกิดขึ้น แต่โปรดควบคุมบุคลากรของคุณด้วยในครั้งต่อไป"
+L5_1.m_Talk_VTN = "Mặc dù, tôi chắc rằng bạn không phải cố ý để chuyện này xảy ra, nhưng hãy cố gắng quản lý người của bạn vào lần tới."
+L5_1.m_Talk_SCN = "虽然这可能不是阁下的意图，但希望下次开始前能好好管制你的员工们。"
+L5_1.m_Talk_DEU = "Ich bin mir sicher, dass dies nicht in Ihrer Absicht lag, aber bitte versuchen Sie, Ihre Leute nächstes Mal besser unter Kontrolle zu halten."
+L5_1.m_Talk_FRA = "Je suis certain que cet incident n'avait rien d'intentionnel, mais je vous saurais gré de garder vos agents sous contrôle à l'avenir."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_END@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000006
+L6_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "이번 건을 잘 처리해 준 대가로 추가 보수를 입금했다. 유용하게 쓰길 바란다."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "今回の件をうまく処理してもらった対価として、\n追加報酬を入金した。有効に活用していただきたい。"
+L6_1.m_Talk_ENG = "I have, however, deposited a bonus payment for a job well done. I hope you make good use of it."
+L6_1.m_Talk_TWN = "由於這次任務處理得很好，我為你增加了一些報酬，希望你能好好使用。"
+L6_1.m_Talk_THA = "อย่างไรก็ตาม ผมได้ฝากเงินโบนัสให้ด้วย ตอบแทนผลงานภารกิจที่ดีเยี่ยม หวังว่าคุณจะได้ใช้ประโยชน์จากเงินจำนวนนี้นะ"
+L6_1.m_Talk_VTN = "tôi vẫn gửi một khoản tiền thưởng vì công việc đã được hoàn thành rất xuất sắc. Hy vọng bạn sử dụng số tiền này vào việc tốt."
+L6_1.m_Talk_SCN = "由于这次任务处理的很好，给你增加了一些报酬，希望你能好好使用。"
+L6_1.m_Talk_DEU = "Ich habe dennoch eine Bonuszahlung für die gute Arbeit angewiesen. Ich hoffe, Sie wissen sie gut zu nutzen."
+L6_1.m_Talk_FRA = "Je vous ai néanmoins versé une prime pour l'efficacité de votre travail. J'espère que vous en ferez bon usage."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000006
+L7_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_END"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

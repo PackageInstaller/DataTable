@@ -1,0 +1,115 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000101
+L1_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "THEMA_COFFIN_FULL"
+L1_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP2_ACT1_START@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000101
+L2_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "<color=#ffd34c>익명의 태스크포스 컴퍼니로부터 수신한 메일입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>匿名のタスクフォースカンパニーから受信したメールです。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>A mail arrived from an anonymous TASKFORCE Company.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>來自匿名特遣勢力公司的郵件。</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>มีจดหมายส่งมาจากบริษัททาสก์ฟอร์สไม่ประสงค์ออกนาม</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Thư đến từ Công Ty TASKFORCE ẩn danh.</color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>来自匿名的特遣势力公司的邮件。</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Aus einer E-Mail eines anonymen TASKFORCE-Unternehmens.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Vous avez reçu un e-mail de la part d'une entreprise TASKFORCE non identifiée.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP2_ACT1_START@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000101
+L3_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "이터니움 확보를 위해 다이브를 진행했던 파견순양함으로부터 기함 파손 신고를 접수 받았습니다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "エタニウム確保のためにダイブした派遣巡洋艦から、艦船の破損申告がありました。"
+L3_1.m_Talk_ENG = "We received a report that our cruiser that was deployed in a dive damaged our flagship while acquiring Eternium."
+L3_1.m_Talk_TWN = "我們接收到了一份來自為了獲取永恆之金正在進行躍入的派遣巡洋艦的損毀報告。"
+L3_1.m_Talk_THA = "เราได้รับรายงานว่ายานรบลาดตระเวนที่เข้าร่วมภารกิจไดฟ์เกิดอุบัติเหตุ ทำให้ยานบัญชาการของเราเกิดความเสียหายขณะเก็บอีเทอร์เนียม"
+L3_1.m_Talk_VTN = "Chúng tôi nhận được báo cáo, khi đang lặn, tàu tuần dương đã làm hỏng chiến hạm của chúng tôi, lúc đó nó đang thực hiện nhiệm vụ khai thác Vàng Vĩnh Cửu."
+L3_1.m_Talk_SCN = "我们接收到了来自为了获得能晶而正在进行跃入的派遣巡洋舰的机舰破损报告。"
+L3_1.m_Talk_DEU = "Wir haben Meldung erhalten, dass unser in einem Tauchgang involvierter Kreuzer beim Schürfen von Eternium unser Flaggschiff beschädigt hat."
+L3_1.m_Talk_FRA = "Nous avons appris que l'un de nos croiseurs déployé dans une plongée a endommagé notre vaisseau amiral en récupérant de l'éternium."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP2_ACT1_START@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000101
+L4_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "수복이 불가능할 정도의 손상은 아니지만, 문제는 포인트에 있는 다수의 변종 침식체들입니다."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "修復が不可能な損傷ではありませんが、問題は多数の変種侵食体がポイントにいることです。"
+L4_1.m_Talk_ENG = "Although the damage can be recovered, there are multiple mutated C.O.'s around the point that are causing a problem."
+L4_1.m_Talk_TWN = "雖然不是無法修復的損傷程度，但問題是現場存在許多變種侵蝕體。"
+L4_1.m_Talk_THA = "แม้ว่าความเสียหายดังกล่าวจะแก้ไขได้ แต่ก็มีวัตถุคอร์รัปต์กลายพันธุ์จำนวนมากรวมฝูงกันอยู่ ณ ตำแหน่งที่เกิดปัญหา"
+L4_1.m_Talk_VTN = "Mặc dù hư hại có thể được sửa chữa, vấn đề là có rất nhiều V.T.B.A.M. đột biến xuất hiện xung quanh địa điểm."
+L4_1.m_Talk_SCN = "虽然并不是无法修复的损伤程度，但问题是在现场存在许多变种侵蚀体。"
+L4_1.m_Talk_DEU = "Der Schaden lässt sich zwar beheben, aber es befinden sich diverse mutierte C. O.s an dieser Position."
+L4_1.m_Talk_FRA = "Si les dégâts peuvent être réparés, un certain nombre d'O.C. mutants nous posent problème dans la zone."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP2_ACT1_START@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000101
+L5_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "엔지니어팀이 기함 수리를 무사히 마칠 수 있도록 호위를 요청합니다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "エンジニアチームが艦船の修理を無事に終えられるよう、護衛を要請します。"
+L5_1.m_Talk_ENG = "We are requesting your company to escort our engineer team until they are able to successfully repair our flagship."
+L5_1.m_Talk_TWN = "希望你能保護工程隊的安全直到艦船修理完畢。"
+L5_1.m_Talk_THA = "เราขอให้บริษัทของคุณคุ้มครองทีมวิศวกรของเราจนกว่าพวกเขาจะซ่อมยานบัญชาการของเราให้แล้วเสร็จ"
+L5_1.m_Talk_VTN = "Chúng tôi yêu cầu công ty của bạn hộ tống đội kỹ sư của chúng tôi cho đến khi soái hạm của chúng tôi được sửa chữa thành công."
+L5_1.m_Talk_SCN = "请求你能一直保护到让工程队安全修理完机舰。"
+L5_1.m_Talk_DEU = "Wir bitten Ihr Unternehmen, unser Technikerteam zu begleiten, bis unser Flaggschiff repariert ist."
+L5_1.m_Talk_FRA = "Nous souhaiterions que votre entreprise escorte notre équipe de techniciens jusqu'au vaisseau amiral et la protège le temps des réparations."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP2_ACT1_START@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000101
+L6_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "차원간 통신이 신호가 마지막으로 확인된 좌표 정보를 함께 전달하겠습니다."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "次元間通信の信号が最後に確認された座標の情報も一緒にお送りします。"
+L6_1.m_Talk_ENG = "The last confirmed coordinates based on the interdimensional communications are attached to this mail."
+L6_1.m_Talk_TWN = "次元間的通信信號會把最終確認的座標情報一同傳送過去。"
+L6_1.m_Talk_THA = "เราได้แนบพิกัดล่าสุดที่ยืนยันจากการสื่อสารระหว่างมิติมาให้ในอีเมลฉบับนี้แล้ว"
+L6_1.m_Talk_VTN = "Tình báo tọa độ được xác nhận lần cuối dựa trên tín hiệu thông tin liên lạc liên không gian được đính kèm trong thư này."
+L6_1.m_Talk_SCN = "次元间的通信信号将会把最终确认好的坐标情报一同传达过去。"
+L6_1.m_Talk_DEU = "Die letzten bestätigten Koordinaten basierend auf interdimensionaler Kommunikation finden Sie im Anhang."
+L6_1.m_Talk_FRA = "Vous trouverez ci-joint les coordonnées les plus récentes qui nous ont été communiquées par transmission interdimensionnelle."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000101
+L7_1.m_CutScenStrID = "FREEORDER_EP2_ACT1_START"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

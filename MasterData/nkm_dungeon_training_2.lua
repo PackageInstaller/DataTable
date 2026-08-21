@@ -1,0 +1,8 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.m_fStartCost = 0
+L0_1.m_BossUnitStrID = "NKM_MONSTER_BOSS_BASIC_OMEN_N"
+L0_1.m_BossUnitLevel = 1
+L0_1.m_fBossPosZ = 0.6
+L0_1.m_fCostSpeedRateA = 10
+NKMDungeonTemplet = L0_1

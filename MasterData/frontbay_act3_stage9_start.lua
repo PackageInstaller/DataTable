@@ -1,0 +1,471 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1, L8_1, L9_1, L10_1, L11_1, L12_1, L13_1, L14_1, L15_1, L16_1, L17_1, L18_1, L19_1, L20_1, L21_1, L22_1, L23_1, L24_1, L25_1, L26_1, L27_1, L28_1, L29_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 5900315
+L1_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_BGFileName = "PROLOGUE_02"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1
+L1_1.m_StartBGMFileName = "CUTSCENE_AMBIENT_WIND"
+L2_1 = {}
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 5900315
+L2_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L2_1.m_bWaitClick = false
+L2_1.m_fWaitTime = 1
+L2_1.m_BGCrash = 30
+L2_1.m_fBGCrashTime = 0.5
+L2_1.m_StartFXSoundName = "FX_CUTSCEN_DOOR_SF"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 5900315
+L3_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Face = "UNIT_SURPRISE"
+L3_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L3_1.m_Pos = "C"
+L3_1.m_Talk_KOREA = "차, 찾았다아-"
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "み、見つけましたぁー"
+L3_1.m_Talk_ENG = "I-I found it!"
+L3_1.m_Talk_TWN = "找，找到了。"
+L3_1.m_Talk_THA = "ฉันเจอแล้ว!"
+L3_1.m_Talk_VTN = "Tôi đã tìm thấy nó!"
+L3_1.m_Talk_SCN = "找，找到了。"
+L3_1.m_Talk_DEU = "I-I found it!"
+L3_1.m_Talk_FRA = "I-I found it!"
+L4_1 = {}
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 5900315
+L4_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L4_1.m_bWaitClick = false
+L4_1.m_fWaitTime = 0
+L4_1.m_Face = "UNIT_HATE"
+L4_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L4_1.m_Pos = "L_F_C"
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 5900315
+L5_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_CharStrID = "DAGGER_SHARKS_NULL_NULL"
+L5_1.m_Pos = "R"
+L5_1.m_Talk_KOREA = "여기가 조종실인 것 같네. 꽤 멀쩡한걸."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "ここが操縦室のようだな。特に壊れたところもない。"
+L5_1.m_Talk_ENG = "This seems to be the flight deck. It's in better condition than I thought it would be."
+L5_1.m_Talk_TWN = "這應該就是駕駛艙了。保存的很完整嘛。"
+L5_1.m_Talk_THA = "นี่ดูเหมือนจะเป็นดาดฟ้าบิน สภาพดีกว่าที่คิดไว้ครับ"
+L5_1.m_Talk_VTN = "Đây có vẻ là sàn đáp. Nó ở trong tình trạng tốt hơn tôi nghĩ."
+L5_1.m_Talk_SCN = "这应该就是驾驶舱了。保存的很完整嘛。"
+L5_1.m_Talk_DEU = "This seems to be the flight deck. It's in better condition than I thought it would be."
+L5_1.m_Talk_FRA = "This seems to be the flight deck. It's in better condition than I thought it would be."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 5900315
+L6_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L6_1.m_Pos = "L"
+L6_1.m_Crash = 20
+L6_1.m_Talk_KOREA = "으, 여기까지 오는 동안 함선이 몇 번이나 뒤집힌 거죠?"
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "うう、ここに来るまでに、艦船が何度ひっくり返ったんでしょうか。"
+L6_1.m_Talk_ENG = "Ooh... How many times has the ship rolled while we were finding our way here?"
+L6_1.m_Talk_TWN = "呃，從我們到這裡，這艘艦船翻了多少次？"
+L6_1.m_Talk_THA = "โอ้... เรือแล่นไปกี่ครั้งแล้วในขณะที่เราพบสถานที่แห่งนี้?"
+L6_1.m_Talk_VTN = "Ôi... Con tàu đã lộn vòng bao nhiêu lần khi chúng ta tìm đường tới đây?"
+L6_1.m_Talk_SCN = "呃呜呜呜，从我们到这里，舰船到底翻了多少次……？"
+L6_1.m_Talk_DEU = "Ooh... How many times has the ship rolled while we were finding our way here?"
+L6_1.m_Talk_FRA = "Ooh... How many times has the ship rolled while we were finding our way here?"
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 5900315
+L7_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 1
+L7_1.m_fFlashBangTime = 0.3
+L7_1.m_StartFXSoundName = "FX_CUTSCEN_SIREN"
+L7_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L7_1.m_Pos = "L_D"
+L8_1 = {}
+L8_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@8#Talk"
+L8_1.m_CutScenProcessKey = 8
+L8_1.m_CutScenID = 5900315
+L8_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L8_1.m_bWaitClick = true
+L8_1.m_fWaitTime = 0
+L8_1.m_Talk_KOREA = "<color=#ffd34c>주동력기관이 안정적이지 않습니다.</color>"
+L8_1.m_fTalkTime = 0.03
+L8_1.m_Talk_JPN = "<color=#ffd34c>主動力機関が不安定です。</color>"
+L8_1.m_Talk_ENG = "<color=#ffd34c>The main power engine is unstable.</color>"
+L8_1.m_Talk_TWN = "<color=#ffd34c>主機不穩定。</color>"
+L8_1.m_Talk_THA = "<color=#ffd34c>กำลังเครื่องยนต์หลักไม่เสถียร</color>"
+L8_1.m_Talk_VTN = "<color=#ffd34c>Động cơ điện chính không ổn định.</color>"
+L8_1.m_Talk_SCN = "<color=#ffd34c>主机不稳定。</color>"
+L8_1.m_Talk_DEU = "<color=#ffd34c>The main power engine is unstable.</color>"
+L8_1.m_Talk_FRA = "<color=#ffd34c>The main power engine is unstable.</color>"
+L9_1 = {}
+L9_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@9#Talk"
+L9_1.m_CutScenProcessKey = 9
+L9_1.m_CutScenID = 5900315
+L9_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L9_1.m_bWaitClick = true
+L9_1.m_fWaitTime = 0
+L9_1.m_Talk_KOREA = "<color=#ffd34c>항행 제어 불능. 이터니움 드라이브 오프라인.</color>"
+L9_1.m_fTalkTime = 0.03
+L9_1.m_Talk_JPN = "<color=#ffd34c>航行制御不能。エタニウムドライブ、オフライン。</color>"
+L9_1.m_Talk_ENG = "<color=#ffd34c>Navigation, unresponsive. Eternium Drive, offline.</color>"
+L9_1.m_Talk_TWN = "<color=#ffd34c>導航裝置失效。永恆之金引擎已離線。</color>"
+L9_1.m_Talk_THA = "<color=#ffd34c>การนำทาง ไม่ตอบสนองอีเทอเนี่ยมไดร์ฟ ออฟไลน์</color>"
+L9_1.m_Talk_VTN = "<color=#ffd34c>Điều hướng, không phản hồi. Ổ Vàng Vĩnh Cửu, ngoại tuyến.</color>"
+L9_1.m_Talk_SCN = "<color=#ffd34c>导航装置失效。能晶引擎已离线。</color>"
+L9_1.m_Talk_DEU = "<color=#ffd34c>Navigation, unresponsive. Eternium Drive, offline.</color>"
+L9_1.m_Talk_FRA = "<color=#ffd34c>Navigation, unresponsive. Eternium Drive, offline.</color>"
+L10_1 = {}
+L10_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@10#Talk"
+L10_1.m_CutScenProcessKey = 10
+L10_1.m_CutScenID = 5900315
+L10_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L10_1.m_bWaitClick = true
+L10_1.m_fWaitTime = 0
+L10_1.m_Face = "UNIT_DESPAIR"
+L10_1.m_CharStrID = "DAGGER_SHARKS_NULL_NULL"
+L10_1.m_Pos = "R"
+L10_1.m_Talk_KOREA = "역시… 움직이는 건 불가능한 건가."
+L10_1.m_fTalkTime = 0.03
+L10_1.m_Talk_JPN = "やっぱり……動かすことはできないのか。"
+L10_1.m_Talk_ENG = "I knew it... It won't budge."
+L10_1.m_Talk_TWN = "看來……是無法移動了。"
+L10_1.m_Talk_THA = "ฉันรู้แล้ว...มันจะไม่ขยับเขยื่อน"
+L10_1.m_Talk_VTN = "Tôi biết ngày mà... Nó sẽ không nhúc nhích."
+L10_1.m_Talk_SCN = "果然……是无法移动了。"
+L10_1.m_Talk_DEU = "I knew it... It won't budge."
+L10_1.m_Talk_FRA = "I knew it... It won't budge."
+L11_1 = {}
+L11_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@11#Talk"
+L11_1.m_CutScenProcessKey = 11
+L11_1.m_CutScenID = 5900315
+L11_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L11_1.m_bWaitClick = true
+L11_1.m_fWaitTime = 0
+L11_1.m_Face = "UNIT_SERIOUS2"
+L11_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L11_1.m_Pos = "L"
+L12_1 = {}
+L13_1 = 2
+L14_1 = 0.15
+L12_1[1] = L13_1
+L12_1[2] = L14_1
+L11_1.m_Bounce = L12_1
+L11_1.m_Talk_KOREA = "괜찮아요! 잭 아저씨가 함포는 쏠 수 있을 거라고 했으니까요!"
+L11_1.m_fTalkTime = 0.03
+L11_1.m_Talk_JPN = "大丈夫ですわ！　ジャックのおじさんが、艦砲は撃てるって言ってましたから！"
+L11_1.m_Talk_ENG = "That's okay! Jack said that we could still use the cannon!"
+L11_1.m_Talk_TWN = "沒關！傑克大叔說，艦砲還能使用！"
+L11_1.m_Talk_THA = "ไม่เป็นไร! แจ็คบอกว่าเรายังใช้ปืนใหญ่ได้!"
+L11_1.m_Talk_VTN = "Không sao đâu! Jack nói chúng ta vẫn có thể sử dụng đại bác!"
+L11_1.m_Talk_SCN = "没关系！杰克大叔说，舰炮还能使用！"
+L11_1.m_Talk_DEU = "That's okay! Jack said that we could still use the cannon!"
+L11_1.m_Talk_FRA = "That's okay! Jack said that we could still use the cannon!"
+L12_1 = {}
+L12_1.m_CutScenProcessKey = 12
+L12_1.m_CutScenID = 5900315
+L12_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L12_1.m_bWaitClick = false
+L12_1.m_fWaitTime = 1
+L12_1.m_StartFXSoundControl = "NCSC_LOOP_PLAY"
+L12_1.m_StartFXSoundName = "TYPING_LOOP"
+L12_1.m_EndFXSoundControl = "NCSC_STOP"
+L12_1.m_EndFXSoundName = "TYPING_LOOP"
+L12_1.m_bClear = true
+L13_1 = {}
+L13_1.m_CutScenProcessKey = 13
+L13_1.m_CutScenID = 5900315
+L13_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L13_1.m_bWaitClick = false
+L13_1.m_fWaitTime = 1
+L13_1.m_StartFXSoundName = "FX_COMBAT_MECHANIC_BAYREN_SKILL_LOOP"
+L14_1 = {}
+L14_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@14#Talk"
+L14_1.m_CutScenProcessKey = 14
+L14_1.m_CutScenID = 5900315
+L14_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L14_1.m_bWaitClick = true
+L14_1.m_fWaitTime = 0
+L14_1.m_Talk_KOREA = "<color=#ffd34c>무기 시스템 점검 중-</color>"
+L14_1.m_fTalkTime = 0.03
+L14_1.m_Talk_JPN = "<color=#ffd34c>武器システムを点検中……</color>"
+L14_1.m_Talk_ENG = "<color=#ffd34c>Checking weapon system-</color>"
+L14_1.m_Talk_TWN = "<color=#ffd34c>武器系統正在維修。</color>"
+L14_1.m_Talk_THA = "<color=#ffd34c>กำลังตรวจสอบระบบอาวุธ-</color>"
+L14_1.m_Talk_VTN = "<color=#ffd34c>Kiểm tra hệ thống vũ khí-</color>"
+L14_1.m_Talk_SCN = "<color=#ffd34c>武器系统，检修中。</color>"
+L14_1.m_Talk_DEU = "<color=#ffd34c>Checking weapon system-</color>"
+L14_1.m_Talk_FRA = "<color=#ffd34c>Checking weapon system-</color>"
+L15_1 = {}
+L15_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@15#Talk"
+L15_1.m_CutScenProcessKey = 15
+L15_1.m_CutScenID = 5900315
+L15_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L15_1.m_bWaitClick = true
+L15_1.m_fWaitTime = 0
+L15_1.m_Talk_KOREA = "<color=#ffd34c>활성 가능한 제4형 플라즈마 주포 1정을 확인했습니다.</color>"
+L15_1.m_fTalkTime = 0.03
+L15_1.m_Talk_JPN = "<color=#ffd34c>活性可能な第4型のプラズマ主砲1挺を確認しました。</color>"
+L15_1.m_Talk_ENG = "<color=#ffd34c>1 Type-4 Plasma Cannon available.</color>"
+L15_1.m_Talk_TWN = "<color=#ffd34c>已發現1門可啟動的第4型等離子砲。</color>"
+L15_1.m_Talk_THA = "<color=#ffd34c>มีปืนใหญ่พลาสม่า คลาส-4 จำนวน 1 เครื่อง</color>"
+L15_1.m_Talk_VTN = "<color=#ffd34c>Có sẵn 1 Pháo Plasma Loại-4.</color>"
+L15_1.m_Talk_SCN = "<color=#ffd34c>已发现1门可激活的第4型等离子炮。</color>"
+L15_1.m_Talk_DEU = "<color=#ffd34c>1 Type-4 Plasma Cannon available.</color>"
+L15_1.m_Talk_FRA = "<color=#ffd34c>1 Type-4 Plasma Cannon available.</color>"
+L16_1 = {}
+L16_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@16#Talk"
+L16_1.m_CutScenProcessKey = 16
+L16_1.m_CutScenID = 5900315
+L16_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L16_1.m_bWaitClick = true
+L16_1.m_fWaitTime = 0
+L16_1.m_Face = "UNIT_PRIDE"
+L16_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L16_1.m_Pos = "C"
+L16_1.m_Crash = 20
+L16_1.m_Talk_KOREA = "…찾았다!"
+L16_1.m_fTalkTime = 0.03
+L16_1.m_Talk_JPN = "……あった！"
+L16_1.m_Talk_ENG = "...Found it!"
+L16_1.m_Talk_TWN = "……找到了！"
+L16_1.m_Talk_THA = "...เจอแล้ว!"
+L16_1.m_Talk_VTN = "...Tìm thấy rồi!"
+L16_1.m_Talk_SCN = "……找到了！"
+L16_1.m_Talk_DEU = "...Found it!"
+L16_1.m_Talk_FRA = "...Found it!"
+L17_1 = {}
+L17_1.m_CutScenProcessKey = 17
+L17_1.m_CutScenID = 5900315
+L17_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L17_1.m_bWaitClick = false
+L17_1.m_fWaitTime = 1
+L17_1.m_Face = "UNIT_SERIOUS2"
+L17_1.m_fFlashBangTime = 0.3
+L17_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP"
+L17_1.m_CharStrID = "CANNON_SHARKS_NULL_NULL"
+L17_1.m_Pos = "C_D"
+L18_1 = {}
+L18_1.m_CutScenProcessKey = 18
+L18_1.m_CutScenID = 5900315
+L18_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L18_1.m_bWaitClick = false
+L18_1.m_fWaitTime = 0
+L18_1.m_BGCrash = 20
+L18_1.m_fBGCrashTime = 1
+L18_1.m_bFadeIn = false
+L18_1.m_fFadeTime = 1
+L18_1.m_StartBGMFileName = "CUTSCENE_UPROAR"
+L18_1.m_StartFXSoundName = "FX_COMBAT_ALL_MECHANIC_WORK_02"
+L19_1 = {}
+L19_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@19#Talk"
+L19_1.m_CutScenProcessKey = 19
+L19_1.m_CutScenID = 5900315
+L19_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L19_1.m_bWaitClick = true
+L19_1.m_fWaitTime = 1
+L19_1.m_BGFileName = "BLACK"
+L19_1.m_bFadeIn = true
+L19_1.m_fFadeTime = 0.2
+L19_1.m_bClear = true
+L19_1.m_Talk_KOREA = "<color=#ffd34c>타깃 포착. 충전 개시.</color>"
+L19_1.m_fTalkTime = 0.03
+L19_1.m_Talk_JPN = "<color=#ffd34c>ターゲットオン。充電開始。</color>"
+L19_1.m_Talk_ENG = "<color=#ffd34c>Target acquired. Charging.</color>"
+L19_1.m_Talk_TWN = "<color=#ffd34c>目標已鎖定。開始充能。</color>"
+L19_1.m_Talk_THA = "<color=#ffd34c>ได้รับเป้าหมายแล้ว กำลังชาร์จ</color>"
+L19_1.m_Talk_VTN = "<color=#ffd34c>Đã tìm được mục tiêu. Đang nạp.</color>"
+L19_1.m_Talk_SCN = "<color=#ffd34c>目标已锁定。开始充能。</color>"
+L19_1.m_Talk_DEU = "<color=#ffd34c>Target acquired. Charging.</color>"
+L19_1.m_Talk_FRA = "<color=#ffd34c>Target acquired. Charging.</color>"
+L20_1 = {}
+L20_1.m_CutScenProcessKey = 20
+L20_1.m_CutScenID = 5900315
+L20_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L20_1.m_bWaitClick = false
+L20_1.m_fWaitTime = 0
+L20_1.m_bFadeIn = false
+L20_1.m_fFadeTime = 1
+L21_1 = {}
+L21_1.m_CutScenProcessKey = 21
+L21_1.m_CutScenID = 5900315
+L21_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L21_1.m_bWaitClick = false
+L21_1.m_fWaitTime = 0
+L21_1.m_BGFileName = "FRONTBAY_DECK_FOG"
+L21_1.m_BGCrash = 30
+L21_1.m_fBGCrashTime = 1
+L21_1.m_bFadeIn = true
+L21_1.m_fFadeTime = 1
+L21_1.m_StartFXSoundName = "FX_COMBAT_ALL_MECHANIC_WORK_27"
+L22_1 = {}
+L22_1.m_CutScenProcessKey = 22
+L22_1.m_CutScenID = 5900315
+L22_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L22_1.m_bWaitClick = false
+L22_1.m_fWaitTime = 0.5
+L22_1.m_StartFXSoundName = "FX_CUTSCEN_ENERGY_CHARGE"
+L23_1 = {}
+L23_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@23#Talk"
+L23_1.m_CutScenProcessKey = 23
+L23_1.m_CutScenID = 5900315
+L23_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L23_1.m_bWaitClick = true
+L23_1.m_fWaitTime = 0
+L23_1.m_BGCrash = 30
+L23_1.m_fBGCrashTime = 0.5
+L23_1.m_CharStrID = "PIRATE_FRONTBAY_JACK_BOSUN"
+L23_1.m_Talk_KOREA = "차원함선 주포의 동력공급을 확인!"
+L23_1.m_fTalkTime = 0.03
+L23_1.m_Talk_JPN = "次元艦船主砲の動力供給を確認！"
+L23_1.m_Talk_ENG = "The dimensional ship's cannon is being charged!"
+L23_1.m_Talk_TWN = "已發現次元戰艦主砲的動力供給！"
+L23_1.m_Talk_THA = "ฉันเห็นปืนใหญ่ของเรือมิติกำลังพุ่งเข้ามา!"
+L23_1.m_Talk_VTN = "Tôi thấy khẩu pháo của con tàu thứ nguyên đang được sạc!"
+L23_1.m_Talk_SCN = "次元战舰主炮的动力供给有反应了！"
+L23_1.m_Talk_DEU = "The dimensional ship's cannon is being charged!"
+L23_1.m_Talk_FRA = "The dimensional ship's cannon is being charged!"
+L24_1 = {}
+L24_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@24#Talk"
+L24_1.m_CutScenProcessKey = 24
+L24_1.m_CutScenID = 5900315
+L24_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L24_1.m_bWaitClick = true
+L24_1.m_fWaitTime = 0
+L24_1.m_BGCrash = 30
+L24_1.m_fBGCrashTime = 0.5
+L24_1.m_CharStrID = "PIRATE_FRONTBAY_JACK_BOSUN"
+L24_1.m_Talk_KOREA = "남은 건 시간문제입니다!"
+L24_1.m_fTalkTime = 0.03
+L24_1.m_Talk_JPN = "あとは時間の問題です！"
+L24_1.m_Talk_ENG = "Now it's just a matter of time!"
+L24_1.m_Talk_TWN = "剩下的就只是時間問題！"
+L24_1.m_Talk_THA = "ตอนนี้เป็นเพียงเรื่องของเวลา!"
+L24_1.m_Talk_VTN = "Bây giờ chỉ còn là vấn đề thời gian thôi!"
+L24_1.m_Talk_SCN = "剩下的就只是时间问题！"
+L24_1.m_Talk_DEU = "Now it's just a matter of time!"
+L24_1.m_Talk_FRA = "Now it's just a matter of time!"
+L25_1 = {}
+L25_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@25#Talk"
+L25_1.m_CutScenProcessKey = 25
+L25_1.m_CutScenID = 5900315
+L25_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L25_1.m_bWaitClick = true
+L25_1.m_fWaitTime = 0
+L25_1.m_CharStrID = "JACK_FRONTBAY_NULL_NULL"
+L25_1.m_Pos = "C"
+L25_1.m_Crash = 20
+L25_1.m_Talk_KOREA = "좋아! 충전이 끝날 때까진 우리가 놈을 막는다!"
+L25_1.m_fTalkTime = 0.03
+L25_1.m_Talk_JPN = "よし！　充電が終わるまでは私たちがヤツを引き止める！"
+L25_1.m_Talk_ENG = "Okay! We stop it until the cannon is fully charged!"
+L25_1.m_Talk_TWN = "很好！我們要盡力阻止那傢伙，直到充能完畢！"
+L25_1.m_Talk_THA = "โอเค! เราหยุดมันจนกว่าปืนใหญ่จะชาร์จเต็ม!"
+L25_1.m_Talk_VTN = "Được rồi! Chúng ta dừng nó lại cho đến khi pháo được nạp đầy!"
+L25_1.m_Talk_SCN = "很好！我们要尽力阻止那家伙，直到充能完毕！"
+L25_1.m_Talk_DEU = "Okay! We stop it until the cannon is fully charged!"
+L25_1.m_Talk_FRA = "Okay! We stop it until the cannon is fully charged!"
+L26_1 = {}
+L26_1.m_CutScenProcessKey = 26
+L26_1.m_CutScenID = 5900315
+L26_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L26_1.m_bWaitClick = false
+L26_1.m_fWaitTime = 0.5
+L26_1.m_bClear = true
+L27_1 = {}
+L27_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@27#Talk"
+L27_1.m_CutScenProcessKey = 27
+L27_1.m_CutScenID = 5900315
+L27_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L27_1.m_bWaitClick = true
+L27_1.m_fWaitTime = 0
+L27_1.m_BGCrash = 30
+L27_1.m_fBGCrashTime = 1
+L27_1.m_StartFXSoundName = "FX_CUTSCEN_CROWD_NOISE_04"
+L27_1.m_CharStrID = "PIRATE_FRONTBAY_NULL_SEVERAL"
+L27_1.m_Talk_KOREA = "우리도 가세하자!"
+L27_1.m_fTalkTime = 0.03
+L27_1.m_Talk_JPN = "俺らも加勢しようぜ！"
+L27_1.m_Talk_ENG = "Let's help out too!"
+L27_1.m_Talk_TWN = "我們也來幫忙！"
+L27_1.m_Talk_THA = "มาช่วยกันด้วย!"
+L27_1.m_Talk_VTN = "Chúng ta cũng hãy giúp đỡ nhé!"
+L27_1.m_Talk_SCN = "我们也来帮忙！"
+L27_1.m_Talk_DEU = "Let's help out too!"
+L27_1.m_Talk_FRA = "Let's help out too!"
+L28_1 = {}
+L28_1.m_CutScenKey_Talk = "FRONTBAY_ACT3_STAGE9_START@28#Talk"
+L28_1.m_CutScenProcessKey = 28
+L28_1.m_CutScenID = 5900315
+L28_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L28_1.m_bWaitClick = true
+L28_1.m_fWaitTime = 0
+L28_1.m_BGCrash = 30
+L28_1.m_fBGCrashTime = 1
+L28_1.m_CharStrID = "HUNTER_FRONTBAY_NULL_SEVERAL"
+L28_1.m_Talk_KOREA = "맡겨두라고!"
+L28_1.m_fTalkTime = 0.03
+L28_1.m_Talk_JPN = "任せておけ！"
+L28_1.m_Talk_ENG = "Count on us!"
+L28_1.m_Talk_TWN = "交給我們吧！"
+L28_1.m_Talk_THA = "ไว้วางใจเรา!"
+L28_1.m_Talk_VTN = "Hãy tin tưởng vào chúng tôi!"
+L28_1.m_Talk_SCN = "交给我们吧！"
+L28_1.m_Talk_DEU = "Count on us!"
+L28_1.m_Talk_FRA = "Count on us!"
+L29_1 = {}
+L29_1.m_CutScenProcessKey = 29
+L29_1.m_CutScenID = 5900315
+L29_1.m_CutScenStrID = "FRONTBAY_ACT3_STAGE9_START"
+L29_1.m_bWaitClick = false
+L29_1.m_fWaitTime = 0
+L29_1.m_BGCrash = 30
+L29_1.m_fBGCrashTime = 1.5
+L29_1.m_bFadeIn = false
+L29_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+L0_1[8] = L8_1
+L0_1[9] = L9_1
+L0_1[10] = L10_1
+L0_1[11] = L11_1
+L0_1[12] = L12_1
+L0_1[13] = L13_1
+L0_1[14] = L14_1
+L0_1[15] = L15_1
+L0_1[16] = L16_1
+L0_1[17] = L17_1
+L0_1[18] = L18_1
+L0_1[19] = L19_1
+L0_1[20] = L20_1
+L0_1[21] = L21_1
+L0_1[22] = L22_1
+L0_1[23] = L23_1
+L0_1[24] = L24_1
+L0_1[25] = L25_1
+L0_1[26] = L26_1
+L0_1[27] = L27_1
+L0_1[28] = L28_1
+L0_1[29] = L29_1
+m_dicNKCCutScenTempletByID = L0_1

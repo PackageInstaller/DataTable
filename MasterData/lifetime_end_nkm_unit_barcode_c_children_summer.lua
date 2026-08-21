@@ -1,0 +1,45 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 11670902
+L1_1.m_CutScenStrID = "LIFETIME_END_NKM_UNIT_BARCODE_C_CHILDREN_SUMMER"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_StartBGMFileName = "CUTSCENE_HOPE"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "LIFETIME_END_NKM_UNIT_BARCODE_C_CHILDREN_SUMMER@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 11670902
+L2_1.m_CutScenStrID = "LIFETIME_END_NKM_UNIT_BARCODE_C_CHILDREN_SUMMER"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_BGFileName = "LIFETIME"
+L2_1.m_Face = "UNIT_PRIDE"
+L2_1.m_CharStrID = "CHILDREN_BARCODE_NULL_SUMMER"
+L2_1.m_Pos = "C"
+L2_1.m_Talk_KOREA = "이제 우리 오빠랑 앞으로 계~속 같이 있을 수 있는 거지? 응. 앞으로도 쭉 함께야. 그렇지, 오빠?"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "これでぼくたち、これからもずっとお兄ちゃんと一緒にいられるよね？\nうん。ずっと一緒だよ！　ね、お兄ちゃん？"
+L2_1.m_Talk_ENG = [[
+Brother, we can now stay with you forever, can't we?
+Yes. We'll never be apart, right?]]
+L2_1.m_Talk_TWN = "那麼我們以後也一直～～～一直跟哥哥在一起對吧？嗯，以後永遠都在一起，對吧，哥哥？"
+L2_1.m_Talk_THA = "พี่คะ ตอนนี้เราก็อยู่กับพี่ตลอดไปได้แล้วใช่มั้ย?\nใช่ เราจะไม่ต้องจากกันอีกแล้วใช่มั้ย?"
+L2_1.m_Talk_VTN = "Anh trai, giờ chúng em có thể ở bên anh mãi mãi, được không?\nỪ. Chúng ta sẽ không bao giờ xa nhau nhé?"
+L2_1.m_Talk_SCN = "哥哥以后也会一直～和我们一起，对不对？嗯，以后也要一直在一起哦，哥哥？"
+L2_1.m_Talk_DEU = "Bruder, wir können jetzt für immer bei dir bleiben, oder?\nJa. Wir werden uns nie mehr trennen, richtig?"
+L2_1.m_Talk_FRA = "Grâce à ça, on va pouvoir rester avec toi pour toujours, grand frère ?\nOn sera jamais séparés, pas vrai ?"
+L3_1 = {}
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 11670902
+L3_1.m_CutScenStrID = "LIFETIME_END_NKM_UNIT_BARCODE_C_CHILDREN_SUMMER"
+L3_1.m_bWaitClick = false
+L3_1.m_fWaitTime = 0
+L3_1.m_bFadeIn = false
+L3_1.m_fFadeTime = 3
+L3_1.m_bFadeWhite = true
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+m_dicNKCCutScenTempletByID = L0_1

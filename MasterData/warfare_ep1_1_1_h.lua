@@ -1,0 +1,24 @@
+local L0_1, L1_1, L2_1
+L0_1 = {}
+L0_1.m_MapSizeX = 3
+L0_1.m_MapSizeY = 1
+L1_1 = {}
+L1_1.m_TileType = "NWMTT_NORMAL"
+L1_1.m_NKM_WARFARE_SPAWN_POINT_TYPE = "NWSPT_DIVE"
+L0_1.NKMWarfareTile0 = L1_1
+L1_1 = {}
+L1_1.m_TileType = "NWMTT_NORMAL"
+L0_1.NKMWarfareTile1 = L1_1
+L1_1 = {}
+L1_1.m_TileType = "NWMTT_NORMAL"
+L1_1.m_DungeonStrID = "NKM_MAIN_BATTLE_EP1_1_1_HARD_BOSS_HM"
+L1_1.m_bFlagDungeon = true
+L1_1.m_NKM_WARFARE_ENEMY_ACTION_TYPE = "NWEAT_DEFENSE"
+L2_1 = {}
+L2_1.Condition = "WFC_PHASE"
+L2_1.Value = 0
+L2_1.Type = "NWNTT_CHEST"
+L2_1.Rate = 50
+L1_1.TileChange = L2_1
+L0_1.NKMWarfareTile2 = L1_1
+NKMWarfareMapTemplet = L0_1

@@ -1,0 +1,4 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_MONSTER_NORMAL_BASIC_BOMB_N"
+NKMUnitTemplet = L0_1

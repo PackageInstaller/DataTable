@@ -1,0 +1,114 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000004
+L1_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "CUTSCENE_TALK_01"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT2_END@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000004
+L2_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "<color=#ffd34c>캐번디시로부터 수신한 메일입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>キャベンディッシュから受信したメールです。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>A mail arrived from Cavendish.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>來自卡文迪許的郵件。</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>มีจดหมายส่งมาจากคาเวนดิช</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Thư đến từ Cavendish. </color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>来自卡文迪许的邮件。</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>E-Mail von Cavendish.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Vous avez reçu un e-mail de la part de Cavendish.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT2_END@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000004
+L3_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "코핀 컴퍼니의 작전 진행은 아주 인상적이었습니다, 사장님."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "コフィンカンパニーの作戦の進め方はとても印象的でしたよ、社長。"
+L3_1.m_Talk_ENG = "The Coffin Company's operation procedure was very impressive."
+L3_1.m_Talk_TWN = "科芬公司的戰略部署很令人印象深刻的呀，老闆。"
+L3_1.m_Talk_THA = "ขั้นตอนการปฏิบัติงานของบริษัทคอฟฟินนั้นน่าประทับใจอย่างยิ่ง"
+L3_1.m_Talk_VTN = "Quy trình tác chiến của Công Ty Coffin gây ấn tượng rất sâu sắc cho người ta ."
+L3_1.m_Talk_SCN = "科芬公司的战略部署挺令人印象深刻的呀，老板。"
+L3_1.m_Talk_DEU = "Die Operation der Coffin Company war äußerst beeindruckend."
+L3_1.m_Talk_FRA = "La Compagnie Coffin a mené cette opération avec brio."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT2_END@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000004
+L4_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "현장에 동행했던 제 대리인도 호평 일색이더군요."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "現場に同行した私の代理人も皆高く評価していました。"
+L4_1.m_Talk_ENG = "My agent who followed you out to the field gave very favorable comments."
+L4_1.m_Talk_TWN = "跟我同行的代理人也對此讚不絕口。"
+L4_1.m_Talk_THA = "ตัวแทนของผมที่ติดตามคุณออกไปในสนามรบก็ให้ความเห็นในเชิงบวกอย่างยิ่ง"
+L4_1.m_Talk_VTN = "Đặc vụ của bên tôi, người đã theo chân các bạn ra chiến trường, đã khen ngợi các bạn rất nhiều."
+L4_1.m_Talk_SCN = "跟我同行的代理人也对此赞不绝口。"
+L4_1.m_Talk_DEU = "Mein Beobachter hat sich sehr wohlwollend geäußert."
+L4_1.m_Talk_FRA = "Mon agent présent sur le terrain n'a eu que des éloges à faire à votre égard."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT2_END@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000004
+L5_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "상급자의 평가 역시 긍정적입니다. 다음에 다시 함께 일할 기회가 있길 바랍니다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "上司の評価も上々です。またいつか一緒に仕事ができることを願っています。"
+L5_1.m_Talk_ENG = "And our superior also gave a positive assessment. We look forward to working together with you again."
+L5_1.m_Talk_TWN = "上級的評價也很積極。希望下次一起合作的機會。"
+L5_1.m_Talk_THA = "และผู้บริหารของเราก็ประเมินพวกคุณด้วยผลคะแนนที่น่าพึงพอใจ หวังว่าพวกเราจะได้ทำธุรกิจร่วมกันอีก"
+L5_1.m_Talk_VTN = "Và cấp trên của chúng tôi cũng đánh giá tích cực các bạn. Chúng tôi mong muốn được làm việc cùng với các bạn một lần nữa."
+L5_1.m_Talk_SCN = "上级的评价也很积极。希望下回还有机会一起合作。"
+L5_1.m_Talk_DEU = "Auch die Einschätzung unseres Vorgesetzten ist positiv. Wir freuen uns auf die weitere Zusammenarbeit."
+L5_1.m_Talk_FRA = "Notre supérieur a également répondu de façon favorable à la perspective d'une collaboration future."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT2_END@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000004
+L6_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "보수는 프론트 베이 시영 부두의 LFHU 252453 컨테이너에 보관해 뒀습니다."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "報酬はフロントベイの市営埠頭にある、LFHU252453コンテナに保管してあります。"
+L6_1.m_Talk_ENG = "Your payment is stored in the Container LFHU 252453 located at Front Bay Municipal Pier."
+L6_1.m_Talk_TWN = "報酬我就放在前灣市營碼頭的LFHU 252453貨櫃裡了。"
+L6_1.m_Talk_THA = "ค่าตอบแทนของคุณเก็บอยู่ในคอนเทนเนอร์ LFHU 252453 ซึ่งตั้งอยู่ที่ท่าเรือเทศบาลฟรอนต์เบย์"
+L6_1.m_Talk_VTN = "Thanh toán của bạn được đặt trong đồ đựng LFHU 252453 ở Bến Tàu Đô Thị Front Bay."
+L6_1.m_Talk_SCN = "报酬给你放在前湾市营码头的LFHU 252453容器里了。"
+L6_1.m_Talk_DEU = "Ihre Bezahlung befindet sich in Container LFHU 252453 am städtischen Pier von Front Bay."
+L6_1.m_Talk_FRA = "Vous trouverez votre paiement à la jetée municipale de Front Bay, conteneur LFHU 252453."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000004
+L7_1.m_CutScenStrID = "FREEORDER_EP1_ACT2_END"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

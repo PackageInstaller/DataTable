@@ -1,0 +1,16 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_MOB_BOSS_TYRANT_STRIKER"
+L0_1.m_UnitSizeX = 175
+L0_1.m_UnitSizeY = 450
+L0_1.m_SpriteScale = 0.75
+L0_1.m_fGageOffsetX = 0
+L0_1.m_fGageOffsetY = 425
+L0_1.m_bDieDeActive = true
+L0_1.m_NKC_TEAM_COLOR_TYPE = "NTCT_ONLY_SHADOW"
+L0_1.m_fShadowScaleX = 800
+L0_1.m_fShadowScaleY = 1000
+L0_1.m_fShadowOffsetX = 0
+L0_1.m_fShadowOffsetY = 40
+L0_1.m_bShowGage = true
+NKMUnitTemplet = L0_1

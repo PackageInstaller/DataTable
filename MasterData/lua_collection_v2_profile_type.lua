@@ -1,0 +1,3 @@
+local L0_1, L1_1
+L0_1 = {}
+COLLECTION_V2_PROFILE_TYPE = L0_1

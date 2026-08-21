@@ -1,0 +1,11 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.m_fStartCost = 0
+L0_1.m_fCostSpeedRateB = 0
+L0_1.m_BossUnitStrID = "NKM_MONSTER_BOSS_BASIC_SIXWING_LEE_JISOO_N"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1

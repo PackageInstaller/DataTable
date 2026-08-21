@@ -1,0 +1,11 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.m_fStartCost = 6
+L0_1.m_fCostSpeedRateB = 0.8
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_CHALLENGE_STATE_TANK_MK2"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1

@@ -1,0 +1,26 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_MONSTER_NORMAL_BASIC_WIZARD_N"
+L1_1 = {}
+L2_1 = {}
+L2_1.m_StateName = "USN_ATTACK1"
+L2_1.m_fAnimSpeed = 1.15
+L2_1.m_bAutoCoolTime = false
+L3_1 = {}
+L4_1 = 5.5
+L5_1 = 8.2
+L3_1[1] = L4_1
+L3_1[2] = L5_1
+L2_1.m_StateCoolTime = L3_1
+L3_1 = {}
+L4_1 = {}
+L4_1.m_DEName = "DE_MONSTER_NORMAL_TRANS_WIZARD_ATTACK1"
+L4_1.m_OffsetX = 0
+L4_1.m_OffsetY = -1000
+L4_1.m_bTargetPos = true
+L4_1.m_bIgnoreNoTarget = true
+L3_1[1] = L4_1
+L2_1.m_listNKMEventDamageEffect = L3_1
+L1_1[1] = L2_1
+L0_1.m_dicNKMUnitState = L1_1
+NKMUnitTemplet = L0_1

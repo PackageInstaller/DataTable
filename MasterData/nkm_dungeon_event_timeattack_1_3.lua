@@ -1,0 +1,10 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateA = 0.7
+L0_1.m_fCostSpeedRateB = 1
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_TIME_MACHINE_GAP_DEFENDER"
+L0_1.m_fBossPosZ = 0.6
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+NKMDungeonTemplet = L0_1

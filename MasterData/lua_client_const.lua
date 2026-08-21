@@ -1,0 +1,9 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.fAutoSpeed = 2
+Dive = L0_1
+L0_1 = {}
+L0_1.fNextTalkChangeSpeedWhenAuto_Fast = 1.0
+L0_1.fNextTalkChangeSpeedWhenAuto_Normal = 1.2
+L0_1.fNextTalkChangeSpeedWhenAuto_Slow = 1.4
+Cutscen = L0_1

@@ -1,0 +1,115 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000123
+L1_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "UI_DIVE"
+L1_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP4_ACT2_STAGE1_END@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000123
+L2_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "우선, 무리한 요청에 응해주셔서 감사드립니다."
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "まず始めに、無理な要請に応じてくださったことに感謝申し上げます。"
+L2_1.m_Talk_ENG = "First of all, thank you very much for responding to our request despite the explanation being so farfetched."
+L2_1.m_Talk_TWN = "首先，感謝各位回應我們無理的請求。"
+L2_1.m_Talk_THA = "ก่อนอื่น ขอขอบคุณมากนะคะที่ตอบรับคำขอของเราทั้งที่คำอธิบายมันดูไม่น่าเชื่ออย่างมาก"
+L2_1.m_Talk_VTN = "Trước hết, cảm ơn rất nhiều vì đã phản hồi yêu cầu của chúng tôi, mặc dù lời giải thích vẫn chưa được thỏa đáng."
+L2_1.m_Talk_SCN = "首先，感谢你们伸出了援手。"
+L2_1.m_Talk_DEU = "Zunächst einmal vielen Dank, dass Sie trotz der weitschweifigen Erklärung auf unsere Anfrage reagieren."
+L2_1.m_Talk_FRA = "Tout d'abord, merci d'avoir répondu favorablement à notre demande malgré nos justifications un peu farfelues."
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP4_ACT2_STAGE1_END@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000123
+L3_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "비록 이곳에서 사장님을 찾진 못했지만 결정적인 단서를 얻는데 성공했습니다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "ここで社長を見つけることはできませんでしたが、決定的な手がかりの入手に成功しました。"
+L3_1.m_Talk_ENG = "We couldn't find our president here, but did find some crucial evidence."
+L3_1.m_Talk_TWN = "雖然這裡沒能找到老闆，但成功得到了決定性線索呢。"
+L3_1.m_Talk_THA = "เราไม่พบตัวท่านประธานที่นี่ แต่เจอหลักฐานสำคัญค่ะ"
+L3_1.m_Talk_VTN = "Chúng tôi không thể tìm được chủ tịch của mình, nhưng đã tìm thấy các bằng chứng quan trọng."
+L3_1.m_Talk_SCN = "虽然没能在这个地方找到老板，但却找到了重要的线索。"
+L3_1.m_Talk_DEU = "Unsere Vorsitzenden haben wir hier nicht gefunden, wichtige Hinweise hingegen schon."
+L3_1.m_Talk_FRA = "Même si notre président n'était pas là, on a pu trouver des indices très utiles."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP4_ACT2_STAGE1_END@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000123
+L4_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "여러분을 지원한 드론은 본래 <color=#a77ed3>리퍼 인더스트리</color>의 제품이지만 제가 원격으로 해킹한 것입니다."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "皆様をサポートしたドローンは、実は<color=#a77ed3>リーファー・インダストリー</color>の製品ですが、私が遠隔操作でハッキングしたものです。"
+L4_1.m_Talk_ENG = "The drone that supported you was made by <color=#a77ed3>Reaper Industries</color>, and remotely hacked by myself."
+L4_1.m_Talk_TWN = "支援各位的無人機原本是<color=#a77ed3>收割者工業</color>的產品，但我進行了遠端駭客入侵的。"
+L4_1.m_Talk_THA = "<color=#a77ed3>รีปเปอร์อินดัสทรีส์</color>เป็นผู้ผลิตโดรนที่คอยช่วยเหลือคุณ และฉันเป็นคนเจาะระบบมันจากทางไกล"
+L4_1.m_Talk_VTN = "Máy bay không người lái hỗ trợ ngài đã được <color=#a77ed3>Reaper Industries</color> chế tạo, và đã bị tôi xâm nhập từ xa."
+L4_1.m_Talk_SCN = "各位使用的无人机本是<color=#a77ed3>利波工业</color>的产品，但我通过远程入侵了它。"
+L4_1.m_Talk_DEU = "Die Drohne zu Ihrer Unterstützung stammt von <color=#a77ed3>Reaper Industries</color> und wurde aus der Ferne von mir persönlich gehackt."
+L4_1.m_Talk_FRA = "Le drone qui vous a assistés appartient à <color=#a77ed3>Reaper Industries</color>, mais je l'ai piraté à distance."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP4_ACT2_STAGE1_END@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000123
+L5_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "비록 제 능력으론 하나의 메카닉을 조종하는 게 최선이지만......"
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "私の能力では一基のメカニックを操縦することしかできませんが……"
+L5_1.m_Talk_ENG = "Although I can't control more than one mech at once,"
+L5_1.m_Talk_TWN = "雖說以我的能力最好是去控制一個裝甲部隊……"
+L5_1.m_Talk_THA = "แต่ถึงอย่างนั้น ฉันก็ควบคุมจักรกลได้ทีละเครื่องเท่านั้นค่ะ"
+L5_1.m_Talk_VTN = "Mặc dù tôi không thể kiểm soát nhiều lính thiết giáp cùng một lúc,"
+L5_1.m_Talk_SCN = "虽然以我的能力，只能操控一个装甲部队……"
+L5_1.m_Talk_DEU = "Auch wenn ich nicht mehr als einen Mech steuern kann,"
+L5_1.m_Talk_FRA = "Je ne peux contrôler qu'un seul méca à la fois, mais..."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP4_ACT2_STAGE1_END@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000123
+L6_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "미약하나마 제가 여러분의 의뢰 수행에 도움을 드릴 예정이니 제 고유 식별코드를 기억해주시기바랍니다."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "微力ながら皆様の依頼遂行を支援する予定ですので、どうか私の固有識別コードを覚えてください。"
+L6_1.m_Talk_ENG = "I'll try my best to aid you while you carry out this mission. Please remember my identifying code."
+L6_1.m_Talk_TWN = "雖然我的力量很微弱，但我還是希望能有助於各位完成委託，因此請各位記住我的固有識別代碼。"
+L6_1.m_Talk_THA = "ฉันจะพยายามช่วยเต็มที่ขณะที่คุณปฏิบัติภารกิจนี้ โปรดจำรหัสยืนยันตัวตนของฉันไว้นะคะ"
+L6_1.m_Talk_VTN = "Tôi sẽ cố gắng hết sức để hỗ trợ khi ngài thực hiện nhiệm vụ này. Vui lòng nhớ mã nhận dạng của tôi nhé."
+L6_1.m_Talk_SCN = "但我能为大家在执行任务时献上绵薄之力，所以请务必记住我固有的识别代码。"
+L6_1.m_Talk_DEU = "werde ich doch alles tun, um Ihnen bei dieser Mission zu helfen. Bitte merken Sie sich meinen Identifikationscode."
+L6_1.m_Talk_FRA = "Je ferai tout mon possible pour vous aider dans votre mission. Retenez bien mon code d'identification."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000123
+L7_1.m_CutScenStrID = "FREEORDER_EP4_ACT2_STAGE1_END"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

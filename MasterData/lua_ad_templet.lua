@@ -1,0 +1,14 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.IDX = 1
+L1_1.OpenTag = "AD_REWARD"
+L1_1.AdRewardStrID = "ADREWARD_ETERNIUM"
+L1_1.AdItemID = 2
+L1_1.DayLimit = 5
+L1_1.WatchCoolTime = 0
+L1_1.RewardItemType = "RT_MISC"
+L1_1.RewardItemID = 2
+L1_1.RewardItemValue = 1000
+L0_1[1] = L1_1
+AD_TEMPLET = L0_1

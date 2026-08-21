@@ -1,0 +1,25 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenID = 5900405
+L1_1.m_CutScenStrID = "PRYDWEN_ACT4_STAGE2_MID"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_BGFileName = "BLACK"
+L2_1 = {}
+L2_1.m_CutScenID = 5900405
+L2_1.m_CutScenStrID = "PRYDWEN_ACT4_STAGE2_MID"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "미드 컷씬 더미입니다."
+L2_1.m_fTalkTime = 0.03
+L2_1.m_bTalkCenterFadeIn = true
+L3_1 = {}
+L3_1.m_CutScenID = 5900405
+L3_1.m_CutScenStrID = "PRYDWEN_ACT4_STAGE2_MID"
+L3_1.m_bWaitClick = false
+L3_1.m_fWaitTime = 0
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+m_dicNKCCutScenTempletByID = L0_1

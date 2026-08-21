@@ -1,0 +1,114 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000005
+L1_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "THEMA_COFFIN_FULL"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_START@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000005
+L2_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_Talk_KOREA = "<color=#ffd34c>익명으로 수신한 메일입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>匿名の送信者から受信したメールです。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>An anonymous mail arrived.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>匿名收取的郵件</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>มีจดหมายส่งมาจากบุคคลไม่ประสงค์ออกนาม</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Thư đến từ người gửi ẩn danh.</color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>匿名收取的邮件</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Aus einer anonymen E-Mail.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Vous avez reçu un e-mail anonyme.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_START@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000005
+L3_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "특정 공간 좌표에서의 대 침식전을 의뢰한다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "特定空間座標における対侵食戦を依頼する。"
+L3_1.m_Talk_ENG = "This is a request for an anti-Corruption battle at a specific spatial coordinates."
+L3_1.m_Talk_TWN = "委託在特定空間座標進行侵蝕戰。"
+L3_1.m_Talk_THA = "นี่เป็นงานจ้างกองรบต่อต้านคอร์รัปชั่น ณ พิกัดมิติที่ระบุ"
+L3_1.m_Talk_VTN = "Đây là yêu cầu về trận chiến chống Ăn Mòn ở một tọa độ không gian cụ thể."
+L3_1.m_Talk_SCN = "委托在特定空间坐标的侵略站。"
+L3_1.m_Talk_DEU = "Gesucht werden: Kämpfer gegen die Verderbnis bei bestimmten Raumkoordinaten."
+L3_1.m_Talk_FRA = "Je souhaiterais solliciter vos services pour une bataille anticorruption à des coordonnées précises."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_START@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000005
+L4_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "내용은 간단하다. 우리 측 조사대가 안전하게 활동할 수 있게 모든 침식체 군집을 와해하면 된다."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "内容は簡単だ。調査隊が安全に活動できるように、\n侵食体の群れを全て追い払ってくれればいい。"
+L4_1.m_Talk_ENG = "The mission is simple. Disperse all C.O. groups in the area to secure the safety of our investigation team."
+L4_1.m_Talk_TWN = "內容很簡單，瓦解所有侵蝕體的攻勢，保障韓國方的調查隊能夠安全地進行活動。"
+L4_1.m_Talk_THA = "เป้าหมายภารกิจก็ง่ายมาก แค่กำจัดฝูงวัตถุคอร์รัปต์\nทั้งหมดในพื้นที่เพื่อคุ้มครองทีมตรวจสอบของเราให้ปลอดภัย"
+L4_1.m_Talk_VTN = "Nhiệm vụ rất đơn giản. Phân tán tất cả các nhóm Vật Thể Bị Ăn Mòn trong khu vực để đảm bảo an toàn cho đội ngũ điều tra của chúng tôi."
+L4_1.m_Talk_SCN = "内容很简单，瓦解一切侵蚀体，以保障我们这里的调查队能够安全行动就可以。"
+L4_1.m_Talk_DEU = "Der Auftrag ist einfach: Alle C. O.-Gruppen in der Gegend vertreiben und unser Untersuchungsteam retten."
+L4_1.m_Talk_FRA = "La mission est simple : assurer la sécurité de notre équipe de recherche en nettoyant la zone des groupes d'O.C. qui s'y trouvent."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_START@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000005
+L5_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "착오가 없게 덧붙이자면, 군집을 형성하는 우두머리만 제거해 달라는 뜻이다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "手違いが無いように付け加えると、群れを形成するボスを倒してほしいという意味だ。"
+L5_1.m_Talk_ENG = "To be clear, I want you to get rid of the C.O. boss that is forming the group."
+L5_1.m_Talk_TWN = "如果沒有錯的話，這意味著你只要清除掉那個能夠形成群落的首領就行了。"
+L5_1.m_Talk_THA = "เพื่อชี้แจงให้ชัดเจน ผมต้องการให้คุณกำจัดหัวหน้าวัตถุคอร์รัปต์ที่เป็นตัวรับผิดชอบในการรวมฝูง"
+L5_1.m_Talk_VTN = "Để rõ hơn, tôi muốn các bạn tiêu diệt nhưỡng nguồn cửa trùm Vật Thể Bị Ăn Mòn có thể hình thành nhóm đó."
+L5_1.m_Talk_SCN = "以防万一，更确切地说就是希望你清除掉那些能够形成群落的源头。"
+L5_1.m_Talk_DEU = "Ich will den C. O.-Boss loswerden, der die Gruppe anführt."
+L5_1.m_Talk_FRA = "Je voudrais plus précisément que vous éliminiez l'O.C. qui les incite tous à se regrouper."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT3_START@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000005
+L6_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "공간 좌표는 별도의 채널로 보낼 예정이다. 긍정적인 답변을 기대하지."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "空間座標は別のチャンネルから送る予定だ。前向きな返答を待っている。"
+L6_1.m_Talk_ENG = "The spatial coordinates will be sent via a separate channel. I hope to hear a positive answer from you."
+L6_1.m_Talk_TWN = "空間座標將通過其他頻道發送過去。期待你的好消息。"
+L6_1.m_Talk_THA = "เราจะส่งพิกัดมิติให้ในแชนแนลอื่นแยกต่างหาก หวังว่าจะได้รับคำตอบที่น่าพึงพอใจจากคุณ"
+L6_1.m_Talk_VTN = "Tọa độ không gian sẽ được gửi qua một kênh riêng biệt. Hy vọng sẽ nghe được một câu trả lời tích cực từ bạn."
+L6_1.m_Talk_SCN = "空间坐标将通过其他的频道发送过去。期待你的好消息。"
+L6_1.m_Talk_DEU = "Die Raumkoordinaten werden über einen gesonderten Kanal gesendet. Ich hoffe auf eine positive Antwort von Ihnen."
+L6_1.m_Talk_FRA = "Vous recevrez les coordonnées susmentionnées sur un autre canal. En espérant une réponse positive de votre part."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000005
+L7_1.m_CutScenStrID = "FREEORDER_EP1_ACT3_START"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

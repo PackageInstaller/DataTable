@@ -1,0 +1,23 @@
+local L0_1, L1_1, L2_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_RewardGroupID = 1
+L1_1.m_RewardGroupStrID = "IMI_CONTRACT_DOC"
+L1_1.m_RewardType = "RT_MISC"
+L1_1.m_RewardID = 1001
+L1_1.m_RewardStrID = "IMI_CONTRACT_DOC"
+L1_1.m_Ratio = 10
+L1_1.m_Quantity_Min = 1
+L1_1.m_Quantity_Max = 1
+L2_1 = {}
+L2_1.m_RewardGroupID = 2
+L2_1.m_RewardGroupStrID = "IMI_CONTRACT_INSTANT"
+L2_1.m_RewardType = "RT_MISC"
+L2_1.m_RewardID = 1002
+L2_1.m_RewardStrID = "IMI_CONTRACT_INSTANT"
+L2_1.m_Ratio = 10
+L2_1.m_Quantity_Min = 1
+L2_1.m_Quantity_Max = 1
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+m_WorldmapMissionRewardTemplet = L0_1

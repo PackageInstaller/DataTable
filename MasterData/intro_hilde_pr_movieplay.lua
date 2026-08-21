@@ -1,0 +1,15 @@
+local L0_1, L1_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1510046
+L1_1.m_CutScenStrID = "INTRO_HILDE_PR_MOVIEPLAY"
+L1_1.m_bWaitClick = true
+L1_1.m_fWaitTime = 0
+L1_1.m_BGFileName = "BLACK"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 0.01
+L1_1.m_StartBGMFileName = "CUTSCENE_SILENCE"
+L1_1.m_MovieName = "AWAKEN_HILDE_PR_PV.mp4"
+L0_1[1] = L1_1
+m_dicNKCCutScenTempletByID = L0_1

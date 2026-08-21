@@ -1,0 +1,297 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1, L8_1, L9_1, L10_1, L11_1, L12_1, L13_1, L14_1, L15_1, L16_1, L17_1, L18_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 10040
+L1_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_fBGFadeInTime = 1.5
+L2_1 = {}
+L3_1 = 0.8
+L4_1 = 0.1
+L5_1 = 0.1
+L6_1 = 1
+L2_1[1] = L3_1
+L2_1[2] = L4_1
+L2_1[3] = L5_1
+L2_1[4] = L6_1
+L1_1.m_colBGFadeIn = L2_1
+L2_1 = {}
+L3_1 = 0
+L4_1 = 0
+L5_1 = 0
+L6_1 = 1
+L2_1[1] = L3_1
+L2_1[2] = L4_1
+L2_1[3] = L5_1
+L2_1[4] = L6_1
+L1_1.m_colBGFadeInStart = L2_1
+L1_1.m_BGFileName = "WORKSHOP"
+L1_1.m_StartBGMFileName = "CUTSCENE_UPROAR"
+L2_1 = {}
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 10040
+L2_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L2_1.m_bWaitClick = false
+L2_1.m_fWaitTime = 0
+L2_1.m_StartFXSoundName = "FX_CUTSCEN_RIFLE_FIRE_02"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 10040
+L3_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_CharStrID = "MICKEY_MASON_NULL_NULL"
+L3_1.m_Pos = "C"
+L3_1.m_Crash = 100
+L3_1.m_Talk_KOREA = "이 자식들! 저항이 너무 심해!"
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "こいつら！　抵抗が激しすぎるぞ！"
+L3_1.m_Talk_ENG = "Those bastards! They’re coming at us with everything they got!"
+L3_1.m_Talk_TWN = "這些傢伙，抵抗得很激烈呢！"
+L3_1.m_Talk_THA = "ไอ้พวกบ้านั่น! คราวนี้มันทุ่มสุดตัวแล้ว!"
+L3_1.m_Talk_VTN = "Bọn khốn này! Chúng đang lao đến chỗ chúng ta với tất cả những thứ chúng có!"
+L3_1.m_Talk_SCN = "这些家伙，攻势很激烈呢！"
+L3_1.m_Talk_DEU = "Diese Mistkerle! Die schießen mit allem auf uns, was sie haben!"
+L3_1.m_Talk_FRA = "Espèces d'enfoirés ! Ils en ont après nous, ils lâchent rien !"
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 10040
+L4_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Face = "UNIT_SERIOUS"
+L4_1.m_CharStrID = "JOHN_MASON_NULL_NULL"
+L4_1.m_Pos = "C"
+L4_1.m_Crash = 40
+L4_1.m_Talk_KOREA = "신경 쓰지 말고 빨리 빠져나가!"
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "気にしないで、さっさと行け！"
+L4_1.m_Talk_ENG = "Forget about them and just get out of here!"
+L4_1.m_Talk_TWN = "別管了，趕快落跑吧！"
+L4_1.m_Talk_THA = "ช่างพวกมันเถอะ เราออกไปจากที่นี่ดีกว่า!"
+L4_1.m_Talk_VTN = "Quên chúng đi và ra khỏi đây mau lên!"
+L4_1.m_Talk_SCN = "别管了，赶紧抽身！"
+L4_1.m_Talk_DEU = "Kümmert euch nicht um sie und macht, dass ihr wegkommt!"
+L4_1.m_Talk_FRA = "Vous occupez pas d'eux et dégagez de là !"
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 10040
+L5_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_CharStrID = "JOHN_MASON_NULL_NULL"
+L5_1.m_Pos = "C"
+L5_1.m_Crash = 75
+L5_1.m_Talk_KOREA = "저 엔진, 진짜로 얼마 못 버틴다!"
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "あのエンジンじゃ、長くは持たないんだよ！"
+L5_1.m_Talk_ENG = "That engine's gonna blow any second now!"
+L5_1.m_Talk_TWN = "那個引擎真的撐不了多久了！"
+L5_1.m_Talk_THA = "ตอนนี้เครื่องยนต์พร้อมจะระเบิดตลอดเวลาแล้วล่ะ!"
+L5_1.m_Talk_VTN = "Động cơ đó sẽ nổ ngay đấy!"
+L5_1.m_Talk_SCN = "那个引擎真的撑不了多久了了！"
+L5_1.m_Talk_DEU = "Der Antrieb geht jede Sekunde hoch!"
+L5_1.m_Talk_FRA = "Le moteur va exploser d'une seconde à l'autre !"
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 10040
+L6_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_CharStrID = "MICKEY_MASON_NULL_NULL"
+L6_1.m_Pos = "C"
+L6_1.m_Crash = 50
+L6_1.m_Talk_KOREA = "하지만 수가 너무 많아!"
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "でも数が多すぎるんだ！"
+L6_1.m_Talk_ENG = "But there’s too many of them!"
+L6_1.m_Talk_TWN = "但是數量太多了！"
+L6_1.m_Talk_THA = "แต่พวกมันมากันเยอะขนาดนี้ จะให้ทำไงล่ะ!"
+L6_1.m_Talk_VTN = "Nhưng bọn chúng đông quá!"
+L6_1.m_Talk_SCN = "但是对方数量太多了！"
+L6_1.m_Talk_DEU = "Aber es sind zu viele!"
+L6_1.m_Talk_FRA = "Ils sont trop nombreux !"
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 10040
+L7_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bClear = true
+L8_1 = {}
+L8_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@8#Talk"
+L8_1.m_CutScenProcessKey = 8
+L8_1.m_CutScenID = 10040
+L8_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L8_1.m_bWaitClick = true
+L8_1.m_fWaitTime = 0
+L8_1.m_BGCrash = 50
+L8_1.m_fBGCrashTime = 0.5
+L8_1.m_StartFXSoundControl = "NCSC_LOOP_PLAY"
+L8_1.m_StartFXSoundName = "FX_CUTSCEN_SIREN"
+L8_1.m_CharStrID = "COMPUTER_VOICE_NULL_NULL"
+L8_1.m_Talk_KOREA = "<color=#ffd34c>위험 경고. 주 엔진 과열.</color>"
+L8_1.m_fTalkTime = 0.03
+L8_1.m_Talk_JPN = "<color=#ffd34c>危険警告。主エンジン過熱。</color>"
+L8_1.m_Talk_ENG = "<color=#ffd34c>Warning. Main engine overheated.</color>"
+L8_1.m_Talk_TWN = "<color=#ffd34c>危險警告，主引擎過熱。</color>"
+L8_1.m_Talk_THA = "<color=#ffd34c>คำเตือน เครื่องยนต์หลักความร้อนสูงเกินพิกัด</color>"
+L8_1.m_Talk_VTN = "<color=#ffd34c>Cảnh báo. Động cơ chính quá nóng.</color>"
+L8_1.m_Talk_SCN = "<color=#ffd34c>危险警告，主引擎过热。</color>"
+L8_1.m_Talk_DEU = "<color=#ffd34c>Warnung! Überhitzung des Hauptantriebs!</color>"
+L8_1.m_Talk_FRA = "<color=#ffd34c>Attention. Surchauffe du moteur principal.</color>"
+L9_1 = {}
+L9_1.m_CutScenProcessKey = 9
+L9_1.m_CutScenID = 10040
+L9_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L9_1.m_bWaitClick = false
+L9_1.m_fWaitTime = 0
+L9_1.m_bClear = true
+L10_1 = {}
+L10_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@10#Talk"
+L10_1.m_CutScenProcessKey = 10
+L10_1.m_CutScenID = 10040
+L10_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L10_1.m_bWaitClick = true
+L10_1.m_fWaitTime = 0
+L10_1.m_Face = "UNIT_SERIOUS"
+L10_1.m_CharStrID = "JOHN_MASON_NULL_NULL"
+L10_1.m_Pos = "C"
+L10_1.m_Crash = 100
+L10_1.m_Talk_KOREA = "빨리! 빨리 움직여!"
+L10_1.m_fTalkTime = 0.03
+L10_1.m_Talk_JPN = "早く！　早く動け！"
+L10_1.m_Talk_ENG = "Hurry! Get moving!"
+L10_1.m_Talk_TWN = "快點！快點動起來！"
+L10_1.m_Talk_THA = "เร็วเข้า! มาได้แล้ว!"
+L10_1.m_Talk_VTN = "Nhanh lên! Di chuyển đi!"
+L10_1.m_Talk_SCN = "快点！快点动起来！"
+L10_1.m_Talk_DEU = "Beeilung! Bewegt euch!"
+L10_1.m_Talk_FRA = "Vite ! Dépêchez-vous !"
+L11_1 = {}
+L11_1.m_CutScenProcessKey = 11
+L11_1.m_CutScenID = 10040
+L11_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L11_1.m_bWaitClick = false
+L11_1.m_fWaitTime = 0
+L11_1.m_bClear = true
+L12_1 = {}
+L12_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@12#Talk"
+L12_1.m_CutScenProcessKey = 12
+L12_1.m_CutScenID = 10040
+L12_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L12_1.m_bWaitClick = true
+L12_1.m_fWaitTime = 0
+L12_1.m_BGCrash = 50
+L12_1.m_fBGCrashTime = 0.5
+L12_1.m_CharStrID = "COMPUTER_VOICE_NULL_NULL"
+L12_1.m_Talk_KOREA = "<color=#ffd34c>노심 손상. 폭발 위험 경고.</color>"
+L12_1.m_fTalkTime = 0.03
+L12_1.m_Talk_JPN = "<color=#ffd34c>炉心損傷。爆発危険警告。</color>"
+L12_1.m_Talk_ENG = "<color=#ffd34c>Reactor core damaged. Explosion imminent.</color>"
+L12_1.m_Talk_TWN = "<color=#ffd34c>核心受損，爆炸的危險警告。</color>"
+L12_1.m_Talk_THA = "<color=#ffd34c>แกนปฏิกรณ์เสียหาย จะเกิดระเบิดในไม่ช้า</color>"
+L12_1.m_Talk_VTN = "<color=#ffd34c>Lõi lò phản ứng đã bị hỏng. Vụ nổ sắp xảy ra.</color>"
+L12_1.m_Talk_SCN = "<color=#ffd34c>核心受损，即将爆炸。</color>"
+L12_1.m_Talk_DEU = "<color=#ffd34c>Reaktorkern beschädigt. Explosion droht.</color>"
+L12_1.m_Talk_FRA = "<color=#ffd34c>Cœur du réacteur endommagé. Explosion imminente.</color>"
+L13_1 = {}
+L13_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@13#Talk"
+L13_1.m_CutScenProcessKey = 13
+L13_1.m_CutScenID = 10040
+L13_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L13_1.m_bWaitClick = true
+L13_1.m_fWaitTime = 0
+L13_1.m_BGCrash = 50
+L13_1.m_fBGCrashTime = 0.5
+L13_1.m_CharStrID = "COMPUTER_VOICE_NULL_NULL"
+L13_1.m_Talk_KOREA = "<color=#ffd34c>반응로 오버 플로우. 컨트롤 불능......</color>"
+L13_1.m_fTalkTime = 0.03
+L13_1.m_Talk_JPN = "<color=#ffd34c>反応炉オーバーフロー。コントロール不能……</color>"
+L13_1.m_Talk_ENG = "<color=#ffd34c>Reactor overflow. Losing control...</color>"
+L13_1.m_Talk_TWN = "<color=#ffd34c>反應爐溢出，無法控制……</color>"
+L13_1.m_Talk_THA = "<color=#ffd34c>สารปฏิกรณ์ล้นเกินขีดจำกัด กำลังสูญเสียการควบคุม...</color>"
+L13_1.m_Talk_VTN = "<color=#ffd34c>Tràn lò phản ứng. Mất kiểm soát... </color>"
+L13_1.m_Talk_SCN = "<color=#ffd34c>反应炉溢出，已失控……</color>"
+L13_1.m_Talk_DEU = "<color=#ffd34c>Reaktorüberlauf nicht mehr unter Kontrolle.</color>"
+L13_1.m_Talk_FRA = "<color=#ffd34c>Défaut du réacteur. Perte de contrôle...</color>"
+L14_1 = {}
+L14_1.m_CutScenProcessKey = 14
+L14_1.m_CutScenID = 10040
+L14_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L14_1.m_bWaitClick = false
+L14_1.m_fWaitTime = 0
+L14_1.m_bClear = true
+L15_1 = {}
+L15_1.m_CutScenKey_Talk = "OTHER_SOF_ACT_3_STAGE3_END@15#Talk"
+L15_1.m_CutScenProcessKey = 15
+L15_1.m_CutScenID = 10040
+L15_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L15_1.m_bWaitClick = true
+L15_1.m_fWaitTime = 0
+L15_1.m_Face = "UNIT_SERIOUS"
+L15_1.m_CharStrID = "JOHN_MASON_NULL_NULL"
+L15_1.m_Pos = "C"
+L15_1.m_Crash = 100
+L15_1.m_Talk_KOREA = "엎드려!!"
+L15_1.m_fTalkTime = 0.03
+L15_1.m_Talk_JPN = "伏せろ！！"
+L15_1.m_Talk_ENG = "Get down!"
+L15_1.m_Talk_TWN = "趴下！！"
+L15_1.m_Talk_THA = "หมอบลง!"
+L15_1.m_Talk_VTN = "Nằm xuống!"
+L15_1.m_Talk_SCN = "趴下！！"
+L15_1.m_Talk_DEU = "Runter!"
+L15_1.m_Talk_FRA = "Baissez-vous !"
+L16_1 = {}
+L16_1.m_CutScenProcessKey = 16
+L16_1.m_CutScenID = 10040
+L16_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L16_1.m_bWaitClick = false
+L16_1.m_fWaitTime = 0
+L16_1.m_bClear = true
+L17_1 = {}
+L17_1.m_CutScenProcessKey = 17
+L17_1.m_CutScenID = 10040
+L17_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L17_1.m_bWaitClick = false
+L17_1.m_fWaitTime = 0
+L17_1.m_StartFXSoundControl = "NCSC_STOP"
+L17_1.m_StartFXSoundName = "FX_CUTSCEN_SIREN"
+L18_1 = {}
+L18_1.m_CutScenProcessKey = 18
+L18_1.m_CutScenID = 10040
+L18_1.m_CutScenStrID = "OTHER_SOF_ACT_3_STAGE3_END"
+L18_1.m_bWaitClick = false
+L18_1.m_fWaitTime = 0
+L18_1.m_BGCrash = 100
+L18_1.m_fBGCrashTime = 0.25
+L18_1.m_bFadeIn = false
+L18_1.m_fFadeTime = 0.25
+L18_1.m_bFadeWhite = true
+L18_1.m_StartFXSoundName = "FX_CUTSCEN_BOOM"
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+L0_1[8] = L8_1
+L0_1[9] = L9_1
+L0_1[10] = L10_1
+L0_1[11] = L11_1
+L0_1[12] = L12_1
+L0_1[13] = L13_1
+L0_1[14] = L14_1
+L0_1[15] = L15_1
+L0_1[16] = L16_1
+L0_1[17] = L17_1
+L0_1[18] = L18_1
+m_dicNKCCutScenTempletByID = L0_1

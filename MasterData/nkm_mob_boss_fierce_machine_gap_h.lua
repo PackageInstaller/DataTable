@@ -1,0 +1,4 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.BASE_UNIT_STR_ID = "NKM_UNIT_BASE_BOSS"
+NKMUnitTemplet = L0_1

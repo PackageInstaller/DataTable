@@ -1,0 +1,115 @@
+local L0_1, L1_1, L2_1, L3_1, L4_1, L5_1, L6_1, L7_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 1000002
+L1_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_bGameObjectBGType = true
+L1_1.m_BGFileName = "AB_UI_NKM_UI_CUTSCEN_BG_MAINSTREAM_001010"
+L1_1.m_bFadeIn = true
+L1_1.m_fFadeTime = 1.5
+L1_1.m_StartBGMFileName = "CUTSCENE_TALK_01"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_END@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 1000002
+L2_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_StartFXSoundName = "FX_CUTSCEN_BEEP"
+L2_1.m_Talk_KOREA = "<color=#ffd34c>ARC-CS1 도시관리국 행정 2부 비서관의 프라이빗 메일입니다.</color>"
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "<color=#ffd34c>ARC-CS1都市管理局行政2部の秘書官からプライベートメールです。</color>"
+L2_1.m_Talk_ENG = "<color=#ffd34c>A private mail arrived from ARC-CS1 City Managements' 2nd Division Secretary.</color>"
+L2_1.m_Talk_TWN = "<color=#ffd34c>來自ARC-CS1城市管理局行政2部秘書長的機密郵件。</color>"
+L2_1.m_Talk_THA = "<color=#ffd34c>มีจดหมายส่วนตัวส่งมาจากเลขานุการประจำกองพลลำดับที่ 2 ของสำนักบริหารเมือง ARC-CS1</color>"
+L2_1.m_Talk_VTN = "<color=#ffd34c>Thư riêng từ thư ký trưởng bộ 2 của Cục Quản Lý Thành Phố ARC-CS1. </color>"
+L2_1.m_Talk_SCN = "<color=#ffd34c>来自ARC-CS1城市管理局行政2部秘书长的私密邮件。</color>"
+L2_1.m_Talk_DEU = "<color=#ffd34c>Private Nachricht vom 2. Divisionssekretär der Stadtverwaltung von ARC-CS1.</color>"
+L2_1.m_Talk_FRA = "<color=#ffd34c>Vous avez reçu un e-mail privé de la part du secrétaire de la seconde division de la direction des cités de CRA-CS1.</color>"
+L3_1 = {}
+L3_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_END@3#Talk"
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 1000002
+L3_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L3_1.m_bWaitClick = true
+L3_1.m_fWaitTime = 0
+L3_1.m_Talk_KOREA = "이번 의뢰를 성공적으로 완수해 주셔서 감사드립니다."
+L3_1.m_fTalkTime = 0.03
+L3_1.m_Talk_JPN = "依頼を見事完遂していただき、ありがとうございます。"
+L3_1.m_Talk_ENG = "Thank you for completing our request successfully."
+L3_1.m_Talk_TWN = "感謝你完成了這次的委託。"
+L3_1.m_Talk_THA = "ขอขอบคุณที่ทำภารกิจของเราในครั้งนี้สำเร็จลุล่วง"
+L3_1.m_Talk_VTN = "Chúc mừng đã hoàn tất thành công yêu cầu của chúng tôi."
+L3_1.m_Talk_SCN = "恭喜你成功地完成了这次的委托。"
+L3_1.m_Talk_DEU = "Vielen Dank, dass Sie unseren Auftrag so erfolgreich ausgeführt haben."
+L3_1.m_Talk_FRA = "Nous vous remercions d'avoir répondu avec efficacité à notre requête."
+L4_1 = {}
+L4_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_END@4#Talk"
+L4_1.m_CutScenProcessKey = 4
+L4_1.m_CutScenID = 1000002
+L4_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L4_1.m_bWaitClick = true
+L4_1.m_fWaitTime = 0
+L4_1.m_Talk_KOREA = "건설 중이던 시설물은 조만간 기동에 들어갈 예정입니다."
+L4_1.m_fTalkTime = 0.03
+L4_1.m_Talk_JPN = "建設中だった施設は、近々稼働する予定です。"
+L4_1.m_Talk_ENG = "All of the facilities that were under construction will be active soon."
+L4_1.m_Talk_TWN = "建設中的設施預計最近幾天進入啟動階段。"
+L4_1.m_Talk_THA = "สิ่งปลูกสร้างทั้งหมดที่อยู่ระหว่างการก่อสร้างจะแล้วเสร็จและพร้อมใช้งานในไม่ช้า"
+L4_1.m_Talk_VTN = "Tất cả các cơ sở đang được xây dựng sẽ sớm đi đi vào hoạt động."
+L4_1.m_Talk_SCN = "建设中的设施预计最近几天进入启动阶段。"
+L4_1.m_Talk_DEU = "Alle im Bau befindlichen Einrichtungen sind bald wieder in Betrieb."
+L4_1.m_Talk_FRA = "Toutes les installations en construction seront bientôt opérationnelles."
+L5_1 = {}
+L5_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_END@5#Talk"
+L5_1.m_CutScenProcessKey = 5
+L5_1.m_CutScenID = 1000002
+L5_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L5_1.m_bWaitClick = true
+L5_1.m_fWaitTime = 0
+L5_1.m_Talk_KOREA = "추후 의뢰 수요가 발생할 시 적극 추천드리도록 하겠습니다."
+L5_1.m_fTalkTime = 0.03
+L5_1.m_Talk_JPN = "今後、依頼が発生した場合は積極的に推薦させていただきます。"
+L5_1.m_Talk_ENG = "I will make positive recommendations about your company if another commission is required."
+L5_1.m_Talk_TWN = "之後如果再有委託需求，我們會積極地推薦你。"
+L5_1.m_Talk_THA = "หากมีงานจ้างอีกในอนาคต เราจะแนะนำบริษัทของคุณเป็นอย่างดี"
+L5_1.m_Talk_VTN = "Tôi sẽ tích cực đề xuất công ty của bạn nếu sau cần phải thực hiện một nhiệm vụ khác."
+L5_1.m_Talk_SCN = "之后再有委托需求的时候，我们会积极推荐你的。"
+L5_1.m_Talk_DEU = "Ich werde Ihr Unternehmen gern empfehlen, sollten weitere Einsätze notwendig sein."
+L5_1.m_Talk_FRA = "Je veillerai à recommander votre entreprise si nous avons des commandes similaires à l'avenir."
+L6_1 = {}
+L6_1.m_CutScenKey_Talk = "FREEORDER_EP1_ACT1_END@6#Talk"
+L6_1.m_CutScenProcessKey = 6
+L6_1.m_CutScenID = 1000002
+L6_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L6_1.m_bWaitClick = true
+L6_1.m_fWaitTime = 0
+L6_1.m_Talk_KOREA = "요구에 정확히 부응해 주신 부분에 대하여 다시 한 번 감사 인사 드립니다."
+L6_1.m_fTalkTime = 0.03
+L6_1.m_Talk_JPN = "今回は依頼に応じていただき、誠にありがとうございました。"
+L6_1.m_Talk_ENG = "Thank you again for satisfying our demands."
+L6_1.m_Talk_TWN = "再次感謝你回應了我們的請求。"
+L6_1.m_Talk_THA = "ขอขอบคุณทางบริษัทอีกครั้งที่ปฏิบัติหน้าที่ได้อย่างดีเยี่ยมสอดคล้องกับความต้องการของเรา"
+L6_1.m_Talk_VTN = "Một lần nữa cảm ơn bạn vì cậu đã đáp ứng yêu cầu nhanh và chính xác của chúng tôi."
+L6_1.m_Talk_SCN = "再次感谢你快速准确地回应了我们的要求。"
+L6_1.m_Talk_DEU = "Nochmals vielen Dank für die Erfüllung unserer Aufträge."
+L6_1.m_Talk_FRA = "Merci de votre coopération."
+L7_1 = {}
+L7_1.m_CutScenProcessKey = 7
+L7_1.m_CutScenID = 1000002
+L7_1.m_CutScenStrID = "FREEORDER_EP1_ACT1_END"
+L7_1.m_bWaitClick = false
+L7_1.m_fWaitTime = 0
+L7_1.m_bFadeIn = false
+L7_1.m_fFadeTime = 1.5
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+L0_1[4] = L4_1
+L0_1[5] = L5_1
+L0_1[6] = L6_1
+L0_1[7] = L7_1
+m_dicNKCCutScenTempletByID = L0_1

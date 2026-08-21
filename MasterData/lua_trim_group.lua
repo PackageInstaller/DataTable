@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1
+L0_1 = {}
+L1_1 = {}
+L1_1.TrimGroupID = 101
+L1_1.TrimGroupName = "SI_TRIM_GROUP_JUNGLE_NAME"
+L1_1.TrimGroupDesc = "SI_TRIM_GROUP_JUNGLE_DESC"
+L1_1.TrimID_1 = 1001
+L1_1.TrimID_2 = 1002
+L1_1.TrimID_3 = 1003
+L1_1.TrimGroupCombatPenalty = "BC_TRIM_COMBAT_PENALTY_01"
+L2_1 = {}
+L2_1.TrimGroupID = 102
+L2_1.TrimGroupName = "SI_TRIM_GROUP_VOLCANO_NAME"
+L2_1.TrimGroupDesc = "SI_TRIM_GROUP_VOLCANO_DESC"
+L2_1.TrimID_1 = 2001
+L2_1.TrimID_2 = 2002
+L2_1.TrimID_3 = 2003
+L2_1.TrimGroupCombatPenalty = "BC_TRIM_COMBAT_PENALTY_01"
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+TRIM_GROUP_TEMPLET = L0_1

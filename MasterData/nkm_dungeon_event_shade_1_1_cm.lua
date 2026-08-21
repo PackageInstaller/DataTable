@@ -1,0 +1,20 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateB = 1
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_SHADE_CORRUPTED_CA_MINISTRA_CM"
+L0_1.m_fBossPosZ = 0.0
+L1_1 = {}
+L2_1 = {}
+L2_1.m_UnitStrID = "NKM_MOB_BOSS_SHADE_CORRUPTED_C_SHADOW_CM"
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_DECK"
+L3_1.m_fEventTimeStart = 0
+L3_1.m_fEventTimeEnd = 240
+L3_1.m_fEventPos = 0.2
+L2_1.m_NKMDungeonEventTiming = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1

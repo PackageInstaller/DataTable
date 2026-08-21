@@ -1,0 +1,43 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L1_1 = {}
+L1_1.m_CutScenProcessKey = 1
+L1_1.m_CutScenID = 11850002
+L1_1.m_CutScenStrID = "LIFETIME_END_NKM_UNIT_GUILTY_C_RAMLETHAL"
+L1_1.m_bWaitClick = false
+L1_1.m_fWaitTime = 0
+L1_1.m_StartBGMFileName = "CUTSCENE_HOPE"
+L2_1 = {}
+L2_1.m_CutScenKey_Talk = "LIFETIME_END_NKM_UNIT_GUILTY_C_RAMLETHAL@2#Talk"
+L2_1.m_CutScenProcessKey = 2
+L2_1.m_CutScenID = 11850002
+L2_1.m_CutScenStrID = "LIFETIME_END_NKM_UNIT_GUILTY_C_RAMLETHAL"
+L2_1.m_bWaitClick = true
+L2_1.m_fWaitTime = 0
+L2_1.m_BGFileName = "LIFETIME"
+L2_1.m_Face = "UNIT_TOUCH"
+L2_1.m_CharStrID = "RAM_COLLABO_NULL_NULL"
+L2_1.m_Pos = "C"
+L2_1.m_bFaceLoop = false
+L2_1.m_Talk_KOREA = "당신을 부정하지 않을게. 그리고 이젠 내 스스로, 미래를 창조하겠어."
+L2_1.m_fTalkTime = 0.03
+L2_1.m_Talk_JPN = "貴方を否定しない。そしてこれからは自分で、未来を創造する。"
+L2_1.m_Talk_ENG = [[
+I won't reject you.
+And now, I'll create the future on my own.]]
+L2_1.m_Talk_TWN = "貴方を否定しない。そしてこれからは自分で、未来を創造する。"
+L2_1.m_Talk_DEU = "Ich werde dich nicht verleugnen. Und jetzt werde ich meine eigene Zukunft gestalten."
+L2_1.m_Talk_FRA = "Je ne te sous-estimerai pas. Désormais, je me forgerai mon propre avenir."
+L3_1 = {}
+L3_1.m_CutScenProcessKey = 3
+L3_1.m_CutScenID = 11850002
+L3_1.m_CutScenStrID = "LIFETIME_END_NKM_UNIT_GUILTY_C_RAMLETHAL"
+L3_1.m_bWaitClick = false
+L3_1.m_fWaitTime = 0
+L3_1.m_bFadeIn = false
+L3_1.m_fFadeTime = 3
+L3_1.m_bFadeWhite = true
+L0_1[1] = L1_1
+L0_1[2] = L2_1
+L0_1[3] = L3_1
+m_dicNKCCutScenTempletByID = L0_1

@@ -1,0 +1,3 @@
+local L0_1, L1_1
+L0_1 = {}
+SHOP_RECOMMEND_TEMPLET = L0_1

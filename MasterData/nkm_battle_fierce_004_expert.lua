@@ -1,0 +1,21 @@
+local L0_1, L1_1, L2_1, L3_1
+L0_1 = {}
+L0_1.m_fStartCost = 5
+L0_1.m_fCostSpeedRateB = 1
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_FIERCE_MINISTRA_TOUGH_EX"
+L0_1.m_fBossPosZ = 0.6
+L0_1.m_bRespawnFreePos = true
+L1_1 = {}
+L2_1 = {}
+L2_1.m_dungeonEventType = "CHANGE_BGM"
+L2_1.m_EventID = 1
+L2_1.m_bPause = false
+L2_1.m_EventActionStrValue = "UI_FIERCE_02"
+L3_1 = {}
+L3_1.m_NKM_DUNGEON_EVENT_TYPE = "NDET_ONE_TIME"
+L3_1.m_fEventTimeStart = 120
+L3_1.m_fEventIgnoreBossInitHPLess = false
+L2_1.m_NKMDungeonEventTiming = L3_1
+L1_1[1] = L2_1
+L0_1.m_listDungeonEventTempletTeamB = L1_1
+NKMDungeonTemplet = L0_1

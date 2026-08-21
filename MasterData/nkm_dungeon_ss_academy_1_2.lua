@@ -1,0 +1,12 @@
+local L0_1, L1_1
+L0_1 = {}
+L0_1.m_fStartCost = 10
+L0_1.m_fCostSpeedRateB = 1.0
+L0_1.m_BossUnitStrID = "NKM_MOB_BOSS_MILITIA_CRIMINAL_HEAVY_H"
+L0_1.m_BossUnitChangeName = "SI_MOB_NAME_BOSS_ACADEMY_CRIMINAL_HEAVY"
+L0_1.m_fBossPosZ = 0.8
+L1_1 = {}
+L0_1.m_listDungeonDeck = L1_1
+L1_1 = {}
+L0_1.m_listDungeonUnitRespawnB = L1_1
+NKMDungeonTemplet = L0_1
