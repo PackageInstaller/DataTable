@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ItemList>
+	<Item infoTextID="0" infoText="-"/>
+	<Item infoTextID="1" infoText="&lt;Pompes&gt;^nUn exercice d'endurance basique. Confère +3 % FOR, +1 % DÉF."/>
+	<Item infoTextID="2" infoText="&lt;Boxe&gt;^nUn exercice d'agilité et de force physique. Confère +2 % FOR, +1 % AGI."/>
+	<Item infoTextID="3" infoText="&lt;Course&gt;^nUn exercice physique basique. Confère +3 % PV."/>
+	<Item infoTextID="4" infoText="&lt;Entraînement à l'épée&gt;^nConfère +1 % PV, +2 % AGI. Vous pouvez développer de nouvelles techniques après avoir atteint un certain nombre de PV ou un certain niveau d'épéiste."/>
+	<Item infoTextID="5" infoText="&lt;Études de magie&gt;^nÉtudier la magie en lisant des livres. Confère +1 % MAG, +2 % PM. Vous pourrez parfois découvrir de nouvelles formules magiques."/>
+	<Item infoTextID="6" infoText="&lt;Études d'artisanat&gt;^nÉtudier la fabrication d'objets magiques. Confère +3 % PM. Vous pourrez parfois découvrir de nouveaux outils."/>
+	<Item infoTextID="7" infoText="&lt;Fabrication de magie&gt;^nEntraînement permettant de manipuler la magie sous différentes formes et densités. Confère +2 % MAG, +1 % PM."/>
+	<Item infoTextID="8" infoText="&lt;Canalisation magique&gt;^nEntraînement permettant de canaliser l'énergie magique aussi longtemps que possible. Confère +1 % MAG, +1 % PM et +1 % PV."/>
+	<Item infoTextID="9" infoText="Jour #num"/>
+	<Item infoTextID="10" infoText="Programme d'entraînement"/>
+	<Item infoTextID="11" infoText="Commencer"/>
+	<Item infoTextID="12" infoText="Commencer l'entraînement -"/>
+	<Item infoTextID="13" infoText="PV"/>
+	<Item infoTextID="14" infoText="PM"/>
+	<Item infoTextID="15" infoText="MAG"/>
+	<Item infoTextID="16" infoText="FOR"/>
+	<Item infoTextID="17" infoText="AGI"/>
+	<Item infoTextID="18" infoText="DÉF"/>
+	<Item infoTextID="19" infoText="-"/>
+	<Item infoTextID="20" infoText="-"/>
+	<Item infoTextID="21" infoText="Entraînement en cours... [#name]"/>
+	<Item infoTextID="22" infoText="Entraînement terminé !"/>
+	<Item infoTextID="23" infoText="Pompes"/>
+	<Item infoTextID="24" infoText="Boxe"/>
+	<Item infoTextID="25" infoText="Course"/>
+	<Item infoTextID="26" infoText="Entraînement à l'épée"/>
+	<Item infoTextID="27" infoText="Étude des livres de magie"/>
+	<Item infoTextID="28" infoText="Étude de l'artisanat"/>
+	<Item infoTextID="29" infoText="Entraînement à la fabrication de magie"/>
+	<Item infoTextID="30" infoText="Entraînement à la canalisation magique"/>
+	<Item infoTextID="31" infoText="Quitter la maison ?"/>
+	<Item infoTextID="32" infoText="Oui"/>
+	<Item infoTextID="33" infoText="Non"/>
+	<Item infoTextID="34" infoText="Voulez-vous dormir ?"/>
+	<Item infoTextID="35" infoText="Remplissez le programme d'entraînement !"/>
+	<Item infoTextID="36" infoText="OK"/>
+	<Item infoTextID="37" infoText="Inventaire"/>
+	<Item infoTextID="38" infoText="Objets favoris"/>
+	<Item infoTextID="39" infoText="Tous les objets"/>
+	<Item infoTextID="40" infoText="Aucun objet dans l'inventaire."/>
+	<Item infoTextID="41" infoText="Aucun objet défini comme favori."/>
+	<Item infoTextID="42" infoText="Appuyez sur l'objet pour l'utiliser immédiatement"/>
+	<Item infoTextID="43" infoText="Utiliser"/>
+	<Item infoTextID="44" infoText="PV actuels"/>
+	<Item infoTextID="45" infoText="PM actuels"/>
+	<Item infoTextID="46" infoText="Définir comme objet récurrent"/>
+	<Item infoTextID="47" infoText="Une nouvelle formule magique de FEU a été ajoutée à l'encyclopédie magique !"/>
+	<Item infoTextID="48" infoText="Une nouvelle formule magique de FOUDRE a été ajoutée à l'encyclopédie magique !"/>
+	<Item infoTextID="49" infoText="Une nouvelle formule magique de GLACE a été ajoutée à l'encyclopédie magique !"/>
+	<Item infoTextID="50" infoText="Une nouvelle formule d'objet a été ajoutée à l'encyclopédie magique !"/>
+	<Item infoTextID="51" infoText="Cette encyclopédie magique a déjà été ajoutée !"/>
+	<Item infoTextID="52" infoText="Changer de costume."/>
+	<Item infoTextID="53" infoText="Vous portez déjà ce costume."/>
+	<Item infoTextID="54" infoText="Vous ne pouvez pas camper ici."/>
+	<Item infoTextID="55" infoText="Arme modifiée."/>
+	<Item infoTextID="56" infoText="L'équipement est déjà utilisé."/>
+	<Item infoTextID="57" infoText="Les PV sont déjà au maximum."/>
+	<Item infoTextID="58" infoText="#power PV récupérés."/>
+	<Item infoTextID="59" infoText="Les PM sont déjà au maximum."/>
+	<Item infoTextID="60" infoText="#power PM récupérés."/>
+	<Item infoTextID="61" infoText="PV max réduits de #power."/>
+	<Item infoTextID="62" infoText="PM max réduits de #power."/>
+	<Item infoTextID="63" infoText="PV max augmentés de #power !"/>
+	<Item infoTextID="64" infoText="MAG augmentée de #power !"/>
+	<Item infoTextID="65" infoText="MP max augmentés de #power !"/>
+	<Item infoTextID="66" infoText="FOR augmentée de #power !"/>
+	<Item infoTextID="67" infoText="DÉF augmentée de #power !"/>
+	<Item infoTextID="68" infoText="AGI augmentée de #power !"/>
+	<Item infoTextID="69" infoText="Cet objet ne peut pas être utilisé pour l'instant !"/>
+	<Item infoTextID="70" infoText="Objet supprimé de la liste des favoris."/>
+	<Item infoTextID="71" infoText="Objet ajouté à la liste des favoris."/>
+	<Item infoTextID="72" infoText="Vous pouvez ajouter jusqu'à 5 objets à votre liste de favoris."/>
+	<Item infoTextID="73" infoText="Quantité : #num"/>
+	<Item infoTextID="74" infoText="Aucun objet dans l'inventaire !"/>
+	<Item infoTextID="75" infoText="Chaudron magique"/>
+	<Item infoTextID="76" infoText="Quantité fabriquée :"/>
+	<Item infoTextID="77" infoText="Encyclopédie magique"/>
+	<Item infoTextID="78" infoText="Impossible de créer un objet en double !"/>
+	<Item infoTextID="79" infoText="Ingrédients insuffisants !"/>
+	<Item infoTextID="80" infoText="&lt;Où trouver&gt;"/>
+	<Item infoTextID="81" infoText="Outil"/>
+	<Item infoTextID="82" infoText="Outil spécial"/>
+	<Item infoTextID="83" infoText="Cercle magique principal"/>
+	<Item infoTextID="84" infoText="Cercle magique de soutien"/>
+	<Item infoTextID="85" infoText="Cercle magique de soutien"/>
+	<Item infoTextID="86" infoText="Commencer la fabrication"/>
+	<Item infoTextID="87" infoText="Inconnu"/>
+	<Item infoTextID="88" infoText="Vous pouvez créer jusqu'à 9 objets à la fois."/>
+	<Item infoTextID="89" infoText="Formule d'artisanat manquante. Récoltez plus de formules !"/>
+	<Item infoTextID="90" infoText="Rentrer à la maison ?"/>
+	<Item infoTextID="91" infoText="Quitter la maison"/>
+	<Item infoTextID="92" infoText="Chaudron magique"/>
+	<Item infoTextID="93" infoText="Livre magique"/>
+	<Item infoTextID="94" infoText="Coussin"/>
+	<Item infoTextID="95" infoText="Inventaire"/>
+	<Item infoTextID="96" infoText="Eirudy se sent menacée ! Voulez-vous commencer le combat ?"/>
+	<Item infoTextID="97" infoText="Défense physique"/>
+	<Item infoTextID="98" infoText="Défense magique"/>
+	<Item infoTextID="99" infoText="FEU"/>
+	<Item infoTextID="100" infoText="LÉGER"/>
+	<Item infoTextID="101" infoText="GLACE"/>
+	<Item infoTextID="102" infoText="Attaque neutre"/>
+	<Item infoTextID="103" infoText="Guérison"/>
+	<Item infoTextID="104" infoText="Ténèbres"/>
+	<Item infoTextID="105" infoText="Faites glisser l'icône magique vers l'emplacement central !"/>
+	<Item infoTextID="106" infoText="Dégâts :"/>
+	<Item infoTextID="107" infoText="Taux de guérison :"/>
+	<Item infoTextID="108" infoText="PM insuffisants !"/>
+	<Item infoTextID="109" infoText="Coût en mana :"/>
+	<Item infoTextID="110" infoText="Veuillez sélectionner la cible !"/>
+	<Item infoTextID="111" infoText="La cible a été désélectionnée."/>
+	<Item infoTextID="112" infoText="Veuillez d'abord équiper un Cercle magique principal (△) !"/>
+	<Item infoTextID="113" infoText="Bonus d'effet magique : +10 %"/>
+	<Item infoTextID="114" infoText="Bonus d'effet magique : 5 %^nCoût en mana : -7 %"/>
+	<Item infoTextID="115" infoText="Coût en mana : -15 %"/>
+	<Item infoTextID="116" infoText="Emplacement principal"/>
+	<Item infoTextID="117" infoText="Emplacement secondaire"/>
+	<Item infoTextID="118" infoText="Emplacement de soutien"/>
+	<Item infoTextID="119" infoText="Cette magie ne peut pas être utilisée pour l'instant !"/>
+	<Item infoTextID="120" infoText="Appuyez sur l'emplacement central pour utiliser la magie."/>
+	<Item infoTextID="121" infoText="Combiner les cercles magiques"/>
+	<Item infoTextID="122" infoText="L'emplacement est vide."/>
+	<Item infoTextID="123" infoText="ASSISTANCE"/>
+	<Item infoTextID="124" infoText="DIVERS"/>
+	<Item infoTextID="125" infoText="Entrepôt des poupées"/>
+	<Item infoTextID="126" infoText="Descendre à l'entrepôt des poupées ?"/>
+	<Item infoTextID="127" infoText="Éveiller une poupée"/>
+	<Item infoTextID="128" infoText="Énergie vitale nécessaire : "/>
+	<Item infoTextID="129" infoText="Éveiller une poupée"/>
+	<Item infoTextID="130" infoText="Énergie vitale de la pierre d'âme insuffisante"/>
+	<Item infoTextID="131" infoText="Éveil de la poupée réussi !"/>
+	<Item infoTextID="132" infoText="Injecter plus d'énergie vitale"/>
+	<Item infoTextID="133" infoText="Remonter ?"/>
+	<Item infoTextID="134" infoText="Échelle"/>
+	<Item infoTextID="135" infoText="Aucune poupée n'a été éveillée."/>
+	<Item infoTextID="136" infoText="Liste des poupées"/>
+	<Item infoTextID="137" infoText="Invoquer une poupée"/>
+	<Item infoTextID="138" infoText="Cette poupée ne peut être invoquée qu'en combat."/>
+	<Item infoTextID="139" infoText="Appuyez n'importe où dans la zone bleue pour invoquer la poupée !"/>
+	<Item infoTextID="140" infoText="Ce poupée est déjà en combat."/>
+	<Item infoTextID="141" infoText="Vous ne pouvez pas invoquer de poupée à cet endroit."/>
+	<Item infoTextID="142" infoText="L'emplacement superpose celui du maître !"/>
+	<Item infoTextID="143" infoText="Défense physique"/>
+	<Item infoTextID="144" infoText="Défense magique"/>
+	<Item infoTextID="145" infoText="EFFETS SONORES ON"/>
+	<Item infoTextID="146" infoText="EFFETS SONORES OFF"/>
+	<Item infoTextID="147" infoText="Paramètres"/>
+	<Item infoTextID="148" infoText="MUSIQUE ON"/>
+	<Item infoTextID="149" infoText="MUSIQUE OFF"/>
+	<Item infoTextID="150" infoText="Encyclopédie de combat"/>
+	<Item infoTextID="151" infoText="Nouvelle^npartie"/>
+	<Item infoTextID="152" infoText="Touchez la porte pour quitter la maison."/>
+	<Item infoTextID="153" infoText="Touchez le sol pour déplacer la sorcière.^nVous pouvez changer le mode de déplacement dans le menu Options."/>
+	<Item infoTextID="154" infoText="Appuyez sur l'icône Bâton pour utiliser la magie."/>
+	<Item infoTextID="155" infoText="Infligez le coup de grâce avec l'épée !"/>
+	<Item infoTextID="156" infoText="La pierre d'âme est remplie d'énergie vitale."/>
+	<Item infoTextID="157" infoText="Remplir la pierre d'âme +#power"/>
+	<Item infoTextID="158" infoText="Utilisez l'échelle pour descendre dans l'Entrepôt des poupées."/>
+	<Item infoTextID="159" infoText="&lt;Invoquer une poupée&gt;^n^nLe bouton « Poupée » a été ajouté au menu de combat. Les poupées éveillées peuvent être invoquées durant les combats. Cependant, vous ne pouvez invoquer qu'une poupée par tour et jusqu'à 3 poupées durant le combat."/>
+	<Item infoTextID="160" infoText="Approchez-vous du sanglier."/>
+	<Item infoTextID="161" infoText="Déplacez-vous vers le montre sur la colline !"/>
+	<Item infoTextID="162" infoText="Appuyez sur le Chaudron magique pour fabriquer un nouveau cercle magique."/>
+	<Item infoTextID="163" infoText="Ici, vous pouvez combiner les cercles magiques."/>
+	<Item infoTextID="164" infoText="Il existe deux types de cercles magiques (ou CM) : le Cercle magique principal et le Cercle magique de soutien."/>
+	<Item infoTextID="165" infoText="Le « CM d'amélioration mineur » est un Cercle magique de soutien."/>
+	<Item infoTextID="166" infoText="Appuyez sur « Soutien » et cherchez le CM d'amélioration mineur que vous venez de créer."/>
+	<Item infoTextID="167" infoText="Faites glisser le CM d'amélioration au centre."/>
+	<Item infoTextID="168" infoText="Si vos PV sont faibles, dormir vous permettra de récupérer tous vos PV/PM."/>
+	<Item infoTextID="169" infoText="Appuyez sur le coussin pour dormir."/>
+	<Item infoTextID="170" infoText="Invoquez une poupée."/>
+	<Item infoTextID="171" infoText="Combat"/>
+	<Item infoTextID="172" infoText="Esquive"/>
+	<Item infoTextID="173" infoText="Défiez le Golem de la Forêt brumeuse occidentale !"/>
+	<Item infoTextID="174" infoText="Appuyez sur le centre de la pièce pour vous entraîner."/>
+	<Item infoTextID="175" infoText="Vous pouvez planifier l'entraînement d'Eirudy sur 5 jours."/>
+	<Item infoTextID="176" infoText="Les icônes d'entraînement sont ci-dessous.^nAppuyez sur chaque icône pour consulter sa description."/>
+	<Item infoTextID="177" infoText="Faites glisser les icônes sur le calendrier pour créer un programme d'entraînement."/>
+	<Item infoTextID="178" infoText="Vous devez remplir chacun des 5 emplacements journaliers pour commencer l'entraînement."/>
+	<Item infoTextID="179" infoText="Commencez l'entraînement en ajoutant une session « Entraînement à l'épée » dans le programme."/>
+	<Item infoTextID="180" infoText="-"/>
+	<Item infoTextID="181" infoText="Pour voir les objets en votre possession, consultez l'inventaire."/>
+	<Item infoTextID="182" infoText="Il est temps d'aller chasser des monstres !"/>
+	<Item infoTextID="183" infoText="Statistiques actuelles"/>
+	<Item infoTextID="184" infoText="Après l'entraînement"/>
+	<Item infoTextID="185" infoText="Clôture de la bêta de Witch Spring.^nAppuyez sur l'écran pour retourner à l'écran titre."/>
+	<Item infoTextID="186" infoText="&lt;Tendances de combat&gt;^nSi vous utilisez beaucoup la magie, vos attaques magiques deviendront plus puissantes. De la même manière, vos compétences à l'épée se développeront au fur et à mesure que vous les utilisez. Lorsque votre Tendance de combat est entièrement définie, vous recevrez un bonus d'attaque de 18 %."/>
+	<Item infoTextID="187" infoText="Après un certain temps, l'ennemi que vous avez combattu ici réapparaîtra.^n[#power %]"/>
+	<Item infoTextID="188" infoText="Cet objet est en cours de réapparition.^n[#power %]"/>
+	<Item infoTextID="189" infoText="L'emplacement central a été réinitialisé."/>
+	<Item infoTextID="190" infoText="#slot a été réinitialisé."/>
+	<Item infoTextID="191" infoText="Trouvez la trace du sanglier !"/>
+	<Item infoTextID="192" infoText="Charger^nsauvegarde"/>
+	<Item infoTextID="193" infoText="Continuer"/>
+	<Item infoTextID="194" infoText="Afficher les empreintes de la sorcière."/>
+	<Item infoTextID="195" infoText="Retour à l'écran titre"/>
+	<Item infoTextID="196" infoText="Journal de la sorcière"/>
+	<Item infoTextID="197" infoText="Aucun objectif à afficher."/>
+	<Item infoTextID="198" infoText="Une nouvelle note a été ajoutée au Journal de la sorcière !"/>
+	<Item infoTextID="199" infoText="Un nouvel objet a été ajouté dans l'inventaire."/>
+	<Item infoTextID="200" infoText="De nouvelles données ont été ajoutées à l'Encyclopédie de combat."/>
+	<Item infoTextID="201" infoText="Aujourd'hui est le jour #day du journal."/>
+	<Item infoTextID="202" infoText="Jour #day"/>
+	<Item infoTextID="203" infoText="#days jours se sont écoulés."/>
+	<Item infoTextID="204" infoText="Nouvel objectif"/>
+	<Item infoTextID="205" infoText="Objectif atteint"/>
+	<Item infoTextID="206" infoText="Achevez un nouvel objectif pour débloquer des sessions d'entraînement supplémentaires."/>
+	<Item infoTextID="207" infoText="Passer les empreintes de la sorcière."/>
+	<Item infoTextID="208" infoText="Afficher les objectifs."/>
+	<Item infoTextID="209" infoText="Passer les objectifs."/>
+	<Item infoTextID="210" infoText="Lire le journal de la sorcière"/>
+	<Item infoTextID="211" infoText="Enregistrer/Charger une sauvegarde"/>
+	<Item infoTextID="212" infoText="Enregistrer une sauvegarde"/>
+	<Item infoTextID="213" infoText="Charger une sauvegarde"/>
+	<Item infoTextID="214" infoText="Emplacement vide"/>
+	<Item infoTextID="215" infoText="Cet emplacement est vide !"/>
+	<Item infoTextID="216" infoText="Il existe déjà une sauvegarde à l'emplacement #num. Supprimer l'ancienne sauvegarde et la remplacer avec la sauvegarde actuelle ? L'ancienne sauvegarde sera perdue."/>
+	<Item infoTextID="217" infoText="Charger la sauvegarde #num ? La progression non sauvegardée sera perdue."/>
+	<Item infoTextID="218" infoText="Voulez-vous vraiment supprimer les données de l'emplacement #num ? Ces données seront supprimées définitivement."/>
+	<Item infoTextID="219" infoText="Sauvegarde n°#num terminée !"/>
+	<Item infoTextID="220" infoText="Sauvegarde n°#num effacée."/>
+	<Item infoTextID="221" infoText="Temps de jeu : #times"/>
+	<Item infoTextID="222" infoText="CHAPITRE 1^nLa sorcière aux marionnettes"/>
+	<Item infoTextID="223" infoText="CHAPITRE 2^nLa sorcière porteuse de vie"/>
+	<Item infoTextID="224" infoText="CHAPITRE 3^nSauveteur en cavale"/>
+	<Item infoTextID="225" infoText="CHAPITRE 4^nRoute sombre"/>
+	<Item infoTextID="226" infoText="CHAPITRE 5^nLa sorcière égarée"/>
+	<Item infoTextID="227" infoText="CHAPITRE 4^nTriple calibre"/>
+	<Item infoTextID="228" infoText="CHAPITRE 5^nLa dernière coupe"/>
+	<Item infoTextID="229" infoText="CHAPITRE 8"/>
+	<Item infoTextID="230" infoText="CHAPITRE 9"/>
+	<Item infoTextID="231" infoText="CHAPITRE 10"/>
+	<Item infoTextID="232" infoText="CHAPITRE 11"/>
+	<Item infoTextID="233" infoText="CHAPITRE 12"/>
+	<Item infoTextID="234" infoText="Entrez un titre de sauvegarde.^n(Jusqu'à 30 caractères, optionnel)"/>
+	<Item infoTextID="235" infoText="Annuler"/>
+	<Item infoTextID="236" infoText="Les caractères spéciaux ne peuvent pas être utilisés !"/>
+	<Item infoTextID="237" infoText="Vous ne pouvez inclure que 30 caractères au maximum !"/>
+	<Item infoTextID="238" infoText="Chargement de la sauvegarde..."/>
+	<Item infoTextID="239" infoText="Entrer dans le trou ?"/>
+	<Item infoTextID="240" infoText="Entrer dans le trou."/>
+	<Item infoTextID="241" infoText="Non..."/>
+	<Item infoTextID="242" infoText="Un nouvel objectif a été ajouté au Journal de la sorcière. À chaque fois que vous réalisez un objectif, vous pouvez recommencer l'entraînement."/>
+	<Item infoTextID="243" infoText="Vous avez récupéré la poupée."/>
+	<Item infoTextID="244" infoText="Vous avez atteint un objectif ! Le nombre d'entraînements restants a été augmenté de 1."/>
+	<Item infoTextID="245" infoText="Chargement de la dernière sauvegarde automatique..."/>
+	<Item infoTextID="246" infoText="Le moment actuel a été sauvegardé automatiquement."/>
+	<Item infoTextID="247" infoText="Aucun emplacement de sauvegarde automatique disponible !"/>
+	<Item infoTextID="248" infoText="Liste d'entraînement"/>
+	<Item infoTextID="249" infoText="*La poupée a atteint le niveau max."/>
+	<Item infoTextID="250" infoText="-"/>
+	<Item infoTextID="251" infoText="Menu d'exploration"/>
+	<Item infoTextID="252" infoText="L'invocation nécessite^n#need % des PM totaux"/>
+	<Item infoTextID="253" infoText="Vous avez besoin de #need PM totaux pour invoquer une poupée !"/>
+	<Item infoTextID="254" infoText="Créez un nouveau cercle magique à la maison grâce aux ingrédients magiques que vous venez d'obtenir !"/>
+	<Item infoTextID="255" infoText="Entraînements disponibles : #num"/>
+	<Item infoTextID="256" infoText="Attributs magiques^n^nil existe 4 types d'attaques magiques : Le feu, la foudre, la glace et l'élément neutre. Parmi tous les attributs, les dégâts et le coût en mana de la magie de feu sont les plus équilibrés. De plus, ces attaques appliquent un effet de brûlure qui inflige des dégâts sur la durée. La magie de foudre nécessite généralement plus de PM que les autres types de magie, mais c'est l'attribut le plus puissant. Il cumule des dégâts supplémentaires et, lorsque ces dégâts dépassent un certain montant, l'ennemi sera étourdi. La magie de glace a un coût en mana relativement faible. Ces sorts peuvent ralentir les ennemis."/>
+	<Item infoTextID="257" infoText="Types de Cercles magiques^n^nIl existe deux types de cercles magiques (ou CM) pouvant être combinés : le Cercle magique principal et le Cercle magique de soutien. Le CM principal détermine le type de magie et le CM de soutien d'amélioration améliore ses attributs magiques. Le CM de soutien de concentration réduit le coût en mana."/>
+	<Item infoTextID="258" infoText="À propos de la magie"/>
+	<Item infoTextID="259" infoText="Tendance de combat^n^nEn combat, si vous utilisez plus la magie que les attaques à l'épée, votre maîtrise magique se développera et vos dégâts magiques de base augmenteront. À l'inverse, si vous utilisez davantage les attaques à l'épée, vous recevrez un bonus de dégâts physiques. Vous pouvez vérifier votre tendance de combat dans le menu Statistiques."/>
+	<Item infoTextID="260" infoText="Effet de tendance magique : #power %"/>
+	<Item infoTextID="261" infoText="Effet de tendance physique : #power %"/>
+	<Item infoTextID="262" infoText="Les PV du sanglier sont faibles. Donnez-lui le coup de grâce !"/>
+	<Item infoTextID="263" infoText="-"/>
+	<Item infoTextID="264" infoText="Consomme #power PV"/>
+	<Item infoTextID="265" infoText="PV insuffisants pour attaquer à l'épée !"/>
+	<Item infoTextID="266" infoText="Niveau d'épéiste"/>
+	<Item infoTextID="267" infoText="Soutien de l'épée magique^n^nLes ennemis en feu subiront des dégâts de brûlure durant leurs tours ou à chaque fois qu'ils sont attaqués. Durant cette période, les séries d'attaques à l'épée peuvent infliger beaucoup de dégâts à l'ennemi.^nSi l'ennemi devient étourdi après avoir été électrocuté, sa DÉF tombera à 0. Durant cette période, les séries d'attaques à l'épée peuvent infliger beaucoup de dégâts à l'ennemi.^nSi l'ennemi devient gelé, ses mouvements seront ralentis. Durant cette période, vous pouvez infliger des dégâts supplémentaires en lançant des sorts d'un autre attribut magique ou utiliser une série d'attaques à l'épée."/>
+	<Item infoTextID="268" infoText="Vous pouvez consulter les nouveaux objectifs et les objectifs achevés dans le Journal de la sorcière."/>
+	<Item infoTextID="269" infoText="Lorsque vous rencontrez un nouvel ennemi, ses informations seront ajoutées à l'Encyclopédie de combat."/>
+	<Item infoTextID="270" infoText="#num sessions d'entraînement ajoutées"/>
+	<Item infoTextID="271" infoText="Il manque quelque chose aux alentours de la maison !"/>
+	<Item infoTextID="272" infoText="Vous apercevez un groupe de lézards. Qu'allez-vous faire ?"/>
+	<Item infoTextID="273" infoText="Vous approcher."/>
+	<Item infoTextID="274" infoText="Les éviter."/>
+	<Item infoTextID="275" infoText="Veuillez sélectionner la cible à attaquer !"/>
+	<Item infoTextID="276" infoText="Veuillez sélectionner la cible sur qui utiliser la magie !"/>
+	<Item infoTextID="277" infoText="Vous choisissez de ne pas utiliser la magie pour cacher votre identité de sorcière."/>
+	<Item infoTextID="278" infoText="À chaque fois que vous éliminez un ennemi vivant, la sorcière absorbe son énergie vitale. Cette énergie recharge la pierre d'âme et restaure les PV de la sorcière."/>
+	<Item infoTextID="279" infoText="Vous pouvez utiliser une corde pour descendre. Descendre avec la corde ?"/>
+	<Item infoTextID="280" infoText="Utiliser la corde pour descendre."/>
+	<Item infoTextID="281" infoText="Ne pas descendre avec la corde."/>
+	<Item infoTextID="282" infoText="Vous avez reçu une recette permettant d'améliorer la pierre d'âme de Grand-mère !"/>
+	<Item infoTextID="283" infoText="La capacité d'absorption vitale maximum de la pierre d'âme a augmenté à #power."/>
+	<Item infoTextID="284" infoText="Aider le charretier de Lehert ?"/>
+	<Item infoTextID="285" infoText="Aider le charretier."/>
+	<Item infoTextID="286" infoText="L'ignorer et aller chercher Adri."/>
+	<Item infoTextID="287" infoText="Traverser le trou dans le mur ?"/>
+	<Item infoTextID="288" infoText="Entrer dans le trou."/>
+	<Item infoTextID="289" infoText="Ne pas entrer dans le trou."/>
+	<Item infoTextID="290" infoText="#armedak$^n[Arme combinant la puissance de l'épée et de la magie de soutien]"/>
+	<Item infoTextID="291" infoText="Quelle relique voulez-vous obtenir ?"/>
+	<Item infoTextID="292" infoText="#wand_levgato$^n[Arme focalisée sur la puissance magique]"/>
+	<Item infoTextID="293" infoText="#dominique$^n[Arme focalisée sur les attaques à l'épée]"/>
+	<Item infoTextID="294" infoText="Chercher le passage secret qui mène vers la chambre des reliques familiales à partir de la chambre d'Adri."/>
+	<Item infoTextID="295" infoText="Adrian veut en savoir plus sur la cachette."/>
+	<Item infoTextID="296" infoText="Ma maison se trouve au centre de la forêt."/>
+	<Item infoTextID="297" infoText="Je ne peux pas te le dire."/>
+	<Item infoTextID="298" infoText="Partir avec Adrian ?"/>
+	<Item infoTextID="299" infoText="Suivre Adrian immédiatement."/>
+	<Item infoTextID="300" infoText="Visiter la maison d'Adrian après s'être préparé."/>
+	<Item infoTextID="301" infoText="MAG temporairement augmentée de #power !"/>
+	<Item infoTextID="302" infoText="FOR temporairement augmentée de #power !"/>
+	<Item infoTextID="303" infoText="Injection d'énergie vitale supplémentaire terminée !"/>
+	<Item infoTextID="304" infoText="Action"/>
+	<Item infoTextID="305" infoText="Attendre"/>
+	<Item infoTextID="306" infoText="PV insuffisants !"/>
+	<Item infoTextID="307" infoText="Cette technique d'épéiste n'a pas encore été maîtrisée. Vous pouvez vous entraîner en sélectionnant « Entraînement à l'épée » dans la liste d'entraînement.&quot;&quot; Entraînement possible lorsque les PV max sont supérieurs à #power."/>
+	<Item infoTextID="308" infoText="[Nouvelle compétence à l'épée]^n^n#num attaques en série"/>
+	<Item infoTextID="309" infoText="Impossible de s'échapper !"/>
+	<Item infoTextID="312" infoText="Charger la sauvegarde automatique"/>
+	<Item infoTextID="314" infoText="Vaincu au combat !"/>
+	<Item infoTextID="315" infoText="Les animaux gardiens bloquent la route."/>
+	<Item infoTextID="316" infoText="Combattre les animaux gardiens."/>
+	<Item infoTextID="317" infoText="Partir."/>
+	<Item infoTextID="318" infoText="Adri est différent.^nJe lui fais confiance."/>
+	<Item infoTextID="319" infoText="Aucun humain n'est digne de confiance."/>
+	<Item infoTextID="320" infoText="Quelle décision allez-vous prendre ?"/>
+	<Item infoTextID="321" infoText="Niveau d'épéiste magique"/>
+	<Item infoTextID="322" infoText="Coût en mana : #power"/>
+	<Item infoTextID="323" infoText="Cette technique d'épéiste magique n'a pas encore été maîtrisée. Vous pouvez vous entraîner en sélectionnant « Étude de la magie » dans la liste d'entraînement.&quot;&quot; Entraînement possible lorsque la MAG est supérieure à #power."/>
+	<Item infoTextID="324" infoText="Vous pouvez vous entraîner en sélectionnant « Étude des livres de magie » dans la liste d'entraînement après avoir atteint le niveau d'épéiste maximum (7 attaques en série) et si votre MAG est supérieure à #power.&quot;&quot;"/>
+	<Item infoTextID="325" infoText="L'effet Absorption vitale durera #num fois."/>
+	<Item infoTextID="326" infoText="L'effet Absorption vitale s'est dissipé."/>
+	<Item infoTextID="327" infoText="L'effet Épée magique durera #num fois."/>
+	<Item infoTextID="328" infoText="L'effet Épée magique s'est dissipé."/>
+	<Item infoTextID="329" infoText="L'effet Explosion magique unique durera #num fois."/>
+	<Item infoTextID="330" infoText="L'effet Explosion magique unique s'est dissipé."/>
+	<Item infoTextID="331" infoText="L'effet Explosion magique massive durera #num fois."/>
+	<Item infoTextID="332" infoText="L'effet Explosion magique massive s'est dissipé."/>
+	<Item infoTextID="333" infoText="Nombre d'effets d'Épée magique restants : #num"/>
+	<Item infoTextID="334" infoText="Nombre d'effets d'Absorption vitale restants : #num"/>
+	<Item infoTextID="335" infoText="Nombre d'effets Explosion magique unique restants : #num"/>
+	<Item infoTextID="336" infoText="Nombre d'effets d'Explosion magique massive restants : #num"/>
+	<Item infoTextID="337" infoText="[Nouvel entraînement d'épéiste magique]"/>
+	<Item infoTextID="338" infoText="* Épée magique^nVous pouvez imbiber votre épée avec votre magie pour renforcer vos attaques et attaquer les ennemis à distance."/>
+	<Item infoTextID="339" infoText="* Absorption vitale^nVous pouvez absorber des PV proportionnellement aux dégâts infligés à l'ennemi."/>
+	<Item infoTextID="340" infoText="* Explosion magique unique^nApplique une marque magique sur les blessures de l'ennemi, qui explosent et infligent des dégâts magiques proportionnels à votre MAG."/>
+	<Item infoTextID="341" infoText="* Résidu magique^nReproduit le sort d'attaque utilisé précédemment sur l'ennemi pour provoquer plusieurs explosions magiques, dont la puissance est réduite de moitié. Les dégâts sont plus élevés durant la première attaques et diminuent au fil du temps."/>
+	<Item infoTextID="342" infoText="* Ecarr Vertel^nUtilise tous vos PV et PM pour vaincre l'ennemi. Les dégâts sont proportionnels à vos PV et PM actuels."/>
+	<Item infoTextID="343" infoText="Nv. d'épéiste magique #step"/>
+	<Item infoTextID="344" infoText="Nv. d'épéiste #step"/>
+	<Item infoTextID="345" infoText="Nv. d'étude de la magie #step"/>
+	<Item infoTextID="346" infoText="Nv. d'étude de l'artisanat #step"/>
+	<Item infoTextID="347" infoText="#weapon équipé"/>
+	<Item infoTextID="348" infoText="Meilleur"/>
+	<Item infoTextID="349" infoText="Compétence Épéiste magique non apprise"/>
+	<Item infoTextID="350" infoText="&lt;Étude de la magie&gt;^n^nSi votre MAG a atteint un certain stade, vous pouvez augmenter votre niveau de recherche via &quot;l'Étude de la magie&quot; dans la liste d'entraînement. Vous pouvez obtenir de nouvelles formules magiques à chaque niveau gagné, et le Bouclier magique que vous recevez au début du combat sera plus résistant.^n(Nv. actuel : #num / Nv. max : 7)"/>
+	<Item infoTextID="351" infoText="&lt;Épéiste&gt;^n^nSi vos PV max ont atteint un certain stade, vous pouvez augmenter votre niveau d'épéiste via l'Entraînement à l'épée dans la liste d'entraînement.&quot;&quot; Le nombre de séries d'attaques à l'épée augmenteront à chaque fois que vous montez en niveau.^n(Nv. actuel : #num / Nv. max : 7)"/>
+	<Item infoTextID="352" infoText="&lt;Épéiste magique&gt;^n^nCette technique permet d'utiliser vos armes pour infliger des dégâts physiques et magiques simultanément. Vous pouvez attaquer plusieurs ennemis avec une puissante attaque à l'épée. Si votre MAG a atteint un certain stade, vous pouvez débloquer cette technique via la Fabrication de magie dans la liste d'entraînement.(Nv. actuel : #num / Nv. max : 5)&quot;&quot;^n"/>
+	<Item infoTextID="353" infoText="&lt;Étude de l'artisanat&gt;^n^nSi votre moyenne de statistiques a atteint un certain stade, vous pouvez augmenter votre niveau d'artisanat via l'Étude de l'artisanat dans la liste d'entraînement.&quot;&quot; Vous pouvez obtenir de nouvelles recettes d'outils à chaque fois que vous montez en niveau.^n(Nv. actuel : #num / Nv. max : 7)"/>
+	<Item infoTextID="354" infoText="Nv. #step"/>
+	<Item infoTextID="355" infoText="Condition de déverrouillage :"/>
+	<Item infoTextID="356" infoText="aucune"/>
+	<Item infoTextID="357" infoText="MAG 40 ou plus"/>
+	<Item infoTextID="358" infoText="MAG #power ou plus"/>
+	<Item infoTextID="359" infoText="PV max #power ou plus"/>
+	<Item infoTextID="360" infoText="MAG 120 ou plus"/>
+	<Item infoTextID="361" infoText="MAG 160 ou plus, PM 300 ou plus"/>
+	<Item infoTextID="362" infoText="MAG 220 ou plus, PM 600 ou plus"/>
+	<Item infoTextID="363" infoText="#power % de MAG"/>
+	<Item infoTextID="364" infoText="Réduit #power % du coût en mana"/>
+	<Item infoTextID="365" infoText="Effets :"/>
+	<Item infoTextID="366" infoText="Effet magique total augmenté de #power %"/>
+	<Item infoTextID="367" infoText="Effectuer une série de #num attaques à l'épée et infliger des dégâts multiples aux ennemis."/>
+	<Item infoTextID="368" infoText="Atteindre #power MAG et^nle niveau d'épéiste max (nv. 7)"/>
+	<Item infoTextID="369" infoText="Nouvelle formule de Cercle magique obtenue !"/>
+	<Item infoTextID="370" infoText="Cette cible est trop loin pour être attaquée directement."/>
+	<Item infoTextID="371" infoText="FOR +#power %"/>
+	<Item infoTextID="372" infoText="MAG +#power %"/>
+	<Item infoTextID="373" infoText="DEF +#power %"/>
+	<Item infoTextID="374" infoText="AGI +#power %"/>
+	<Item infoTextID="375" infoText="Encouragements de Lara"/>
+	<Item infoTextID="376" infoText="Journal"/>
+	<Item infoTextID="377" infoText="DÉF temporairement augmentée de #power % !"/>
+	<Item infoTextID="378" infoText="AGI temporairement augmentée de #power % !"/>
+	<Item infoTextID="379" infoText="Une puissante vague de froid émane du sol."/>
+	<Item infoTextID="380" infoText="Descendre."/>
+	<Item infoTextID="381" infoText="Ne pas descendre."/>
+	<Item infoTextID="382" infoText="Choisissez votre destination."/>
+	<Item infoTextID="383" infoText="Vous pouvez vous rendre dans une autre zone avec le Cercle de téléportation magique."/>
+	<Item infoTextID="384" infoText="Or"/>
+	<Item infoTextID="385" infoText="Ingrédients"/>
+	<Item infoTextID="386" infoText="Moyenne de toutes les statistiques #power ou plus"/>
+	<Item infoTextID="387" infoText="Moyenne de tous les statistiques"/>
+	<Item infoTextID="388" infoText="Nouvelle recette d'outil obtenue !"/>
+	<Item infoTextID="389" infoText="Je ne sais pas."/>
+	<Item infoTextID="390" infoText="Utiliser la clé de Grand-mère ?"/>
+	<Item infoTextID="391" infoText="Utiliser la clé pour ouvrir la porte."/>
+	<Item infoTextID="392" infoText="Ne pas l'utiliser."/>
+	<Item infoTextID="393" infoText="Porte du sous-sol"/>
+	<Item infoTextID="394" infoText="Récoltez 700 points d'énergie vitale dans votre pierre d'âme. Vous pouvez généralement absorber plus d'énergie vitale sur les humains que sur les monstres."/>
+	<Item infoTextID="395" infoText="Nouvelles recettes obtenues : pierre d'âme rouge et pierre d'âme bleue."/>
+	<Item infoTextID="396" infoText="Qu'allez-vous faire avec Velita ?"/>
+	<Item infoTextID="397" infoText="Dévorer son âme."/>
+	<Item infoTextID="398" infoText="La laisser partir."/>
+	<Item infoTextID="399" infoText="Récoltez #num débris d'âme"/>
+	<Item infoTextID="400" infoText="Cette pierre d'âme ne contient aucune énergie vitale."/>
+	<Item infoTextID="401" infoText="#power PV et PM restaurés avec la pierre d'âme."/>
+	<Item infoTextID="402" infoText="&lt;Utiliser la pierre d'âme&gt;^n^nLa pierre d'âme peut être utilisée en combat à partir du niveau 2. Utiliser la pierre d'âme en combat consommera toute l'énergie vitale qu'elle contient et restaurera vos PV et PM en conséquence."/>
+	<Item infoTextID="403" infoText="Veuillez choisir une action."/>
+	<Item infoTextID="404" infoText="Aller dans l'eau."/>
+	<Item infoTextID="405" infoText="Ne pas aller dans l'eau."/>
+	<Item infoTextID="406" infoText="Vous pouvez maintenant invoquer une nouvelle poupée."/>
+	<Item infoTextID="407" infoText="Toutes les statistiques ont augmenté de #power %."/>
+	<Item infoTextID="408" infoText="Vous pouvez invoquer jusqu'à 3 poupées en combat."/>
+	<Item infoTextID="409" infoText="Une nouvelle destination a été ajoutée à la Liste de téléportation."/>
+	<Item infoTextID="410" infoText="Le développement de l'Ancien bâton de Revgato est terminé."/>
+	<Item infoTextID="411" infoText="Vous avez débloqué une nouvelle magie !"/>
+	<Item infoTextID="412" infoText="Judith a donné le livre à Johannes."/>
+	<Item infoTextID="413" infoText="Êtes-vous prêt à attaquer le château de Shubeth ?"/>
+	<Item infoTextID="414" infoText="Partir maintenant."/>
+	<Item infoTextID="415" infoText="Continuer les préparations."/>
+	<Item infoTextID="416" infoText="Johannes a donné le Nid des dragons à Monnet."/>
+	<Item infoTextID="417" infoText="Tous les événements majeurs de l'histoire seront enregistrés dans le Journal de la sorcière."/>
+	<Item infoTextID="418" infoText="Histoires et objectifs^nCes documents contiennent des indices sur la direction que prendra l'histoire de la sorcière."/>
+	<Item infoTextID="419" infoText="Aller récolter les objets."/>
+	<Item infoTextID="420" infoText="Suivez la flèche et rendez-vous vers la Forêt occidentale."/>
+	<Item infoTextID="421" infoText="&lt;Récolte d'objets&gt;^n^nVous pouvez récolter des objets en vous approchant des points brillants. Les objets récoltés vous seront utiles durant votre aventure. Vous pouvez les utiliser directement ou créer de nouveaux objets en les combinant."/>
+	<Item infoTextID="422" infoText="Appuyez sur le menu d'exploration dans la partie supérieure gauche pour consulter l'état de votre exploration."/>
+	<Item infoTextID="423" infoText="Appuyez sur l'icône Maison du menu d'exploration pour utiliser le sort Retour."/>
+	<Item infoTextID="424" infoText="&lt;Retour rapide à la maison&gt;"/>
+	<Item infoTextID="425" infoText="&lt;Absorption d'énergie vitale de la pierre d'âme&gt;"/>
+	<Item infoTextID="426" infoText="Bouton du menu d'exploration"/>
+	<Item infoTextID="427" infoText="Bouton du sort Retour"/>
+	<Item infoTextID="428" infoText="La pierre d'âme contient actuellement 50 points d'énergie vitale."/>
+	<Item infoTextID="429" infoText="50 points d'énergie vitale sont nécessaires pour éveiller cette poupée."/>
+	<Item infoTextID="430" infoText="Éveillez la poupée !"/>
+	<Item infoTextID="431" infoText="Grâce au Chaudron magique, vous pouvez créer de nouveaux objets ou sorts de magie en utilisant des ingrédients magiques."/>
+	<Item infoTextID="432" infoText="Le « CM d'amélioration mineur » est un Cercle magique de soutien."/>
+	<Item infoTextID="433" infoText="Appuyez sur le bouton Cercle magique de soutien."/>
+	<Item infoTextID="434" infoText="&lt;Combinaison magique&gt;^n^nLes Cercles magiques pouvant être insérés dans un emplacement sont divisés en 2 types : Le Cercle magique principal et le Cercle magique de soutien.^n^nLe Cercle magique principal détermine l'attribut magique.^nLe Cercle magique de soutien améliore les effets du CM principal.^n^nIl existe 2 types de soutien : « CM d'amélioration », qui améliore les effets magiques et « CM de concentration » qui réduit le coût en PM."/>
+	<Item infoTextID="435" infoText="Cercle magique principal"/>
+	<Item infoTextID="436" infoText="Cercle magique d'amélioration"/>
+	<Item infoTextID="437" infoText="Cercle magique de concentration"/>
+	<Item infoTextID="438" infoText="La magie a été améliorée !"/>
+	<Item infoTextID="439" infoText="&lt;Attaques en série&gt;^nVous avez appris une nouvelle techniques d'Attaques en série via l'entraînement. Vous pouvez infliger plus de dégâts aux ennemis en utilisant la magie de feu suivie par des attaques en série."/>
+	<Item infoTextID="440" infoText="Vous pouvez enregistrer ou charger la sauvegarde actuelle en utilisant le journal."/>
+	<Item infoTextID="441" infoText="Vous pouvez sauvegarder la progression en appuyant sur Enregistrer une sauvegarde, et l'arrière-plan deviendra rouge."/>
+	<Item infoTextID="442" infoText="Vous pouvez charger la progression en appuyant sur Charger une sauvegarde, et l'arrière-plan deviendra bleu."/>
+	<Item infoTextID="443" infoText="Les attaques en série infligent plus de dégâts à l'ennemi."/>
+	<Item infoTextID="444" infoText="En combinant les séries d'attaques à la magie de feu, vous pouvez infliger des dégâts supplémentaires à l'ennemi."/>
+	<Item infoTextID="445" infoText="Commencez par utiliser la magie de feu."/>
+	<Item infoTextID="446" infoText="Utilisez une série de 2 attaques.^nCela consommera vos PV, mais Emilia vous aidera à récupérer."/>
+	<Item infoTextID="447" infoText="Utilisez une série d'attaques.^nL'ennemi subira plus de dégâts s'il est affecté par l'effet Brûlure."/>
+	<Item infoTextID="448" infoText="Objectif"/>
+	<Item infoTextID="449" infoText="&lt;Temps d'attente après avoir utilisé un objet&gt;^n^nUtiliser un objet en combat entraîne un temps d'attente moins élevé que d'autres actions (attaque, magie, etc.) Après avoir utilisé un objet, votre tour reviendra plus rapidement qu'en utilisant d'autres actions."/>
+	<Item infoTextID="450" infoText="Consulter l'Encyclopédie magique^n^nOuvrez le menu d'exploration pour consulter l'Encyclopédie magique. Vous pouvez vérifier les ingrédients dont vous avez besoin pour fabriquer un objet, même pendant l'exploration."/>
+	<Item infoTextID="451" infoText="Bouton Encyclopédie magique"/>
+	<Item infoTextID="452" infoText="DEF +#power"/>
+	<Item infoTextID="453" infoText="Aptitude de récupération de PV +#power"/>
+	<Item infoTextID="454" infoText="Garde désactivée"/>
+	<Item infoTextID="455" infoText="Récupération de PV +#power"/>
+	<Item infoTextID="456" infoText="Récupération de PM +#power"/>
+	<Item infoTextID="457" infoText="Aptitude de récupération de PM +#power"/>
+	<Item infoTextID="458" infoText="&lt;Défense&gt;^n^nVous pouvez améliorer votre défense en utilisant l'option d'entraînement « Pompes ». À partir du nv. 1 de Défense, vous pouvez utiliser l'option Garde en combat. En utilisant la Garde, vous vous défendrez jusqu'au prochain tour. Pendant cette période, votre DÉF augmentera et vous régénérerez vos PV et PM sans utiliser d'objets. Plus votre niveau de Défense est élevé, plus votre tour reviendra rapidement."/>
+	<Item infoTextID="459" infoText="&lt;Nv. de Défense : #num&gt;^n^nCondition d'apprentissage : DÉF #power ou plus"/>
+	<Item infoTextID="460" infoText="^n[Actif jusqu'au prochain tour]^n- DÉF +#power %^n- Récupération de PV et PM #rPower %"/>
+	<Item infoTextID="461" infoText="Nv. de Défense #step"/>
+	<Item infoTextID="462" infoText="Nv. de Défense atteint #step"/>
+	<Item infoTextID="463" infoText="&lt;Garde&gt;^n^nVous avez appris à utiliser l'aptitude Garde en combat. La Garde permet de récupérer vos PV et PM sans utiliser d'objets. Plus votre niveau de Défense est élevé, plus votre taux de DÉF et de récupération augmenteront, et plus votre tour reviendra rapidement."/>
+	<Item infoTextID="464" infoText="Charger la sauvegarde #num ?"/>
+	<Item infoTextID="465" infoText="Performance de combat"/>
+	<Item infoTextID="466" infoText="Vous possédez déjà ce Cercle magique. Après avoir créé un Cercle magique, vous pouvez utiliser dans plusieurs emplacements."/>
+	<Item infoTextID="467" infoText="Commercer avec le marchand"/>
+	<Item infoTextID="468" infoText="Acheter"/>
+	<Item infoTextID="469" infoText="Vendre"/>
+	<Item infoTextID="470" infoText="Prix :"/>
+	<Item infoTextID="471" infoText="Dans l'inventaire :"/>
+	<Item infoTextID="472" infoText="#num"/>
+	<Item infoTextID="473" infoText="Quantité achetée :"/>
+	<Item infoTextID="474" infoText="Vous pouvez échanger au moins 1 objet."/>
+	<Item infoTextID="475" infoText="Vous pouvez échanger jusqu'à 100 objets à la fois."/>
+	<Item infoTextID="476" infoText="Quantité à vendre :"/>
+	<Item infoTextID="477" infoText="Acheter les objets pour #count or ?"/>
+	<Item infoTextID="478" infoText="Vendre les objets pour #count or ?"/>
+	<Item infoTextID="479" infoText="Or insuffisant."/>
+	<Item infoTextID="480" infoText="Achat terminé !"/>
+	<Item infoTextID="481" infoText="Vente terminée !"/>
+	<Item infoTextID="482" infoText="Cet objet ne peut pas être vendu !"/>
+	<Item infoTextID="483" infoText="Ceci est la quantité maximum que vous pouvez vendre."/>
+	<Item infoTextID="484" infoText="Que voulez-vous faire ?"/>
+	<Item infoTextID="485" infoText="Parler au marchand."/>
+	<Item infoTextID="486" infoText="Commercer."/>
+	<Item infoTextID="487" infoText="Rien."/>
+	<Item infoTextID="488" infoText="Chevaucher la poupée - AGI +#power %"/>
+	<Item infoTextID="489" infoText="Chevaucher la poupée - DÉF +#power %"/>
+	<Item infoTextID="490" infoText="Chevaucher la poupée - FOR +#power %"/>
+	<Item infoTextID="491" infoText="Une nouvelle poupée a été ajoutée à la Chambre des marionnettes."/>
+	<Item infoTextID="492" infoText="&lt;Chevaucher une poupée&gt;^n^nVous pouvez chevaucher les poupées durant l'exploration ou en combat. Chevaucher une poupée vous permet de vous déplacer plus rapidement et affecte votre AGI en combat."/>
+	<Item infoTextID="493" infoText="&lt;Chapitre #num - Quête terminée&gt;"/>
+	<Item infoTextID="494" infoText="Nouvelle quête de chapitre"/>
+	<Item infoTextID="495" infoText="Quête de chapitre terminée"/>
+	<Item infoTextID="496" infoText="Quête échouée"/>
+	<Item infoTextID="497" infoText="Le Cercle magique principal détermine l'attribut magique."/>
+	<Item infoTextID="498" infoText="Le Cercle magique de soutien améliore l'effet du CM principal."/>
+	<Item infoTextID="499" infoText="Le temps s'est écoulé. Session d'entraînement +1"/>
+	<Item infoTextID="500" infoText="Vous pouvez obtenir des sessions d'entraînement supplémentaires au fil du temps en achevant des objectifs ou des quêtes.^n(#num % restant avant la prochaine session d'entraînement)"/>
+	<Item infoTextID="501" infoText="Donner la Griffe de l'Ancien dragon à Za'rrel ?"/>
+	<Item infoTextID="502" infoText="Oui"/>
+	<Item infoTextID="503" infoText="Non"/>
+	<Item infoTextID="504" infoText="Le temps s'écoulera durant l'exploration et les combats. Vous pourrez effectuer 1 session d'entraînement après un certain temps."/>
+	<Item infoTextID="505" infoText="Veuillez consulter le menu d'exploration pour vérifier le temps restant avant la prochaine session."/>
+	<Item infoTextID="506" infoText="Information obtenue"/>
+	<Item infoTextID="507" infoText="L'information n'a pas encore été obtenue."/>
+	<Item infoTextID="508" infoText="Aucune information n'a été obtenue."/>
+	<Item infoTextID="509" infoText="L'arme équipée a été améliorée."/>
+	<Item infoTextID="510" infoText="Accepter la requête et éliminer la Compagnie noire ?"/>
+	<Item infoTextID="511" infoText="Accepter"/>
+	<Item infoTextID="512" infoText="Refuser"/>
+	<Item infoTextID="513" infoText="Commencer le combat contre la Compagnie noire ?"/>
+	<Item infoTextID="514" infoText="Commencer le combat"/>
+	<Item infoTextID="515" infoText="S'enfuir"/>
+	<Item infoTextID="516" infoText="Donner la Gemme rouge à Judith ?"/>
+	<Item infoTextID="517" infoText="Donner"/>
+	<Item infoTextID="518" infoText="Ne pas donner"/>
+	<Item infoTextID="519" infoText="Carte du continent de Derkarr"/>
+	<Item infoTextID="520" infoText="Ouest : Forêt brumeuse^nNord : Village de Shubeth^nEst : Camp de mercenaires de Shubeth^nSud : Village de Lehert"/>
+	<Item infoTextID="521" infoText="Ouest : Mont Shubeth"/>
+	<Item infoTextID="522" infoText="Est : Camp de mercenaires de Shubeth - Est"/>
+	<Item infoTextID="523" infoText="Sud : Route de Derkarr^nNord : Route de Shubeth"/>
+	<Item infoTextID="524" infoText="Sud-ouest"/>
+	<Item infoTextID="525" infoText="Nord : Village de Lehert^nEst : Temple de Morell^nSud-est : Village de Ziv"/>
+	<Item infoTextID="526" infoText="Ouest : Village de Ziv^nNord-est : Village de Lehert"/>
+	<Item infoTextID="527" infoText="Sud : Fontaine de Revgato^nNord : Village de Shubeth"/>
+	<Item infoTextID="528" infoText="Gauche : Entrée du château de Shubeth^nDroite : Entrée du village de Shubeth, Queue de dragon"/>
+	<Item infoTextID="529" infoText="Nord : Chateau de Shubeth, village de Shubeth^nOuest : Vallée du dragon^nEst : Camp de mercenaires de Shubeth, Caldaria^nSud : Fontaine de Revgato"/>
+	<Item infoTextID="530" infoText="Gauche : Entrée du château de Shubeth^nDroite : Entrée du village de Shubeth, Queue de dragon"/>
+	<Item infoTextID="531" infoText="Ouest : Porte orientale du village de Shubeth^nSud : Lehert-reed"/>
+	<Item infoTextID="532" infoText="Nord : Route de Shubeth^nSud : Route de Derkarr"/>
+	<Item infoTextID="533" infoText="Fontaine de Morell - Entrée"/>
+	<Item infoTextID="534" infoText="Nord :Lehert-reed^nOuest : Camp de mercenaires de Lehert^nSud : Désert de Lehert, village de Ziv"/>
+	<Item infoTextID="535" infoText="Nord :Lehert-reed^nSud : Désert de Lehert, village de Ziv"/>
+	<Item infoTextID="536" infoText="Nord : Ravin de Derkarr"/>
+	<Item infoTextID="537" infoText="Sud : Jetée^nOuest : Fontaine de Marii"/>
+	<Item infoTextID="538" infoText="Fontaine de Marii, entrée de la Forêt de Marii"/>
+	<Item infoTextID="539" infoText="Nord : Ravin de Derkarr, village de Shubeth^nOuest : Fontaine de Marii^nEst : Village de Ziv"/>
+	<Item infoTextID="540" infoText="Ouest : Route de Derkarr, Fontaine de Marii^nEst : Désert de Lehert"/>
+	<Item infoTextID="541" infoText="Ouest : Route de Derkarr, Fontaine de Marii, Jetée"/>
+	<Item infoTextID="542" infoText="Est : Wardilum^nSud : Village de Lehert"/>
+	<Item infoTextID="543" infoText="Poursuivre les voleurs qui se cachent dans la mine ?"/>
+	<Item infoTextID="544" infoText="Les poursuivre"/>
+	<Item infoTextID="545" infoText="L'ignorer"/>
+	<Item infoTextID="546" infoText="Monter sur le tas de rochers ?"/>
+	<Item infoTextID="547" infoText="Monter"/>
+	<Item infoTextID="548" infoText="Ne pas monter"/>
+	<Item infoTextID="549" infoText="Zones explorées"/>
+	<Item infoTextID="550" infoText="Descendre de monture"/>
+	<Item infoTextID="551" infoText="Vous êtes descendu de la poupée !"/>
+	<Item infoTextID="552" infoText="Bouclier magique - Dégâts subis réduits de #power %"/>
+	<Item infoTextID="553" infoText="* Coup de grâce^nUne technique d'épéiste unique à Za'rrel Shubetha. Cette technique vous permet d'assaillir l'ennemi après l'avoir affaibli en absorbant son énergie. La puissance de cette technique dépend entièrement de votre FOR."/>
+	<Item infoTextID="554" infoText="Nécessite #num tours pour activer le Coup de grâce."/>
+	<Item infoTextID="555" infoText="L'action est exécutée après #num tours."/>
+	<Item infoTextID="556" infoText="Il n'y a aucune trace d'énergie magique. Utilisez d'abord la magie."/>
+	<Item infoTextID="557" infoText="Cette technique d'épéiste magique a déjà été utilisée !"/>
+	<Item infoTextID="558" infoText="&lt;Cercle de téléportation magique&gt;^n^nLa sorcière peut se téléporter dans une autre zone avec le Cercle de téléportation magique. La zone actuelle sera ajoutée dans la Liste de téléportation lorsque vous vous approcherez de ce cercle magique."/>
+	<Item infoTextID="559" infoText="&lt;Magie de glace&gt;^n^nLa magie de glace est moins puissante que la magie de feu, mais elle consomme peu de PM. De plus, elle peut geler les ennemis et les ralentir pour que le tour de la sorcière arrive plus rapidement.^nDe plus, le Bouclier magique généré après avoir utilisé cette magie est le plus puissant de tous les attributs."/>
+	<Item infoTextID="560" infoText="&lt;Magie de foudre&gt;^n^nLa magie de foudre est la plus puissante magie parmi tous les attributs. Il cumule des dégâts supplémentaires et, lorsque ces dégâts dépassent un certain montant, l'ennemi sera étourdi.^nCependant, l'utilisation répétée de la magie de foudre augmente le coût en PM à chaque nouveau sort. Le Bouclier magie est le moins puissant de tous les attributs."/>
+	<Item infoTextID="561" infoText="Liste d'entraînement chargée : #num."/>
+	<Item infoTextID="562" infoText="L'enregistrement de la Liste d'entraînement a été désactivé."/>
+	<Item infoTextID="563" infoText="Liste d'entraînement ##num"/>
+	<Item infoTextID="564" infoText="&lt;Enregistrement de la Liste d'entraînement&gt;^n^nAppuyez sur le bouton Liste d'entraînement à gauche pour charger une liste prédéfinie. Placez les entraînements tant que le bouton est maintenu pour que cette Liste d'entraînement soit automatiquement sauvegardée à cet emplacement. Pour désactiver la sauvegarde, appuyez de nouveau sur le bouton.^n^nUtilisez cette fonction pour vous entraîner plus rapidement."/>
+	<Item infoTextID="565" infoText="(Portée : #num)"/>
+	<Item infoTextID="566" infoText="&lt;Augmenter l'AGI en chassant&gt;^n^nChasser un animal rapide durant l'exploration peut augmenter votre AGI. Cependant, il existe une limite d'augmentation pour chaque animal."/>
+	<Item infoTextID="567" infoText="Nouvel objectif"/>
+	<Item infoTextID="568" infoText="Objectif atteint"/>
+	<Item infoTextID="569" infoText="Tous les objets ont été vendus."/>
+	<Item infoTextID="570" infoText="Accessoires modifiés."/>
+	<Item infoTextID="571" infoText="L'accessoire est déjà utilisé."/>
+	<Item infoTextID="572" infoText="* Unir^nCette attaque magique absorbe l'énergie de la terre et peut être utilisée sans aucun coût en PM. Au fil du temps, l'énergie que vous récoltez augmente considérablement. Vous pouvez récolter de l'énergie jusqu'à trois fois."/>
+	<Item infoTextID="573" infoText="Commencer à récolter l'énergie de la terre."/>
+	<Item infoTextID="574" infoText="Vous avez accumulé #power points d'énergie en utilisant Unir. Continuer à récolter l'énergie ?"/>
+	<Item infoTextID="575" infoText="Tirez avec la sphère d'Unir (énergie : #power)."/>
+	<Item infoTextID="576" infoText="Amélioration de l'âme : #num restants."/>
+	<Item infoTextID="577" infoText="Donner la Coquille de Mullet au marchand ?"/>
+	<Item infoTextID="578" infoText="Oui"/>
+	<Item infoTextID="579" infoText="Non"/>
+	<Item infoTextID="580" infoText="Que voulez-vous faire du renard du désert mort ?"/>
+	<Item infoTextID="581" infoText="Le prendre"/>
+	<Item infoTextID="582" infoText="Le laisser"/>
+	<Item infoTextID="583" infoText="Vous avez renvoyé le Renardeau du désert mort chez lui."/>
+	<Item infoTextID="584" infoText="Brad a soif."/>
+	<Item infoTextID="585" infoText="Lui offrir de l'eau"/>
+	<Item infoTextID="586" infoText="L'ignorer"/>
+	<Item infoTextID="587" infoText="Posez des questions pour trouver le mari disparu."/>
+	<Item infoTextID="588" infoText="Aller chercher la personne disparue"/>
+	<Item infoTextID="589" infoText="L'ignorer"/>
+	<Item infoTextID="590" infoText="Le déplacement en mode écran tactile a été activé !"/>
+	<Item infoTextID="591" infoText="Le déplacement en mode manette virtuelle a été activé !"/>
+	<Item infoTextID="592" infoText="Se déplacer avec l'écran tactile"/>
+	<Item infoTextID="593" infoText="Se déplacer avec la manette virtuelle"/>
+	<Item infoTextID="594" infoText="Les illustrations débloquées durant la partie^nseront affichées ici."/>
+	<Item infoTextID="595" infoText="Statistiques insuffisantes pour équiper cet objet."/>
+	<Item infoTextID="596" infoText="Impossible d'invoquer une poupée ici !"/>
+	<Item infoTextID="597" infoText="Tout"/>
+	<Item infoTextID="598" infoText="Équipement"/>
+	<Item infoTextID="599" infoText="Consommables"/>
+	<Item infoTextID="600" infoText="Autre"/>
+	<Item infoTextID="601" infoText="Sauvegarde du journal"/>
+	<Item infoTextID="602" infoText="Vous n'êtes pas connecté au service Google Play Games. Voulez-vous vous connecter ?"/>
+	<Item infoTextID="603" infoText="Connexion"/>
+	<Item infoTextID="604" infoText="Déconnexion"/>
+	<Item infoTextID="605" infoText="Vous n'êtes pas actuellement connecté."/>
+	<Item infoTextID="606" infoText="Vous avez été déconnecté du service Google Play Games."/>
+	<Item infoTextID="607" infoText="La déconnexion a échoué. Veuillez réessayer."/>
+	<Item infoTextID="608" infoText="Vous êtes connecté au service Google Play Games."/>
+	<Item infoTextID="609" infoText="Toutes les sauvegardes de votre Journal actuellement sur votre appareil seront réinitialisées. Les sauvegardes de votre Journal enregistrées en ligne seront téléchargées sur votre appareil. Cette action ne peut pas être annulée. Continuer ?"/>
+	<Item infoTextID="610" infoText="Aucune sauvegarde du Journal ne peut être mise en ligne."/>
+	<Item infoTextID="611" infoText="Attendez quelques instants."/>
+	<Item infoTextID="612" infoText="Échec de connexion. Veuillez réessayer."/>
+	<Item infoTextID="613" infoText="Exploits"/>
+	<Item infoTextID="614" infoText="Sauvegarde en ligne du Journal"/>
+	<Item infoTextID="615" infoText="Lire le Journal en ligne"/>
+	<Item infoTextID="616" infoText="Aucune sauvegarde du Journal n'a été trouvée en ligne."/>
+	<Item infoTextID="617" infoText="Votre Journal a été sauvegardé en ligne."/>
+	<Item infoTextID="618" infoText="Votre Journal a été téléchargé depuis la sauvegarde en ligne. Redémarrage du jeu."/>
+	<Item infoTextID="619" infoText="Échec du chargement du Journal sauvegardé en ligne. Veuillez réessayer."/>
+	<Item infoTextID="620" infoText="L'Ancien dragon vous avertit."/>
+	<Item infoTextID="621" infoText="S'enfuir"/>
+	<Item infoTextID="622" infoText="Tenter de lui parler"/>
+	<Item infoTextID="623" infoText="#power ou plus"/>
+	<Item infoTextID="624" infoText="#power % de MAG + proportionnel à vos PV et PM actuels"/>
+	<Item infoTextID="625" infoText="Le jeu doit être redémarré pour appliquer les paramètres de langue."/>
+	<Item infoTextID="626" infoText="Retourner à l'écran titre ?"/>
+	<Item infoTextID="627" infoText="Voulez-vous vraiment quitter le jeu ?"/>
+	<Item infoTextID="628" infoText="Commencer une nouvelle partie ?"/>
+	<Item infoTextID="629" infoText="Chevaucher une monture réduit les dégâts subis de #power %"/>
+	<Item infoTextID="630" infoText="DÉF + #power %"/>
+	<Item infoTextID="631" infoText="Échec de sauvegarde du Journal. Veuillez réessayer."/>
+	<Item infoTextID="632" infoText="&lt;Achèvement des quêtes&gt;^n^nAchever une quête durant le chapitre où cette quête est disponible accélèrera le passage du temps et permettra d'obtenir plus de sessions d'entraînement."/>
+	<Item infoTextID="633" infoText="Temps écoulé : #num %"/>
+	<Item infoTextID="634" infoText="Vous ne pouvez invoquer qu'une seule poupée par tour."/>
+	<Item infoTextID="635" infoText="Sac de combat de Hector équipé.&quot;&quot;"/>
+	<Item infoTextID="636" infoText="La prochaine fois, vous pourrez utiliser l'outil."/>
+	<Item infoTextID="637" infoText="Vous pouvez exécuter la prochaine action immédiatement."/>
+	<Item infoTextID="638" infoText="&lt;Équipement supplémentaire&gt;^n^nVous pouvez équiper des objets supplémentaires pour obtenir des effets spéciaux en combat. Vous pouvez retrouver ces objets dans la catégorie Inventaire de l'onglet Équipement.&quot;&quot;"/>
+	<Item infoTextID="639" infoText="Propriétés magiques"/>
+	<Item infoTextID="640" infoText="Emplacements"/>
+	<Item infoTextID="641" infoText="&lt;Magie de feu&gt;^n^nLa magie de feu est l'attribut le plus équilibré. Elle applique un effet de Brûlure sur les ennemis qui inflige des dégâts à chaque tour et lorsqu'ils sont attaqués. Les dégâts supplémentaires sont proportionnels à la MAG du lanceur."/>
+	<Item infoTextID="642" infoText="&lt;Bouclier magique&gt;^n^nUne sphère protectrice qui réduit les dégâts subis, soit au début du combat, soit en utilisant la magie. L'efficacité du bouclier diminue au fil du temps. L'efficacité du Bouclier magique augmente selon le niveau d'Étude de la magie ou selon le niveau du sort utilisé."/>
+	<Item infoTextID="643" infoText="Bouclier magique"/>
+	<Item infoTextID="644" infoText="Adrian vous attend sur le mont Shubeth."/>
+	<Item infoTextID="645" infoText="Pour continuer, vous devez enregistrer une sauvegarde après l'illustration de fin."/>
+	<Item infoTextID="646" infoText="Déplacez la manette virtuelle à l'emplacement voulu !"/>
+	<Item infoTextID="647" infoText="Changer de costume."/>
+	<Item infoTextID="648" infoText="Vous portez déjà ce costume."/>
+	<Item infoTextID="649" infoText="Vous ne pouvez pas changer de costume ici."/>
+	<Item infoTextID="650" infoText="Suivre Judith sur l'île de Mahnil ?"/>
+	<Item infoTextID="651" infoText="Suivre Judith"/>
+	<Item infoTextID="652" infoText="Ne pas suivre Judith"/>
+	<Item infoTextID="653" infoText="Injecter l'énergie vitale dans la poupée ?"/>
+	<Item infoTextID="654" infoText="Injecter l'énergie vitale"/>
+	<Item infoTextID="655" infoText="Ne pas injecter l'énergie vitale"/>
+	<Item infoTextID="656" infoText="C'est une lettre de Grand-mère. Voulez-vous la lire ?"/>
+	<Item infoTextID="657" infoText="Lire la lettre de Grand-mère ?"/>
+	<Item infoTextID="658" infoText="Lire la lettre."/>
+	<Item infoTextID="659" infoText="Ne pas lire la lettre."/>
+	<Item infoTextID="660" infoText="Ne pas utiliser la technique d'épéiste."/>
+	<Item infoTextID="661" infoText="Participer à l'Épreuve de patience ?"/>
+	<Item infoTextID="662" infoText="Relever le défi."/>
+	<Item infoTextID="663" infoText="Ne pas relever le défi."/>
+	<Item infoTextID="664" infoText="Se rendre dans la prison du château de Shubeth ?"/>
+	<Item infoTextID="665" infoText="Y aller."/>
+	<Item infoTextID="666" infoText="Ne pas y aller."/>
+	<Item infoTextID="667" infoText="Se rendre dans le Laboratoire souterrain ?"/>
+	<Item infoTextID="668" infoText="Donner le métal rare doré à Za'rrel ?"/>
+	<Item infoTextID="669" infoText="Oui."/>
+	<Item infoTextID="670" infoText="Non."/>
+	<Item infoTextID="671" infoText="* Pluie de lames^nConsomme 15 % de vos PV pour déchaîner une série de 16 coups consécutifs en un seul tour. Ne peut être lancé que si Pinerame est équipée."/>
+	<Item infoTextID="672" infoText="À partir d'ici, vous commencerez le mode « Suite de l'histoire »."/>
+	<Item infoTextID="673" infoText="C'est un contenu supplémentaire disponible gratuitement. Vous pouvez découvrir des histoires, des costumes et des objet supplémentaires ainsi que des boss bonus à la fin de l'histoire principale."/>
+</ItemList>

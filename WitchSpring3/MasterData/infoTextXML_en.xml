@@ -1,0 +1,674 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ItemList>
+	<Item infoTextID="0" infoText="-"/>
+	<Item infoTextID="1" infoText="&lt;Push-Up&gt;^nBasic strength exercise. You will get STR 3% up, DEF 1% up."/>
+	<Item infoTextID="2" infoText="&lt;Punching&gt;^nExercise to train basic agility and physical strength. You will get STR 2% up, AGI 1% up."/>
+	<Item infoTextID="3" infoText="&lt;Running&gt;^nBasic physical exercise. You will get HP 3% up."/>
+	<Item infoTextID="4" infoText="&lt;Sword Training&gt;^nYou will get HP 1% up, AGI 2% up. You can start practicing a new technique once you reach a certain HP or Swordsmanship level."/>
+	<Item infoTextID="5" infoText="&lt;Magic Research&gt;^nStudy magic by reading books. You will get MAG 1% up, MP 2% up after studying. New magic recipes will be discovered occasionally."/>
+	<Item infoTextID="6" infoText="&lt;Crafting Research&gt;^nStudy magic crafting. You will get MP 3% up after studying. New tool recipes will be discovered occasionally."/>
+	<Item infoTextID="7" infoText="&lt;Magic Shaping&gt;^nTrain to put magic power in a certain shape and density. You will get MAG 2% up, MP 1% up after training."/>
+	<Item infoTextID="8" infoText="&lt;Magic Burst&gt;^nTrain to blast magic power for as long as possible. You will get MAG 1% up, MP 1% up, HP 1% up after training."/>
+	<Item infoTextID="9" infoText="Day #num"/>
+	<Item infoTextID="10" infoText="Schedule Training"/>
+	<Item infoTextID="11" infoText="Start"/>
+	<Item infoTextID="12" infoText="Start Training -"/>
+	<Item infoTextID="13" infoText="HP"/>
+	<Item infoTextID="14" infoText="MP"/>
+	<Item infoTextID="15" infoText="MAG"/>
+	<Item infoTextID="16" infoText="STR"/>
+	<Item infoTextID="17" infoText="AGI"/>
+	<Item infoTextID="18" infoText="DEF"/>
+	<Item infoTextID="19" infoText="-"/>
+	<Item infoTextID="20" infoText="-"/>
+	<Item infoTextID="21" infoText="Training in progress... [#name]"/>
+	<Item infoTextID="22" infoText="Training Completed!"/>
+	<Item infoTextID="23" infoText="Push-up"/>
+	<Item infoTextID="24" infoText="Punching"/>
+	<Item infoTextID="25" infoText="Running"/>
+	<Item infoTextID="26" infoText="Sword Training"/>
+	<Item infoTextID="27" infoText="Magic Book Research"/>
+	<Item infoTextID="28" infoText="Crafting Research"/>
+	<Item infoTextID="29" infoText="Magic Shaping Training"/>
+	<Item infoTextID="30" infoText="Magic Burst Training"/>
+	<Item infoTextID="31" infoText="Leave the house?"/>
+	<Item infoTextID="32" infoText="Yes"/>
+	<Item infoTextID="33" infoText="No"/>
+	<Item infoTextID="34" infoText="Would you like to sleep?"/>
+	<Item infoTextID="35" infoText="Fill out the training schedule!"/>
+	<Item infoTextID="36" infoText="OK"/>
+	<Item infoTextID="37" infoText="Inventory"/>
+	<Item infoTextID="38" infoText="Favorite Items"/>
+	<Item infoTextID="39" infoText="All Items"/>
+	<Item infoTextID="40" infoText="No item in inventory."/>
+	<Item infoTextID="41" infoText="No item set as Favorite."/>
+	<Item infoTextID="42" infoText="Press item to use it immediately"/>
+	<Item infoTextID="43" infoText="Use"/>
+	<Item infoTextID="44" infoText="Current HP"/>
+	<Item infoTextID="45" infoText="Current MP"/>
+	<Item infoTextID="46" infoText="Set as frequently used item"/>
+	<Item infoTextID="47" infoText="A new FIRE magic recipe has been added to the magic encyclopedia!"/>
+	<Item infoTextID="48" infoText="A new LIGHTNING magic recipe has been added to the magic encyclopedia!"/>
+	<Item infoTextID="49" infoText="A new ICE magic recipe has been added to the magic encyclopedia!"/>
+	<Item infoTextID="50" infoText="A new item recipe has been added to the magic encyclopedia!"/>
+	<Item infoTextID="51" infoText="This magic encyclopedia has already been added!"/>
+	<Item infoTextID="52" infoText="Change costume."/>
+	<Item infoTextID="53" infoText="Already wearing this costume."/>
+	<Item infoTextID="54" infoText="You may not camp here."/>
+	<Item infoTextID="55" infoText="Weapon changed."/>
+	<Item infoTextID="56" infoText="Equipment is already in use."/>
+	<Item infoTextID="57" infoText="HP is already full."/>
+	<Item infoTextID="58" infoText="HP recovered by #power."/>
+	<Item infoTextID="59" infoText="MP is already full."/>
+	<Item infoTextID="60" infoText="MP recovered by #power."/>
+	<Item infoTextID="61" infoText="Max HP decreased by #power."/>
+	<Item infoTextID="62" infoText="Max MP decreased by #power."/>
+	<Item infoTextID="63" infoText="Max HP increased by #power!"/>
+	<Item infoTextID="64" infoText="MAG increased by #power!"/>
+	<Item infoTextID="65" infoText="Max MP increased by #power!"/>
+	<Item infoTextID="66" infoText="STR increased by #power!"/>
+	<Item infoTextID="67" infoText="DEF increased by #power!"/>
+	<Item infoTextID="68" infoText="AGI increased by #power!"/>
+	<Item infoTextID="69" infoText="This item cannot be used now!"/>
+	<Item infoTextID="70" infoText="Item removed from Favorite Items list."/>
+	<Item infoTextID="71" infoText="Item added to Favorite Items list."/>
+	<Item infoTextID="72" infoText="You can add up to 5 items to the Favorite Items list."/>
+	<Item infoTextID="73" infoText="Item Quantity : #num"/>
+	<Item infoTextID="74" infoText="No item in inventory!"/>
+	<Item infoTextID="75" infoText="Magic Pot"/>
+	<Item infoTextID="76" infoText="Craft Quantity :"/>
+	<Item infoTextID="77" infoText="Magic Encyclopedia"/>
+	<Item infoTextID="78" infoText="Unable to create a duplicate item!"/>
+	<Item infoTextID="79" infoText="Not enough ingredients!"/>
+	<Item infoTextID="80" infoText="&lt;Where to Find&gt;"/>
+	<Item infoTextID="81" infoText="Tool"/>
+	<Item infoTextID="82" infoText="Special Tool"/>
+	<Item infoTextID="83" infoText="Main Magic Circle"/>
+	<Item infoTextID="84" infoText="Supportive Magic Circle"/>
+	<Item infoTextID="85" infoText="Supportive Magic Circle"/>
+	<Item infoTextID="86" infoText="Start Crafting"/>
+	<Item infoTextID="87" infoText="Unknown"/>
+	<Item infoTextID="88" infoText="You can create up to 9 at a time."/>
+	<Item infoTextID="89" infoText="There is no recipe to craft. Collect recipes!"/>
+	<Item infoTextID="90" infoText="Go home?"/>
+	<Item infoTextID="91" infoText="Leave House"/>
+	<Item infoTextID="92" infoText="Magic Pot"/>
+	<Item infoTextID="93" infoText="Magic Book"/>
+	<Item infoTextID="94" infoText="Sleep Cushion"/>
+	<Item infoTextID="95" infoText="Inventory"/>
+	<Item infoTextID="96" infoText="Eirudy feels threatened! Would you like to start a battle?"/>
+	<Item infoTextID="97" infoText="Physical Defense"/>
+	<Item infoTextID="98" infoText="Magic Defense"/>
+	<Item infoTextID="99" infoText="FIRE"/>
+	<Item infoTextID="100" infoText="LIGHT"/>
+	<Item infoTextID="101" infoText="ICE"/>
+	<Item infoTextID="102" infoText="Neutral Attack"/>
+	<Item infoTextID="103" infoText="Cure"/>
+	<Item infoTextID="104" infoText="Dark"/>
+	<Item infoTextID="105" infoText="Drag the magic icon to the middle slot!"/>
+	<Item infoTextID="106" infoText="Damage :"/>
+	<Item infoTextID="107" infoText="Healing rate :"/>
+	<Item infoTextID="108" infoText="Not enough MP!"/>
+	<Item infoTextID="109" infoText="Mana cost :"/>
+	<Item infoTextID="110" infoText="Please select the target!"/>
+	<Item infoTextID="111" infoText="Target has been deselected."/>
+	<Item infoTextID="112" infoText="Please equip Main Magic Circle(△) first!"/>
+	<Item infoTextID="113" infoText="Magic effect boost + 10%"/>
+	<Item infoTextID="114" infoText="Magic effect boost 5%^nMana cost 7% down"/>
+	<Item infoTextID="115" infoText="Mana cost 15% down"/>
+	<Item infoTextID="116" infoText="Main Slot"/>
+	<Item infoTextID="117" infoText="Secondary Slot"/>
+	<Item infoTextID="118" infoText="Supportive Slot"/>
+	<Item infoTextID="119" infoText="This magic cannot be used now!"/>
+	<Item infoTextID="120" infoText="Press the slot in the center to use magic."/>
+	<Item infoTextID="121" infoText="Combine Magic Circles"/>
+	<Item infoTextID="122" infoText="Slot is empty."/>
+	<Item infoTextID="123" infoText="SUPPORT"/>
+	<Item infoTextID="124" infoText="OTHER"/>
+	<Item infoTextID="125" infoText="Doll Storage"/>
+	<Item infoTextID="126" infoText="Go downstairs to the Doll Storage?"/>
+	<Item infoTextID="127" infoText="Wake a Doll"/>
+	<Item infoTextID="128" infoText="Vitality needed : "/>
+	<Item infoTextID="129" infoText="Wake a Doll"/>
+	<Item infoTextID="130" infoText="Not enough Vitality in the Soul Stone"/>
+	<Item infoTextID="131" infoText="Doll successfully awakened!"/>
+	<Item infoTextID="132" infoText="Inject More Vitality"/>
+	<Item infoTextID="133" infoText="Go upstairs?"/>
+	<Item infoTextID="134" infoText="Ladder"/>
+	<Item infoTextID="135" infoText="No dolls have been awakened."/>
+	<Item infoTextID="136" infoText="Doll List"/>
+	<Item infoTextID="137" infoText="Summon Doll"/>
+	<Item infoTextID="138" infoText="This doll can only be summoned during battles."/>
+	<Item infoTextID="139" infoText="Within the blue range, tap where you want to summon the doll!"/>
+	<Item infoTextID="140" infoText="This doll is already in use for the battle."/>
+	<Item infoTextID="141" infoText="You can not summon a doll in that location."/>
+	<Item infoTextID="142" infoText="The location overlaps with the master!"/>
+	<Item infoTextID="143" infoText="Physical Defense"/>
+	<Item infoTextID="144" infoText="Magic Defense"/>
+	<Item infoTextID="145" infoText="SFX ON"/>
+	<Item infoTextID="146" infoText="SFX OFF"/>
+	<Item infoTextID="147" infoText="Settings"/>
+	<Item infoTextID="148" infoText="BGM ON"/>
+	<Item infoTextID="149" infoText="BGM OFF"/>
+	<Item infoTextID="150" infoText="Battle Encyclopedia"/>
+	<Item infoTextID="151" infoText="New^nGame"/>
+	<Item infoTextID="152" infoText="Touch the door to leave the house."/>
+	<Item infoTextID="153" infoText="Touch the terrain to move the witch.^nYou can change control settings from the Options."/>
+	<Item infoTextID="154" infoText="Tap the wand icon to use magic."/>
+	<Item infoTextID="155" infoText="Attack with sword for the finishing blow!"/>
+	<Item infoTextID="156" infoText="Filled Soul Stone with Vitality."/>
+	<Item infoTextID="157" infoText="Fill Soul Stone +#power"/>
+	<Item infoTextID="158" infoText="Use the ladder to go down to the Doll Storage."/>
+	<Item infoTextID="159" infoText="&lt;Summon Doll&gt;^n^n'Doll' button has been added to the combat menu. Awakened dolls can be summoned and used in battles. However, you can only summon 1 doll per turn, and up to 3 dolls throughout the battle."/>
+	<Item infoTextID="160" infoText="Move towards the wild boar."/>
+	<Item infoTextID="161" infoText="Move towards the monster on the hilltop!"/>
+	<Item infoTextID="162" infoText="Tap the Magic Pot to craft a new magic circle."/>
+	<Item infoTextID="163" infoText="You can combine magic circles here."/>
+	<Item infoTextID="164" infoText="Main Magic Circle' and 'Supportive Magic Circle' are the two main types of magic circles."/>
+	<Item infoTextID="165" infoText="The 'Lesser Boost MC' is a 'Supportive Magic Circle'."/>
+	<Item infoTextID="166" infoText="Tap 'Supportive' and look for the 'Lesser Boost MC' you just crafted."/>
+	<Item infoTextID="167" infoText="Drag the Boost MC to the slot in the center."/>
+	<Item infoTextID="168" infoText="If you're running low on HP, sleep to get your HP and MP fully restored."/>
+	<Item infoTextID="169" infoText="Press the floor cushion to sleep."/>
+	<Item infoTextID="170" infoText="Summon a doll."/>
+	<Item infoTextID="171" infoText="Combat"/>
+	<Item infoTextID="172" infoText="Dodge"/>
+	<Item infoTextID="173" infoText="Challenge the Golem in the Western Misty Forest!"/>
+	<Item infoTextID="174" infoText="Tap the center of house to train."/>
+	<Item infoTextID="175" infoText="You can schedule how to train Eirudy on a five-day basis."/>
+	<Item infoTextID="176" infoText="Below are the training icons.^nTap each icon to see description."/>
+	<Item infoTextID="177" infoText="Drag training icons to the day slots to create a training schedule."/>
+	<Item infoTextID="178" infoText="There are 5 day slots total, and you must fill all of these slots to start training."/>
+	<Item infoTextID="179" infoText="Start training by putting at least one 'Sword Training' in the training schedule."/>
+	<Item infoTextID="180" infoText="-"/>
+	<Item infoTextID="181" infoText="To check out items in your possession, check the Inventory."/>
+	<Item infoTextID="182" infoText="Now, let's get out there to catch some monsters!"/>
+	<Item infoTextID="183" infoText="Current Stats"/>
+	<Item infoTextID="184" infoText="After Training"/>
+	<Item infoTextID="185" infoText="End of Witch Spring beta test.^nTap the screen to go to the title screen."/>
+	<Item infoTextID="186" infoText="&lt;Combat Tendency&gt;^nIf you use a lot of magic, your magic attacks will become stronger. Likewise, your sword attacks will become stronger with more sword use. Once your combat tendency becomes completely one-sided, you will gain up to 18% extra attack bonus."/>
+	<Item infoTextID="187" infoText="After a certain amount of time, the enemy you fought here will reappear.^n[#power %]"/>
+	<Item infoTextID="188" infoText="Collection items are being regenerated.^n[#power %]"/>
+	<Item infoTextID="189" infoText="Middle slot has been reset."/>
+	<Item infoTextID="190" infoText="#slot has been reset."/>
+	<Item infoTextID="191" infoText="Find the traces of wild boar!"/>
+	<Item infoTextID="192" infoText="Load^nMoment"/>
+	<Item infoTextID="193" infoText="Continue"/>
+	<Item infoTextID="194" infoText="Show footsteps of the witch."/>
+	<Item infoTextID="195" infoText="To Title Screen"/>
+	<Item infoTextID="196" infoText="Witch's Journal"/>
+	<Item infoTextID="197" infoText="No goals to display."/>
+	<Item infoTextID="198" infoText="A new entry has been recorded in the Witch's Journal."/>
+	<Item infoTextID="199" infoText="New item added to inventory."/>
+	<Item infoTextID="200" infoText="New data has been recorded in the Battle Encyclopedia."/>
+	<Item infoTextID="201" infoText="Today is the Day #day of writing a journal."/>
+	<Item infoTextID="202" infoText="Day #day"/>
+	<Item infoTextID="203" infoText="#days days have passed."/>
+	<Item infoTextID="204" infoText="New Goal"/>
+	<Item infoTextID="205" infoText="Goal Achieved"/>
+	<Item infoTextID="206" infoText="Achieving a new goal will give you additional opportunity for training."/>
+	<Item infoTextID="207" infoText="Skip footsteps of the witch."/>
+	<Item infoTextID="208" infoText="Show goals."/>
+	<Item infoTextID="209" infoText="Skip goals."/>
+	<Item infoTextID="210" infoText="Read Witch's Journal"/>
+	<Item infoTextID="211" infoText="Record/Load Moment"/>
+	<Item infoTextID="212" infoText="Record Moment"/>
+	<Item infoTextID="213" infoText="Load Moment"/>
+	<Item infoTextID="214" infoText="Empty entry"/>
+	<Item infoTextID="215" infoText="It's an empty entry!"/>
+	<Item infoTextID="216" infoText="There is already a record in entry #num. Delete previous record and replace it with the record of current moment? Previous record will be lost."/>
+	<Item infoTextID="217" infoText="Load record from entry #num? Unsaved memory will be lost."/>
+	<Item infoTextID="218" infoText="Are you sure you want to delete record from entry #num? Deleted record will be lost permanently."/>
+	<Item infoTextID="219" infoText="Moment recorded in entry #num!"/>
+	<Item infoTextID="220" infoText="Deleted record from entry #num."/>
+	<Item infoTextID="221" infoText="Play time : #times"/>
+	<Item infoTextID="222" infoText="CHAPTER 1^nMarionette Witch"/>
+	<Item infoTextID="223" infoText="CHAPTER 2^nWitch Who Gives Life"/>
+	<Item infoTextID="224" infoText="CHAPTER 3^nSavior On The Run"/>
+	<Item infoTextID="225" infoText="CHAPTER 4^nDark Path"/>
+	<Item infoTextID="226" infoText="CHAPTER 5^nWitch Astray"/>
+	<Item infoTextID="227" infoText="CHAPTER 4^nTri-Caliber"/>
+	<Item infoTextID="228" infoText="CHAPTER 5^nThe Last Cup"/>
+	<Item infoTextID="229" infoText="CHAPTER 8"/>
+	<Item infoTextID="230" infoText="CHAPTER 9"/>
+	<Item infoTextID="231" infoText="CHAPTER 10"/>
+	<Item infoTextID="232" infoText="CHAPTER 11"/>
+	<Item infoTextID="233" infoText="CHAPTER 12"/>
+	<Item infoTextID="234" infoText="Enter the save title.^n (up to 30 characters, optional)"/>
+	<Item infoTextID="235" infoText="Cancel"/>
+	<Item infoTextID="236" infoText="Special characters cannot be used for the title!"/>
+	<Item infoTextID="237" infoText="You can write up to 30 characters for the title!"/>
+	<Item infoTextID="238" infoText="Loading saved moment..."/>
+	<Item infoTextID="239" infoText="Go into the hole inside?"/>
+	<Item infoTextID="240" infoText="Go into the hole."/>
+	<Item infoTextID="241" infoText="No..."/>
+	<Item infoTextID="242" infoText="A new goal has been added to the Witch's Journal. Every time you achieve a goal, you can restart training."/>
+	<Item infoTextID="243" infoText="You got the doll back."/>
+	<Item infoTextID="244" infoText="You achieved a goal! The number of times you can train has been increased by 1."/>
+	<Item infoTextID="245" infoText="Loading the last autosaved moment..."/>
+	<Item infoTextID="246" infoText="Current moment has been saved automatically."/>
+	<Item infoTextID="247" infoText="No autosave data available!"/>
+	<Item infoTextID="248" infoText="Training List"/>
+	<Item infoTextID="249" infoText="*Doll has reached Max level."/>
+	<Item infoTextID="250" infoText="-"/>
+	<Item infoTextID="251" infoText="Field Menu"/>
+	<Item infoTextID="252" infoText="Requires #need%^nof total MP to summon"/>
+	<Item infoTextID="253" infoText="You need #need of total MP to summon a doll!"/>
+	<Item infoTextID="254" infoText="Craft a new magic circle at home with the magic ingredients you just got!"/>
+	<Item infoTextID="255" infoText="Training #num times available"/>
+	<Item infoTextID="256" infoText="Magic Attributes^n^nThere are 4 types of magic attacks: Fire, Lightning, Ice, and Neutral. Damage and Mana cost of fire magic is average among all attributes. As an additional effect, it burns and gives your enemy damage over time. Lightning magic usually requires more MP than other magic, but it is the most powerful attribute that can give the most damage. It accumulates damage to the enemy as an additional effect, and once the cumulative damage exceeds a certain amount the enemy is stunned. Ice magic has relatively low Mana cost. It can slow down enemy actions."/>
+	<Item infoTextID="257" infoText="Types of Magic Circle^n^nMain Magic Circle and Supportive Magic Circle are the 2 types of magic circles which can be combined with each other. Main MC decides the type of magic, the Boost Support MC boosts the magic's effect, and Focus Support MC reduces the Mana cost."/>
+	<Item infoTextID="258" infoText="About Magic"/>
+	<Item infoTextID="259" infoText="Combat Tendency^n^nIf you use more magic than sword in combats, your magic proficiency will be increased, adding additional damage to basic magic damage. On the other hand, if you use sword more than magic in combats, additional damage will be added to your sword attacks. You can check your combat tendency in the Stats menu."/>
+	<Item infoTextID="260" infoText="Magic Tendency effect #power%"/>
+	<Item infoTextID="261" infoText="Sword Tendency effect #power%"/>
+	<Item infoTextID="262" infoText="Wild Boar's HP is low. Just give it a swing!"/>
+	<Item infoTextID="263" infoText="-"/>
+	<Item infoTextID="264" infoText="Consumes #power HP"/>
+	<Item infoTextID="265" infoText="Insufficient HP for sword attack!"/>
+	<Item infoTextID="266" infoText="Swordsmanship"/>
+	<Item infoTextID="267" infoText="Magic Sword Support^n^nEnemy on fire will get burn damage every time their turn comes around, or every time they are attacked. At this point, a serial sword attacks can deal a lot of damage to the enemy.^nWhen the enemy gets stunned due to electrification, their DEF will drop to 0. At this point, a serial sword attacks can deal a lot of damage to the enemy.^nWhen the enemy gets frozen, their movements will slow down. At this point, you can either give additional damage by using magic of different attribute or attack with sword multiple times."/>
+	<Item infoTextID="268" infoText="And you can see the new or achieved goals in the Witch's Journal."/>
+	<Item infoTextID="269" infoText="When you encounter a new enemy, information about the enemy is added to the Battle Encyclopedia."/>
+	<Item infoTextID="270" infoText="#num more training count added"/>
+	<Item infoTextID="271" infoText="Something feels empty around the house!"/>
+	<Item infoTextID="272" infoText="You see a group of lizards. What will you do?"/>
+	<Item infoTextID="273" infoText="Approach."/>
+	<Item infoTextID="274" infoText="Avoid."/>
+	<Item infoTextID="275" infoText="Please select the target to attack!"/>
+	<Item infoTextID="276" infoText="Please choose a target to use magic on!"/>
+	<Item infoTextID="277" infoText="You choose not to use magic to hide your identity as a witch."/>
+	<Item infoTextID="278" infoText="Every time you defeat an enemy with life, the witch takes Vitality from the enemy. The collected vitality recharges the Soul Stone, and restores the witch's HP."/>
+	<Item infoTextID="279" infoText="There is a rope that you can use to go down. Climb down the rope?"/>
+	<Item infoTextID="280" infoText="Climb down the rope."/>
+	<Item infoTextID="281" infoText="Don't climb down the rope."/>
+	<Item infoTextID="282" infoText="Received a recipe for improving Soul Stone from Grandmother!"/>
+	<Item infoTextID="283" infoText="Max capacity of the Soul Stone for absorbing life has increased to #power."/>
+	<Item infoTextID="284" infoText="Help the Lehert wagon driver?"/>
+	<Item infoTextID="285" infoText="Help the wagon driver."/>
+	<Item infoTextID="286" infoText="Just hurry and go look for Adri."/>
+	<Item infoTextID="287" infoText="Go through the hole in the wall?"/>
+	<Item infoTextID="288" infoText="Go into the hole."/>
+	<Item infoTextID="289" infoText="Don't go into the hole."/>
+	<Item infoTextID="290" infoText="#armedak$^n[Weapon with Sword Attack Power + Supportive Magic Power]"/>
+	<Item infoTextID="291" infoText="Which present would you like to choose?"/>
+	<Item infoTextID="292" infoText="#wand_levgato$^n[Weapon focused on Magic Power]"/>
+	<Item infoTextID="293" infoText="#dominique$^n[Weapon focused on Sword Attack Power]"/>
+	<Item infoTextID="294" infoText="Look for the secret passage that leads to the Heirloom Chamber from Adri's room."/>
+	<Item infoTextID="295" infoText="Adrian wants to know about the hideout."/>
+	<Item infoTextID="296" infoText="My house is in the middle of the Misty Forest."/>
+	<Item infoTextID="297" infoText="I can't tell you."/>
+	<Item infoTextID="298" infoText="Go with Adrian now?"/>
+	<Item infoTextID="299" infoText="Follow Adrian immediately."/>
+	<Item infoTextID="300" infoText="Visit Adrian's house directly after getting ready."/>
+	<Item infoTextID="301" infoText="MAG temporarily increases by #power!"/>
+	<Item infoTextID="302" infoText="STR temporarily increases by #power!"/>
+	<Item infoTextID="303" infoText="Additional Vitality injection complete!"/>
+	<Item infoTextID="304" infoText="Action"/>
+	<Item infoTextID="305" infoText="Wait"/>
+	<Item infoTextID="306" infoText="Insufficient HP!"/>
+	<Item infoTextID="307" infoText="Swordsmanship technique not yet mastered. You can practice by choosing &quot;Sword Training&quot; from Training List. Can be practiced when Max HP is higher than #power."/>
+	<Item infoTextID="308" infoText="[ New Sword Skill ]^n^n#num serial attack(s)"/>
+	<Item infoTextID="309" infoText="Unable to escape now!"/>
+	<Item infoTextID="312" infoText="Load autosaved moment"/>
+	<Item infoTextID="314" infoText="Defeated in battle!"/>
+	<Item infoTextID="315" infoText="Guardian animals are blocking the way."/>
+	<Item infoTextID="316" infoText="Fight the guardian animals."/>
+	<Item infoTextID="317" infoText="Go back."/>
+	<Item infoTextID="318" infoText="Adri is different.^nI trust Adri."/>
+	<Item infoTextID="319" infoText="No human can be trusted."/>
+	<Item infoTextID="320" infoText="Which path do you choose?"/>
+	<Item infoTextID="321" infoText="Magic Swordsmanship"/>
+	<Item infoTextID="322" infoText="Mana cost : #power"/>
+	<Item infoTextID="323" infoText="Magic Swordsmanship technique not yet mastered. You can practice by choosing &quot;Magic Research&quot; from Training List. Can be practiced when MAG is higher than #power."/>
+	<Item infoTextID="324" infoText="You can practice it through &quot;Magic Book Research&quot; from Training List when you have reached maximum swordsmanship level (7 serial attacks) and MAG is higher than #power."/>
+	<Item infoTextID="325" infoText="Absorbing Blade effect will last for #num times."/>
+	<Item infoTextID="326" infoText="Absorbing Blade effect is gone."/>
+	<Item infoTextID="327" infoText="Magic Blade effect will last for #num times."/>
+	<Item infoTextID="328" infoText="Magic Blade effect is gone."/>
+	<Item infoTextID="329" infoText="Single Magic Explosion effect will last for #num times."/>
+	<Item infoTextID="330" infoText="Single Magic Explosion effect is gone."/>
+	<Item infoTextID="331" infoText="Mass Magic Explosion effect will last for #num times."/>
+	<Item infoTextID="332" infoText="Mass Magic Explosion effect is gone."/>
+	<Item infoTextID="333" infoText="Magic Blade effect #num times remaining"/>
+	<Item infoTextID="334" infoText="Absorbing Blade effect #num times remaining"/>
+	<Item infoTextID="335" infoText="Single Magic Explosion effect #num times remaining"/>
+	<Item infoTextID="336" infoText="Mass Magic Explosion effect #num times remaining"/>
+	<Item infoTextID="337" infoText="[New Magic Swordsmanship Training]"/>
+	<Item infoTextID="338" infoText="* Magic Blade^nNot only can you give magic power to your blade and strengthen your attacks, you can also get the enemies in distance."/>
+	<Item infoTextID="339" infoText="* Absorbing Blade^nYou can absorb HP proportional to the amount of damage given to your enemy."/>
+	<Item infoTextID="340" infoText="* Single Magic Explosion^nLeave a magic mark on the enemy's cut would, which will explode and give damage proportional to MAG."/>
+	<Item infoTextID="341" infoText="* Magic Residue^nReproduces the attacking spell that was used immediately before, causing magical explosions that are half as powerful as the previous attack to the enemy. Damage is strongest on the first attack, and gradually decreases over time."/>
+	<Item infoTextID="342" infoText="* Ecarr Vertel^nUse all of your HP and MP to defeat the enemy. Its damage is proportional to your current HP and MP."/>
+	<Item infoTextID="343" infoText="Magic Swordsmanship Lv.#step"/>
+	<Item infoTextID="344" infoText="Swordsmanship Lv.#step"/>
+	<Item infoTextID="345" infoText="Magic Research Lv.#step"/>
+	<Item infoTextID="346" infoText="Crafting Research Lv.#step"/>
+	<Item infoTextID="347" infoText="#weapon equipped"/>
+	<Item infoTextID="348" infoText="Best"/>
+	<Item infoTextID="349" infoText="Magic Swordsmanship not learned"/>
+	<Item infoTextID="350" infoText="&lt;Magic Research&gt;^n^nIf your MAG is above a certain point, you can raise your research level through &quot;Magic Research&quot; from Training List. You can acquire a new magic recipe every time you level up, and the Magic Shield you get at the beginning of the battles become harder.^n(current level #num / Max level 7)"/>
+	<Item infoTextID="351" infoText="&lt;Swordsmanship&gt;^n^nIf your Max HP is above a certain point, you can raise your swordsmanship level through &quot;Sword Training&quot; from Training List. The number of Serial Sword Attacks will increase every time you level up.^n(current level #num / Max level 7)"/>
+	<Item infoTextID="352" infoText="&lt;Magic Swordsmanship&gt;^n^nThis is a technique where you use weapons to attack with both physical and magical powers. You can attack multiple enemies with a stronger sword attack. If your MAG is above a certain point, you can acquire it through &quot;Magic Shaping&quot; from Training List.^n(Current level #num / Max level 5)"/>
+	<Item infoTextID="353" infoText="&lt;Crafting Research&gt;^n^nIf your average stats are above a certain level, you can raise the crafting level through &quot;Crafting Research&quot; from Training List. You can acquire new tool recipes every time you level up.^n(current level #num / Max 7 level)"/>
+	<Item infoTextID="354" infoText="Lv.#step"/>
+	<Item infoTextID="355" infoText="Unlock Condition :"/>
+	<Item infoTextID="356" infoText="none"/>
+	<Item infoTextID="357" infoText="MAG 40 or higher"/>
+	<Item infoTextID="358" infoText="MAG #power or higher"/>
+	<Item infoTextID="359" infoText="Max HP #power or higher"/>
+	<Item infoTextID="360" infoText="MAG 120 or higher"/>
+	<Item infoTextID="361" infoText="MAG 160 or higher, MP 300 or more"/>
+	<Item infoTextID="362" infoText="MAG 220 or higher, MP 600 or more"/>
+	<Item infoTextID="363" infoText="#Power% of MAG"/>
+	<Item infoTextID="364" infoText="Reduces #power% of mana cost"/>
+	<Item infoTextID="365" infoText="Effects :"/>
+	<Item infoTextID="366" infoText="Total magic effect boosted to #power%"/>
+	<Item infoTextID="367" infoText="Swing sword #num times in a single attack and givew multiple damage to enemies."/>
+	<Item infoTextID="368" infoText="Reach MAG #power or higher and^nMax level in Swordsmanship (Lv.7)"/>
+	<Item infoTextID="369" infoText="Obtained new Magic Circle recipe!"/>
+	<Item infoTextID="370" infoText="You can not attack directly because the target is too far away."/>
+	<Item infoTextID="371" infoText="STR #power% up"/>
+	<Item infoTextID="372" infoText="MAG #power% up"/>
+	<Item infoTextID="373" infoText="DEF #power% up"/>
+	<Item infoTextID="374" infoText="AGI #power% up"/>
+	<Item infoTextID="375" infoText="Lara's cheering"/>
+	<Item infoTextID="376" infoText="Diary"/>
+	<Item infoTextID="377" infoText="DEF temporarily rises by #power%!"/>
+	<Item infoTextID="378" infoText="AGI temporarily rises by #power%!"/>
+	<Item infoTextID="379" infoText="A strong chill is creeping up from underground."/>
+	<Item infoTextID="380" infoText="Go down."/>
+	<Item infoTextID="381" infoText="Don't go down."/>
+	<Item infoTextID="382" infoText="Choose your destination."/>
+	<Item infoTextID="383" infoText="You can move to another area through the Teleportation Magic Circle."/>
+	<Item infoTextID="384" infoText="Gold"/>
+	<Item infoTextID="385" infoText="Ingredients"/>
+	<Item infoTextID="386" infoText="Average of all stats #power or higher"/>
+	<Item infoTextID="387" infoText="All stats average"/>
+	<Item infoTextID="388" infoText="Obtained new tool recipe!"/>
+	<Item infoTextID="389" infoText="I don't know."/>
+	<Item infoTextID="390" infoText="Use the key from Grandmother?"/>
+	<Item infoTextID="391" infoText="Use the key to open the door."/>
+	<Item infoTextID="392" infoText="Don't use it."/>
+	<Item infoTextID="393" infoText="Basement door"/>
+	<Item infoTextID="394" infoText="Collect 700 Vitality in your Soul Stone. You can generally absorb more vitality from humans than from monsters."/>
+	<Item infoTextID="395" infoText="Obtained recipe for Red Soul Stone and Blue Soul Stone."/>
+	<Item infoTextID="396" infoText="What will you do with Velita?"/>
+	<Item infoTextID="397" infoText="Eat her soul."/>
+	<Item infoTextID="398" infoText="Let her go."/>
+	<Item infoTextID="399" infoText="Collect #num Soul Debris"/>
+	<Item infoTextID="400" infoText="There is no vitality stored in the Soul Stone."/>
+	<Item infoTextID="401" infoText="Restored #power HP and MP using Soul Stone."/>
+	<Item infoTextID="402" infoText="&lt;Using the Soul Stone&gt;^n^nSoul Stone can be used during combat from Level 2. Using the Soul Stone during a combat will use up all the Vitality stored in it and restore your HP and MP accordingly."/>
+	<Item infoTextID="403" infoText="Please choose an action."/>
+	<Item infoTextID="404" infoText="Go into the water."/>
+	<Item infoTextID="405" infoText="Don't go in."/>
+	<Item infoTextID="406" infoText="You can now summon a new doll."/>
+	<Item infoTextID="407" infoText="All stats have been increased by #power%."/>
+	<Item infoTextID="408" infoText="You can summon up to 3 dolls during battle."/>
+	<Item infoTextID="409" infoText="A new place has been added to the Teleport list."/>
+	<Item infoTextID="410" infoText="The Old Staff of Revgato has been trained."/>
+	<Item infoTextID="411" infoText="Acquired a new magic!"/>
+	<Item infoTextID="412" infoText="Judith turned over the book to Johannes."/>
+	<Item infoTextID="413" infoText="Are you ready to attack Shubeth Castle?"/>
+	<Item infoTextID="414" infoText="Go now."/>
+	<Item infoTextID="415" infoText="Prepare a little more."/>
+	<Item infoTextID="416" infoText="Johannes handed the dragon's nest to Monnet."/>
+	<Item infoTextID="417" infoText="All of the major events that happen to the witch will be recorded in the Witch's Journal."/>
+	<Item infoTextID="418" infoText="Stories and Goals^nThese records are a hint of the path the witch will move forward to."/>
+	<Item infoTextID="419" infoText="Go and collect items."/>
+	<Item infoTextID="420" infoText="Follow the arrow and head towards the Western Forest."/>
+	<Item infoTextID="421" infoText="&lt;Item Collection&gt;^n^nYou can collect items on the field where it sparkles. Collected items will help you to survive. You can use them directly or you can create new items by crafting them together."/>
+	<Item infoTextID="422" infoText="Press the field menu button on the upper left corner to see field menu."/>
+	<Item infoTextID="423" infoText="Press the house icon from field menu to use Return spell."/>
+	<Item infoTextID="424" infoText="&lt;Fast return to home&gt;"/>
+	<Item infoTextID="425" infoText="&lt;Vitality absorption of Soul Stone&gt;"/>
+	<Item infoTextID="426" infoText="Field menu button"/>
+	<Item infoTextID="427" infoText="Return spell button"/>
+	<Item infoTextID="428" infoText="The Soul Stone is currently filled with 50 vitality."/>
+	<Item infoTextID="429" infoText="Vitality required to wake up this doll is 50."/>
+	<Item infoTextID="430" infoText="Wake up the doll!"/>
+	<Item infoTextID="431" infoText="With the Magic Pot, you can create new items or magic using magical ingredients."/>
+	<Item infoTextID="432" infoText="The 'Lesser Boost MC' is a 'Supportive Magic Circle'."/>
+	<Item infoTextID="433" infoText="Press the 'Supportive Magic Circle' button."/>
+	<Item infoTextID="434" infoText="&lt;Magic Combination&gt;^n^nThe types of magic circle to be placed in one slot are classified into two types: 'Main Magic Circle' and 'Supportive Magic Circle'.^n^nThe 'Main Magic Circle' determines the attribute of magic.^n'Supportive Magic Circle' enhances the effect of the Main MC.^n^nThere are 2 types of supportive MC; 'Boost MC' which boosts the effect of magic and 'Focus MC' which reduces MP cost."/>
+	<Item infoTextID="435" infoText="Main Magic Circle"/>
+	<Item infoTextID="436" infoText="Boost Magic Circle"/>
+	<Item infoTextID="437" infoText="Focus Magic Circle"/>
+	<Item infoTextID="438" infoText="Magic has been enhanced!"/>
+	<Item infoTextID="439" infoText="&lt;Use of Serial Attacks&gt;^nYou have learned a new Serial Attack technique through training. You can give more damage to the enemies by using fire magic and then serial attack on them."/>
+	<Item infoTextID="440" infoText="You can record or load the current moment using the diary."/>
+	<Item infoTextID="441" infoText="You can record time by pressing 'Record Moment' and the background will be displayed in red."/>
+	<Item infoTextID="442" infoText="You can load time by pressing 'Load Moment' and the background will be displayed in blue."/>
+	<Item infoTextID="443" infoText="Serial attacks can cause more damage to the enemy."/>
+	<Item infoTextID="444" infoText="When used with fire magic you can inflict additional damage on the enemy."/>
+	<Item infoTextID="445" infoText="First try using Fire magic."/>
+	<Item infoTextID="446" infoText="Try 2 serial attacks.^nYou'll use up a bit of your HP, but Emilia will help you recover."/>
+	<Item infoTextID="447" infoText="Try to serial attack^nnow and it will inflict more damage to the enemy with burn effect."/>
+	<Item infoTextID="448" infoText="Goal"/>
+	<Item infoTextID="449" infoText="&lt;Wait time after using item&gt;^n^nUsing an item during battle is a relatively light action compared to other actions (attack, magic, etc.) So after you use an item, your turn comes back faster than other actions."/>
+	<Item infoTextID="450" infoText="See Magic Encyclopedia^n^nOpen the field menu to see the magic encyclopedia. You can check the ingredients you need for crafting even out in the field."/>
+	<Item infoTextID="451" infoText="Magic Encyclopedia button"/>
+	<Item infoTextID="452" infoText="DEF +#power"/>
+	<Item infoTextID="453" infoText="HP recovery ability +#power"/>
+	<Item infoTextID="454" infoText="Guard off"/>
+	<Item infoTextID="455" infoText="HP recovery +#power"/>
+	<Item infoTextID="456" infoText="MP recovery +#power"/>
+	<Item infoTextID="457" infoText="MP recovery ability +#power"/>
+	<Item infoTextID="458" infoText="&lt;Defense&gt;^n^nYou can improve your defense through 'Push-Up' during training. From Defense Lv.1 you can use 'Guard' during combat. You will defend yourself in 'Guard' posture until the next turn. During this time, your DEF will increase and your HP and MP will be recovered without using items. The higher your Defense level is, the sooner your turn will come back."/>
+	<Item infoTextID="459" infoText="&lt; Defense Lv.#num &gt;^n^nLearning Condition : DEF #power or higher"/>
+	<Item infoTextID="460" infoText="^n[Effective until next turn]^n-DEF #power% up ^n-HP and MP recovery # rPower%"/>
+	<Item infoTextID="461" infoText="Defense Lv.#step"/>
+	<Item infoTextID="462" infoText="Reached Defense Lv.#step"/>
+	<Item infoTextID="463" infoText="&lt;Guard&gt;^n^nYou have learned to use 'Guard' during combats. Guard will recover your HP and MP without using items. If Defense Level is higher, DEF rate and recovery rate will increase, and your turn will come back faster."/>
+	<Item infoTextID="464" infoText="Load record from entry #num?"/>
+	<Item infoTextID="465" infoText="Combat performance"/>
+	<Item infoTextID="466" infoText="You already have this magic circle. Once a magic circle is created, you can use it in multiple different slots."/>
+	<Item infoTextID="467" infoText="Deal with the merchant"/>
+	<Item infoTextID="468" infoText="Buy"/>
+	<Item infoTextID="469" infoText="Sell"/>
+	<Item infoTextID="470" infoText="Price :"/>
+	<Item infoTextID="471" infoText="In Inventory :"/>
+	<Item infoTextID="472" infoText="#num"/>
+	<Item infoTextID="473" infoText="Purchase Quantity :"/>
+	<Item infoTextID="474" infoText="You can trade at least 1."/>
+	<Item infoTextID="475" infoText="You can trade up to 100 at a time."/>
+	<Item infoTextID="476" infoText="Sell Quantity :"/>
+	<Item infoTextID="477" infoText="Buy item(s) with #count Gold?"/>
+	<Item infoTextID="478" infoText="Sell item(s) at #count Gold?"/>
+	<Item infoTextID="479" infoText="Not enough Gold!"/>
+	<Item infoTextID="480" infoText="Purchase Complete!"/>
+	<Item infoTextID="481" infoText="Sale Complete!"/>
+	<Item infoTextID="482" infoText="This item cannot be sold!"/>
+	<Item infoTextID="483" infoText="This is the maximum quantity you can sell."/>
+	<Item infoTextID="484" infoText="What would you like to do with the merchant?"/>
+	<Item infoTextID="485" infoText="Talk to him."/>
+	<Item infoTextID="486" infoText="Trade."/>
+	<Item infoTextID="487" infoText="Do nothing."/>
+	<Item infoTextID="488" infoText="Ride Doll - AGI #power% up"/>
+	<Item infoTextID="489" infoText="Ride Doll - DEF #power% up"/>
+	<Item infoTextID="490" infoText="Ride Doll - STR #power% up"/>
+	<Item infoTextID="491" infoText="A new doll has been added to the Marionette Chamber."/>
+	<Item infoTextID="492" infoText="&lt;Riding a Doll&gt;^n^nYou can use mountable dolls out in the field as well as in battles. It helps you move faster in the field, and affects AGI in battles."/>
+	<Item infoTextID="493" infoText="&lt; CHAPTER #num Quest Complete &gt;"/>
+	<Item infoTextID="494" infoText="New Chapter Quest"/>
+	<Item infoTextID="495" infoText="Chapter Quest Complete"/>
+	<Item infoTextID="496" infoText="Quest overdue"/>
+	<Item infoTextID="497" infoText="Main Magic Circle that determines the attribute of the magic."/>
+	<Item infoTextID="498" infoText="Supportive Magic Circle that enhances the effect of the Main MC."/>
+	<Item infoTextID="499" infoText="Time has elapsed. Training count + 1"/>
+	<Item infoTextID="500" infoText="You can get training counts added over time, or by achieving a new goal or a quest.^n(#num% until the next training count)"/>
+	<Item infoTextID="501" infoText="Give the Claw of Ancient Dragon to Za'rrel?"/>
+	<Item infoTextID="502" infoText="Yes"/>
+	<Item infoTextID="503" infoText="No"/>
+	<Item infoTextID="504" infoText="Time will flow while you explore or fight in battles. Training counts will be added by 1 after a certain amount of time has elapsed."/>
+	<Item infoTextID="505" infoText="Please refer to the Field Menu for the time remaining until the next training count."/>
+	<Item infoTextID="506" infoText="Acquired Info"/>
+	<Item infoTextID="507" infoText="Info has not been acquired yet."/>
+	<Item infoTextID="508" infoText="No info has been acquired yet."/>
+	<Item infoTextID="509" infoText="Equipped weapon has been enhanced."/>
+	<Item infoTextID="510" infoText="Accept request to take down the Dark Company?"/>
+	<Item infoTextID="511" infoText="Accept"/>
+	<Item infoTextID="512" infoText="Decline"/>
+	<Item infoTextID="513" infoText="Start battle with the Dark Company?"/>
+	<Item infoTextID="514" infoText="Start battle"/>
+	<Item infoTextID="515" infoText="Run away"/>
+	<Item infoTextID="516" infoText="Trade the 'Red Gem' with Judith?"/>
+	<Item infoTextID="517" infoText="Trade"/>
+	<Item infoTextID="518" infoText="Don't trade"/>
+	<Item infoTextID="519" infoText="Map of Derkarr Continent"/>
+	<Item infoTextID="520" infoText="West:Misty Forest^nNorth:Shubeth Village^nEast:Shubeth Mercenary Camp^nSouth:Lehert Village"/>
+	<Item infoTextID="521" infoText="West:Mt. Shubeth"/>
+	<Item infoTextID="522" infoText="East:Shubeth Mercenary Camp - East"/>
+	<Item infoTextID="523" infoText="South:Derkarr Road^nNorth:Shubeth Road"/>
+	<Item infoTextID="524" infoText="Southwest"/>
+	<Item infoTextID="525" infoText="North:Lehert Village^nEast:Morell Temple^nSouthwest:Ziv Village"/>
+	<Item infoTextID="526" infoText="West:Ziv Village^nNortheast:Lehert Village"/>
+	<Item infoTextID="527" infoText="South:Spring of Revgato^nNorth:Shubeth Village"/>
+	<Item infoTextID="528" infoText="Left:Shubeth Castle Entrance^nRight:Shubeth Village Entrance, Dragontail"/>
+	<Item infoTextID="529" infoText="North:Shubeth Castle, Shubeth Village^nWest:Dragon Valley^nEast:Shubeth Mercenary Camp, Caldaria^nSouth:Spring of Revgato"/>
+	<Item infoTextID="530" infoText="Shubeth Village Entrance^nDragontail"/>
+	<Item infoTextID="531" infoText="West:Shubeth Village Eastern Gate^nSouth:Lehert-reed"/>
+	<Item infoTextID="532" infoText="North:Shubeth Road^nSouth:Derkarr Road"/>
+	<Item infoTextID="533" infoText="Spring of Morell - Entrance"/>
+	<Item infoTextID="534" infoText="North:Lehert-reed^nWest:Lehert Mercenary Camp^nSouth:Lehert Desert, Ziv Village"/>
+	<Item infoTextID="535" infoText="North:Lehert-reed^nSouth:Lehert Desert, Ziv Village"/>
+	<Item infoTextID="536" infoText="North:Derkarr Gorge"/>
+	<Item infoTextID="537" infoText="South:Pier^nWest:Spring of Marii"/>
+	<Item infoTextID="538" infoText="Spring of Marii, Entrance to Forest of Marii"/>
+	<Item infoTextID="539" infoText="North:Derkarr Gorge, Shubeth Village^nWest:Spring of Marii^nEast:Ziv Village"/>
+	<Item infoTextID="540" infoText="West:Derkarr Road, Spring of Marii^nEast:Lehert Desert"/>
+	<Item infoTextID="541" infoText="West:Derkarr Road, Spring of Marii, Pier"/>
+	<Item infoTextID="542" infoText="East:Wardilum^nSouth:Lehert Village"/>
+	<Item infoTextID="543" infoText="Go after the thieves hiding in the mine?"/>
+	<Item infoTextID="544" infoText="Go after them"/>
+	<Item infoTextID="545" infoText="Ignore"/>
+	<Item infoTextID="546" infoText="Climb up the pile of rocks?"/>
+	<Item infoTextID="547" infoText="Climb up"/>
+	<Item infoTextID="548" infoText="Don't bother"/>
+	<Item infoTextID="549" infoText="Explored Areas"/>
+	<Item infoTextID="550" infoText="Dismount"/>
+	<Item infoTextID="551" infoText="Dismounted from the doll!"/>
+	<Item infoTextID="552" infoText="Magic Shield - Damage #power% down"/>
+	<Item infoTextID="553" infoText="* Deathblow^nZa'rrel Shubetha-only swordsmanship style. It is a skill where you rush to the enemy after collecting energy in a defenseless state during combat. The power of this technique depends solely on STR."/>
+	<Item infoTextID="554" infoText="Focusing for #num turns for the Deathblow."/>
+	<Item infoTextID="555" infoText="Begin action after #num turns."/>
+	<Item infoTextID="556" infoText="There is no trace of magic power. Use magic first."/>
+	<Item infoTextID="557" infoText="This Magic Swordsmanship has already been used!"/>
+	<Item infoTextID="558" infoText="&lt;Teleportation Magic Circle&gt;^n^nThe witch can move to another area with blue Teleportation Magic Circle. Current area will be added to the Teleportation List once you get near this magic circle."/>
+	<Item infoTextID="559" infoText="&lt;Ice Magic&gt;^n^nIce magics are slightly less powerful than Fire magic, but it consumes very little MP. As an additional effect, it freezes the enemy and slow them down so that the witch's turn will come faster.^nAlso, the effect of Magic Shield created after casting is the strongest out of all other attributes."/>
+	<Item infoTextID="560" infoText="&lt;Lightning Magic&gt;^n^nLightning magic is the most powerful of all attributes. It accumulates damage to the enemy, and once the cumulative damage exceeds a certain amount the enemy will become stunned.^nHowever, multiple uses of lightning magic in a single battle will increase MP consumption per cast. It has the least effective Magic Shield of all attributes."/>
+	<Item infoTextID="561" infoText="Loaded Training List saved on #num."/>
+	<Item infoTextID="562" infoText="Training List Registration has been disabled."/>
+	<Item infoTextID="563" infoText="Training List ##num"/>
+	<Item infoTextID="564" infoText="&lt;Training List Registration&gt;^n^nPress the Training List button on the left to load pre-saved Training List. Place Trainings while the button is pressed, and the placed Training List is automatically saved to this button. To disable this, press the button again.^n^nUse this function if you want to train quickly."/>
+	<Item infoTextID="565" infoText="(Range: #num)"/>
+	<Item infoTextID="566" infoText="&lt;Raise AGI by Hunting&gt;^n^nHunting a fast-moving animal in the field could increase your AGI. However, there is a increase limit for each animal."/>
+	<Item infoTextID="567" infoText="New Goal"/>
+	<Item infoTextID="568" infoText="Goal Achieved"/>
+	<Item infoTextID="569" infoText="All items sold."/>
+	<Item infoTextID="570" infoText="Accessories changed."/>
+	<Item infoTextID="571" infoText="Accessory is already in use."/>
+	<Item infoTextID="572" infoText="* Unir^nAttack magic that collects the energy of the earth and uses it with no MP cost. Over time, the energy that you collect increases significantly. You can collect energy up to three times."/>
+	<Item infoTextID="573" infoText="Begin collecting the energy of earth."/>
+	<Item infoTextID="574" infoText="Collected #power energy by casting Unir. Keep collecting energy?"/>
+	<Item infoTextID="575" infoText="Shoot the sphere of Unir with #power energy."/>
+	<Item infoTextID="576" infoText="Advance of Soul #num times remaining."/>
+	<Item infoTextID="577" infoText="Give the Mullet's Scale to merchant?"/>
+	<Item infoTextID="578" infoText="Yes"/>
+	<Item infoTextID="579" infoText="No"/>
+	<Item infoTextID="580" infoText="What would you do with the dead desert fox?"/>
+	<Item infoTextID="581" infoText="Take it"/>
+	<Item infoTextID="582" infoText="Leave it"/>
+	<Item infoTextID="583" infoText="Sent the dead Desert Fox Cub home."/>
+	<Item infoTextID="584" infoText="Brad is thirsty."/>
+	<Item infoTextID="585" infoText="Give him water"/>
+	<Item infoTextID="586" infoText="Ignore"/>
+	<Item infoTextID="587" infoText="Asking to find the missing husband."/>
+	<Item infoTextID="588" infoText="Go to find the missing person"/>
+	<Item infoTextID="589" infoText="Ignore"/>
+	<Item infoTextID="590" infoText="Screen Touch mode enabled for movement!"/>
+	<Item infoTextID="591" infoText="Virtual Joystick mode enabled for movement!"/>
+	<Item infoTextID="592" infoText="Move with Screen Touch"/>
+	<Item infoTextID="593" infoText="Move with Virtual Joystick"/>
+	<Item infoTextID="594" infoText="Illustrations that you collect during gameplay^nwill be saved here."/>
+	<Item infoTextID="595" infoText="Not enough stat to equip this item."/>
+	<Item infoTextID="596" infoText="Unable to summon doll here!"/>
+	<Item infoTextID="597" infoText="All"/>
+	<Item infoTextID="598" infoText="Equipment"/>
+	<Item infoTextID="599" infoText="Consumable"/>
+	<Item infoTextID="600" infoText="Other"/>
+	<Item infoTextID="601" infoText="Diary Backup"/>
+	<Item infoTextID="602" infoText="You are not signed in to the Google Play Games service. Would you like to log in?"/>
+	<Item infoTextID="603" infoText="Login"/>
+	<Item infoTextID="604" infoText="Log out"/>
+	<Item infoTextID="605" infoText="You are not currently logged in."/>
+	<Item infoTextID="606" infoText="You have been signed out of the Google Play Games service."/>
+	<Item infoTextID="607" infoText="Sign out failed. Please try again!"/>
+	<Item infoTextID="608" infoText="You are signed in to the Google Play Games service."/>
+	<Item infoTextID="609" infoText="All of your Diary records currently on your device will be reset, and your Diary records backed up in the Cloud will be saved back on your device. This action cannot be canceled. Continue?"/>
+	<Item infoTextID="610" infoText="There are no Diary records to back up to the Cloud."/>
+	<Item infoTextID="611" infoText="Please wait a moment."/>
+	<Item infoTextID="612" infoText="Login failed. Please try again!"/>
+	<Item infoTextID="613" infoText="Achievements"/>
+	<Item infoTextID="614" infoText="Back up your Diary to the Cloud"/>
+	<Item infoTextID="615" infoText="Read diary from Cloud"/>
+	<Item infoTextID="616" infoText="There are no Diary records stored in the Cloud."/>
+	<Item infoTextID="617" infoText="Successfully backed up your Diary to the Cloud."/>
+	<Item infoTextID="618" infoText="Successfully loaded your Diary from the Cloud. Restarting the game."/>
+	<Item infoTextID="619" infoText="Failed to load Diary data stored in the Cloud. Please try again!"/>
+	<Item infoTextID="620" infoText="The Ancient Dragon warns you."/>
+	<Item infoTextID="621" infoText="Run away"/>
+	<Item infoTextID="622" infoText="Try to talk"/>
+	<Item infoTextID="623" infoText="#power or more"/>
+	<Item infoTextID="624" infoText="#power% of MAG + proportional to current HP and MP"/>
+	<Item infoTextID="625" infoText="Restart the game to apply the language settings."/>
+	<Item infoTextID="626" infoText="Go back to title screen?"/>
+	<Item infoTextID="627" infoText="Are you sure you want to exit from the game?"/>
+	<Item infoTextID="628" infoText="Start a new story?"/>
+	<Item infoTextID="629" infoText="Mounting reduces damage received by #power%"/>
+	<Item infoTextID="630" infoText="DEF + #power%"/>
+	<Item infoTextID="631" infoText="Diary backup failed. Please try again!"/>
+	<Item infoTextID="632" infoText="&lt;Quest Achievement&gt;^n^nAchieving the quest in chapter where quest is available will make the time will flow faster, speeding up the acquisition of additional training counts."/>
+	<Item infoTextID="633" infoText="Time elapsed: #num%"/>
+	<Item infoTextID="634" infoText="You can only summon 1 doll per turn."/>
+	<Item infoTextID="635" infoText="Equipped &quot;Hector's Battle Sack&quot;."/>
+	<Item infoTextID="636" infoText="You can use the tool next time."/>
+	<Item infoTextID="637" infoText="You may proceed to the next action right away."/>
+	<Item infoTextID="638" infoText="&lt; Additional Equipment &gt;^n^nYou can equip Additional Equipment to get auxiliary effects during combats. You can find them in your Inventory under the &quot;Equipment&quot; tab."/>
+	<Item infoTextID="639" infoText="Magic Properties"/>
+	<Item infoTextID="640" infoText="Placement of Slots"/>
+	<Item infoTextID="641" infoText="&lt; Fire Magic &gt;^n^nFire magic is the closest to average of all attributes. It leaves burning effect on enemies, and gives additional burning damage every turn and when they are attacked. The additional damage is proportional to the caster's MAG."/>
+	<Item infoTextID="642" infoText="&lt;Magic Shield&gt;^n^nA glowing sphere is formed to reduce the amount of damage you receive either immediately upon entering battle, or whenever you use magic. The shield's effectiveness decreases over time. The effectiveness of a magic shield increases as much as your Magic Research level, or the higher the level of magic that you use is."/>
+	<Item infoTextID="643" infoText="Magic Shield"/>
+	<Item infoTextID="644" infoText="Adrian is waiting for you on Mt. Shubeth."/>
+	<Item infoTextID="645" infoText="A save file after the ending illustration must exist to proceed."/>
+	<Item infoTextID="646" infoText="Drag the Virtual Joystick to desired location!"/>
+	<Item infoTextID="647" infoText="Changing costumes."/>
+	<Item infoTextID="648" infoText="You are already wearing this costume."/>
+	<Item infoTextID="649" infoText="You can not change costumes here."/>
+	<Item infoTextID="650" infoText="Follow Judith to the Mahnil Island?"/>
+	<Item infoTextID="651" infoText="Follow Judith"/>
+	<Item infoTextID="652" infoText="Don't follow Judith"/>
+	<Item infoTextID="653" infoText="Inject vitality into the doll?"/>
+	<Item infoTextID="654" infoText="Inject vitality"/>
+	<Item infoTextID="655" infoText="Don't inject vitality"/>
+	<Item infoTextID="656" infoText="There is a letter from Grandmother. Would you like to read it?"/>
+	<Item infoTextID="657" infoText="Read Grandmother's letter?"/>
+	<Item infoTextID="658" infoText="Read."/>
+	<Item infoTextID="659" infoText="Don't read."/>
+	<Item infoTextID="660" infoText="Do not use magic."/>
+	<Item infoTextID="661" infoText="Challenge the Trial of Patience?"/>
+	<Item infoTextID="662" infoText="Challenge."/>
+	<Item infoTextID="663" infoText="Do not challenge."/>
+	<Item infoTextID="664" infoText="Go to Shubeth Castle Prison?"/>
+	<Item infoTextID="665" infoText="Go."/>
+	<Item infoTextID="666" infoText="Don't go."/>
+	<Item infoTextID="667" infoText="Go to the Underground Laboratory?"/>
+	<Item infoTextID="668" infoText="Give the golden rare metal to Za'rrel?"/>
+	<Item infoTextID="669" infoText="Yes."/>
+	<Item infoTextID="670" infoText="No."/>
+	<Item infoTextID="671" infoText="*Double Croche^nSpends 15% of HP in return for 16 sword strikes within a single turn. Can only be cast while Pinerame is equipped."/>
+	<Item infoTextID="672" infoText="You will be entering the 'After Story' mode from here."/>
+	<Item infoTextID="673" infoText="This is an additional content mode that is updated once for free. You can enjoy additional post-ending stories, additional costumes, items, and boss contents after the end of the main story."/>
+</ItemList>
