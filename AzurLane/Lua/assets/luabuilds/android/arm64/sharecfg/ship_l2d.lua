@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_l2d") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_l2d"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_l2d = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_l2d
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_l2d = rawget(pg, "ship_l2d") or setmetatable({
+	__name = "ship_l2d"
+}, confNEO)
+pg.ship_l2d.all = {
 	101,
 	102,
 	103,
@@ -3035,27 +3012,237 @@ var_0_3.all = {
 	960007241,
 	960007242,
 	960007243,
-	960007244
+	960007244,
+	30510301,
+	30510302,
+	30510303,
+	30510304,
+	30510305,
+	30510306,
+	30510307,
+	30510308,
+	30510309,
+	30510310,
+	30510311,
+	30510312,
+	30510313,
+	30510314,
+	30510315,
+	30510316,
+	30510317,
+	30510318,
+	30510319,
+	30510320,
+	30510321,
+	30510322,
+	30510323,
+	30510324,
+	30510325,
+	30510326,
+	30510327,
+	30510328,
+	30510329,
+	30510330,
+	30510331,
+	30510332,
+	30510333,
+	30510334,
+	30510335,
+	30510336,
+	30510337,
+	30510338,
+	30510339,
+	30510340,
+	30510341,
+	30510342,
+	30510343,
+	30510344,
+	30510345,
+	30510346,
+	30510347,
+	30510348,
+	30510349,
+	30510350,
+	30510351,
+	30510352,
+	30510353,
+	30510354,
+	30510355,
+	30510356,
+	30510357,
+	30510358,
+	30510359,
+	30510360,
+	30510361,
+	30510362,
+	30510363,
+	30510364,
+	30510365,
+	30510366,
+	30510367,
+	30510368,
+	30510369,
+	30510370,
+	30510371,
+	30510372,
+	30510373,
+	30510374,
+	30510375,
+	30510376,
+	30510377,
+	30510378,
+	30510379,
+	30510380,
+	30510381,
+	30510382,
+	30510383,
+	30510384,
+	30510385,
+	30510386,
+	10720101,
+	10720102,
+	10720103,
+	10720104,
+	10720105,
+	10720106,
+	10720107,
+	10720108,
+	10720109,
+	10720110,
+	10720111,
+	10720112,
+	10720113,
+	10720114,
+	10720115,
+	10720116,
+	10720117,
+	10720118,
+	10720119,
+	10720120,
+	10720121,
+	10720122,
+	10720123,
+	10720124,
+	10720125,
+	10720126,
+	10720127,
+	10720128,
+	10720129,
+	10720130,
+	10720131,
+	10720132,
+	10720133,
+	10720134,
+	10720135,
+	10720136,
+	10720137,
+	10720138,
+	10720139,
+	10720140,
+	10720141,
+	10720142,
+	10720143,
+	10720144,
+	10720145,
+	10720146,
+	10720147,
+	10720148,
+	10720149,
+	10720150,
+	10720151,
+	10720152,
+	10720153,
+	10720154,
+	10720155,
+	10720156,
+	10720157,
+	10720158,
+	10720159,
+	10720160,
+	10720161,
+	10720162,
+	10720163,
+	10720164,
+	10720165,
+	10720166,
+	10720167,
+	10720168,
+	10720169,
+	10720170,
+	20712201,
+	20712202,
+	20712203,
+	20712204,
+	20712205,
+	20712206,
+	20712207,
+	20712208,
+	20712209,
+	20712210,
+	20712211,
+	20712212,
+	20712213,
+	20712214,
+	20712215,
+	20712216,
+	20712217,
+	20712218,
+	20712219,
+	20712220,
+	20712221,
+	20712222,
+	20712223,
+	20712224,
+	20712225,
+	20712226,
+	20712227,
+	20712228,
+	20712229,
+	20712230,
+	20712231,
+	20712232,
+	20712233,
+	20712234,
+	20712235,
+	20712236,
+	20712237,
+	20712238,
+	20712239,
+	20712240,
+	20712241,
+	20712242,
+	20712243,
+	20712244,
+	20712245,
+	20712246,
+	20712247,
+	20712248,
+	20712249,
+	20712250,
+	20712251,
+	20712252,
+	20712253,
+	20712254,
+	20712255,
+	20712256,
+	20712257,
+	20712258,
+	20712259,
+	20712260,
+	20712261,
+	20712262,
+	20712263,
+	20712264,
+	20712265,
+	20712266,
+	20712267,
+	20712268
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_l2d = {}
+pg.base = pg.base or {}
+pg.base.ship_l2d = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_l2d
-
-	var_1_0[101] = {
+	pg.base.ship_l2d[101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3094,11 +3281,7 @@ var_0_3.base.ship_l2d = {}
 			3
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_l2d
-
-	var_1_1[102] = {
+	pg.base.ship_l2d[102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3137,11 +3320,7 @@ var_0_3.base.ship_l2d = {}
 			3
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_l2d
-
-	var_1_2[103] = {
+	pg.base.ship_l2d[103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3180,11 +3359,7 @@ var_0_3.base.ship_l2d = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_l2d
-
-	var_1_3[104] = {
+	pg.base.ship_l2d[104] = {
 		listener_data = "",
 		offset_x = 2,
 		gyro_y = 0,
@@ -3223,11 +3398,7 @@ var_0_3.base.ship_l2d = {}
 			3
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_l2d
-
-	var_1_4[105] = {
+	pg.base.ship_l2d[105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3266,11 +3437,7 @@ var_0_3.base.ship_l2d = {}
 			3
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_l2d
-
-	var_1_5[201] = {
+	pg.base.ship_l2d[201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3314,11 +3481,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_l2d
-
-	var_1_6[202] = {
+	pg.base.ship_l2d[202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3357,11 +3520,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_l2d
-
-	var_1_7[203] = {
+	pg.base.ship_l2d[203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 1,
@@ -3400,11 +3559,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_l2d
-
-	var_1_8[204] = {
+	pg.base.ship_l2d[204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3443,11 +3598,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_l2d
-
-	var_1_9[205] = {
+	pg.base.ship_l2d[205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 1,
@@ -3486,11 +3637,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_l2d
-
-	var_1_10[206] = {
+	pg.base.ship_l2d[206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3534,11 +3681,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_l2d
-
-	var_1_11[207] = {
+	pg.base.ship_l2d[207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3577,11 +3720,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_l2d
-
-	var_1_12[208] = {
+	pg.base.ship_l2d[208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 1,
@@ -3620,11 +3759,7 @@ var_0_3.base.ship_l2d = {}
 			3.5
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_l2d
-
-	var_1_13[1031651] = {
+	pg.base.ship_l2d[1031651] = {
 		listener_data = "",
 		offset_x = 8,
 		gyro_y = 0,
@@ -3668,11 +3803,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_l2d
-
-	var_1_14[3012921] = {
+	pg.base.ship_l2d[3012921] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3716,11 +3847,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_l2d
-
-	var_1_15[3012922] = {
+	pg.base.ship_l2d[3012922] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3765,11 +3892,7 @@ var_0_3.base.ship_l2d = {}
 			reset = 1
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_l2d
-
-	var_1_16[3012923] = {
+	pg.base.ship_l2d[3012923] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3808,11 +3931,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_l2d
-
-	var_1_17[3012924] = {
+	pg.base.ship_l2d[3012924] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3851,11 +3970,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_l2d
-
-	var_1_18[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3894,11 +4009,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_l2d
-
-	var_1_19[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3937,11 +4048,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_l2d
-
-	var_1_20[3070821] = {
+	pg.base.ship_l2d[3070821] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -3985,11 +4092,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_l2d
-
-	var_1_21[3070822] = {
+	pg.base.ship_l2d[3070822] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4028,11 +4131,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_l2d
-
-	var_1_22[3070823] = {
+	pg.base.ship_l2d[3070823] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4071,11 +4170,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_l2d
-
-	var_1_23[3070824] = {
+	pg.base.ship_l2d[3070824] = {
 		listener_data = "",
 		offset_x = 80,
 		gyro_y = 0,
@@ -4119,11 +4214,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_l2d
-
-	var_1_24[3070825] = {
+	pg.base.ship_l2d[3070825] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4162,11 +4253,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_l2d
-
-	var_1_25[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4210,11 +4297,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_l2d
-
-	var_1_26[3060721] = {
+	pg.base.ship_l2d[3060721] = {
 		listener_data = "",
 		offset_x = 15,
 		gyro_y = 0,
@@ -4264,11 +4347,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_l2d
-
-	var_1_27[3060722] = {
+	pg.base.ship_l2d[3060722] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4319,11 +4398,7 @@ var_0_3.base.ship_l2d = {}
 			ignore = {}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_l2d
-
-	var_1_28[8990311] = {
+	pg.base.ship_l2d[8990311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4367,11 +4442,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_l2d
-
-	var_1_29[8990312] = {
+	pg.base.ship_l2d[8990312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4415,11 +4486,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_l2d
-
-	var_1_30[8990313] = {
+	pg.base.ship_l2d[8990313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4463,11 +4530,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_l2d
-
-	var_1_31[1032611] = {
+	pg.base.ship_l2d[1032611] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4506,11 +4569,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_l2d
-
-	var_1_32[3022161] = {
+	pg.base.ship_l2d[3022161] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -4554,11 +4613,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_l2d
-
-	var_1_33[3022162] = {
+	pg.base.ship_l2d[3022162] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4597,11 +4652,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_l2d
-
-	var_1_34[4990521] = {
+	pg.base.ship_l2d[4990521] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -4640,11 +4691,7 @@ var_0_3.base.ship_l2d = {}
 			8
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_l2d
-
-	var_1_35[4990522] = {
+	pg.base.ship_l2d[4990522] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4683,11 +4730,7 @@ var_0_3.base.ship_l2d = {}
 			8
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_l2d
-
-	var_1_36[4990523] = {
+	pg.base.ship_l2d[4990523] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4726,11 +4769,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_l2d
-
-	var_1_37[4990524] = {
+	pg.base.ship_l2d[4990524] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4781,11 +4820,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_l2d
-
-	var_1_38[4990525] = {
+	pg.base.ship_l2d[4990525] = {
 		listener_data = "",
 		offset_x = 30,
 		gyro_y = 0,
@@ -4836,11 +4871,7 @@ var_0_3.base.ship_l2d = {}
 			ignore = {}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_l2d
-
-	var_1_39[4990526] = {
+	pg.base.ship_l2d[4990526] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4879,11 +4910,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_l2d
-
-	var_1_40[4990527] = {
+	pg.base.ship_l2d[4990527] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 1,
@@ -4922,11 +4949,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_l2d
-
-	var_1_41[4990528] = {
+	pg.base.ship_l2d[4990528] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -4969,11 +4992,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_l2d
-
-	var_1_42[5020521] = {
+	pg.base.ship_l2d[5020521] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5012,11 +5031,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_l2d
-
-	var_1_43[4990711] = {
+	pg.base.ship_l2d[4990711] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5060,11 +5075,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_l2d
-
-	var_1_44[4060221] = {
+	pg.base.ship_l2d[4060221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5103,11 +5114,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_l2d
-
-	var_1_45[7030211] = {
+	pg.base.ship_l2d[7030211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5146,11 +5153,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_l2d
-
-	var_1_46[7030212] = {
+	pg.base.ship_l2d[7030212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5189,11 +5192,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_l2d
-
-	var_1_47[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -5232,11 +5231,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_l2d
-
-	var_1_48[3070752] = {
+	pg.base.ship_l2d[3070752] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5287,11 +5282,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_l2d
-
-	var_1_49[3070753] = {
+	pg.base.ship_l2d[3070753] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -5330,11 +5321,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_l2d
-
-	var_1_50[3070754] = {
+	pg.base.ship_l2d[3070754] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -5378,11 +5365,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_l2d
-
-	var_1_51[3070755] = {
+	pg.base.ship_l2d[3070755] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -5426,11 +5409,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_l2d
-
-	var_1_52[3070756] = {
+	pg.base.ship_l2d[3070756] = {
 		listener_data = "",
 		offset_x = 40,
 		gyro_y = 0,
@@ -5480,11 +5459,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_l2d
-
-	var_1_53[3070757] = {
+	pg.base.ship_l2d[3070757] = {
 		listener_data = "",
 		offset_x = 140,
 		gyro_y = 0,
@@ -5535,11 +5510,7 @@ var_0_3.base.ship_l2d = {}
 			ignore = {}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_l2d
-
-	var_1_54[3070758] = {
+	pg.base.ship_l2d[3070758] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5578,11 +5549,7 @@ var_0_3.base.ship_l2d = {}
 			45
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_l2d
-
-	var_1_55[3070759] = {
+	pg.base.ship_l2d[3070759] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5621,11 +5588,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_l2d
-
-	var_1_56[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 5,
 		gyro_y = 0,
@@ -5664,11 +5627,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_l2d
-
-	var_1_57[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 8,
 		gyro_y = 0,
@@ -5707,11 +5666,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_l2d
-
-	var_1_58[1990311] = {
+	pg.base.ship_l2d[1990311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5750,11 +5705,7 @@ var_0_3.base.ship_l2d = {}
 			0
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_l2d
-
-	var_1_59[1990312] = {
+	pg.base.ship_l2d[1990312] = {
 		listener_data = "",
 		offset_x = 15,
 		gyro_y = 0,
@@ -5793,11 +5744,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_l2d
-
-	var_1_60[1990313] = {
+	pg.base.ship_l2d[1990313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5841,11 +5788,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_l2d
-
-	var_1_61[1051721] = {
+	pg.base.ship_l2d[1051721] = {
 		listener_data = "",
 		offset_x = 125,
 		gyro_y = 0,
@@ -5889,11 +5832,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_l2d
-
-	var_1_62[1051722] = {
+	pg.base.ship_l2d[1051722] = {
 		listener_data = "",
 		offset_x = 300,
 		gyro_y = 0,
@@ -5937,11 +5876,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_l2d
-
-	var_1_63[1051723] = {
+	pg.base.ship_l2d[1051723] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -5988,11 +5923,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_l2d
-
-	var_1_64[1051724] = {
+	pg.base.ship_l2d[1051724] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6031,11 +5962,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_l2d
-
-	var_1_65[1051725] = {
+	pg.base.ship_l2d[1051725] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -6074,11 +6001,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_l2d
-
-	var_1_66[1051726] = {
+	pg.base.ship_l2d[1051726] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6126,11 +6049,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_l2d
-
-	var_1_67[1051727] = {
+	pg.base.ship_l2d[1051727] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6174,11 +6093,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_l2d
-
-	var_1_68[1051728] = {
+	pg.base.ship_l2d[1051728] = {
 		listener_data = "",
 		offset_x = 10,
 		gyro_y = 0,
@@ -6217,11 +6132,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_l2d
-
-	var_1_69[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6268,11 +6179,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_l2d
-
-	var_1_70[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -6311,11 +6218,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_l2d
-
-	var_1_71[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6354,11 +6257,7 @@ var_0_3.base.ship_l2d = {}
 			15
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_l2d
-
-	var_1_72[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 1,
@@ -6397,11 +6296,7 @@ var_0_3.base.ship_l2d = {}
 			15
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_l2d
-
-	var_1_73[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6440,11 +6335,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_l2d
-
-	var_1_74[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6483,11 +6374,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_l2d
-
-	var_1_75[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6526,11 +6413,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_l2d
-
-	var_1_76[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6569,11 +6452,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_l2d
-
-	var_1_77[1370601] = {
+	pg.base.ship_l2d[1370601] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -6612,11 +6491,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_l2d
-
-	var_1_78[1370602] = {
+	pg.base.ship_l2d[1370602] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -6655,11 +6530,7 @@ var_0_3.base.ship_l2d = {}
 			1
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_l2d
-
-	var_1_79[1370603] = {
+	pg.base.ship_l2d[1370603] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6703,11 +6574,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_l2d
-
-	var_1_80[1370604] = {
+	pg.base.ship_l2d[1370604] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6751,11 +6618,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_l2d
-
-	var_1_81[1020531] = {
+	pg.base.ship_l2d[1020531] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6799,11 +6662,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_l2d
-
-	var_1_82[1020532] = {
+	pg.base.ship_l2d[1020532] = {
 		listener_data = "",
 		offset_x = 5,
 		gyro_y = 0,
@@ -6842,11 +6701,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_l2d
-
-	var_1_83[1020533] = {
+	pg.base.ship_l2d[1020533] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6890,11 +6745,7 @@ var_0_3.base.ship_l2d = {}
 			type = 1
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_l2d
-
-	var_1_84[9050211] = {
+	pg.base.ship_l2d[9050211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6938,11 +6789,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_l2d
-
-	var_1_85[9050212] = {
+	pg.base.ship_l2d[9050212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -6986,11 +6833,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_l2d
-
-	var_1_86[9050213] = {
+	pg.base.ship_l2d[9050213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7029,11 +6872,7 @@ var_0_3.base.ship_l2d = {}
 			10
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_l2d
-
-	var_1_87[3190131] = {
+	pg.base.ship_l2d[3190131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7077,11 +6916,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_l2d
-
-	var_1_88[3190132] = {
+	pg.base.ship_l2d[3190132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7124,11 +6959,7 @@ var_0_3.base.ship_l2d = {}
 			type = 2
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_l2d
-
-	var_1_89[3190133] = {
+	pg.base.ship_l2d[3190133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7186,11 +7017,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_l2d
-
-	var_1_90[3190134] = {
+	pg.base.ship_l2d[3190134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7242,11 +7069,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_l2d
-
-	var_1_91[3190135] = {
+	pg.base.ship_l2d[3190135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7304,11 +7127,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_l2d
-
-	var_1_92[3190136] = {
+	pg.base.ship_l2d[3190136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7360,11 +7179,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_l2d
-
-	var_1_93[3190137] = {
+	pg.base.ship_l2d[3190137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7422,11 +7237,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_l2d
-
-	var_1_94[3190138] = {
+	pg.base.ship_l2d[3190138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7478,11 +7289,7 @@ var_0_3.base.ship_l2d = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_l2d
-
-	var_1_95[3190139] = {
+	pg.base.ship_l2d[3190139] = {
 		listener_data = "",
 		offset_x = 10,
 		gyro_y = 0,
@@ -7521,11 +7328,7 @@ var_0_3.base.ship_l2d = {}
 			30
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_l2d
-
-	var_1_96[3190140] = {
+	pg.base.ship_l2d[3190140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7564,11 +7367,7 @@ var_0_3.base.ship_l2d = {}
 			15
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_l2d
-
-	var_1_97[3190141] = {
+	pg.base.ship_l2d[3190141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7607,11 +7406,7 @@ var_0_3.base.ship_l2d = {}
 			15
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_l2d
-
-	var_1_98[3190142] = {
+	pg.base.ship_l2d[3190142] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7650,8 +7445,7 @@ var_0_3.base.ship_l2d = {}
 			15
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_l2d[3190143] = {
+	pg.base.ship_l2d[3190143] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7694,11 +7488,7 @@ var_0_3.base.ship_l2d = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_l2d
-
-	var_2_0[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7737,11 +7527,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_l2d
-
-	var_2_1[3990521] = {
+	pg.base.ship_l2d[3990521] = {
 		listener_data = "",
 		offset_x = 99999,
 		gyro_y = 0,
@@ -7783,11 +7569,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_l2d
-
-	var_2_2[3990522] = {
+	pg.base.ship_l2d[3990522] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -7826,11 +7608,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_l2d
-
-	var_2_3[3990523] = {
+	pg.base.ship_l2d[3990523] = {
 		listener_data = "",
 		offset_x = 99999,
 		gyro_y = 0,
@@ -7872,11 +7650,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_l2d
-
-	var_2_4[3990524] = {
+	pg.base.ship_l2d[3990524] = {
 		listener_data = "",
 		offset_x = 99999,
 		gyro_y = 0,
@@ -7918,11 +7692,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_l2d
-
-	var_2_5[3990525] = {
+	pg.base.ship_l2d[3990525] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -7961,11 +7731,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_l2d
-
-	var_2_6[3990526] = {
+	pg.base.ship_l2d[3990526] = {
 		listener_data = "",
 		offset_x = 300,
 		gyro_y = 0,
@@ -8018,11 +7784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_l2d
-
-	var_2_7[3990527] = {
+	pg.base.ship_l2d[3990527] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8072,11 +7834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_l2d
-
-	var_2_8[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8120,11 +7878,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_l2d
-
-	var_2_9[3018912] = {
+	pg.base.ship_l2d[3018912] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8168,11 +7922,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_l2d
-
-	var_2_10[3018913] = {
+	pg.base.ship_l2d[3018913] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -8216,11 +7966,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_l2d
-
-	var_2_11[3018914] = {
+	pg.base.ship_l2d[3018914] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8273,11 +8019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_l2d
-
-	var_2_12[3018915] = {
+	pg.base.ship_l2d[3018915] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8327,11 +8069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_l2d
-
-	var_2_13[30319101] = {
+	pg.base.ship_l2d[30319101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8370,11 +8108,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_l2d
-
-	var_2_14[30319102] = {
+	pg.base.ship_l2d[30319102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8413,11 +8147,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_l2d
-
-	var_2_15[30319103] = {
+	pg.base.ship_l2d[30319103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8456,11 +8186,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_l2d
-
-	var_2_16[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8504,11 +8230,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_l2d
-
-	var_2_17[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -8560,11 +8282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_l2d
-
-	var_2_18[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -8608,11 +8326,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_l2d
-
-	var_2_19[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8656,11 +8370,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_l2d
-
-	var_2_20[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8704,11 +8414,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_l2d
-
-	var_2_21[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8765,11 +8471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_l2d
-
-	var_2_22[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8819,11 +8521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_l2d
-
-	var_2_23[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8873,11 +8571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_l2d
-
-	var_2_24[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8927,11 +8621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_l2d
-
-	var_2_25[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -8975,11 +8665,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_l2d
-
-	var_2_26[30708301] = {
+	pg.base.ship_l2d[30708301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9037,11 +8723,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_l2d
-
-	var_2_27[30708302] = {
+	pg.base.ship_l2d[30708302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9091,11 +8773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_l2d
-
-	var_2_28[30708303] = {
+	pg.base.ship_l2d[30708303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9139,11 +8817,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_l2d
-
-	var_2_29[30708304] = {
+	pg.base.ship_l2d[30708304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9182,11 +8856,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_l2d
-
-	var_2_30[30708305] = {
+	pg.base.ship_l2d[30708305] = {
 		listener_data = "",
 		offset_x = 15,
 		gyro_y = 0,
@@ -9225,11 +8895,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_l2d
-
-	var_2_31[30708306] = {
+	pg.base.ship_l2d[30708306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9281,11 +8947,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_l2d
-
-	var_2_32[30708307] = {
+	pg.base.ship_l2d[30708307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9342,11 +9004,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_l2d
-
-	var_2_33[30708308] = {
+	pg.base.ship_l2d[30708308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9398,11 +9056,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_l2d
-
-	var_2_34[30708309] = {
+	pg.base.ship_l2d[30708309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9459,11 +9113,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_l2d
-
-	var_2_35[30708310] = {
+	pg.base.ship_l2d[30708310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9515,11 +9165,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_l2d
-
-	var_2_36[30708311] = {
+	pg.base.ship_l2d[30708311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9576,11 +9222,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_l2d
-
-	var_2_37[30708312] = {
+	pg.base.ship_l2d[30708312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9632,11 +9274,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_l2d
-
-	var_2_38[30708313] = {
+	pg.base.ship_l2d[30708313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9693,11 +9331,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_l2d
-
-	var_2_39[30708314] = {
+	pg.base.ship_l2d[30708314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9749,11 +9383,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_l2d
-
-	var_2_40[30708315] = {
+	pg.base.ship_l2d[30708315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9810,11 +9440,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_l2d
-
-	var_2_41[30708316] = {
+	pg.base.ship_l2d[30708316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9866,11 +9492,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_l2d
-
-	var_2_42[30708317] = {
+	pg.base.ship_l2d[30708317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9927,11 +9549,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_l2d
-
-	var_2_43[30708318] = {
+	pg.base.ship_l2d[30708318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -9983,11 +9601,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_l2d
-
-	var_2_44[30708319] = {
+	pg.base.ship_l2d[30708319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10044,11 +9658,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_l2d
-
-	var_2_45[30708320] = {
+	pg.base.ship_l2d[30708320] = {
 		listener_data = "",
 		offset_x = 30,
 		gyro_y = 0,
@@ -10099,11 +9709,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_l2d
-
-	var_2_46[30708321] = {
+	pg.base.ship_l2d[30708321] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10160,11 +9766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_l2d
-
-	var_2_47[30708322] = {
+	pg.base.ship_l2d[30708322] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10203,11 +9805,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_l2d
-
-	var_2_48[30708323] = {
+	pg.base.ship_l2d[30708323] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10246,11 +9844,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_l2d
-
-	var_2_49[30708324] = {
+	pg.base.ship_l2d[30708324] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10289,11 +9883,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_l2d
-
-	var_2_50[30708325] = {
+	pg.base.ship_l2d[30708325] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10332,11 +9922,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_l2d
-
-	var_2_51[30708326] = {
+	pg.base.ship_l2d[30708326] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10375,11 +9961,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_l2d
-
-	var_2_52[40503201] = {
+	pg.base.ship_l2d[40503201] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -10418,11 +10000,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_l2d
-
-	var_2_53[40503202] = {
+	pg.base.ship_l2d[40503202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10461,11 +10039,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_l2d
-
-	var_2_54[40503203] = {
+	pg.base.ship_l2d[40503203] = {
 		listener_data = "",
 		offset_x = 9999999,
 		gyro_y = 0,
@@ -10508,11 +10082,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_l2d
-
-	var_2_55[40503204] = {
+	pg.base.ship_l2d[40503204] = {
 		listener_data = "",
 		offset_x = 9999999,
 		gyro_y = 0,
@@ -10555,11 +10125,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_l2d
-
-	var_2_56[40503205] = {
+	pg.base.ship_l2d[40503205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10610,11 +10176,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_l2d
-
-	var_2_57[40503206] = {
+	pg.base.ship_l2d[40503206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10664,11 +10226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_l2d
-
-	var_2_58[96000311] = {
+	pg.base.ship_l2d[96000311] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -10719,11 +10277,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_l2d
-
-	var_2_59[96000312] = {
+	pg.base.ship_l2d[96000312] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -10773,11 +10327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_l2d
-
-	var_2_60[96000313] = {
+	pg.base.ship_l2d[96000313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10816,11 +10366,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_l2d
-
-	var_2_61[96000314] = {
+	pg.base.ship_l2d[96000314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10859,11 +10405,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_l2d
-
-	var_2_62[96000315] = {
+	pg.base.ship_l2d[96000315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10902,11 +10444,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_l2d
-
-	var_2_63[96000316] = {
+	pg.base.ship_l2d[96000316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10945,11 +10483,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_l2d
-
-	var_2_64[96000317] = {
+	pg.base.ship_l2d[96000317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -10988,11 +10522,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_l2d
-
-	var_2_65[96000318] = {
+	pg.base.ship_l2d[96000318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11031,11 +10561,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_l2d
-
-	var_2_66[96000319] = {
+	pg.base.ship_l2d[96000319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11074,11 +10600,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_l2d
-
-	var_2_67[96000320] = {
+	pg.base.ship_l2d[96000320] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11117,11 +10639,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_l2d
-
-	var_2_68[96000321] = {
+	pg.base.ship_l2d[96000321] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -11165,11 +10683,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_l2d
-
-	var_2_69[10151101] = {
+	pg.base.ship_l2d[10151101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11251,11 +10765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_l2d
-
-	var_2_70[10151102] = {
+	pg.base.ship_l2d[10151102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11337,11 +10847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_l2d
-
-	var_2_71[10151103] = {
+	pg.base.ship_l2d[10151103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11419,11 +10925,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_l2d
-
-	var_2_72[10151104] = {
+	pg.base.ship_l2d[10151104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11501,11 +11003,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_l2d
-
-	var_2_73[10151105] = {
+	pg.base.ship_l2d[10151105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11583,11 +11081,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_l2d
-
-	var_2_74[10151106] = {
+	pg.base.ship_l2d[10151106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11635,11 +11129,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_l2d
-
-	var_2_75[10151107] = {
+	pg.base.ship_l2d[10151107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11687,11 +11177,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_l2d
-
-	var_2_76[10151108] = {
+	pg.base.ship_l2d[10151108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11739,11 +11225,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_l2d
-
-	var_2_77[10151109] = {
+	pg.base.ship_l2d[10151109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11787,11 +11269,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_l2d
-
-	var_2_78[10151110] = {
+	pg.base.ship_l2d[10151110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11835,11 +11313,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_l2d
-
-	var_2_79[10151111] = {
+	pg.base.ship_l2d[10151111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11883,11 +11357,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_l2d
-
-	var_2_80[10151112] = {
+	pg.base.ship_l2d[10151112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11931,11 +11401,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_l2d
-
-	var_2_81[10151113] = {
+	pg.base.ship_l2d[10151113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -11979,11 +11445,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_l2d
-
-	var_2_82[10151114] = {
+	pg.base.ship_l2d[10151114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12027,11 +11489,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_l2d
-
-	var_2_83[10151115] = {
+	pg.base.ship_l2d[10151115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12075,11 +11533,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_l2d
-
-	var_2_84[10151116] = {
+	pg.base.ship_l2d[10151116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12123,11 +11577,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_l2d
-
-	var_2_85[10151117] = {
+	pg.base.ship_l2d[10151117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12205,11 +11655,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_l2d
-
-	var_2_86[10151118] = {
+	pg.base.ship_l2d[10151118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12287,11 +11733,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_l2d
-
-	var_2_87[10151119] = {
+	pg.base.ship_l2d[10151119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12369,11 +11811,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_l2d
-
-	var_2_88[10151120] = {
+	pg.base.ship_l2d[10151120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12451,11 +11889,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_l2d
-
-	var_2_89[10151121] = {
+	pg.base.ship_l2d[10151121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12533,11 +11967,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_l2d
-
-	var_2_90[10151122] = {
+	pg.base.ship_l2d[10151122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12615,11 +12045,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_l2d
-
-	var_2_91[11802101] = {
+	pg.base.ship_l2d[11802101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12658,11 +12084,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_l2d
-
-	var_2_92[11802102] = {
+	pg.base.ship_l2d[11802102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12705,11 +12127,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_l2d
-
-	var_2_93[11802103] = {
+	pg.base.ship_l2d[11802103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12752,11 +12170,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_l2d
-
-	var_2_94[11802104] = {
+	pg.base.ship_l2d[11802104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12799,11 +12213,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_l2d
-
-	var_2_95[11802105] = {
+	pg.base.ship_l2d[11802105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12842,11 +12252,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_l2d
-
-	var_2_96[11802106] = {
+	pg.base.ship_l2d[11802106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12918,11 +12324,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_l2d
-
-	var_2_97[11802107] = {
+	pg.base.ship_l2d[11802107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -12994,11 +12396,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_l2d
-
-	var_2_98[11802108] = {
+	pg.base.ship_l2d[11802108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13046,8 +12444,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_l2d[11802109] = {
+	pg.base.ship_l2d[11802109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13099,11 +12496,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_l2d
-
-	var_3_0[11802110] = {
+	pg.base.ship_l2d[11802110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13151,11 +12544,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_l2d
-
-	var_3_1[10209701] = {
+	pg.base.ship_l2d[10209701] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13198,11 +12587,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_l2d
-
-	var_3_2[10209702] = {
+	pg.base.ship_l2d[10209702] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13253,11 +12638,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_l2d
-
-	var_3_3[10209703] = {
+	pg.base.ship_l2d[10209703] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13308,11 +12689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_l2d
-
-	var_3_4[49909101] = {
+	pg.base.ship_l2d[49909101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13384,11 +12761,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_l2d
-
-	var_3_5[49909102] = {
+	pg.base.ship_l2d[49909102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13439,11 +12812,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_l2d
-
-	var_3_6[49909103] = {
+	pg.base.ship_l2d[49909103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13494,11 +12863,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_l2d
-
-	var_3_7[49909104] = {
+	pg.base.ship_l2d[49909104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13549,11 +12914,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_l2d
-
-	var_3_8[49909105] = {
+	pg.base.ship_l2d[49909105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13604,11 +12965,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_l2d
-
-	var_3_9[49909106] = {
+	pg.base.ship_l2d[49909106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13659,11 +13016,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_l2d
-
-	var_3_10[49909107] = {
+	pg.base.ship_l2d[49909107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13735,11 +13088,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_l2d
-
-	var_3_11[49909108] = {
+	pg.base.ship_l2d[49909108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13787,11 +13136,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_l2d
-
-	var_3_12[49909109] = {
+	pg.base.ship_l2d[49909109] = {
 		listener_data = "",
 		offset_x = 15,
 		gyro_y = 0,
@@ -13830,11 +13175,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_l2d
-
-	var_3_13[49909110] = {
+	pg.base.ship_l2d[49909110] = {
 		listener_data = "",
 		offset_x = 400,
 		gyro_y = 0,
@@ -13892,11 +13233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_l2d
-
-	var_3_14[49909111] = {
+	pg.base.ship_l2d[49909111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13939,11 +13276,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_l2d
-
-	var_3_15[49909112] = {
+	pg.base.ship_l2d[49909112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -13986,11 +13319,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_l2d
-
-	var_3_16[49909113] = {
+	pg.base.ship_l2d[49909113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14029,11 +13358,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_l2d
-
-	var_3_17[30186301] = {
+	pg.base.ship_l2d[30186301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14077,11 +13402,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_l2d
-
-	var_3_18[30186302] = {
+	pg.base.ship_l2d[30186302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14125,11 +13446,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_l2d
-
-	var_3_19[30186303] = {
+	pg.base.ship_l2d[30186303] = {
 		listener_data = "",
 		offset_x = 12,
 		gyro_y = 0,
@@ -14190,11 +13507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_l2d
-
-	var_3_20[30186305] = {
+	pg.base.ship_l2d[30186305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14238,11 +13551,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_l2d
-
-	var_3_21[30186306] = {
+	pg.base.ship_l2d[30186306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14281,11 +13590,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_l2d
-
-	var_3_22[30186307] = {
+	pg.base.ship_l2d[30186307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 1,
@@ -14324,11 +13629,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_l2d
-
-	var_3_23[19904101] = {
+	pg.base.ship_l2d[19904101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14400,11 +13701,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_l2d
-
-	var_3_24[19904102] = {
+	pg.base.ship_l2d[19904102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14452,11 +13749,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_l2d
-
-	var_3_25[19904103] = {
+	pg.base.ship_l2d[19904103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14520,11 +13813,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_l2d
-
-	var_3_26[19904104] = {
+	pg.base.ship_l2d[19904104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14600,11 +13889,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_l2d
-
-	var_3_27[19904105] = {
+	pg.base.ship_l2d[19904105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14668,11 +13953,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_l2d
-
-	var_3_28[19904106] = {
+	pg.base.ship_l2d[19904106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14748,11 +14029,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_l2d
-
-	var_3_29[19904107] = {
+	pg.base.ship_l2d[19904107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14816,11 +14093,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_l2d
-
-	var_3_30[19904108] = {
+	pg.base.ship_l2d[19904108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14896,11 +14169,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_l2d
-
-	var_3_31[19904109] = {
+	pg.base.ship_l2d[19904109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -14964,11 +14233,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_l2d
-
-	var_3_32[19904110] = {
+	pg.base.ship_l2d[19904110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15044,11 +14309,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_l2d
-
-	var_3_33[19904111] = {
+	pg.base.ship_l2d[19904111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15112,11 +14373,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_l2d
-
-	var_3_34[19904112] = {
+	pg.base.ship_l2d[19904112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15192,11 +14449,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_l2d
-
-	var_3_35[19904113] = {
+	pg.base.ship_l2d[19904113] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -15240,11 +14493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_l2d
-
-	var_3_36[19904114] = {
+	pg.base.ship_l2d[19904114] = {
 		listener_data = "",
 		offset_x = -50,
 		gyro_y = 0,
@@ -15291,11 +14540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_l2d
-
-	var_3_37[19904115] = {
+	pg.base.ship_l2d[19904115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15340,11 +14585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_l2d
-
-	var_3_38[19904116] = {
+	pg.base.ship_l2d[19904116] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -15383,11 +14624,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_l2d
-
-	var_3_39[19904117] = {
+	pg.base.ship_l2d[19904117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15426,11 +14663,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_l2d
-
-	var_3_40[19904118] = {
+	pg.base.ship_l2d[19904118] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -15469,11 +14702,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_l2d
-
-	var_3_41[19904119] = {
+	pg.base.ship_l2d[19904119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15516,11 +14745,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_l2d
-
-	var_3_42[19904120] = {
+	pg.base.ship_l2d[19904120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15563,11 +14788,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_l2d
-
-	var_3_43[19904121] = {
+	pg.base.ship_l2d[19904121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15606,11 +14827,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_l2d
-
-	var_3_44[19904122] = {
+	pg.base.ship_l2d[19904122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15649,11 +14866,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_l2d
-
-	var_3_45[19904123] = {
+	pg.base.ship_l2d[19904123] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -15697,11 +14910,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_l2d
-
-	var_3_46[19904124] = {
+	pg.base.ship_l2d[19904124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15745,11 +14954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_l2d
-
-	var_3_47[19904125] = {
+	pg.base.ship_l2d[19904125] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -15793,11 +14998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_l2d
-
-	var_3_48[19904126] = {
+	pg.base.ship_l2d[19904126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15841,11 +15042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_l2d
-
-	var_3_49[19904127] = {
+	pg.base.ship_l2d[19904127] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -15889,11 +15086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_l2d
-
-	var_3_50[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -15937,11 +15130,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_l2d
-
-	var_3_51[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -15985,11 +15174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_l2d
-
-	var_3_52[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16033,11 +15218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_l2d
-
-	var_3_53[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -16081,11 +15262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_l2d
-
-	var_3_54[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16129,11 +15306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_l2d
-
-	var_3_55[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -16172,11 +15345,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_l2d
-
-	var_3_56[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16267,11 +15436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_l2d
-
-	var_3_57[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16358,11 +15523,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_l2d
-
-	var_3_58[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16410,11 +15571,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_l2d
-
-	var_3_59[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16501,11 +15658,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_l2d
-
-	var_3_60[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16592,11 +15745,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_l2d
-
-	var_3_61[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16686,11 +15835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_l2d
-
-	var_3_62[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16738,11 +15883,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_l2d
-
-	var_3_63[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16829,11 +15970,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_l2d
-
-	var_3_64[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -16920,11 +16057,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_l2d
-
-	var_3_65[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17014,11 +16147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_l2d
-
-	var_3_66[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17105,11 +16234,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_l2d
-
-	var_3_67[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17196,11 +16321,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_l2d
-
-	var_3_68[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17290,11 +16411,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_l2d
-
-	var_3_69[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17342,11 +16459,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_l2d
-
-	var_3_70[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17394,11 +16507,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_l2d
-
-	var_3_71[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17446,11 +16555,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_l2d
-
-	var_3_72[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17494,11 +16599,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_l2d
-
-	var_3_73[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -17542,11 +16643,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_l2d
-
-	var_3_74[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17590,11 +16687,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_l2d
-
-	var_3_75[50105120] = {
+	pg.base.ship_l2d[50105120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17649,11 +16742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_l2d
-
-	var_3_76[50105121] = {
+	pg.base.ship_l2d[50105121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17701,11 +16790,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_l2d
-
-	var_3_77[50105122] = {
+	pg.base.ship_l2d[50105122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17753,11 +16838,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_l2d
-
-	var_3_78[50105123] = {
+	pg.base.ship_l2d[50105123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17805,11 +16886,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_l2d
-
-	var_3_79[19903201] = {
+	pg.base.ship_l2d[19903201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -17907,11 +16984,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_l2d
-
-	var_3_80[19903202] = {
+	pg.base.ship_l2d[19903202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18009,11 +17082,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_l2d
-
-	var_3_81[19903203] = {
+	pg.base.ship_l2d[19903203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18108,11 +17177,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_l2d
-
-	var_3_82[19903204] = {
+	pg.base.ship_l2d[19903204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18160,11 +17225,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_l2d
-
-	var_3_83[19903205] = {
+	pg.base.ship_l2d[19903205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18212,11 +17273,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_l2d
-
-	var_3_84[19903206] = {
+	pg.base.ship_l2d[19903206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18314,11 +17371,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_l2d
-
-	var_3_85[19903207] = {
+	pg.base.ship_l2d[19903207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18420,11 +17473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_l2d
-
-	var_3_86[19903208] = {
+	pg.base.ship_l2d[19903208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18523,11 +17572,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_l2d
-
-	var_3_87[19903209] = {
+	pg.base.ship_l2d[19903209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18624,11 +17669,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_l2d
-
-	var_3_88[19903210] = {
+	pg.base.ship_l2d[19903210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18725,11 +17766,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_l2d
-
-	var_3_89[19903211] = {
+	pg.base.ship_l2d[19903211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18826,11 +17863,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_l2d
-
-	var_3_90[19903212] = {
+	pg.base.ship_l2d[19903212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18933,11 +17966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_l2d
-
-	var_3_91[19903213] = {
+	pg.base.ship_l2d[19903213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -18985,11 +18014,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_l2d
-
-	var_3_92[19903214] = {
+	pg.base.ship_l2d[19903214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19082,11 +18107,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_l2d
-
-	var_3_93[19903215] = {
+	pg.base.ship_l2d[19903215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19184,11 +18205,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.ship_l2d
-
-	var_3_94[19903216] = {
+	pg.base.ship_l2d[19903216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19281,11 +18298,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_l2d
-
-	var_3_95[19903217] = {
+	pg.base.ship_l2d[19903217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19376,11 +18389,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_l2d
-
-	var_3_96[19903218] = {
+	pg.base.ship_l2d[19903218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19472,11 +18481,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_l2d
-
-	var_3_97[19903219] = {
+	pg.base.ship_l2d[19903219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19569,11 +18574,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_l2d
-
-	var_3_98[19903220] = {
+	pg.base.ship_l2d[19903220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19666,8 +18667,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.ship_l2d[19903221] = {
+	pg.base.ship_l2d[19903221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19764,11 +18764,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_l2d
-
-	var_4_0[19903222] = {
+	pg.base.ship_l2d[19903222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19816,11 +18812,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_l2d
-
-	var_4_1[19903223] = {
+	pg.base.ship_l2d[19903223] = {
 		listener_data = "",
 		offset_x = 450,
 		gyro_y = 0,
@@ -19864,11 +18856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_l2d
-
-	var_4_2[19903224] = {
+	pg.base.ship_l2d[19903224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -19912,11 +18900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_l2d
-
-	var_4_3[19903225] = {
+	pg.base.ship_l2d[19903225] = {
 		listener_data = "",
 		offset_x = 450,
 		gyro_y = 0,
@@ -19960,11 +18944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_l2d
-
-	var_4_4[19903226] = {
+	pg.base.ship_l2d[19903226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20008,11 +18988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_l2d
-
-	var_4_5[19903227] = {
+	pg.base.ship_l2d[19903227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20064,11 +19040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_l2d
-
-	var_4_6[19903228] = {
+	pg.base.ship_l2d[19903228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20116,11 +19088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_l2d
-
-	var_4_7[19903229] = {
+	pg.base.ship_l2d[19903229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20168,11 +19136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_l2d
-
-	var_4_8[19903230] = {
+	pg.base.ship_l2d[19903230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20215,11 +19179,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_l2d
-
-	var_4_9[19903231] = {
+	pg.base.ship_l2d[19903231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20263,11 +19223,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_l2d
-
-	var_4_10[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20311,11 +19267,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_l2d
-
-	var_4_11[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20359,11 +19311,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_l2d
-
-	var_4_12[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20407,11 +19355,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_l2d
-
-	var_4_13[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20459,11 +19403,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_l2d
-
-	var_4_14[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20511,11 +19451,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_l2d
-
-	var_4_15[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20563,11 +19499,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_l2d
-
-	var_4_16[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20615,11 +19547,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_l2d
-
-	var_4_17[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20667,11 +19595,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_l2d
-
-	var_4_18[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20719,11 +19643,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_l2d
-
-	var_4_19[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20816,11 +19736,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_l2d
-
-	var_4_20[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20918,11 +19834,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_l2d
-
-	var_4_21[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -20971,11 +19883,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_l2d
-
-	var_4_22[20607201] = {
+	pg.base.ship_l2d[20607201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21023,11 +19931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_l2d
-
-	var_4_23[20607202] = {
+	pg.base.ship_l2d[20607202] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -21066,11 +19970,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_l2d
-
-	var_4_24[20607203] = {
+	pg.base.ship_l2d[20607203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21109,11 +20009,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_l2d
-
-	var_4_25[20607204] = {
+	pg.base.ship_l2d[20607204] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -21152,11 +20048,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_l2d
-
-	var_4_26[20607205] = {
+	pg.base.ship_l2d[20607205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21200,11 +20092,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_l2d
-
-	var_4_27[20607206] = {
+	pg.base.ship_l2d[20607206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21247,11 +20135,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_l2d
-
-	var_4_28[20607207] = {
+	pg.base.ship_l2d[20607207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21294,11 +20178,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_l2d
-
-	var_4_29[20607208] = {
+	pg.base.ship_l2d[20607208] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -21337,11 +20217,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_l2d
-
-	var_4_30[20607209] = {
+	pg.base.ship_l2d[20607209] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -21380,11 +20256,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_l2d
-
-	var_4_31[20607210] = {
+	pg.base.ship_l2d[20607210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21423,11 +20295,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_l2d
-
-	var_4_32[20607211] = {
+	pg.base.ship_l2d[20607211] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -21466,11 +20334,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_l2d
-
-	var_4_33[20607212] = {
+	pg.base.ship_l2d[20607212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21509,11 +20373,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_l2d
-
-	var_4_34[20607213] = {
+	pg.base.ship_l2d[20607213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21556,11 +20416,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_l2d
-
-	var_4_35[20607214] = {
+	pg.base.ship_l2d[20607214] = {
 		listener_data = "",
 		offset_x = 75,
 		gyro_y = 0,
@@ -21607,11 +20463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_l2d
-
-	var_4_36[20607215] = {
+	pg.base.ship_l2d[20607215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21654,11 +20506,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_l2d
-
-	var_4_37[20607216] = {
+	pg.base.ship_l2d[20607216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21697,11 +20545,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_l2d
-
-	var_4_38[20607217] = {
+	pg.base.ship_l2d[20607217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21752,11 +20596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_l2d
-
-	var_4_39[20607218] = {
+	pg.base.ship_l2d[20607218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21849,11 +20689,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_l2d
-
-	var_4_40[20607219] = {
+	pg.base.ship_l2d[20607219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21901,11 +20737,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_l2d
-
-	var_4_41[20607220] = {
+	pg.base.ship_l2d[20607220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -21998,11 +20830,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_l2d
-
-	var_4_42[20607221] = {
+	pg.base.ship_l2d[20607221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22050,11 +20878,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_l2d
-
-	var_4_43[20607222] = {
+	pg.base.ship_l2d[20607222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22147,11 +20971,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_l2d
-
-	var_4_44[20607223] = {
+	pg.base.ship_l2d[20607223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22199,11 +21019,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_l2d
-
-	var_4_45[20607224] = {
+	pg.base.ship_l2d[20607224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22296,11 +21112,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_l2d
-
-	var_4_46[20607225] = {
+	pg.base.ship_l2d[20607225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22348,11 +21160,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_l2d
-
-	var_4_47[20607226] = {
+	pg.base.ship_l2d[20607226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22444,11 +21252,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_l2d
-
-	var_4_48[20607227] = {
+	pg.base.ship_l2d[20607227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22496,11 +21300,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_l2d
-
-	var_4_49[20607228] = {
+	pg.base.ship_l2d[20607228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22539,11 +21339,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_l2d
-
-	var_4_50[20607229] = {
+	pg.base.ship_l2d[20607229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22587,11 +21383,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_l2d
-
-	var_4_51[20607230] = {
+	pg.base.ship_l2d[20607230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22634,11 +21426,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_l2d
-
-	var_4_52[20606201] = {
+	pg.base.ship_l2d[20606201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22681,11 +21469,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_l2d
-
-	var_4_53[20606202] = {
+	pg.base.ship_l2d[20606202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22728,11 +21512,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_l2d
-
-	var_4_54[20606203] = {
+	pg.base.ship_l2d[20606203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22776,11 +21556,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_l2d
-
-	var_4_55[20606204] = {
+	pg.base.ship_l2d[20606204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22824,11 +21600,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_l2d
-
-	var_4_56[20606205] = {
+	pg.base.ship_l2d[20606205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22872,11 +21644,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_l2d
-
-	var_4_57[20606206] = {
+	pg.base.ship_l2d[20606206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -22969,11 +21737,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_l2d
-
-	var_4_58[20606207] = {
+	pg.base.ship_l2d[20606207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23021,11 +21785,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_l2d
-
-	var_4_59[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 10,
 		gyro_y = 0,
@@ -23064,11 +21824,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_l2d
-
-	var_4_60[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23107,11 +21863,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_l2d
-
-	var_4_61[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23210,11 +21962,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_l2d
-
-	var_4_62[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23257,11 +22005,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_l2d
-
-	var_4_63[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23304,11 +22048,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_l2d
-
-	var_4_64[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23352,11 +22092,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_l2d
-
-	var_4_65[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23400,11 +22136,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_l2d
-
-	var_4_66[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23448,11 +22180,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_l2d
-
-	var_4_67[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23500,11 +22228,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_l2d
-
-	var_4_68[10145201] = {
+	pg.base.ship_l2d[10145201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23552,11 +22276,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_l2d
-
-	var_4_69[10145202] = {
+	pg.base.ship_l2d[10145202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23604,11 +22324,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_l2d
-
-	var_4_70[10145203] = {
+	pg.base.ship_l2d[10145203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23663,11 +22379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_l2d
-
-	var_4_71[70502101] = {
+	pg.base.ship_l2d[70502101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23710,11 +22422,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_l2d
-
-	var_4_72[70502102] = {
+	pg.base.ship_l2d[70502102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23757,11 +22465,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_l2d
-
-	var_4_73[70502103] = {
+	pg.base.ship_l2d[70502103] = {
 		listener_data = "",
 		offset_x = 6,
 		gyro_y = 0,
@@ -23800,11 +22504,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_l2d
-
-	var_4_74[70502104] = {
+	pg.base.ship_l2d[70502104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23843,11 +22543,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_l2d
-
-	var_4_75[70502105] = {
+	pg.base.ship_l2d[70502105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23895,11 +22591,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_l2d
-
-	var_4_76[70502106] = {
+	pg.base.ship_l2d[70502106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23947,11 +22639,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_l2d
-
-	var_4_77[70502107] = {
+	pg.base.ship_l2d[70502107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -23999,11 +22687,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_l2d
-
-	var_4_78[70502108] = {
+	pg.base.ship_l2d[70502108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24051,11 +22735,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_l2d
-
-	var_4_79[70502109] = {
+	pg.base.ship_l2d[70502109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24103,11 +22783,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_l2d
-
-	var_4_80[70502110] = {
+	pg.base.ship_l2d[70502110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24150,11 +22826,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_l2d
-
-	var_4_81[70502111] = {
+	pg.base.ship_l2d[70502111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24198,11 +22870,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_l2d
-
-	var_4_82[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24298,11 +22966,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_l2d
-
-	var_4_83[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24398,11 +23062,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_l2d
-
-	var_4_84[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24446,11 +23106,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_l2d
-
-	var_4_85[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24494,11 +23150,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_l2d
-
-	var_4_86[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24542,11 +23194,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_l2d
-
-	var_4_87[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24625,11 +23273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_l2d
-
-	var_4_88[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24677,11 +23321,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_l2d
-
-	var_4_89[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24729,11 +23369,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_l2d
-
-	var_4_90[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24829,11 +23465,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_l2d
-
-	var_4_91[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 30,
 		gyro_y = 0,
@@ -24872,11 +23504,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_l2d
-
-	var_4_92[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -24915,11 +23543,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_l2d
-
-	var_4_93[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 30,
 		gyro_y = 0,
@@ -24958,11 +23582,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.ship_l2d
-
-	var_4_94[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25001,11 +23621,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_l2d
-
-	var_4_95[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25053,11 +23669,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_l2d
-
-	var_4_96[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25101,11 +23713,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_l2d
-
-	var_4_97[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25151,11 +23759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_l2d
-
-	var_4_98[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25201,8 +23805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.ship_l2d[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25252,11 +23855,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_l2d
-
-	var_5_0[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25302,11 +23901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_l2d
-
-	var_5_1[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25351,11 +23946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_l2d
-
-	var_5_2[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25400,11 +23991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_l2d
-
-	var_5_3[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25447,11 +24034,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_l2d
-
-	var_5_4[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25495,11 +24078,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_l2d
-
-	var_5_5[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25543,11 +24122,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_l2d
-
-	var_5_6[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25591,11 +24166,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_l2d
-
-	var_5_7[20705312] = {
+	pg.base.ship_l2d[20705312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25681,11 +24252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_l2d
-
-	var_5_8[20705313] = {
+	pg.base.ship_l2d[20705313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25782,11 +24349,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_l2d
-
-	var_5_9[20705314] = {
+	pg.base.ship_l2d[20705314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25834,11 +24397,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_l2d
-
-	var_5_10[20705315] = {
+	pg.base.ship_l2d[20705315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25935,11 +24494,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_l2d
-
-	var_5_11[20705316] = {
+	pg.base.ship_l2d[20705316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -25987,11 +24542,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_l2d
-
-	var_5_12[80503101] = {
+	pg.base.ship_l2d[80503101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26034,11 +24585,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_l2d
-
-	var_5_13[80503102] = {
+	pg.base.ship_l2d[80503102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26082,11 +24629,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_l2d
-
-	var_5_14[80503103] = {
+	pg.base.ship_l2d[80503103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26134,11 +24677,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_l2d
-
-	var_5_15[80503104] = {
+	pg.base.ship_l2d[80503104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26182,11 +24721,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_l2d
-
-	var_5_16[80503105] = {
+	pg.base.ship_l2d[80503105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26234,11 +24769,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_l2d
-
-	var_5_17[80503106] = {
+	pg.base.ship_l2d[80503106] = {
 		listener_data = "",
 		offset_x = 25,
 		gyro_y = 0,
@@ -26333,11 +24864,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_l2d
-
-	var_5_18[80503107] = {
+	pg.base.ship_l2d[80503107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26385,11 +24912,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_l2d
-
-	var_5_19[80503108] = {
+	pg.base.ship_l2d[80503108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26484,11 +25007,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_l2d
-
-	var_5_20[80503109] = {
+	pg.base.ship_l2d[80503109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26536,11 +25055,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_l2d
-
-	var_5_21[80503110] = {
+	pg.base.ship_l2d[80503110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26637,11 +25152,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_l2d
-
-	var_5_22[80503111] = {
+	pg.base.ship_l2d[80503111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26680,11 +25191,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_l2d
-
-	var_5_23[29903401] = {
+	pg.base.ship_l2d[29903401] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26732,11 +25239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_l2d
-
-	var_5_24[29903402] = {
+	pg.base.ship_l2d[29903402] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26779,11 +25282,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_l2d
-
-	var_5_25[29903403] = {
+	pg.base.ship_l2d[29903403] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26880,11 +25379,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_l2d
-
-	var_5_26[29903404] = {
+	pg.base.ship_l2d[29903404] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26932,11 +25427,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_l2d
-
-	var_5_27[29903405] = {
+	pg.base.ship_l2d[29903405] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -26984,11 +25475,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_l2d
-
-	var_5_28[29903406] = {
+	pg.base.ship_l2d[29903406] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27036,11 +25523,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_l2d
-
-	var_5_29[29903407] = {
+	pg.base.ship_l2d[29903407] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27115,11 +25598,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_l2d
-
-	var_5_30[29903408] = {
+	pg.base.ship_l2d[29903408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27189,11 +25668,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_l2d
-
-	var_5_31[29903409] = {
+	pg.base.ship_l2d[29903409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27263,11 +25738,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_l2d
-
-	var_5_32[29903410] = {
+	pg.base.ship_l2d[29903410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27337,11 +25808,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_l2d
-
-	var_5_33[29903411] = {
+	pg.base.ship_l2d[29903411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27412,11 +25879,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_l2d
-
-	var_5_34[29903412] = {
+	pg.base.ship_l2d[29903412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27464,11 +25927,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.ship_l2d
-
-	var_5_35[29903413] = {
+	pg.base.ship_l2d[29903413] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27511,11 +25970,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.ship_l2d
-
-	var_5_36[29903414] = {
+	pg.base.ship_l2d[29903414] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27585,11 +26040,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.ship_l2d
-
-	var_5_37[29903415] = {
+	pg.base.ship_l2d[29903415] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27637,11 +26088,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.ship_l2d
-
-	var_5_38[29903416] = {
+	pg.base.ship_l2d[29903416] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27685,11 +26132,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.ship_l2d
-
-	var_5_39[29903417] = {
+	pg.base.ship_l2d[29903417] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27733,11 +26176,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.ship_l2d
-
-	var_5_40[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27801,11 +26240,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.ship_l2d
-
-	var_5_41[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27867,11 +26302,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.ship_l2d
-
-	var_5_42[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27919,11 +26350,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.ship_l2d
-
-	var_5_43[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -27987,11 +26414,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.ship_l2d
-
-	var_5_44[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28053,11 +26476,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.ship_l2d
-
-	var_5_45[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28105,11 +26524,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.ship_l2d
-
-	var_5_46[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28173,11 +26588,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.ship_l2d
-
-	var_5_47[10213408] = {
+	pg.base.ship_l2d[10213408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28239,11 +26650,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.ship_l2d
-
-	var_5_48[10213409] = {
+	pg.base.ship_l2d[10213409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28291,11 +26698,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.ship_l2d
-
-	var_5_49[10213410] = {
+	pg.base.ship_l2d[10213410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28359,11 +26762,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.ship_l2d
-
-	var_5_50[10213411] = {
+	pg.base.ship_l2d[10213411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28425,11 +26824,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.ship_l2d
-
-	var_5_51[10213412] = {
+	pg.base.ship_l2d[10213412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28477,11 +26872,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.ship_l2d
-
-	var_5_52[10213413] = {
+	pg.base.ship_l2d[10213413] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28545,11 +26936,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.ship_l2d
-
-	var_5_53[10213414] = {
+	pg.base.ship_l2d[10213414] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28611,11 +26998,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.ship_l2d
-
-	var_5_54[10213415] = {
+	pg.base.ship_l2d[10213415] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28663,11 +27046,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.ship_l2d
-
-	var_5_55[10213416] = {
+	pg.base.ship_l2d[10213416] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28731,11 +27110,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.ship_l2d
-
-	var_5_56[10213417] = {
+	pg.base.ship_l2d[10213417] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28797,11 +27172,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.ship_l2d
-
-	var_5_57[10213418] = {
+	pg.base.ship_l2d[10213418] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28849,11 +27220,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.ship_l2d
-
-	var_5_58[10213419] = {
+	pg.base.ship_l2d[10213419] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28917,11 +27284,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.ship_l2d
-
-	var_5_59[10213420] = {
+	pg.base.ship_l2d[10213420] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -28996,11 +27359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.ship_l2d
-
-	var_5_60[10213421] = {
+	pg.base.ship_l2d[10213421] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29039,11 +27398,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.ship_l2d
-
-	var_5_61[10213422] = {
+	pg.base.ship_l2d[10213422] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29082,11 +27437,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.ship_l2d
-
-	var_5_62[10213423] = {
+	pg.base.ship_l2d[10213423] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29125,11 +27476,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.ship_l2d
-
-	var_5_63[10213424] = {
+	pg.base.ship_l2d[10213424] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29168,11 +27515,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.ship_l2d
-
-	var_5_64[10213425] = {
+	pg.base.ship_l2d[10213425] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29211,11 +27554,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.ship_l2d
-
-	var_5_65[10213426] = {
+	pg.base.ship_l2d[10213426] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29254,11 +27593,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.ship_l2d
-
-	var_5_66[10213427] = {
+	pg.base.ship_l2d[10213427] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29297,11 +27632,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.ship_l2d
-
-	var_5_67[10213428] = {
+	pg.base.ship_l2d[10213428] = {
 		listener_data = "",
 		offset_x = 7,
 		gyro_y = 0,
@@ -29340,11 +27671,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.ship_l2d
-
-	var_5_68[10213429] = {
+	pg.base.ship_l2d[10213429] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29383,11 +27710,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.ship_l2d
-
-	var_5_69[10213430] = {
+	pg.base.ship_l2d[10213430] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29426,11 +27749,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.ship_l2d
-
-	var_5_70[10213431] = {
+	pg.base.ship_l2d[10213431] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29469,11 +27788,7 @@ end)()
 			12.5
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.ship_l2d
-
-	var_5_71[10213432] = {
+	pg.base.ship_l2d[10213432] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29512,11 +27827,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.ship_l2d
-
-	var_5_72[10213433] = {
+	pg.base.ship_l2d[10213433] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29564,11 +27875,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.ship_l2d
-
-	var_5_73[10213434] = {
+	pg.base.ship_l2d[10213434] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29616,11 +27923,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.ship_l2d
-
-	var_5_74[10213435] = {
+	pg.base.ship_l2d[10213435] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29668,11 +27971,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.ship_l2d
-
-	var_5_75[10213436] = {
+	pg.base.ship_l2d[10213436] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29715,11 +28014,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.ship_l2d
-
-	var_5_76[10213437] = {
+	pg.base.ship_l2d[10213437] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29762,11 +28057,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.ship_l2d
-
-	var_5_77[10213438] = {
+	pg.base.ship_l2d[10213438] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29809,11 +28100,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.ship_l2d
-
-	var_5_78[10213439] = {
+	pg.base.ship_l2d[10213439] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29852,11 +28139,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.ship_l2d
-
-	var_5_79[10213440] = {
+	pg.base.ship_l2d[10213440] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29895,11 +28178,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.ship_l2d
-
-	var_5_80[10213441] = {
+	pg.base.ship_l2d[10213441] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -29966,11 +28245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.ship_l2d
-
-	var_5_81[10213442] = {
+	pg.base.ship_l2d[10213442] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30013,11 +28288,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.ship_l2d
-
-	var_5_82[10213443] = {
+	pg.base.ship_l2d[10213443] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -30056,11 +28327,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.ship_l2d
-
-	var_5_83[10213444] = {
+	pg.base.ship_l2d[10213444] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30099,11 +28366,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.ship_l2d
-
-	var_5_84[10213445] = {
+	pg.base.ship_l2d[10213445] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30142,11 +28405,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.ship_l2d
-
-	var_5_85[10213446] = {
+	pg.base.ship_l2d[10213446] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30185,11 +28444,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.ship_l2d
-
-	var_5_86[10213447] = {
+	pg.base.ship_l2d[10213447] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30237,11 +28492,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.ship_l2d
-
-	var_5_87[10213448] = {
+	pg.base.ship_l2d[10213448] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30289,11 +28540,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.ship_l2d
-
-	var_5_88[10213449] = {
+	pg.base.ship_l2d[10213449] = {
 		listener_data = "",
 		offset_x = -14,
 		gyro_y = 0,
@@ -30332,11 +28579,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.ship_l2d
-
-	var_5_89[10213450] = {
+	pg.base.ship_l2d[10213450] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -30379,11 +28622,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.ship_l2d
-
-	var_5_90[10213451] = {
+	pg.base.ship_l2d[10213451] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30446,11 +28685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.ship_l2d
-
-	var_5_91[10213452] = {
+	pg.base.ship_l2d[10213452] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30513,11 +28748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.ship_l2d
-
-	var_5_92[10213453] = {
+	pg.base.ship_l2d[10213453] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30580,11 +28811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.ship_l2d
-
-	var_5_93[10213454] = {
+	pg.base.ship_l2d[10213454] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30647,11 +28874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.ship_l2d
-
-	var_5_94[90107101] = {
+	pg.base.ship_l2d[90107101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30694,11 +28917,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.ship_l2d
-
-	var_5_95[90107102] = {
+	pg.base.ship_l2d[90107102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30791,11 +29010,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.ship_l2d
-
-	var_5_96[90107103] = {
+	pg.base.ship_l2d[90107103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30888,11 +29103,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.ship_l2d
-
-	var_5_97[90107104] = {
+	pg.base.ship_l2d[90107104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -30940,11 +29151,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.ship_l2d
-
-	var_5_98[90107105] = {
+	pg.base.ship_l2d[90107105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31037,8 +29244,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.ship_l2d[90107106] = {
+	pg.base.ship_l2d[90107106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31090,11 +29296,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.ship_l2d
-
-	var_6_0[90107107] = {
+	pg.base.ship_l2d[90107107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31142,11 +29344,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.ship_l2d
-
-	var_6_1[90107108] = {
+	pg.base.ship_l2d[90107108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31239,11 +29437,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.ship_l2d
-
-	var_6_2[90107109] = {
+	pg.base.ship_l2d[90107109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31291,11 +29485,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.ship_l2d
-
-	var_6_3[90107110] = {
+	pg.base.ship_l2d[90107110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31339,11 +29529,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.ship_l2d
-
-	var_6_4[40310201] = {
+	pg.base.ship_l2d[40310201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31436,11 +29622,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.ship_l2d
-
-	var_6_5[40310202] = {
+	pg.base.ship_l2d[40310202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31488,11 +29670,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.ship_l2d
-
-	var_6_6[40310203] = {
+	pg.base.ship_l2d[40310203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31585,11 +29763,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.ship_l2d
-
-	var_6_7[40310204] = {
+	pg.base.ship_l2d[40310204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31682,11 +29856,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.ship_l2d
-
-	var_6_8[40310205] = {
+	pg.base.ship_l2d[40310205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31779,11 +29949,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.ship_l2d
-
-	var_6_9[40310206] = {
+	pg.base.ship_l2d[40310206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31831,11 +29997,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.ship_l2d
-
-	var_6_10[40310207] = {
+	pg.base.ship_l2d[40310207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31928,11 +30090,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.ship_l2d
-
-	var_6_11[40310208] = {
+	pg.base.ship_l2d[40310208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -31980,11 +30138,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.ship_l2d
-
-	var_6_12[40310209] = {
+	pg.base.ship_l2d[40310209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32077,11 +30231,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.ship_l2d
-
-	var_6_13[40310210] = {
+	pg.base.ship_l2d[40310210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32129,11 +30279,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.ship_l2d
-
-	var_6_14[20703701] = {
+	pg.base.ship_l2d[20703701] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -32266,11 +30412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.ship_l2d
-
-	var_6_15[20703702] = {
+	pg.base.ship_l2d[20703702] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32326,11 +30468,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.ship_l2d
-
-	var_6_16[20703703] = {
+	pg.base.ship_l2d[20703703] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32376,11 +30514,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.ship_l2d
-
-	var_6_17[20703704] = {
+	pg.base.ship_l2d[20703704] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32426,11 +30560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.ship_l2d
-
-	var_6_18[20703705] = {
+	pg.base.ship_l2d[20703705] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32476,11 +30606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.ship_l2d
-
-	var_6_19[20703706] = {
+	pg.base.ship_l2d[20703706] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32545,11 +30671,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.ship_l2d
-
-	var_6_20[20703707] = {
+	pg.base.ship_l2d[20703707] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32612,11 +30734,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.ship_l2d
-
-	var_6_21[20703708] = {
+	pg.base.ship_l2d[20703708] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32679,11 +30797,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.ship_l2d
-
-	var_6_22[20703709] = {
+	pg.base.ship_l2d[20703709] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32746,11 +30860,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.ship_l2d
-
-	var_6_23[20703710] = {
+	pg.base.ship_l2d[20703710] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32813,11 +30923,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.ship_l2d
-
-	var_6_24[20703711] = {
+	pg.base.ship_l2d[20703711] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32880,11 +30986,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.ship_l2d
-
-	var_6_25[20703712] = {
+	pg.base.ship_l2d[20703712] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32930,11 +31032,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.ship_l2d
-
-	var_6_26[20703713] = {
+	pg.base.ship_l2d[20703713] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -32980,11 +31078,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.ship_l2d
-
-	var_6_27[20703714] = {
+	pg.base.ship_l2d[20703714] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33030,11 +31124,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.ship_l2d
-
-	var_6_28[20703715] = {
+	pg.base.ship_l2d[20703715] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33080,11 +31170,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.ship_l2d
-
-	var_6_29[20703716] = {
+	pg.base.ship_l2d[20703716] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33130,11 +31216,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.ship_l2d
-
-	var_6_30[20703717] = {
+	pg.base.ship_l2d[20703717] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33180,11 +31262,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.ship_l2d
-
-	var_6_31[20703718] = {
+	pg.base.ship_l2d[20703718] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33283,11 +31361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.ship_l2d
-
-	var_6_32[20703719] = {
+	pg.base.ship_l2d[20703719] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33386,11 +31460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.ship_l2d
-
-	var_6_33[20703720] = {
+	pg.base.ship_l2d[20703720] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33433,11 +31503,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.ship_l2d
-
-	var_6_34[20703721] = {
+	pg.base.ship_l2d[20703721] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33480,11 +31546,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.ship_l2d
-
-	var_6_35[20703722] = {
+	pg.base.ship_l2d[20703722] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -33538,11 +31600,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.ship_l2d
-
-	var_6_36[20703723] = {
+	pg.base.ship_l2d[20703723] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -33586,11 +31644,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.ship_l2d
-
-	var_6_37[20703724] = {
+	pg.base.ship_l2d[20703724] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -33634,11 +31688,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.ship_l2d
-
-	var_6_38[20703725] = {
+	pg.base.ship_l2d[20703725] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -33682,11 +31732,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.ship_l2d
-
-	var_6_39[20703726] = {
+	pg.base.ship_l2d[20703726] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -33730,11 +31776,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.ship_l2d
-
-	var_6_40[20703727] = {
+	pg.base.ship_l2d[20703727] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33776,11 +31818,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.ship_l2d
-
-	var_6_41[20703728] = {
+	pg.base.ship_l2d[20703728] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33823,11 +31861,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.ship_l2d
-
-	var_6_42[20703729] = {
+	pg.base.ship_l2d[20703729] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33866,11 +31900,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.ship_l2d
-
-	var_6_43[20703730] = {
+	pg.base.ship_l2d[20703730] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33909,11 +31939,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.ship_l2d
-
-	var_6_44[20703731] = {
+	pg.base.ship_l2d[20703731] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33952,11 +31978,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.ship_l2d
-
-	var_6_45[90402101] = {
+	pg.base.ship_l2d[90402101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -33998,11 +32020,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.ship_l2d
-
-	var_6_46[90402102] = {
+	pg.base.ship_l2d[90402102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34065,11 +32083,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.ship_l2d
-
-	var_6_47[90402103] = {
+	pg.base.ship_l2d[90402103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34115,11 +32129,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.ship_l2d
-
-	var_6_48[90402104] = {
+	pg.base.ship_l2d[90402104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34182,11 +32192,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.ship_l2d
-
-	var_6_49[90402105] = {
+	pg.base.ship_l2d[90402105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34249,11 +32255,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.ship_l2d
-
-	var_6_50[90402106] = {
+	pg.base.ship_l2d[90402106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34299,11 +32301,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.ship_l2d
-
-	var_6_51[90402107] = {
+	pg.base.ship_l2d[90402107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34345,11 +32343,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.ship_l2d
-
-	var_6_52[90402108] = {
+	pg.base.ship_l2d[90402108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34391,11 +32385,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.ship_l2d
-
-	var_6_53[90402109] = {
+	pg.base.ship_l2d[90402109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34459,11 +32449,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.ship_l2d
-
-	var_6_54[90402110] = {
+	pg.base.ship_l2d[90402110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34527,11 +32513,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.ship_l2d
-
-	var_6_55[90402111] = {
+	pg.base.ship_l2d[90402111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34595,11 +32577,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.ship_l2d
-
-	var_6_56[90402112] = {
+	pg.base.ship_l2d[90402112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34663,11 +32641,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.ship_l2d
-
-	var_6_57[90402113] = {
+	pg.base.ship_l2d[90402113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34713,11 +32687,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.ship_l2d
-
-	var_6_58[90402114] = {
+	pg.base.ship_l2d[90402114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34759,11 +32729,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.ship_l2d
-
-	var_6_59[90402115] = {
+	pg.base.ship_l2d[90402115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34805,11 +32771,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.ship_l2d
-
-	var_6_60[90402116] = {
+	pg.base.ship_l2d[90402116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34851,11 +32813,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.ship_l2d
-
-	var_6_61[90402117] = {
+	pg.base.ship_l2d[90402117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34897,11 +32855,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.ship_l2d
-
-	var_6_62[90402118] = {
+	pg.base.ship_l2d[90402118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -34964,11 +32918,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.ship_l2d
-
-	var_6_63[90402119] = {
+	pg.base.ship_l2d[90402119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35014,11 +32964,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.ship_l2d
-
-	var_6_64[90402120] = {
+	pg.base.ship_l2d[90402120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35060,11 +33006,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.ship_l2d
-
-	var_6_65[90402121] = {
+	pg.base.ship_l2d[90402121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35106,11 +33048,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.ship_l2d
-
-	var_6_66[90402122] = {
+	pg.base.ship_l2d[90402122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35154,11 +33092,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.ship_l2d
-
-	var_6_67[90701301] = {
+	pg.base.ship_l2d[90701301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35213,11 +33147,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.ship_l2d
-
-	var_6_68[90701302] = {
+	pg.base.ship_l2d[90701302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35274,11 +33204,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.ship_l2d
-
-	var_6_69[90701303] = {
+	pg.base.ship_l2d[90701303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35334,11 +33260,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.ship_l2d
-
-	var_6_70[90701304] = {
+	pg.base.ship_l2d[90701304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35388,11 +33310,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.ship_l2d
-
-	var_6_71[90701305] = {
+	pg.base.ship_l2d[90701305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35438,11 +33356,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.ship_l2d
-
-	var_6_72[90701306] = {
+	pg.base.ship_l2d[90701306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35492,11 +33406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.ship_l2d
-
-	var_6_73[90701307] = {
+	pg.base.ship_l2d[90701307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35551,11 +33461,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.ship_l2d
-
-	var_6_74[90701308] = {
+	pg.base.ship_l2d[90701308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35610,11 +33516,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.ship_l2d
-
-	var_6_75[90701309] = {
+	pg.base.ship_l2d[90701309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35664,11 +33566,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.ship_l2d
-
-	var_6_76[90701310] = {
+	pg.base.ship_l2d[90701310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35714,11 +33612,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.ship_l2d
-
-	var_6_77[90701311] = {
+	pg.base.ship_l2d[90701311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35768,11 +33662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.ship_l2d
-
-	var_6_78[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35827,11 +33717,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.ship_l2d
-
-	var_6_79[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35886,11 +33772,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.ship_l2d
-
-	var_6_80[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35940,11 +33822,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.ship_l2d
-
-	var_6_81[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -35990,11 +33868,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.ship_l2d
-
-	var_6_82[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36044,11 +33918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.ship_l2d
-
-	var_6_83[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36104,11 +33974,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.ship_l2d
-
-	var_6_84[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36165,11 +34031,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.ship_l2d
-
-	var_6_85[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36219,11 +34081,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.ship_l2d
-
-	var_6_86[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36269,11 +34127,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.ship_l2d
-
-	var_6_87[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36323,11 +34177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.ship_l2d
-
-	var_6_88[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36370,11 +34220,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.ship_l2d
-
-	var_6_89[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36417,11 +34263,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.ship_l2d
-
-	var_6_90[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36464,11 +34306,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.ship_l2d
-
-	var_6_91[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36511,11 +34349,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.ship_l2d
-
-	var_6_92[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36554,11 +34388,7 @@ end)()
 			120
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.ship_l2d
-
-	var_6_93[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36597,11 +34427,7 @@ end)()
 			60
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.ship_l2d
-
-	var_6_94[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36640,11 +34466,7 @@ end)()
 			60
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.ship_l2d
-
-	var_6_95[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36683,11 +34505,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.ship_l2d
-
-	var_6_96[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -36740,11 +34558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.ship_l2d
-
-	var_6_97[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36799,11 +34613,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.ship_l2d
-
-	var_6_98[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36860,8 +34670,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.ship_l2d[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36921,11 +34730,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.ship_l2d
-
-	var_7_0[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -36980,11 +34785,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.ship_l2d
-
-	var_7_1[80702201] = {
+	pg.base.ship_l2d[80702201] = {
 		listener_data = "",
 		offset_x = -20,
 		gyro_y = 0,
@@ -37028,11 +34829,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.ship_l2d
-
-	var_7_2[80702202] = {
+	pg.base.ship_l2d[80702202] = {
 		listener_data = "",
 		offset_x = -20,
 		gyro_y = 0,
@@ -37076,11 +34873,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.ship_l2d
-
-	var_7_3[80702203] = {
+	pg.base.ship_l2d[80702203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37129,11 +34922,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.ship_l2d
-
-	var_7_4[80702204] = {
+	pg.base.ship_l2d[80702204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37179,11 +34968,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.ship_l2d
-
-	var_7_5[49902201] = {
+	pg.base.ship_l2d[49902201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37265,11 +35050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.ship_l2d
-
-	var_7_6[49902202] = {
+	pg.base.ship_l2d[49902202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37311,11 +35092,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.ship_l2d
-
-	var_7_7[49902203] = {
+	pg.base.ship_l2d[49902203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37396,11 +35173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.ship_l2d
-
-	var_7_8[49902204] = {
+	pg.base.ship_l2d[49902204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37482,11 +35255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.ship_l2d
-
-	var_7_9[49902205] = {
+	pg.base.ship_l2d[49902205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37568,11 +35337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.ship_l2d
-
-	var_7_10[49902206] = {
+	pg.base.ship_l2d[49902206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37654,11 +35419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.ship_l2d
-
-	var_7_11[49902207] = {
+	pg.base.ship_l2d[49902207] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -37700,11 +35461,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.ship_l2d
-
-	var_7_12[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37785,11 +35542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.ship_l2d
-
-	var_7_13[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37876,11 +35629,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.ship_l2d
-
-	var_7_14[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -37961,11 +35710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.ship_l2d
-
-	var_7_15[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38048,11 +35793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.ship_l2d
-
-	var_7_16[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38096,11 +35837,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.ship_l2d
-
-	var_7_17[10328101] = {
+	pg.base.ship_l2d[10328101] = {
 		listener_data = "",
 		offset_x = 20,
 		gyro_y = 0,
@@ -38198,11 +35935,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.ship_l2d
-
-	var_7_18[10328102] = {
+	pg.base.ship_l2d[10328102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38295,11 +36028,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.ship_l2d
-
-	var_7_19[10328103] = {
+	pg.base.ship_l2d[10328103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38341,11 +36070,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.ship_l2d
-
-	var_7_20[10328104] = {
+	pg.base.ship_l2d[10328104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38438,11 +36163,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.ship_l2d
-
-	var_7_21[10328105] = {
+	pg.base.ship_l2d[10328105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38484,11 +36205,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.ship_l2d
-
-	var_7_22[10328106] = {
+	pg.base.ship_l2d[10328106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38530,11 +36247,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.ship_l2d
-
-	var_7_23[10328107] = {
+	pg.base.ship_l2d[10328107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38580,11 +36293,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.ship_l2d
-
-	var_7_24[10328108] = {
+	pg.base.ship_l2d[10328108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38677,11 +36386,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.ship_l2d
-
-	var_7_25[10328109] = {
+	pg.base.ship_l2d[10328109] = {
 		listener_data = "",
 		offset_x = 7,
 		gyro_y = 0,
@@ -38742,11 +36447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.ship_l2d
-
-	var_7_26[10328110] = {
+	pg.base.ship_l2d[10328110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38788,11 +36489,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.ship_l2d
-
-	var_7_27[10328111] = {
+	pg.base.ship_l2d[10328111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38834,11 +36531,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.ship_l2d
-
-	var_7_28[10328112] = {
+	pg.base.ship_l2d[10328112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38880,11 +36573,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.ship_l2d
-
-	var_7_29[10328113] = {
+	pg.base.ship_l2d[10328113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38926,11 +36615,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.ship_l2d
-
-	var_7_30[10328114] = {
+	pg.base.ship_l2d[10328114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -38972,11 +36657,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.ship_l2d
-
-	var_7_31[10328115] = {
+	pg.base.ship_l2d[10328115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39069,11 +36750,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.ship_l2d
-
-	var_7_32[10328116] = {
+	pg.base.ship_l2d[10328116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39115,11 +36792,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.ship_l2d
-
-	var_7_33[10328117] = {
+	pg.base.ship_l2d[10328117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39161,11 +36834,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.ship_l2d
-
-	var_7_34[10328118] = {
+	pg.base.ship_l2d[10328118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39207,11 +36876,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.ship_l2d
-
-	var_7_35[10328119] = {
+	pg.base.ship_l2d[10328119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39253,11 +36918,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.ship_l2d
-
-	var_7_36[10328120] = {
+	pg.base.ship_l2d[10328120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39299,11 +36960,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.ship_l2d
-
-	var_7_37[10328121] = {
+	pg.base.ship_l2d[10328121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39398,11 +37055,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.ship_l2d
-
-	var_7_38[10328122] = {
+	pg.base.ship_l2d[10328122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39444,11 +37097,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.ship_l2d
-
-	var_7_39[10328123] = {
+	pg.base.ship_l2d[10328123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39490,11 +37139,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.ship_l2d
-
-	var_7_40[10328124] = {
+	pg.base.ship_l2d[10328124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39536,11 +37181,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.ship_l2d
-
-	var_7_41[10328125] = {
+	pg.base.ship_l2d[10328125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39586,11 +37227,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.ship_l2d
-
-	var_7_42[30510201] = {
+	pg.base.ship_l2d[30510201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39686,11 +37323,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.ship_l2d
-
-	var_7_43[30510202] = {
+	pg.base.ship_l2d[30510202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39744,11 +37377,7 @@ end)()
 			type = 8
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.ship_l2d
-
-	var_7_44[30510203] = {
+	pg.base.ship_l2d[30510203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39794,11 +37423,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.ship_l2d
-
-	var_7_45[30510204] = {
+	pg.base.ship_l2d[30510204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -39898,11 +37523,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.ship_l2d
-
-	var_7_46[30510205] = {
+	pg.base.ship_l2d[30510205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40002,11 +37623,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.ship_l2d
-
-	var_7_47[30510206] = {
+	pg.base.ship_l2d[30510206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40106,11 +37723,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.ship_l2d
-
-	var_7_48[30510207] = {
+	pg.base.ship_l2d[30510207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40210,11 +37823,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.ship_l2d
-
-	var_7_49[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40314,11 +37923,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.ship_l2d
-
-	var_7_50[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40418,11 +38023,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.ship_l2d
-
-	var_7_51[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40470,11 +38071,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.ship_l2d
-
-	var_7_52[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40522,11 +38119,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.ship_l2d
-
-	var_7_53[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40574,11 +38167,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.ship_l2d
-
-	var_7_54[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40626,11 +38215,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.ship_l2d
-
-	var_7_55[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40678,11 +38263,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.ship_l2d
-
-	var_7_56[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40730,11 +38311,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.ship_l2d
-
-	var_7_57[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -40784,11 +38361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.ship_l2d
-
-	var_7_58[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -40838,11 +38411,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.ship_l2d
-
-	var_7_59[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40902,11 +38471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.ship_l2d
-
-	var_7_60[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -40954,11 +38519,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.ship_l2d
-
-	var_7_61[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41006,11 +38567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.ship_l2d
-
-	var_7_62[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41058,11 +38615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.ship_l2d
-
-	var_7_63[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41105,11 +38658,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.ship_l2d
-
-	var_7_64[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41152,11 +38701,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.ship_l2d
-
-	var_7_65[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41199,11 +38744,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.ship_l2d
-
-	var_7_66[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41246,11 +38787,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.ship_l2d
-
-	var_7_67[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 30,
 		gyro_y = 0,
@@ -41311,11 +38848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.ship_l2d
-
-	var_7_68[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 30,
 		gyro_y = 0,
@@ -41376,11 +38909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.ship_l2d
-
-	var_7_69[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41419,11 +38948,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.ship_l2d
-
-	var_7_70[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41462,11 +38987,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.ship_l2d
-
-	var_7_71[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41509,11 +39030,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.ship_l2d
-
-	var_7_72[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41556,11 +39073,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.ship_l2d
-
-	var_7_73[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41599,11 +39112,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.ship_l2d
-
-	var_7_74[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41656,11 +39165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.ship_l2d
-
-	var_7_75[30225101] = {
+	pg.base.ship_l2d[30225101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41699,11 +39204,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.ship_l2d
-
-	var_7_76[30225102] = {
+	pg.base.ship_l2d[30225102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41746,11 +39247,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.ship_l2d
-
-	var_7_77[30225103] = {
+	pg.base.ship_l2d[30225103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41793,11 +39290,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.ship_l2d
-
-	var_7_78[30225104] = {
+	pg.base.ship_l2d[30225104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41840,11 +39333,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.ship_l2d
-
-	var_7_79[30225105] = {
+	pg.base.ship_l2d[30225105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -41939,11 +39428,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.ship_l2d
-
-	var_7_80[30225106] = {
+	pg.base.ship_l2d[30225106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42038,11 +39523,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.ship_l2d
-
-	var_7_81[30225107] = {
+	pg.base.ship_l2d[30225107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42137,11 +39618,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.ship_l2d
-
-	var_7_82[30225108] = {
+	pg.base.ship_l2d[30225108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42236,11 +39713,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.ship_l2d
-
-	var_7_83[30225109] = {
+	pg.base.ship_l2d[30225109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42335,11 +39808,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.ship_l2d
-
-	var_7_84[30225110] = {
+	pg.base.ship_l2d[30225110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42434,11 +39903,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.ship_l2d
-
-	var_7_85[30225111] = {
+	pg.base.ship_l2d[30225111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42533,11 +39998,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.ship_l2d
-
-	var_7_86[30225112] = {
+	pg.base.ship_l2d[30225112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42583,11 +40044,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.ship_l2d
-
-	var_7_87[30225113] = {
+	pg.base.ship_l2d[30225113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42636,11 +40093,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.ship_l2d
-
-	var_7_88[30225114] = {
+	pg.base.ship_l2d[30225114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42735,11 +40188,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.ship_l2d
-
-	var_7_89[30225115] = {
+	pg.base.ship_l2d[30225115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42834,11 +40283,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.ship_l2d
-
-	var_7_90[30225116] = {
+	pg.base.ship_l2d[30225116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -42933,11 +40378,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.ship_l2d
-
-	var_7_91[30225117] = {
+	pg.base.ship_l2d[30225117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43032,11 +40473,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.ship_l2d
-
-	var_7_92[30225118] = {
+	pg.base.ship_l2d[30225118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43131,11 +40568,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.ship_l2d
-
-	var_7_93[30225119] = {
+	pg.base.ship_l2d[30225119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43230,11 +40663,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.ship_l2d
-
-	var_7_94[30225120] = {
+	pg.base.ship_l2d[30225120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43280,11 +40709,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.ship_l2d
-
-	var_7_95[30225121] = {
+	pg.base.ship_l2d[30225121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43379,11 +40804,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.ship_l2d
-
-	var_7_96[30715101] = {
+	pg.base.ship_l2d[30715101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43437,11 +40858,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.ship_l2d
-
-	var_7_97[30715102] = {
+	pg.base.ship_l2d[30715102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43489,11 +40906,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.ship_l2d
-
-	var_7_98[30715103] = {
+	pg.base.ship_l2d[30715103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43541,8 +40954,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.ship_l2d[30715104] = {
+	pg.base.ship_l2d[30715104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43594,11 +41006,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.ship_l2d
-
-	var_8_0[30715105] = {
+	pg.base.ship_l2d[30715105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43646,11 +41054,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.ship_l2d
-
-	var_8_1[30715106] = {
+	pg.base.ship_l2d[30715106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43698,11 +41102,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.ship_l2d
-
-	var_8_2[30715107] = {
+	pg.base.ship_l2d[30715107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43750,11 +41150,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.ship_l2d
-
-	var_8_3[30715108] = {
+	pg.base.ship_l2d[30715108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43800,11 +41196,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.ship_l2d
-
-	var_8_4[30715109] = {
+	pg.base.ship_l2d[30715109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43850,11 +41242,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.ship_l2d
-
-	var_8_5[30715110] = {
+	pg.base.ship_l2d[30715110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43900,11 +41288,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.ship_l2d
-
-	var_8_6[30715111] = {
+	pg.base.ship_l2d[30715111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -43950,11 +41334,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.ship_l2d
-
-	var_8_7[30715112] = {
+	pg.base.ship_l2d[30715112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44000,11 +41380,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.ship_l2d
-
-	var_8_8[30715113] = {
+	pg.base.ship_l2d[30715113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44050,11 +41426,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.ship_l2d
-
-	var_8_9[30715114] = {
+	pg.base.ship_l2d[30715114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44100,11 +41472,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.ship_l2d
-
-	var_8_10[30715115] = {
+	pg.base.ship_l2d[30715115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44147,11 +41515,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.ship_l2d
-
-	var_8_11[30715116] = {
+	pg.base.ship_l2d[30715116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44197,11 +41561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.ship_l2d
-
-	var_8_12[30715117] = {
+	pg.base.ship_l2d[30715117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44247,11 +41607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.ship_l2d
-
-	var_8_13[30715118] = {
+	pg.base.ship_l2d[30715118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44294,11 +41650,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.ship_l2d
-
-	var_8_14[30715119] = {
+	pg.base.ship_l2d[30715119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44341,11 +41693,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.ship_l2d
-
-	var_8_15[30715120] = {
+	pg.base.ship_l2d[30715120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44389,11 +41737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.ship_l2d
-
-	var_8_16[20220401] = {
+	pg.base.ship_l2d[20220401] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44436,11 +41780,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.ship_l2d
-
-	var_8_17[20220402] = {
+	pg.base.ship_l2d[20220402] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44483,11 +41823,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.ship_l2d
-
-	var_8_18[20220403] = {
+	pg.base.ship_l2d[20220403] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44530,11 +41866,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.ship_l2d
-
-	var_8_19[20220404] = {
+	pg.base.ship_l2d[20220404] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44577,11 +41909,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.ship_l2d
-
-	var_8_20[20220405] = {
+	pg.base.ship_l2d[20220405] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44624,11 +41952,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.ship_l2d
-
-	var_8_21[20220406] = {
+	pg.base.ship_l2d[20220406] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -44706,11 +42030,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.ship_l2d
-
-	var_8_22[20220407] = {
+	pg.base.ship_l2d[20220407] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44752,11 +42072,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.ship_l2d
-
-	var_8_23[20220408] = {
+	pg.base.ship_l2d[20220408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44798,11 +42114,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.ship_l2d
-
-	var_8_24[20220409] = {
+	pg.base.ship_l2d[20220409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44844,11 +42156,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.ship_l2d
-
-	var_8_25[20220410] = {
+	pg.base.ship_l2d[20220410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44890,11 +42198,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.ship_l2d
-
-	var_8_26[20220411] = {
+	pg.base.ship_l2d[20220411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44936,11 +42240,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.ship_l2d
-
-	var_8_27[20220412] = {
+	pg.base.ship_l2d[20220412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -44982,11 +42282,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.ship_l2d
-
-	var_8_28[20220413] = {
+	pg.base.ship_l2d[20220413] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45028,11 +42324,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.ship_l2d
-
-	var_8_29[20220414] = {
+	pg.base.ship_l2d[20220414] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45074,11 +42366,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.ship_l2d
-
-	var_8_30[20220415] = {
+	pg.base.ship_l2d[20220415] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45120,11 +42408,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.ship_l2d
-
-	var_8_31[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45166,11 +42450,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.ship_l2d
-
-	var_8_32[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45212,11 +42492,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.ship_l2d
-
-	var_8_33[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45258,11 +42534,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.ship_l2d
-
-	var_8_34[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45304,11 +42576,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.ship_l2d
-
-	var_8_35[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45403,11 +42671,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.ship_l2d
-
-	var_8_36[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45502,11 +42766,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.ship_l2d
-
-	var_8_37[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45601,11 +42861,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.ship_l2d
-
-	var_8_38[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45700,11 +42956,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.ship_l2d
-
-	var_8_39[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45799,11 +43051,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.ship_l2d
-
-	var_8_40[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45898,11 +43146,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.ship_l2d
-
-	var_8_41[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -45997,11 +43241,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.ship_l2d
-
-	var_8_42[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46096,11 +43336,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.ship_l2d
-
-	var_8_43[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46197,11 +43433,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.ship_l2d
-
-	var_8_44[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46296,11 +43528,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.ship_l2d
-
-	var_8_45[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46346,11 +43574,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.ship_l2d
-
-	var_8_46[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46396,11 +43620,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.ship_l2d
-
-	var_8_47[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46446,11 +43666,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.ship_l2d
-
-	var_8_48[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46496,11 +43712,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.ship_l2d
-
-	var_8_49[30513201] = {
+	pg.base.ship_l2d[30513201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46559,11 +43771,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.ship_l2d
-
-	var_8_50[30513202] = {
+	pg.base.ship_l2d[30513202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46658,11 +43866,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.ship_l2d
-
-	var_8_51[30513203] = {
+	pg.base.ship_l2d[30513203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46757,11 +43961,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.ship_l2d
-
-	var_8_52[30513204] = {
+	pg.base.ship_l2d[30513204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46856,11 +44056,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.ship_l2d
-
-	var_8_53[30513205] = {
+	pg.base.ship_l2d[30513205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -46955,11 +44151,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.ship_l2d
-
-	var_8_54[30513206] = {
+	pg.base.ship_l2d[30513206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47054,11 +44246,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.ship_l2d
-
-	var_8_55[30513207] = {
+	pg.base.ship_l2d[30513207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47104,11 +44292,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.ship_l2d
-
-	var_8_56[30513208] = {
+	pg.base.ship_l2d[30513208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47151,11 +44335,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.ship_l2d
-
-	var_8_57[30513209] = {
+	pg.base.ship_l2d[30513209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47250,11 +44430,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.ship_l2d
-
-	var_8_58[30513210] = {
+	pg.base.ship_l2d[30513210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47349,11 +44525,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.ship_l2d
-
-	var_8_59[30513211] = {
+	pg.base.ship_l2d[30513211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47399,11 +44571,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.ship_l2d
-
-	var_8_60[40501301] = {
+	pg.base.ship_l2d[40501301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47446,11 +44614,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.ship_l2d
-
-	var_8_61[40501302] = {
+	pg.base.ship_l2d[40501302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47494,11 +44658,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.ship_l2d
-
-	var_8_62[40501303] = {
+	pg.base.ship_l2d[40501303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47541,11 +44701,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.ship_l2d
-
-	var_8_63[40501304] = {
+	pg.base.ship_l2d[40501304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47588,11 +44744,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.ship_l2d
-
-	var_8_64[40501305] = {
+	pg.base.ship_l2d[40501305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47635,11 +44787,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.ship_l2d
-
-	var_8_65[40501306] = {
+	pg.base.ship_l2d[40501306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47697,11 +44845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.ship_l2d
-
-	var_8_66[40501307] = {
+	pg.base.ship_l2d[40501307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47796,11 +44940,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.ship_l2d
-
-	var_8_67[40501308] = {
+	pg.base.ship_l2d[40501308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47843,11 +44983,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.ship_l2d
-
-	var_8_68[40501309] = {
+	pg.base.ship_l2d[40501309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -47893,11 +45029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.ship_l2d
-
-	var_8_69[40501310] = {
+	pg.base.ship_l2d[40501310] = {
 		listener_data = "",
 		offset_x = -200,
 		gyro_y = 0,
@@ -47943,11 +45075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.ship_l2d
-
-	var_8_70[40501311] = {
+	pg.base.ship_l2d[40501311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48044,11 +45172,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.ship_l2d
-
-	var_8_71[40501312] = {
+	pg.base.ship_l2d[40501312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48096,11 +45220,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.ship_l2d
-
-	var_8_72[40501313] = {
+	pg.base.ship_l2d[40501313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48143,11 +45263,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.ship_l2d
-
-	var_8_73[40501314] = {
+	pg.base.ship_l2d[40501314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48190,11 +45306,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.ship_l2d
-
-	var_8_74[40501315] = {
+	pg.base.ship_l2d[40501315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48289,11 +45401,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.ship_l2d
-
-	var_8_75[40501316] = {
+	pg.base.ship_l2d[40501316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48339,11 +45447,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.ship_l2d
-
-	var_8_76[40501317] = {
+	pg.base.ship_l2d[40501317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48438,11 +45542,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.ship_l2d
-
-	var_8_77[40501318] = {
+	pg.base.ship_l2d[40501318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48488,11 +45588,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.ship_l2d
-
-	var_8_78[40501319] = {
+	pg.base.ship_l2d[40501319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48587,11 +45683,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.ship_l2d
-
-	var_8_79[40501320] = {
+	pg.base.ship_l2d[40501320] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48637,11 +45729,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.ship_l2d
-
-	var_8_80[40501321] = {
+	pg.base.ship_l2d[40501321] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48683,11 +45771,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.ship_l2d
-
-	var_8_81[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48782,11 +45866,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.ship_l2d
-
-	var_8_82[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48830,11 +45910,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.ship_l2d
-
-	var_8_83[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48878,11 +45954,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.ship_l2d
-
-	var_8_84[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -48928,11 +46000,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.ship_l2d
-
-	var_8_85[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49027,11 +46095,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.ship_l2d
-
-	var_8_86[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49126,11 +46190,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.ship_l2d
-
-	var_8_87[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49225,11 +46285,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.ship_l2d
-
-	var_8_88[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49324,11 +46380,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.ship_l2d
-
-	var_8_89[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49370,11 +46422,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.ship_l2d
-
-	var_8_90[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49416,11 +46464,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.ship_l2d
-
-	var_8_91[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49515,11 +46559,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.ship_l2d
-
-	var_8_92[49905312] = {
+	pg.base.ship_l2d[49905312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49565,11 +46605,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.ship_l2d
-
-	var_8_93[49905313] = {
+	pg.base.ship_l2d[49905313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49612,11 +46648,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.ship_l2d
-
-	var_8_94[49905314] = {
+	pg.base.ship_l2d[49905314] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -49670,11 +46702,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.ship_l2d
-
-	var_8_95[49905316] = {
+	pg.base.ship_l2d[49905316] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -49728,11 +46756,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.ship_l2d
-
-	var_8_96[49905318] = {
+	pg.base.ship_l2d[49905318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49775,11 +46799,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.ship_l2d
-
-	var_8_97[49905319] = {
+	pg.base.ship_l2d[49905319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49822,11 +46842,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.ship_l2d
-
-	var_8_98[40704101] = {
+	pg.base.ship_l2d[40704101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49869,8 +46885,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.ship_l2d[40704102] = {
+	pg.base.ship_l2d[40704102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -49917,11 +46932,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.ship_l2d
-
-	var_9_0[40704103] = {
+	pg.base.ship_l2d[40704103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50016,11 +47027,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.ship_l2d
-
-	var_9_1[40704104] = {
+	pg.base.ship_l2d[40704104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50068,11 +47075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.ship_l2d
-
-	var_9_2[40704105] = {
+	pg.base.ship_l2d[40704105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50115,11 +47118,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.ship_l2d
-
-	var_9_3[40704106] = {
+	pg.base.ship_l2d[40704106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50214,11 +47213,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.ship_l2d
-
-	var_9_4[40704107] = {
+	pg.base.ship_l2d[40704107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50260,11 +47255,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.ship_l2d
-
-	var_9_5[40704108] = {
+	pg.base.ship_l2d[40704108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50310,11 +47301,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.ship_l2d
-
-	var_9_6[40704109] = {
+	pg.base.ship_l2d[40704109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50409,11 +47396,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.ship_l2d
-
-	var_9_7[40704110] = {
+	pg.base.ship_l2d[40704110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50456,11 +47439,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.ship_l2d
-
-	var_9_8[40704111] = {
+	pg.base.ship_l2d[40704111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50506,11 +47485,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.ship_l2d
-
-	var_9_9[40704112] = {
+	pg.base.ship_l2d[40704112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50605,11 +47580,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.ship_l2d
-
-	var_9_10[40704113] = {
+	pg.base.ship_l2d[40704113] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -50648,11 +47619,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.ship_l2d
-
-	var_9_11[40704114] = {
+	pg.base.ship_l2d[40704114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50698,11 +47665,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.ship_l2d
-
-	var_9_12[40704115] = {
+	pg.base.ship_l2d[40704115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50797,11 +47760,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.ship_l2d
-
-	var_9_13[40704116] = {
+	pg.base.ship_l2d[40704116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -50847,11 +47806,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.ship_l2d
-
-	var_9_14[21] = {
+	pg.base.ship_l2d[21] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -50957,11 +47912,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.ship_l2d
-
-	var_9_15[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51025,11 +47976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.ship_l2d
-
-	var_9_16[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51083,11 +48030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.ship_l2d
-
-	var_9_17[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51148,11 +48091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.ship_l2d
-
-	var_9_18[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51216,11 +48155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.ship_l2d
-
-	var_9_19[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51268,11 +48203,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.ship_l2d
-
-	var_9_20[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51336,11 +48267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.ship_l2d
-
-	var_9_21[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51404,11 +48331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.ship_l2d
-
-	var_9_22[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51503,11 +48426,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.ship_l2d
-
-	var_9_23[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51550,11 +48469,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.ship_l2d
-
-	var_9_24[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51651,11 +48566,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.ship_l2d
-
-	var_9_25[69902112] = {
+	pg.base.ship_l2d[69902112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51698,11 +48609,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.ship_l2d
-
-	var_9_26[69902113] = {
+	pg.base.ship_l2d[69902113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51797,11 +48704,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.ship_l2d
-
-	var_9_27[69902114] = {
+	pg.base.ship_l2d[69902114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51844,11 +48747,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.ship_l2d
-
-	var_9_28[69902115] = {
+	pg.base.ship_l2d[69902115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51945,11 +48844,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.ship_l2d
-
-	var_9_29[69902116] = {
+	pg.base.ship_l2d[69902116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -51992,11 +48887,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.ship_l2d
-
-	var_9_30[69902117] = {
+	pg.base.ship_l2d[69902117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52091,11 +48982,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.ship_l2d
-
-	var_9_31[69902118] = {
+	pg.base.ship_l2d[69902118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52138,11 +49025,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.ship_l2d
-
-	var_9_32[69902119] = {
+	pg.base.ship_l2d[69902119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52239,11 +49122,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.ship_l2d
-
-	var_9_33[69902120] = {
+	pg.base.ship_l2d[69902120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52286,11 +49165,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.ship_l2d
-
-	var_9_34[69902121] = {
+	pg.base.ship_l2d[69902121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52333,11 +49208,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.ship_l2d
-
-	var_9_35[69902122] = {
+	pg.base.ship_l2d[69902122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52432,11 +49303,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.ship_l2d
-
-	var_9_36[69902123] = {
+	pg.base.ship_l2d[69902123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52531,11 +49398,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.ship_l2d
-
-	var_9_37[69902124] = {
+	pg.base.ship_l2d[69902124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52630,11 +49493,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.ship_l2d
-
-	var_9_38[69902125] = {
+	pg.base.ship_l2d[69902125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52677,11 +49536,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.ship_l2d
-
-	var_9_39[69902126] = {
+	pg.base.ship_l2d[69902126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52724,11 +49579,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.ship_l2d
-
-	var_9_40[69902127] = {
+	pg.base.ship_l2d[69902127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52771,11 +49622,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.ship_l2d
-
-	var_9_41[69902128] = {
+	pg.base.ship_l2d[69902128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52872,11 +49719,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.ship_l2d
-
-	var_9_42[69902129] = {
+	pg.base.ship_l2d[69902129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -52973,11 +49816,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.ship_l2d
-
-	var_9_43[69902130] = {
+	pg.base.ship_l2d[69902130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53074,11 +49913,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.ship_l2d
-
-	var_9_44[69902131] = {
+	pg.base.ship_l2d[69902131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53121,11 +49956,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.ship_l2d
-
-	var_9_45[69902132] = {
+	pg.base.ship_l2d[69902132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53168,11 +49999,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.ship_l2d
-
-	var_9_46[69902133] = {
+	pg.base.ship_l2d[69902133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53215,11 +50042,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.ship_l2d
-
-	var_9_47[69902134] = {
+	pg.base.ship_l2d[69902134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53262,11 +50085,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.ship_l2d
-
-	var_9_48[69902135] = {
+	pg.base.ship_l2d[69902135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53308,11 +50127,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.ship_l2d
-
-	var_9_49[69902136] = {
+	pg.base.ship_l2d[69902136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53355,11 +50170,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.ship_l2d
-
-	var_9_50[69902137] = {
+	pg.base.ship_l2d[69902137] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -53409,11 +50220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.ship_l2d
-
-	var_9_51[69902138] = {
+	pg.base.ship_l2d[69902138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53455,11 +50262,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.ship_l2d
-
-	var_9_52[69902139] = {
+	pg.base.ship_l2d[69902139] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53501,11 +50304,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.ship_l2d
-
-	var_9_53[69902140] = {
+	pg.base.ship_l2d[69902140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53547,11 +50346,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.ship_l2d
-
-	var_9_54[69902141] = {
+	pg.base.ship_l2d[69902141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53593,11 +50388,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.ship_l2d
-
-	var_9_55[69902142] = {
+	pg.base.ship_l2d[69902142] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53639,11 +50430,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.ship_l2d
-
-	var_9_56[69902143] = {
+	pg.base.ship_l2d[69902143] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53685,11 +50472,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.ship_l2d
-
-	var_9_57[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53732,11 +50515,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.ship_l2d
-
-	var_9_58[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53775,11 +50554,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.ship_l2d
-
-	var_9_59[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53818,11 +50593,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.ship_l2d
-
-	var_9_60[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53865,11 +50636,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.ship_l2d
-
-	var_9_61[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -53973,11 +50740,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.ship_l2d
-
-	var_9_62[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54084,11 +50847,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.ship_l2d
-
-	var_9_63[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54197,11 +50956,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.ship_l2d
-
-	var_9_64[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54310,11 +51065,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.ship_l2d
-
-	var_9_65[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54360,11 +51111,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.ship_l2d
-
-	var_9_66[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54406,11 +51153,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.ship_l2d
-
-	var_9_67[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54514,11 +51257,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.ship_l2d
-
-	var_9_68[79902112] = {
+	pg.base.ship_l2d[79902112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54560,11 +51299,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.ship_l2d
-
-	var_9_69[79902113] = {
+	pg.base.ship_l2d[79902113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54610,11 +51345,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.ship_l2d
-
-	var_9_70[79902114] = {
+	pg.base.ship_l2d[79902114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54656,11 +51387,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.ship_l2d
-
-	var_9_71[79902115] = {
+	pg.base.ship_l2d[79902115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54767,11 +51494,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.ship_l2d
-
-	var_9_72[79902116] = {
+	pg.base.ship_l2d[79902116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54881,11 +51604,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.ship_l2d
-
-	var_9_73[79902117] = {
+	pg.base.ship_l2d[79902117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -54994,11 +51713,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.ship_l2d
-
-	var_9_74[79902118] = {
+	pg.base.ship_l2d[79902118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55105,11 +51820,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.ship_l2d
-
-	var_9_75[79902119] = {
+	pg.base.ship_l2d[79902119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55218,11 +51929,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.ship_l2d
-
-	var_9_76[79902120] = {
+	pg.base.ship_l2d[79902120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55331,11 +52038,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.ship_l2d
-
-	var_9_77[79902121] = {
+	pg.base.ship_l2d[79902121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55381,11 +52084,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.ship_l2d
-
-	var_9_78[79902122] = {
+	pg.base.ship_l2d[79902122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55427,11 +52126,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.ship_l2d
-
-	var_9_79[79902123] = {
+	pg.base.ship_l2d[79902123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55535,11 +52230,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.ship_l2d
-
-	var_9_80[79902124] = {
+	pg.base.ship_l2d[79902124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55585,11 +52276,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.ship_l2d
-
-	var_9_81[79902125] = {
+	pg.base.ship_l2d[79902125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55631,11 +52318,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.ship_l2d
-
-	var_9_82[79902126] = {
+	pg.base.ship_l2d[79902126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55677,11 +52360,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.ship_l2d
-
-	var_9_83[79902127] = {
+	pg.base.ship_l2d[79902127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55785,11 +52464,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.ship_l2d
-
-	var_9_84[79902128] = {
+	pg.base.ship_l2d[79902128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55893,11 +52568,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.ship_l2d
-
-	var_9_85[79902129] = {
+	pg.base.ship_l2d[79902129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55943,11 +52614,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.ship_l2d
-
-	var_9_86[79902130] = {
+	pg.base.ship_l2d[79902130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -55989,11 +52656,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.ship_l2d
-
-	var_9_87[79902131] = {
+	pg.base.ship_l2d[79902131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56035,11 +52698,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.ship_l2d
-
-	var_9_88[79902132] = {
+	pg.base.ship_l2d[79902132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56081,11 +52740,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.ship_l2d
-
-	var_9_89[79902133] = {
+	pg.base.ship_l2d[79902133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56160,11 +52815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.ship_l2d
-
-	var_9_90[30708401] = {
+	pg.base.ship_l2d[30708401] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56274,11 +52925,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.ship_l2d
-
-	var_9_91[30708402] = {
+	pg.base.ship_l2d[30708402] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56382,11 +53029,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.ship_l2d
-
-	var_9_92[30708403] = {
+	pg.base.ship_l2d[30708403] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56432,11 +53075,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.ship_l2d
-
-	var_9_93[30708404] = {
+	pg.base.ship_l2d[30708404] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56540,11 +53179,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.ship_l2d
-
-	var_9_94[30708405] = {
+	pg.base.ship_l2d[30708405] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56590,11 +53225,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.ship_l2d
-
-	var_9_95[30708406] = {
+	pg.base.ship_l2d[30708406] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56698,11 +53329,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.ship_l2d
-
-	var_9_96[30708407] = {
+	pg.base.ship_l2d[30708407] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56748,11 +53375,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.ship_l2d
-
-	var_9_97[30708408] = {
+	pg.base.ship_l2d[30708408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56856,11 +53479,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.ship_l2d
-
-	var_9_98[30708409] = {
+	pg.base.ship_l2d[30708409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -56906,8 +53525,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.ship_l2d[30708410] = {
+	pg.base.ship_l2d[30708410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57015,11 +53633,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.ship_l2d
-
-	var_10_0[30708411] = {
+	pg.base.ship_l2d[30708411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57123,11 +53737,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.ship_l2d
-
-	var_10_1[30708412] = {
+	pg.base.ship_l2d[30708412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57231,11 +53841,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.ship_l2d
-
-	var_10_2[30708413] = {
+	pg.base.ship_l2d[30708413] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57281,11 +53887,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.ship_l2d
-
-	var_10_3[30708414] = {
+	pg.base.ship_l2d[30708414] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57389,11 +53991,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.ship_l2d
-
-	var_10_4[30708415] = {
+	pg.base.ship_l2d[30708415] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57497,11 +54095,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.ship_l2d
-
-	var_10_5[30708416] = {
+	pg.base.ship_l2d[30708416] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57605,11 +54199,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.ship_l2d
-
-	var_10_6[30708417] = {
+	pg.base.ship_l2d[30708417] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57713,11 +54303,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.ship_l2d
-
-	var_10_7[30708418] = {
+	pg.base.ship_l2d[30708418] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57763,11 +54349,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.ship_l2d
-
-	var_10_8[30708419] = {
+	pg.base.ship_l2d[30708419] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57871,11 +54453,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.ship_l2d
-
-	var_10_9[30708420] = {
+	pg.base.ship_l2d[30708420] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -57979,11 +54557,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.ship_l2d
-
-	var_10_10[30708421] = {
+	pg.base.ship_l2d[30708421] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58029,11 +54603,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.ship_l2d
-
-	var_10_11[30708422] = {
+	pg.base.ship_l2d[30708422] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58137,11 +54707,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.ship_l2d
-
-	var_10_12[30708423] = {
+	pg.base.ship_l2d[30708423] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58187,11 +54753,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.ship_l2d
-
-	var_10_13[30708424] = {
+	pg.base.ship_l2d[30708424] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58295,11 +54857,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.ship_l2d
-
-	var_10_14[30708425] = {
+	pg.base.ship_l2d[30708425] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58345,11 +54903,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.ship_l2d
-
-	var_10_15[30708426] = {
+	pg.base.ship_l2d[30708426] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58453,11 +55007,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.ship_l2d
-
-	var_10_16[30708427] = {
+	pg.base.ship_l2d[30708427] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58503,11 +55053,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.ship_l2d
-
-	var_10_17[30708428] = {
+	pg.base.ship_l2d[30708428] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58611,11 +55157,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.ship_l2d
-
-	var_10_18[30708429] = {
+	pg.base.ship_l2d[30708429] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58719,11 +55261,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.ship_l2d
-
-	var_10_19[30708430] = {
+	pg.base.ship_l2d[30708430] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58827,11 +55365,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.ship_l2d
-
-	var_10_20[30708431] = {
+	pg.base.ship_l2d[30708431] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58877,11 +55411,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.ship_l2d
-
-	var_10_21[30708432] = {
+	pg.base.ship_l2d[30708432] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -58987,11 +55517,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.ship_l2d
-
-	var_10_22[30708433] = {
+	pg.base.ship_l2d[30708433] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59097,11 +55623,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.ship_l2d
-
-	var_10_23[30708434] = {
+	pg.base.ship_l2d[30708434] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59149,11 +55671,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.ship_l2d
-
-	var_10_24[30708435] = {
+	pg.base.ship_l2d[30708435] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59259,11 +55777,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.ship_l2d
-
-	var_10_25[30708436] = {
+	pg.base.ship_l2d[30708436] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59311,11 +55825,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.ship_l2d
-
-	var_10_26[30708437] = {
+	pg.base.ship_l2d[30708437] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59419,11 +55929,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.ship_l2d
-
-	var_10_27[30708438] = {
+	pg.base.ship_l2d[30708438] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59469,11 +55975,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.ship_l2d
-
-	var_10_28[30708439] = {
+	pg.base.ship_l2d[30708439] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59577,11 +56079,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.ship_l2d
-
-	var_10_29[30708440] = {
+	pg.base.ship_l2d[30708440] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59627,11 +56125,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.ship_l2d
-
-	var_10_30[30708441] = {
+	pg.base.ship_l2d[30708441] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59735,11 +56229,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.ship_l2d
-
-	var_10_31[30708442] = {
+	pg.base.ship_l2d[30708442] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59778,11 +56268,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.ship_l2d
-
-	var_10_32[30708443] = {
+	pg.base.ship_l2d[30708443] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59827,11 +56313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.ship_l2d
-
-	var_10_33[30708444] = {
+	pg.base.ship_l2d[30708444] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -59881,11 +56363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.ship_l2d
-
-	var_10_34[30708445] = {
+	pg.base.ship_l2d[30708445] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59931,11 +56409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.ship_l2d
-
-	var_10_35[30708446] = {
+	pg.base.ship_l2d[30708446] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -59984,11 +56458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.ship_l2d
-
-	var_10_36[30708447] = {
+	pg.base.ship_l2d[30708447] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60031,11 +56501,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.ship_l2d
-
-	var_10_37[30708448] = {
+	pg.base.ship_l2d[30708448] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60078,11 +56544,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.ship_l2d
-
-	var_10_38[30708449] = {
+	pg.base.ship_l2d[30708449] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60125,11 +56587,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.ship_l2d
-
-	var_10_39[30708450] = {
+	pg.base.ship_l2d[30708450] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60194,11 +56652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.ship_l2d
-
-	var_10_40[30708451] = {
+	pg.base.ship_l2d[30708451] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60237,11 +56691,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.ship_l2d
-
-	var_10_41[30708452] = {
+	pg.base.ship_l2d[30708452] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60280,11 +56730,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.ship_l2d
-
-	var_10_42[30708453] = {
+	pg.base.ship_l2d[30708453] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60323,11 +56769,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.ship_l2d
-
-	var_10_43[30708454] = {
+	pg.base.ship_l2d[30708454] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60366,11 +56808,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.ship_l2d
-
-	var_10_44[30708455] = {
+	pg.base.ship_l2d[30708455] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60409,11 +56847,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.ship_l2d
-
-	var_10_45[30708456] = {
+	pg.base.ship_l2d[30708456] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60452,11 +56886,7 @@ end)()
 			8
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.ship_l2d
-
-	var_10_46[30708457] = {
+	pg.base.ship_l2d[30708457] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60495,11 +56925,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.ship_l2d
-
-	var_10_47[30708458] = {
+	pg.base.ship_l2d[30708458] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60538,11 +56964,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.ship_l2d
-
-	var_10_48[50301101] = {
+	pg.base.ship_l2d[50301101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60648,11 +57070,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.ship_l2d
-
-	var_10_49[50301102] = {
+	pg.base.ship_l2d[50301102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60756,11 +57174,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.ship_l2d
-
-	var_10_50[50301103] = {
+	pg.base.ship_l2d[50301103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60864,11 +57278,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.ship_l2d
-
-	var_10_51[50301104] = {
+	pg.base.ship_l2d[50301104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -60972,11 +57382,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.ship_l2d
-
-	var_10_52[50301105] = {
+	pg.base.ship_l2d[50301105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61080,11 +57486,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.ship_l2d
-
-	var_10_53[50301106] = {
+	pg.base.ship_l2d[50301106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61188,11 +57590,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.ship_l2d
-
-	var_10_54[50301107] = {
+	pg.base.ship_l2d[50301107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61238,11 +57636,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.ship_l2d
-
-	var_10_55[50301108] = {
+	pg.base.ship_l2d[50301108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61288,11 +57682,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.ship_l2d
-
-	var_10_56[50301109] = {
+	pg.base.ship_l2d[50301109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61338,11 +57728,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.ship_l2d
-
-	var_10_57[50301110] = {
+	pg.base.ship_l2d[50301110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61388,11 +57774,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.ship_l2d
-
-	var_10_58[50301111] = {
+	pg.base.ship_l2d[50301111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61498,11 +57880,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.ship_l2d
-
-	var_10_59[50301112] = {
+	pg.base.ship_l2d[50301112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61548,11 +57926,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.ship_l2d
-
-	var_10_60[50301113] = {
+	pg.base.ship_l2d[50301113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61658,11 +58032,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.ship_l2d
-
-	var_10_61[50301114] = {
+	pg.base.ship_l2d[50301114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61710,11 +58080,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.ship_l2d
-
-	var_10_62[50301115] = {
+	pg.base.ship_l2d[50301115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61753,11 +58119,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.ship_l2d
-
-	var_10_63[50301116] = {
+	pg.base.ship_l2d[50301116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -61800,11 +58162,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.ship_l2d
-
-	var_10_64[50301117] = {
+	pg.base.ship_l2d[50301117] = {
 		listener_data = "",
 		offset_x = -200,
 		gyro_y = 0,
@@ -61848,11 +58206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.ship_l2d
-
-	var_10_65[50301118] = {
+	pg.base.ship_l2d[50301118] = {
 		listener_data = "",
 		offset_x = -200,
 		gyro_y = 0,
@@ -61896,11 +58250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.ship_l2d
-
-	var_10_66[50301119] = {
+	pg.base.ship_l2d[50301119] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -61950,11 +58300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.ship_l2d
-
-	var_10_67[50301120] = {
+	pg.base.ship_l2d[50301120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62001,11 +58347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.ship_l2d
-
-	var_10_68[50301121] = {
+	pg.base.ship_l2d[50301121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62044,11 +58386,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.ship_l2d
-
-	var_10_69[50301122] = {
+	pg.base.ship_l2d[50301122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62087,11 +58425,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.ship_l2d
-
-	var_10_70[89903101] = {
+	pg.base.ship_l2d[89903101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62194,11 +58528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.ship_l2d
-
-	var_10_71[89903102] = {
+	pg.base.ship_l2d[89903102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62301,11 +58631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.ship_l2d
-
-	var_10_72[89903103] = {
+	pg.base.ship_l2d[89903103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62402,11 +58728,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.ship_l2d
-
-	var_10_73[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62503,11 +58825,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.ship_l2d
-
-	var_10_74[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62604,11 +58922,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.ship_l2d
-
-	var_10_75[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62705,11 +59019,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.ship_l2d
-
-	var_10_76[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62804,11 +59114,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.ship_l2d
-
-	var_10_77[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -62905,11 +59211,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.ship_l2d
-
-	var_10_78[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63004,11 +59306,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.ship_l2d
-
-	var_10_79[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63054,11 +59352,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.ship_l2d
-
-	var_10_80[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63104,11 +59398,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.ship_l2d
-
-	var_10_81[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63154,11 +59444,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.ship_l2d
-
-	var_10_82[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63204,11 +59490,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.ship_l2d
-
-	var_10_83[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63254,11 +59536,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.ship_l2d
-
-	var_10_84[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63301,11 +59579,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.ship_l2d
-
-	var_10_85[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63348,11 +59622,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.ship_l2d
-
-	var_10_86[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63395,11 +59665,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.ship_l2d
-
-	var_10_87[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63508,11 +59774,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.ship_l2d
-
-	var_10_88[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63616,11 +59878,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.ship_l2d
-
-	var_10_89[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63666,11 +59924,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.ship_l2d
-
-	var_10_90[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63774,11 +60028,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.ship_l2d
-
-	var_10_91[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63824,11 +60074,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.ship_l2d
-
-	var_10_92[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63932,11 +60178,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.ship_l2d
-
-	var_10_93[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -63982,11 +60224,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.ship_l2d
-
-	var_10_94[90501408] = {
+	pg.base.ship_l2d[90501408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64090,11 +60328,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.ship_l2d
-
-	var_10_95[90501409] = {
+	pg.base.ship_l2d[90501409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64140,11 +60374,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.ship_l2d
-
-	var_10_96[90501410] = {
+	pg.base.ship_l2d[90501410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64248,11 +60478,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.ship_l2d
-
-	var_10_97[90501411] = {
+	pg.base.ship_l2d[90501411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64298,11 +60524,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.ship_l2d
-
-	var_10_98[90501412] = {
+	pg.base.ship_l2d[90501412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64348,8 +60570,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.ship_l2d[49903301] = {
+	pg.base.ship_l2d[49903301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64461,11 +60682,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.ship_l2d
-
-	var_11_0[49903302] = {
+	pg.base.ship_l2d[49903302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64511,11 +60728,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.ship_l2d
-
-	var_11_1[49903303] = {
+	pg.base.ship_l2d[49903303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64619,11 +60832,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.ship_l2d
-
-	var_11_2[49903304] = {
+	pg.base.ship_l2d[49903304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64669,11 +60878,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.ship_l2d
-
-	var_11_3[49903305] = {
+	pg.base.ship_l2d[49903305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64777,11 +60982,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.ship_l2d
-
-	var_11_4[49903306] = {
+	pg.base.ship_l2d[49903306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64827,11 +61028,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.ship_l2d
-
-	var_11_5[49903307] = {
+	pg.base.ship_l2d[49903307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64874,11 +61071,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.ship_l2d
-
-	var_11_6[49903308] = {
+	pg.base.ship_l2d[49903308] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -64922,11 +61115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.ship_l2d
-
-	var_11_7[49903309] = {
+	pg.base.ship_l2d[49903309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -64965,11 +61154,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.ship_l2d
-
-	var_11_8[49903310] = {
+	pg.base.ship_l2d[49903310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65008,11 +61193,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.ship_l2d
-
-	var_11_9[49903311] = {
+	pg.base.ship_l2d[49903311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65051,11 +61232,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.ship_l2d
-
-	var_11_10[49903312] = {
+	pg.base.ship_l2d[49903312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65094,11 +61271,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.ship_l2d
-
-	var_11_11[49903313] = {
+	pg.base.ship_l2d[49903313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65137,11 +61310,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.ship_l2d
-
-	var_11_12[49903314] = {
+	pg.base.ship_l2d[49903314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65180,11 +61349,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.ship_l2d
-
-	var_11_13[60508101] = {
+	pg.base.ship_l2d[60508101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65294,11 +61459,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.ship_l2d
-
-	var_11_14[60508102] = {
+	pg.base.ship_l2d[60508102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65404,11 +61565,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.ship_l2d
-
-	var_11_15[60508103] = {
+	pg.base.ship_l2d[60508103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65505,11 +61662,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.ship_l2d
-
-	var_11_16[60508104] = {
+	pg.base.ship_l2d[60508104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65557,11 +61710,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.ship_l2d
-
-	var_11_17[60508105] = {
+	pg.base.ship_l2d[60508105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65658,11 +61807,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.ship_l2d
-
-	var_11_18[60508106] = {
+	pg.base.ship_l2d[60508106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65768,11 +61913,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.ship_l2d
-
-	var_11_19[60508107] = {
+	pg.base.ship_l2d[60508107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65820,11 +61961,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.ship_l2d
-
-	var_11_20[60508108] = {
+	pg.base.ship_l2d[60508108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65872,11 +62009,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.ship_l2d
-
-	var_11_21[60508109] = {
+	pg.base.ship_l2d[60508109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -65982,11 +62115,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.ship_l2d
-
-	var_11_22[60508110] = {
+	pg.base.ship_l2d[60508110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66092,11 +62221,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.ship_l2d
-
-	var_11_23[60508111] = {
+	pg.base.ship_l2d[60508111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66145,11 +62270,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.ship_l2d
-
-	var_11_24[60508112] = {
+	pg.base.ship_l2d[60508112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66259,11 +62380,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.ship_l2d
-
-	var_11_25[60508113] = {
+	pg.base.ship_l2d[60508113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66314,11 +62431,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.ship_l2d
-
-	var_11_26[60508114] = {
+	pg.base.ship_l2d[60508114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66367,11 +62480,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.ship_l2d
-
-	var_11_27[60508115] = {
+	pg.base.ship_l2d[60508115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66481,11 +62590,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.ship_l2d
-
-	var_11_28[60508116] = {
+	pg.base.ship_l2d[60508116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66536,11 +62641,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.ship_l2d
-
-	var_11_29[60508117] = {
+	pg.base.ship_l2d[60508117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66589,11 +62690,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.ship_l2d
-
-	var_11_30[60508118] = {
+	pg.base.ship_l2d[60508118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66702,11 +62799,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.ship_l2d
-
-	var_11_31[60508119] = {
+	pg.base.ship_l2d[60508119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66757,11 +62850,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.ship_l2d
-
-	var_11_32[60508120] = {
+	pg.base.ship_l2d[60508120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66859,11 +62948,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.ship_l2d
-
-	var_11_33[60508121] = {
+	pg.base.ship_l2d[60508121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66911,11 +62996,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.ship_l2d
-
-	var_11_34[60508122] = {
+	pg.base.ship_l2d[60508122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -66957,11 +63038,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.ship_l2d
-
-	var_11_35[50209201] = {
+	pg.base.ship_l2d[50209201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67062,11 +63139,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.ship_l2d
-
-	var_11_36[50209202] = {
+	pg.base.ship_l2d[50209202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67163,11 +63236,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.ship_l2d
-
-	var_11_37[50209203] = {
+	pg.base.ship_l2d[50209203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67215,11 +63284,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.ship_l2d
-
-	var_11_38[50209204] = {
+	pg.base.ship_l2d[50209204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67267,11 +63332,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.ship_l2d
-
-	var_11_39[50209205] = {
+	pg.base.ship_l2d[50209205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67310,11 +63371,7 @@ end)()
 			5
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.ship_l2d
-
-	var_11_40[50209206] = {
+	pg.base.ship_l2d[50209206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67353,11 +63410,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.ship_l2d
-
-	var_11_41[90107201] = {
+	pg.base.ship_l2d[90107201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67408,11 +63461,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.ship_l2d
-
-	var_11_42[90107202] = {
+	pg.base.ship_l2d[90107202] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -67456,11 +63505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.ship_l2d
-
-	var_11_43[90107203] = {
+	pg.base.ship_l2d[90107203] = {
 		listener_data = "",
 		offset_x = -100,
 		gyro_y = 0,
@@ -67504,11 +63549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.ship_l2d
-
-	var_11_44[90107204] = {
+	pg.base.ship_l2d[90107204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67551,11 +63592,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.ship_l2d
-
-	var_11_45[90107205] = {
+	pg.base.ship_l2d[90107205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67598,11 +63635,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.ship_l2d
-
-	var_11_46[90107206] = {
+	pg.base.ship_l2d[90107206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67644,11 +63677,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.ship_l2d
-
-	var_11_47[90107207] = {
+	pg.base.ship_l2d[90107207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67691,11 +63720,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.ship_l2d
-
-	var_11_48[90107208] = {
+	pg.base.ship_l2d[90107208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67778,11 +63803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.ship_l2d
-
-	var_11_49[90107209] = {
+	pg.base.ship_l2d[90107209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67825,11 +63846,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.ship_l2d
-
-	var_11_50[90107210] = {
+	pg.base.ship_l2d[90107210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -67926,11 +63943,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.ship_l2d
-
-	var_11_51[90107211] = {
+	pg.base.ship_l2d[90107211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68027,11 +64040,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.ship_l2d
-
-	var_11_52[90107212] = {
+	pg.base.ship_l2d[90107212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68128,11 +64137,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.ship_l2d
-
-	var_11_53[90107213] = {
+	pg.base.ship_l2d[90107213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68180,11 +64185,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.ship_l2d
-
-	var_11_54[90107214] = {
+	pg.base.ship_l2d[90107214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68232,11 +64233,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.ship_l2d
-
-	var_11_55[90107215] = {
+	pg.base.ship_l2d[90107215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68284,11 +64281,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.ship_l2d
-
-	var_11_56[90107216] = {
+	pg.base.ship_l2d[90107216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68385,11 +64378,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.ship_l2d
-
-	var_11_57[90107217] = {
+	pg.base.ship_l2d[90107217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68432,11 +64421,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.ship_l2d
-
-	var_11_58[90107218] = {
+	pg.base.ship_l2d[90107218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68479,11 +64464,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.ship_l2d
-
-	var_11_59[90107219] = {
+	pg.base.ship_l2d[90107219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68531,11 +64512,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.ship_l2d
-
-	var_11_60[90107220] = {
+	pg.base.ship_l2d[90107220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68583,11 +64560,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.ship_l2d
-
-	var_11_61[90107221] = {
+	pg.base.ship_l2d[90107221] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -68654,11 +64627,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.ship_l2d
-
-	var_11_62[90107222] = {
+	pg.base.ship_l2d[90107222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68763,11 +64732,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.ship_l2d
-
-	var_11_63[90107223] = {
+	pg.base.ship_l2d[90107223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68823,11 +64788,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.ship_l2d
-
-	var_11_64[90107224] = {
+	pg.base.ship_l2d[90107224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68883,11 +64844,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.ship_l2d
-
-	var_11_65[90107225] = {
+	pg.base.ship_l2d[90107225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -68943,11 +64900,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.ship_l2d
-
-	var_11_66[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -68995,11 +64948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.ship_l2d
-
-	var_11_67[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69042,11 +64991,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.ship_l2d
-
-	var_11_68[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69089,11 +65034,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.ship_l2d
-
-	var_11_69[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69197,11 +65138,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.ship_l2d
-
-	var_11_70[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69305,11 +65242,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.ship_l2d
-
-	var_11_71[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69413,11 +65346,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.ship_l2d
-
-	var_11_72[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69521,11 +65450,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.ship_l2d
-
-	var_11_73[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69571,11 +65496,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.ship_l2d
-
-	var_11_74[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69679,11 +65600,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.ship_l2d
-
-	var_11_75[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69725,11 +65642,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.ship_l2d
-
-	var_11_76[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69775,11 +65688,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.ship_l2d
-
-	var_11_77[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69883,11 +65792,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.ship_l2d
-
-	var_11_78[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69933,11 +65838,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.ship_l2d
-
-	var_11_79[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -69979,11 +65880,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.ship_l2d
-
-	var_11_80[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70029,11 +65926,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.ship_l2d
-
-	var_11_81[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70079,11 +65972,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.ship_l2d
-
-	var_11_82[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70187,11 +66076,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.ship_l2d
-
-	var_11_83[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70237,11 +66122,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.ship_l2d
-
-	var_11_84[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70287,11 +66168,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.ship_l2d
-
-	var_11_85[20138101] = {
+	pg.base.ship_l2d[20138101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70337,11 +66214,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.ship_l2d
-
-	var_11_86[20138102] = {
+	pg.base.ship_l2d[20138102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70442,11 +66315,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.ship_l2d
-
-	var_11_87[20138103] = {
+	pg.base.ship_l2d[20138103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70547,11 +66416,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.ship_l2d
-
-	var_11_88[20138104] = {
+	pg.base.ship_l2d[20138104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70597,11 +66462,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.ship_l2d
-
-	var_11_89[20138105] = {
+	pg.base.ship_l2d[20138105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70702,11 +66563,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.ship_l2d
-
-	var_11_90[20138106] = {
+	pg.base.ship_l2d[20138106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70752,11 +66609,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.ship_l2d
-
-	var_11_91[20138107] = {
+	pg.base.ship_l2d[20138107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70857,11 +66710,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.ship_l2d
-
-	var_11_92[20138108] = {
+	pg.base.ship_l2d[20138108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -70962,11 +66811,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.ship_l2d
-
-	var_11_93[20138109] = {
+	pg.base.ship_l2d[20138109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71012,11 +66857,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.ship_l2d
-
-	var_11_94[20138110] = {
+	pg.base.ship_l2d[20138110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71058,11 +66899,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.ship_l2d
-
-	var_11_95[20138111] = {
+	pg.base.ship_l2d[20138111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71104,11 +66941,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.ship_l2d
-
-	var_11_96[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71150,11 +66983,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.ship_l2d
-
-	var_11_97[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71196,11 +67025,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.ship_l2d
-
-	var_11_98[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71239,8 +67064,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.ship_l2d[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71283,11 +67107,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.ship_l2d
-
-	var_12_0[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71397,11 +67217,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.ship_l2d
-
-	var_12_1[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71447,11 +67263,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.ship_l2d
-
-	var_12_2[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71556,11 +67368,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.ship_l2d
-
-	var_12_3[20515104] = {
+	pg.base.ship_l2d[20515104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71665,11 +67473,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.ship_l2d
-
-	var_12_4[20515105] = {
+	pg.base.ship_l2d[20515105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71765,11 +67569,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.ship_l2d
-
-	var_12_5[20515106] = {
+	pg.base.ship_l2d[20515106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71865,11 +67665,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.ship_l2d
-
-	var_12_6[20515107] = {
+	pg.base.ship_l2d[20515107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -71965,11 +67761,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.ship_l2d
-
-	var_12_7[20515108] = {
+	pg.base.ship_l2d[20515108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72065,11 +67857,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.ship_l2d
-
-	var_12_8[20515109] = {
+	pg.base.ship_l2d[20515109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72170,11 +67958,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.ship_l2d
-
-	var_12_9[20515110] = {
+	pg.base.ship_l2d[20515110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72275,11 +68059,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.ship_l2d
-
-	var_12_10[20515111] = {
+	pg.base.ship_l2d[20515111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72375,11 +68155,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.ship_l2d
-
-	var_12_11[20515112] = {
+	pg.base.ship_l2d[20515112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72475,11 +68251,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.ship_l2d
-
-	var_12_12[20515113] = {
+	pg.base.ship_l2d[20515113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72525,11 +68297,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.ship_l2d
-
-	var_12_13[20515114] = {
+	pg.base.ship_l2d[20515114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72575,11 +68343,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.ship_l2d
-
-	var_12_14[20515115] = {
+	pg.base.ship_l2d[20515115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72625,11 +68389,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.ship_l2d
-
-	var_12_15[20515116] = {
+	pg.base.ship_l2d[20515116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72675,11 +68435,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.ship_l2d
-
-	var_12_16[20515117] = {
+	pg.base.ship_l2d[20515117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72725,11 +68481,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.ship_l2d
-
-	var_12_17[20515118] = {
+	pg.base.ship_l2d[20515118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72775,11 +68527,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.ship_l2d
-
-	var_12_18[20515119] = {
+	pg.base.ship_l2d[20515119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72818,11 +68566,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.ship_l2d
-
-	var_12_19[20515120] = {
+	pg.base.ship_l2d[20515120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72861,11 +68605,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.ship_l2d
-
-	var_12_20[20515121] = {
+	pg.base.ship_l2d[20515121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72904,11 +68644,7 @@ end)()
 			6
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.ship_l2d
-
-	var_12_21[20515122] = {
+	pg.base.ship_l2d[20515122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72947,11 +68683,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.ship_l2d
-
-	var_12_22[20515123] = {
+	pg.base.ship_l2d[20515123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -72990,11 +68722,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.ship_l2d
-
-	var_12_23[20515124] = {
+	pg.base.ship_l2d[20515124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73033,11 +68761,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.ship_l2d
-
-	var_12_24[20515125] = {
+	pg.base.ship_l2d[20515125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73076,11 +68800,7 @@ end)()
 			5
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.ship_l2d
-
-	var_12_25[20515126] = {
+	pg.base.ship_l2d[20515126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73119,11 +68839,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.ship_l2d
-
-	var_12_26[20515127] = {
+	pg.base.ship_l2d[20515127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73162,11 +68878,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.ship_l2d
-
-	var_12_27[20515128] = {
+	pg.base.ship_l2d[20515128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73205,11 +68917,7 @@ end)()
 			5
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.ship_l2d
-
-	var_12_28[20515129] = {
+	pg.base.ship_l2d[20515129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73248,11 +68956,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.ship_l2d
-
-	var_12_29[20515130] = {
+	pg.base.ship_l2d[20515130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73291,11 +68995,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.ship_l2d
-
-	var_12_30[20515131] = {
+	pg.base.ship_l2d[20515131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73334,11 +69034,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.ship_l2d
-
-	var_12_31[20515132] = {
+	pg.base.ship_l2d[20515132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73377,11 +69073,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.ship_l2d
-
-	var_12_32[20515133] = {
+	pg.base.ship_l2d[20515133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73420,11 +69112,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.ship_l2d
-
-	var_12_33[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73523,11 +69211,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.ship_l2d
-
-	var_12_34[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73622,11 +69306,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.ship_l2d
-
-	var_12_35[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73721,11 +69401,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.ship_l2d
-
-	var_12_36[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73820,11 +69496,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.ship_l2d
-
-	var_12_37[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -73919,11 +69591,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.ship_l2d
-
-	var_12_38[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74018,11 +69686,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.ship_l2d
-
-	var_12_39[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74117,11 +69781,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.ship_l2d
-
-	var_12_40[39906208] = {
+	pg.base.ship_l2d[39906208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74167,11 +69827,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.ship_l2d
-
-	var_12_41[39906209] = {
+	pg.base.ship_l2d[39906209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74266,11 +69922,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.ship_l2d
-
-	var_12_42[39906210] = {
+	pg.base.ship_l2d[39906210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74365,11 +70017,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.ship_l2d
-
-	var_12_43[39906211] = {
+	pg.base.ship_l2d[39906211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74411,11 +70059,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.ship_l2d
-
-	var_12_44[39906212] = {
+	pg.base.ship_l2d[39906212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74511,11 +70155,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.ship_l2d
-
-	var_12_45[39906213] = {
+	pg.base.ship_l2d[39906213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74611,11 +70251,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.ship_l2d
-
-	var_12_46[39906214] = {
+	pg.base.ship_l2d[39906214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74710,11 +70346,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.ship_l2d
-
-	var_12_47[39906215] = {
+	pg.base.ship_l2d[39906215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74763,11 +70395,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.ship_l2d
-
-	var_12_48[39906216] = {
+	pg.base.ship_l2d[39906216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74876,11 +70504,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.ship_l2d
-
-	var_12_49[39906217] = {
+	pg.base.ship_l2d[39906217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74931,11 +70555,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.ship_l2d
-
-	var_12_50[39906218] = {
+	pg.base.ship_l2d[39906218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -74977,11 +70597,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.ship_l2d
-
-	var_12_51[39906219] = {
+	pg.base.ship_l2d[39906219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75081,11 +70697,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.ship_l2d
-
-	var_12_52[39906220] = {
+	pg.base.ship_l2d[39906220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75185,11 +70797,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.ship_l2d
-
-	var_12_53[39906221] = {
+	pg.base.ship_l2d[39906221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75231,11 +70839,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.ship_l2d
-
-	var_12_54[39906222] = {
+	pg.base.ship_l2d[39906222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75330,11 +70934,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.ship_l2d
-
-	var_12_55[39906223] = {
+	pg.base.ship_l2d[39906223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75376,11 +70976,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.ship_l2d
-
-	var_12_56[39906224] = {
+	pg.base.ship_l2d[39906224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75419,11 +71015,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.ship_l2d
-
-	var_12_57[39906225] = {
+	pg.base.ship_l2d[39906225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75469,11 +71061,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.ship_l2d
-
-	var_12_58[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75520,11 +71108,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.ship_l2d
-
-	var_12_59[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75567,11 +71151,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.ship_l2d
-
-	var_12_60[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -75610,11 +71190,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.ship_l2d
-
-	var_12_61[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -75653,11 +71229,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.ship_l2d
-
-	var_12_62[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75757,11 +71329,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.ship_l2d
-
-	var_12_63[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75863,11 +71431,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.ship_l2d
-
-	var_12_64[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -75979,11 +71543,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.ship_l2d
-
-	var_12_65[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76096,11 +71656,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.ship_l2d
-
-	var_12_66[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76213,11 +71769,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.ship_l2d
-
-	var_12_67[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76330,11 +71882,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.ship_l2d
-
-	var_12_68[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76447,11 +71995,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.ship_l2d
-
-	var_12_69[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76564,11 +72108,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.ship_l2d
-
-	var_12_70[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76670,11 +72210,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.ship_l2d
-
-	var_12_71[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76776,11 +72312,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.ship_l2d
-
-	var_12_72[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76826,11 +72358,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.ship_l2d
-
-	var_12_73[30707616] = {
+	pg.base.ship_l2d[30707616] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -76932,11 +72460,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.ship_l2d
-
-	var_12_74[30707617] = {
+	pg.base.ship_l2d[30707617] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77038,11 +72562,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.ship_l2d
-
-	var_12_75[30707618] = {
+	pg.base.ship_l2d[30707618] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77088,11 +72608,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.ship_l2d
-
-	var_12_76[30707619] = {
+	pg.base.ship_l2d[30707619] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77138,11 +72654,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.ship_l2d
-
-	var_12_77[30707620] = {
+	pg.base.ship_l2d[30707620] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77242,11 +72754,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.ship_l2d
-
-	var_12_78[30707621] = {
+	pg.base.ship_l2d[30707621] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77292,11 +72800,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.ship_l2d
-
-	var_12_79[30707622] = {
+	pg.base.ship_l2d[30707622] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77396,11 +72900,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.ship_l2d
-
-	var_12_80[30707623] = {
+	pg.base.ship_l2d[30707623] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77499,11 +72999,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.ship_l2d
-
-	var_12_81[30707624] = {
+	pg.base.ship_l2d[30707624] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77603,11 +73099,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.ship_l2d
-
-	var_12_82[30707625] = {
+	pg.base.ship_l2d[30707625] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77649,11 +73141,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.ship_l2d
-
-	var_12_83[30707626] = {
+	pg.base.ship_l2d[30707626] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77753,11 +73241,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.ship_l2d
-
-	var_12_84[30707627] = {
+	pg.base.ship_l2d[30707627] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77803,11 +73287,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.ship_l2d
-
-	var_12_85[30707628] = {
+	pg.base.ship_l2d[30707628] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77853,11 +73333,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.ship_l2d
-
-	var_12_86[30707629] = {
+	pg.base.ship_l2d[30707629] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -77956,11 +73432,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.ship_l2d
-
-	var_12_87[30707630] = {
+	pg.base.ship_l2d[30707630] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78060,11 +73532,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.ship_l2d
-
-	var_12_88[30707631] = {
+	pg.base.ship_l2d[30707631] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78110,11 +73578,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.ship_l2d
-
-	var_12_89[30707632] = {
+	pg.base.ship_l2d[30707632] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78153,11 +73617,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.ship_l2d
-
-	var_12_90[30707633] = {
+	pg.base.ship_l2d[30707633] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78203,11 +73663,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.ship_l2d
-
-	var_12_91[30707634] = {
+	pg.base.ship_l2d[30707634] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78250,11 +73706,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.ship_l2d
-
-	var_12_92[30707635] = {
+	pg.base.ship_l2d[30707635] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78297,11 +73749,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.ship_l2d
-
-	var_12_93[20705501] = {
+	pg.base.ship_l2d[20705501] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78400,11 +73848,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.ship_l2d
-
-	var_12_94[20705502] = {
+	pg.base.ship_l2d[20705502] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78499,11 +73943,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.ship_l2d
-
-	var_12_95[20705503] = {
+	pg.base.ship_l2d[20705503] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78597,11 +74037,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.ship_l2d
-
-	var_12_96[20705504] = {
+	pg.base.ship_l2d[20705504] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78696,11 +74132,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.ship_l2d
-
-	var_12_97[20705505] = {
+	pg.base.ship_l2d[20705505] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78795,11 +74227,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.ship_l2d
-
-	var_12_98[20705506] = {
+	pg.base.ship_l2d[20705506] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78894,8 +74322,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.ship_l2d[20705507] = {
+	pg.base.ship_l2d[20705507] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78945,11 +74372,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.ship_l2d
-
-	var_13_0[20705508] = {
+	pg.base.ship_l2d[20705508] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -78995,11 +74418,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.ship_l2d
-
-	var_13_1[20705509] = {
+	pg.base.ship_l2d[20705509] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79045,11 +74464,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.ship_l2d
-
-	var_13_2[20705510] = {
+	pg.base.ship_l2d[20705510] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79095,11 +74510,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.ship_l2d
-
-	var_13_3[20705511] = {
+	pg.base.ship_l2d[20705511] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79145,11 +74556,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.ship_l2d
-
-	var_13_4[20705512] = {
+	pg.base.ship_l2d[20705512] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79244,11 +74651,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.ship_l2d
-
-	var_13_5[20705513] = {
+	pg.base.ship_l2d[20705513] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79343,11 +74746,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.ship_l2d
-
-	var_13_6[20705514] = {
+	pg.base.ship_l2d[20705514] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79393,11 +74792,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.ship_l2d
-
-	var_13_7[20705515] = {
+	pg.base.ship_l2d[20705515] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79492,11 +74887,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.ship_l2d
-
-	var_13_8[20705516] = {
+	pg.base.ship_l2d[20705516] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79591,11 +74982,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.ship_l2d
-
-	var_13_9[20705517] = {
+	pg.base.ship_l2d[20705517] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79641,11 +75028,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.ship_l2d
-
-	var_13_10[20705518] = {
+	pg.base.ship_l2d[20705518] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79740,11 +75123,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.ship_l2d
-
-	var_13_11[20705519] = {
+	pg.base.ship_l2d[20705519] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79790,11 +75169,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.ship_l2d
-
-	var_13_12[20705520] = {
+	pg.base.ship_l2d[20705520] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79885,11 +75260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.ship_l2d
-
-	var_13_13[29902401] = {
+	pg.base.ship_l2d[29902401] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -79994,11 +75365,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.ship_l2d
-
-	var_13_14[29902402] = {
+	pg.base.ship_l2d[29902402] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80099,11 +75466,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.ship_l2d
-
-	var_13_15[29902403] = {
+	pg.base.ship_l2d[29902403] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80149,11 +75512,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.ship_l2d
-
-	var_13_16[29902404] = {
+	pg.base.ship_l2d[29902404] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80254,11 +75613,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.ship_l2d
-
-	var_13_17[29902405] = {
+	pg.base.ship_l2d[29902405] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80359,11 +75714,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.ship_l2d
-
-	var_13_18[29902406] = {
+	pg.base.ship_l2d[29902406] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80464,11 +75815,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.ship_l2d
-
-	var_13_19[29902407] = {
+	pg.base.ship_l2d[29902407] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80569,11 +75916,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.ship_l2d
-
-	var_13_20[29902408] = {
+	pg.base.ship_l2d[29902408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80674,11 +76017,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.ship_l2d
-
-	var_13_21[29902409] = {
+	pg.base.ship_l2d[29902409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80724,11 +76063,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.ship_l2d
-
-	var_13_22[29902410] = {
+	pg.base.ship_l2d[29902410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80770,11 +76105,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.ship_l2d
-
-	var_13_23[29902411] = {
+	pg.base.ship_l2d[29902411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80817,11 +76148,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.ship_l2d
-
-	var_13_24[29902412] = {
+	pg.base.ship_l2d[29902412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80864,11 +76191,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.ship_l2d
-
-	var_13_25[29902413] = {
+	pg.base.ship_l2d[29902413] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -80911,11 +76234,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.ship_l2d
-
-	var_13_26[40314201] = {
+	pg.base.ship_l2d[40314201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81014,11 +76333,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.ship_l2d
-
-	var_13_27[40314202] = {
+	pg.base.ship_l2d[40314202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81060,11 +76375,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.ship_l2d
-
-	var_13_28[40314203] = {
+	pg.base.ship_l2d[40314203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81106,11 +76417,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.ship_l2d
-
-	var_13_29[40314204] = {
+	pg.base.ship_l2d[40314204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81156,11 +76463,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.ship_l2d
-
-	var_13_30[40314205] = {
+	pg.base.ship_l2d[40314205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81255,11 +76558,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.ship_l2d
-
-	var_13_31[40314206] = {
+	pg.base.ship_l2d[40314206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81301,11 +76600,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.ship_l2d
-
-	var_13_32[40314207] = {
+	pg.base.ship_l2d[40314207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81347,11 +76642,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.ship_l2d
-
-	var_13_33[40314208] = {
+	pg.base.ship_l2d[40314208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81397,11 +76688,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.ship_l2d
-
-	var_13_34[40314209] = {
+	pg.base.ship_l2d[40314209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81496,11 +76783,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.ship_l2d
-
-	var_13_35[40314210] = {
+	pg.base.ship_l2d[40314210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81542,11 +76825,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.ship_l2d
-
-	var_13_36[40314211] = {
+	pg.base.ship_l2d[40314211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81588,11 +76867,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.ship_l2d
-
-	var_13_37[40314212] = {
+	pg.base.ship_l2d[40314212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81638,11 +76913,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.ship_l2d
-
-	var_13_38[40314213] = {
+	pg.base.ship_l2d[40314213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81737,11 +77008,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.ship_l2d
-
-	var_13_39[40314214] = {
+	pg.base.ship_l2d[40314214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81783,11 +77050,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.ship_l2d
-
-	var_13_40[40314215] = {
+	pg.base.ship_l2d[40314215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81833,11 +77096,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.ship_l2d
-
-	var_13_41[40314216] = {
+	pg.base.ship_l2d[40314216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81932,11 +77191,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.ship_l2d
-
-	var_13_42[40314217] = {
+	pg.base.ship_l2d[40314217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -81982,11 +77237,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.ship_l2d
-
-	var_13_43[40314218] = {
+	pg.base.ship_l2d[40314218] = {
 		listener_data = "",
 		offset_x = -75,
 		gyro_y = 0,
@@ -82025,11 +77276,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.ship_l2d
-
-	var_13_44[40314219] = {
+	pg.base.ship_l2d[40314219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82068,11 +77315,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.ship_l2d
-
-	var_13_45[40314220] = {
+	pg.base.ship_l2d[40314220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82115,11 +77358,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.ship_l2d
-
-	var_13_46[40314221] = {
+	pg.base.ship_l2d[40314221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82162,11 +77401,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.ship_l2d
-
-	var_13_47[40314222] = {
+	pg.base.ship_l2d[40314222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82212,11 +77447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.ship_l2d
-
-	var_13_48[40314223] = {
+	pg.base.ship_l2d[40314223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82255,11 +77486,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.ship_l2d
-
-	var_13_49[40314224] = {
+	pg.base.ship_l2d[40314224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82298,11 +77525,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.ship_l2d
-
-	var_13_50[40314225] = {
+	pg.base.ship_l2d[40314225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82341,11 +77564,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.ship_l2d
-
-	var_13_51[40314226] = {
+	pg.base.ship_l2d[40314226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82384,11 +77603,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.ship_l2d
-
-	var_13_52[39904201] = {
+	pg.base.ship_l2d[39904201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82435,11 +77650,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.ship_l2d
-
-	var_13_53[39904202] = {
+	pg.base.ship_l2d[39904202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82478,11 +77689,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.ship_l2d
-
-	var_13_54[39904203] = {
+	pg.base.ship_l2d[39904203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82521,11 +77728,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.ship_l2d
-
-	var_13_55[39904204] = {
+	pg.base.ship_l2d[39904204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82568,11 +77771,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.ship_l2d
-
-	var_13_56[39904205] = {
+	pg.base.ship_l2d[39904205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82615,11 +77814,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.ship_l2d
-
-	var_13_57[39904206] = {
+	pg.base.ship_l2d[39904206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82658,11 +77853,7 @@ end)()
 			30
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.ship_l2d
-
-	var_13_58[39904207] = {
+	pg.base.ship_l2d[39904207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82705,11 +77896,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.ship_l2d
-
-	var_13_59[39904208] = {
+	pg.base.ship_l2d[39904208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82748,11 +77935,7 @@ end)()
 			180
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.ship_l2d
-
-	var_13_60[39904209] = {
+	pg.base.ship_l2d[39904209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82795,11 +77978,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.ship_l2d
-
-	var_13_61[39904210] = {
+	pg.base.ship_l2d[39904210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -82899,11 +78078,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.ship_l2d
-
-	var_13_62[39904211] = {
+	pg.base.ship_l2d[39904211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83003,11 +78178,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.ship_l2d
-
-	var_13_63[39904212] = {
+	pg.base.ship_l2d[39904212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83049,11 +78220,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.ship_l2d
-
-	var_13_64[39904213] = {
+	pg.base.ship_l2d[39904213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83099,11 +78266,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.ship_l2d
-
-	var_13_65[39904214] = {
+	pg.base.ship_l2d[39904214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83203,11 +78366,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.ship_l2d
-
-	var_13_66[39904215] = {
+	pg.base.ship_l2d[39904215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83253,11 +78412,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.ship_l2d
-
-	var_13_67[39904216] = {
+	pg.base.ship_l2d[39904216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83357,11 +78512,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.ship_l2d
-
-	var_13_68[39904217] = {
+	pg.base.ship_l2d[39904217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83407,11 +78558,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.ship_l2d
-
-	var_13_69[39904218] = {
+	pg.base.ship_l2d[39904218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83511,11 +78658,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.ship_l2d
-
-	var_13_70[39904219] = {
+	pg.base.ship_l2d[39904219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83615,11 +78758,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.ship_l2d
-
-	var_13_71[39904220] = {
+	pg.base.ship_l2d[39904220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83719,11 +78858,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.ship_l2d
-
-	var_13_72[39904221] = {
+	pg.base.ship_l2d[39904221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83769,11 +78904,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.ship_l2d
-
-	var_13_73[39904222] = {
+	pg.base.ship_l2d[39904222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83873,11 +79004,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.ship_l2d
-
-	var_13_74[39904223] = {
+	pg.base.ship_l2d[39904223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83919,11 +79046,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.ship_l2d
-
-	var_13_75[39904224] = {
+	pg.base.ship_l2d[39904224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -83965,11 +79088,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.ship_l2d
-
-	var_13_76[39904225] = {
+	pg.base.ship_l2d[39904225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84015,11 +79134,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.ship_l2d
-
-	var_13_77[39904226] = {
+	pg.base.ship_l2d[39904226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84119,11 +79234,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.ship_l2d
-
-	var_13_78[39904227] = {
+	pg.base.ship_l2d[39904227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84167,11 +79278,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.ship_l2d
-
-	var_13_79[39904228] = {
+	pg.base.ship_l2d[39904228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84271,11 +79378,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.ship_l2d
-
-	var_13_80[39904229] = {
+	pg.base.ship_l2d[39904229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84319,11 +79422,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.ship_l2d
-
-	var_13_81[39904230] = {
+	pg.base.ship_l2d[39904230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84424,11 +79523,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.ship_l2d
-
-	var_13_82[39904231] = {
+	pg.base.ship_l2d[39904231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84472,11 +79567,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.ship_l2d
-
-	var_13_83[39904232] = {
+	pg.base.ship_l2d[39904232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84522,11 +79613,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.ship_l2d
-
-	var_13_84[39904233] = {
+	pg.base.ship_l2d[39904233] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84591,11 +79678,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.ship_l2d
-
-	var_13_85[39904234] = {
+	pg.base.ship_l2d[39904234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84638,11 +79721,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.ship_l2d
-
-	var_13_86[40113101] = {
+	pg.base.ship_l2d[40113101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84689,11 +79768,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.ship_l2d
-
-	var_13_87[40113102] = {
+	pg.base.ship_l2d[40113102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84737,11 +79812,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.ship_l2d
-
-	var_13_88[40113103] = {
+	pg.base.ship_l2d[40113103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84785,11 +79856,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.ship_l2d
-
-	var_13_89[40113104] = {
+	pg.base.ship_l2d[40113104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84832,11 +79899,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.ship_l2d
-
-	var_13_90[40113105] = {
+	pg.base.ship_l2d[40113105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -84901,11 +79964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.ship_l2d
-
-	var_13_91[40113106] = {
+	pg.base.ship_l2d[40113106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85006,11 +80065,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.ship_l2d
-
-	var_13_92[40113107] = {
+	pg.base.ship_l2d[40113107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85056,11 +80111,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.ship_l2d
-
-	var_13_93[40113108] = {
+	pg.base.ship_l2d[40113108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85161,11 +80212,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.ship_l2d
-
-	var_13_94[40113109] = {
+	pg.base.ship_l2d[40113109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85266,11 +80313,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.ship_l2d
-
-	var_13_95[40113110] = {
+	pg.base.ship_l2d[40113110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85371,11 +80414,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.ship_l2d
-
-	var_13_96[40113111] = {
+	pg.base.ship_l2d[40113111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85439,11 +80478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.ship_l2d
-
-	var_13_97[40113112] = {
+	pg.base.ship_l2d[40113112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85489,11 +80524,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.ship_l2d
-
-	var_13_98[40113113] = {
+	pg.base.ship_l2d[40113113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85594,8 +80625,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.ship_l2d[40113114] = {
+	pg.base.ship_l2d[40113114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85700,11 +80730,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.ship_l2d
-
-	var_14_0[40113115] = {
+	pg.base.ship_l2d[40113115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85805,11 +80831,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.ship_l2d
-
-	var_14_1[40113116] = {
+	pg.base.ship_l2d[40113116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85855,11 +80877,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.ship_l2d
-
-	var_14_2[40113117] = {
+	pg.base.ship_l2d[40113117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -85960,11 +80978,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.ship_l2d
-
-	var_14_3[40113118] = {
+	pg.base.ship_l2d[40113118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86065,11 +81079,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.ship_l2d
-
-	var_14_4[40113119] = {
+	pg.base.ship_l2d[40113119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86115,11 +81125,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.ship_l2d
-
-	var_14_5[40113120] = {
+	pg.base.ship_l2d[40113120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86158,11 +81164,7 @@ end)()
 			20
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.ship_l2d
-
-	var_14_6[40113121] = {
+	pg.base.ship_l2d[40113121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86201,11 +81203,7 @@ end)()
 			5
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.ship_l2d
-
-	var_14_7[40407101] = {
+	pg.base.ship_l2d[40407101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86311,11 +81309,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.ship_l2d
-
-	var_14_8[40407102] = {
+	pg.base.ship_l2d[40407102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86364,11 +81358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.ship_l2d
-
-	var_14_9[40407103] = {
+	pg.base.ship_l2d[40407103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86411,11 +81401,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.ship_l2d
-
-	var_14_10[40407104] = {
+	pg.base.ship_l2d[40407104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86458,11 +81444,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.ship_l2d
-
-	var_14_11[40407105] = {
+	pg.base.ship_l2d[40407105] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -86517,11 +81499,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.ship_l2d
-
-	var_14_12[40407106] = {
+	pg.base.ship_l2d[40407106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86564,11 +81542,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.ship_l2d
-
-	var_14_13[40407107] = {
+	pg.base.ship_l2d[40407107] = {
 		listener_data = "",
 		offset_x = 85,
 		gyro_y = 0,
@@ -86618,11 +81592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.ship_l2d
-
-	var_14_14[40407108] = {
+	pg.base.ship_l2d[40407108] = {
 		listener_data = "",
 		offset_x = 85,
 		gyro_y = 0,
@@ -86672,11 +81642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.ship_l2d
-
-	var_14_15[40407109] = {
+	pg.base.ship_l2d[40407109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86715,11 +81681,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.ship_l2d
-
-	var_14_16[40407110] = {
+	pg.base.ship_l2d[40407110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86758,11 +81720,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.ship_l2d
-
-	var_14_17[40407111] = {
+	pg.base.ship_l2d[40407111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86805,11 +81763,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.ship_l2d
-
-	var_14_18[40407112] = {
+	pg.base.ship_l2d[40407112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86852,11 +81806,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.ship_l2d
-
-	var_14_19[40407113] = {
+	pg.base.ship_l2d[40407113] = {
 		listener_data = "",
 		offset_x = -250,
 		gyro_y = 0,
@@ -86895,11 +81845,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.ship_l2d
-
-	var_14_20[40407114] = {
+	pg.base.ship_l2d[40407114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86938,11 +81884,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.ship_l2d
-
-	var_14_21[40407115] = {
+	pg.base.ship_l2d[40407115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -86985,11 +81927,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.ship_l2d
-
-	var_14_22[40407116] = {
+	pg.base.ship_l2d[40407116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87035,11 +81973,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.ship_l2d
-
-	var_14_23[40407117] = {
+	pg.base.ship_l2d[40407117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87140,11 +82074,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.ship_l2d
-
-	var_14_24[40407118] = {
+	pg.base.ship_l2d[40407118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87245,11 +82175,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.ship_l2d
-
-	var_14_25[40407119] = {
+	pg.base.ship_l2d[40407119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87350,11 +82276,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.ship_l2d
-
-	var_14_26[40407120] = {
+	pg.base.ship_l2d[40407120] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -87408,11 +82330,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.ship_l2d
-
-	var_14_27[40407121] = {
+	pg.base.ship_l2d[40407121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87455,11 +82373,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.ship_l2d
-
-	var_14_28[40407122] = {
+	pg.base.ship_l2d[40407122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87560,11 +82474,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.ship_l2d
-
-	var_14_29[40407123] = {
+	pg.base.ship_l2d[40407123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87665,11 +82575,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.ship_l2d
-
-	var_14_30[40407124] = {
+	pg.base.ship_l2d[40407124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87711,11 +82617,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.ship_l2d
-
-	var_14_31[40407125] = {
+	pg.base.ship_l2d[40407125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87757,11 +82659,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.ship_l2d
-
-	var_14_32[40407126] = {
+	pg.base.ship_l2d[40407126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87807,11 +82705,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.ship_l2d
-
-	var_14_33[40407127] = {
+	pg.base.ship_l2d[40407127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87857,11 +82751,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.ship_l2d
-
-	var_14_34[40407128] = {
+	pg.base.ship_l2d[40407128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87907,11 +82797,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.ship_l2d
-
-	var_14_35[40407129] = {
+	pg.base.ship_l2d[40407129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -87957,11 +82843,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.ship_l2d
-
-	var_14_36[40407130] = {
+	pg.base.ship_l2d[40407130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88007,11 +82889,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.ship_l2d
-
-	var_14_37[40407131] = {
+	pg.base.ship_l2d[40407131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88075,11 +82953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.ship_l2d
-
-	var_14_38[40407132] = {
+	pg.base.ship_l2d[40407132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88125,11 +82999,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.ship_l2d
-
-	var_14_39[40407133] = {
+	pg.base.ship_l2d[40407133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88193,11 +83063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.ship_l2d
-
-	var_14_40[40407134] = {
+	pg.base.ship_l2d[40407134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88236,11 +83102,7 @@ end)()
 			30
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.ship_l2d
-
-	var_14_41[40407135] = {
+	pg.base.ship_l2d[40407135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88279,11 +83141,7 @@ end)()
 			30
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.ship_l2d
-
-	var_14_42[40407136] = {
+	pg.base.ship_l2d[40407136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88329,11 +83187,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.ship_l2d
-
-	var_14_43[19903301] = {
+	pg.base.ship_l2d[19903301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88438,11 +83292,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.ship_l2d
-
-	var_14_44[19903302] = {
+	pg.base.ship_l2d[19903302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88543,11 +83393,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.ship_l2d
-
-	var_14_45[19903303] = {
+	pg.base.ship_l2d[19903303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88593,11 +83439,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.ship_l2d
-
-	var_14_46[19903304] = {
+	pg.base.ship_l2d[19903304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88694,11 +83536,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.ship_l2d
-
-	var_14_47[19903305] = {
+	pg.base.ship_l2d[19903305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88795,11 +83633,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.ship_l2d
-
-	var_14_48[19903306] = {
+	pg.base.ship_l2d[19903306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -88900,11 +83734,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.ship_l2d
-
-	var_14_49[19903307] = {
+	pg.base.ship_l2d[19903307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89001,11 +83831,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.ship_l2d
-
-	var_14_50[19903308] = {
+	pg.base.ship_l2d[19903308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89102,11 +83928,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.ship_l2d
-
-	var_14_51[19903309] = {
+	pg.base.ship_l2d[19903309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89203,11 +84025,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.ship_l2d
-
-	var_14_52[19903310] = {
+	pg.base.ship_l2d[19903310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89308,11 +84126,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.ship_l2d
-
-	var_14_53[19903311] = {
+	pg.base.ship_l2d[19903311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89409,11 +84223,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.ship_l2d
-
-	var_14_54[19903312] = {
+	pg.base.ship_l2d[19903312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89510,11 +84320,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.ship_l2d
-
-	var_14_55[19903313] = {
+	pg.base.ship_l2d[19903313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89611,11 +84417,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.ship_l2d
-
-	var_14_56[19903314] = {
+	pg.base.ship_l2d[19903314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89712,11 +84514,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.ship_l2d
-
-	var_14_57[19903315] = {
+	pg.base.ship_l2d[19903315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89817,11 +84615,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.ship_l2d
-
-	var_14_58[19903316] = {
+	pg.base.ship_l2d[19903316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -89918,11 +84712,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.ship_l2d
-
-	var_14_59[19903317] = {
+	pg.base.ship_l2d[19903317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90026,11 +84816,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.ship_l2d
-
-	var_14_60[19903318] = {
+	pg.base.ship_l2d[19903318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90136,11 +84922,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.ship_l2d
-
-	var_14_61[19903319] = {
+	pg.base.ship_l2d[19903319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90246,11 +85028,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.ship_l2d
-
-	var_14_62[19903320] = {
+	pg.base.ship_l2d[19903320] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90351,11 +85129,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.ship_l2d
-
-	var_14_63[19903321] = {
+	pg.base.ship_l2d[19903321] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90452,11 +85226,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.ship_l2d
-
-	var_14_64[19903322] = {
+	pg.base.ship_l2d[19903322] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90553,11 +85323,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.ship_l2d
-
-	var_14_65[19903323] = {
+	pg.base.ship_l2d[19903323] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90658,11 +85424,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.ship_l2d
-
-	var_14_66[19903324] = {
+	pg.base.ship_l2d[19903324] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -90701,11 +85463,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.ship_l2d
-
-	var_14_67[19903325] = {
+	pg.base.ship_l2d[19903325] = {
 		listener_data = "",
 		offset_x = -50,
 		gyro_y = 0,
@@ -90744,11 +85502,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.ship_l2d
-
-	var_14_68[19903326] = {
+	pg.base.ship_l2d[19903326] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90787,11 +85541,7 @@ end)()
 			10
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.ship_l2d
-
-	var_14_69[19903327] = {
+	pg.base.ship_l2d[19903327] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90834,11 +85584,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.ship_l2d
-
-	var_14_70[19903328] = {
+	pg.base.ship_l2d[19903328] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90881,11 +85627,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.ship_l2d
-
-	var_14_71[19903329] = {
+	pg.base.ship_l2d[19903329] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90928,11 +85670,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.ship_l2d
-
-	var_14_72[19903330] = {
+	pg.base.ship_l2d[19903330] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -90975,11 +85713,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.ship_l2d
-
-	var_14_73[19903331] = {
+	pg.base.ship_l2d[19903331] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91021,11 +85755,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.ship_l2d
-
-	var_14_74[19903332] = {
+	pg.base.ship_l2d[19903332] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91070,11 +85800,7 @@ end)()
 			target = 10
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.ship_l2d
-
-	var_14_75[19903333] = {
+	pg.base.ship_l2d[19903333] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -91160,11 +85886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.ship_l2d
-
-	var_14_76[19903334] = {
+	pg.base.ship_l2d[19903334] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91230,11 +85952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.ship_l2d
-
-	var_14_77[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91339,11 +86057,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.ship_l2d
-
-	var_14_78[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91444,11 +86158,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.ship_l2d
-
-	var_14_79[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91549,11 +86259,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.ship_l2d
-
-	var_14_80[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91654,11 +86360,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.ship_l2d
-
-	var_14_81[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91759,11 +86461,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.ship_l2d
-
-	var_14_82[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91864,11 +86562,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.ship_l2d
-
-	var_14_83[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91914,11 +86608,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.ship_l2d
-
-	var_14_84[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -91964,11 +86654,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.ship_l2d
-
-	var_14_85[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92069,11 +86755,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.ship_l2d
-
-	var_14_86[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92119,11 +86801,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.ship_l2d
-
-	var_14_87[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -92173,11 +86851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.ship_l2d
-
-	var_14_88[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92224,11 +86898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.ship_l2d
-
-	var_14_89[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92329,11 +86999,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.ship_l2d
-
-	var_14_90[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92434,11 +87100,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.ship_l2d
-
-	var_14_91[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92539,11 +87201,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.ship_l2d
-
-	var_14_92[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92644,11 +87302,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.ship_l2d
-
-	var_14_93[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92749,11 +87403,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.ship_l2d
-
-	var_14_94[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92854,11 +87504,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.ship_l2d
-
-	var_14_95[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92904,11 +87550,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.ship_l2d
-
-	var_14_96[80601120] = {
+	pg.base.ship_l2d[80601120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92950,11 +87592,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.ship_l2d
-
-	var_14_97[80601121] = {
+	pg.base.ship_l2d[80601121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -92996,11 +87634,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.ship_l2d
-
-	var_14_98[80601122] = {
+	pg.base.ship_l2d[80601122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93043,8 +87677,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.ship_l2d[80601123] = {
+	pg.base.ship_l2d[80601123] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -93098,11 +87731,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.ship_l2d
-
-	var_15_0[80601124] = {
+	pg.base.ship_l2d[80601124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93141,11 +87770,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.ship_l2d
-
-	var_15_1[80601125] = {
+	pg.base.ship_l2d[80601125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93184,11 +87809,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.ship_l2d
-
-	var_15_2[80601126] = {
+	pg.base.ship_l2d[80601126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93231,11 +87852,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.ship_l2d
-
-	var_15_3[80601127] = {
+	pg.base.ship_l2d[80601127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93278,11 +87895,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.ship_l2d
-
-	var_15_4[80601128] = {
+	pg.base.ship_l2d[80601128] = {
 		listener_data = "",
 		offset_x = -50,
 		gyro_y = 0,
@@ -93321,11 +87934,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.ship_l2d
-
-	var_15_5[80601129] = {
+	pg.base.ship_l2d[80601129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93368,11 +87977,7 @@ end)()
 			type = 13
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.ship_l2d
-
-	var_15_6[80601130] = {
+	pg.base.ship_l2d[80601130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93418,11 +88023,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.ship_l2d
-
-	var_15_7[80601131] = {
+	pg.base.ship_l2d[80601131] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -93481,11 +88082,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.ship_l2d
-
-	var_15_8[80401101] = {
+	pg.base.ship_l2d[80401101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93590,11 +88187,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.ship_l2d
-
-	var_15_9[80401102] = {
+	pg.base.ship_l2d[80401102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93636,11 +88229,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.ship_l2d
-
-	var_15_10[80401103] = {
+	pg.base.ship_l2d[80401103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93682,11 +88271,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.ship_l2d
-
-	var_15_11[80401104] = {
+	pg.base.ship_l2d[80401104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93732,11 +88317,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.ship_l2d
-
-	var_15_12[80401105] = {
+	pg.base.ship_l2d[80401105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93837,11 +88418,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.ship_l2d
-
-	var_15_13[80401106] = {
+	pg.base.ship_l2d[80401106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -93942,11 +88519,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.ship_l2d
-
-	var_15_14[80401107] = {
+	pg.base.ship_l2d[80401107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94047,11 +88620,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.ship_l2d
-
-	var_15_15[80401108] = {
+	pg.base.ship_l2d[80401108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94097,11 +88666,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.ship_l2d
-
-	var_15_16[80401109] = {
+	pg.base.ship_l2d[80401109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94202,11 +88767,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.ship_l2d
-
-	var_15_17[80401110] = {
+	pg.base.ship_l2d[80401110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94307,11 +88868,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.ship_l2d
-
-	var_15_18[80401111] = {
+	pg.base.ship_l2d[80401111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94412,11 +88969,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.ship_l2d
-
-	var_15_19[80401112] = {
+	pg.base.ship_l2d[80401112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94517,11 +89070,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.ship_l2d
-
-	var_15_20[80401113] = {
+	pg.base.ship_l2d[80401113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94622,11 +89171,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.ship_l2d
-
-	var_15_21[80401114] = {
+	pg.base.ship_l2d[80401114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94672,11 +89217,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.ship_l2d
-
-	var_15_22[80401115] = {
+	pg.base.ship_l2d[80401115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94777,11 +89318,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.ship_l2d
-
-	var_15_23[80401116] = {
+	pg.base.ship_l2d[80401116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94882,11 +89419,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.ship_l2d
-
-	var_15_24[80401117] = {
+	pg.base.ship_l2d[80401117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -94987,11 +89520,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.ship_l2d
-
-	var_15_25[80401118] = {
+	pg.base.ship_l2d[80401118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95092,11 +89621,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.ship_l2d
-
-	var_15_26[80401119] = {
+	pg.base.ship_l2d[80401119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95139,11 +89664,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.ship_l2d
-
-	var_15_27[80401120] = {
+	pg.base.ship_l2d[80401120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95186,11 +89707,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.ship_l2d
-
-	var_15_28[80401121] = {
+	pg.base.ship_l2d[80401121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95233,11 +89750,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.ship_l2d
-
-	var_15_29[80401122] = {
+	pg.base.ship_l2d[80401122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95338,11 +89851,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.ship_l2d
-
-	var_15_30[80401123] = {
+	pg.base.ship_l2d[80401123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95443,11 +89952,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.ship_l2d
-
-	var_15_31[13706101] = {
+	pg.base.ship_l2d[13706101] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -95555,11 +90060,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.ship_l2d
-
-	var_15_32[13706102] = {
+	pg.base.ship_l2d[13706102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95602,11 +90103,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.ship_l2d
-
-	var_15_33[13706103] = {
+	pg.base.ship_l2d[13706103] = {
 		listener_data = "",
 		offset_x = -50,
 		gyro_y = 0,
@@ -95652,11 +90149,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.ship_l2d
-
-	var_15_34[13706104] = {
+	pg.base.ship_l2d[13706104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95760,11 +90253,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.ship_l2d
-
-	var_15_35[13706105] = {
+	pg.base.ship_l2d[13706105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95803,11 +90292,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.ship_l2d
-
-	var_15_36[13706106] = {
+	pg.base.ship_l2d[13706106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95914,11 +90399,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.ship_l2d
-
-	var_15_37[13706107] = {
+	pg.base.ship_l2d[13706107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -95957,11 +90438,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.ship_l2d
-
-	var_15_38[13706108] = {
+	pg.base.ship_l2d[13706108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96068,11 +90545,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.ship_l2d
-
-	var_15_39[13706109] = {
+	pg.base.ship_l2d[13706109] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -96111,11 +90584,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.ship_l2d
-
-	var_15_40[13706110] = {
+	pg.base.ship_l2d[13706110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96222,11 +90691,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.ship_l2d
-
-	var_15_41[13706111] = {
+	pg.base.ship_l2d[13706111] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -96265,11 +90730,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.ship_l2d
-
-	var_15_42[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96376,11 +90837,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.ship_l2d
-
-	var_15_43[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96419,11 +90876,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.ship_l2d
-
-	var_15_44[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96530,11 +90983,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.ship_l2d
-
-	var_15_45[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -96573,11 +91022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.ship_l2d
-
-	var_15_46[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96684,11 +91129,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.ship_l2d
-
-	var_15_47[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -96734,11 +91175,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.ship_l2d
-
-	var_15_48[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96842,11 +91279,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.ship_l2d
-
-	var_15_49[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96889,11 +91322,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.ship_l2d
-
-	var_15_50[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -96997,11 +91426,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.ship_l2d
-
-	var_15_51[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97105,11 +91530,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.ship_l2d
-
-	var_15_52[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97213,11 +91634,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.ship_l2d
-
-	var_15_53[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97321,11 +91738,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.ship_l2d
-
-	var_15_54[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97429,11 +91842,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.ship_l2d
-
-	var_15_55[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97537,11 +91946,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.ship_l2d
-
-	var_15_56[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97587,11 +91992,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.ship_l2d
-
-	var_15_57[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97637,11 +92038,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.ship_l2d
-
-	var_15_58[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97687,11 +92084,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.ship_l2d
-
-	var_15_59[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97737,11 +92130,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.ship_l2d
-
-	var_15_60[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97787,11 +92176,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.ship_l2d
-
-	var_15_61[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97837,11 +92222,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.ship_l2d
-
-	var_15_62[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97883,11 +92264,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.ship_l2d
-
-	var_15_63[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -97929,11 +92306,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.ship_l2d
-
-	var_15_64[30716101] = {
+	pg.base.ship_l2d[30716101] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -97983,11 +92356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.ship_l2d
-
-	var_15_65[30716102] = {
+	pg.base.ship_l2d[30716102] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -98026,11 +92395,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.ship_l2d
-
-	var_15_66[30716103] = {
+	pg.base.ship_l2d[30716103] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -98069,11 +92434,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.ship_l2d
-
-	var_15_67[30716104] = {
+	pg.base.ship_l2d[30716104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98116,11 +92477,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.ship_l2d
-
-	var_15_68[30716105] = {
+	pg.base.ship_l2d[30716105] = {
 		listener_data = "",
 		offset_x = -50,
 		gyro_y = 0,
@@ -98182,11 +92539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.ship_l2d
-
-	var_15_69[30716106] = {
+	pg.base.ship_l2d[30716106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98228,11 +92581,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.ship_l2d
-
-	var_15_70[30716107] = {
+	pg.base.ship_l2d[30716107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98292,11 +92641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.ship_l2d
-
-	var_15_71[30716108] = {
+	pg.base.ship_l2d[30716108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98338,11 +92683,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.ship_l2d
-
-	var_15_72[30716109] = {
+	pg.base.ship_l2d[30716109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98384,11 +92725,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.ship_l2d
-
-	var_15_73[30716110] = {
+	pg.base.ship_l2d[30716110] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -98468,11 +92805,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.ship_l2d
-
-	var_15_74[30716111] = {
+	pg.base.ship_l2d[30716111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98516,11 +92849,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.ship_l2d
-
-	var_15_75[30716112] = {
+	pg.base.ship_l2d[30716112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98564,11 +92893,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.ship_l2d
-
-	var_15_76[30716113] = {
+	pg.base.ship_l2d[30716113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98612,11 +92937,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.ship_l2d
-
-	var_15_77[30716114] = {
+	pg.base.ship_l2d[30716114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98679,11 +93000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.ship_l2d
-
-	var_15_78[30716115] = {
+	pg.base.ship_l2d[30716115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98746,11 +93063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.ship_l2d
-
-	var_15_79[30716116] = {
+	pg.base.ship_l2d[30716116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98813,11 +93126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.ship_l2d
-
-	var_15_80[30716117] = {
+	pg.base.ship_l2d[30716117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98880,11 +93189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.ship_l2d
-
-	var_15_81[30716118] = {
+	pg.base.ship_l2d[30716118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -98947,11 +93252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.ship_l2d
-
-	var_15_82[30716119] = {
+	pg.base.ship_l2d[30716119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99014,11 +93315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.ship_l2d
-
-	var_15_83[30716120] = {
+	pg.base.ship_l2d[30716120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99079,11 +93376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.ship_l2d
-
-	var_15_84[30716121] = {
+	pg.base.ship_l2d[30716121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99122,11 +93415,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_84
-
-	local var_15_85 = var_15_84.base.ship_l2d
-
-	var_15_85[30716122] = {
+	pg.base.ship_l2d[30716122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99189,11 +93478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.ship_l2d
-
-	var_15_86[30716123] = {
+	pg.base.ship_l2d[30716123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99260,11 +93545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.ship_l2d
-
-	var_15_87[30716124] = {
+	pg.base.ship_l2d[30716124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99329,11 +93610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.ship_l2d
-
-	var_15_88[30716125] = {
+	pg.base.ship_l2d[30716125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99395,11 +93672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.ship_l2d
-
-	var_15_89[30716126] = {
+	pg.base.ship_l2d[30716126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99460,11 +93733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.ship_l2d
-
-	var_15_90[30716127] = {
+	pg.base.ship_l2d[30716127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99510,11 +93779,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.ship_l2d
-
-	var_15_91[30716128] = {
+	pg.base.ship_l2d[30716128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99560,11 +93825,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.ship_l2d
-
-	var_15_92[30716129] = {
+	pg.base.ship_l2d[30716129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99610,11 +93871,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.ship_l2d
-
-	var_15_93[30716130] = {
+	pg.base.ship_l2d[30716130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99660,11 +93917,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.ship_l2d
-
-	var_15_94[30716131] = {
+	pg.base.ship_l2d[30716131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99725,11 +93978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.ship_l2d
-
-	var_15_95[30716132] = {
+	pg.base.ship_l2d[30716132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99789,11 +94038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.ship_l2d
-
-	var_15_96[30716133] = {
+	pg.base.ship_l2d[30716133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99836,11 +94081,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.ship_l2d
-
-	var_15_97[30716134] = {
+	pg.base.ship_l2d[30716134] = {
 		offset_x = -50,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -99890,11 +94131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.ship_l2d
-
-	var_15_98[30716135] = {
+	pg.base.ship_l2d[30716135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -99960,8 +94197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_98
-	var_15_98.base.ship_l2d[30716136] = {
+	pg.base.ship_l2d[30716136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100028,11 +94264,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.ship_l2d
-
-	var_16_0[30716137] = {
+	pg.base.ship_l2d[30716137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100074,11 +94306,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.ship_l2d
-
-	var_16_1[30716138] = {
+	pg.base.ship_l2d[30716138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100141,11 +94369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.ship_l2d
-
-	var_16_2[30716139] = {
+	pg.base.ship_l2d[30716139] = {
 		listener_data = "",
 		offset_x = 60,
 		gyro_y = 0,
@@ -100195,11 +94419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.ship_l2d
-
-	var_16_3[30716140] = {
+	pg.base.ship_l2d[30716140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100260,11 +94480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.ship_l2d
-
-	var_16_4[30716141] = {
+	pg.base.ship_l2d[30716141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100307,11 +94523,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.ship_l2d
-
-	var_16_5[70502201] = {
+	pg.base.ship_l2d[70502201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100359,11 +94571,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.ship_l2d
-
-	var_16_6[70502202] = {
+	pg.base.ship_l2d[70502202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100407,11 +94615,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.ship_l2d
-
-	var_16_7[70502203] = {
+	pg.base.ship_l2d[70502203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100453,11 +94657,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.ship_l2d
-
-	var_16_8[70502204] = {
+	pg.base.ship_l2d[70502204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100499,11 +94699,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.ship_l2d
-
-	var_16_9[70502205] = {
+	pg.base.ship_l2d[70502205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100545,11 +94741,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.ship_l2d
-
-	var_16_10[70502207] = {
+	pg.base.ship_l2d[70502207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100609,11 +94801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.ship_l2d
-
-	var_16_11[70502208] = {
+	pg.base.ship_l2d[70502208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100673,11 +94861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.ship_l2d
-
-	var_16_12[70502209] = {
+	pg.base.ship_l2d[70502209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100739,11 +94923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.ship_l2d
-
-	var_16_13[70502210] = {
+	pg.base.ship_l2d[70502210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100803,11 +94983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.ship_l2d
-
-	var_16_14[70502211] = {
+	pg.base.ship_l2d[70502211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100867,11 +95043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.ship_l2d
-
-	var_16_15[70502212] = {
+	pg.base.ship_l2d[70502212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100933,11 +95105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.ship_l2d
-
-	var_16_16[70502213] = {
+	pg.base.ship_l2d[70502213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -100983,11 +95151,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.ship_l2d
-
-	var_16_17[70502214] = {
+	pg.base.ship_l2d[70502214] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101046,11 +95210,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.ship_l2d
-
-	var_16_18[70502215] = {
+	pg.base.ship_l2d[70502215] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101109,11 +95269,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.ship_l2d
-
-	var_16_19[70502216] = {
+	pg.base.ship_l2d[70502216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101155,11 +95311,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.ship_l2d
-
-	var_16_20[70502217] = {
+	pg.base.ship_l2d[70502217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101219,11 +95371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.ship_l2d
-
-	var_16_21[70502218] = {
+	pg.base.ship_l2d[70502218] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -101295,11 +95443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.ship_l2d
-
-	var_16_22[70502219] = {
+	pg.base.ship_l2d[70502219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101361,11 +95505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.ship_l2d
-
-	var_16_23[70502220] = {
+	pg.base.ship_l2d[70502220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101425,11 +95565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.ship_l2d
-
-	var_16_24[70502221] = {
+	pg.base.ship_l2d[70502221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101475,11 +95611,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.ship_l2d
-
-	var_16_25[70502222] = {
+	pg.base.ship_l2d[70502222] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -101551,11 +95683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.ship_l2d
-
-	var_16_26[70502223] = {
+	pg.base.ship_l2d[70502223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101617,11 +95745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.ship_l2d
-
-	var_16_27[70502224] = {
+	pg.base.ship_l2d[70502224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -101667,11 +95791,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.ship_l2d
-
-	var_16_28[70502225] = {
+	pg.base.ship_l2d[70502225] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101725,11 +95845,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.ship_l2d
-
-	var_16_29[70502226] = {
+	pg.base.ship_l2d[70502226] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101783,11 +95899,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.ship_l2d
-
-	var_16_30[70502227] = {
+	pg.base.ship_l2d[70502227] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101841,11 +95953,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.ship_l2d
-
-	var_16_31[70502228] = {
+	pg.base.ship_l2d[70502228] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101899,11 +96007,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.ship_l2d
-
-	var_16_32[70502229] = {
+	pg.base.ship_l2d[70502229] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -101957,11 +96061,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.ship_l2d
-
-	var_16_33[70502230] = {
+	pg.base.ship_l2d[70502230] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -102015,11 +96115,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.ship_l2d
-
-	var_16_34[70502231] = {
+	pg.base.ship_l2d[70502231] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -102073,11 +96169,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.ship_l2d
-
-	var_16_35[70502232] = {
+	pg.base.ship_l2d[70502232] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -102131,11 +96223,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.ship_l2d
-
-	var_16_36[70502233] = {
+	pg.base.ship_l2d[70502233] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -102189,11 +96277,7 @@ end)()
 			type = 15
 		}
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.ship_l2d
-
-	var_16_37[70502234] = {
+	pg.base.ship_l2d[70502234] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -102255,11 +96339,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.ship_l2d
-
-	var_16_38[70502235] = {
+	pg.base.ship_l2d[70502235] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -102309,11 +96389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.ship_l2d
-
-	var_16_39[70502236] = {
+	pg.base.ship_l2d[70502236] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -102363,11 +96439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.ship_l2d
-
-	var_16_40[70502237] = {
+	pg.base.ship_l2d[70502237] = {
 		listener_data = "",
 		offset_x = -14,
 		gyro_y = 0,
@@ -102417,11 +96489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.ship_l2d
-
-	var_16_41[70502238] = {
+	pg.base.ship_l2d[70502238] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102464,11 +96532,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.ship_l2d
-
-	var_16_42[70502239] = {
+	pg.base.ship_l2d[70502239] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102511,11 +96575,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.ship_l2d
-
-	var_16_43[70502240] = {
+	pg.base.ship_l2d[70502240] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102558,11 +96618,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.ship_l2d
-
-	var_16_44[70502241] = {
+	pg.base.ship_l2d[70502241] = {
 		listener_data = "",
 		offset_x = 70,
 		gyro_y = 0,
@@ -102606,11 +96662,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.ship_l2d
-
-	var_16_45[70502242] = {
+	pg.base.ship_l2d[70502242] = {
 		listener_data = "",
 		offset_x = 70,
 		gyro_y = 0,
@@ -102654,11 +96706,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.ship_l2d
-
-	var_16_46[70502243] = {
+	pg.base.ship_l2d[70502243] = {
 		listener_data = "",
 		offset_x = 70,
 		gyro_y = 0,
@@ -102702,11 +96750,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.ship_l2d
-
-	var_16_47[70502244] = {
+	pg.base.ship_l2d[70502244] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102766,11 +96810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.ship_l2d
-
-	var_16_48[70502245] = {
+	pg.base.ship_l2d[70502245] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102830,11 +96870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.ship_l2d
-
-	var_16_49[70502246] = {
+	pg.base.ship_l2d[70502246] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102894,11 +96930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.ship_l2d
-
-	var_16_50[70502247] = {
+	pg.base.ship_l2d[70502247] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -102958,11 +96990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.ship_l2d
-
-	var_16_51[70502248] = {
+	pg.base.ship_l2d[70502248] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103008,11 +97036,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.ship_l2d
-
-	var_16_52[70502249] = {
+	pg.base.ship_l2d[70502249] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103058,11 +97082,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.ship_l2d
-
-	var_16_53[70502250] = {
+	pg.base.ship_l2d[70502250] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103108,11 +97128,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.ship_l2d
-
-	var_16_54[70502251] = {
+	pg.base.ship_l2d[70502251] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103158,11 +97174,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.ship_l2d
-
-	var_16_55[70502252] = {
+	pg.base.ship_l2d[70502252] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103223,11 +97235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.ship_l2d
-
-	var_16_56[70502253] = {
+	pg.base.ship_l2d[70502253] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103288,11 +97296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.ship_l2d
-
-	var_16_57[70502254] = {
+	pg.base.ship_l2d[70502254] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103334,11 +97338,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.ship_l2d
-
-	var_16_58[70502255] = {
+	pg.base.ship_l2d[70502255] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -103399,11 +97399,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.ship_l2d
-
-	var_16_59[70502256] = {
+	pg.base.ship_l2d[70502256] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -103464,11 +97460,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.ship_l2d
-
-	var_16_60[70502257] = {
+	pg.base.ship_l2d[70502257] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -103528,11 +97520,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.ship_l2d
-
-	var_16_61[70502258] = {
+	pg.base.ship_l2d[70502258] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -103591,11 +97579,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.ship_l2d
-
-	var_16_62[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103659,11 +97643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.ship_l2d
-
-	var_16_63[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103723,11 +97703,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.ship_l2d
-
-	var_16_64[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103773,11 +97749,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.ship_l2d
-
-	var_16_65[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103837,11 +97809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.ship_l2d
-
-	var_16_66[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103901,11 +97869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.ship_l2d
-
-	var_16_67[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -103965,11 +97929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.ship_l2d
-
-	var_16_68[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104011,11 +97971,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.ship_l2d
-
-	var_16_69[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104061,11 +98017,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.ship_l2d
-
-	var_16_70[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104125,11 +98077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.ship_l2d
-
-	var_16_71[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104173,11 +98121,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.ship_l2d
-
-	var_16_72[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104221,11 +98165,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.ship_l2d
-
-	var_16_73[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104285,11 +98225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.ship_l2d
-
-	var_16_74[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104349,11 +98285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.ship_l2d
-
-	var_16_75[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104413,11 +98345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.ship_l2d
-
-	var_16_76[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104477,11 +98405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.ship_l2d
-
-	var_16_77[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104541,11 +98465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.ship_l2d
-
-	var_16_78[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104605,11 +98525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.ship_l2d
-
-	var_16_79[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104653,11 +98569,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.ship_l2d
-
-	var_16_80[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104701,11 +98613,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.ship_l2d
-
-	var_16_81[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104765,11 +98673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_81
-
-	local var_16_82 = var_16_81.base.ship_l2d
-
-	var_16_82[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104829,11 +98733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.ship_l2d
-
-	var_16_83[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104893,11 +98793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.ship_l2d
-
-	var_16_84[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -104957,11 +98853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_84
-
-	local var_16_85 = var_16_84.base.ship_l2d
-
-	var_16_85[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105021,11 +98913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.ship_l2d
-
-	var_16_86[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105085,11 +98973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.ship_l2d
-
-	var_16_87[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105133,11 +99017,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.ship_l2d
-
-	var_16_88[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105181,11 +99061,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.ship_l2d
-
-	var_16_89[30516128] = {
+	pg.base.ship_l2d[30516128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105245,11 +99121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.ship_l2d
-
-	var_16_90[30516129] = {
+	pg.base.ship_l2d[30516129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105309,11 +99181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.ship_l2d
-
-	var_16_91[30516130] = {
+	pg.base.ship_l2d[30516130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105373,11 +99241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.ship_l2d
-
-	var_16_92[30516131] = {
+	pg.base.ship_l2d[30516131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105437,11 +99301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.ship_l2d
-
-	var_16_93[30516132] = {
+	pg.base.ship_l2d[30516132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105501,11 +99361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.ship_l2d
-
-	var_16_94[30516133] = {
+	pg.base.ship_l2d[30516133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105565,11 +99421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.ship_l2d
-
-	var_16_95[30516134] = {
+	pg.base.ship_l2d[30516134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105613,11 +99465,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.ship_l2d
-
-	var_16_96[30516135] = {
+	pg.base.ship_l2d[30516135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105661,11 +99509,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.ship_l2d
-
-	var_16_97[30516136] = {
+	pg.base.ship_l2d[30516136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105725,11 +99569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.ship_l2d
-
-	var_16_98[30516137] = {
+	pg.base.ship_l2d[30516137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105789,8 +99629,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_98
-	var_16_98.base.ship_l2d[30516138] = {
+	pg.base.ship_l2d[30516138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105854,11 +99693,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.ship_l2d
-
-	var_17_0[30516139] = {
+	pg.base.ship_l2d[30516139] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105918,11 +99753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.ship_l2d
-
-	var_17_1[30516140] = {
+	pg.base.ship_l2d[30516140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -105982,11 +99813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.ship_l2d
-
-	var_17_2[30516141] = {
+	pg.base.ship_l2d[30516141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106046,11 +99873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.ship_l2d
-
-	var_17_3[30516142] = {
+	pg.base.ship_l2d[30516142] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106089,11 +99912,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.ship_l2d
-
-	var_17_4[30516143] = {
+	pg.base.ship_l2d[30516143] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106132,11 +99951,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.ship_l2d
-
-	var_17_5[30516144] = {
+	pg.base.ship_l2d[30516144] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106179,11 +99994,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.ship_l2d
-
-	var_17_6[30516145] = {
+	pg.base.ship_l2d[30516145] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106226,11 +100037,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.ship_l2d
-
-	var_17_7[30516146] = {
+	pg.base.ship_l2d[30516146] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106273,11 +100080,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.ship_l2d
-
-	var_17_8[30516147] = {
+	pg.base.ship_l2d[30516147] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106320,11 +100123,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.ship_l2d
-
-	var_17_9[30516148] = {
+	pg.base.ship_l2d[30516148] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106367,11 +100166,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.ship_l2d
-
-	var_17_10[30516149] = {
+	pg.base.ship_l2d[30516149] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106414,11 +100209,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.ship_l2d
-
-	var_17_11[30516150] = {
+	pg.base.ship_l2d[30516150] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106457,11 +100248,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.ship_l2d
-
-	var_17_12[30516151] = {
+	pg.base.ship_l2d[30516151] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106507,11 +100294,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.ship_l2d
-
-	var_17_13[30320101] = {
+	pg.base.ship_l2d[30320101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106575,11 +100358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.ship_l2d
-
-	var_17_14[30320102] = {
+	pg.base.ship_l2d[30320102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106639,11 +100418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.ship_l2d
-
-	var_17_15[30320103] = {
+	pg.base.ship_l2d[30320103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106703,11 +100478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.ship_l2d
-
-	var_17_16[30320104] = {
+	pg.base.ship_l2d[30320104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106753,11 +100524,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.ship_l2d
-
-	var_17_17[30320105] = {
+	pg.base.ship_l2d[30320105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106799,11 +100566,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.ship_l2d
-
-	var_17_18[30320106] = {
+	pg.base.ship_l2d[30320106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106863,11 +100626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.ship_l2d
-
-	var_17_19[30320107] = {
+	pg.base.ship_l2d[30320107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -106913,11 +100672,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.ship_l2d
-
-	var_17_20[30320108] = {
+	pg.base.ship_l2d[30320108] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -106971,11 +100726,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.ship_l2d
-
-	var_17_21[30320109] = {
+	pg.base.ship_l2d[30320109] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -107029,11 +100780,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.ship_l2d
-
-	var_17_22[30320110] = {
+	pg.base.ship_l2d[30320110] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -107087,11 +100834,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.ship_l2d
-
-	var_17_23[30320111] = {
+	pg.base.ship_l2d[30320111] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -107145,11 +100888,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.ship_l2d
-
-	var_17_24[30320112] = {
+	pg.base.ship_l2d[30320112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107209,11 +100948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.ship_l2d
-
-	var_17_25[30320113] = {
+	pg.base.ship_l2d[30320113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107273,11 +101008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.ship_l2d
-
-	var_17_26[30320114] = {
+	pg.base.ship_l2d[30320114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107337,11 +101068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.ship_l2d
-
-	var_17_27[30320115] = {
+	pg.base.ship_l2d[30320115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107387,11 +101114,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.ship_l2d
-
-	var_17_28[30320116] = {
+	pg.base.ship_l2d[30320116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107451,11 +101174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.ship_l2d
-
-	var_17_29[30320117] = {
+	pg.base.ship_l2d[30320117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107499,11 +101218,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.ship_l2d
-
-	var_17_30[30320118] = {
+	pg.base.ship_l2d[30320118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107549,11 +101264,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.ship_l2d
-
-	var_17_31[30320119] = {
+	pg.base.ship_l2d[30320119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107613,11 +101324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.ship_l2d
-
-	var_17_32[30320120] = {
+	pg.base.ship_l2d[30320120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107677,11 +101384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_32
-
-	local var_17_33 = var_17_32.base.ship_l2d
-
-	var_17_33[30320121] = {
+	pg.base.ship_l2d[30320121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107741,11 +101444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_33
-
-	local var_17_34 = var_17_33.base.ship_l2d
-
-	var_17_34[30320122] = {
+	pg.base.ship_l2d[30320122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107791,11 +101490,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_34
-
-	local var_17_35 = var_17_34.base.ship_l2d
-
-	var_17_35[30320123] = {
+	pg.base.ship_l2d[30320123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107834,11 +101529,7 @@ end)()
 			20
 		}
 	}
-	pg = var_17_35
-
-	local var_17_36 = var_17_35.base.ship_l2d
-
-	var_17_36[30320124] = {
+	pg.base.ship_l2d[30320124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107877,11 +101568,7 @@ end)()
 			10
 		}
 	}
-	pg = var_17_36
-
-	local var_17_37 = var_17_36.base.ship_l2d
-
-	var_17_37[30320125] = {
+	pg.base.ship_l2d[30320125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107920,11 +101607,7 @@ end)()
 			10
 		}
 	}
-	pg = var_17_37
-
-	local var_17_38 = var_17_37.base.ship_l2d
-
-	var_17_38[11802201] = {
+	pg.base.ship_l2d[11802201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -107990,11 +101673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_38
-
-	local var_17_39 = var_17_38.base.ship_l2d
-
-	var_17_39[11802202] = {
+	pg.base.ship_l2d[11802202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108056,11 +101735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_39
-
-	local var_17_40 = var_17_39.base.ship_l2d
-
-	var_17_40[11802203] = {
+	pg.base.ship_l2d[11802203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108122,11 +101797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_40
-
-	local var_17_41 = var_17_40.base.ship_l2d
-
-	var_17_41[11802204] = {
+	pg.base.ship_l2d[11802204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108174,11 +101845,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_41
-
-	local var_17_42 = var_17_41.base.ship_l2d
-
-	var_17_42[11802205] = {
+	pg.base.ship_l2d[11802205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108238,11 +101905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_42
-
-	local var_17_43 = var_17_42.base.ship_l2d
-
-	var_17_43[11802206] = {
+	pg.base.ship_l2d[11802206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108302,11 +101965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_43
-
-	local var_17_44 = var_17_43.base.ship_l2d
-
-	var_17_44[11802207] = {
+	pg.base.ship_l2d[11802207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108368,11 +102027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_44
-
-	local var_17_45 = var_17_44.base.ship_l2d
-
-	var_17_45[11802208] = {
+	pg.base.ship_l2d[11802208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108434,11 +102089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_45
-
-	local var_17_46 = var_17_45.base.ship_l2d
-
-	var_17_46[11802209] = {
+	pg.base.ship_l2d[11802209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108498,11 +102149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_46
-
-	local var_17_47 = var_17_46.base.ship_l2d
-
-	var_17_47[11802210] = {
+	pg.base.ship_l2d[11802210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108564,11 +102211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_47
-
-	local var_17_48 = var_17_47.base.ship_l2d
-
-	var_17_48[11802211] = {
+	pg.base.ship_l2d[11802211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108628,11 +102271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_48
-
-	local var_17_49 = var_17_48.base.ship_l2d
-
-	var_17_49[11802212] = {
+	pg.base.ship_l2d[11802212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108694,11 +102333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_49
-
-	local var_17_50 = var_17_49.base.ship_l2d
-
-	var_17_50[11802213] = {
+	pg.base.ship_l2d[11802213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108760,11 +102395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_50
-
-	local var_17_51 = var_17_50.base.ship_l2d
-
-	var_17_51[11802214] = {
+	pg.base.ship_l2d[11802214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108824,11 +102455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_51
-
-	local var_17_52 = var_17_51.base.ship_l2d
-
-	var_17_52[11802215] = {
+	pg.base.ship_l2d[11802215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108888,11 +102515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_52
-
-	local var_17_53 = var_17_52.base.ship_l2d
-
-	var_17_53[11802216] = {
+	pg.base.ship_l2d[11802216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -108952,11 +102575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_53
-
-	local var_17_54 = var_17_53.base.ship_l2d
-
-	var_17_54[11802217] = {
+	pg.base.ship_l2d[11802217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109016,11 +102635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_54
-
-	local var_17_55 = var_17_54.base.ship_l2d
-
-	var_17_55[11802218] = {
+	pg.base.ship_l2d[11802218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109080,11 +102695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_55
-
-	local var_17_56 = var_17_55.base.ship_l2d
-
-	var_17_56[11802219] = {
+	pg.base.ship_l2d[11802219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109144,11 +102755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_56
-
-	local var_17_57 = var_17_56.base.ship_l2d
-
-	var_17_57[11802220] = {
+	pg.base.ship_l2d[11802220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109208,11 +102815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_57
-
-	local var_17_58 = var_17_57.base.ship_l2d
-
-	var_17_58[11802221] = {
+	pg.base.ship_l2d[11802221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109272,11 +102875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_58
-
-	local var_17_59 = var_17_58.base.ship_l2d
-
-	var_17_59[11802222] = {
+	pg.base.ship_l2d[11802222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109336,11 +102935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_59
-
-	local var_17_60 = var_17_59.base.ship_l2d
-
-	var_17_60[11802223] = {
+	pg.base.ship_l2d[11802223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109386,11 +102981,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_60
-
-	local var_17_61 = var_17_60.base.ship_l2d
-
-	var_17_61[11802224] = {
+	pg.base.ship_l2d[11802224] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -109492,11 +103083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_61
-
-	local var_17_62 = var_17_61.base.ship_l2d
-
-	var_17_62[30319201] = {
+	pg.base.ship_l2d[30319201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109542,11 +103129,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_62
-
-	local var_17_63 = var_17_62.base.ship_l2d
-
-	var_17_63[30319202] = {
+	pg.base.ship_l2d[30319202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109606,11 +103189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_63
-
-	local var_17_64 = var_17_63.base.ship_l2d
-
-	var_17_64[30319203] = {
+	pg.base.ship_l2d[30319203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109670,11 +103249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_64
-
-	local var_17_65 = var_17_64.base.ship_l2d
-
-	var_17_65[30319204] = {
+	pg.base.ship_l2d[30319204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109720,11 +103295,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_65
-
-	local var_17_66 = var_17_65.base.ship_l2d
-
-	var_17_66[30319205] = {
+	pg.base.ship_l2d[30319205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109784,11 +103355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_66
-
-	local var_17_67 = var_17_66.base.ship_l2d
-
-	var_17_67[30319206] = {
+	pg.base.ship_l2d[30319206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109834,11 +103401,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_67
-
-	local var_17_68 = var_17_67.base.ship_l2d
-
-	var_17_68[30319207] = {
+	pg.base.ship_l2d[30319207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109898,11 +103461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_68
-
-	local var_17_69 = var_17_68.base.ship_l2d
-
-	var_17_69[30319208] = {
+	pg.base.ship_l2d[30319208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -109962,11 +103521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_69
-
-	local var_17_70 = var_17_69.base.ship_l2d
-
-	var_17_70[30319209] = {
+	pg.base.ship_l2d[30319209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110028,11 +103583,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_70
-
-	local var_17_71 = var_17_70.base.ship_l2d
-
-	var_17_71[30319210] = {
+	pg.base.ship_l2d[30319210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110078,11 +103629,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_17_71
-
-	local var_17_72 = var_17_71.base.ship_l2d
-
-	var_17_72[30319211] = {
+	pg.base.ship_l2d[30319211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110142,11 +103689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_72
-
-	local var_17_73 = var_17_72.base.ship_l2d
-
-	var_17_73[30319212] = {
+	pg.base.ship_l2d[30319212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110207,11 +103750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_73
-
-	local var_17_74 = var_17_73.base.ship_l2d
-
-	var_17_74[30319213] = {
+	pg.base.ship_l2d[30319213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110254,11 +103793,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_74
-
-	local var_17_75 = var_17_74.base.ship_l2d
-
-	var_17_75[30319214] = {
+	pg.base.ship_l2d[30319214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110301,11 +103836,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_75
-
-	local var_17_76 = var_17_75.base.ship_l2d
-
-	var_17_76[30319215] = {
+	pg.base.ship_l2d[30319215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110380,11 +103911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_76
-
-	local var_17_77 = var_17_76.base.ship_l2d
-
-	var_17_77[30319216] = {
+	pg.base.ship_l2d[30319216] = {
 		listener_data = "",
 		offset_x = -100,
 		gyro_y = 0,
@@ -110423,11 +103950,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_77
-
-	local var_17_78 = var_17_77.base.ship_l2d
-
-	var_17_78[30319217] = {
+	pg.base.ship_l2d[30319217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110466,11 +103989,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_78
-
-	local var_17_79 = var_17_78.base.ship_l2d
-
-	var_17_79[30319218] = {
+	pg.base.ship_l2d[30319218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110513,11 +104032,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_17_79
-
-	local var_17_80 = var_17_79.base.ship_l2d
-
-	var_17_80[30319219] = {
+	pg.base.ship_l2d[30319219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110556,11 +104071,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_80
-
-	local var_17_81 = var_17_80.base.ship_l2d
-
-	var_17_81[30319220] = {
+	pg.base.ship_l2d[30319220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110599,11 +104110,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_81
-
-	local var_17_82 = var_17_81.base.ship_l2d
-
-	var_17_82[80503201] = {
+	pg.base.ship_l2d[80503201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110667,11 +104174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_82
-
-	local var_17_83 = var_17_82.base.ship_l2d
-
-	var_17_83[80503202] = {
+	pg.base.ship_l2d[80503202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110731,11 +104234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_83
-
-	local var_17_84 = var_17_83.base.ship_l2d
-
-	var_17_84[80503203] = {
+	pg.base.ship_l2d[80503203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110795,11 +104294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_84
-
-	local var_17_85 = var_17_84.base.ship_l2d
-
-	var_17_85[80503204] = {
+	pg.base.ship_l2d[80503204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110859,11 +104354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_85
-
-	local var_17_86 = var_17_85.base.ship_l2d
-
-	var_17_86[80503205] = {
+	pg.base.ship_l2d[80503205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110923,11 +104414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_86
-
-	local var_17_87 = var_17_86.base.ship_l2d
-
-	var_17_87[80503206] = {
+	pg.base.ship_l2d[80503206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -110987,11 +104474,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_87
-
-	local var_17_88 = var_17_87.base.ship_l2d
-
-	var_17_88[80503207] = {
+	pg.base.ship_l2d[80503207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111051,11 +104534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_88
-
-	local var_17_89 = var_17_88.base.ship_l2d
-
-	var_17_89[80503208] = {
+	pg.base.ship_l2d[80503208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111115,11 +104594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_89
-
-	local var_17_90 = var_17_89.base.ship_l2d
-
-	var_17_90[80503209] = {
+	pg.base.ship_l2d[80503209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111179,11 +104654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_90
-
-	local var_17_91 = var_17_90.base.ship_l2d
-
-	var_17_91[80503210] = {
+	pg.base.ship_l2d[80503210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111243,11 +104714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_91
-
-	local var_17_92 = var_17_91.base.ship_l2d
-
-	var_17_92[80503211] = {
+	pg.base.ship_l2d[80503211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111307,11 +104774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_92
-
-	local var_17_93 = var_17_92.base.ship_l2d
-
-	var_17_93[80503212] = {
+	pg.base.ship_l2d[80503212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111371,11 +104834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_93
-
-	local var_17_94 = var_17_93.base.ship_l2d
-
-	var_17_94[80503213] = {
+	pg.base.ship_l2d[80503213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111435,11 +104894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_94
-
-	local var_17_95 = var_17_94.base.ship_l2d
-
-	var_17_95[80503214] = {
+	pg.base.ship_l2d[80503214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111499,11 +104954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_95
-
-	local var_17_96 = var_17_95.base.ship_l2d
-
-	var_17_96[80503215] = {
+	pg.base.ship_l2d[80503215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111563,11 +105014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_96
-
-	local var_17_97 = var_17_96.base.ship_l2d
-
-	var_17_97[80503216] = {
+	pg.base.ship_l2d[80503216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111629,11 +105076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_97
-
-	local var_17_98 = var_17_97.base.ship_l2d
-
-	var_17_98[80503217] = {
+	pg.base.ship_l2d[80503217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111693,8 +105136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_98
-	var_17_98.base.ship_l2d[80503218] = {
+	pg.base.ship_l2d[80503218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111758,11 +105200,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_18_0 = var_1_10000.base.ship_l2d
-
-	var_18_0[80503219] = {
+	pg.base.ship_l2d[80503219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111822,11 +105260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_0
-
-	local var_18_1 = var_18_0.base.ship_l2d
-
-	var_18_1[80503220] = {
+	pg.base.ship_l2d[80503220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111888,11 +105322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_1
-
-	local var_18_2 = var_18_1.base.ship_l2d
-
-	var_18_2[80503221] = {
+	pg.base.ship_l2d[80503221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -111954,11 +105384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_2
-
-	local var_18_3 = var_18_2.base.ship_l2d
-
-	var_18_3[80503222] = {
+	pg.base.ship_l2d[80503222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112018,11 +105444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_3
-
-	local var_18_4 = var_18_3.base.ship_l2d
-
-	var_18_4[80503223] = {
+	pg.base.ship_l2d[80503223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112082,11 +105504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_4
-
-	local var_18_5 = var_18_4.base.ship_l2d
-
-	var_18_5[80503224] = {
+	pg.base.ship_l2d[80503224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112146,11 +105564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_5
-
-	local var_18_6 = var_18_5.base.ship_l2d
-
-	var_18_6[80503225] = {
+	pg.base.ship_l2d[80503225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112210,11 +105624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_6
-
-	local var_18_7 = var_18_6.base.ship_l2d
-
-	var_18_7[80503226] = {
+	pg.base.ship_l2d[80503226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112274,11 +105684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_7
-
-	local var_18_8 = var_18_7.base.ship_l2d
-
-	var_18_8[80503227] = {
+	pg.base.ship_l2d[80503227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112338,11 +105744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_8
-
-	local var_18_9 = var_18_8.base.ship_l2d
-
-	var_18_9[80503228] = {
+	pg.base.ship_l2d[80503228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112402,11 +105804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_9
-
-	local var_18_10 = var_18_9.base.ship_l2d
-
-	var_18_10[80503229] = {
+	pg.base.ship_l2d[80503229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112466,11 +105864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_10
-
-	local var_18_11 = var_18_10.base.ship_l2d
-
-	var_18_11[80503230] = {
+	pg.base.ship_l2d[80503230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112530,11 +105924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_11
-
-	local var_18_12 = var_18_11.base.ship_l2d
-
-	var_18_12[80503231] = {
+	pg.base.ship_l2d[80503231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112594,11 +105984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_12
-
-	local var_18_13 = var_18_12.base.ship_l2d
-
-	var_18_13[80503232] = {
+	pg.base.ship_l2d[80503232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112658,11 +106044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_13
-
-	local var_18_14 = var_18_13.base.ship_l2d
-
-	var_18_14[80503233] = {
+	pg.base.ship_l2d[80503233] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112722,11 +106104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_14
-
-	local var_18_15 = var_18_14.base.ship_l2d
-
-	var_18_15[80503234] = {
+	pg.base.ship_l2d[80503234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112786,11 +106164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_15
-
-	local var_18_16 = var_18_15.base.ship_l2d
-
-	var_18_16[80503235] = {
+	pg.base.ship_l2d[80503235] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112850,11 +106224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_16
-
-	local var_18_17 = var_18_16.base.ship_l2d
-
-	var_18_17[80503236] = {
+	pg.base.ship_l2d[80503236] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112914,11 +106284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_17
-
-	local var_18_18 = var_18_17.base.ship_l2d
-
-	var_18_18[80503237] = {
+	pg.base.ship_l2d[80503237] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -112978,11 +106344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_18
-
-	local var_18_19 = var_18_18.base.ship_l2d
-
-	var_18_19[80503238] = {
+	pg.base.ship_l2d[80503238] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113042,11 +106404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_19
-
-	local var_18_20 = var_18_19.base.ship_l2d
-
-	var_18_20[80503239] = {
+	pg.base.ship_l2d[80503239] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113106,11 +106464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_20
-
-	local var_18_21 = var_18_20.base.ship_l2d
-
-	var_18_21[80503240] = {
+	pg.base.ship_l2d[80503240] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113170,11 +106524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_21
-
-	local var_18_22 = var_18_21.base.ship_l2d
-
-	var_18_22[80503241] = {
+	pg.base.ship_l2d[80503241] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113234,11 +106584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_22
-
-	local var_18_23 = var_18_22.base.ship_l2d
-
-	var_18_23[80503242] = {
+	pg.base.ship_l2d[80503242] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113298,11 +106644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_23
-
-	local var_18_24 = var_18_23.base.ship_l2d
-
-	var_18_24[80503243] = {
+	pg.base.ship_l2d[80503243] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113362,11 +106704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_24
-
-	local var_18_25 = var_18_24.base.ship_l2d
-
-	var_18_25[80503244] = {
+	pg.base.ship_l2d[80503244] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113426,11 +106764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_25
-
-	local var_18_26 = var_18_25.base.ship_l2d
-
-	var_18_26[80503245] = {
+	pg.base.ship_l2d[80503245] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113490,11 +106824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_26
-
-	local var_18_27 = var_18_26.base.ship_l2d
-
-	var_18_27[80503246] = {
+	pg.base.ship_l2d[80503246] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113554,11 +106884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_27
-
-	local var_18_28 = var_18_27.base.ship_l2d
-
-	var_18_28[80503247] = {
+	pg.base.ship_l2d[80503247] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113601,11 +106927,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_28
-
-	local var_18_29 = var_18_28.base.ship_l2d
-
-	var_18_29[80503248] = {
+	pg.base.ship_l2d[80503248] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113648,11 +106970,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_29
-
-	local var_18_30 = var_18_29.base.ship_l2d
-
-	var_18_30[80503249] = {
+	pg.base.ship_l2d[80503249] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113695,11 +107013,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_30
-
-	local var_18_31 = var_18_30.base.ship_l2d
-
-	var_18_31[80503250] = {
+	pg.base.ship_l2d[80503250] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113742,11 +107056,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_31
-
-	local var_18_32 = var_18_31.base.ship_l2d
-
-	var_18_32[80503251] = {
+	pg.base.ship_l2d[80503251] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113789,11 +107099,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_32
-
-	local var_18_33 = var_18_32.base.ship_l2d
-
-	var_18_33[80503252] = {
+	pg.base.ship_l2d[80503252] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113836,11 +107142,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_33
-
-	local var_18_34 = var_18_33.base.ship_l2d
-
-	var_18_34[80503253] = {
+	pg.base.ship_l2d[80503253] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113883,11 +107185,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_34
-
-	local var_18_35 = var_18_34.base.ship_l2d
-
-	var_18_35[80503254] = {
+	pg.base.ship_l2d[80503254] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113930,11 +107228,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_35
-
-	local var_18_36 = var_18_35.base.ship_l2d
-
-	var_18_36[80503255] = {
+	pg.base.ship_l2d[80503255] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -113981,11 +107275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_36
-
-	local var_18_37 = var_18_36.base.ship_l2d
-
-	var_18_37[80503256] = {
+	pg.base.ship_l2d[80503256] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114031,11 +107321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_37
-
-	local var_18_38 = var_18_37.base.ship_l2d
-
-	var_18_38[80503257] = {
+	pg.base.ship_l2d[80503257] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114080,11 +107366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_38
-
-	local var_18_39 = var_18_38.base.ship_l2d
-
-	var_18_39[80503258] = {
+	pg.base.ship_l2d[80503258] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114131,11 +107413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_39
-
-	local var_18_40 = var_18_39.base.ship_l2d
-
-	var_18_40[80503259] = {
+	pg.base.ship_l2d[80503259] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114180,11 +107458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_40
-
-	local var_18_41 = var_18_40.base.ship_l2d
-
-	var_18_41[80503260] = {
+	pg.base.ship_l2d[80503260] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114235,11 +107509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_41
-
-	local var_18_42 = var_18_41.base.ship_l2d
-
-	var_18_42[80503261] = {
+	pg.base.ship_l2d[80503261] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114289,11 +107559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_42
-
-	local var_18_43 = var_18_42.base.ship_l2d
-
-	var_18_43[80503262] = {
+	pg.base.ship_l2d[80503262] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -114354,11 +107620,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_43
-
-	local var_18_44 = var_18_43.base.ship_l2d
-
-	var_18_44[80503263] = {
+	pg.base.ship_l2d[80503263] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -114413,11 +107675,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_44
-
-	local var_18_45 = var_18_44.base.ship_l2d
-
-	var_18_45[80503264] = {
+	pg.base.ship_l2d[80503264] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114465,11 +107723,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_18_45
-
-	local var_18_46 = var_18_45.base.ship_l2d
-
-	var_18_46[80503265] = {
+	pg.base.ship_l2d[80503265] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114508,11 +107762,7 @@ end)()
 			30
 		}
 	}
-	pg = var_18_46
-
-	local var_18_47 = var_18_46.base.ship_l2d
-
-	var_18_47[80503266] = {
+	pg.base.ship_l2d[80503266] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114551,11 +107801,7 @@ end)()
 			30
 		}
 	}
-	pg = var_18_47
-
-	local var_18_48 = var_18_47.base.ship_l2d
-
-	var_18_48[960012101] = {
+	pg.base.ship_l2d[960012101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114619,11 +107865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_48
-
-	local var_18_49 = var_18_48.base.ship_l2d
-
-	var_18_49[960012102] = {
+	pg.base.ship_l2d[960012102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114665,11 +107907,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_49
-
-	local var_18_50 = var_18_49.base.ship_l2d
-
-	var_18_50[960012103] = {
+	pg.base.ship_l2d[960012103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114729,11 +107967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_50
-
-	local var_18_51 = var_18_50.base.ship_l2d
-
-	var_18_51[960012104] = {
+	pg.base.ship_l2d[960012104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114793,11 +108027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_51
-
-	local var_18_52 = var_18_51.base.ship_l2d
-
-	var_18_52[960012105] = {
+	pg.base.ship_l2d[960012105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114857,11 +108087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_52
-
-	local var_18_53 = var_18_52.base.ship_l2d
-
-	var_18_53[960012106] = {
+	pg.base.ship_l2d[960012106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114921,11 +108147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_53
-
-	local var_18_54 = var_18_53.base.ship_l2d
-
-	var_18_54[960012107] = {
+	pg.base.ship_l2d[960012107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -114985,11 +108207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_54
-
-	local var_18_55 = var_18_54.base.ship_l2d
-
-	var_18_55[960012108] = {
+	pg.base.ship_l2d[960012108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115033,11 +108251,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_55
-
-	local var_18_56 = var_18_55.base.ship_l2d
-
-	var_18_56[960012109] = {
+	pg.base.ship_l2d[960012109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115081,11 +108295,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_56
-
-	local var_18_57 = var_18_56.base.ship_l2d
-
-	var_18_57[960012110] = {
+	pg.base.ship_l2d[960012110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115129,11 +108339,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_57
-
-	local var_18_58 = var_18_57.base.ship_l2d
-
-	var_18_58[960012111] = {
+	pg.base.ship_l2d[960012111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115193,11 +108399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_58
-
-	local var_18_59 = var_18_58.base.ship_l2d
-
-	var_18_59[960012112] = {
+	pg.base.ship_l2d[960012112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115257,11 +108459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_59
-
-	local var_18_60 = var_18_59.base.ship_l2d
-
-	var_18_60[960012113] = {
+	pg.base.ship_l2d[960012113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115321,11 +108519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_60
-
-	local var_18_61 = var_18_60.base.ship_l2d
-
-	var_18_61[960012114] = {
+	pg.base.ship_l2d[960012114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115385,11 +108579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_61
-
-	local var_18_62 = var_18_61.base.ship_l2d
-
-	var_18_62[960012115] = {
+	pg.base.ship_l2d[960012115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115449,11 +108639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_62
-
-	local var_18_63 = var_18_62.base.ship_l2d
-
-	var_18_63[960012116] = {
+	pg.base.ship_l2d[960012116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115497,11 +108683,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_63
-
-	local var_18_64 = var_18_63.base.ship_l2d
-
-	var_18_64[960012117] = {
+	pg.base.ship_l2d[960012117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115545,11 +108727,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_64
-
-	local var_18_65 = var_18_64.base.ship_l2d
-
-	var_18_65[960012118] = {
+	pg.base.ship_l2d[960012118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115592,11 +108770,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_65
-
-	local var_18_66 = var_18_65.base.ship_l2d
-
-	var_18_66[960012119] = {
+	pg.base.ship_l2d[960012119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115639,11 +108813,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_66
-
-	local var_18_67 = var_18_66.base.ship_l2d
-
-	var_18_67[960012120] = {
+	pg.base.ship_l2d[960012120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115686,11 +108856,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_67
-
-	local var_18_68 = var_18_67.base.ship_l2d
-
-	var_18_68[960012121] = {
+	pg.base.ship_l2d[960012121] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -115740,11 +108906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_68
-
-	local var_18_69 = var_18_68.base.ship_l2d
-
-	var_18_69[960012122] = {
+	pg.base.ship_l2d[960012122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115787,11 +108949,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_69
-
-	local var_18_70 = var_18_69.base.ship_l2d
-
-	var_18_70[960012123] = {
+	pg.base.ship_l2d[960012123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115853,11 +109011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_70
-
-	local var_18_71 = var_18_70.base.ship_l2d
-
-	var_18_71[960012124] = {
+	pg.base.ship_l2d[960012124] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -115930,11 +109084,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_18_71
-
-	local var_18_72 = var_18_71.base.ship_l2d
-
-	var_18_72[960012125] = {
+	pg.base.ship_l2d[960012125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -115973,11 +109123,7 @@ end)()
 			6
 		}
 	}
-	pg = var_18_72
-
-	local var_18_73 = var_18_72.base.ship_l2d
-
-	var_18_73[960012126] = {
+	pg.base.ship_l2d[960012126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116016,11 +109162,7 @@ end)()
 			18
 		}
 	}
-	pg = var_18_73
-
-	local var_18_74 = var_18_73.base.ship_l2d
-
-	var_18_74[960012127] = {
+	pg.base.ship_l2d[960012127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116059,11 +109201,7 @@ end)()
 			40
 		}
 	}
-	pg = var_18_74
-
-	local var_18_75 = var_18_74.base.ship_l2d
-
-	var_18_75[960012128] = {
+	pg.base.ship_l2d[960012128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116102,11 +109240,7 @@ end)()
 			30
 		}
 	}
-	pg = var_18_75
-
-	local var_18_76 = var_18_75.base.ship_l2d
-
-	var_18_76[960012129] = {
+	pg.base.ship_l2d[960012129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116171,11 +109305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_76
-
-	local var_18_77 = var_18_76.base.ship_l2d
-
-	var_18_77[960012130] = {
+	pg.base.ship_l2d[960012130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116223,11 +109353,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_18_77
-
-	local var_18_78 = var_18_77.base.ship_l2d
-
-	var_18_78[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116291,11 +109417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_78
-
-	local var_18_79 = var_18_78.base.ship_l2d
-
-	var_18_79[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116355,11 +109477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_79
-
-	local var_18_80 = var_18_79.base.ship_l2d
-
-	var_18_80[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116419,11 +109537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_80
-
-	local var_18_81 = var_18_80.base.ship_l2d
-
-	var_18_81[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116471,11 +109585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_81
-
-	local var_18_82 = var_18_81.base.ship_l2d
-
-	var_18_82[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116535,11 +109645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_82
-
-	local var_18_83 = var_18_82.base.ship_l2d
-
-	var_18_83[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116599,11 +109705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_83
-
-	local var_18_84 = var_18_83.base.ship_l2d
-
-	var_18_84[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116663,11 +109765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_84
-
-	local var_18_85 = var_18_84.base.ship_l2d
-
-	var_18_85[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116727,11 +109825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_85
-
-	local var_18_86 = var_18_85.base.ship_l2d
-
-	var_18_86[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116791,11 +109885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_86
-
-	local var_18_87 = var_18_86.base.ship_l2d
-
-	var_18_87[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116855,11 +109945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_87
-
-	local var_18_88 = var_18_87.base.ship_l2d
-
-	var_18_88[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116907,11 +109993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_88
-
-	local var_18_89 = var_18_88.base.ship_l2d
-
-	var_18_89[960014112] = {
+	pg.base.ship_l2d[960014112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -116971,11 +110053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_89
-
-	local var_18_90 = var_18_89.base.ship_l2d
-
-	var_18_90[960014113] = {
+	pg.base.ship_l2d[960014113] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -117051,11 +110129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_90
-
-	local var_18_91 = var_18_90.base.ship_l2d
-
-	var_18_91[960014114] = {
+	pg.base.ship_l2d[960014114] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -117131,11 +110205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_91
-
-	local var_18_92 = var_18_91.base.ship_l2d
-
-	var_18_92[960014115] = {
+	pg.base.ship_l2d[960014115] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -117211,11 +110281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_92
-
-	local var_18_93 = var_18_92.base.ship_l2d
-
-	var_18_93[960014116] = {
+	pg.base.ship_l2d[960014116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117263,11 +110329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_93
-
-	local var_18_94 = var_18_93.base.ship_l2d
-
-	var_18_94[960014117] = {
+	pg.base.ship_l2d[960014117] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -117326,11 +110388,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_18_94
-
-	local var_18_95 = var_18_94.base.ship_l2d
-
-	var_18_95[960014118] = {
+	pg.base.ship_l2d[960014118] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -117389,11 +110447,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_18_95
-
-	local var_18_96 = var_18_95.base.ship_l2d
-
-	var_18_96[960014119] = {
+	pg.base.ship_l2d[960014119] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -117452,11 +110506,7 @@ end)()
 		},
 		action_trigger_active = {}
 	}
-	pg = var_18_96
-
-	local var_18_97 = var_18_96.base.ship_l2d
-
-	var_18_97[960014120] = {
+	pg.base.ship_l2d[960014120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117504,11 +110554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_97
-
-	local var_18_98 = var_18_97.base.ship_l2d
-
-	var_18_98[960014121] = {
+	pg.base.ship_l2d[960014121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117551,8 +110597,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_18_98
-	var_18_98.base.ship_l2d[960014122] = {
+	pg.base.ship_l2d[960014122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117599,11 +110644,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_19_0 = var_1_10000.base.ship_l2d
-
-	var_19_0[960014123] = {
+	pg.base.ship_l2d[960014123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117663,11 +110704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_0
-
-	local var_19_1 = var_19_0.base.ship_l2d
-
-	var_19_1[960014124] = {
+	pg.base.ship_l2d[960014124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117727,11 +110764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_1
-
-	local var_19_2 = var_19_1.base.ship_l2d
-
-	var_19_2[960014125] = {
+	pg.base.ship_l2d[960014125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117791,11 +110824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_2
-
-	local var_19_3 = var_19_2.base.ship_l2d
-
-	var_19_3[960014126] = {
+	pg.base.ship_l2d[960014126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117855,11 +110884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_3
-
-	local var_19_4 = var_19_3.base.ship_l2d
-
-	var_19_4[960014127] = {
+	pg.base.ship_l2d[960014127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117919,11 +110944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_4
-
-	local var_19_5 = var_19_4.base.ship_l2d
-
-	var_19_5[960014128] = {
+	pg.base.ship_l2d[960014128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -117969,11 +110990,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_5
-
-	local var_19_6 = var_19_5.base.ship_l2d
-
-	var_19_6[960014129] = {
+	pg.base.ship_l2d[960014129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118033,11 +111050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_6
-
-	local var_19_7 = var_19_6.base.ship_l2d
-
-	var_19_7[960014130] = {
+	pg.base.ship_l2d[960014130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118083,11 +111096,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_7
-
-	local var_19_8 = var_19_7.base.ship_l2d
-
-	var_19_8[960014131] = {
+	pg.base.ship_l2d[960014131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118147,11 +111156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_8
-
-	local var_19_9 = var_19_8.base.ship_l2d
-
-	var_19_9[960014132] = {
+	pg.base.ship_l2d[960014132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118211,11 +111216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_9
-
-	local var_19_10 = var_19_9.base.ship_l2d
-
-	var_19_10[960014133] = {
+	pg.base.ship_l2d[960014133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118258,11 +111259,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_10
-
-	local var_19_11 = var_19_10.base.ship_l2d
-
-	var_19_11[960014134] = {
+	pg.base.ship_l2d[960014134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118306,11 +111303,7 @@ end)()
 			type = 1
 		}
 	}
-	pg = var_19_11
-
-	local var_19_12 = var_19_11.base.ship_l2d
-
-	var_19_12[960014135] = {
+	pg.base.ship_l2d[960014135] = {
 		listener_data = "",
 		offset_x = 60,
 		gyro_y = 0,
@@ -118360,11 +111353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_12
-
-	local var_19_13 = var_19_12.base.ship_l2d
-
-	var_19_13[960014136] = {
+	pg.base.ship_l2d[960014136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118406,11 +111395,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_13
-
-	local var_19_14 = var_19_13.base.ship_l2d
-
-	var_19_14[960014137] = {
+	pg.base.ship_l2d[960014137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118454,11 +111439,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_14
-
-	local var_19_15 = var_19_14.base.ship_l2d
-
-	var_19_15[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118522,11 +111503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_15
-
-	local var_19_16 = var_19_15.base.ship_l2d
-
-	var_19_16[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118609,11 +111586,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_16
-
-	local var_19_17 = var_19_16.base.ship_l2d
-
-	var_19_17[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118656,11 +111629,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_17
-
-	local var_19_18 = var_19_17.base.ship_l2d
-
-	var_19_18[28] = {
+	pg.base.ship_l2d[28] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -118714,11 +111683,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_18
-
-	local var_19_19 = var_19_18.base.ship_l2d
-
-	var_19_19[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118780,11 +111745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_19
-
-	local var_19_20 = var_19_19.base.ship_l2d
-
-	var_19_20[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118855,11 +111816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_20
-
-	local var_19_21 = var_19_20.base.ship_l2d
-
-	var_19_21[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118919,11 +111876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_21
-
-	local var_19_22 = var_19_21.base.ship_l2d
-
-	var_19_22[10517408] = {
+	pg.base.ship_l2d[10517408] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -118983,11 +111936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_22
-
-	local var_19_23 = var_19_22.base.ship_l2d
-
-	var_19_23[10517409] = {
+	pg.base.ship_l2d[10517409] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119047,11 +111996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_23
-
-	local var_19_24 = var_19_23.base.ship_l2d
-
-	var_19_24[10517410] = {
+	pg.base.ship_l2d[10517410] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119111,11 +112056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_24
-
-	local var_19_25 = var_19_24.base.ship_l2d
-
-	var_19_25[10517411] = {
+	pg.base.ship_l2d[10517411] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119175,11 +112116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_25
-
-	local var_19_26 = var_19_25.base.ship_l2d
-
-	var_19_26[10517412] = {
+	pg.base.ship_l2d[10517412] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119239,11 +112176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_26
-
-	local var_19_27 = var_19_26.base.ship_l2d
-
-	var_19_27[10517413] = {
+	pg.base.ship_l2d[10517413] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119303,11 +112236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_27
-
-	local var_19_28 = var_19_27.base.ship_l2d
-
-	var_19_28[10517414] = {
+	pg.base.ship_l2d[10517414] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119367,11 +112296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_28
-
-	local var_19_29 = var_19_28.base.ship_l2d
-
-	var_19_29[10517415] = {
+	pg.base.ship_l2d[10517415] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119431,11 +112356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_29
-
-	local var_19_30 = var_19_29.base.ship_l2d
-
-	var_19_30[10517416] = {
+	pg.base.ship_l2d[10517416] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119495,11 +112416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_30
-
-	local var_19_31 = var_19_30.base.ship_l2d
-
-	var_19_31[10517417] = {
+	pg.base.ship_l2d[10517417] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119559,11 +112476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_31
-
-	local var_19_32 = var_19_31.base.ship_l2d
-
-	var_19_32[10517418] = {
+	pg.base.ship_l2d[10517418] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119623,11 +112536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_32
-
-	local var_19_33 = var_19_32.base.ship_l2d
-
-	var_19_33[10517419] = {
+	pg.base.ship_l2d[10517419] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119669,11 +112578,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_33
-
-	local var_19_34 = var_19_33.base.ship_l2d
-
-	var_19_34[10517420] = {
+	pg.base.ship_l2d[10517420] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119715,11 +112620,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_34
-
-	local var_19_35 = var_19_34.base.ship_l2d
-
-	var_19_35[10517421] = {
+	pg.base.ship_l2d[10517421] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119779,11 +112680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_35
-
-	local var_19_36 = var_19_35.base.ship_l2d
-
-	var_19_36[10517422] = {
+	pg.base.ship_l2d[10517422] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119843,11 +112740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_36
-
-	local var_19_37 = var_19_36.base.ship_l2d
-
-	var_19_37[10517423] = {
+	pg.base.ship_l2d[10517423] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119911,11 +112804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_37
-
-	local var_19_38 = var_19_37.base.ship_l2d
-
-	var_19_38[10517424] = {
+	pg.base.ship_l2d[10517424] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -119979,11 +112868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_38
-
-	local var_19_39 = var_19_38.base.ship_l2d
-
-	var_19_39[10517425] = {
+	pg.base.ship_l2d[10517425] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120047,11 +112932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_39
-
-	local var_19_40 = var_19_39.base.ship_l2d
-
-	var_19_40[10517426] = {
+	pg.base.ship_l2d[10517426] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120113,11 +112994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_40
-
-	local var_19_41 = var_19_40.base.ship_l2d
-
-	var_19_41[10517427] = {
+	pg.base.ship_l2d[10517427] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120177,11 +113054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_41
-
-	local var_19_42 = var_19_41.base.ship_l2d
-
-	var_19_42[10517428] = {
+	pg.base.ship_l2d[10517428] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120245,11 +113118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_42
-
-	local var_19_43 = var_19_42.base.ship_l2d
-
-	var_19_43[10517429] = {
+	pg.base.ship_l2d[10517429] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120313,11 +113182,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_43
-
-	local var_19_44 = var_19_43.base.ship_l2d
-
-	var_19_44[10517430] = {
+	pg.base.ship_l2d[10517430] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120381,11 +113246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_44
-
-	local var_19_45 = var_19_44.base.ship_l2d
-
-	var_19_45[10517431] = {
+	pg.base.ship_l2d[10517431] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120447,11 +113308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_45
-
-	local var_19_46 = var_19_45.base.ship_l2d
-
-	var_19_46[10517432] = {
+	pg.base.ship_l2d[10517432] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120513,11 +113370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_46
-
-	local var_19_47 = var_19_46.base.ship_l2d
-
-	var_19_47[10517433] = {
+	pg.base.ship_l2d[10517433] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120579,11 +113432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_47
-
-	local var_19_48 = var_19_47.base.ship_l2d
-
-	var_19_48[10517434] = {
+	pg.base.ship_l2d[10517434] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120647,11 +113496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_48
-
-	local var_19_49 = var_19_48.base.ship_l2d
-
-	var_19_49[10517435] = {
+	pg.base.ship_l2d[10517435] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120715,11 +113560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_49
-
-	local var_19_50 = var_19_49.base.ship_l2d
-
-	var_19_50[10517436] = {
+	pg.base.ship_l2d[10517436] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120783,11 +113624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_50
-
-	local var_19_51 = var_19_50.base.ship_l2d
-
-	var_19_51[10517437] = {
+	pg.base.ship_l2d[10517437] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120851,11 +113688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_51
-
-	local var_19_52 = var_19_51.base.ship_l2d
-
-	var_19_52[10517438] = {
+	pg.base.ship_l2d[10517438] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120917,11 +113750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_52
-
-	local var_19_53 = var_19_52.base.ship_l2d
-
-	var_19_53[10517439] = {
+	pg.base.ship_l2d[10517439] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -120981,11 +113810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_53
-
-	local var_19_54 = var_19_53.base.ship_l2d
-
-	var_19_54[10517440] = {
+	pg.base.ship_l2d[10517440] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121027,11 +113852,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_54
-
-	local var_19_55 = var_19_54.base.ship_l2d
-
-	var_19_55[10517441] = {
+	pg.base.ship_l2d[10517441] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121073,11 +113894,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_55
-
-	local var_19_56 = var_19_55.base.ship_l2d
-
-	var_19_56[10517442] = {
+	pg.base.ship_l2d[10517442] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121137,11 +113954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_56
-
-	local var_19_57 = var_19_56.base.ship_l2d
-
-	var_19_57[10517443] = {
+	pg.base.ship_l2d[10517443] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121201,11 +114014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_57
-
-	local var_19_58 = var_19_57.base.ship_l2d
-
-	var_19_58[10517444] = {
+	pg.base.ship_l2d[10517444] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121267,11 +114076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_58
-
-	local var_19_59 = var_19_58.base.ship_l2d
-
-	var_19_59[10517445] = {
+	pg.base.ship_l2d[10517445] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121333,11 +114138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_59
-
-	local var_19_60 = var_19_59.base.ship_l2d
-
-	var_19_60[10517446] = {
+	pg.base.ship_l2d[10517446] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121397,11 +114198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_60
-
-	local var_19_61 = var_19_60.base.ship_l2d
-
-	var_19_61[10517447] = {
+	pg.base.ship_l2d[10517447] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121461,11 +114258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_61
-
-	local var_19_62 = var_19_61.base.ship_l2d
-
-	var_19_62[10517448] = {
+	pg.base.ship_l2d[10517448] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121525,11 +114318,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_62
-
-	local var_19_63 = var_19_62.base.ship_l2d
-
-	var_19_63[10517449] = {
+	pg.base.ship_l2d[10517449] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121589,11 +114378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_63
-
-	local var_19_64 = var_19_63.base.ship_l2d
-
-	var_19_64[10517450] = {
+	pg.base.ship_l2d[10517450] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121653,11 +114438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_64
-
-	local var_19_65 = var_19_64.base.ship_l2d
-
-	var_19_65[10517451] = {
+	pg.base.ship_l2d[10517451] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121703,11 +114484,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_65
-
-	local var_19_66 = var_19_65.base.ship_l2d
-
-	var_19_66[10517452] = {
+	pg.base.ship_l2d[10517452] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121771,11 +114548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_66
-
-	local var_19_67 = var_19_66.base.ship_l2d
-
-	var_19_67[10725101] = {
+	pg.base.ship_l2d[10725101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121839,11 +114612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_67
-
-	local var_19_68 = var_19_67.base.ship_l2d
-
-	var_19_68[10725102] = {
+	pg.base.ship_l2d[10725102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121903,11 +114672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_68
-
-	local var_19_69 = var_19_68.base.ship_l2d
-
-	var_19_69[10725103] = {
+	pg.base.ship_l2d[10725103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -121967,11 +114732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_69
-
-	local var_19_70 = var_19_69.base.ship_l2d
-
-	var_19_70[10725104] = {
+	pg.base.ship_l2d[10725104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122015,11 +114776,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_70
-
-	local var_19_71 = var_19_70.base.ship_l2d
-
-	var_19_71[10725105] = {
+	pg.base.ship_l2d[10725105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122079,11 +114836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_71
-
-	local var_19_72 = var_19_71.base.ship_l2d
-
-	var_19_72[10725106] = {
+	pg.base.ship_l2d[10725106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122143,11 +114896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_72
-
-	local var_19_73 = var_19_72.base.ship_l2d
-
-	var_19_73[10725107] = {
+	pg.base.ship_l2d[10725107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122207,11 +114956,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_73
-
-	local var_19_74 = var_19_73.base.ship_l2d
-
-	var_19_74[10725108] = {
+	pg.base.ship_l2d[10725108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122271,11 +115016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_74
-
-	local var_19_75 = var_19_74.base.ship_l2d
-
-	var_19_75[10725109] = {
+	pg.base.ship_l2d[10725109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122335,11 +115076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_75
-
-	local var_19_76 = var_19_75.base.ship_l2d
-
-	var_19_76[10725110] = {
+	pg.base.ship_l2d[10725110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122399,11 +115136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_76
-
-	local var_19_77 = var_19_76.base.ship_l2d
-
-	var_19_77[10725111] = {
+	pg.base.ship_l2d[10725111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122449,11 +115182,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_77
-
-	local var_19_78 = var_19_77.base.ship_l2d
-
-	var_19_78[10725112] = {
+	pg.base.ship_l2d[10725112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122513,11 +115242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_78
-
-	local var_19_79 = var_19_78.base.ship_l2d
-
-	var_19_79[10725113] = {
+	pg.base.ship_l2d[10725113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122559,11 +115284,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_79
-
-	local var_19_80 = var_19_79.base.ship_l2d
-
-	var_19_80[10725114] = {
+	pg.base.ship_l2d[10725114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122623,11 +115344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_80
-
-	local var_19_81 = var_19_80.base.ship_l2d
-
-	var_19_81[10725115] = {
+	pg.base.ship_l2d[10725115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122687,11 +115404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_81
-
-	local var_19_82 = var_19_81.base.ship_l2d
-
-	var_19_82[10725116] = {
+	pg.base.ship_l2d[10725116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122737,11 +115450,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_82
-
-	local var_19_83 = var_19_82.base.ship_l2d
-
-	var_19_83[10725117] = {
+	pg.base.ship_l2d[10725117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122801,11 +115510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_83
-
-	local var_19_84 = var_19_83.base.ship_l2d
-
-	var_19_84[10725118] = {
+	pg.base.ship_l2d[10725118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122847,11 +115552,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_84
-
-	local var_19_85 = var_19_84.base.ship_l2d
-
-	var_19_85[10725119] = {
+	pg.base.ship_l2d[10725119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122897,11 +115598,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_85
-
-	local var_19_86 = var_19_85.base.ship_l2d
-
-	var_19_86[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -122961,11 +115658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_86
-
-	local var_19_87 = var_19_86.base.ship_l2d
-
-	var_19_87[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123007,11 +115700,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_87
-
-	local var_19_88 = var_19_87.base.ship_l2d
-
-	var_19_88[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123071,11 +115760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_88
-
-	local var_19_89 = var_19_88.base.ship_l2d
-
-	var_19_89[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123135,11 +115820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_89
-
-	local var_19_90 = var_19_89.base.ship_l2d
-
-	var_19_90[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123199,11 +115880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_90
-
-	local var_19_91 = var_19_90.base.ship_l2d
-
-	var_19_91[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123263,11 +115940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_91
-
-	local var_19_92 = var_19_91.base.ship_l2d
-
-	var_19_92[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123313,11 +115986,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_19_92
-
-	local var_19_93 = var_19_92.base.ship_l2d
-
-	var_19_93[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123360,11 +116029,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_19_93
-
-	local var_19_94 = var_19_93.base.ship_l2d
-
-	var_19_94[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123403,11 +116068,7 @@ end)()
 			8
 		}
 	}
-	pg = var_19_94
-
-	local var_19_95 = var_19_94.base.ship_l2d
-
-	var_19_95[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123446,11 +116107,7 @@ end)()
 			5
 		}
 	}
-	pg = var_19_95
-
-	local var_19_96 = var_19_95.base.ship_l2d
-
-	var_19_96[10716101] = {
+	pg.base.ship_l2d[10716101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123514,11 +116171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_96
-
-	local var_19_97 = var_19_96.base.ship_l2d
-
-	var_19_97[10716102] = {
+	pg.base.ship_l2d[10716102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123578,11 +116231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_97
-
-	local var_19_98 = var_19_97.base.ship_l2d
-
-	var_19_98[10716103] = {
+	pg.base.ship_l2d[10716103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123642,8 +116291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_98
-	var_19_98.base.ship_l2d[10716104] = {
+	pg.base.ship_l2d[10716104] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -123701,11 +116349,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_20_0 = var_1_10000.base.ship_l2d
-
-	var_20_0[10716105] = {
+	pg.base.ship_l2d[10716105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123765,11 +116409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_0
-
-	local var_20_1 = var_20_0.base.ship_l2d
-
-	var_20_1[10716106] = {
+	pg.base.ship_l2d[10716106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123811,11 +116451,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_1
-
-	local var_20_2 = var_20_1.base.ship_l2d
-
-	var_20_2[10716107] = {
+	pg.base.ship_l2d[10716107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123875,11 +116511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_2
-
-	local var_20_3 = var_20_2.base.ship_l2d
-
-	var_20_3[10716108] = {
+	pg.base.ship_l2d[10716108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123918,11 +116550,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_3
-
-	local var_20_4 = var_20_3.base.ship_l2d
-
-	var_20_4[10716109] = {
+	pg.base.ship_l2d[10716109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -123964,11 +116592,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_4
-
-	local var_20_5 = var_20_4.base.ship_l2d
-
-	var_20_5[10716110] = {
+	pg.base.ship_l2d[10716110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124028,11 +116652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_5
-
-	local var_20_6 = var_20_5.base.ship_l2d
-
-	var_20_6[10716111] = {
+	pg.base.ship_l2d[10716111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124092,11 +116712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_6
-
-	local var_20_7 = var_20_6.base.ship_l2d
-
-	var_20_7[10716112] = {
+	pg.base.ship_l2d[10716112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124138,11 +116754,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_7
-
-	local var_20_8 = var_20_7.base.ship_l2d
-
-	var_20_8[10716113] = {
+	pg.base.ship_l2d[10716113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124202,11 +116814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_8
-
-	local var_20_9 = var_20_8.base.ship_l2d
-
-	var_20_9[10716114] = {
+	pg.base.ship_l2d[10716114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124266,11 +116874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_9
-
-	local var_20_10 = var_20_9.base.ship_l2d
-
-	var_20_10[10716115] = {
+	pg.base.ship_l2d[10716115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124330,11 +116934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_10
-
-	local var_20_11 = var_20_10.base.ship_l2d
-
-	var_20_11[10716116] = {
+	pg.base.ship_l2d[10716116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124398,11 +116998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_11
-
-	local var_20_12 = var_20_11.base.ship_l2d
-
-	var_20_12[10716117] = {
+	pg.base.ship_l2d[10716117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124462,11 +117058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_12
-
-	local var_20_13 = var_20_12.base.ship_l2d
-
-	var_20_13[10716118] = {
+	pg.base.ship_l2d[10716118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124530,11 +117122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_13
-
-	local var_20_14 = var_20_13.base.ship_l2d
-
-	var_20_14[10716119] = {
+	pg.base.ship_l2d[10716119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124576,11 +117164,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_14
-
-	local var_20_15 = var_20_14.base.ship_l2d
-
-	var_20_15[10716120] = {
+	pg.base.ship_l2d[10716120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124640,11 +117224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_15
-
-	local var_20_16 = var_20_15.base.ship_l2d
-
-	var_20_16[10716121] = {
+	pg.base.ship_l2d[10716121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124690,11 +117270,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_16
-
-	local var_20_17 = var_20_16.base.ship_l2d
-
-	var_20_17[10716122] = {
+	pg.base.ship_l2d[10716122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124754,11 +117330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_17
-
-	local var_20_18 = var_20_17.base.ship_l2d
-
-	var_20_18[10716123] = {
+	pg.base.ship_l2d[10716123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124818,11 +117390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_18
-
-	local var_20_19 = var_20_18.base.ship_l2d
-
-	var_20_19[10716124] = {
+	pg.base.ship_l2d[10716124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124882,11 +117450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_19
-
-	local var_20_20 = var_20_19.base.ship_l2d
-
-	var_20_20[10716125] = {
+	pg.base.ship_l2d[10716125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124928,11 +117492,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_20
-
-	local var_20_21 = var_20_20.base.ship_l2d
-
-	var_20_21[10716126] = {
+	pg.base.ship_l2d[10716126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -124974,11 +117534,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_21
-
-	local var_20_22 = var_20_21.base.ship_l2d
-
-	var_20_22[10716127] = {
+	pg.base.ship_l2d[10716127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125038,11 +117594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_22
-
-	local var_20_23 = var_20_22.base.ship_l2d
-
-	var_20_23[10716128] = {
+	pg.base.ship_l2d[10716128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125084,11 +117636,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_23
-
-	local var_20_24 = var_20_23.base.ship_l2d
-
-	var_20_24[10716129] = {
+	pg.base.ship_l2d[10716129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125148,11 +117696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_24
-
-	local var_20_25 = var_20_24.base.ship_l2d
-
-	var_20_25[10716130] = {
+	pg.base.ship_l2d[10716130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125212,11 +117756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_25
-
-	local var_20_26 = var_20_25.base.ship_l2d
-
-	var_20_26[10716131] = {
+	pg.base.ship_l2d[10716131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125276,11 +117816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_26
-
-	local var_20_27 = var_20_26.base.ship_l2d
-
-	var_20_27[10716132] = {
+	pg.base.ship_l2d[10716132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125322,11 +117858,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_27
-
-	local var_20_28 = var_20_27.base.ship_l2d
-
-	var_20_28[10716133] = {
+	pg.base.ship_l2d[10716133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125368,11 +117900,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_28
-
-	local var_20_29 = var_20_28.base.ship_l2d
-
-	var_20_29[10716134] = {
+	pg.base.ship_l2d[10716134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125415,11 +117943,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_29
-
-	local var_20_30 = var_20_29.base.ship_l2d
-
-	var_20_30[10716135] = {
+	pg.base.ship_l2d[10716135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125462,11 +117986,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_30
-
-	local var_20_31 = var_20_30.base.ship_l2d
-
-	var_20_31[10716136] = {
+	pg.base.ship_l2d[10716136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125509,11 +118029,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_31
-
-	local var_20_32 = var_20_31.base.ship_l2d
-
-	var_20_32[10716137] = {
+	pg.base.ship_l2d[10716137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125552,11 +118068,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_32
-
-	local var_20_33 = var_20_32.base.ship_l2d
-
-	var_20_33[10710201] = {
+	pg.base.ship_l2d[10710201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125620,11 +118132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_33
-
-	local var_20_34 = var_20_33.base.ship_l2d
-
-	var_20_34[10710202] = {
+	pg.base.ship_l2d[10710202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125684,11 +118192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_34
-
-	local var_20_35 = var_20_34.base.ship_l2d
-
-	var_20_35[10710203] = {
+	pg.base.ship_l2d[10710203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125748,11 +118252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_35
-
-	local var_20_36 = var_20_35.base.ship_l2d
-
-	var_20_36[10710204] = {
+	pg.base.ship_l2d[10710204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125812,11 +118312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_36
-
-	local var_20_37 = var_20_36.base.ship_l2d
-
-	var_20_37[10710205] = {
+	pg.base.ship_l2d[10710205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125876,11 +118372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_37
-
-	local var_20_38 = var_20_37.base.ship_l2d
-
-	var_20_38[10710206] = {
+	pg.base.ship_l2d[10710206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125926,11 +118418,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_38
-
-	local var_20_39 = var_20_38.base.ship_l2d
-
-	var_20_39[10710207] = {
+	pg.base.ship_l2d[10710207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -125990,11 +118478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_39
-
-	local var_20_40 = var_20_39.base.ship_l2d
-
-	var_20_40[10710208] = {
+	pg.base.ship_l2d[10710208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126054,11 +118538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_40
-
-	local var_20_41 = var_20_40.base.ship_l2d
-
-	var_20_41[10710209] = {
+	pg.base.ship_l2d[10710209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126118,11 +118598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_41
-
-	local var_20_42 = var_20_41.base.ship_l2d
-
-	var_20_42[10710210] = {
+	pg.base.ship_l2d[10710210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126168,11 +118644,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_42
-
-	local var_20_43 = var_20_42.base.ship_l2d
-
-	var_20_43[10710211] = {
+	pg.base.ship_l2d[10710211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126232,11 +118704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_43
-
-	local var_20_44 = var_20_43.base.ship_l2d
-
-	var_20_44[10710212] = {
+	pg.base.ship_l2d[10710212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126296,11 +118764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_44
-
-	local var_20_45 = var_20_44.base.ship_l2d
-
-	var_20_45[10710213] = {
+	pg.base.ship_l2d[10710213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126360,11 +118824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_45
-
-	local var_20_46 = var_20_45.base.ship_l2d
-
-	var_20_46[10710214] = {
+	pg.base.ship_l2d[10710214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126410,11 +118870,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_46
-
-	local var_20_47 = var_20_46.base.ship_l2d
-
-	var_20_47[10710215] = {
+	pg.base.ship_l2d[10710215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126474,11 +118930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_47
-
-	local var_20_48 = var_20_47.base.ship_l2d
-
-	var_20_48[10710216] = {
+	pg.base.ship_l2d[10710216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126538,11 +118990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_48
-
-	local var_20_49 = var_20_48.base.ship_l2d
-
-	var_20_49[10710217] = {
+	pg.base.ship_l2d[10710217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126602,11 +119050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_49
-
-	local var_20_50 = var_20_49.base.ship_l2d
-
-	var_20_50[10710218] = {
+	pg.base.ship_l2d[10710218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126650,11 +119094,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_50
-
-	local var_20_51 = var_20_50.base.ship_l2d
-
-	var_20_51[10710219] = {
+	pg.base.ship_l2d[10710219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126700,11 +119140,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_51
-
-	local var_20_52 = var_20_51.base.ship_l2d
-
-	var_20_52[10710220] = {
+	pg.base.ship_l2d[10710220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126764,11 +119200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_52
-
-	local var_20_53 = var_20_52.base.ship_l2d
-
-	var_20_53[10710221] = {
+	pg.base.ship_l2d[10710221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126814,11 +119246,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_53
-
-	local var_20_54 = var_20_53.base.ship_l2d
-
-	var_20_54[10710222] = {
+	pg.base.ship_l2d[10710222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126878,11 +119306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_54
-
-	local var_20_55 = var_20_54.base.ship_l2d
-
-	var_20_55[10710223] = {
+	pg.base.ship_l2d[10710223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126942,11 +119366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_55
-
-	local var_20_56 = var_20_55.base.ship_l2d
-
-	var_20_56[10710224] = {
+	pg.base.ship_l2d[10710224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -126988,11 +119408,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_56
-
-	local var_20_57 = var_20_56.base.ship_l2d
-
-	var_20_57[10710225] = {
+	pg.base.ship_l2d[10710225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127034,11 +119450,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_57
-
-	local var_20_58 = var_20_57.base.ship_l2d
-
-	var_20_58[10710226] = {
+	pg.base.ship_l2d[10710226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127081,11 +119493,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_58
-
-	local var_20_59 = var_20_58.base.ship_l2d
-
-	var_20_59[10710227] = {
+	pg.base.ship_l2d[10710227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127128,11 +119536,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_59
-
-	local var_20_60 = var_20_59.base.ship_l2d
-
-	var_20_60[10710228] = {
+	pg.base.ship_l2d[10710228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127175,11 +119579,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_60
-
-	local var_20_61 = var_20_60.base.ship_l2d
-
-	var_20_61[10710229] = {
+	pg.base.ship_l2d[10710229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127221,11 +119621,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_61
-
-	local var_20_62 = var_20_61.base.ship_l2d
-
-	var_20_62[10710230] = {
+	pg.base.ship_l2d[10710230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127267,11 +119663,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_62
-
-	local var_20_63 = var_20_62.base.ship_l2d
-
-	var_20_63[10710231] = {
+	pg.base.ship_l2d[10710231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127335,11 +119727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_63
-
-	local var_20_64 = var_20_63.base.ship_l2d
-
-	var_20_64[10710232] = {
+	pg.base.ship_l2d[10710232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127403,11 +119791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_64
-
-	local var_20_65 = var_20_64.base.ship_l2d
-
-	var_20_65[10710233] = {
+	pg.base.ship_l2d[10710233] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -127466,11 +119850,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_20_65
-
-	local var_20_66 = var_20_65.base.ship_l2d
-
-	var_20_66[10710234] = {
+	pg.base.ship_l2d[10710234] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -127529,11 +119909,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_20_66
-
-	local var_20_67 = var_20_66.base.ship_l2d
-
-	var_20_67[119901101] = {
+	pg.base.ship_l2d[119901101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127597,11 +119973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_67
-
-	local var_20_68 = var_20_67.base.ship_l2d
-
-	var_20_68[119901102] = {
+	pg.base.ship_l2d[119901102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127665,11 +120037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_68
-
-	local var_20_69 = var_20_68.base.ship_l2d
-
-	var_20_69[119901103] = {
+	pg.base.ship_l2d[119901103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127729,11 +120097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_69
-
-	local var_20_70 = var_20_69.base.ship_l2d
-
-	var_20_70[119901104] = {
+	pg.base.ship_l2d[119901104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127793,11 +120157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_70
-
-	local var_20_71 = var_20_70.base.ship_l2d
-
-	var_20_71[119901105] = {
+	pg.base.ship_l2d[119901105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127857,11 +120217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_71
-
-	local var_20_72 = var_20_71.base.ship_l2d
-
-	var_20_72[119901106] = {
+	pg.base.ship_l2d[119901106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127903,11 +120259,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_72
-
-	local var_20_73 = var_20_72.base.ship_l2d
-
-	var_20_73[119901107] = {
+	pg.base.ship_l2d[119901107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -127971,11 +120323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_73
-
-	local var_20_74 = var_20_73.base.ship_l2d
-
-	var_20_74[119901108] = {
+	pg.base.ship_l2d[119901108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128039,11 +120387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_74
-
-	local var_20_75 = var_20_74.base.ship_l2d
-
-	var_20_75[119901109] = {
+	pg.base.ship_l2d[119901109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128085,11 +120429,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_75
-
-	local var_20_76 = var_20_75.base.ship_l2d
-
-	var_20_76[119901110] = {
+	pg.base.ship_l2d[119901110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128131,11 +120471,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_76
-
-	local var_20_77 = var_20_76.base.ship_l2d
-
-	var_20_77[119901111] = {
+	pg.base.ship_l2d[119901111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128181,11 +120517,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_77
-
-	local var_20_78 = var_20_77.base.ship_l2d
-
-	var_20_78[119901112] = {
+	pg.base.ship_l2d[119901112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128227,11 +120559,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_78
-
-	local var_20_79 = var_20_78.base.ship_l2d
-
-	var_20_79[119901113] = {
+	pg.base.ship_l2d[119901113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128273,11 +120601,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_20_79
-
-	local var_20_80 = var_20_79.base.ship_l2d
-
-	var_20_80[119901114] = {
+	pg.base.ship_l2d[119901114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128337,11 +120661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_80
-
-	local var_20_81 = var_20_80.base.ship_l2d
-
-	var_20_81[119901115] = {
+	pg.base.ship_l2d[119901115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128401,11 +120721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_81
-
-	local var_20_82 = var_20_81.base.ship_l2d
-
-	var_20_82[119901116] = {
+	pg.base.ship_l2d[119901116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128465,11 +120781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_82
-
-	local var_20_83 = var_20_82.base.ship_l2d
-
-	var_20_83[119901117] = {
+	pg.base.ship_l2d[119901117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128529,11 +120841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_83
-
-	local var_20_84 = var_20_83.base.ship_l2d
-
-	var_20_84[119901118] = {
+	pg.base.ship_l2d[119901118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128593,11 +120901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_84
-
-	local var_20_85 = var_20_84.base.ship_l2d
-
-	var_20_85[119901119] = {
+	pg.base.ship_l2d[119901119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128661,11 +120965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_85
-
-	local var_20_86 = var_20_85.base.ship_l2d
-
-	var_20_86[119901120] = {
+	pg.base.ship_l2d[119901120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128725,11 +121025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_86
-
-	local var_20_87 = var_20_86.base.ship_l2d
-
-	var_20_87[119901121] = {
+	pg.base.ship_l2d[119901121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128789,11 +121085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_87
-
-	local var_20_88 = var_20_87.base.ship_l2d
-
-	var_20_88[119901122] = {
+	pg.base.ship_l2d[119901122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128853,11 +121145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_88
-
-	local var_20_89 = var_20_88.base.ship_l2d
-
-	var_20_89[119901123] = {
+	pg.base.ship_l2d[119901123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128917,11 +121205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_89
-
-	local var_20_90 = var_20_89.base.ship_l2d
-
-	var_20_90[119901124] = {
+	pg.base.ship_l2d[119901124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -128981,11 +121265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_90
-
-	local var_20_91 = var_20_90.base.ship_l2d
-
-	var_20_91[119901125] = {
+	pg.base.ship_l2d[119901125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129031,11 +121311,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_20_91
-
-	local var_20_92 = var_20_91.base.ship_l2d
-
-	var_20_92[119901126] = {
+	pg.base.ship_l2d[119901126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129099,11 +121375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_92
-
-	local var_20_93 = var_20_92.base.ship_l2d
-
-	var_20_93[119901127] = {
+	pg.base.ship_l2d[119901127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129167,11 +121439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_93
-
-	local var_20_94 = var_20_93.base.ship_l2d
-
-	var_20_94[119901128] = {
+	pg.base.ship_l2d[119901128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129231,11 +121499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_94
-
-	local var_20_95 = var_20_94.base.ship_l2d
-
-	var_20_95[119901129] = {
+	pg.base.ship_l2d[119901129] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -129301,11 +121565,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_20_95
-
-	local var_20_96 = var_20_95.base.ship_l2d
-
-	var_20_96[119901130] = {
+	pg.base.ship_l2d[119901130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129365,11 +121625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_96
-
-	local var_20_97 = var_20_96.base.ship_l2d
-
-	var_20_97[119901131] = {
+	pg.base.ship_l2d[119901131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129429,11 +121685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_97
-
-	local var_20_98 = var_20_97.base.ship_l2d
-
-	var_20_98[119901132] = {
+	pg.base.ship_l2d[119901132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129493,8 +121745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_98
-	var_20_98.base.ship_l2d[119901133] = {
+	pg.base.ship_l2d[119901133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129564,11 +121815,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_21_0 = var_1_10000.base.ship_l2d
-
-	var_21_0[119901134] = {
+	pg.base.ship_l2d[119901134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129611,11 +121858,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_0
-
-	local var_21_1 = var_21_0.base.ship_l2d
-
-	var_21_1[119901135] = {
+	pg.base.ship_l2d[119901135] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -129674,11 +121917,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_21_1
-
-	local var_21_2 = var_21_1.base.ship_l2d
-
-	var_21_2[119901136] = {
+	pg.base.ship_l2d[119901136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129720,11 +121959,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_2
-
-	local var_21_3 = var_21_2.base.ship_l2d
-
-	var_21_3[119901137] = {
+	pg.base.ship_l2d[119901137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129788,11 +122023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_3
-
-	local var_21_4 = var_21_3.base.ship_l2d
-
-	var_21_4[119901138] = {
+	pg.base.ship_l2d[119901138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129856,11 +122087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_4
-
-	local var_21_5 = var_21_4.base.ship_l2d
-
-	var_21_5[119901139] = {
+	pg.base.ship_l2d[119901139] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129902,11 +122129,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_5
-
-	local var_21_6 = var_21_5.base.ship_l2d
-
-	var_21_6[119901140] = {
+	pg.base.ship_l2d[119901140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129948,11 +122171,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_6
-
-	local var_21_7 = var_21_6.base.ship_l2d
-
-	var_21_7[119901141] = {
+	pg.base.ship_l2d[119901141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -129994,11 +122213,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_7
-
-	local var_21_8 = var_21_7.base.ship_l2d
-
-	var_21_8[40303701] = {
+	pg.base.ship_l2d[40303701] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130062,11 +122277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_8
-
-	local var_21_9 = var_21_8.base.ship_l2d
-
-	var_21_9[40303702] = {
+	pg.base.ship_l2d[40303702] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130126,11 +122337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_9
-
-	local var_21_10 = var_21_9.base.ship_l2d
-
-	var_21_10[40303703] = {
+	pg.base.ship_l2d[40303703] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130173,11 +122380,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_10
-
-	local var_21_11 = var_21_10.base.ship_l2d
-
-	var_21_11[40303704] = {
+	pg.base.ship_l2d[40303704] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130220,11 +122423,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_11
-
-	local var_21_12 = var_21_11.base.ship_l2d
-
-	var_21_12[40303705] = {
+	pg.base.ship_l2d[40303705] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130267,11 +122466,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_12
-
-	local var_21_13 = var_21_12.base.ship_l2d
-
-	var_21_13[40303706] = {
+	pg.base.ship_l2d[40303706] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130314,11 +122509,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_13
-
-	local var_21_14 = var_21_13.base.ship_l2d
-
-	var_21_14[40303707] = {
+	pg.base.ship_l2d[40303707] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130361,11 +122552,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_14
-
-	local var_21_15 = var_21_14.base.ship_l2d
-
-	var_21_15[40303708] = {
+	pg.base.ship_l2d[40303708] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130408,11 +122595,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_15
-
-	local var_21_16 = var_21_15.base.ship_l2d
-
-	var_21_16[40303709] = {
+	pg.base.ship_l2d[40303709] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130455,11 +122638,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_16
-
-	local var_21_17 = var_21_16.base.ship_l2d
-
-	var_21_17[40303710] = {
+	pg.base.ship_l2d[40303710] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130502,11 +122681,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_17
-
-	local var_21_18 = var_21_17.base.ship_l2d
-
-	var_21_18[40303711] = {
+	pg.base.ship_l2d[40303711] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130549,11 +122724,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_18
-
-	local var_21_19 = var_21_18.base.ship_l2d
-
-	var_21_19[40303712] = {
+	pg.base.ship_l2d[40303712] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130596,11 +122767,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_19
-
-	local var_21_20 = var_21_19.base.ship_l2d
-
-	var_21_20[40303713] = {
+	pg.base.ship_l2d[40303713] = {
 		listener_data = "",
 		offset_x = 200,
 		gyro_y = 0,
@@ -130639,11 +122806,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_20
-
-	local var_21_21 = var_21_20.base.ship_l2d
-
-	var_21_21[40303714] = {
+	pg.base.ship_l2d[40303714] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130686,11 +122849,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_21
-
-	local var_21_22 = var_21_21.base.ship_l2d
-
-	var_21_22[40303715] = {
+	pg.base.ship_l2d[40303715] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130736,11 +122895,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_22
-
-	local var_21_23 = var_21_22.base.ship_l2d
-
-	var_21_23[40303716] = {
+	pg.base.ship_l2d[40303716] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130800,11 +122955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_23
-
-	local var_21_24 = var_21_23.base.ship_l2d
-
-	var_21_24[40303717] = {
+	pg.base.ship_l2d[40303717] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130864,11 +123015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_24
-
-	local var_21_25 = var_21_24.base.ship_l2d
-
-	var_21_25[40303718] = {
+	pg.base.ship_l2d[40303718] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130914,11 +123061,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_25
-
-	local var_21_26 = var_21_25.base.ship_l2d
-
-	var_21_26[40303719] = {
+	pg.base.ship_l2d[40303719] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -130978,11 +123121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_26
-
-	local var_21_27 = var_21_26.base.ship_l2d
-
-	var_21_27[40303720] = {
+	pg.base.ship_l2d[40303720] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131024,11 +123163,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_27
-
-	local var_21_28 = var_21_27.base.ship_l2d
-
-	var_21_28[40303721] = {
+	pg.base.ship_l2d[40303721] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131070,11 +123205,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_28
-
-	local var_21_29 = var_21_28.base.ship_l2d
-
-	var_21_29[40303722] = {
+	pg.base.ship_l2d[40303722] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131116,11 +123247,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_29
-
-	local var_21_30 = var_21_29.base.ship_l2d
-
-	var_21_30[40303723] = {
+	pg.base.ship_l2d[40303723] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131166,11 +123293,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_30
-
-	local var_21_31 = var_21_30.base.ship_l2d
-
-	var_21_31[40303724] = {
+	pg.base.ship_l2d[40303724] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -131229,11 +123352,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_21_31
-
-	local var_21_32 = var_21_31.base.ship_l2d
-
-	var_21_32[40303725] = {
+	pg.base.ship_l2d[40303725] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -131292,11 +123411,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_21_32
-
-	local var_21_33 = var_21_32.base.ship_l2d
-
-	var_21_33[40303726] = {
+	pg.base.ship_l2d[40303726] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -131355,11 +123470,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_21_33
-
-	local var_21_34 = var_21_33.base.ship_l2d
-
-	var_21_34[40303727] = {
+	pg.base.ship_l2d[40303727] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131419,11 +123530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_34
-
-	local var_21_35 = var_21_34.base.ship_l2d
-
-	var_21_35[40303728] = {
+	pg.base.ship_l2d[40303728] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131469,11 +123576,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_35
-
-	local var_21_36 = var_21_35.base.ship_l2d
-
-	var_21_36[40303729] = {
+	pg.base.ship_l2d[40303729] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131533,11 +123636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_36
-
-	local var_21_37 = var_21_36.base.ship_l2d
-
-	var_21_37[40303730] = {
+	pg.base.ship_l2d[40303730] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131583,11 +123682,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_37
-
-	local var_21_38 = var_21_37.base.ship_l2d
-
-	var_21_38[40303731] = {
+	pg.base.ship_l2d[40303731] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131647,11 +123742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_38
-
-	local var_21_39 = var_21_38.base.ship_l2d
-
-	var_21_39[40303732] = {
+	pg.base.ship_l2d[40303732] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131711,11 +123802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_39
-
-	local var_21_40 = var_21_39.base.ship_l2d
-
-	var_21_40[40303733] = {
+	pg.base.ship_l2d[40303733] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131775,11 +123862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_40
-
-	local var_21_41 = var_21_40.base.ship_l2d
-
-	var_21_41[40303734] = {
+	pg.base.ship_l2d[40303734] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131839,11 +123922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_41
-
-	local var_21_42 = var_21_41.base.ship_l2d
-
-	var_21_42[40303735] = {
+	pg.base.ship_l2d[40303735] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131887,11 +123966,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_42
-
-	local var_21_43 = var_21_42.base.ship_l2d
-
-	var_21_43[40303736] = {
+	pg.base.ship_l2d[40303736] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131935,11 +124010,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_43
-
-	local var_21_44 = var_21_43.base.ship_l2d
-
-	var_21_44[40303737] = {
+	pg.base.ship_l2d[40303737] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -131983,11 +124054,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_44
-
-	local var_21_45 = var_21_44.base.ship_l2d
-
-	var_21_45[40303738] = {
+	pg.base.ship_l2d[40303738] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132033,11 +124100,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_45
-
-	local var_21_46 = var_21_45.base.ship_l2d
-
-	var_21_46[40303739] = {
+	pg.base.ship_l2d[40303739] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132097,11 +124160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_46
-
-	local var_21_47 = var_21_46.base.ship_l2d
-
-	var_21_47[40303740] = {
+	pg.base.ship_l2d[40303740] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132161,11 +124220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_47
-
-	local var_21_48 = var_21_47.base.ship_l2d
-
-	var_21_48[40303741] = {
+	pg.base.ship_l2d[40303741] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132211,11 +124266,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_48
-
-	local var_21_49 = var_21_48.base.ship_l2d
-
-	var_21_49[40303742] = {
+	pg.base.ship_l2d[40303742] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132261,11 +124312,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_49
-
-	local var_21_50 = var_21_49.base.ship_l2d
-
-	var_21_50[40303743] = {
+	pg.base.ship_l2d[40303743] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132325,11 +124372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_50
-
-	local var_21_51 = var_21_50.base.ship_l2d
-
-	var_21_51[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132372,11 +124415,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_51
-
-	local var_21_52 = var_21_51.base.ship_l2d
-
-	var_21_52[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132415,11 +124454,7 @@ end)()
 			10
 		}
 	}
-	pg = var_21_52
-
-	local var_21_53 = var_21_52.base.ship_l2d
-
-	var_21_53[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132458,11 +124493,7 @@ end)()
 			10
 		}
 	}
-	pg = var_21_53
-
-	local var_21_54 = var_21_53.base.ship_l2d
-
-	var_21_54[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132501,11 +124532,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_21_54
-
-	local var_21_55 = var_21_54.base.ship_l2d
-
-	var_21_55[49910101] = {
+	pg.base.ship_l2d[49910101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132569,11 +124596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_55
-
-	local var_21_56 = var_21_55.base.ship_l2d
-
-	var_21_56[49910102] = {
+	pg.base.ship_l2d[49910102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132619,11 +124642,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_56
-
-	local var_21_57 = var_21_56.base.ship_l2d
-
-	var_21_57[49910103] = {
+	pg.base.ship_l2d[49910103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132687,11 +124706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_57
-
-	local var_21_58 = var_21_57.base.ship_l2d
-
-	var_21_58[49910104] = {
+	pg.base.ship_l2d[49910104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132740,11 +124755,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_58
-
-	local var_21_59 = var_21_58.base.ship_l2d
-
-	var_21_59[49910105] = {
+	pg.base.ship_l2d[49910105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132795,11 +124806,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_59
-
-	local var_21_60 = var_21_59.base.ship_l2d
-
-	var_21_60[49910106] = {
+	pg.base.ship_l2d[49910106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132864,11 +124871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_60
-
-	local var_21_61 = var_21_60.base.ship_l2d
-
-	var_21_61[49910107] = {
+	pg.base.ship_l2d[49910107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132932,11 +124935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_61
-
-	local var_21_62 = var_21_61.base.ship_l2d
-
-	var_21_62[49910108] = {
+	pg.base.ship_l2d[49910108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -132996,11 +124995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_62
-
-	local var_21_63 = var_21_62.base.ship_l2d
-
-	var_21_63[49910109] = {
+	pg.base.ship_l2d[49910109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133046,11 +125041,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_63
-
-	local var_21_64 = var_21_63.base.ship_l2d
-
-	var_21_64[49910110] = {
+	pg.base.ship_l2d[49910110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133092,11 +125083,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_64
-
-	local var_21_65 = var_21_64.base.ship_l2d
-
-	var_21_65[49910111] = {
+	pg.base.ship_l2d[49910111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133156,11 +125143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_65
-
-	local var_21_66 = var_21_65.base.ship_l2d
-
-	var_21_66[49910112] = {
+	pg.base.ship_l2d[49910112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133220,11 +125203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_66
-
-	local var_21_67 = var_21_66.base.ship_l2d
-
-	var_21_67[49910113] = {
+	pg.base.ship_l2d[49910113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133284,11 +125263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_67
-
-	local var_21_68 = var_21_67.base.ship_l2d
-
-	var_21_68[49910114] = {
+	pg.base.ship_l2d[49910114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133348,11 +125323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_68
-
-	local var_21_69 = var_21_68.base.ship_l2d
-
-	var_21_69[49910115] = {
+	pg.base.ship_l2d[49910115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133416,11 +125387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_69
-
-	local var_21_70 = var_21_69.base.ship_l2d
-
-	var_21_70[49910116] = {
+	pg.base.ship_l2d[49910116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133484,11 +125451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_70
-
-	local var_21_71 = var_21_70.base.ship_l2d
-
-	var_21_71[49910117] = {
+	pg.base.ship_l2d[49910117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133552,11 +125515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_71
-
-	local var_21_72 = var_21_71.base.ship_l2d
-
-	var_21_72[49910118] = {
+	pg.base.ship_l2d[49910118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133620,11 +125579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_72
-
-	local var_21_73 = var_21_72.base.ship_l2d
-
-	var_21_73[49910119] = {
+	pg.base.ship_l2d[49910119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133688,11 +125643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_73
-
-	local var_21_74 = var_21_73.base.ship_l2d
-
-	var_21_74[49910120] = {
+	pg.base.ship_l2d[49910120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133755,11 +125706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_74
-
-	local var_21_75 = var_21_74.base.ship_l2d
-
-	var_21_75[49910121] = {
+	pg.base.ship_l2d[49910121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133824,11 +125771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_75
-
-	local var_21_76 = var_21_75.base.ship_l2d
-
-	var_21_76[49910122] = {
+	pg.base.ship_l2d[49910122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133893,11 +125836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_76
-
-	local var_21_77 = var_21_76.base.ship_l2d
-
-	var_21_77[49910123] = {
+	pg.base.ship_l2d[49910123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -133961,11 +125900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_77
-
-	local var_21_78 = var_21_77.base.ship_l2d
-
-	var_21_78[49910124] = {
+	pg.base.ship_l2d[49910124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134029,11 +125964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_78
-
-	local var_21_79 = var_21_78.base.ship_l2d
-
-	var_21_79[49910125] = {
+	pg.base.ship_l2d[49910125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134093,11 +126024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_79
-
-	local var_21_80 = var_21_79.base.ship_l2d
-
-	var_21_80[49910126] = {
+	pg.base.ship_l2d[49910126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134161,11 +126088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_80
-
-	local var_21_81 = var_21_80.base.ship_l2d
-
-	var_21_81[49910127] = {
+	pg.base.ship_l2d[49910127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134229,11 +126152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_81
-
-	local var_21_82 = var_21_81.base.ship_l2d
-
-	var_21_82[49910128] = {
+	pg.base.ship_l2d[49910128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134293,11 +126212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_82
-
-	local var_21_83 = var_21_82.base.ship_l2d
-
-	var_21_83[49910129] = {
+	pg.base.ship_l2d[49910129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134339,11 +126254,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_83
-
-	local var_21_84 = var_21_83.base.ship_l2d
-
-	var_21_84[49910130] = {
+	pg.base.ship_l2d[49910130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134403,11 +126314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_84
-
-	local var_21_85 = var_21_84.base.ship_l2d
-
-	var_21_85[49910131] = {
+	pg.base.ship_l2d[49910131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134471,11 +126378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_85
-
-	local var_21_86 = var_21_85.base.ship_l2d
-
-	var_21_86[49910132] = {
+	pg.base.ship_l2d[49910132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134535,11 +126438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_86
-
-	local var_21_87 = var_21_86.base.ship_l2d
-
-	var_21_87[49910133] = {
+	pg.base.ship_l2d[49910133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134602,11 +126501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_87
-
-	local var_21_88 = var_21_87.base.ship_l2d
-
-	var_21_88[49910134] = {
+	pg.base.ship_l2d[49910134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134671,11 +126566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_88
-
-	local var_21_89 = var_21_88.base.ship_l2d
-
-	var_21_89[49910135] = {
+	pg.base.ship_l2d[49910135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134740,11 +126631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_89
-
-	local var_21_90 = var_21_89.base.ship_l2d
-
-	var_21_90[49910136] = {
+	pg.base.ship_l2d[49910136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134808,11 +126695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_90
-
-	local var_21_91 = var_21_90.base.ship_l2d
-
-	var_21_91[49910137] = {
+	pg.base.ship_l2d[49910137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134876,11 +126759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_91
-
-	local var_21_92 = var_21_91.base.ship_l2d
-
-	var_21_92[49910138] = {
+	pg.base.ship_l2d[49910138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -134940,11 +126819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_92
-
-	local var_21_93 = var_21_92.base.ship_l2d
-
-	var_21_93[49910139] = {
+	pg.base.ship_l2d[49910139] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135004,11 +126879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_93
-
-	local var_21_94 = var_21_93.base.ship_l2d
-
-	var_21_94[49910140] = {
+	pg.base.ship_l2d[49910140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135054,11 +126925,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_21_94
-
-	local var_21_95 = var_21_94.base.ship_l2d
-
-	var_21_95[49910141] = {
+	pg.base.ship_l2d[49910141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135101,11 +126968,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_95
-
-	local var_21_96 = var_21_95.base.ship_l2d
-
-	var_21_96[49910142] = {
+	pg.base.ship_l2d[49910142] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135148,11 +127011,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_96
-
-	local var_21_97 = var_21_96.base.ship_l2d
-
-	var_21_97[49910143] = {
+	pg.base.ship_l2d[49910143] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135195,11 +127054,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_97
-
-	local var_21_98 = var_21_97.base.ship_l2d
-
-	var_21_98[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135242,8 +127097,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_21_98
-	var_21_98.base.ship_l2d[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135290,11 +127144,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_22_0 = var_1_10000.base.ship_l2d
-
-	var_22_0[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135337,11 +127187,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_0
-
-	local var_22_1 = var_22_0.base.ship_l2d
-
-	var_22_1[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135404,11 +127250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_1
-
-	local var_22_2 = var_22_1.base.ship_l2d
-
-	var_22_2[21] = {
+	pg.base.ship_l2d[21] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -135488,11 +127330,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_22_2
-
-	local var_22_3 = var_22_2.base.ship_l2d
-
-	var_22_3[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135536,11 +127374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_3
-
-	local var_22_4 = var_22_3.base.ship_l2d
-
-	var_22_4[23] = {
+	pg.base.ship_l2d[23] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -135597,11 +127431,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_22_4
-
-	local var_22_5 = var_22_4.base.ship_l2d
-
-	var_22_5[24] = {
+	pg.base.ship_l2d[24] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -135658,11 +127488,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_22_5
-
-	local var_22_6 = var_22_5.base.ship_l2d
-
-	var_22_6[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135705,11 +127531,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_6
-
-	local var_22_7 = var_22_6.base.ship_l2d
-
-	var_22_7[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135752,11 +127574,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_7
-
-	local var_22_8 = var_22_7.base.ship_l2d
-
-	var_22_8[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135800,11 +127618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_8
-
-	local var_22_9 = var_22_8.base.ship_l2d
-
-	var_22_9[28] = {
+	pg.base.ship_l2d[28] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -135870,11 +127684,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_22_9
-
-	local var_22_10 = var_22_9.base.ship_l2d
-
-	var_22_10[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135917,11 +127727,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_10
-
-	local var_22_11 = var_22_10.base.ship_l2d
-
-	var_22_11[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -135964,11 +127770,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_11
-
-	local var_22_12 = var_22_11.base.ship_l2d
-
-	var_22_12[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136011,11 +127813,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_12
-
-	local var_22_13 = var_22_12.base.ship_l2d
-
-	var_22_13[30311712] = {
+	pg.base.ship_l2d[30311712] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136058,11 +127856,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_13
-
-	local var_22_14 = var_22_13.base.ship_l2d
-
-	var_22_14[30311713] = {
+	pg.base.ship_l2d[30311713] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136105,11 +127899,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_14
-
-	local var_22_15 = var_22_14.base.ship_l2d
-
-	var_22_15[30311714] = {
+	pg.base.ship_l2d[30311714] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136152,11 +127942,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_15
-
-	local var_22_16 = var_22_15.base.ship_l2d
-
-	var_22_16[30311715] = {
+	pg.base.ship_l2d[30311715] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136199,11 +127985,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_16
-
-	local var_22_17 = var_22_16.base.ship_l2d
-
-	var_22_17[30311716] = {
+	pg.base.ship_l2d[30311716] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136246,11 +128028,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_17
-
-	local var_22_18 = var_22_17.base.ship_l2d
-
-	var_22_18[30311717] = {
+	pg.base.ship_l2d[30311717] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136293,11 +128071,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_18
-
-	local var_22_19 = var_22_18.base.ship_l2d
-
-	var_22_19[30311718] = {
+	pg.base.ship_l2d[30311718] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136340,11 +128114,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_19
-
-	local var_22_20 = var_22_19.base.ship_l2d
-
-	var_22_20[30311719] = {
+	pg.base.ship_l2d[30311719] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136391,11 +128161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_20
-
-	local var_22_21 = var_22_20.base.ship_l2d
-
-	var_22_21[30311720] = {
+	pg.base.ship_l2d[30311720] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136441,11 +128207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_21
-
-	local var_22_22 = var_22_21.base.ship_l2d
-
-	var_22_22[30311721] = {
+	pg.base.ship_l2d[30311721] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136505,11 +128267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_22
-
-	local var_22_23 = var_22_22.base.ship_l2d
-
-	var_22_23[30311722] = {
+	pg.base.ship_l2d[30311722] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136569,11 +128327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_23
-
-	local var_22_24 = var_22_23.base.ship_l2d
-
-	var_22_24[30311723] = {
+	pg.base.ship_l2d[30311723] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136633,11 +128387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_24
-
-	local var_22_25 = var_22_24.base.ship_l2d
-
-	var_22_25[30311724] = {
+	pg.base.ship_l2d[30311724] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136683,11 +128433,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_25
-
-	local var_22_26 = var_22_25.base.ship_l2d
-
-	var_22_26[30311725] = {
+	pg.base.ship_l2d[30311725] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136747,11 +128493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_26
-
-	local var_22_27 = var_22_26.base.ship_l2d
-
-	var_22_27[30311726] = {
+	pg.base.ship_l2d[30311726] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136811,11 +128553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_27
-
-	local var_22_28 = var_22_27.base.ship_l2d
-
-	var_22_28[30311727] = {
+	pg.base.ship_l2d[30311727] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136861,11 +128599,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_28
-
-	local var_22_29 = var_22_28.base.ship_l2d
-
-	var_22_29[30311728] = {
+	pg.base.ship_l2d[30311728] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136925,11 +128659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_29
-
-	local var_22_30 = var_22_29.base.ship_l2d
-
-	var_22_30[30311729] = {
+	pg.base.ship_l2d[30311729] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -136989,11 +128719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_30
-
-	local var_22_31 = var_22_30.base.ship_l2d
-
-	var_22_31[30311730] = {
+	pg.base.ship_l2d[30311730] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137039,11 +128765,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_31
-
-	local var_22_32 = var_22_31.base.ship_l2d
-
-	var_22_32[30311731] = {
+	pg.base.ship_l2d[30311731] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137103,11 +128825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_32
-
-	local var_22_33 = var_22_32.base.ship_l2d
-
-	var_22_33[30311732] = {
+	pg.base.ship_l2d[30311732] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137167,11 +128885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_33
-
-	local var_22_34 = var_22_33.base.ship_l2d
-
-	var_22_34[30311733] = {
+	pg.base.ship_l2d[30311733] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137217,11 +128931,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_34
-
-	local var_22_35 = var_22_34.base.ship_l2d
-
-	var_22_35[30311734] = {
+	pg.base.ship_l2d[30311734] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137281,11 +128991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_35
-
-	local var_22_36 = var_22_35.base.ship_l2d
-
-	var_22_36[30311735] = {
+	pg.base.ship_l2d[30311735] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137327,11 +129033,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_36
-
-	local var_22_37 = var_22_36.base.ship_l2d
-
-	var_22_37[30311736] = {
+	pg.base.ship_l2d[30311736] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137377,11 +129079,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_37
-
-	local var_22_38 = var_22_37.base.ship_l2d
-
-	var_22_38[30311737] = {
+	pg.base.ship_l2d[30311737] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137441,11 +129139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_38
-
-	local var_22_39 = var_22_38.base.ship_l2d
-
-	var_22_39[30311738] = {
+	pg.base.ship_l2d[30311738] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137505,11 +129199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_39
-
-	local var_22_40 = var_22_39.base.ship_l2d
-
-	var_22_40[30311739] = {
+	pg.base.ship_l2d[30311739] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137569,11 +129259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_40
-
-	local var_22_41 = var_22_40.base.ship_l2d
-
-	var_22_41[30311740] = {
+	pg.base.ship_l2d[30311740] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137633,11 +129319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_41
-
-	local var_22_42 = var_22_41.base.ship_l2d
-
-	var_22_42[30311741] = {
+	pg.base.ship_l2d[30311741] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137697,11 +129379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_42
-
-	local var_22_43 = var_22_42.base.ship_l2d
-
-	var_22_43[30311742] = {
+	pg.base.ship_l2d[30311742] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137761,11 +129439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_43
-
-	local var_22_44 = var_22_43.base.ship_l2d
-
-	var_22_44[30311743] = {
+	pg.base.ship_l2d[30311743] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137825,11 +129499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_44
-
-	local var_22_45 = var_22_44.base.ship_l2d
-
-	var_22_45[30311744] = {
+	pg.base.ship_l2d[30311744] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137889,11 +129559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_45
-
-	local var_22_46 = var_22_45.base.ship_l2d
-
-	var_22_46[30311745] = {
+	pg.base.ship_l2d[30311745] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -137953,11 +129619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_46
-
-	local var_22_47 = var_22_46.base.ship_l2d
-
-	var_22_47[30311746] = {
+	pg.base.ship_l2d[30311746] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138017,11 +129679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_47
-
-	local var_22_48 = var_22_47.base.ship_l2d
-
-	var_22_48[30311747] = {
+	pg.base.ship_l2d[30311747] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138081,11 +129739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_48
-
-	local var_22_49 = var_22_48.base.ship_l2d
-
-	var_22_49[30311748] = {
+	pg.base.ship_l2d[30311748] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138145,11 +129799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_49
-
-	local var_22_50 = var_22_49.base.ship_l2d
-
-	var_22_50[30311749] = {
+	pg.base.ship_l2d[30311749] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138209,11 +129859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_50
-
-	local var_22_51 = var_22_50.base.ship_l2d
-
-	var_22_51[30311750] = {
+	pg.base.ship_l2d[30311750] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138273,11 +129919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_51
-
-	local var_22_52 = var_22_51.base.ship_l2d
-
-	var_22_52[30311751] = {
+	pg.base.ship_l2d[30311751] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138337,11 +129979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_52
-
-	local var_22_53 = var_22_52.base.ship_l2d
-
-	var_22_53[30311752] = {
+	pg.base.ship_l2d[30311752] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138401,11 +130039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_53
-
-	local var_22_54 = var_22_53.base.ship_l2d
-
-	var_22_54[30311753] = {
+	pg.base.ship_l2d[30311753] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138465,11 +130099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_54
-
-	local var_22_55 = var_22_54.base.ship_l2d
-
-	var_22_55[30311754] = {
+	pg.base.ship_l2d[30311754] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138529,11 +130159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_55
-
-	local var_22_56 = var_22_55.base.ship_l2d
-
-	var_22_56[30311755] = {
+	pg.base.ship_l2d[30311755] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138593,11 +130219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_56
-
-	local var_22_57 = var_22_56.base.ship_l2d
-
-	var_22_57[30311756] = {
+	pg.base.ship_l2d[30311756] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138657,11 +130279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_57
-
-	local var_22_58 = var_22_57.base.ship_l2d
-
-	var_22_58[30311757] = {
+	pg.base.ship_l2d[30311757] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138721,11 +130339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_58
-
-	local var_22_59 = var_22_58.base.ship_l2d
-
-	var_22_59[30311758] = {
+	pg.base.ship_l2d[30311758] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138767,11 +130381,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_59
-
-	local var_22_60 = var_22_59.base.ship_l2d
-
-	var_22_60[30311759] = {
+	pg.base.ship_l2d[30311759] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138831,11 +130441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_60
-
-	local var_22_61 = var_22_60.base.ship_l2d
-
-	var_22_61[30311760] = {
+	pg.base.ship_l2d[30311760] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138895,11 +130501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_61
-
-	local var_22_62 = var_22_61.base.ship_l2d
-
-	var_22_62[30311761] = {
+	pg.base.ship_l2d[30311761] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -138959,11 +130561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_62
-
-	local var_22_63 = var_22_62.base.ship_l2d
-
-	var_22_63[30311762] = {
+	pg.base.ship_l2d[30311762] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139023,11 +130621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_63
-
-	local var_22_64 = var_22_63.base.ship_l2d
-
-	var_22_64[30311763] = {
+	pg.base.ship_l2d[30311763] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139087,11 +130681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_64
-
-	local var_22_65 = var_22_64.base.ship_l2d
-
-	var_22_65[30311764] = {
+	pg.base.ship_l2d[30311764] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139151,11 +130741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_65
-
-	local var_22_66 = var_22_65.base.ship_l2d
-
-	var_22_66[30311765] = {
+	pg.base.ship_l2d[30311765] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139215,11 +130801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_66
-
-	local var_22_67 = var_22_66.base.ship_l2d
-
-	var_22_67[30311766] = {
+	pg.base.ship_l2d[30311766] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139279,11 +130861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_67
-
-	local var_22_68 = var_22_67.base.ship_l2d
-
-	var_22_68[30311767] = {
+	pg.base.ship_l2d[30311767] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139343,11 +130921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_68
-
-	local var_22_69 = var_22_68.base.ship_l2d
-
-	var_22_69[30311768] = {
+	pg.base.ship_l2d[30311768] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139407,11 +130981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_69
-
-	local var_22_70 = var_22_69.base.ship_l2d
-
-	var_22_70[30311769] = {
+	pg.base.ship_l2d[30311769] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139471,11 +131041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_70
-
-	local var_22_71 = var_22_70.base.ship_l2d
-
-	var_22_71[30311770] = {
+	pg.base.ship_l2d[30311770] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139535,11 +131101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_71
-
-	local var_22_72 = var_22_71.base.ship_l2d
-
-	var_22_72[30311771] = {
+	pg.base.ship_l2d[30311771] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139599,11 +131161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_72
-
-	local var_22_73 = var_22_72.base.ship_l2d
-
-	var_22_73[30311772] = {
+	pg.base.ship_l2d[30311772] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139663,11 +131221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_73
-
-	local var_22_74 = var_22_73.base.ship_l2d
-
-	var_22_74[30311773] = {
+	pg.base.ship_l2d[30311773] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139727,11 +131281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_74
-
-	local var_22_75 = var_22_74.base.ship_l2d
-
-	var_22_75[30311774] = {
+	pg.base.ship_l2d[30311774] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139791,11 +131341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_75
-
-	local var_22_76 = var_22_75.base.ship_l2d
-
-	var_22_76[30311775] = {
+	pg.base.ship_l2d[30311775] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139855,11 +131401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_76
-
-	local var_22_77 = var_22_76.base.ship_l2d
-
-	var_22_77[30311776] = {
+	pg.base.ship_l2d[30311776] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139919,11 +131461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_77
-
-	local var_22_78 = var_22_77.base.ship_l2d
-
-	var_22_78[30311777] = {
+	pg.base.ship_l2d[30311777] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -139983,11 +131521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_78
-
-	local var_22_79 = var_22_78.base.ship_l2d
-
-	var_22_79[30311778] = {
+	pg.base.ship_l2d[30311778] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140047,11 +131581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_79
-
-	local var_22_80 = var_22_79.base.ship_l2d
-
-	var_22_80[30311779] = {
+	pg.base.ship_l2d[30311779] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140097,11 +131627,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_80
-
-	local var_22_81 = var_22_80.base.ship_l2d
-
-	var_22_81[30311780] = {
+	pg.base.ship_l2d[30311780] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140166,11 +131692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_81
-
-	local var_22_82 = var_22_81.base.ship_l2d
-
-	var_22_82[30311781] = {
+	pg.base.ship_l2d[30311781] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140235,11 +131757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_82
-
-	local var_22_83 = var_22_82.base.ship_l2d
-
-	var_22_83[30311782] = {
+	pg.base.ship_l2d[30311782] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140304,11 +131822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_83
-
-	local var_22_84 = var_22_83.base.ship_l2d
-
-	var_22_84[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -140352,11 +131866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_84
-
-	local var_22_85 = var_22_84.base.ship_l2d
-
-	var_22_85[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140416,11 +131926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_85
-
-	local var_22_86 = var_22_85.base.ship_l2d
-
-	var_22_86[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -140468,11 +131974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_86
-
-	local var_22_87 = var_22_86.base.ship_l2d
-
-	var_22_87[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140532,11 +132034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_87
-
-	local var_22_88 = var_22_87.base.ship_l2d
-
-	var_22_88[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140596,11 +132094,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_88
-
-	local var_22_89 = var_22_88.base.ship_l2d
-
-	var_22_89[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140660,11 +132154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_89
-
-	local var_22_90 = var_22_89.base.ship_l2d
-
-	var_22_90[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140724,11 +132214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_90
-
-	local var_22_91 = var_22_90.base.ship_l2d
-
-	var_22_91[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140788,11 +132274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_91
-
-	local var_22_92 = var_22_91.base.ship_l2d
-
-	var_22_92[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140838,11 +132320,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_22_92
-
-	local var_22_93 = var_22_92.base.ship_l2d
-
-	var_22_93[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140890,11 +132368,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_93
-
-	local var_22_94 = var_22_93.base.ship_l2d
-
-	var_22_94[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140937,11 +132411,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_94
-
-	local var_22_95 = var_22_94.base.ship_l2d
-
-	var_22_95[50302112] = {
+	pg.base.ship_l2d[50302112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -140984,11 +132454,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_95
-
-	local var_22_96 = var_22_95.base.ship_l2d
-
-	var_22_96[50302113] = {
+	pg.base.ship_l2d[50302113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141031,11 +132497,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_22_96
-
-	local var_22_97 = var_22_96.base.ship_l2d
-
-	var_22_97[50302114] = {
+	pg.base.ship_l2d[50302114] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -141079,11 +132541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_97
-
-	local var_22_98 = var_22_97.base.ship_l2d
-
-	var_22_98[50302115] = {
+	pg.base.ship_l2d[50302115] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -141122,8 +132580,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_98
-	var_22_98.base.ship_l2d[50302116] = {
+	pg.base.ship_l2d[50302116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141187,11 +132644,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_23_0 = var_1_10000.base.ship_l2d
-
-	var_23_0[50302117] = {
+	pg.base.ship_l2d[50302117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141233,11 +132686,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_0
-
-	local var_23_1 = var_23_0.base.ship_l2d
-
-	var_23_1[50302118] = {
+	pg.base.ship_l2d[50302118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141279,11 +132728,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_1
-
-	local var_23_2 = var_23_1.base.ship_l2d
-
-	var_23_2[50302119] = {
+	pg.base.ship_l2d[50302119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141343,11 +132788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_2
-
-	local var_23_3 = var_23_2.base.ship_l2d
-
-	var_23_3[50302120] = {
+	pg.base.ship_l2d[50302120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141407,11 +132848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_3
-
-	local var_23_4 = var_23_3.base.ship_l2d
-
-	var_23_4[50302121] = {
+	pg.base.ship_l2d[50302121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141471,11 +132908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_4
-
-	local var_23_5 = var_23_4.base.ship_l2d
-
-	var_23_5[50302122] = {
+	pg.base.ship_l2d[50302122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141514,11 +132947,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_5
-
-	local var_23_6 = var_23_5.base.ship_l2d
-
-	var_23_6[50302123] = {
+	pg.base.ship_l2d[50302123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141564,11 +132993,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_6
-
-	local var_23_7 = var_23_6.base.ship_l2d
-
-	var_23_7[50302124] = {
+	pg.base.ship_l2d[50302124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141610,11 +133035,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_7
-
-	local var_23_8 = var_23_7.base.ship_l2d
-
-	var_23_8[50302125] = {
+	pg.base.ship_l2d[50302125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141656,11 +133077,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_8
-
-	local var_23_9 = var_23_8.base.ship_l2d
-
-	var_23_9[50302126] = {
+	pg.base.ship_l2d[50302126] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141702,11 +133119,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_9
-
-	local var_23_10 = var_23_9.base.ship_l2d
-
-	var_23_10[50302127] = {
+	pg.base.ship_l2d[50302127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141766,11 +133179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_10
-
-	local var_23_11 = var_23_10.base.ship_l2d
-
-	var_23_11[50302128] = {
+	pg.base.ship_l2d[50302128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141812,11 +133221,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_11
-
-	local var_23_12 = var_23_11.base.ship_l2d
-
-	var_23_12[50302129] = {
+	pg.base.ship_l2d[50302129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141858,11 +133263,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_12
-
-	local var_23_13 = var_23_12.base.ship_l2d
-
-	var_23_13[50302130] = {
+	pg.base.ship_l2d[50302130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141904,11 +133305,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_13
-
-	local var_23_14 = var_23_13.base.ship_l2d
-
-	var_23_14[50302131] = {
+	pg.base.ship_l2d[50302131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -141968,11 +133365,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_14
-
-	local var_23_15 = var_23_14.base.ship_l2d
-
-	var_23_15[50302132] = {
+	pg.base.ship_l2d[50302132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142018,11 +133411,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_15
-
-	local var_23_16 = var_23_15.base.ship_l2d
-
-	var_23_16[50302133] = {
+	pg.base.ship_l2d[50302133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142068,11 +133457,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_16
-
-	local var_23_17 = var_23_16.base.ship_l2d
-
-	var_23_17[50302134] = {
+	pg.base.ship_l2d[50302134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142115,11 +133500,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_17
-
-	local var_23_18 = var_23_17.base.ship_l2d
-
-	var_23_18[50302135] = {
+	pg.base.ship_l2d[50302135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142161,11 +133542,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_18
-
-	local var_23_19 = var_23_18.base.ship_l2d
-
-	var_23_19[50302136] = {
+	pg.base.ship_l2d[50302136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142226,11 +133603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_19
-
-	local var_23_20 = var_23_19.base.ship_l2d
-
-	var_23_20[50302137] = {
+	pg.base.ship_l2d[50302137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142290,11 +133663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_20
-
-	local var_23_21 = var_23_20.base.ship_l2d
-
-	var_23_21[50302138] = {
+	pg.base.ship_l2d[50302138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142354,11 +133723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_21
-
-	local var_23_22 = var_23_21.base.ship_l2d
-
-	var_23_22[50302139] = {
+	pg.base.ship_l2d[50302139] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142404,11 +133769,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_22
-
-	local var_23_23 = var_23_22.base.ship_l2d
-
-	var_23_23[50302140] = {
+	pg.base.ship_l2d[50302140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142450,11 +133811,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_23
-
-	local var_23_24 = var_23_23.base.ship_l2d
-
-	var_23_24[50302141] = {
+	pg.base.ship_l2d[50302141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142514,11 +133871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_24
-
-	local var_23_25 = var_23_24.base.ship_l2d
-
-	var_23_25[50302142] = {
+	pg.base.ship_l2d[50302142] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142578,11 +133931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_25
-
-	local var_23_26 = var_23_25.base.ship_l2d
-
-	var_23_26[50302143] = {
+	pg.base.ship_l2d[50302143] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142628,11 +133977,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_26
-
-	local var_23_27 = var_23_26.base.ship_l2d
-
-	var_23_27[50302144] = {
+	pg.base.ship_l2d[50302144] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142674,11 +134019,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_27
-
-	local var_23_28 = var_23_27.base.ship_l2d
-
-	var_23_28[50302145] = {
+	pg.base.ship_l2d[50302145] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142720,11 +134061,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_28
-
-	local var_23_29 = var_23_28.base.ship_l2d
-
-	var_23_29[50302146] = {
+	pg.base.ship_l2d[50302146] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142766,11 +134103,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_29
-
-	local var_23_30 = var_23_29.base.ship_l2d
-
-	var_23_30[50302147] = {
+	pg.base.ship_l2d[50302147] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142816,11 +134149,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_30
-
-	local var_23_31 = var_23_30.base.ship_l2d
-
-	var_23_31[50302148] = {
+	pg.base.ship_l2d[50302148] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142880,11 +134209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_31
-
-	local var_23_32 = var_23_31.base.ship_l2d
-
-	var_23_32[50302149] = {
+	pg.base.ship_l2d[50302149] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142923,11 +134248,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_32
-
-	local var_23_33 = var_23_32.base.ship_l2d
-
-	var_23_33[50302150] = {
+	pg.base.ship_l2d[50302150] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -142989,11 +134310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_33
-
-	local var_23_34 = var_23_33.base.ship_l2d
-
-	var_23_34[50302151] = {
+	pg.base.ship_l2d[50302151] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143058,11 +134375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_34
-
-	local var_23_35 = var_23_34.base.ship_l2d
-
-	var_23_35[50302152] = {
+	pg.base.ship_l2d[50302152] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143122,11 +134435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_35
-
-	local var_23_36 = var_23_35.base.ship_l2d
-
-	var_23_36[50302153] = {
+	pg.base.ship_l2d[50302153] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143186,11 +134495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_36
-
-	local var_23_37 = var_23_36.base.ship_l2d
-
-	var_23_37[50302154] = {
+	pg.base.ship_l2d[50302154] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143250,11 +134555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_37
-
-	local var_23_38 = var_23_37.base.ship_l2d
-
-	var_23_38[50302155] = {
+	pg.base.ship_l2d[50302155] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143319,11 +134620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_38
-
-	local var_23_39 = var_23_38.base.ship_l2d
-
-	var_23_39[50302156] = {
+	pg.base.ship_l2d[50302156] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143383,11 +134680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_39
-
-	local var_23_40 = var_23_39.base.ship_l2d
-
-	var_23_40[50302157] = {
+	pg.base.ship_l2d[50302157] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143433,11 +134726,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_40
-
-	local var_23_41 = var_23_40.base.ship_l2d
-
-	var_23_41[50302158] = {
+	pg.base.ship_l2d[50302158] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143502,11 +134791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_41
-
-	local var_23_42 = var_23_41.base.ship_l2d
-
-	var_23_42[50302159] = {
+	pg.base.ship_l2d[50302159] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143571,11 +134856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_42
-
-	local var_23_43 = var_23_42.base.ship_l2d
-
-	var_23_43[50302160] = {
+	pg.base.ship_l2d[50302160] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143640,11 +134921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_43
-
-	local var_23_44 = var_23_43.base.ship_l2d
-
-	var_23_44[50302161] = {
+	pg.base.ship_l2d[50302161] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143705,11 +134982,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_44
-
-	local var_23_45 = var_23_44.base.ship_l2d
-
-	var_23_45[50302162] = {
+	pg.base.ship_l2d[50302162] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143770,11 +135043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_45
-
-	local var_23_46 = var_23_45.base.ship_l2d
-
-	var_23_46[50302163] = {
+	pg.base.ship_l2d[50302163] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143818,11 +135087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_46
-
-	local var_23_47 = var_23_46.base.ship_l2d
-
-	var_23_47[50302164] = {
+	pg.base.ship_l2d[50302164] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -143879,11 +135144,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_23_47
-
-	local var_23_48 = var_23_47.base.ship_l2d
-
-	var_23_48[50302165] = {
+	pg.base.ship_l2d[50302165] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -143927,11 +135188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_48
-
-	local var_23_49 = var_23_48.base.ship_l2d
-
-	var_23_49[50302166] = {
+	pg.base.ship_l2d[50302166] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -143970,11 +135227,7 @@ end)()
 			15
 		}
 	}
-	pg = var_23_49
-
-	local var_23_50 = var_23_49.base.ship_l2d
-
-	var_23_50[50302167] = {
+	pg.base.ship_l2d[50302167] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144013,11 +135266,7 @@ end)()
 			15
 		}
 	}
-	pg = var_23_50
-
-	local var_23_51 = var_23_50.base.ship_l2d
-
-	var_23_51[50302168] = {
+	pg.base.ship_l2d[50302168] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144060,11 +135309,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_51
-
-	local var_23_52 = var_23_51.base.ship_l2d
-
-	var_23_52[49902301] = {
+	pg.base.ship_l2d[49902301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144106,11 +135351,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_52
-
-	local var_23_53 = var_23_52.base.ship_l2d
-
-	var_23_53[49902302] = {
+	pg.base.ship_l2d[49902302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144152,11 +135393,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_53
-
-	local var_23_54 = var_23_53.base.ship_l2d
-
-	var_23_54[49902303] = {
+	pg.base.ship_l2d[49902303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144198,11 +135435,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_23_54
-
-	local var_23_55 = var_23_54.base.ship_l2d
-
-	var_23_55[49902304] = {
+	pg.base.ship_l2d[49902304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144262,11 +135495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_55
-
-	local var_23_56 = var_23_55.base.ship_l2d
-
-	var_23_56[49902305] = {
+	pg.base.ship_l2d[49902305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144326,11 +135555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_56
-
-	local var_23_57 = var_23_56.base.ship_l2d
-
-	var_23_57[49902306] = {
+	pg.base.ship_l2d[49902306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144390,11 +135615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_57
-
-	local var_23_58 = var_23_57.base.ship_l2d
-
-	var_23_58[49902307] = {
+	pg.base.ship_l2d[49902307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144440,11 +135661,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_58
-
-	local var_23_59 = var_23_58.base.ship_l2d
-
-	var_23_59[49902308] = {
+	pg.base.ship_l2d[49902308] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -144504,11 +135721,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_23_59
-
-	local var_23_60 = var_23_59.base.ship_l2d
-
-	var_23_60[49902309] = {
+	pg.base.ship_l2d[49902309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144568,11 +135781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_60
-
-	local var_23_61 = var_23_60.base.ship_l2d
-
-	var_23_61[49902310] = {
+	pg.base.ship_l2d[49902310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144632,11 +135841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_61
-
-	local var_23_62 = var_23_61.base.ship_l2d
-
-	var_23_62[49902311] = {
+	pg.base.ship_l2d[49902311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144682,11 +135887,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_62
-
-	local var_23_63 = var_23_62.base.ship_l2d
-
-	var_23_63[49902312] = {
+	pg.base.ship_l2d[49902312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144746,11 +135947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_63
-
-	local var_23_64 = var_23_63.base.ship_l2d
-
-	var_23_64[49902313] = {
+	pg.base.ship_l2d[49902313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144810,11 +136007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_64
-
-	local var_23_65 = var_23_64.base.ship_l2d
-
-	var_23_65[49902314] = {
+	pg.base.ship_l2d[49902314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144875,11 +136068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_65
-
-	local var_23_66 = var_23_65.base.ship_l2d
-
-	var_23_66[49902315] = {
+	pg.base.ship_l2d[49902315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -144939,11 +136128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_66
-
-	local var_23_67 = var_23_66.base.ship_l2d
-
-	var_23_67[49902316] = {
+	pg.base.ship_l2d[49902316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145003,11 +136188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_67
-
-	local var_23_68 = var_23_67.base.ship_l2d
-
-	var_23_68[49902317] = {
+	pg.base.ship_l2d[49902317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145068,11 +136249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_68
-
-	local var_23_69 = var_23_68.base.ship_l2d
-
-	var_23_69[49902318] = {
+	pg.base.ship_l2d[49902318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145133,11 +136310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_69
-
-	local var_23_70 = var_23_69.base.ship_l2d
-
-	var_23_70[49902319] = {
+	pg.base.ship_l2d[49902319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145198,11 +136371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_70
-
-	local var_23_71 = var_23_70.base.ship_l2d
-
-	var_23_71[49902320] = {
+	pg.base.ship_l2d[49902320] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145263,11 +136432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_71
-
-	local var_23_72 = var_23_71.base.ship_l2d
-
-	var_23_72[49902321] = {
+	pg.base.ship_l2d[49902321] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145328,11 +136493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_72
-
-	local var_23_73 = var_23_72.base.ship_l2d
-
-	var_23_73[49902322] = {
+	pg.base.ship_l2d[49902322] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145393,11 +136554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_73
-
-	local var_23_74 = var_23_73.base.ship_l2d
-
-	var_23_74[49902323] = {
+	pg.base.ship_l2d[49902323] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145458,11 +136615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_74
-
-	local var_23_75 = var_23_74.base.ship_l2d
-
-	var_23_75[49902324] = {
+	pg.base.ship_l2d[49902324] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145523,11 +136676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_75
-
-	local var_23_76 = var_23_75.base.ship_l2d
-
-	var_23_76[49902325] = {
+	pg.base.ship_l2d[49902325] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145588,11 +136737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_76
-
-	local var_23_77 = var_23_76.base.ship_l2d
-
-	var_23_77[49902326] = {
+	pg.base.ship_l2d[49902326] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145653,11 +136798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_77
-
-	local var_23_78 = var_23_77.base.ship_l2d
-
-	var_23_78[49902327] = {
+	pg.base.ship_l2d[49902327] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145718,11 +136859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_78
-
-	local var_23_79 = var_23_78.base.ship_l2d
-
-	var_23_79[49902328] = {
+	pg.base.ship_l2d[49902328] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145783,11 +136920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_79
-
-	local var_23_80 = var_23_79.base.ship_l2d
-
-	var_23_80[49902329] = {
+	pg.base.ship_l2d[49902329] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145848,11 +136981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_80
-
-	local var_23_81 = var_23_80.base.ship_l2d
-
-	var_23_81[49902330] = {
+	pg.base.ship_l2d[49902330] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145913,11 +137042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_81
-
-	local var_23_82 = var_23_81.base.ship_l2d
-
-	var_23_82[49902331] = {
+	pg.base.ship_l2d[49902331] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -145977,11 +137102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_82
-
-	local var_23_83 = var_23_82.base.ship_l2d
-
-	var_23_83[49902332] = {
+	pg.base.ship_l2d[49902332] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146041,11 +137162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_83
-
-	local var_23_84 = var_23_83.base.ship_l2d
-
-	var_23_84[49902333] = {
+	pg.base.ship_l2d[49902333] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146105,11 +137222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_84
-
-	local var_23_85 = var_23_84.base.ship_l2d
-
-	var_23_85[49902334] = {
+	pg.base.ship_l2d[49902334] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146169,11 +137282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_85
-
-	local var_23_86 = var_23_85.base.ship_l2d
-
-	var_23_86[49902335] = {
+	pg.base.ship_l2d[49902335] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146233,11 +137342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_86
-
-	local var_23_87 = var_23_86.base.ship_l2d
-
-	var_23_87[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146297,11 +137402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_87
-
-	local var_23_88 = var_23_87.base.ship_l2d
-
-	var_23_88[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146361,11 +137462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_88
-
-	local var_23_89 = var_23_88.base.ship_l2d
-
-	var_23_89[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146425,11 +137522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_89
-
-	local var_23_90 = var_23_89.base.ship_l2d
-
-	var_23_90[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146489,11 +137582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_90
-
-	local var_23_91 = var_23_90.base.ship_l2d
-
-	var_23_91[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146539,11 +137628,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_91
-
-	local var_23_92 = var_23_91.base.ship_l2d
-
-	var_23_92[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146603,11 +137688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_92
-
-	local var_23_93 = var_23_92.base.ship_l2d
-
-	var_23_93[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146667,11 +137748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_93
-
-	local var_23_94 = var_23_93.base.ship_l2d
-
-	var_23_94[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146731,11 +137808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_94
-
-	local var_23_95 = var_23_94.base.ship_l2d
-
-	var_23_95[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146781,11 +137854,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_23_95
-
-	local var_23_96 = var_23_95.base.ship_l2d
-
-	var_23_96[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146845,11 +137914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_96
-
-	local var_23_97 = var_23_96.base.ship_l2d
-
-	var_23_97[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146909,11 +137974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_97
-
-	local var_23_98 = var_23_97.base.ship_l2d
-
-	var_23_98[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -146973,8 +138034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_98
-	var_23_98.base.ship_l2d[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147024,11 +138084,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_24_0 = var_1_10000.base.ship_l2d
-
-	var_24_0[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147088,11 +138144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_0
-
-	local var_24_1 = var_24_0.base.ship_l2d
-
-	var_24_1[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147152,11 +138204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_1
-
-	local var_24_2 = var_24_1.base.ship_l2d
-
-	var_24_2[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147216,11 +138264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_2
-
-	local var_24_3 = var_24_2.base.ship_l2d
-
-	var_24_3[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147280,11 +138324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_3
-
-	local var_24_4 = var_24_3.base.ship_l2d
-
-	var_24_4[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147330,11 +138370,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_4
-
-	local var_24_5 = var_24_4.base.ship_l2d
-
-	var_24_5[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147380,11 +138416,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_5
-
-	local var_24_6 = var_24_5.base.ship_l2d
-
-	var_24_6[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147444,11 +138476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_6
-
-	local var_24_7 = var_24_6.base.ship_l2d
-
-	var_24_7[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147508,11 +138536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_7
-
-	local var_24_8 = var_24_7.base.ship_l2d
-
-	var_24_8[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147572,11 +138596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_8
-
-	local var_24_9 = var_24_8.base.ship_l2d
-
-	var_24_9[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147636,11 +138656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_9
-
-	local var_24_10 = var_24_9.base.ship_l2d
-
-	var_24_10[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147686,11 +138702,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_10
-
-	local var_24_11 = var_24_10.base.ship_l2d
-
-	var_24_11[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147750,11 +138762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_11
-
-	local var_24_12 = var_24_11.base.ship_l2d
-
-	var_24_12[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -147798,11 +138806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_12
-
-	local var_24_13 = var_24_12.base.ship_l2d
-
-	var_24_13[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147873,11 +138877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_13
-
-	local var_24_14 = var_24_13.base.ship_l2d
-
-	var_24_14[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147920,11 +138920,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_14
-
-	local var_24_15 = var_24_14.base.ship_l2d
-
-	var_24_15[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -147966,11 +138962,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_15
-
-	local var_24_16 = var_24_15.base.ship_l2d
-
-	var_24_16[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = -150,
 		gyro_y = 0,
@@ -148009,11 +139001,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_16
-
-	local var_24_17 = var_24_16.base.ship_l2d
-
-	var_24_17[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 150,
 		gyro_y = 0,
@@ -148052,11 +139040,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_17
-
-	local var_24_18 = var_24_17.base.ship_l2d
-
-	var_24_18[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148099,11 +139083,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_18
-
-	local var_24_19 = var_24_18.base.ship_l2d
-
-	var_24_19[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148146,11 +139126,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_19
-
-	local var_24_20 = var_24_19.base.ship_l2d
-
-	var_24_20[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148210,11 +139186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_20
-
-	local var_24_21 = var_24_20.base.ship_l2d
-
-	var_24_21[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148260,11 +139232,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_21
-
-	local var_24_22 = var_24_21.base.ship_l2d
-
-	var_24_22[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148307,11 +139275,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_22
-
-	local var_24_23 = var_24_22.base.ship_l2d
-
-	var_24_23[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148371,11 +139335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_23
-
-	local var_24_24 = var_24_23.base.ship_l2d
-
-	var_24_24[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148436,11 +139396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_24
-
-	local var_24_25 = var_24_24.base.ship_l2d
-
-	var_24_25[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148500,11 +139456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_25
-
-	local var_24_26 = var_24_25.base.ship_l2d
-
-	var_24_26[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148565,11 +139517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_26
-
-	local var_24_27 = var_24_26.base.ship_l2d
-
-	var_24_27[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148630,11 +139578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_27
-
-	local var_24_28 = var_24_27.base.ship_l2d
-
-	var_24_28[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148680,11 +139624,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_28
-
-	local var_24_29 = var_24_28.base.ship_l2d
-
-	var_24_29[30708512] = {
+	pg.base.ship_l2d[30708512] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148726,11 +139666,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_29
-
-	local var_24_30 = var_24_29.base.ship_l2d
-
-	var_24_30[30708513] = {
+	pg.base.ship_l2d[30708513] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148790,11 +139726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_30
-
-	local var_24_31 = var_24_30.base.ship_l2d
-
-	var_24_31[30708514] = {
+	pg.base.ship_l2d[30708514] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148854,11 +139786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_31
-
-	local var_24_32 = var_24_31.base.ship_l2d
-
-	var_24_32[30708515] = {
+	pg.base.ship_l2d[30708515] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -148918,11 +139846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_32
-
-	local var_24_33 = var_24_32.base.ship_l2d
-
-	var_24_33[30708516] = {
+	pg.base.ship_l2d[30708516] = {
 		offset_x = 0,
 		gyro_y = 0,
 		drag_direct = 0,
@@ -148993,11 +139917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_33
-
-	local var_24_34 = var_24_33.base.ship_l2d
-
-	var_24_34[30708517] = {
+	pg.base.ship_l2d[30708517] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149057,11 +139977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_34
-
-	local var_24_35 = var_24_34.base.ship_l2d
-
-	var_24_35[30708518] = {
+	pg.base.ship_l2d[30708518] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149107,11 +140023,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_35
-
-	local var_24_36 = var_24_35.base.ship_l2d
-
-	var_24_36[30708519] = {
+	pg.base.ship_l2d[30708519] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149157,11 +140069,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_36
-
-	local var_24_37 = var_24_36.base.ship_l2d
-
-	var_24_37[30708520] = {
+	pg.base.ship_l2d[30708520] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149203,11 +140111,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_37
-
-	local var_24_38 = var_24_37.base.ship_l2d
-
-	var_24_38[30708521] = {
+	pg.base.ship_l2d[30708521] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149249,11 +140153,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_38
-
-	local var_24_39 = var_24_38.base.ship_l2d
-
-	var_24_39[30708522] = {
+	pg.base.ship_l2d[30708522] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149298,11 +140198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_39
-
-	local var_24_40 = var_24_39.base.ship_l2d
-
-	var_24_40[30708523] = {
+	pg.base.ship_l2d[30708523] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149362,11 +140258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_40
-
-	local var_24_41 = var_24_40.base.ship_l2d
-
-	var_24_41[30708524] = {
+	pg.base.ship_l2d[30708524] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149426,11 +140318,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_41
-
-	local var_24_42 = var_24_41.base.ship_l2d
-
-	var_24_42[30708525] = {
+	pg.base.ship_l2d[30708525] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149490,11 +140378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_42
-
-	local var_24_43 = var_24_42.base.ship_l2d
-
-	var_24_43[30708526] = {
+	pg.base.ship_l2d[30708526] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149540,11 +140424,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_43
-
-	local var_24_44 = var_24_43.base.ship_l2d
-
-	var_24_44[30708527] = {
+	pg.base.ship_l2d[30708527] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149583,11 +140463,7 @@ end)()
 			10
 		}
 	}
-	pg = var_24_44
-
-	local var_24_45 = var_24_44.base.ship_l2d
-
-	var_24_45[49909201] = {
+	pg.base.ship_l2d[49909201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149630,11 +140506,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_45
-
-	local var_24_46 = var_24_45.base.ship_l2d
-
-	var_24_46[49909202] = {
+	pg.base.ship_l2d[49909202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149677,11 +140549,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_46
-
-	local var_24_47 = var_24_46.base.ship_l2d
-
-	var_24_47[49909203] = {
+	pg.base.ship_l2d[49909203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149740,11 +140608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_47
-
-	local var_24_48 = var_24_47.base.ship_l2d
-
-	var_24_48[49909204] = {
+	pg.base.ship_l2d[49909204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149803,11 +140667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_48
-
-	local var_24_49 = var_24_48.base.ship_l2d
-
-	var_24_49[49909205] = {
+	pg.base.ship_l2d[49909205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149866,11 +140726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_49
-
-	local var_24_50 = var_24_49.base.ship_l2d
-
-	var_24_50[49909206] = {
+	pg.base.ship_l2d[49909206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149916,11 +140772,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_50
-
-	local var_24_51 = var_24_50.base.ship_l2d
-
-	var_24_51[49909207] = {
+	pg.base.ship_l2d[49909207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -149979,11 +140831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_51
-
-	local var_24_52 = var_24_51.base.ship_l2d
-
-	var_24_52[49909208] = {
+	pg.base.ship_l2d[49909208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150042,11 +140890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_52
-
-	local var_24_53 = var_24_52.base.ship_l2d
-
-	var_24_53[49909209] = {
+	pg.base.ship_l2d[49909209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150105,11 +140949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_53
-
-	local var_24_54 = var_24_53.base.ship_l2d
-
-	var_24_54[49909210] = {
+	pg.base.ship_l2d[49909210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150168,11 +141008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_54
-
-	local var_24_55 = var_24_54.base.ship_l2d
-
-	var_24_55[49909211] = {
+	pg.base.ship_l2d[49909211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150218,11 +141054,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_55
-
-	local var_24_56 = var_24_55.base.ship_l2d
-
-	var_24_56[49909212] = {
+	pg.base.ship_l2d[49909212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150281,11 +141113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_56
-
-	local var_24_57 = var_24_56.base.ship_l2d
-
-	var_24_57[49909213] = {
+	pg.base.ship_l2d[49909213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150344,11 +141172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_57
-
-	local var_24_58 = var_24_57.base.ship_l2d
-
-	var_24_58[49909214] = {
+	pg.base.ship_l2d[49909214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150394,11 +141218,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_58
-
-	local var_24_59 = var_24_58.base.ship_l2d
-
-	var_24_59[49909215] = {
+	pg.base.ship_l2d[49909215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150440,11 +141260,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_59
-
-	local var_24_60 = var_24_59.base.ship_l2d
-
-	var_24_60[49909216] = {
+	pg.base.ship_l2d[49909216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150503,11 +141319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_60
-
-	local var_24_61 = var_24_60.base.ship_l2d
-
-	var_24_61[49909217] = {
+	pg.base.ship_l2d[49909217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150549,11 +141361,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_61
-
-	local var_24_62 = var_24_61.base.ship_l2d
-
-	var_24_62[49909218] = {
+	pg.base.ship_l2d[49909218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150599,11 +141407,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_62
-
-	local var_24_63 = var_24_62.base.ship_l2d
-
-	var_24_63[49909219] = {
+	pg.base.ship_l2d[49909219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150662,11 +141466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_63
-
-	local var_24_64 = var_24_63.base.ship_l2d
-
-	var_24_64[49909220] = {
+	pg.base.ship_l2d[49909220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150708,11 +141508,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_64
-
-	local var_24_65 = var_24_64.base.ship_l2d
-
-	var_24_65[49909221] = {
+	pg.base.ship_l2d[49909221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150754,11 +141550,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_65
-
-	local var_24_66 = var_24_65.base.ship_l2d
-
-	var_24_66[49909222] = {
+	pg.base.ship_l2d[49909222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150800,11 +141592,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_66
-
-	local var_24_67 = var_24_66.base.ship_l2d
-
-	var_24_67[49909223] = {
+	pg.base.ship_l2d[49909223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150846,11 +141634,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_67
-
-	local var_24_68 = var_24_67.base.ship_l2d
-
-	var_24_68[49909224] = {
+	pg.base.ship_l2d[49909224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150892,11 +141676,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_68
-
-	local var_24_69 = var_24_68.base.ship_l2d
-
-	var_24_69[49909225] = {
+	pg.base.ship_l2d[49909225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -150942,11 +141722,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_69
-
-	local var_24_70 = var_24_69.base.ship_l2d
-
-	var_24_70[49909226] = {
+	pg.base.ship_l2d[49909226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151005,11 +141781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_70
-
-	local var_24_71 = var_24_70.base.ship_l2d
-
-	var_24_71[49909227] = {
+	pg.base.ship_l2d[49909227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151055,11 +141827,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_71
-
-	local var_24_72 = var_24_71.base.ship_l2d
-
-	var_24_72[49909228] = {
+	pg.base.ship_l2d[49909228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151103,11 +141871,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_72
-
-	local var_24_73 = var_24_72.base.ship_l2d
-
-	var_24_73[49909229] = {
+	pg.base.ship_l2d[49909229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151151,11 +141915,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_73
-
-	local var_24_74 = var_24_73.base.ship_l2d
-
-	var_24_74[49909230] = {
+	pg.base.ship_l2d[49909230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151199,11 +141959,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_74
-
-	local var_24_75 = var_24_74.base.ship_l2d
-
-	var_24_75[49909231] = {
+	pg.base.ship_l2d[49909231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151242,11 +141998,7 @@ end)()
 			6
 		}
 	}
-	pg = var_24_75
-
-	local var_24_76 = var_24_75.base.ship_l2d
-
-	var_24_76[49909232] = {
+	pg.base.ship_l2d[49909232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151285,11 +142037,7 @@ end)()
 			10
 		}
 	}
-	pg = var_24_76
-
-	local var_24_77 = var_24_76.base.ship_l2d
-
-	var_24_77[49909233] = {
+	pg.base.ship_l2d[49909233] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151328,11 +142076,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_24_77
-
-	local var_24_78 = var_24_77.base.ship_l2d
-
-	var_24_78[49909234] = {
+	pg.base.ship_l2d[49909234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151371,11 +142115,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_78
-
-	local var_24_79 = var_24_78.base.ship_l2d
-
-	var_24_79[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151434,11 +142174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_79
-
-	local var_24_80 = var_24_79.base.ship_l2d
-
-	var_24_80[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151484,11 +142220,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_80
-
-	local var_24_81 = var_24_80.base.ship_l2d
-
-	var_24_81[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151530,11 +142262,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_81
-
-	local var_24_82 = var_24_81.base.ship_l2d
-
-	var_24_82[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151593,11 +142321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_82
-
-	local var_24_83 = var_24_82.base.ship_l2d
-
-	var_24_83[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151656,11 +142380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_83
-
-	local var_24_84 = var_24_83.base.ship_l2d
-
-	var_24_84[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151719,11 +142439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_84
-
-	local var_24_85 = var_24_84.base.ship_l2d
-
-	var_24_85[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151782,11 +142498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_85
-
-	local var_24_86 = var_24_85.base.ship_l2d
-
-	var_24_86[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151845,11 +142557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_86
-
-	local var_24_87 = var_24_86.base.ship_l2d
-
-	var_24_87[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151891,11 +142599,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_87
-
-	local var_24_88 = var_24_87.base.ship_l2d
-
-	var_24_88[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -151937,11 +142641,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_88
-
-	local var_24_89 = var_24_88.base.ship_l2d
-
-	var_24_89[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152001,11 +142701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_89
-
-	local var_24_90 = var_24_89.base.ship_l2d
-
-	var_24_90[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152051,11 +142747,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_90
-
-	local var_24_91 = var_24_90.base.ship_l2d
-
-	var_24_91[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152114,11 +142806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_91
-
-	local var_24_92 = var_24_91.base.ship_l2d
-
-	var_24_92[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152160,11 +142848,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_92
-
-	local var_24_93 = var_24_92.base.ship_l2d
-
-	var_24_93[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152206,11 +142890,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_93
-
-	local var_24_94 = var_24_93.base.ship_l2d
-
-	var_24_94[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152269,11 +142949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_94
-
-	local var_24_95 = var_24_94.base.ship_l2d
-
-	var_24_95[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152332,11 +143008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_95
-
-	local var_24_96 = var_24_95.base.ship_l2d
-
-	var_24_96[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152382,11 +143054,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_24_96
-
-	local var_24_97 = var_24_96.base.ship_l2d
-
-	var_24_97[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152445,11 +143113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_97
-
-	local var_24_98 = var_24_97.base.ship_l2d
-
-	var_24_98[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152491,8 +143155,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_24_98
-	var_24_98.base.ship_l2d[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152555,11 +143218,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_25_0 = var_1_10000.base.ship_l2d
-
-	var_25_0[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152618,11 +143277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_0
-
-	local var_25_1 = var_25_0.base.ship_l2d
-
-	var_25_1[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152668,11 +143323,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_25_1
-
-	local var_25_2 = var_25_1.base.ship_l2d
-
-	var_25_2[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152747,11 +143398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_2
-
-	local var_25_3 = var_25_2.base.ship_l2d
-
-	var_25_3[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152790,11 +143437,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_3
-
-	local var_25_4 = var_25_3.base.ship_l2d
-
-	var_25_4[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152869,11 +143512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_4
-
-	local var_25_5 = var_25_4.base.ship_l2d
-
-	var_25_5[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152948,11 +143587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_5
-
-	local var_25_6 = var_25_5.base.ship_l2d
-
-	var_25_6[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -152995,11 +143630,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_6
-
-	local var_25_7 = var_25_6.base.ship_l2d
-
-	var_25_7[29] = {
+	pg.base.ship_l2d[29] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -153059,11 +143690,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_25_7
-
-	local var_25_8 = var_25_7.base.ship_l2d
-
-	var_25_8[30] = {
+	pg.base.ship_l2d[30] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -153123,11 +143750,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_25_8
-
-	local var_25_9 = var_25_8.base.ship_l2d
-
-	var_25_9[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153166,11 +143789,7 @@ end)()
 			15
 		}
 	}
-	pg = var_25_9
-
-	local var_25_10 = var_25_9.base.ship_l2d
-
-	var_25_10[20707232] = {
+	pg.base.ship_l2d[20707232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153209,11 +143828,7 @@ end)()
 			15
 		}
 	}
-	pg = var_25_10
-
-	local var_25_11 = var_25_10.base.ship_l2d
-
-	var_25_11[20707233] = {
+	pg.base.ship_l2d[20707233] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153252,11 +143867,7 @@ end)()
 			10
 		}
 	}
-	pg = var_25_11
-
-	local var_25_12 = var_25_11.base.ship_l2d
-
-	var_25_12[20707234] = {
+	pg.base.ship_l2d[20707234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153295,11 +143906,7 @@ end)()
 			15
 		}
 	}
-	pg = var_25_12
-
-	local var_25_13 = var_25_12.base.ship_l2d
-
-	var_25_13[20707235] = {
+	pg.base.ship_l2d[20707235] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153338,11 +143945,7 @@ end)()
 			30
 		}
 	}
-	pg = var_25_13
-
-	local var_25_14 = var_25_13.base.ship_l2d
-
-	var_25_14[20707236] = {
+	pg.base.ship_l2d[20707236] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153381,11 +143984,7 @@ end)()
 			30
 		}
 	}
-	pg = var_25_14
-
-	local var_25_15 = var_25_14.base.ship_l2d
-
-	var_25_15[20707237] = {
+	pg.base.ship_l2d[20707237] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153424,11 +144023,7 @@ end)()
 			10
 		}
 	}
-	pg = var_25_15
-
-	local var_25_16 = var_25_15.base.ship_l2d
-
-	var_25_16[20707238] = {
+	pg.base.ship_l2d[20707238] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153467,11 +144062,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_16
-
-	local var_25_17 = var_25_16.base.ship_l2d
-
-	var_25_17[30229101] = {
+	pg.base.ship_l2d[30229101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153530,11 +144121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_17
-
-	local var_25_18 = var_25_17.base.ship_l2d
-
-	var_25_18[30229102] = {
+	pg.base.ship_l2d[30229102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153593,11 +144180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_18
-
-	local var_25_19 = var_25_18.base.ship_l2d
-
-	var_25_19[30229103] = {
+	pg.base.ship_l2d[30229103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153656,11 +144239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_19
-
-	local var_25_20 = var_25_19.base.ship_l2d
-
-	var_25_20[30229104] = {
+	pg.base.ship_l2d[30229104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153719,11 +144298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_20
-
-	local var_25_21 = var_25_20.base.ship_l2d
-
-	var_25_21[30229105] = {
+	pg.base.ship_l2d[30229105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153782,11 +144357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_21
-
-	local var_25_22 = var_25_21.base.ship_l2d
-
-	var_25_22[30229106] = {
+	pg.base.ship_l2d[30229106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153846,11 +144417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_22
-
-	local var_25_23 = var_25_22.base.ship_l2d
-
-	var_25_23[30229107] = {
+	pg.base.ship_l2d[30229107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153909,11 +144476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_23
-
-	local var_25_24 = var_25_23.base.ship_l2d
-
-	var_25_24[30229108] = {
+	pg.base.ship_l2d[30229108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -153972,11 +144535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_24
-
-	local var_25_25 = var_25_24.base.ship_l2d
-
-	var_25_25[30229109] = {
+	pg.base.ship_l2d[30229109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154036,11 +144595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_25
-
-	local var_25_26 = var_25_25.base.ship_l2d
-
-	var_25_26[30229110] = {
+	pg.base.ship_l2d[30229110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154099,11 +144654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_26
-
-	local var_25_27 = var_25_26.base.ship_l2d
-
-	var_25_27[30229111] = {
+	pg.base.ship_l2d[30229111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154162,11 +144713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_27
-
-	local var_25_28 = var_25_27.base.ship_l2d
-
-	var_25_28[30229112] = {
+	pg.base.ship_l2d[30229112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154225,11 +144772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_28
-
-	local var_25_29 = var_25_28.base.ship_l2d
-
-	var_25_29[30229113] = {
+	pg.base.ship_l2d[30229113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154288,11 +144831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_29
-
-	local var_25_30 = var_25_29.base.ship_l2d
-
-	var_25_30[30229114] = {
+	pg.base.ship_l2d[30229114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154351,11 +144890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_30
-
-	local var_25_31 = var_25_30.base.ship_l2d
-
-	var_25_31[30229115] = {
+	pg.base.ship_l2d[30229115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154414,11 +144949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_31
-
-	local var_25_32 = var_25_31.base.ship_l2d
-
-	var_25_32[30229116] = {
+	pg.base.ship_l2d[30229116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154477,11 +145008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_32
-
-	local var_25_33 = var_25_32.base.ship_l2d
-
-	var_25_33[30229117] = {
+	pg.base.ship_l2d[30229117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154540,11 +145067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_33
-
-	local var_25_34 = var_25_33.base.ship_l2d
-
-	var_25_34[30229118] = {
+	pg.base.ship_l2d[30229118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154604,11 +145127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_34
-
-	local var_25_35 = var_25_34.base.ship_l2d
-
-	var_25_35[30229119] = {
+	pg.base.ship_l2d[30229119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154667,11 +145186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_35
-
-	local var_25_36 = var_25_35.base.ship_l2d
-
-	var_25_36[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154730,11 +145245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_36
-
-	local var_25_37 = var_25_36.base.ship_l2d
-
-	var_25_37[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154776,11 +145287,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_37
-
-	local var_25_38 = var_25_37.base.ship_l2d
-
-	var_25_38[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154822,11 +145329,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_38
-
-	local var_25_39 = var_25_38.base.ship_l2d
-
-	var_25_39[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154868,11 +145371,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_39
-
-	local var_25_40 = var_25_39.base.ship_l2d
-
-	var_25_40[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154931,11 +145430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_40
-
-	local var_25_41 = var_25_40.base.ship_l2d
-
-	var_25_41[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -154994,11 +145489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_41
-
-	local var_25_42 = var_25_41.base.ship_l2d
-
-	var_25_42[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155057,11 +145548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_42
-
-	local var_25_43 = var_25_42.base.ship_l2d
-
-	var_25_43[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155120,11 +145607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_43
-
-	local var_25_44 = var_25_43.base.ship_l2d
-
-	var_25_44[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155183,11 +145666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_44
-
-	local var_25_45 = var_25_44.base.ship_l2d
-
-	var_25_45[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155246,11 +145725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_45
-
-	local var_25_46 = var_25_45.base.ship_l2d
-
-	var_25_46[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155309,11 +145784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_46
-
-	local var_25_47 = var_25_46.base.ship_l2d
-
-	var_25_47[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155372,11 +145843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_47
-
-	local var_25_48 = var_25_47.base.ship_l2d
-
-	var_25_48[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155435,11 +145902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_48
-
-	local var_25_49 = var_25_48.base.ship_l2d
-
-	var_25_49[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155498,11 +145961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_49
-
-	local var_25_50 = var_25_49.base.ship_l2d
-
-	var_25_50[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155561,11 +146020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_50
-
-	local var_25_51 = var_25_50.base.ship_l2d
-
-	var_25_51[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155625,11 +146080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_51
-
-	local var_25_52 = var_25_51.base.ship_l2d
-
-	var_25_52[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155689,11 +146140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_52
-
-	local var_25_53 = var_25_52.base.ship_l2d
-
-	var_25_53[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155752,11 +146199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_53
-
-	local var_25_54 = var_25_53.base.ship_l2d
-
-	var_25_54[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155815,11 +146258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_54
-
-	local var_25_55 = var_25_54.base.ship_l2d
-
-	var_25_55[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155862,11 +146301,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_55
-
-	local var_25_56 = var_25_55.base.ship_l2d
-
-	var_25_56[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155909,11 +146344,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_56
-
-	local var_25_57 = var_25_56.base.ship_l2d
-
-	var_25_57[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -155957,11 +146388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_57
-
-	local var_25_58 = var_25_57.base.ship_l2d
-
-	var_25_58[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156005,11 +146432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_58
-
-	local var_25_59 = var_25_58.base.ship_l2d
-
-	var_25_59[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156052,11 +146475,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_59
-
-	local var_25_60 = var_25_59.base.ship_l2d
-
-	var_25_60[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156099,11 +146518,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_60
-
-	local var_25_61 = var_25_60.base.ship_l2d
-
-	var_25_61[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156142,11 +146557,7 @@ end)()
 			15
 		}
 	}
-	pg = var_25_61
-
-	local var_25_62 = var_25_61.base.ship_l2d
-
-	var_25_62[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156185,11 +146596,7 @@ end)()
 			15
 		}
 	}
-	pg = var_25_62
-
-	local var_25_63 = var_25_62.base.ship_l2d
-
-	var_25_63[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156228,11 +146635,7 @@ end)()
 			10
 		}
 	}
-	pg = var_25_63
-
-	local var_25_64 = var_25_63.base.ship_l2d
-
-	var_25_64[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156271,11 +146674,7 @@ end)()
 			30
 		}
 	}
-	pg = var_25_64
-
-	local var_25_65 = var_25_64.base.ship_l2d
-
-	var_25_65[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156314,11 +146713,7 @@ end)()
 			6
 		}
 	}
-	pg = var_25_65
-
-	local var_25_66 = var_25_65.base.ship_l2d
-
-	var_25_66[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156357,11 +146752,7 @@ end)()
 			6
 		}
 	}
-	pg = var_25_66
-
-	local var_25_67 = var_25_66.base.ship_l2d
-
-	var_25_67[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156408,11 +146799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_67
-
-	local var_25_68 = var_25_67.base.ship_l2d
-
-	var_25_68[30229152] = {
+	pg.base.ship_l2d[30229152] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156471,11 +146858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_68
-
-	local var_25_69 = var_25_68.base.ship_l2d
-
-	var_25_69[30229153] = {
+	pg.base.ship_l2d[30229153] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156521,11 +146904,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_25_69
-
-	local var_25_70 = var_25_69.base.ship_l2d
-
-	var_25_70[30229154] = {
+	pg.base.ship_l2d[30229154] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156564,11 +146943,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_70
-
-	local var_25_71 = var_25_70.base.ship_l2d
-
-	var_25_71[20602301] = {
+	pg.base.ship_l2d[20602301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156607,11 +146982,7 @@ end)()
 			10
 		}
 	}
-	pg = var_25_71
-
-	local var_25_72 = var_25_71.base.ship_l2d
-
-	var_25_72[20602302] = {
+	pg.base.ship_l2d[20602302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156670,11 +147041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_72
-
-	local var_25_73 = var_25_72.base.ship_l2d
-
-	var_25_73[20602303] = {
+	pg.base.ship_l2d[20602303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156734,11 +147101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_73
-
-	local var_25_74 = var_25_73.base.ship_l2d
-
-	var_25_74[20602304] = {
+	pg.base.ship_l2d[20602304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156797,11 +147160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_74
-
-	local var_25_75 = var_25_74.base.ship_l2d
-
-	var_25_75[20602305] = {
+	pg.base.ship_l2d[20602305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156860,11 +147219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_75
-
-	local var_25_76 = var_25_75.base.ship_l2d
-
-	var_25_76[20602306] = {
+	pg.base.ship_l2d[20602306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156923,11 +147278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_76
-
-	local var_25_77 = var_25_76.base.ship_l2d
-
-	var_25_77[20602307] = {
+	pg.base.ship_l2d[20602307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -156973,11 +147324,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_25_77
-
-	local var_25_78 = var_25_77.base.ship_l2d
-
-	var_25_78[20602308] = {
+	pg.base.ship_l2d[20602308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157019,11 +147366,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_78
-
-	local var_25_79 = var_25_78.base.ship_l2d
-
-	var_25_79[20602309] = {
+	pg.base.ship_l2d[20602309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157082,11 +147425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_79
-
-	local var_25_80 = var_25_79.base.ship_l2d
-
-	var_25_80[20602310] = {
+	pg.base.ship_l2d[20602310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157145,11 +147484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_80
-
-	local var_25_81 = var_25_80.base.ship_l2d
-
-	var_25_81[20602311] = {
+	pg.base.ship_l2d[20602311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157208,11 +147543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_81
-
-	local var_25_82 = var_25_81.base.ship_l2d
-
-	var_25_82[20602312] = {
+	pg.base.ship_l2d[20602312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157272,11 +147603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_82
-
-	local var_25_83 = var_25_82.base.ship_l2d
-
-	var_25_83[20602313] = {
+	pg.base.ship_l2d[20602313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157336,11 +147663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_83
-
-	local var_25_84 = var_25_83.base.ship_l2d
-
-	var_25_84[20602314] = {
+	pg.base.ship_l2d[20602314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157386,11 +147709,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_25_84
-
-	local var_25_85 = var_25_84.base.ship_l2d
-
-	var_25_85[20602315] = {
+	pg.base.ship_l2d[20602315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157429,11 +147748,7 @@ end)()
 			10
 		}
 	}
-	pg = var_25_85
-
-	local var_25_86 = var_25_85.base.ship_l2d
-
-	var_25_86[20602316] = {
+	pg.base.ship_l2d[20602316] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -157472,11 +147787,7 @@ end)()
 			10
 		}
 	}
-	pg = var_25_86
-
-	local var_25_87 = var_25_86.base.ship_l2d
-
-	var_25_87[20602317] = {
+	pg.base.ship_l2d[20602317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157518,11 +147829,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_87
-
-	local var_25_88 = var_25_87.base.ship_l2d
-
-	var_25_88[20602318] = {
+	pg.base.ship_l2d[20602318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157581,11 +147888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_88
-
-	local var_25_89 = var_25_88.base.ship_l2d
-
-	var_25_89[20602319] = {
+	pg.base.ship_l2d[20602319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157645,11 +147948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_89
-
-	local var_25_90 = var_25_89.base.ship_l2d
-
-	var_25_90[20602320] = {
+	pg.base.ship_l2d[20602320] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157709,11 +148008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_90
-
-	local var_25_91 = var_25_90.base.ship_l2d
-
-	var_25_91[20602321] = {
+	pg.base.ship_l2d[20602321] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157772,11 +148067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_91
-
-	local var_25_92 = var_25_91.base.ship_l2d
-
-	var_25_92[20602322] = {
+	pg.base.ship_l2d[20602322] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157836,11 +148127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_92
-
-	local var_25_93 = var_25_92.base.ship_l2d
-
-	var_25_93[20602323] = {
+	pg.base.ship_l2d[20602323] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157899,11 +148186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_93
-
-	local var_25_94 = var_25_93.base.ship_l2d
-
-	var_25_94[20602324] = {
+	pg.base.ship_l2d[20602324] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -157963,11 +148246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_94
-
-	local var_25_95 = var_25_94.base.ship_l2d
-
-	var_25_95[20602325] = {
+	pg.base.ship_l2d[20602325] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158026,11 +148305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_95
-
-	local var_25_96 = var_25_95.base.ship_l2d
-
-	var_25_96[20602326] = {
+	pg.base.ship_l2d[20602326] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158089,11 +148364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_96
-
-	local var_25_97 = var_25_96.base.ship_l2d
-
-	var_25_97[20602327] = {
+	pg.base.ship_l2d[20602327] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158137,11 +148408,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_25_97
-
-	local var_25_98 = var_25_97.base.ship_l2d
-
-	var_25_98[20602328] = {
+	pg.base.ship_l2d[20602328] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -158185,8 +148452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_98
-	var_25_98.base.ship_l2d[20602329] = {
+	pg.base.ship_l2d[20602329] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158250,11 +148516,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_26_0 = var_1_10000.base.ship_l2d
-
-	var_26_0[20602330] = {
+	pg.base.ship_l2d[20602330] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158314,11 +148576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_0
-
-	local var_26_1 = var_26_0.base.ship_l2d
-
-	var_26_1[20602331] = {
+	pg.base.ship_l2d[20602331] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158378,11 +148636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_1
-
-	local var_26_2 = var_26_1.base.ship_l2d
-
-	var_26_2[20602332] = {
+	pg.base.ship_l2d[20602332] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158442,11 +148696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_2
-
-	local var_26_3 = var_26_2.base.ship_l2d
-
-	var_26_3[20602333] = {
+	pg.base.ship_l2d[20602333] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158492,11 +148742,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_3
-
-	local var_26_4 = var_26_3.base.ship_l2d
-
-	var_26_4[20602334] = {
+	pg.base.ship_l2d[20602334] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -158535,11 +148781,7 @@ end)()
 			10
 		}
 	}
-	pg = var_26_4
-
-	local var_26_5 = var_26_4.base.ship_l2d
-
-	var_26_5[20602335] = {
+	pg.base.ship_l2d[20602335] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158598,11 +148840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_5
-
-	local var_26_6 = var_26_5.base.ship_l2d
-
-	var_26_6[20602336] = {
+	pg.base.ship_l2d[20602336] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158661,11 +148899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_6
-
-	local var_26_7 = var_26_6.base.ship_l2d
-
-	var_26_7[20602337] = {
+	pg.base.ship_l2d[20602337] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158707,11 +148941,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_26_7
-
-	local var_26_8 = var_26_7.base.ship_l2d
-
-	var_26_8[20602338] = {
+	pg.base.ship_l2d[20602338] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158757,11 +148987,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_8
-
-	local var_26_9 = var_26_8.base.ship_l2d
-
-	var_26_9[49906301] = {
+	pg.base.ship_l2d[49906301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158824,11 +149050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_9
-
-	local var_26_10 = var_26_9.base.ship_l2d
-
-	var_26_10[49906302] = {
+	pg.base.ship_l2d[49906302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158887,11 +149109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_10
-
-	local var_26_11 = var_26_10.base.ship_l2d
-
-	var_26_11[49906303] = {
+	pg.base.ship_l2d[49906303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -158950,11 +149168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_11
-
-	local var_26_12 = var_26_11.base.ship_l2d
-
-	var_26_12[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159013,11 +149227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_12
-
-	local var_26_13 = var_26_12.base.ship_l2d
-
-	var_26_13[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159059,11 +149269,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_26_13
-
-	local var_26_14 = var_26_13.base.ship_l2d
-
-	var_26_14[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159122,11 +149328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_14
-
-	local var_26_15 = var_26_14.base.ship_l2d
-
-	var_26_15[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159168,11 +149370,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_26_15
-
-	local var_26_16 = var_26_15.base.ship_l2d
-
-	var_26_16[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159231,11 +149429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_16
-
-	local var_26_17 = var_26_16.base.ship_l2d
-
-	var_26_17[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159294,11 +149488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_17
-
-	local var_26_18 = var_26_17.base.ship_l2d
-
-	var_26_18[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159357,11 +149547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_18
-
-	local var_26_19 = var_26_18.base.ship_l2d
-
-	var_26_19[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159420,11 +149606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_19
-
-	local var_26_20 = var_26_19.base.ship_l2d
-
-	var_26_20[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159470,11 +149652,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_20
-
-	local var_26_21 = var_26_20.base.ship_l2d
-
-	var_26_21[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159533,11 +149711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_21
-
-	local var_26_22 = var_26_21.base.ship_l2d
-
-	var_26_22[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159596,11 +149770,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_22
-
-	local var_26_23 = var_26_22.base.ship_l2d
-
-	var_26_23[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159659,11 +149829,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_23
-
-	local var_26_24 = var_26_23.base.ship_l2d
-
-	var_26_24[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159709,11 +149875,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_24
-
-	local var_26_25 = var_26_24.base.ship_l2d
-
-	var_26_25[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159772,11 +149934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_25
-
-	local var_26_26 = var_26_25.base.ship_l2d
-
-	var_26_26[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159835,11 +149993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_26
-
-	local var_26_27 = var_26_26.base.ship_l2d
-
-	var_26_27[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159898,11 +150052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_27
-
-	local var_26_28 = var_26_27.base.ship_l2d
-
-	var_26_28[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -159948,11 +150098,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_28
-
-	local var_26_29 = var_26_28.base.ship_l2d
-
-	var_26_29[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160011,11 +150157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_29
-
-	local var_26_30 = var_26_29.base.ship_l2d
-
-	var_26_30[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160074,11 +150216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_30
-
-	local var_26_31 = var_26_30.base.ship_l2d
-
-	var_26_31[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160137,11 +150275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_31
-
-	local var_26_32 = var_26_31.base.ship_l2d
-
-	var_26_32[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160200,11 +150334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_32
-
-	local var_26_33 = var_26_32.base.ship_l2d
-
-	var_26_33[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160263,11 +150393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_33
-
-	local var_26_34 = var_26_33.base.ship_l2d
-
-	var_26_34[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160311,11 +150437,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_26_34
-
-	local var_26_35 = var_26_34.base.ship_l2d
-
-	var_26_35[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160361,11 +150483,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_35
-
-	local var_26_36 = var_26_35.base.ship_l2d
-
-	var_26_36[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160404,11 +150522,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_36
-
-	local var_26_37 = var_26_36.base.ship_l2d
-
-	var_26_37[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160467,11 +150581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_37
-
-	local var_26_38 = var_26_37.base.ship_l2d
-
-	var_26_38[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160530,11 +150640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_38
-
-	local var_26_39 = var_26_38.base.ship_l2d
-
-	var_26_39[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160580,11 +150686,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_39
-
-	local var_26_40 = var_26_39.base.ship_l2d
-
-	var_26_40[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160630,11 +150732,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_40
-
-	local var_26_41 = var_26_40.base.ship_l2d
-
-	var_26_41[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160677,11 +150775,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_26_41
-
-	local var_26_42 = var_26_41.base.ship_l2d
-
-	var_26_42[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160724,11 +150818,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_26_42
-
-	local var_26_43 = var_26_42.base.ship_l2d
-
-	var_26_43[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160767,11 +150857,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_43
-
-	local var_26_44 = var_26_43.base.ship_l2d
-
-	var_26_44[89901301] = {
+	pg.base.ship_l2d[89901301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160834,11 +150920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_44
-
-	local var_26_45 = var_26_44.base.ship_l2d
-
-	var_26_45[89901302] = {
+	pg.base.ship_l2d[89901302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160884,11 +150966,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_45
-
-	local var_26_46 = var_26_45.base.ship_l2d
-
-	var_26_46[89901303] = {
+	pg.base.ship_l2d[89901303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -160947,11 +151025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_46
-
-	local var_26_47 = var_26_46.base.ship_l2d
-
-	var_26_47[89901304] = {
+	pg.base.ship_l2d[89901304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161010,11 +151084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_47
-
-	local var_26_48 = var_26_47.base.ship_l2d
-
-	var_26_48[89901305] = {
+	pg.base.ship_l2d[89901305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161073,11 +151143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_48
-
-	local var_26_49 = var_26_48.base.ship_l2d
-
-	var_26_49[89901306] = {
+	pg.base.ship_l2d[89901306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161123,11 +151189,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_49
-
-	local var_26_50 = var_26_49.base.ship_l2d
-
-	var_26_50[89901307] = {
+	pg.base.ship_l2d[89901307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161186,11 +151248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_50
-
-	local var_26_51 = var_26_50.base.ship_l2d
-
-	var_26_51[89901308] = {
+	pg.base.ship_l2d[89901308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161236,11 +151294,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_51
-
-	local var_26_52 = var_26_51.base.ship_l2d
-
-	var_26_52[89901309] = {
+	pg.base.ship_l2d[89901309] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161299,11 +151353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_52
-
-	local var_26_53 = var_26_52.base.ship_l2d
-
-	var_26_53[89901310] = {
+	pg.base.ship_l2d[89901310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161362,11 +151412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_53
-
-	local var_26_54 = var_26_53.base.ship_l2d
-
-	var_26_54[89901311] = {
+	pg.base.ship_l2d[89901311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161425,11 +151471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_54
-
-	local var_26_55 = var_26_54.base.ship_l2d
-
-	var_26_55[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161488,11 +151530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_55
-
-	local var_26_56 = var_26_55.base.ship_l2d
-
-	var_26_56[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161551,11 +151589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_56
-
-	local var_26_57 = var_26_56.base.ship_l2d
-
-	var_26_57[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161601,11 +151635,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_57
-
-	local var_26_58 = var_26_57.base.ship_l2d
-
-	var_26_58[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161664,11 +151694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_58
-
-	local var_26_59 = var_26_58.base.ship_l2d
-
-	var_26_59[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161707,11 +151733,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_59
-
-	local var_26_60 = var_26_59.base.ship_l2d
-
-	var_26_60[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161750,11 +151772,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_60
-
-	local var_26_61 = var_26_60.base.ship_l2d
-
-	var_26_61[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161793,11 +151811,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_26_61
-
-	local var_26_62 = var_26_61.base.ship_l2d
-
-	var_26_62[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161836,11 +151850,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_26_62
-
-	local var_26_63 = var_26_62.base.ship_l2d
-
-	var_26_63[20135501] = {
+	pg.base.ship_l2d[20135501] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161899,11 +151909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_63
-
-	local var_26_64 = var_26_63.base.ship_l2d
-
-	var_26_64[20135502] = {
+	pg.base.ship_l2d[20135502] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -161962,11 +151968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_64
-
-	local var_26_65 = var_26_64.base.ship_l2d
-
-	var_26_65[20135503] = {
+	pg.base.ship_l2d[20135503] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162025,11 +152027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_65
-
-	local var_26_66 = var_26_65.base.ship_l2d
-
-	var_26_66[20135504] = {
+	pg.base.ship_l2d[20135504] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162088,11 +152086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_66
-
-	local var_26_67 = var_26_66.base.ship_l2d
-
-	var_26_67[20135505] = {
+	pg.base.ship_l2d[20135505] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162151,11 +152145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_67
-
-	local var_26_68 = var_26_67.base.ship_l2d
-
-	var_26_68[20135506] = {
+	pg.base.ship_l2d[20135506] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162214,11 +152204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_68
-
-	local var_26_69 = var_26_68.base.ship_l2d
-
-	var_26_69[20135507] = {
+	pg.base.ship_l2d[20135507] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162264,11 +152250,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_69
-
-	local var_26_70 = var_26_69.base.ship_l2d
-
-	var_26_70[20135508] = {
+	pg.base.ship_l2d[20135508] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162314,11 +152296,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_70
-
-	local var_26_71 = var_26_70.base.ship_l2d
-
-	var_26_71[20135509] = {
+	pg.base.ship_l2d[20135509] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162377,11 +152355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_71
-
-	local var_26_72 = var_26_71.base.ship_l2d
-
-	var_26_72[20135510] = {
+	pg.base.ship_l2d[20135510] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162444,11 +152418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_72
-
-	local var_26_73 = var_26_72.base.ship_l2d
-
-	var_26_73[20135511] = {
+	pg.base.ship_l2d[20135511] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162507,11 +152477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_73
-
-	local var_26_74 = var_26_73.base.ship_l2d
-
-	var_26_74[20135512] = {
+	pg.base.ship_l2d[20135512] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162570,11 +152536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_74
-
-	local var_26_75 = var_26_74.base.ship_l2d
-
-	var_26_75[20135513] = {
+	pg.base.ship_l2d[20135513] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162633,11 +152595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_75
-
-	local var_26_76 = var_26_75.base.ship_l2d
-
-	var_26_76[20135514] = {
+	pg.base.ship_l2d[20135514] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162696,11 +152654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_76
-
-	local var_26_77 = var_26_76.base.ship_l2d
-
-	var_26_77[20135515] = {
+	pg.base.ship_l2d[20135515] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162759,11 +152713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_77
-
-	local var_26_78 = var_26_77.base.ship_l2d
-
-	var_26_78[20135516] = {
+	pg.base.ship_l2d[20135516] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162822,11 +152772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_78
-
-	local var_26_79 = var_26_78.base.ship_l2d
-
-	var_26_79[20135517] = {
+	pg.base.ship_l2d[20135517] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162885,11 +152831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_79
-
-	local var_26_80 = var_26_79.base.ship_l2d
-
-	var_26_80[20135518] = {
+	pg.base.ship_l2d[20135518] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -162948,11 +152890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_80
-
-	local var_26_81 = var_26_80.base.ship_l2d
-
-	var_26_81[20135519] = {
+	pg.base.ship_l2d[20135519] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163011,11 +152949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_81
-
-	local var_26_82 = var_26_81.base.ship_l2d
-
-	var_26_82[20135520] = {
+	pg.base.ship_l2d[20135520] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163074,11 +153008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_82
-
-	local var_26_83 = var_26_82.base.ship_l2d
-
-	var_26_83[20135521] = {
+	pg.base.ship_l2d[20135521] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163137,11 +153067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_83
-
-	local var_26_84 = var_26_83.base.ship_l2d
-
-	var_26_84[20135522] = {
+	pg.base.ship_l2d[20135522] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163200,11 +153126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_84
-
-	local var_26_85 = var_26_84.base.ship_l2d
-
-	var_26_85[20135523] = {
+	pg.base.ship_l2d[20135523] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163263,11 +153185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_85
-
-	local var_26_86 = var_26_85.base.ship_l2d
-
-	var_26_86[20135524] = {
+	pg.base.ship_l2d[20135524] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163326,11 +153244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_86
-
-	local var_26_87 = var_26_86.base.ship_l2d
-
-	var_26_87[20135525] = {
+	pg.base.ship_l2d[20135525] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163389,11 +153303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_87
-
-	local var_26_88 = var_26_87.base.ship_l2d
-
-	var_26_88[20135526] = {
+	pg.base.ship_l2d[20135526] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163452,11 +153362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_88
-
-	local var_26_89 = var_26_88.base.ship_l2d
-
-	var_26_89[20135527] = {
+	pg.base.ship_l2d[20135527] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163515,11 +153421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_89
-
-	local var_26_90 = var_26_89.base.ship_l2d
-
-	var_26_90[20135528] = {
+	pg.base.ship_l2d[20135528] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163579,11 +153481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_90
-
-	local var_26_91 = var_26_90.base.ship_l2d
-
-	var_26_91[20135529] = {
+	pg.base.ship_l2d[20135529] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163643,11 +153541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_91
-
-	local var_26_92 = var_26_91.base.ship_l2d
-
-	var_26_92[20135530] = {
+	pg.base.ship_l2d[20135530] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163706,11 +153600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_92
-
-	local var_26_93 = var_26_92.base.ship_l2d
-
-	var_26_93[20135531] = {
+	pg.base.ship_l2d[20135531] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163756,11 +153646,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_93
-
-	local var_26_94 = var_26_93.base.ship_l2d
-
-	var_26_94[20135532] = {
+	pg.base.ship_l2d[20135532] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163806,11 +153692,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_94
-
-	local var_26_95 = var_26_94.base.ship_l2d
-
-	var_26_95[20135533] = {
+	pg.base.ship_l2d[20135533] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163856,11 +153738,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_95
-
-	local var_26_96 = var_26_95.base.ship_l2d
-
-	var_26_96[20135534] = {
+	pg.base.ship_l2d[20135534] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163906,11 +153784,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_96
-
-	local var_26_97 = var_26_96.base.ship_l2d
-
-	var_26_97[20135535] = {
+	pg.base.ship_l2d[20135535] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -163956,11 +153830,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_97
-
-	local var_26_98 = var_26_97.base.ship_l2d
-
-	var_26_98[20135536] = {
+	pg.base.ship_l2d[20135536] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164006,8 +153876,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_26_98
-	var_26_98.base.ship_l2d[20135537] = {
+	pg.base.ship_l2d[20135537] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164070,11 +153939,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_27_0 = var_1_10000.base.ship_l2d
-
-	var_27_0[20135538] = {
+	pg.base.ship_l2d[20135538] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164133,11 +153998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_0
-
-	local var_27_1 = var_27_0.base.ship_l2d
-
-	var_27_1[20135539] = {
+	pg.base.ship_l2d[20135539] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164196,11 +154057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_1
-
-	local var_27_2 = var_27_1.base.ship_l2d
-
-	var_27_2[20135540] = {
+	pg.base.ship_l2d[20135540] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164246,11 +154103,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_2
-
-	local var_27_3 = var_27_2.base.ship_l2d
-
-	var_27_3[20135541] = {
+	pg.base.ship_l2d[20135541] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164296,11 +154149,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_3
-
-	local var_27_4 = var_27_3.base.ship_l2d
-
-	var_27_4[20135542] = {
+	pg.base.ship_l2d[20135542] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164361,11 +154210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_4
-
-	local var_27_5 = var_27_4.base.ship_l2d
-
-	var_27_5[20135543] = {
+	pg.base.ship_l2d[20135543] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164426,11 +154271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_5
-
-	local var_27_6 = var_27_5.base.ship_l2d
-
-	var_27_6[20135544] = {
+	pg.base.ship_l2d[20135544] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164489,11 +154330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_6
-
-	local var_27_7 = var_27_6.base.ship_l2d
-
-	var_27_7[20135545] = {
+	pg.base.ship_l2d[20135545] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164552,11 +154389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_7
-
-	local var_27_8 = var_27_7.base.ship_l2d
-
-	var_27_8[20135546] = {
+	pg.base.ship_l2d[20135546] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164615,11 +154448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_8
-
-	local var_27_9 = var_27_8.base.ship_l2d
-
-	var_27_9[20135547] = {
+	pg.base.ship_l2d[20135547] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164678,11 +154507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_9
-
-	local var_27_10 = var_27_9.base.ship_l2d
-
-	var_27_10[20135548] = {
+	pg.base.ship_l2d[20135548] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164741,11 +154566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_10
-
-	local var_27_11 = var_27_10.base.ship_l2d
-
-	var_27_11[20135549] = {
+	pg.base.ship_l2d[20135549] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164806,11 +154627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_11
-
-	local var_27_12 = var_27_11.base.ship_l2d
-
-	var_27_12[20135550] = {
+	pg.base.ship_l2d[20135550] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164871,11 +154688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_12
-
-	local var_27_13 = var_27_12.base.ship_l2d
-
-	var_27_13[20135551] = {
+	pg.base.ship_l2d[20135551] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164934,11 +154747,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_13
-
-	local var_27_14 = var_27_13.base.ship_l2d
-
-	var_27_14[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -164997,11 +154806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_14
-
-	local var_27_15 = var_27_14.base.ship_l2d
-
-	var_27_15[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165062,11 +154867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_15
-
-	local var_27_16 = var_27_15.base.ship_l2d
-
-	var_27_16[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165112,11 +154913,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_16
-
-	local var_27_17 = var_27_16.base.ship_l2d
-
-	var_27_17[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165175,11 +154972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_17
-
-	local var_27_18 = var_27_17.base.ship_l2d
-
-	var_27_18[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165240,11 +155033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_18
-
-	local var_27_19 = var_27_18.base.ship_l2d
-
-	var_27_19[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165290,11 +155079,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_19
-
-	local var_27_20 = var_27_19.base.ship_l2d
-
-	var_27_20[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165353,11 +155138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_20
-
-	local var_27_21 = var_27_20.base.ship_l2d
-
-	var_27_21[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165416,11 +155197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_21
-
-	local var_27_22 = var_27_21.base.ship_l2d
-
-	var_27_22[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165462,11 +155239,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_22
-
-	local var_27_23 = var_27_22.base.ship_l2d
-
-	var_27_23[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165508,11 +155281,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_23
-
-	local var_27_24 = var_27_23.base.ship_l2d
-
-	var_27_24[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165554,11 +155323,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_24
-
-	local var_27_25 = var_27_24.base.ship_l2d
-
-	var_27_25[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165600,11 +155365,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_25
-
-	local var_27_26 = var_27_25.base.ship_l2d
-
-	var_27_26[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165646,11 +155407,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_26
-
-	local var_27_27 = var_27_26.base.ship_l2d
-
-	var_27_27[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165692,11 +155449,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_27
-
-	local var_27_28 = var_27_27.base.ship_l2d
-
-	var_27_28[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165738,11 +155491,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_28
-
-	local var_27_29 = var_27_28.base.ship_l2d
-
-	var_27_29[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165785,11 +155534,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_29
-
-	local var_27_30 = var_27_29.base.ship_l2d
-
-	var_27_30[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165832,11 +155577,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_30
-
-	local var_27_31 = var_27_30.base.ship_l2d
-
-	var_27_31[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165878,11 +155619,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_31
-
-	local var_27_32 = var_27_31.base.ship_l2d
-
-	var_27_32[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165924,11 +155661,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_32
-
-	local var_27_33 = var_27_32.base.ship_l2d
-
-	var_27_33[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -165967,11 +155700,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_33
-
-	local var_27_34 = var_27_33.base.ship_l2d
-
-	var_27_34[40507101] = {
+	pg.base.ship_l2d[40507101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166030,11 +155759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_34
-
-	local var_27_35 = var_27_34.base.ship_l2d
-
-	var_27_35[40507102] = {
+	pg.base.ship_l2d[40507102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166080,11 +155805,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_35
-
-	local var_27_36 = var_27_35.base.ship_l2d
-
-	var_27_36[40507103] = {
+	pg.base.ship_l2d[40507103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166143,11 +155864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_36
-
-	local var_27_37 = var_27_36.base.ship_l2d
-
-	var_27_37[40507104] = {
+	pg.base.ship_l2d[40507104] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166206,11 +155923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_37
-
-	local var_27_38 = var_27_37.base.ship_l2d
-
-	var_27_38[40507105] = {
+	pg.base.ship_l2d[40507105] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166269,11 +155982,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_38
-
-	local var_27_39 = var_27_38.base.ship_l2d
-
-	var_27_39[40507106] = {
+	pg.base.ship_l2d[40507106] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166319,11 +156028,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_39
-
-	local var_27_40 = var_27_39.base.ship_l2d
-
-	var_27_40[40507107] = {
+	pg.base.ship_l2d[40507107] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166382,11 +156087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_40
-
-	local var_27_41 = var_27_40.base.ship_l2d
-
-	var_27_41[40507108] = {
+	pg.base.ship_l2d[40507108] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166432,11 +156133,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_41
-
-	local var_27_42 = var_27_41.base.ship_l2d
-
-	var_27_42[40507109] = {
+	pg.base.ship_l2d[40507109] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166495,11 +156192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_42
-
-	local var_27_43 = var_27_42.base.ship_l2d
-
-	var_27_43[40507110] = {
+	pg.base.ship_l2d[40507110] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166558,11 +156251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_43
-
-	local var_27_44 = var_27_43.base.ship_l2d
-
-	var_27_44[40507111] = {
+	pg.base.ship_l2d[40507111] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166621,11 +156310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_44
-
-	local var_27_45 = var_27_44.base.ship_l2d
-
-	var_27_45[40507112] = {
+	pg.base.ship_l2d[40507112] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166684,11 +156369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_45
-
-	local var_27_46 = var_27_45.base.ship_l2d
-
-	var_27_46[40507113] = {
+	pg.base.ship_l2d[40507113] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166747,11 +156428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_46
-
-	local var_27_47 = var_27_46.base.ship_l2d
-
-	var_27_47[40507114] = {
+	pg.base.ship_l2d[40507114] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166810,11 +156487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_47
-
-	local var_27_48 = var_27_47.base.ship_l2d
-
-	var_27_48[40507115] = {
+	pg.base.ship_l2d[40507115] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166873,11 +156546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_48
-
-	local var_27_49 = var_27_48.base.ship_l2d
-
-	var_27_49[40507116] = {
+	pg.base.ship_l2d[40507116] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166936,11 +156605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_49
-
-	local var_27_50 = var_27_49.base.ship_l2d
-
-	var_27_50[40507117] = {
+	pg.base.ship_l2d[40507117] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -166986,11 +156651,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_50
-
-	local var_27_51 = var_27_50.base.ship_l2d
-
-	var_27_51[40507118] = {
+	pg.base.ship_l2d[40507118] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167049,11 +156710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_51
-
-	local var_27_52 = var_27_51.base.ship_l2d
-
-	var_27_52[40507119] = {
+	pg.base.ship_l2d[40507119] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167099,11 +156756,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_52
-
-	local var_27_53 = var_27_52.base.ship_l2d
-
-	var_27_53[40507120] = {
+	pg.base.ship_l2d[40507120] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167162,11 +156815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_53
-
-	local var_27_54 = var_27_53.base.ship_l2d
-
-	var_27_54[40507121] = {
+	pg.base.ship_l2d[40507121] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167208,11 +156857,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_54
-
-	local var_27_55 = var_27_54.base.ship_l2d
-
-	var_27_55[40507122] = {
+	pg.base.ship_l2d[40507122] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167255,11 +156900,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_55
-
-	local var_27_56 = var_27_55.base.ship_l2d
-
-	var_27_56[40507123] = {
+	pg.base.ship_l2d[40507123] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167301,11 +156942,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_56
-
-	local var_27_57 = var_27_56.base.ship_l2d
-
-	var_27_57[40507124] = {
+	pg.base.ship_l2d[40507124] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167348,11 +156985,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_57
-
-	local var_27_58 = var_27_57.base.ship_l2d
-
-	var_27_58[40507125] = {
+	pg.base.ship_l2d[40507125] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167395,11 +157028,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_58
-
-	local var_27_59 = var_27_58.base.ship_l2d
-
-	var_27_59[40507126] = {
+	pg.base.ship_l2d[40507126] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -167449,11 +157078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_59
-
-	local var_27_60 = var_27_59.base.ship_l2d
-
-	var_27_60[40507127] = {
+	pg.base.ship_l2d[40507127] = {
 		listener_data = "",
 		offset_x = 100,
 		gyro_y = 0,
@@ -167503,11 +157128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_60
-
-	local var_27_61 = var_27_60.base.ship_l2d
-
-	var_27_61[40507128] = {
+	pg.base.ship_l2d[40507128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167549,11 +157170,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_61
-
-	local var_27_62 = var_27_61.base.ship_l2d
-
-	var_27_62[40507129] = {
+	pg.base.ship_l2d[40507129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167599,11 +157216,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_62
-
-	local var_27_63 = var_27_62.base.ship_l2d
-
-	var_27_63[40507130] = {
+	pg.base.ship_l2d[40507130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167645,11 +157258,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_63
-
-	local var_27_64 = var_27_63.base.ship_l2d
-
-	var_27_64[40507131] = {
+	pg.base.ship_l2d[40507131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167691,11 +157300,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_64
-
-	local var_27_65 = var_27_64.base.ship_l2d
-
-	var_27_65[40507132] = {
+	pg.base.ship_l2d[40507132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167737,11 +157342,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_65
-
-	local var_27_66 = var_27_65.base.ship_l2d
-
-	var_27_66[40507133] = {
+	pg.base.ship_l2d[40507133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167800,11 +157401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_66
-
-	local var_27_67 = var_27_66.base.ship_l2d
-
-	var_27_67[40507134] = {
+	pg.base.ship_l2d[40507134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167843,11 +157440,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_67
-
-	local var_27_68 = var_27_67.base.ship_l2d
-
-	var_27_68[40815101] = {
+	pg.base.ship_l2d[40815101] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167910,11 +157503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_68
-
-	local var_27_69 = var_27_68.base.ship_l2d
-
-	var_27_69[40815102] = {
+	pg.base.ship_l2d[40815102] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -167973,11 +157562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_69
-
-	local var_27_70 = var_27_69.base.ship_l2d
-
-	var_27_70[40815103] = {
+	pg.base.ship_l2d[40815103] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168036,11 +157621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_70
-
-	local var_27_71 = var_27_70.base.ship_l2d
-
-	var_27_71[0] = {
+	pg.base.ship_l2d[0] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168099,11 +157680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_71
-
-	local var_27_72 = var_27_71.base.ship_l2d
-
-	var_27_72[1] = {
+	pg.base.ship_l2d[1] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168162,11 +157739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_72
-
-	local var_27_73 = var_27_72.base.ship_l2d
-
-	var_27_73[2] = {
+	pg.base.ship_l2d[2] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168225,11 +157798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_73
-
-	local var_27_74 = var_27_73.base.ship_l2d
-
-	var_27_74[3] = {
+	pg.base.ship_l2d[3] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168288,11 +157857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_74
-
-	local var_27_75 = var_27_74.base.ship_l2d
-
-	var_27_75[4] = {
+	pg.base.ship_l2d[4] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168351,11 +157916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_75
-
-	local var_27_76 = var_27_75.base.ship_l2d
-
-	var_27_76[5] = {
+	pg.base.ship_l2d[5] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168414,11 +157975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_76
-
-	local var_27_77 = var_27_76.base.ship_l2d
-
-	var_27_77[6] = {
+	pg.base.ship_l2d[6] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168477,11 +158034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_77
-
-	local var_27_78 = var_27_77.base.ship_l2d
-
-	var_27_78[7] = {
+	pg.base.ship_l2d[7] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168540,11 +158093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_78
-
-	local var_27_79 = var_27_78.base.ship_l2d
-
-	var_27_79[8] = {
+	pg.base.ship_l2d[8] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168603,11 +158152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_79
-
-	local var_27_80 = var_27_79.base.ship_l2d
-
-	var_27_80[9] = {
+	pg.base.ship_l2d[9] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168666,11 +158211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_80
-
-	local var_27_81 = var_27_80.base.ship_l2d
-
-	var_27_81[10] = {
+	pg.base.ship_l2d[10] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168729,11 +158270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_81
-
-	local var_27_82 = var_27_81.base.ship_l2d
-
-	var_27_82[11] = {
+	pg.base.ship_l2d[11] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168792,11 +158329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_82
-
-	local var_27_83 = var_27_82.base.ship_l2d
-
-	var_27_83[12] = {
+	pg.base.ship_l2d[12] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168855,11 +158388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_83
-
-	local var_27_84 = var_27_83.base.ship_l2d
-
-	var_27_84[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168918,11 +158447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_84
-
-	local var_27_85 = var_27_84.base.ship_l2d
-
-	var_27_85[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -168981,11 +158506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_85
-
-	local var_27_86 = var_27_85.base.ship_l2d
-
-	var_27_86[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169044,11 +158565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_86
-
-	local var_27_87 = var_27_86.base.ship_l2d
-
-	var_27_87[16] = {
+	pg.base.ship_l2d[16] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169107,11 +158624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_87
-
-	local var_27_88 = var_27_87.base.ship_l2d
-
-	var_27_88[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169170,11 +158683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_88
-
-	local var_27_89 = var_27_88.base.ship_l2d
-
-	var_27_89[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169233,11 +158742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_89
-
-	local var_27_90 = var_27_89.base.ship_l2d
-
-	var_27_90[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169296,11 +158801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_90
-
-	local var_27_91 = var_27_90.base.ship_l2d
-
-	var_27_91[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169359,11 +158860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_91
-
-	local var_27_92 = var_27_91.base.ship_l2d
-
-	var_27_92[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169422,11 +158919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_92
-
-	local var_27_93 = var_27_92.base.ship_l2d
-
-	var_27_93[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169485,11 +158978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_93
-
-	local var_27_94 = var_27_93.base.ship_l2d
-
-	var_27_94[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169535,11 +159024,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_27_94
-
-	local var_27_95 = var_27_94.base.ship_l2d
-
-	var_27_95[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169582,11 +159067,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_95
-
-	local var_27_96 = var_27_95.base.ship_l2d
-
-	var_27_96[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169629,11 +159110,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_96
-
-	local var_27_97 = var_27_96.base.ship_l2d
-
-	var_27_97[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169675,11 +159152,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_97
-
-	local var_27_98 = var_27_97.base.ship_l2d
-
-	var_27_98[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169721,8 +159194,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_27_98
-	var_27_98.base.ship_l2d[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169768,11 +159240,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_28_0 = var_1_10000.base.ship_l2d
-
-	var_28_0[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169814,11 +159282,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_0
-
-	local var_28_1 = var_28_0.base.ship_l2d
-
-	var_28_1[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169860,11 +159324,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_1
-
-	local var_28_2 = var_28_1.base.ship_l2d
-
-	var_28_2[31] = {
+	pg.base.ship_l2d[31] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169906,11 +159366,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_2
-
-	local var_28_3 = var_28_2.base.ship_l2d
-
-	var_28_3[40815136] = {
+	pg.base.ship_l2d[40815136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -169969,11 +159425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_3
-
-	local var_28_4 = var_28_3.base.ship_l2d
-
-	var_28_4[90107301] = {
+	pg.base.ship_l2d[90107301] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170036,11 +159488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_4
-
-	local var_28_5 = var_28_4.base.ship_l2d
-
-	var_28_5[90107302] = {
+	pg.base.ship_l2d[90107302] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170083,11 +159531,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_5
-
-	local var_28_6 = var_28_5.base.ship_l2d
-
-	var_28_6[90107303] = {
+	pg.base.ship_l2d[90107303] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170146,11 +159590,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_6
-
-	local var_28_7 = var_28_6.base.ship_l2d
-
-	var_28_7[90107304] = {
+	pg.base.ship_l2d[90107304] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170209,11 +159649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_7
-
-	local var_28_8 = var_28_7.base.ship_l2d
-
-	var_28_8[90107305] = {
+	pg.base.ship_l2d[90107305] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170259,11 +159695,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_28_8
-
-	local var_28_9 = var_28_8.base.ship_l2d
-
-	var_28_9[90107306] = {
+	pg.base.ship_l2d[90107306] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170307,11 +159739,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_9
-
-	local var_28_10 = var_28_9.base.ship_l2d
-
-	var_28_10[90107307] = {
+	pg.base.ship_l2d[90107307] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170355,11 +159783,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_10
-
-	local var_28_11 = var_28_10.base.ship_l2d
-
-	var_28_11[90107308] = {
+	pg.base.ship_l2d[90107308] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170403,11 +159827,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_11
-
-	local var_28_12 = var_28_11.base.ship_l2d
-
-	var_28_12[90107309] = {
+	pg.base.ship_l2d[90107309] = {
 		listener_data = "",
 		offset_x = 14,
 		gyro_y = 0,
@@ -170457,11 +159877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_12
-
-	local var_28_13 = var_28_12.base.ship_l2d
-
-	var_28_13[90107310] = {
+	pg.base.ship_l2d[90107310] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170507,11 +159923,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_28_13
-
-	local var_28_14 = var_28_13.base.ship_l2d
-
-	var_28_14[90107311] = {
+	pg.base.ship_l2d[90107311] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170554,11 +159966,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_14
-
-	local var_28_15 = var_28_14.base.ship_l2d
-
-	var_28_15[90107312] = {
+	pg.base.ship_l2d[90107312] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170601,11 +160009,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_15
-
-	local var_28_16 = var_28_15.base.ship_l2d
-
-	var_28_16[90107313] = {
+	pg.base.ship_l2d[90107313] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170648,11 +160052,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_16
-
-	local var_28_17 = var_28_16.base.ship_l2d
-
-	var_28_17[90107314] = {
+	pg.base.ship_l2d[90107314] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170695,11 +160095,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_17
-
-	local var_28_18 = var_28_17.base.ship_l2d
-
-	var_28_18[90107315] = {
+	pg.base.ship_l2d[90107315] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170742,11 +160138,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_18
-
-	local var_28_19 = var_28_18.base.ship_l2d
-
-	var_28_19[90107316] = {
+	pg.base.ship_l2d[90107316] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170805,11 +160197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_19
-
-	local var_28_20 = var_28_19.base.ship_l2d
-
-	var_28_20[90107317] = {
+	pg.base.ship_l2d[90107317] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170868,11 +160256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_20
-
-	local var_28_21 = var_28_20.base.ship_l2d
-
-	var_28_21[90107318] = {
+	pg.base.ship_l2d[90107318] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170931,11 +160315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_21
-
-	local var_28_22 = var_28_21.base.ship_l2d
-
-	var_28_22[90107319] = {
+	pg.base.ship_l2d[90107319] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -170978,11 +160358,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_22
-
-	local var_28_23 = var_28_22.base.ship_l2d
-
-	var_28_23[90107320] = {
+	pg.base.ship_l2d[90107320] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171025,11 +160401,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_23
-
-	local var_28_24 = var_28_23.base.ship_l2d
-
-	var_28_24[90107321] = {
+	pg.base.ship_l2d[90107321] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171072,11 +160444,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_24
-
-	local var_28_25 = var_28_24.base.ship_l2d
-
-	var_28_25[90107322] = {
+	pg.base.ship_l2d[90107322] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171119,11 +160487,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_25
-
-	local var_28_26 = var_28_25.base.ship_l2d
-
-	var_28_26[90107323] = {
+	pg.base.ship_l2d[90107323] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171166,11 +160530,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_26
-
-	local var_28_27 = var_28_26.base.ship_l2d
-
-	var_28_27[90107324] = {
+	pg.base.ship_l2d[90107324] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171213,11 +160573,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_27
-
-	local var_28_28 = var_28_27.base.ship_l2d
-
-	var_28_28[90107325] = {
+	pg.base.ship_l2d[90107325] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171260,11 +160616,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_28
-
-	local var_28_29 = var_28_28.base.ship_l2d
-
-	var_28_29[90107326] = {
+	pg.base.ship_l2d[90107326] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171323,11 +160675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_29
-
-	local var_28_30 = var_28_29.base.ship_l2d
-
-	var_28_30[90107327] = {
+	pg.base.ship_l2d[90107327] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171386,11 +160734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_30
-
-	local var_28_31 = var_28_30.base.ship_l2d
-
-	var_28_31[90107328] = {
+	pg.base.ship_l2d[90107328] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171449,11 +160793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_31
-
-	local var_28_32 = var_28_31.base.ship_l2d
-
-	var_28_32[90107329] = {
+	pg.base.ship_l2d[90107329] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171512,11 +160852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_32
-
-	local var_28_33 = var_28_32.base.ship_l2d
-
-	var_28_33[90107330] = {
+	pg.base.ship_l2d[90107330] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171575,11 +160911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_33
-
-	local var_28_34 = var_28_33.base.ship_l2d
-
-	var_28_34[90107331] = {
+	pg.base.ship_l2d[90107331] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171638,11 +160970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_34
-
-	local var_28_35 = var_28_34.base.ship_l2d
-
-	var_28_35[90107332] = {
+	pg.base.ship_l2d[90107332] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171701,11 +161029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_35
-
-	local var_28_36 = var_28_35.base.ship_l2d
-
-	var_28_36[90107333] = {
+	pg.base.ship_l2d[90107333] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171764,11 +161088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_36
-
-	local var_28_37 = var_28_36.base.ship_l2d
-
-	var_28_37[90107334] = {
+	pg.base.ship_l2d[90107334] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171827,11 +161147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_37
-
-	local var_28_38 = var_28_37.base.ship_l2d
-
-	var_28_38[90107335] = {
+	pg.base.ship_l2d[90107335] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171890,11 +161206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_38
-
-	local var_28_39 = var_28_38.base.ship_l2d
-
-	var_28_39[90107336] = {
+	pg.base.ship_l2d[90107336] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -171953,11 +161265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_39
-
-	local var_28_40 = var_28_39.base.ship_l2d
-
-	var_28_40[90107337] = {
+	pg.base.ship_l2d[90107337] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172016,11 +161324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_40
-
-	local var_28_41 = var_28_40.base.ship_l2d
-
-	var_28_41[90107338] = {
+	pg.base.ship_l2d[90107338] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172079,11 +161383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_41
-
-	local var_28_42 = var_28_41.base.ship_l2d
-
-	var_28_42[90107339] = {
+	pg.base.ship_l2d[90107339] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172142,11 +161442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_42
-
-	local var_28_43 = var_28_42.base.ship_l2d
-
-	var_28_43[90107340] = {
+	pg.base.ship_l2d[90107340] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172205,11 +161501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_43
-
-	local var_28_44 = var_28_43.base.ship_l2d
-
-	var_28_44[90107341] = {
+	pg.base.ship_l2d[90107341] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172268,11 +161560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_44
-
-	local var_28_45 = var_28_44.base.ship_l2d
-
-	var_28_45[90107342] = {
+	pg.base.ship_l2d[90107342] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172331,11 +161619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_45
-
-	local var_28_46 = var_28_45.base.ship_l2d
-
-	var_28_46[90107343] = {
+	pg.base.ship_l2d[90107343] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172394,11 +161678,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_46
-
-	local var_28_47 = var_28_46.base.ship_l2d
-
-	var_28_47[90107344] = {
+	pg.base.ship_l2d[90107344] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172457,11 +161737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_47
-
-	local var_28_48 = var_28_47.base.ship_l2d
-
-	var_28_48[90107345] = {
+	pg.base.ship_l2d[90107345] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172520,11 +161796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_48
-
-	local var_28_49 = var_28_48.base.ship_l2d
-
-	var_28_49[90107346] = {
+	pg.base.ship_l2d[90107346] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172584,11 +161856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_49
-
-	local var_28_50 = var_28_49.base.ship_l2d
-
-	var_28_50[90107347] = {
+	pg.base.ship_l2d[90107347] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172648,11 +161916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_50
-
-	local var_28_51 = var_28_50.base.ship_l2d
-
-	var_28_51[90107348] = {
+	pg.base.ship_l2d[90107348] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172712,11 +161976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_51
-
-	local var_28_52 = var_28_51.base.ship_l2d
-
-	var_28_52[90107349] = {
+	pg.base.ship_l2d[90107349] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172776,11 +162036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_52
-
-	local var_28_53 = var_28_52.base.ship_l2d
-
-	var_28_53[90107350] = {
+	pg.base.ship_l2d[90107350] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172839,11 +162095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_53
-
-	local var_28_54 = var_28_53.base.ship_l2d
-
-	var_28_54[90107351] = {
+	pg.base.ship_l2d[90107351] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172885,11 +162137,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_54
-
-	local var_28_55 = var_28_54.base.ship_l2d
-
-	var_28_55[90107352] = {
+	pg.base.ship_l2d[90107352] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172931,11 +162179,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_55
-
-	local var_28_56 = var_28_55.base.ship_l2d
-
-	var_28_56[90107353] = {
+	pg.base.ship_l2d[90107353] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -172977,11 +162221,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_56
-
-	local var_28_57 = var_28_56.base.ship_l2d
-
-	var_28_57[90107354] = {
+	pg.base.ship_l2d[90107354] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173040,11 +162280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_57
-
-	local var_28_58 = var_28_57.base.ship_l2d
-
-	var_28_58[90107355] = {
+	pg.base.ship_l2d[90107355] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173103,11 +162339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_58
-
-	local var_28_59 = var_28_58.base.ship_l2d
-
-	var_28_59[90107356] = {
+	pg.base.ship_l2d[90107356] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173166,11 +162398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_59
-
-	local var_28_60 = var_28_59.base.ship_l2d
-
-	var_28_60[90107357] = {
+	pg.base.ship_l2d[90107357] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173229,11 +162457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_60
-
-	local var_28_61 = var_28_60.base.ship_l2d
-
-	var_28_61[90107358] = {
+	pg.base.ship_l2d[90107358] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173292,11 +162516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_61
-
-	local var_28_62 = var_28_61.base.ship_l2d
-
-	var_28_62[90107359] = {
+	pg.base.ship_l2d[90107359] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173335,11 +162555,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_62
-
-	local var_28_63 = var_28_62.base.ship_l2d
-
-	var_28_63[90107360] = {
+	pg.base.ship_l2d[90107360] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173378,11 +162594,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_63
-
-	local var_28_64 = var_28_63.base.ship_l2d
-
-	var_28_64[90107361] = {
+	pg.base.ship_l2d[90107361] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173441,11 +162653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_64
-
-	local var_28_65 = var_28_64.base.ship_l2d
-
-	var_28_65[90107362] = {
+	pg.base.ship_l2d[90107362] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173489,11 +162697,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_65
-
-	local var_28_66 = var_28_65.base.ship_l2d
-
-	var_28_66[90107363] = {
+	pg.base.ship_l2d[90107363] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173537,11 +162741,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_66
-
-	local var_28_67 = var_28_66.base.ship_l2d
-
-	var_28_67[90107364] = {
+	pg.base.ship_l2d[90107364] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173600,11 +162800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_67
-
-	local var_28_68 = var_28_67.base.ship_l2d
-
-	var_28_68[90107365] = {
+	pg.base.ship_l2d[90107365] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173647,11 +162843,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_68
-
-	local var_28_69 = var_28_68.base.ship_l2d
-
-	var_28_69[90107366] = {
+	pg.base.ship_l2d[90107366] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173697,11 +162889,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_28_69
-
-	local var_28_70 = var_28_69.base.ship_l2d
-
-	var_28_70[90107367] = {
+	pg.base.ship_l2d[90107367] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173754,11 +162942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_70
-
-	local var_28_71 = var_28_70.base.ship_l2d
-
-	var_28_71[90107368] = {
+	pg.base.ship_l2d[90107368] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173811,11 +162995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_71
-
-	local var_28_72 = var_28_71.base.ship_l2d
-
-	var_28_72[90107369] = {
+	pg.base.ship_l2d[90107369] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173858,11 +163038,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_72
-
-	local var_28_73 = var_28_72.base.ship_l2d
-
-	var_28_73[90107370] = {
+	pg.base.ship_l2d[90107370] = {
 		listener_data = "",
 		offset_x = -200,
 		gyro_y = 0,
@@ -173901,11 +163077,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_73
-
-	local var_28_74 = var_28_73.base.ship_l2d
-
-	var_28_74[90107371] = {
+	pg.base.ship_l2d[90107371] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -173964,11 +163136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_74
-
-	local var_28_75 = var_28_74.base.ship_l2d
-
-	var_28_75[90107372] = {
+	pg.base.ship_l2d[90107372] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174027,11 +163195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_75
-
-	local var_28_76 = var_28_75.base.ship_l2d
-
-	var_28_76[90107373] = {
+	pg.base.ship_l2d[90107373] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174090,11 +163254,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_76
-
-	local var_28_77 = var_28_76.base.ship_l2d
-
-	var_28_77[90107374] = {
+	pg.base.ship_l2d[90107374] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174153,11 +163313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_77
-
-	local var_28_78 = var_28_77.base.ship_l2d
-
-	var_28_78[90107375] = {
+	pg.base.ship_l2d[90107375] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174216,11 +163372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_78
-
-	local var_28_79 = var_28_78.base.ship_l2d
-
-	var_28_79[90107376] = {
+	pg.base.ship_l2d[90107376] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174263,11 +163415,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_79
-
-	local var_28_80 = var_28_79.base.ship_l2d
-
-	var_28_80[90107377] = {
+	pg.base.ship_l2d[90107377] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174310,11 +163458,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_80
-
-	local var_28_81 = var_28_80.base.ship_l2d
-
-	var_28_81[90107378] = {
+	pg.base.ship_l2d[90107378] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174357,11 +163501,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_81
-
-	local var_28_82 = var_28_81.base.ship_l2d
-
-	var_28_82[90107379] = {
+	pg.base.ship_l2d[90107379] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174404,11 +163544,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_82
-
-	local var_28_83 = var_28_82.base.ship_l2d
-
-	var_28_83[90107380] = {
+	pg.base.ship_l2d[90107380] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174451,11 +163587,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_83
-
-	local var_28_84 = var_28_83.base.ship_l2d
-
-	var_28_84[90107381] = {
+	pg.base.ship_l2d[90107381] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174494,11 +163626,7 @@ end)()
 			5
 		}
 	}
-	pg = var_28_84
-
-	local var_28_85 = var_28_84.base.ship_l2d
-
-	var_28_85[90107382] = {
+	pg.base.ship_l2d[90107382] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174537,11 +163665,7 @@ end)()
 			30
 		}
 	}
-	pg = var_28_85
-
-	local var_28_86 = var_28_85.base.ship_l2d
-
-	var_28_86[90107383] = {
+	pg.base.ship_l2d[90107383] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174580,11 +163704,7 @@ end)()
 			15
 		}
 	}
-	pg = var_28_86
-
-	local var_28_87 = var_28_86.base.ship_l2d
-
-	var_28_87[90107384] = {
+	pg.base.ship_l2d[90107384] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174623,11 +163743,7 @@ end)()
 			15
 		}
 	}
-	pg = var_28_87
-
-	local var_28_88 = var_28_87.base.ship_l2d
-
-	var_28_88[90107385] = {
+	pg.base.ship_l2d[90107385] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174666,11 +163782,7 @@ end)()
 			15
 		}
 	}
-	pg = var_28_88
-
-	local var_28_89 = var_28_88.base.ship_l2d
-
-	var_28_89[90107386] = {
+	pg.base.ship_l2d[90107386] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174709,11 +163821,7 @@ end)()
 			15
 		}
 	}
-	pg = var_28_89
-
-	local var_28_90 = var_28_89.base.ship_l2d
-
-	var_28_90[90107387] = {
+	pg.base.ship_l2d[90107387] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -174800,11 +163908,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_28_90
-
-	local var_28_91 = var_28_90.base.ship_l2d
-
-	var_28_91[30715201] = {
+	pg.base.ship_l2d[30715201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174863,11 +163967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_91
-
-	local var_28_92 = var_28_91.base.ship_l2d
-
-	var_28_92[30715202] = {
+	pg.base.ship_l2d[30715202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174913,11 +164013,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_28_92
-
-	local var_28_93 = var_28_92.base.ship_l2d
-
-	var_28_93[30715203] = {
+	pg.base.ship_l2d[30715203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -174959,11 +164055,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_93
-
-	local var_28_94 = var_28_93.base.ship_l2d
-
-	var_28_94[30715204] = {
+	pg.base.ship_l2d[30715204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175005,11 +164097,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_94
-
-	local var_28_95 = var_28_94.base.ship_l2d
-
-	var_28_95[30715205] = {
+	pg.base.ship_l2d[30715205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175051,11 +164139,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_95
-
-	local var_28_96 = var_28_95.base.ship_l2d
-
-	var_28_96[30715206] = {
+	pg.base.ship_l2d[30715206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175097,11 +164181,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_96
-
-	local var_28_97 = var_28_96.base.ship_l2d
-
-	var_28_97[30715207] = {
+	pg.base.ship_l2d[30715207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175143,11 +164223,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_28_97
-
-	local var_28_98 = var_28_97.base.ship_l2d
-
-	var_28_98[30715208] = {
+	pg.base.ship_l2d[30715208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175206,8 +164282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_98
-	var_28_98.base.ship_l2d[30715209] = {
+	pg.base.ship_l2d[30715209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175270,11 +164345,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_29_0 = var_1_10000.base.ship_l2d
-
-	var_29_0[30715210] = {
+	pg.base.ship_l2d[30715210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175333,11 +164404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_0
-
-	local var_29_1 = var_29_0.base.ship_l2d
-
-	var_29_1[30715211] = {
+	pg.base.ship_l2d[30715211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175396,11 +164463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_1
-
-	local var_29_2 = var_29_1.base.ship_l2d
-
-	var_29_2[30715212] = {
+	pg.base.ship_l2d[30715212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175459,11 +164522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_2
-
-	local var_29_3 = var_29_2.base.ship_l2d
-
-	var_29_3[30715213] = {
+	pg.base.ship_l2d[30715213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175522,11 +164581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_3
-
-	local var_29_4 = var_29_3.base.ship_l2d
-
-	var_29_4[30715214] = {
+	pg.base.ship_l2d[30715214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175585,11 +164640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_4
-
-	local var_29_5 = var_29_4.base.ship_l2d
-
-	var_29_5[30715215] = {
+	pg.base.ship_l2d[30715215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175648,11 +164699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_5
-
-	local var_29_6 = var_29_5.base.ship_l2d
-
-	var_29_6[30715216] = {
+	pg.base.ship_l2d[30715216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175711,11 +164758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_6
-
-	local var_29_7 = var_29_6.base.ship_l2d
-
-	var_29_7[30715217] = {
+	pg.base.ship_l2d[30715217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175774,11 +164817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_7
-
-	local var_29_8 = var_29_7.base.ship_l2d
-
-	var_29_8[30715218] = {
+	pg.base.ship_l2d[30715218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175837,11 +164876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_8
-
-	local var_29_9 = var_29_8.base.ship_l2d
-
-	var_29_9[30715219] = {
+	pg.base.ship_l2d[30715219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175900,11 +164935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_9
-
-	local var_29_10 = var_29_9.base.ship_l2d
-
-	var_29_10[30715220] = {
+	pg.base.ship_l2d[30715220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -175963,11 +164994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_10
-
-	local var_29_11 = var_29_10.base.ship_l2d
-
-	var_29_11[30715221] = {
+	pg.base.ship_l2d[30715221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176026,11 +165053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_11
-
-	local var_29_12 = var_29_11.base.ship_l2d
-
-	var_29_12[30715222] = {
+	pg.base.ship_l2d[30715222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176076,11 +165099,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_12
-
-	local var_29_13 = var_29_12.base.ship_l2d
-
-	var_29_13[30715223] = {
+	pg.base.ship_l2d[30715223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176126,11 +165145,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_13
-
-	local var_29_14 = var_29_13.base.ship_l2d
-
-	var_29_14[30715224] = {
+	pg.base.ship_l2d[30715224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176176,11 +165191,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_14
-
-	local var_29_15 = var_29_14.base.ship_l2d
-
-	var_29_15[30715225] = {
+	pg.base.ship_l2d[30715225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176226,11 +165237,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_15
-
-	local var_29_16 = var_29_15.base.ship_l2d
-
-	var_29_16[30715226] = {
+	pg.base.ship_l2d[30715226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176276,11 +165283,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_16
-
-	local var_29_17 = var_29_16.base.ship_l2d
-
-	var_29_17[30715227] = {
+	pg.base.ship_l2d[30715227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176326,11 +165329,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_17
-
-	local var_29_18 = var_29_17.base.ship_l2d
-
-	var_29_18[30715228] = {
+	pg.base.ship_l2d[30715228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176376,11 +165375,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_18
-
-	local var_29_19 = var_29_18.base.ship_l2d
-
-	var_29_19[30715229] = {
+	pg.base.ship_l2d[30715229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176426,11 +165421,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_19
-
-	local var_29_20 = var_29_19.base.ship_l2d
-
-	var_29_20[30715230] = {
+	pg.base.ship_l2d[30715230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176476,11 +165467,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_20
-
-	local var_29_21 = var_29_20.base.ship_l2d
-
-	var_29_21[30715231] = {
+	pg.base.ship_l2d[30715231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176526,11 +165513,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_21
-
-	local var_29_22 = var_29_21.base.ship_l2d
-
-	var_29_22[30715232] = {
+	pg.base.ship_l2d[30715232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176589,11 +165572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_22
-
-	local var_29_23 = var_29_22.base.ship_l2d
-
-	var_29_23[30715233] = {
+	pg.base.ship_l2d[30715233] = {
 		listener_data = "",
 		offset_x = 10,
 		gyro_y = 0,
@@ -176643,11 +165622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_23
-
-	local var_29_24 = var_29_23.base.ship_l2d
-
-	var_29_24[30715234] = {
+	pg.base.ship_l2d[30715234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176686,11 +165661,7 @@ end)()
 			10
 		}
 	}
-	pg = var_29_24
-
-	local var_29_25 = var_29_24.base.ship_l2d
-
-	var_29_25[30715235] = {
+	pg.base.ship_l2d[30715235] = {
 		listener_data = "",
 		offset_x = 15,
 		gyro_y = 0,
@@ -176729,11 +165700,7 @@ end)()
 			30
 		}
 	}
-	pg = var_29_25
-
-	local var_29_26 = var_29_25.base.ship_l2d
-
-	var_29_26[30715236] = {
+	pg.base.ship_l2d[30715236] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176776,11 +165743,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_26
-
-	local var_29_27 = var_29_26.base.ship_l2d
-
-	var_29_27[30715237] = {
+	pg.base.ship_l2d[30715237] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176819,11 +165782,7 @@ end)()
 			15
 		}
 	}
-	pg = var_29_27
-
-	local var_29_28 = var_29_27.base.ship_l2d
-
-	var_29_28[30715238] = {
+	pg.base.ship_l2d[30715238] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176862,11 +165821,7 @@ end)()
 			15
 		}
 	}
-	pg = var_29_28
-
-	local var_29_29 = var_29_28.base.ship_l2d
-
-	var_29_29[30715239] = {
+	pg.base.ship_l2d[30715239] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176905,11 +165860,7 @@ end)()
 			15
 		}
 	}
-	pg = var_29_29
-
-	local var_29_30 = var_29_29.base.ship_l2d
-
-	var_29_30[30715240] = {
+	pg.base.ship_l2d[30715240] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176948,11 +165899,7 @@ end)()
 			10
 		}
 	}
-	pg = var_29_30
-
-	local var_29_31 = var_29_30.base.ship_l2d
-
-	var_29_31[30715241] = {
+	pg.base.ship_l2d[30715241] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -176991,11 +165938,7 @@ end)()
 			15
 		}
 	}
-	pg = var_29_31
-
-	local var_29_32 = var_29_31.base.ship_l2d
-
-	var_29_32[30715242] = {
+	pg.base.ship_l2d[30715242] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177034,11 +165977,7 @@ end)()
 			15
 		}
 	}
-	pg = var_29_32
-
-	local var_29_33 = var_29_32.base.ship_l2d
-
-	var_29_33[30715243] = {
+	pg.base.ship_l2d[30715243] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177077,11 +166016,7 @@ end)()
 			10
 		}
 	}
-	pg = var_29_33
-
-	local var_29_34 = var_29_33.base.ship_l2d
-
-	var_29_34[30715244] = {
+	pg.base.ship_l2d[30715244] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177120,11 +166055,7 @@ end)()
 			10
 		}
 	}
-	pg = var_29_34
-
-	local var_29_35 = var_29_34.base.ship_l2d
-
-	var_29_35[13] = {
+	pg.base.ship_l2d[13] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177167,11 +166098,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_35
-
-	local var_29_36 = var_29_35.base.ship_l2d
-
-	var_29_36[14] = {
+	pg.base.ship_l2d[14] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177214,11 +166141,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_36
-
-	local var_29_37 = var_29_36.base.ship_l2d
-
-	var_29_37[15] = {
+	pg.base.ship_l2d[15] = {
 		listener_data = "",
 		offset_x = 50,
 		gyro_y = 0,
@@ -177268,11 +166191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_37
-
-	local var_29_38 = var_29_37.base.ship_l2d
-
-	var_29_38[16] = {
+	pg.base.ship_l2d[16] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -177324,11 +166243,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_38
-
-	local var_29_39 = var_29_38.base.ship_l2d
-
-	var_29_39[17] = {
+	pg.base.ship_l2d[17] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177371,11 +166286,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_39
-
-	local var_29_40 = var_29_39.base.ship_l2d
-
-	var_29_40[18] = {
+	pg.base.ship_l2d[18] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177418,11 +166329,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_40
-
-	local var_29_41 = var_29_40.base.ship_l2d
-
-	var_29_41[19] = {
+	pg.base.ship_l2d[19] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177465,11 +166372,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_41
-
-	local var_29_42 = var_29_41.base.ship_l2d
-
-	var_29_42[20] = {
+	pg.base.ship_l2d[20] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177512,11 +166415,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_42
-
-	local var_29_43 = var_29_42.base.ship_l2d
-
-	var_29_43[21] = {
+	pg.base.ship_l2d[21] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177559,11 +166458,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_43
-
-	local var_29_44 = var_29_43.base.ship_l2d
-
-	var_29_44[22] = {
+	pg.base.ship_l2d[22] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177606,11 +166501,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_44
-
-	local var_29_45 = var_29_44.base.ship_l2d
-
-	var_29_45[23] = {
+	pg.base.ship_l2d[23] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177653,11 +166544,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_45
-
-	local var_29_46 = var_29_45.base.ship_l2d
-
-	var_29_46[24] = {
+	pg.base.ship_l2d[24] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177700,11 +166587,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_46
-
-	local var_29_47 = var_29_46.base.ship_l2d
-
-	var_29_47[25] = {
+	pg.base.ship_l2d[25] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177747,11 +166630,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_47
-
-	local var_29_48 = var_29_47.base.ship_l2d
-
-	var_29_48[26] = {
+	pg.base.ship_l2d[26] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177810,11 +166689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_48
-
-	local var_29_49 = var_29_48.base.ship_l2d
-
-	var_29_49[27] = {
+	pg.base.ship_l2d[27] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177873,11 +166748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_49
-
-	local var_29_50 = var_29_49.base.ship_l2d
-
-	var_29_50[28] = {
+	pg.base.ship_l2d[28] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177919,11 +166790,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_50
-
-	local var_29_51 = var_29_50.base.ship_l2d
-
-	var_29_51[29] = {
+	pg.base.ship_l2d[29] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -177965,11 +166832,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_51
-
-	local var_29_52 = var_29_51.base.ship_l2d
-
-	var_29_52[30] = {
+	pg.base.ship_l2d[30] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178011,11 +166874,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_52
-
-	local var_29_53 = var_29_52.base.ship_l2d
-
-	var_29_53[31] = {
+	pg.base.ship_l2d[31] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178074,11 +166933,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_53
-
-	local var_29_54 = var_29_53.base.ship_l2d
-
-	var_29_54[81801120] = {
+	pg.base.ship_l2d[81801120] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178137,11 +166992,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_54
-
-	local var_29_55 = var_29_54.base.ship_l2d
-
-	var_29_55[81801121] = {
+	pg.base.ship_l2d[81801121] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178200,11 +167051,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_55
-
-	local var_29_56 = var_29_55.base.ship_l2d
-
-	var_29_56[81801122] = {
+	pg.base.ship_l2d[81801122] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178265,11 +167112,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_56
-
-	local var_29_57 = var_29_56.base.ship_l2d
-
-	var_29_57[81801123] = {
+	pg.base.ship_l2d[81801123] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178328,11 +167171,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_57
-
-	local var_29_58 = var_29_57.base.ship_l2d
-
-	var_29_58[81801124] = {
+	pg.base.ship_l2d[81801124] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178391,11 +167230,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_58
-
-	local var_29_59 = var_29_58.base.ship_l2d
-
-	var_29_59[81801125] = {
+	pg.base.ship_l2d[81801125] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178454,11 +167289,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_59
-
-	local var_29_60 = var_29_59.base.ship_l2d
-
-	var_29_60[81801126] = {
+	pg.base.ship_l2d[81801126] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -178517,11 +167348,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_60
-
-	local var_29_61 = var_29_60.base.ship_l2d
-
-	var_29_61[81801127] = {
+	pg.base.ship_l2d[81801127] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178567,11 +167394,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_61
-
-	local var_29_62 = var_29_61.base.ship_l2d
-
-	var_29_62[81801128] = {
+	pg.base.ship_l2d[81801128] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178630,11 +167453,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_62
-
-	local var_29_63 = var_29_62.base.ship_l2d
-
-	var_29_63[81801129] = {
+	pg.base.ship_l2d[81801129] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178693,11 +167512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_63
-
-	local var_29_64 = var_29_63.base.ship_l2d
-
-	var_29_64[81801130] = {
+	pg.base.ship_l2d[81801130] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178756,11 +167571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_64
-
-	local var_29_65 = var_29_64.base.ship_l2d
-
-	var_29_65[81801131] = {
+	pg.base.ship_l2d[81801131] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178819,11 +167630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_65
-
-	local var_29_66 = var_29_65.base.ship_l2d
-
-	var_29_66[81801132] = {
+	pg.base.ship_l2d[81801132] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178865,11 +167672,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_66
-
-	local var_29_67 = var_29_66.base.ship_l2d
-
-	var_29_67[81801133] = {
+	pg.base.ship_l2d[81801133] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178928,11 +167731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_67
-
-	local var_29_68 = var_29_67.base.ship_l2d
-
-	var_29_68[81801134] = {
+	pg.base.ship_l2d[81801134] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -178991,11 +167790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_68
-
-	local var_29_69 = var_29_68.base.ship_l2d
-
-	var_29_69[81801135] = {
+	pg.base.ship_l2d[81801135] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179054,11 +167849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_69
-
-	local var_29_70 = var_29_69.base.ship_l2d
-
-	var_29_70[81801136] = {
+	pg.base.ship_l2d[81801136] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179117,11 +167908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_70
-
-	local var_29_71 = var_29_70.base.ship_l2d
-
-	var_29_71[81801137] = {
+	pg.base.ship_l2d[81801137] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179180,11 +167967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_71
-
-	local var_29_72 = var_29_71.base.ship_l2d
-
-	var_29_72[81801138] = {
+	pg.base.ship_l2d[81801138] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179243,11 +168026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_72
-
-	local var_29_73 = var_29_72.base.ship_l2d
-
-	var_29_73[81801139] = {
+	pg.base.ship_l2d[81801139] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -179327,11 +168106,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_73
-
-	local var_29_74 = var_29_73.base.ship_l2d
-
-	var_29_74[81801140] = {
+	pg.base.ship_l2d[81801140] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179375,11 +168150,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_74
-
-	local var_29_75 = var_29_74.base.ship_l2d
-
-	var_29_75[81801141] = {
+	pg.base.ship_l2d[81801141] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179423,11 +168194,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_75
-
-	local var_29_76 = var_29_75.base.ship_l2d
-
-	var_29_76[81801142] = {
+	pg.base.ship_l2d[81801142] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179471,11 +168238,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_76
-
-	local var_29_77 = var_29_76.base.ship_l2d
-
-	var_29_77[81801143] = {
+	pg.base.ship_l2d[81801143] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179519,11 +168282,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_77
-
-	local var_29_78 = var_29_77.base.ship_l2d
-
-	var_29_78[81801144] = {
+	pg.base.ship_l2d[81801144] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179567,11 +168326,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_78
-
-	local var_29_79 = var_29_78.base.ship_l2d
-
-	var_29_79[81801145] = {
+	pg.base.ship_l2d[81801145] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179615,11 +168370,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_79
-
-	local var_29_80 = var_29_79.base.ship_l2d
-
-	var_29_80[81801146] = {
+	pg.base.ship_l2d[81801146] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179663,11 +168414,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_80
-
-	local var_29_81 = var_29_80.base.ship_l2d
-
-	var_29_81[81801147] = {
+	pg.base.ship_l2d[81801147] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179711,11 +168458,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_81
-
-	local var_29_82 = var_29_81.base.ship_l2d
-
-	var_29_82[81801148] = {
+	pg.base.ship_l2d[81801148] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179759,11 +168502,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_82
-
-	local var_29_83 = var_29_82.base.ship_l2d
-
-	var_29_83[81801149] = {
+	pg.base.ship_l2d[81801149] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179805,11 +168544,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_83
-
-	local var_29_84 = var_29_83.base.ship_l2d
-
-	var_29_84[81801150] = {
+	pg.base.ship_l2d[81801150] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179851,11 +168586,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_84
-
-	local var_29_85 = var_29_84.base.ship_l2d
-
-	var_29_85[81801151] = {
+	pg.base.ship_l2d[81801151] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -179914,11 +168645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_85
-
-	local var_29_86 = var_29_85.base.ship_l2d
-
-	var_29_86[81801152] = {
+	pg.base.ship_l2d[81801152] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -179977,11 +168704,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_86
-
-	local var_29_87 = var_29_86.base.ship_l2d
-
-	var_29_87[81801153] = {
+	pg.base.ship_l2d[81801153] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180027,11 +168750,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_87
-
-	local var_29_88 = var_29_87.base.ship_l2d
-
-	var_29_88[81801154] = {
+	pg.base.ship_l2d[81801154] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180077,11 +168796,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_88
-
-	local var_29_89 = var_29_88.base.ship_l2d
-
-	var_29_89[81801155] = {
+	pg.base.ship_l2d[81801155] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180127,11 +168842,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_89
-
-	local var_29_90 = var_29_89.base.ship_l2d
-
-	var_29_90[81801156] = {
+	pg.base.ship_l2d[81801156] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180190,11 +168901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_90
-
-	local var_29_91 = var_29_90.base.ship_l2d
-
-	var_29_91[81801157] = {
+	pg.base.ship_l2d[81801157] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180253,11 +168960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_91
-
-	local var_29_92 = var_29_91.base.ship_l2d
-
-	var_29_92[81801158] = {
+	pg.base.ship_l2d[81801158] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180306,11 +169009,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_29_92
-
-	local var_29_93 = var_29_92.base.ship_l2d
-
-	var_29_93[81801159] = {
+	pg.base.ship_l2d[81801159] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180353,11 +169052,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_93
-
-	local var_29_94 = var_29_93.base.ship_l2d
-
-	var_29_94[81801160] = {
+	pg.base.ship_l2d[81801160] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180416,11 +169111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_94
-
-	local var_29_95 = var_29_94.base.ship_l2d
-
-	var_29_95[81801161] = {
+	pg.base.ship_l2d[81801161] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180463,11 +169154,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_95
-
-	local var_29_96 = var_29_95.base.ship_l2d
-
-	var_29_96[81801162] = {
+	pg.base.ship_l2d[81801162] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180510,11 +169197,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_29_96
-
-	local var_29_97 = var_29_96.base.ship_l2d
-
-	var_29_97[81801163] = {
+	pg.base.ship_l2d[81801163] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -180593,11 +169276,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_29_97
-
-	local var_29_98 = var_29_97.base.ship_l2d
-
-	var_29_98[81801164] = {
+	pg.base.ship_l2d[81801164] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180656,8 +169335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_98
-	var_29_98.base.ship_l2d[81801165] = {
+	pg.base.ship_l2d[81801165] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180719,11 +169397,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_30_0 = var_1_10000.base.ship_l2d
-
-	var_30_0[81801166] = {
+	pg.base.ship_l2d[81801166] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180781,11 +169455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_0
-
-	local var_30_1 = var_30_0.base.ship_l2d
-
-	var_30_1[81801167] = {
+	pg.base.ship_l2d[81801167] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180843,11 +169513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_1
-
-	local var_30_2 = var_30_1.base.ship_l2d
-
-	var_30_2[29905201] = {
+	pg.base.ship_l2d[29905201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180890,11 +169556,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_2
-
-	local var_30_3 = var_30_2.base.ship_l2d
-
-	var_30_3[29905202] = {
+	pg.base.ship_l2d[29905202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180936,11 +169598,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_3
-
-	local var_30_4 = var_30_3.base.ship_l2d
-
-	var_30_4[29905203] = {
+	pg.base.ship_l2d[29905203] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -180982,11 +169640,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_4
-
-	local var_30_5 = var_30_4.base.ship_l2d
-
-	var_30_5[29905204] = {
+	pg.base.ship_l2d[29905204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181028,11 +169682,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_5
-
-	local var_30_6 = var_30_5.base.ship_l2d
-
-	var_30_6[29905205] = {
+	pg.base.ship_l2d[29905205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181074,11 +169724,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_6
-
-	local var_30_7 = var_30_6.base.ship_l2d
-
-	var_30_7[29905206] = {
+	pg.base.ship_l2d[29905206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181120,11 +169766,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_7
-
-	local var_30_8 = var_30_7.base.ship_l2d
-
-	var_30_8[29905207] = {
+	pg.base.ship_l2d[29905207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181167,11 +169809,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_8
-
-	local var_30_9 = var_30_8.base.ship_l2d
-
-	var_30_9[29905208] = {
+	pg.base.ship_l2d[29905208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181213,11 +169851,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_9
-
-	local var_30_10 = var_30_9.base.ship_l2d
-
-	var_30_10[29905209] = {
+	pg.base.ship_l2d[29905209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181259,11 +169893,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_10
-
-	local var_30_11 = var_30_10.base.ship_l2d
-
-	var_30_11[29905210] = {
+	pg.base.ship_l2d[29905210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181305,11 +169935,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_11
-
-	local var_30_12 = var_30_11.base.ship_l2d
-
-	var_30_12[29905211] = {
+	pg.base.ship_l2d[29905211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181351,11 +169977,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_12
-
-	local var_30_13 = var_30_12.base.ship_l2d
-
-	var_30_13[29905212] = {
+	pg.base.ship_l2d[29905212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181397,11 +170019,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_13
-
-	local var_30_14 = var_30_13.base.ship_l2d
-
-	var_30_14[29905213] = {
+	pg.base.ship_l2d[29905213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181443,11 +170061,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_14
-
-	local var_30_15 = var_30_14.base.ship_l2d
-
-	var_30_15[29905214] = {
+	pg.base.ship_l2d[29905214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181489,11 +170103,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_15
-
-	local var_30_16 = var_30_15.base.ship_l2d
-
-	var_30_16[29905215] = {
+	pg.base.ship_l2d[29905215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181535,11 +170145,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_16
-
-	local var_30_17 = var_30_16.base.ship_l2d
-
-	var_30_17[29905216] = {
+	pg.base.ship_l2d[29905216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181581,11 +170187,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_17
-
-	local var_30_18 = var_30_17.base.ship_l2d
-
-	var_30_18[29905217] = {
+	pg.base.ship_l2d[29905217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181628,11 +170230,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_18
-
-	local var_30_19 = var_30_18.base.ship_l2d
-
-	var_30_19[29905218] = {
+	pg.base.ship_l2d[29905218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181678,11 +170276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_19
-
-	local var_30_20 = var_30_19.base.ship_l2d
-
-	var_30_20[29905219] = {
+	pg.base.ship_l2d[29905219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181724,11 +170318,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_20
-
-	local var_30_21 = var_30_20.base.ship_l2d
-
-	var_30_21[29905220] = {
+	pg.base.ship_l2d[29905220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181770,11 +170360,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_21
-
-	local var_30_22 = var_30_21.base.ship_l2d
-
-	var_30_22[29905221] = {
+	pg.base.ship_l2d[29905221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181817,11 +170403,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_22
-
-	local var_30_23 = var_30_22.base.ship_l2d
-
-	var_30_23[29905222] = {
+	pg.base.ship_l2d[29905222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181863,11 +170445,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_23
-
-	local var_30_24 = var_30_23.base.ship_l2d
-
-	var_30_24[29905223] = {
+	pg.base.ship_l2d[29905223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181909,11 +170487,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_24
-
-	local var_30_25 = var_30_24.base.ship_l2d
-
-	var_30_25[29905224] = {
+	pg.base.ship_l2d[29905224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -181955,11 +170529,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_25
-
-	local var_30_26 = var_30_25.base.ship_l2d
-
-	var_30_26[29905225] = {
+	pg.base.ship_l2d[29905225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182001,11 +170571,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_26
-
-	local var_30_27 = var_30_26.base.ship_l2d
-
-	var_30_27[29905226] = {
+	pg.base.ship_l2d[29905226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182049,11 +170615,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_27
-
-	local var_30_28 = var_30_27.base.ship_l2d
-
-	var_30_28[29905227] = {
+	pg.base.ship_l2d[29905227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182097,11 +170659,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_28
-
-	local var_30_29 = var_30_28.base.ship_l2d
-
-	var_30_29[29905228] = {
+	pg.base.ship_l2d[29905228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182144,11 +170702,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_29
-
-	local var_30_30 = var_30_29.base.ship_l2d
-
-	var_30_30[29905229] = {
+	pg.base.ship_l2d[29905229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182191,11 +170745,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_30
-
-	local var_30_31 = var_30_30.base.ship_l2d
-
-	var_30_31[29905230] = {
+	pg.base.ship_l2d[29905230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182238,11 +170788,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_31
-
-	local var_30_32 = var_30_31.base.ship_l2d
-
-	var_30_32[29905231] = {
+	pg.base.ship_l2d[29905231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182301,11 +170847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_32
-
-	local var_30_33 = var_30_32.base.ship_l2d
-
-	var_30_33[29905232] = {
+	pg.base.ship_l2d[29905232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182364,11 +170906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_33
-
-	local var_30_34 = var_30_33.base.ship_l2d
-
-	var_30_34[29905233] = {
+	pg.base.ship_l2d[29905233] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182427,11 +170965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_34
-
-	local var_30_35 = var_30_34.base.ship_l2d
-
-	var_30_35[29905234] = {
+	pg.base.ship_l2d[29905234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182477,11 +171011,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_30_35
-
-	local var_30_36 = var_30_35.base.ship_l2d
-
-	var_30_36[29905235] = {
+	pg.base.ship_l2d[29905235] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182540,11 +171070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_36
-
-	local var_30_37 = var_30_36.base.ship_l2d
-
-	var_30_37[29905236] = {
+	pg.base.ship_l2d[29905236] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182603,11 +171129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_37
-
-	local var_30_38 = var_30_37.base.ship_l2d
-
-	var_30_38[29905237] = {
+	pg.base.ship_l2d[29905237] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182666,11 +171188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_38
-
-	local var_30_39 = var_30_38.base.ship_l2d
-
-	var_30_39[29905238] = {
+	pg.base.ship_l2d[29905238] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182729,11 +171247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_39
-
-	local var_30_40 = var_30_39.base.ship_l2d
-
-	var_30_40[29905239] = {
+	pg.base.ship_l2d[29905239] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182792,11 +171306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_40
-
-	local var_30_41 = var_30_40.base.ship_l2d
-
-	var_30_41[29905240] = {
+	pg.base.ship_l2d[29905240] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182855,11 +171365,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_41
-
-	local var_30_42 = var_30_41.base.ship_l2d
-
-	var_30_42[29905241] = {
+	pg.base.ship_l2d[29905241] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182918,11 +171424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_42
-
-	local var_30_43 = var_30_42.base.ship_l2d
-
-	var_30_43[29905242] = {
+	pg.base.ship_l2d[29905242] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -182981,11 +171483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_43
-
-	local var_30_44 = var_30_43.base.ship_l2d
-
-	var_30_44[29905243] = {
+	pg.base.ship_l2d[29905243] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183044,11 +171542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_44
-
-	local var_30_45 = var_30_44.base.ship_l2d
-
-	var_30_45[29905244] = {
+	pg.base.ship_l2d[29905244] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183107,11 +171601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_45
-
-	local var_30_46 = var_30_45.base.ship_l2d
-
-	var_30_46[29905245] = {
+	pg.base.ship_l2d[29905245] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183157,11 +171647,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_30_46
-
-	local var_30_47 = var_30_46.base.ship_l2d
-
-	var_30_47[29905246] = {
+	pg.base.ship_l2d[29905246] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183220,11 +171706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_47
-
-	local var_30_48 = var_30_47.base.ship_l2d
-
-	var_30_48[29905247] = {
+	pg.base.ship_l2d[29905247] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183283,11 +171765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_48
-
-	local var_30_49 = var_30_48.base.ship_l2d
-
-	var_30_49[29905248] = {
+	pg.base.ship_l2d[29905248] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183346,11 +171824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_49
-
-	local var_30_50 = var_30_49.base.ship_l2d
-
-	var_30_50[29905249] = {
+	pg.base.ship_l2d[29905249] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183413,11 +171887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_50
-
-	local var_30_51 = var_30_50.base.ship_l2d
-
-	var_30_51[29905250] = {
+	pg.base.ship_l2d[29905250] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183463,11 +171933,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_30_51
-
-	local var_30_52 = var_30_51.base.ship_l2d
-
-	var_30_52[29905251] = {
+	pg.base.ship_l2d[29905251] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183526,11 +171992,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_52
-
-	local var_30_53 = var_30_52.base.ship_l2d
-
-	var_30_53[29905252] = {
+	pg.base.ship_l2d[29905252] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183576,11 +172038,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_30_53
-
-	local var_30_54 = var_30_53.base.ship_l2d
-
-	var_30_54[29905253] = {
+	pg.base.ship_l2d[29905253] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183639,11 +172097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_54
-
-	local var_30_55 = var_30_54.base.ship_l2d
-
-	var_30_55[29905254] = {
+	pg.base.ship_l2d[29905254] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183689,11 +172143,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_30_55
-
-	local var_30_56 = var_30_55.base.ship_l2d
-
-	var_30_56[29905255] = {
+	pg.base.ship_l2d[29905255] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183752,11 +172202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_56
-
-	local var_30_57 = var_30_56.base.ship_l2d
-
-	var_30_57[29905256] = {
+	pg.base.ship_l2d[29905256] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183815,11 +172261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_57
-
-	local var_30_58 = var_30_57.base.ship_l2d
-
-	var_30_58[29905257] = {
+	pg.base.ship_l2d[29905257] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183878,11 +172320,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_58
-
-	local var_30_59 = var_30_58.base.ship_l2d
-
-	var_30_59[29905258] = {
+	pg.base.ship_l2d[29905258] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183941,11 +172379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_59
-
-	local var_30_60 = var_30_59.base.ship_l2d
-
-	var_30_60[29905259] = {
+	pg.base.ship_l2d[29905259] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -183991,11 +172425,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_30_60
-
-	local var_30_61 = var_30_60.base.ship_l2d
-
-	var_30_61[29905260] = {
+	pg.base.ship_l2d[29905260] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184054,11 +172484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_61
-
-	local var_30_62 = var_30_61.base.ship_l2d
-
-	var_30_62[29905261] = {
+	pg.base.ship_l2d[29905261] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184117,11 +172543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_62
-
-	local var_30_63 = var_30_62.base.ship_l2d
-
-	var_30_63[29905262] = {
+	pg.base.ship_l2d[29905262] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -184180,11 +172602,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_30_63
-
-	local var_30_64 = var_30_63.base.ship_l2d
-
-	var_30_64[29905263] = {
+	pg.base.ship_l2d[29905263] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -184243,11 +172661,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_30_64
-
-	local var_30_65 = var_30_64.base.ship_l2d
-
-	var_30_65[29905264] = {
+	pg.base.ship_l2d[29905264] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184309,11 +172723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_65
-
-	local var_30_66 = var_30_65.base.ship_l2d
-
-	var_30_66[960007201] = {
+	pg.base.ship_l2d[960007201] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184360,11 +172770,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_66
-
-	local var_30_67 = var_30_66.base.ship_l2d
-
-	var_30_67[960007202] = {
+	pg.base.ship_l2d[960007202] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184407,11 +172813,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_67
-
-	local var_30_68 = var_30_67.base.ship_l2d
-
-	var_30_68[960007203] = {
+	pg.base.ship_l2d[960007203] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -184465,11 +172867,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_68
-
-	local var_30_69 = var_30_68.base.ship_l2d
-
-	var_30_69[960007204] = {
+	pg.base.ship_l2d[960007204] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184512,11 +172910,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_69
-
-	local var_30_70 = var_30_69.base.ship_l2d
-
-	var_30_70[960007205] = {
+	pg.base.ship_l2d[960007205] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184559,11 +172953,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_70
-
-	local var_30_71 = var_30_70.base.ship_l2d
-
-	var_30_71[960007206] = {
+	pg.base.ship_l2d[960007206] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184606,11 +172996,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_71
-
-	local var_30_72 = var_30_71.base.ship_l2d
-
-	var_30_72[960007207] = {
+	pg.base.ship_l2d[960007207] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184685,11 +173071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_72
-
-	local var_30_73 = var_30_72.base.ship_l2d
-
-	var_30_73[960007208] = {
+	pg.base.ship_l2d[960007208] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184731,11 +173113,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_73
-
-	local var_30_74 = var_30_73.base.ship_l2d
-
-	var_30_74[960007209] = {
+	pg.base.ship_l2d[960007209] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184777,11 +173155,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_74
-
-	local var_30_75 = var_30_74.base.ship_l2d
-
-	var_30_75[960007210] = {
+	pg.base.ship_l2d[960007210] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184823,11 +173197,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_75
-
-	local var_30_76 = var_30_75.base.ship_l2d
-
-	var_30_76[960007211] = {
+	pg.base.ship_l2d[960007211] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184869,11 +173239,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_76
-
-	local var_30_77 = var_30_76.base.ship_l2d
-
-	var_30_77[960007212] = {
+	pg.base.ship_l2d[960007212] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184915,11 +173281,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_77
-
-	local var_30_78 = var_30_77.base.ship_l2d
-
-	var_30_78[960007213] = {
+	pg.base.ship_l2d[960007213] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -184961,11 +173323,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_78
-
-	local var_30_79 = var_30_78.base.ship_l2d
-
-	var_30_79[960007214] = {
+	pg.base.ship_l2d[960007214] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185007,11 +173365,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_79
-
-	local var_30_80 = var_30_79.base.ship_l2d
-
-	var_30_80[960007215] = {
+	pg.base.ship_l2d[960007215] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185053,11 +173407,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_80
-
-	local var_30_81 = var_30_80.base.ship_l2d
-
-	var_30_81[960007216] = {
+	pg.base.ship_l2d[960007216] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185099,11 +173449,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_81
-
-	local var_30_82 = var_30_81.base.ship_l2d
-
-	var_30_82[960007217] = {
+	pg.base.ship_l2d[960007217] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185145,11 +173491,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_82
-
-	local var_30_83 = var_30_82.base.ship_l2d
-
-	var_30_83[960007218] = {
+	pg.base.ship_l2d[960007218] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185191,11 +173533,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_83
-
-	local var_30_84 = var_30_83.base.ship_l2d
-
-	var_30_84[960007219] = {
+	pg.base.ship_l2d[960007219] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185237,11 +173575,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_84
-
-	local var_30_85 = var_30_84.base.ship_l2d
-
-	var_30_85[960007220] = {
+	pg.base.ship_l2d[960007220] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185283,11 +173617,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_85
-
-	local var_30_86 = var_30_85.base.ship_l2d
-
-	var_30_86[960007221] = {
+	pg.base.ship_l2d[960007221] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185329,11 +173659,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_86
-
-	local var_30_87 = var_30_86.base.ship_l2d
-
-	var_30_87[960007222] = {
+	pg.base.ship_l2d[960007222] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185375,11 +173701,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_87
-
-	local var_30_88 = var_30_87.base.ship_l2d
-
-	var_30_88[960007223] = {
+	pg.base.ship_l2d[960007223] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185421,11 +173743,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_88
-
-	local var_30_89 = var_30_88.base.ship_l2d
-
-	var_30_89[960007224] = {
+	pg.base.ship_l2d[960007224] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185467,11 +173785,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_89
-
-	local var_30_90 = var_30_89.base.ship_l2d
-
-	var_30_90[960007225] = {
+	pg.base.ship_l2d[960007225] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185531,11 +173845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_90
-
-	local var_30_91 = var_30_90.base.ship_l2d
-
-	var_30_91[960007226] = {
+	pg.base.ship_l2d[960007226] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185594,11 +173904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_91
-
-	local var_30_92 = var_30_91.base.ship_l2d
-
-	var_30_92[960007227] = {
+	pg.base.ship_l2d[960007227] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185657,11 +173963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_92
-
-	local var_30_93 = var_30_92.base.ship_l2d
-
-	var_30_93[960007228] = {
+	pg.base.ship_l2d[960007228] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185720,11 +174022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_93
-
-	local var_30_94 = var_30_93.base.ship_l2d
-
-	var_30_94[960007229] = {
+	pg.base.ship_l2d[960007229] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185783,11 +174081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_94
-
-	local var_30_95 = var_30_94.base.ship_l2d
-
-	var_30_95[960007230] = {
+	pg.base.ship_l2d[960007230] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185846,11 +174140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_95
-
-	local var_30_96 = var_30_95.base.ship_l2d
-
-	var_30_96[960007231] = {
+	pg.base.ship_l2d[960007231] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185909,11 +174199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_96
-
-	local var_30_97 = var_30_96.base.ship_l2d
-
-	var_30_97[960007232] = {
+	pg.base.ship_l2d[960007232] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -185972,11 +174258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_97
-
-	local var_30_98 = var_30_97.base.ship_l2d
-
-	var_30_98[960007233] = {
+	pg.base.ship_l2d[960007233] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186019,8 +174301,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_30_98
-	var_30_98.base.ship_l2d[960007234] = {
+	pg.base.ship_l2d[960007234] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186083,11 +174364,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_31_0 = var_1_10000.base.ship_l2d
-
-	var_31_0[960007235] = {
+	pg.base.ship_l2d[960007235] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186146,11 +174423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_0
-
-	local var_31_1 = var_31_0.base.ship_l2d
-
-	var_31_1[960007236] = {
+	pg.base.ship_l2d[960007236] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186209,11 +174482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_1
-
-	local var_31_2 = var_31_1.base.ship_l2d
-
-	var_31_2[960007237] = {
+	pg.base.ship_l2d[960007237] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186273,11 +174542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_2
-
-	local var_31_3 = var_31_2.base.ship_l2d
-
-	var_31_3[960007238] = {
+	pg.base.ship_l2d[960007238] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186336,11 +174601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_3
-
-	local var_31_4 = var_31_3.base.ship_l2d
-
-	var_31_4[960007239] = {
+	pg.base.ship_l2d[960007239] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186386,11 +174647,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_31_4
-
-	local var_31_5 = var_31_4.base.ship_l2d
-
-	var_31_5[960007240] = {
+	pg.base.ship_l2d[960007240] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186436,11 +174693,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_31_5
-
-	local var_31_6 = var_31_5.base.ship_l2d
-
-	var_31_6[960007241] = {
+	pg.base.ship_l2d[960007241] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186486,11 +174739,7 @@ end)()
 			ignore = {}
 		}
 	}
-	pg = var_31_6
-
-	local var_31_7 = var_31_6.base.ship_l2d
-
-	var_31_7[960007242] = {
+	pg.base.ship_l2d[960007242] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186550,11 +174799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_7
-
-	local var_31_8 = var_31_7.base.ship_l2d
-
-	var_31_8[960007243] = {
+	pg.base.ship_l2d[960007243] = {
 		offset_x = 0,
 		gyro_y = 0,
 		action_trigger_active = "",
@@ -186620,8 +174865,7 @@ end)()
 			type = 7
 		}
 	}
-	pg = var_31_8
-	var_31_8.base.ship_l2d[960007244] = {
+	pg.base.ship_l2d[960007244] = {
 		listener_data = "",
 		offset_x = 0,
 		gyro_y = 0,
@@ -186680,6 +174924,12184 @@ end)()
 				"mail",
 				"touch_body",
 				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510301] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag1",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510301,
+		offset_y = 0,
+		revert_smooth = 250,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 250,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			999
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510302] = {
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		revert_action_index = 0,
+		draw_able_name = "",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510302,
+		offset_y = 0,
+		revert_smooth = 250,
+		limit_time = 0.2,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag1",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 250,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			999
+		},
+		react_condition = {
+			idle_on = {
+				0
+			}
+		},
+		listener_data = {
+			type = 2,
+			change = {
+				{
+					1,
+					{
+						"TouchDrag1"
+					},
+					1
+				}
+			}
+		},
+		action_trigger = {
+			type = 7
+		}
+	}
+	pg.base.ship_l2d[30510303] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag2",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510303,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag2",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510304] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 1,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag3",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		action_trigger = "",
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510304,
+		offset_y = 400,
+		revert_smooth = 100,
+		limit_time = 1,
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag3",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			3
+		},
+		parts_data = {
+			parts = {
+				0,
+				1,
+				2,
+				3
+			}
+		}
+	}
+	pg.base.ship_l2d[30510305] = {
+		listener_data = "",
+		offset_x = 400,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag4",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		action_trigger = "",
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510305,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag4",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 0,
+		offset_circle = "",
+		range = {
+			-1,
+			1
+		}
+	}
+	pg.base.ship_l2d[30510306] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle1",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510306,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle1",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 1,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510307] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle2",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510307,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle2",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 2,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510308] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle3",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510308,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle3",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 3,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510309] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle4",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510309,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle4",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510310] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle5",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510310,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle5",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 2,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510311] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle6",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510311,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle6",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 5,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510312] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle7",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510312,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle7",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 6,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510313] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle8",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510313,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle8",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 2,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510314] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle9",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510314,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle9",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510315] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle10",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510315,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle10",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 8,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510316] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle11",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510316,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle11",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 9,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510317] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle12",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510317,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle12",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510318] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle13",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510318,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle13",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 10,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510319] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle14",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510319,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle14",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 11,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510320] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle15",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510320,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle15",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510321] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle16",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510321,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle16",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 12,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510322] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle17",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510322,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle17",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510323] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle18",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510323,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle18",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510324] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle19",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510324,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle19",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 13,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510325] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle20",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510325,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle20",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 14,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510326] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle21",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510326,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle21",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 13,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510327] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle22",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510327,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle22",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 15,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510328] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle23",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510328,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle23",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510329] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle24",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510329,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle24",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510330] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle25",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510330,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle25",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 16,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510331] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle26",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510331,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle26",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 17,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510332] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle27",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510332,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle27",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 16,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510333] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle28",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510333,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle28",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 18,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510334] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle29",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510334,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle29",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 19,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510335] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle30",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510335,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle30",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[0] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle31",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510336,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle31",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 21,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[1] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle32",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510337,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle32",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 22,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[2] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle33",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510338,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle33",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 21,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[3] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle34",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510339,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle34",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[4] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle35",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510340,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle35",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 24,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[5] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle36",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510341,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle36",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[6] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle37",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510342,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle37",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 25,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[7] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle38",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510343,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle38",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 26,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[8] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle39",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510344,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle39",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 25,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[9] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle40",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510345,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle40",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 27,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle41",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510346,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle41",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 28,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[11] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle42",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510347,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle42",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 27,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[12] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle43",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510348,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle43",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 29,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[13] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle44",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510349,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle44",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 30,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[14] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle45",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510350,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle45",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 29,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[15] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle46",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510351,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle46",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 31,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[16] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle47",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510352,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle47",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 32,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[17] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle48",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510353,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle48",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 31,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[18] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle49",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510354,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle49",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 33,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[19] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle50",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510355,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle50",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 34,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle51",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510356,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle51",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 35,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[21] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle52",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510357,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle52",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[22] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle53",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510358,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle53",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[23] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle54",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510359,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle54",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[24] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle55",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510360,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle55",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 36,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[25] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle56",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510361,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle56",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[26] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle57",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510362,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle57",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[27] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle58",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510363,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle58",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[28] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle59",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510364,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle59",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[29] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle60",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510365,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle60",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[30] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle61",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510366,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle61",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 37,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[31] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle62",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510367,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle62",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 38,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510368] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle63",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510368,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle63",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 39,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510369] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle64",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510369,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle64",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[30510370] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle65",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510370,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle65",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 40,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510371] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle66",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510371,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle66",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 41,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510372] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle67",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510372,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle67",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 42,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510373] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle68",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510373,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle68",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 43,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510374] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle69",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510374,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle69",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[30510375] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle70",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510375,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle70",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 44,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510376] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag11",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510376,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag11",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 44,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510377] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag12",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510377,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag12",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 44,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510378] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag13",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510378,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag13",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 45,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510379] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag14",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510379,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag14",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 46,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30510380] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag15",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510380,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag15",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[30510381] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag8",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510381,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.2,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag8",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510382] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag5",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510382,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.2,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag5",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510383] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag7",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510383,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.2,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			999
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510384] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag6",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510384,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.2,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag6",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30510385] = {
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510385,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.2,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag7",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			999
+		},
+		listener_data = {
+			type = 2,
+			change = {
+				{
+					1,
+					{
+						"TouchDrag7"
+					},
+					1
+				}
+			}
+		},
+		action_trigger = {
+			type = 7
+		}
+	}
+	pg.base.ship_l2d[30510386] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "",
+		ship_skin_id = 305103,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 30510386,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			parameter = "touch_drag8",
+			type = 12,
+			num = {
+				0.01,
+				1
+			}
+		},
+		action_trigger_active = {
+			enable = {},
+			ignore = {
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"mail",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720101] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag1",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720101,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag1",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		react_condition = {
+			idle_on = {
+				0
+			}
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720102] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag2",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720102,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag2",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720103] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag3",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720103,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag3",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720104] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag4",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720104,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag4",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+
+	return
+end)()
+;(function()
+	pg.base.ship_l2d[10720105] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag5",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720105,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag5",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag5",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720106] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag6",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720106,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag6",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag6",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720107] = {
+		listener_data = "",
+		offset_x = 100,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag7",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		action_trigger = "",
+		revert = 100,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720107,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag7",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 0,
+		offset_circle = "",
+		range = {
+			-1,
+			1
+		}
+	}
+	pg.base.ship_l2d[10720108] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag8",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720108,
+		offset_y = 0,
+		revert_smooth = 150,
+		limit_time = 0.3,
+		parts_data = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag8",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 150,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			2
+		},
+		action_trigger = {
+			type = 6,
+			action_list = {
+				{
+					action = ""
+				},
+				{
+					action = ""
+				},
+				{
+					action = ""
+				}
+			}
+		},
+		relation_parameter = {
+			list = {
+				{
+					name = "touch_drag8",
+					mode = 1,
+					type = 103,
+					drag_direct = 0,
+					range_abs = 0,
+					relation_value = {
+						0,
+						1,
+						2
+					},
+					range = {
+						0,
+						2
+					}
+				}
+			}
+		}
+	}
+	pg.base.ship_l2d[10720109] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag9",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720109,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag9",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			target = 0,
+			action = "idle",
+			type = 2
+		},
+		action_trigger_active = {
+			idle_focus = 1,
+			idle = 49,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head",
+				"touch_special",
+				"wedding",
+				"main_3"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720110] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag11",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720110,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag11",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag11",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720111] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag12",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720111,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag12",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag12",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720112] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag13",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720112,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag13",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag13",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720113] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag14",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720113,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag14",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag14",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720114] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag15",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720114,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag15",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag15",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720115] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag16",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720115,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag16",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag16",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720116] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag17",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720116,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag17",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720117] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag18",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720117,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag18",
+		save_parameter = 0,
+		revert_idle_index = "1",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720118] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag19",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720118,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag19",
+		save_parameter = 0,
+		revert_idle_index = "1",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			circle = true,
+			target = 1,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10720119] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle1",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720119,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle1",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 1,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720120] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle2",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720120,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle2",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 2,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720121] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle3",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720121,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle3",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 3,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720122] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle4",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720122,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle4",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720123] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle5",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720123,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle5",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 5,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720124] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle6",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720124,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle6",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 6,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720125] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle7",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720125,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle7",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720126] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle8",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720126,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle8",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720127] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle9",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720127,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle9",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 9,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[0] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle10",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720128,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle10",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[1] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle11",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720129,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle11",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 9,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[2] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle12",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720130,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle12",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[3] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle13",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720131,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle13",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 13,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[4] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle14",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720132,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle14",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 14,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[5] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle15",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720133,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle15",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[6] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle16",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720134,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle16",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 16,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[7] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle17",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720135,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle17",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 17,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[8] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle18",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720136,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle18",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[9] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle19",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720137,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle19",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 1,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle20",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720138,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle20",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[11] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle21",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720139,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle21",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 21,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[12] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle22",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720140,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle22",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 22,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[13] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle23",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720141,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle23",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[14] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle24",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720142,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle24",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 24,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[15] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle25",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720143,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle25",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 25,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[16] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle26",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720144,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle26",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[17] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle27",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720145,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle27",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[18] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle28",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720146,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle28",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[19] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle29",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720147,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle29",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle30",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720148,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle30",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[21] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle31",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720149,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle31",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[22] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle32",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720150,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle32",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 32,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[23] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle33",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720151,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle33",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 33,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[24] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle34",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720152,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle34",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 32,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[25] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle35",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720153,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle35",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[26] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle36",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720154,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle36",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[27] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle37",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720155,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle37",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 37,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[28] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle38",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720156,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle38",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 38,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[29] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle39",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720157,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle39",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[30] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle40",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720158,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle40",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[31] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle41",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720159,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle41",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 41,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720160] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle42",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720160,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle42",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[10720161] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle43",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720161,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle43",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[10720162] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle44",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720162,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle44",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 44,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720163] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle45",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720163,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			target = 0,
+			action = "idle",
+			type = 2
+		},
+		action_trigger_active = {
+			idle_focus = 1,
+			idle = 45,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head",
+				"touch_special",
+				"wedding",
+				"main_3"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720164] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle46",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720164,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			target = 0,
+			action = "idle",
+			type = 2
+		},
+		action_trigger_active = {
+			idle_focus = 1,
+			idle = 44,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head",
+				"touch_special",
+				"wedding",
+				"main_3"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720165] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle47",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720165,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle47",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 47,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720166] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle48",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720166,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle48",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 48,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720167] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle49",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720167,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle49",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 47,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[10720168] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle50",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720168,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle50",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[10720169] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle9",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720169,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			trigger_name = "idle",
+			action = "idle",
+			type = 10,
+			trigger_index = 49,
+			trigger_rate = 0.85
+		},
+		action_trigger_active = {
+			idle_focus = 1,
+			idle = 7,
+			enable = {
+				"touch_idle1",
+				"touch_idle2",
+				"touch_idle3",
+				"touch_idle4",
+				"touch_idle5",
+				"touch_idle6",
+				"touch_idle7",
+				"touch_idle8",
+				"touch_idle9",
+				"touch_idle10",
+				"touch_idle11",
+				"touch_idle12",
+				"touch_idle13",
+				"touch_idle14",
+				"touch_idle15",
+				"touch_idle16",
+				"touch_idle17",
+				"touch_idle18",
+				"touch_idle19",
+				"idle",
+				"idle1",
+				"idle2",
+				"idle3",
+				"idle4",
+				"idle6",
+				"idle7",
+				"idle8",
+				"idle9",
+				"idle10",
+				"idle11",
+				"idle12",
+				"idle13",
+				"idle14",
+				"idle15",
+				"idle16",
+				"idle17",
+				"touch_drag1",
+				"touch_drag2",
+				"touch_drag3",
+				"touch_drag4",
+				"touch_drag5",
+				"touch_drag6",
+				"touch_drag7",
+				"touch_drag8",
+				"touch_drag9",
+				"touch_drag10",
+				"touch_drag11",
+				"touch_drag12",
+				"touch_drag13",
+				"touch_drag14",
+				"touch_drag15",
+				"touch_drag16",
+				"touch_drag17",
+				"touch_drag18",
+				"touch_drag19",
+				"touch_drag20",
+				"touch_drag21"
+			},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[10720170] = {
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "",
+		ship_skin_id = 107201,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 10720170,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag10",
+		save_parameter = 0,
+		revert_idle_index = "1",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		listener_data = {
+			type = 1,
+			change = {
+				{
+					1,
+					{
+						"touch_drag11",
+						"touch_drag12",
+						"touch_drag13"
+					},
+					4
+				},
+				{
+					2,
+					{
+						"touch_drag47"
+					},
+					0
+				}
+			}
+		},
+		action_trigger = {
+			type = 7
+		}
+	}
+	pg.base.ship_l2d[9] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag1",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712201,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag1",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag1",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[10] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag2",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712202,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag2",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag2",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[11] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag3",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712203,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag3",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag3",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[12] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag4",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712204,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag4",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag4",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[13] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag5",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712205,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag5",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag5",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[14] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag6",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712206,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag6",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag6",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[15] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag7",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712207,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag7",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag7",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[16] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag8",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712208,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag8",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag8",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[17] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag9",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712209,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag9",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag9",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[18] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag10",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712210,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "touch_drag10",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_drag10",
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[19] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag20",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712211,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_UI",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 10,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[20] = {
+		listener_data = "",
+		offset_x = 100,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 1,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag21",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		action_trigger = "",
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712212,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_fa",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			2
+		},
+		parts_data = {
+			parts = {
+				0,
+				1,
+				2
+			}
+		}
+	}
+	pg.base.ship_l2d[21] = {
+		listener_data = "",
+		offset_x = 100,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 1,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag22",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		action_trigger = "",
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712213,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_wa",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			2
+		},
+		parts_data = {
+			parts = {
+				0,
+				1,
+				2
+			}
+		}
+	}
+	pg.base.ship_l2d[22] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag23",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712214,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_fu",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 10,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[23] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag24",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712215,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_fu2",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 10,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[24] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag25",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712216,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "L2D_UI",
+		save_parameter = 0,
+		revert_idle_index = "1",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 10,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[25] = {
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 2,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag26",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712217,
+		offset_y = 100,
+		revert_smooth = 100,
+		limit_time = 1,
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "L2D_D",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 0,
+		offset_circle = "",
+		range = {
+			-10,
+			0
+		},
+		parts_data = {
+			parts = {
+				-10,
+				-5,
+				0
+			}
+		},
+		listener_data = {
+			type = 2,
+			change = {
+				{
+					2,
+					{
+						"TouchIdle27"
+					},
+					0
+				},
+				{
+					2,
+					{
+						"TouchIdle37"
+					},
+					-10
+				}
+			}
+		},
+		action_trigger = {
+			type = 7
+		}
+	}
+	pg.base.ship_l2d[26] = {
+		offset_x = 75,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag27",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712218,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "L2D_T2",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 0,
+		offset_circle = "",
+		range = {
+			-10,
+			10
+		},
+		parts_data = {
+			parts = {
+				-10,
+				0,
+				10
+			}
+		},
+		listener_data = {
+			type = 2,
+			change = {
+				{
+					2,
+					{
+						"TouchDrag28"
+					},
+					0
+				}
+			}
+		},
+		action_trigger = {
+			type = 7
+		}
+	}
+	pg.base.ship_l2d[27] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag28",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712219,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "L2D_T",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 10,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[28] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag30",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712220,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_fu3",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 10,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[29] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag31",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712221,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 0.3,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "L2D_D2",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 10,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			10
+		},
+		action_trigger = {
+			circle = true,
+			target = 0,
+			type = 2
+		}
+	}
+	pg.base.ship_l2d[30] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchDrag32",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		action_trigger = "",
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712222,
+		offset_y = 100,
+		revert_smooth = 100,
+		limit_time = 1,
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "CD_zhaopian",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 0,
+		offset_circle = "",
+		range = {
+			-2,
+			2
+		},
+		parts_data = {
+			parts = {
+				-2,
+				-1,
+				0,
+				1,
+				2
+			}
+		}
+	}
+	pg.base.ship_l2d[31] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle1",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712223,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		react_condition = {
+			idle_on = {
+				0
+			}
+		},
+		action_trigger = {
+			action = "touch_idle1",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 1,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712224] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle2",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712224,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle2",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 2,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712225] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle3",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712225,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle3",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 3,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712226] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle4",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712226,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle4",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 4,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712227] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle5",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712227,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle5",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 5,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712228] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle6",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712228,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle6",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 6,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712229] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle7",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712229,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle7",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 7,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712230] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle8",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712230,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle8",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 8,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712231] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle9",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712231,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle9",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 9,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712232] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle10",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712232,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle10",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 10,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712233] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle11",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712233,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle11",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 11,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712234] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle12",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712234,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle12",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 12,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+
+	return
+end)()
+;(function()
+	pg.base.ship_l2d[20712235] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle13",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712235,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "Paramtouch_idle7",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle13",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712236] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle14",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712236,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "Paramtouch_idle14",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle14",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712237] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle15",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712237,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "Paramtouch_idle16",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle15",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712238] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle16",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712238,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "Paramtouch_idle40",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle16",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712239] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle17",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712239,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "Paramtouch_idle41",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle17",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712240] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle18",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712240,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "Paramtouch_idle42",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle18",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712241] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle20",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712241,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle20",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712242] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle23",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712242,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle23",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712243] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle24",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712243,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle24",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 24,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712244] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle25",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712244,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle25",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 25,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712245] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle26",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712245,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle26",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712246] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle27",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712246,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle27",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 27,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712247] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle28",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712247,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle28",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 28,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712248] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle29",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712248,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle29",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 29,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712249] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle30",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712249,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle30",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 30,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712250] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle31",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712250,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle31",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 31,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712251] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle32",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712251,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle32",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 30,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712252] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle33",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712252,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle33",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 33,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712253] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle34",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712253,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle34",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 34,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712254] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle35",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712254,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle35",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 35,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712255] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle36",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712255,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle36",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 36,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712256] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle37",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712256,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle37",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 37,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712257] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle39",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712257,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle39",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 39,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712258] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle40",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712258,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle40",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 40,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712259] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle41",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712259,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle41",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 41,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712260] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle42",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712260,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle42",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712261] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle43",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712261,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle43",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712262] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle45",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712262,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle45",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712263] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle46",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712263,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle46",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712264] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle47",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712264,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle47",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 20,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712265] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle48",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712265,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle48",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 23,
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head"
+			}
+		}
+	}
+	pg.base.ship_l2d[20712266] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "TouchIdle49",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712266,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "empty",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			action = "touch_idle49",
+			type = 2
+		},
+		action_trigger_active = {
+			idle = 0,
+			enable = {},
+			ignore = {}
+		}
+	}
+	pg.base.ship_l2d[20712267] = {
+		offset_x = -100,
+		gyro_y = 0,
+		action_trigger_active = "",
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712267,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "L2D_D3",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			20
+		},
+		listener_data = {
+			type = 1,
+			change = {
+				{
+					1,
+					{
+						"touch_drag4",
+						"touch_drag5",
+						"touch_drag6",
+						"touch_drag7",
+						"touch_idle24",
+						"touch_idle25",
+						"touch_idle31",
+						"touch_idle33"
+					},
+					4
+				}
+			}
+		},
+		action_trigger = {
+			type = 7
+		}
+	}
+	pg.base.ship_l2d[20712268] = {
+		listener_data = "",
+		offset_x = 0,
+		gyro_y = 0,
+		drag_direct = 0,
+		react_condition = "",
+		revert_action_index = 0,
+		draw_able_name = "",
+		ship_skin_id = 207122,
+		mode = 1,
+		react_pos_y = 0,
+		revert = -1,
+		react_pos_x = 0,
+		shop_action = 0,
+		id = 20712268,
+		offset_y = 0,
+		revert_smooth = 100,
+		limit_time = 1,
+		parts_data = "",
+		relation_parameter = "",
+		ignore_react = 1,
+		gyro = 0,
+		gyro_x = 0,
+		ignore_action = 1,
+		parameter = "",
+		save_parameter = 0,
+		revert_idle_index = "",
+		gyro_z = 0,
+		smooth = 100,
+		start_value = 0,
+		range_abs = 1,
+		offset_circle = "",
+		range = {
+			0,
+			1
+		},
+		action_trigger = {
+			parameter = "CD_UI",
+			type = 12,
+			num = {
+				0.01,
+				10
+			}
+		},
+		action_trigger_active = {
+			enable = {},
+			ignore = {
+				"main_1",
+				"main_2",
+				"main_3",
+				"main_4",
+				"main_5",
+				"mission",
+				"mission_complete",
+				"complete",
+				"login",
+				"home",
+				"mail",
+				"touch_body",
+				"touch_head",
+				"touch_special",
+				"wedding"
 			}
 		}
 	}

@@ -175,7 +175,9 @@ function onLinkController(self, linkId)
             return
         end
 
-        if map.MapLoader:getCurSceneType() == MAP_TYPE.MAIN_CITY then
+        GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_TOP_PANEL)
+
+        if map.MapLoader:getCurSceneType() == MAP_TYPE.MAIN_CITY or (map.MapLoader:getCurSceneType() == MAP_TYPE.BIG_HOSTEL and bigHostel.BigHostelManager:getHostelHero().main_type == BigHostelConst.SceneUI_Type.MIANUI)then
             -- 在主页的直接处理
             if self.closeAllCall then
                 self.closeAllCall(self.closeAllCallThis)

@@ -110,6 +110,11 @@ function configUI(self)
     self.m_btnLogin = self:getChildGO('BtnLogin')
     self.mBtnSwitch = self:getChildGO('BtnSwitch')
     self.mBtnSwitch:SetActive(not BoardShower:isForceBoardImg())
+
+    local sdkBtnEnableDic = sdk.SdkManager:getSdkButtonEnable()
+    self.mBtnSwitchSdk = self:getChildGO('BtnSwitchSdk')
+    self.mBtnSwitchSdk:SetActive(sdkBtnEnableDic.switchAccountBtnEnable)
+
     self.mImgSwitch = self:getChildGO('mImgIconSwitch'):GetComponent(ty.AutoRefImage)
     self.mBtnAudio = self:getChildGO('BtnAudio')
     self.mImgAudio = self:getChildGO('mImgIconAudio'):GetComponent(ty.AutoRefImage)
@@ -121,6 +126,7 @@ function configUI(self)
     self.m_textCleanStorage = self:getChildGO('TextCleanStorage'):GetComponent(ty.Text)
     self.m_textAccountName = self:getChildGO('TextAccountName'):GetComponent(ty.Text)
 
+    self.m_btnDestroyAccount = self:getChildGO('mBtnDestroyAccount')
     self.m_btnQuit = self:getChildGO('mBtnQuit')
     self.m_btnAgeTip = self:getChildGO('BtnAgeTip')
 
@@ -151,6 +157,7 @@ function configUI(self)
     self.m_btnGetUniqueId:SetActive(web.WebManager:isShowUniqueId())
     
     -- self.mBtnAudio:SetActive(false)
+    self.m_btnDestroyAccount:SetActive(sdk.ChannelData:isChannel(sdk.ChannelData.ANDROID_QUICK1_DY) or sdk.ChannelData:isChannel(sdk.ChannelData.ANDROID_QUICK2_DY) or sdk.ChannelData:isChannel(sdk.ChannelData.ANDROID_QUICK3_DY))
     self.m_btnQuit:SetActive(gs.Application.platform == gs.RuntimePlatform.WindowsPlayer)
 
     self.mTxtClientVersion = self:getChildGO('TextClientVersion'):GetComponent(ty.Text)
@@ -162,41 +169,48 @@ function initViewText(self)
     self:setBtnLabel(self.mBtnAudio, 62060, "音乐")
     self:setBtnLabel(self.m_btnCleanAssets, 71, "修复")
     self:setBtnLabel(self.mBtnSwitch, 1196, "切换")
+    self:setBtnLabel(self.mBtnSwitchSdk, 10000005, "切换账号")
+
+    self:setBtnLabel(self.m_btnLogin, 10000362, "开始接入")
+    self:setBtnLabel(self.m_btnDestroyAccount, 0, "销号")
+    self:setBtnLabel(self.m_btnQuit, 44219, "退出")
     -- self.m_textNotice.text = _TT(52010)
     -- self.m_textCleanAssets.text = '清除资源'
     -- self.m_textCleanStorage.text = '清除服务器记录'
-    
-    local channelId, channelName = sdk.SdkManager:getChannelData()
-    if(channelId == sdk.AndroidChannelId.QIANYOU)then
-        self.mTextPolicyAgreement.text = _TT(284)
-        gs.TransQuick:UIPosX(self.mRectGroupPolicyAgreement, 120)
-        self.mTxtTip.text = _TT(345)
-    elseif(channelId == sdk.AndroidChannelId.DANDANYOU)then
+    gs.TransQuick:UIPosX(self.mRectGroupPolicyAgreement, 0)
+
+    if(sdk.ChannelData:isChannelQY())then
+        if(sdk.ChannelData:isChannel(sdk.ChannelData.ANDROID_QY_XM))then
+            self.mTextPolicyAgreement.text = _TT(346)
+            self.mTxtTip.text = _TT(344)
+        else
+            self.mTextPolicyAgreement.text = _TT(284)
+            self.mTxtTip.text = _TT(345)
+        end
+    elseif(sdk.ChannelData:isChannelDDY())then
         self.mTextPolicyAgreement.text = _TT(342)
-        gs.TransQuick:UIPosX(self.mRectGroupPolicyAgreement, 120)
         self.mTxtTip.text = _TT(344)
-    elseif(channelId == sdk.AndroidChannelId.QUICK or channelId == sdk.AndroidChannelId.QUICK2)then
+    elseif(sdk.ChannelData:isChannelQuick1() or sdk.ChannelData:isChannelQuick2())then
         self.mTextPolicyAgreement.text = _TT(343)
-        gs.TransQuick:UIPosX(self.mRectGroupPolicyAgreement, 120)
         self.mTxtTip.text = _TT(344)
-    elseif(channelId == sdk.AndroidChannelId.QUICK3)then
+    elseif(sdk.ChannelData:isChannelQuick3())then
         self.mTextPolicyAgreement.text = _TT(285)
-        gs.TransQuick:UIPosX(self.mRectGroupPolicyAgreement, 120)
         self.mTxtTip.text = _TT(344)
     else
         self.mTextPolicyAgreement.text = _TT(283)
-        gs.TransQuick:UIPosX(self.mRectGroupPolicyAgreement, 0)
         self.mTxtTip.text = _TT(268)
-    end    
+    end
 end
 
 -- UI事件管理
 function addAllUIEvent(self)
     self:addUIEvent(self.m_btnNotice, self.__onClickNoticeHandler)
     self:addUIEvent(self.m_btnLogin, self.__onClickLoginHandler, UrlManager:getUIBaseSoundPath("ui_basic_load.prefab"))
+    self:addUIEvent(self.m_btnDestroyAccount, self.__onClickDestroyAccountHandler)
     self:addUIEvent(self.m_btnQuit, self.__onClickQuitHandler)
     self:addUIEvent(self.m_btnAgeTip, self.__onClickAgeTipHandler)
     self:addUIEvent(self.mBtnSwitch, self.__onClickSwitchHandler)
+    self:addUIEvent(self.mBtnSwitchSdk, self.__onClickSwitchSdkHandler)
     self:addUIEvent(self.mBtnAudio, self.__onClickBgAudioHandler)
     self:addUIEvent(self.m_btnCleanAssets, self.__onClickCleanAssetsHandler)
     self:addUIEvent(self.m_btnCleanStorage, self.__onClickCleanStorageHandler)
@@ -214,7 +228,7 @@ function active(self, args)
     super.active(self, args)
     self:updateClientVersion()
     self:updateServerVersion()
-    
+
     login.LoginManager:setLoginViewVisible(true)
     web.WebManager:addEventListener(web.WebManager.SDK_ACCOUNT_LOGIN_INTERRUPT, self.__onSdkLoginInterruptHandler, self)
     web.WebManager:addEventListener(web.WebManager.GAIN_ALL_DATA_FINISH, self.__onGainAllDataFinishHandler, self)
@@ -244,6 +258,10 @@ function __onClickSwitchHandler(self)
     self:__updateBgAudioState(self.mIsAudioMute)
 end
 
+function __onClickSwitchSdkHandler(self)
+    sdk.SdkManager:switchAccount()
+end
+
 function __updateBgPlayState(self, isImgVideo)
     self.mIsImgBg = isImgVideo
     if (self.mIsImgBg) then
@@ -252,7 +270,7 @@ function __updateBgPlayState(self, isImgVideo)
         self.mImgSwitch:SetImg(UrlManager:getPackPath("updateRes/update_res_6.png"), true)
     end
     StorageUtil:saveBool0('IsUpdateResImgBg', isImgVideo)
-    if(self.mIsImgBg ~= (BoardShower:getBoardState() == BoardShower.BoardState.ImgBg))then
+    if (self.mIsImgBg ~= (BoardShower:getBoardState() == BoardShower.BoardState.ImgBg)) then
         BoardShower:onClickSwitchModeHandler()
     end
 end
@@ -292,8 +310,8 @@ end
 
 -- 销毁
 function destroyPanel(self)
-    if(web.WebManager:hasEventListener(web.WebManager.GAIN_ALL_DATA_FINISH, self.__onGainAllDataFinishHandler, self))then
-        self:deActive(self) 
+    if (web.WebManager:hasEventListener(web.WebManager.GAIN_ALL_DATA_FINISH, self.__onGainAllDataFinishHandler, self)) then
+        self:deActive(self)
     end
     super.destroyPanel(self)
 end
@@ -411,16 +429,15 @@ function __onClickLoginHandler(self)
         local url, parasmDic = web.getReportGenericArgsUrl(web.GENERIC_ARGS_REPORT_TYPE.CLICK_LOGIN_1, "方式1")
         WebInterfaceUtil:postAsyncLoop(url, parasmDic, nil, nil, self, nil)
         
-        if(self.mIsAllowPolicy)then
+        if (self.mIsAllowPolicy) then
             self:dispatchEvent(login.LoginManager.EVENT_LOGIN, {})
         else
             local languageId = 0
-            local channelId, channelName = sdk.SdkManager:getChannelData()
-            if(channelId == sdk.AndroidChannelId.QIANYOU)then
+            if(sdk.ChannelData:isChannelQY())then
                 languageId = 88
-            elseif(channelId == sdk.AndroidChannelId.DANDANYOU)then
+            elseif(sdk.ChannelData:isChannelDDY())then
                 languageId = 88
-            elseif(channelId == sdk.AndroidChannelId.QUICK or channelId == sdk.AndroidChannelId.QUICK2 or channelId == sdk.AndroidChannelId.QUICK3)then
+            elseif(sdk.ChannelData:isChannelQuick1() or sdk.ChannelData:isChannelQuick2() or sdk.ChannelData:isChannelQuick3())then
                 languageId = 88
             else
                 languageId = 70
@@ -432,6 +449,10 @@ function __onClickLoginHandler(self)
             end, _TT(2), _TT(5), nil, nil)
         end
     end
+end
+
+function __onClickDestroyAccountHandler(self)
+    sdk.SdkManager:destroyAccount()
 end
 
 function __onClickQuitHandler(self)
@@ -447,7 +468,11 @@ end
 -- 清理资源
 function __onClickCleanAssetsHandler(self)
     UIFactory:alertMessge(_TT(52), --"将清除所有资源并重新下载"
-    true, function() GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = true, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = true }) end, _TT(1), --"确定"
+    true, 
+    function() 
+        CS.UnityEngine.PlayerPrefs.DeleteAll()
+        GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = true, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = true }) 
+    end, _TT(1), --"确定"
     nil, true, function() end, _TT(2), --"取消"
     _TT(55), --"清除缓存提示"
     nil, nil)
@@ -480,7 +505,7 @@ end
 
 function commonUrlLinkData(position, localPosition, linkIdStr, linkTextStr)
     if linkIdStr and linkTextStr then
-		linkIdStr = string.gsub(linkIdStr, "\'", "")
+        linkIdStr = string.gsub(linkIdStr, "\'", "")
         sdk.SdkManager:openSDKUIBrowser(linkIdStr)
     end
 end
@@ -493,7 +518,7 @@ function updateClientVersion(self)
     local proVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ProVersionKey)
     local artVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ArtVersionKey)
     if (version ~= "" and proVersion ~= "" and artVersion ~= "") then
-        self.mTxtClientVersion.text = web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion)
+        self.mTxtClientVersion.text = _TT(10000295) .. ": " .. web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion)
         self.mTxtClientVersion.gameObject:SetActive(true)
     else
         self.mTxtClientVersion.text = "";
@@ -509,7 +534,7 @@ function updateServerVersion(self)
     local serverProVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.ProVersionKey)
     local serverArtVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.ArtVersionKey)
     if (serverVersion ~= "" and serverProVersion ~= "" and serverArtVersion ~= "") then
-        self.mTxtServerVersion.text = web.getFormatVersion(prefixVersion, serverVersionStr, serverProVersion, serverArtVersion)
+        self.mTxtServerVersion.text = _TT(10000296) .. ": " .. web.getFormatVersion(prefixVersion, serverVersionStr, serverProVersion, serverArtVersion)
         self.mTxtServerVersion.gameObject:SetActive(true)
     else
         self.mTxtServerVersion.text = ""

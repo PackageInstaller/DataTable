@@ -1,25 +1,10 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("VoiceChatStep")
+﻿local var_0_0 = class("VoiceChatStep")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0
-
-	if not arg_1_1.say then
-		var_1_0 = ""
-	end
-
-	arg_1_0.say = var_1_0
+	arg_1_0.say = arg_1_1.say or ""
 	arg_1_0.voice = arg_1_1.voice
 	arg_1_0.options = arg_1_1.options
-
-	local var_1_1
-
-	if not arg_1_1.wait then
-		var_1_1 = 0
-	end
-
-	arg_1_0.waitForClick = var_1_1
+	arg_1_0.waitForClick = arg_1_1.wait or 0
 	arg_1_0.optionFlag = arg_1_1.optionFlag
 	arg_1_0.dispatcher = arg_1_1.dispatcher
 	arg_1_0.shipGroup = arg_1_2
@@ -32,23 +17,10 @@ function var_0_0.IsSameBranch(arg_2_0, arg_2_1)
 end
 
 function var_0_0.GetSay(arg_3_0)
-	HXSet = var_1_10001
+	local var_3_0 = getProxy(ApartmentProxy):getApartment(arg_3_0.shipGroup)
+	local var_3_1 = var_3_0 and var_3_0:GetCallName() or arg_3_0.shipGroup
 
-	local var_3_0 = var_1_10001.hxLan(arg_3_0.say)
-
-	getProxy = var_1_10002
-	ApartmentProxy = var_1_10004
-
-	local var_3_1 = var_1_10002(var_1_10004)
-	local var_3_2
-
-	if not var_2.getApartment(var_3_1, arg_3_0.shipGroup) or not var_2:GetCallName() then
-		var_3_2 = arg_3_0.shipGroup
-	end
-
-	string = var_3_1
-
-	return (var_3_1.gsub(var_3_0, "{dorm3d}", var_3_2))
+	return (string.gsub(HXSet.hxLan(arg_3_0.say), "{dorm3d}", var_3_1))
 end
 
 function var_0_0.GetVoice(arg_4_0)
@@ -60,24 +32,11 @@ function var_0_0.ExistOption(arg_5_0)
 end
 
 function var_0_0.GetOptions(arg_6_0)
-	_ = var_1_10001
+	local var_6_0 = arg_6_0.options or {}
 
-	local var_6_0 = var_1_10001.map
-	local var_6_1
-
-	if not arg_6_0.options then
-		var_6_1 = {}
-	end
-
-	return var_6_0(var_6_1, function(arg_7_0)
-		local var_7_0 = arg_7_0.content
-
-		HXSet = var_2_10002
-
-		local var_7_1 = var_2_10002.hxLan(var_7_0)
-
+	return _.map(var_6_0, function(arg_7_0)
 		return {
-			var_7_1,
+			HXSet.hxLan(arg_7_0.content),
 			arg_7_0.flag
 		}
 	end)
@@ -96,7 +55,9 @@ function var_0_0.IsRecallDispatcher(arg_10_0)
 		return false
 	end
 
-	return arg_10_0:GetDispatcher().callbackData ~= nil and var_1.callbackData.name ~= nil
+	local var_10_0 = arg_10_0:GetDispatcher()
+
+	return var_10_0.callbackData ~= nil and var_10_0.callbackData.name ~= nil
 end
 
 function var_0_0.GetDispatcherRecallName(arg_11_0)

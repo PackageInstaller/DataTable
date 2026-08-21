@@ -45,6 +45,7 @@ hero.HeroMaterialItem = require("game/hero/view/item/HeroMaterialItem")
 hero.HeroSingleSelectPanel = require("game/hero/view/HeroSingleSelectPanel")
 
 hero.HeroDetailPanel = require("game/hero/view/HeroDetailPanel")
+hero.HeroStoryPanel = require("game/hero/view/HeroStoryPanel")
 hero.HeroDevelopPanel = require("game/hero/view/HeroDevelopPanel")
 hero.HeroUpGradePanel = require("game/hero/view/HeroUpGradePanel")
 hero.HeroDetailDesTips = require("game/hero/view/HeroDetailDesTips")
@@ -68,6 +69,7 @@ hero.HeroSkillIntroduceItem = require("game/hero/view/item/HeroSkillIntroduceIte
 
 -- 升级
 hero.HeroLvlUpTabView = require("game/hero/view/tab/HeroLvlUpTabView")
+hero.HeroLvlUpResetView = require("game/hero/view/tab/HeroLvlUpResetView")
 hero.HeroLvlUpAttrItem_1 = require("game/hero/view/item/HeroLvlUpAttrItem_1")
 hero.HeroRankUpAttrItem = require("game/hero/view/item/HeroRankUpAttrItem")
 

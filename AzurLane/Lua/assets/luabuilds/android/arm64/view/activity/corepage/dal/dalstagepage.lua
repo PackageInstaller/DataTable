@@ -1,325 +1,121 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DALStagePage", import("view.activity.CorePage.CoreActivityPage"))
 
-local var_0_0 = "DALStagePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.CoreActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.AD = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.AD
-
-	arg_1_0.tabs = var_1.Find(var_1_1, "tabs")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.AD = arg_1_0._tf:Find("AD")
+	arg_1_0.tabs = arg_1_0.AD:Find("tabs")
 	arg_1_0.tabsList = arg_1_0.tabs.transform.childCount
-	setText = var_1
 
-	local var_1_2 = arg_1_0.AD
-	local var_1_3 = var_3.Find(var_1_2, "headline_bg/Text (Legacy)")
-
-	i18n = var_4
-
-	var_1(var_1_3, var_4("DAL_story_tip"))
+	setText(arg_1_0.AD:Find("headline_bg/Text (Legacy)"), i18n("DAL_story_tip"))
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	getProxy = var_1_10001
-	TaskProxy = var_1_10003
-	arg_2_0.taskProxy = var_1_10001(var_1_10003)
-
-	local var_2_0 = arg_2_0.activity
-
-	arg_2_0.config_data = var_1.getConfig(var_2_0, "config_data")
-
-	local var_2_1 = arg_2_0.activity
-
-	arg_2_0.config_client = var_1.getConfig(var_2_1, "config_client").story
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.taskProxy = getProxy(TaskProxy)
+	arg_2_0.config_data = arg_2_0.activity:getConfig("config_data")
+	arg_2_0.config_client = arg_2_0.activity:getConfig("config_client").story
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_3_0)
+function var_0_0.OnUpdateFlush(arg_3_0)
 	for iter_3_0 = 1, #arg_3_0.config_data do
-		local var_3_0 = arg_3_0.taskProxy
-		local var_3_1 = var_5.getTaskVO(var_3_0, arg_3_0.config_data[iter_3_0])
+		local var_3_0 = arg_3_0.taskProxy:getTaskVO(arg_3_0.config_data[iter_3_0]):getTaskStatus()
 
-		var_1_10006 = var_5.getTaskStatus(var_3_1)
-		SetActive = var_3_0
+		SetActive(arg_3_0.AD:Find("tabs/" .. iter_3_0 .. "/got_red"), var_3_0 == 2)
+		SetActive(arg_3_0.AD:Find("tabs/" .. iter_3_0 .. "/red"), var_3_0 == 1)
 
-		local var_3_2 = arg_3_0.AD
+		if var_3_0 == 2 then
+			local var_3_1 = pg.NewStoryMgr.GetInstance()
 
-		var_3_0(var_9.Find(var_3_2, "tabs/" .. iter_3_0 .. "/got_red"), var_1_10006 == 2)
+			if not var_3_1:IsPlayed(arg_3_0.config_client[iter_3_0][1]) then
+				local var_3_2, var_3_3 = pg.NewStoryMgr.GetInstance():StoryName2StoryId(arg_3_0.config_client[iter_3_0][1])
 
-		SetActive = var_3_0
-
-		local var_3_3 = arg_3_0.AD
-
-		var_3_0(var_9.Find(var_3_3, "tabs/" .. iter_3_0 .. "/red"), var_1_10006 == 1)
-
-		if var_1_10006 == 2 then
-			pg = var_3_0
-
-			local var_3_4 = var_3_0.NewStoryMgr.GetInstance()
-
-			if not var_7.IsPlayed(var_3_4, arg_3_0.config_client[iter_3_0][1]) then
-				pg = var_3_1
-
-				local var_3_5 = var_3_1.NewStoryMgr.GetInstance()
-				local var_3_6, var_3_7 = var_8.StoryName2StoryId(var_3_5, arg_3_0.config_client[iter_3_0][1])
-
-				pg = var_3_5
-
-				local var_3_8 = var_3_5.m02
-				local var_3_9 = var_10.sendNotification
-
-				GAME = var_13
-
-				local var_3_10 = var_13.STORY_UPDATE_LIST
-				local var_3_11 = {
+				pg.m02:sendNotification(GAME.STORY_UPDATE_LIST, {
 					storyIds = {
-						var_3_6
-					}
-				}
-
-				callback = var_15
-				var_3_11.callback = var_15
-
-				var_3_9(var_3_8, var_3_10, var_3_11)
+						var_3_2
+					},
+					callback = callback
+				})
 			end
 		end
 	end
 
-	local var_3_12 = -1
+	local var_3_4 = -1
 
 	for iter_3_1 = 0, arg_3_0.tabsList - 1 do
-		onToggle = var_1_10006
-
-		local var_3_13 = arg_3_0
-		local var_3_14 = arg_3_0.tabs
-		local var_3_15 = var_9.GetChild(var_3_14, iter_3_1)
-
-		local function var_3_16(arg_4_0)
+		onToggle(arg_3_0, arg_3_0.tabs:GetChild(iter_3_1), function(arg_4_0)
 			if arg_4_0 then
-				if var_3_12 ~= iter_3_1 then
-					local var_4_0 = arg_3_0
-
-					var_1.OnUpdata(var_4_0, iter_3_1 + 1)
+				if var_3_4 ~= iter_3_1 then
+					arg_3_0:OnUpdata(iter_3_1 + 1)
 				end
 
-				var_3_12 = iter_3_1
+				var_3_4 = iter_3_1
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_3_14
-
-		var_1_10006(var_3_13, var_3_15, var_3_16, var_3_14)
+		end, SFX_PANEL)
 	end
 
-	triggerToggle = var_2
-
-	local var_3_17 = arg_3_0.tabs
-
-	var_2(var_4.Find(var_3_17, "1"), true)
+	triggerToggle(arg_3_0.tabs:Find("1"), true)
 
 	return
 end
 
-function var_0_1.OnUpdata(arg_5_0, arg_5_1)
-	setText = var_1_10002
+function var_0_0.OnUpdata(arg_5_0, arg_5_1)
+	setText(arg_5_0.AD:Find("id"), "0" .. arg_5_1)
+	setText(arg_5_0.AD:Find("id/Text"), i18n("dal_story_tip_name_en_" .. arg_5_1))
+	setText(arg_5_0.AD:Find("go/name"), i18n("text_goto"))
+	setImageSprite(arg_5_0.AD:Find("Image"), LoadSprite("ui/DALStagePage_atlas", arg_5_1), true)
 
-	local var_5_0 = arg_5_0.AD
+	local var_5_0 = arg_5_0.taskProxy:getTaskVO(arg_5_0.config_data[arg_5_1])
 
-	var_1_10002(var_4.Find(var_5_0, "id"), "0" .. arg_5_1)
+	setText(arg_5_0.AD:Find("Image/lock/Text"), var_5_0:getConfig("desc"))
+	setText(arg_5_0.AD:Find("Text"), var_5_0:getConfig("name"))
 
-	setText = var_1_10002
+	local var_5_1 = var_5_0:getConfig("award_display")[1]
 
-	local var_5_1 = arg_5_0.AD
-	local var_5_2 = var_4.Find(var_5_1, "id/Text")
-
-	i18n = var_5
-
-	var_1_10002(var_5_2, var_5("dal_story_tip_name_en_" .. arg_5_1))
-
-	setText = var_1_10002
-
-	local var_5_3 = arg_5_0.AD
-	local var_5_4 = var_4.Find(var_5_3, "go/name")
-
-	i18n = var_5
-
-	var_1_10002(var_5_4, var_5("text_goto"))
-
-	setImageSprite = var_1_10002
-
-	local var_5_5 = arg_5_0.AD
-	local var_5_6 = var_4.Find(var_5_5, "Image")
-
-	LoadSprite = var_5
-
-	var_1_10002(var_5_6, var_5("ui/DALStagePage_atlas", arg_5_1), true)
-
-	local var_5_7 = arg_5_0.taskProxy
-	local var_5_8 = var_2.getTaskVO(var_5_7, arg_5_0.config_data[arg_5_1])
-
-	setText = var_1_10003
-
-	local var_5_9 = arg_5_0.AD
-
-	var_1_10003(var_5.Find(var_5_9, "Image/lock/Text"), var_5_8:getConfig("desc"))
-
-	setText = var_1_10003
-
-	local var_5_10 = arg_5_0.AD
-
-	var_1_10003(var_5.Find(var_5_10, "Text"), var_5_8:getConfig("name"))
-
-	local var_5_11 = var_5_8:getConfig("award_display")[1]
-	local var_5_12 = {
-		type = var_5_11[1],
-		id = var_5_11[2],
-		count = var_5_11[3]
-	}
-
-	updateDrop = var_5
-
-	local var_5_13 = arg_5_0.AD
-
-	var_5(var_7.Find(var_5_13, "award"), var_5_12)
-
-	onButton = var_5
-
-	local var_5_14 = arg_5_0
-	local var_5_15 = arg_5_0.AD
-	local var_5_16 = var_8.Find(var_5_15, "award/icon_mask")
-
-	local function var_5_17()
-		local var_6_0 = arg_5_0
-		local var_6_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.ON_DROP, var_5_12)
+	updateDrop(arg_5_0.AD:Find("award"), {
+		type = var_5_1[1],
+		id = var_5_1[2],
+		count = var_5_1[3]
+	})
+	onButton(arg_5_0, arg_5_0.AD:Find("award/icon_mask"), function()
+		arg_5_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_5_15
+	local var_5_2 = var_5_0:getTaskStatus()
 
-	var_5(var_5_14, var_5_16, var_5_17, var_5_15)
-
-	local var_5_18 = var_5_8:getTaskStatus()
-
-	SetActive = var_6
-
-	local var_5_19 = arg_5_0.AD
-
-	var_6(var_8.Find(var_5_19, "award/lock"), var_5_18 == 2)
-
-	SetActive = var_6
-
-	local var_5_20 = arg_5_0.AD
-
-	var_6(var_8.Find(var_5_20, "play"), var_5_18 == 1 and not arg_5_0.IsPlayeds)
-
-	SetActive = var_6
-
-	local var_5_21 = arg_5_0.AD
-
-	var_6(var_8.Find(var_5_21, "go"), var_5_18 == 0)
-
-	SetActive = var_6
-
-	local var_5_22 = arg_5_0.AD
-
-	var_6(var_8.Find(var_5_22, "Image/lock"), var_5_18 == 0)
-
-	onButton = var_6
-
-	local var_5_23 = arg_5_0
-	local var_5_24 = arg_5_0.AD
-	local var_5_25 = var_9.Find(var_5_24, "play")
-
-	local function var_5_26()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.NewStoryMgr.GetInstance()
-
-		var_0.Play(var_7_0, arg_5_0.config_client[arg_5_1][1], function()
-			local var_8_0 = arg_5_0
-			local var_8_1 = var_0.emit
-
-			ActivityMediator = var_3_10003
-
-			var_8_1(var_8_0, var_3_10003.ON_TASK_SUBMIT, var_5_8)
+	SetActive(arg_5_0.AD:Find("award/lock"), var_5_2 == 2)
+	SetActive(arg_5_0.AD:Find("play"), var_5_2 == 1 and not arg_5_0.IsPlayeds)
+	SetActive(arg_5_0.AD:Find("go"), var_5_2 == 0)
+	SetActive(arg_5_0.AD:Find("Image/lock"), var_5_2 == 0)
+	onButton(arg_5_0, arg_5_0.AD:Find("play"), function()
+		pg.NewStoryMgr.GetInstance():Play(arg_5_0.config_client[arg_5_1][1], function()
+			arg_5_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_5_0)
 
 			return
 		end, true)
 
 		return
-	end
-
-	SFX_PANEL = var_5_24
-
-	var_6(var_5_23, var_5_25, var_5_26, var_5_24)
-
-	onButton = var_6
-
-	local var_5_27 = arg_5_0
-	local var_5_28 = arg_5_0.AD
-	local var_5_29 = var_9.Find(var_5_28, "go")
-
-	local function var_5_30()
-		local var_9_0 = arg_5_0
-		local var_9_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.ON_TASK_GO, var_5_8)
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0.AD:Find("go"), function()
+		arg_5_0:emit(ActivityMediator.ON_TASK_GO, var_5_0)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_5_28
-
-	var_6(var_5_27, var_5_29, var_5_30, var_5_28)
-
-	if var_5_18 == 0 then
-		setText = var_6
-
-		local var_5_31 = arg_5_0.AD
-		local var_5_32 = var_8.Find(var_5_31, "rule")
-
-		i18n = var_5_29
-
-		var_6(var_5_32, var_5_29("dal_story_tip1"))
-	elseif var_5_18 == 1 then
-		setText = var_6
-
-		local var_5_33 = arg_5_0.AD
-		local var_5_34 = var_8.Find(var_5_33, "rule")
-
-		i18n = var_5_29
-
-		var_6(var_5_34, var_5_29("dal_story_tip2"))
-	elseif var_5_18 == 2 then
-		setText = var_6
-
-		local var_5_35 = arg_5_0.AD
-		local var_5_36 = var_8.Find(var_5_35, "rule")
-
-		i18n = var_5_29
-
-		var_6(var_5_36, var_5_29("dal_story_tip3"))
+	if var_5_2 == 0 then
+		setText(arg_5_0.AD:Find("rule"), i18n("dal_story_tip1"))
+	elseif var_5_2 == 1 then
+		setText(arg_5_0.AD:Find("rule"), i18n("dal_story_tip2"))
+	elseif var_5_2 == 2 then
+		setText(arg_5_0.AD:Find("rule"), i18n("dal_story_tip3"))
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

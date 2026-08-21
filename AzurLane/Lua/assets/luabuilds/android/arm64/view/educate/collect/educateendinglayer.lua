@@ -1,11 +1,5 @@
-﻿class = var_0_10000
-
-local var_0_0 = "EducateEndingLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".EducateCollectLayerTemplate"))
-local var_0_2 = {
+﻿local var_0_0 = class("EducateEndingLayer", import(".EducateCollectLayerTemplate"))
+local var_0_1 = {
 	frame_1 = "frame1",
 	frame_5 = "frame3",
 	frame_3 = "frame2",
@@ -13,373 +7,176 @@ local var_0_2 = {
 	frame_2 = "frame2"
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateEndingUI"
 end
 
-function var_0_1.initConfig(arg_2_0)
-	pg = var_1_10001
-	arg_2_0.config = var_1_10001.child_ending
+function var_0_0.initConfig(arg_2_0)
+	arg_2_0.config = pg.child_ending
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	setText = var_1_10001
+function var_0_0.didEnter(arg_3_0)
+	setText(arg_3_0.windowTF:Find("tip"), i18n("child_buy_ending_tip"))
+	setText(arg_3_0.performTF:Find("review_btn/Text"), i18n("child_btn_review"))
 
-	local var_3_0 = arg_3_0.windowTF
-	local var_3_1 = var_3.Find(var_3_0, "tip")
-
-	i18n = var_1_10004
-
-	var_1_10001(var_3_1, var_1_10004("child_buy_ending_tip"))
-
-	setText = var_1_10001
-
-	local var_3_2 = arg_3_0.performTF
-	local var_3_3 = var_3.Find(var_3_2, "review_btn/Text")
-
-	i18n = var_4
-
-	var_1_10001(var_3_3, var_4("child_btn_review"))
-
-	local var_3_4 = arg_3_0.windowTF
-
-	arg_3_0.tpl = var_1.Find(var_3_4, "condition_tpl")
-	pg = var_1
-	arg_3_0.addPrice = var_1.gameset.child_cg_add_price.key_value
-	pg = var_1
-	arg_3_0.maxPrice = var_1.gameset.child_cg_max_price.key_value
+	arg_3_0.tpl = arg_3_0.windowTF:Find("condition_tpl")
+	arg_3_0.addPrice = pg.gameset.child_cg_add_price.key_value
+	arg_3_0.maxPrice = pg.gameset.child_cg_max_price.key_value
 
 	arg_3_0:Flush()
 
 	return
 end
 
-function var_0_1.SetData(arg_4_0)
-	getProxy = var_1_10001
-	EducateProxy = var_1_10003
+function var_0_0.SetData(arg_4_0)
+	local var_4_0 = getProxy(EducateProxy)
 
-	local var_4_0 = var_1_10001(var_1_10003)
-
-	arg_4_0.endings = var_1.GetAllEndings(var_4_0)
-	arg_4_0.completeEndings = var_1:GetCompleteEndings()
-	arg_4_0.char = var_1:GetCharData()
-	arg_4_0.gameCnt = var_1:GetGameCnt()
-	arg_4_0.bugCnt = var_1:GetEndingBuyCnt()
+	arg_4_0.endings = var_4_0:GetAllEndings()
+	arg_4_0.completeEndings = var_4_0:GetCompleteEndings()
+	arg_4_0.char = var_4_0:GetCharData()
+	arg_4_0.gameCnt = var_4_0:GetGameCnt()
+	arg_4_0.bugCnt = var_4_0:GetEndingBuyCnt()
 
 	return
 end
 
-function var_0_1.Flush(arg_5_0)
+function var_0_0.Flush(arg_5_0)
 	arg_5_0:SetData()
-
-	setText = var_1
-
-	var_1(arg_5_0.curCntTF, #arg_5_0.endings)
-
-	setText = var_1
-
-	var_1(arg_5_0.allCntTF, "/" .. #arg_5_0.config.all)
+	setText(arg_5_0.curCntTF, #arg_5_0.endings)
+	setText(arg_5_0.allCntTF, "/" .. #arg_5_0.config.all)
 	arg_5_0:updatePage()
 
 	return
 end
 
-function var_0_1.updateItem(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = var_0_2[arg_6_2.name]
+function var_0_0.updateItem(arg_6_0, arg_6_1, arg_6_2)
+	GetImageSpriteFromAtlasAsync("ui/educateendingui_atlas", var_0_1[arg_6_2.name] .. "_" .. arg_6_1.sp_bg, arg_6_2)
+	LoadImageSpriteAsync("bg/" .. arg_6_1.pic, arg_6_2:Find("icon/Image"))
+	setText(arg_6_2:Find("unlock/name"), arg_6_1.name)
+	setText(arg_6_2:Find("lock/name"), arg_6_1.lock_name)
 
-	GetImageSpriteFromAtlasAsync = var_4
+	local var_6_0 = table.contains(arg_6_0.endings, arg_6_1.id)
 
-	var_4("ui/educateendingui_atlas", var_6_0 .. "_" .. arg_6_1.sp_bg, arg_6_2)
+	setActive(arg_6_2:Find("icon/lock"), not var_6_0)
+	setActive(arg_6_2:Find("unlock"), var_6_0)
+	setActive(arg_6_2:Find("lock"), not var_6_0)
 
-	LoadImageSpriteAsync = var_4
-
-	var_4("bg/" .. arg_6_1.pic, arg_6_2:Find("icon/Image"))
-
-	setText = var_4
-
-	var_4(arg_6_2:Find("unlock/name"), arg_6_1.name)
-
-	setText = var_4
-
-	var_4(arg_6_2:Find("lock/name"), arg_6_1.lock_name)
-
-	table = var_4
-
-	local var_6_1 = var_4.contains(arg_6_0.endings, arg_6_1.id)
-
-	setActive = var_1_10005
-
-	var_1_10005(arg_6_2:Find("icon/lock"), not var_6_1)
-
-	setActive = var_1_10005
-
-	var_1_10005(arg_6_2:Find("unlock"), var_6_1)
-
-	setActive = var_1_10005
-
-	var_1_10005(arg_6_2:Find("lock"), not var_6_1)
-
-	if var_6_1 then
-		onButton = var_1_10005
-
-		local var_6_2 = arg_6_0
-		local var_6_3 = arg_6_2
-
-		local function var_6_4()
-			local var_7_0 = arg_6_0
-
-			var_0.showPerformWindow(var_7_0, arg_6_1)
+	if var_6_0 then
+		onButton(arg_6_0, arg_6_2, function()
+			arg_6_0:showPerformWindow(arg_6_1)
 
 			return
-		end
-
-		SFX_PANEL = var_10
-
-		var_1_10005(var_6_2, var_6_3, var_6_4, var_10)
-
-		setActive = var_1_10005
-
-		local var_6_5 = arg_6_2:Find("unlock/complete")
-
-		table = var_6_3
-
-		var_1_10005(var_6_5, var_6_3.contains(arg_6_0.completeEndings, arg_6_1.id))
+		end, SFX_PANEL)
+		setActive(arg_6_2:Find("unlock/complete"), table.contains(arg_6_0.completeEndings, arg_6_1.id))
 	else
-		removeOnButton = var_1_10005
+		removeOnButton(arg_6_2)
 
-		var_1_10005(arg_6_2)
+		local var_6_1 = arg_6_2:Find("lock/desc/conditions")
 
-		local var_6_6 = arg_6_2:Find("lock/desc/conditions")
-		local var_6_7 = arg_6_1.condition
+		arg_6_0:updateConditions(arg_6_1.condition, var_6_1)
+		setActive(var_6_1, #arg_6_1.condition > 0)
 
-		arg_6_0:updateConditions(var_6_7, var_6_6)
+		local var_6_2 = arg_6_2:Find("lock/desc/Text")
 
-		setActive = var_7
+		setText(var_6_2, arg_6_1.unlock_desc)
+		setActive(var_6_2, arg_6_1.unlock_desc ~= "")
 
-		var_7(var_6_6, #arg_6_1.condition > 0)
+		local var_6_3 = arg_6_2:Find("lock/unlock_btn")
 
-		local var_6_8 = arg_6_2
-		local var_6_9 = arg_6_2.Find(var_6_8, "lock/desc/Text")
-
-		setText = var_8
-
-		var_8(var_6_9, arg_6_1.unlock_desc)
-
-		setActive = var_8
-
-		var_8(var_6_9, arg_6_1.unlock_desc ~= "")
-
-		local var_6_10 = arg_6_2:Find("lock/unlock_btn")
-
-		setActive = var_6_8
-
-		var_6_8(var_6_10, arg_6_0.gameCnt > 1)
-
-		onButton = var_6_8
-
-		local var_6_11 = arg_6_0
-		local var_6_12 = var_6_10
-
-		local function var_6_13()
-			local var_8_0 = arg_6_0
-
-			var_0.OnClickBuyBtn(var_8_0, arg_6_1)
+		setActive(var_6_3, arg_6_0.gameCnt > 1)
+		onButton(arg_6_0, var_6_3, function()
+			arg_6_0:OnClickBuyBtn(arg_6_1)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10014
-
-		var_6_8(var_6_11, var_6_12, var_6_13, var_1_10014)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.updateConditions(arg_9_0, arg_9_1, arg_9_2)
+function var_0_0.updateConditions(arg_9_0, arg_9_1, arg_9_2)
 	local var_9_0 = 0
 
 	for iter_9_0 = 1, #arg_9_1 do
-		local var_9_1 = arg_9_1[iter_9_0][1]
+		local var_9_1 = arg_9_1[iter_9_0]
 
-		EducateConst = var_1_10010
-
-		if var_9_1 == var_1_10010.DROP_TYPE_ATTR then
+		if arg_9_1[iter_9_0][1] == EducateConst.DROP_TYPE_ATTR then
 			var_9_0 = var_9_0 + 1
 
-			local var_9_2
+			local var_9_2 = iter_9_0 <= arg_9_2.childCount and arg_9_2:GetChild(iter_9_0 - 1) or cloneTplTo(arg_9_0.tpl, arg_9_2)
+			local var_9_3 = false
+			local var_9_4 = ""
 
-			if not (iter_9_0 <= arg_9_2.childCount) or not arg_9_2:GetChild(iter_9_0 - 1) then
-				cloneTplTo = var_9_2
-				var_9_2 = var_9_2(arg_9_0.tpl, arg_9_2)
-			end
-
-			var_1_10010 = false
-
-			local var_9_3 = ""
-			local var_9_5
-
-			if var_1_10008[3] then
-				local var_9_4 = arg_9_0.char
-
-				var_9_5 = var_9_5.GetAttrById(var_9_4, var_1_10008[2])
-				var_1_10010 = var_1_10008[3] <= var_9_5
-				pg = var_9_5
-				var_9_3 = var_9_5.child_attr[var_1_10008[2]].name .. " > " .. var_1_10008[3]
+			if var_9_1[3] then
+				var_9_3 = arg_9_0.char:GetAttrById(var_9_1[2]) >= var_9_1[3]
+				var_9_4 = pg.child_attr[var_9_1[2]].name .. " > " .. var_9_1[3]
 			else
-				local var_9_6 = arg_9_0.char
-
-				var_1_10010 = var_9_5.GetPersonalityId(var_9_6) == var_1_10008[2]
-				i18n = var_9_5
-				var_9_5 = var_9_5("child_nature_title")
-				pg = var_1_10013
-				var_9_3 = var_9_5 .. var_1_10013.child_attr[var_1_10008[2]].name
+				var_9_3 = arg_9_0.char:GetPersonalityId() == var_9_1[2]
+				var_9_4 = i18n("child_nature_title") .. pg.child_attr[var_9_1[2]].name
 			end
 
-			setActive = var_9_5
-
-			local var_9_7 = var_9_2
-
-			var_9_5(var_9_2.Find(var_9_7, "icon/unlock"), var_1_10010)
-
-			local var_9_8 = var_1_10010 and "F59F48" or "FFFFFF"
-
-			setTextColor = var_1_10013
-
-			local var_9_9 = var_9_2:Find("Text")
-
-			Color = var_9_7
-
-			var_1_10013(var_9_9, var_9_7.NewHex(var_9_8))
-
-			setText = var_1_10013
-
-			var_1_10013(var_9_2:Find("Text"), var_9_3)
+			setActive(var_9_2:Find("icon/unlock"), var_9_3)
+			setTextColor(var_9_2:Find("Text"), Color.NewHex(var_9_3 and "F59F48" or "FFFFFF"))
+			setText(var_9_2:Find("Text"), var_9_4)
 		end
 	end
 
 	for iter_9_1 = 1, arg_9_2.childCount do
-		setActive = var_1_10008
-
-		var_1_10008(arg_9_2:GetChild(iter_9_1 - 1), iter_9_1 <= var_9_0)
+		setActive(arg_9_2:GetChild(iter_9_1 - 1), iter_9_1 <= var_9_0)
 	end
 
 	return
 end
 
-function var_0_1.showPerformWindow(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.performTF
-	local var_10_1 = var_2.Find(var_10_0, "Image")
+function var_0_0.showPerformWindow(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0.performTF:Find("Image")
 
-	LoadImageSpriteAsync = var_1_10003
-
-	var_1_10003("bg/" .. arg_10_1.pic, var_10_1)
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_10_0.performTF, true)
-
-	onButton = var_1_10003
-
-	local var_10_2 = arg_10_0
-	local var_10_3 = var_10_1
-
-	local function var_10_4()
-		setActive = var_2_10000
-
-		var_2_10000(arg_10_0.performTF, false)
+	LoadImageSpriteAsync("bg/" .. arg_10_1.pic, var_10_0)
+	setActive(arg_10_0.performTF, true)
+	onButton(arg_10_0, var_10_0, function()
+		setActive(arg_10_0.performTF, false)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_10_2, var_10_3, var_10_4, var_1_10008)
-
-	onButton = var_1_10003
-
-	local var_10_5 = arg_10_0
-	local var_10_6 = arg_10_0.performTF
-	local var_10_7 = var_6.Find(var_10_6, "review_btn")
-
-	local function var_10_8()
-		pg = var_2_10000
-
-		local var_12_0 = var_2_10000.PerformMgr.GetInstance()
-
-		var_0.PlayGroup(var_12_0, arg_10_1.performance)
+	end, SFX_PANEL)
+	onButton(arg_10_0, arg_10_0.performTF:Find("review_btn"), function()
+		pg.PerformMgr.GetInstance():PlayGroup(arg_10_1.performance)
 
 		return
-	end
-
-	SFX_PANEL = var_10_6
-
-	var_1_10003(var_10_5, var_10_7, var_10_8, var_10_6)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnClickBuyBtn(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_1.lock_name
+function var_0_0.OnClickBuyBtn(arg_13_0, arg_13_1)
+	arg_13_0:emit(EducateBaseUI.EDUCATE_ON_MSG_TIP, {
+		content = i18n("child_cg_buy", math.min(arg_13_0.maxPrice, arg_13_1.child_cg_basic_price + arg_13_0.bugCnt * arg_13_0.addPrice), arg_13_1.lock_name),
+		onYes = function()
+			arg_13_0:emit(EducateCollectMediatorTemplate.UNLOCK, {
+				type = EducateBuyCollectCommand.TYPE.ENDING,
+				id = arg_13_1.id,
+				cost = var_0
+			})
 
-	math = var_1_10003
-
-	local var_13_1 = var_1_10003.min(arg_13_0.maxPrice, arg_13_1.child_cg_basic_price + arg_13_0.bugCnt * arg_13_0.addPrice)
-	local var_13_2 = arg_13_0
-	local var_13_3 = arg_13_0.emit
-
-	EducateBaseUI = var_7
-
-	local var_13_4 = var_7.EDUCATE_ON_MSG_TIP
-	local var_13_5 = {}
-
-	i18n = var_1_10009
-	var_13_5.content = var_1_10009("child_cg_buy", var_13_1, var_13_0)
-
-	function var_13_5.onYes()
-		local var_14_0 = arg_13_0
-		local var_14_1 = var_0.emit
-
-		EducateCollectMediatorTemplate = var_2_10003
-
-		local var_14_2 = var_2_10003.UNLOCK
-		local var_14_3 = {}
-
-		EducateBuyCollectCommand = var_2_10005
-		var_14_3.type = var_2_10005.TYPE.ENDING
-		var_14_3.id = arg_13_1.id
-		var_14_3.cost = var_13_1
-
-		var_14_1(var_14_0, var_14_2, var_14_3)
-
-		return
-	end
-
-	var_13_3(var_13_2, var_13_4, var_13_5)
+			return
+		end
+	})
 
 	return
 end
 
-function var_0_1.playAnimChange(arg_15_0)
-	local var_15_0 = arg_15_0.anim
-
-	var_1.Stop(var_15_0)
-
-	local var_15_1 = arg_15_0.anim
-
-	var_1.Play(var_15_1, "anim_educate_ending_change")
+function var_0_0.playAnimChange(arg_15_0)
+	arg_15_0.anim:Stop()
+	arg_15_0.anim:Play("anim_educate_ending_change")
 
 	return
 end
 
-function var_0_1.playAnimClose(arg_16_0)
-	local var_16_0 = arg_16_0.anim
-
-	var_1.Play(var_16_0, "anim_educate_ending_out")
+function var_0_0.playAnimClose(arg_16_0)
+	arg_16_0.anim:Play("anim_educate_ending_out")
 
 	return
 end
 
-return var_0_1
+return var_0_0

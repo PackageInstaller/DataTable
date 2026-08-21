@@ -1,73 +1,32 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandCheaterOperateCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandCheaterOperateCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().type
-	local var_1_1 = var_2.arg_list
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 23103, {
-		type = var_1_0,
-		arg_list = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(23103, {
+		type = var_1_0.type,
+		arg_list = var_1_0.arg_list
 	}, 23104, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			switch = var_2_2
+			switch(var_0, {
+				[IslandCheaterTavernConst.PlayerOperateType.PutCard] = function()
+					getProxy(IslandProxy):GetIsland():GetCheaterTavernAgency():MainPlayerPutCard(var_0)
 
-			local var_2_0 = var_1_0
-
-			var_2_10004 = {}
-			IslandCheaterTavernConst = var_2_10005
-			var_2_10004[var_2_10005.PlayerOperateType.PutCard] = function()
-				getProxy = var_3_10000
-				IslandProxy = var_3_10002
-
-				local var_3_0 = var_3_10000(var_3_10002)
-				local var_3_1 = var_0.GetIsland(var_3_0)
-				local var_3_2 = var_0.GetCheaterTavernAgency(var_3_1)
-
-				var_0.MainPlayerPutCard(var_3_2, var_1_1)
-
-				return
-			end
-			IslandCheaterTavernConst = var_5
-			var_2_10004[var_5.PlayerOperateType.Query] = function()
-				return
-			end
-			IslandCheaterTavernConst = var_5
-			var_2_10004[var_5.PlayerOperateType.Shoot] = function()
-				return
-			end
-
-			var_2_2(var_2_0, var_2_10004)
-
-			local var_2_1 = arg_1_0
-
-			var_2_2 = var_2_2.sendNotification
-			GAME = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004.ISLAND_PLAYER_CHEATER_OPERATE_DONE, {
-				type = var_1_0,
-				arg_list = var_1_1
+					return
+				end,
+				[IslandCheaterTavernConst.PlayerOperateType.Query] = function()
+					return
+				end,
+				[IslandCheaterTavernConst.PlayerOperateType.Shoot] = function()
+					return
+				end
+			})
+			arg_1_0:sendNotification(GAME.ISLAND_PLAYER_CHEATER_OPERATE_DONE, {
+				type = var_0,
+				arg_list = var_0
 			})
 		else
-			pg = var_2_2
-
-			local var_2_3 = var_2_2.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -76,4 +35,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

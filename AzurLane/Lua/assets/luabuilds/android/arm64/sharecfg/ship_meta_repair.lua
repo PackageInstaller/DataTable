@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_meta_repair") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_meta_repair"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_meta_repair = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_meta_repair
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_meta_repair = rawget(pg, "ship_meta_repair") or setmetatable({
+	__name = "ship_meta_repair"
+}, confNEO)
+pg.ship_meta_repair.all = {
 	1301,
 	1302,
 	1303,
@@ -3199,25 +3176,11 @@ var_0_3.all = {
 	63419,
 	63420
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_meta_repair = {}
+pg.base = pg.base or {}
+pg.base.ship_meta_repair = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_meta_repair
-
-	var_1_0[1301] = {
+	pg.base.ship_meta_repair[1301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1301,
@@ -3227,11 +3190,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_meta_repair
-
-	var_1_1[1302] = {
+	pg.base.ship_meta_repair[1302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1302,
@@ -3241,11 +3200,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_meta_repair
-
-	var_1_2[1303] = {
+	pg.base.ship_meta_repair[1303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1303,
@@ -3255,11 +3210,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_meta_repair
-
-	var_1_3[1304] = {
+	pg.base.ship_meta_repair[1304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1304,
@@ -3269,11 +3220,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_meta_repair
-
-	var_1_4[1305] = {
+	pg.base.ship_meta_repair[1305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1305,
@@ -3283,11 +3230,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_meta_repair
-
-	var_1_5[1306] = {
+	pg.base.ship_meta_repair[1306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1306,
@@ -3297,11 +3240,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_meta_repair
-
-	var_1_6[1307] = {
+	pg.base.ship_meta_repair[1307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1307,
@@ -3311,11 +3250,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_meta_repair
-
-	var_1_7[1308] = {
+	pg.base.ship_meta_repair[1308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1308,
@@ -3325,11 +3260,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_meta_repair
-
-	var_1_8[1309] = {
+	pg.base.ship_meta_repair[1309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1309,
@@ -3339,11 +3270,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_meta_repair
-
-	var_1_9[1310] = {
+	pg.base.ship_meta_repair[1310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1310,
@@ -3353,11 +3280,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_meta_repair
-
-	var_1_10[1311] = {
+	pg.base.ship_meta_repair[1311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1311,
@@ -3367,11 +3290,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_meta_repair
-
-	var_1_11[1312] = {
+	pg.base.ship_meta_repair[1312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1312,
@@ -3381,11 +3300,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_meta_repair
-
-	var_1_12[1313] = {
+	pg.base.ship_meta_repair[1313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1313,
@@ -3395,11 +3310,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_meta_repair
-
-	var_1_13[1314] = {
+	pg.base.ship_meta_repair[1314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1314,
@@ -3409,11 +3320,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_meta_repair
-
-	var_1_14[1315] = {
+	pg.base.ship_meta_repair[1315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1315,
@@ -3423,11 +3330,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_meta_repair
-
-	var_1_15[1316] = {
+	pg.base.ship_meta_repair[1316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1316,
@@ -3437,11 +3340,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_meta_repair
-
-	var_1_16[1317] = {
+	pg.base.ship_meta_repair[1317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1317,
@@ -3451,11 +3350,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_meta_repair
-
-	var_1_17[1318] = {
+	pg.base.ship_meta_repair[1318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1318,
@@ -3465,11 +3360,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_meta_repair
-
-	var_1_18[1319] = {
+	pg.base.ship_meta_repair[1319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1319,
@@ -3479,11 +3370,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_meta_repair
-
-	var_1_19[1320] = {
+	pg.base.ship_meta_repair[1320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1320,
@@ -3493,11 +3380,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_meta_repair
-
-	var_1_20[1321] = {
+	pg.base.ship_meta_repair[1321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1321,
@@ -3507,11 +3390,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_meta_repair
-
-	var_1_21[1322] = {
+	pg.base.ship_meta_repair[1322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1322,
@@ -3521,11 +3400,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_meta_repair
-
-	var_1_22[1323] = {
+	pg.base.ship_meta_repair[1323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1323,
@@ -3535,11 +3410,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_meta_repair
-
-	var_1_23[1324] = {
+	pg.base.ship_meta_repair[1324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1324,
@@ -3549,11 +3420,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_meta_repair
-
-	var_1_24[1325] = {
+	pg.base.ship_meta_repair[1325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1325,
@@ -3563,11 +3430,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_meta_repair
-
-	var_1_25[1326] = {
+	pg.base.ship_meta_repair[1326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1326,
@@ -3577,11 +3440,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_meta_repair
-
-	var_1_26[1327] = {
+	pg.base.ship_meta_repair[1327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1327,
@@ -3591,11 +3450,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_meta_repair
-
-	var_1_27[1328] = {
+	pg.base.ship_meta_repair[1328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1328,
@@ -3605,11 +3460,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_meta_repair
-
-	var_1_28[1329] = {
+	pg.base.ship_meta_repair[1329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1329,
@@ -3619,11 +3470,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_meta_repair
-
-	var_1_29[1330] = {
+	pg.base.ship_meta_repair[1330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 1330,
@@ -3633,11 +3480,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_meta_repair
-
-	var_1_30[1401] = {
+	pg.base.ship_meta_repair[1401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1401,
@@ -3647,11 +3490,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_meta_repair
-
-	var_1_31[1402] = {
+	pg.base.ship_meta_repair[1402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1402,
@@ -3661,11 +3500,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_meta_repair
-
-	var_1_32[1403] = {
+	pg.base.ship_meta_repair[1403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1403,
@@ -3675,11 +3510,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_meta_repair
-
-	var_1_33[1404] = {
+	pg.base.ship_meta_repair[1404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1404,
@@ -3689,11 +3520,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_meta_repair
-
-	var_1_34[1405] = {
+	pg.base.ship_meta_repair[1405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1405,
@@ -3703,11 +3530,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_meta_repair
-
-	var_1_35[1406] = {
+	pg.base.ship_meta_repair[1406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1406,
@@ -3717,11 +3540,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_meta_repair
-
-	var_1_36[1407] = {
+	pg.base.ship_meta_repair[1407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1407,
@@ -3731,11 +3550,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_meta_repair
-
-	var_1_37[1408] = {
+	pg.base.ship_meta_repair[1408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1408,
@@ -3745,11 +3560,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_meta_repair
-
-	var_1_38[1409] = {
+	pg.base.ship_meta_repair[1409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1409,
@@ -3759,11 +3570,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_meta_repair
-
-	var_1_39[1410] = {
+	pg.base.ship_meta_repair[1410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1410,
@@ -3773,11 +3580,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_meta_repair
-
-	var_1_40[1411] = {
+	pg.base.ship_meta_repair[1411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1411,
@@ -3787,11 +3590,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_meta_repair
-
-	var_1_41[1412] = {
+	pg.base.ship_meta_repair[1412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1412,
@@ -3801,11 +3600,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_meta_repair
-
-	var_1_42[1413] = {
+	pg.base.ship_meta_repair[1413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1413,
@@ -3815,11 +3610,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_meta_repair
-
-	var_1_43[1414] = {
+	pg.base.ship_meta_repair[1414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1414,
@@ -3829,11 +3620,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_meta_repair
-
-	var_1_44[1415] = {
+	pg.base.ship_meta_repair[1415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1415,
@@ -3843,11 +3630,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_meta_repair
-
-	var_1_45[1416] = {
+	pg.base.ship_meta_repair[1416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1416,
@@ -3857,11 +3640,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_meta_repair
-
-	var_1_46[1417] = {
+	pg.base.ship_meta_repair[1417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1417,
@@ -3871,11 +3650,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_meta_repair
-
-	var_1_47[1418] = {
+	pg.base.ship_meta_repair[1418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1418,
@@ -3885,11 +3660,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_meta_repair
-
-	var_1_48[1419] = {
+	pg.base.ship_meta_repair[1419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1419,
@@ -3899,11 +3670,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_meta_repair
-
-	var_1_49[1420] = {
+	pg.base.ship_meta_repair[1420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 1420,
@@ -3913,11 +3680,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_meta_repair
-
-	var_1_50[2301] = {
+	pg.base.ship_meta_repair[2301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2301,
@@ -3927,11 +3690,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_meta_repair
-
-	var_1_51[2302] = {
+	pg.base.ship_meta_repair[2302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2302,
@@ -3941,11 +3700,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_meta_repair
-
-	var_1_52[2303] = {
+	pg.base.ship_meta_repair[2303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2303,
@@ -3955,11 +3710,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_meta_repair
-
-	var_1_53[2304] = {
+	pg.base.ship_meta_repair[2304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2304,
@@ -3969,11 +3720,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_meta_repair
-
-	var_1_54[2305] = {
+	pg.base.ship_meta_repair[2305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2305,
@@ -3983,11 +3730,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_meta_repair
-
-	var_1_55[2306] = {
+	pg.base.ship_meta_repair[2306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2306,
@@ -3997,11 +3740,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_meta_repair
-
-	var_1_56[2307] = {
+	pg.base.ship_meta_repair[2307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2307,
@@ -4011,11 +3750,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_meta_repair
-
-	var_1_57[2308] = {
+	pg.base.ship_meta_repair[2308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2308,
@@ -4025,11 +3760,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_meta_repair
-
-	var_1_58[2309] = {
+	pg.base.ship_meta_repair[2309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2309,
@@ -4039,11 +3770,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_meta_repair
-
-	var_1_59[2310] = {
+	pg.base.ship_meta_repair[2310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2310,
@@ -4053,11 +3780,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_meta_repair
-
-	var_1_60[2311] = {
+	pg.base.ship_meta_repair[2311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2311,
@@ -4067,11 +3790,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_meta_repair
-
-	var_1_61[2312] = {
+	pg.base.ship_meta_repair[2312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2312,
@@ -4081,11 +3800,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_meta_repair
-
-	var_1_62[2313] = {
+	pg.base.ship_meta_repair[2313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2313,
@@ -4095,11 +3810,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_meta_repair
-
-	var_1_63[2314] = {
+	pg.base.ship_meta_repair[2314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2314,
@@ -4109,11 +3820,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_meta_repair
-
-	var_1_64[2315] = {
+	pg.base.ship_meta_repair[2315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2315,
@@ -4123,11 +3830,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_meta_repair
-
-	var_1_65[2316] = {
+	pg.base.ship_meta_repair[2316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2316,
@@ -4137,11 +3840,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_meta_repair
-
-	var_1_66[2317] = {
+	pg.base.ship_meta_repair[2317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2317,
@@ -4151,11 +3850,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_meta_repair
-
-	var_1_67[2318] = {
+	pg.base.ship_meta_repair[2318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2318,
@@ -4165,11 +3860,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_meta_repair
-
-	var_1_68[2319] = {
+	pg.base.ship_meta_repair[2319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2319,
@@ -4179,11 +3870,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_meta_repair
-
-	var_1_69[2320] = {
+	pg.base.ship_meta_repair[2320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2320,
@@ -4193,11 +3880,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_meta_repair
-
-	var_1_70[2321] = {
+	pg.base.ship_meta_repair[2321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2321,
@@ -4207,11 +3890,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_meta_repair
-
-	var_1_71[2322] = {
+	pg.base.ship_meta_repair[2322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2322,
@@ -4221,11 +3900,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_meta_repair
-
-	var_1_72[2323] = {
+	pg.base.ship_meta_repair[2323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2323,
@@ -4235,11 +3910,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_meta_repair
-
-	var_1_73[2324] = {
+	pg.base.ship_meta_repair[2324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2324,
@@ -4249,11 +3920,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_meta_repair
-
-	var_1_74[2325] = {
+	pg.base.ship_meta_repair[2325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2325,
@@ -4263,11 +3930,7 @@ var_0_3.base.ship_meta_repair = {}
 			3
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_meta_repair
-
-	var_1_75[2326] = {
+	pg.base.ship_meta_repair[2326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2326,
@@ -4277,11 +3940,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_meta_repair
-
-	var_1_76[2327] = {
+	pg.base.ship_meta_repair[2327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2327,
@@ -4291,11 +3950,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_meta_repair
-
-	var_1_77[2328] = {
+	pg.base.ship_meta_repair[2328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2328,
@@ -4305,11 +3960,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_meta_repair
-
-	var_1_78[2329] = {
+	pg.base.ship_meta_repair[2329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2329,
@@ -4319,11 +3970,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_meta_repair
-
-	var_1_79[2330] = {
+	pg.base.ship_meta_repair[2330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 2330,
@@ -4333,11 +3980,7 @@ var_0_3.base.ship_meta_repair = {}
 			4
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_meta_repair
-
-	var_1_80[2401] = {
+	pg.base.ship_meta_repair[2401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2401,
@@ -4347,11 +3990,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_meta_repair
-
-	var_1_81[2402] = {
+	pg.base.ship_meta_repair[2402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2402,
@@ -4361,11 +4000,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_meta_repair
-
-	var_1_82[2403] = {
+	pg.base.ship_meta_repair[2403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2403,
@@ -4375,11 +4010,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_meta_repair
-
-	var_1_83[2404] = {
+	pg.base.ship_meta_repair[2404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2404,
@@ -4389,11 +4020,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_meta_repair
-
-	var_1_84[2405] = {
+	pg.base.ship_meta_repair[2405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2405,
@@ -4403,11 +4030,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_meta_repair
-
-	var_1_85[2406] = {
+	pg.base.ship_meta_repair[2406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2406,
@@ -4417,11 +4040,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_meta_repair
-
-	var_1_86[2407] = {
+	pg.base.ship_meta_repair[2407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2407,
@@ -4431,11 +4050,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_meta_repair
-
-	var_1_87[2408] = {
+	pg.base.ship_meta_repair[2408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2408,
@@ -4445,11 +4060,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_meta_repair
-
-	var_1_88[2409] = {
+	pg.base.ship_meta_repair[2409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2409,
@@ -4459,11 +4070,7 @@ var_0_3.base.ship_meta_repair = {}
 			1
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_meta_repair
-
-	var_1_89[2410] = {
+	pg.base.ship_meta_repair[2410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2410,
@@ -4473,11 +4080,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_meta_repair
-
-	var_1_90[2411] = {
+	pg.base.ship_meta_repair[2411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2411,
@@ -4487,11 +4090,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_meta_repair
-
-	var_1_91[2412] = {
+	pg.base.ship_meta_repair[2412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2412,
@@ -4501,11 +4100,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_meta_repair
-
-	var_1_92[2413] = {
+	pg.base.ship_meta_repair[2413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2413,
@@ -4515,11 +4110,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_meta_repair
-
-	var_1_93[2414] = {
+	pg.base.ship_meta_repair[2414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2414,
@@ -4529,11 +4120,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_meta_repair
-
-	var_1_94[2415] = {
+	pg.base.ship_meta_repair[2415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2415,
@@ -4543,11 +4130,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_meta_repair
-
-	var_1_95[2416] = {
+	pg.base.ship_meta_repair[2416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2416,
@@ -4557,11 +4140,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_meta_repair
-
-	var_1_96[2417] = {
+	pg.base.ship_meta_repair[2417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2417,
@@ -4571,11 +4150,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_meta_repair
-
-	var_1_97[2418] = {
+	pg.base.ship_meta_repair[2418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2418,
@@ -4585,11 +4160,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_meta_repair
-
-	var_1_98[2419] = {
+	pg.base.ship_meta_repair[2419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2419,
@@ -4599,8 +4170,7 @@ var_0_3.base.ship_meta_repair = {}
 			2
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_meta_repair[2420] = {
+	pg.base.ship_meta_repair[2420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 2420,
@@ -4614,11 +4184,7 @@ var_0_3.base.ship_meta_repair = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_meta_repair
-
-	var_2_0[3101] = {
+	pg.base.ship_meta_repair[3101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3101,
@@ -4628,11 +4194,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_meta_repair
-
-	var_2_1[3102] = {
+	pg.base.ship_meta_repair[3102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3102,
@@ -4642,11 +4204,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_meta_repair
-
-	var_2_2[3103] = {
+	pg.base.ship_meta_repair[3103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3103,
@@ -4656,11 +4214,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_meta_repair
-
-	var_2_3[3104] = {
+	pg.base.ship_meta_repair[3104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3104,
@@ -4670,11 +4224,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_meta_repair
-
-	var_2_4[3105] = {
+	pg.base.ship_meta_repair[3105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3105,
@@ -4684,11 +4234,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_meta_repair
-
-	var_2_5[3106] = {
+	pg.base.ship_meta_repair[3106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3106,
@@ -4698,11 +4244,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_meta_repair
-
-	var_2_6[3107] = {
+	pg.base.ship_meta_repair[3107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3107,
@@ -4712,11 +4254,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_meta_repair
-
-	var_2_7[3108] = {
+	pg.base.ship_meta_repair[3108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3108,
@@ -4726,11 +4264,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_meta_repair
-
-	var_2_8[3109] = {
+	pg.base.ship_meta_repair[3109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3109,
@@ -4740,11 +4274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_meta_repair
-
-	var_2_9[3110] = {
+	pg.base.ship_meta_repair[3110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3110,
@@ -4754,11 +4284,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_meta_repair
-
-	var_2_10[3111] = {
+	pg.base.ship_meta_repair[3111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3111,
@@ -4768,11 +4294,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_meta_repair
-
-	var_2_11[3112] = {
+	pg.base.ship_meta_repair[3112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3112,
@@ -4782,11 +4304,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_meta_repair
-
-	var_2_12[3113] = {
+	pg.base.ship_meta_repair[3113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3113,
@@ -4796,11 +4314,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_meta_repair
-
-	var_2_13[3114] = {
+	pg.base.ship_meta_repair[3114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3114,
@@ -4810,11 +4324,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_meta_repair
-
-	var_2_14[3115] = {
+	pg.base.ship_meta_repair[3115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3115,
@@ -4824,11 +4334,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_meta_repair
-
-	var_2_15[3116] = {
+	pg.base.ship_meta_repair[3116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3116,
@@ -4838,11 +4344,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_meta_repair
-
-	var_2_16[3117] = {
+	pg.base.ship_meta_repair[3117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3117,
@@ -4852,11 +4354,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_meta_repair
-
-	var_2_17[3118] = {
+	pg.base.ship_meta_repair[3118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3118,
@@ -4866,11 +4364,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_meta_repair
-
-	var_2_18[3119] = {
+	pg.base.ship_meta_repair[3119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3119,
@@ -4880,11 +4374,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_meta_repair
-
-	var_2_19[3120] = {
+	pg.base.ship_meta_repair[3120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 3120,
@@ -4894,11 +4384,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_meta_repair
-
-	var_2_20[3401] = {
+	pg.base.ship_meta_repair[3401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3401,
@@ -4908,11 +4394,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_meta_repair
-
-	var_2_21[3402] = {
+	pg.base.ship_meta_repair[3402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3402,
@@ -4922,11 +4404,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_meta_repair
-
-	var_2_22[3403] = {
+	pg.base.ship_meta_repair[3403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3403,
@@ -4936,11 +4414,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_meta_repair
-
-	var_2_23[3404] = {
+	pg.base.ship_meta_repair[3404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3404,
@@ -4950,11 +4424,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_meta_repair
-
-	var_2_24[3405] = {
+	pg.base.ship_meta_repair[3405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3405,
@@ -4964,11 +4434,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_meta_repair
-
-	var_2_25[3406] = {
+	pg.base.ship_meta_repair[3406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3406,
@@ -4978,11 +4444,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_meta_repair
-
-	var_2_26[3407] = {
+	pg.base.ship_meta_repair[3407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3407,
@@ -4992,11 +4454,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_meta_repair
-
-	var_2_27[3408] = {
+	pg.base.ship_meta_repair[3408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3408,
@@ -5006,11 +4464,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_meta_repair
-
-	var_2_28[3409] = {
+	pg.base.ship_meta_repair[3409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3409,
@@ -5020,11 +4474,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_meta_repair
-
-	var_2_29[3410] = {
+	pg.base.ship_meta_repair[3410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3410,
@@ -5034,11 +4484,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_meta_repair
-
-	var_2_30[3411] = {
+	pg.base.ship_meta_repair[3411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3411,
@@ -5048,11 +4494,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_meta_repair
-
-	var_2_31[3412] = {
+	pg.base.ship_meta_repair[3412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3412,
@@ -5062,11 +4504,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_meta_repair
-
-	var_2_32[3413] = {
+	pg.base.ship_meta_repair[3413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3413,
@@ -5076,11 +4514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_meta_repair
-
-	var_2_33[3414] = {
+	pg.base.ship_meta_repair[3414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3414,
@@ -5090,11 +4524,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_meta_repair
-
-	var_2_34[3415] = {
+	pg.base.ship_meta_repair[3415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3415,
@@ -5104,11 +4534,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_meta_repair
-
-	var_2_35[3416] = {
+	pg.base.ship_meta_repair[3416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3416,
@@ -5118,11 +4544,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_meta_repair
-
-	var_2_36[3417] = {
+	pg.base.ship_meta_repair[3417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3417,
@@ -5132,11 +4554,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_meta_repair
-
-	var_2_37[3418] = {
+	pg.base.ship_meta_repair[3418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3418,
@@ -5146,11 +4564,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_meta_repair
-
-	var_2_38[3419] = {
+	pg.base.ship_meta_repair[3419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3419,
@@ -5160,11 +4574,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_meta_repair
-
-	var_2_39[3420] = {
+	pg.base.ship_meta_repair[3420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3420,
@@ -5174,11 +4584,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_meta_repair
-
-	var_2_40[3421] = {
+	pg.base.ship_meta_repair[3421] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3421,
@@ -5188,11 +4594,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_meta_repair
-
-	var_2_41[3422] = {
+	pg.base.ship_meta_repair[3422] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3422,
@@ -5202,11 +4604,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_meta_repair
-
-	var_2_42[3423] = {
+	pg.base.ship_meta_repair[3423] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3423,
@@ -5216,11 +4614,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_meta_repair
-
-	var_2_43[3424] = {
+	pg.base.ship_meta_repair[3424] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3424,
@@ -5230,11 +4624,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_meta_repair
-
-	var_2_44[3425] = {
+	pg.base.ship_meta_repair[3425] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3425,
@@ -5244,11 +4634,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_meta_repair
-
-	var_2_45[3426] = {
+	pg.base.ship_meta_repair[3426] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3426,
@@ -5258,11 +4644,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_meta_repair
-
-	var_2_46[3427] = {
+	pg.base.ship_meta_repair[3427] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3427,
@@ -5272,11 +4654,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_meta_repair
-
-	var_2_47[3428] = {
+	pg.base.ship_meta_repair[3428] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3428,
@@ -5286,11 +4664,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_meta_repair
-
-	var_2_48[3429] = {
+	pg.base.ship_meta_repair[3429] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3429,
@@ -5300,11 +4674,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_meta_repair
-
-	var_2_49[3430] = {
+	pg.base.ship_meta_repair[3430] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 3430,
@@ -5314,11 +4684,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_meta_repair
-
-	var_2_50[4301] = {
+	pg.base.ship_meta_repair[4301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4301,
@@ -5328,11 +4694,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_meta_repair
-
-	var_2_51[4302] = {
+	pg.base.ship_meta_repair[4302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4302,
@@ -5342,11 +4704,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_meta_repair
-
-	var_2_52[4303] = {
+	pg.base.ship_meta_repair[4303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4303,
@@ -5356,11 +4714,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_meta_repair
-
-	var_2_53[4304] = {
+	pg.base.ship_meta_repair[4304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4304,
@@ -5370,11 +4724,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_meta_repair
-
-	var_2_54[4305] = {
+	pg.base.ship_meta_repair[4305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4305,
@@ -5384,11 +4734,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_meta_repair
-
-	var_2_55[4306] = {
+	pg.base.ship_meta_repair[4306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4306,
@@ -5398,11 +4744,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_meta_repair
-
-	var_2_56[4307] = {
+	pg.base.ship_meta_repair[4307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4307,
@@ -5412,11 +4754,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_meta_repair
-
-	var_2_57[4308] = {
+	pg.base.ship_meta_repair[4308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4308,
@@ -5426,11 +4764,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_meta_repair
-
-	var_2_58[4309] = {
+	pg.base.ship_meta_repair[4309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4309,
@@ -5440,11 +4774,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_meta_repair
-
-	var_2_59[4310] = {
+	pg.base.ship_meta_repair[4310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4310,
@@ -5454,11 +4784,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_meta_repair
-
-	var_2_60[4311] = {
+	pg.base.ship_meta_repair[4311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4311,
@@ -5468,11 +4794,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_meta_repair
-
-	var_2_61[4312] = {
+	pg.base.ship_meta_repair[4312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4312,
@@ -5482,11 +4804,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_meta_repair
-
-	var_2_62[4313] = {
+	pg.base.ship_meta_repair[4313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4313,
@@ -5496,11 +4814,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_meta_repair
-
-	var_2_63[4314] = {
+	pg.base.ship_meta_repair[4314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4314,
@@ -5510,11 +4824,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_meta_repair
-
-	var_2_64[4315] = {
+	pg.base.ship_meta_repair[4315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4315,
@@ -5524,11 +4834,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_meta_repair
-
-	var_2_65[4316] = {
+	pg.base.ship_meta_repair[4316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4316,
@@ -5538,11 +4844,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_meta_repair
-
-	var_2_66[4317] = {
+	pg.base.ship_meta_repair[4317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4317,
@@ -5552,11 +4854,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_meta_repair
-
-	var_2_67[4318] = {
+	pg.base.ship_meta_repair[4318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4318,
@@ -5566,11 +4864,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_meta_repair
-
-	var_2_68[4319] = {
+	pg.base.ship_meta_repair[4319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4319,
@@ -5580,11 +4874,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_meta_repair
-
-	var_2_69[4320] = {
+	pg.base.ship_meta_repair[4320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4320,
@@ -5594,11 +4884,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_meta_repair
-
-	var_2_70[4321] = {
+	pg.base.ship_meta_repair[4321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4321,
@@ -5608,11 +4894,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_meta_repair
-
-	var_2_71[4322] = {
+	pg.base.ship_meta_repair[4322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4322,
@@ -5622,11 +4904,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_meta_repair
-
-	var_2_72[4323] = {
+	pg.base.ship_meta_repair[4323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4323,
@@ -5636,11 +4914,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_meta_repair
-
-	var_2_73[4324] = {
+	pg.base.ship_meta_repair[4324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4324,
@@ -5650,11 +4924,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_meta_repair
-
-	var_2_74[4325] = {
+	pg.base.ship_meta_repair[4325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4325,
@@ -5664,11 +4934,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_meta_repair
-
-	var_2_75[4326] = {
+	pg.base.ship_meta_repair[4326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4326,
@@ -5678,11 +4944,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_meta_repair
-
-	var_2_76[4327] = {
+	pg.base.ship_meta_repair[4327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4327,
@@ -5692,11 +4954,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_meta_repair
-
-	var_2_77[4328] = {
+	pg.base.ship_meta_repair[4328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4328,
@@ -5706,11 +4964,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_meta_repair
-
-	var_2_78[4329] = {
+	pg.base.ship_meta_repair[4329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4329,
@@ -5720,11 +4974,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_meta_repair
-
-	var_2_79[4330] = {
+	pg.base.ship_meta_repair[4330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 4330,
@@ -5734,11 +4984,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_meta_repair
-
-	var_2_80[4401] = {
+	pg.base.ship_meta_repair[4401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4401,
@@ -5748,11 +4994,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_meta_repair
-
-	var_2_81[4402] = {
+	pg.base.ship_meta_repair[4402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4402,
@@ -5762,11 +5004,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_meta_repair
-
-	var_2_82[4403] = {
+	pg.base.ship_meta_repair[4403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4403,
@@ -5776,11 +5014,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_meta_repair
-
-	var_2_83[4404] = {
+	pg.base.ship_meta_repair[4404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4404,
@@ -5790,11 +5024,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_meta_repair
-
-	var_2_84[4405] = {
+	pg.base.ship_meta_repair[4405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4405,
@@ -5804,11 +5034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_meta_repair
-
-	var_2_85[4406] = {
+	pg.base.ship_meta_repair[4406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4406,
@@ -5818,11 +5044,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_meta_repair
-
-	var_2_86[4407] = {
+	pg.base.ship_meta_repair[4407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4407,
@@ -5832,11 +5054,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_meta_repair
-
-	var_2_87[4408] = {
+	pg.base.ship_meta_repair[4408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4408,
@@ -5846,11 +5064,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_meta_repair
-
-	var_2_88[4409] = {
+	pg.base.ship_meta_repair[4409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4409,
@@ -5860,11 +5074,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_meta_repair
-
-	var_2_89[4410] = {
+	pg.base.ship_meta_repair[4410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4410,
@@ -5874,11 +5084,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_meta_repair
-
-	var_2_90[4411] = {
+	pg.base.ship_meta_repair[4411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4411,
@@ -5888,11 +5094,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_meta_repair
-
-	var_2_91[4412] = {
+	pg.base.ship_meta_repair[4412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4412,
@@ -5902,11 +5104,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_meta_repair
-
-	var_2_92[4413] = {
+	pg.base.ship_meta_repair[4413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4413,
@@ -5916,11 +5114,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_meta_repair
-
-	var_2_93[4414] = {
+	pg.base.ship_meta_repair[4414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4414,
@@ -5930,11 +5124,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_meta_repair
-
-	var_2_94[4415] = {
+	pg.base.ship_meta_repair[4415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4415,
@@ -5944,11 +5134,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_meta_repair
-
-	var_2_95[4416] = {
+	pg.base.ship_meta_repair[4416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4416,
@@ -5958,11 +5144,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_meta_repair
-
-	var_2_96[4417] = {
+	pg.base.ship_meta_repair[4417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4417,
@@ -5972,11 +5154,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_meta_repair
-
-	var_2_97[4418] = {
+	pg.base.ship_meta_repair[4418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4418,
@@ -5986,11 +5164,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_meta_repair
-
-	var_2_98[4419] = {
+	pg.base.ship_meta_repair[4419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4419,
@@ -6000,8 +5174,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_meta_repair[4420] = {
+	pg.base.ship_meta_repair[4420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 4420,
@@ -6015,11 +5188,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_meta_repair
-
-	var_3_0[5101] = {
+	pg.base.ship_meta_repair[5101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5101,
@@ -6029,11 +5198,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_meta_repair
-
-	var_3_1[5102] = {
+	pg.base.ship_meta_repair[5102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5102,
@@ -6043,11 +5208,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_meta_repair
-
-	var_3_2[5103] = {
+	pg.base.ship_meta_repair[5103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5103,
@@ -6057,11 +5218,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_meta_repair
-
-	var_3_3[5104] = {
+	pg.base.ship_meta_repair[5104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5104,
@@ -6071,11 +5228,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_meta_repair
-
-	var_3_4[5105] = {
+	pg.base.ship_meta_repair[5105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5105,
@@ -6085,11 +5238,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_meta_repair
-
-	var_3_5[5106] = {
+	pg.base.ship_meta_repair[5106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5106,
@@ -6099,11 +5248,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_meta_repair
-
-	var_3_6[5107] = {
+	pg.base.ship_meta_repair[5107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5107,
@@ -6113,11 +5258,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_meta_repair
-
-	var_3_7[5108] = {
+	pg.base.ship_meta_repair[5108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5108,
@@ -6127,11 +5268,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_meta_repair
-
-	var_3_8[5109] = {
+	pg.base.ship_meta_repair[5109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5109,
@@ -6141,11 +5278,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_meta_repair
-
-	var_3_9[5110] = {
+	pg.base.ship_meta_repair[5110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5110,
@@ -6155,11 +5288,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_meta_repair
-
-	var_3_10[5111] = {
+	pg.base.ship_meta_repair[5111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5111,
@@ -6169,11 +5298,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_meta_repair
-
-	var_3_11[5112] = {
+	pg.base.ship_meta_repair[5112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5112,
@@ -6183,11 +5308,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_meta_repair
-
-	var_3_12[5113] = {
+	pg.base.ship_meta_repair[5113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5113,
@@ -6197,11 +5318,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_meta_repair
-
-	var_3_13[5114] = {
+	pg.base.ship_meta_repair[5114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5114,
@@ -6211,11 +5328,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_meta_repair
-
-	var_3_14[5115] = {
+	pg.base.ship_meta_repair[5115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5115,
@@ -6225,11 +5338,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_meta_repair
-
-	var_3_15[5116] = {
+	pg.base.ship_meta_repair[5116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5116,
@@ -6239,11 +5348,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_meta_repair
-
-	var_3_16[5117] = {
+	pg.base.ship_meta_repair[5117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5117,
@@ -6253,11 +5358,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_meta_repair
-
-	var_3_17[5118] = {
+	pg.base.ship_meta_repair[5118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5118,
@@ -6267,11 +5368,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_meta_repair
-
-	var_3_18[5119] = {
+	pg.base.ship_meta_repair[5119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5119,
@@ -6281,11 +5378,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_meta_repair
-
-	var_3_19[5120] = {
+	pg.base.ship_meta_repair[5120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5120,
@@ -6295,11 +5388,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_meta_repair
-
-	var_3_20[5121] = {
+	pg.base.ship_meta_repair[5121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5121,
@@ -6309,11 +5398,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_meta_repair
-
-	var_3_21[5122] = {
+	pg.base.ship_meta_repair[5122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5122,
@@ -6323,11 +5408,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_meta_repair
-
-	var_3_22[5123] = {
+	pg.base.ship_meta_repair[5123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5123,
@@ -6337,11 +5418,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_meta_repair
-
-	var_3_23[5124] = {
+	pg.base.ship_meta_repair[5124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5124,
@@ -6351,11 +5428,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_meta_repair
-
-	var_3_24[5125] = {
+	pg.base.ship_meta_repair[5125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5125,
@@ -6365,11 +5438,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_meta_repair
-
-	var_3_25[5126] = {
+	pg.base.ship_meta_repair[5126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5126,
@@ -6379,11 +5448,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_meta_repair
-
-	var_3_26[5127] = {
+	pg.base.ship_meta_repair[5127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5127,
@@ -6393,11 +5458,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_meta_repair
-
-	var_3_27[5128] = {
+	pg.base.ship_meta_repair[5128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5128,
@@ -6407,11 +5468,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_meta_repair
-
-	var_3_28[5129] = {
+	pg.base.ship_meta_repair[5129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5129,
@@ -6421,11 +5478,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_meta_repair
-
-	var_3_29[5130] = {
+	pg.base.ship_meta_repair[5130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 5130,
@@ -6435,11 +5488,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_meta_repair
-
-	var_3_30[5401] = {
+	pg.base.ship_meta_repair[5401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5401,
@@ -6449,11 +5498,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_meta_repair
-
-	var_3_31[5402] = {
+	pg.base.ship_meta_repair[5402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5402,
@@ -6463,11 +5508,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_meta_repair
-
-	var_3_32[5403] = {
+	pg.base.ship_meta_repair[5403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5403,
@@ -6477,11 +5518,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_meta_repair
-
-	var_3_33[5404] = {
+	pg.base.ship_meta_repair[5404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5404,
@@ -6491,11 +5528,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_meta_repair
-
-	var_3_34[5405] = {
+	pg.base.ship_meta_repair[5405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5405,
@@ -6505,11 +5538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_meta_repair
-
-	var_3_35[5406] = {
+	pg.base.ship_meta_repair[5406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5406,
@@ -6519,11 +5548,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_meta_repair
-
-	var_3_36[5407] = {
+	pg.base.ship_meta_repair[5407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5407,
@@ -6533,11 +5558,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_meta_repair
-
-	var_3_37[5408] = {
+	pg.base.ship_meta_repair[5408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5408,
@@ -6547,11 +5568,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_meta_repair
-
-	var_3_38[5409] = {
+	pg.base.ship_meta_repair[5409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5409,
@@ -6561,11 +5578,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_meta_repair
-
-	var_3_39[5410] = {
+	pg.base.ship_meta_repair[5410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5410,
@@ -6575,11 +5588,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_meta_repair
-
-	var_3_40[5411] = {
+	pg.base.ship_meta_repair[5411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5411,
@@ -6589,11 +5598,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_meta_repair
-
-	var_3_41[5412] = {
+	pg.base.ship_meta_repair[5412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5412,
@@ -6603,11 +5608,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_meta_repair
-
-	var_3_42[5413] = {
+	pg.base.ship_meta_repair[5413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5413,
@@ -6617,11 +5618,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_meta_repair
-
-	var_3_43[5414] = {
+	pg.base.ship_meta_repair[5414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5414,
@@ -6631,11 +5628,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_meta_repair
-
-	var_3_44[5415] = {
+	pg.base.ship_meta_repair[5415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5415,
@@ -6645,11 +5638,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_meta_repair
-
-	var_3_45[5416] = {
+	pg.base.ship_meta_repair[5416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5416,
@@ -6659,11 +5648,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_meta_repair
-
-	var_3_46[5417] = {
+	pg.base.ship_meta_repair[5417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5417,
@@ -6673,11 +5658,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_meta_repair
-
-	var_3_47[5418] = {
+	pg.base.ship_meta_repair[5418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5418,
@@ -6687,11 +5668,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_meta_repair
-
-	var_3_48[5419] = {
+	pg.base.ship_meta_repair[5419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5419,
@@ -6701,11 +5678,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_meta_repair
-
-	var_3_49[5420] = {
+	pg.base.ship_meta_repair[5420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 5420,
@@ -6715,11 +5688,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_meta_repair
-
-	var_3_50[6301] = {
+	pg.base.ship_meta_repair[6301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6301,
@@ -6729,11 +5698,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_meta_repair
-
-	var_3_51[6302] = {
+	pg.base.ship_meta_repair[6302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6302,
@@ -6743,11 +5708,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_meta_repair
-
-	var_3_52[6303] = {
+	pg.base.ship_meta_repair[6303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6303,
@@ -6757,11 +5718,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_meta_repair
-
-	var_3_53[6304] = {
+	pg.base.ship_meta_repair[6304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6304,
@@ -6771,11 +5728,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_meta_repair
-
-	var_3_54[6305] = {
+	pg.base.ship_meta_repair[6305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6305,
@@ -6785,11 +5738,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_meta_repair
-
-	var_3_55[6306] = {
+	pg.base.ship_meta_repair[6306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6306,
@@ -6799,11 +5748,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_meta_repair
-
-	var_3_56[6307] = {
+	pg.base.ship_meta_repair[6307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6307,
@@ -6813,11 +5758,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_meta_repair
-
-	var_3_57[6308] = {
+	pg.base.ship_meta_repair[6308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6308,
@@ -6827,11 +5768,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_meta_repair
-
-	var_3_58[6309] = {
+	pg.base.ship_meta_repair[6309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6309,
@@ -6841,11 +5778,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_meta_repair
-
-	var_3_59[6310] = {
+	pg.base.ship_meta_repair[6310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6310,
@@ -6855,11 +5788,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_meta_repair
-
-	var_3_60[6311] = {
+	pg.base.ship_meta_repair[6311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6311,
@@ -6869,11 +5798,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_meta_repair
-
-	var_3_61[6312] = {
+	pg.base.ship_meta_repair[6312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6312,
@@ -6883,11 +5808,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_meta_repair
-
-	var_3_62[6313] = {
+	pg.base.ship_meta_repair[6313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6313,
@@ -6897,11 +5818,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_meta_repair
-
-	var_3_63[6314] = {
+	pg.base.ship_meta_repair[6314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6314,
@@ -6911,11 +5828,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_meta_repair
-
-	var_3_64[6315] = {
+	pg.base.ship_meta_repair[6315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6315,
@@ -6925,11 +5838,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_meta_repair
-
-	var_3_65[6316] = {
+	pg.base.ship_meta_repair[6316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6316,
@@ -6939,11 +5848,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_meta_repair
-
-	var_3_66[6317] = {
+	pg.base.ship_meta_repair[6317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6317,
@@ -6953,11 +5858,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_meta_repair
-
-	var_3_67[6318] = {
+	pg.base.ship_meta_repair[6318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6318,
@@ -6967,11 +5868,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_meta_repair
-
-	var_3_68[6319] = {
+	pg.base.ship_meta_repair[6319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6319,
@@ -6981,11 +5878,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_meta_repair
-
-	var_3_69[6320] = {
+	pg.base.ship_meta_repair[6320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6320,
@@ -6995,11 +5888,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_meta_repair
-
-	var_3_70[6321] = {
+	pg.base.ship_meta_repair[6321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6321,
@@ -7009,11 +5898,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_meta_repair
-
-	var_3_71[6322] = {
+	pg.base.ship_meta_repair[6322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6322,
@@ -7023,11 +5908,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_meta_repair
-
-	var_3_72[6323] = {
+	pg.base.ship_meta_repair[6323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6323,
@@ -7037,11 +5918,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_meta_repair
-
-	var_3_73[6324] = {
+	pg.base.ship_meta_repair[6324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6324,
@@ -7051,11 +5928,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_meta_repair
-
-	var_3_74[6325] = {
+	pg.base.ship_meta_repair[6325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6325,
@@ -7065,11 +5938,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_meta_repair
-
-	var_3_75[6326] = {
+	pg.base.ship_meta_repair[6326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6326,
@@ -7079,11 +5948,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_meta_repair
-
-	var_3_76[6327] = {
+	pg.base.ship_meta_repair[6327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6327,
@@ -7093,11 +5958,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_meta_repair
-
-	var_3_77[6328] = {
+	pg.base.ship_meta_repair[6328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6328,
@@ -7107,11 +5968,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_meta_repair
-
-	var_3_78[6329] = {
+	pg.base.ship_meta_repair[6329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6329,
@@ -7121,11 +5978,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_meta_repair
-
-	var_3_79[6330] = {
+	pg.base.ship_meta_repair[6330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 6330,
@@ -7135,11 +5988,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_meta_repair
-
-	var_3_80[6401] = {
+	pg.base.ship_meta_repair[6401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6401,
@@ -7149,11 +5998,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_meta_repair
-
-	var_3_81[6402] = {
+	pg.base.ship_meta_repair[6402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6402,
@@ -7163,11 +6008,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_meta_repair
-
-	var_3_82[6403] = {
+	pg.base.ship_meta_repair[6403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6403,
@@ -7177,11 +6018,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_meta_repair
-
-	var_3_83[6404] = {
+	pg.base.ship_meta_repair[6404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6404,
@@ -7191,11 +6028,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_meta_repair
-
-	var_3_84[6405] = {
+	pg.base.ship_meta_repair[6405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6405,
@@ -7205,11 +6038,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_meta_repair
-
-	var_3_85[6406] = {
+	pg.base.ship_meta_repair[6406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6406,
@@ -7219,11 +6048,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_meta_repair
-
-	var_3_86[6407] = {
+	pg.base.ship_meta_repair[6407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6407,
@@ -7233,11 +6058,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_meta_repair
-
-	var_3_87[6408] = {
+	pg.base.ship_meta_repair[6408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6408,
@@ -7247,11 +6068,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_meta_repair
-
-	var_3_88[6409] = {
+	pg.base.ship_meta_repair[6409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6409,
@@ -7261,11 +6078,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_meta_repair
-
-	var_3_89[6410] = {
+	pg.base.ship_meta_repair[6410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6410,
@@ -7275,11 +6088,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_meta_repair
-
-	var_3_90[6411] = {
+	pg.base.ship_meta_repair[6411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6411,
@@ -7289,11 +6098,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_meta_repair
-
-	var_3_91[6412] = {
+	pg.base.ship_meta_repair[6412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6412,
@@ -7303,11 +6108,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_meta_repair
-
-	var_3_92[6413] = {
+	pg.base.ship_meta_repair[6413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6413,
@@ -7317,11 +6118,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_meta_repair
-
-	var_3_93[6414] = {
+	pg.base.ship_meta_repair[6414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6414,
@@ -7331,11 +6128,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.ship_meta_repair
-
-	var_3_94[6415] = {
+	pg.base.ship_meta_repair[6415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6415,
@@ -7345,11 +6138,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_meta_repair
-
-	var_3_95[6416] = {
+	pg.base.ship_meta_repair[6416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6416,
@@ -7359,11 +6148,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_meta_repair
-
-	var_3_96[6417] = {
+	pg.base.ship_meta_repair[6417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6417,
@@ -7373,11 +6158,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_meta_repair
-
-	var_3_97[6418] = {
+	pg.base.ship_meta_repair[6418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6418,
@@ -7387,11 +6168,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_meta_repair
-
-	var_3_98[6419] = {
+	pg.base.ship_meta_repair[6419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6419,
@@ -7401,8 +6178,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.ship_meta_repair[6420] = {
+	pg.base.ship_meta_repair[6420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 6420,
@@ -7416,11 +6192,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_meta_repair
-
-	var_4_0[7101] = {
+	pg.base.ship_meta_repair[7101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7101,
@@ -7430,11 +6202,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_meta_repair
-
-	var_4_1[7102] = {
+	pg.base.ship_meta_repair[7102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7102,
@@ -7444,11 +6212,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_meta_repair
-
-	var_4_2[7103] = {
+	pg.base.ship_meta_repair[7103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7103,
@@ -7458,11 +6222,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_meta_repair
-
-	var_4_3[7104] = {
+	pg.base.ship_meta_repair[7104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7104,
@@ -7472,11 +6232,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_meta_repair
-
-	var_4_4[7105] = {
+	pg.base.ship_meta_repair[7105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7105,
@@ -7486,11 +6242,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_meta_repair
-
-	var_4_5[7106] = {
+	pg.base.ship_meta_repair[7106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7106,
@@ -7500,11 +6252,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_meta_repair
-
-	var_4_6[7107] = {
+	pg.base.ship_meta_repair[7107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7107,
@@ -7514,11 +6262,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_meta_repair
-
-	var_4_7[7108] = {
+	pg.base.ship_meta_repair[7108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7108,
@@ -7528,11 +6272,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_meta_repair
-
-	var_4_8[7109] = {
+	pg.base.ship_meta_repair[7109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7109,
@@ -7542,11 +6282,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_meta_repair
-
-	var_4_9[7110] = {
+	pg.base.ship_meta_repair[7110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7110,
@@ -7556,11 +6292,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_meta_repair
-
-	var_4_10[7111] = {
+	pg.base.ship_meta_repair[7111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7111,
@@ -7570,11 +6302,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_meta_repair
-
-	var_4_11[7112] = {
+	pg.base.ship_meta_repair[7112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7112,
@@ -7584,11 +6312,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_meta_repair
-
-	var_4_12[7113] = {
+	pg.base.ship_meta_repair[7113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7113,
@@ -7598,11 +6322,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_meta_repair
-
-	var_4_13[7114] = {
+	pg.base.ship_meta_repair[7114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7114,
@@ -7612,11 +6332,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_meta_repair
-
-	var_4_14[7115] = {
+	pg.base.ship_meta_repair[7115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7115,
@@ -7626,11 +6342,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_meta_repair
-
-	var_4_15[7116] = {
+	pg.base.ship_meta_repair[7116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7116,
@@ -7640,11 +6352,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_meta_repair
-
-	var_4_16[7117] = {
+	pg.base.ship_meta_repair[7117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7117,
@@ -7654,11 +6362,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_meta_repair
-
-	var_4_17[7118] = {
+	pg.base.ship_meta_repair[7118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7118,
@@ -7668,11 +6372,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_meta_repair
-
-	var_4_18[7119] = {
+	pg.base.ship_meta_repair[7119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7119,
@@ -7682,11 +6382,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_meta_repair
-
-	var_4_19[7120] = {
+	pg.base.ship_meta_repair[7120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7120,
@@ -7696,11 +6392,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_meta_repair
-
-	var_4_20[7121] = {
+	pg.base.ship_meta_repair[7121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7121,
@@ -7710,11 +6402,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_meta_repair
-
-	var_4_21[7122] = {
+	pg.base.ship_meta_repair[7122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7122,
@@ -7724,11 +6412,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_meta_repair
-
-	var_4_22[7123] = {
+	pg.base.ship_meta_repair[7123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7123,
@@ -7738,11 +6422,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_meta_repair
-
-	var_4_23[7124] = {
+	pg.base.ship_meta_repair[7124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7124,
@@ -7752,11 +6432,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_meta_repair
-
-	var_4_24[7125] = {
+	pg.base.ship_meta_repair[7125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7125,
@@ -7766,11 +6442,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_meta_repair
-
-	var_4_25[7126] = {
+	pg.base.ship_meta_repair[7126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7126,
@@ -7780,11 +6452,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_meta_repair
-
-	var_4_26[7127] = {
+	pg.base.ship_meta_repair[7127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7127,
@@ -7794,11 +6462,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_meta_repair
-
-	var_4_27[7128] = {
+	pg.base.ship_meta_repair[7128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7128,
@@ -7808,11 +6472,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_meta_repair
-
-	var_4_28[7129] = {
+	pg.base.ship_meta_repair[7129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7129,
@@ -7822,11 +6482,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_meta_repair
-
-	var_4_29[7130] = {
+	pg.base.ship_meta_repair[7130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 7130,
@@ -7836,11 +6492,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_meta_repair
-
-	var_4_30[7201] = {
+	pg.base.ship_meta_repair[7201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7201,
@@ -7850,11 +6502,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_meta_repair
-
-	var_4_31[7202] = {
+	pg.base.ship_meta_repair[7202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7202,
@@ -7864,11 +6512,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_meta_repair
-
-	var_4_32[7203] = {
+	pg.base.ship_meta_repair[7203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7203,
@@ -7878,11 +6522,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_meta_repair
-
-	var_4_33[7204] = {
+	pg.base.ship_meta_repair[7204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7204,
@@ -7892,11 +6532,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_meta_repair
-
-	var_4_34[7205] = {
+	pg.base.ship_meta_repair[7205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7205,
@@ -7906,11 +6542,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_meta_repair
-
-	var_4_35[7206] = {
+	pg.base.ship_meta_repair[7206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7206,
@@ -7920,11 +6552,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_meta_repair
-
-	var_4_36[7207] = {
+	pg.base.ship_meta_repair[7207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7207,
@@ -7934,11 +6562,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_meta_repair
-
-	var_4_37[7208] = {
+	pg.base.ship_meta_repair[7208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7208,
@@ -7948,11 +6572,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_meta_repair
-
-	var_4_38[7209] = {
+	pg.base.ship_meta_repair[7209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7209,
@@ -7962,11 +6582,7 @@ end)()
 			5
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_meta_repair
-
-	var_4_39[7210] = {
+	pg.base.ship_meta_repair[7210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 7210,
@@ -7976,11 +6592,7 @@ end)()
 			6
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_meta_repair
-
-	var_4_40[7401] = {
+	pg.base.ship_meta_repair[7401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7401,
@@ -7990,11 +6602,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_meta_repair
-
-	var_4_41[7402] = {
+	pg.base.ship_meta_repair[7402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7402,
@@ -8004,11 +6612,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_meta_repair
-
-	var_4_42[7403] = {
+	pg.base.ship_meta_repair[7403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7403,
@@ -8018,11 +6622,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_meta_repair
-
-	var_4_43[7404] = {
+	pg.base.ship_meta_repair[7404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7404,
@@ -8032,11 +6632,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_meta_repair
-
-	var_4_44[7405] = {
+	pg.base.ship_meta_repair[7405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7405,
@@ -8046,11 +6642,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_meta_repair
-
-	var_4_45[7406] = {
+	pg.base.ship_meta_repair[7406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7406,
@@ -8060,11 +6652,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_meta_repair
-
-	var_4_46[7407] = {
+	pg.base.ship_meta_repair[7407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7407,
@@ -8074,11 +6662,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_meta_repair
-
-	var_4_47[7408] = {
+	pg.base.ship_meta_repair[7408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7408,
@@ -8088,11 +6672,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_meta_repair
-
-	var_4_48[7409] = {
+	pg.base.ship_meta_repair[7409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7409,
@@ -8102,11 +6682,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_meta_repair
-
-	var_4_49[7410] = {
+	pg.base.ship_meta_repair[7410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7410,
@@ -8116,11 +6692,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_meta_repair
-
-	var_4_50[7411] = {
+	pg.base.ship_meta_repair[7411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7411,
@@ -8130,11 +6702,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_meta_repair
-
-	var_4_51[7412] = {
+	pg.base.ship_meta_repair[7412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7412,
@@ -8144,11 +6712,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_meta_repair
-
-	var_4_52[7413] = {
+	pg.base.ship_meta_repair[7413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7413,
@@ -8158,11 +6722,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_meta_repair
-
-	var_4_53[7414] = {
+	pg.base.ship_meta_repair[7414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7414,
@@ -8172,11 +6732,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_meta_repair
-
-	var_4_54[7415] = {
+	pg.base.ship_meta_repair[7415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7415,
@@ -8186,11 +6742,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_meta_repair
-
-	var_4_55[7416] = {
+	pg.base.ship_meta_repair[7416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7416,
@@ -8200,11 +6752,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_meta_repair
-
-	var_4_56[7417] = {
+	pg.base.ship_meta_repair[7417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7417,
@@ -8214,11 +6762,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_meta_repair
-
-	var_4_57[7418] = {
+	pg.base.ship_meta_repair[7418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7418,
@@ -8228,11 +6772,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_meta_repair
-
-	var_4_58[7419] = {
+	pg.base.ship_meta_repair[7419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7419,
@@ -8242,11 +6782,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_meta_repair
-
-	var_4_59[7420] = {
+	pg.base.ship_meta_repair[7420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 7420,
@@ -8256,11 +6792,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_meta_repair
-
-	var_4_60[8301] = {
+	pg.base.ship_meta_repair[8301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8301,
@@ -8270,11 +6802,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_meta_repair
-
-	var_4_61[8302] = {
+	pg.base.ship_meta_repair[8302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8302,
@@ -8284,11 +6812,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_meta_repair
-
-	var_4_62[8303] = {
+	pg.base.ship_meta_repair[8303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8303,
@@ -8298,11 +6822,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_meta_repair
-
-	var_4_63[8304] = {
+	pg.base.ship_meta_repair[8304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8304,
@@ -8312,11 +6832,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_meta_repair
-
-	var_4_64[8305] = {
+	pg.base.ship_meta_repair[8305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8305,
@@ -8326,11 +6842,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_meta_repair
-
-	var_4_65[8306] = {
+	pg.base.ship_meta_repair[8306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8306,
@@ -8340,11 +6852,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_meta_repair
-
-	var_4_66[8307] = {
+	pg.base.ship_meta_repair[8307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8307,
@@ -8354,11 +6862,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_meta_repair
-
-	var_4_67[8308] = {
+	pg.base.ship_meta_repair[8308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8308,
@@ -8368,11 +6872,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_meta_repair
-
-	var_4_68[8309] = {
+	pg.base.ship_meta_repair[8309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8309,
@@ -8382,11 +6882,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_meta_repair
-
-	var_4_69[8310] = {
+	pg.base.ship_meta_repair[8310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8310,
@@ -8396,11 +6892,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_meta_repair
-
-	var_4_70[8311] = {
+	pg.base.ship_meta_repair[8311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8311,
@@ -8410,11 +6902,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_meta_repair
-
-	var_4_71[8312] = {
+	pg.base.ship_meta_repair[8312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8312,
@@ -8424,11 +6912,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_meta_repair
-
-	var_4_72[8313] = {
+	pg.base.ship_meta_repair[8313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8313,
@@ -8438,11 +6922,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_meta_repair
-
-	var_4_73[8314] = {
+	pg.base.ship_meta_repair[8314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8314,
@@ -8452,11 +6932,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_meta_repair
-
-	var_4_74[8315] = {
+	pg.base.ship_meta_repair[8315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8315,
@@ -8466,11 +6942,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_meta_repair
-
-	var_4_75[8316] = {
+	pg.base.ship_meta_repair[8316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8316,
@@ -8480,11 +6952,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_meta_repair
-
-	var_4_76[8317] = {
+	pg.base.ship_meta_repair[8317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8317,
@@ -8494,11 +6962,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_meta_repair
-
-	var_4_77[8318] = {
+	pg.base.ship_meta_repair[8318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8318,
@@ -8508,11 +6972,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_meta_repair
-
-	var_4_78[8319] = {
+	pg.base.ship_meta_repair[8319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8319,
@@ -8522,11 +6982,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_meta_repair
-
-	var_4_79[8320] = {
+	pg.base.ship_meta_repair[8320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8320,
@@ -8536,11 +6992,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_meta_repair
-
-	var_4_80[8321] = {
+	pg.base.ship_meta_repair[8321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8321,
@@ -8550,11 +7002,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_meta_repair
-
-	var_4_81[8322] = {
+	pg.base.ship_meta_repair[8322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8322,
@@ -8564,11 +7012,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_meta_repair
-
-	var_4_82[8323] = {
+	pg.base.ship_meta_repair[8323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8323,
@@ -8578,11 +7022,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_meta_repair
-
-	var_4_83[8324] = {
+	pg.base.ship_meta_repair[8324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8324,
@@ -8592,11 +7032,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_meta_repair
-
-	var_4_84[8325] = {
+	pg.base.ship_meta_repair[8325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8325,
@@ -8606,11 +7042,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_meta_repair
-
-	var_4_85[8326] = {
+	pg.base.ship_meta_repair[8326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8326,
@@ -8620,11 +7052,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_meta_repair
-
-	var_4_86[8327] = {
+	pg.base.ship_meta_repair[8327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8327,
@@ -8634,11 +7062,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_meta_repair
-
-	var_4_87[8328] = {
+	pg.base.ship_meta_repair[8328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8328,
@@ -8648,11 +7072,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_meta_repair
-
-	var_4_88[8329] = {
+	pg.base.ship_meta_repair[8329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8329,
@@ -8662,11 +7082,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_meta_repair
-
-	var_4_89[8330] = {
+	pg.base.ship_meta_repair[8330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 8330,
@@ -8676,11 +7092,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_meta_repair
-
-	var_4_90[8401] = {
+	pg.base.ship_meta_repair[8401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8401,
@@ -8690,11 +7102,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_meta_repair
-
-	var_4_91[8402] = {
+	pg.base.ship_meta_repair[8402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8402,
@@ -8704,11 +7112,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_meta_repair
-
-	var_4_92[8403] = {
+	pg.base.ship_meta_repair[8403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8403,
@@ -8718,11 +7122,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_meta_repair
-
-	var_4_93[8404] = {
+	pg.base.ship_meta_repair[8404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8404,
@@ -8732,11 +7132,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.ship_meta_repair
-
-	var_4_94[8405] = {
+	pg.base.ship_meta_repair[8405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8405,
@@ -8746,11 +7142,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_meta_repair
-
-	var_4_95[8406] = {
+	pg.base.ship_meta_repair[8406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8406,
@@ -8760,11 +7152,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_meta_repair
-
-	var_4_96[8407] = {
+	pg.base.ship_meta_repair[8407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8407,
@@ -8774,11 +7162,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_meta_repair
-
-	var_4_97[8408] = {
+	pg.base.ship_meta_repair[8408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8408,
@@ -8788,11 +7172,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_meta_repair
-
-	var_4_98[8409] = {
+	pg.base.ship_meta_repair[8409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8409,
@@ -8802,8 +7182,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.ship_meta_repair[8410] = {
+	pg.base.ship_meta_repair[8410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8410,
@@ -8817,11 +7196,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_meta_repair
-
-	var_5_0[8411] = {
+	pg.base.ship_meta_repair[8411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8411,
@@ -8831,11 +7206,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_meta_repair
-
-	var_5_1[8412] = {
+	pg.base.ship_meta_repair[8412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8412,
@@ -8845,11 +7216,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_meta_repair
-
-	var_5_2[8413] = {
+	pg.base.ship_meta_repair[8413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8413,
@@ -8859,11 +7226,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_meta_repair
-
-	var_5_3[8414] = {
+	pg.base.ship_meta_repair[8414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8414,
@@ -8873,11 +7236,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_meta_repair
-
-	var_5_4[8415] = {
+	pg.base.ship_meta_repair[8415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8415,
@@ -8887,11 +7246,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_meta_repair
-
-	var_5_5[8416] = {
+	pg.base.ship_meta_repair[8416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8416,
@@ -8901,11 +7256,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_meta_repair
-
-	var_5_6[8417] = {
+	pg.base.ship_meta_repair[8417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8417,
@@ -8915,11 +7266,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_meta_repair
-
-	var_5_7[8418] = {
+	pg.base.ship_meta_repair[8418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8418,
@@ -8929,11 +7276,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_meta_repair
-
-	var_5_8[8419] = {
+	pg.base.ship_meta_repair[8419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8419,
@@ -8943,11 +7286,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_meta_repair
-
-	var_5_9[8420] = {
+	pg.base.ship_meta_repair[8420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 8420,
@@ -8957,11 +7296,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_meta_repair
-
-	var_5_10[9101] = {
+	pg.base.ship_meta_repair[9101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9101,
@@ -8971,11 +7306,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_meta_repair
-
-	var_5_11[9102] = {
+	pg.base.ship_meta_repair[9102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9102,
@@ -8985,11 +7316,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_meta_repair
-
-	var_5_12[9103] = {
+	pg.base.ship_meta_repair[9103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9103,
@@ -8999,11 +7326,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_meta_repair
-
-	var_5_13[9104] = {
+	pg.base.ship_meta_repair[9104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9104,
@@ -9013,11 +7336,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_meta_repair
-
-	var_5_14[9105] = {
+	pg.base.ship_meta_repair[9105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9105,
@@ -9027,11 +7346,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_meta_repair
-
-	var_5_15[9106] = {
+	pg.base.ship_meta_repair[9106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9106,
@@ -9041,11 +7356,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_meta_repair
-
-	var_5_16[9107] = {
+	pg.base.ship_meta_repair[9107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9107,
@@ -9055,11 +7366,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_meta_repair
-
-	var_5_17[9108] = {
+	pg.base.ship_meta_repair[9108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9108,
@@ -9069,11 +7376,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_meta_repair
-
-	var_5_18[9109] = {
+	pg.base.ship_meta_repair[9109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9109,
@@ -9083,11 +7386,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_meta_repair
-
-	var_5_19[9110] = {
+	pg.base.ship_meta_repair[9110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9110,
@@ -9097,11 +7396,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_meta_repair
-
-	var_5_20[9111] = {
+	pg.base.ship_meta_repair[9111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9111,
@@ -9111,11 +7406,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_meta_repair
-
-	var_5_21[9112] = {
+	pg.base.ship_meta_repair[9112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9112,
@@ -9125,11 +7416,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_meta_repair
-
-	var_5_22[9113] = {
+	pg.base.ship_meta_repair[9113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9113,
@@ -9139,11 +7426,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_meta_repair
-
-	var_5_23[9114] = {
+	pg.base.ship_meta_repair[9114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9114,
@@ -9153,11 +7436,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_meta_repair
-
-	var_5_24[9115] = {
+	pg.base.ship_meta_repair[9115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9115,
@@ -9167,11 +7446,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_meta_repair
-
-	var_5_25[9116] = {
+	pg.base.ship_meta_repair[9116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9116,
@@ -9181,11 +7456,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_meta_repair
-
-	var_5_26[9117] = {
+	pg.base.ship_meta_repair[9117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9117,
@@ -9195,11 +7466,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_meta_repair
-
-	var_5_27[9118] = {
+	pg.base.ship_meta_repair[9118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9118,
@@ -9209,11 +7476,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_meta_repair
-
-	var_5_28[9119] = {
+	pg.base.ship_meta_repair[9119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9119,
@@ -9223,11 +7486,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_meta_repair
-
-	var_5_29[9120] = {
+	pg.base.ship_meta_repair[9120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9120,
@@ -9237,11 +7496,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_meta_repair
-
-	var_5_30[9121] = {
+	pg.base.ship_meta_repair[9121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9121,
@@ -9251,11 +7506,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_meta_repair
-
-	var_5_31[9122] = {
+	pg.base.ship_meta_repair[9122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9122,
@@ -9265,11 +7516,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_meta_repair
-
-	var_5_32[9123] = {
+	pg.base.ship_meta_repair[9123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9123,
@@ -9279,11 +7526,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_meta_repair
-
-	var_5_33[9124] = {
+	pg.base.ship_meta_repair[9124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9124,
@@ -9293,11 +7536,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_meta_repair
-
-	var_5_34[9125] = {
+	pg.base.ship_meta_repair[9125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9125,
@@ -9307,11 +7546,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.ship_meta_repair
-
-	var_5_35[9126] = {
+	pg.base.ship_meta_repair[9126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9126,
@@ -9321,11 +7556,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.ship_meta_repair
-
-	var_5_36[9127] = {
+	pg.base.ship_meta_repair[9127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9127,
@@ -9335,11 +7566,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.ship_meta_repair
-
-	var_5_37[9128] = {
+	pg.base.ship_meta_repair[9128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9128,
@@ -9349,11 +7576,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.ship_meta_repair
-
-	var_5_38[9129] = {
+	pg.base.ship_meta_repair[9129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9129,
@@ -9363,11 +7586,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.ship_meta_repair
-
-	var_5_39[9130] = {
+	pg.base.ship_meta_repair[9130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 9130,
@@ -9377,11 +7596,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.ship_meta_repair
-
-	var_5_40[9201] = {
+	pg.base.ship_meta_repair[9201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9201,
@@ -9391,11 +7606,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.ship_meta_repair
-
-	var_5_41[9202] = {
+	pg.base.ship_meta_repair[9202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9202,
@@ -9405,11 +7616,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.ship_meta_repair
-
-	var_5_42[9203] = {
+	pg.base.ship_meta_repair[9203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9203,
@@ -9419,11 +7626,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.ship_meta_repair
-
-	var_5_43[9204] = {
+	pg.base.ship_meta_repair[9204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9204,
@@ -9433,11 +7636,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.ship_meta_repair
-
-	var_5_44[9205] = {
+	pg.base.ship_meta_repair[9205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9205,
@@ -9447,11 +7646,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.ship_meta_repair
-
-	var_5_45[9206] = {
+	pg.base.ship_meta_repair[9206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9206,
@@ -9461,11 +7656,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.ship_meta_repair
-
-	var_5_46[9207] = {
+	pg.base.ship_meta_repair[9207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9207,
@@ -9475,11 +7666,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.ship_meta_repair
-
-	var_5_47[9208] = {
+	pg.base.ship_meta_repair[9208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9208,
@@ -9489,11 +7676,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.ship_meta_repair
-
-	var_5_48[9209] = {
+	pg.base.ship_meta_repair[9209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9209,
@@ -9503,11 +7686,7 @@ end)()
 			5
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.ship_meta_repair
-
-	var_5_49[9210] = {
+	pg.base.ship_meta_repair[9210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 9210,
@@ -9517,11 +7696,7 @@ end)()
 			6
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.ship_meta_repair
-
-	var_5_50[9401] = {
+	pg.base.ship_meta_repair[9401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9401,
@@ -9531,11 +7706,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.ship_meta_repair
-
-	var_5_51[9402] = {
+	pg.base.ship_meta_repair[9402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9402,
@@ -9545,11 +7716,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.ship_meta_repair
-
-	var_5_52[9403] = {
+	pg.base.ship_meta_repair[9403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9403,
@@ -9559,11 +7726,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.ship_meta_repair
-
-	var_5_53[9404] = {
+	pg.base.ship_meta_repair[9404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9404,
@@ -9573,11 +7736,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.ship_meta_repair
-
-	var_5_54[9405] = {
+	pg.base.ship_meta_repair[9405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9405,
@@ -9587,11 +7746,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.ship_meta_repair
-
-	var_5_55[9406] = {
+	pg.base.ship_meta_repair[9406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9406,
@@ -9601,11 +7756,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.ship_meta_repair
-
-	var_5_56[9407] = {
+	pg.base.ship_meta_repair[9407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9407,
@@ -9615,11 +7766,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.ship_meta_repair
-
-	var_5_57[9408] = {
+	pg.base.ship_meta_repair[9408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9408,
@@ -9629,11 +7776,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.ship_meta_repair
-
-	var_5_58[9409] = {
+	pg.base.ship_meta_repair[9409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9409,
@@ -9643,11 +7786,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.ship_meta_repair
-
-	var_5_59[9410] = {
+	pg.base.ship_meta_repair[9410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9410,
@@ -9657,11 +7796,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.ship_meta_repair
-
-	var_5_60[9411] = {
+	pg.base.ship_meta_repair[9411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9411,
@@ -9671,11 +7806,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.ship_meta_repair
-
-	var_5_61[9412] = {
+	pg.base.ship_meta_repair[9412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9412,
@@ -9685,11 +7816,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.ship_meta_repair
-
-	var_5_62[9413] = {
+	pg.base.ship_meta_repair[9413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9413,
@@ -9699,11 +7826,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.ship_meta_repair
-
-	var_5_63[9414] = {
+	pg.base.ship_meta_repair[9414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9414,
@@ -9713,11 +7836,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.ship_meta_repair
-
-	var_5_64[9415] = {
+	pg.base.ship_meta_repair[9415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9415,
@@ -9727,11 +7846,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.ship_meta_repair
-
-	var_5_65[9416] = {
+	pg.base.ship_meta_repair[9416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9416,
@@ -9741,11 +7856,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.ship_meta_repair
-
-	var_5_66[9417] = {
+	pg.base.ship_meta_repair[9417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9417,
@@ -9755,11 +7866,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.ship_meta_repair
-
-	var_5_67[9418] = {
+	pg.base.ship_meta_repair[9418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9418,
@@ -9769,11 +7876,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.ship_meta_repair
-
-	var_5_68[9419] = {
+	pg.base.ship_meta_repair[9419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9419,
@@ -9783,11 +7886,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.ship_meta_repair
-
-	var_5_69[9420] = {
+	pg.base.ship_meta_repair[9420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 9420,
@@ -9797,11 +7896,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.ship_meta_repair
-
-	var_5_70[10101] = {
+	pg.base.ship_meta_repair[10101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10101,
@@ -9811,11 +7906,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.ship_meta_repair
-
-	var_5_71[10102] = {
+	pg.base.ship_meta_repair[10102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10102,
@@ -9825,11 +7916,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.ship_meta_repair
-
-	var_5_72[10103] = {
+	pg.base.ship_meta_repair[10103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10103,
@@ -9839,11 +7926,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.ship_meta_repair
-
-	var_5_73[10104] = {
+	pg.base.ship_meta_repair[10104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10104,
@@ -9853,11 +7936,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.ship_meta_repair
-
-	var_5_74[10105] = {
+	pg.base.ship_meta_repair[10105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10105,
@@ -9867,11 +7946,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.ship_meta_repair
-
-	var_5_75[10106] = {
+	pg.base.ship_meta_repair[10106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10106,
@@ -9881,11 +7956,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.ship_meta_repair
-
-	var_5_76[10107] = {
+	pg.base.ship_meta_repair[10107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10107,
@@ -9895,11 +7966,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.ship_meta_repair
-
-	var_5_77[10108] = {
+	pg.base.ship_meta_repair[10108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10108,
@@ -9909,11 +7976,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.ship_meta_repair
-
-	var_5_78[10109] = {
+	pg.base.ship_meta_repair[10109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10109,
@@ -9923,11 +7986,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.ship_meta_repair
-
-	var_5_79[10110] = {
+	pg.base.ship_meta_repair[10110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10110,
@@ -9937,11 +7996,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.ship_meta_repair
-
-	var_5_80[10111] = {
+	pg.base.ship_meta_repair[10111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10111,
@@ -9951,11 +8006,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.ship_meta_repair
-
-	var_5_81[10112] = {
+	pg.base.ship_meta_repair[10112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10112,
@@ -9965,11 +8016,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.ship_meta_repair
-
-	var_5_82[10113] = {
+	pg.base.ship_meta_repair[10113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10113,
@@ -9979,11 +8026,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.ship_meta_repair
-
-	var_5_83[10114] = {
+	pg.base.ship_meta_repair[10114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10114,
@@ -9993,11 +8036,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.ship_meta_repair
-
-	var_5_84[10115] = {
+	pg.base.ship_meta_repair[10115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10115,
@@ -10007,11 +8046,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.ship_meta_repair
-
-	var_5_85[10116] = {
+	pg.base.ship_meta_repair[10116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10116,
@@ -10021,11 +8056,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.ship_meta_repair
-
-	var_5_86[10117] = {
+	pg.base.ship_meta_repair[10117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10117,
@@ -10035,11 +8066,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.ship_meta_repair
-
-	var_5_87[10118] = {
+	pg.base.ship_meta_repair[10118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10118,
@@ -10049,11 +8076,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.ship_meta_repair
-
-	var_5_88[10119] = {
+	pg.base.ship_meta_repair[10119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10119,
@@ -10063,11 +8086,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.ship_meta_repair
-
-	var_5_89[10120] = {
+	pg.base.ship_meta_repair[10120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10120,
@@ -10077,11 +8096,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.ship_meta_repair
-
-	var_5_90[10121] = {
+	pg.base.ship_meta_repair[10121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10121,
@@ -10091,11 +8106,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.ship_meta_repair
-
-	var_5_91[10122] = {
+	pg.base.ship_meta_repair[10122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10122,
@@ -10105,11 +8116,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.ship_meta_repair
-
-	var_5_92[10123] = {
+	pg.base.ship_meta_repair[10123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10123,
@@ -10119,11 +8126,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.ship_meta_repair
-
-	var_5_93[10124] = {
+	pg.base.ship_meta_repair[10124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10124,
@@ -10133,11 +8136,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.ship_meta_repair
-
-	var_5_94[10125] = {
+	pg.base.ship_meta_repair[10125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10125,
@@ -10147,11 +8146,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.ship_meta_repair
-
-	var_5_95[10126] = {
+	pg.base.ship_meta_repair[10126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10126,
@@ -10161,11 +8156,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.ship_meta_repair
-
-	var_5_96[10127] = {
+	pg.base.ship_meta_repair[10127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10127,
@@ -10175,11 +8166,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.ship_meta_repair
-
-	var_5_97[10128] = {
+	pg.base.ship_meta_repair[10128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10128,
@@ -10189,11 +8176,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.ship_meta_repair
-
-	var_5_98[10129] = {
+	pg.base.ship_meta_repair[10129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10129,
@@ -10203,8 +8186,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.ship_meta_repair[10130] = {
+	pg.base.ship_meta_repair[10130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 10130,
@@ -10218,11 +8200,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.ship_meta_repair
-
-	var_6_0[10401] = {
+	pg.base.ship_meta_repair[10401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10401,
@@ -10232,11 +8210,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.ship_meta_repair
-
-	var_6_1[10402] = {
+	pg.base.ship_meta_repair[10402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10402,
@@ -10246,11 +8220,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.ship_meta_repair
-
-	var_6_2[10403] = {
+	pg.base.ship_meta_repair[10403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10403,
@@ -10260,11 +8230,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.ship_meta_repair
-
-	var_6_3[10404] = {
+	pg.base.ship_meta_repair[10404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10404,
@@ -10274,11 +8240,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.ship_meta_repair
-
-	var_6_4[10405] = {
+	pg.base.ship_meta_repair[10405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10405,
@@ -10288,11 +8250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.ship_meta_repair
-
-	var_6_5[10406] = {
+	pg.base.ship_meta_repair[10406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10406,
@@ -10302,11 +8260,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.ship_meta_repair
-
-	var_6_6[10407] = {
+	pg.base.ship_meta_repair[10407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10407,
@@ -10316,11 +8270,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.ship_meta_repair
-
-	var_6_7[10408] = {
+	pg.base.ship_meta_repair[10408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10408,
@@ -10330,11 +8280,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.ship_meta_repair
-
-	var_6_8[10409] = {
+	pg.base.ship_meta_repair[10409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10409,
@@ -10344,11 +8290,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.ship_meta_repair
-
-	var_6_9[10410] = {
+	pg.base.ship_meta_repair[10410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10410,
@@ -10358,11 +8300,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.ship_meta_repair
-
-	var_6_10[10411] = {
+	pg.base.ship_meta_repair[10411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10411,
@@ -10372,11 +8310,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.ship_meta_repair
-
-	var_6_11[10412] = {
+	pg.base.ship_meta_repair[10412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10412,
@@ -10386,11 +8320,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.ship_meta_repair
-
-	var_6_12[10413] = {
+	pg.base.ship_meta_repair[10413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10413,
@@ -10400,11 +8330,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.ship_meta_repair
-
-	var_6_13[10414] = {
+	pg.base.ship_meta_repair[10414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10414,
@@ -10414,11 +8340,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.ship_meta_repair
-
-	var_6_14[10415] = {
+	pg.base.ship_meta_repair[10415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10415,
@@ -10428,11 +8350,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.ship_meta_repair
-
-	var_6_15[10416] = {
+	pg.base.ship_meta_repair[10416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10416,
@@ -10442,11 +8360,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.ship_meta_repair
-
-	var_6_16[10417] = {
+	pg.base.ship_meta_repair[10417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10417,
@@ -10456,11 +8370,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.ship_meta_repair
-
-	var_6_17[10418] = {
+	pg.base.ship_meta_repair[10418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10418,
@@ -10470,11 +8380,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.ship_meta_repair
-
-	var_6_18[10419] = {
+	pg.base.ship_meta_repair[10419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10419,
@@ -10484,11 +8390,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.ship_meta_repair
-
-	var_6_19[10420] = {
+	pg.base.ship_meta_repair[10420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 10420,
@@ -10498,11 +8400,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.ship_meta_repair
-
-	var_6_20[11101] = {
+	pg.base.ship_meta_repair[11101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11101,
@@ -10512,11 +8410,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.ship_meta_repair
-
-	var_6_21[11102] = {
+	pg.base.ship_meta_repair[11102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11102,
@@ -10526,11 +8420,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.ship_meta_repair
-
-	var_6_22[11103] = {
+	pg.base.ship_meta_repair[11103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11103,
@@ -10540,11 +8430,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.ship_meta_repair
-
-	var_6_23[11104] = {
+	pg.base.ship_meta_repair[11104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11104,
@@ -10554,11 +8440,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.ship_meta_repair
-
-	var_6_24[11105] = {
+	pg.base.ship_meta_repair[11105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11105,
@@ -10568,11 +8450,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.ship_meta_repair
-
-	var_6_25[11106] = {
+	pg.base.ship_meta_repair[11106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11106,
@@ -10582,11 +8460,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.ship_meta_repair
-
-	var_6_26[11107] = {
+	pg.base.ship_meta_repair[11107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11107,
@@ -10596,11 +8470,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.ship_meta_repair
-
-	var_6_27[11108] = {
+	pg.base.ship_meta_repair[11108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11108,
@@ -10610,11 +8480,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.ship_meta_repair
-
-	var_6_28[11109] = {
+	pg.base.ship_meta_repair[11109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11109,
@@ -10624,11 +8490,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.ship_meta_repair
-
-	var_6_29[11110] = {
+	pg.base.ship_meta_repair[11110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 11110,
@@ -10638,11 +8500,7 @@ end)()
 			5
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.ship_meta_repair
-
-	var_6_30[11201] = {
+	pg.base.ship_meta_repair[11201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11201,
@@ -10652,11 +8510,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.ship_meta_repair
-
-	var_6_31[11202] = {
+	pg.base.ship_meta_repair[11202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11202,
@@ -10666,11 +8520,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.ship_meta_repair
-
-	var_6_32[11203] = {
+	pg.base.ship_meta_repair[11203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11203,
@@ -10680,11 +8530,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.ship_meta_repair
-
-	var_6_33[11204] = {
+	pg.base.ship_meta_repair[11204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11204,
@@ -10694,11 +8540,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.ship_meta_repair
-
-	var_6_34[11205] = {
+	pg.base.ship_meta_repair[11205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11205,
@@ -10708,11 +8550,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.ship_meta_repair
-
-	var_6_35[11206] = {
+	pg.base.ship_meta_repair[11206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11206,
@@ -10722,11 +8560,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.ship_meta_repair
-
-	var_6_36[11207] = {
+	pg.base.ship_meta_repair[11207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11207,
@@ -10736,11 +8570,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.ship_meta_repair
-
-	var_6_37[11208] = {
+	pg.base.ship_meta_repair[11208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11208,
@@ -10750,11 +8580,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.ship_meta_repair
-
-	var_6_38[11209] = {
+	pg.base.ship_meta_repair[11209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11209,
@@ -10764,11 +8590,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.ship_meta_repair
-
-	var_6_39[11210] = {
+	pg.base.ship_meta_repair[11210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11210,
@@ -10778,11 +8600,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.ship_meta_repair
-
-	var_6_40[11211] = {
+	pg.base.ship_meta_repair[11211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11211,
@@ -10792,11 +8610,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.ship_meta_repair
-
-	var_6_41[11212] = {
+	pg.base.ship_meta_repair[11212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11212,
@@ -10806,11 +8620,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.ship_meta_repair
-
-	var_6_42[11213] = {
+	pg.base.ship_meta_repair[11213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11213,
@@ -10820,11 +8630,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.ship_meta_repair
-
-	var_6_43[11214] = {
+	pg.base.ship_meta_repair[11214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11214,
@@ -10834,11 +8640,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.ship_meta_repair
-
-	var_6_44[11215] = {
+	pg.base.ship_meta_repair[11215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11215,
@@ -10848,11 +8650,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.ship_meta_repair
-
-	var_6_45[11216] = {
+	pg.base.ship_meta_repair[11216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11216,
@@ -10862,11 +8660,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.ship_meta_repair
-
-	var_6_46[11217] = {
+	pg.base.ship_meta_repair[11217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11217,
@@ -10876,11 +8670,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.ship_meta_repair
-
-	var_6_47[11218] = {
+	pg.base.ship_meta_repair[11218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11218,
@@ -10890,11 +8680,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.ship_meta_repair
-
-	var_6_48[11219] = {
+	pg.base.ship_meta_repair[11219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11219,
@@ -10904,11 +8690,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.ship_meta_repair
-
-	var_6_49[11220] = {
+	pg.base.ship_meta_repair[11220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 11220,
@@ -10918,11 +8700,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.ship_meta_repair
-
-	var_6_50[11401] = {
+	pg.base.ship_meta_repair[11401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11401,
@@ -10932,11 +8710,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.ship_meta_repair
-
-	var_6_51[11402] = {
+	pg.base.ship_meta_repair[11402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11402,
@@ -10946,11 +8720,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.ship_meta_repair
-
-	var_6_52[11403] = {
+	pg.base.ship_meta_repair[11403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11403,
@@ -10960,11 +8730,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.ship_meta_repair
-
-	var_6_53[11404] = {
+	pg.base.ship_meta_repair[11404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11404,
@@ -10974,11 +8740,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.ship_meta_repair
-
-	var_6_54[11405] = {
+	pg.base.ship_meta_repair[11405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11405,
@@ -10988,11 +8750,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.ship_meta_repair
-
-	var_6_55[11406] = {
+	pg.base.ship_meta_repair[11406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11406,
@@ -11002,11 +8760,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.ship_meta_repair
-
-	var_6_56[11407] = {
+	pg.base.ship_meta_repair[11407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11407,
@@ -11016,11 +8770,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.ship_meta_repair
-
-	var_6_57[11408] = {
+	pg.base.ship_meta_repair[11408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11408,
@@ -11030,11 +8780,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.ship_meta_repair
-
-	var_6_58[11409] = {
+	pg.base.ship_meta_repair[11409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11409,
@@ -11044,11 +8790,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.ship_meta_repair
-
-	var_6_59[11410] = {
+	pg.base.ship_meta_repair[11410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11410,
@@ -11058,11 +8800,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.ship_meta_repair
-
-	var_6_60[11411] = {
+	pg.base.ship_meta_repair[11411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11411,
@@ -11072,11 +8810,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.ship_meta_repair
-
-	var_6_61[11412] = {
+	pg.base.ship_meta_repair[11412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11412,
@@ -11086,11 +8820,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.ship_meta_repair
-
-	var_6_62[11413] = {
+	pg.base.ship_meta_repair[11413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11413,
@@ -11100,11 +8830,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.ship_meta_repair
-
-	var_6_63[11414] = {
+	pg.base.ship_meta_repair[11414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11414,
@@ -11114,11 +8840,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.ship_meta_repair
-
-	var_6_64[11415] = {
+	pg.base.ship_meta_repair[11415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11415,
@@ -11128,11 +8850,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.ship_meta_repair
-
-	var_6_65[11416] = {
+	pg.base.ship_meta_repair[11416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11416,
@@ -11142,11 +8860,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.ship_meta_repair
-
-	var_6_66[11417] = {
+	pg.base.ship_meta_repair[11417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11417,
@@ -11156,11 +8870,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.ship_meta_repair
-
-	var_6_67[11418] = {
+	pg.base.ship_meta_repair[11418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11418,
@@ -11170,11 +8880,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.ship_meta_repair
-
-	var_6_68[11419] = {
+	pg.base.ship_meta_repair[11419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11419,
@@ -11184,11 +8890,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.ship_meta_repair
-
-	var_6_69[11420] = {
+	pg.base.ship_meta_repair[11420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 11420,
@@ -11198,11 +8900,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.ship_meta_repair
-
-	var_6_70[12101] = {
+	pg.base.ship_meta_repair[12101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12101,
@@ -11212,11 +8910,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.ship_meta_repair
-
-	var_6_71[12102] = {
+	pg.base.ship_meta_repair[12102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12102,
@@ -11226,11 +8920,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.ship_meta_repair
-
-	var_6_72[12103] = {
+	pg.base.ship_meta_repair[12103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12103,
@@ -11240,11 +8930,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.ship_meta_repair
-
-	var_6_73[12104] = {
+	pg.base.ship_meta_repair[12104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12104,
@@ -11254,11 +8940,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.ship_meta_repair
-
-	var_6_74[12105] = {
+	pg.base.ship_meta_repair[12105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12105,
@@ -11268,11 +8950,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.ship_meta_repair
-
-	var_6_75[12106] = {
+	pg.base.ship_meta_repair[12106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12106,
@@ -11282,11 +8960,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.ship_meta_repair
-
-	var_6_76[12107] = {
+	pg.base.ship_meta_repair[12107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12107,
@@ -11296,11 +8970,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.ship_meta_repair
-
-	var_6_77[12108] = {
+	pg.base.ship_meta_repair[12108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12108,
@@ -11310,11 +8980,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.ship_meta_repair
-
-	var_6_78[12109] = {
+	pg.base.ship_meta_repair[12109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12109,
@@ -11324,11 +8990,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.ship_meta_repair
-
-	var_6_79[12110] = {
+	pg.base.ship_meta_repair[12110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12110,
@@ -11338,11 +9000,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.ship_meta_repair
-
-	var_6_80[12111] = {
+	pg.base.ship_meta_repair[12111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12111,
@@ -11352,11 +9010,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.ship_meta_repair
-
-	var_6_81[12112] = {
+	pg.base.ship_meta_repair[12112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12112,
@@ -11366,11 +9020,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.ship_meta_repair
-
-	var_6_82[12113] = {
+	pg.base.ship_meta_repair[12113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12113,
@@ -11380,11 +9030,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.ship_meta_repair
-
-	var_6_83[12114] = {
+	pg.base.ship_meta_repair[12114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12114,
@@ -11394,11 +9040,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.ship_meta_repair
-
-	var_6_84[12115] = {
+	pg.base.ship_meta_repair[12115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12115,
@@ -11408,11 +9050,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.ship_meta_repair
-
-	var_6_85[12116] = {
+	pg.base.ship_meta_repair[12116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12116,
@@ -11422,11 +9060,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.ship_meta_repair
-
-	var_6_86[12117] = {
+	pg.base.ship_meta_repair[12117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12117,
@@ -11436,11 +9070,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.ship_meta_repair
-
-	var_6_87[12118] = {
+	pg.base.ship_meta_repair[12118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12118,
@@ -11450,11 +9080,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.ship_meta_repair
-
-	var_6_88[12119] = {
+	pg.base.ship_meta_repair[12119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12119,
@@ -11464,11 +9090,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.ship_meta_repair
-
-	var_6_89[12120] = {
+	pg.base.ship_meta_repair[12120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12120,
@@ -11478,11 +9100,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.ship_meta_repair
-
-	var_6_90[12121] = {
+	pg.base.ship_meta_repair[12121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12121,
@@ -11492,11 +9110,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.ship_meta_repair
-
-	var_6_91[12122] = {
+	pg.base.ship_meta_repair[12122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12122,
@@ -11506,11 +9120,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.ship_meta_repair
-
-	var_6_92[12123] = {
+	pg.base.ship_meta_repair[12123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12123,
@@ -11520,11 +9130,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.ship_meta_repair
-
-	var_6_93[12124] = {
+	pg.base.ship_meta_repair[12124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12124,
@@ -11534,11 +9140,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.ship_meta_repair
-
-	var_6_94[12125] = {
+	pg.base.ship_meta_repair[12125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12125,
@@ -11548,11 +9150,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.ship_meta_repair
-
-	var_6_95[12126] = {
+	pg.base.ship_meta_repair[12126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12126,
@@ -11562,11 +9160,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.ship_meta_repair
-
-	var_6_96[12127] = {
+	pg.base.ship_meta_repair[12127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12127,
@@ -11576,11 +9170,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.ship_meta_repair
-
-	var_6_97[12128] = {
+	pg.base.ship_meta_repair[12128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12128,
@@ -11590,11 +9180,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.ship_meta_repair
-
-	var_6_98[12129] = {
+	pg.base.ship_meta_repair[12129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12129,
@@ -11604,8 +9190,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.ship_meta_repair[12130] = {
+	pg.base.ship_meta_repair[12130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 12130,
@@ -11619,11 +9204,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.ship_meta_repair
-
-	var_7_0[12401] = {
+	pg.base.ship_meta_repair[12401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12401,
@@ -11633,11 +9214,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.ship_meta_repair
-
-	var_7_1[12402] = {
+	pg.base.ship_meta_repair[12402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12402,
@@ -11647,11 +9224,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.ship_meta_repair
-
-	var_7_2[12403] = {
+	pg.base.ship_meta_repair[12403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12403,
@@ -11661,11 +9234,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.ship_meta_repair
-
-	var_7_3[12404] = {
+	pg.base.ship_meta_repair[12404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12404,
@@ -11675,11 +9244,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.ship_meta_repair
-
-	var_7_4[12405] = {
+	pg.base.ship_meta_repair[12405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12405,
@@ -11689,11 +9254,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.ship_meta_repair
-
-	var_7_5[12406] = {
+	pg.base.ship_meta_repair[12406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12406,
@@ -11703,11 +9264,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.ship_meta_repair
-
-	var_7_6[12407] = {
+	pg.base.ship_meta_repair[12407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12407,
@@ -11717,11 +9274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.ship_meta_repair
-
-	var_7_7[12408] = {
+	pg.base.ship_meta_repair[12408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12408,
@@ -11731,11 +9284,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.ship_meta_repair
-
-	var_7_8[12409] = {
+	pg.base.ship_meta_repair[12409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12409,
@@ -11745,11 +9294,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.ship_meta_repair
-
-	var_7_9[12410] = {
+	pg.base.ship_meta_repair[12410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12410,
@@ -11759,11 +9304,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.ship_meta_repair
-
-	var_7_10[12411] = {
+	pg.base.ship_meta_repair[12411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12411,
@@ -11773,11 +9314,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.ship_meta_repair
-
-	var_7_11[12412] = {
+	pg.base.ship_meta_repair[12412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12412,
@@ -11787,11 +9324,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.ship_meta_repair
-
-	var_7_12[12413] = {
+	pg.base.ship_meta_repair[12413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12413,
@@ -11801,11 +9334,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.ship_meta_repair
-
-	var_7_13[12414] = {
+	pg.base.ship_meta_repair[12414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12414,
@@ -11815,11 +9344,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.ship_meta_repair
-
-	var_7_14[12415] = {
+	pg.base.ship_meta_repair[12415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12415,
@@ -11829,11 +9354,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.ship_meta_repair
-
-	var_7_15[12416] = {
+	pg.base.ship_meta_repair[12416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12416,
@@ -11843,11 +9364,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.ship_meta_repair
-
-	var_7_16[12417] = {
+	pg.base.ship_meta_repair[12417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12417,
@@ -11857,11 +9374,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.ship_meta_repair
-
-	var_7_17[12418] = {
+	pg.base.ship_meta_repair[12418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12418,
@@ -11871,11 +9384,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.ship_meta_repair
-
-	var_7_18[12419] = {
+	pg.base.ship_meta_repair[12419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12419,
@@ -11885,11 +9394,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.ship_meta_repair
-
-	var_7_19[12420] = {
+	pg.base.ship_meta_repair[12420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 12420,
@@ -11899,11 +9404,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.ship_meta_repair
-
-	var_7_20[13101] = {
+	pg.base.ship_meta_repair[13101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13101,
@@ -11913,11 +9414,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.ship_meta_repair
-
-	var_7_21[13102] = {
+	pg.base.ship_meta_repair[13102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13102,
@@ -11927,11 +9424,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.ship_meta_repair
-
-	var_7_22[13103] = {
+	pg.base.ship_meta_repair[13103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13103,
@@ -11941,11 +9434,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.ship_meta_repair
-
-	var_7_23[13104] = {
+	pg.base.ship_meta_repair[13104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13104,
@@ -11955,11 +9444,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.ship_meta_repair
-
-	var_7_24[13105] = {
+	pg.base.ship_meta_repair[13105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13105,
@@ -11969,11 +9454,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.ship_meta_repair
-
-	var_7_25[13106] = {
+	pg.base.ship_meta_repair[13106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13106,
@@ -11983,11 +9464,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.ship_meta_repair
-
-	var_7_26[13107] = {
+	pg.base.ship_meta_repair[13107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13107,
@@ -11997,11 +9474,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.ship_meta_repair
-
-	var_7_27[13108] = {
+	pg.base.ship_meta_repair[13108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13108,
@@ -12011,11 +9484,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.ship_meta_repair
-
-	var_7_28[13109] = {
+	pg.base.ship_meta_repair[13109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13109,
@@ -12025,11 +9494,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.ship_meta_repair
-
-	var_7_29[13110] = {
+	pg.base.ship_meta_repair[13110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13110,
@@ -12039,11 +9504,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.ship_meta_repair
-
-	var_7_30[13111] = {
+	pg.base.ship_meta_repair[13111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13111,
@@ -12053,11 +9514,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.ship_meta_repair
-
-	var_7_31[13112] = {
+	pg.base.ship_meta_repair[13112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13112,
@@ -12067,11 +9524,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.ship_meta_repair
-
-	var_7_32[13113] = {
+	pg.base.ship_meta_repair[13113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13113,
@@ -12081,11 +9534,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.ship_meta_repair
-
-	var_7_33[13114] = {
+	pg.base.ship_meta_repair[13114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13114,
@@ -12095,11 +9544,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.ship_meta_repair
-
-	var_7_34[13115] = {
+	pg.base.ship_meta_repair[13115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13115,
@@ -12109,11 +9554,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.ship_meta_repair
-
-	var_7_35[13116] = {
+	pg.base.ship_meta_repair[13116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13116,
@@ -12123,11 +9564,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.ship_meta_repair
-
-	var_7_36[13117] = {
+	pg.base.ship_meta_repair[13117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13117,
@@ -12137,11 +9574,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.ship_meta_repair
-
-	var_7_37[13118] = {
+	pg.base.ship_meta_repair[13118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13118,
@@ -12151,11 +9584,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.ship_meta_repair
-
-	var_7_38[13119] = {
+	pg.base.ship_meta_repair[13119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13119,
@@ -12165,11 +9594,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.ship_meta_repair
-
-	var_7_39[13120] = {
+	pg.base.ship_meta_repair[13120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 13120,
@@ -12179,11 +9604,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.ship_meta_repair
-
-	var_7_40[13201] = {
+	pg.base.ship_meta_repair[13201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13201,
@@ -12193,11 +9614,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.ship_meta_repair
-
-	var_7_41[13202] = {
+	pg.base.ship_meta_repair[13202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13202,
@@ -12207,11 +9624,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.ship_meta_repair
-
-	var_7_42[13203] = {
+	pg.base.ship_meta_repair[13203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13203,
@@ -12221,11 +9634,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.ship_meta_repair
-
-	var_7_43[13204] = {
+	pg.base.ship_meta_repair[13204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13204,
@@ -12235,11 +9644,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.ship_meta_repair
-
-	var_7_44[13205] = {
+	pg.base.ship_meta_repair[13205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13205,
@@ -12249,11 +9654,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.ship_meta_repair
-
-	var_7_45[13206] = {
+	pg.base.ship_meta_repair[13206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13206,
@@ -12263,11 +9664,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.ship_meta_repair
-
-	var_7_46[13207] = {
+	pg.base.ship_meta_repair[13207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13207,
@@ -12277,11 +9674,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.ship_meta_repair
-
-	var_7_47[13208] = {
+	pg.base.ship_meta_repair[13208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13208,
@@ -12291,11 +9684,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.ship_meta_repair
-
-	var_7_48[13209] = {
+	pg.base.ship_meta_repair[13209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13209,
@@ -12305,11 +9694,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.ship_meta_repair
-
-	var_7_49[13210] = {
+	pg.base.ship_meta_repair[13210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13210,
@@ -12319,11 +9704,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.ship_meta_repair
-
-	var_7_50[13211] = {
+	pg.base.ship_meta_repair[13211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13211,
@@ -12333,11 +9714,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.ship_meta_repair
-
-	var_7_51[13212] = {
+	pg.base.ship_meta_repair[13212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13212,
@@ -12347,11 +9724,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.ship_meta_repair
-
-	var_7_52[13213] = {
+	pg.base.ship_meta_repair[13213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13213,
@@ -12361,11 +9734,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.ship_meta_repair
-
-	var_7_53[13214] = {
+	pg.base.ship_meta_repair[13214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13214,
@@ -12375,11 +9744,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.ship_meta_repair
-
-	var_7_54[13215] = {
+	pg.base.ship_meta_repair[13215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13215,
@@ -12389,11 +9754,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.ship_meta_repair
-
-	var_7_55[13216] = {
+	pg.base.ship_meta_repair[13216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13216,
@@ -12403,11 +9764,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.ship_meta_repair
-
-	var_7_56[13217] = {
+	pg.base.ship_meta_repair[13217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13217,
@@ -12417,11 +9774,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.ship_meta_repair
-
-	var_7_57[13218] = {
+	pg.base.ship_meta_repair[13218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13218,
@@ -12431,11 +9784,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.ship_meta_repair
-
-	var_7_58[13219] = {
+	pg.base.ship_meta_repair[13219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13219,
@@ -12445,11 +9794,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.ship_meta_repair
-
-	var_7_59[13220] = {
+	pg.base.ship_meta_repair[13220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 13220,
@@ -12459,11 +9804,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.ship_meta_repair
-
-	var_7_60[13401] = {
+	pg.base.ship_meta_repair[13401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13401,
@@ -12473,11 +9814,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.ship_meta_repair
-
-	var_7_61[13402] = {
+	pg.base.ship_meta_repair[13402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13402,
@@ -12487,11 +9824,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.ship_meta_repair
-
-	var_7_62[13403] = {
+	pg.base.ship_meta_repair[13403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13403,
@@ -12501,11 +9834,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.ship_meta_repair
-
-	var_7_63[13404] = {
+	pg.base.ship_meta_repair[13404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13404,
@@ -12515,11 +9844,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.ship_meta_repair
-
-	var_7_64[13405] = {
+	pg.base.ship_meta_repair[13405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13405,
@@ -12529,11 +9854,7 @@ end)()
 			5
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.ship_meta_repair
-
-	var_7_65[13406] = {
+	pg.base.ship_meta_repair[13406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13406,
@@ -12543,11 +9864,7 @@ end)()
 			5
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.ship_meta_repair
-
-	var_7_66[13407] = {
+	pg.base.ship_meta_repair[13407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13407,
@@ -12557,11 +9874,7 @@ end)()
 			6
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.ship_meta_repair
-
-	var_7_67[13408] = {
+	pg.base.ship_meta_repair[13408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13408,
@@ -12571,11 +9884,7 @@ end)()
 			6
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.ship_meta_repair
-
-	var_7_68[13409] = {
+	pg.base.ship_meta_repair[13409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13409,
@@ -12585,11 +9894,7 @@ end)()
 			6
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.ship_meta_repair
-
-	var_7_69[13410] = {
+	pg.base.ship_meta_repair[13410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 13410,
@@ -12599,11 +9904,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.ship_meta_repair
-
-	var_7_70[14101] = {
+	pg.base.ship_meta_repair[14101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14101,
@@ -12613,11 +9914,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.ship_meta_repair
-
-	var_7_71[14102] = {
+	pg.base.ship_meta_repair[14102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14102,
@@ -12627,11 +9924,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.ship_meta_repair
-
-	var_7_72[14103] = {
+	pg.base.ship_meta_repair[14103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14103,
@@ -12641,11 +9934,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.ship_meta_repair
-
-	var_7_73[14104] = {
+	pg.base.ship_meta_repair[14104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14104,
@@ -12655,11 +9944,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.ship_meta_repair
-
-	var_7_74[14105] = {
+	pg.base.ship_meta_repair[14105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14105,
@@ -12669,11 +9954,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.ship_meta_repair
-
-	var_7_75[14106] = {
+	pg.base.ship_meta_repair[14106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14106,
@@ -12683,11 +9964,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.ship_meta_repair
-
-	var_7_76[14107] = {
+	pg.base.ship_meta_repair[14107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14107,
@@ -12697,11 +9974,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.ship_meta_repair
-
-	var_7_77[14108] = {
+	pg.base.ship_meta_repair[14108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14108,
@@ -12711,11 +9984,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.ship_meta_repair
-
-	var_7_78[14109] = {
+	pg.base.ship_meta_repair[14109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14109,
@@ -12725,11 +9994,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.ship_meta_repair
-
-	var_7_79[14110] = {
+	pg.base.ship_meta_repair[14110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14110,
@@ -12739,11 +10004,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.ship_meta_repair
-
-	var_7_80[14111] = {
+	pg.base.ship_meta_repair[14111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14111,
@@ -12753,11 +10014,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.ship_meta_repair
-
-	var_7_81[14112] = {
+	pg.base.ship_meta_repair[14112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14112,
@@ -12767,11 +10024,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.ship_meta_repair
-
-	var_7_82[14113] = {
+	pg.base.ship_meta_repair[14113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14113,
@@ -12781,11 +10034,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.ship_meta_repair
-
-	var_7_83[14114] = {
+	pg.base.ship_meta_repair[14114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14114,
@@ -12795,11 +10044,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.ship_meta_repair
-
-	var_7_84[14115] = {
+	pg.base.ship_meta_repair[14115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14115,
@@ -12809,11 +10054,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.ship_meta_repair
-
-	var_7_85[14116] = {
+	pg.base.ship_meta_repair[14116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14116,
@@ -12823,11 +10064,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.ship_meta_repair
-
-	var_7_86[14117] = {
+	pg.base.ship_meta_repair[14117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14117,
@@ -12837,11 +10074,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.ship_meta_repair
-
-	var_7_87[14118] = {
+	pg.base.ship_meta_repair[14118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14118,
@@ -12851,11 +10084,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.ship_meta_repair
-
-	var_7_88[14119] = {
+	pg.base.ship_meta_repair[14119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14119,
@@ -12865,11 +10094,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.ship_meta_repair
-
-	var_7_89[14120] = {
+	pg.base.ship_meta_repair[14120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14120,
@@ -12879,11 +10104,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.ship_meta_repair
-
-	var_7_90[14121] = {
+	pg.base.ship_meta_repair[14121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14121,
@@ -12893,11 +10114,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.ship_meta_repair
-
-	var_7_91[14122] = {
+	pg.base.ship_meta_repair[14122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14122,
@@ -12907,11 +10124,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.ship_meta_repair
-
-	var_7_92[14123] = {
+	pg.base.ship_meta_repair[14123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14123,
@@ -12921,11 +10134,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.ship_meta_repair
-
-	var_7_93[14124] = {
+	pg.base.ship_meta_repair[14124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14124,
@@ -12935,11 +10144,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.ship_meta_repair
-
-	var_7_94[14125] = {
+	pg.base.ship_meta_repair[14125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14125,
@@ -12949,11 +10154,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.ship_meta_repair
-
-	var_7_95[14126] = {
+	pg.base.ship_meta_repair[14126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14126,
@@ -12963,11 +10164,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.ship_meta_repair
-
-	var_7_96[14127] = {
+	pg.base.ship_meta_repair[14127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14127,
@@ -12977,11 +10174,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.ship_meta_repair
-
-	var_7_97[14128] = {
+	pg.base.ship_meta_repair[14128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14128,
@@ -12991,11 +10184,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.ship_meta_repair
-
-	var_7_98[14129] = {
+	pg.base.ship_meta_repair[14129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14129,
@@ -13005,8 +10194,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.ship_meta_repair[14130] = {
+	pg.base.ship_meta_repair[14130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 14130,
@@ -13020,11 +10208,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.ship_meta_repair
-
-	var_8_0[14401] = {
+	pg.base.ship_meta_repair[14401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14401,
@@ -13034,11 +10218,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.ship_meta_repair
-
-	var_8_1[14402] = {
+	pg.base.ship_meta_repair[14402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14402,
@@ -13048,11 +10228,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.ship_meta_repair
-
-	var_8_2[14403] = {
+	pg.base.ship_meta_repair[14403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14403,
@@ -13062,11 +10238,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.ship_meta_repair
-
-	var_8_3[14404] = {
+	pg.base.ship_meta_repair[14404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14404,
@@ -13076,11 +10248,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.ship_meta_repair
-
-	var_8_4[14405] = {
+	pg.base.ship_meta_repair[14405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14405,
@@ -13090,11 +10258,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.ship_meta_repair
-
-	var_8_5[14406] = {
+	pg.base.ship_meta_repair[14406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14406,
@@ -13104,11 +10268,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.ship_meta_repair
-
-	var_8_6[14407] = {
+	pg.base.ship_meta_repair[14407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14407,
@@ -13118,11 +10278,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.ship_meta_repair
-
-	var_8_7[14408] = {
+	pg.base.ship_meta_repair[14408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14408,
@@ -13132,11 +10288,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.ship_meta_repair
-
-	var_8_8[14409] = {
+	pg.base.ship_meta_repair[14409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14409,
@@ -13146,11 +10298,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.ship_meta_repair
-
-	var_8_9[14410] = {
+	pg.base.ship_meta_repair[14410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14410,
@@ -13160,11 +10308,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.ship_meta_repair
-
-	var_8_10[14411] = {
+	pg.base.ship_meta_repair[14411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14411,
@@ -13174,11 +10318,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.ship_meta_repair
-
-	var_8_11[14412] = {
+	pg.base.ship_meta_repair[14412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14412,
@@ -13188,11 +10328,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.ship_meta_repair
-
-	var_8_12[14413] = {
+	pg.base.ship_meta_repair[14413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14413,
@@ -13202,11 +10338,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.ship_meta_repair
-
-	var_8_13[14414] = {
+	pg.base.ship_meta_repair[14414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14414,
@@ -13216,11 +10348,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.ship_meta_repair
-
-	var_8_14[14415] = {
+	pg.base.ship_meta_repair[14415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14415,
@@ -13230,11 +10358,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.ship_meta_repair
-
-	var_8_15[14416] = {
+	pg.base.ship_meta_repair[14416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14416,
@@ -13244,11 +10368,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.ship_meta_repair
-
-	var_8_16[14417] = {
+	pg.base.ship_meta_repair[14417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14417,
@@ -13258,11 +10378,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.ship_meta_repair
-
-	var_8_17[14418] = {
+	pg.base.ship_meta_repair[14418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14418,
@@ -13272,11 +10388,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.ship_meta_repair
-
-	var_8_18[14419] = {
+	pg.base.ship_meta_repair[14419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14419,
@@ -13286,11 +10398,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.ship_meta_repair
-
-	var_8_19[14420] = {
+	pg.base.ship_meta_repair[14420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 14420,
@@ -13300,11 +10408,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.ship_meta_repair
-
-	var_8_20[15201] = {
+	pg.base.ship_meta_repair[15201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15201,
@@ -13314,11 +10418,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.ship_meta_repair
-
-	var_8_21[15202] = {
+	pg.base.ship_meta_repair[15202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15202,
@@ -13328,11 +10428,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.ship_meta_repair
-
-	var_8_22[15203] = {
+	pg.base.ship_meta_repair[15203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15203,
@@ -13342,11 +10438,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.ship_meta_repair
-
-	var_8_23[15204] = {
+	pg.base.ship_meta_repair[15204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15204,
@@ -13356,11 +10448,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.ship_meta_repair
-
-	var_8_24[15205] = {
+	pg.base.ship_meta_repair[15205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15205,
@@ -13370,11 +10458,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.ship_meta_repair
-
-	var_8_25[15206] = {
+	pg.base.ship_meta_repair[15206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15206,
@@ -13384,11 +10468,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.ship_meta_repair
-
-	var_8_26[15207] = {
+	pg.base.ship_meta_repair[15207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15207,
@@ -13398,11 +10478,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.ship_meta_repair
-
-	var_8_27[15208] = {
+	pg.base.ship_meta_repair[15208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15208,
@@ -13412,11 +10488,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.ship_meta_repair
-
-	var_8_28[15209] = {
+	pg.base.ship_meta_repair[15209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15209,
@@ -13426,11 +10498,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.ship_meta_repair
-
-	var_8_29[15210] = {
+	pg.base.ship_meta_repair[15210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15210,
@@ -13440,11 +10508,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.ship_meta_repair
-
-	var_8_30[15211] = {
+	pg.base.ship_meta_repair[15211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15211,
@@ -13454,11 +10518,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.ship_meta_repair
-
-	var_8_31[15212] = {
+	pg.base.ship_meta_repair[15212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15212,
@@ -13468,11 +10528,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.ship_meta_repair
-
-	var_8_32[15213] = {
+	pg.base.ship_meta_repair[15213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15213,
@@ -13482,11 +10538,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.ship_meta_repair
-
-	var_8_33[15214] = {
+	pg.base.ship_meta_repair[15214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15214,
@@ -13496,11 +10548,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.ship_meta_repair
-
-	var_8_34[15215] = {
+	pg.base.ship_meta_repair[15215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15215,
@@ -13510,11 +10558,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.ship_meta_repair
-
-	var_8_35[15216] = {
+	pg.base.ship_meta_repair[15216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15216,
@@ -13524,11 +10568,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.ship_meta_repair
-
-	var_8_36[15217] = {
+	pg.base.ship_meta_repair[15217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15217,
@@ -13538,11 +10578,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.ship_meta_repair
-
-	var_8_37[15218] = {
+	pg.base.ship_meta_repair[15218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15218,
@@ -13552,11 +10588,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.ship_meta_repair
-
-	var_8_38[15219] = {
+	pg.base.ship_meta_repair[15219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15219,
@@ -13566,11 +10598,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.ship_meta_repair
-
-	var_8_39[15220] = {
+	pg.base.ship_meta_repair[15220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15220,
@@ -13580,11 +10608,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.ship_meta_repair
-
-	var_8_40[15221] = {
+	pg.base.ship_meta_repair[15221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15221,
@@ -13594,11 +10618,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.ship_meta_repair
-
-	var_8_41[15222] = {
+	pg.base.ship_meta_repair[15222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15222,
@@ -13608,11 +10628,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.ship_meta_repair
-
-	var_8_42[15223] = {
+	pg.base.ship_meta_repair[15223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15223,
@@ -13622,11 +10638,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.ship_meta_repair
-
-	var_8_43[15224] = {
+	pg.base.ship_meta_repair[15224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15224,
@@ -13636,11 +10648,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.ship_meta_repair
-
-	var_8_44[15225] = {
+	pg.base.ship_meta_repair[15225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15225,
@@ -13650,11 +10658,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.ship_meta_repair
-
-	var_8_45[15226] = {
+	pg.base.ship_meta_repair[15226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15226,
@@ -13664,11 +10668,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.ship_meta_repair
-
-	var_8_46[15227] = {
+	pg.base.ship_meta_repair[15227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15227,
@@ -13678,11 +10678,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.ship_meta_repair
-
-	var_8_47[15228] = {
+	pg.base.ship_meta_repair[15228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15228,
@@ -13692,11 +10688,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.ship_meta_repair
-
-	var_8_48[15229] = {
+	pg.base.ship_meta_repair[15229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15229,
@@ -13706,11 +10698,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.ship_meta_repair
-
-	var_8_49[15230] = {
+	pg.base.ship_meta_repair[15230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 15230,
@@ -13720,11 +10708,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.ship_meta_repair
-
-	var_8_50[15401] = {
+	pg.base.ship_meta_repair[15401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15401,
@@ -13734,11 +10718,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.ship_meta_repair
-
-	var_8_51[15402] = {
+	pg.base.ship_meta_repair[15402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15402,
@@ -13748,11 +10728,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.ship_meta_repair
-
-	var_8_52[15403] = {
+	pg.base.ship_meta_repair[15403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15403,
@@ -13762,11 +10738,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.ship_meta_repair
-
-	var_8_53[15404] = {
+	pg.base.ship_meta_repair[15404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15404,
@@ -13776,11 +10748,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.ship_meta_repair
-
-	var_8_54[15405] = {
+	pg.base.ship_meta_repair[15405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15405,
@@ -13790,11 +10758,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.ship_meta_repair
-
-	var_8_55[15406] = {
+	pg.base.ship_meta_repair[15406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15406,
@@ -13804,11 +10768,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.ship_meta_repair
-
-	var_8_56[15407] = {
+	pg.base.ship_meta_repair[15407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15407,
@@ -13818,11 +10778,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.ship_meta_repair
-
-	var_8_57[15408] = {
+	pg.base.ship_meta_repair[15408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15408,
@@ -13832,11 +10788,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.ship_meta_repair
-
-	var_8_58[15409] = {
+	pg.base.ship_meta_repair[15409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15409,
@@ -13846,11 +10798,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.ship_meta_repair
-
-	var_8_59[15410] = {
+	pg.base.ship_meta_repair[15410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15410,
@@ -13860,11 +10808,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.ship_meta_repair
-
-	var_8_60[15411] = {
+	pg.base.ship_meta_repair[15411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15411,
@@ -13874,11 +10818,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.ship_meta_repair
-
-	var_8_61[15412] = {
+	pg.base.ship_meta_repair[15412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15412,
@@ -13888,11 +10828,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.ship_meta_repair
-
-	var_8_62[15413] = {
+	pg.base.ship_meta_repair[15413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15413,
@@ -13902,11 +10838,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.ship_meta_repair
-
-	var_8_63[15414] = {
+	pg.base.ship_meta_repair[15414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15414,
@@ -13916,11 +10848,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.ship_meta_repair
-
-	var_8_64[15415] = {
+	pg.base.ship_meta_repair[15415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15415,
@@ -13930,11 +10858,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.ship_meta_repair
-
-	var_8_65[15416] = {
+	pg.base.ship_meta_repair[15416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15416,
@@ -13944,11 +10868,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.ship_meta_repair
-
-	var_8_66[15417] = {
+	pg.base.ship_meta_repair[15417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15417,
@@ -13958,11 +10878,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.ship_meta_repair
-
-	var_8_67[15418] = {
+	pg.base.ship_meta_repair[15418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15418,
@@ -13972,11 +10888,7 @@ end)()
 			5
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.ship_meta_repair
-
-	var_8_68[15419] = {
+	pg.base.ship_meta_repair[15419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15419,
@@ -13986,11 +10898,7 @@ end)()
 			5
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.ship_meta_repair
-
-	var_8_69[15420] = {
+	pg.base.ship_meta_repair[15420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 15420,
@@ -14000,11 +10908,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.ship_meta_repair
-
-	var_8_70[16201] = {
+	pg.base.ship_meta_repair[16201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16201,
@@ -14014,11 +10918,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.ship_meta_repair
-
-	var_8_71[16202] = {
+	pg.base.ship_meta_repair[16202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16202,
@@ -14028,11 +10928,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.ship_meta_repair
-
-	var_8_72[16203] = {
+	pg.base.ship_meta_repair[16203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16203,
@@ -14042,11 +10938,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.ship_meta_repair
-
-	var_8_73[16204] = {
+	pg.base.ship_meta_repair[16204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16204,
@@ -14056,11 +10948,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.ship_meta_repair
-
-	var_8_74[16205] = {
+	pg.base.ship_meta_repair[16205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16205,
@@ -14070,11 +10958,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.ship_meta_repair
-
-	var_8_75[16206] = {
+	pg.base.ship_meta_repair[16206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16206,
@@ -14084,11 +10968,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.ship_meta_repair
-
-	var_8_76[16207] = {
+	pg.base.ship_meta_repair[16207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16207,
@@ -14098,11 +10978,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.ship_meta_repair
-
-	var_8_77[16208] = {
+	pg.base.ship_meta_repair[16208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16208,
@@ -14112,11 +10988,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.ship_meta_repair
-
-	var_8_78[16209] = {
+	pg.base.ship_meta_repair[16209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16209,
@@ -14126,11 +10998,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.ship_meta_repair
-
-	var_8_79[16210] = {
+	pg.base.ship_meta_repair[16210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16210,
@@ -14140,11 +11008,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.ship_meta_repair
-
-	var_8_80[16211] = {
+	pg.base.ship_meta_repair[16211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16211,
@@ -14154,11 +11018,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.ship_meta_repair
-
-	var_8_81[16212] = {
+	pg.base.ship_meta_repair[16212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16212,
@@ -14168,11 +11028,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.ship_meta_repair
-
-	var_8_82[16213] = {
+	pg.base.ship_meta_repair[16213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16213,
@@ -14182,11 +11038,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.ship_meta_repair
-
-	var_8_83[16214] = {
+	pg.base.ship_meta_repair[16214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16214,
@@ -14196,11 +11048,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.ship_meta_repair
-
-	var_8_84[16215] = {
+	pg.base.ship_meta_repair[16215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16215,
@@ -14210,11 +11058,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.ship_meta_repair
-
-	var_8_85[16216] = {
+	pg.base.ship_meta_repair[16216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16216,
@@ -14224,11 +11068,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.ship_meta_repair
-
-	var_8_86[16217] = {
+	pg.base.ship_meta_repair[16217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16217,
@@ -14238,11 +11078,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.ship_meta_repair
-
-	var_8_87[16218] = {
+	pg.base.ship_meta_repair[16218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16218,
@@ -14252,11 +11088,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.ship_meta_repair
-
-	var_8_88[16219] = {
+	pg.base.ship_meta_repair[16219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16219,
@@ -14266,11 +11098,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.ship_meta_repair
-
-	var_8_89[16220] = {
+	pg.base.ship_meta_repair[16220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16220,
@@ -14280,11 +11108,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.ship_meta_repair
-
-	var_8_90[16221] = {
+	pg.base.ship_meta_repair[16221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16221,
@@ -14294,11 +11118,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.ship_meta_repair
-
-	var_8_91[16222] = {
+	pg.base.ship_meta_repair[16222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16222,
@@ -14308,11 +11128,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.ship_meta_repair
-
-	var_8_92[16223] = {
+	pg.base.ship_meta_repair[16223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16223,
@@ -14322,11 +11138,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.ship_meta_repair
-
-	var_8_93[16224] = {
+	pg.base.ship_meta_repair[16224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16224,
@@ -14336,11 +11148,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.ship_meta_repair
-
-	var_8_94[16225] = {
+	pg.base.ship_meta_repair[16225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16225,
@@ -14350,11 +11158,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.ship_meta_repair
-
-	var_8_95[16226] = {
+	pg.base.ship_meta_repair[16226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16226,
@@ -14364,11 +11168,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.ship_meta_repair
-
-	var_8_96[16227] = {
+	pg.base.ship_meta_repair[16227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16227,
@@ -14378,11 +11178,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.ship_meta_repair
-
-	var_8_97[16228] = {
+	pg.base.ship_meta_repair[16228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16228,
@@ -14392,11 +11188,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.ship_meta_repair
-
-	var_8_98[16229] = {
+	pg.base.ship_meta_repair[16229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16229,
@@ -14406,8 +11198,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.ship_meta_repair[16230] = {
+	pg.base.ship_meta_repair[16230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 16230,
@@ -14421,11 +11212,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.ship_meta_repair
-
-	var_9_0[16401] = {
+	pg.base.ship_meta_repair[16401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16401,
@@ -14435,11 +11222,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.ship_meta_repair
-
-	var_9_1[16402] = {
+	pg.base.ship_meta_repair[16402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16402,
@@ -14449,11 +11232,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.ship_meta_repair
-
-	var_9_2[16403] = {
+	pg.base.ship_meta_repair[16403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16403,
@@ -14463,11 +11242,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.ship_meta_repair
-
-	var_9_3[16404] = {
+	pg.base.ship_meta_repair[16404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16404,
@@ -14477,11 +11252,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.ship_meta_repair
-
-	var_9_4[16405] = {
+	pg.base.ship_meta_repair[16405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16405,
@@ -14491,11 +11262,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.ship_meta_repair
-
-	var_9_5[16406] = {
+	pg.base.ship_meta_repair[16406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16406,
@@ -14505,11 +11272,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.ship_meta_repair
-
-	var_9_6[16407] = {
+	pg.base.ship_meta_repair[16407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16407,
@@ -14519,11 +11282,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.ship_meta_repair
-
-	var_9_7[16408] = {
+	pg.base.ship_meta_repair[16408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16408,
@@ -14533,11 +11292,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.ship_meta_repair
-
-	var_9_8[16409] = {
+	pg.base.ship_meta_repair[16409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16409,
@@ -14547,11 +11302,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.ship_meta_repair
-
-	var_9_9[16410] = {
+	pg.base.ship_meta_repair[16410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16410,
@@ -14561,11 +11312,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.ship_meta_repair
-
-	var_9_10[16411] = {
+	pg.base.ship_meta_repair[16411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16411,
@@ -14575,11 +11322,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.ship_meta_repair
-
-	var_9_11[16412] = {
+	pg.base.ship_meta_repair[16412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16412,
@@ -14589,11 +11332,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.ship_meta_repair
-
-	var_9_12[16413] = {
+	pg.base.ship_meta_repair[16413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16413,
@@ -14603,11 +11342,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.ship_meta_repair
-
-	var_9_13[16414] = {
+	pg.base.ship_meta_repair[16414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16414,
@@ -14617,11 +11352,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.ship_meta_repair
-
-	var_9_14[16415] = {
+	pg.base.ship_meta_repair[16415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16415,
@@ -14631,11 +11362,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.ship_meta_repair
-
-	var_9_15[16416] = {
+	pg.base.ship_meta_repair[16416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16416,
@@ -14645,11 +11372,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.ship_meta_repair
-
-	var_9_16[16417] = {
+	pg.base.ship_meta_repair[16417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16417,
@@ -14659,11 +11382,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.ship_meta_repair
-
-	var_9_17[16418] = {
+	pg.base.ship_meta_repair[16418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16418,
@@ -14673,11 +11392,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.ship_meta_repair
-
-	var_9_18[16419] = {
+	pg.base.ship_meta_repair[16419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16419,
@@ -14687,11 +11402,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.ship_meta_repair
-
-	var_9_19[16420] = {
+	pg.base.ship_meta_repair[16420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 16420,
@@ -14701,11 +11412,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.ship_meta_repair
-
-	var_9_20[17101] = {
+	pg.base.ship_meta_repair[17101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17101,
@@ -14715,11 +11422,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.ship_meta_repair
-
-	var_9_21[17102] = {
+	pg.base.ship_meta_repair[17102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17102,
@@ -14729,11 +11432,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.ship_meta_repair
-
-	var_9_22[17103] = {
+	pg.base.ship_meta_repair[17103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17103,
@@ -14743,11 +11442,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.ship_meta_repair
-
-	var_9_23[17104] = {
+	pg.base.ship_meta_repair[17104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17104,
@@ -14757,11 +11452,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.ship_meta_repair
-
-	var_9_24[17105] = {
+	pg.base.ship_meta_repair[17105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17105,
@@ -14771,11 +11462,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.ship_meta_repair
-
-	var_9_25[17106] = {
+	pg.base.ship_meta_repair[17106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17106,
@@ -14785,11 +11472,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.ship_meta_repair
-
-	var_9_26[17107] = {
+	pg.base.ship_meta_repair[17107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17107,
@@ -14799,11 +11482,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.ship_meta_repair
-
-	var_9_27[17108] = {
+	pg.base.ship_meta_repair[17108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17108,
@@ -14813,11 +11492,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.ship_meta_repair
-
-	var_9_28[17109] = {
+	pg.base.ship_meta_repair[17109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17109,
@@ -14827,11 +11502,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.ship_meta_repair
-
-	var_9_29[17110] = {
+	pg.base.ship_meta_repair[17110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17110,
@@ -14841,11 +11512,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.ship_meta_repair
-
-	var_9_30[17111] = {
+	pg.base.ship_meta_repair[17111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17111,
@@ -14855,11 +11522,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.ship_meta_repair
-
-	var_9_31[17112] = {
+	pg.base.ship_meta_repair[17112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17112,
@@ -14869,11 +11532,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.ship_meta_repair
-
-	var_9_32[17113] = {
+	pg.base.ship_meta_repair[17113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17113,
@@ -14883,11 +11542,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.ship_meta_repair
-
-	var_9_33[17114] = {
+	pg.base.ship_meta_repair[17114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17114,
@@ -14897,11 +11552,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.ship_meta_repair
-
-	var_9_34[17115] = {
+	pg.base.ship_meta_repair[17115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17115,
@@ -14911,11 +11562,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.ship_meta_repair
-
-	var_9_35[17116] = {
+	pg.base.ship_meta_repair[17116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17116,
@@ -14925,11 +11572,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.ship_meta_repair
-
-	var_9_36[17117] = {
+	pg.base.ship_meta_repair[17117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17117,
@@ -14939,11 +11582,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.ship_meta_repair
-
-	var_9_37[17118] = {
+	pg.base.ship_meta_repair[17118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17118,
@@ -14953,11 +11592,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.ship_meta_repair
-
-	var_9_38[17119] = {
+	pg.base.ship_meta_repair[17119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17119,
@@ -14967,11 +11602,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.ship_meta_repair
-
-	var_9_39[17120] = {
+	pg.base.ship_meta_repair[17120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17120,
@@ -14981,11 +11612,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.ship_meta_repair
-
-	var_9_40[17121] = {
+	pg.base.ship_meta_repair[17121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17121,
@@ -14995,11 +11622,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.ship_meta_repair
-
-	var_9_41[17122] = {
+	pg.base.ship_meta_repair[17122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17122,
@@ -15009,11 +11632,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.ship_meta_repair
-
-	var_9_42[17123] = {
+	pg.base.ship_meta_repair[17123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17123,
@@ -15023,11 +11642,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.ship_meta_repair
-
-	var_9_43[17124] = {
+	pg.base.ship_meta_repair[17124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17124,
@@ -15037,11 +11652,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.ship_meta_repair
-
-	var_9_44[17125] = {
+	pg.base.ship_meta_repair[17125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17125,
@@ -15051,11 +11662,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.ship_meta_repair
-
-	var_9_45[17126] = {
+	pg.base.ship_meta_repair[17126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17126,
@@ -15065,11 +11672,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.ship_meta_repair
-
-	var_9_46[17127] = {
+	pg.base.ship_meta_repair[17127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17127,
@@ -15079,11 +11682,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.ship_meta_repair
-
-	var_9_47[17128] = {
+	pg.base.ship_meta_repair[17128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17128,
@@ -15093,11 +11692,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.ship_meta_repair
-
-	var_9_48[17129] = {
+	pg.base.ship_meta_repair[17129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17129,
@@ -15107,11 +11702,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.ship_meta_repair
-
-	var_9_49[17130] = {
+	pg.base.ship_meta_repair[17130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 17130,
@@ -15121,11 +11712,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.ship_meta_repair
-
-	var_9_50[17401] = {
+	pg.base.ship_meta_repair[17401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17401,
@@ -15135,11 +11722,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.ship_meta_repair
-
-	var_9_51[17402] = {
+	pg.base.ship_meta_repair[17402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17402,
@@ -15149,11 +11732,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.ship_meta_repair
-
-	var_9_52[17403] = {
+	pg.base.ship_meta_repair[17403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17403,
@@ -15163,11 +11742,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.ship_meta_repair
-
-	var_9_53[17404] = {
+	pg.base.ship_meta_repair[17404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17404,
@@ -15177,11 +11752,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.ship_meta_repair
-
-	var_9_54[17405] = {
+	pg.base.ship_meta_repair[17405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17405,
@@ -15191,11 +11762,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.ship_meta_repair
-
-	var_9_55[17406] = {
+	pg.base.ship_meta_repair[17406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17406,
@@ -15205,11 +11772,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.ship_meta_repair
-
-	var_9_56[17407] = {
+	pg.base.ship_meta_repair[17407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17407,
@@ -15219,11 +11782,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.ship_meta_repair
-
-	var_9_57[17408] = {
+	pg.base.ship_meta_repair[17408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17408,
@@ -15233,11 +11792,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.ship_meta_repair
-
-	var_9_58[17409] = {
+	pg.base.ship_meta_repair[17409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17409,
@@ -15247,11 +11802,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.ship_meta_repair
-
-	var_9_59[17410] = {
+	pg.base.ship_meta_repair[17410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17410,
@@ -15261,11 +11812,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.ship_meta_repair
-
-	var_9_60[17411] = {
+	pg.base.ship_meta_repair[17411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17411,
@@ -15275,11 +11822,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.ship_meta_repair
-
-	var_9_61[17412] = {
+	pg.base.ship_meta_repair[17412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17412,
@@ -15289,11 +11832,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.ship_meta_repair
-
-	var_9_62[17413] = {
+	pg.base.ship_meta_repair[17413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17413,
@@ -15303,11 +11842,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.ship_meta_repair
-
-	var_9_63[17414] = {
+	pg.base.ship_meta_repair[17414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17414,
@@ -15317,11 +11852,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.ship_meta_repair
-
-	var_9_64[17415] = {
+	pg.base.ship_meta_repair[17415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17415,
@@ -15331,11 +11862,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.ship_meta_repair
-
-	var_9_65[17416] = {
+	pg.base.ship_meta_repair[17416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17416,
@@ -15345,11 +11872,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.ship_meta_repair
-
-	var_9_66[17417] = {
+	pg.base.ship_meta_repair[17417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17417,
@@ -15359,11 +11882,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.ship_meta_repair
-
-	var_9_67[17418] = {
+	pg.base.ship_meta_repair[17418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17418,
@@ -15373,11 +11892,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.ship_meta_repair
-
-	var_9_68[17419] = {
+	pg.base.ship_meta_repair[17419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17419,
@@ -15387,11 +11902,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.ship_meta_repair
-
-	var_9_69[17420] = {
+	pg.base.ship_meta_repair[17420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 17420,
@@ -15401,11 +11912,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.ship_meta_repair
-
-	var_9_70[18101] = {
+	pg.base.ship_meta_repair[18101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18101,
@@ -15415,11 +11922,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.ship_meta_repair
-
-	var_9_71[18102] = {
+	pg.base.ship_meta_repair[18102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18102,
@@ -15429,11 +11932,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.ship_meta_repair
-
-	var_9_72[18103] = {
+	pg.base.ship_meta_repair[18103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18103,
@@ -15443,11 +11942,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.ship_meta_repair
-
-	var_9_73[18104] = {
+	pg.base.ship_meta_repair[18104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18104,
@@ -15457,11 +11952,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.ship_meta_repair
-
-	var_9_74[18105] = {
+	pg.base.ship_meta_repair[18105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18105,
@@ -15471,11 +11962,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.ship_meta_repair
-
-	var_9_75[18106] = {
+	pg.base.ship_meta_repair[18106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18106,
@@ -15485,11 +11972,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.ship_meta_repair
-
-	var_9_76[18107] = {
+	pg.base.ship_meta_repair[18107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18107,
@@ -15499,11 +11982,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.ship_meta_repair
-
-	var_9_77[18108] = {
+	pg.base.ship_meta_repair[18108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18108,
@@ -15513,11 +11992,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.ship_meta_repair
-
-	var_9_78[18109] = {
+	pg.base.ship_meta_repair[18109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18109,
@@ -15527,11 +12002,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.ship_meta_repair
-
-	var_9_79[18110] = {
+	pg.base.ship_meta_repair[18110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 18110,
@@ -15541,11 +12012,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.ship_meta_repair
-
-	var_9_80[18201] = {
+	pg.base.ship_meta_repair[18201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18201,
@@ -15555,11 +12022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.ship_meta_repair
-
-	var_9_81[18202] = {
+	pg.base.ship_meta_repair[18202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18202,
@@ -15569,11 +12032,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.ship_meta_repair
-
-	var_9_82[18203] = {
+	pg.base.ship_meta_repair[18203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18203,
@@ -15583,11 +12042,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.ship_meta_repair
-
-	var_9_83[18204] = {
+	pg.base.ship_meta_repair[18204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18204,
@@ -15597,11 +12052,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.ship_meta_repair
-
-	var_9_84[18205] = {
+	pg.base.ship_meta_repair[18205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18205,
@@ -15611,11 +12062,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.ship_meta_repair
-
-	var_9_85[18206] = {
+	pg.base.ship_meta_repair[18206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18206,
@@ -15625,11 +12072,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.ship_meta_repair
-
-	var_9_86[18207] = {
+	pg.base.ship_meta_repair[18207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18207,
@@ -15639,11 +12082,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.ship_meta_repair
-
-	var_9_87[18208] = {
+	pg.base.ship_meta_repair[18208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18208,
@@ -15653,11 +12092,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.ship_meta_repair
-
-	var_9_88[18209] = {
+	pg.base.ship_meta_repair[18209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18209,
@@ -15667,11 +12102,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.ship_meta_repair
-
-	var_9_89[18210] = {
+	pg.base.ship_meta_repair[18210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18210,
@@ -15681,11 +12112,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.ship_meta_repair
-
-	var_9_90[18211] = {
+	pg.base.ship_meta_repair[18211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18211,
@@ -15695,11 +12122,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.ship_meta_repair
-
-	var_9_91[18212] = {
+	pg.base.ship_meta_repair[18212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18212,
@@ -15709,11 +12132,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.ship_meta_repair
-
-	var_9_92[18213] = {
+	pg.base.ship_meta_repair[18213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18213,
@@ -15723,11 +12142,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.ship_meta_repair
-
-	var_9_93[18214] = {
+	pg.base.ship_meta_repair[18214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18214,
@@ -15737,11 +12152,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.ship_meta_repair
-
-	var_9_94[18215] = {
+	pg.base.ship_meta_repair[18215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18215,
@@ -15751,11 +12162,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.ship_meta_repair
-
-	var_9_95[18216] = {
+	pg.base.ship_meta_repair[18216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18216,
@@ -15765,11 +12172,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.ship_meta_repair
-
-	var_9_96[18217] = {
+	pg.base.ship_meta_repair[18217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18217,
@@ -15779,11 +12182,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.ship_meta_repair
-
-	var_9_97[18218] = {
+	pg.base.ship_meta_repair[18218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18218,
@@ -15793,11 +12192,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.ship_meta_repair
-
-	var_9_98[18219] = {
+	pg.base.ship_meta_repair[18219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18219,
@@ -15807,8 +12202,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.ship_meta_repair[18220] = {
+	pg.base.ship_meta_repair[18220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 18220,
@@ -15822,11 +12216,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.ship_meta_repair
-
-	var_10_0[18401] = {
+	pg.base.ship_meta_repair[18401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18401,
@@ -15836,11 +12226,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.ship_meta_repair
-
-	var_10_1[18402] = {
+	pg.base.ship_meta_repair[18402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18402,
@@ -15850,11 +12236,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.ship_meta_repair
-
-	var_10_2[18403] = {
+	pg.base.ship_meta_repair[18403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18403,
@@ -15864,11 +12246,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.ship_meta_repair
-
-	var_10_3[18404] = {
+	pg.base.ship_meta_repair[18404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18404,
@@ -15878,11 +12256,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.ship_meta_repair
-
-	var_10_4[18405] = {
+	pg.base.ship_meta_repair[18405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18405,
@@ -15892,11 +12266,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.ship_meta_repair
-
-	var_10_5[18406] = {
+	pg.base.ship_meta_repair[18406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18406,
@@ -15906,11 +12276,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.ship_meta_repair
-
-	var_10_6[18407] = {
+	pg.base.ship_meta_repair[18407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18407,
@@ -15920,11 +12286,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.ship_meta_repair
-
-	var_10_7[18408] = {
+	pg.base.ship_meta_repair[18408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18408,
@@ -15934,11 +12296,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.ship_meta_repair
-
-	var_10_8[18409] = {
+	pg.base.ship_meta_repair[18409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18409,
@@ -15948,11 +12306,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.ship_meta_repair
-
-	var_10_9[18410] = {
+	pg.base.ship_meta_repair[18410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18410,
@@ -15962,11 +12316,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.ship_meta_repair
-
-	var_10_10[18411] = {
+	pg.base.ship_meta_repair[18411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18411,
@@ -15976,11 +12326,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.ship_meta_repair
-
-	var_10_11[18412] = {
+	pg.base.ship_meta_repair[18412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18412,
@@ -15990,11 +12336,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.ship_meta_repair
-
-	var_10_12[18413] = {
+	pg.base.ship_meta_repair[18413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18413,
@@ -16004,11 +12346,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.ship_meta_repair
-
-	var_10_13[18414] = {
+	pg.base.ship_meta_repair[18414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18414,
@@ -16018,11 +12356,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.ship_meta_repair
-
-	var_10_14[18415] = {
+	pg.base.ship_meta_repair[18415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18415,
@@ -16032,11 +12366,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.ship_meta_repair
-
-	var_10_15[18416] = {
+	pg.base.ship_meta_repair[18416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18416,
@@ -16046,11 +12376,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.ship_meta_repair
-
-	var_10_16[18417] = {
+	pg.base.ship_meta_repair[18417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18417,
@@ -16060,11 +12386,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.ship_meta_repair
-
-	var_10_17[18418] = {
+	pg.base.ship_meta_repair[18418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18418,
@@ -16074,11 +12396,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.ship_meta_repair
-
-	var_10_18[18419] = {
+	pg.base.ship_meta_repair[18419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18419,
@@ -16088,11 +12406,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.ship_meta_repair
-
-	var_10_19[18420] = {
+	pg.base.ship_meta_repair[18420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 18420,
@@ -16102,11 +12416,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.ship_meta_repair
-
-	var_10_20[19101] = {
+	pg.base.ship_meta_repair[19101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19101,
@@ -16116,11 +12426,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.ship_meta_repair
-
-	var_10_21[19102] = {
+	pg.base.ship_meta_repair[19102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19102,
@@ -16130,11 +12436,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.ship_meta_repair
-
-	var_10_22[19103] = {
+	pg.base.ship_meta_repair[19103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19103,
@@ -16144,11 +12446,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.ship_meta_repair
-
-	var_10_23[19104] = {
+	pg.base.ship_meta_repair[19104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19104,
@@ -16158,11 +12456,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.ship_meta_repair
-
-	var_10_24[19105] = {
+	pg.base.ship_meta_repair[19105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19105,
@@ -16172,11 +12466,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.ship_meta_repair
-
-	var_10_25[19106] = {
+	pg.base.ship_meta_repair[19106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19106,
@@ -16186,11 +12476,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.ship_meta_repair
-
-	var_10_26[19107] = {
+	pg.base.ship_meta_repair[19107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19107,
@@ -16200,11 +12486,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.ship_meta_repair
-
-	var_10_27[19108] = {
+	pg.base.ship_meta_repair[19108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19108,
@@ -16214,11 +12496,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.ship_meta_repair
-
-	var_10_28[19109] = {
+	pg.base.ship_meta_repair[19109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19109,
@@ -16228,11 +12506,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.ship_meta_repair
-
-	var_10_29[19110] = {
+	pg.base.ship_meta_repair[19110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19110,
@@ -16242,11 +12516,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.ship_meta_repair
-
-	var_10_30[19111] = {
+	pg.base.ship_meta_repair[19111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19111,
@@ -16256,11 +12526,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.ship_meta_repair
-
-	var_10_31[19112] = {
+	pg.base.ship_meta_repair[19112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19112,
@@ -16270,11 +12536,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.ship_meta_repair
-
-	var_10_32[19113] = {
+	pg.base.ship_meta_repair[19113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19113,
@@ -16284,11 +12546,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.ship_meta_repair
-
-	var_10_33[19114] = {
+	pg.base.ship_meta_repair[19114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19114,
@@ -16298,11 +12556,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.ship_meta_repair
-
-	var_10_34[19115] = {
+	pg.base.ship_meta_repair[19115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19115,
@@ -16312,11 +12566,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.ship_meta_repair
-
-	var_10_35[19116] = {
+	pg.base.ship_meta_repair[19116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19116,
@@ -16326,11 +12576,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.ship_meta_repair
-
-	var_10_36[19117] = {
+	pg.base.ship_meta_repair[19117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19117,
@@ -16340,11 +12586,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.ship_meta_repair
-
-	var_10_37[19118] = {
+	pg.base.ship_meta_repair[19118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19118,
@@ -16354,11 +12596,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.ship_meta_repair
-
-	var_10_38[19119] = {
+	pg.base.ship_meta_repair[19119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19119,
@@ -16368,11 +12606,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.ship_meta_repair
-
-	var_10_39[19120] = {
+	pg.base.ship_meta_repair[19120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19120,
@@ -16382,11 +12616,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.ship_meta_repair
-
-	var_10_40[19121] = {
+	pg.base.ship_meta_repair[19121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19121,
@@ -16396,11 +12626,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.ship_meta_repair
-
-	var_10_41[19122] = {
+	pg.base.ship_meta_repair[19122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19122,
@@ -16410,11 +12636,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.ship_meta_repair
-
-	var_10_42[19123] = {
+	pg.base.ship_meta_repair[19123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19123,
@@ -16424,11 +12646,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.ship_meta_repair
-
-	var_10_43[19124] = {
+	pg.base.ship_meta_repair[19124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19124,
@@ -16438,11 +12656,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.ship_meta_repair
-
-	var_10_44[19125] = {
+	pg.base.ship_meta_repair[19125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19125,
@@ -16452,11 +12666,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.ship_meta_repair
-
-	var_10_45[19126] = {
+	pg.base.ship_meta_repair[19126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19126,
@@ -16466,11 +12676,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.ship_meta_repair
-
-	var_10_46[19127] = {
+	pg.base.ship_meta_repair[19127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19127,
@@ -16480,11 +12686,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.ship_meta_repair
-
-	var_10_47[19128] = {
+	pg.base.ship_meta_repair[19128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19128,
@@ -16494,11 +12696,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.ship_meta_repair
-
-	var_10_48[19129] = {
+	pg.base.ship_meta_repair[19129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19129,
@@ -16508,11 +12706,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.ship_meta_repair
-
-	var_10_49[19130] = {
+	pg.base.ship_meta_repair[19130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 19130,
@@ -16522,11 +12716,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.ship_meta_repair
-
-	var_10_50[19401] = {
+	pg.base.ship_meta_repair[19401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19401,
@@ -16536,11 +12726,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.ship_meta_repair
-
-	var_10_51[19402] = {
+	pg.base.ship_meta_repair[19402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19402,
@@ -16550,11 +12736,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.ship_meta_repair
-
-	var_10_52[19403] = {
+	pg.base.ship_meta_repair[19403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19403,
@@ -16564,11 +12746,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.ship_meta_repair
-
-	var_10_53[19404] = {
+	pg.base.ship_meta_repair[19404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19404,
@@ -16578,11 +12756,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.ship_meta_repair
-
-	var_10_54[19405] = {
+	pg.base.ship_meta_repair[19405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19405,
@@ -16592,11 +12766,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.ship_meta_repair
-
-	var_10_55[19406] = {
+	pg.base.ship_meta_repair[19406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19406,
@@ -16606,11 +12776,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.ship_meta_repair
-
-	var_10_56[19407] = {
+	pg.base.ship_meta_repair[19407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19407,
@@ -16620,11 +12786,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.ship_meta_repair
-
-	var_10_57[19408] = {
+	pg.base.ship_meta_repair[19408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19408,
@@ -16634,11 +12796,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.ship_meta_repair
-
-	var_10_58[19409] = {
+	pg.base.ship_meta_repair[19409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19409,
@@ -16648,11 +12806,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.ship_meta_repair
-
-	var_10_59[19410] = {
+	pg.base.ship_meta_repair[19410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19410,
@@ -16662,11 +12816,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.ship_meta_repair
-
-	var_10_60[19411] = {
+	pg.base.ship_meta_repair[19411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19411,
@@ -16676,11 +12826,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.ship_meta_repair
-
-	var_10_61[19412] = {
+	pg.base.ship_meta_repair[19412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19412,
@@ -16690,11 +12836,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.ship_meta_repair
-
-	var_10_62[19413] = {
+	pg.base.ship_meta_repair[19413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19413,
@@ -16704,11 +12846,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.ship_meta_repair
-
-	var_10_63[19414] = {
+	pg.base.ship_meta_repair[19414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19414,
@@ -16718,11 +12856,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.ship_meta_repair
-
-	var_10_64[19415] = {
+	pg.base.ship_meta_repair[19415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19415,
@@ -16732,11 +12866,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.ship_meta_repair
-
-	var_10_65[19416] = {
+	pg.base.ship_meta_repair[19416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19416,
@@ -16746,11 +12876,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.ship_meta_repair
-
-	var_10_66[19417] = {
+	pg.base.ship_meta_repair[19417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19417,
@@ -16760,11 +12886,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.ship_meta_repair
-
-	var_10_67[19418] = {
+	pg.base.ship_meta_repair[19418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19418,
@@ -16774,11 +12896,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.ship_meta_repair
-
-	var_10_68[19419] = {
+	pg.base.ship_meta_repair[19419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19419,
@@ -16788,11 +12906,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.ship_meta_repair
-
-	var_10_69[19420] = {
+	pg.base.ship_meta_repair[19420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 19420,
@@ -16802,11 +12916,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.ship_meta_repair
-
-	var_10_70[20101] = {
+	pg.base.ship_meta_repair[20101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20101,
@@ -16816,11 +12926,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.ship_meta_repair
-
-	var_10_71[20102] = {
+	pg.base.ship_meta_repair[20102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20102,
@@ -16830,11 +12936,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.ship_meta_repair
-
-	var_10_72[20103] = {
+	pg.base.ship_meta_repair[20103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20103,
@@ -16844,11 +12946,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.ship_meta_repair
-
-	var_10_73[20104] = {
+	pg.base.ship_meta_repair[20104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20104,
@@ -16858,11 +12956,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.ship_meta_repair
-
-	var_10_74[20105] = {
+	pg.base.ship_meta_repair[20105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20105,
@@ -16872,11 +12966,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.ship_meta_repair
-
-	var_10_75[20106] = {
+	pg.base.ship_meta_repair[20106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20106,
@@ -16886,11 +12976,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.ship_meta_repair
-
-	var_10_76[20107] = {
+	pg.base.ship_meta_repair[20107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20107,
@@ -16900,11 +12986,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.ship_meta_repair
-
-	var_10_77[20108] = {
+	pg.base.ship_meta_repair[20108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20108,
@@ -16914,11 +12996,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.ship_meta_repair
-
-	var_10_78[20109] = {
+	pg.base.ship_meta_repair[20109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20109,
@@ -16928,11 +13006,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.ship_meta_repair
-
-	var_10_79[20110] = {
+	pg.base.ship_meta_repair[20110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 20110,
@@ -16942,11 +13016,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.ship_meta_repair
-
-	var_10_80[20201] = {
+	pg.base.ship_meta_repair[20201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20201,
@@ -16956,11 +13026,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.ship_meta_repair
-
-	var_10_81[20202] = {
+	pg.base.ship_meta_repair[20202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20202,
@@ -16970,11 +13036,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.ship_meta_repair
-
-	var_10_82[20203] = {
+	pg.base.ship_meta_repair[20203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20203,
@@ -16984,11 +13046,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.ship_meta_repair
-
-	var_10_83[20204] = {
+	pg.base.ship_meta_repair[20204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20204,
@@ -16998,11 +13056,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.ship_meta_repair
-
-	var_10_84[20205] = {
+	pg.base.ship_meta_repair[20205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20205,
@@ -17012,11 +13066,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.ship_meta_repair
-
-	var_10_85[20206] = {
+	pg.base.ship_meta_repair[20206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20206,
@@ -17026,11 +13076,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.ship_meta_repair
-
-	var_10_86[20207] = {
+	pg.base.ship_meta_repair[20207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20207,
@@ -17040,11 +13086,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.ship_meta_repair
-
-	var_10_87[20208] = {
+	pg.base.ship_meta_repair[20208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20208,
@@ -17054,11 +13096,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.ship_meta_repair
-
-	var_10_88[20209] = {
+	pg.base.ship_meta_repair[20209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20209,
@@ -17068,11 +13106,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.ship_meta_repair
-
-	var_10_89[20210] = {
+	pg.base.ship_meta_repair[20210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20210,
@@ -17082,11 +13116,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.ship_meta_repair
-
-	var_10_90[20211] = {
+	pg.base.ship_meta_repair[20211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20211,
@@ -17096,11 +13126,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.ship_meta_repair
-
-	var_10_91[20212] = {
+	pg.base.ship_meta_repair[20212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20212,
@@ -17110,11 +13136,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.ship_meta_repair
-
-	var_10_92[20213] = {
+	pg.base.ship_meta_repair[20213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20213,
@@ -17124,11 +13146,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.ship_meta_repair
-
-	var_10_93[20214] = {
+	pg.base.ship_meta_repair[20214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20214,
@@ -17138,11 +13156,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.ship_meta_repair
-
-	var_10_94[20215] = {
+	pg.base.ship_meta_repair[20215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20215,
@@ -17152,11 +13166,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.ship_meta_repair
-
-	var_10_95[20216] = {
+	pg.base.ship_meta_repair[20216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20216,
@@ -17166,11 +13176,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.ship_meta_repair
-
-	var_10_96[20217] = {
+	pg.base.ship_meta_repair[20217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20217,
@@ -17180,11 +13186,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.ship_meta_repair
-
-	var_10_97[20218] = {
+	pg.base.ship_meta_repair[20218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20218,
@@ -17194,11 +13196,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.ship_meta_repair
-
-	var_10_98[20219] = {
+	pg.base.ship_meta_repair[20219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20219,
@@ -17208,8 +13206,7 @@ end)()
 			4
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.ship_meta_repair[20220] = {
+	pg.base.ship_meta_repair[20220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20220,
@@ -17223,11 +13220,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.ship_meta_repair
-
-	var_11_0[20221] = {
+	pg.base.ship_meta_repair[20221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 20221,
@@ -17237,11 +13230,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.ship_meta_repair
-
-	var_11_1[20401] = {
+	pg.base.ship_meta_repair[20401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20401,
@@ -17251,11 +13240,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.ship_meta_repair
-
-	var_11_2[20402] = {
+	pg.base.ship_meta_repair[20402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20402,
@@ -17265,11 +13250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.ship_meta_repair
-
-	var_11_3[20403] = {
+	pg.base.ship_meta_repair[20403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20403,
@@ -17279,11 +13260,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.ship_meta_repair
-
-	var_11_4[20404] = {
+	pg.base.ship_meta_repair[20404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20404,
@@ -17293,11 +13270,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.ship_meta_repair
-
-	var_11_5[20405] = {
+	pg.base.ship_meta_repair[20405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20405,
@@ -17307,11 +13280,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.ship_meta_repair
-
-	var_11_6[20406] = {
+	pg.base.ship_meta_repair[20406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20406,
@@ -17321,11 +13290,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.ship_meta_repair
-
-	var_11_7[20407] = {
+	pg.base.ship_meta_repair[20407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20407,
@@ -17335,11 +13300,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.ship_meta_repair
-
-	var_11_8[20408] = {
+	pg.base.ship_meta_repair[20408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20408,
@@ -17349,11 +13310,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.ship_meta_repair
-
-	var_11_9[20409] = {
+	pg.base.ship_meta_repair[20409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20409,
@@ -17363,11 +13320,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.ship_meta_repair
-
-	var_11_10[20410] = {
+	pg.base.ship_meta_repair[20410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20410,
@@ -17377,11 +13330,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.ship_meta_repair
-
-	var_11_11[20411] = {
+	pg.base.ship_meta_repair[20411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20411,
@@ -17391,11 +13340,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.ship_meta_repair
-
-	var_11_12[20412] = {
+	pg.base.ship_meta_repair[20412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20412,
@@ -17405,11 +13350,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.ship_meta_repair
-
-	var_11_13[20413] = {
+	pg.base.ship_meta_repair[20413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20413,
@@ -17419,11 +13360,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.ship_meta_repair
-
-	var_11_14[20414] = {
+	pg.base.ship_meta_repair[20414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20414,
@@ -17433,11 +13370,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.ship_meta_repair
-
-	var_11_15[20415] = {
+	pg.base.ship_meta_repair[20415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20415,
@@ -17447,11 +13380,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.ship_meta_repair
-
-	var_11_16[20416] = {
+	pg.base.ship_meta_repair[20416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20416,
@@ -17461,11 +13390,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.ship_meta_repair
-
-	var_11_17[20417] = {
+	pg.base.ship_meta_repair[20417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20417,
@@ -17475,11 +13400,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.ship_meta_repair
-
-	var_11_18[20418] = {
+	pg.base.ship_meta_repair[20418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20418,
@@ -17489,11 +13410,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.ship_meta_repair
-
-	var_11_19[20419] = {
+	pg.base.ship_meta_repair[20419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20419,
@@ -17503,11 +13420,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.ship_meta_repair
-
-	var_11_20[20420] = {
+	pg.base.ship_meta_repair[20420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20420,
@@ -17517,11 +13430,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.ship_meta_repair
-
-	var_11_21[20421] = {
+	pg.base.ship_meta_repair[20421] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 20421,
@@ -17531,11 +13440,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.ship_meta_repair
-
-	var_11_22[21101] = {
+	pg.base.ship_meta_repair[21101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21101,
@@ -17545,11 +13450,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.ship_meta_repair
-
-	var_11_23[21102] = {
+	pg.base.ship_meta_repair[21102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21102,
@@ -17559,11 +13460,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.ship_meta_repair
-
-	var_11_24[21103] = {
+	pg.base.ship_meta_repair[21103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21103,
@@ -17573,11 +13470,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.ship_meta_repair
-
-	var_11_25[21104] = {
+	pg.base.ship_meta_repair[21104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21104,
@@ -17587,11 +13480,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.ship_meta_repair
-
-	var_11_26[21105] = {
+	pg.base.ship_meta_repair[21105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21105,
@@ -17601,11 +13490,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.ship_meta_repair
-
-	var_11_27[21106] = {
+	pg.base.ship_meta_repair[21106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21106,
@@ -17615,11 +13500,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.ship_meta_repair
-
-	var_11_28[21107] = {
+	pg.base.ship_meta_repair[21107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21107,
@@ -17629,11 +13510,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.ship_meta_repair
-
-	var_11_29[21108] = {
+	pg.base.ship_meta_repair[21108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21108,
@@ -17643,11 +13520,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.ship_meta_repair
-
-	var_11_30[21109] = {
+	pg.base.ship_meta_repair[21109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21109,
@@ -17657,11 +13530,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.ship_meta_repair
-
-	var_11_31[21110] = {
+	pg.base.ship_meta_repair[21110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 21110,
@@ -17671,11 +13540,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.ship_meta_repair
-
-	var_11_32[21201] = {
+	pg.base.ship_meta_repair[21201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21201,
@@ -17685,11 +13550,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.ship_meta_repair
-
-	var_11_33[21202] = {
+	pg.base.ship_meta_repair[21202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21202,
@@ -17699,11 +13560,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.ship_meta_repair
-
-	var_11_34[21203] = {
+	pg.base.ship_meta_repair[21203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21203,
@@ -17713,11 +13570,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.ship_meta_repair
-
-	var_11_35[21204] = {
+	pg.base.ship_meta_repair[21204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21204,
@@ -17727,11 +13580,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.ship_meta_repair
-
-	var_11_36[21205] = {
+	pg.base.ship_meta_repair[21205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21205,
@@ -17741,11 +13590,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.ship_meta_repair
-
-	var_11_37[21206] = {
+	pg.base.ship_meta_repair[21206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21206,
@@ -17755,11 +13600,7 @@ end)()
 			4
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.ship_meta_repair
-
-	var_11_38[21207] = {
+	pg.base.ship_meta_repair[21207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21207,
@@ -17769,11 +13610,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.ship_meta_repair
-
-	var_11_39[21208] = {
+	pg.base.ship_meta_repair[21208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21208,
@@ -17783,11 +13620,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.ship_meta_repair
-
-	var_11_40[21209] = {
+	pg.base.ship_meta_repair[21209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21209,
@@ -17797,11 +13630,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.ship_meta_repair
-
-	var_11_41[21210] = {
+	pg.base.ship_meta_repair[21210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21210,
@@ -17811,11 +13640,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.ship_meta_repair
-
-	var_11_42[21211] = {
+	pg.base.ship_meta_repair[21211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21211,
@@ -17825,11 +13650,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.ship_meta_repair
-
-	var_11_43[21212] = {
+	pg.base.ship_meta_repair[21212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21212,
@@ -17839,11 +13660,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.ship_meta_repair
-
-	var_11_44[21213] = {
+	pg.base.ship_meta_repair[21213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21213,
@@ -17853,11 +13670,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.ship_meta_repair
-
-	var_11_45[21214] = {
+	pg.base.ship_meta_repair[21214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21214,
@@ -17867,11 +13680,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.ship_meta_repair
-
-	var_11_46[21215] = {
+	pg.base.ship_meta_repair[21215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21215,
@@ -17881,11 +13690,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.ship_meta_repair
-
-	var_11_47[21216] = {
+	pg.base.ship_meta_repair[21216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21216,
@@ -17895,11 +13700,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.ship_meta_repair
-
-	var_11_48[21217] = {
+	pg.base.ship_meta_repair[21217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21217,
@@ -17909,11 +13710,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.ship_meta_repair
-
-	var_11_49[21218] = {
+	pg.base.ship_meta_repair[21218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21218,
@@ -17923,11 +13720,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.ship_meta_repair
-
-	var_11_50[21219] = {
+	pg.base.ship_meta_repair[21219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21219,
@@ -17937,11 +13730,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.ship_meta_repair
-
-	var_11_51[21220] = {
+	pg.base.ship_meta_repair[21220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 21220,
@@ -17951,11 +13740,7 @@ end)()
 			6
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.ship_meta_repair
-
-	var_11_52[21401] = {
+	pg.base.ship_meta_repair[21401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21401,
@@ -17965,11 +13750,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.ship_meta_repair
-
-	var_11_53[21402] = {
+	pg.base.ship_meta_repair[21402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21402,
@@ -17979,11 +13760,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.ship_meta_repair
-
-	var_11_54[21403] = {
+	pg.base.ship_meta_repair[21403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21403,
@@ -17993,11 +13770,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.ship_meta_repair
-
-	var_11_55[21404] = {
+	pg.base.ship_meta_repair[21404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21404,
@@ -18007,11 +13780,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.ship_meta_repair
-
-	var_11_56[21405] = {
+	pg.base.ship_meta_repair[21405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21405,
@@ -18021,11 +13790,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.ship_meta_repair
-
-	var_11_57[21406] = {
+	pg.base.ship_meta_repair[21406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21406,
@@ -18035,11 +13800,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.ship_meta_repair
-
-	var_11_58[21407] = {
+	pg.base.ship_meta_repair[21407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21407,
@@ -18049,11 +13810,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.ship_meta_repair
-
-	var_11_59[21408] = {
+	pg.base.ship_meta_repair[21408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21408,
@@ -18063,11 +13820,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.ship_meta_repair
-
-	var_11_60[21409] = {
+	pg.base.ship_meta_repair[21409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21409,
@@ -18077,11 +13830,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.ship_meta_repair
-
-	var_11_61[21410] = {
+	pg.base.ship_meta_repair[21410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21410,
@@ -18091,11 +13840,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.ship_meta_repair
-
-	var_11_62[21411] = {
+	pg.base.ship_meta_repair[21411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21411,
@@ -18105,11 +13850,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.ship_meta_repair
-
-	var_11_63[21412] = {
+	pg.base.ship_meta_repair[21412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21412,
@@ -18119,11 +13860,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.ship_meta_repair
-
-	var_11_64[21413] = {
+	pg.base.ship_meta_repair[21413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21413,
@@ -18133,11 +13870,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.ship_meta_repair
-
-	var_11_65[21414] = {
+	pg.base.ship_meta_repair[21414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21414,
@@ -18147,11 +13880,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.ship_meta_repair
-
-	var_11_66[21415] = {
+	pg.base.ship_meta_repair[21415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21415,
@@ -18161,11 +13890,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.ship_meta_repair
-
-	var_11_67[21416] = {
+	pg.base.ship_meta_repair[21416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21416,
@@ -18175,11 +13900,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.ship_meta_repair
-
-	var_11_68[21417] = {
+	pg.base.ship_meta_repair[21417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21417,
@@ -18189,11 +13910,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.ship_meta_repair
-
-	var_11_69[21418] = {
+	pg.base.ship_meta_repair[21418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21418,
@@ -18203,11 +13920,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.ship_meta_repair
-
-	var_11_70[21419] = {
+	pg.base.ship_meta_repair[21419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21419,
@@ -18217,11 +13930,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.ship_meta_repair
-
-	var_11_71[21420] = {
+	pg.base.ship_meta_repair[21420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 21420,
@@ -18231,11 +13940,7 @@ end)()
 			3
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.ship_meta_repair
-
-	var_11_72[22101] = {
+	pg.base.ship_meta_repair[22101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22101,
@@ -18245,11 +13950,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.ship_meta_repair
-
-	var_11_73[22102] = {
+	pg.base.ship_meta_repair[22102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22102,
@@ -18259,11 +13960,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.ship_meta_repair
-
-	var_11_74[22103] = {
+	pg.base.ship_meta_repair[22103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22103,
@@ -18273,11 +13970,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.ship_meta_repair
-
-	var_11_75[22104] = {
+	pg.base.ship_meta_repair[22104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22104,
@@ -18287,11 +13980,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.ship_meta_repair
-
-	var_11_76[22105] = {
+	pg.base.ship_meta_repair[22105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22105,
@@ -18301,11 +13990,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.ship_meta_repair
-
-	var_11_77[22106] = {
+	pg.base.ship_meta_repair[22106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22106,
@@ -18315,11 +14000,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.ship_meta_repair
-
-	var_11_78[22107] = {
+	pg.base.ship_meta_repair[22107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22107,
@@ -18329,11 +14010,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.ship_meta_repair
-
-	var_11_79[22108] = {
+	pg.base.ship_meta_repair[22108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22108,
@@ -18343,11 +14020,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.ship_meta_repair
-
-	var_11_80[22109] = {
+	pg.base.ship_meta_repair[22109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22109,
@@ -18357,11 +14030,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.ship_meta_repair
-
-	var_11_81[22110] = {
+	pg.base.ship_meta_repair[22110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22110,
@@ -18371,11 +14040,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.ship_meta_repair
-
-	var_11_82[22111] = {
+	pg.base.ship_meta_repair[22111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22111,
@@ -18385,11 +14050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.ship_meta_repair
-
-	var_11_83[22112] = {
+	pg.base.ship_meta_repair[22112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22112,
@@ -18399,11 +14060,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.ship_meta_repair
-
-	var_11_84[22113] = {
+	pg.base.ship_meta_repair[22113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22113,
@@ -18413,11 +14070,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.ship_meta_repair
-
-	var_11_85[22114] = {
+	pg.base.ship_meta_repair[22114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22114,
@@ -18427,11 +14080,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.ship_meta_repair
-
-	var_11_86[22115] = {
+	pg.base.ship_meta_repair[22115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22115,
@@ -18441,11 +14090,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.ship_meta_repair
-
-	var_11_87[22116] = {
+	pg.base.ship_meta_repair[22116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22116,
@@ -18455,11 +14100,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.ship_meta_repair
-
-	var_11_88[22117] = {
+	pg.base.ship_meta_repair[22117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22117,
@@ -18469,11 +14110,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.ship_meta_repair
-
-	var_11_89[22118] = {
+	pg.base.ship_meta_repair[22118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22118,
@@ -18483,11 +14120,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.ship_meta_repair
-
-	var_11_90[22119] = {
+	pg.base.ship_meta_repair[22119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22119,
@@ -18497,11 +14130,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.ship_meta_repair
-
-	var_11_91[22120] = {
+	pg.base.ship_meta_repair[22120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22120,
@@ -18511,11 +14140,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.ship_meta_repair
-
-	var_11_92[22121] = {
+	pg.base.ship_meta_repair[22121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22121,
@@ -18525,11 +14150,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.ship_meta_repair
-
-	var_11_93[22122] = {
+	pg.base.ship_meta_repair[22122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22122,
@@ -18539,11 +14160,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.ship_meta_repair
-
-	var_11_94[22123] = {
+	pg.base.ship_meta_repair[22123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22123,
@@ -18553,11 +14170,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.ship_meta_repair
-
-	var_11_95[22124] = {
+	pg.base.ship_meta_repair[22124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22124,
@@ -18567,11 +14180,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.ship_meta_repair
-
-	var_11_96[22125] = {
+	pg.base.ship_meta_repair[22125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22125,
@@ -18581,11 +14190,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.ship_meta_repair
-
-	var_11_97[22126] = {
+	pg.base.ship_meta_repair[22126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22126,
@@ -18595,11 +14200,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.ship_meta_repair
-
-	var_11_98[22127] = {
+	pg.base.ship_meta_repair[22127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22127,
@@ -18609,8 +14210,7 @@ end)()
 			2
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.ship_meta_repair[22128] = {
+	pg.base.ship_meta_repair[22128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22128,
@@ -18624,11 +14224,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.ship_meta_repair
-
-	var_12_0[22129] = {
+	pg.base.ship_meta_repair[22129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22129,
@@ -18638,11 +14234,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.ship_meta_repair
-
-	var_12_1[22130] = {
+	pg.base.ship_meta_repair[22130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 22130,
@@ -18652,11 +14244,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.ship_meta_repair
-
-	var_12_2[22401] = {
+	pg.base.ship_meta_repair[22401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22401,
@@ -18666,11 +14254,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.ship_meta_repair
-
-	var_12_3[22402] = {
+	pg.base.ship_meta_repair[22402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22402,
@@ -18680,11 +14264,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.ship_meta_repair
-
-	var_12_4[22403] = {
+	pg.base.ship_meta_repair[22403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22403,
@@ -18694,11 +14274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.ship_meta_repair
-
-	var_12_5[22404] = {
+	pg.base.ship_meta_repair[22404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22404,
@@ -18708,11 +14284,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.ship_meta_repair
-
-	var_12_6[22405] = {
+	pg.base.ship_meta_repair[22405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22405,
@@ -18722,11 +14294,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.ship_meta_repair
-
-	var_12_7[22406] = {
+	pg.base.ship_meta_repair[22406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22406,
@@ -18736,11 +14304,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.ship_meta_repair
-
-	var_12_8[22407] = {
+	pg.base.ship_meta_repair[22407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22407,
@@ -18750,11 +14314,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.ship_meta_repair
-
-	var_12_9[22408] = {
+	pg.base.ship_meta_repair[22408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22408,
@@ -18764,11 +14324,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.ship_meta_repair
-
-	var_12_10[22409] = {
+	pg.base.ship_meta_repair[22409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22409,
@@ -18778,11 +14334,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.ship_meta_repair
-
-	var_12_11[22410] = {
+	pg.base.ship_meta_repair[22410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22410,
@@ -18792,11 +14344,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.ship_meta_repair
-
-	var_12_12[22411] = {
+	pg.base.ship_meta_repair[22411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22411,
@@ -18806,11 +14354,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.ship_meta_repair
-
-	var_12_13[22412] = {
+	pg.base.ship_meta_repair[22412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22412,
@@ -18820,11 +14364,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.ship_meta_repair
-
-	var_12_14[22413] = {
+	pg.base.ship_meta_repair[22413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22413,
@@ -18834,11 +14374,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.ship_meta_repair
-
-	var_12_15[22414] = {
+	pg.base.ship_meta_repair[22414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22414,
@@ -18848,11 +14384,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.ship_meta_repair
-
-	var_12_16[22415] = {
+	pg.base.ship_meta_repair[22415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22415,
@@ -18862,11 +14394,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.ship_meta_repair
-
-	var_12_17[22416] = {
+	pg.base.ship_meta_repair[22416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22416,
@@ -18876,11 +14404,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.ship_meta_repair
-
-	var_12_18[22417] = {
+	pg.base.ship_meta_repair[22417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22417,
@@ -18890,11 +14414,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.ship_meta_repair
-
-	var_12_19[22418] = {
+	pg.base.ship_meta_repair[22418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22418,
@@ -18904,11 +14424,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.ship_meta_repair
-
-	var_12_20[22419] = {
+	pg.base.ship_meta_repair[22419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22419,
@@ -18918,11 +14434,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.ship_meta_repair
-
-	var_12_21[22420] = {
+	pg.base.ship_meta_repair[22420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 22420,
@@ -18932,11 +14444,7 @@ end)()
 			5
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.ship_meta_repair
-
-	var_12_22[23101] = {
+	pg.base.ship_meta_repair[23101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23101,
@@ -18946,11 +14454,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.ship_meta_repair
-
-	var_12_23[23102] = {
+	pg.base.ship_meta_repair[23102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23102,
@@ -18960,11 +14464,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.ship_meta_repair
-
-	var_12_24[23103] = {
+	pg.base.ship_meta_repair[23103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23103,
@@ -18974,11 +14474,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.ship_meta_repair
-
-	var_12_25[23104] = {
+	pg.base.ship_meta_repair[23104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23104,
@@ -18988,11 +14484,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.ship_meta_repair
-
-	var_12_26[23105] = {
+	pg.base.ship_meta_repair[23105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23105,
@@ -19002,11 +14494,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.ship_meta_repair
-
-	var_12_27[23106] = {
+	pg.base.ship_meta_repair[23106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23106,
@@ -19016,11 +14504,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.ship_meta_repair
-
-	var_12_28[23107] = {
+	pg.base.ship_meta_repair[23107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23107,
@@ -19030,11 +14514,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.ship_meta_repair
-
-	var_12_29[23108] = {
+	pg.base.ship_meta_repair[23108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23108,
@@ -19044,11 +14524,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.ship_meta_repair
-
-	var_12_30[23109] = {
+	pg.base.ship_meta_repair[23109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23109,
@@ -19058,11 +14534,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.ship_meta_repair
-
-	var_12_31[23110] = {
+	pg.base.ship_meta_repair[23110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23110,
@@ -19072,11 +14544,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.ship_meta_repair
-
-	var_12_32[23111] = {
+	pg.base.ship_meta_repair[23111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23111,
@@ -19086,11 +14554,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.ship_meta_repair
-
-	var_12_33[23112] = {
+	pg.base.ship_meta_repair[23112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23112,
@@ -19100,11 +14564,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.ship_meta_repair
-
-	var_12_34[23113] = {
+	pg.base.ship_meta_repair[23113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23113,
@@ -19114,11 +14574,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.ship_meta_repair
-
-	var_12_35[23114] = {
+	pg.base.ship_meta_repair[23114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23114,
@@ -19128,11 +14584,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.ship_meta_repair
-
-	var_12_36[23115] = {
+	pg.base.ship_meta_repair[23115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23115,
@@ -19142,11 +14594,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.ship_meta_repair
-
-	var_12_37[23116] = {
+	pg.base.ship_meta_repair[23116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23116,
@@ -19156,11 +14604,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.ship_meta_repair
-
-	var_12_38[23117] = {
+	pg.base.ship_meta_repair[23117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23117,
@@ -19170,11 +14614,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.ship_meta_repair
-
-	var_12_39[23118] = {
+	pg.base.ship_meta_repair[23118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23118,
@@ -19184,11 +14624,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.ship_meta_repair
-
-	var_12_40[23119] = {
+	pg.base.ship_meta_repair[23119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23119,
@@ -19198,11 +14634,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.ship_meta_repair
-
-	var_12_41[23120] = {
+	pg.base.ship_meta_repair[23120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 23120,
@@ -19212,11 +14644,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.ship_meta_repair
-
-	var_12_42[23201] = {
+	pg.base.ship_meta_repair[23201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23201,
@@ -19226,11 +14654,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.ship_meta_repair
-
-	var_12_43[23202] = {
+	pg.base.ship_meta_repair[23202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23202,
@@ -19240,11 +14664,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.ship_meta_repair
-
-	var_12_44[23203] = {
+	pg.base.ship_meta_repair[23203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23203,
@@ -19254,11 +14674,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.ship_meta_repair
-
-	var_12_45[23204] = {
+	pg.base.ship_meta_repair[23204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23204,
@@ -19268,11 +14684,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.ship_meta_repair
-
-	var_12_46[23205] = {
+	pg.base.ship_meta_repair[23205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23205,
@@ -19282,11 +14694,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.ship_meta_repair
-
-	var_12_47[23206] = {
+	pg.base.ship_meta_repair[23206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23206,
@@ -19296,11 +14704,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.ship_meta_repair
-
-	var_12_48[23207] = {
+	pg.base.ship_meta_repair[23207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23207,
@@ -19310,11 +14714,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.ship_meta_repair
-
-	var_12_49[23208] = {
+	pg.base.ship_meta_repair[23208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23208,
@@ -19324,11 +14724,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.ship_meta_repair
-
-	var_12_50[23209] = {
+	pg.base.ship_meta_repair[23209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23209,
@@ -19338,11 +14734,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.ship_meta_repair
-
-	var_12_51[23210] = {
+	pg.base.ship_meta_repair[23210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23210,
@@ -19352,11 +14744,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.ship_meta_repair
-
-	var_12_52[23211] = {
+	pg.base.ship_meta_repair[23211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23211,
@@ -19366,11 +14754,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.ship_meta_repair
-
-	var_12_53[23212] = {
+	pg.base.ship_meta_repair[23212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23212,
@@ -19380,11 +14764,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.ship_meta_repair
-
-	var_12_54[23213] = {
+	pg.base.ship_meta_repair[23213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23213,
@@ -19394,11 +14774,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.ship_meta_repair
-
-	var_12_55[23214] = {
+	pg.base.ship_meta_repair[23214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23214,
@@ -19408,11 +14784,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.ship_meta_repair
-
-	var_12_56[23215] = {
+	pg.base.ship_meta_repair[23215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23215,
@@ -19422,11 +14794,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.ship_meta_repair
-
-	var_12_57[23216] = {
+	pg.base.ship_meta_repair[23216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23216,
@@ -19436,11 +14804,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.ship_meta_repair
-
-	var_12_58[23217] = {
+	pg.base.ship_meta_repair[23217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23217,
@@ -19450,11 +14814,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.ship_meta_repair
-
-	var_12_59[23218] = {
+	pg.base.ship_meta_repair[23218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23218,
@@ -19464,11 +14824,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.ship_meta_repair
-
-	var_12_60[23219] = {
+	pg.base.ship_meta_repair[23219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23219,
@@ -19478,11 +14834,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.ship_meta_repair
-
-	var_12_61[23220] = {
+	pg.base.ship_meta_repair[23220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 23220,
@@ -19492,11 +14844,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.ship_meta_repair
-
-	var_12_62[23401] = {
+	pg.base.ship_meta_repair[23401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23401,
@@ -19506,11 +14854,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.ship_meta_repair
-
-	var_12_63[23402] = {
+	pg.base.ship_meta_repair[23402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23402,
@@ -19520,11 +14864,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.ship_meta_repair
-
-	var_12_64[23403] = {
+	pg.base.ship_meta_repair[23403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23403,
@@ -19534,11 +14874,7 @@ end)()
 			4
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.ship_meta_repair
-
-	var_12_65[23404] = {
+	pg.base.ship_meta_repair[23404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23404,
@@ -19548,11 +14884,7 @@ end)()
 			5
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.ship_meta_repair
-
-	var_12_66[23405] = {
+	pg.base.ship_meta_repair[23405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23405,
@@ -19562,11 +14894,7 @@ end)()
 			5
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.ship_meta_repair
-
-	var_12_67[23406] = {
+	pg.base.ship_meta_repair[23406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23406,
@@ -19576,11 +14904,7 @@ end)()
 			6
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.ship_meta_repair
-
-	var_12_68[23407] = {
+	pg.base.ship_meta_repair[23407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23407,
@@ -19590,11 +14914,7 @@ end)()
 			6
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.ship_meta_repair
-
-	var_12_69[23408] = {
+	pg.base.ship_meta_repair[23408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23408,
@@ -19604,11 +14924,7 @@ end)()
 			7
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.ship_meta_repair
-
-	var_12_70[23409] = {
+	pg.base.ship_meta_repair[23409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23409,
@@ -19618,11 +14934,7 @@ end)()
 			7
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.ship_meta_repair
-
-	var_12_71[23410] = {
+	pg.base.ship_meta_repair[23410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 23410,
@@ -19632,11 +14944,7 @@ end)()
 			7
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.ship_meta_repair
-
-	var_12_72[24201] = {
+	pg.base.ship_meta_repair[24201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24201,
@@ -19646,11 +14954,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.ship_meta_repair
-
-	var_12_73[24202] = {
+	pg.base.ship_meta_repair[24202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24202,
@@ -19660,11 +14964,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.ship_meta_repair
-
-	var_12_74[24203] = {
+	pg.base.ship_meta_repair[24203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24203,
@@ -19674,11 +14974,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.ship_meta_repair
-
-	var_12_75[24204] = {
+	pg.base.ship_meta_repair[24204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24204,
@@ -19688,11 +14984,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.ship_meta_repair
-
-	var_12_76[24205] = {
+	pg.base.ship_meta_repair[24205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24205,
@@ -19702,11 +14994,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.ship_meta_repair
-
-	var_12_77[24206] = {
+	pg.base.ship_meta_repair[24206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24206,
@@ -19716,11 +15004,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.ship_meta_repair
-
-	var_12_78[24207] = {
+	pg.base.ship_meta_repair[24207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24207,
@@ -19730,11 +15014,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.ship_meta_repair
-
-	var_12_79[24208] = {
+	pg.base.ship_meta_repair[24208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24208,
@@ -19744,11 +15024,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.ship_meta_repair
-
-	var_12_80[24209] = {
+	pg.base.ship_meta_repair[24209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24209,
@@ -19758,11 +15034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.ship_meta_repair
-
-	var_12_81[24210] = {
+	pg.base.ship_meta_repair[24210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24210,
@@ -19772,11 +15044,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.ship_meta_repair
-
-	var_12_82[24211] = {
+	pg.base.ship_meta_repair[24211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24211,
@@ -19786,11 +15054,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.ship_meta_repair
-
-	var_12_83[24212] = {
+	pg.base.ship_meta_repair[24212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24212,
@@ -19800,11 +15064,7 @@ end)()
 			1
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.ship_meta_repair
-
-	var_12_84[24213] = {
+	pg.base.ship_meta_repair[24213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24213,
@@ -19814,11 +15074,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.ship_meta_repair
-
-	var_12_85[24214] = {
+	pg.base.ship_meta_repair[24214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24214,
@@ -19828,11 +15084,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.ship_meta_repair
-
-	var_12_86[24215] = {
+	pg.base.ship_meta_repair[24215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24215,
@@ -19842,11 +15094,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.ship_meta_repair
-
-	var_12_87[24216] = {
+	pg.base.ship_meta_repair[24216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24216,
@@ -19856,11 +15104,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.ship_meta_repair
-
-	var_12_88[24217] = {
+	pg.base.ship_meta_repair[24217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24217,
@@ -19870,11 +15114,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.ship_meta_repair
-
-	var_12_89[24218] = {
+	pg.base.ship_meta_repair[24218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24218,
@@ -19884,11 +15124,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.ship_meta_repair
-
-	var_12_90[24219] = {
+	pg.base.ship_meta_repair[24219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24219,
@@ -19898,11 +15134,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.ship_meta_repair
-
-	var_12_91[24220] = {
+	pg.base.ship_meta_repair[24220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24220,
@@ -19912,11 +15144,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.ship_meta_repair
-
-	var_12_92[24221] = {
+	pg.base.ship_meta_repair[24221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24221,
@@ -19926,11 +15154,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.ship_meta_repair
-
-	var_12_93[24222] = {
+	pg.base.ship_meta_repair[24222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24222,
@@ -19940,11 +15164,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.ship_meta_repair
-
-	var_12_94[24223] = {
+	pg.base.ship_meta_repair[24223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24223,
@@ -19954,11 +15174,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.ship_meta_repair
-
-	var_12_95[24224] = {
+	pg.base.ship_meta_repair[24224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24224,
@@ -19968,11 +15184,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.ship_meta_repair
-
-	var_12_96[24225] = {
+	pg.base.ship_meta_repair[24225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24225,
@@ -19982,11 +15194,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.ship_meta_repair
-
-	var_12_97[24226] = {
+	pg.base.ship_meta_repair[24226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24226,
@@ -19996,11 +15204,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.ship_meta_repair
-
-	var_12_98[24227] = {
+	pg.base.ship_meta_repair[24227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24227,
@@ -20010,8 +15214,7 @@ end)()
 			3
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.ship_meta_repair[24228] = {
+	pg.base.ship_meta_repair[24228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24228,
@@ -20025,11 +15228,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.ship_meta_repair
-
-	var_13_0[24229] = {
+	pg.base.ship_meta_repair[24229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24229,
@@ -20039,11 +15238,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.ship_meta_repair
-
-	var_13_1[24230] = {
+	pg.base.ship_meta_repair[24230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 24230,
@@ -20053,11 +15248,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.ship_meta_repair
-
-	var_13_2[24401] = {
+	pg.base.ship_meta_repair[24401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24401,
@@ -20067,11 +15258,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.ship_meta_repair
-
-	var_13_3[24402] = {
+	pg.base.ship_meta_repair[24402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24402,
@@ -20081,11 +15268,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.ship_meta_repair
-
-	var_13_4[24403] = {
+	pg.base.ship_meta_repair[24403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24403,
@@ -20095,11 +15278,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.ship_meta_repair
-
-	var_13_5[24404] = {
+	pg.base.ship_meta_repair[24404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24404,
@@ -20109,11 +15288,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.ship_meta_repair
-
-	var_13_6[24405] = {
+	pg.base.ship_meta_repair[24405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24405,
@@ -20123,11 +15298,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.ship_meta_repair
-
-	var_13_7[24406] = {
+	pg.base.ship_meta_repair[24406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24406,
@@ -20137,11 +15308,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.ship_meta_repair
-
-	var_13_8[24407] = {
+	pg.base.ship_meta_repair[24407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24407,
@@ -20151,11 +15318,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.ship_meta_repair
-
-	var_13_9[24408] = {
+	pg.base.ship_meta_repair[24408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24408,
@@ -20165,11 +15328,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.ship_meta_repair
-
-	var_13_10[24409] = {
+	pg.base.ship_meta_repair[24409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24409,
@@ -20179,11 +15338,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.ship_meta_repair
-
-	var_13_11[24410] = {
+	pg.base.ship_meta_repair[24410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24410,
@@ -20193,11 +15348,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.ship_meta_repair
-
-	var_13_12[24411] = {
+	pg.base.ship_meta_repair[24411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24411,
@@ -20207,11 +15358,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.ship_meta_repair
-
-	var_13_13[24412] = {
+	pg.base.ship_meta_repair[24412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24412,
@@ -20221,11 +15368,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.ship_meta_repair
-
-	var_13_14[24413] = {
+	pg.base.ship_meta_repair[24413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24413,
@@ -20235,11 +15378,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.ship_meta_repair
-
-	var_13_15[24414] = {
+	pg.base.ship_meta_repair[24414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24414,
@@ -20249,11 +15388,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.ship_meta_repair
-
-	var_13_16[24415] = {
+	pg.base.ship_meta_repair[24415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24415,
@@ -20263,11 +15398,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.ship_meta_repair
-
-	var_13_17[24416] = {
+	pg.base.ship_meta_repair[24416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24416,
@@ -20277,11 +15408,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.ship_meta_repair
-
-	var_13_18[24417] = {
+	pg.base.ship_meta_repair[24417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24417,
@@ -20291,11 +15418,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.ship_meta_repair
-
-	var_13_19[24418] = {
+	pg.base.ship_meta_repair[24418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24418,
@@ -20305,11 +15428,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.ship_meta_repair
-
-	var_13_20[24419] = {
+	pg.base.ship_meta_repair[24419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24419,
@@ -20319,11 +15438,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.ship_meta_repair
-
-	var_13_21[24420] = {
+	pg.base.ship_meta_repair[24420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 24420,
@@ -20333,11 +15448,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.ship_meta_repair
-
-	var_13_22[25101] = {
+	pg.base.ship_meta_repair[25101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25101,
@@ -20347,11 +15458,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.ship_meta_repair
-
-	var_13_23[25102] = {
+	pg.base.ship_meta_repair[25102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25102,
@@ -20361,11 +15468,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.ship_meta_repair
-
-	var_13_24[25103] = {
+	pg.base.ship_meta_repair[25103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25103,
@@ -20375,11 +15478,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.ship_meta_repair
-
-	var_13_25[25104] = {
+	pg.base.ship_meta_repair[25104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25104,
@@ -20389,11 +15488,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.ship_meta_repair
-
-	var_13_26[25105] = {
+	pg.base.ship_meta_repair[25105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25105,
@@ -20403,11 +15498,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.ship_meta_repair
-
-	var_13_27[25106] = {
+	pg.base.ship_meta_repair[25106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25106,
@@ -20417,11 +15508,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.ship_meta_repair
-
-	var_13_28[25107] = {
+	pg.base.ship_meta_repair[25107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25107,
@@ -20431,11 +15518,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.ship_meta_repair
-
-	var_13_29[25108] = {
+	pg.base.ship_meta_repair[25108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25108,
@@ -20445,11 +15528,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.ship_meta_repair
-
-	var_13_30[25109] = {
+	pg.base.ship_meta_repair[25109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25109,
@@ -20459,11 +15538,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.ship_meta_repair
-
-	var_13_31[25110] = {
+	pg.base.ship_meta_repair[25110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 25110,
@@ -20473,11 +15548,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.ship_meta_repair
-
-	var_13_32[25201] = {
+	pg.base.ship_meta_repair[25201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25201,
@@ -20487,11 +15558,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.ship_meta_repair
-
-	var_13_33[25202] = {
+	pg.base.ship_meta_repair[25202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25202,
@@ -20501,11 +15568,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.ship_meta_repair
-
-	var_13_34[25203] = {
+	pg.base.ship_meta_repair[25203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25203,
@@ -20515,11 +15578,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.ship_meta_repair
-
-	var_13_35[25204] = {
+	pg.base.ship_meta_repair[25204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25204,
@@ -20529,11 +15588,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.ship_meta_repair
-
-	var_13_36[25205] = {
+	pg.base.ship_meta_repair[25205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25205,
@@ -20543,11 +15598,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.ship_meta_repair
-
-	var_13_37[25206] = {
+	pg.base.ship_meta_repair[25206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25206,
@@ -20557,11 +15608,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.ship_meta_repair
-
-	var_13_38[25207] = {
+	pg.base.ship_meta_repair[25207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25207,
@@ -20571,11 +15618,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.ship_meta_repair
-
-	var_13_39[25208] = {
+	pg.base.ship_meta_repair[25208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25208,
@@ -20585,11 +15628,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.ship_meta_repair
-
-	var_13_40[25209] = {
+	pg.base.ship_meta_repair[25209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25209,
@@ -20599,11 +15638,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.ship_meta_repair
-
-	var_13_41[25210] = {
+	pg.base.ship_meta_repair[25210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25210,
@@ -20613,11 +15648,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.ship_meta_repair
-
-	var_13_42[25211] = {
+	pg.base.ship_meta_repair[25211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25211,
@@ -20627,11 +15658,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.ship_meta_repair
-
-	var_13_43[25212] = {
+	pg.base.ship_meta_repair[25212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25212,
@@ -20641,11 +15668,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.ship_meta_repair
-
-	var_13_44[25213] = {
+	pg.base.ship_meta_repair[25213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25213,
@@ -20655,11 +15678,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.ship_meta_repair
-
-	var_13_45[25214] = {
+	pg.base.ship_meta_repair[25214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25214,
@@ -20669,11 +15688,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.ship_meta_repair
-
-	var_13_46[25215] = {
+	pg.base.ship_meta_repair[25215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25215,
@@ -20683,11 +15698,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.ship_meta_repair
-
-	var_13_47[25216] = {
+	pg.base.ship_meta_repair[25216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25216,
@@ -20697,11 +15708,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.ship_meta_repair
-
-	var_13_48[25217] = {
+	pg.base.ship_meta_repair[25217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25217,
@@ -20711,11 +15718,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.ship_meta_repair
-
-	var_13_49[25218] = {
+	pg.base.ship_meta_repair[25218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25218,
@@ -20725,11 +15728,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.ship_meta_repair
-
-	var_13_50[25219] = {
+	pg.base.ship_meta_repair[25219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25219,
@@ -20739,11 +15738,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.ship_meta_repair
-
-	var_13_51[25220] = {
+	pg.base.ship_meta_repair[25220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 25220,
@@ -20753,11 +15748,7 @@ end)()
 			5
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.ship_meta_repair
-
-	var_13_52[25401] = {
+	pg.base.ship_meta_repair[25401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25401,
@@ -20767,11 +15758,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.ship_meta_repair
-
-	var_13_53[25402] = {
+	pg.base.ship_meta_repair[25402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25402,
@@ -20781,11 +15768,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.ship_meta_repair
-
-	var_13_54[25403] = {
+	pg.base.ship_meta_repair[25403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25403,
@@ -20795,11 +15778,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.ship_meta_repair
-
-	var_13_55[25404] = {
+	pg.base.ship_meta_repair[25404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25404,
@@ -20809,11 +15788,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.ship_meta_repair
-
-	var_13_56[25405] = {
+	pg.base.ship_meta_repair[25405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25405,
@@ -20823,11 +15798,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.ship_meta_repair
-
-	var_13_57[25406] = {
+	pg.base.ship_meta_repair[25406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25406,
@@ -20837,11 +15808,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.ship_meta_repair
-
-	var_13_58[25407] = {
+	pg.base.ship_meta_repair[25407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25407,
@@ -20851,11 +15818,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.ship_meta_repair
-
-	var_13_59[25408] = {
+	pg.base.ship_meta_repair[25408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25408,
@@ -20865,11 +15828,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.ship_meta_repair
-
-	var_13_60[25409] = {
+	pg.base.ship_meta_repair[25409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25409,
@@ -20879,11 +15838,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.ship_meta_repair
-
-	var_13_61[25410] = {
+	pg.base.ship_meta_repair[25410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25410,
@@ -20893,11 +15848,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.ship_meta_repair
-
-	var_13_62[25411] = {
+	pg.base.ship_meta_repair[25411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25411,
@@ -20907,11 +15858,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.ship_meta_repair
-
-	var_13_63[25412] = {
+	pg.base.ship_meta_repair[25412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25412,
@@ -20921,11 +15868,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.ship_meta_repair
-
-	var_13_64[25413] = {
+	pg.base.ship_meta_repair[25413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25413,
@@ -20935,11 +15878,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.ship_meta_repair
-
-	var_13_65[25414] = {
+	pg.base.ship_meta_repair[25414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25414,
@@ -20949,11 +15888,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.ship_meta_repair
-
-	var_13_66[25415] = {
+	pg.base.ship_meta_repair[25415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25415,
@@ -20963,11 +15898,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.ship_meta_repair
-
-	var_13_67[25416] = {
+	pg.base.ship_meta_repair[25416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25416,
@@ -20977,11 +15908,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.ship_meta_repair
-
-	var_13_68[25417] = {
+	pg.base.ship_meta_repair[25417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25417,
@@ -20991,11 +15918,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.ship_meta_repair
-
-	var_13_69[25418] = {
+	pg.base.ship_meta_repair[25418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25418,
@@ -21005,11 +15928,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.ship_meta_repair
-
-	var_13_70[25419] = {
+	pg.base.ship_meta_repair[25419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25419,
@@ -21019,11 +15938,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.ship_meta_repair
-
-	var_13_71[25420] = {
+	pg.base.ship_meta_repair[25420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 25420,
@@ -21033,11 +15948,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.ship_meta_repair
-
-	var_13_72[26301] = {
+	pg.base.ship_meta_repair[26301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26301,
@@ -21047,11 +15958,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.ship_meta_repair
-
-	var_13_73[26302] = {
+	pg.base.ship_meta_repair[26302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26302,
@@ -21061,11 +15968,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.ship_meta_repair
-
-	var_13_74[26303] = {
+	pg.base.ship_meta_repair[26303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26303,
@@ -21075,11 +15978,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.ship_meta_repair
-
-	var_13_75[26304] = {
+	pg.base.ship_meta_repair[26304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26304,
@@ -21089,11 +15988,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.ship_meta_repair
-
-	var_13_76[26305] = {
+	pg.base.ship_meta_repair[26305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26305,
@@ -21103,11 +15998,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.ship_meta_repair
-
-	var_13_77[26306] = {
+	pg.base.ship_meta_repair[26306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26306,
@@ -21117,11 +16008,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.ship_meta_repair
-
-	var_13_78[26307] = {
+	pg.base.ship_meta_repair[26307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26307,
@@ -21131,11 +16018,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.ship_meta_repair
-
-	var_13_79[26308] = {
+	pg.base.ship_meta_repair[26308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26308,
@@ -21145,11 +16028,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.ship_meta_repair
-
-	var_13_80[26309] = {
+	pg.base.ship_meta_repair[26309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26309,
@@ -21159,11 +16038,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.ship_meta_repair
-
-	var_13_81[26310] = {
+	pg.base.ship_meta_repair[26310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26310,
@@ -21173,11 +16048,7 @@ end)()
 			1
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.ship_meta_repair
-
-	var_13_82[26311] = {
+	pg.base.ship_meta_repair[26311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26311,
@@ -21187,11 +16058,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.ship_meta_repair
-
-	var_13_83[26312] = {
+	pg.base.ship_meta_repair[26312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26312,
@@ -21201,11 +16068,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.ship_meta_repair
-
-	var_13_84[26313] = {
+	pg.base.ship_meta_repair[26313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26313,
@@ -21215,11 +16078,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.ship_meta_repair
-
-	var_13_85[26314] = {
+	pg.base.ship_meta_repair[26314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26314,
@@ -21229,11 +16088,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.ship_meta_repair
-
-	var_13_86[26315] = {
+	pg.base.ship_meta_repair[26315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26315,
@@ -21243,11 +16098,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.ship_meta_repair
-
-	var_13_87[26316] = {
+	pg.base.ship_meta_repair[26316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26316,
@@ -21257,11 +16108,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.ship_meta_repair
-
-	var_13_88[26317] = {
+	pg.base.ship_meta_repair[26317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26317,
@@ -21271,11 +16118,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.ship_meta_repair
-
-	var_13_89[26318] = {
+	pg.base.ship_meta_repair[26318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26318,
@@ -21285,11 +16128,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.ship_meta_repair
-
-	var_13_90[26319] = {
+	pg.base.ship_meta_repair[26319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26319,
@@ -21299,11 +16138,7 @@ end)()
 			2
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.ship_meta_repair
-
-	var_13_91[26320] = {
+	pg.base.ship_meta_repair[26320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26320,
@@ -21313,11 +16148,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.ship_meta_repair
-
-	var_13_92[26321] = {
+	pg.base.ship_meta_repair[26321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26321,
@@ -21327,11 +16158,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.ship_meta_repair
-
-	var_13_93[26322] = {
+	pg.base.ship_meta_repair[26322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26322,
@@ -21341,11 +16168,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.ship_meta_repair
-
-	var_13_94[26323] = {
+	pg.base.ship_meta_repair[26323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26323,
@@ -21355,11 +16178,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.ship_meta_repair
-
-	var_13_95[26324] = {
+	pg.base.ship_meta_repair[26324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26324,
@@ -21369,11 +16188,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.ship_meta_repair
-
-	var_13_96[26325] = {
+	pg.base.ship_meta_repair[26325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26325,
@@ -21383,11 +16198,7 @@ end)()
 			3
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.ship_meta_repair
-
-	var_13_97[26326] = {
+	pg.base.ship_meta_repair[26326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26326,
@@ -21397,11 +16208,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.ship_meta_repair
-
-	var_13_98[26327] = {
+	pg.base.ship_meta_repair[26327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26327,
@@ -21411,8 +16218,7 @@ end)()
 			4
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.ship_meta_repair[26328] = {
+	pg.base.ship_meta_repair[26328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26328,
@@ -21426,11 +16232,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.ship_meta_repair
-
-	var_14_0[26329] = {
+	pg.base.ship_meta_repair[26329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26329,
@@ -21440,11 +16242,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.ship_meta_repair
-
-	var_14_1[26330] = {
+	pg.base.ship_meta_repair[26330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 26330,
@@ -21454,11 +16252,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.ship_meta_repair
-
-	var_14_2[26401] = {
+	pg.base.ship_meta_repair[26401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26401,
@@ -21468,11 +16262,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.ship_meta_repair
-
-	var_14_3[26402] = {
+	pg.base.ship_meta_repair[26402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26402,
@@ -21482,11 +16272,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.ship_meta_repair
-
-	var_14_4[26403] = {
+	pg.base.ship_meta_repair[26403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26403,
@@ -21496,11 +16282,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.ship_meta_repair
-
-	var_14_5[26404] = {
+	pg.base.ship_meta_repair[26404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26404,
@@ -21510,11 +16292,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.ship_meta_repair
-
-	var_14_6[26405] = {
+	pg.base.ship_meta_repair[26405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26405,
@@ -21524,11 +16302,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.ship_meta_repair
-
-	var_14_7[26406] = {
+	pg.base.ship_meta_repair[26406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26406,
@@ -21538,11 +16312,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.ship_meta_repair
-
-	var_14_8[26407] = {
+	pg.base.ship_meta_repair[26407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26407,
@@ -21552,11 +16322,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.ship_meta_repair
-
-	var_14_9[26408] = {
+	pg.base.ship_meta_repair[26408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26408,
@@ -21566,11 +16332,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.ship_meta_repair
-
-	var_14_10[26409] = {
+	pg.base.ship_meta_repair[26409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26409,
@@ -21580,11 +16342,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.ship_meta_repair
-
-	var_14_11[26410] = {
+	pg.base.ship_meta_repair[26410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26410,
@@ -21594,11 +16352,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.ship_meta_repair
-
-	var_14_12[26411] = {
+	pg.base.ship_meta_repair[26411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26411,
@@ -21608,11 +16362,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.ship_meta_repair
-
-	var_14_13[26412] = {
+	pg.base.ship_meta_repair[26412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26412,
@@ -21622,11 +16372,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.ship_meta_repair
-
-	var_14_14[26413] = {
+	pg.base.ship_meta_repair[26413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26413,
@@ -21636,11 +16382,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.ship_meta_repair
-
-	var_14_15[26414] = {
+	pg.base.ship_meta_repair[26414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26414,
@@ -21650,11 +16392,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.ship_meta_repair
-
-	var_14_16[26415] = {
+	pg.base.ship_meta_repair[26415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26415,
@@ -21664,11 +16402,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.ship_meta_repair
-
-	var_14_17[26416] = {
+	pg.base.ship_meta_repair[26416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26416,
@@ -21678,11 +16412,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.ship_meta_repair
-
-	var_14_18[26417] = {
+	pg.base.ship_meta_repair[26417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26417,
@@ -21692,11 +16422,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.ship_meta_repair
-
-	var_14_19[26418] = {
+	pg.base.ship_meta_repair[26418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26418,
@@ -21706,11 +16432,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.ship_meta_repair
-
-	var_14_20[26419] = {
+	pg.base.ship_meta_repair[26419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26419,
@@ -21720,11 +16442,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.ship_meta_repair
-
-	var_14_21[26420] = {
+	pg.base.ship_meta_repair[26420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 26420,
@@ -21734,11 +16452,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.ship_meta_repair
-
-	var_14_22[27101] = {
+	pg.base.ship_meta_repair[27101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27101,
@@ -21748,11 +16462,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.ship_meta_repair
-
-	var_14_23[27102] = {
+	pg.base.ship_meta_repair[27102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27102,
@@ -21762,11 +16472,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.ship_meta_repair
-
-	var_14_24[27103] = {
+	pg.base.ship_meta_repair[27103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27103,
@@ -21776,11 +16482,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.ship_meta_repair
-
-	var_14_25[27104] = {
+	pg.base.ship_meta_repair[27104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27104,
@@ -21790,11 +16492,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.ship_meta_repair
-
-	var_14_26[27105] = {
+	pg.base.ship_meta_repair[27105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27105,
@@ -21804,11 +16502,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.ship_meta_repair
-
-	var_14_27[27106] = {
+	pg.base.ship_meta_repair[27106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27106,
@@ -21818,11 +16512,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.ship_meta_repair
-
-	var_14_28[27107] = {
+	pg.base.ship_meta_repair[27107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27107,
@@ -21832,11 +16522,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.ship_meta_repair
-
-	var_14_29[27108] = {
+	pg.base.ship_meta_repair[27108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27108,
@@ -21846,11 +16532,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.ship_meta_repair
-
-	var_14_30[27109] = {
+	pg.base.ship_meta_repair[27109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27109,
@@ -21860,11 +16542,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.ship_meta_repair
-
-	var_14_31[27110] = {
+	pg.base.ship_meta_repair[27110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27110,
@@ -21874,11 +16552,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.ship_meta_repair
-
-	var_14_32[27111] = {
+	pg.base.ship_meta_repair[27111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27111,
@@ -21888,11 +16562,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.ship_meta_repair
-
-	var_14_33[27112] = {
+	pg.base.ship_meta_repair[27112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27112,
@@ -21902,11 +16572,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.ship_meta_repair
-
-	var_14_34[27113] = {
+	pg.base.ship_meta_repair[27113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27113,
@@ -21916,11 +16582,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.ship_meta_repair
-
-	var_14_35[27114] = {
+	pg.base.ship_meta_repair[27114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27114,
@@ -21930,11 +16592,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.ship_meta_repair
-
-	var_14_36[27115] = {
+	pg.base.ship_meta_repair[27115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27115,
@@ -21944,11 +16602,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.ship_meta_repair
-
-	var_14_37[27116] = {
+	pg.base.ship_meta_repair[27116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27116,
@@ -21958,11 +16612,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.ship_meta_repair
-
-	var_14_38[27117] = {
+	pg.base.ship_meta_repair[27117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27117,
@@ -21972,11 +16622,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.ship_meta_repair
-
-	var_14_39[27118] = {
+	pg.base.ship_meta_repair[27118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27118,
@@ -21986,11 +16632,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.ship_meta_repair
-
-	var_14_40[27119] = {
+	pg.base.ship_meta_repair[27119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27119,
@@ -22000,11 +16642,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.ship_meta_repair
-
-	var_14_41[27120] = {
+	pg.base.ship_meta_repair[27120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27120,
@@ -22014,11 +16652,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.ship_meta_repair
-
-	var_14_42[27121] = {
+	pg.base.ship_meta_repair[27121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27121,
@@ -22028,11 +16662,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.ship_meta_repair
-
-	var_14_43[27122] = {
+	pg.base.ship_meta_repair[27122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27122,
@@ -22042,11 +16672,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.ship_meta_repair
-
-	var_14_44[27123] = {
+	pg.base.ship_meta_repair[27123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27123,
@@ -22056,11 +16682,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.ship_meta_repair
-
-	var_14_45[27124] = {
+	pg.base.ship_meta_repair[27124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27124,
@@ -22070,11 +16692,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.ship_meta_repair
-
-	var_14_46[27125] = {
+	pg.base.ship_meta_repair[27125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27125,
@@ -22084,11 +16702,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.ship_meta_repair
-
-	var_14_47[27126] = {
+	pg.base.ship_meta_repair[27126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27126,
@@ -22098,11 +16712,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.ship_meta_repair
-
-	var_14_48[27127] = {
+	pg.base.ship_meta_repair[27127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27127,
@@ -22112,11 +16722,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.ship_meta_repair
-
-	var_14_49[27128] = {
+	pg.base.ship_meta_repair[27128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27128,
@@ -22126,11 +16732,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.ship_meta_repair
-
-	var_14_50[27129] = {
+	pg.base.ship_meta_repair[27129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27129,
@@ -22140,11 +16742,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.ship_meta_repair
-
-	var_14_51[27130] = {
+	pg.base.ship_meta_repair[27130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 27130,
@@ -22154,11 +16752,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.ship_meta_repair
-
-	var_14_52[27401] = {
+	pg.base.ship_meta_repair[27401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27401,
@@ -22168,11 +16762,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.ship_meta_repair
-
-	var_14_53[27402] = {
+	pg.base.ship_meta_repair[27402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27402,
@@ -22182,11 +16772,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.ship_meta_repair
-
-	var_14_54[27403] = {
+	pg.base.ship_meta_repair[27403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27403,
@@ -22196,11 +16782,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.ship_meta_repair
-
-	var_14_55[27404] = {
+	pg.base.ship_meta_repair[27404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27404,
@@ -22210,11 +16792,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.ship_meta_repair
-
-	var_14_56[27405] = {
+	pg.base.ship_meta_repair[27405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27405,
@@ -22224,11 +16802,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.ship_meta_repair
-
-	var_14_57[27406] = {
+	pg.base.ship_meta_repair[27406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27406,
@@ -22238,11 +16812,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.ship_meta_repair
-
-	var_14_58[27407] = {
+	pg.base.ship_meta_repair[27407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27407,
@@ -22252,11 +16822,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.ship_meta_repair
-
-	var_14_59[27408] = {
+	pg.base.ship_meta_repair[27408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27408,
@@ -22266,11 +16832,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.ship_meta_repair
-
-	var_14_60[27409] = {
+	pg.base.ship_meta_repair[27409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27409,
@@ -22280,11 +16842,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.ship_meta_repair
-
-	var_14_61[27410] = {
+	pg.base.ship_meta_repair[27410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27410,
@@ -22294,11 +16852,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.ship_meta_repair
-
-	var_14_62[27411] = {
+	pg.base.ship_meta_repair[27411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27411,
@@ -22308,11 +16862,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.ship_meta_repair
-
-	var_14_63[27412] = {
+	pg.base.ship_meta_repair[27412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27412,
@@ -22322,11 +16872,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.ship_meta_repair
-
-	var_14_64[27413] = {
+	pg.base.ship_meta_repair[27413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27413,
@@ -22336,11 +16882,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.ship_meta_repair
-
-	var_14_65[27414] = {
+	pg.base.ship_meta_repair[27414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27414,
@@ -22350,11 +16892,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.ship_meta_repair
-
-	var_14_66[27415] = {
+	pg.base.ship_meta_repair[27415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27415,
@@ -22364,11 +16902,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.ship_meta_repair
-
-	var_14_67[27416] = {
+	pg.base.ship_meta_repair[27416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27416,
@@ -22378,11 +16912,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.ship_meta_repair
-
-	var_14_68[27417] = {
+	pg.base.ship_meta_repair[27417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27417,
@@ -22392,11 +16922,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.ship_meta_repair
-
-	var_14_69[27418] = {
+	pg.base.ship_meta_repair[27418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27418,
@@ -22406,11 +16932,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.ship_meta_repair
-
-	var_14_70[27419] = {
+	pg.base.ship_meta_repair[27419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27419,
@@ -22420,11 +16942,7 @@ end)()
 			5
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.ship_meta_repair
-
-	var_14_71[27420] = {
+	pg.base.ship_meta_repair[27420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 27420,
@@ -22434,11 +16952,7 @@ end)()
 			5
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.ship_meta_repair
-
-	var_14_72[28101] = {
+	pg.base.ship_meta_repair[28101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28101,
@@ -22448,11 +16962,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.ship_meta_repair
-
-	var_14_73[28102] = {
+	pg.base.ship_meta_repair[28102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28102,
@@ -22462,11 +16972,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.ship_meta_repair
-
-	var_14_74[28103] = {
+	pg.base.ship_meta_repair[28103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28103,
@@ -22476,11 +16982,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.ship_meta_repair
-
-	var_14_75[28104] = {
+	pg.base.ship_meta_repair[28104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28104,
@@ -22490,11 +16992,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.ship_meta_repair
-
-	var_14_76[28105] = {
+	pg.base.ship_meta_repair[28105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28105,
@@ -22504,11 +17002,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.ship_meta_repair
-
-	var_14_77[28106] = {
+	pg.base.ship_meta_repair[28106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28106,
@@ -22518,11 +17012,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.ship_meta_repair
-
-	var_14_78[28107] = {
+	pg.base.ship_meta_repair[28107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28107,
@@ -22532,11 +17022,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.ship_meta_repair
-
-	var_14_79[28108] = {
+	pg.base.ship_meta_repair[28108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28108,
@@ -22546,11 +17032,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.ship_meta_repair
-
-	var_14_80[28109] = {
+	pg.base.ship_meta_repair[28109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28109,
@@ -22560,11 +17042,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.ship_meta_repair
-
-	var_14_81[28110] = {
+	pg.base.ship_meta_repair[28110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 28110,
@@ -22574,11 +17052,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.ship_meta_repair
-
-	var_14_82[28201] = {
+	pg.base.ship_meta_repair[28201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28201,
@@ -22588,11 +17062,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.ship_meta_repair
-
-	var_14_83[28202] = {
+	pg.base.ship_meta_repair[28202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28202,
@@ -22602,11 +17072,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.ship_meta_repair
-
-	var_14_84[28203] = {
+	pg.base.ship_meta_repair[28203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28203,
@@ -22616,11 +17082,7 @@ end)()
 			1
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.ship_meta_repair
-
-	var_14_85[28204] = {
+	pg.base.ship_meta_repair[28204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28204,
@@ -22630,11 +17092,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.ship_meta_repair
-
-	var_14_86[28205] = {
+	pg.base.ship_meta_repair[28205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28205,
@@ -22644,11 +17102,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.ship_meta_repair
-
-	var_14_87[28206] = {
+	pg.base.ship_meta_repair[28206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28206,
@@ -22658,11 +17112,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.ship_meta_repair
-
-	var_14_88[28207] = {
+	pg.base.ship_meta_repair[28207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28207,
@@ -22672,11 +17122,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.ship_meta_repair
-
-	var_14_89[28208] = {
+	pg.base.ship_meta_repair[28208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28208,
@@ -22686,11 +17132,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.ship_meta_repair
-
-	var_14_90[28209] = {
+	pg.base.ship_meta_repair[28209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28209,
@@ -22700,11 +17142,7 @@ end)()
 			2
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.ship_meta_repair
-
-	var_14_91[28210] = {
+	pg.base.ship_meta_repair[28210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28210,
@@ -22714,11 +17152,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.ship_meta_repair
-
-	var_14_92[28211] = {
+	pg.base.ship_meta_repair[28211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28211,
@@ -22728,11 +17162,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.ship_meta_repair
-
-	var_14_93[28212] = {
+	pg.base.ship_meta_repair[28212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28212,
@@ -22742,11 +17172,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.ship_meta_repair
-
-	var_14_94[28213] = {
+	pg.base.ship_meta_repair[28213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28213,
@@ -22756,11 +17182,7 @@ end)()
 			3
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.ship_meta_repair
-
-	var_14_95[28214] = {
+	pg.base.ship_meta_repair[28214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28214,
@@ -22770,11 +17192,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.ship_meta_repair
-
-	var_14_96[28215] = {
+	pg.base.ship_meta_repair[28215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28215,
@@ -22784,11 +17202,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.ship_meta_repair
-
-	var_14_97[28216] = {
+	pg.base.ship_meta_repair[28216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28216,
@@ -22798,11 +17212,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.ship_meta_repair
-
-	var_14_98[28217] = {
+	pg.base.ship_meta_repair[28217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28217,
@@ -22812,8 +17222,7 @@ end)()
 			4
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.ship_meta_repair[28218] = {
+	pg.base.ship_meta_repair[28218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28218,
@@ -22827,11 +17236,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.ship_meta_repair
-
-	var_15_0[28219] = {
+	pg.base.ship_meta_repair[28219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28219,
@@ -22841,11 +17246,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.ship_meta_repair
-
-	var_15_1[28220] = {
+	pg.base.ship_meta_repair[28220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 28220,
@@ -22855,11 +17256,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.ship_meta_repair
-
-	var_15_2[28401] = {
+	pg.base.ship_meta_repair[28401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28401,
@@ -22869,11 +17266,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.ship_meta_repair
-
-	var_15_3[28402] = {
+	pg.base.ship_meta_repair[28402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28402,
@@ -22883,11 +17276,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.ship_meta_repair
-
-	var_15_4[28403] = {
+	pg.base.ship_meta_repair[28403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28403,
@@ -22897,11 +17286,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.ship_meta_repair
-
-	var_15_5[28404] = {
+	pg.base.ship_meta_repair[28404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28404,
@@ -22911,11 +17296,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.ship_meta_repair
-
-	var_15_6[28405] = {
+	pg.base.ship_meta_repair[28405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28405,
@@ -22925,11 +17306,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.ship_meta_repair
-
-	var_15_7[28406] = {
+	pg.base.ship_meta_repair[28406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28406,
@@ -22939,11 +17316,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.ship_meta_repair
-
-	var_15_8[28407] = {
+	pg.base.ship_meta_repair[28407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28407,
@@ -22953,11 +17326,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.ship_meta_repair
-
-	var_15_9[28408] = {
+	pg.base.ship_meta_repair[28408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28408,
@@ -22967,11 +17336,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.ship_meta_repair
-
-	var_15_10[28409] = {
+	pg.base.ship_meta_repair[28409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28409,
@@ -22981,11 +17346,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.ship_meta_repair
-
-	var_15_11[28410] = {
+	pg.base.ship_meta_repair[28410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28410,
@@ -22995,11 +17356,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.ship_meta_repair
-
-	var_15_12[28411] = {
+	pg.base.ship_meta_repair[28411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28411,
@@ -23009,11 +17366,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.ship_meta_repair
-
-	var_15_13[28412] = {
+	pg.base.ship_meta_repair[28412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28412,
@@ -23023,11 +17376,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.ship_meta_repair
-
-	var_15_14[28413] = {
+	pg.base.ship_meta_repair[28413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28413,
@@ -23037,11 +17386,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.ship_meta_repair
-
-	var_15_15[28414] = {
+	pg.base.ship_meta_repair[28414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28414,
@@ -23051,11 +17396,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.ship_meta_repair
-
-	var_15_16[28415] = {
+	pg.base.ship_meta_repair[28415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28415,
@@ -23065,11 +17406,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.ship_meta_repair
-
-	var_15_17[28416] = {
+	pg.base.ship_meta_repair[28416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28416,
@@ -23079,11 +17416,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.ship_meta_repair
-
-	var_15_18[28417] = {
+	pg.base.ship_meta_repair[28417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28417,
@@ -23093,11 +17426,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.ship_meta_repair
-
-	var_15_19[28418] = {
+	pg.base.ship_meta_repair[28418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28418,
@@ -23107,11 +17436,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.ship_meta_repair
-
-	var_15_20[28419] = {
+	pg.base.ship_meta_repair[28419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28419,
@@ -23121,11 +17446,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.ship_meta_repair
-
-	var_15_21[28420] = {
+	pg.base.ship_meta_repair[28420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 28420,
@@ -23135,11 +17456,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.ship_meta_repair
-
-	var_15_22[29201] = {
+	pg.base.ship_meta_repair[29201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29201,
@@ -23149,11 +17466,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.ship_meta_repair
-
-	var_15_23[29202] = {
+	pg.base.ship_meta_repair[29202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29202,
@@ -23163,11 +17476,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.ship_meta_repair
-
-	var_15_24[29203] = {
+	pg.base.ship_meta_repair[29203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29203,
@@ -23177,11 +17486,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.ship_meta_repair
-
-	var_15_25[29204] = {
+	pg.base.ship_meta_repair[29204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29204,
@@ -23191,11 +17496,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.ship_meta_repair
-
-	var_15_26[29205] = {
+	pg.base.ship_meta_repair[29205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29205,
@@ -23205,11 +17506,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.ship_meta_repair
-
-	var_15_27[29206] = {
+	pg.base.ship_meta_repair[29206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29206,
@@ -23219,11 +17516,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.ship_meta_repair
-
-	var_15_28[29207] = {
+	pg.base.ship_meta_repair[29207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29207,
@@ -23233,11 +17526,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.ship_meta_repair
-
-	var_15_29[29208] = {
+	pg.base.ship_meta_repair[29208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29208,
@@ -23247,11 +17536,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.ship_meta_repair
-
-	var_15_30[29209] = {
+	pg.base.ship_meta_repair[29209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29209,
@@ -23261,11 +17546,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.ship_meta_repair
-
-	var_15_31[29210] = {
+	pg.base.ship_meta_repair[29210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29210,
@@ -23275,11 +17556,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.ship_meta_repair
-
-	var_15_32[29211] = {
+	pg.base.ship_meta_repair[29211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29211,
@@ -23289,11 +17566,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.ship_meta_repair
-
-	var_15_33[29212] = {
+	pg.base.ship_meta_repair[29212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29212,
@@ -23303,11 +17576,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.ship_meta_repair
-
-	var_15_34[29213] = {
+	pg.base.ship_meta_repair[29213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29213,
@@ -23317,11 +17586,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.ship_meta_repair
-
-	var_15_35[29214] = {
+	pg.base.ship_meta_repair[29214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29214,
@@ -23331,11 +17596,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.ship_meta_repair
-
-	var_15_36[29215] = {
+	pg.base.ship_meta_repair[29215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29215,
@@ -23345,11 +17606,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.ship_meta_repair
-
-	var_15_37[29216] = {
+	pg.base.ship_meta_repair[29216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29216,
@@ -23359,11 +17616,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.ship_meta_repair
-
-	var_15_38[29217] = {
+	pg.base.ship_meta_repair[29217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29217,
@@ -23373,11 +17626,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.ship_meta_repair
-
-	var_15_39[29218] = {
+	pg.base.ship_meta_repair[29218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29218,
@@ -23387,11 +17636,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.ship_meta_repair
-
-	var_15_40[29219] = {
+	pg.base.ship_meta_repair[29219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29219,
@@ -23401,11 +17646,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.ship_meta_repair
-
-	var_15_41[29220] = {
+	pg.base.ship_meta_repair[29220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29220,
@@ -23415,11 +17656,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.ship_meta_repair
-
-	var_15_42[29221] = {
+	pg.base.ship_meta_repair[29221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29221,
@@ -23429,11 +17666,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.ship_meta_repair
-
-	var_15_43[29222] = {
+	pg.base.ship_meta_repair[29222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29222,
@@ -23443,11 +17676,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.ship_meta_repair
-
-	var_15_44[29223] = {
+	pg.base.ship_meta_repair[29223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29223,
@@ -23457,11 +17686,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.ship_meta_repair
-
-	var_15_45[29224] = {
+	pg.base.ship_meta_repair[29224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29224,
@@ -23471,11 +17696,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.ship_meta_repair
-
-	var_15_46[29225] = {
+	pg.base.ship_meta_repair[29225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29225,
@@ -23485,11 +17706,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.ship_meta_repair
-
-	var_15_47[29226] = {
+	pg.base.ship_meta_repair[29226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29226,
@@ -23499,11 +17716,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.ship_meta_repair
-
-	var_15_48[29227] = {
+	pg.base.ship_meta_repair[29227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29227,
@@ -23513,11 +17726,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.ship_meta_repair
-
-	var_15_49[29228] = {
+	pg.base.ship_meta_repair[29228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29228,
@@ -23527,11 +17736,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.ship_meta_repair
-
-	var_15_50[29229] = {
+	pg.base.ship_meta_repair[29229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29229,
@@ -23541,11 +17746,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.ship_meta_repair
-
-	var_15_51[29230] = {
+	pg.base.ship_meta_repair[29230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 29230,
@@ -23555,11 +17756,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.ship_meta_repair
-
-	var_15_52[29401] = {
+	pg.base.ship_meta_repair[29401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29401,
@@ -23569,11 +17766,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.ship_meta_repair
-
-	var_15_53[29402] = {
+	pg.base.ship_meta_repair[29402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29402,
@@ -23583,11 +17776,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.ship_meta_repair
-
-	var_15_54[29403] = {
+	pg.base.ship_meta_repair[29403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29403,
@@ -23597,11 +17786,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.ship_meta_repair
-
-	var_15_55[29404] = {
+	pg.base.ship_meta_repair[29404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29404,
@@ -23611,11 +17796,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.ship_meta_repair
-
-	var_15_56[29405] = {
+	pg.base.ship_meta_repair[29405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29405,
@@ -23625,11 +17806,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.ship_meta_repair
-
-	var_15_57[29406] = {
+	pg.base.ship_meta_repair[29406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29406,
@@ -23639,11 +17816,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.ship_meta_repair
-
-	var_15_58[29407] = {
+	pg.base.ship_meta_repair[29407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29407,
@@ -23653,11 +17826,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.ship_meta_repair
-
-	var_15_59[29408] = {
+	pg.base.ship_meta_repair[29408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29408,
@@ -23667,11 +17836,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.ship_meta_repair
-
-	var_15_60[29409] = {
+	pg.base.ship_meta_repair[29409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29409,
@@ -23681,11 +17846,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.ship_meta_repair
-
-	var_15_61[29410] = {
+	pg.base.ship_meta_repair[29410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29410,
@@ -23695,11 +17856,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.ship_meta_repair
-
-	var_15_62[29411] = {
+	pg.base.ship_meta_repair[29411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29411,
@@ -23709,11 +17866,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.ship_meta_repair
-
-	var_15_63[29412] = {
+	pg.base.ship_meta_repair[29412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29412,
@@ -23723,11 +17876,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.ship_meta_repair
-
-	var_15_64[29413] = {
+	pg.base.ship_meta_repair[29413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29413,
@@ -23737,11 +17886,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.ship_meta_repair
-
-	var_15_65[29414] = {
+	pg.base.ship_meta_repair[29414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29414,
@@ -23751,11 +17896,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.ship_meta_repair
-
-	var_15_66[29415] = {
+	pg.base.ship_meta_repair[29415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29415,
@@ -23765,11 +17906,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.ship_meta_repair
-
-	var_15_67[29416] = {
+	pg.base.ship_meta_repair[29416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29416,
@@ -23779,11 +17916,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.ship_meta_repair
-
-	var_15_68[29417] = {
+	pg.base.ship_meta_repair[29417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29417,
@@ -23793,11 +17926,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.ship_meta_repair
-
-	var_15_69[29418] = {
+	pg.base.ship_meta_repair[29418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29418,
@@ -23807,11 +17936,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.ship_meta_repair
-
-	var_15_70[29419] = {
+	pg.base.ship_meta_repair[29419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29419,
@@ -23821,11 +17946,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.ship_meta_repair
-
-	var_15_71[29420] = {
+	pg.base.ship_meta_repair[29420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 29420,
@@ -23835,11 +17956,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.ship_meta_repair
-
-	var_15_72[30101] = {
+	pg.base.ship_meta_repair[30101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30101,
@@ -23849,11 +17966,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.ship_meta_repair
-
-	var_15_73[30102] = {
+	pg.base.ship_meta_repair[30102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30102,
@@ -23863,11 +17976,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.ship_meta_repair
-
-	var_15_74[30103] = {
+	pg.base.ship_meta_repair[30103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30103,
@@ -23877,11 +17986,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.ship_meta_repair
-
-	var_15_75[30104] = {
+	pg.base.ship_meta_repair[30104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30104,
@@ -23891,11 +17996,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.ship_meta_repair
-
-	var_15_76[30105] = {
+	pg.base.ship_meta_repair[30105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30105,
@@ -23905,11 +18006,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.ship_meta_repair
-
-	var_15_77[30106] = {
+	pg.base.ship_meta_repair[30106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30106,
@@ -23919,11 +18016,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.ship_meta_repair
-
-	var_15_78[30107] = {
+	pg.base.ship_meta_repair[30107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30107,
@@ -23933,11 +18026,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.ship_meta_repair
-
-	var_15_79[30108] = {
+	pg.base.ship_meta_repair[30108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30108,
@@ -23947,11 +18036,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.ship_meta_repair
-
-	var_15_80[30109] = {
+	pg.base.ship_meta_repair[30109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30109,
@@ -23961,11 +18046,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.ship_meta_repair
-
-	var_15_81[30110] = {
+	pg.base.ship_meta_repair[30110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 30110,
@@ -23975,11 +18056,7 @@ end)()
 			4
 		}
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.ship_meta_repair
-
-	var_15_82[30201] = {
+	pg.base.ship_meta_repair[30201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30201,
@@ -23989,11 +18066,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.ship_meta_repair
-
-	var_15_83[30202] = {
+	pg.base.ship_meta_repair[30202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30202,
@@ -24003,11 +18076,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.ship_meta_repair
-
-	var_15_84[30203] = {
+	pg.base.ship_meta_repair[30203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30203,
@@ -24017,11 +18086,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_84
-
-	local var_15_85 = var_15_84.base.ship_meta_repair
-
-	var_15_85[30204] = {
+	pg.base.ship_meta_repair[30204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30204,
@@ -24031,11 +18096,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.ship_meta_repair
-
-	var_15_86[30205] = {
+	pg.base.ship_meta_repair[30205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30205,
@@ -24045,11 +18106,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.ship_meta_repair
-
-	var_15_87[30206] = {
+	pg.base.ship_meta_repair[30206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30206,
@@ -24059,11 +18116,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.ship_meta_repair
-
-	var_15_88[30207] = {
+	pg.base.ship_meta_repair[30207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30207,
@@ -24073,11 +18126,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.ship_meta_repair
-
-	var_15_89[30208] = {
+	pg.base.ship_meta_repair[30208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30208,
@@ -24087,11 +18136,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.ship_meta_repair
-
-	var_15_90[30209] = {
+	pg.base.ship_meta_repair[30209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30209,
@@ -24101,11 +18146,7 @@ end)()
 			1
 		}
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.ship_meta_repair
-
-	var_15_91[30210] = {
+	pg.base.ship_meta_repair[30210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30210,
@@ -24115,11 +18156,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.ship_meta_repair
-
-	var_15_92[30211] = {
+	pg.base.ship_meta_repair[30211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30211,
@@ -24129,11 +18166,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.ship_meta_repair
-
-	var_15_93[30212] = {
+	pg.base.ship_meta_repair[30212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30212,
@@ -24143,11 +18176,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.ship_meta_repair
-
-	var_15_94[30213] = {
+	pg.base.ship_meta_repair[30213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30213,
@@ -24157,11 +18186,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.ship_meta_repair
-
-	var_15_95[30214] = {
+	pg.base.ship_meta_repair[30214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30214,
@@ -24171,11 +18196,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.ship_meta_repair
-
-	var_15_96[30215] = {
+	pg.base.ship_meta_repair[30215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30215,
@@ -24185,11 +18206,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.ship_meta_repair
-
-	var_15_97[30216] = {
+	pg.base.ship_meta_repair[30216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30216,
@@ -24199,11 +18216,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.ship_meta_repair
-
-	var_15_98[30217] = {
+	pg.base.ship_meta_repair[30217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30217,
@@ -24213,8 +18226,7 @@ end)()
 			3
 		}
 	}
-	pg = var_15_98
-	var_15_98.base.ship_meta_repair[30218] = {
+	pg.base.ship_meta_repair[30218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30218,
@@ -24228,11 +18240,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.ship_meta_repair
-
-	var_16_0[30219] = {
+	pg.base.ship_meta_repair[30219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30219,
@@ -24242,11 +18250,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.ship_meta_repair
-
-	var_16_1[30220] = {
+	pg.base.ship_meta_repair[30220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 30220,
@@ -24256,11 +18260,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.ship_meta_repair
-
-	var_16_2[30401] = {
+	pg.base.ship_meta_repair[30401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30401,
@@ -24270,11 +18270,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.ship_meta_repair
-
-	var_16_3[30402] = {
+	pg.base.ship_meta_repair[30402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30402,
@@ -24284,11 +18280,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.ship_meta_repair
-
-	var_16_4[30403] = {
+	pg.base.ship_meta_repair[30403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30403,
@@ -24298,11 +18290,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.ship_meta_repair
-
-	var_16_5[30404] = {
+	pg.base.ship_meta_repair[30404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30404,
@@ -24312,11 +18300,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.ship_meta_repair
-
-	var_16_6[30405] = {
+	pg.base.ship_meta_repair[30405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30405,
@@ -24326,11 +18310,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.ship_meta_repair
-
-	var_16_7[30406] = {
+	pg.base.ship_meta_repair[30406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30406,
@@ -24340,11 +18320,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.ship_meta_repair
-
-	var_16_8[30407] = {
+	pg.base.ship_meta_repair[30407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30407,
@@ -24354,11 +18330,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.ship_meta_repair
-
-	var_16_9[30408] = {
+	pg.base.ship_meta_repair[30408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30408,
@@ -24368,11 +18340,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.ship_meta_repair
-
-	var_16_10[30409] = {
+	pg.base.ship_meta_repair[30409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30409,
@@ -24382,11 +18350,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.ship_meta_repair
-
-	var_16_11[30410] = {
+	pg.base.ship_meta_repair[30410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30410,
@@ -24396,11 +18360,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.ship_meta_repair
-
-	var_16_12[30411] = {
+	pg.base.ship_meta_repair[30411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30411,
@@ -24410,11 +18370,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.ship_meta_repair
-
-	var_16_13[30412] = {
+	pg.base.ship_meta_repair[30412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30412,
@@ -24424,11 +18380,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.ship_meta_repair
-
-	var_16_14[30413] = {
+	pg.base.ship_meta_repair[30413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30413,
@@ -24438,11 +18390,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.ship_meta_repair
-
-	var_16_15[30414] = {
+	pg.base.ship_meta_repair[30414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30414,
@@ -24452,11 +18400,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.ship_meta_repair
-
-	var_16_16[30415] = {
+	pg.base.ship_meta_repair[30415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30415,
@@ -24466,11 +18410,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.ship_meta_repair
-
-	var_16_17[30416] = {
+	pg.base.ship_meta_repair[30416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30416,
@@ -24480,11 +18420,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.ship_meta_repair
-
-	var_16_18[30417] = {
+	pg.base.ship_meta_repair[30417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30417,
@@ -24494,11 +18430,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.ship_meta_repair
-
-	var_16_19[30418] = {
+	pg.base.ship_meta_repair[30418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30418,
@@ -24508,11 +18440,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.ship_meta_repair
-
-	var_16_20[30419] = {
+	pg.base.ship_meta_repair[30419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30419,
@@ -24522,11 +18450,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.ship_meta_repair
-
-	var_16_21[30420] = {
+	pg.base.ship_meta_repair[30420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 30420,
@@ -24536,11 +18460,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.ship_meta_repair
-
-	var_16_22[31101] = {
+	pg.base.ship_meta_repair[31101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31101,
@@ -24550,11 +18470,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.ship_meta_repair
-
-	var_16_23[31102] = {
+	pg.base.ship_meta_repair[31102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31102,
@@ -24564,11 +18480,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.ship_meta_repair
-
-	var_16_24[31103] = {
+	pg.base.ship_meta_repair[31103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31103,
@@ -24578,11 +18490,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.ship_meta_repair
-
-	var_16_25[31104] = {
+	pg.base.ship_meta_repair[31104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31104,
@@ -24592,11 +18500,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.ship_meta_repair
-
-	var_16_26[31105] = {
+	pg.base.ship_meta_repair[31105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31105,
@@ -24606,11 +18510,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.ship_meta_repair
-
-	var_16_27[31106] = {
+	pg.base.ship_meta_repair[31106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31106,
@@ -24620,11 +18520,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.ship_meta_repair
-
-	var_16_28[31107] = {
+	pg.base.ship_meta_repair[31107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31107,
@@ -24634,11 +18530,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.ship_meta_repair
-
-	var_16_29[31108] = {
+	pg.base.ship_meta_repair[31108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31108,
@@ -24648,11 +18540,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.ship_meta_repair
-
-	var_16_30[31109] = {
+	pg.base.ship_meta_repair[31109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31109,
@@ -24662,11 +18550,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.ship_meta_repair
-
-	var_16_31[31110] = {
+	pg.base.ship_meta_repair[31110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31110,
@@ -24676,11 +18560,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.ship_meta_repair
-
-	var_16_32[31111] = {
+	pg.base.ship_meta_repair[31111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31111,
@@ -24690,11 +18570,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.ship_meta_repair
-
-	var_16_33[31112] = {
+	pg.base.ship_meta_repair[31112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31112,
@@ -24704,11 +18580,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.ship_meta_repair
-
-	var_16_34[31113] = {
+	pg.base.ship_meta_repair[31113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31113,
@@ -24718,11 +18590,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.ship_meta_repair
-
-	var_16_35[31114] = {
+	pg.base.ship_meta_repair[31114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31114,
@@ -24732,11 +18600,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.ship_meta_repair
-
-	var_16_36[31115] = {
+	pg.base.ship_meta_repair[31115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31115,
@@ -24746,11 +18610,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.ship_meta_repair
-
-	var_16_37[31116] = {
+	pg.base.ship_meta_repair[31116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31116,
@@ -24760,11 +18620,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.ship_meta_repair
-
-	var_16_38[31117] = {
+	pg.base.ship_meta_repair[31117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31117,
@@ -24774,11 +18630,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.ship_meta_repair
-
-	var_16_39[31118] = {
+	pg.base.ship_meta_repair[31118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31118,
@@ -24788,11 +18640,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.ship_meta_repair
-
-	var_16_40[31119] = {
+	pg.base.ship_meta_repair[31119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31119,
@@ -24802,11 +18650,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.ship_meta_repair
-
-	var_16_41[31120] = {
+	pg.base.ship_meta_repair[31120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31120,
@@ -24816,11 +18660,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.ship_meta_repair
-
-	var_16_42[31121] = {
+	pg.base.ship_meta_repair[31121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31121,
@@ -24830,11 +18670,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.ship_meta_repair
-
-	var_16_43[31122] = {
+	pg.base.ship_meta_repair[31122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31122,
@@ -24844,11 +18680,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.ship_meta_repair
-
-	var_16_44[31123] = {
+	pg.base.ship_meta_repair[31123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31123,
@@ -24858,11 +18690,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.ship_meta_repair
-
-	var_16_45[31124] = {
+	pg.base.ship_meta_repair[31124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31124,
@@ -24872,11 +18700,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.ship_meta_repair
-
-	var_16_46[31125] = {
+	pg.base.ship_meta_repair[31125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31125,
@@ -24886,11 +18710,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.ship_meta_repair
-
-	var_16_47[31126] = {
+	pg.base.ship_meta_repair[31126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31126,
@@ -24900,11 +18720,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.ship_meta_repair
-
-	var_16_48[31127] = {
+	pg.base.ship_meta_repair[31127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31127,
@@ -24914,11 +18730,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.ship_meta_repair
-
-	var_16_49[31128] = {
+	pg.base.ship_meta_repair[31128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31128,
@@ -24928,11 +18740,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.ship_meta_repair
-
-	var_16_50[31129] = {
+	pg.base.ship_meta_repair[31129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31129,
@@ -24942,11 +18750,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.ship_meta_repair
-
-	var_16_51[31130] = {
+	pg.base.ship_meta_repair[31130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 31130,
@@ -24956,11 +18760,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.ship_meta_repair
-
-	var_16_52[31401] = {
+	pg.base.ship_meta_repair[31401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31401,
@@ -24970,11 +18770,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.ship_meta_repair
-
-	var_16_53[31402] = {
+	pg.base.ship_meta_repair[31402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31402,
@@ -24984,11 +18780,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.ship_meta_repair
-
-	var_16_54[31403] = {
+	pg.base.ship_meta_repair[31403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31403,
@@ -24998,11 +18790,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.ship_meta_repair
-
-	var_16_55[31404] = {
+	pg.base.ship_meta_repair[31404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31404,
@@ -25012,11 +18800,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.ship_meta_repair
-
-	var_16_56[31405] = {
+	pg.base.ship_meta_repair[31405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31405,
@@ -25026,11 +18810,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.ship_meta_repair
-
-	var_16_57[31406] = {
+	pg.base.ship_meta_repair[31406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31406,
@@ -25040,11 +18820,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.ship_meta_repair
-
-	var_16_58[31407] = {
+	pg.base.ship_meta_repair[31407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31407,
@@ -25054,11 +18830,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.ship_meta_repair
-
-	var_16_59[31408] = {
+	pg.base.ship_meta_repair[31408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31408,
@@ -25068,11 +18840,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.ship_meta_repair
-
-	var_16_60[31409] = {
+	pg.base.ship_meta_repair[31409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31409,
@@ -25082,11 +18850,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.ship_meta_repair
-
-	var_16_61[31410] = {
+	pg.base.ship_meta_repair[31410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31410,
@@ -25096,11 +18860,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.ship_meta_repair
-
-	var_16_62[31411] = {
+	pg.base.ship_meta_repair[31411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31411,
@@ -25110,11 +18870,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.ship_meta_repair
-
-	var_16_63[31412] = {
+	pg.base.ship_meta_repair[31412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31412,
@@ -25124,11 +18880,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.ship_meta_repair
-
-	var_16_64[31413] = {
+	pg.base.ship_meta_repair[31413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31413,
@@ -25138,11 +18890,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.ship_meta_repair
-
-	var_16_65[31414] = {
+	pg.base.ship_meta_repair[31414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31414,
@@ -25152,11 +18900,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.ship_meta_repair
-
-	var_16_66[31415] = {
+	pg.base.ship_meta_repair[31415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31415,
@@ -25166,11 +18910,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.ship_meta_repair
-
-	var_16_67[31416] = {
+	pg.base.ship_meta_repair[31416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31416,
@@ -25180,11 +18920,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.ship_meta_repair
-
-	var_16_68[31417] = {
+	pg.base.ship_meta_repair[31417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31417,
@@ -25194,11 +18930,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.ship_meta_repair
-
-	var_16_69[31418] = {
+	pg.base.ship_meta_repair[31418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31418,
@@ -25208,11 +18940,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.ship_meta_repair
-
-	var_16_70[31419] = {
+	pg.base.ship_meta_repair[31419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31419,
@@ -25222,11 +18950,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.ship_meta_repair
-
-	var_16_71[31420] = {
+	pg.base.ship_meta_repair[31420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 31420,
@@ -25236,11 +18960,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.ship_meta_repair
-
-	var_16_72[32201] = {
+	pg.base.ship_meta_repair[32201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32201,
@@ -25250,11 +18970,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.ship_meta_repair
-
-	var_16_73[32202] = {
+	pg.base.ship_meta_repair[32202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32202,
@@ -25264,11 +18980,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.ship_meta_repair
-
-	var_16_74[32203] = {
+	pg.base.ship_meta_repair[32203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32203,
@@ -25278,11 +18990,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.ship_meta_repair
-
-	var_16_75[32204] = {
+	pg.base.ship_meta_repair[32204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32204,
@@ -25292,11 +19000,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.ship_meta_repair
-
-	var_16_76[32205] = {
+	pg.base.ship_meta_repair[32205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32205,
@@ -25306,11 +19010,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.ship_meta_repair
-
-	var_16_77[32206] = {
+	pg.base.ship_meta_repair[32206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32206,
@@ -25320,11 +19020,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.ship_meta_repair
-
-	var_16_78[32207] = {
+	pg.base.ship_meta_repair[32207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32207,
@@ -25334,11 +19030,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.ship_meta_repair
-
-	var_16_79[32208] = {
+	pg.base.ship_meta_repair[32208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32208,
@@ -25348,11 +19040,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.ship_meta_repair
-
-	var_16_80[32209] = {
+	pg.base.ship_meta_repair[32209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32209,
@@ -25362,11 +19050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.ship_meta_repair
-
-	var_16_81[32210] = {
+	pg.base.ship_meta_repair[32210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32210,
@@ -25376,11 +19060,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_81
-
-	local var_16_82 = var_16_81.base.ship_meta_repair
-
-	var_16_82[32211] = {
+	pg.base.ship_meta_repair[32211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32211,
@@ -25390,11 +19070,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.ship_meta_repair
-
-	var_16_83[32212] = {
+	pg.base.ship_meta_repair[32212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32212,
@@ -25404,11 +19080,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.ship_meta_repair
-
-	var_16_84[32213] = {
+	pg.base.ship_meta_repair[32213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32213,
@@ -25418,11 +19090,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_84
-
-	local var_16_85 = var_16_84.base.ship_meta_repair
-
-	var_16_85[32214] = {
+	pg.base.ship_meta_repair[32214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32214,
@@ -25432,11 +19100,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.ship_meta_repair
-
-	var_16_86[32215] = {
+	pg.base.ship_meta_repair[32215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32215,
@@ -25446,11 +19110,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.ship_meta_repair
-
-	var_16_87[32216] = {
+	pg.base.ship_meta_repair[32216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32216,
@@ -25460,11 +19120,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.ship_meta_repair
-
-	var_16_88[32217] = {
+	pg.base.ship_meta_repair[32217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32217,
@@ -25474,11 +19130,7 @@ end)()
 			2
 		}
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.ship_meta_repair
-
-	var_16_89[32218] = {
+	pg.base.ship_meta_repair[32218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32218,
@@ -25488,11 +19140,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.ship_meta_repair
-
-	var_16_90[32219] = {
+	pg.base.ship_meta_repair[32219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32219,
@@ -25502,11 +19150,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.ship_meta_repair
-
-	var_16_91[32220] = {
+	pg.base.ship_meta_repair[32220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32220,
@@ -25516,11 +19160,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.ship_meta_repair
-
-	var_16_92[32221] = {
+	pg.base.ship_meta_repair[32221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32221,
@@ -25530,11 +19170,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.ship_meta_repair
-
-	var_16_93[32222] = {
+	pg.base.ship_meta_repair[32222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32222,
@@ -25544,11 +19180,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.ship_meta_repair
-
-	var_16_94[32223] = {
+	pg.base.ship_meta_repair[32223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32223,
@@ -25558,11 +19190,7 @@ end)()
 			3
 		}
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.ship_meta_repair
-
-	var_16_95[32224] = {
+	pg.base.ship_meta_repair[32224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32224,
@@ -25572,11 +19200,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.ship_meta_repair
-
-	var_16_96[32225] = {
+	pg.base.ship_meta_repair[32225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32225,
@@ -25586,11 +19210,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.ship_meta_repair
-
-	var_16_97[32226] = {
+	pg.base.ship_meta_repair[32226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32226,
@@ -25600,11 +19220,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.ship_meta_repair
-
-	var_16_98[32227] = {
+	pg.base.ship_meta_repair[32227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32227,
@@ -25614,8 +19230,7 @@ end)()
 			4
 		}
 	}
-	pg = var_16_98
-	var_16_98.base.ship_meta_repair[32228] = {
+	pg.base.ship_meta_repair[32228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32228,
@@ -25629,11 +19244,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.ship_meta_repair
-
-	var_17_0[32229] = {
+	pg.base.ship_meta_repair[32229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32229,
@@ -25643,11 +19254,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.ship_meta_repair
-
-	var_17_1[32230] = {
+	pg.base.ship_meta_repair[32230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 32230,
@@ -25657,11 +19264,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.ship_meta_repair
-
-	var_17_2[32401] = {
+	pg.base.ship_meta_repair[32401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32401,
@@ -25671,11 +19274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.ship_meta_repair
-
-	var_17_3[32402] = {
+	pg.base.ship_meta_repair[32402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32402,
@@ -25685,11 +19284,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.ship_meta_repair
-
-	var_17_4[32403] = {
+	pg.base.ship_meta_repair[32403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32403,
@@ -25699,11 +19294,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.ship_meta_repair
-
-	var_17_5[32404] = {
+	pg.base.ship_meta_repair[32404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32404,
@@ -25713,11 +19304,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.ship_meta_repair
-
-	var_17_6[32405] = {
+	pg.base.ship_meta_repair[32405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32405,
@@ -25727,11 +19314,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.ship_meta_repair
-
-	var_17_7[32406] = {
+	pg.base.ship_meta_repair[32406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32406,
@@ -25741,11 +19324,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.ship_meta_repair
-
-	var_17_8[32407] = {
+	pg.base.ship_meta_repair[32407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32407,
@@ -25755,11 +19334,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.ship_meta_repair
-
-	var_17_9[32408] = {
+	pg.base.ship_meta_repair[32408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32408,
@@ -25769,11 +19344,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.ship_meta_repair
-
-	var_17_10[32409] = {
+	pg.base.ship_meta_repair[32409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32409,
@@ -25783,11 +19354,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.ship_meta_repair
-
-	var_17_11[32410] = {
+	pg.base.ship_meta_repair[32410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32410,
@@ -25797,11 +19364,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.ship_meta_repair
-
-	var_17_12[32411] = {
+	pg.base.ship_meta_repair[32411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32411,
@@ -25811,11 +19374,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.ship_meta_repair
-
-	var_17_13[32412] = {
+	pg.base.ship_meta_repair[32412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32412,
@@ -25825,11 +19384,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.ship_meta_repair
-
-	var_17_14[32413] = {
+	pg.base.ship_meta_repair[32413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32413,
@@ -25839,11 +19394,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.ship_meta_repair
-
-	var_17_15[32414] = {
+	pg.base.ship_meta_repair[32414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32414,
@@ -25853,11 +19404,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.ship_meta_repair
-
-	var_17_16[32415] = {
+	pg.base.ship_meta_repair[32415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32415,
@@ -25867,11 +19414,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.ship_meta_repair
-
-	var_17_17[32416] = {
+	pg.base.ship_meta_repair[32416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32416,
@@ -25881,11 +19424,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.ship_meta_repair
-
-	var_17_18[32417] = {
+	pg.base.ship_meta_repair[32417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32417,
@@ -25895,11 +19434,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.ship_meta_repair
-
-	var_17_19[32418] = {
+	pg.base.ship_meta_repair[32418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32418,
@@ -25909,11 +19444,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.ship_meta_repair
-
-	var_17_20[32419] = {
+	pg.base.ship_meta_repair[32419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32419,
@@ -25923,11 +19454,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.ship_meta_repair
-
-	var_17_21[32420] = {
+	pg.base.ship_meta_repair[32420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 32420,
@@ -25937,11 +19464,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.ship_meta_repair
-
-	var_17_22[33101] = {
+	pg.base.ship_meta_repair[33101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33101,
@@ -25951,11 +19474,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.ship_meta_repair
-
-	var_17_23[33102] = {
+	pg.base.ship_meta_repair[33102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33102,
@@ -25965,11 +19484,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.ship_meta_repair
-
-	var_17_24[33103] = {
+	pg.base.ship_meta_repair[33103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33103,
@@ -25979,11 +19494,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.ship_meta_repair
-
-	var_17_25[33104] = {
+	pg.base.ship_meta_repair[33104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33104,
@@ -25993,11 +19504,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.ship_meta_repair
-
-	var_17_26[33105] = {
+	pg.base.ship_meta_repair[33105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33105,
@@ -26007,11 +19514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.ship_meta_repair
-
-	var_17_27[33106] = {
+	pg.base.ship_meta_repair[33106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33106,
@@ -26021,11 +19524,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.ship_meta_repair
-
-	var_17_28[33107] = {
+	pg.base.ship_meta_repair[33107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33107,
@@ -26035,11 +19534,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.ship_meta_repair
-
-	var_17_29[33108] = {
+	pg.base.ship_meta_repair[33108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33108,
@@ -26049,11 +19544,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.ship_meta_repair
-
-	var_17_30[33109] = {
+	pg.base.ship_meta_repair[33109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33109,
@@ -26063,11 +19554,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.ship_meta_repair
-
-	var_17_31[33110] = {
+	pg.base.ship_meta_repair[33110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33110,
@@ -26077,11 +19564,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.ship_meta_repair
-
-	var_17_32[33111] = {
+	pg.base.ship_meta_repair[33111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33111,
@@ -26091,11 +19574,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_32
-
-	local var_17_33 = var_17_32.base.ship_meta_repair
-
-	var_17_33[33112] = {
+	pg.base.ship_meta_repair[33112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33112,
@@ -26105,11 +19584,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_33
-
-	local var_17_34 = var_17_33.base.ship_meta_repair
-
-	var_17_34[33113] = {
+	pg.base.ship_meta_repair[33113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33113,
@@ -26119,11 +19594,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_34
-
-	local var_17_35 = var_17_34.base.ship_meta_repair
-
-	var_17_35[33114] = {
+	pg.base.ship_meta_repair[33114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33114,
@@ -26133,11 +19604,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_35
-
-	local var_17_36 = var_17_35.base.ship_meta_repair
-
-	var_17_36[33115] = {
+	pg.base.ship_meta_repair[33115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33115,
@@ -26147,11 +19614,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_36
-
-	local var_17_37 = var_17_36.base.ship_meta_repair
-
-	var_17_37[33116] = {
+	pg.base.ship_meta_repair[33116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33116,
@@ -26161,11 +19624,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_37
-
-	local var_17_38 = var_17_37.base.ship_meta_repair
-
-	var_17_38[33117] = {
+	pg.base.ship_meta_repair[33117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33117,
@@ -26175,11 +19634,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_38
-
-	local var_17_39 = var_17_38.base.ship_meta_repair
-
-	var_17_39[33118] = {
+	pg.base.ship_meta_repair[33118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33118,
@@ -26189,11 +19644,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_39
-
-	local var_17_40 = var_17_39.base.ship_meta_repair
-
-	var_17_40[33119] = {
+	pg.base.ship_meta_repair[33119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33119,
@@ -26203,11 +19654,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_40
-
-	local var_17_41 = var_17_40.base.ship_meta_repair
-
-	var_17_41[33120] = {
+	pg.base.ship_meta_repair[33120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 33120,
@@ -26217,11 +19664,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_41
-
-	local var_17_42 = var_17_41.base.ship_meta_repair
-
-	var_17_42[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33301,
@@ -26231,11 +19674,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_42
-
-	local var_17_43 = var_17_42.base.ship_meta_repair
-
-	var_17_43[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33302,
@@ -26245,11 +19684,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_43
-
-	local var_17_44 = var_17_43.base.ship_meta_repair
-
-	var_17_44[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33303,
@@ -26259,11 +19694,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_44
-
-	local var_17_45 = var_17_44.base.ship_meta_repair
-
-	var_17_45[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33304,
@@ -26273,11 +19704,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_45
-
-	local var_17_46 = var_17_45.base.ship_meta_repair
-
-	var_17_46[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33305,
@@ -26287,11 +19714,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_46
-
-	local var_17_47 = var_17_46.base.ship_meta_repair
-
-	var_17_47[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33306,
@@ -26301,11 +19724,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_47
-
-	local var_17_48 = var_17_47.base.ship_meta_repair
-
-	var_17_48[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33307,
@@ -26315,11 +19734,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_48
-
-	local var_17_49 = var_17_48.base.ship_meta_repair
-
-	var_17_49[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33308,
@@ -26329,11 +19744,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_49
-
-	local var_17_50 = var_17_49.base.ship_meta_repair
-
-	var_17_50[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33309,
@@ -26343,11 +19754,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_50
-
-	local var_17_51 = var_17_50.base.ship_meta_repair
-
-	var_17_51[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33310,
@@ -26357,11 +19764,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_51
-
-	local var_17_52 = var_17_51.base.ship_meta_repair
-
-	var_17_52[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33311,
@@ -26371,11 +19774,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_52
-
-	local var_17_53 = var_17_52.base.ship_meta_repair
-
-	var_17_53[33312] = {
+	pg.base.ship_meta_repair[33312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33312,
@@ -26385,11 +19784,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_53
-
-	local var_17_54 = var_17_53.base.ship_meta_repair
-
-	var_17_54[33313] = {
+	pg.base.ship_meta_repair[33313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33313,
@@ -26399,11 +19794,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_54
-
-	local var_17_55 = var_17_54.base.ship_meta_repair
-
-	var_17_55[33314] = {
+	pg.base.ship_meta_repair[33314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33314,
@@ -26413,11 +19804,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_55
-
-	local var_17_56 = var_17_55.base.ship_meta_repair
-
-	var_17_56[33315] = {
+	pg.base.ship_meta_repair[33315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33315,
@@ -26427,11 +19814,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_56
-
-	local var_17_57 = var_17_56.base.ship_meta_repair
-
-	var_17_57[33316] = {
+	pg.base.ship_meta_repair[33316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33316,
@@ -26441,11 +19824,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_57
-
-	local var_17_58 = var_17_57.base.ship_meta_repair
-
-	var_17_58[33317] = {
+	pg.base.ship_meta_repair[33317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33317,
@@ -26455,11 +19834,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_58
-
-	local var_17_59 = var_17_58.base.ship_meta_repair
-
-	var_17_59[33318] = {
+	pg.base.ship_meta_repair[33318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33318,
@@ -26469,11 +19844,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_59
-
-	local var_17_60 = var_17_59.base.ship_meta_repair
-
-	var_17_60[33319] = {
+	pg.base.ship_meta_repair[33319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33319,
@@ -26483,11 +19854,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_60
-
-	local var_17_61 = var_17_60.base.ship_meta_repair
-
-	var_17_61[33320] = {
+	pg.base.ship_meta_repair[33320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 33320,
@@ -26497,11 +19864,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_61
-
-	local var_17_62 = var_17_61.base.ship_meta_repair
-
-	var_17_62[33401] = {
+	pg.base.ship_meta_repair[33401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33401,
@@ -26511,11 +19874,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_62
-
-	local var_17_63 = var_17_62.base.ship_meta_repair
-
-	var_17_63[33402] = {
+	pg.base.ship_meta_repair[33402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33402,
@@ -26525,11 +19884,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_63
-
-	local var_17_64 = var_17_63.base.ship_meta_repair
-
-	var_17_64[33403] = {
+	pg.base.ship_meta_repair[33403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33403,
@@ -26539,11 +19894,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_64
-
-	local var_17_65 = var_17_64.base.ship_meta_repair
-
-	var_17_65[33404] = {
+	pg.base.ship_meta_repair[33404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33404,
@@ -26553,11 +19904,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_65
-
-	local var_17_66 = var_17_65.base.ship_meta_repair
-
-	var_17_66[33405] = {
+	pg.base.ship_meta_repair[33405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33405,
@@ -26567,11 +19914,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_66
-
-	local var_17_67 = var_17_66.base.ship_meta_repair
-
-	var_17_67[33406] = {
+	pg.base.ship_meta_repair[33406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33406,
@@ -26581,11 +19924,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_67
-
-	local var_17_68 = var_17_67.base.ship_meta_repair
-
-	var_17_68[33407] = {
+	pg.base.ship_meta_repair[33407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33407,
@@ -26595,11 +19934,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_68
-
-	local var_17_69 = var_17_68.base.ship_meta_repair
-
-	var_17_69[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33408,
@@ -26609,11 +19944,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_69
-
-	local var_17_70 = var_17_69.base.ship_meta_repair
-
-	var_17_70[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33409,
@@ -26623,11 +19954,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_70
-
-	local var_17_71 = var_17_70.base.ship_meta_repair
-
-	var_17_71[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 33410,
@@ -26637,11 +19964,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_71
-
-	local var_17_72 = var_17_71.base.ship_meta_repair
-
-	var_17_72[34101] = {
+	pg.base.ship_meta_repair[34101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34101,
@@ -26651,11 +19974,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_72
-
-	local var_17_73 = var_17_72.base.ship_meta_repair
-
-	var_17_73[34102] = {
+	pg.base.ship_meta_repair[34102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34102,
@@ -26665,11 +19984,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_73
-
-	local var_17_74 = var_17_73.base.ship_meta_repair
-
-	var_17_74[34103] = {
+	pg.base.ship_meta_repair[34103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34103,
@@ -26679,11 +19994,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_74
-
-	local var_17_75 = var_17_74.base.ship_meta_repair
-
-	var_17_75[34104] = {
+	pg.base.ship_meta_repair[34104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34104,
@@ -26693,11 +20004,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_75
-
-	local var_17_76 = var_17_75.base.ship_meta_repair
-
-	var_17_76[34105] = {
+	pg.base.ship_meta_repair[34105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34105,
@@ -26707,11 +20014,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_76
-
-	local var_17_77 = var_17_76.base.ship_meta_repair
-
-	var_17_77[34106] = {
+	pg.base.ship_meta_repair[34106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34106,
@@ -26721,11 +20024,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_77
-
-	local var_17_78 = var_17_77.base.ship_meta_repair
-
-	var_17_78[34107] = {
+	pg.base.ship_meta_repair[34107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34107,
@@ -26735,11 +20034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_78
-
-	local var_17_79 = var_17_78.base.ship_meta_repair
-
-	var_17_79[34108] = {
+	pg.base.ship_meta_repair[34108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34108,
@@ -26749,11 +20044,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_79
-
-	local var_17_80 = var_17_79.base.ship_meta_repair
-
-	var_17_80[34109] = {
+	pg.base.ship_meta_repair[34109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34109,
@@ -26763,11 +20054,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_80
-
-	local var_17_81 = var_17_80.base.ship_meta_repair
-
-	var_17_81[34110] = {
+	pg.base.ship_meta_repair[34110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34110,
@@ -26777,11 +20064,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_81
-
-	local var_17_82 = var_17_81.base.ship_meta_repair
-
-	var_17_82[34111] = {
+	pg.base.ship_meta_repair[34111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34111,
@@ -26791,11 +20074,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_82
-
-	local var_17_83 = var_17_82.base.ship_meta_repair
-
-	var_17_83[34112] = {
+	pg.base.ship_meta_repair[34112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34112,
@@ -26805,11 +20084,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_83
-
-	local var_17_84 = var_17_83.base.ship_meta_repair
-
-	var_17_84[34113] = {
+	pg.base.ship_meta_repair[34113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34113,
@@ -26819,11 +20094,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_84
-
-	local var_17_85 = var_17_84.base.ship_meta_repair
-
-	var_17_85[34114] = {
+	pg.base.ship_meta_repair[34114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34114,
@@ -26833,11 +20104,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_85
-
-	local var_17_86 = var_17_85.base.ship_meta_repair
-
-	var_17_86[34115] = {
+	pg.base.ship_meta_repair[34115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34115,
@@ -26847,11 +20114,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_86
-
-	local var_17_87 = var_17_86.base.ship_meta_repair
-
-	var_17_87[34116] = {
+	pg.base.ship_meta_repair[34116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34116,
@@ -26861,11 +20124,7 @@ end)()
 			3
 		}
 	}
-	pg = var_17_87
-
-	local var_17_88 = var_17_87.base.ship_meta_repair
-
-	var_17_88[34117] = {
+	pg.base.ship_meta_repair[34117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34117,
@@ -26875,11 +20134,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_88
-
-	local var_17_89 = var_17_88.base.ship_meta_repair
-
-	var_17_89[34118] = {
+	pg.base.ship_meta_repair[34118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34118,
@@ -26889,11 +20144,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_89
-
-	local var_17_90 = var_17_89.base.ship_meta_repair
-
-	var_17_90[34119] = {
+	pg.base.ship_meta_repair[34119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34119,
@@ -26903,11 +20154,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_90
-
-	local var_17_91 = var_17_90.base.ship_meta_repair
-
-	var_17_91[34120] = {
+	pg.base.ship_meta_repair[34120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 34120,
@@ -26917,11 +20164,7 @@ end)()
 			4
 		}
 	}
-	pg = var_17_91
-
-	local var_17_92 = var_17_91.base.ship_meta_repair
-
-	var_17_92[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34201,
@@ -26931,11 +20174,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_92
-
-	local var_17_93 = var_17_92.base.ship_meta_repair
-
-	var_17_93[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34202,
@@ -26945,11 +20184,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_93
-
-	local var_17_94 = var_17_93.base.ship_meta_repair
-
-	var_17_94[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34203,
@@ -26959,11 +20194,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_94
-
-	local var_17_95 = var_17_94.base.ship_meta_repair
-
-	var_17_95[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34204,
@@ -26973,11 +20204,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_95
-
-	local var_17_96 = var_17_95.base.ship_meta_repair
-
-	var_17_96[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34205,
@@ -26987,11 +20214,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_96
-
-	local var_17_97 = var_17_96.base.ship_meta_repair
-
-	var_17_97[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34206,
@@ -27001,11 +20224,7 @@ end)()
 			1
 		}
 	}
-	pg = var_17_97
-
-	local var_17_98 = var_17_97.base.ship_meta_repair
-
-	var_17_98[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34207,
@@ -27015,8 +20234,7 @@ end)()
 			2
 		}
 	}
-	pg = var_17_98
-	var_17_98.base.ship_meta_repair[34208] = {
+	pg.base.ship_meta_repair[34208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34208,
@@ -27030,11 +20248,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_18_0 = var_1_10000.base.ship_meta_repair
-
-	var_18_0[34209] = {
+	pg.base.ship_meta_repair[34209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34209,
@@ -27044,11 +20258,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_0
-
-	local var_18_1 = var_18_0.base.ship_meta_repair
-
-	var_18_1[34210] = {
+	pg.base.ship_meta_repair[34210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34210,
@@ -27058,11 +20268,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_1
-
-	local var_18_2 = var_18_1.base.ship_meta_repair
-
-	var_18_2[34211] = {
+	pg.base.ship_meta_repair[34211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34211,
@@ -27072,11 +20278,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_2
-
-	local var_18_3 = var_18_2.base.ship_meta_repair
-
-	var_18_3[34212] = {
+	pg.base.ship_meta_repair[34212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34212,
@@ -27086,11 +20288,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_3
-
-	local var_18_4 = var_18_3.base.ship_meta_repair
-
-	var_18_4[34213] = {
+	pg.base.ship_meta_repair[34213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34213,
@@ -27100,11 +20298,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_4
-
-	local var_18_5 = var_18_4.base.ship_meta_repair
-
-	var_18_5[34214] = {
+	pg.base.ship_meta_repair[34214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34214,
@@ -27114,11 +20308,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_5
-
-	local var_18_6 = var_18_5.base.ship_meta_repair
-
-	var_18_6[34215] = {
+	pg.base.ship_meta_repair[34215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34215,
@@ -27128,11 +20318,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_6
-
-	local var_18_7 = var_18_6.base.ship_meta_repair
-
-	var_18_7[34216] = {
+	pg.base.ship_meta_repair[34216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34216,
@@ -27142,11 +20328,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_7
-
-	local var_18_8 = var_18_7.base.ship_meta_repair
-
-	var_18_8[34217] = {
+	pg.base.ship_meta_repair[34217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34217,
@@ -27156,11 +20338,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_8
-
-	local var_18_9 = var_18_8.base.ship_meta_repair
-
-	var_18_9[34218] = {
+	pg.base.ship_meta_repair[34218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34218,
@@ -27170,11 +20348,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_9
-
-	local var_18_10 = var_18_9.base.ship_meta_repair
-
-	var_18_10[34219] = {
+	pg.base.ship_meta_repair[34219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34219,
@@ -27184,11 +20358,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_10
-
-	local var_18_11 = var_18_10.base.ship_meta_repair
-
-	var_18_11[34220] = {
+	pg.base.ship_meta_repair[34220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 34220,
@@ -27198,11 +20368,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_11
-
-	local var_18_12 = var_18_11.base.ship_meta_repair
-
-	var_18_12[34401] = {
+	pg.base.ship_meta_repair[34401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34401,
@@ -27212,11 +20378,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_12
-
-	local var_18_13 = var_18_12.base.ship_meta_repair
-
-	var_18_13[34402] = {
+	pg.base.ship_meta_repair[34402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34402,
@@ -27226,11 +20388,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_13
-
-	local var_18_14 = var_18_13.base.ship_meta_repair
-
-	var_18_14[34403] = {
+	pg.base.ship_meta_repair[34403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34403,
@@ -27240,11 +20398,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_14
-
-	local var_18_15 = var_18_14.base.ship_meta_repair
-
-	var_18_15[34404] = {
+	pg.base.ship_meta_repair[34404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34404,
@@ -27254,11 +20408,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_15
-
-	local var_18_16 = var_18_15.base.ship_meta_repair
-
-	var_18_16[34405] = {
+	pg.base.ship_meta_repair[34405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34405,
@@ -27268,11 +20418,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_16
-
-	local var_18_17 = var_18_16.base.ship_meta_repair
-
-	var_18_17[34406] = {
+	pg.base.ship_meta_repair[34406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34406,
@@ -27282,11 +20428,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_17
-
-	local var_18_18 = var_18_17.base.ship_meta_repair
-
-	var_18_18[34407] = {
+	pg.base.ship_meta_repair[34407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34407,
@@ -27296,11 +20438,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_18
-
-	local var_18_19 = var_18_18.base.ship_meta_repair
-
-	var_18_19[34408] = {
+	pg.base.ship_meta_repair[34408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34408,
@@ -27310,11 +20448,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_19
-
-	local var_18_20 = var_18_19.base.ship_meta_repair
-
-	var_18_20[34409] = {
+	pg.base.ship_meta_repair[34409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34409,
@@ -27324,11 +20458,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_20
-
-	local var_18_21 = var_18_20.base.ship_meta_repair
-
-	var_18_21[34410] = {
+	pg.base.ship_meta_repair[34410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 34410,
@@ -27338,11 +20468,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_21
-
-	local var_18_22 = var_18_21.base.ship_meta_repair
-
-	var_18_22[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35101,
@@ -27352,11 +20478,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_22
-
-	local var_18_23 = var_18_22.base.ship_meta_repair
-
-	var_18_23[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35102,
@@ -27366,11 +20488,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_23
-
-	local var_18_24 = var_18_23.base.ship_meta_repair
-
-	var_18_24[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35103,
@@ -27380,11 +20498,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_24
-
-	local var_18_25 = var_18_24.base.ship_meta_repair
-
-	var_18_25[35104] = {
+	pg.base.ship_meta_repair[35104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35104,
@@ -27394,11 +20508,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_25
-
-	local var_18_26 = var_18_25.base.ship_meta_repair
-
-	var_18_26[35105] = {
+	pg.base.ship_meta_repair[35105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35105,
@@ -27408,11 +20518,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_26
-
-	local var_18_27 = var_18_26.base.ship_meta_repair
-
-	var_18_27[35106] = {
+	pg.base.ship_meta_repair[35106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35106,
@@ -27422,11 +20528,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_27
-
-	local var_18_28 = var_18_27.base.ship_meta_repair
-
-	var_18_28[35107] = {
+	pg.base.ship_meta_repair[35107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35107,
@@ -27436,11 +20538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_28
-
-	local var_18_29 = var_18_28.base.ship_meta_repair
-
-	var_18_29[35108] = {
+	pg.base.ship_meta_repair[35108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35108,
@@ -27450,11 +20548,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_29
-
-	local var_18_30 = var_18_29.base.ship_meta_repair
-
-	var_18_30[35109] = {
+	pg.base.ship_meta_repair[35109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35109,
@@ -27464,11 +20558,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_30
-
-	local var_18_31 = var_18_30.base.ship_meta_repair
-
-	var_18_31[35110] = {
+	pg.base.ship_meta_repair[35110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35110,
@@ -27478,11 +20568,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_31
-
-	local var_18_32 = var_18_31.base.ship_meta_repair
-
-	var_18_32[35111] = {
+	pg.base.ship_meta_repair[35111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35111,
@@ -27492,11 +20578,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_32
-
-	local var_18_33 = var_18_32.base.ship_meta_repair
-
-	var_18_33[35112] = {
+	pg.base.ship_meta_repair[35112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35112,
@@ -27506,11 +20588,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_33
-
-	local var_18_34 = var_18_33.base.ship_meta_repair
-
-	var_18_34[35113] = {
+	pg.base.ship_meta_repair[35113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35113,
@@ -27520,11 +20598,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_34
-
-	local var_18_35 = var_18_34.base.ship_meta_repair
-
-	var_18_35[35114] = {
+	pg.base.ship_meta_repair[35114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35114,
@@ -27534,11 +20608,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_35
-
-	local var_18_36 = var_18_35.base.ship_meta_repair
-
-	var_18_36[35115] = {
+	pg.base.ship_meta_repair[35115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35115,
@@ -27548,11 +20618,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_36
-
-	local var_18_37 = var_18_36.base.ship_meta_repair
-
-	var_18_37[35116] = {
+	pg.base.ship_meta_repair[35116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35116,
@@ -27562,11 +20628,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_37
-
-	local var_18_38 = var_18_37.base.ship_meta_repair
-
-	var_18_38[35117] = {
+	pg.base.ship_meta_repair[35117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35117,
@@ -27576,11 +20638,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_38
-
-	local var_18_39 = var_18_38.base.ship_meta_repair
-
-	var_18_39[35118] = {
+	pg.base.ship_meta_repair[35118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35118,
@@ -27590,11 +20648,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_39
-
-	local var_18_40 = var_18_39.base.ship_meta_repair
-
-	var_18_40[35119] = {
+	pg.base.ship_meta_repair[35119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35119,
@@ -27604,11 +20658,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_40
-
-	local var_18_41 = var_18_40.base.ship_meta_repair
-
-	var_18_41[35120] = {
+	pg.base.ship_meta_repair[35120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35120,
@@ -27618,11 +20668,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_41
-
-	local var_18_42 = var_18_41.base.ship_meta_repair
-
-	var_18_42[35121] = {
+	pg.base.ship_meta_repair[35121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35121,
@@ -27632,11 +20678,7 @@ end)()
 			2
 		}
 	}
-	pg = var_18_42
-
-	local var_18_43 = var_18_42.base.ship_meta_repair
-
-	var_18_43[35122] = {
+	pg.base.ship_meta_repair[35122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35122,
@@ -27646,11 +20688,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_43
-
-	local var_18_44 = var_18_43.base.ship_meta_repair
-
-	var_18_44[35123] = {
+	pg.base.ship_meta_repair[35123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35123,
@@ -27660,11 +20698,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_44
-
-	local var_18_45 = var_18_44.base.ship_meta_repair
-
-	var_18_45[35124] = {
+	pg.base.ship_meta_repair[35124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35124,
@@ -27674,11 +20708,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_45
-
-	local var_18_46 = var_18_45.base.ship_meta_repair
-
-	var_18_46[35125] = {
+	pg.base.ship_meta_repair[35125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35125,
@@ -27688,11 +20718,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_46
-
-	local var_18_47 = var_18_46.base.ship_meta_repair
-
-	var_18_47[35126] = {
+	pg.base.ship_meta_repair[35126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35126,
@@ -27702,11 +20728,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_47
-
-	local var_18_48 = var_18_47.base.ship_meta_repair
-
-	var_18_48[35127] = {
+	pg.base.ship_meta_repair[35127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35127,
@@ -27716,11 +20738,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_48
-
-	local var_18_49 = var_18_48.base.ship_meta_repair
-
-	var_18_49[35128] = {
+	pg.base.ship_meta_repair[35128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35128,
@@ -27730,11 +20748,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_49
-
-	local var_18_50 = var_18_49.base.ship_meta_repair
-
-	var_18_50[35129] = {
+	pg.base.ship_meta_repair[35129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35129,
@@ -27744,11 +20758,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_50
-
-	local var_18_51 = var_18_50.base.ship_meta_repair
-
-	var_18_51[35130] = {
+	pg.base.ship_meta_repair[35130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 35130,
@@ -27758,11 +20768,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_51
-
-	local var_18_52 = var_18_51.base.ship_meta_repair
-
-	var_18_52[35401] = {
+	pg.base.ship_meta_repair[35401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35401,
@@ -27772,11 +20778,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_52
-
-	local var_18_53 = var_18_52.base.ship_meta_repair
-
-	var_18_53[35402] = {
+	pg.base.ship_meta_repair[35402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35402,
@@ -27786,11 +20788,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_53
-
-	local var_18_54 = var_18_53.base.ship_meta_repair
-
-	var_18_54[35403] = {
+	pg.base.ship_meta_repair[35403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35403,
@@ -27800,11 +20798,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_54
-
-	local var_18_55 = var_18_54.base.ship_meta_repair
-
-	var_18_55[35404] = {
+	pg.base.ship_meta_repair[35404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35404,
@@ -27814,11 +20808,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_55
-
-	local var_18_56 = var_18_55.base.ship_meta_repair
-
-	var_18_56[35405] = {
+	pg.base.ship_meta_repair[35405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35405,
@@ -27828,11 +20818,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_56
-
-	local var_18_57 = var_18_56.base.ship_meta_repair
-
-	var_18_57[35406] = {
+	pg.base.ship_meta_repair[35406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35406,
@@ -27842,11 +20828,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_57
-
-	local var_18_58 = var_18_57.base.ship_meta_repair
-
-	var_18_58[35407] = {
+	pg.base.ship_meta_repair[35407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35407,
@@ -27856,11 +20838,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_58
-
-	local var_18_59 = var_18_58.base.ship_meta_repair
-
-	var_18_59[35408] = {
+	pg.base.ship_meta_repair[35408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35408,
@@ -27870,11 +20848,7 @@ end)()
 			1
 		}
 	}
-	pg = var_18_59
-
-	local var_18_60 = var_18_59.base.ship_meta_repair
-
-	var_18_60[35409] = {
+	pg.base.ship_meta_repair[35409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35409,
@@ -27884,11 +20858,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_60
-
-	local var_18_61 = var_18_60.base.ship_meta_repair
-
-	var_18_61[35410] = {
+	pg.base.ship_meta_repair[35410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35410,
@@ -27898,11 +20868,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_61
-
-	local var_18_62 = var_18_61.base.ship_meta_repair
-
-	var_18_62[35411] = {
+	pg.base.ship_meta_repair[35411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35411,
@@ -27912,11 +20878,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_62
-
-	local var_18_63 = var_18_62.base.ship_meta_repair
-
-	var_18_63[35412] = {
+	pg.base.ship_meta_repair[35412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35412,
@@ -27926,11 +20888,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_63
-
-	local var_18_64 = var_18_63.base.ship_meta_repair
-
-	var_18_64[35413] = {
+	pg.base.ship_meta_repair[35413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35413,
@@ -27940,11 +20898,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_64
-
-	local var_18_65 = var_18_64.base.ship_meta_repair
-
-	var_18_65[35414] = {
+	pg.base.ship_meta_repair[35414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35414,
@@ -27954,11 +20908,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_65
-
-	local var_18_66 = var_18_65.base.ship_meta_repair
-
-	var_18_66[35415] = {
+	pg.base.ship_meta_repair[35415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35415,
@@ -27968,11 +20918,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_66
-
-	local var_18_67 = var_18_66.base.ship_meta_repair
-
-	var_18_67[35416] = {
+	pg.base.ship_meta_repair[35416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35416,
@@ -27982,11 +20928,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_67
-
-	local var_18_68 = var_18_67.base.ship_meta_repair
-
-	var_18_68[35417] = {
+	pg.base.ship_meta_repair[35417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35417,
@@ -27996,11 +20938,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_68
-
-	local var_18_69 = var_18_68.base.ship_meta_repair
-
-	var_18_69[35418] = {
+	pg.base.ship_meta_repair[35418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35418,
@@ -28010,11 +20948,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_69
-
-	local var_18_70 = var_18_69.base.ship_meta_repair
-
-	var_18_70[35419] = {
+	pg.base.ship_meta_repair[35419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35419,
@@ -28024,11 +20958,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_70
-
-	local var_18_71 = var_18_70.base.ship_meta_repair
-
-	var_18_71[35420] = {
+	pg.base.ship_meta_repair[35420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 35420,
@@ -28038,11 +20968,7 @@ end)()
 			5
 		}
 	}
-	pg = var_18_71
-
-	local var_18_72 = var_18_71.base.ship_meta_repair
-
-	var_18_72[36201] = {
+	pg.base.ship_meta_repair[36201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36201,
@@ -28052,11 +20978,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_72
-
-	local var_18_73 = var_18_72.base.ship_meta_repair
-
-	var_18_73[36202] = {
+	pg.base.ship_meta_repair[36202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36202,
@@ -28066,11 +20988,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_73
-
-	local var_18_74 = var_18_73.base.ship_meta_repair
-
-	var_18_74[36203] = {
+	pg.base.ship_meta_repair[36203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36203,
@@ -28080,11 +20998,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_74
-
-	local var_18_75 = var_18_74.base.ship_meta_repair
-
-	var_18_75[36204] = {
+	pg.base.ship_meta_repair[36204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36204,
@@ -28094,11 +21008,7 @@ end)()
 			3
 		}
 	}
-	pg = var_18_75
-
-	local var_18_76 = var_18_75.base.ship_meta_repair
-
-	var_18_76[36205] = {
+	pg.base.ship_meta_repair[36205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36205,
@@ -28108,11 +21018,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_76
-
-	local var_18_77 = var_18_76.base.ship_meta_repair
-
-	var_18_77[36206] = {
+	pg.base.ship_meta_repair[36206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36206,
@@ -28122,11 +21028,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_77
-
-	local var_18_78 = var_18_77.base.ship_meta_repair
-
-	var_18_78[36207] = {
+	pg.base.ship_meta_repair[36207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36207,
@@ -28136,11 +21038,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_78
-
-	local var_18_79 = var_18_78.base.ship_meta_repair
-
-	var_18_79[36208] = {
+	pg.base.ship_meta_repair[36208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36208,
@@ -28150,11 +21048,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_79
-
-	local var_18_80 = var_18_79.base.ship_meta_repair
-
-	var_18_80[36209] = {
+	pg.base.ship_meta_repair[36209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36209,
@@ -28164,11 +21058,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_80
-
-	local var_18_81 = var_18_80.base.ship_meta_repair
-
-	var_18_81[36210] = {
+	pg.base.ship_meta_repair[36210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36210,
@@ -28178,11 +21068,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_81
-
-	local var_18_82 = var_18_81.base.ship_meta_repair
-
-	var_18_82[36211] = {
+	pg.base.ship_meta_repair[36211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36211,
@@ -28192,11 +21078,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_82
-
-	local var_18_83 = var_18_82.base.ship_meta_repair
-
-	var_18_83[36212] = {
+	pg.base.ship_meta_repair[36212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36212,
@@ -28206,11 +21088,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_83
-
-	local var_18_84 = var_18_83.base.ship_meta_repair
-
-	var_18_84[36213] = {
+	pg.base.ship_meta_repair[36213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36213,
@@ -28220,11 +21098,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_84
-
-	local var_18_85 = var_18_84.base.ship_meta_repair
-
-	var_18_85[36214] = {
+	pg.base.ship_meta_repair[36214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36214,
@@ -28234,11 +21108,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_85
-
-	local var_18_86 = var_18_85.base.ship_meta_repair
-
-	var_18_86[36215] = {
+	pg.base.ship_meta_repair[36215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36215,
@@ -28248,11 +21118,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_86
-
-	local var_18_87 = var_18_86.base.ship_meta_repair
-
-	var_18_87[36216] = {
+	pg.base.ship_meta_repair[36216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36216,
@@ -28262,11 +21128,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_87
-
-	local var_18_88 = var_18_87.base.ship_meta_repair
-
-	var_18_88[36217] = {
+	pg.base.ship_meta_repair[36217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36217,
@@ -28276,11 +21138,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_88
-
-	local var_18_89 = var_18_88.base.ship_meta_repair
-
-	var_18_89[36218] = {
+	pg.base.ship_meta_repair[36218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36218,
@@ -28290,11 +21148,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_89
-
-	local var_18_90 = var_18_89.base.ship_meta_repair
-
-	var_18_90[36219] = {
+	pg.base.ship_meta_repair[36219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36219,
@@ -28304,11 +21158,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_90
-
-	local var_18_91 = var_18_90.base.ship_meta_repair
-
-	var_18_91[36220] = {
+	pg.base.ship_meta_repair[36220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36220,
@@ -28318,11 +21168,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_91
-
-	local var_18_92 = var_18_91.base.ship_meta_repair
-
-	var_18_92[36221] = {
+	pg.base.ship_meta_repair[36221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36221,
@@ -28332,11 +21178,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_92
-
-	local var_18_93 = var_18_92.base.ship_meta_repair
-
-	var_18_93[36222] = {
+	pg.base.ship_meta_repair[36222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36222,
@@ -28346,11 +21188,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_93
-
-	local var_18_94 = var_18_93.base.ship_meta_repair
-
-	var_18_94[36223] = {
+	pg.base.ship_meta_repair[36223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36223,
@@ -28360,11 +21198,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_94
-
-	local var_18_95 = var_18_94.base.ship_meta_repair
-
-	var_18_95[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36224,
@@ -28374,11 +21208,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_95
-
-	local var_18_96 = var_18_95.base.ship_meta_repair
-
-	var_18_96[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36225,
@@ -28388,11 +21218,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_96
-
-	local var_18_97 = var_18_96.base.ship_meta_repair
-
-	var_18_97[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36226,
@@ -28402,11 +21228,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_97
-
-	local var_18_98 = var_18_97.base.ship_meta_repair
-
-	var_18_98[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36227,
@@ -28416,8 +21238,7 @@ end)()
 			4
 		}
 	}
-	pg = var_18_98
-	var_18_98.base.ship_meta_repair[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36228,
@@ -28431,11 +21252,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_19_0 = var_1_10000.base.ship_meta_repair
-
-	var_19_0[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36229,
@@ -28445,11 +21262,7 @@ end)()
 			4
 		}
 	}
-	pg = var_19_0
-
-	local var_19_1 = var_19_0.base.ship_meta_repair
-
-	var_19_1[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 36230,
@@ -28459,11 +21272,7 @@ end)()
 			4
 		}
 	}
-	pg = var_19_1
-
-	local var_19_2 = var_19_1.base.ship_meta_repair
-
-	var_19_2[36401] = {
+	pg.base.ship_meta_repair[36401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36401,
@@ -28473,11 +21282,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_2
-
-	local var_19_3 = var_19_2.base.ship_meta_repair
-
-	var_19_3[36402] = {
+	pg.base.ship_meta_repair[36402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36402,
@@ -28487,11 +21292,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_3
-
-	local var_19_4 = var_19_3.base.ship_meta_repair
-
-	var_19_4[36403] = {
+	pg.base.ship_meta_repair[36403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36403,
@@ -28501,11 +21302,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_4
-
-	local var_19_5 = var_19_4.base.ship_meta_repair
-
-	var_19_5[36404] = {
+	pg.base.ship_meta_repair[36404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36404,
@@ -28515,11 +21312,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_5
-
-	local var_19_6 = var_19_5.base.ship_meta_repair
-
-	var_19_6[36405] = {
+	pg.base.ship_meta_repair[36405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36405,
@@ -28529,11 +21322,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_6
-
-	local var_19_7 = var_19_6.base.ship_meta_repair
-
-	var_19_7[36406] = {
+	pg.base.ship_meta_repair[36406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36406,
@@ -28543,11 +21332,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_7
-
-	local var_19_8 = var_19_7.base.ship_meta_repair
-
-	var_19_8[36407] = {
+	pg.base.ship_meta_repair[36407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36407,
@@ -28557,11 +21342,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_8
-
-	local var_19_9 = var_19_8.base.ship_meta_repair
-
-	var_19_9[36408] = {
+	pg.base.ship_meta_repair[36408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36408,
@@ -28571,11 +21352,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_9
-
-	local var_19_10 = var_19_9.base.ship_meta_repair
-
-	var_19_10[36409] = {
+	pg.base.ship_meta_repair[36409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36409,
@@ -28585,11 +21362,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_10
-
-	local var_19_11 = var_19_10.base.ship_meta_repair
-
-	var_19_11[36410] = {
+	pg.base.ship_meta_repair[36410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36410,
@@ -28599,11 +21372,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_11
-
-	local var_19_12 = var_19_11.base.ship_meta_repair
-
-	var_19_12[36411] = {
+	pg.base.ship_meta_repair[36411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36411,
@@ -28613,11 +21382,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_12
-
-	local var_19_13 = var_19_12.base.ship_meta_repair
-
-	var_19_13[36412] = {
+	pg.base.ship_meta_repair[36412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36412,
@@ -28627,11 +21392,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_13
-
-	local var_19_14 = var_19_13.base.ship_meta_repair
-
-	var_19_14[36413] = {
+	pg.base.ship_meta_repair[36413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36413,
@@ -28641,11 +21402,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_14
-
-	local var_19_15 = var_19_14.base.ship_meta_repair
-
-	var_19_15[36414] = {
+	pg.base.ship_meta_repair[36414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36414,
@@ -28655,11 +21412,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_15
-
-	local var_19_16 = var_19_15.base.ship_meta_repair
-
-	var_19_16[36415] = {
+	pg.base.ship_meta_repair[36415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36415,
@@ -28669,11 +21422,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_16
-
-	local var_19_17 = var_19_16.base.ship_meta_repair
-
-	var_19_17[36416] = {
+	pg.base.ship_meta_repair[36416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36416,
@@ -28683,11 +21432,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_17
-
-	local var_19_18 = var_19_17.base.ship_meta_repair
-
-	var_19_18[36417] = {
+	pg.base.ship_meta_repair[36417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36417,
@@ -28697,11 +21442,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_18
-
-	local var_19_19 = var_19_18.base.ship_meta_repair
-
-	var_19_19[36418] = {
+	pg.base.ship_meta_repair[36418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36418,
@@ -28711,11 +21452,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_19
-
-	local var_19_20 = var_19_19.base.ship_meta_repair
-
-	var_19_20[36419] = {
+	pg.base.ship_meta_repair[36419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36419,
@@ -28725,11 +21462,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_20
-
-	local var_19_21 = var_19_20.base.ship_meta_repair
-
-	var_19_21[36420] = {
+	pg.base.ship_meta_repair[36420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 36420,
@@ -28739,11 +21472,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_21
-
-	local var_19_22 = var_19_21.base.ship_meta_repair
-
-	var_19_22[37101] = {
+	pg.base.ship_meta_repair[37101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37101,
@@ -28753,11 +21482,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_22
-
-	local var_19_23 = var_19_22.base.ship_meta_repair
-
-	var_19_23[37102] = {
+	pg.base.ship_meta_repair[37102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37102,
@@ -28767,11 +21492,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_23
-
-	local var_19_24 = var_19_23.base.ship_meta_repair
-
-	var_19_24[37103] = {
+	pg.base.ship_meta_repair[37103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37103,
@@ -28781,11 +21502,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_24
-
-	local var_19_25 = var_19_24.base.ship_meta_repair
-
-	var_19_25[37104] = {
+	pg.base.ship_meta_repair[37104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37104,
@@ -28795,11 +21512,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_25
-
-	local var_19_26 = var_19_25.base.ship_meta_repair
-
-	var_19_26[37105] = {
+	pg.base.ship_meta_repair[37105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37105,
@@ -28809,11 +21522,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_26
-
-	local var_19_27 = var_19_26.base.ship_meta_repair
-
-	var_19_27[37106] = {
+	pg.base.ship_meta_repair[37106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37106,
@@ -28823,11 +21532,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_27
-
-	local var_19_28 = var_19_27.base.ship_meta_repair
-
-	var_19_28[37107] = {
+	pg.base.ship_meta_repair[37107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37107,
@@ -28837,11 +21542,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_28
-
-	local var_19_29 = var_19_28.base.ship_meta_repair
-
-	var_19_29[37108] = {
+	pg.base.ship_meta_repair[37108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37108,
@@ -28851,11 +21552,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_29
-
-	local var_19_30 = var_19_29.base.ship_meta_repair
-
-	var_19_30[37109] = {
+	pg.base.ship_meta_repair[37109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37109,
@@ -28865,11 +21562,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_30
-
-	local var_19_31 = var_19_30.base.ship_meta_repair
-
-	var_19_31[37110] = {
+	pg.base.ship_meta_repair[37110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37110,
@@ -28879,11 +21572,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_31
-
-	local var_19_32 = var_19_31.base.ship_meta_repair
-
-	var_19_32[37111] = {
+	pg.base.ship_meta_repair[37111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37111,
@@ -28893,11 +21582,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_32
-
-	local var_19_33 = var_19_32.base.ship_meta_repair
-
-	var_19_33[37112] = {
+	pg.base.ship_meta_repair[37112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37112,
@@ -28907,11 +21592,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_33
-
-	local var_19_34 = var_19_33.base.ship_meta_repair
-
-	var_19_34[37113] = {
+	pg.base.ship_meta_repair[37113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37113,
@@ -28921,11 +21602,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_34
-
-	local var_19_35 = var_19_34.base.ship_meta_repair
-
-	var_19_35[37114] = {
+	pg.base.ship_meta_repair[37114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37114,
@@ -28935,11 +21612,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_35
-
-	local var_19_36 = var_19_35.base.ship_meta_repair
-
-	var_19_36[37115] = {
+	pg.base.ship_meta_repair[37115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37115,
@@ -28949,11 +21622,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_36
-
-	local var_19_37 = var_19_36.base.ship_meta_repair
-
-	var_19_37[37116] = {
+	pg.base.ship_meta_repair[37116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37116,
@@ -28963,11 +21632,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_37
-
-	local var_19_38 = var_19_37.base.ship_meta_repair
-
-	var_19_38[37117] = {
+	pg.base.ship_meta_repair[37117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37117,
@@ -28977,11 +21642,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_38
-
-	local var_19_39 = var_19_38.base.ship_meta_repair
-
-	var_19_39[37118] = {
+	pg.base.ship_meta_repair[37118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37118,
@@ -28991,11 +21652,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_39
-
-	local var_19_40 = var_19_39.base.ship_meta_repair
-
-	var_19_40[37119] = {
+	pg.base.ship_meta_repair[37119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37119,
@@ -29005,11 +21662,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_40
-
-	local var_19_41 = var_19_40.base.ship_meta_repair
-
-	var_19_41[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37120,
@@ -29019,11 +21672,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_41
-
-	local var_19_42 = var_19_41.base.ship_meta_repair
-
-	var_19_42[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37121,
@@ -29033,11 +21682,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_42
-
-	local var_19_43 = var_19_42.base.ship_meta_repair
-
-	var_19_43[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37122,
@@ -29047,11 +21692,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_43
-
-	local var_19_44 = var_19_43.base.ship_meta_repair
-
-	var_19_44[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37123,
@@ -29061,11 +21702,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_44
-
-	local var_19_45 = var_19_44.base.ship_meta_repair
-
-	var_19_45[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37124,
@@ -29075,11 +21712,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_45
-
-	local var_19_46 = var_19_45.base.ship_meta_repair
-
-	var_19_46[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37125,
@@ -29089,11 +21722,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_46
-
-	local var_19_47 = var_19_46.base.ship_meta_repair
-
-	var_19_47[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37126,
@@ -29103,11 +21732,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_47
-
-	local var_19_48 = var_19_47.base.ship_meta_repair
-
-	var_19_48[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37127,
@@ -29117,11 +21742,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_48
-
-	local var_19_49 = var_19_48.base.ship_meta_repair
-
-	var_19_49[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37128,
@@ -29131,11 +21752,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_49
-
-	local var_19_50 = var_19_49.base.ship_meta_repair
-
-	var_19_50[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37129,
@@ -29145,11 +21762,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_50
-
-	local var_19_51 = var_19_50.base.ship_meta_repair
-
-	var_19_51[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 37130,
@@ -29159,11 +21772,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_51
-
-	local var_19_52 = var_19_51.base.ship_meta_repair
-
-	var_19_52[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37401,
@@ -29173,11 +21782,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_52
-
-	local var_19_53 = var_19_52.base.ship_meta_repair
-
-	var_19_53[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37402,
@@ -29187,11 +21792,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_53
-
-	local var_19_54 = var_19_53.base.ship_meta_repair
-
-	var_19_54[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37403,
@@ -29201,11 +21802,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_54
-
-	local var_19_55 = var_19_54.base.ship_meta_repair
-
-	var_19_55[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37404,
@@ -29215,11 +21812,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_55
-
-	local var_19_56 = var_19_55.base.ship_meta_repair
-
-	var_19_56[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37405,
@@ -29229,11 +21822,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_56
-
-	local var_19_57 = var_19_56.base.ship_meta_repair
-
-	var_19_57[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37406,
@@ -29243,11 +21832,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_57
-
-	local var_19_58 = var_19_57.base.ship_meta_repair
-
-	var_19_58[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37407,
@@ -29257,11 +21842,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_58
-
-	local var_19_59 = var_19_58.base.ship_meta_repair
-
-	var_19_59[37408] = {
+	pg.base.ship_meta_repair[37408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37408,
@@ -29271,11 +21852,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_59
-
-	local var_19_60 = var_19_59.base.ship_meta_repair
-
-	var_19_60[37409] = {
+	pg.base.ship_meta_repair[37409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37409,
@@ -29285,11 +21862,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_60
-
-	local var_19_61 = var_19_60.base.ship_meta_repair
-
-	var_19_61[37410] = {
+	pg.base.ship_meta_repair[37410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37410,
@@ -29299,11 +21872,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_61
-
-	local var_19_62 = var_19_61.base.ship_meta_repair
-
-	var_19_62[37411] = {
+	pg.base.ship_meta_repair[37411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37411,
@@ -29313,11 +21882,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_62
-
-	local var_19_63 = var_19_62.base.ship_meta_repair
-
-	var_19_63[37412] = {
+	pg.base.ship_meta_repair[37412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37412,
@@ -29327,11 +21892,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_63
-
-	local var_19_64 = var_19_63.base.ship_meta_repair
-
-	var_19_64[37413] = {
+	pg.base.ship_meta_repair[37413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37413,
@@ -29341,11 +21902,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_64
-
-	local var_19_65 = var_19_64.base.ship_meta_repair
-
-	var_19_65[37414] = {
+	pg.base.ship_meta_repair[37414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37414,
@@ -29355,11 +21912,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_65
-
-	local var_19_66 = var_19_65.base.ship_meta_repair
-
-	var_19_66[37415] = {
+	pg.base.ship_meta_repair[37415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37415,
@@ -29369,11 +21922,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_66
-
-	local var_19_67 = var_19_66.base.ship_meta_repair
-
-	var_19_67[37416] = {
+	pg.base.ship_meta_repair[37416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37416,
@@ -29383,11 +21932,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_67
-
-	local var_19_68 = var_19_67.base.ship_meta_repair
-
-	var_19_68[37417] = {
+	pg.base.ship_meta_repair[37417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37417,
@@ -29397,11 +21942,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_68
-
-	local var_19_69 = var_19_68.base.ship_meta_repair
-
-	var_19_69[37418] = {
+	pg.base.ship_meta_repair[37418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37418,
@@ -29411,11 +21952,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_69
-
-	local var_19_70 = var_19_69.base.ship_meta_repair
-
-	var_19_70[37419] = {
+	pg.base.ship_meta_repair[37419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37419,
@@ -29425,11 +21962,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_70
-
-	local var_19_71 = var_19_70.base.ship_meta_repair
-
-	var_19_71[37420] = {
+	pg.base.ship_meta_repair[37420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 37420,
@@ -29439,11 +21972,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_71
-
-	local var_19_72 = var_19_71.base.ship_meta_repair
-
-	var_19_72[38101] = {
+	pg.base.ship_meta_repair[38101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38101,
@@ -29453,11 +21982,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_72
-
-	local var_19_73 = var_19_72.base.ship_meta_repair
-
-	var_19_73[38102] = {
+	pg.base.ship_meta_repair[38102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38102,
@@ -29467,11 +21992,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_73
-
-	local var_19_74 = var_19_73.base.ship_meta_repair
-
-	var_19_74[38103] = {
+	pg.base.ship_meta_repair[38103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38103,
@@ -29481,11 +22002,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_74
-
-	local var_19_75 = var_19_74.base.ship_meta_repair
-
-	var_19_75[38104] = {
+	pg.base.ship_meta_repair[38104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38104,
@@ -29495,11 +22012,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_75
-
-	local var_19_76 = var_19_75.base.ship_meta_repair
-
-	var_19_76[38105] = {
+	pg.base.ship_meta_repair[38105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38105,
@@ -29509,11 +22022,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_76
-
-	local var_19_77 = var_19_76.base.ship_meta_repair
-
-	var_19_77[38106] = {
+	pg.base.ship_meta_repair[38106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38106,
@@ -29523,11 +22032,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_77
-
-	local var_19_78 = var_19_77.base.ship_meta_repair
-
-	var_19_78[38107] = {
+	pg.base.ship_meta_repair[38107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38107,
@@ -29537,11 +22042,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_78
-
-	local var_19_79 = var_19_78.base.ship_meta_repair
-
-	var_19_79[38108] = {
+	pg.base.ship_meta_repair[38108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38108,
@@ -29551,11 +22052,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_79
-
-	local var_19_80 = var_19_79.base.ship_meta_repair
-
-	var_19_80[38109] = {
+	pg.base.ship_meta_repair[38109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38109,
@@ -29565,11 +22062,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_80
-
-	local var_19_81 = var_19_80.base.ship_meta_repair
-
-	var_19_81[38110] = {
+	pg.base.ship_meta_repair[38110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38110,
@@ -29579,11 +22072,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_81
-
-	local var_19_82 = var_19_81.base.ship_meta_repair
-
-	var_19_82[38111] = {
+	pg.base.ship_meta_repair[38111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38111,
@@ -29593,11 +22082,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_82
-
-	local var_19_83 = var_19_82.base.ship_meta_repair
-
-	var_19_83[38112] = {
+	pg.base.ship_meta_repair[38112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38112,
@@ -29607,11 +22092,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_83
-
-	local var_19_84 = var_19_83.base.ship_meta_repair
-
-	var_19_84[38113] = {
+	pg.base.ship_meta_repair[38113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38113,
@@ -29621,11 +22102,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_84
-
-	local var_19_85 = var_19_84.base.ship_meta_repair
-
-	var_19_85[38114] = {
+	pg.base.ship_meta_repair[38114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38114,
@@ -29635,11 +22112,7 @@ end)()
 			2
 		}
 	}
-	pg = var_19_85
-
-	local var_19_86 = var_19_85.base.ship_meta_repair
-
-	var_19_86[38115] = {
+	pg.base.ship_meta_repair[38115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38115,
@@ -29649,11 +22122,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_86
-
-	local var_19_87 = var_19_86.base.ship_meta_repair
-
-	var_19_87[38116] = {
+	pg.base.ship_meta_repair[38116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38116,
@@ -29663,11 +22132,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_87
-
-	local var_19_88 = var_19_87.base.ship_meta_repair
-
-	var_19_88[38117] = {
+	pg.base.ship_meta_repair[38117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38117,
@@ -29677,11 +22142,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_88
-
-	local var_19_89 = var_19_88.base.ship_meta_repair
-
-	var_19_89[38118] = {
+	pg.base.ship_meta_repair[38118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38118,
@@ -29691,11 +22152,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_89
-
-	local var_19_90 = var_19_89.base.ship_meta_repair
-
-	var_19_90[38119] = {
+	pg.base.ship_meta_repair[38119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38119,
@@ -29705,11 +22162,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_90
-
-	local var_19_91 = var_19_90.base.ship_meta_repair
-
-	var_19_91[38120] = {
+	pg.base.ship_meta_repair[38120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38120,
@@ -29719,11 +22172,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_91
-
-	local var_19_92 = var_19_91.base.ship_meta_repair
-
-	var_19_92[38121] = {
+	pg.base.ship_meta_repair[38121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38121,
@@ -29733,11 +22182,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_92
-
-	local var_19_93 = var_19_92.base.ship_meta_repair
-
-	var_19_93[38122] = {
+	pg.base.ship_meta_repair[38122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38122,
@@ -29747,11 +22192,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_93
-
-	local var_19_94 = var_19_93.base.ship_meta_repair
-
-	var_19_94[38123] = {
+	pg.base.ship_meta_repair[38123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38123,
@@ -29761,11 +22202,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_94
-
-	local var_19_95 = var_19_94.base.ship_meta_repair
-
-	var_19_95[38124] = {
+	pg.base.ship_meta_repair[38124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38124,
@@ -29775,11 +22212,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_95
-
-	local var_19_96 = var_19_95.base.ship_meta_repair
-
-	var_19_96[38125] = {
+	pg.base.ship_meta_repair[38125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38125,
@@ -29789,11 +22222,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_96
-
-	local var_19_97 = var_19_96.base.ship_meta_repair
-
-	var_19_97[38126] = {
+	pg.base.ship_meta_repair[38126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38126,
@@ -29803,11 +22232,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_97
-
-	local var_19_98 = var_19_97.base.ship_meta_repair
-
-	var_19_98[38127] = {
+	pg.base.ship_meta_repair[38127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38127,
@@ -29817,8 +22242,7 @@ end)()
 			3
 		}
 	}
-	pg = var_19_98
-	var_19_98.base.ship_meta_repair[38128] = {
+	pg.base.ship_meta_repair[38128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38128,
@@ -29832,11 +22256,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_20_0 = var_1_10000.base.ship_meta_repair
-
-	var_20_0[38129] = {
+	pg.base.ship_meta_repair[38129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38129,
@@ -29846,11 +22266,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_0
-
-	local var_20_1 = var_20_0.base.ship_meta_repair
-
-	var_20_1[38130] = {
+	pg.base.ship_meta_repair[38130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 38130,
@@ -29860,11 +22276,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_1
-
-	local var_20_2 = var_20_1.base.ship_meta_repair
-
-	var_20_2[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38401,
@@ -29874,11 +22286,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_2
-
-	local var_20_3 = var_20_2.base.ship_meta_repair
-
-	var_20_3[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38402,
@@ -29888,11 +22296,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_3
-
-	local var_20_4 = var_20_3.base.ship_meta_repair
-
-	var_20_4[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38403,
@@ -29902,11 +22306,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_4
-
-	local var_20_5 = var_20_4.base.ship_meta_repair
-
-	var_20_5[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38404,
@@ -29916,11 +22316,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_5
-
-	local var_20_6 = var_20_5.base.ship_meta_repair
-
-	var_20_6[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38405,
@@ -29930,11 +22326,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_6
-
-	local var_20_7 = var_20_6.base.ship_meta_repair
-
-	var_20_7[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38406,
@@ -29944,11 +22336,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_7
-
-	local var_20_8 = var_20_7.base.ship_meta_repair
-
-	var_20_8[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38407,
@@ -29958,11 +22346,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_8
-
-	local var_20_9 = var_20_8.base.ship_meta_repair
-
-	var_20_9[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38408,
@@ -29972,11 +22356,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_9
-
-	local var_20_10 = var_20_9.base.ship_meta_repair
-
-	var_20_10[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38409,
@@ -29986,11 +22366,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_10
-
-	local var_20_11 = var_20_10.base.ship_meta_repair
-
-	var_20_11[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38410,
@@ -30000,11 +22376,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_11
-
-	local var_20_12 = var_20_11.base.ship_meta_repair
-
-	var_20_12[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38411,
@@ -30014,11 +22386,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_12
-
-	local var_20_13 = var_20_12.base.ship_meta_repair
-
-	var_20_13[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38412,
@@ -30028,11 +22396,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_13
-
-	local var_20_14 = var_20_13.base.ship_meta_repair
-
-	var_20_14[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38413,
@@ -30042,11 +22406,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_14
-
-	local var_20_15 = var_20_14.base.ship_meta_repair
-
-	var_20_15[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38414,
@@ -30056,11 +22416,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_15
-
-	local var_20_16 = var_20_15.base.ship_meta_repair
-
-	var_20_16[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38415,
@@ -30070,11 +22426,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_16
-
-	local var_20_17 = var_20_16.base.ship_meta_repair
-
-	var_20_17[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38416,
@@ -30084,11 +22436,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_17
-
-	local var_20_18 = var_20_17.base.ship_meta_repair
-
-	var_20_18[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38417,
@@ -30098,11 +22446,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_18
-
-	local var_20_19 = var_20_18.base.ship_meta_repair
-
-	var_20_19[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38418,
@@ -30112,11 +22456,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_19
-
-	local var_20_20 = var_20_19.base.ship_meta_repair
-
-	var_20_20[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38419,
@@ -30126,11 +22466,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_20
-
-	local var_20_21 = var_20_20.base.ship_meta_repair
-
-	var_20_21[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 38420,
@@ -30140,11 +22476,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_21
-
-	local var_20_22 = var_20_21.base.ship_meta_repair
-
-	var_20_22[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39301,
@@ -30154,11 +22486,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_22
-
-	local var_20_23 = var_20_22.base.ship_meta_repair
-
-	var_20_23[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39302,
@@ -30168,11 +22496,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_23
-
-	local var_20_24 = var_20_23.base.ship_meta_repair
-
-	var_20_24[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39303,
@@ -30182,11 +22506,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_24
-
-	local var_20_25 = var_20_24.base.ship_meta_repair
-
-	var_20_25[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39304,
@@ -30196,11 +22516,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_25
-
-	local var_20_26 = var_20_25.base.ship_meta_repair
-
-	var_20_26[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39305,
@@ -30210,11 +22526,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_26
-
-	local var_20_27 = var_20_26.base.ship_meta_repair
-
-	var_20_27[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39306,
@@ -30224,11 +22536,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_27
-
-	local var_20_28 = var_20_27.base.ship_meta_repair
-
-	var_20_28[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39307,
@@ -30238,11 +22546,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_28
-
-	local var_20_29 = var_20_28.base.ship_meta_repair
-
-	var_20_29[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39308,
@@ -30252,11 +22556,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_29
-
-	local var_20_30 = var_20_29.base.ship_meta_repair
-
-	var_20_30[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39309,
@@ -30266,11 +22566,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_30
-
-	local var_20_31 = var_20_30.base.ship_meta_repair
-
-	var_20_31[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39310,
@@ -30280,11 +22576,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_31
-
-	local var_20_32 = var_20_31.base.ship_meta_repair
-
-	var_20_32[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39311,
@@ -30294,11 +22586,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_32
-
-	local var_20_33 = var_20_32.base.ship_meta_repair
-
-	var_20_33[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39312,
@@ -30308,11 +22596,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_33
-
-	local var_20_34 = var_20_33.base.ship_meta_repair
-
-	var_20_34[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39313,
@@ -30322,11 +22606,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_34
-
-	local var_20_35 = var_20_34.base.ship_meta_repair
-
-	var_20_35[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39314,
@@ -30336,11 +22616,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_35
-
-	local var_20_36 = var_20_35.base.ship_meta_repair
-
-	var_20_36[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39315,
@@ -30350,11 +22626,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_36
-
-	local var_20_37 = var_20_36.base.ship_meta_repair
-
-	var_20_37[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39316,
@@ -30364,11 +22636,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_37
-
-	local var_20_38 = var_20_37.base.ship_meta_repair
-
-	var_20_38[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39317,
@@ -30378,11 +22646,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_38
-
-	local var_20_39 = var_20_38.base.ship_meta_repair
-
-	var_20_39[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39318,
@@ -30392,11 +22656,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_39
-
-	local var_20_40 = var_20_39.base.ship_meta_repair
-
-	var_20_40[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39319,
@@ -30406,11 +22666,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_40
-
-	local var_20_41 = var_20_40.base.ship_meta_repair
-
-	var_20_41[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39320,
@@ -30420,11 +22676,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_41
-
-	local var_20_42 = var_20_41.base.ship_meta_repair
-
-	var_20_42[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39321,
@@ -30434,11 +22686,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_42
-
-	local var_20_43 = var_20_42.base.ship_meta_repair
-
-	var_20_43[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39322,
@@ -30448,11 +22696,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_43
-
-	local var_20_44 = var_20_43.base.ship_meta_repair
-
-	var_20_44[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39323,
@@ -30462,11 +22706,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_44
-
-	local var_20_45 = var_20_44.base.ship_meta_repair
-
-	var_20_45[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39324,
@@ -30476,11 +22716,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_45
-
-	local var_20_46 = var_20_45.base.ship_meta_repair
-
-	var_20_46[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39325,
@@ -30490,11 +22726,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_46
-
-	local var_20_47 = var_20_46.base.ship_meta_repair
-
-	var_20_47[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39326,
@@ -30504,11 +22736,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_47
-
-	local var_20_48 = var_20_47.base.ship_meta_repair
-
-	var_20_48[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39327,
@@ -30518,11 +22746,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_48
-
-	local var_20_49 = var_20_48.base.ship_meta_repair
-
-	var_20_49[39328] = {
+	pg.base.ship_meta_repair[39328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39328,
@@ -30532,11 +22756,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_49
-
-	local var_20_50 = var_20_49.base.ship_meta_repair
-
-	var_20_50[39329] = {
+	pg.base.ship_meta_repair[39329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39329,
@@ -30546,11 +22766,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_50
-
-	local var_20_51 = var_20_50.base.ship_meta_repair
-
-	var_20_51[39330] = {
+	pg.base.ship_meta_repair[39330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 39330,
@@ -30560,11 +22776,7 @@ end)()
 			4
 		}
 	}
-	pg = var_20_51
-
-	local var_20_52 = var_20_51.base.ship_meta_repair
-
-	var_20_52[39401] = {
+	pg.base.ship_meta_repair[39401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39401,
@@ -30574,11 +22786,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_52
-
-	local var_20_53 = var_20_52.base.ship_meta_repair
-
-	var_20_53[39402] = {
+	pg.base.ship_meta_repair[39402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39402,
@@ -30588,11 +22796,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_53
-
-	local var_20_54 = var_20_53.base.ship_meta_repair
-
-	var_20_54[39403] = {
+	pg.base.ship_meta_repair[39403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39403,
@@ -30602,11 +22806,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_54
-
-	local var_20_55 = var_20_54.base.ship_meta_repair
-
-	var_20_55[39404] = {
+	pg.base.ship_meta_repair[39404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39404,
@@ -30616,11 +22816,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_55
-
-	local var_20_56 = var_20_55.base.ship_meta_repair
-
-	var_20_56[39405] = {
+	pg.base.ship_meta_repair[39405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39405,
@@ -30630,11 +22826,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_56
-
-	local var_20_57 = var_20_56.base.ship_meta_repair
-
-	var_20_57[39406] = {
+	pg.base.ship_meta_repair[39406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39406,
@@ -30644,11 +22836,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_57
-
-	local var_20_58 = var_20_57.base.ship_meta_repair
-
-	var_20_58[39407] = {
+	pg.base.ship_meta_repair[39407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39407,
@@ -30658,11 +22846,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_58
-
-	local var_20_59 = var_20_58.base.ship_meta_repair
-
-	var_20_59[39408] = {
+	pg.base.ship_meta_repair[39408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39408,
@@ -30672,11 +22856,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_59
-
-	local var_20_60 = var_20_59.base.ship_meta_repair
-
-	var_20_60[39409] = {
+	pg.base.ship_meta_repair[39409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39409,
@@ -30686,11 +22866,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_60
-
-	local var_20_61 = var_20_60.base.ship_meta_repair
-
-	var_20_61[39410] = {
+	pg.base.ship_meta_repair[39410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39410,
@@ -30700,11 +22876,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_61
-
-	local var_20_62 = var_20_61.base.ship_meta_repair
-
-	var_20_62[39411] = {
+	pg.base.ship_meta_repair[39411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39411,
@@ -30714,11 +22886,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_62
-
-	local var_20_63 = var_20_62.base.ship_meta_repair
-
-	var_20_63[39412] = {
+	pg.base.ship_meta_repair[39412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39412,
@@ -30728,11 +22896,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_63
-
-	local var_20_64 = var_20_63.base.ship_meta_repair
-
-	var_20_64[39413] = {
+	pg.base.ship_meta_repair[39413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39413,
@@ -30742,11 +22906,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_64
-
-	local var_20_65 = var_20_64.base.ship_meta_repair
-
-	var_20_65[39414] = {
+	pg.base.ship_meta_repair[39414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39414,
@@ -30756,11 +22916,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_65
-
-	local var_20_66 = var_20_65.base.ship_meta_repair
-
-	var_20_66[39415] = {
+	pg.base.ship_meta_repair[39415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39415,
@@ -30770,11 +22926,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_66
-
-	local var_20_67 = var_20_66.base.ship_meta_repair
-
-	var_20_67[39416] = {
+	pg.base.ship_meta_repair[39416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39416,
@@ -30784,11 +22936,7 @@ end)()
 			4
 		}
 	}
-	pg = var_20_67
-
-	local var_20_68 = var_20_67.base.ship_meta_repair
-
-	var_20_68[39417] = {
+	pg.base.ship_meta_repair[39417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39417,
@@ -30798,11 +22946,7 @@ end)()
 			4
 		}
 	}
-	pg = var_20_68
-
-	local var_20_69 = var_20_68.base.ship_meta_repair
-
-	var_20_69[39418] = {
+	pg.base.ship_meta_repair[39418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39418,
@@ -30812,11 +22956,7 @@ end)()
 			4
 		}
 	}
-	pg = var_20_69
-
-	local var_20_70 = var_20_69.base.ship_meta_repair
-
-	var_20_70[39419] = {
+	pg.base.ship_meta_repair[39419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39419,
@@ -30826,11 +22966,7 @@ end)()
 			4
 		}
 	}
-	pg = var_20_70
-
-	local var_20_71 = var_20_70.base.ship_meta_repair
-
-	var_20_71[39420] = {
+	pg.base.ship_meta_repair[39420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 39420,
@@ -30840,11 +22976,7 @@ end)()
 			4
 		}
 	}
-	pg = var_20_71
-
-	local var_20_72 = var_20_71.base.ship_meta_repair
-
-	var_20_72[40101] = {
+	pg.base.ship_meta_repair[40101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40101,
@@ -30854,11 +22986,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_72
-
-	local var_20_73 = var_20_72.base.ship_meta_repair
-
-	var_20_73[40102] = {
+	pg.base.ship_meta_repair[40102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40102,
@@ -30868,11 +22996,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_73
-
-	local var_20_74 = var_20_73.base.ship_meta_repair
-
-	var_20_74[40103] = {
+	pg.base.ship_meta_repair[40103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40103,
@@ -30882,11 +23006,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_74
-
-	local var_20_75 = var_20_74.base.ship_meta_repair
-
-	var_20_75[40104] = {
+	pg.base.ship_meta_repair[40104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40104,
@@ -30896,11 +23016,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_75
-
-	local var_20_76 = var_20_75.base.ship_meta_repair
-
-	var_20_76[40105] = {
+	pg.base.ship_meta_repair[40105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40105,
@@ -30910,11 +23026,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_76
-
-	local var_20_77 = var_20_76.base.ship_meta_repair
-
-	var_20_77[40106] = {
+	pg.base.ship_meta_repair[40106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40106,
@@ -30924,11 +23036,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_77
-
-	local var_20_78 = var_20_77.base.ship_meta_repair
-
-	var_20_78[40107] = {
+	pg.base.ship_meta_repair[40107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40107,
@@ -30938,11 +23046,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_78
-
-	local var_20_79 = var_20_78.base.ship_meta_repair
-
-	var_20_79[40108] = {
+	pg.base.ship_meta_repair[40108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40108,
@@ -30952,11 +23056,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_79
-
-	local var_20_80 = var_20_79.base.ship_meta_repair
-
-	var_20_80[40109] = {
+	pg.base.ship_meta_repair[40109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40109,
@@ -30966,11 +23066,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_80
-
-	local var_20_81 = var_20_80.base.ship_meta_repair
-
-	var_20_81[40110] = {
+	pg.base.ship_meta_repair[40110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40110,
@@ -30980,11 +23076,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_81
-
-	local var_20_82 = var_20_81.base.ship_meta_repair
-
-	var_20_82[40111] = {
+	pg.base.ship_meta_repair[40111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40111,
@@ -30994,11 +23086,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_82
-
-	local var_20_83 = var_20_82.base.ship_meta_repair
-
-	var_20_83[40112] = {
+	pg.base.ship_meta_repair[40112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40112,
@@ -31008,11 +23096,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_83
-
-	local var_20_84 = var_20_83.base.ship_meta_repair
-
-	var_20_84[40113] = {
+	pg.base.ship_meta_repair[40113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40113,
@@ -31022,11 +23106,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_84
-
-	local var_20_85 = var_20_84.base.ship_meta_repair
-
-	var_20_85[40114] = {
+	pg.base.ship_meta_repair[40114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40114,
@@ -31036,11 +23116,7 @@ end)()
 			1
 		}
 	}
-	pg = var_20_85
-
-	local var_20_86 = var_20_85.base.ship_meta_repair
-
-	var_20_86[40115] = {
+	pg.base.ship_meta_repair[40115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40115,
@@ -31050,11 +23126,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_86
-
-	local var_20_87 = var_20_86.base.ship_meta_repair
-
-	var_20_87[40116] = {
+	pg.base.ship_meta_repair[40116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40116,
@@ -31064,11 +23136,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_87
-
-	local var_20_88 = var_20_87.base.ship_meta_repair
-
-	var_20_88[40117] = {
+	pg.base.ship_meta_repair[40117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40117,
@@ -31078,11 +23146,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_88
-
-	local var_20_89 = var_20_88.base.ship_meta_repair
-
-	var_20_89[40118] = {
+	pg.base.ship_meta_repair[40118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40118,
@@ -31092,11 +23156,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_89
-
-	local var_20_90 = var_20_89.base.ship_meta_repair
-
-	var_20_90[40119] = {
+	pg.base.ship_meta_repair[40119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40119,
@@ -31106,11 +23166,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_90
-
-	local var_20_91 = var_20_90.base.ship_meta_repair
-
-	var_20_91[40120] = {
+	pg.base.ship_meta_repair[40120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40120,
@@ -31120,11 +23176,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_91
-
-	local var_20_92 = var_20_91.base.ship_meta_repair
-
-	var_20_92[40121] = {
+	pg.base.ship_meta_repair[40121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40121,
@@ -31134,11 +23186,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_92
-
-	local var_20_93 = var_20_92.base.ship_meta_repair
-
-	var_20_93[40122] = {
+	pg.base.ship_meta_repair[40122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40122,
@@ -31148,11 +23196,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_93
-
-	local var_20_94 = var_20_93.base.ship_meta_repair
-
-	var_20_94[40123] = {
+	pg.base.ship_meta_repair[40123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40123,
@@ -31162,11 +23206,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_94
-
-	local var_20_95 = var_20_94.base.ship_meta_repair
-
-	var_20_95[40124] = {
+	pg.base.ship_meta_repair[40124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40124,
@@ -31176,11 +23216,7 @@ end)()
 			2
 		}
 	}
-	pg = var_20_95
-
-	local var_20_96 = var_20_95.base.ship_meta_repair
-
-	var_20_96[40125] = {
+	pg.base.ship_meta_repair[40125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40125,
@@ -31190,11 +23226,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_96
-
-	local var_20_97 = var_20_96.base.ship_meta_repair
-
-	var_20_97[40126] = {
+	pg.base.ship_meta_repair[40126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40126,
@@ -31204,11 +23236,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_97
-
-	local var_20_98 = var_20_97.base.ship_meta_repair
-
-	var_20_98[40127] = {
+	pg.base.ship_meta_repair[40127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40127,
@@ -31218,8 +23246,7 @@ end)()
 			3
 		}
 	}
-	pg = var_20_98
-	var_20_98.base.ship_meta_repair[40128] = {
+	pg.base.ship_meta_repair[40128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40128,
@@ -31233,11 +23260,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_21_0 = var_1_10000.base.ship_meta_repair
-
-	var_21_0[40129] = {
+	pg.base.ship_meta_repair[40129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40129,
@@ -31247,11 +23270,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_0
-
-	local var_21_1 = var_21_0.base.ship_meta_repair
-
-	var_21_1[40130] = {
+	pg.base.ship_meta_repair[40130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 40130,
@@ -31261,11 +23280,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_1
-
-	local var_21_2 = var_21_1.base.ship_meta_repair
-
-	var_21_2[40401] = {
+	pg.base.ship_meta_repair[40401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40401,
@@ -31275,11 +23290,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_2
-
-	local var_21_3 = var_21_2.base.ship_meta_repair
-
-	var_21_3[40402] = {
+	pg.base.ship_meta_repair[40402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40402,
@@ -31289,11 +23300,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_3
-
-	local var_21_4 = var_21_3.base.ship_meta_repair
-
-	var_21_4[40403] = {
+	pg.base.ship_meta_repair[40403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40403,
@@ -31303,11 +23310,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_4
-
-	local var_21_5 = var_21_4.base.ship_meta_repair
-
-	var_21_5[40404] = {
+	pg.base.ship_meta_repair[40404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40404,
@@ -31317,11 +23320,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_5
-
-	local var_21_6 = var_21_5.base.ship_meta_repair
-
-	var_21_6[40405] = {
+	pg.base.ship_meta_repair[40405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40405,
@@ -31331,11 +23330,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_6
-
-	local var_21_7 = var_21_6.base.ship_meta_repair
-
-	var_21_7[40406] = {
+	pg.base.ship_meta_repair[40406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40406,
@@ -31345,11 +23340,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_7
-
-	local var_21_8 = var_21_7.base.ship_meta_repair
-
-	var_21_8[40407] = {
+	pg.base.ship_meta_repair[40407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40407,
@@ -31359,11 +23350,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_8
-
-	local var_21_9 = var_21_8.base.ship_meta_repair
-
-	var_21_9[40408] = {
+	pg.base.ship_meta_repair[40408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40408,
@@ -31373,11 +23360,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_9
-
-	local var_21_10 = var_21_9.base.ship_meta_repair
-
-	var_21_10[40409] = {
+	pg.base.ship_meta_repair[40409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40409,
@@ -31387,11 +23370,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_10
-
-	local var_21_11 = var_21_10.base.ship_meta_repair
-
-	var_21_11[40410] = {
+	pg.base.ship_meta_repair[40410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40410,
@@ -31401,11 +23380,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_11
-
-	local var_21_12 = var_21_11.base.ship_meta_repair
-
-	var_21_12[40411] = {
+	pg.base.ship_meta_repair[40411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40411,
@@ -31415,11 +23390,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_12
-
-	local var_21_13 = var_21_12.base.ship_meta_repair
-
-	var_21_13[40412] = {
+	pg.base.ship_meta_repair[40412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40412,
@@ -31429,11 +23400,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_13
-
-	local var_21_14 = var_21_13.base.ship_meta_repair
-
-	var_21_14[40413] = {
+	pg.base.ship_meta_repair[40413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40413,
@@ -31443,11 +23410,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_14
-
-	local var_21_15 = var_21_14.base.ship_meta_repair
-
-	var_21_15[40414] = {
+	pg.base.ship_meta_repair[40414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40414,
@@ -31457,11 +23420,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_15
-
-	local var_21_16 = var_21_15.base.ship_meta_repair
-
-	var_21_16[40415] = {
+	pg.base.ship_meta_repair[40415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40415,
@@ -31471,11 +23430,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_16
-
-	local var_21_17 = var_21_16.base.ship_meta_repair
-
-	var_21_17[40416] = {
+	pg.base.ship_meta_repair[40416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40416,
@@ -31485,11 +23440,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_17
-
-	local var_21_18 = var_21_17.base.ship_meta_repair
-
-	var_21_18[40417] = {
+	pg.base.ship_meta_repair[40417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40417,
@@ -31499,11 +23450,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_18
-
-	local var_21_19 = var_21_18.base.ship_meta_repair
-
-	var_21_19[40418] = {
+	pg.base.ship_meta_repair[40418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40418,
@@ -31513,11 +23460,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_19
-
-	local var_21_20 = var_21_19.base.ship_meta_repair
-
-	var_21_20[40419] = {
+	pg.base.ship_meta_repair[40419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40419,
@@ -31527,11 +23470,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_20
-
-	local var_21_21 = var_21_20.base.ship_meta_repair
-
-	var_21_21[40420] = {
+	pg.base.ship_meta_repair[40420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 40420,
@@ -31541,11 +23480,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_21
-
-	local var_21_22 = var_21_21.base.ship_meta_repair
-
-	var_21_22[41301] = {
+	pg.base.ship_meta_repair[41301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41301,
@@ -31555,11 +23490,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_22
-
-	local var_21_23 = var_21_22.base.ship_meta_repair
-
-	var_21_23[41302] = {
+	pg.base.ship_meta_repair[41302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41302,
@@ -31569,11 +23500,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_23
-
-	local var_21_24 = var_21_23.base.ship_meta_repair
-
-	var_21_24[41303] = {
+	pg.base.ship_meta_repair[41303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41303,
@@ -31583,11 +23510,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_24
-
-	local var_21_25 = var_21_24.base.ship_meta_repair
-
-	var_21_25[41304] = {
+	pg.base.ship_meta_repair[41304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41304,
@@ -31597,11 +23520,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_25
-
-	local var_21_26 = var_21_25.base.ship_meta_repair
-
-	var_21_26[41305] = {
+	pg.base.ship_meta_repair[41305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41305,
@@ -31611,11 +23530,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_26
-
-	local var_21_27 = var_21_26.base.ship_meta_repair
-
-	var_21_27[41306] = {
+	pg.base.ship_meta_repair[41306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41306,
@@ -31625,11 +23540,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_27
-
-	local var_21_28 = var_21_27.base.ship_meta_repair
-
-	var_21_28[41307] = {
+	pg.base.ship_meta_repair[41307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41307,
@@ -31639,11 +23550,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_28
-
-	local var_21_29 = var_21_28.base.ship_meta_repair
-
-	var_21_29[41308] = {
+	pg.base.ship_meta_repair[41308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41308,
@@ -31653,11 +23560,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_29
-
-	local var_21_30 = var_21_29.base.ship_meta_repair
-
-	var_21_30[41309] = {
+	pg.base.ship_meta_repair[41309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41309,
@@ -31667,11 +23570,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_30
-
-	local var_21_31 = var_21_30.base.ship_meta_repair
-
-	var_21_31[41310] = {
+	pg.base.ship_meta_repair[41310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41310,
@@ -31681,11 +23580,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_31
-
-	local var_21_32 = var_21_31.base.ship_meta_repair
-
-	var_21_32[41311] = {
+	pg.base.ship_meta_repair[41311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41311,
@@ -31695,11 +23590,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_32
-
-	local var_21_33 = var_21_32.base.ship_meta_repair
-
-	var_21_33[41312] = {
+	pg.base.ship_meta_repair[41312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41312,
@@ -31709,11 +23600,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_33
-
-	local var_21_34 = var_21_33.base.ship_meta_repair
-
-	var_21_34[41313] = {
+	pg.base.ship_meta_repair[41313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41313,
@@ -31723,11 +23610,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_34
-
-	local var_21_35 = var_21_34.base.ship_meta_repair
-
-	var_21_35[41314] = {
+	pg.base.ship_meta_repair[41314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41314,
@@ -31737,11 +23620,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_35
-
-	local var_21_36 = var_21_35.base.ship_meta_repair
-
-	var_21_36[41315] = {
+	pg.base.ship_meta_repair[41315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41315,
@@ -31751,11 +23630,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_36
-
-	local var_21_37 = var_21_36.base.ship_meta_repair
-
-	var_21_37[41316] = {
+	pg.base.ship_meta_repair[41316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41316,
@@ -31765,11 +23640,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_37
-
-	local var_21_38 = var_21_37.base.ship_meta_repair
-
-	var_21_38[41317] = {
+	pg.base.ship_meta_repair[41317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41317,
@@ -31779,11 +23650,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_38
-
-	local var_21_39 = var_21_38.base.ship_meta_repair
-
-	var_21_39[41318] = {
+	pg.base.ship_meta_repair[41318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41318,
@@ -31793,11 +23660,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_39
-
-	local var_21_40 = var_21_39.base.ship_meta_repair
-
-	var_21_40[41319] = {
+	pg.base.ship_meta_repair[41319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41319,
@@ -31807,11 +23670,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_40
-
-	local var_21_41 = var_21_40.base.ship_meta_repair
-
-	var_21_41[41320] = {
+	pg.base.ship_meta_repair[41320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41320,
@@ -31821,11 +23680,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_41
-
-	local var_21_42 = var_21_41.base.ship_meta_repair
-
-	var_21_42[41321] = {
+	pg.base.ship_meta_repair[41321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41321,
@@ -31835,11 +23690,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_42
-
-	local var_21_43 = var_21_42.base.ship_meta_repair
-
-	var_21_43[41322] = {
+	pg.base.ship_meta_repair[41322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41322,
@@ -31849,11 +23700,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_43
-
-	local var_21_44 = var_21_43.base.ship_meta_repair
-
-	var_21_44[41323] = {
+	pg.base.ship_meta_repair[41323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41323,
@@ -31863,11 +23710,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_44
-
-	local var_21_45 = var_21_44.base.ship_meta_repair
-
-	var_21_45[41324] = {
+	pg.base.ship_meta_repair[41324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41324,
@@ -31877,11 +23720,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_45
-
-	local var_21_46 = var_21_45.base.ship_meta_repair
-
-	var_21_46[41325] = {
+	pg.base.ship_meta_repair[41325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41325,
@@ -31891,11 +23730,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_46
-
-	local var_21_47 = var_21_46.base.ship_meta_repair
-
-	var_21_47[41326] = {
+	pg.base.ship_meta_repair[41326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41326,
@@ -31905,11 +23740,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_47
-
-	local var_21_48 = var_21_47.base.ship_meta_repair
-
-	var_21_48[41327] = {
+	pg.base.ship_meta_repair[41327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41327,
@@ -31919,11 +23750,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_48
-
-	local var_21_49 = var_21_48.base.ship_meta_repair
-
-	var_21_49[41328] = {
+	pg.base.ship_meta_repair[41328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41328,
@@ -31933,11 +23760,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_49
-
-	local var_21_50 = var_21_49.base.ship_meta_repair
-
-	var_21_50[41329] = {
+	pg.base.ship_meta_repair[41329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41329,
@@ -31947,11 +23770,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_50
-
-	local var_21_51 = var_21_50.base.ship_meta_repair
-
-	var_21_51[41330] = {
+	pg.base.ship_meta_repair[41330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 41330,
@@ -31961,11 +23780,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_51
-
-	local var_21_52 = var_21_51.base.ship_meta_repair
-
-	var_21_52[41401] = {
+	pg.base.ship_meta_repair[41401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41401,
@@ -31975,11 +23790,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_52
-
-	local var_21_53 = var_21_52.base.ship_meta_repair
-
-	var_21_53[41402] = {
+	pg.base.ship_meta_repair[41402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41402,
@@ -31989,11 +23800,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_53
-
-	local var_21_54 = var_21_53.base.ship_meta_repair
-
-	var_21_54[41403] = {
+	pg.base.ship_meta_repair[41403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41403,
@@ -32003,11 +23810,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_54
-
-	local var_21_55 = var_21_54.base.ship_meta_repair
-
-	var_21_55[41404] = {
+	pg.base.ship_meta_repair[41404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41404,
@@ -32017,11 +23820,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_55
-
-	local var_21_56 = var_21_55.base.ship_meta_repair
-
-	var_21_56[41405] = {
+	pg.base.ship_meta_repair[41405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41405,
@@ -32031,11 +23830,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_56
-
-	local var_21_57 = var_21_56.base.ship_meta_repair
-
-	var_21_57[41406] = {
+	pg.base.ship_meta_repair[41406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41406,
@@ -32045,11 +23840,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_57
-
-	local var_21_58 = var_21_57.base.ship_meta_repair
-
-	var_21_58[41407] = {
+	pg.base.ship_meta_repair[41407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41407,
@@ -32059,11 +23850,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_58
-
-	local var_21_59 = var_21_58.base.ship_meta_repair
-
-	var_21_59[41408] = {
+	pg.base.ship_meta_repair[41408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41408,
@@ -32073,11 +23860,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_59
-
-	local var_21_60 = var_21_59.base.ship_meta_repair
-
-	var_21_60[41409] = {
+	pg.base.ship_meta_repair[41409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41409,
@@ -32087,11 +23870,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_60
-
-	local var_21_61 = var_21_60.base.ship_meta_repair
-
-	var_21_61[41410] = {
+	pg.base.ship_meta_repair[41410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41410,
@@ -32101,11 +23880,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_61
-
-	local var_21_62 = var_21_61.base.ship_meta_repair
-
-	var_21_62[41411] = {
+	pg.base.ship_meta_repair[41411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41411,
@@ -32115,11 +23890,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_62
-
-	local var_21_63 = var_21_62.base.ship_meta_repair
-
-	var_21_63[41412] = {
+	pg.base.ship_meta_repair[41412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41412,
@@ -32129,11 +23900,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_63
-
-	local var_21_64 = var_21_63.base.ship_meta_repair
-
-	var_21_64[41413] = {
+	pg.base.ship_meta_repair[41413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41413,
@@ -32143,11 +23910,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_64
-
-	local var_21_65 = var_21_64.base.ship_meta_repair
-
-	var_21_65[41414] = {
+	pg.base.ship_meta_repair[41414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41414,
@@ -32157,11 +23920,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_65
-
-	local var_21_66 = var_21_65.base.ship_meta_repair
-
-	var_21_66[41415] = {
+	pg.base.ship_meta_repair[41415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41415,
@@ -32171,11 +23930,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_66
-
-	local var_21_67 = var_21_66.base.ship_meta_repair
-
-	var_21_67[41416] = {
+	pg.base.ship_meta_repair[41416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41416,
@@ -32185,11 +23940,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_67
-
-	local var_21_68 = var_21_67.base.ship_meta_repair
-
-	var_21_68[41417] = {
+	pg.base.ship_meta_repair[41417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41417,
@@ -32199,11 +23950,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_68
-
-	local var_21_69 = var_21_68.base.ship_meta_repair
-
-	var_21_69[41418] = {
+	pg.base.ship_meta_repair[41418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41418,
@@ -32213,11 +23960,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_69
-
-	local var_21_70 = var_21_69.base.ship_meta_repair
-
-	var_21_70[41419] = {
+	pg.base.ship_meta_repair[41419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41419,
@@ -32227,11 +23970,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_70
-
-	local var_21_71 = var_21_70.base.ship_meta_repair
-
-	var_21_71[41420] = {
+	pg.base.ship_meta_repair[41420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 41420,
@@ -32241,11 +23980,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_71
-
-	local var_21_72 = var_21_71.base.ship_meta_repair
-
-	var_21_72[42101] = {
+	pg.base.ship_meta_repair[42101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42101,
@@ -32255,11 +23990,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_72
-
-	local var_21_73 = var_21_72.base.ship_meta_repair
-
-	var_21_73[42102] = {
+	pg.base.ship_meta_repair[42102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42102,
@@ -32269,11 +24000,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_73
-
-	local var_21_74 = var_21_73.base.ship_meta_repair
-
-	var_21_74[42103] = {
+	pg.base.ship_meta_repair[42103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42103,
@@ -32283,11 +24010,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_74
-
-	local var_21_75 = var_21_74.base.ship_meta_repair
-
-	var_21_75[42104] = {
+	pg.base.ship_meta_repair[42104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42104,
@@ -32297,11 +24020,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_75
-
-	local var_21_76 = var_21_75.base.ship_meta_repair
-
-	var_21_76[42105] = {
+	pg.base.ship_meta_repair[42105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42105,
@@ -32311,11 +24030,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_76
-
-	local var_21_77 = var_21_76.base.ship_meta_repair
-
-	var_21_77[42106] = {
+	pg.base.ship_meta_repair[42106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42106,
@@ -32325,11 +24040,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_77
-
-	local var_21_78 = var_21_77.base.ship_meta_repair
-
-	var_21_78[42107] = {
+	pg.base.ship_meta_repair[42107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42107,
@@ -32339,11 +24050,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_78
-
-	local var_21_79 = var_21_78.base.ship_meta_repair
-
-	var_21_79[42108] = {
+	pg.base.ship_meta_repair[42108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42108,
@@ -32353,11 +24060,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_79
-
-	local var_21_80 = var_21_79.base.ship_meta_repair
-
-	var_21_80[42109] = {
+	pg.base.ship_meta_repair[42109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42109,
@@ -32367,11 +24070,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_80
-
-	local var_21_81 = var_21_80.base.ship_meta_repair
-
-	var_21_81[42110] = {
+	pg.base.ship_meta_repair[42110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42110,
@@ -32381,11 +24080,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_81
-
-	local var_21_82 = var_21_81.base.ship_meta_repair
-
-	var_21_82[42111] = {
+	pg.base.ship_meta_repair[42111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42111,
@@ -32395,11 +24090,7 @@ end)()
 			2
 		}
 	}
-	pg = var_21_82
-
-	local var_21_83 = var_21_82.base.ship_meta_repair
-
-	var_21_83[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42112,
@@ -32409,11 +24100,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_83
-
-	local var_21_84 = var_21_83.base.ship_meta_repair
-
-	var_21_84[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42113,
@@ -32423,11 +24110,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_84
-
-	local var_21_85 = var_21_84.base.ship_meta_repair
-
-	var_21_85[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42114,
@@ -32437,11 +24120,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_85
-
-	local var_21_86 = var_21_85.base.ship_meta_repair
-
-	var_21_86[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42115,
@@ -32451,11 +24130,7 @@ end)()
 			3
 		}
 	}
-	pg = var_21_86
-
-	local var_21_87 = var_21_86.base.ship_meta_repair
-
-	var_21_87[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42116,
@@ -32465,11 +24140,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_87
-
-	local var_21_88 = var_21_87.base.ship_meta_repair
-
-	var_21_88[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42117,
@@ -32479,11 +24150,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_88
-
-	local var_21_89 = var_21_88.base.ship_meta_repair
-
-	var_21_89[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42118,
@@ -32493,11 +24160,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_89
-
-	local var_21_90 = var_21_89.base.ship_meta_repair
-
-	var_21_90[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42119,
@@ -32507,11 +24170,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_90
-
-	local var_21_91 = var_21_90.base.ship_meta_repair
-
-	var_21_91[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 42120,
@@ -32521,11 +24180,7 @@ end)()
 			4
 		}
 	}
-	pg = var_21_91
-
-	local var_21_92 = var_21_91.base.ship_meta_repair
-
-	var_21_92[42201] = {
+	pg.base.ship_meta_repair[42201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42201,
@@ -32535,11 +24190,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_92
-
-	local var_21_93 = var_21_92.base.ship_meta_repair
-
-	var_21_93[42202] = {
+	pg.base.ship_meta_repair[42202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42202,
@@ -32549,11 +24200,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_93
-
-	local var_21_94 = var_21_93.base.ship_meta_repair
-
-	var_21_94[42203] = {
+	pg.base.ship_meta_repair[42203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42203,
@@ -32563,11 +24210,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_94
-
-	local var_21_95 = var_21_94.base.ship_meta_repair
-
-	var_21_95[42204] = {
+	pg.base.ship_meta_repair[42204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42204,
@@ -32577,11 +24220,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_95
-
-	local var_21_96 = var_21_95.base.ship_meta_repair
-
-	var_21_96[42205] = {
+	pg.base.ship_meta_repair[42205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42205,
@@ -32591,11 +24230,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_96
-
-	local var_21_97 = var_21_96.base.ship_meta_repair
-
-	var_21_97[42206] = {
+	pg.base.ship_meta_repair[42206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42206,
@@ -32605,11 +24240,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_97
-
-	local var_21_98 = var_21_97.base.ship_meta_repair
-
-	var_21_98[42207] = {
+	pg.base.ship_meta_repair[42207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42207,
@@ -32619,8 +24250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_21_98
-	var_21_98.base.ship_meta_repair[42208] = {
+	pg.base.ship_meta_repair[42208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42208,
@@ -32634,11 +24264,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_22_0 = var_1_10000.base.ship_meta_repair
-
-	var_22_0[42209] = {
+	pg.base.ship_meta_repair[42209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42209,
@@ -32648,11 +24274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_0
-
-	local var_22_1 = var_22_0.base.ship_meta_repair
-
-	var_22_1[42210] = {
+	pg.base.ship_meta_repair[42210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42210,
@@ -32662,11 +24284,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_1
-
-	local var_22_2 = var_22_1.base.ship_meta_repair
-
-	var_22_2[42211] = {
+	pg.base.ship_meta_repair[42211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42211,
@@ -32676,11 +24294,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_2
-
-	local var_22_3 = var_22_2.base.ship_meta_repair
-
-	var_22_3[42212] = {
+	pg.base.ship_meta_repair[42212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42212,
@@ -32690,11 +24304,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_3
-
-	local var_22_4 = var_22_3.base.ship_meta_repair
-
-	var_22_4[42213] = {
+	pg.base.ship_meta_repair[42213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42213,
@@ -32704,11 +24314,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_4
-
-	local var_22_5 = var_22_4.base.ship_meta_repair
-
-	var_22_5[42214] = {
+	pg.base.ship_meta_repair[42214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42214,
@@ -32718,11 +24324,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_5
-
-	local var_22_6 = var_22_5.base.ship_meta_repair
-
-	var_22_6[42215] = {
+	pg.base.ship_meta_repair[42215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42215,
@@ -32732,11 +24334,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_6
-
-	local var_22_7 = var_22_6.base.ship_meta_repair
-
-	var_22_7[42216] = {
+	pg.base.ship_meta_repair[42216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42216,
@@ -32746,11 +24344,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_7
-
-	local var_22_8 = var_22_7.base.ship_meta_repair
-
-	var_22_8[42217] = {
+	pg.base.ship_meta_repair[42217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42217,
@@ -32760,11 +24354,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_8
-
-	local var_22_9 = var_22_8.base.ship_meta_repair
-
-	var_22_9[42218] = {
+	pg.base.ship_meta_repair[42218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42218,
@@ -32774,11 +24364,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_9
-
-	local var_22_10 = var_22_9.base.ship_meta_repair
-
-	var_22_10[42219] = {
+	pg.base.ship_meta_repair[42219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42219,
@@ -32788,11 +24374,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_10
-
-	local var_22_11 = var_22_10.base.ship_meta_repair
-
-	var_22_11[42220] = {
+	pg.base.ship_meta_repair[42220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 42220,
@@ -32802,11 +24384,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_11
-
-	local var_22_12 = var_22_11.base.ship_meta_repair
-
-	var_22_12[42401] = {
+	pg.base.ship_meta_repair[42401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42401,
@@ -32816,11 +24394,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_12
-
-	local var_22_13 = var_22_12.base.ship_meta_repair
-
-	var_22_13[42402] = {
+	pg.base.ship_meta_repair[42402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42402,
@@ -32830,11 +24404,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_13
-
-	local var_22_14 = var_22_13.base.ship_meta_repair
-
-	var_22_14[42403] = {
+	pg.base.ship_meta_repair[42403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42403,
@@ -32844,11 +24414,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_14
-
-	local var_22_15 = var_22_14.base.ship_meta_repair
-
-	var_22_15[42404] = {
+	pg.base.ship_meta_repair[42404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42404,
@@ -32858,11 +24424,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_15
-
-	local var_22_16 = var_22_15.base.ship_meta_repair
-
-	var_22_16[42405] = {
+	pg.base.ship_meta_repair[42405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42405,
@@ -32872,11 +24434,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_16
-
-	local var_22_17 = var_22_16.base.ship_meta_repair
-
-	var_22_17[42406] = {
+	pg.base.ship_meta_repair[42406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42406,
@@ -32886,11 +24444,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_17
-
-	local var_22_18 = var_22_17.base.ship_meta_repair
-
-	var_22_18[42407] = {
+	pg.base.ship_meta_repair[42407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42407,
@@ -32900,11 +24454,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_18
-
-	local var_22_19 = var_22_18.base.ship_meta_repair
-
-	var_22_19[42408] = {
+	pg.base.ship_meta_repair[42408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42408,
@@ -32914,11 +24464,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_19
-
-	local var_22_20 = var_22_19.base.ship_meta_repair
-
-	var_22_20[42409] = {
+	pg.base.ship_meta_repair[42409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42409,
@@ -32928,11 +24474,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_20
-
-	local var_22_21 = var_22_20.base.ship_meta_repair
-
-	var_22_21[42410] = {
+	pg.base.ship_meta_repair[42410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 42410,
@@ -32942,11 +24484,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_21
-
-	local var_22_22 = var_22_21.base.ship_meta_repair
-
-	var_22_22[43101] = {
+	pg.base.ship_meta_repair[43101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43101,
@@ -32956,11 +24494,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_22
-
-	local var_22_23 = var_22_22.base.ship_meta_repair
-
-	var_22_23[43102] = {
+	pg.base.ship_meta_repair[43102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43102,
@@ -32970,11 +24504,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_23
-
-	local var_22_24 = var_22_23.base.ship_meta_repair
-
-	var_22_24[43103] = {
+	pg.base.ship_meta_repair[43103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43103,
@@ -32984,11 +24514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_24
-
-	local var_22_25 = var_22_24.base.ship_meta_repair
-
-	var_22_25[43104] = {
+	pg.base.ship_meta_repair[43104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43104,
@@ -32998,11 +24524,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_25
-
-	local var_22_26 = var_22_25.base.ship_meta_repair
-
-	var_22_26[43105] = {
+	pg.base.ship_meta_repair[43105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43105,
@@ -33012,11 +24534,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_26
-
-	local var_22_27 = var_22_26.base.ship_meta_repair
-
-	var_22_27[43106] = {
+	pg.base.ship_meta_repair[43106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43106,
@@ -33026,11 +24544,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_27
-
-	local var_22_28 = var_22_27.base.ship_meta_repair
-
-	var_22_28[43107] = {
+	pg.base.ship_meta_repair[43107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43107,
@@ -33040,11 +24554,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_28
-
-	local var_22_29 = var_22_28.base.ship_meta_repair
-
-	var_22_29[43108] = {
+	pg.base.ship_meta_repair[43108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43108,
@@ -33054,11 +24564,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_29
-
-	local var_22_30 = var_22_29.base.ship_meta_repair
-
-	var_22_30[43109] = {
+	pg.base.ship_meta_repair[43109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43109,
@@ -33068,11 +24574,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_30
-
-	local var_22_31 = var_22_30.base.ship_meta_repair
-
-	var_22_31[43110] = {
+	pg.base.ship_meta_repair[43110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43110,
@@ -33082,11 +24584,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_31
-
-	local var_22_32 = var_22_31.base.ship_meta_repair
-
-	var_22_32[43111] = {
+	pg.base.ship_meta_repair[43111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43111,
@@ -33096,11 +24594,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_32
-
-	local var_22_33 = var_22_32.base.ship_meta_repair
-
-	var_22_33[43112] = {
+	pg.base.ship_meta_repair[43112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43112,
@@ -33110,11 +24604,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_33
-
-	local var_22_34 = var_22_33.base.ship_meta_repair
-
-	var_22_34[43113] = {
+	pg.base.ship_meta_repair[43113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43113,
@@ -33124,11 +24614,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_34
-
-	local var_22_35 = var_22_34.base.ship_meta_repair
-
-	var_22_35[43114] = {
+	pg.base.ship_meta_repair[43114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43114,
@@ -33138,11 +24624,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_35
-
-	local var_22_36 = var_22_35.base.ship_meta_repair
-
-	var_22_36[43115] = {
+	pg.base.ship_meta_repair[43115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43115,
@@ -33152,11 +24634,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_36
-
-	local var_22_37 = var_22_36.base.ship_meta_repair
-
-	var_22_37[43116] = {
+	pg.base.ship_meta_repair[43116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43116,
@@ -33166,11 +24644,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_37
-
-	local var_22_38 = var_22_37.base.ship_meta_repair
-
-	var_22_38[43117] = {
+	pg.base.ship_meta_repair[43117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43117,
@@ -33180,11 +24654,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_38
-
-	local var_22_39 = var_22_38.base.ship_meta_repair
-
-	var_22_39[43118] = {
+	pg.base.ship_meta_repair[43118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43118,
@@ -33194,11 +24664,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_39
-
-	local var_22_40 = var_22_39.base.ship_meta_repair
-
-	var_22_40[43119] = {
+	pg.base.ship_meta_repair[43119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43119,
@@ -33208,11 +24674,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_40
-
-	local var_22_41 = var_22_40.base.ship_meta_repair
-
-	var_22_41[43120] = {
+	pg.base.ship_meta_repair[43120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 43120,
@@ -33222,11 +24684,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_41
-
-	local var_22_42 = var_22_41.base.ship_meta_repair
-
-	var_22_42[43201] = {
+	pg.base.ship_meta_repair[43201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43201,
@@ -33236,11 +24694,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_42
-
-	local var_22_43 = var_22_42.base.ship_meta_repair
-
-	var_22_43[43202] = {
+	pg.base.ship_meta_repair[43202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43202,
@@ -33250,11 +24704,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_43
-
-	local var_22_44 = var_22_43.base.ship_meta_repair
-
-	var_22_44[43203] = {
+	pg.base.ship_meta_repair[43203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43203,
@@ -33264,11 +24714,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_44
-
-	local var_22_45 = var_22_44.base.ship_meta_repair
-
-	var_22_45[43204] = {
+	pg.base.ship_meta_repair[43204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43204,
@@ -33278,11 +24724,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_45
-
-	local var_22_46 = var_22_45.base.ship_meta_repair
-
-	var_22_46[43205] = {
+	pg.base.ship_meta_repair[43205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43205,
@@ -33292,11 +24734,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_46
-
-	local var_22_47 = var_22_46.base.ship_meta_repair
-
-	var_22_47[43206] = {
+	pg.base.ship_meta_repair[43206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43206,
@@ -33306,11 +24744,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_47
-
-	local var_22_48 = var_22_47.base.ship_meta_repair
-
-	var_22_48[43207] = {
+	pg.base.ship_meta_repair[43207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43207,
@@ -33320,11 +24754,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_48
-
-	local var_22_49 = var_22_48.base.ship_meta_repair
-
-	var_22_49[43208] = {
+	pg.base.ship_meta_repair[43208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43208,
@@ -33334,11 +24764,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_49
-
-	local var_22_50 = var_22_49.base.ship_meta_repair
-
-	var_22_50[43209] = {
+	pg.base.ship_meta_repair[43209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43209,
@@ -33348,11 +24774,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_50
-
-	local var_22_51 = var_22_50.base.ship_meta_repair
-
-	var_22_51[43210] = {
+	pg.base.ship_meta_repair[43210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43210,
@@ -33362,11 +24784,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_51
-
-	local var_22_52 = var_22_51.base.ship_meta_repair
-
-	var_22_52[43211] = {
+	pg.base.ship_meta_repair[43211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43211,
@@ -33376,11 +24794,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_52
-
-	local var_22_53 = var_22_52.base.ship_meta_repair
-
-	var_22_53[43212] = {
+	pg.base.ship_meta_repair[43212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43212,
@@ -33390,11 +24804,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_53
-
-	local var_22_54 = var_22_53.base.ship_meta_repair
-
-	var_22_54[43213] = {
+	pg.base.ship_meta_repair[43213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43213,
@@ -33404,11 +24814,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_54
-
-	local var_22_55 = var_22_54.base.ship_meta_repair
-
-	var_22_55[43214] = {
+	pg.base.ship_meta_repair[43214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43214,
@@ -33418,11 +24824,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_55
-
-	local var_22_56 = var_22_55.base.ship_meta_repair
-
-	var_22_56[43215] = {
+	pg.base.ship_meta_repair[43215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43215,
@@ -33432,11 +24834,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_56
-
-	local var_22_57 = var_22_56.base.ship_meta_repair
-
-	var_22_57[43216] = {
+	pg.base.ship_meta_repair[43216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43216,
@@ -33446,11 +24844,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_57
-
-	local var_22_58 = var_22_57.base.ship_meta_repair
-
-	var_22_58[43217] = {
+	pg.base.ship_meta_repair[43217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43217,
@@ -33460,11 +24854,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_58
-
-	local var_22_59 = var_22_58.base.ship_meta_repair
-
-	var_22_59[43218] = {
+	pg.base.ship_meta_repair[43218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43218,
@@ -33474,11 +24864,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_59
-
-	local var_22_60 = var_22_59.base.ship_meta_repair
-
-	var_22_60[43219] = {
+	pg.base.ship_meta_repair[43219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43219,
@@ -33488,11 +24874,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_60
-
-	local var_22_61 = var_22_60.base.ship_meta_repair
-
-	var_22_61[43220] = {
+	pg.base.ship_meta_repair[43220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 43220,
@@ -33502,11 +24884,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_61
-
-	local var_22_62 = var_22_61.base.ship_meta_repair
-
-	var_22_62[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43401,
@@ -33516,11 +24894,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_62
-
-	local var_22_63 = var_22_62.base.ship_meta_repair
-
-	var_22_63[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43402,
@@ -33530,11 +24904,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_63
-
-	local var_22_64 = var_22_63.base.ship_meta_repair
-
-	var_22_64[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43403,
@@ -33544,11 +24914,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_64
-
-	local var_22_65 = var_22_64.base.ship_meta_repair
-
-	var_22_65[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43404,
@@ -33558,11 +24924,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_65
-
-	local var_22_66 = var_22_65.base.ship_meta_repair
-
-	var_22_66[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43405,
@@ -33572,11 +24934,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_66
-
-	local var_22_67 = var_22_66.base.ship_meta_repair
-
-	var_22_67[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43406,
@@ -33586,11 +24944,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_67
-
-	local var_22_68 = var_22_67.base.ship_meta_repair
-
-	var_22_68[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43407,
@@ -33600,11 +24954,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_68
-
-	local var_22_69 = var_22_68.base.ship_meta_repair
-
-	var_22_69[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43408,
@@ -33614,11 +24964,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_69
-
-	local var_22_70 = var_22_69.base.ship_meta_repair
-
-	var_22_70[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43409,
@@ -33628,11 +24974,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_70
-
-	local var_22_71 = var_22_70.base.ship_meta_repair
-
-	var_22_71[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 43410,
@@ -33642,11 +24984,7 @@ end)()
 			5
 		}
 	}
-	pg = var_22_71
-
-	local var_22_72 = var_22_71.base.ship_meta_repair
-
-	var_22_72[44101] = {
+	pg.base.ship_meta_repair[44101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44101,
@@ -33656,11 +24994,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_72
-
-	local var_22_73 = var_22_72.base.ship_meta_repair
-
-	var_22_73[44102] = {
+	pg.base.ship_meta_repair[44102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44102,
@@ -33670,11 +25004,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_73
-
-	local var_22_74 = var_22_73.base.ship_meta_repair
-
-	var_22_74[44103] = {
+	pg.base.ship_meta_repair[44103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44103,
@@ -33684,11 +25014,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_74
-
-	local var_22_75 = var_22_74.base.ship_meta_repair
-
-	var_22_75[44104] = {
+	pg.base.ship_meta_repair[44104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44104,
@@ -33698,11 +25024,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_75
-
-	local var_22_76 = var_22_75.base.ship_meta_repair
-
-	var_22_76[44105] = {
+	pg.base.ship_meta_repair[44105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44105,
@@ -33712,11 +25034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_76
-
-	local var_22_77 = var_22_76.base.ship_meta_repair
-
-	var_22_77[44106] = {
+	pg.base.ship_meta_repair[44106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44106,
@@ -33726,11 +25044,7 @@ end)()
 			1
 		}
 	}
-	pg = var_22_77
-
-	local var_22_78 = var_22_77.base.ship_meta_repair
-
-	var_22_78[44107] = {
+	pg.base.ship_meta_repair[44107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44107,
@@ -33740,11 +25054,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_78
-
-	local var_22_79 = var_22_78.base.ship_meta_repair
-
-	var_22_79[44108] = {
+	pg.base.ship_meta_repair[44108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44108,
@@ -33754,11 +25064,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_79
-
-	local var_22_80 = var_22_79.base.ship_meta_repair
-
-	var_22_80[44109] = {
+	pg.base.ship_meta_repair[44109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44109,
@@ -33768,11 +25074,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_80
-
-	local var_22_81 = var_22_80.base.ship_meta_repair
-
-	var_22_81[44110] = {
+	pg.base.ship_meta_repair[44110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44110,
@@ -33782,11 +25084,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_81
-
-	local var_22_82 = var_22_81.base.ship_meta_repair
-
-	var_22_82[44111] = {
+	pg.base.ship_meta_repair[44111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44111,
@@ -33796,11 +25094,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_82
-
-	local var_22_83 = var_22_82.base.ship_meta_repair
-
-	var_22_83[44112] = {
+	pg.base.ship_meta_repair[44112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44112,
@@ -33810,11 +25104,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_83
-
-	local var_22_84 = var_22_83.base.ship_meta_repair
-
-	var_22_84[44113] = {
+	pg.base.ship_meta_repair[44113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44113,
@@ -33824,11 +25114,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_84
-
-	local var_22_85 = var_22_84.base.ship_meta_repair
-
-	var_22_85[44114] = {
+	pg.base.ship_meta_repair[44114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44114,
@@ -33838,11 +25124,7 @@ end)()
 			2
 		}
 	}
-	pg = var_22_85
-
-	local var_22_86 = var_22_85.base.ship_meta_repair
-
-	var_22_86[44115] = {
+	pg.base.ship_meta_repair[44115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44115,
@@ -33852,11 +25134,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_86
-
-	local var_22_87 = var_22_86.base.ship_meta_repair
-
-	var_22_87[44116] = {
+	pg.base.ship_meta_repair[44116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44116,
@@ -33866,11 +25144,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_87
-
-	local var_22_88 = var_22_87.base.ship_meta_repair
-
-	var_22_88[44117] = {
+	pg.base.ship_meta_repair[44117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44117,
@@ -33880,11 +25154,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_88
-
-	local var_22_89 = var_22_88.base.ship_meta_repair
-
-	var_22_89[44118] = {
+	pg.base.ship_meta_repair[44118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44118,
@@ -33894,11 +25164,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_89
-
-	local var_22_90 = var_22_89.base.ship_meta_repair
-
-	var_22_90[44119] = {
+	pg.base.ship_meta_repair[44119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44119,
@@ -33908,11 +25174,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_90
-
-	local var_22_91 = var_22_90.base.ship_meta_repair
-
-	var_22_91[44120] = {
+	pg.base.ship_meta_repair[44120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44120,
@@ -33922,11 +25184,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_91
-
-	local var_22_92 = var_22_91.base.ship_meta_repair
-
-	var_22_92[44121] = {
+	pg.base.ship_meta_repair[44121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44121,
@@ -33936,11 +25194,7 @@ end)()
 			3
 		}
 	}
-	pg = var_22_92
-
-	local var_22_93 = var_22_92.base.ship_meta_repair
-
-	var_22_93[44122] = {
+	pg.base.ship_meta_repair[44122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44122,
@@ -33950,11 +25204,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_93
-
-	local var_22_94 = var_22_93.base.ship_meta_repair
-
-	var_22_94[44123] = {
+	pg.base.ship_meta_repair[44123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44123,
@@ -33964,11 +25214,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_94
-
-	local var_22_95 = var_22_94.base.ship_meta_repair
-
-	var_22_95[44124] = {
+	pg.base.ship_meta_repair[44124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44124,
@@ -33978,11 +25224,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_95
-
-	local var_22_96 = var_22_95.base.ship_meta_repair
-
-	var_22_96[44125] = {
+	pg.base.ship_meta_repair[44125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44125,
@@ -33992,11 +25234,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_96
-
-	local var_22_97 = var_22_96.base.ship_meta_repair
-
-	var_22_97[44126] = {
+	pg.base.ship_meta_repair[44126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44126,
@@ -34006,11 +25244,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_97
-
-	local var_22_98 = var_22_97.base.ship_meta_repair
-
-	var_22_98[44127] = {
+	pg.base.ship_meta_repair[44127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44127,
@@ -34020,8 +25254,7 @@ end)()
 			4
 		}
 	}
-	pg = var_22_98
-	var_22_98.base.ship_meta_repair[44128] = {
+	pg.base.ship_meta_repair[44128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44128,
@@ -34035,11 +25268,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_23_0 = var_1_10000.base.ship_meta_repair
-
-	var_23_0[44129] = {
+	pg.base.ship_meta_repair[44129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44129,
@@ -34049,11 +25278,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_0
-
-	local var_23_1 = var_23_0.base.ship_meta_repair
-
-	var_23_1[44130] = {
+	pg.base.ship_meta_repair[44130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 44130,
@@ -34063,11 +25288,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_1
-
-	local var_23_2 = var_23_1.base.ship_meta_repair
-
-	var_23_2[44401] = {
+	pg.base.ship_meta_repair[44401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44401,
@@ -34077,11 +25298,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_2
-
-	local var_23_3 = var_23_2.base.ship_meta_repair
-
-	var_23_3[44402] = {
+	pg.base.ship_meta_repair[44402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44402,
@@ -34091,11 +25308,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_3
-
-	local var_23_4 = var_23_3.base.ship_meta_repair
-
-	var_23_4[44403] = {
+	pg.base.ship_meta_repair[44403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44403,
@@ -34105,11 +25318,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_4
-
-	local var_23_5 = var_23_4.base.ship_meta_repair
-
-	var_23_5[44404] = {
+	pg.base.ship_meta_repair[44404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44404,
@@ -34119,11 +25328,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_5
-
-	local var_23_6 = var_23_5.base.ship_meta_repair
-
-	var_23_6[44405] = {
+	pg.base.ship_meta_repair[44405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44405,
@@ -34133,11 +25338,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_6
-
-	local var_23_7 = var_23_6.base.ship_meta_repair
-
-	var_23_7[44406] = {
+	pg.base.ship_meta_repair[44406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44406,
@@ -34147,11 +25348,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_7
-
-	local var_23_8 = var_23_7.base.ship_meta_repair
-
-	var_23_8[44407] = {
+	pg.base.ship_meta_repair[44407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44407,
@@ -34161,11 +25358,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_8
-
-	local var_23_9 = var_23_8.base.ship_meta_repair
-
-	var_23_9[44408] = {
+	pg.base.ship_meta_repair[44408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44408,
@@ -34175,11 +25368,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_9
-
-	local var_23_10 = var_23_9.base.ship_meta_repair
-
-	var_23_10[44409] = {
+	pg.base.ship_meta_repair[44409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44409,
@@ -34189,11 +25378,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_10
-
-	local var_23_11 = var_23_10.base.ship_meta_repair
-
-	var_23_11[44410] = {
+	pg.base.ship_meta_repair[44410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44410,
@@ -34203,11 +25388,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_11
-
-	local var_23_12 = var_23_11.base.ship_meta_repair
-
-	var_23_12[44411] = {
+	pg.base.ship_meta_repair[44411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44411,
@@ -34217,11 +25398,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_12
-
-	local var_23_13 = var_23_12.base.ship_meta_repair
-
-	var_23_13[44412] = {
+	pg.base.ship_meta_repair[44412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44412,
@@ -34231,11 +25408,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_13
-
-	local var_23_14 = var_23_13.base.ship_meta_repair
-
-	var_23_14[44413] = {
+	pg.base.ship_meta_repair[44413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44413,
@@ -34245,11 +25418,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_14
-
-	local var_23_15 = var_23_14.base.ship_meta_repair
-
-	var_23_15[44414] = {
+	pg.base.ship_meta_repair[44414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44414,
@@ -34259,11 +25428,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_15
-
-	local var_23_16 = var_23_15.base.ship_meta_repair
-
-	var_23_16[44415] = {
+	pg.base.ship_meta_repair[44415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44415,
@@ -34273,11 +25438,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_16
-
-	local var_23_17 = var_23_16.base.ship_meta_repair
-
-	var_23_17[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44416,
@@ -34287,11 +25448,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_17
-
-	local var_23_18 = var_23_17.base.ship_meta_repair
-
-	var_23_18[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44417,
@@ -34301,11 +25458,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_18
-
-	local var_23_19 = var_23_18.base.ship_meta_repair
-
-	var_23_19[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44418,
@@ -34315,11 +25468,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_19
-
-	local var_23_20 = var_23_19.base.ship_meta_repair
-
-	var_23_20[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44419,
@@ -34329,11 +25478,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_20
-
-	local var_23_21 = var_23_20.base.ship_meta_repair
-
-	var_23_21[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 44420,
@@ -34343,11 +25488,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_21
-
-	local var_23_22 = var_23_21.base.ship_meta_repair
-
-	var_23_22[45301] = {
+	pg.base.ship_meta_repair[45301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45301,
@@ -34357,11 +25498,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_22
-
-	local var_23_23 = var_23_22.base.ship_meta_repair
-
-	var_23_23[45302] = {
+	pg.base.ship_meta_repair[45302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45302,
@@ -34371,11 +25508,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_23
-
-	local var_23_24 = var_23_23.base.ship_meta_repair
-
-	var_23_24[45303] = {
+	pg.base.ship_meta_repair[45303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45303,
@@ -34385,11 +25518,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_24
-
-	local var_23_25 = var_23_24.base.ship_meta_repair
-
-	var_23_25[45304] = {
+	pg.base.ship_meta_repair[45304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45304,
@@ -34399,11 +25528,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_25
-
-	local var_23_26 = var_23_25.base.ship_meta_repair
-
-	var_23_26[45305] = {
+	pg.base.ship_meta_repair[45305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45305,
@@ -34413,11 +25538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_26
-
-	local var_23_27 = var_23_26.base.ship_meta_repair
-
-	var_23_27[45306] = {
+	pg.base.ship_meta_repair[45306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45306,
@@ -34427,11 +25548,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_27
-
-	local var_23_28 = var_23_27.base.ship_meta_repair
-
-	var_23_28[45307] = {
+	pg.base.ship_meta_repair[45307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45307,
@@ -34441,11 +25558,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_28
-
-	local var_23_29 = var_23_28.base.ship_meta_repair
-
-	var_23_29[45308] = {
+	pg.base.ship_meta_repair[45308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45308,
@@ -34455,11 +25568,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_29
-
-	local var_23_30 = var_23_29.base.ship_meta_repair
-
-	var_23_30[45309] = {
+	pg.base.ship_meta_repair[45309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45309,
@@ -34469,11 +25578,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_30
-
-	local var_23_31 = var_23_30.base.ship_meta_repair
-
-	var_23_31[45310] = {
+	pg.base.ship_meta_repair[45310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45310,
@@ -34483,11 +25588,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_31
-
-	local var_23_32 = var_23_31.base.ship_meta_repair
-
-	var_23_32[45311] = {
+	pg.base.ship_meta_repair[45311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45311,
@@ -34497,11 +25598,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_32
-
-	local var_23_33 = var_23_32.base.ship_meta_repair
-
-	var_23_33[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45312,
@@ -34511,11 +25608,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_33
-
-	local var_23_34 = var_23_33.base.ship_meta_repair
-
-	var_23_34[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45313,
@@ -34525,11 +25618,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_34
-
-	local var_23_35 = var_23_34.base.ship_meta_repair
-
-	var_23_35[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45314,
@@ -34539,11 +25628,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_35
-
-	local var_23_36 = var_23_35.base.ship_meta_repair
-
-	var_23_36[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45315,
@@ -34553,11 +25638,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_36
-
-	local var_23_37 = var_23_36.base.ship_meta_repair
-
-	var_23_37[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45316,
@@ -34567,11 +25648,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_37
-
-	local var_23_38 = var_23_37.base.ship_meta_repair
-
-	var_23_38[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45317,
@@ -34581,11 +25658,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_38
-
-	local var_23_39 = var_23_38.base.ship_meta_repair
-
-	var_23_39[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45318,
@@ -34595,11 +25668,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_39
-
-	local var_23_40 = var_23_39.base.ship_meta_repair
-
-	var_23_40[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45319,
@@ -34609,11 +25678,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_40
-
-	local var_23_41 = var_23_40.base.ship_meta_repair
-
-	var_23_41[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45320,
@@ -34623,11 +25688,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_41
-
-	local var_23_42 = var_23_41.base.ship_meta_repair
-
-	var_23_42[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45321,
@@ -34637,11 +25698,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_42
-
-	local var_23_43 = var_23_42.base.ship_meta_repair
-
-	var_23_43[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45322,
@@ -34651,11 +25708,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_43
-
-	local var_23_44 = var_23_43.base.ship_meta_repair
-
-	var_23_44[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45323,
@@ -34665,11 +25718,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_44
-
-	local var_23_45 = var_23_44.base.ship_meta_repair
-
-	var_23_45[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45324,
@@ -34679,11 +25728,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_45
-
-	local var_23_46 = var_23_45.base.ship_meta_repair
-
-	var_23_46[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45325,
@@ -34693,11 +25738,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_46
-
-	local var_23_47 = var_23_46.base.ship_meta_repair
-
-	var_23_47[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45326,
@@ -34707,11 +25748,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_47
-
-	local var_23_48 = var_23_47.base.ship_meta_repair
-
-	var_23_48[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45327,
@@ -34721,11 +25758,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_48
-
-	local var_23_49 = var_23_48.base.ship_meta_repair
-
-	var_23_49[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45328,
@@ -34735,11 +25768,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_49
-
-	local var_23_50 = var_23_49.base.ship_meta_repair
-
-	var_23_50[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45329,
@@ -34749,11 +25778,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_50
-
-	local var_23_51 = var_23_50.base.ship_meta_repair
-
-	var_23_51[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 45330,
@@ -34763,11 +25788,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_51
-
-	local var_23_52 = var_23_51.base.ship_meta_repair
-
-	var_23_52[45401] = {
+	pg.base.ship_meta_repair[45401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45401,
@@ -34777,11 +25798,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_52
-
-	local var_23_53 = var_23_52.base.ship_meta_repair
-
-	var_23_53[45402] = {
+	pg.base.ship_meta_repair[45402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45402,
@@ -34791,11 +25808,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_53
-
-	local var_23_54 = var_23_53.base.ship_meta_repair
-
-	var_23_54[45403] = {
+	pg.base.ship_meta_repair[45403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45403,
@@ -34805,11 +25818,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_54
-
-	local var_23_55 = var_23_54.base.ship_meta_repair
-
-	var_23_55[45404] = {
+	pg.base.ship_meta_repair[45404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45404,
@@ -34819,11 +25828,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_55
-
-	local var_23_56 = var_23_55.base.ship_meta_repair
-
-	var_23_56[45405] = {
+	pg.base.ship_meta_repair[45405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45405,
@@ -34833,11 +25838,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_56
-
-	local var_23_57 = var_23_56.base.ship_meta_repair
-
-	var_23_57[45406] = {
+	pg.base.ship_meta_repair[45406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45406,
@@ -34847,11 +25848,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_57
-
-	local var_23_58 = var_23_57.base.ship_meta_repair
-
-	var_23_58[45407] = {
+	pg.base.ship_meta_repair[45407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45407,
@@ -34861,11 +25858,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_58
-
-	local var_23_59 = var_23_58.base.ship_meta_repair
-
-	var_23_59[45408] = {
+	pg.base.ship_meta_repair[45408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45408,
@@ -34875,11 +25868,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_59
-
-	local var_23_60 = var_23_59.base.ship_meta_repair
-
-	var_23_60[45409] = {
+	pg.base.ship_meta_repair[45409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45409,
@@ -34889,11 +25878,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_60
-
-	local var_23_61 = var_23_60.base.ship_meta_repair
-
-	var_23_61[45410] = {
+	pg.base.ship_meta_repair[45410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45410,
@@ -34903,11 +25888,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_61
-
-	local var_23_62 = var_23_61.base.ship_meta_repair
-
-	var_23_62[45411] = {
+	pg.base.ship_meta_repair[45411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45411,
@@ -34917,11 +25898,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_62
-
-	local var_23_63 = var_23_62.base.ship_meta_repair
-
-	var_23_63[45412] = {
+	pg.base.ship_meta_repair[45412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45412,
@@ -34931,11 +25908,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_63
-
-	local var_23_64 = var_23_63.base.ship_meta_repair
-
-	var_23_64[45413] = {
+	pg.base.ship_meta_repair[45413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45413,
@@ -34945,11 +25918,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_64
-
-	local var_23_65 = var_23_64.base.ship_meta_repair
-
-	var_23_65[45414] = {
+	pg.base.ship_meta_repair[45414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45414,
@@ -34959,11 +25928,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_65
-
-	local var_23_66 = var_23_65.base.ship_meta_repair
-
-	var_23_66[45415] = {
+	pg.base.ship_meta_repair[45415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45415,
@@ -34973,11 +25938,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_66
-
-	local var_23_67 = var_23_66.base.ship_meta_repair
-
-	var_23_67[45416] = {
+	pg.base.ship_meta_repair[45416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45416,
@@ -34987,11 +25948,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_67
-
-	local var_23_68 = var_23_67.base.ship_meta_repair
-
-	var_23_68[45417] = {
+	pg.base.ship_meta_repair[45417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45417,
@@ -35001,11 +25958,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_68
-
-	local var_23_69 = var_23_68.base.ship_meta_repair
-
-	var_23_69[45418] = {
+	pg.base.ship_meta_repair[45418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45418,
@@ -35015,11 +25968,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_69
-
-	local var_23_70 = var_23_69.base.ship_meta_repair
-
-	var_23_70[45419] = {
+	pg.base.ship_meta_repair[45419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45419,
@@ -35029,11 +25978,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_70
-
-	local var_23_71 = var_23_70.base.ship_meta_repair
-
-	var_23_71[45420] = {
+	pg.base.ship_meta_repair[45420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 45420,
@@ -35043,11 +25988,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_71
-
-	local var_23_72 = var_23_71.base.ship_meta_repair
-
-	var_23_72[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46101,
@@ -35057,11 +25998,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_72
-
-	local var_23_73 = var_23_72.base.ship_meta_repair
-
-	var_23_73[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46102,
@@ -35071,11 +26008,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_73
-
-	local var_23_74 = var_23_73.base.ship_meta_repair
-
-	var_23_74[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46103,
@@ -35085,11 +26018,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_74
-
-	local var_23_75 = var_23_74.base.ship_meta_repair
-
-	var_23_75[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46104,
@@ -35099,11 +26028,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_75
-
-	local var_23_76 = var_23_75.base.ship_meta_repair
-
-	var_23_76[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46105,
@@ -35113,11 +26038,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_76
-
-	local var_23_77 = var_23_76.base.ship_meta_repair
-
-	var_23_77[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46106,
@@ -35127,11 +26048,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_77
-
-	local var_23_78 = var_23_77.base.ship_meta_repair
-
-	var_23_78[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46107,
@@ -35141,11 +26058,7 @@ end)()
 			1
 		}
 	}
-	pg = var_23_78
-
-	local var_23_79 = var_23_78.base.ship_meta_repair
-
-	var_23_79[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46108,
@@ -35155,11 +26068,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_79
-
-	local var_23_80 = var_23_79.base.ship_meta_repair
-
-	var_23_80[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46109,
@@ -35169,11 +26078,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_80
-
-	local var_23_81 = var_23_80.base.ship_meta_repair
-
-	var_23_81[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46110,
@@ -35183,11 +26088,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_81
-
-	local var_23_82 = var_23_81.base.ship_meta_repair
-
-	var_23_82[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46111,
@@ -35197,11 +26098,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_82
-
-	local var_23_83 = var_23_82.base.ship_meta_repair
-
-	var_23_83[46112] = {
+	pg.base.ship_meta_repair[46112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46112,
@@ -35211,11 +26108,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_83
-
-	local var_23_84 = var_23_83.base.ship_meta_repair
-
-	var_23_84[46113] = {
+	pg.base.ship_meta_repair[46113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46113,
@@ -35225,11 +26118,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_84
-
-	local var_23_85 = var_23_84.base.ship_meta_repair
-
-	var_23_85[46114] = {
+	pg.base.ship_meta_repair[46114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46114,
@@ -35239,11 +26128,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_85
-
-	local var_23_86 = var_23_85.base.ship_meta_repair
-
-	var_23_86[46115] = {
+	pg.base.ship_meta_repair[46115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46115,
@@ -35253,11 +26138,7 @@ end)()
 			2
 		}
 	}
-	pg = var_23_86
-
-	local var_23_87 = var_23_86.base.ship_meta_repair
-
-	var_23_87[46116] = {
+	pg.base.ship_meta_repair[46116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46116,
@@ -35267,11 +26148,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_87
-
-	local var_23_88 = var_23_87.base.ship_meta_repair
-
-	var_23_88[46117] = {
+	pg.base.ship_meta_repair[46117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46117,
@@ -35281,11 +26158,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_88
-
-	local var_23_89 = var_23_88.base.ship_meta_repair
-
-	var_23_89[46118] = {
+	pg.base.ship_meta_repair[46118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46118,
@@ -35295,11 +26168,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_89
-
-	local var_23_90 = var_23_89.base.ship_meta_repair
-
-	var_23_90[46119] = {
+	pg.base.ship_meta_repair[46119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46119,
@@ -35309,11 +26178,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_90
-
-	local var_23_91 = var_23_90.base.ship_meta_repair
-
-	var_23_91[46120] = {
+	pg.base.ship_meta_repair[46120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46120,
@@ -35323,11 +26188,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_91
-
-	local var_23_92 = var_23_91.base.ship_meta_repair
-
-	var_23_92[46121] = {
+	pg.base.ship_meta_repair[46121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46121,
@@ -35337,11 +26198,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_92
-
-	local var_23_93 = var_23_92.base.ship_meta_repair
-
-	var_23_93[46122] = {
+	pg.base.ship_meta_repair[46122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46122,
@@ -35351,11 +26208,7 @@ end)()
 			3
 		}
 	}
-	pg = var_23_93
-
-	local var_23_94 = var_23_93.base.ship_meta_repair
-
-	var_23_94[46123] = {
+	pg.base.ship_meta_repair[46123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46123,
@@ -35365,11 +26218,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_94
-
-	local var_23_95 = var_23_94.base.ship_meta_repair
-
-	var_23_95[46124] = {
+	pg.base.ship_meta_repair[46124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46124,
@@ -35379,11 +26228,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_95
-
-	local var_23_96 = var_23_95.base.ship_meta_repair
-
-	var_23_96[46125] = {
+	pg.base.ship_meta_repair[46125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46125,
@@ -35393,11 +26238,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_96
-
-	local var_23_97 = var_23_96.base.ship_meta_repair
-
-	var_23_97[46126] = {
+	pg.base.ship_meta_repair[46126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46126,
@@ -35407,11 +26248,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_97
-
-	local var_23_98 = var_23_97.base.ship_meta_repair
-
-	var_23_98[46127] = {
+	pg.base.ship_meta_repair[46127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46127,
@@ -35421,8 +26258,7 @@ end)()
 			4
 		}
 	}
-	pg = var_23_98
-	var_23_98.base.ship_meta_repair[46128] = {
+	pg.base.ship_meta_repair[46128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46128,
@@ -35436,11 +26272,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_24_0 = var_1_10000.base.ship_meta_repair
-
-	var_24_0[46129] = {
+	pg.base.ship_meta_repair[46129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46129,
@@ -35450,11 +26282,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_0
-
-	local var_24_1 = var_24_0.base.ship_meta_repair
-
-	var_24_1[46130] = {
+	pg.base.ship_meta_repair[46130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 46130,
@@ -35464,11 +26292,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_1
-
-	local var_24_2 = var_24_1.base.ship_meta_repair
-
-	var_24_2[46401] = {
+	pg.base.ship_meta_repair[46401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46401,
@@ -35478,11 +26302,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_2
-
-	local var_24_3 = var_24_2.base.ship_meta_repair
-
-	var_24_3[46402] = {
+	pg.base.ship_meta_repair[46402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46402,
@@ -35492,11 +26312,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_3
-
-	local var_24_4 = var_24_3.base.ship_meta_repair
-
-	var_24_4[46403] = {
+	pg.base.ship_meta_repair[46403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46403,
@@ -35506,11 +26322,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_4
-
-	local var_24_5 = var_24_4.base.ship_meta_repair
-
-	var_24_5[46404] = {
+	pg.base.ship_meta_repair[46404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46404,
@@ -35520,11 +26332,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_5
-
-	local var_24_6 = var_24_5.base.ship_meta_repair
-
-	var_24_6[46405] = {
+	pg.base.ship_meta_repair[46405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46405,
@@ -35534,11 +26342,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_6
-
-	local var_24_7 = var_24_6.base.ship_meta_repair
-
-	var_24_7[46406] = {
+	pg.base.ship_meta_repair[46406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46406,
@@ -35548,11 +26352,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_7
-
-	local var_24_8 = var_24_7.base.ship_meta_repair
-
-	var_24_8[46407] = {
+	pg.base.ship_meta_repair[46407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46407,
@@ -35562,11 +26362,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_8
-
-	local var_24_9 = var_24_8.base.ship_meta_repair
-
-	var_24_9[46408] = {
+	pg.base.ship_meta_repair[46408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46408,
@@ -35576,11 +26372,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_9
-
-	local var_24_10 = var_24_9.base.ship_meta_repair
-
-	var_24_10[46409] = {
+	pg.base.ship_meta_repair[46409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46409,
@@ -35590,11 +26382,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_10
-
-	local var_24_11 = var_24_10.base.ship_meta_repair
-
-	var_24_11[46410] = {
+	pg.base.ship_meta_repair[46410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46410,
@@ -35604,11 +26392,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_11
-
-	local var_24_12 = var_24_11.base.ship_meta_repair
-
-	var_24_12[46411] = {
+	pg.base.ship_meta_repair[46411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46411,
@@ -35618,11 +26402,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_12
-
-	local var_24_13 = var_24_12.base.ship_meta_repair
-
-	var_24_13[46412] = {
+	pg.base.ship_meta_repair[46412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46412,
@@ -35632,11 +26412,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_13
-
-	local var_24_14 = var_24_13.base.ship_meta_repair
-
-	var_24_14[46413] = {
+	pg.base.ship_meta_repair[46413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46413,
@@ -35646,11 +26422,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_14
-
-	local var_24_15 = var_24_14.base.ship_meta_repair
-
-	var_24_15[46414] = {
+	pg.base.ship_meta_repair[46414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46414,
@@ -35660,11 +26432,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_15
-
-	local var_24_16 = var_24_15.base.ship_meta_repair
-
-	var_24_16[46415] = {
+	pg.base.ship_meta_repair[46415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46415,
@@ -35674,11 +26442,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_16
-
-	local var_24_17 = var_24_16.base.ship_meta_repair
-
-	var_24_17[46416] = {
+	pg.base.ship_meta_repair[46416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46416,
@@ -35688,11 +26452,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_17
-
-	local var_24_18 = var_24_17.base.ship_meta_repair
-
-	var_24_18[46417] = {
+	pg.base.ship_meta_repair[46417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46417,
@@ -35702,11 +26462,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_18
-
-	local var_24_19 = var_24_18.base.ship_meta_repair
-
-	var_24_19[46418] = {
+	pg.base.ship_meta_repair[46418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46418,
@@ -35716,11 +26472,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_19
-
-	local var_24_20 = var_24_19.base.ship_meta_repair
-
-	var_24_20[46419] = {
+	pg.base.ship_meta_repair[46419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46419,
@@ -35730,11 +26482,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_20
-
-	local var_24_21 = var_24_20.base.ship_meta_repair
-
-	var_24_21[46420] = {
+	pg.base.ship_meta_repair[46420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 46420,
@@ -35744,11 +26492,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_21
-
-	local var_24_22 = var_24_21.base.ship_meta_repair
-
-	var_24_22[47201] = {
+	pg.base.ship_meta_repair[47201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47201,
@@ -35758,11 +26502,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_22
-
-	local var_24_23 = var_24_22.base.ship_meta_repair
-
-	var_24_23[47202] = {
+	pg.base.ship_meta_repair[47202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47202,
@@ -35772,11 +26512,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_23
-
-	local var_24_24 = var_24_23.base.ship_meta_repair
-
-	var_24_24[47203] = {
+	pg.base.ship_meta_repair[47203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47203,
@@ -35786,11 +26522,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_24
-
-	local var_24_25 = var_24_24.base.ship_meta_repair
-
-	var_24_25[47204] = {
+	pg.base.ship_meta_repair[47204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47204,
@@ -35800,11 +26532,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_25
-
-	local var_24_26 = var_24_25.base.ship_meta_repair
-
-	var_24_26[47205] = {
+	pg.base.ship_meta_repair[47205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47205,
@@ -35814,11 +26542,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_26
-
-	local var_24_27 = var_24_26.base.ship_meta_repair
-
-	var_24_27[47206] = {
+	pg.base.ship_meta_repair[47206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47206,
@@ -35828,11 +26552,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_27
-
-	local var_24_28 = var_24_27.base.ship_meta_repair
-
-	var_24_28[47207] = {
+	pg.base.ship_meta_repair[47207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47207,
@@ -35842,11 +26562,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_28
-
-	local var_24_29 = var_24_28.base.ship_meta_repair
-
-	var_24_29[47208] = {
+	pg.base.ship_meta_repair[47208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47208,
@@ -35856,11 +26572,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_29
-
-	local var_24_30 = var_24_29.base.ship_meta_repair
-
-	var_24_30[47209] = {
+	pg.base.ship_meta_repair[47209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47209,
@@ -35870,11 +26582,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_30
-
-	local var_24_31 = var_24_30.base.ship_meta_repair
-
-	var_24_31[47210] = {
+	pg.base.ship_meta_repair[47210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47210,
@@ -35884,11 +26592,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_31
-
-	local var_24_32 = var_24_31.base.ship_meta_repair
-
-	var_24_32[47211] = {
+	pg.base.ship_meta_repair[47211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47211,
@@ -35898,11 +26602,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_32
-
-	local var_24_33 = var_24_32.base.ship_meta_repair
-
-	var_24_33[47212] = {
+	pg.base.ship_meta_repair[47212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47212,
@@ -35912,11 +26612,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_33
-
-	local var_24_34 = var_24_33.base.ship_meta_repair
-
-	var_24_34[47213] = {
+	pg.base.ship_meta_repair[47213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47213,
@@ -35926,11 +26622,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_34
-
-	local var_24_35 = var_24_34.base.ship_meta_repair
-
-	var_24_35[47214] = {
+	pg.base.ship_meta_repair[47214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47214,
@@ -35940,11 +26632,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_35
-
-	local var_24_36 = var_24_35.base.ship_meta_repair
-
-	var_24_36[47215] = {
+	pg.base.ship_meta_repair[47215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47215,
@@ -35954,11 +26642,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_36
-
-	local var_24_37 = var_24_36.base.ship_meta_repair
-
-	var_24_37[47216] = {
+	pg.base.ship_meta_repair[47216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47216,
@@ -35968,11 +26652,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_37
-
-	local var_24_38 = var_24_37.base.ship_meta_repair
-
-	var_24_38[47217] = {
+	pg.base.ship_meta_repair[47217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47217,
@@ -35982,11 +26662,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_38
-
-	local var_24_39 = var_24_38.base.ship_meta_repair
-
-	var_24_39[47218] = {
+	pg.base.ship_meta_repair[47218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47218,
@@ -35996,11 +26672,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_39
-
-	local var_24_40 = var_24_39.base.ship_meta_repair
-
-	var_24_40[47219] = {
+	pg.base.ship_meta_repair[47219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47219,
@@ -36010,11 +26682,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_40
-
-	local var_24_41 = var_24_40.base.ship_meta_repair
-
-	var_24_41[47220] = {
+	pg.base.ship_meta_repair[47220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47220,
@@ -36024,11 +26692,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_41
-
-	local var_24_42 = var_24_41.base.ship_meta_repair
-
-	var_24_42[47221] = {
+	pg.base.ship_meta_repair[47221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47221,
@@ -36038,11 +26702,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_42
-
-	local var_24_43 = var_24_42.base.ship_meta_repair
-
-	var_24_43[47222] = {
+	pg.base.ship_meta_repair[47222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47222,
@@ -36052,11 +26712,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_43
-
-	local var_24_44 = var_24_43.base.ship_meta_repair
-
-	var_24_44[47223] = {
+	pg.base.ship_meta_repair[47223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47223,
@@ -36066,11 +26722,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_44
-
-	local var_24_45 = var_24_44.base.ship_meta_repair
-
-	var_24_45[47224] = {
+	pg.base.ship_meta_repair[47224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47224,
@@ -36080,11 +26732,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_45
-
-	local var_24_46 = var_24_45.base.ship_meta_repair
-
-	var_24_46[47225] = {
+	pg.base.ship_meta_repair[47225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47225,
@@ -36094,11 +26742,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_46
-
-	local var_24_47 = var_24_46.base.ship_meta_repair
-
-	var_24_47[47226] = {
+	pg.base.ship_meta_repair[47226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47226,
@@ -36108,11 +26752,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_47
-
-	local var_24_48 = var_24_47.base.ship_meta_repair
-
-	var_24_48[47227] = {
+	pg.base.ship_meta_repair[47227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47227,
@@ -36122,11 +26762,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_48
-
-	local var_24_49 = var_24_48.base.ship_meta_repair
-
-	var_24_49[47228] = {
+	pg.base.ship_meta_repair[47228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47228,
@@ -36136,11 +26772,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_49
-
-	local var_24_50 = var_24_49.base.ship_meta_repair
-
-	var_24_50[47229] = {
+	pg.base.ship_meta_repair[47229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47229,
@@ -36150,11 +26782,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_50
-
-	local var_24_51 = var_24_50.base.ship_meta_repair
-
-	var_24_51[47230] = {
+	pg.base.ship_meta_repair[47230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 47230,
@@ -36164,11 +26792,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_51
-
-	local var_24_52 = var_24_51.base.ship_meta_repair
-
-	var_24_52[47401] = {
+	pg.base.ship_meta_repair[47401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47401,
@@ -36178,11 +26802,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_52
-
-	local var_24_53 = var_24_52.base.ship_meta_repair
-
-	var_24_53[47402] = {
+	pg.base.ship_meta_repair[47402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47402,
@@ -36192,11 +26812,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_53
-
-	local var_24_54 = var_24_53.base.ship_meta_repair
-
-	var_24_54[47403] = {
+	pg.base.ship_meta_repair[47403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47403,
@@ -36206,11 +26822,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_54
-
-	local var_24_55 = var_24_54.base.ship_meta_repair
-
-	var_24_55[47404] = {
+	pg.base.ship_meta_repair[47404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47404,
@@ -36220,11 +26832,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_55
-
-	local var_24_56 = var_24_55.base.ship_meta_repair
-
-	var_24_56[47405] = {
+	pg.base.ship_meta_repair[47405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47405,
@@ -36234,11 +26842,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_56
-
-	local var_24_57 = var_24_56.base.ship_meta_repair
-
-	var_24_57[47406] = {
+	pg.base.ship_meta_repair[47406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47406,
@@ -36248,11 +26852,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_57
-
-	local var_24_58 = var_24_57.base.ship_meta_repair
-
-	var_24_58[47407] = {
+	pg.base.ship_meta_repair[47407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47407,
@@ -36262,11 +26862,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_58
-
-	local var_24_59 = var_24_58.base.ship_meta_repair
-
-	var_24_59[47408] = {
+	pg.base.ship_meta_repair[47408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47408,
@@ -36276,11 +26872,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_59
-
-	local var_24_60 = var_24_59.base.ship_meta_repair
-
-	var_24_60[47409] = {
+	pg.base.ship_meta_repair[47409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47409,
@@ -36290,11 +26882,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_60
-
-	local var_24_61 = var_24_60.base.ship_meta_repair
-
-	var_24_61[47410] = {
+	pg.base.ship_meta_repair[47410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47410,
@@ -36304,11 +26892,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_61
-
-	local var_24_62 = var_24_61.base.ship_meta_repair
-
-	var_24_62[47411] = {
+	pg.base.ship_meta_repair[47411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47411,
@@ -36318,11 +26902,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_62
-
-	local var_24_63 = var_24_62.base.ship_meta_repair
-
-	var_24_63[47412] = {
+	pg.base.ship_meta_repair[47412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47412,
@@ -36332,11 +26912,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_63
-
-	local var_24_64 = var_24_63.base.ship_meta_repair
-
-	var_24_64[47413] = {
+	pg.base.ship_meta_repair[47413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47413,
@@ -36346,11 +26922,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_64
-
-	local var_24_65 = var_24_64.base.ship_meta_repair
-
-	var_24_65[47414] = {
+	pg.base.ship_meta_repair[47414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47414,
@@ -36360,11 +26932,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_65
-
-	local var_24_66 = var_24_65.base.ship_meta_repair
-
-	var_24_66[47415] = {
+	pg.base.ship_meta_repair[47415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47415,
@@ -36374,11 +26942,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_66
-
-	local var_24_67 = var_24_66.base.ship_meta_repair
-
-	var_24_67[47416] = {
+	pg.base.ship_meta_repair[47416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47416,
@@ -36388,11 +26952,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_67
-
-	local var_24_68 = var_24_67.base.ship_meta_repair
-
-	var_24_68[47417] = {
+	pg.base.ship_meta_repair[47417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47417,
@@ -36402,11 +26962,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_68
-
-	local var_24_69 = var_24_68.base.ship_meta_repair
-
-	var_24_69[47418] = {
+	pg.base.ship_meta_repair[47418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47418,
@@ -36416,11 +26972,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_69
-
-	local var_24_70 = var_24_69.base.ship_meta_repair
-
-	var_24_70[47419] = {
+	pg.base.ship_meta_repair[47419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47419,
@@ -36430,11 +26982,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_70
-
-	local var_24_71 = var_24_70.base.ship_meta_repair
-
-	var_24_71[47420] = {
+	pg.base.ship_meta_repair[47420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 47420,
@@ -36444,11 +26992,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_71
-
-	local var_24_72 = var_24_71.base.ship_meta_repair
-
-	var_24_72[48301] = {
+	pg.base.ship_meta_repair[48301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48301,
@@ -36458,11 +27002,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_72
-
-	local var_24_73 = var_24_72.base.ship_meta_repair
-
-	var_24_73[48302] = {
+	pg.base.ship_meta_repair[48302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48302,
@@ -36472,11 +27012,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_73
-
-	local var_24_74 = var_24_73.base.ship_meta_repair
-
-	var_24_74[48303] = {
+	pg.base.ship_meta_repair[48303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48303,
@@ -36486,11 +27022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_74
-
-	local var_24_75 = var_24_74.base.ship_meta_repair
-
-	var_24_75[48304] = {
+	pg.base.ship_meta_repair[48304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48304,
@@ -36500,11 +27032,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_75
-
-	local var_24_76 = var_24_75.base.ship_meta_repair
-
-	var_24_76[48305] = {
+	pg.base.ship_meta_repair[48305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48305,
@@ -36514,11 +27042,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_76
-
-	local var_24_77 = var_24_76.base.ship_meta_repair
-
-	var_24_77[48306] = {
+	pg.base.ship_meta_repair[48306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48306,
@@ -36528,11 +27052,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_77
-
-	local var_24_78 = var_24_77.base.ship_meta_repair
-
-	var_24_78[48307] = {
+	pg.base.ship_meta_repair[48307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48307,
@@ -36542,11 +27062,7 @@ end)()
 			1
 		}
 	}
-	pg = var_24_78
-
-	local var_24_79 = var_24_78.base.ship_meta_repair
-
-	var_24_79[48308] = {
+	pg.base.ship_meta_repair[48308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48308,
@@ -36556,11 +27072,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_79
-
-	local var_24_80 = var_24_79.base.ship_meta_repair
-
-	var_24_80[48309] = {
+	pg.base.ship_meta_repair[48309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48309,
@@ -36570,11 +27082,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_80
-
-	local var_24_81 = var_24_80.base.ship_meta_repair
-
-	var_24_81[48310] = {
+	pg.base.ship_meta_repair[48310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48310,
@@ -36584,11 +27092,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_81
-
-	local var_24_82 = var_24_81.base.ship_meta_repair
-
-	var_24_82[48311] = {
+	pg.base.ship_meta_repair[48311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48311,
@@ -36598,11 +27102,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_82
-
-	local var_24_83 = var_24_82.base.ship_meta_repair
-
-	var_24_83[48312] = {
+	pg.base.ship_meta_repair[48312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48312,
@@ -36612,11 +27112,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_83
-
-	local var_24_84 = var_24_83.base.ship_meta_repair
-
-	var_24_84[48313] = {
+	pg.base.ship_meta_repair[48313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48313,
@@ -36626,11 +27122,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_84
-
-	local var_24_85 = var_24_84.base.ship_meta_repair
-
-	var_24_85[48314] = {
+	pg.base.ship_meta_repair[48314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48314,
@@ -36640,11 +27132,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_85
-
-	local var_24_86 = var_24_85.base.ship_meta_repair
-
-	var_24_86[48315] = {
+	pg.base.ship_meta_repair[48315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48315,
@@ -36654,11 +27142,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_86
-
-	local var_24_87 = var_24_86.base.ship_meta_repair
-
-	var_24_87[48316] = {
+	pg.base.ship_meta_repair[48316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48316,
@@ -36668,11 +27152,7 @@ end)()
 			2
 		}
 	}
-	pg = var_24_87
-
-	local var_24_88 = var_24_87.base.ship_meta_repair
-
-	var_24_88[48317] = {
+	pg.base.ship_meta_repair[48317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48317,
@@ -36682,11 +27162,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_88
-
-	local var_24_89 = var_24_88.base.ship_meta_repair
-
-	var_24_89[48318] = {
+	pg.base.ship_meta_repair[48318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48318,
@@ -36696,11 +27172,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_89
-
-	local var_24_90 = var_24_89.base.ship_meta_repair
-
-	var_24_90[48319] = {
+	pg.base.ship_meta_repair[48319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48319,
@@ -36710,11 +27182,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_90
-
-	local var_24_91 = var_24_90.base.ship_meta_repair
-
-	var_24_91[48320] = {
+	pg.base.ship_meta_repair[48320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48320,
@@ -36724,11 +27192,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_91
-
-	local var_24_92 = var_24_91.base.ship_meta_repair
-
-	var_24_92[48321] = {
+	pg.base.ship_meta_repair[48321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48321,
@@ -36738,11 +27202,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_92
-
-	local var_24_93 = var_24_92.base.ship_meta_repair
-
-	var_24_93[48322] = {
+	pg.base.ship_meta_repair[48322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48322,
@@ -36752,11 +27212,7 @@ end)()
 			3
 		}
 	}
-	pg = var_24_93
-
-	local var_24_94 = var_24_93.base.ship_meta_repair
-
-	var_24_94[48323] = {
+	pg.base.ship_meta_repair[48323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48323,
@@ -36766,11 +27222,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_94
-
-	local var_24_95 = var_24_94.base.ship_meta_repair
-
-	var_24_95[48324] = {
+	pg.base.ship_meta_repair[48324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48324,
@@ -36780,11 +27232,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_95
-
-	local var_24_96 = var_24_95.base.ship_meta_repair
-
-	var_24_96[48325] = {
+	pg.base.ship_meta_repair[48325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48325,
@@ -36794,11 +27242,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_96
-
-	local var_24_97 = var_24_96.base.ship_meta_repair
-
-	var_24_97[48326] = {
+	pg.base.ship_meta_repair[48326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48326,
@@ -36808,11 +27252,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_97
-
-	local var_24_98 = var_24_97.base.ship_meta_repair
-
-	var_24_98[48327] = {
+	pg.base.ship_meta_repair[48327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48327,
@@ -36822,8 +27262,7 @@ end)()
 			4
 		}
 	}
-	pg = var_24_98
-	var_24_98.base.ship_meta_repair[48328] = {
+	pg.base.ship_meta_repair[48328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48328,
@@ -36837,11 +27276,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_25_0 = var_1_10000.base.ship_meta_repair
-
-	var_25_0[48329] = {
+	pg.base.ship_meta_repair[48329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48329,
@@ -36851,11 +27286,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_0
-
-	local var_25_1 = var_25_0.base.ship_meta_repair
-
-	var_25_1[48330] = {
+	pg.base.ship_meta_repair[48330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 48330,
@@ -36865,11 +27296,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_1
-
-	local var_25_2 = var_25_1.base.ship_meta_repair
-
-	var_25_2[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48401,
@@ -36879,11 +27306,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_2
-
-	local var_25_3 = var_25_2.base.ship_meta_repair
-
-	var_25_3[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48402,
@@ -36893,11 +27316,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_3
-
-	local var_25_4 = var_25_3.base.ship_meta_repair
-
-	var_25_4[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48403,
@@ -36907,11 +27326,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_4
-
-	local var_25_5 = var_25_4.base.ship_meta_repair
-
-	var_25_5[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48404,
@@ -36921,11 +27336,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_5
-
-	local var_25_6 = var_25_5.base.ship_meta_repair
-
-	var_25_6[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48405,
@@ -36935,11 +27346,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_6
-
-	local var_25_7 = var_25_6.base.ship_meta_repair
-
-	var_25_7[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48406,
@@ -36949,11 +27356,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_7
-
-	local var_25_8 = var_25_7.base.ship_meta_repair
-
-	var_25_8[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48407,
@@ -36963,11 +27366,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_8
-
-	local var_25_9 = var_25_8.base.ship_meta_repair
-
-	var_25_9[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48408,
@@ -36977,11 +27376,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_9
-
-	local var_25_10 = var_25_9.base.ship_meta_repair
-
-	var_25_10[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48409,
@@ -36991,11 +27386,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_10
-
-	local var_25_11 = var_25_10.base.ship_meta_repair
-
-	var_25_11[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48410,
@@ -37005,11 +27396,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_11
-
-	local var_25_12 = var_25_11.base.ship_meta_repair
-
-	var_25_12[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48411,
@@ -37019,11 +27406,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_12
-
-	local var_25_13 = var_25_12.base.ship_meta_repair
-
-	var_25_13[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48412,
@@ -37033,11 +27416,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_13
-
-	local var_25_14 = var_25_13.base.ship_meta_repair
-
-	var_25_14[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48413,
@@ -37047,11 +27426,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_14
-
-	local var_25_15 = var_25_14.base.ship_meta_repair
-
-	var_25_15[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48414,
@@ -37061,11 +27436,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_15
-
-	local var_25_16 = var_25_15.base.ship_meta_repair
-
-	var_25_16[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48415,
@@ -37075,11 +27446,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_16
-
-	local var_25_17 = var_25_16.base.ship_meta_repair
-
-	var_25_17[48416] = {
+	pg.base.ship_meta_repair[48416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48416,
@@ -37089,11 +27456,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_17
-
-	local var_25_18 = var_25_17.base.ship_meta_repair
-
-	var_25_18[48417] = {
+	pg.base.ship_meta_repair[48417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48417,
@@ -37103,11 +27466,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_18
-
-	local var_25_19 = var_25_18.base.ship_meta_repair
-
-	var_25_19[48418] = {
+	pg.base.ship_meta_repair[48418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48418,
@@ -37117,11 +27476,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_19
-
-	local var_25_20 = var_25_19.base.ship_meta_repair
-
-	var_25_20[48419] = {
+	pg.base.ship_meta_repair[48419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48419,
@@ -37131,11 +27486,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_20
-
-	local var_25_21 = var_25_20.base.ship_meta_repair
-
-	var_25_21[48420] = {
+	pg.base.ship_meta_repair[48420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 48420,
@@ -37145,11 +27496,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_21
-
-	local var_25_22 = var_25_21.base.ship_meta_repair
-
-	var_25_22[49201] = {
+	pg.base.ship_meta_repair[49201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49201,
@@ -37159,11 +27506,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_22
-
-	local var_25_23 = var_25_22.base.ship_meta_repair
-
-	var_25_23[49202] = {
+	pg.base.ship_meta_repair[49202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49202,
@@ -37173,11 +27516,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_23
-
-	local var_25_24 = var_25_23.base.ship_meta_repair
-
-	var_25_24[49203] = {
+	pg.base.ship_meta_repair[49203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49203,
@@ -37187,11 +27526,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_24
-
-	local var_25_25 = var_25_24.base.ship_meta_repair
-
-	var_25_25[49204] = {
+	pg.base.ship_meta_repair[49204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49204,
@@ -37201,11 +27536,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_25
-
-	local var_25_26 = var_25_25.base.ship_meta_repair
-
-	var_25_26[49205] = {
+	pg.base.ship_meta_repair[49205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49205,
@@ -37215,11 +27546,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_26
-
-	local var_25_27 = var_25_26.base.ship_meta_repair
-
-	var_25_27[49206] = {
+	pg.base.ship_meta_repair[49206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49206,
@@ -37229,11 +27556,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_27
-
-	local var_25_28 = var_25_27.base.ship_meta_repair
-
-	var_25_28[49207] = {
+	pg.base.ship_meta_repair[49207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49207,
@@ -37243,11 +27566,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_28
-
-	local var_25_29 = var_25_28.base.ship_meta_repair
-
-	var_25_29[49208] = {
+	pg.base.ship_meta_repair[49208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49208,
@@ -37257,11 +27576,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_29
-
-	local var_25_30 = var_25_29.base.ship_meta_repair
-
-	var_25_30[49209] = {
+	pg.base.ship_meta_repair[49209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49209,
@@ -37271,11 +27586,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_30
-
-	local var_25_31 = var_25_30.base.ship_meta_repair
-
-	var_25_31[49210] = {
+	pg.base.ship_meta_repair[49210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49210,
@@ -37285,11 +27596,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_31
-
-	local var_25_32 = var_25_31.base.ship_meta_repair
-
-	var_25_32[49211] = {
+	pg.base.ship_meta_repair[49211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49211,
@@ -37299,11 +27606,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_32
-
-	local var_25_33 = var_25_32.base.ship_meta_repair
-
-	var_25_33[49212] = {
+	pg.base.ship_meta_repair[49212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49212,
@@ -37313,11 +27616,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_33
-
-	local var_25_34 = var_25_33.base.ship_meta_repair
-
-	var_25_34[49213] = {
+	pg.base.ship_meta_repair[49213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49213,
@@ -37327,11 +27626,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_34
-
-	local var_25_35 = var_25_34.base.ship_meta_repair
-
-	var_25_35[49214] = {
+	pg.base.ship_meta_repair[49214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49214,
@@ -37341,11 +27636,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_35
-
-	local var_25_36 = var_25_35.base.ship_meta_repair
-
-	var_25_36[49215] = {
+	pg.base.ship_meta_repair[49215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49215,
@@ -37355,11 +27646,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_36
-
-	local var_25_37 = var_25_36.base.ship_meta_repair
-
-	var_25_37[49216] = {
+	pg.base.ship_meta_repair[49216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49216,
@@ -37369,11 +27656,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_37
-
-	local var_25_38 = var_25_37.base.ship_meta_repair
-
-	var_25_38[49217] = {
+	pg.base.ship_meta_repair[49217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49217,
@@ -37383,11 +27666,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_38
-
-	local var_25_39 = var_25_38.base.ship_meta_repair
-
-	var_25_39[49218] = {
+	pg.base.ship_meta_repair[49218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49218,
@@ -37397,11 +27676,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_39
-
-	local var_25_40 = var_25_39.base.ship_meta_repair
-
-	var_25_40[49219] = {
+	pg.base.ship_meta_repair[49219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49219,
@@ -37411,11 +27686,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_40
-
-	local var_25_41 = var_25_40.base.ship_meta_repair
-
-	var_25_41[49220] = {
+	pg.base.ship_meta_repair[49220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49220,
@@ -37425,11 +27696,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_41
-
-	local var_25_42 = var_25_41.base.ship_meta_repair
-
-	var_25_42[49221] = {
+	pg.base.ship_meta_repair[49221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49221,
@@ -37439,11 +27706,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_42
-
-	local var_25_43 = var_25_42.base.ship_meta_repair
-
-	var_25_43[49222] = {
+	pg.base.ship_meta_repair[49222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49222,
@@ -37453,11 +27716,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_43
-
-	local var_25_44 = var_25_43.base.ship_meta_repair
-
-	var_25_44[49223] = {
+	pg.base.ship_meta_repair[49223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49223,
@@ -37467,11 +27726,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_44
-
-	local var_25_45 = var_25_44.base.ship_meta_repair
-
-	var_25_45[49224] = {
+	pg.base.ship_meta_repair[49224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49224,
@@ -37481,11 +27736,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_45
-
-	local var_25_46 = var_25_45.base.ship_meta_repair
-
-	var_25_46[49225] = {
+	pg.base.ship_meta_repair[49225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49225,
@@ -37495,11 +27746,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_46
-
-	local var_25_47 = var_25_46.base.ship_meta_repair
-
-	var_25_47[49226] = {
+	pg.base.ship_meta_repair[49226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49226,
@@ -37509,11 +27756,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_47
-
-	local var_25_48 = var_25_47.base.ship_meta_repair
-
-	var_25_48[49227] = {
+	pg.base.ship_meta_repair[49227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49227,
@@ -37523,11 +27766,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_48
-
-	local var_25_49 = var_25_48.base.ship_meta_repair
-
-	var_25_49[49228] = {
+	pg.base.ship_meta_repair[49228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49228,
@@ -37537,11 +27776,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_49
-
-	local var_25_50 = var_25_49.base.ship_meta_repair
-
-	var_25_50[49229] = {
+	pg.base.ship_meta_repair[49229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49229,
@@ -37551,11 +27786,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_50
-
-	local var_25_51 = var_25_50.base.ship_meta_repair
-
-	var_25_51[49230] = {
+	pg.base.ship_meta_repair[49230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 49230,
@@ -37565,11 +27796,7 @@ end)()
 			5
 		}
 	}
-	pg = var_25_51
-
-	local var_25_52 = var_25_51.base.ship_meta_repair
-
-	var_25_52[49401] = {
+	pg.base.ship_meta_repair[49401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49401,
@@ -37579,11 +27806,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_52
-
-	local var_25_53 = var_25_52.base.ship_meta_repair
-
-	var_25_53[49402] = {
+	pg.base.ship_meta_repair[49402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49402,
@@ -37593,11 +27816,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_53
-
-	local var_25_54 = var_25_53.base.ship_meta_repair
-
-	var_25_54[49403] = {
+	pg.base.ship_meta_repair[49403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49403,
@@ -37607,11 +27826,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_54
-
-	local var_25_55 = var_25_54.base.ship_meta_repair
-
-	var_25_55[49404] = {
+	pg.base.ship_meta_repair[49404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49404,
@@ -37621,11 +27836,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_55
-
-	local var_25_56 = var_25_55.base.ship_meta_repair
-
-	var_25_56[49405] = {
+	pg.base.ship_meta_repair[49405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49405,
@@ -37635,11 +27846,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_56
-
-	local var_25_57 = var_25_56.base.ship_meta_repair
-
-	var_25_57[49406] = {
+	pg.base.ship_meta_repair[49406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49406,
@@ -37649,11 +27856,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_57
-
-	local var_25_58 = var_25_57.base.ship_meta_repair
-
-	var_25_58[49407] = {
+	pg.base.ship_meta_repair[49407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49407,
@@ -37663,11 +27866,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_58
-
-	local var_25_59 = var_25_58.base.ship_meta_repair
-
-	var_25_59[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49408,
@@ -37677,11 +27876,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_59
-
-	local var_25_60 = var_25_59.base.ship_meta_repair
-
-	var_25_60[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49409,
@@ -37691,11 +27886,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_60
-
-	local var_25_61 = var_25_60.base.ship_meta_repair
-
-	var_25_61[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49410,
@@ -37705,11 +27896,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_61
-
-	local var_25_62 = var_25_61.base.ship_meta_repair
-
-	var_25_62[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49411,
@@ -37719,11 +27906,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_62
-
-	local var_25_63 = var_25_62.base.ship_meta_repair
-
-	var_25_63[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49412,
@@ -37733,11 +27916,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_63
-
-	local var_25_64 = var_25_63.base.ship_meta_repair
-
-	var_25_64[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49413,
@@ -37747,11 +27926,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_64
-
-	local var_25_65 = var_25_64.base.ship_meta_repair
-
-	var_25_65[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49414,
@@ -37761,11 +27936,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_65
-
-	local var_25_66 = var_25_65.base.ship_meta_repair
-
-	var_25_66[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49415,
@@ -37775,11 +27946,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_66
-
-	local var_25_67 = var_25_66.base.ship_meta_repair
-
-	var_25_67[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49416,
@@ -37789,11 +27956,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_67
-
-	local var_25_68 = var_25_67.base.ship_meta_repair
-
-	var_25_68[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49417,
@@ -37803,11 +27966,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_68
-
-	local var_25_69 = var_25_68.base.ship_meta_repair
-
-	var_25_69[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49418,
@@ -37817,11 +27976,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_69
-
-	local var_25_70 = var_25_69.base.ship_meta_repair
-
-	var_25_70[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49419,
@@ -37831,11 +27986,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_70
-
-	local var_25_71 = var_25_70.base.ship_meta_repair
-
-	var_25_71[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 49420,
@@ -37845,11 +27996,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_71
-
-	local var_25_72 = var_25_71.base.ship_meta_repair
-
-	var_25_72[50101] = {
+	pg.base.ship_meta_repair[50101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50101,
@@ -37859,11 +28006,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_72
-
-	local var_25_73 = var_25_72.base.ship_meta_repair
-
-	var_25_73[50102] = {
+	pg.base.ship_meta_repair[50102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50102,
@@ -37873,11 +28016,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_73
-
-	local var_25_74 = var_25_73.base.ship_meta_repair
-
-	var_25_74[50103] = {
+	pg.base.ship_meta_repair[50103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50103,
@@ -37887,11 +28026,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_74
-
-	local var_25_75 = var_25_74.base.ship_meta_repair
-
-	var_25_75[50104] = {
+	pg.base.ship_meta_repair[50104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50104,
@@ -37901,11 +28036,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_75
-
-	local var_25_76 = var_25_75.base.ship_meta_repair
-
-	var_25_76[50105] = {
+	pg.base.ship_meta_repair[50105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50105,
@@ -37915,11 +28046,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_76
-
-	local var_25_77 = var_25_76.base.ship_meta_repair
-
-	var_25_77[50106] = {
+	pg.base.ship_meta_repair[50106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50106,
@@ -37929,11 +28056,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_77
-
-	local var_25_78 = var_25_77.base.ship_meta_repair
-
-	var_25_78[50107] = {
+	pg.base.ship_meta_repair[50107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50107,
@@ -37943,11 +28066,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_78
-
-	local var_25_79 = var_25_78.base.ship_meta_repair
-
-	var_25_79[50108] = {
+	pg.base.ship_meta_repair[50108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50108,
@@ -37957,11 +28076,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_79
-
-	local var_25_80 = var_25_79.base.ship_meta_repair
-
-	var_25_80[50109] = {
+	pg.base.ship_meta_repair[50109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50109,
@@ -37971,11 +28086,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_80
-
-	local var_25_81 = var_25_80.base.ship_meta_repair
-
-	var_25_81[50110] = {
+	pg.base.ship_meta_repair[50110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50110,
@@ -37985,11 +28096,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_81
-
-	local var_25_82 = var_25_81.base.ship_meta_repair
-
-	var_25_82[50111] = {
+	pg.base.ship_meta_repair[50111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50111,
@@ -37999,11 +28106,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_82
-
-	local var_25_83 = var_25_82.base.ship_meta_repair
-
-	var_25_83[50112] = {
+	pg.base.ship_meta_repair[50112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50112,
@@ -38013,11 +28116,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_83
-
-	local var_25_84 = var_25_83.base.ship_meta_repair
-
-	var_25_84[50113] = {
+	pg.base.ship_meta_repair[50113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50113,
@@ -38027,11 +28126,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_84
-
-	local var_25_85 = var_25_84.base.ship_meta_repair
-
-	var_25_85[50114] = {
+	pg.base.ship_meta_repair[50114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50114,
@@ -38041,11 +28136,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_85
-
-	local var_25_86 = var_25_85.base.ship_meta_repair
-
-	var_25_86[50115] = {
+	pg.base.ship_meta_repair[50115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50115,
@@ -38055,11 +28146,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_86
-
-	local var_25_87 = var_25_86.base.ship_meta_repair
-
-	var_25_87[50116] = {
+	pg.base.ship_meta_repair[50116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50116,
@@ -38069,11 +28156,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_87
-
-	local var_25_88 = var_25_87.base.ship_meta_repair
-
-	var_25_88[50117] = {
+	pg.base.ship_meta_repair[50117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50117,
@@ -38083,11 +28166,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_88
-
-	local var_25_89 = var_25_88.base.ship_meta_repair
-
-	var_25_89[50118] = {
+	pg.base.ship_meta_repair[50118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50118,
@@ -38097,11 +28176,7 @@ end)()
 			2
 		}
 	}
-	pg = var_25_89
-
-	local var_25_90 = var_25_89.base.ship_meta_repair
-
-	var_25_90[50119] = {
+	pg.base.ship_meta_repair[50119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50119,
@@ -38111,11 +28186,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_90
-
-	local var_25_91 = var_25_90.base.ship_meta_repair
-
-	var_25_91[50120] = {
+	pg.base.ship_meta_repair[50120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50120,
@@ -38125,11 +28196,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_91
-
-	local var_25_92 = var_25_91.base.ship_meta_repair
-
-	var_25_92[50121] = {
+	pg.base.ship_meta_repair[50121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50121,
@@ -38139,11 +28206,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_92
-
-	local var_25_93 = var_25_92.base.ship_meta_repair
-
-	var_25_93[50122] = {
+	pg.base.ship_meta_repair[50122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50122,
@@ -38153,11 +28216,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_93
-
-	local var_25_94 = var_25_93.base.ship_meta_repair
-
-	var_25_94[50123] = {
+	pg.base.ship_meta_repair[50123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50123,
@@ -38167,11 +28226,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_94
-
-	local var_25_95 = var_25_94.base.ship_meta_repair
-
-	var_25_95[50124] = {
+	pg.base.ship_meta_repair[50124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50124,
@@ -38181,11 +28236,7 @@ end)()
 			3
 		}
 	}
-	pg = var_25_95
-
-	local var_25_96 = var_25_95.base.ship_meta_repair
-
-	var_25_96[50125] = {
+	pg.base.ship_meta_repair[50125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50125,
@@ -38195,11 +28246,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_96
-
-	local var_25_97 = var_25_96.base.ship_meta_repair
-
-	var_25_97[50126] = {
+	pg.base.ship_meta_repair[50126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50126,
@@ -38209,11 +28256,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_97
-
-	local var_25_98 = var_25_97.base.ship_meta_repair
-
-	var_25_98[50127] = {
+	pg.base.ship_meta_repair[50127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50127,
@@ -38223,8 +28266,7 @@ end)()
 			4
 		}
 	}
-	pg = var_25_98
-	var_25_98.base.ship_meta_repair[50128] = {
+	pg.base.ship_meta_repair[50128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50128,
@@ -38238,11 +28280,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_26_0 = var_1_10000.base.ship_meta_repair
-
-	var_26_0[50129] = {
+	pg.base.ship_meta_repair[50129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50129,
@@ -38252,11 +28290,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_0
-
-	local var_26_1 = var_26_0.base.ship_meta_repair
-
-	var_26_1[50130] = {
+	pg.base.ship_meta_repair[50130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 50130,
@@ -38266,11 +28300,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_1
-
-	local var_26_2 = var_26_1.base.ship_meta_repair
-
-	var_26_2[50401] = {
+	pg.base.ship_meta_repair[50401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50401,
@@ -38280,11 +28310,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_2
-
-	local var_26_3 = var_26_2.base.ship_meta_repair
-
-	var_26_3[50402] = {
+	pg.base.ship_meta_repair[50402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50402,
@@ -38294,11 +28320,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_3
-
-	local var_26_4 = var_26_3.base.ship_meta_repair
-
-	var_26_4[50403] = {
+	pg.base.ship_meta_repair[50403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50403,
@@ -38308,11 +28330,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_4
-
-	local var_26_5 = var_26_4.base.ship_meta_repair
-
-	var_26_5[50404] = {
+	pg.base.ship_meta_repair[50404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50404,
@@ -38322,11 +28340,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_5
-
-	local var_26_6 = var_26_5.base.ship_meta_repair
-
-	var_26_6[50405] = {
+	pg.base.ship_meta_repair[50405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50405,
@@ -38336,11 +28350,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_6
-
-	local var_26_7 = var_26_6.base.ship_meta_repair
-
-	var_26_7[50406] = {
+	pg.base.ship_meta_repair[50406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50406,
@@ -38350,11 +28360,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_7
-
-	local var_26_8 = var_26_7.base.ship_meta_repair
-
-	var_26_8[50407] = {
+	pg.base.ship_meta_repair[50407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50407,
@@ -38364,11 +28370,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_8
-
-	local var_26_9 = var_26_8.base.ship_meta_repair
-
-	var_26_9[50408] = {
+	pg.base.ship_meta_repair[50408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50408,
@@ -38378,11 +28380,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_9
-
-	local var_26_10 = var_26_9.base.ship_meta_repair
-
-	var_26_10[50409] = {
+	pg.base.ship_meta_repair[50409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50409,
@@ -38392,11 +28390,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_10
-
-	local var_26_11 = var_26_10.base.ship_meta_repair
-
-	var_26_11[50410] = {
+	pg.base.ship_meta_repair[50410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50410,
@@ -38406,11 +28400,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_11
-
-	local var_26_12 = var_26_11.base.ship_meta_repair
-
-	var_26_12[50411] = {
+	pg.base.ship_meta_repair[50411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50411,
@@ -38420,11 +28410,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_12
-
-	local var_26_13 = var_26_12.base.ship_meta_repair
-
-	var_26_13[50412] = {
+	pg.base.ship_meta_repair[50412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50412,
@@ -38434,11 +28420,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_13
-
-	local var_26_14 = var_26_13.base.ship_meta_repair
-
-	var_26_14[50413] = {
+	pg.base.ship_meta_repair[50413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50413,
@@ -38448,11 +28430,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_14
-
-	local var_26_15 = var_26_14.base.ship_meta_repair
-
-	var_26_15[50414] = {
+	pg.base.ship_meta_repair[50414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50414,
@@ -38462,11 +28440,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_15
-
-	local var_26_16 = var_26_15.base.ship_meta_repair
-
-	var_26_16[50415] = {
+	pg.base.ship_meta_repair[50415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50415,
@@ -38476,11 +28450,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_16
-
-	local var_26_17 = var_26_16.base.ship_meta_repair
-
-	var_26_17[50416] = {
+	pg.base.ship_meta_repair[50416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50416,
@@ -38490,11 +28460,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_17
-
-	local var_26_18 = var_26_17.base.ship_meta_repair
-
-	var_26_18[50417] = {
+	pg.base.ship_meta_repair[50417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50417,
@@ -38504,11 +28470,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_18
-
-	local var_26_19 = var_26_18.base.ship_meta_repair
-
-	var_26_19[50418] = {
+	pg.base.ship_meta_repair[50418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50418,
@@ -38518,11 +28480,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_19
-
-	local var_26_20 = var_26_19.base.ship_meta_repair
-
-	var_26_20[50419] = {
+	pg.base.ship_meta_repair[50419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50419,
@@ -38532,11 +28490,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_20
-
-	local var_26_21 = var_26_20.base.ship_meta_repair
-
-	var_26_21[50420] = {
+	pg.base.ship_meta_repair[50420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 50420,
@@ -38546,11 +28500,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_21
-
-	local var_26_22 = var_26_21.base.ship_meta_repair
-
-	var_26_22[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51201,
@@ -38560,11 +28510,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_22
-
-	local var_26_23 = var_26_22.base.ship_meta_repair
-
-	var_26_23[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51202,
@@ -38574,11 +28520,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_23
-
-	local var_26_24 = var_26_23.base.ship_meta_repair
-
-	var_26_24[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51203,
@@ -38588,11 +28530,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_24
-
-	local var_26_25 = var_26_24.base.ship_meta_repair
-
-	var_26_25[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51204,
@@ -38602,11 +28540,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_25
-
-	local var_26_26 = var_26_25.base.ship_meta_repair
-
-	var_26_26[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51205,
@@ -38616,11 +28550,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_26
-
-	local var_26_27 = var_26_26.base.ship_meta_repair
-
-	var_26_27[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51206,
@@ -38630,11 +28560,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_27
-
-	local var_26_28 = var_26_27.base.ship_meta_repair
-
-	var_26_28[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51207,
@@ -38644,11 +28570,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_28
-
-	local var_26_29 = var_26_28.base.ship_meta_repair
-
-	var_26_29[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51208,
@@ -38658,11 +28580,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_29
-
-	local var_26_30 = var_26_29.base.ship_meta_repair
-
-	var_26_30[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51209,
@@ -38672,11 +28590,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_30
-
-	local var_26_31 = var_26_30.base.ship_meta_repair
-
-	var_26_31[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51210,
@@ -38686,11 +28600,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_31
-
-	local var_26_32 = var_26_31.base.ship_meta_repair
-
-	var_26_32[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51211,
@@ -38700,11 +28610,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_32
-
-	local var_26_33 = var_26_32.base.ship_meta_repair
-
-	var_26_33[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51212,
@@ -38714,11 +28620,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_33
-
-	local var_26_34 = var_26_33.base.ship_meta_repair
-
-	var_26_34[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51213,
@@ -38728,11 +28630,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_34
-
-	local var_26_35 = var_26_34.base.ship_meta_repair
-
-	var_26_35[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51214,
@@ -38742,11 +28640,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_35
-
-	local var_26_36 = var_26_35.base.ship_meta_repair
-
-	var_26_36[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51215,
@@ -38756,11 +28650,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_36
-
-	local var_26_37 = var_26_36.base.ship_meta_repair
-
-	var_26_37[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51216,
@@ -38770,11 +28660,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_37
-
-	local var_26_38 = var_26_37.base.ship_meta_repair
-
-	var_26_38[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51217,
@@ -38784,11 +28670,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_38
-
-	local var_26_39 = var_26_38.base.ship_meta_repair
-
-	var_26_39[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51218,
@@ -38798,11 +28680,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_39
-
-	local var_26_40 = var_26_39.base.ship_meta_repair
-
-	var_26_40[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51219,
@@ -38812,11 +28690,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_40
-
-	local var_26_41 = var_26_40.base.ship_meta_repair
-
-	var_26_41[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51220,
@@ -38826,11 +28700,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_41
-
-	local var_26_42 = var_26_41.base.ship_meta_repair
-
-	var_26_42[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51221,
@@ -38840,11 +28710,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_42
-
-	local var_26_43 = var_26_42.base.ship_meta_repair
-
-	var_26_43[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51222,
@@ -38854,11 +28720,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_43
-
-	local var_26_44 = var_26_43.base.ship_meta_repair
-
-	var_26_44[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51223,
@@ -38868,11 +28730,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_44
-
-	local var_26_45 = var_26_44.base.ship_meta_repair
-
-	var_26_45[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51224,
@@ -38882,11 +28740,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_45
-
-	local var_26_46 = var_26_45.base.ship_meta_repair
-
-	var_26_46[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51225,
@@ -38896,11 +28750,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_46
-
-	local var_26_47 = var_26_46.base.ship_meta_repair
-
-	var_26_47[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51226,
@@ -38910,11 +28760,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_47
-
-	local var_26_48 = var_26_47.base.ship_meta_repair
-
-	var_26_48[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51227,
@@ -38924,11 +28770,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_48
-
-	local var_26_49 = var_26_48.base.ship_meta_repair
-
-	var_26_49[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51228,
@@ -38938,11 +28780,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_49
-
-	local var_26_50 = var_26_49.base.ship_meta_repair
-
-	var_26_50[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51229,
@@ -38952,11 +28790,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_50
-
-	local var_26_51 = var_26_50.base.ship_meta_repair
-
-	var_26_51[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 51230,
@@ -38966,11 +28800,7 @@ end)()
 			5
 		}
 	}
-	pg = var_26_51
-
-	local var_26_52 = var_26_51.base.ship_meta_repair
-
-	var_26_52[51401] = {
+	pg.base.ship_meta_repair[51401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51401,
@@ -38980,11 +28810,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_52
-
-	local var_26_53 = var_26_52.base.ship_meta_repair
-
-	var_26_53[51402] = {
+	pg.base.ship_meta_repair[51402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51402,
@@ -38994,11 +28820,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_53
-
-	local var_26_54 = var_26_53.base.ship_meta_repair
-
-	var_26_54[51403] = {
+	pg.base.ship_meta_repair[51403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51403,
@@ -39008,11 +28830,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_54
-
-	local var_26_55 = var_26_54.base.ship_meta_repair
-
-	var_26_55[51404] = {
+	pg.base.ship_meta_repair[51404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51404,
@@ -39022,11 +28840,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_55
-
-	local var_26_56 = var_26_55.base.ship_meta_repair
-
-	var_26_56[51405] = {
+	pg.base.ship_meta_repair[51405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51405,
@@ -39036,11 +28850,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_56
-
-	local var_26_57 = var_26_56.base.ship_meta_repair
-
-	var_26_57[51406] = {
+	pg.base.ship_meta_repair[51406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51406,
@@ -39050,11 +28860,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_57
-
-	local var_26_58 = var_26_57.base.ship_meta_repair
-
-	var_26_58[51407] = {
+	pg.base.ship_meta_repair[51407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51407,
@@ -39064,11 +28870,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_58
-
-	local var_26_59 = var_26_58.base.ship_meta_repair
-
-	var_26_59[51408] = {
+	pg.base.ship_meta_repair[51408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51408,
@@ -39078,11 +28880,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_59
-
-	local var_26_60 = var_26_59.base.ship_meta_repair
-
-	var_26_60[51409] = {
+	pg.base.ship_meta_repair[51409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51409,
@@ -39092,11 +28890,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_60
-
-	local var_26_61 = var_26_60.base.ship_meta_repair
-
-	var_26_61[51410] = {
+	pg.base.ship_meta_repair[51410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51410,
@@ -39106,11 +28900,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_61
-
-	local var_26_62 = var_26_61.base.ship_meta_repair
-
-	var_26_62[51411] = {
+	pg.base.ship_meta_repair[51411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51411,
@@ -39120,11 +28910,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_62
-
-	local var_26_63 = var_26_62.base.ship_meta_repair
-
-	var_26_63[51412] = {
+	pg.base.ship_meta_repair[51412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51412,
@@ -39134,11 +28920,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_63
-
-	local var_26_64 = var_26_63.base.ship_meta_repair
-
-	var_26_64[51413] = {
+	pg.base.ship_meta_repair[51413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51413,
@@ -39148,11 +28930,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_64
-
-	local var_26_65 = var_26_64.base.ship_meta_repair
-
-	var_26_65[51414] = {
+	pg.base.ship_meta_repair[51414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51414,
@@ -39162,11 +28940,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_65
-
-	local var_26_66 = var_26_65.base.ship_meta_repair
-
-	var_26_66[51415] = {
+	pg.base.ship_meta_repair[51415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51415,
@@ -39176,11 +28950,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_66
-
-	local var_26_67 = var_26_66.base.ship_meta_repair
-
-	var_26_67[51416] = {
+	pg.base.ship_meta_repair[51416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51416,
@@ -39190,11 +28960,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_67
-
-	local var_26_68 = var_26_67.base.ship_meta_repair
-
-	var_26_68[51417] = {
+	pg.base.ship_meta_repair[51417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51417,
@@ -39204,11 +28970,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_68
-
-	local var_26_69 = var_26_68.base.ship_meta_repair
-
-	var_26_69[51418] = {
+	pg.base.ship_meta_repair[51418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51418,
@@ -39218,11 +28980,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_69
-
-	local var_26_70 = var_26_69.base.ship_meta_repair
-
-	var_26_70[51419] = {
+	pg.base.ship_meta_repair[51419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51419,
@@ -39232,11 +28990,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_70
-
-	local var_26_71 = var_26_70.base.ship_meta_repair
-
-	var_26_71[51420] = {
+	pg.base.ship_meta_repair[51420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 51420,
@@ -39246,11 +29000,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_71
-
-	local var_26_72 = var_26_71.base.ship_meta_repair
-
-	var_26_72[52201] = {
+	pg.base.ship_meta_repair[52201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52201,
@@ -39260,11 +29010,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_72
-
-	local var_26_73 = var_26_72.base.ship_meta_repair
-
-	var_26_73[52202] = {
+	pg.base.ship_meta_repair[52202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52202,
@@ -39274,11 +29020,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_73
-
-	local var_26_74 = var_26_73.base.ship_meta_repair
-
-	var_26_74[52203] = {
+	pg.base.ship_meta_repair[52203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52203,
@@ -39288,11 +29030,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_74
-
-	local var_26_75 = var_26_74.base.ship_meta_repair
-
-	var_26_75[52204] = {
+	pg.base.ship_meta_repair[52204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52204,
@@ -39302,11 +29040,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_75
-
-	local var_26_76 = var_26_75.base.ship_meta_repair
-
-	var_26_76[52205] = {
+	pg.base.ship_meta_repair[52205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52205,
@@ -39316,11 +29050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_76
-
-	local var_26_77 = var_26_76.base.ship_meta_repair
-
-	var_26_77[52206] = {
+	pg.base.ship_meta_repair[52206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52206,
@@ -39330,11 +29060,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_77
-
-	local var_26_78 = var_26_77.base.ship_meta_repair
-
-	var_26_78[52207] = {
+	pg.base.ship_meta_repair[52207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52207,
@@ -39344,11 +29070,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_78
-
-	local var_26_79 = var_26_78.base.ship_meta_repair
-
-	var_26_79[52208] = {
+	pg.base.ship_meta_repair[52208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52208,
@@ -39358,11 +29080,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_79
-
-	local var_26_80 = var_26_79.base.ship_meta_repair
-
-	var_26_80[52209] = {
+	pg.base.ship_meta_repair[52209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52209,
@@ -39372,11 +29090,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_80
-
-	local var_26_81 = var_26_80.base.ship_meta_repair
-
-	var_26_81[52210] = {
+	pg.base.ship_meta_repair[52210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52210,
@@ -39386,11 +29100,7 @@ end)()
 			1
 		}
 	}
-	pg = var_26_81
-
-	local var_26_82 = var_26_81.base.ship_meta_repair
-
-	var_26_82[52211] = {
+	pg.base.ship_meta_repair[52211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52211,
@@ -39400,11 +29110,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_82
-
-	local var_26_83 = var_26_82.base.ship_meta_repair
-
-	var_26_83[52212] = {
+	pg.base.ship_meta_repair[52212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52212,
@@ -39414,11 +29120,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_83
-
-	local var_26_84 = var_26_83.base.ship_meta_repair
-
-	var_26_84[52213] = {
+	pg.base.ship_meta_repair[52213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52213,
@@ -39428,11 +29130,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_84
-
-	local var_26_85 = var_26_84.base.ship_meta_repair
-
-	var_26_85[52214] = {
+	pg.base.ship_meta_repair[52214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52214,
@@ -39442,11 +29140,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_85
-
-	local var_26_86 = var_26_85.base.ship_meta_repair
-
-	var_26_86[52215] = {
+	pg.base.ship_meta_repair[52215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52215,
@@ -39456,11 +29150,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_86
-
-	local var_26_87 = var_26_86.base.ship_meta_repair
-
-	var_26_87[52216] = {
+	pg.base.ship_meta_repair[52216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52216,
@@ -39470,11 +29160,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_87
-
-	local var_26_88 = var_26_87.base.ship_meta_repair
-
-	var_26_88[52217] = {
+	pg.base.ship_meta_repair[52217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52217,
@@ -39484,11 +29170,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_88
-
-	local var_26_89 = var_26_88.base.ship_meta_repair
-
-	var_26_89[52218] = {
+	pg.base.ship_meta_repair[52218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52218,
@@ -39498,11 +29180,7 @@ end)()
 			2
 		}
 	}
-	pg = var_26_89
-
-	local var_26_90 = var_26_89.base.ship_meta_repair
-
-	var_26_90[52219] = {
+	pg.base.ship_meta_repair[52219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52219,
@@ -39512,11 +29190,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_90
-
-	local var_26_91 = var_26_90.base.ship_meta_repair
-
-	var_26_91[52220] = {
+	pg.base.ship_meta_repair[52220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52220,
@@ -39526,11 +29200,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_91
-
-	local var_26_92 = var_26_91.base.ship_meta_repair
-
-	var_26_92[52221] = {
+	pg.base.ship_meta_repair[52221] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52221,
@@ -39540,11 +29210,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_92
-
-	local var_26_93 = var_26_92.base.ship_meta_repair
-
-	var_26_93[52222] = {
+	pg.base.ship_meta_repair[52222] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52222,
@@ -39554,11 +29220,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_93
-
-	local var_26_94 = var_26_93.base.ship_meta_repair
-
-	var_26_94[52223] = {
+	pg.base.ship_meta_repair[52223] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52223,
@@ -39568,11 +29230,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_94
-
-	local var_26_95 = var_26_94.base.ship_meta_repair
-
-	var_26_95[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52224,
@@ -39582,11 +29240,7 @@ end)()
 			3
 		}
 	}
-	pg = var_26_95
-
-	local var_26_96 = var_26_95.base.ship_meta_repair
-
-	var_26_96[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52225,
@@ -39596,11 +29250,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_96
-
-	local var_26_97 = var_26_96.base.ship_meta_repair
-
-	var_26_97[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52226,
@@ -39610,11 +29260,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_97
-
-	local var_26_98 = var_26_97.base.ship_meta_repair
-
-	var_26_98[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52227,
@@ -39624,8 +29270,7 @@ end)()
 			4
 		}
 	}
-	pg = var_26_98
-	var_26_98.base.ship_meta_repair[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52228,
@@ -39639,11 +29284,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_27_0 = var_1_10000.base.ship_meta_repair
-
-	var_27_0[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52229,
@@ -39653,11 +29294,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_0
-
-	local var_27_1 = var_27_0.base.ship_meta_repair
-
-	var_27_1[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 52230,
@@ -39667,11 +29304,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_1
-
-	local var_27_2 = var_27_1.base.ship_meta_repair
-
-	var_27_2[52401] = {
+	pg.base.ship_meta_repair[52401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52401,
@@ -39681,11 +29314,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_2
-
-	local var_27_3 = var_27_2.base.ship_meta_repair
-
-	var_27_3[52402] = {
+	pg.base.ship_meta_repair[52402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52402,
@@ -39695,11 +29324,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_3
-
-	local var_27_4 = var_27_3.base.ship_meta_repair
-
-	var_27_4[52403] = {
+	pg.base.ship_meta_repair[52403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52403,
@@ -39709,11 +29334,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_4
-
-	local var_27_5 = var_27_4.base.ship_meta_repair
-
-	var_27_5[52404] = {
+	pg.base.ship_meta_repair[52404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52404,
@@ -39723,11 +29344,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_5
-
-	local var_27_6 = var_27_5.base.ship_meta_repair
-
-	var_27_6[52405] = {
+	pg.base.ship_meta_repair[52405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52405,
@@ -39737,11 +29354,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_6
-
-	local var_27_7 = var_27_6.base.ship_meta_repair
-
-	var_27_7[52406] = {
+	pg.base.ship_meta_repair[52406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52406,
@@ -39751,11 +29364,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_7
-
-	local var_27_8 = var_27_7.base.ship_meta_repair
-
-	var_27_8[52407] = {
+	pg.base.ship_meta_repair[52407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52407,
@@ -39765,11 +29374,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_8
-
-	local var_27_9 = var_27_8.base.ship_meta_repair
-
-	var_27_9[52408] = {
+	pg.base.ship_meta_repair[52408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52408,
@@ -39779,11 +29384,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_9
-
-	local var_27_10 = var_27_9.base.ship_meta_repair
-
-	var_27_10[52409] = {
+	pg.base.ship_meta_repair[52409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52409,
@@ -39793,11 +29394,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_10
-
-	local var_27_11 = var_27_10.base.ship_meta_repair
-
-	var_27_11[52410] = {
+	pg.base.ship_meta_repair[52410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52410,
@@ -39807,11 +29404,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_11
-
-	local var_27_12 = var_27_11.base.ship_meta_repair
-
-	var_27_12[52411] = {
+	pg.base.ship_meta_repair[52411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52411,
@@ -39821,11 +29414,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_12
-
-	local var_27_13 = var_27_12.base.ship_meta_repair
-
-	var_27_13[52412] = {
+	pg.base.ship_meta_repair[52412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52412,
@@ -39835,11 +29424,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_13
-
-	local var_27_14 = var_27_13.base.ship_meta_repair
-
-	var_27_14[52413] = {
+	pg.base.ship_meta_repair[52413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52413,
@@ -39849,11 +29434,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_14
-
-	local var_27_15 = var_27_14.base.ship_meta_repair
-
-	var_27_15[52414] = {
+	pg.base.ship_meta_repair[52414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52414,
@@ -39863,11 +29444,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_15
-
-	local var_27_16 = var_27_15.base.ship_meta_repair
-
-	var_27_16[52415] = {
+	pg.base.ship_meta_repair[52415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52415,
@@ -39877,11 +29454,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_16
-
-	local var_27_17 = var_27_16.base.ship_meta_repair
-
-	var_27_17[52416] = {
+	pg.base.ship_meta_repair[52416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52416,
@@ -39891,11 +29464,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_17
-
-	local var_27_18 = var_27_17.base.ship_meta_repair
-
-	var_27_18[52417] = {
+	pg.base.ship_meta_repair[52417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52417,
@@ -39905,11 +29474,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_18
-
-	local var_27_19 = var_27_18.base.ship_meta_repair
-
-	var_27_19[52418] = {
+	pg.base.ship_meta_repair[52418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52418,
@@ -39919,11 +29484,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_19
-
-	local var_27_20 = var_27_19.base.ship_meta_repair
-
-	var_27_20[52419] = {
+	pg.base.ship_meta_repair[52419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52419,
@@ -39933,11 +29494,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_20
-
-	local var_27_21 = var_27_20.base.ship_meta_repair
-
-	var_27_21[52420] = {
+	pg.base.ship_meta_repair[52420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 52420,
@@ -39947,11 +29504,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_21
-
-	local var_27_22 = var_27_21.base.ship_meta_repair
-
-	var_27_22[53101] = {
+	pg.base.ship_meta_repair[53101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53101,
@@ -39961,11 +29514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_22
-
-	local var_27_23 = var_27_22.base.ship_meta_repair
-
-	var_27_23[53102] = {
+	pg.base.ship_meta_repair[53102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53102,
@@ -39975,11 +29524,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_23
-
-	local var_27_24 = var_27_23.base.ship_meta_repair
-
-	var_27_24[53103] = {
+	pg.base.ship_meta_repair[53103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53103,
@@ -39989,11 +29534,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_24
-
-	local var_27_25 = var_27_24.base.ship_meta_repair
-
-	var_27_25[53104] = {
+	pg.base.ship_meta_repair[53104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53104,
@@ -40003,11 +29544,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_25
-
-	local var_27_26 = var_27_25.base.ship_meta_repair
-
-	var_27_26[53105] = {
+	pg.base.ship_meta_repair[53105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53105,
@@ -40017,11 +29554,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_26
-
-	local var_27_27 = var_27_26.base.ship_meta_repair
-
-	var_27_27[53106] = {
+	pg.base.ship_meta_repair[53106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53106,
@@ -40031,11 +29564,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_27
-
-	local var_27_28 = var_27_27.base.ship_meta_repair
-
-	var_27_28[53107] = {
+	pg.base.ship_meta_repair[53107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53107,
@@ -40045,11 +29574,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_28
-
-	local var_27_29 = var_27_28.base.ship_meta_repair
-
-	var_27_29[53108] = {
+	pg.base.ship_meta_repair[53108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53108,
@@ -40059,11 +29584,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_29
-
-	local var_27_30 = var_27_29.base.ship_meta_repair
-
-	var_27_30[53109] = {
+	pg.base.ship_meta_repair[53109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53109,
@@ -40073,11 +29594,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_30
-
-	local var_27_31 = var_27_30.base.ship_meta_repair
-
-	var_27_31[53110] = {
+	pg.base.ship_meta_repair[53110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53110,
@@ -40087,11 +29604,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_31
-
-	local var_27_32 = var_27_31.base.ship_meta_repair
-
-	var_27_32[53111] = {
+	pg.base.ship_meta_repair[53111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53111,
@@ -40101,11 +29614,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_32
-
-	local var_27_33 = var_27_32.base.ship_meta_repair
-
-	var_27_33[53112] = {
+	pg.base.ship_meta_repair[53112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53112,
@@ -40115,11 +29624,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_33
-
-	local var_27_34 = var_27_33.base.ship_meta_repair
-
-	var_27_34[53113] = {
+	pg.base.ship_meta_repair[53113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53113,
@@ -40129,11 +29634,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_34
-
-	local var_27_35 = var_27_34.base.ship_meta_repair
-
-	var_27_35[53114] = {
+	pg.base.ship_meta_repair[53114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53114,
@@ -40143,11 +29644,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_35
-
-	local var_27_36 = var_27_35.base.ship_meta_repair
-
-	var_27_36[53115] = {
+	pg.base.ship_meta_repair[53115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53115,
@@ -40157,11 +29654,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_36
-
-	local var_27_37 = var_27_36.base.ship_meta_repair
-
-	var_27_37[53116] = {
+	pg.base.ship_meta_repair[53116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53116,
@@ -40171,11 +29664,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_37
-
-	local var_27_38 = var_27_37.base.ship_meta_repair
-
-	var_27_38[53117] = {
+	pg.base.ship_meta_repair[53117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53117,
@@ -40185,11 +29674,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_38
-
-	local var_27_39 = var_27_38.base.ship_meta_repair
-
-	var_27_39[53118] = {
+	pg.base.ship_meta_repair[53118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53118,
@@ -40199,11 +29684,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_39
-
-	local var_27_40 = var_27_39.base.ship_meta_repair
-
-	var_27_40[53119] = {
+	pg.base.ship_meta_repair[53119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53119,
@@ -40213,11 +29694,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_40
-
-	local var_27_41 = var_27_40.base.ship_meta_repair
-
-	var_27_41[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 53120,
@@ -40227,11 +29704,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_41
-
-	local var_27_42 = var_27_41.base.ship_meta_repair
-
-	var_27_42[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53401,
@@ -40241,11 +29714,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_42
-
-	local var_27_43 = var_27_42.base.ship_meta_repair
-
-	var_27_43[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53402,
@@ -40255,11 +29724,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_43
-
-	local var_27_44 = var_27_43.base.ship_meta_repair
-
-	var_27_44[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53403,
@@ -40269,11 +29734,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_44
-
-	local var_27_45 = var_27_44.base.ship_meta_repair
-
-	var_27_45[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53404,
@@ -40283,11 +29744,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_45
-
-	local var_27_46 = var_27_45.base.ship_meta_repair
-
-	var_27_46[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53405,
@@ -40297,11 +29754,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_46
-
-	local var_27_47 = var_27_46.base.ship_meta_repair
-
-	var_27_47[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53406,
@@ -40311,11 +29764,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_47
-
-	local var_27_48 = var_27_47.base.ship_meta_repair
-
-	var_27_48[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53407,
@@ -40325,11 +29774,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_48
-
-	local var_27_49 = var_27_48.base.ship_meta_repair
-
-	var_27_49[53408] = {
+	pg.base.ship_meta_repair[53408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53408,
@@ -40339,11 +29784,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_49
-
-	local var_27_50 = var_27_49.base.ship_meta_repair
-
-	var_27_50[53409] = {
+	pg.base.ship_meta_repair[53409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53409,
@@ -40353,11 +29794,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_50
-
-	local var_27_51 = var_27_50.base.ship_meta_repair
-
-	var_27_51[53410] = {
+	pg.base.ship_meta_repair[53410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53410,
@@ -40367,11 +29804,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_51
-
-	local var_27_52 = var_27_51.base.ship_meta_repair
-
-	var_27_52[53411] = {
+	pg.base.ship_meta_repair[53411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53411,
@@ -40381,11 +29814,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_52
-
-	local var_27_53 = var_27_52.base.ship_meta_repair
-
-	var_27_53[53412] = {
+	pg.base.ship_meta_repair[53412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53412,
@@ -40395,11 +29824,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_53
-
-	local var_27_54 = var_27_53.base.ship_meta_repair
-
-	var_27_54[53413] = {
+	pg.base.ship_meta_repair[53413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53413,
@@ -40409,11 +29834,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_54
-
-	local var_27_55 = var_27_54.base.ship_meta_repair
-
-	var_27_55[53414] = {
+	pg.base.ship_meta_repair[53414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53414,
@@ -40423,11 +29844,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_55
-
-	local var_27_56 = var_27_55.base.ship_meta_repair
-
-	var_27_56[53415] = {
+	pg.base.ship_meta_repair[53415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53415,
@@ -40437,11 +29854,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_56
-
-	local var_27_57 = var_27_56.base.ship_meta_repair
-
-	var_27_57[53416] = {
+	pg.base.ship_meta_repair[53416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53416,
@@ -40451,11 +29864,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_57
-
-	local var_27_58 = var_27_57.base.ship_meta_repair
-
-	var_27_58[53417] = {
+	pg.base.ship_meta_repair[53417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53417,
@@ -40465,11 +29874,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_58
-
-	local var_27_59 = var_27_58.base.ship_meta_repair
-
-	var_27_59[53418] = {
+	pg.base.ship_meta_repair[53418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53418,
@@ -40479,11 +29884,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_59
-
-	local var_27_60 = var_27_59.base.ship_meta_repair
-
-	var_27_60[53419] = {
+	pg.base.ship_meta_repair[53419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53419,
@@ -40493,11 +29894,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_60
-
-	local var_27_61 = var_27_60.base.ship_meta_repair
-
-	var_27_61[53420] = {
+	pg.base.ship_meta_repair[53420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53420,
@@ -40507,11 +29904,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_61
-
-	local var_27_62 = var_27_61.base.ship_meta_repair
-
-	var_27_62[53421] = {
+	pg.base.ship_meta_repair[53421] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53421,
@@ -40521,11 +29914,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_62
-
-	local var_27_63 = var_27_62.base.ship_meta_repair
-
-	var_27_63[53422] = {
+	pg.base.ship_meta_repair[53422] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53422,
@@ -40535,11 +29924,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_63
-
-	local var_27_64 = var_27_63.base.ship_meta_repair
-
-	var_27_64[53423] = {
+	pg.base.ship_meta_repair[53423] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53423,
@@ -40549,11 +29934,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_64
-
-	local var_27_65 = var_27_64.base.ship_meta_repair
-
-	var_27_65[53424] = {
+	pg.base.ship_meta_repair[53424] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53424,
@@ -40563,11 +29944,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_65
-
-	local var_27_66 = var_27_65.base.ship_meta_repair
-
-	var_27_66[53425] = {
+	pg.base.ship_meta_repair[53425] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53425,
@@ -40577,11 +29954,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_66
-
-	local var_27_67 = var_27_66.base.ship_meta_repair
-
-	var_27_67[53426] = {
+	pg.base.ship_meta_repair[53426] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53426,
@@ -40591,11 +29964,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_67
-
-	local var_27_68 = var_27_67.base.ship_meta_repair
-
-	var_27_68[53427] = {
+	pg.base.ship_meta_repair[53427] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53427,
@@ -40605,11 +29974,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_68
-
-	local var_27_69 = var_27_68.base.ship_meta_repair
-
-	var_27_69[53428] = {
+	pg.base.ship_meta_repair[53428] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53428,
@@ -40619,11 +29984,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_69
-
-	local var_27_70 = var_27_69.base.ship_meta_repair
-
-	var_27_70[53429] = {
+	pg.base.ship_meta_repair[53429] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53429,
@@ -40633,11 +29994,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_70
-
-	local var_27_71 = var_27_70.base.ship_meta_repair
-
-	var_27_71[53430] = {
+	pg.base.ship_meta_repair[53430] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 53430,
@@ -40647,11 +30004,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_71
-
-	local var_27_72 = var_27_71.base.ship_meta_repair
-
-	var_27_72[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54301,
@@ -40661,11 +30014,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_72
-
-	local var_27_73 = var_27_72.base.ship_meta_repair
-
-	var_27_73[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54302,
@@ -40675,11 +30024,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_73
-
-	local var_27_74 = var_27_73.base.ship_meta_repair
-
-	var_27_74[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54303,
@@ -40689,11 +30034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_74
-
-	local var_27_75 = var_27_74.base.ship_meta_repair
-
-	var_27_75[54304] = {
+	pg.base.ship_meta_repair[54304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54304,
@@ -40703,11 +30044,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_75
-
-	local var_27_76 = var_27_75.base.ship_meta_repair
-
-	var_27_76[54305] = {
+	pg.base.ship_meta_repair[54305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54305,
@@ -40717,11 +30054,7 @@ end)()
 			1
 		}
 	}
-	pg = var_27_76
-
-	local var_27_77 = var_27_76.base.ship_meta_repair
-
-	var_27_77[54306] = {
+	pg.base.ship_meta_repair[54306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54306,
@@ -40731,11 +30064,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_77
-
-	local var_27_78 = var_27_77.base.ship_meta_repair
-
-	var_27_78[54307] = {
+	pg.base.ship_meta_repair[54307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54307,
@@ -40745,11 +30074,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_78
-
-	local var_27_79 = var_27_78.base.ship_meta_repair
-
-	var_27_79[54308] = {
+	pg.base.ship_meta_repair[54308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54308,
@@ -40759,11 +30084,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_79
-
-	local var_27_80 = var_27_79.base.ship_meta_repair
-
-	var_27_80[54309] = {
+	pg.base.ship_meta_repair[54309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54309,
@@ -40773,11 +30094,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_80
-
-	local var_27_81 = var_27_80.base.ship_meta_repair
-
-	var_27_81[54310] = {
+	pg.base.ship_meta_repair[54310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54310,
@@ -40787,11 +30104,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_81
-
-	local var_27_82 = var_27_81.base.ship_meta_repair
-
-	var_27_82[54311] = {
+	pg.base.ship_meta_repair[54311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54311,
@@ -40801,11 +30114,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_82
-
-	local var_27_83 = var_27_82.base.ship_meta_repair
-
-	var_27_83[54312] = {
+	pg.base.ship_meta_repair[54312] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54312,
@@ -40815,11 +30124,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_83
-
-	local var_27_84 = var_27_83.base.ship_meta_repair
-
-	var_27_84[54313] = {
+	pg.base.ship_meta_repair[54313] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54313,
@@ -40829,11 +30134,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_84
-
-	local var_27_85 = var_27_84.base.ship_meta_repair
-
-	var_27_85[54314] = {
+	pg.base.ship_meta_repair[54314] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54314,
@@ -40843,11 +30144,7 @@ end)()
 			2
 		}
 	}
-	pg = var_27_85
-
-	local var_27_86 = var_27_85.base.ship_meta_repair
-
-	var_27_86[54315] = {
+	pg.base.ship_meta_repair[54315] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54315,
@@ -40857,11 +30154,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_86
-
-	local var_27_87 = var_27_86.base.ship_meta_repair
-
-	var_27_87[54316] = {
+	pg.base.ship_meta_repair[54316] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54316,
@@ -40871,11 +30164,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_87
-
-	local var_27_88 = var_27_87.base.ship_meta_repair
-
-	var_27_88[54317] = {
+	pg.base.ship_meta_repair[54317] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54317,
@@ -40885,11 +30174,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_88
-
-	local var_27_89 = var_27_88.base.ship_meta_repair
-
-	var_27_89[54318] = {
+	pg.base.ship_meta_repair[54318] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54318,
@@ -40899,11 +30184,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_89
-
-	local var_27_90 = var_27_89.base.ship_meta_repair
-
-	var_27_90[54319] = {
+	pg.base.ship_meta_repair[54319] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54319,
@@ -40913,11 +30194,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_90
-
-	local var_27_91 = var_27_90.base.ship_meta_repair
-
-	var_27_91[54320] = {
+	pg.base.ship_meta_repair[54320] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54320,
@@ -40927,11 +30204,7 @@ end)()
 			3
 		}
 	}
-	pg = var_27_91
-
-	local var_27_92 = var_27_91.base.ship_meta_repair
-
-	var_27_92[54321] = {
+	pg.base.ship_meta_repair[54321] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54321,
@@ -40941,11 +30214,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_92
-
-	local var_27_93 = var_27_92.base.ship_meta_repair
-
-	var_27_93[54322] = {
+	pg.base.ship_meta_repair[54322] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54322,
@@ -40955,11 +30224,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_93
-
-	local var_27_94 = var_27_93.base.ship_meta_repair
-
-	var_27_94[54323] = {
+	pg.base.ship_meta_repair[54323] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54323,
@@ -40969,11 +30234,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_94
-
-	local var_27_95 = var_27_94.base.ship_meta_repair
-
-	var_27_95[54324] = {
+	pg.base.ship_meta_repair[54324] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54324,
@@ -40983,11 +30244,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_95
-
-	local var_27_96 = var_27_95.base.ship_meta_repair
-
-	var_27_96[54325] = {
+	pg.base.ship_meta_repair[54325] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54325,
@@ -40997,11 +30254,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_96
-
-	local var_27_97 = var_27_96.base.ship_meta_repair
-
-	var_27_97[54326] = {
+	pg.base.ship_meta_repair[54326] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54326,
@@ -41011,11 +30264,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_97
-
-	local var_27_98 = var_27_97.base.ship_meta_repair
-
-	var_27_98[54327] = {
+	pg.base.ship_meta_repair[54327] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54327,
@@ -41025,8 +30274,7 @@ end)()
 			4
 		}
 	}
-	pg = var_27_98
-	var_27_98.base.ship_meta_repair[54328] = {
+	pg.base.ship_meta_repair[54328] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54328,
@@ -41040,11 +30288,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_28_0 = var_1_10000.base.ship_meta_repair
-
-	var_28_0[54329] = {
+	pg.base.ship_meta_repair[54329] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54329,
@@ -41054,11 +30298,7 @@ end)()
 			4
 		}
 	}
-	pg = var_28_0
-
-	local var_28_1 = var_28_0.base.ship_meta_repair
-
-	var_28_1[54330] = {
+	pg.base.ship_meta_repair[54330] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 54330,
@@ -41068,11 +30308,7 @@ end)()
 			4
 		}
 	}
-	pg = var_28_1
-
-	local var_28_2 = var_28_1.base.ship_meta_repair
-
-	var_28_2[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54401,
@@ -41082,11 +30318,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_2
-
-	local var_28_3 = var_28_2.base.ship_meta_repair
-
-	var_28_3[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54402,
@@ -41096,11 +30328,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_3
-
-	local var_28_4 = var_28_3.base.ship_meta_repair
-
-	var_28_4[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54403,
@@ -41110,11 +30338,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_4
-
-	local var_28_5 = var_28_4.base.ship_meta_repair
-
-	var_28_5[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54404,
@@ -41124,11 +30348,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_5
-
-	local var_28_6 = var_28_5.base.ship_meta_repair
-
-	var_28_6[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54405,
@@ -41138,11 +30358,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_6
-
-	local var_28_7 = var_28_6.base.ship_meta_repair
-
-	var_28_7[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54406,
@@ -41152,11 +30368,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_7
-
-	local var_28_8 = var_28_7.base.ship_meta_repair
-
-	var_28_8[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54407,
@@ -41166,11 +30378,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_8
-
-	local var_28_9 = var_28_8.base.ship_meta_repair
-
-	var_28_9[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54408,
@@ -41180,11 +30388,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_9
-
-	local var_28_10 = var_28_9.base.ship_meta_repair
-
-	var_28_10[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54409,
@@ -41194,11 +30398,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_10
-
-	local var_28_11 = var_28_10.base.ship_meta_repair
-
-	var_28_11[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54410,
@@ -41208,11 +30408,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_11
-
-	local var_28_12 = var_28_11.base.ship_meta_repair
-
-	var_28_12[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54411,
@@ -41222,11 +30418,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_12
-
-	local var_28_13 = var_28_12.base.ship_meta_repair
-
-	var_28_13[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54412,
@@ -41236,11 +30428,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_13
-
-	local var_28_14 = var_28_13.base.ship_meta_repair
-
-	var_28_14[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54413,
@@ -41250,11 +30438,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_14
-
-	local var_28_15 = var_28_14.base.ship_meta_repair
-
-	var_28_15[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54414,
@@ -41264,11 +30448,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_15
-
-	local var_28_16 = var_28_15.base.ship_meta_repair
-
-	var_28_16[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54415,
@@ -41278,11 +30458,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_16
-
-	local var_28_17 = var_28_16.base.ship_meta_repair
-
-	var_28_17[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54416,
@@ -41292,11 +30468,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_17
-
-	local var_28_18 = var_28_17.base.ship_meta_repair
-
-	var_28_18[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54417,
@@ -41306,11 +30478,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_18
-
-	local var_28_19 = var_28_18.base.ship_meta_repair
-
-	var_28_19[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54418,
@@ -41320,11 +30488,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_19
-
-	local var_28_20 = var_28_19.base.ship_meta_repair
-
-	var_28_20[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54419,
@@ -41334,11 +30498,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_20
-
-	local var_28_21 = var_28_20.base.ship_meta_repair
-
-	var_28_21[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 54420,
@@ -41348,11 +30508,7 @@ end)()
 			4
 		}
 	}
-	pg = var_28_21
-
-	local var_28_22 = var_28_21.base.ship_meta_repair
-
-	var_28_22[55101] = {
+	pg.base.ship_meta_repair[55101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55101,
@@ -41362,11 +30518,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_22
-
-	local var_28_23 = var_28_22.base.ship_meta_repair
-
-	var_28_23[55102] = {
+	pg.base.ship_meta_repair[55102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55102,
@@ -41376,11 +30528,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_23
-
-	local var_28_24 = var_28_23.base.ship_meta_repair
-
-	var_28_24[55103] = {
+	pg.base.ship_meta_repair[55103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55103,
@@ -41390,11 +30538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_24
-
-	local var_28_25 = var_28_24.base.ship_meta_repair
-
-	var_28_25[55104] = {
+	pg.base.ship_meta_repair[55104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55104,
@@ -41404,11 +30548,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_25
-
-	local var_28_26 = var_28_25.base.ship_meta_repair
-
-	var_28_26[55105] = {
+	pg.base.ship_meta_repair[55105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55105,
@@ -41418,11 +30558,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_26
-
-	local var_28_27 = var_28_26.base.ship_meta_repair
-
-	var_28_27[55106] = {
+	pg.base.ship_meta_repair[55106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55106,
@@ -41432,11 +30568,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_27
-
-	local var_28_28 = var_28_27.base.ship_meta_repair
-
-	var_28_28[55107] = {
+	pg.base.ship_meta_repair[55107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55107,
@@ -41446,11 +30578,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_28
-
-	local var_28_29 = var_28_28.base.ship_meta_repair
-
-	var_28_29[55108] = {
+	pg.base.ship_meta_repair[55108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55108,
@@ -41460,11 +30588,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_29
-
-	local var_28_30 = var_28_29.base.ship_meta_repair
-
-	var_28_30[55109] = {
+	pg.base.ship_meta_repair[55109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55109,
@@ -41474,11 +30598,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_30
-
-	local var_28_31 = var_28_30.base.ship_meta_repair
-
-	var_28_31[55110] = {
+	pg.base.ship_meta_repair[55110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55110,
@@ -41488,11 +30608,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_31
-
-	local var_28_32 = var_28_31.base.ship_meta_repair
-
-	var_28_32[55111] = {
+	pg.base.ship_meta_repair[55111] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55111,
@@ -41502,11 +30618,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_32
-
-	local var_28_33 = var_28_32.base.ship_meta_repair
-
-	var_28_33[55112] = {
+	pg.base.ship_meta_repair[55112] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55112,
@@ -41516,11 +30628,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_33
-
-	local var_28_34 = var_28_33.base.ship_meta_repair
-
-	var_28_34[55113] = {
+	pg.base.ship_meta_repair[55113] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55113,
@@ -41530,11 +30638,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_34
-
-	local var_28_35 = var_28_34.base.ship_meta_repair
-
-	var_28_35[55114] = {
+	pg.base.ship_meta_repair[55114] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55114,
@@ -41544,11 +30648,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_35
-
-	local var_28_36 = var_28_35.base.ship_meta_repair
-
-	var_28_36[55115] = {
+	pg.base.ship_meta_repair[55115] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55115,
@@ -41558,11 +30658,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_36
-
-	local var_28_37 = var_28_36.base.ship_meta_repair
-
-	var_28_37[55116] = {
+	pg.base.ship_meta_repair[55116] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55116,
@@ -41572,11 +30668,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_37
-
-	local var_28_38 = var_28_37.base.ship_meta_repair
-
-	var_28_38[55117] = {
+	pg.base.ship_meta_repair[55117] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55117,
@@ -41586,11 +30678,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_38
-
-	local var_28_39 = var_28_38.base.ship_meta_repair
-
-	var_28_39[55118] = {
+	pg.base.ship_meta_repair[55118] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55118,
@@ -41600,11 +30688,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_39
-
-	local var_28_40 = var_28_39.base.ship_meta_repair
-
-	var_28_40[55119] = {
+	pg.base.ship_meta_repair[55119] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55119,
@@ -41614,11 +30698,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_40
-
-	local var_28_41 = var_28_40.base.ship_meta_repair
-
-	var_28_41[55120] = {
+	pg.base.ship_meta_repair[55120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 55120,
@@ -41628,11 +30708,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_41
-
-	local var_28_42 = var_28_41.base.ship_meta_repair
-
-	var_28_42[55401] = {
+	pg.base.ship_meta_repair[55401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55401,
@@ -41642,11 +30718,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_42
-
-	local var_28_43 = var_28_42.base.ship_meta_repair
-
-	var_28_43[55402] = {
+	pg.base.ship_meta_repair[55402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55402,
@@ -41656,11 +30728,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_43
-
-	local var_28_44 = var_28_43.base.ship_meta_repair
-
-	var_28_44[55403] = {
+	pg.base.ship_meta_repair[55403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55403,
@@ -41670,11 +30738,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_44
-
-	local var_28_45 = var_28_44.base.ship_meta_repair
-
-	var_28_45[55404] = {
+	pg.base.ship_meta_repair[55404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55404,
@@ -41684,11 +30748,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_45
-
-	local var_28_46 = var_28_45.base.ship_meta_repair
-
-	var_28_46[55405] = {
+	pg.base.ship_meta_repair[55405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55405,
@@ -41698,11 +30758,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_46
-
-	local var_28_47 = var_28_46.base.ship_meta_repair
-
-	var_28_47[55406] = {
+	pg.base.ship_meta_repair[55406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55406,
@@ -41712,11 +30768,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_47
-
-	local var_28_48 = var_28_47.base.ship_meta_repair
-
-	var_28_48[55407] = {
+	pg.base.ship_meta_repair[55407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55407,
@@ -41726,11 +30778,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_48
-
-	local var_28_49 = var_28_48.base.ship_meta_repair
-
-	var_28_49[55408] = {
+	pg.base.ship_meta_repair[55408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55408,
@@ -41740,11 +30788,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_49
-
-	local var_28_50 = var_28_49.base.ship_meta_repair
-
-	var_28_50[55409] = {
+	pg.base.ship_meta_repair[55409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55409,
@@ -41754,11 +30798,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_50
-
-	local var_28_51 = var_28_50.base.ship_meta_repair
-
-	var_28_51[55410] = {
+	pg.base.ship_meta_repair[55410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55410,
@@ -41768,11 +30808,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_51
-
-	local var_28_52 = var_28_51.base.ship_meta_repair
-
-	var_28_52[55411] = {
+	pg.base.ship_meta_repair[55411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55411,
@@ -41782,11 +30818,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_52
-
-	local var_28_53 = var_28_52.base.ship_meta_repair
-
-	var_28_53[55412] = {
+	pg.base.ship_meta_repair[55412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55412,
@@ -41796,11 +30828,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_53
-
-	local var_28_54 = var_28_53.base.ship_meta_repair
-
-	var_28_54[55413] = {
+	pg.base.ship_meta_repair[55413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55413,
@@ -41810,11 +30838,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_54
-
-	local var_28_55 = var_28_54.base.ship_meta_repair
-
-	var_28_55[55414] = {
+	pg.base.ship_meta_repair[55414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55414,
@@ -41824,11 +30848,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_55
-
-	local var_28_56 = var_28_55.base.ship_meta_repair
-
-	var_28_56[55415] = {
+	pg.base.ship_meta_repair[55415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55415,
@@ -41838,11 +30858,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_56
-
-	local var_28_57 = var_28_56.base.ship_meta_repair
-
-	var_28_57[55416] = {
+	pg.base.ship_meta_repair[55416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55416,
@@ -41852,11 +30868,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_57
-
-	local var_28_58 = var_28_57.base.ship_meta_repair
-
-	var_28_58[55417] = {
+	pg.base.ship_meta_repair[55417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55417,
@@ -41866,11 +30878,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_58
-
-	local var_28_59 = var_28_58.base.ship_meta_repair
-
-	var_28_59[55418] = {
+	pg.base.ship_meta_repair[55418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55418,
@@ -41880,11 +30888,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_59
-
-	local var_28_60 = var_28_59.base.ship_meta_repair
-
-	var_28_60[55419] = {
+	pg.base.ship_meta_repair[55419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55419,
@@ -41894,11 +30898,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_60
-
-	local var_28_61 = var_28_60.base.ship_meta_repair
-
-	var_28_61[55420] = {
+	pg.base.ship_meta_repair[55420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55420,
@@ -41908,11 +30908,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_61
-
-	local var_28_62 = var_28_61.base.ship_meta_repair
-
-	var_28_62[55421] = {
+	pg.base.ship_meta_repair[55421] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55421,
@@ -41922,11 +30918,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_62
-
-	local var_28_63 = var_28_62.base.ship_meta_repair
-
-	var_28_63[55422] = {
+	pg.base.ship_meta_repair[55422] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55422,
@@ -41936,11 +30928,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_63
-
-	local var_28_64 = var_28_63.base.ship_meta_repair
-
-	var_28_64[55423] = {
+	pg.base.ship_meta_repair[55423] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55423,
@@ -41950,11 +30938,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_64
-
-	local var_28_65 = var_28_64.base.ship_meta_repair
-
-	var_28_65[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55424,
@@ -41964,11 +30948,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_65
-
-	local var_28_66 = var_28_65.base.ship_meta_repair
-
-	var_28_66[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55425,
@@ -41978,11 +30958,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_66
-
-	local var_28_67 = var_28_66.base.ship_meta_repair
-
-	var_28_67[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55426,
@@ -41992,11 +30968,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_67
-
-	local var_28_68 = var_28_67.base.ship_meta_repair
-
-	var_28_68[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55427,
@@ -42006,11 +30978,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_68
-
-	local var_28_69 = var_28_68.base.ship_meta_repair
-
-	var_28_69[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55428,
@@ -42020,11 +30988,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_69
-
-	local var_28_70 = var_28_69.base.ship_meta_repair
-
-	var_28_70[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55429,
@@ -42034,11 +30998,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_70
-
-	local var_28_71 = var_28_70.base.ship_meta_repair
-
-	var_28_71[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 55430,
@@ -42048,11 +31008,7 @@ end)()
 			4
 		}
 	}
-	pg = var_28_71
-
-	local var_28_72 = var_28_71.base.ship_meta_repair
-
-	var_28_72[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56201,
@@ -42062,11 +31018,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_72
-
-	local var_28_73 = var_28_72.base.ship_meta_repair
-
-	var_28_73[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56202,
@@ -42076,11 +31028,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_73
-
-	local var_28_74 = var_28_73.base.ship_meta_repair
-
-	var_28_74[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56203,
@@ -42090,11 +31038,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_74
-
-	local var_28_75 = var_28_74.base.ship_meta_repair
-
-	var_28_75[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56204,
@@ -42104,11 +31048,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_75
-
-	local var_28_76 = var_28_75.base.ship_meta_repair
-
-	var_28_76[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56205,
@@ -42118,11 +31058,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_76
-
-	local var_28_77 = var_28_76.base.ship_meta_repair
-
-	var_28_77[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56206,
@@ -42132,11 +31068,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_77
-
-	local var_28_78 = var_28_77.base.ship_meta_repair
-
-	var_28_78[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56207,
@@ -42146,11 +31078,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_78
-
-	local var_28_79 = var_28_78.base.ship_meta_repair
-
-	var_28_79[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56208,
@@ -42160,11 +31088,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_79
-
-	local var_28_80 = var_28_79.base.ship_meta_repair
-
-	var_28_80[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56209,
@@ -42174,11 +31098,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_80
-
-	local var_28_81 = var_28_80.base.ship_meta_repair
-
-	var_28_81[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56210,
@@ -42188,11 +31108,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_81
-
-	local var_28_82 = var_28_81.base.ship_meta_repair
-
-	var_28_82[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56211,
@@ -42202,11 +31118,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_82
-
-	local var_28_83 = var_28_82.base.ship_meta_repair
-
-	var_28_83[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56212,
@@ -42216,11 +31128,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_83
-
-	local var_28_84 = var_28_83.base.ship_meta_repair
-
-	var_28_84[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56213,
@@ -42230,11 +31138,7 @@ end)()
 			1
 		}
 	}
-	pg = var_28_84
-
-	local var_28_85 = var_28_84.base.ship_meta_repair
-
-	var_28_85[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56214,
@@ -42244,11 +31148,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_85
-
-	local var_28_86 = var_28_85.base.ship_meta_repair
-
-	var_28_86[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56215,
@@ -42258,11 +31158,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_86
-
-	local var_28_87 = var_28_86.base.ship_meta_repair
-
-	var_28_87[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56216,
@@ -42272,11 +31168,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_87
-
-	local var_28_88 = var_28_87.base.ship_meta_repair
-
-	var_28_88[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56217,
@@ -42286,11 +31178,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_88
-
-	local var_28_89 = var_28_88.base.ship_meta_repair
-
-	var_28_89[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56218,
@@ -42300,11 +31188,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_89
-
-	local var_28_90 = var_28_89.base.ship_meta_repair
-
-	var_28_90[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56219,
@@ -42314,11 +31198,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_90
-
-	local var_28_91 = var_28_90.base.ship_meta_repair
-
-	var_28_91[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56220,
@@ -42328,11 +31208,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_91
-
-	local var_28_92 = var_28_91.base.ship_meta_repair
-
-	var_28_92[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56221,
@@ -42342,11 +31218,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_92
-
-	local var_28_93 = var_28_92.base.ship_meta_repair
-
-	var_28_93[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56222,
@@ -42356,11 +31228,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_93
-
-	local var_28_94 = var_28_93.base.ship_meta_repair
-
-	var_28_94[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56223,
@@ -42370,11 +31238,7 @@ end)()
 			2
 		}
 	}
-	pg = var_28_94
-
-	local var_28_95 = var_28_94.base.ship_meta_repair
-
-	var_28_95[56224] = {
+	pg.base.ship_meta_repair[56224] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56224,
@@ -42384,11 +31248,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_95
-
-	local var_28_96 = var_28_95.base.ship_meta_repair
-
-	var_28_96[56225] = {
+	pg.base.ship_meta_repair[56225] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56225,
@@ -42398,11 +31258,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_96
-
-	local var_28_97 = var_28_96.base.ship_meta_repair
-
-	var_28_97[56226] = {
+	pg.base.ship_meta_repair[56226] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56226,
@@ -42412,11 +31268,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_97
-
-	local var_28_98 = var_28_97.base.ship_meta_repair
-
-	var_28_98[56227] = {
+	pg.base.ship_meta_repair[56227] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56227,
@@ -42426,8 +31278,7 @@ end)()
 			3
 		}
 	}
-	pg = var_28_98
-	var_28_98.base.ship_meta_repair[56228] = {
+	pg.base.ship_meta_repair[56228] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56228,
@@ -42441,11 +31292,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_29_0 = var_1_10000.base.ship_meta_repair
-
-	var_29_0[56229] = {
+	pg.base.ship_meta_repair[56229] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56229,
@@ -42455,11 +31302,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_0
-
-	local var_29_1 = var_29_0.base.ship_meta_repair
-
-	var_29_1[56230] = {
+	pg.base.ship_meta_repair[56230] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 56230,
@@ -42469,11 +31312,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_1
-
-	local var_29_2 = var_29_1.base.ship_meta_repair
-
-	var_29_2[56401] = {
+	pg.base.ship_meta_repair[56401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56401,
@@ -42483,11 +31322,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_2
-
-	local var_29_3 = var_29_2.base.ship_meta_repair
-
-	var_29_3[56402] = {
+	pg.base.ship_meta_repair[56402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56402,
@@ -42497,11 +31332,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_3
-
-	local var_29_4 = var_29_3.base.ship_meta_repair
-
-	var_29_4[56403] = {
+	pg.base.ship_meta_repair[56403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56403,
@@ -42511,11 +31342,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_4
-
-	local var_29_5 = var_29_4.base.ship_meta_repair
-
-	var_29_5[56404] = {
+	pg.base.ship_meta_repair[56404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56404,
@@ -42525,11 +31352,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_5
-
-	local var_29_6 = var_29_5.base.ship_meta_repair
-
-	var_29_6[56405] = {
+	pg.base.ship_meta_repair[56405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56405,
@@ -42539,11 +31362,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_6
-
-	local var_29_7 = var_29_6.base.ship_meta_repair
-
-	var_29_7[56406] = {
+	pg.base.ship_meta_repair[56406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56406,
@@ -42553,11 +31372,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_7
-
-	local var_29_8 = var_29_7.base.ship_meta_repair
-
-	var_29_8[56407] = {
+	pg.base.ship_meta_repair[56407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56407,
@@ -42567,11 +31382,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_8
-
-	local var_29_9 = var_29_8.base.ship_meta_repair
-
-	var_29_9[56408] = {
+	pg.base.ship_meta_repair[56408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56408,
@@ -42581,11 +31392,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_9
-
-	local var_29_10 = var_29_9.base.ship_meta_repair
-
-	var_29_10[56409] = {
+	pg.base.ship_meta_repair[56409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56409,
@@ -42595,11 +31402,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_10
-
-	local var_29_11 = var_29_10.base.ship_meta_repair
-
-	var_29_11[56410] = {
+	pg.base.ship_meta_repair[56410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56410,
@@ -42609,11 +31412,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_11
-
-	local var_29_12 = var_29_11.base.ship_meta_repair
-
-	var_29_12[56411] = {
+	pg.base.ship_meta_repair[56411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56411,
@@ -42623,11 +31422,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_12
-
-	local var_29_13 = var_29_12.base.ship_meta_repair
-
-	var_29_13[56412] = {
+	pg.base.ship_meta_repair[56412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56412,
@@ -42637,11 +31432,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_13
-
-	local var_29_14 = var_29_13.base.ship_meta_repair
-
-	var_29_14[56413] = {
+	pg.base.ship_meta_repair[56413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56413,
@@ -42651,11 +31442,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_14
-
-	local var_29_15 = var_29_14.base.ship_meta_repair
-
-	var_29_15[56414] = {
+	pg.base.ship_meta_repair[56414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56414,
@@ -42665,11 +31452,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_15
-
-	local var_29_16 = var_29_15.base.ship_meta_repair
-
-	var_29_16[56415] = {
+	pg.base.ship_meta_repair[56415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56415,
@@ -42679,11 +31462,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_16
-
-	local var_29_17 = var_29_16.base.ship_meta_repair
-
-	var_29_17[56416] = {
+	pg.base.ship_meta_repair[56416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56416,
@@ -42693,11 +31472,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_17
-
-	local var_29_18 = var_29_17.base.ship_meta_repair
-
-	var_29_18[56417] = {
+	pg.base.ship_meta_repair[56417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56417,
@@ -42707,11 +31482,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_18
-
-	local var_29_19 = var_29_18.base.ship_meta_repair
-
-	var_29_19[56418] = {
+	pg.base.ship_meta_repair[56418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56418,
@@ -42721,11 +31492,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_19
-
-	local var_29_20 = var_29_19.base.ship_meta_repair
-
-	var_29_20[56419] = {
+	pg.base.ship_meta_repair[56419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56419,
@@ -42735,11 +31502,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_20
-
-	local var_29_21 = var_29_20.base.ship_meta_repair
-
-	var_29_21[56420] = {
+	pg.base.ship_meta_repair[56420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 56420,
@@ -42749,11 +31512,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_21
-
-	local var_29_22 = var_29_21.base.ship_meta_repair
-
-	var_29_22[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57101,
@@ -42763,11 +31522,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_22
-
-	local var_29_23 = var_29_22.base.ship_meta_repair
-
-	var_29_23[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57102,
@@ -42777,11 +31532,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_23
-
-	local var_29_24 = var_29_23.base.ship_meta_repair
-
-	var_29_24[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57103,
@@ -42791,11 +31542,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_24
-
-	local var_29_25 = var_29_24.base.ship_meta_repair
-
-	var_29_25[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57104,
@@ -42805,11 +31552,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_25
-
-	local var_29_26 = var_29_25.base.ship_meta_repair
-
-	var_29_26[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57105,
@@ -42819,11 +31562,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_26
-
-	local var_29_27 = var_29_26.base.ship_meta_repair
-
-	var_29_27[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57106,
@@ -42833,11 +31572,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_27
-
-	local var_29_28 = var_29_27.base.ship_meta_repair
-
-	var_29_28[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57107,
@@ -42847,11 +31582,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_28
-
-	local var_29_29 = var_29_28.base.ship_meta_repair
-
-	var_29_29[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57108,
@@ -42861,11 +31592,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_29
-
-	local var_29_30 = var_29_29.base.ship_meta_repair
-
-	var_29_30[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57109,
@@ -42875,11 +31602,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_30
-
-	local var_29_31 = var_29_30.base.ship_meta_repair
-
-	var_29_31[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57110,
@@ -42889,11 +31612,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_31
-
-	local var_29_32 = var_29_31.base.ship_meta_repair
-
-	var_29_32[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57111,
@@ -42903,11 +31622,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_32
-
-	local var_29_33 = var_29_32.base.ship_meta_repair
-
-	var_29_33[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57112,
@@ -42917,11 +31632,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_33
-
-	local var_29_34 = var_29_33.base.ship_meta_repair
-
-	var_29_34[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57113,
@@ -42931,11 +31642,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_34
-
-	local var_29_35 = var_29_34.base.ship_meta_repair
-
-	var_29_35[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57114,
@@ -42945,11 +31652,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_35
-
-	local var_29_36 = var_29_35.base.ship_meta_repair
-
-	var_29_36[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57115,
@@ -42959,11 +31662,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_36
-
-	local var_29_37 = var_29_36.base.ship_meta_repair
-
-	var_29_37[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57116,
@@ -42973,11 +31672,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_37
-
-	local var_29_38 = var_29_37.base.ship_meta_repair
-
-	var_29_38[29] = {
+	pg.base.ship_meta_repair[29] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57117,
@@ -42987,11 +31682,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_38
-
-	local var_29_39 = var_29_38.base.ship_meta_repair
-
-	var_29_39[30] = {
+	pg.base.ship_meta_repair[30] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57118,
@@ -43001,11 +31692,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_39
-
-	local var_29_40 = var_29_39.base.ship_meta_repair
-
-	var_29_40[31] = {
+	pg.base.ship_meta_repair[31] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57119,
@@ -43015,11 +31702,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_40
-
-	local var_29_41 = var_29_40.base.ship_meta_repair
-
-	var_29_41[57120] = {
+	pg.base.ship_meta_repair[57120] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57120,
@@ -43029,11 +31712,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_41
-
-	local var_29_42 = var_29_41.base.ship_meta_repair
-
-	var_29_42[57121] = {
+	pg.base.ship_meta_repair[57121] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57121,
@@ -43043,11 +31722,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_42
-
-	local var_29_43 = var_29_42.base.ship_meta_repair
-
-	var_29_43[57122] = {
+	pg.base.ship_meta_repair[57122] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57122,
@@ -43057,11 +31732,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_43
-
-	local var_29_44 = var_29_43.base.ship_meta_repair
-
-	var_29_44[57123] = {
+	pg.base.ship_meta_repair[57123] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57123,
@@ -43071,11 +31742,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_44
-
-	local var_29_45 = var_29_44.base.ship_meta_repair
-
-	var_29_45[57124] = {
+	pg.base.ship_meta_repair[57124] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57124,
@@ -43085,11 +31752,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_45
-
-	local var_29_46 = var_29_45.base.ship_meta_repair
-
-	var_29_46[57125] = {
+	pg.base.ship_meta_repair[57125] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57125,
@@ -43099,11 +31762,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_46
-
-	local var_29_47 = var_29_46.base.ship_meta_repair
-
-	var_29_47[57126] = {
+	pg.base.ship_meta_repair[57126] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57126,
@@ -43113,11 +31772,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_47
-
-	local var_29_48 = var_29_47.base.ship_meta_repair
-
-	var_29_48[57127] = {
+	pg.base.ship_meta_repair[57127] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57127,
@@ -43127,11 +31782,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_48
-
-	local var_29_49 = var_29_48.base.ship_meta_repair
-
-	var_29_49[57128] = {
+	pg.base.ship_meta_repair[57128] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57128,
@@ -43141,11 +31792,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_49
-
-	local var_29_50 = var_29_49.base.ship_meta_repair
-
-	var_29_50[57129] = {
+	pg.base.ship_meta_repair[57129] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57129,
@@ -43155,11 +31802,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_50
-
-	local var_29_51 = var_29_50.base.ship_meta_repair
-
-	var_29_51[57130] = {
+	pg.base.ship_meta_repair[57130] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 57130,
@@ -43169,11 +31812,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_51
-
-	local var_29_52 = var_29_51.base.ship_meta_repair
-
-	var_29_52[57401] = {
+	pg.base.ship_meta_repair[57401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57401,
@@ -43183,11 +31822,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_52
-
-	local var_29_53 = var_29_52.base.ship_meta_repair
-
-	var_29_53[57402] = {
+	pg.base.ship_meta_repair[57402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57402,
@@ -43197,11 +31832,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_53
-
-	local var_29_54 = var_29_53.base.ship_meta_repair
-
-	var_29_54[57403] = {
+	pg.base.ship_meta_repair[57403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57403,
@@ -43211,11 +31842,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_54
-
-	local var_29_55 = var_29_54.base.ship_meta_repair
-
-	var_29_55[57404] = {
+	pg.base.ship_meta_repair[57404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57404,
@@ -43225,11 +31852,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_55
-
-	local var_29_56 = var_29_55.base.ship_meta_repair
-
-	var_29_56[57405] = {
+	pg.base.ship_meta_repair[57405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57405,
@@ -43239,11 +31862,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_56
-
-	local var_29_57 = var_29_56.base.ship_meta_repair
-
-	var_29_57[57406] = {
+	pg.base.ship_meta_repair[57406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57406,
@@ -43253,11 +31872,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_57
-
-	local var_29_58 = var_29_57.base.ship_meta_repair
-
-	var_29_58[57407] = {
+	pg.base.ship_meta_repair[57407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57407,
@@ -43267,11 +31882,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_58
-
-	local var_29_59 = var_29_58.base.ship_meta_repair
-
-	var_29_59[57408] = {
+	pg.base.ship_meta_repair[57408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57408,
@@ -43281,11 +31892,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_59
-
-	local var_29_60 = var_29_59.base.ship_meta_repair
-
-	var_29_60[57409] = {
+	pg.base.ship_meta_repair[57409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57409,
@@ -43295,11 +31902,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_60
-
-	local var_29_61 = var_29_60.base.ship_meta_repair
-
-	var_29_61[57410] = {
+	pg.base.ship_meta_repair[57410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57410,
@@ -43309,11 +31912,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_61
-
-	local var_29_62 = var_29_61.base.ship_meta_repair
-
-	var_29_62[57411] = {
+	pg.base.ship_meta_repair[57411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57411,
@@ -43323,11 +31922,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_62
-
-	local var_29_63 = var_29_62.base.ship_meta_repair
-
-	var_29_63[57412] = {
+	pg.base.ship_meta_repair[57412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57412,
@@ -43337,11 +31932,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_63
-
-	local var_29_64 = var_29_63.base.ship_meta_repair
-
-	var_29_64[57413] = {
+	pg.base.ship_meta_repair[57413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57413,
@@ -43351,11 +31942,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_64
-
-	local var_29_65 = var_29_64.base.ship_meta_repair
-
-	var_29_65[57414] = {
+	pg.base.ship_meta_repair[57414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57414,
@@ -43365,11 +31952,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_65
-
-	local var_29_66 = var_29_65.base.ship_meta_repair
-
-	var_29_66[57415] = {
+	pg.base.ship_meta_repair[57415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57415,
@@ -43379,11 +31962,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_66
-
-	local var_29_67 = var_29_66.base.ship_meta_repair
-
-	var_29_67[57416] = {
+	pg.base.ship_meta_repair[57416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57416,
@@ -43393,11 +31972,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_67
-
-	local var_29_68 = var_29_67.base.ship_meta_repair
-
-	var_29_68[57417] = {
+	pg.base.ship_meta_repair[57417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57417,
@@ -43407,11 +31982,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_68
-
-	local var_29_69 = var_29_68.base.ship_meta_repair
-
-	var_29_69[57418] = {
+	pg.base.ship_meta_repair[57418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57418,
@@ -43421,11 +31992,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_69
-
-	local var_29_70 = var_29_69.base.ship_meta_repair
-
-	var_29_70[57419] = {
+	pg.base.ship_meta_repair[57419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57419,
@@ -43435,11 +32002,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_70
-
-	local var_29_71 = var_29_70.base.ship_meta_repair
-
-	var_29_71[57420] = {
+	pg.base.ship_meta_repair[57420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 57420,
@@ -43449,11 +32012,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_71
-
-	local var_29_72 = var_29_71.base.ship_meta_repair
-
-	var_29_72[59101] = {
+	pg.base.ship_meta_repair[59101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59101,
@@ -43463,11 +32022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_72
-
-	local var_29_73 = var_29_72.base.ship_meta_repair
-
-	var_29_73[59102] = {
+	pg.base.ship_meta_repair[59102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59102,
@@ -43477,11 +32032,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_73
-
-	local var_29_74 = var_29_73.base.ship_meta_repair
-
-	var_29_74[59103] = {
+	pg.base.ship_meta_repair[59103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59103,
@@ -43491,11 +32042,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_74
-
-	local var_29_75 = var_29_74.base.ship_meta_repair
-
-	var_29_75[59104] = {
+	pg.base.ship_meta_repair[59104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59104,
@@ -43505,11 +32052,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_75
-
-	local var_29_76 = var_29_75.base.ship_meta_repair
-
-	var_29_76[59105] = {
+	pg.base.ship_meta_repair[59105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59105,
@@ -43519,11 +32062,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_76
-
-	local var_29_77 = var_29_76.base.ship_meta_repair
-
-	var_29_77[59106] = {
+	pg.base.ship_meta_repair[59106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59106,
@@ -43533,11 +32072,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_77
-
-	local var_29_78 = var_29_77.base.ship_meta_repair
-
-	var_29_78[59107] = {
+	pg.base.ship_meta_repair[59107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59107,
@@ -43547,11 +32082,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_78
-
-	local var_29_79 = var_29_78.base.ship_meta_repair
-
-	var_29_79[59108] = {
+	pg.base.ship_meta_repair[59108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59108,
@@ -43561,11 +32092,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_79
-
-	local var_29_80 = var_29_79.base.ship_meta_repair
-
-	var_29_80[59109] = {
+	pg.base.ship_meta_repair[59109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59109,
@@ -43575,11 +32102,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_80
-
-	local var_29_81 = var_29_80.base.ship_meta_repair
-
-	var_29_81[59110] = {
+	pg.base.ship_meta_repair[59110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 59110,
@@ -43589,11 +32112,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_81
-
-	local var_29_82 = var_29_81.base.ship_meta_repair
-
-	var_29_82[59201] = {
+	pg.base.ship_meta_repair[59201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59201,
@@ -43603,11 +32122,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_82
-
-	local var_29_83 = var_29_82.base.ship_meta_repair
-
-	var_29_83[59202] = {
+	pg.base.ship_meta_repair[59202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59202,
@@ -43617,11 +32132,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_83
-
-	local var_29_84 = var_29_83.base.ship_meta_repair
-
-	var_29_84[59203] = {
+	pg.base.ship_meta_repair[59203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59203,
@@ -43631,11 +32142,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_84
-
-	local var_29_85 = var_29_84.base.ship_meta_repair
-
-	var_29_85[59204] = {
+	pg.base.ship_meta_repair[59204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59204,
@@ -43645,11 +32152,7 @@ end)()
 			1
 		}
 	}
-	pg = var_29_85
-
-	local var_29_86 = var_29_85.base.ship_meta_repair
-
-	var_29_86[59205] = {
+	pg.base.ship_meta_repair[59205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59205,
@@ -43659,11 +32162,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_86
-
-	local var_29_87 = var_29_86.base.ship_meta_repair
-
-	var_29_87[59206] = {
+	pg.base.ship_meta_repair[59206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59206,
@@ -43673,11 +32172,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_87
-
-	local var_29_88 = var_29_87.base.ship_meta_repair
-
-	var_29_88[59207] = {
+	pg.base.ship_meta_repair[59207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59207,
@@ -43687,11 +32182,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_88
-
-	local var_29_89 = var_29_88.base.ship_meta_repair
-
-	var_29_89[59208] = {
+	pg.base.ship_meta_repair[59208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59208,
@@ -43701,11 +32192,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_89
-
-	local var_29_90 = var_29_89.base.ship_meta_repair
-
-	var_29_90[59209] = {
+	pg.base.ship_meta_repair[59209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59209,
@@ -43715,11 +32202,7 @@ end)()
 			2
 		}
 	}
-	pg = var_29_90
-
-	local var_29_91 = var_29_90.base.ship_meta_repair
-
-	var_29_91[59210] = {
+	pg.base.ship_meta_repair[59210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59210,
@@ -43729,11 +32212,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_91
-
-	local var_29_92 = var_29_91.base.ship_meta_repair
-
-	var_29_92[59211] = {
+	pg.base.ship_meta_repair[59211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59211,
@@ -43743,11 +32222,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_92
-
-	local var_29_93 = var_29_92.base.ship_meta_repair
-
-	var_29_93[59212] = {
+	pg.base.ship_meta_repair[59212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59212,
@@ -43757,11 +32232,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_93
-
-	local var_29_94 = var_29_93.base.ship_meta_repair
-
-	var_29_94[59213] = {
+	pg.base.ship_meta_repair[59213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59213,
@@ -43771,11 +32242,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_94
-
-	local var_29_95 = var_29_94.base.ship_meta_repair
-
-	var_29_95[59214] = {
+	pg.base.ship_meta_repair[59214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59214,
@@ -43785,11 +32252,7 @@ end)()
 			3
 		}
 	}
-	pg = var_29_95
-
-	local var_29_96 = var_29_95.base.ship_meta_repair
-
-	var_29_96[59215] = {
+	pg.base.ship_meta_repair[59215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59215,
@@ -43799,11 +32262,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_96
-
-	local var_29_97 = var_29_96.base.ship_meta_repair
-
-	var_29_97[59216] = {
+	pg.base.ship_meta_repair[59216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59216,
@@ -43813,11 +32272,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_97
-
-	local var_29_98 = var_29_97.base.ship_meta_repair
-
-	var_29_98[59217] = {
+	pg.base.ship_meta_repair[59217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59217,
@@ -43827,8 +32282,7 @@ end)()
 			4
 		}
 	}
-	pg = var_29_98
-	var_29_98.base.ship_meta_repair[59218] = {
+	pg.base.ship_meta_repair[59218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59218,
@@ -43842,11 +32296,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_30_0 = var_1_10000.base.ship_meta_repair
-
-	var_30_0[59219] = {
+	pg.base.ship_meta_repair[59219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59219,
@@ -43856,11 +32306,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_0
-
-	local var_30_1 = var_30_0.base.ship_meta_repair
-
-	var_30_1[59220] = {
+	pg.base.ship_meta_repair[59220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 59220,
@@ -43870,11 +32316,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_1
-
-	local var_30_2 = var_30_1.base.ship_meta_repair
-
-	var_30_2[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59401,
@@ -43884,11 +32326,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_2
-
-	local var_30_3 = var_30_2.base.ship_meta_repair
-
-	var_30_3[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59402,
@@ -43898,11 +32336,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_3
-
-	local var_30_4 = var_30_3.base.ship_meta_repair
-
-	var_30_4[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59403,
@@ -43912,11 +32346,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_4
-
-	local var_30_5 = var_30_4.base.ship_meta_repair
-
-	var_30_5[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59404,
@@ -43926,11 +32356,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_5
-
-	local var_30_6 = var_30_5.base.ship_meta_repair
-
-	var_30_6[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59405,
@@ -43940,11 +32366,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_6
-
-	local var_30_7 = var_30_6.base.ship_meta_repair
-
-	var_30_7[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59406,
@@ -43954,11 +32376,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_7
-
-	local var_30_8 = var_30_7.base.ship_meta_repair
-
-	var_30_8[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59407,
@@ -43968,11 +32386,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_8
-
-	local var_30_9 = var_30_8.base.ship_meta_repair
-
-	var_30_9[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59408,
@@ -43982,11 +32396,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_9
-
-	local var_30_10 = var_30_9.base.ship_meta_repair
-
-	var_30_10[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59409,
@@ -43996,11 +32406,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_10
-
-	local var_30_11 = var_30_10.base.ship_meta_repair
-
-	var_30_11[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59410,
@@ -44010,11 +32416,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_11
-
-	local var_30_12 = var_30_11.base.ship_meta_repair
-
-	var_30_12[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59411,
@@ -44024,11 +32426,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_12
-
-	local var_30_13 = var_30_12.base.ship_meta_repair
-
-	var_30_13[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59412,
@@ -44038,11 +32436,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_13
-
-	local var_30_14 = var_30_13.base.ship_meta_repair
-
-	var_30_14[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59413,
@@ -44052,11 +32446,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_14
-
-	local var_30_15 = var_30_14.base.ship_meta_repair
-
-	var_30_15[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59414,
@@ -44066,11 +32456,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_15
-
-	local var_30_16 = var_30_15.base.ship_meta_repair
-
-	var_30_16[23] = {
+	pg.base.ship_meta_repair[23] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59415,
@@ -44080,11 +32466,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_16
-
-	local var_30_17 = var_30_16.base.ship_meta_repair
-
-	var_30_17[24] = {
+	pg.base.ship_meta_repair[24] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59416,
@@ -44094,11 +32476,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_17
-
-	local var_30_18 = var_30_17.base.ship_meta_repair
-
-	var_30_18[25] = {
+	pg.base.ship_meta_repair[25] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59417,
@@ -44108,11 +32486,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_18
-
-	local var_30_19 = var_30_18.base.ship_meta_repair
-
-	var_30_19[26] = {
+	pg.base.ship_meta_repair[26] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59418,
@@ -44122,11 +32496,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_19
-
-	local var_30_20 = var_30_19.base.ship_meta_repair
-
-	var_30_20[27] = {
+	pg.base.ship_meta_repair[27] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59419,
@@ -44136,11 +32506,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_20
-
-	local var_30_21 = var_30_20.base.ship_meta_repair
-
-	var_30_21[28] = {
+	pg.base.ship_meta_repair[28] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 59420,
@@ -44150,11 +32516,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_21
-
-	local var_30_22 = var_30_21.base.ship_meta_repair
-
-	var_30_22[58101] = {
+	pg.base.ship_meta_repair[58101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58101,
@@ -44164,11 +32526,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_22
-
-	local var_30_23 = var_30_22.base.ship_meta_repair
-
-	var_30_23[58102] = {
+	pg.base.ship_meta_repair[58102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58102,
@@ -44178,11 +32536,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_23
-
-	local var_30_24 = var_30_23.base.ship_meta_repair
-
-	var_30_24[58103] = {
+	pg.base.ship_meta_repair[58103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58103,
@@ -44192,11 +32546,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_24
-
-	local var_30_25 = var_30_24.base.ship_meta_repair
-
-	var_30_25[58104] = {
+	pg.base.ship_meta_repair[58104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58104,
@@ -44206,11 +32556,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_25
-
-	local var_30_26 = var_30_25.base.ship_meta_repair
-
-	var_30_26[58105] = {
+	pg.base.ship_meta_repair[58105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58105,
@@ -44220,11 +32566,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_26
-
-	local var_30_27 = var_30_26.base.ship_meta_repair
-
-	var_30_27[58106] = {
+	pg.base.ship_meta_repair[58106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58106,
@@ -44234,11 +32576,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_27
-
-	local var_30_28 = var_30_27.base.ship_meta_repair
-
-	var_30_28[58107] = {
+	pg.base.ship_meta_repair[58107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58107,
@@ -44248,11 +32586,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_28
-
-	local var_30_29 = var_30_28.base.ship_meta_repair
-
-	var_30_29[58108] = {
+	pg.base.ship_meta_repair[58108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58108,
@@ -44262,11 +32596,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_29
-
-	local var_30_30 = var_30_29.base.ship_meta_repair
-
-	var_30_30[58109] = {
+	pg.base.ship_meta_repair[58109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58109,
@@ -44276,11 +32606,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_30
-
-	local var_30_31 = var_30_30.base.ship_meta_repair
-
-	var_30_31[58110] = {
+	pg.base.ship_meta_repair[58110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 58110,
@@ -44290,11 +32616,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_31
-
-	local var_30_32 = var_30_31.base.ship_meta_repair
-
-	var_30_32[58201] = {
+	pg.base.ship_meta_repair[58201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58201,
@@ -44304,11 +32626,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_32
-
-	local var_30_33 = var_30_32.base.ship_meta_repair
-
-	var_30_33[58202] = {
+	pg.base.ship_meta_repair[58202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58202,
@@ -44318,11 +32636,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_33
-
-	local var_30_34 = var_30_33.base.ship_meta_repair
-
-	var_30_34[58203] = {
+	pg.base.ship_meta_repair[58203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58203,
@@ -44332,11 +32646,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_34
-
-	local var_30_35 = var_30_34.base.ship_meta_repair
-
-	var_30_35[58204] = {
+	pg.base.ship_meta_repair[58204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58204,
@@ -44346,11 +32656,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_35
-
-	local var_30_36 = var_30_35.base.ship_meta_repair
-
-	var_30_36[58205] = {
+	pg.base.ship_meta_repair[58205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58205,
@@ -44360,11 +32666,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_36
-
-	local var_30_37 = var_30_36.base.ship_meta_repair
-
-	var_30_37[58206] = {
+	pg.base.ship_meta_repair[58206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58206,
@@ -44374,11 +32676,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_37
-
-	local var_30_38 = var_30_37.base.ship_meta_repair
-
-	var_30_38[58207] = {
+	pg.base.ship_meta_repair[58207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58207,
@@ -44388,11 +32686,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_38
-
-	local var_30_39 = var_30_38.base.ship_meta_repair
-
-	var_30_39[58208] = {
+	pg.base.ship_meta_repair[58208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58208,
@@ -44402,11 +32696,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_39
-
-	local var_30_40 = var_30_39.base.ship_meta_repair
-
-	var_30_40[58209] = {
+	pg.base.ship_meta_repair[58209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58209,
@@ -44416,11 +32706,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_40
-
-	local var_30_41 = var_30_40.base.ship_meta_repair
-
-	var_30_41[58210] = {
+	pg.base.ship_meta_repair[58210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58210,
@@ -44430,11 +32716,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_41
-
-	local var_30_42 = var_30_41.base.ship_meta_repair
-
-	var_30_42[58211] = {
+	pg.base.ship_meta_repair[58211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58211,
@@ -44444,11 +32726,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_42
-
-	local var_30_43 = var_30_42.base.ship_meta_repair
-
-	var_30_43[58212] = {
+	pg.base.ship_meta_repair[58212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58212,
@@ -44458,11 +32736,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_43
-
-	local var_30_44 = var_30_43.base.ship_meta_repair
-
-	var_30_44[58213] = {
+	pg.base.ship_meta_repair[58213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58213,
@@ -44472,11 +32746,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_44
-
-	local var_30_45 = var_30_44.base.ship_meta_repair
-
-	var_30_45[58214] = {
+	pg.base.ship_meta_repair[58214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58214,
@@ -44486,11 +32756,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_45
-
-	local var_30_46 = var_30_45.base.ship_meta_repair
-
-	var_30_46[58215] = {
+	pg.base.ship_meta_repair[58215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58215,
@@ -44500,11 +32766,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_46
-
-	local var_30_47 = var_30_46.base.ship_meta_repair
-
-	var_30_47[58216] = {
+	pg.base.ship_meta_repair[58216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58216,
@@ -44514,11 +32776,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_47
-
-	local var_30_48 = var_30_47.base.ship_meta_repair
-
-	var_30_48[58217] = {
+	pg.base.ship_meta_repair[58217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58217,
@@ -44528,11 +32786,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_48
-
-	local var_30_49 = var_30_48.base.ship_meta_repair
-
-	var_30_49[58218] = {
+	pg.base.ship_meta_repair[58218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58218,
@@ -44542,11 +32796,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_49
-
-	local var_30_50 = var_30_49.base.ship_meta_repair
-
-	var_30_50[58219] = {
+	pg.base.ship_meta_repair[58219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58219,
@@ -44556,11 +32806,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_50
-
-	local var_30_51 = var_30_50.base.ship_meta_repair
-
-	var_30_51[58220] = {
+	pg.base.ship_meta_repair[58220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 58220,
@@ -44570,11 +32816,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_51
-
-	local var_30_52 = var_30_51.base.ship_meta_repair
-
-	var_30_52[58401] = {
+	pg.base.ship_meta_repair[58401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58401,
@@ -44584,11 +32826,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_52
-
-	local var_30_53 = var_30_52.base.ship_meta_repair
-
-	var_30_53[58402] = {
+	pg.base.ship_meta_repair[58402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58402,
@@ -44598,11 +32836,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_53
-
-	local var_30_54 = var_30_53.base.ship_meta_repair
-
-	var_30_54[58403] = {
+	pg.base.ship_meta_repair[58403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58403,
@@ -44612,11 +32846,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_54
-
-	local var_30_55 = var_30_54.base.ship_meta_repair
-
-	var_30_55[58404] = {
+	pg.base.ship_meta_repair[58404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58404,
@@ -44626,11 +32856,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_55
-
-	local var_30_56 = var_30_55.base.ship_meta_repair
-
-	var_30_56[58405] = {
+	pg.base.ship_meta_repair[58405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58405,
@@ -44640,11 +32866,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_56
-
-	local var_30_57 = var_30_56.base.ship_meta_repair
-
-	var_30_57[58406] = {
+	pg.base.ship_meta_repair[58406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58406,
@@ -44654,11 +32876,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_57
-
-	local var_30_58 = var_30_57.base.ship_meta_repair
-
-	var_30_58[58407] = {
+	pg.base.ship_meta_repair[58407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58407,
@@ -44668,11 +32886,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_58
-
-	local var_30_59 = var_30_58.base.ship_meta_repair
-
-	var_30_59[58408] = {
+	pg.base.ship_meta_repair[58408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58408,
@@ -44682,11 +32896,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_59
-
-	local var_30_60 = var_30_59.base.ship_meta_repair
-
-	var_30_60[58409] = {
+	pg.base.ship_meta_repair[58409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58409,
@@ -44696,11 +32906,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_60
-
-	local var_30_61 = var_30_60.base.ship_meta_repair
-
-	var_30_61[58410] = {
+	pg.base.ship_meta_repair[58410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58410,
@@ -44710,11 +32916,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_61
-
-	local var_30_62 = var_30_61.base.ship_meta_repair
-
-	var_30_62[58411] = {
+	pg.base.ship_meta_repair[58411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58411,
@@ -44724,11 +32926,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_62
-
-	local var_30_63 = var_30_62.base.ship_meta_repair
-
-	var_30_63[58412] = {
+	pg.base.ship_meta_repair[58412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58412,
@@ -44738,11 +32936,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_63
-
-	local var_30_64 = var_30_63.base.ship_meta_repair
-
-	var_30_64[58413] = {
+	pg.base.ship_meta_repair[58413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58413,
@@ -44752,11 +32946,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_64
-
-	local var_30_65 = var_30_64.base.ship_meta_repair
-
-	var_30_65[58414] = {
+	pg.base.ship_meta_repair[58414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58414,
@@ -44766,11 +32956,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_65
-
-	local var_30_66 = var_30_65.base.ship_meta_repair
-
-	var_30_66[58415] = {
+	pg.base.ship_meta_repair[58415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58415,
@@ -44780,11 +32966,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_66
-
-	local var_30_67 = var_30_66.base.ship_meta_repair
-
-	var_30_67[58416] = {
+	pg.base.ship_meta_repair[58416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58416,
@@ -44794,11 +32976,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_67
-
-	local var_30_68 = var_30_67.base.ship_meta_repair
-
-	var_30_68[58417] = {
+	pg.base.ship_meta_repair[58417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58417,
@@ -44808,11 +32986,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_68
-
-	local var_30_69 = var_30_68.base.ship_meta_repair
-
-	var_30_69[58418] = {
+	pg.base.ship_meta_repair[58418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58418,
@@ -44822,11 +32996,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_69
-
-	local var_30_70 = var_30_69.base.ship_meta_repair
-
-	var_30_70[58419] = {
+	pg.base.ship_meta_repair[58419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58419,
@@ -44836,11 +33006,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_70
-
-	local var_30_71 = var_30_70.base.ship_meta_repair
-
-	var_30_71[58420] = {
+	pg.base.ship_meta_repair[58420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 58420,
@@ -44850,11 +33016,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_71
-
-	local var_30_72 = var_30_71.base.ship_meta_repair
-
-	var_30_72[60101] = {
+	pg.base.ship_meta_repair[60101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60101,
@@ -44864,11 +33026,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_72
-
-	local var_30_73 = var_30_72.base.ship_meta_repair
-
-	var_30_73[60102] = {
+	pg.base.ship_meta_repair[60102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60102,
@@ -44878,11 +33036,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_73
-
-	local var_30_74 = var_30_73.base.ship_meta_repair
-
-	var_30_74[60103] = {
+	pg.base.ship_meta_repair[60103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60103,
@@ -44892,11 +33046,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_74
-
-	local var_30_75 = var_30_74.base.ship_meta_repair
-
-	var_30_75[60104] = {
+	pg.base.ship_meta_repair[60104] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60104,
@@ -44906,11 +33056,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_75
-
-	local var_30_76 = var_30_75.base.ship_meta_repair
-
-	var_30_76[60105] = {
+	pg.base.ship_meta_repair[60105] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60105,
@@ -44920,11 +33066,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_76
-
-	local var_30_77 = var_30_76.base.ship_meta_repair
-
-	var_30_77[60106] = {
+	pg.base.ship_meta_repair[60106] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60106,
@@ -44934,11 +33076,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_77
-
-	local var_30_78 = var_30_77.base.ship_meta_repair
-
-	var_30_78[60107] = {
+	pg.base.ship_meta_repair[60107] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60107,
@@ -44948,11 +33086,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_78
-
-	local var_30_79 = var_30_78.base.ship_meta_repair
-
-	var_30_79[60108] = {
+	pg.base.ship_meta_repair[60108] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60108,
@@ -44962,11 +33096,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_79
-
-	local var_30_80 = var_30_79.base.ship_meta_repair
-
-	var_30_80[60109] = {
+	pg.base.ship_meta_repair[60109] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60109,
@@ -44976,11 +33106,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_80
-
-	local var_30_81 = var_30_80.base.ship_meta_repair
-
-	var_30_81[60110] = {
+	pg.base.ship_meta_repair[60110] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 60110,
@@ -44990,11 +33116,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_81
-
-	local var_30_82 = var_30_81.base.ship_meta_repair
-
-	var_30_82[60201] = {
+	pg.base.ship_meta_repair[60201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60201,
@@ -45004,11 +33126,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_82
-
-	local var_30_83 = var_30_82.base.ship_meta_repair
-
-	var_30_83[60202] = {
+	pg.base.ship_meta_repair[60202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60202,
@@ -45018,11 +33136,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_83
-
-	local var_30_84 = var_30_83.base.ship_meta_repair
-
-	var_30_84[60203] = {
+	pg.base.ship_meta_repair[60203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60203,
@@ -45032,11 +33146,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_84
-
-	local var_30_85 = var_30_84.base.ship_meta_repair
-
-	var_30_85[60204] = {
+	pg.base.ship_meta_repair[60204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60204,
@@ -45046,11 +33156,7 @@ end)()
 			1
 		}
 	}
-	pg = var_30_85
-
-	local var_30_86 = var_30_85.base.ship_meta_repair
-
-	var_30_86[60205] = {
+	pg.base.ship_meta_repair[60205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60205,
@@ -45060,11 +33166,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_86
-
-	local var_30_87 = var_30_86.base.ship_meta_repair
-
-	var_30_87[60206] = {
+	pg.base.ship_meta_repair[60206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60206,
@@ -45074,11 +33176,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_87
-
-	local var_30_88 = var_30_87.base.ship_meta_repair
-
-	var_30_88[60207] = {
+	pg.base.ship_meta_repair[60207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60207,
@@ -45088,11 +33186,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_88
-
-	local var_30_89 = var_30_88.base.ship_meta_repair
-
-	var_30_89[60208] = {
+	pg.base.ship_meta_repair[60208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60208,
@@ -45102,11 +33196,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_89
-
-	local var_30_90 = var_30_89.base.ship_meta_repair
-
-	var_30_90[60209] = {
+	pg.base.ship_meta_repair[60209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60209,
@@ -45116,11 +33206,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_90
-
-	local var_30_91 = var_30_90.base.ship_meta_repair
-
-	var_30_91[60210] = {
+	pg.base.ship_meta_repair[60210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60210,
@@ -45130,11 +33216,7 @@ end)()
 			2
 		}
 	}
-	pg = var_30_91
-
-	local var_30_92 = var_30_91.base.ship_meta_repair
-
-	var_30_92[60211] = {
+	pg.base.ship_meta_repair[60211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60211,
@@ -45144,11 +33226,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_92
-
-	local var_30_93 = var_30_92.base.ship_meta_repair
-
-	var_30_93[60212] = {
+	pg.base.ship_meta_repair[60212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60212,
@@ -45158,11 +33236,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_93
-
-	local var_30_94 = var_30_93.base.ship_meta_repair
-
-	var_30_94[60213] = {
+	pg.base.ship_meta_repair[60213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60213,
@@ -45172,11 +33246,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_94
-
-	local var_30_95 = var_30_94.base.ship_meta_repair
-
-	var_30_95[60214] = {
+	pg.base.ship_meta_repair[60214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60214,
@@ -45186,11 +33256,7 @@ end)()
 			3
 		}
 	}
-	pg = var_30_95
-
-	local var_30_96 = var_30_95.base.ship_meta_repair
-
-	var_30_96[60215] = {
+	pg.base.ship_meta_repair[60215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60215,
@@ -45200,11 +33266,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_96
-
-	local var_30_97 = var_30_96.base.ship_meta_repair
-
-	var_30_97[60216] = {
+	pg.base.ship_meta_repair[60216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60216,
@@ -45214,11 +33276,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_97
-
-	local var_30_98 = var_30_97.base.ship_meta_repair
-
-	var_30_98[60217] = {
+	pg.base.ship_meta_repair[60217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60217,
@@ -45228,8 +33286,7 @@ end)()
 			4
 		}
 	}
-	pg = var_30_98
-	var_30_98.base.ship_meta_repair[60218] = {
+	pg.base.ship_meta_repair[60218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60218,
@@ -45243,11 +33300,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_31_0 = var_1_10000.base.ship_meta_repair
-
-	var_31_0[60219] = {
+	pg.base.ship_meta_repair[60219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60219,
@@ -45257,11 +33310,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_0
-
-	local var_31_1 = var_31_0.base.ship_meta_repair
-
-	var_31_1[60220] = {
+	pg.base.ship_meta_repair[60220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 60220,
@@ -45271,11 +33320,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_1
-
-	local var_31_2 = var_31_1.base.ship_meta_repair
-
-	var_31_2[60401] = {
+	pg.base.ship_meta_repair[60401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60401,
@@ -45285,11 +33330,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_2
-
-	local var_31_3 = var_31_2.base.ship_meta_repair
-
-	var_31_3[60402] = {
+	pg.base.ship_meta_repair[60402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60402,
@@ -45299,11 +33340,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_3
-
-	local var_31_4 = var_31_3.base.ship_meta_repair
-
-	var_31_4[60403] = {
+	pg.base.ship_meta_repair[60403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60403,
@@ -45313,11 +33350,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_4
-
-	local var_31_5 = var_31_4.base.ship_meta_repair
-
-	var_31_5[60404] = {
+	pg.base.ship_meta_repair[60404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60404,
@@ -45327,11 +33360,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_5
-
-	local var_31_6 = var_31_5.base.ship_meta_repair
-
-	var_31_6[60405] = {
+	pg.base.ship_meta_repair[60405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60405,
@@ -45341,11 +33370,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_6
-
-	local var_31_7 = var_31_6.base.ship_meta_repair
-
-	var_31_7[60406] = {
+	pg.base.ship_meta_repair[60406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60406,
@@ -45355,11 +33380,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_7
-
-	local var_31_8 = var_31_7.base.ship_meta_repair
-
-	var_31_8[60407] = {
+	pg.base.ship_meta_repair[60407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60407,
@@ -45369,11 +33390,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_8
-
-	local var_31_9 = var_31_8.base.ship_meta_repair
-
-	var_31_9[60408] = {
+	pg.base.ship_meta_repair[60408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60408,
@@ -45383,11 +33400,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_9
-
-	local var_31_10 = var_31_9.base.ship_meta_repair
-
-	var_31_10[60409] = {
+	pg.base.ship_meta_repair[60409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60409,
@@ -45397,11 +33410,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_10
-
-	local var_31_11 = var_31_10.base.ship_meta_repair
-
-	var_31_11[60410] = {
+	pg.base.ship_meta_repair[60410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60410,
@@ -45411,11 +33420,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_11
-
-	local var_31_12 = var_31_11.base.ship_meta_repair
-
-	var_31_12[60411] = {
+	pg.base.ship_meta_repair[60411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60411,
@@ -45425,11 +33430,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_12
-
-	local var_31_13 = var_31_12.base.ship_meta_repair
-
-	var_31_13[60412] = {
+	pg.base.ship_meta_repair[60412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60412,
@@ -45439,11 +33440,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_13
-
-	local var_31_14 = var_31_13.base.ship_meta_repair
-
-	var_31_14[60413] = {
+	pg.base.ship_meta_repair[60413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60413,
@@ -45453,11 +33450,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_14
-
-	local var_31_15 = var_31_14.base.ship_meta_repair
-
-	var_31_15[60414] = {
+	pg.base.ship_meta_repair[60414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60414,
@@ -45467,11 +33460,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_15
-
-	local var_31_16 = var_31_15.base.ship_meta_repair
-
-	var_31_16[60415] = {
+	pg.base.ship_meta_repair[60415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60415,
@@ -45481,11 +33470,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_16
-
-	local var_31_17 = var_31_16.base.ship_meta_repair
-
-	var_31_17[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60416,
@@ -45495,11 +33480,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_17
-
-	local var_31_18 = var_31_17.base.ship_meta_repair
-
-	var_31_18[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60417,
@@ -45509,11 +33490,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_18
-
-	local var_31_19 = var_31_18.base.ship_meta_repair
-
-	var_31_19[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60418,
@@ -45523,11 +33500,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_19
-
-	local var_31_20 = var_31_19.base.ship_meta_repair
-
-	var_31_20[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60419,
@@ -45537,11 +33510,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_20
-
-	local var_31_21 = var_31_20.base.ship_meta_repair
-
-	var_31_21[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 60420,
@@ -45551,11 +33520,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_21
-
-	local var_31_22 = var_31_21.base.ship_meta_repair
-
-	var_31_22[61301] = {
+	pg.base.ship_meta_repair[61301] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61301,
@@ -45565,11 +33530,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_22
-
-	local var_31_23 = var_31_22.base.ship_meta_repair
-
-	var_31_23[61302] = {
+	pg.base.ship_meta_repair[61302] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61302,
@@ -45579,11 +33540,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_23
-
-	local var_31_24 = var_31_23.base.ship_meta_repair
-
-	var_31_24[61303] = {
+	pg.base.ship_meta_repair[61303] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61303,
@@ -45593,11 +33550,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_24
-
-	local var_31_25 = var_31_24.base.ship_meta_repair
-
-	var_31_25[61304] = {
+	pg.base.ship_meta_repair[61304] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61304,
@@ -45607,11 +33560,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_25
-
-	local var_31_26 = var_31_25.base.ship_meta_repair
-
-	var_31_26[61305] = {
+	pg.base.ship_meta_repair[61305] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61305,
@@ -45621,11 +33570,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_26
-
-	local var_31_27 = var_31_26.base.ship_meta_repair
-
-	var_31_27[61306] = {
+	pg.base.ship_meta_repair[61306] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61306,
@@ -45635,11 +33580,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_27
-
-	local var_31_28 = var_31_27.base.ship_meta_repair
-
-	var_31_28[61307] = {
+	pg.base.ship_meta_repair[61307] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61307,
@@ -45649,11 +33590,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_28
-
-	local var_31_29 = var_31_28.base.ship_meta_repair
-
-	var_31_29[61308] = {
+	pg.base.ship_meta_repair[61308] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61308,
@@ -45663,11 +33600,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_29
-
-	local var_31_30 = var_31_29.base.ship_meta_repair
-
-	var_31_30[61309] = {
+	pg.base.ship_meta_repair[61309] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61309,
@@ -45677,11 +33610,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_30
-
-	local var_31_31 = var_31_30.base.ship_meta_repair
-
-	var_31_31[61310] = {
+	pg.base.ship_meta_repair[61310] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61310,
@@ -45691,11 +33620,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_31
-
-	local var_31_32 = var_31_31.base.ship_meta_repair
-
-	var_31_32[61311] = {
+	pg.base.ship_meta_repair[61311] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61311,
@@ -45705,11 +33630,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_32
-
-	local var_31_33 = var_31_32.base.ship_meta_repair
-
-	var_31_33[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61312,
@@ -45719,11 +33640,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_33
-
-	local var_31_34 = var_31_33.base.ship_meta_repair
-
-	var_31_34[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61313,
@@ -45733,11 +33650,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_34
-
-	local var_31_35 = var_31_34.base.ship_meta_repair
-
-	var_31_35[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61314,
@@ -45747,11 +33660,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_35
-
-	local var_31_36 = var_31_35.base.ship_meta_repair
-
-	var_31_36[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61315,
@@ -45761,11 +33670,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_36
-
-	local var_31_37 = var_31_36.base.ship_meta_repair
-
-	var_31_37[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61316,
@@ -45775,11 +33680,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_37
-
-	local var_31_38 = var_31_37.base.ship_meta_repair
-
-	var_31_38[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61317,
@@ -45789,11 +33690,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_38
-
-	local var_31_39 = var_31_38.base.ship_meta_repair
-
-	var_31_39[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61318,
@@ -45803,11 +33700,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_39
-
-	local var_31_40 = var_31_39.base.ship_meta_repair
-
-	var_31_40[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61319,
@@ -45817,11 +33710,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_40
-
-	local var_31_41 = var_31_40.base.ship_meta_repair
-
-	var_31_41[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61320,
@@ -45831,11 +33720,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_41
-
-	local var_31_42 = var_31_41.base.ship_meta_repair
-
-	var_31_42[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61321,
@@ -45845,11 +33730,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_42
-
-	local var_31_43 = var_31_42.base.ship_meta_repair
-
-	var_31_43[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61322,
@@ -45859,11 +33740,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_43
-
-	local var_31_44 = var_31_43.base.ship_meta_repair
-
-	var_31_44[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61323,
@@ -45873,11 +33750,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_44
-
-	local var_31_45 = var_31_44.base.ship_meta_repair
-
-	var_31_45[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61324,
@@ -45887,11 +33760,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_45
-
-	local var_31_46 = var_31_45.base.ship_meta_repair
-
-	var_31_46[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61325,
@@ -45901,11 +33770,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_46
-
-	local var_31_47 = var_31_46.base.ship_meta_repair
-
-	var_31_47[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61326,
@@ -45915,11 +33780,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_47
-
-	local var_31_48 = var_31_47.base.ship_meta_repair
-
-	var_31_48[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61327,
@@ -45929,11 +33790,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_48
-
-	local var_31_49 = var_31_48.base.ship_meta_repair
-
-	var_31_49[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61328,
@@ -45943,11 +33800,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_49
-
-	local var_31_50 = var_31_49.base.ship_meta_repair
-
-	var_31_50[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61329,
@@ -45957,11 +33810,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_50
-
-	local var_31_51 = var_31_50.base.ship_meta_repair
-
-	var_31_51[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21111,
 		id = 61330,
@@ -45971,11 +33820,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_51
-
-	local var_31_52 = var_31_51.base.ship_meta_repair
-
-	var_31_52[61401] = {
+	pg.base.ship_meta_repair[61401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61401,
@@ -45985,11 +33830,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_52
-
-	local var_31_53 = var_31_52.base.ship_meta_repair
-
-	var_31_53[61402] = {
+	pg.base.ship_meta_repair[61402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61402,
@@ -45999,11 +33840,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_53
-
-	local var_31_54 = var_31_53.base.ship_meta_repair
-
-	var_31_54[61403] = {
+	pg.base.ship_meta_repair[61403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61403,
@@ -46013,11 +33850,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_54
-
-	local var_31_55 = var_31_54.base.ship_meta_repair
-
-	var_31_55[61404] = {
+	pg.base.ship_meta_repair[61404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61404,
@@ -46027,11 +33860,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_55
-
-	local var_31_56 = var_31_55.base.ship_meta_repair
-
-	var_31_56[61405] = {
+	pg.base.ship_meta_repair[61405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61405,
@@ -46041,11 +33870,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_56
-
-	local var_31_57 = var_31_56.base.ship_meta_repair
-
-	var_31_57[61406] = {
+	pg.base.ship_meta_repair[61406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61406,
@@ -46055,11 +33880,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_57
-
-	local var_31_58 = var_31_57.base.ship_meta_repair
-
-	var_31_58[61407] = {
+	pg.base.ship_meta_repair[61407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61407,
@@ -46069,11 +33890,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_58
-
-	local var_31_59 = var_31_58.base.ship_meta_repair
-
-	var_31_59[61408] = {
+	pg.base.ship_meta_repair[61408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61408,
@@ -46083,11 +33900,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_59
-
-	local var_31_60 = var_31_59.base.ship_meta_repair
-
-	var_31_60[61409] = {
+	pg.base.ship_meta_repair[61409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61409,
@@ -46097,11 +33910,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_60
-
-	local var_31_61 = var_31_60.base.ship_meta_repair
-
-	var_31_61[61410] = {
+	pg.base.ship_meta_repair[61410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61410,
@@ -46111,11 +33920,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_61
-
-	local var_31_62 = var_31_61.base.ship_meta_repair
-
-	var_31_62[61411] = {
+	pg.base.ship_meta_repair[61411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61411,
@@ -46125,11 +33930,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_62
-
-	local var_31_63 = var_31_62.base.ship_meta_repair
-
-	var_31_63[61412] = {
+	pg.base.ship_meta_repair[61412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61412,
@@ -46139,11 +33940,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_63
-
-	local var_31_64 = var_31_63.base.ship_meta_repair
-
-	var_31_64[61413] = {
+	pg.base.ship_meta_repair[61413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61413,
@@ -46153,11 +33950,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_64
-
-	local var_31_65 = var_31_64.base.ship_meta_repair
-
-	var_31_65[61414] = {
+	pg.base.ship_meta_repair[61414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61414,
@@ -46167,11 +33960,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_65
-
-	local var_31_66 = var_31_65.base.ship_meta_repair
-
-	var_31_66[61415] = {
+	pg.base.ship_meta_repair[61415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61415,
@@ -46181,11 +33970,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_66
-
-	local var_31_67 = var_31_66.base.ship_meta_repair
-
-	var_31_67[61416] = {
+	pg.base.ship_meta_repair[61416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61416,
@@ -46195,11 +33980,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_67
-
-	local var_31_68 = var_31_67.base.ship_meta_repair
-
-	var_31_68[61417] = {
+	pg.base.ship_meta_repair[61417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61417,
@@ -46209,11 +33990,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_68
-
-	local var_31_69 = var_31_68.base.ship_meta_repair
-
-	var_31_69[61418] = {
+	pg.base.ship_meta_repair[61418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61418,
@@ -46223,11 +34000,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_69
-
-	local var_31_70 = var_31_69.base.ship_meta_repair
-
-	var_31_70[61419] = {
+	pg.base.ship_meta_repair[61419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61419,
@@ -46237,11 +34010,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_70
-
-	local var_31_71 = var_31_70.base.ship_meta_repair
-
-	var_31_71[61420] = {
+	pg.base.ship_meta_repair[61420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 61420,
@@ -46251,11 +34020,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_71
-
-	local var_31_72 = var_31_71.base.ship_meta_repair
-
-	var_31_72[62201] = {
+	pg.base.ship_meta_repair[62201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62201,
@@ -46265,11 +34030,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_72
-
-	local var_31_73 = var_31_72.base.ship_meta_repair
-
-	var_31_73[62202] = {
+	pg.base.ship_meta_repair[62202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62202,
@@ -46279,11 +34040,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_73
-
-	local var_31_74 = var_31_73.base.ship_meta_repair
-
-	var_31_74[62203] = {
+	pg.base.ship_meta_repair[62203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62203,
@@ -46293,11 +34050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_74
-
-	local var_31_75 = var_31_74.base.ship_meta_repair
-
-	var_31_75[62204] = {
+	pg.base.ship_meta_repair[62204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62204,
@@ -46307,11 +34060,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_75
-
-	local var_31_76 = var_31_75.base.ship_meta_repair
-
-	var_31_76[62205] = {
+	pg.base.ship_meta_repair[62205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62205,
@@ -46321,11 +34070,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_76
-
-	local var_31_77 = var_31_76.base.ship_meta_repair
-
-	var_31_77[62206] = {
+	pg.base.ship_meta_repair[62206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62206,
@@ -46335,11 +34080,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_77
-
-	local var_31_78 = var_31_77.base.ship_meta_repair
-
-	var_31_78[62207] = {
+	pg.base.ship_meta_repair[62207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62207,
@@ -46349,11 +34090,7 @@ end)()
 			1
 		}
 	}
-	pg = var_31_78
-
-	local var_31_79 = var_31_78.base.ship_meta_repair
-
-	var_31_79[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62208,
@@ -46363,11 +34100,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_79
-
-	local var_31_80 = var_31_79.base.ship_meta_repair
-
-	var_31_80[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62209,
@@ -46377,11 +34110,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_80
-
-	local var_31_81 = var_31_80.base.ship_meta_repair
-
-	var_31_81[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62210,
@@ -46391,11 +34120,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_81
-
-	local var_31_82 = var_31_81.base.ship_meta_repair
-
-	var_31_82[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62211,
@@ -46405,11 +34130,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_82
-
-	local var_31_83 = var_31_82.base.ship_meta_repair
-
-	var_31_83[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62212,
@@ -46419,11 +34140,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_83
-
-	local var_31_84 = var_31_83.base.ship_meta_repair
-
-	var_31_84[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62213,
@@ -46433,11 +34150,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_84
-
-	local var_31_85 = var_31_84.base.ship_meta_repair
-
-	var_31_85[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62214,
@@ -46447,11 +34160,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_85
-
-	local var_31_86 = var_31_85.base.ship_meta_repair
-
-	var_31_86[7] = {
+	pg.base.ship_meta_repair[7] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62215,
@@ -46461,11 +34170,7 @@ end)()
 			2
 		}
 	}
-	pg = var_31_86
-
-	local var_31_87 = var_31_86.base.ship_meta_repair
-
-	var_31_87[8] = {
+	pg.base.ship_meta_repair[8] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62216,
@@ -46475,11 +34180,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_87
-
-	local var_31_88 = var_31_87.base.ship_meta_repair
-
-	var_31_88[9] = {
+	pg.base.ship_meta_repair[9] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62217,
@@ -46489,11 +34190,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_88
-
-	local var_31_89 = var_31_88.base.ship_meta_repair
-
-	var_31_89[10] = {
+	pg.base.ship_meta_repair[10] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62218,
@@ -46503,11 +34200,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_89
-
-	local var_31_90 = var_31_89.base.ship_meta_repair
-
-	var_31_90[11] = {
+	pg.base.ship_meta_repair[11] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62219,
@@ -46517,11 +34210,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_90
-
-	local var_31_91 = var_31_90.base.ship_meta_repair
-
-	var_31_91[12] = {
+	pg.base.ship_meta_repair[12] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62220,
@@ -46531,11 +34220,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_91
-
-	local var_31_92 = var_31_91.base.ship_meta_repair
-
-	var_31_92[13] = {
+	pg.base.ship_meta_repair[13] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62221,
@@ -46545,11 +34230,7 @@ end)()
 			3
 		}
 	}
-	pg = var_31_92
-
-	local var_31_93 = var_31_92.base.ship_meta_repair
-
-	var_31_93[14] = {
+	pg.base.ship_meta_repair[14] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62222,
@@ -46559,11 +34240,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_93
-
-	local var_31_94 = var_31_93.base.ship_meta_repair
-
-	var_31_94[15] = {
+	pg.base.ship_meta_repair[15] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62223,
@@ -46573,11 +34250,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_94
-
-	local var_31_95 = var_31_94.base.ship_meta_repair
-
-	var_31_95[16] = {
+	pg.base.ship_meta_repair[16] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62224,
@@ -46587,11 +34260,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_95
-
-	local var_31_96 = var_31_95.base.ship_meta_repair
-
-	var_31_96[17] = {
+	pg.base.ship_meta_repair[17] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62225,
@@ -46601,11 +34270,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_96
-
-	local var_31_97 = var_31_96.base.ship_meta_repair
-
-	var_31_97[18] = {
+	pg.base.ship_meta_repair[18] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62226,
@@ -46615,11 +34280,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_97
-
-	local var_31_98 = var_31_97.base.ship_meta_repair
-
-	var_31_98[19] = {
+	pg.base.ship_meta_repair[19] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62227,
@@ -46629,8 +34290,7 @@ end)()
 			4
 		}
 	}
-	pg = var_31_98
-	var_31_98.base.ship_meta_repair[20] = {
+	pg.base.ship_meta_repair[20] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62228,
@@ -46644,11 +34304,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_32_0 = var_1_10000.base.ship_meta_repair
-
-	var_32_0[21] = {
+	pg.base.ship_meta_repair[21] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62229,
@@ -46658,11 +34314,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_0
-
-	local var_32_1 = var_32_0.base.ship_meta_repair
-
-	var_32_1[22] = {
+	pg.base.ship_meta_repair[22] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 62230,
@@ -46672,11 +34324,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_1
-
-	local var_32_2 = var_32_1.base.ship_meta_repair
-
-	var_32_2[62401] = {
+	pg.base.ship_meta_repair[62401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62401,
@@ -46686,11 +34334,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_2
-
-	local var_32_3 = var_32_2.base.ship_meta_repair
-
-	var_32_3[62402] = {
+	pg.base.ship_meta_repair[62402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62402,
@@ -46700,11 +34344,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_3
-
-	local var_32_4 = var_32_3.base.ship_meta_repair
-
-	var_32_4[62403] = {
+	pg.base.ship_meta_repair[62403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62403,
@@ -46714,11 +34354,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_4
-
-	local var_32_5 = var_32_4.base.ship_meta_repair
-
-	var_32_5[62404] = {
+	pg.base.ship_meta_repair[62404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62404,
@@ -46728,11 +34364,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_5
-
-	local var_32_6 = var_32_5.base.ship_meta_repair
-
-	var_32_6[62405] = {
+	pg.base.ship_meta_repair[62405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62405,
@@ -46742,11 +34374,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_6
-
-	local var_32_7 = var_32_6.base.ship_meta_repair
-
-	var_32_7[62406] = {
+	pg.base.ship_meta_repair[62406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62406,
@@ -46756,11 +34384,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_7
-
-	local var_32_8 = var_32_7.base.ship_meta_repair
-
-	var_32_8[62407] = {
+	pg.base.ship_meta_repair[62407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62407,
@@ -46770,11 +34394,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_8
-
-	local var_32_9 = var_32_8.base.ship_meta_repair
-
-	var_32_9[62408] = {
+	pg.base.ship_meta_repair[62408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62408,
@@ -46784,11 +34404,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_9
-
-	local var_32_10 = var_32_9.base.ship_meta_repair
-
-	var_32_10[62409] = {
+	pg.base.ship_meta_repair[62409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62409,
@@ -46798,11 +34414,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_10
-
-	local var_32_11 = var_32_10.base.ship_meta_repair
-
-	var_32_11[62410] = {
+	pg.base.ship_meta_repair[62410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62410,
@@ -46812,11 +34424,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_11
-
-	local var_32_12 = var_32_11.base.ship_meta_repair
-
-	var_32_12[62411] = {
+	pg.base.ship_meta_repair[62411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62411,
@@ -46826,11 +34434,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_12
-
-	local var_32_13 = var_32_12.base.ship_meta_repair
-
-	var_32_13[62412] = {
+	pg.base.ship_meta_repair[62412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62412,
@@ -46840,11 +34444,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_13
-
-	local var_32_14 = var_32_13.base.ship_meta_repair
-
-	var_32_14[62413] = {
+	pg.base.ship_meta_repair[62413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62413,
@@ -46854,11 +34454,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_14
-
-	local var_32_15 = var_32_14.base.ship_meta_repair
-
-	var_32_15[62414] = {
+	pg.base.ship_meta_repair[62414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62414,
@@ -46868,11 +34464,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_15
-
-	local var_32_16 = var_32_15.base.ship_meta_repair
-
-	var_32_16[62415] = {
+	pg.base.ship_meta_repair[62415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62415,
@@ -46882,11 +34474,7 @@ end)()
 			5
 		}
 	}
-	pg = var_32_16
-
-	local var_32_17 = var_32_16.base.ship_meta_repair
-
-	var_32_17[62416] = {
+	pg.base.ship_meta_repair[62416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62416,
@@ -46896,11 +34484,7 @@ end)()
 			5
 		}
 	}
-	pg = var_32_17
-
-	local var_32_18 = var_32_17.base.ship_meta_repair
-
-	var_32_18[62417] = {
+	pg.base.ship_meta_repair[62417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62417,
@@ -46910,11 +34494,7 @@ end)()
 			5
 		}
 	}
-	pg = var_32_18
-
-	local var_32_19 = var_32_18.base.ship_meta_repair
-
-	var_32_19[62418] = {
+	pg.base.ship_meta_repair[62418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62418,
@@ -46924,11 +34504,7 @@ end)()
 			5
 		}
 	}
-	pg = var_32_19
-
-	local var_32_20 = var_32_19.base.ship_meta_repair
-
-	var_32_20[62419] = {
+	pg.base.ship_meta_repair[62419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62419,
@@ -46938,11 +34514,7 @@ end)()
 			5
 		}
 	}
-	pg = var_32_20
-
-	local var_32_21 = var_32_20.base.ship_meta_repair
-
-	var_32_21[62420] = {
+	pg.base.ship_meta_repair[62420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 62420,
@@ -46952,11 +34524,7 @@ end)()
 			5
 		}
 	}
-	pg = var_32_21
-
-	local var_32_22 = var_32_21.base.ship_meta_repair
-
-	var_32_22[63101] = {
+	pg.base.ship_meta_repair[63101] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63101,
@@ -46966,11 +34534,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_22
-
-	local var_32_23 = var_32_22.base.ship_meta_repair
-
-	var_32_23[63102] = {
+	pg.base.ship_meta_repair[63102] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63102,
@@ -46980,11 +34544,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_23
-
-	local var_32_24 = var_32_23.base.ship_meta_repair
-
-	var_32_24[63103] = {
+	pg.base.ship_meta_repair[63103] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63103,
@@ -46994,11 +34554,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_24
-
-	local var_32_25 = var_32_24.base.ship_meta_repair
-
-	var_32_25[0] = {
+	pg.base.ship_meta_repair[0] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63104,
@@ -47008,11 +34564,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_25
-
-	local var_32_26 = var_32_25.base.ship_meta_repair
-
-	var_32_26[1] = {
+	pg.base.ship_meta_repair[1] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63105,
@@ -47022,11 +34574,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_26
-
-	local var_32_27 = var_32_26.base.ship_meta_repair
-
-	var_32_27[2] = {
+	pg.base.ship_meta_repair[2] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63106,
@@ -47036,11 +34584,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_27
-
-	local var_32_28 = var_32_27.base.ship_meta_repair
-
-	var_32_28[3] = {
+	pg.base.ship_meta_repair[3] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63107,
@@ -47050,11 +34594,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_28
-
-	local var_32_29 = var_32_28.base.ship_meta_repair
-
-	var_32_29[4] = {
+	pg.base.ship_meta_repair[4] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63108,
@@ -47064,11 +34604,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_29
-
-	local var_32_30 = var_32_29.base.ship_meta_repair
-
-	var_32_30[5] = {
+	pg.base.ship_meta_repair[5] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63109,
@@ -47078,11 +34614,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_30
-
-	local var_32_31 = var_32_30.base.ship_meta_repair
-
-	var_32_31[6] = {
+	pg.base.ship_meta_repair[6] = {
 		repair_exp = 100,
 		item_id = 21101,
 		id = 63110,
@@ -47092,11 +34624,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_31
-
-	local var_32_32 = var_32_31.base.ship_meta_repair
-
-	var_32_32[63201] = {
+	pg.base.ship_meta_repair[63201] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63201,
@@ -47106,11 +34634,7 @@ end)()
 			1
 		}
 	}
-	pg = var_32_32
-
-	local var_32_33 = var_32_32.base.ship_meta_repair
-
-	var_32_33[63202] = {
+	pg.base.ship_meta_repair[63202] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63202,
@@ -47120,11 +34644,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_33
-
-	local var_32_34 = var_32_33.base.ship_meta_repair
-
-	var_32_34[63203] = {
+	pg.base.ship_meta_repair[63203] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63203,
@@ -47134,11 +34654,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_34
-
-	local var_32_35 = var_32_34.base.ship_meta_repair
-
-	var_32_35[63204] = {
+	pg.base.ship_meta_repair[63204] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63204,
@@ -47148,11 +34664,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_35
-
-	local var_32_36 = var_32_35.base.ship_meta_repair
-
-	var_32_36[63205] = {
+	pg.base.ship_meta_repair[63205] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63205,
@@ -47162,11 +34674,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_36
-
-	local var_32_37 = var_32_36.base.ship_meta_repair
-
-	var_32_37[63206] = {
+	pg.base.ship_meta_repair[63206] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63206,
@@ -47176,11 +34684,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_37
-
-	local var_32_38 = var_32_37.base.ship_meta_repair
-
-	var_32_38[63207] = {
+	pg.base.ship_meta_repair[63207] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63207,
@@ -47190,11 +34694,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_38
-
-	local var_32_39 = var_32_38.base.ship_meta_repair
-
-	var_32_39[63208] = {
+	pg.base.ship_meta_repair[63208] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63208,
@@ -47204,11 +34704,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_39
-
-	local var_32_40 = var_32_39.base.ship_meta_repair
-
-	var_32_40[63209] = {
+	pg.base.ship_meta_repair[63209] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63209,
@@ -47218,11 +34714,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_40
-
-	local var_32_41 = var_32_40.base.ship_meta_repair
-
-	var_32_41[63210] = {
+	pg.base.ship_meta_repair[63210] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63210,
@@ -47232,11 +34724,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_41
-
-	local var_32_42 = var_32_41.base.ship_meta_repair
-
-	var_32_42[63211] = {
+	pg.base.ship_meta_repair[63211] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63211,
@@ -47246,11 +34734,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_42
-
-	local var_32_43 = var_32_42.base.ship_meta_repair
-
-	var_32_43[63212] = {
+	pg.base.ship_meta_repair[63212] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63212,
@@ -47260,11 +34744,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_43
-
-	local var_32_44 = var_32_43.base.ship_meta_repair
-
-	var_32_44[63213] = {
+	pg.base.ship_meta_repair[63213] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63213,
@@ -47274,11 +34754,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_44
-
-	local var_32_45 = var_32_44.base.ship_meta_repair
-
-	var_32_45[63214] = {
+	pg.base.ship_meta_repair[63214] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63214,
@@ -47288,11 +34764,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_45
-
-	local var_32_46 = var_32_45.base.ship_meta_repair
-
-	var_32_46[63215] = {
+	pg.base.ship_meta_repair[63215] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63215,
@@ -47302,11 +34774,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_46
-
-	local var_32_47 = var_32_46.base.ship_meta_repair
-
-	var_32_47[63216] = {
+	pg.base.ship_meta_repair[63216] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63216,
@@ -47316,11 +34784,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_47
-
-	local var_32_48 = var_32_47.base.ship_meta_repair
-
-	var_32_48[63217] = {
+	pg.base.ship_meta_repair[63217] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63217,
@@ -47330,11 +34794,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_48
-
-	local var_32_49 = var_32_48.base.ship_meta_repair
-
-	var_32_49[63218] = {
+	pg.base.ship_meta_repair[63218] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63218,
@@ -47344,11 +34804,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_49
-
-	local var_32_50 = var_32_49.base.ship_meta_repair
-
-	var_32_50[63219] = {
+	pg.base.ship_meta_repair[63219] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63219,
@@ -47358,11 +34814,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_50
-
-	local var_32_51 = var_32_50.base.ship_meta_repair
-
-	var_32_51[63220] = {
+	pg.base.ship_meta_repair[63220] = {
 		repair_exp = 100,
 		item_id = 21131,
 		id = 63220,
@@ -47372,11 +34824,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_51
-
-	local var_32_52 = var_32_51.base.ship_meta_repair
-
-	var_32_52[63401] = {
+	pg.base.ship_meta_repair[63401] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63401,
@@ -47386,11 +34834,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_52
-
-	local var_32_53 = var_32_52.base.ship_meta_repair
-
-	var_32_53[63402] = {
+	pg.base.ship_meta_repair[63402] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63402,
@@ -47400,11 +34844,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_53
-
-	local var_32_54 = var_32_53.base.ship_meta_repair
-
-	var_32_54[63403] = {
+	pg.base.ship_meta_repair[63403] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63403,
@@ -47414,11 +34854,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_54
-
-	local var_32_55 = var_32_54.base.ship_meta_repair
-
-	var_32_55[63404] = {
+	pg.base.ship_meta_repair[63404] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63404,
@@ -47428,11 +34864,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_55
-
-	local var_32_56 = var_32_55.base.ship_meta_repair
-
-	var_32_56[63405] = {
+	pg.base.ship_meta_repair[63405] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63405,
@@ -47442,11 +34874,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_56
-
-	local var_32_57 = var_32_56.base.ship_meta_repair
-
-	var_32_57[63406] = {
+	pg.base.ship_meta_repair[63406] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63406,
@@ -47456,11 +34884,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_57
-
-	local var_32_58 = var_32_57.base.ship_meta_repair
-
-	var_32_58[63407] = {
+	pg.base.ship_meta_repair[63407] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63407,
@@ -47470,11 +34894,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_58
-
-	local var_32_59 = var_32_58.base.ship_meta_repair
-
-	var_32_59[63408] = {
+	pg.base.ship_meta_repair[63408] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63408,
@@ -47484,11 +34904,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_59
-
-	local var_32_60 = var_32_59.base.ship_meta_repair
-
-	var_32_60[63409] = {
+	pg.base.ship_meta_repair[63409] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63409,
@@ -47498,11 +34914,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_60
-
-	local var_32_61 = var_32_60.base.ship_meta_repair
-
-	var_32_61[63410] = {
+	pg.base.ship_meta_repair[63410] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63410,
@@ -47512,11 +34924,7 @@ end)()
 			2
 		}
 	}
-	pg = var_32_61
-
-	local var_32_62 = var_32_61.base.ship_meta_repair
-
-	var_32_62[63411] = {
+	pg.base.ship_meta_repair[63411] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63411,
@@ -47526,11 +34934,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_62
-
-	local var_32_63 = var_32_62.base.ship_meta_repair
-
-	var_32_63[63412] = {
+	pg.base.ship_meta_repair[63412] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63412,
@@ -47540,11 +34944,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_63
-
-	local var_32_64 = var_32_63.base.ship_meta_repair
-
-	var_32_64[63413] = {
+	pg.base.ship_meta_repair[63413] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63413,
@@ -47554,11 +34954,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_64
-
-	local var_32_65 = var_32_64.base.ship_meta_repair
-
-	var_32_65[63414] = {
+	pg.base.ship_meta_repair[63414] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63414,
@@ -47568,11 +34964,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_65
-
-	local var_32_66 = var_32_65.base.ship_meta_repair
-
-	var_32_66[63415] = {
+	pg.base.ship_meta_repair[63415] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63415,
@@ -47582,11 +34974,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_66
-
-	local var_32_67 = var_32_66.base.ship_meta_repair
-
-	var_32_67[63416] = {
+	pg.base.ship_meta_repair[63416] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63416,
@@ -47596,11 +34984,7 @@ end)()
 			3
 		}
 	}
-	pg = var_32_67
-
-	local var_32_68 = var_32_67.base.ship_meta_repair
-
-	var_32_68[63417] = {
+	pg.base.ship_meta_repair[63417] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63417,
@@ -47610,11 +34994,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_68
-
-	local var_32_69 = var_32_68.base.ship_meta_repair
-
-	var_32_69[63418] = {
+	pg.base.ship_meta_repair[63418] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63418,
@@ -47624,11 +35004,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_69
-
-	local var_32_70 = var_32_69.base.ship_meta_repair
-
-	var_32_70[63419] = {
+	pg.base.ship_meta_repair[63419] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63419,
@@ -47638,8 +35014,7 @@ end)()
 			4
 		}
 	}
-	pg = var_32_70
-	var_32_70.base.ship_meta_repair[63420] = {
+	pg.base.ship_meta_repair[63420] = {
 		repair_exp = 100,
 		item_id = 21121,
 		id = 63420,

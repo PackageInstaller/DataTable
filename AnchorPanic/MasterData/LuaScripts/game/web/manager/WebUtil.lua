@@ -32,6 +32,11 @@ end
 
 -- 通过请求方式获取地址格式
 web.__getUrlByReqType = function(isPost, url, data, key, time)
+    -- if(data ~= nil and data ~= "")then
+        -- 统一添加上自创建的游戏唯一id
+        data = web.__getContactParams(data, "&LyClientPID", CS.Lylibs.MD5Util.GetUniqueSuperId())
+    -- end
+    
     local encodeData = web.__urlEncode(data)
     local time = time or web.__getTime()
     local sign = CS.Lylibs.MD5Util.GetMD5ByString(data .. time .. key)
@@ -59,6 +64,16 @@ end
 
 -- 渠道cdn资源更新类型
 web.getChannelUpdateTypeUrl = function()
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+
     local time = web.__getTime()
     local data = ""
     data = web.__getContactParams(data, "version", web.WebManager.game_version_name)-- 当前游戏客户端版本
@@ -69,8 +84,9 @@ web.getChannelUpdateTypeUrl = function()
     data = web.__getContactParams(data, "&device", CS.UnityEngine.SystemInfo.deviceModel)-- 设备硬件型号 如huawei P9.1
     data = web.__getContactParams(data, "&cpu", gs.SdkManager:GetCpuName())-- 设备CPU
     data = web.__getContactParams(data, "&gpu", CS.UnityEngine.SystemInfo.graphicsDeviceName)-- 设备GPU
-    data = web.__getContactParams(data, "&deviceId", sdk.SdkManager:getUniqueId())-- 设备产品编号
-    data = web.__getContactParams(data, "&uuid", sdk.SdkManager:getUniqueId())-- 设备标识ID
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
     data = web.__getContactParams(data, "&deviceTime", time)-- 客户端时间
     data = web.__getContactParams(data, "&systemMemorySize", (gs.SdkManager:GetMemorySize("SystemTotalMemory") / 1024).."GB")-- 系统内存大小
     return web.__getUrlByReqType(true, web.__getConfig().check_channel_update_type .. "?", data, web.__getConfig().common_key, time)
@@ -78,6 +94,16 @@ end
 
 -- 通用参数统计
 web.getReportGenericArgsUrl = function(type, genericArgs)
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+
     local time = web.__getTime()
     local data = ""
     data = web.__getContactParams(data, "version", web.WebManager.game_version_name)-- 当前游戏客户端版本
@@ -88,8 +114,9 @@ web.getReportGenericArgsUrl = function(type, genericArgs)
     data = web.__getContactParams(data, "&device", CS.UnityEngine.SystemInfo.deviceModel)-- 设备硬件型号 如huawei P9.1
     data = web.__getContactParams(data, "&cpu", gs.SdkManager:GetCpuName())-- 设备CPU
     data = web.__getContactParams(data, "&gpu", CS.UnityEngine.SystemInfo.graphicsDeviceName)-- 设备GPU
-    data = web.__getContactParams(data, "&deviceId", sdk.SdkManager:getUniqueId())-- 设备产品编号
-    data = web.__getContactParams(data, "&uuid", sdk.SdkManager:getUniqueId())-- 设备标识ID
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
     data = web.__getContactParams(data, "&genericArgs", tostring(genericArgs))-- 通用字符串参数
     data = web.__getContactParams(data, "&type", type)-- 类型
     data = web.__getContactParams(data, "&deviceTime", time)-- 客户端时间
@@ -154,6 +181,16 @@ end
 
 -- 上报步骤统计
 web.getReportStepUrl = function(step, time)
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+    
     local versionName = web.WebManager.game_version_name
     if(download and download.ResDownLoadManager)then
         local serverVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.VersionKey)
@@ -165,9 +202,10 @@ web.getReportStepUrl = function(step, time)
     data = web.__getContactParams(data, "&devOS", web.WebManager.dev_os)-- 设备ID 1:android 2:ios
     data = web.__getContactParams(data, "&devVer", CS.UnityEngine.SystemInfo.operatingSystem)-- 设备型号 如5.0（移动设备上获取不到）
     data = web.__getContactParams(data, "&device", CS.UnityEngine.SystemInfo.deviceModel)-- 设备硬件型号 如huawei P9.1
-    data = web.__getContactParams(data, "&deviceId", sdk.SdkManager:getUniqueId())-- 设备产品编号
-    data = web.__getContactParams(data, "&uuid", sdk.SdkManager:getUniqueId())-- 设备标识ID
-    data = web.__getContactParams(data, "&mobile", "")-- 手机号码
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
+    data = web.__getContactParams(data, "&mobile", CS.Lylibs.MD5Util.GetUniqueSuperId())-- 这里特殊放id，后台方便不用改表
     data = web.__getContactParams(data, "&pf_id", web.WebManager.pf_id)
     data = web.__getContactParams(data, "&channel_id", web.WebManager.channel_id)
     data = web.__getContactParams(data, "&srv_id", web.WebManager.server_id or "")
@@ -191,6 +229,16 @@ end
 
 -- bug统计
 web.getBugUrl = function(content)
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+
     local time = web.__getTime()
     local data = ""
     data = web.__getContactParams(data, "version", web.WebManager.game_version_name)-- 当前游戏客户端版本
@@ -206,7 +254,10 @@ web.getBugUrl = function(content)
     data = web.__getContactParams(data, "&playerName", role and role.RoleManager:getRoleVo():getPlayerName() or "")
     data = web.__getContactParams(data, "&level", role and role.RoleManager:getRoleVo():getPlayerLvl() or 0)
     data = web.__getContactParams(data, "&deviceTime", time)-- 客户端时间
-    data = web.__getContactParams(data, "&content", sdk.SdkManager:getUniqueId() .. "->" .. content)
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
+    data = web.__getContactParams(data, "&content", content)
     return web.__getUrlByReqType(true, web.__getConfig().bug_url .. "?", data, web.__getConfig().common_key, time)
 end
 
@@ -228,6 +279,16 @@ end
 
 -- 获取游戏服登录token
 web.getGameLoginTokenUrl = function(isYingYongBao)
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+    
     local data = ""
     data = web.__getContactParams(data, "sid", web.WebManager.sdk_account_author_token)
     data = web.__getContactParams(data, "&pf_id", web.WebManager.pf_id)
@@ -236,7 +297,9 @@ web.getGameLoginTokenUrl = function(isYingYongBao)
     data = web.__getContactParams(data, "&adult", web.WebManager.adult)
     data = web.__getContactParams(data, "&ext_info", web.WebManager.ext_info)
     data = web.__getContactParams(data, "&pgid", web.WebManager.pgid or 0)
-    data = web.__getContactParams(data, "&uuid", sdk.SdkManager:getUniqueId())-- 设备标识ID
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
     -- 是否应用宝
     if(isYingYongBao)then
         data = web.__getContactParams(data, "&openid", "")
@@ -282,6 +345,16 @@ end
 
 -- 文件实时上传地址
 web.getUploadRealTimeUrl = function(content)
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+    
     local time = web.__getTime()
     local data = ""
     data = web.__getContactParams(data, "version", web.WebManager.game_version_name)-- 当前游戏客户端版本
@@ -297,13 +370,25 @@ web.getUploadRealTimeUrl = function(content)
     data = web.__getContactParams(data, "&playerName", role and role.RoleManager and role.RoleManager:getRoleVo():getPlayerName() or "")
     data = web.__getContactParams(data, "&level", role and role.RoleManager and role.RoleManager:getRoleVo():getPlayerLvl() or 0)
     data = web.__getContactParams(data, "&deviceTime", time)-- 客户端时间
-    data = web.__getContactParams(data, "&uuid", sdk.SdkManager:getUniqueId())-- uuid
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
     data = web.__getContactParams(data, "&content", content)
     return web.__getUrlByReqType(true, web.__getConfig().upload_real_time_url .. "?", data, web.__getConfig().common_key, time)
 end
 
 -- 文件上传类型地址
 web.getUploadTypeUrl = function()
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+    
     local time = web.__getTime()
     local data = ""
     data = web.__getContactParams(data, "&ip", web.WebManager.web_ip or "")
@@ -323,7 +408,9 @@ web.getUploadTypeUrl = function()
     data = web.__getContactParams(data, "&playerName", role and role.RoleManager:getRoleVo():getPlayerName() or "")
     data = web.__getContactParams(data, "&level", role and role.RoleManager:getRoleVo():getPlayerLvl() or 0)
     data = web.__getContactParams(data, "&deviceTime", time)-- 客户端时间
-    data = web.__getContactParams(data, "&uuid", sdk.SdkManager:getUniqueId())-- uuid
+    data = web.__getContactParams(data, "&deviceId",  uniqueIdType)-- uniqueId类型
+    data = web.__getContactParams(data, "&uniqueId", uniqueId)-- uniqueId
+    data = web.__getContactParams(data, "&uuid", uuid)-- 设备ID
     return web.__getUrlByReqType(true, web.__getConfig().get_upload_type_url .. "?", data, web.__getConfig().common_key, time)
 end
 
@@ -379,8 +466,8 @@ web.getFormatVersion = function(prefixVersion, serverVersionStr, serverProVersio
         platform = "Windows"
     end
     local prefixVersionStr = prefixVersion == "" and "" or prefixVersion .. "."
-    local channelId, channelName = sdk.SdkManager:getChannelData()
-    local channelIdStr = channelId == sdk.AndroidChannelId.NONE and "" or "(" .. tostring(channelId) .. ")" 
+    local channelId, channelName = sdk.ChannelData:getData()
+    local channelIdStr = channelId == sdk.ChannelData.DEFAULT and "" or "(" .. tostring(channelId) .. ")" 
     return string.substitute("{0}{1}{2}_{3}_{4}{5}", platform, prefixVersionStr, serverVersionStr, serverProVersion, serverArtVersion, channelIdStr)
 end
 
@@ -393,9 +480,20 @@ web.setSplashTipProcess = function(process)
 end
 
 web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutExtension, successCall, failCall)
+    local uniqueIdType = ""
+    local uniqueId = ""
+    local uuid = ""
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        uniqueIdType = sdkInfo.deviceId or ""
+        uniqueId = sdkInfo.uniqueId or ""
+        uuid = sdkInfo.uuid or ""
+    end
+
     local time = tostring(web.__getTime())
-    local uuid = sdk.SdkManager:getUniqueId()
+    local webGamePlatformId = web.__getConfig().web_game_platform_id
     local remoteServerUrl = web.__getConfig().upload_file_url
+    local remoteServerKey = web.__getConfig().upload_file_key
     local remoteFileName = remoteFileNameWithoutExtension ..".ly"
     local isHasNetWork, isMobileNet, isWifi = web.getNetStatus()
 
@@ -411,7 +509,11 @@ web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutEx
     appendData = appendData .. string.format("\n%s ==> %s", "设备硬件型号", CS.UnityEngine.SystemInfo.deviceModel)
     appendData = appendData .. string.format("\n%s ==> %s", "设备CPU", gs.SdkManager:GetCpuName())
     appendData = appendData .. string.format("\n%s ==> %s", "设备GPU", CS.UnityEngine.SystemInfo.graphicsDeviceName)
-    appendData = appendData .. string.format("\n%s ==> %s", "UUID", sdk.SdkManager:getUniqueId())
+    appendData = appendData .. string.format("\n%s ==> %s", "SDK uniqueIdType", uniqueIdType)
+    appendData = appendData .. string.format("\n%s ==> %s", "SDK uniqueId", uniqueId)
+    appendData = appendData .. string.format("\n%s ==> %s", "SDK uuid", uuid)
+    appendData = appendData .. string.format("\n%s ==> %s", "自实现唯一ID", gs.SdkManager:GetUniqueId())
+    appendData = appendData .. string.format("\n%s ==> %s", "游戏id", CS.Lylibs.MD5Util.GetUniqueSuperId())
     appendData = appendData .. string.format("\n%s ==> %s", "系统内存大小", (gs.SdkManager:GetMemorySize("SystemTotalMemory") / 1024).."GB")
     appendData = appendData .. string.format("\n%s ==> %s", "缓存服务器", web.WebManager:getWebServerStorage())
     
@@ -421,7 +523,6 @@ web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutEx
     appendData = appendData .. string.format("\n%s ==> %s", "id_4", web.WebManager.sdk_account_id or "")
     appendData = appendData .. string.format("\n%s ==> %s", "是否Wifi", tostring(isWifi))
 
-    local sdkInfo = sdk.SdkManager:getSdkInfo()
     if(sdkInfo)then
         appendData = appendData .. string.format("\n%s ==> %s", "包名", sdkInfo.packageName or "")
     end
@@ -433,9 +534,16 @@ web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutEx
         print(appendData)
     end
 
+    -- 这里和C#的防空处理一样
+    if(uniqueId == "")then
+        uniqueId = gs.SdkManager:GetUniqueId()
+    end
+    if(uuid == "")then
+        uuid = gs.SdkManager:GetUniqueId()
+    end
     local headParamsDic = {}
-    headParamsDic["ly-report-key"] = "6HNihFsuHCQsWcnwkV36eZqOexvqbQSI"
-    headParamsDic["ly-report-gameid"] = "12"
+    headParamsDic["ly-report-key"] = remoteServerKey
+    headParamsDic["ly-report-gameid"] = webGamePlatformId
     headParamsDic["ly-report-sign"] = CS.Lylibs.MD5Util.GetMD5ByString(CS.Lylibs.MD5Util.GetMD5ByString(uuid) .. time)
     headParamsDic["ly-report-time"] = time
     
@@ -445,6 +553,7 @@ web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutEx
     paramsDic["save"] = "1"
     paramsDic["uuid"] = uuid
     paramsDic["version"] = "1"
+    paramsDic["LyClientPID"] = CS.Lylibs.MD5Util.GetUniqueSuperId()
 
     gs.FileUtil.UploadFile(headParamsDic, paramsDic, remoteServerUrl, remoteFileName, 
     function(result, responseCode, msg)
@@ -454,6 +563,37 @@ web.uploadFile = function(isAppendDetail, localFilePath, remoteFileNameWithoutEx
             failCall(responseCode, msg)
         end
     end)
+end
+
+-- 获取Debug登录权限
+web.getClientAuthLoginUrl = function()
+    local data = ""
+    -- data = web.__getContactParams(data, "g", 12)
+    data = web.__getContactParams(data, "user_name", login.LoginManager.clientAuthId)
+    data = web.__getContactParams(data, "&pwd", login.LoginManager.clientAuthPwd)
+
+    local webConfig = require("game/web/config/OuterTestConfig") --固定用外测的配置
+    return web.__getUrlByReqType(true, web.__getConfig().client_auth_login .. "?", data, webConfig.common_key)
+end
+
+-- 获取后台超级资源开关
+web.getSuperResSwitchUrl = function()
+    local data = ""
+    data = web.__getContactParams(data, "pf_id", web.WebManager.pf_id)
+    data = web.__getContactParams(data, "&channel_id", web.WebManager.channel_id)
+    data = web.__getContactParams(data, "&sub_channel_id", web.WebManager.sub_channel_id)
+
+    -- 和提审服参数一样原理
+    local bigCode = string.split(web.WebManager.game_version_name, ".")[1] or web.WebManager.game_version_name
+    data = web.__getContactParams(data, "&game_version", bigCode)
+
+    -- 额外再补上这两个参数，一起由后台控制是否审核版本
+    local sdkInfo = sdk.SdkManager:getSdkInfo()
+    if(sdkInfo)then
+        data = web.__getContactParams(data, "&package_name", sdkInfo.packageName)
+        data = web.__getContactParams(data, "&sdk_version", sdkInfo.versionCode)
+    end
+    return web.__getUrlByReqType(true, web.__getConfig().get_super_res_switch .. "?", data, web.__getConfig().common_key)
 end
 
 --[[ 替换语言包自动生成，请勿修改！

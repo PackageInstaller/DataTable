@@ -1,210 +1,76 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AttachmentBombEnemyCell", import("view.level.cell.StaticCellView"))
 
-local var_0_0 = "AttachmentBombEnemyCell"
+var_0_0.StateLive = 1
+var_0_0.StateDead = 2
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.level.cell.StaticCellView"))
-
-var_0_1.StateLive = 1
-var_0_1.StateDead = 2
-
-function var_0_1.GetOrder(arg_1_0)
-	ChapterConst = var_1_10001
-
-	return var_1_10001.CellPriorityAttachment
+function var_0_0.GetOrder(arg_1_0)
+	return ChapterConst.CellPriorityAttachment
 end
 
-function var_0_1.Update(arg_2_0)
-	local var_2_0 = arg_2_0.info
-
-	IsNil = var_1_10002
-
-	local var_2_1
-
-	if var_1_10002(arg_2_0.go) then
-		var_2_1 = arg_2_0
-
-		arg_2_0.PrepareBase(var_2_1, "bomb_enemy_" .. var_2_0.attachmentId)
+function var_0_0.Update(arg_2_0)
+	if IsNil(arg_2_0.go) then
+		arg_2_0:PrepareBase("bomb_enemy_" .. arg_2_0.info.attachmentId)
 	end
 
-	local var_2_2 = arg_2_0.state
-	local var_2_3 = var_2_0.flag
+	local var_2_0 = arg_2_0.state
 
-	ChapterConst = var_2_1
-
-	if var_2_3 == var_2_1.CellFlagActive and arg_2_0.state ~= var_0_1.StateLive then
-		arg_2_0.state = var_0_1.StateLive
+	if arg_2_0.info.flag == ChapterConst.CellFlagActive and arg_2_0.state ~= var_0_0.StateLive then
+		arg_2_0.state = var_0_0.StateLive
 		arg_2_0.dead = nil
-		var_1_10005 = arg_2_0
 
-		arg_2_0.ClearLoader(var_1_10005)
+		arg_2_0:ClearLoader()
+		assert(pg.specialunit_template[arg_2_0.info.attachmentId], "specialunit_template not exist: " .. arg_2_0.info.attachmentId)
+		arg_2_0:GetLoader():GetPrefab("leveluiview/Tpl_Enemy", "Tpl_Enemy", function(arg_3_0)
+			setParent(arg_3_0, arg_2_0.tf)
 
-		pg = var_3
+			tf(arg_3_0).anchoredPosition = Vector2(0, 10)
 
-		local var_2_4 = var_3.specialunit_template[var_2_0.attachmentId]
-
-		assert = var_4
-
-		var_4(var_2_4, "specialunit_template not exist: " .. var_2_0.attachmentId)
-
-		local var_2_5 = arg_2_0:GetLoader()
-
-		var_4.GetPrefab(var_2_5, "leveluiview/Tpl_Enemy", "Tpl_Enemy", function(arg_3_0)
-			setParent = var_2_10001
-
-			var_2_10001(arg_3_0, arg_2_0.tf)
-
-			tf = var_2_10001
-
-			local var_3_0 = var_2_10001(arg_3_0)
-
-			Vector2 = var_2_10002
-			var_3_0.anchoredPosition = var_2_10002(0, 10)
-
-			local var_3_1 = arg_2_0
-			local var_3_2 = var_1.GetLoader(var_3_1)
-			local var_3_3 = var_1.GetSprite
-			local var_3_4 = "enemies/" .. var_2_4.prefab
-			local var_3_5 = ""
-
-			findTF = var_2_10006
-
-			var_3_3(var_3_2, var_3_4, var_3_5, var_2_10006(arg_3_0, "icon"))
-
-			setActive = var_3_3
-			findTF = var_3_2
-
-			var_3_3(var_3_2(arg_3_0, "titleContain/bg_s"), var_2_4.enemy_point == 5)
-
-			setActive = var_3_3
-			findTF = var_3
-
-			var_3_3(var_3(arg_3_0, "titleContain/bg_m"), var_2_4.enemy_point == 8)
-
-			setActive = var_3_3
-			findTF = var_3
-
-			var_3_3(var_3(arg_3_0, "titleContain/bg_h"), var_2_4.enemy_point == 10)
+			arg_2_0:GetLoader():GetSprite("enemies/" .. var_0.prefab, "", findTF(arg_3_0, "icon"))
+			setActive(findTF(arg_3_0, "titleContain/bg_s"), var_0.enemy_point == 5)
+			setActive(findTF(arg_3_0, "titleContain/bg_m"), var_0.enemy_point == 8)
+			setActive(findTF(arg_3_0, "titleContain/bg_h"), var_0.enemy_point == 10)
 
 			arg_2_0.enemy = arg_3_0
 
-			local var_3_6 = arg_2_0
-
-			var_1.ResetCanvasOrder(var_3_6)
-
-			local var_3_7 = arg_2_0
-
-			var_1.Update(var_3_7)
+			arg_2_0:ResetCanvasOrder()
+			arg_2_0:Update()
 
 			return
 		end)
-	else
-		local var_2_6 = var_2_0.flag
+	elseif arg_2_0.info.flag == ChapterConst.CellFlagDisabled and arg_2_0.state ~= var_0_0.StateDead then
+		arg_2_0.state = var_0_0.StateDead
+		arg_2_0.enemy = nil
 
-		ChapterConst = var_4
+		arg_2_0:ClearLoader()
+		assert(pg.land_based_template[arg_2_0.info.attachmentId], "land_based_template not exist: " .. arg_2_0.info.attachmentId)
+		arg_2_0:GetLoader():GetPrefab("leveluiview/Tpl_Dead", "Tpl_Dead", function(arg_4_0)
+			setParent(arg_4_0, arg_2_0.tf)
 
-		if var_2_6 == var_4.CellFlagDisabled and arg_2_0.state ~= var_0_1.StateDead then
-			arg_2_0.state = var_0_1.StateDead
-			arg_2_0.enemy = nil
-			var_1_10005 = arg_2_0
+			tf(arg_4_0).anchoredPosition = Vector2(0, 10)
 
-			arg_2_0.ClearLoader(var_1_10005)
+			arg_2_0:GetLoader():GetSprite("enemies/" .. var_0.prefab .. "_d_blue", "", findTF(arg_4_0, "icon"))
+			setActive(findTF(arg_4_0, "effect_not_open"), false)
+			setActive(findTF(arg_4_0, "effect_open"), false)
+			setActive(findTF(arg_4_0, "huoqiubaozha"), var_2_0 == var_0_0.StateLive)
 
-			pg = var_3
+			arg_2_0.dead = arg_4_0
 
-			local var_2_7 = var_3.land_based_template[var_2_0.attachmentId]
+			arg_2_0:ResetCanvasOrder()
+			arg_2_0:Update()
 
-			assert = var_4
-
-			var_4(var_2_7, "land_based_template not exist: " .. var_2_0.attachmentId)
-
-			local var_2_8 = arg_2_0:GetLoader()
-
-			var_4.GetPrefab(var_2_8, "leveluiview/Tpl_Dead", "Tpl_Dead", function(arg_4_0)
-				setParent = var_2_10001
-
-				var_2_10001(arg_4_0, arg_2_0.tf)
-
-				tf = var_2_10001
-
-				local var_4_0 = var_2_10001(arg_4_0)
-
-				Vector2 = var_2_10002
-				var_4_0.anchoredPosition = var_2_10002(0, 10)
-
-				local var_4_1 = arg_2_0
-				local var_4_2 = var_1.GetLoader(var_4_1)
-				local var_4_3 = var_1.GetSprite
-				local var_4_4 = "enemies/" .. var_2_7.prefab .. "_d_blue"
-				local var_4_5 = ""
-
-				findTF = var_6
-
-				var_4_3(var_4_2, var_4_4, var_4_5, var_6(arg_4_0, "icon"))
-
-				setActive = var_4_3
-				findTF = var_4_2
-
-				var_4_3(var_4_2(arg_4_0, "effect_not_open"), false)
-
-				setActive = var_4_3
-				findTF = var_3
-
-				var_4_3(var_3(arg_4_0, "effect_open"), false)
-
-				setActive = var_4_3
-				findTF = var_3
-
-				var_4_3(var_3(arg_4_0, "huoqiubaozha"), var_2_2 == var_0_1.StateLive)
-
-				arg_2_0.dead = arg_4_0
-
-				local var_4_6 = arg_2_0
-
-				var_1.ResetCanvasOrder(var_4_6)
-
-				local var_4_7 = arg_2_0
-
-				var_1.Update(var_4_7)
-
-				return
-			end)
-		end
+			return
+		end)
 	end
 
-	local var_2_9 = var_2_0.flag
+	if arg_2_0.info.flag == ChapterConst.CellFlagActive and arg_2_0.enemy then
+		setActive(findTF(arg_2_0.enemy, "effect_found"), arg_2_0.info.trait == ChapterConst.TraitVirgin)
 
-	ChapterConst = var_4
-
-	if var_2_9 == var_4.CellFlagActive and arg_2_0.enemy then
-		setActive = var_3
-		findTF = var_1_10005
-
-		local var_2_10 = var_1_10005(arg_2_0.enemy, "effect_found")
-		local var_2_11 = var_2_0.trait
-
-		ChapterConst = var_7
-
-		var_3(var_2_10, var_2_11 == var_7.TraitVirgin)
-
-		local var_2_12 = var_2_0.trait
-
-		ChapterConst = var_4
-
-		if var_2_12 == var_4.TraitVirgin then
-			pg = var_2_12
-
-			local var_2_13 = var_2_12.CriMgr.GetInstance()
-			local var_2_14 = var_3.PlaySoundEffect_V3
-
-			SFX_UI_WEIGHANCHOR_ENEMY = var_6
-
-			var_2_14(var_2_13, var_6)
+		if arg_2_0.info.trait == ChapterConst.TraitVirgin then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WEIGHANCHOR_ENEMY)
 		end
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

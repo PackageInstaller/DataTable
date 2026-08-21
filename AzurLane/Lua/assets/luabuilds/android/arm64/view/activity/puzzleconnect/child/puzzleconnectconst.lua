@@ -1,16 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PuzzleConnectConst")
+﻿local var_0_0 = class("PuzzleConnectConst")
 
 var_0_0.item_bound = {
 	138,
 	138
 }
 var_0_0.item_spacing = 3
-Color = var_1
-var_0_0.color_green = var_1.New(0, 1, 0, 0.5)
-Color = var_1
-var_0_0.color_red = var_1.New(1, 0.5, 0, 0.5)
+var_0_0.color_green = Color.New(0, 1, 0, 0.5)
+var_0_0.color_red = Color.New(1, 0.5, 0, 0.5)
 var_0_0.color_count = 6
 var_0_0.chapter_data = {
 	{

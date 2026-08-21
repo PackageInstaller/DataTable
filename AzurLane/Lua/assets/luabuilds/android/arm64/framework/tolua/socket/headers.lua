@@ -1,12 +1,7 @@
-﻿require = var_0_10000
-
-local var_0_0 = var_0_10000("socket")
+﻿local var_0_0 = require("socket")
 
 var_0_0.headers = {}
-
-local var_0_1 = var_0_0.headers
-
-var_0_1.canonic = {
+var_0_0.headers.canonic = {
 	["last-attempt-date"] = "Last-Attempt-Date",
 	received = "Received",
 	["mime-version"] = "MIME-Version",
@@ -100,4 +95,4 @@ var_0_1.canonic = {
 	server = "Server"
 }
 
-return var_0_1
+return var_0_0.headers

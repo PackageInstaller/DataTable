@@ -1,27 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("U73SkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-local var_0_0 = "U73SkinPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.SkinTemplatePage"))
-
-function var_0_1.OnUpdateFlush(arg_1_0)
-	var_0_1.super.OnUpdateFlush(arg_1_0)
-
-	setText = var_1
-
-	local var_1_0 = arg_1_0.dayTF
-
-	setColorStr = var_1_10004
-
-	local var_1_1 = arg_1_0.nday
-
-	COLOR_GREEN = var_1_10007
-
-	var_1(var_1_0, var_1_10004(var_1_1, var_1_10007) .. "/" .. #arg_1_0.taskGroup)
+function var_0_0.OnUpdateFlush(arg_1_0)
+	var_0_0.super.OnUpdateFlush(arg_1_0)
+	setText(arg_1_0.dayTF, setColorStr(arg_1_0.nday, COLOR_GREEN) .. "/" .. #arg_1_0.taskGroup)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,10 +1,5 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.ship_skin_template_column_time = {
+﻿pg = pg or {}
+pg.ship_skin_template_column_time = {
 	[101314] = {
 		time = {
 			{

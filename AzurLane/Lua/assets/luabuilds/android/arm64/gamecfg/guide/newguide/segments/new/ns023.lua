@@ -1,11 +1,4 @@
-﻿local var_0_0 = {
-	"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击 <color=#ff7d36> 出击 </color>",
-	"红方的旗舰大黄蜂一定就藏在这片海域的某处，只要击沉她的话就可以压制海域了！",
-	"在这之前，我们需要先击破对方派出拦截的侦查部队，就先拿他们试试指挥官的能力",
-	"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧～"
-}
-
-return {
+﻿return {
 	id = "NS023",
 	events = {
 		{
@@ -16,17 +9,17 @@ return {
 				dir = 1,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击 <color=#ff7d36> 出击 </color>",
+					"红方的旗舰大黄蜂一定就藏在这片海域的某处，只要击沉她的话就可以压制海域了！",
+					"在这之前，我们需要先击破对方派出拦截的侦查部队，就先拿他们试试指挥官的能力",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧～"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -50,7 +43,12 @@ return {
 				dir = 1,
 				posY = -200,
 				posX = -190,
-				text = var_0_0[2]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击 <color=#ff7d36> 出击 </color>",
+					"红方的旗舰大黄蜂一定就藏在这片海域的某处，只要击沉她的话就可以压制海域了！",
+					"在这之前，我们需要先击破对方派出拦截的侦查部队，就先拿他们试试指挥官的能力",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧～"
+				})[2]
 			},
 			baseui = {
 				delay = 0.2,
@@ -65,7 +63,12 @@ return {
 				dir = 1,
 				posY = -200,
 				posX = -190,
-				text = var_0_0[3]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击 <color=#ff7d36> 出击 </color>",
+					"红方的旗舰大黄蜂一定就藏在这片海域的某处，只要击沉她的话就可以压制海域了！",
+					"在这之前，我们需要先击破对方派出拦截的侦查部队，就先拿他们试试指挥官的能力",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧～"
+				})[3]
 			}
 		},
 		{
@@ -75,7 +78,12 @@ return {
 				dir = 1,
 				posY = -351,
 				posX = -257,
-				text = var_0_0[4]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击 <color=#ff7d36> 出击 </color>",
+					"红方的旗舰大黄蜂一定就藏在这片海域的某处，只要击沉她的话就可以压制海域了！",
+					"在这之前，我们需要先击破对方派出拦截的侦查部队，就先拿他们试试指挥官的能力",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧～"
+				})[4]
 			},
 			ui = {
 				eventPath = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/quads/chapter_cell_quad_4_6",

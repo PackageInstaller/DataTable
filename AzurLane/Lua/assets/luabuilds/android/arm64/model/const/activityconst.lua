@@ -1,15 +1,8 @@
-﻿setmetatable = var_0_10000
-
-local var_0_0 = var_0_10000({}, {
+﻿local var_0_0 = setmetatable({}, {
 	__index = function(arg_1_0, arg_1_1)
-		assert = var_1_10002
-		pg = var_1_10004
+		assert(pg.activity_const[arg_1_1], "activity_const without key:" .. arg_1_1)
 
-		var_1_10002(var_1_10004.activity_const[arg_1_1], "activity_const without key:" .. arg_1_1)
-
-		pg = var_1_10002
-
-		return var_1_10002.activity_const[arg_1_1].act_id
+		return pg.activity_const[arg_1_1].act_id
 	end
 })
 
@@ -203,9 +196,7 @@ function var_0_0.BBRule(arg_2_0)
 		0
 	}
 
-	_ = var_1_10002
-
-	var_1_10002.each(arg_2_0, function(arg_3_0)
+	_.each(arg_2_0, function(arg_3_0)
 		var_2_0[arg_3_0] = var_2_0[arg_3_0] + 1
 
 		return
@@ -213,36 +204,40 @@ function var_0_0.BBRule(arg_2_0)
 
 	local var_2_1 = 7
 
-	_ = var_1_10003
-
-	if var_1_10003.all(var_2_0, function(arg_4_0)
+	if _.all({
+		0,
+		0,
+		0,
+		0,
+		0,
+		0
+	}, function(arg_4_0)
 		return arg_4_0 == 1
 	end) then
 		var_2_1 = 2
 	else
-		ipairs = var_3
-
-		for iter_2_0, iter_2_1 in var_3(var_2_0) do
+		for iter_2_0, iter_2_1 in ipairs({
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		}) do
 			if iter_2_0 == 4 then
-				if 4 <= iter_2_1 then
-					math = var_8
-					var_2_1 = var_8.min(var_2_1, 1)
-				elseif 3 <= iter_2_1 then
-					math = var_8
-					var_2_1 = var_8.min(var_2_1, 3)
-				elseif 2 <= iter_2_1 then
-					math = var_8
-					var_2_1 = var_8.min(var_2_1, 5)
-				elseif 1 <= iter_2_1 then
-					math = var_8
-					var_2_1 = var_8.min(var_2_1, 6)
+				if iter_2_1 >= 4 then
+					var_2_1 = math.min(var_2_1, 1)
+				elseif iter_2_1 >= 3 then
+					var_2_1 = math.min(var_2_1, 3)
+				elseif iter_2_1 >= 2 then
+					var_2_1 = math.min(var_2_1, 5)
+				elseif iter_2_1 >= 1 then
+					var_2_1 = math.min(var_2_1, 6)
 				end
-			elseif 5 <= iter_2_1 then
-				math = var_8
-				var_2_1 = var_8.min(var_2_1, 1)
-			elseif 4 <= iter_2_1 then
-				math = var_8
-				var_2_1 = var_8.min(var_2_1, 4)
+			elseif iter_2_1 >= 5 then
+				var_2_1 = math.min(var_2_1, 1)
+			elseif iter_2_1 >= 4 then
+				var_2_1 = math.min(var_2_1, 4)
 			end
 		end
 	end

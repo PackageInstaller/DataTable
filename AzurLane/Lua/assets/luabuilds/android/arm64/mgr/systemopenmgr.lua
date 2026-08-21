@@ -1,169 +1,89 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.SystemOpenMgr = singletonClass("SystemOpenMgr")
 
-local var_0_0
+local var_0_0 = true
+local var_0_1 = pg.open_systems_limited
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-singletonClass = var_0_10001
-var_0.SystemOpenMgr = var_0_10001("SystemOpenMgr")
-pg = var_0
-
-local var_0_1 = var_0.SystemOpenMgr
-local var_0_2 = true
-
-pg = var_0_10002
-
-local var_0_3 = var_0_10002.open_systems_limited
-
-function var_0_1.Init(arg_1_0, arg_1_1)
-	print = var_1_10002
-
-	var_1_10002("initializing SystemOpenMgr manager...")
+function pg.SystemOpenMgr.Init(arg_1_0, arg_1_1)
+	print("initializing SystemOpenMgr manager...")
 	arg_1_1()
 
 	return
 end
 
-pm = var_3
+local var_0_2 = pm.Facade.sendNotification
 
-local var_0_4 = var_3.Facade.sendNotification
+function pm.Facade.sendNotification(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	if var_0_0 and arg_2_1 == GAME.LOAD_SCENE and arg_2_2.context.mediator then
+		local var_2_0 = getProxy(PlayerProxy)
 
-pm = var_0_10004
+		if var_2_0 then
+			local var_2_1 = var_2_0:getRawData()
 
-function var_0_10004.Facade.sendNotification(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0
-
-	if var_0_2 then
-		GAME = var_2_0
-
-		if arg_2_1 == var_2_0.LOAD_SCENE and arg_2_2.context.mediator then
-			getProxy = var_2_0
-			PlayerProxy = var_1_10006
-			var_2_0 = var_2_0(var_1_10006)
-
-			local var_2_1 = arg_2_2.context.mediator.__cname
-
-			if var_2_0 and var_2_0:getRawData() then
-				pg = var_1_10007
-				var_1_10009 = var_1_10007.SystemOpenMgr.GetInstance()
-
-				local var_2_2, var_2_3 = var_7.isOpenSystem(var_1_10009, var_1_10006.level, var_2_1)
+			if var_2_1 then
+				local var_2_2, var_2_3 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_2_1.level, arg_2_2.context.mediator.__cname)
 
 				if not var_2_2 then
-					pg = var_1_10009
-
-					local var_2_4 = var_1_10009.TipsMgr.GetInstance()
-
-					var_1_10009.ShowTips(var_2_4, var_2_3)
+					pg.TipsMgr.GetInstance():ShowTips(var_2_3)
 
 					return
 				end
 			end
-
-			HXSet = var_1_10006
-
-			if var_1_10006.isHxSkin() and var_2_1 == "NewSkinShopMediator" then
-				return
-			end
-
-			local var_2_5 = var_0_4
-			local var_2_6 = arg_2_0
-
-			GAME = var_1_10009
-
-			var_2_5(var_2_6, var_1_10009.CHECK_HOTFIX_VER, {
-				mediatorName = var_2_1
-			})
 		end
+
+		if HXSet.isHxSkin() and arg_2_2.context.mediator.__cname == "NewSkinShopMediator" then
+			return
+		end
+
+		var_0_2(arg_2_0, GAME.CHECK_HOTFIX_VER, {
+			mediatorName = arg_2_2.context.mediator.__cname
+		})
 	end
 
-	GAME = var_2_0
-
-	if arg_2_1 == var_2_0.BEGIN_STAGE then
-		pg = var_4
-
-		local var_2_7 = var_4.GuildMsgBoxMgr.GetInstance()
-
-		var_4.OnBeginBattle(var_2_7)
+	if arg_2_1 == GAME.BEGIN_STAGE then
+		pg.GuildMsgBoxMgr.GetInstance():OnBeginBattle()
 	end
 
-	GAME = var_4
-
-	if arg_2_1 == var_4.FINISH_STAGE_DONE then
-		pg = var_4
-
-		local var_2_8 = var_4.GuildMsgBoxMgr.GetInstance()
-
-		var_4.OnFinishBattle(var_2_8, arg_2_2)
+	if arg_2_1 == GAME.FINISH_STAGE_DONE then
+		pg.GuildMsgBoxMgr.GetInstance():OnFinishBattle(arg_2_2)
 	end
 
-	var_0_4(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	var_0_2(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
 	return
 end
 
-local function var_0_5(arg_3_0)
-	local var_3_0 = var_0_3[14].level
-	local var_3_1 = var_0_3[14].name
-
-	if var_3_0 == arg_3_0 then
-		pg = var_1_10003
-
-		local var_3_2 = var_1_10003.NewStoryMgr.GetInstance()
-
-		if not var_3.IsPlayed(var_3_2, "ZHIHUIMIAO1") then
-			IsUnityEditor = var_1_10004
-
-			if var_1_10004 then
-				return true
-			else
-				var_1_10004 = false
-				i18n = var_3_2
-
-				local var_3_3 = var_3_2("no_open_system_tip", var_3_1, var_3_0)
-
-				return
-			end
-
-			if false then
-				if var_3_0 < arg_3_0 then
-					return true
-				else
-					local var_3_4 = false
-
-					i18n = var_1_10004
-
-					local var_3_5 = var_1_10004("no_open_system_tip", var_3_1, var_3_0)
-
-					return
-				end
-			end
+local function var_0_3(arg_3_0)
+	if var_0_1[14].level == arg_3_0 then
+		if pg.NewStoryMgr.GetInstance():IsPlayed("ZHIHUIMIAO1") or IsUnityEditor then
+			return true
+		else
+			local var_3_1 = i18n("no_open_system_tip", var_0_1[14].name, var_0_1[14].level)
 
 			return
 		end
+	elseif var_0_1[14].level < arg_3_0 then
+		return true
+	else
+		local var_3_3 = i18n("no_open_system_tip", var_0_1[14].name, var_0_1[14].level)
+
+		return
 	end
+
+	return
 end
 
-function var_0_1.isOpenSystem(arg_4_0, arg_4_1, arg_4_2)
-	if arg_4_2 == "EquipmentTransformTreeMediator" then
-		LOCK_EQUIPMENT_TRANSFORM = var_1_10003
-
-		if var_1_10003 then
-			return false
-		end
+function pg.SystemOpenMgr.isOpenSystem(arg_4_0, arg_4_1, arg_4_2)
+	if arg_4_2 == "EquipmentTransformTreeMediator" and LOCK_EQUIPMENT_TRANSFORM then
+		return false
 	end
 
 	if arg_4_2 == "CommanderCatMediator" then
-		return var_0_5(arg_4_1)
+		return var_0_3(arg_4_1)
 	else
-		pairs = var_1_10003
-
-		for iter_4_0, iter_4_1 in var_1_10003(var_0_3.all) do
-			if var_0_3[iter_4_1].mediator == arg_4_2 and arg_4_1 < var_0_3[iter_4_1].level then
-				local var_4_0 = false
-
-				i18n = var_1_10009
-				var_1_10009 = var_1_10009("no_open_system_tip", var_0_3[iter_4_1].name, var_0_3[iter_4_1].level)
+		for iter_4_0, iter_4_1 in pairs(var_0_1.all) do
+			if var_0_1[iter_4_1].mediator == arg_4_2 and arg_4_1 < var_0_1[iter_4_1].level then
+				local var_4_1 = i18n("no_open_system_tip", var_0_1[iter_4_1].name, var_0_1[iter_4_1].level)
 
 				return
 			end
@@ -175,67 +95,41 @@ function var_0_1.isOpenSystem(arg_4_0, arg_4_1, arg_4_2)
 	return
 end
 
-local function var_0_6(arg_5_0)
-	_ = var_1_10001
-
-	local var_5_0 = var_1_10001.sort(var_0_3.all, function(arg_6_0, arg_6_1)
-		return var_0_3[arg_6_0].level > var_0_3[arg_6_1].level
-	end)
-
-	pairs = var_1_10002
-
-	for iter_5_0, iter_5_1 in var_1_10002(var_5_0) do
-		if arg_5_0 >= var_0_3[iter_5_1].level then
-			return var_7
+local function var_0_4(arg_5_0)
+	for iter_5_0, iter_5_1 in pairs((_.sort(var_0_1.all, function(arg_6_0, arg_6_1)
+		return var_0_1[arg_6_0].level > var_0_1[arg_6_1].level
+	end))) do
+		if arg_5_0 >= var_0_1[iter_5_1].level then
+			return var_0_1[iter_5_1]
 		end
 	end
 
 	return
 end
 
-function var_0_1.notification(arg_7_0, arg_7_1)
-	if not var_0_2 then
+function pg.SystemOpenMgr.notification(arg_7_0, arg_7_1)
+	if not var_0_0 then
 		return
 	end
 
-	if var_0_6(arg_7_1) then
-		pg = var_1_10003
+	local var_7_0 = var_0_4(arg_7_1)
 
-		if not var_1_10003.MsgboxMgr.GetInstance()._go.activeSelf and var_2.story_id and var_2.story_id ~= "" and not arg_7_0.active then
-			pg = var_3
+	if var_7_0 and not pg.MsgboxMgr.GetInstance()._go.activeSelf and var_7_0.story_id and var_7_0.story_id ~= "" and not arg_7_0.active then
+		if not pg.NewStoryMgr.GetInstance():IsPlayed(var_7_0.story_id) then
+			if not pg.SeriesGuideMgr.GetInstance():isNotFinish() then
+				arg_7_0.active = true
 
-			local var_7_0 = var_3.NewStoryMgr.GetInstance()
-
-			if not var_3.IsPlayed(var_7_0, var_2.story_id) then
-				pg = var_3
-
-				local var_7_1 = var_3.SeriesGuideMgr.GetInstance()
-
-				if not var_3.isNotFinish(var_7_1) then
-					arg_7_0.active = true
-					pg = var_3
-
-					local var_7_2 = var_3.MsgboxMgr.GetInstance()
-					local var_7_3 = var_3.ShowMsgBox
-					local var_7_4 = {
-						modal = true,
-						hideNo = true,
-						hideClose = true
-					}
-
-					i18n = var_1_10007
-					var_7_4.content = var_1_10007("open_system_tip", var_2.name)
-
-					function var_7_4.onYes()
-						local var_8_0 = arg_7_0
-
-						var_0.doSystemGuide(var_8_0, var_0.id)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					modal = true,
+					hideNo = true,
+					hideClose = true,
+					content = i18n("open_system_tip", var_7_0.name),
+					onYes = function()
+						arg_7_0:doSystemGuide(var_7_0.id)
 
 						return
 					end
-
-					var_7_3(var_7_2, var_7_4)
-				end
+				})
 			end
 		end
 	end
@@ -243,48 +137,19 @@ function var_0_1.notification(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.doSystemGuide(arg_9_0, arg_9_1)
-	IsUnityEditor = var_1_10002
-
-	if var_1_10002 then
-		ENABLE_GUIDE = var_1_10002
-
-		if not var_1_10002 then
-			return
-		end
+function pg.SystemOpenMgr.doSystemGuide(arg_9_0, arg_9_1)
+	if IsUnityEditor and not ENABLE_GUIDE then
+		return
 	end
 
-	pg = var_1_10002
+	local var_9_0 = pg.open_systems_limited[arg_9_1]
 
-	if var_1_10002.open_systems_limited[arg_9_1].story_id and var_3 ~= "" then
-		getProxy = var_1_10004
-		ContextProxy = var_1_10006
-
-		local var_9_0 = var_1_10004(var_1_10006)
-		local var_9_1 = var_4.getCurrentContext(var_9_0).scene
-
-		SCENE = var_9_0
-
-		if var_9_1 ~= var_9_0[var_2.scene] then
-			pg = var_9_1
-
-			local var_9_2 = var_9_1.m02
-
-			var_9_1 = var_9_1.sendNotification
-			GAME = var_1_10008
-
-			local var_9_3 = var_1_10008.GO_SCENE
-
-			SCENE = var_1_10009
-
-			var_9_1(var_9_2, var_9_3, var_1_10009[var_2.scene])
+	if pg.open_systems_limited[arg_9_1].story_id and pg.open_systems_limited[arg_9_1].story_id ~= "" then
+		if getProxy(ContextProxy):getCurrentContext().scene ~= SCENE[var_9_0.scene] then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE[var_9_0.scene])
 		end
 
-		pg = var_9_1
-
-		local var_9_4 = var_9_1.SystemGuideMgr.GetInstance()
-
-		var_5.PlayByGuideId(var_9_4, var_3, {}, function()
+		pg.SystemGuideMgr.GetInstance():PlayByGuideId(pg.open_systems_limited[arg_9_1].story_id, {}, function()
 			arg_9_0.active = nil
 
 			return

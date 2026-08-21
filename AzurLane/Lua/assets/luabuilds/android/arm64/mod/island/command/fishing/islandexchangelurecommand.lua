@@ -1,65 +1,27 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandExchangeLureCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandExchangeLureCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.fishPointId
+	local var_1_2 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().lureId
-	local var_1_1 = var_2.fishPointId
-	local var_1_2 = var_2.callback
-
-	pg = var_1_10006
-
-	local var_1_3 = var_1_10006.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_3, 21064, {
-		bait_id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(21064, {
+		bait_id = var_1_0.lureId
 	}, 21065, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			getProxy = var_2_2
-			IslandProxy = var_2_10003
-
-			local var_2_0 = var_2_2(var_2_10003)
-			local var_2_1 = var_2_2.GetIsland(var_2_0)
-
-			var_2_2 = var_2_2.GetFishingAgency(var_2_1)
+			local var_2_0 = getProxy(IslandProxy):GetIsland():GetFishingAgency()
 
 			if var_1_1 then
-				var_2_10004 = var_2_2
-
-				local var_2_3 = var_2_2.GetBaitId(var_2_10004)
-
-				pg = var_2_1
-
-				local var_2_4 = var_2_1.GameTrackerMgr.GetInstance()
-				local var_2_5 = var_3.Record
-
-				GameTrackerBuilder = var_2_10006
-
-				var_2_5(var_2_4, var_2_10006.BuildIslandFishingChangeLure(var_1_1, var_2_3, var_1_0))
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandFishingChangeLure(var_1_1, var_2_0:GetBaitId(), var_0))
 			end
 
-			var_2_10004 = var_2_2
-
-			var_2_2.UpdateBaitId(var_2_10004, var_1_0)
+			var_2_0:UpdateBaitId(var_0)
 
 			if var_1_2 then
 				var_1_2()
 			end
 		else
-			pg = var_2_2
-
-			local var_2_6 = var_2_2.TipsMgr.GetInstance()
-			local var_2_7 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_7(var_2_6, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -68,4 +30,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

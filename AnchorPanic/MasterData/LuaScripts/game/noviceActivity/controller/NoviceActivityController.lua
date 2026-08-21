@@ -39,6 +39,15 @@ function listNotification(self)
     
     GameDispatcher:addEventListener(EventName.REQ_RAFFLE_REWARD,self.onReqWelfareRaffleHandler,self)
     noviceActivity.NoviceActivityManager:addEventListener(noviceActivity.NoviceActivityManager.UPDATE_RED, self.updateRed, self)
+
+    GameDispatcher:addEventListener(EventName.REQ_NOVICE_SSR_GET,self.onReqNoviceSsrGet,self)
+    GameDispatcher:addEventListener(EventName.REQ_NOVICE_ACTIVITY_RECHARGE_RECEIVE,self.onReqNoviceRechargeReceive,self)
+    GameDispatcher:addEventListener(EventName.REQ_NOVICE_ACTIVITY_RECHARGE_RECEIVE_TWO,self.onReqNoviceRechargeReceiveTwo,self)
+    
+    
+    GameDispatcher:addEventListener(EventName.ACTIVITY_NOVICE_UPDATE, self.onUpdateNoviceEndTimeChange,self)
+
+    GameDispatcher:addEventListener(EventName.REQ_NOVICE_STRENGTH_AWARD, self.onReqNoviceStrengthHandler,self)
 end
 
 --注册server发来的数据
@@ -72,6 +81,14 @@ function registerMsgHandler(self)
         SC_ACTIVITY_NOVICE_TURNTABLE_PANEL = self.onNoiveTurntablePanel,
         --- *s2c* 新手活动-转盘面板抽奖 24302
         SC_ACTIVITY_NOVICE_TURNTABLE_DRAW = self.onNoviceTurntableDraw,
+        --- *s2c* 作战储备-srr奖励-面板 24480
+        SC_COMBAT_PREPARE_SSR_PANEL = self.onCombatPrepareSsrPanel,
+        --- *s2c* 作战储备-累充奖励面板 24482
+        SC_COMBAT_PREPARE_RECHARGE_PANEL = self.onCombatPrepareRechargePanel,
+
+        SC_COMBAT_PREPARE_RECHARGE_RECEIVE = self.onUpdatePrepareRechargeReceive,
+        --- *s2c* 作战储备-体力-面板 24520
+        SC_COMBAT_PREPARE_STRENGTH_PANEL = self.onCombatPreareStreengthPanel,
     }
 end
 
@@ -179,6 +196,24 @@ function onReqNoviceActivityReturnaskRecive(self, taskId)
     SOCKET_SEND(Protocol.CS_ACTIVITY_NOVICE_RETURN_RECEIVE, { id = taskId })
 end
 
+--- *c2s* 作战储备-srr奖励-领取 24481
+function onReqNoviceSsrGet(self)
+    SOCKET_SEND(Protocol.CS_COMBAT_PREPARE_SSR_GET, {},Protocol.SC_COMBAT_PREPARE_SSR_PANEL)
+end
+
+--- *c2s* 领取作战储备-累充奖励 24483
+function onReqNoviceRechargeReceive(self,taskId)
+    SOCKET_SEND(Protocol.CS_COMBAT_PREPARE_RECHARGE_RECEIVE, { recharge_id = taskId },Protocol.SC_COMBAT_PREPARE_RECHARGE_RECEIVE)
+end
+
+--- *c2s* 领取周年累充奖励 24531
+function onReqNoviceRechargeReceiveTwo(self,taskId)
+    SOCKET_SEND(Protocol.CS_CELE_RECHARGE2_RECEIVE, { recharge_id = taskId },Protocol.SC_CELE_RECHARGE2_RECEIVE)
+end
+--- *c2s* 领取-作战储备-体力奖励 24521
+function onReqNoviceStrengthHandler(self,msg)
+    SOCKET_SEND(Protocol.CS_COMBAT_PREPARE_STRENGTH_GAIN, { reward_id = msg.id },Protocol.SC_COMBAT_PREPARE_STRENGTH_PANEL)
+end
 
 -------------------------------------------------红点---------------------------------------------------------------------------
 function updateRed(self, type)
@@ -198,16 +233,46 @@ function onNoviceTurntableDraw(self,msg)
     end
 end
 
+--- *s2c* 作战储备-srr奖励-面板 24480
+function onCombatPrepareSsrPanel(self,msg)
+    noviceActivity.NoviceActivityManager:parseSsrPanelInfoMsg(msg)
+end
+
+--- *s2c* 作战储备-累充奖励面板 24482
+function onCombatPrepareRechargePanel(self,msg)
+    noviceActivity.NoviceActivityManager:parseNoviceActivityRechargeMsg(msg)
+end
+
+function onUpdatePrepareRechargeReceive(self,msg)
+    if msg.result == 1 then
+        noviceActivity.NoviceActivityManager:updateNoviceActivityRechargeMsg(msg)
+    end
+end
+
+function onCombatPreareStreengthPanel(self,msg)
+    noviceActivity.NoviceActivityManager:parseStrengthMsgData(msg)
+end
+
 -------------------------------------------------打开界面------------------------------------------------------------------------
 function onOpenNoviceActivityPanel(self, args)
     if not args then
         args = {}
     end
     if not args.type then
-        if noviceActivity.NoviceActivityConst:getTabList()[1] then
+        if activity.ActivityManager:getNoviceActivityIsOpen() then
             args.type = noviceActivity.NoviceActivityConst:getTabList()[1].page
+        else
+            if activity.ActivityManager:getNoviceActivitySsrIsOpen() then
+                args.type = noviceActivity.NoviceActivityConst.NOVICEAVTIVITY_SSR
+            end
+
+            if activity.ActivityManager:getNoviceActivityRechargeIsOpen() then
+                args.type = noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RECHARGE
+            end
         end
+        
     end
+
     if self.mNoviceActivityPanel == nil then
         self.mNoviceActivityPanel = noviceActivity.NoviceActivityPanel.new()
         self.mNoviceActivityPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyNoviceActivityPanel, self)
@@ -218,6 +283,12 @@ end
 function onDestroyNoviceActivityPanel(self)
     self.mNoviceActivityPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyNoviceActivityPanel, self)
     self.mNoviceActivityPanel = nil
+end
+
+function onUpdateNoviceEndTimeChange(self)
+    if self.mNoviceActivityPanel then
+        self.mNoviceActivityPanel:close()
+    end
 end
 
 return _M

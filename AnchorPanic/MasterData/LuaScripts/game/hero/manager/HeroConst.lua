@@ -274,35 +274,6 @@ hero.getDevelopIcon = function(cusTabType)
     return icon
 end
 
--- 0-物理/无属性
--- 1-电属性
--- 2-火属性
--- 3-冰属性
-hero.getEleTypeColor = function(eleType)
-    local color = "8e8e8eFF"
-    local name = "无属性"
-    if (eleType == 1) then
-        name = "电" -- "电属性"
-        color = "f3c434ff"
-    elseif (eleType == 2) then
-        name = "火" -- "火属性"
-        color = "d16466ff"
-    elseif (eleType == 3) then
-        name = "冰" -- "冰属性"
-        color = "4e82f8ff"
-    elseif (eleType == 4) then
-        name = "物理" -- "冰属性"
-        color = "4e82f8ff"
-    elseif (eleType == 5) then
-        name = "光" -- "冰属性"
-        color = "4e82f8ff"
-    elseif (eleType == 6) then
-        name = "暗" -- "冰属性"
-        color = "4e82f8ff"
-    end
-    return color, name
-end
-
 -- 0-物理/ 直击
 -- 1-电属性 骋电
 -- 2-火属性 轰炎
@@ -330,6 +301,9 @@ hero.getHeroTypeName = function(eleType)
     elseif (eleType == 5) then
         name = _TT(81055) --量蚀"光属性"
         color = "fff660ff"
+    elseif (eleType == 6) then
+        name = _TT(81075) --量蚀"暗属性"
+        color = "bd3effff"
     end
     return color, name
 end
@@ -362,7 +336,8 @@ hero.ELEMENTTYPE = {
     FIRE = 2, -- 火
     ICE = 3, --  冰
     NATURE = 4, -- 自然
-    LIGHT = 5 -- 光
+    LIGHT = 5, -- 光
+    DARK = 6 -- 暗
 }
 
 
@@ -623,6 +598,19 @@ end
 hero.getSingleSelectOffset = function()
     return hero.__SingleSelectOffset
 end
+
+--战员dna蛋 形态枚举
+hero.eggType = {
+    none = 0, --无
+    egg = 1, --蛋形态
+    role = 2 --人形态
+}
+
+hero.eggQuality = {
+    r = 1,
+    sr = 2,
+    ssr = 3
+}
 
 --[[ 替换语言包自动生成，请勿修改！
 	语言包: _TT(1030):	"属性"

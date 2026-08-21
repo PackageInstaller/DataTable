@@ -32,7 +32,7 @@ end
 -- 初始化
 function configUI(self)
     super.configUI(self)
-    
+
     self.mGroupTotal = self:getChildTrans('GroupTotal')
     self.mGroupBtn = self:getChildGO('GroupBtn')
     self.mGroupContent = self:getChildGO('GroupContent')
@@ -42,7 +42,7 @@ function configUI(self)
 
     self.m_textPower = self:getChildGO("TextPower"):GetComponent(ty.Text)
     self.m_textPowerNum = self:getChildGO("TextPowerNum"):GetComponent(ty.Text)
-    
+
     self.m_headNode = self:getChildTrans("HeadNode")
     self.m_imgTitleGo = self:getChildGO("ImgTitle")
     self.m_imgTitle = self.m_imgTitleGo:GetComponent(ty.AutoRefImage)
@@ -52,7 +52,7 @@ function configUI(self)
     self.m_textLvl = self:getChildGO("TextLvl"):GetComponent(ty.Text)
     self.m_textTitleHeroNum = self:getChildGO("TextTitleHeroNum"):GetComponent(ty.Text)
     self.m_textHeroNum = self:getChildGO("TextHeroNum"):GetComponent(ty.Text)
-    
+
     self.mTxtName = self:getChildGO("TextName"):GetComponent(ty.Text)
     self.m_btnModifyMark = self:getChildGO("BtnModifyMark")
     self.m_textAutograph = self:getChildGO("TextAutograph"):GetComponent(ty.Text)
@@ -114,7 +114,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.m_btnModifyMark, self.__onClickOpenMarkPanelHandler)
     self:addUIEvent(self.mBtnBlack, self.__onClickAddBlackHandler)
     self:addUIEvent(self.mBtnDel, self.__onClickDelFriendHandler)
-    self:addUIEvent(self.mBtnChat,self.__onBtnChatHanlder)
+    self:addUIEvent(self.mBtnChat, self.__onBtnChatHanlder)
 end
 
 
@@ -184,7 +184,7 @@ function upateInfo(self)
         return
     end
 
-    self.mTxtName.text = self.data.name
+    self.mTxtName.text = FilterWordUtil:filterTemp(self.data.name)
     local friendVo = friend.FriendManager:getFriendVo(self.data.id)
     if (friendVo) then
         self.mBtnDel.transform:Find("Image"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath("role/role_19.png"), true)
@@ -219,10 +219,10 @@ function upateInfo(self)
     -- self.m_playerHeadGrid:setLvl(roleVo:getPlayerLvl())
     self.m_playerHeadGrid:setLvl(nil)
     self.m_playerHeadGrid:setClickEnable(false)
-    
+
     local signature = _TT(25101)--"这家伙很懒，什么都没留下"
 
-    if(self.data.signature == "" or self.data.signature==_TT(25101)) then
+    if (self.data.signature == "" or self.data.signature == _TT(25101)) then
         self.m_textAutograph.text = ""
         self.mNoAutoTxt.gameObject:SetActive(true)
     else
@@ -231,9 +231,6 @@ function upateInfo(self)
     end
 
     --self.m_textAutograph.text = self.data.signature == "" and signature or self.data.signature
-    
-
-
     self.m_textID.text = self.data.showId
     self.m_textLvl.text = self.data.lvl
     self.m_textHeroNum.text = self.data.heroNum
@@ -259,7 +256,7 @@ function updateTitle(self)
 end
 
 function __resetShowList(self)
-    if(table.empty(self.m_heroCardDic))then
+    if (table.empty(self.m_heroCardDic)) then
         self.m_heroCardDic = {}
         for pos = 1, role.RoleManager.heroShowNum do
             local item = role.OtherRoleShowHeroItem.new()
@@ -279,7 +276,7 @@ end
 function updateShowHeroList(self, args)
     self:__resetShowList()
 
-    local showHeroList = self.data.heroList    
+    local showHeroList = self.data.heroList
     for i = 1, #showHeroList do
         local heroPosVo = showHeroList[i]
         local item = self.m_heroCardDic[heroPosVo.showPos]
@@ -290,11 +287,11 @@ end
 function __onClickShowGridHandler(self, item)
     local heroVo = item:getData()
     if heroVo then
-        GameDispatcher:dispatchEvent(EventName.SHOW_SINGLE_HERO_INFO, {heroVo = heroVo})
+        GameDispatcher:dispatchEvent(EventName.SHOW_SINGLE_HERO_INFO, { heroVo = heroVo })
     end
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

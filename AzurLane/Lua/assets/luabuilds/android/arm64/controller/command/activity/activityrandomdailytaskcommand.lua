@@ -1,67 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ActivityRandomDailyTaskCommand", pm.SimpleCommand)
 
-local var_0_0 = "ActivityRandomDailyTaskCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(ActivityProxy):getActivityById(var_1_0.activity_id)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0)
-
-	getProxy = var_1_10003
-	ActivityProxy = var_1_10005
-
-	local var_1_2 = var_1_10003(var_1_10005)
-
-	if not var_3.getActivityById(var_1_2, var_1_1.activity_id) or var_3:isEnd() then
+	if not var_1_1 or var_1_1:isEnd() then
 		return
 	end
 
-	pg = var_1_0
-
-	local var_1_3 = var_1_0.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_3, 11202, {
-		activity_id = var_1_1.activity_id,
-		cmd = var_1_1.cmd,
-		arg1 = var_1_1.arg1,
-		arg2 = var_1_1.arg2,
+	pg.ConnectionMgr.GetInstance():Send(11202, {
+		activity_id = var_1_0.activity_id,
+		cmd = var_1_0.cmd,
+		arg1 = var_1_0.arg1,
+		arg2 = var_1_0.arg2,
 		arg_list = {},
-		kvargs1 = var_1_1.kvargs1
+		kvargs1 = var_1_0.kvargs1
 	}, 11203, function(arg_2_0)
-		local var_2_0
-
 		if arg_2_0.result == 0 then
-			var_2_0 = var_1_1.cmd
-			ActivityConst = var_2_10002
+			if var_1_0.cmd == ActivityConst.RANDOM_DAILY_TASK_OP_RANDOM then
+				var_1_1.data1 = pg.TimeMgr.GetInstance():GetServerTime()
 
-			if var_2_0 == var_2_10002.RANDOM_DAILY_TASK_OP_RANDOM then
-				pg = var_2_0
-
-				local var_2_1 = var_2_0.TimeMgr.GetInstance()
-
-				var_2_0 = var_2_0.GetServerTime(var_2_1)
-
-				local var_2_2 = var_0
-
-				var_2_2.data1 = var_2_0
-				getProxy = var_2_2
-				ActivityProxy = var_2_10004
-				var_2_10004 = var_2_2(var_2_10004)
-
-				var_2.updateActivity(var_2_10004, var_0)
+				getProxy(ActivityProxy):updateActivity(var_1_1)
 			end
 		else
-			pg = var_2_0
-
-			local var_2_3 = var_2_0.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -70,4 +32,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -79,7 +79,7 @@ function setData(self, param)
     -- else
        
     --end
-    self.mTxtName.text = rankData.name
+    self.mTxtName.text = FilterWordUtil:filterTemp(rankData.name)
     self.mTxtScore.text = rankData.score
     self.mTxtWin.text = rankData.win_count
     --self.mTxtRankCurDan.text = _TT(arena.ArenaManager:getAwardList(rankData.segment).rankName)

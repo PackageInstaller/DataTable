@@ -1,10 +1,7 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RawFurnitureData")
+﻿local var_0_0 = class("RawFurnitureData")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg = var_1_10002
-	arg_1_0.config = var_1_10002.furniture_data_template[arg_1_1.configId]
+	arg_1_0.config = pg.furniture_data_template[arg_1_1.configId]
 	arg_1_0.name = arg_1_0.config.name
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.floor = arg_1_1.floor
@@ -13,31 +10,23 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.child = arg_1_1.child
 	arg_1_0.position = arg_1_1.position
 
-	local var_1_0
+	if arg_1_0.position then
+		arg_1_0.x = arg_1_0.position.x or arg_1_1.x
 
-	if not arg_1_0.position or not arg_1_0.position.x then
-		var_1_0 = arg_1_1.x
+		if arg_1_0.position then
+			arg_1_0.y = arg_1_0.position.y or arg_1_1.y
+
+			if arg_1_0.dir == 1 then
+				arg_1_0.sizeX = arg_1_0.config.size[1]
+				arg_1_0.sizeY = arg_1_0.config.size[2]
+			else
+				arg_1_0.sizeX = arg_1_0.config.size[2]
+				arg_1_0.sizeY = arg_1_0.config.size[1]
+			end
+
+			return
+		end
 	end
-
-	arg_1_0.x = var_1_0
-
-	local var_1_1
-
-	if not arg_1_0.position or not arg_1_0.position.y then
-		var_1_1 = arg_1_1.y
-	end
-
-	arg_1_0.y = var_1_1
-
-	if arg_1_0.dir == 1 then
-		arg_1_0.sizeX = arg_1_0.config.size[1]
-		arg_1_0.sizeY = arg_1_0.config.size[2]
-	else
-		arg_1_0.sizeX = arg_1_0.config.size[2]
-		arg_1_0.sizeY = arg_1_0.config.size[1]
-	end
-
-	return
 end
 
 function var_0_0.IsCompletion(arg_2_0)
@@ -65,13 +54,7 @@ function var_0_0.IsCompletion(arg_2_0)
 end
 
 function var_0_0.ExistParnet(arg_3_0)
-	local var_3_0
-
-	if arg_3_0.parent then
-		var_3_0 = arg_3_0.parent ~= 0
-	end
-
-	return var_3_0
+	return arg_3_0.parent and arg_3_0.parent ~= 0
 end
 
 function var_0_0.LegalParent(arg_4_0, arg_4_1)
@@ -96,24 +79,13 @@ function var_0_0.LegalChild(arg_5_0, arg_5_1)
 	end
 
 	local var_5_0 = {}
+	local var_5_1 = arg_5_0.child or {}
 
-	pairs = var_3
-
-	local var_5_1
-
-	if not arg_5_0.child then
-		var_5_1 = {}
+	for iter_5_0, iter_5_1 in pairs(var_5_1) do
+		table.insert(var_5_0, iter_5_0)
 	end
 
-	for iter_5_0, iter_5_1 in var_3(var_5_1) do
-		table = var_1_10008
-
-		var_1_10008.insert(var_5_0, iter_5_0)
-	end
-
-	table = var_3
-
-	if not var_3.contains(var_5_0, arg_5_1.id) then
+	if not table.contains(var_5_0, arg_5_1.id) then
 		return false
 	end
 
@@ -122,11 +94,7 @@ end
 
 function var_0_0.InSide(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
 	if arg_6_0.config.belong == 1 and arg_6_0.config.type ~= 1 and arg_6_0.config.type ~= 4 and not arg_6_0:ExistParnet() then
-		local var_6_0 = arg_6_0:GetAreaByPosition()
-
-		_ = var_1_10006
-
-		return var_1_10006.all(var_6_0, function(arg_7_0)
+		return _.all(arg_6_0:GetAreaByPosition(), function(arg_7_0)
 			return arg_7_0.x >= arg_6_1 and arg_7_0.y >= arg_6_2 and arg_7_0.x <= arg_6_3 and arg_7_0.y <= arg_6_4
 		end)
 	end
@@ -143,22 +111,13 @@ function var_0_0.InSide(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4)
 end
 
 function var_0_0.GetAreaByPosition(arg_8_0)
-	local var_8_0 = {}
-
 	for iter_8_0 = arg_8_0.x, arg_8_0.x + arg_8_0.sizeX - 1 do
 		for iter_8_1 = arg_8_0.y, arg_8_0.y + arg_8_0.sizeY - 1 do
-			table = var_1_10010
-			var_1_10010 = var_1_10010.insert
-
-			local var_8_1 = var_8_0
-
-			Vector2 = var_1_10013
-
-			var_1_10010(var_8_1, var_1_10013(iter_8_0, iter_8_1))
+			table.insert({}, Vector2(iter_8_0, iter_8_1))
 		end
 	end
 
-	return var_8_0
+	return {}
 end
 
 function var_0_0.MatOrPaper(arg_9_0)

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CrossRoadRunningData")
+﻿local var_0_0 = class("CrossRoadRunningData")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._tpl = arg_1_1
@@ -21,8 +19,7 @@ function var_0_0.Init(arg_2_0)
 	arg_2_0.selectRoleId = -1
 	arg_2_0.playerPosition = nil
 	arg_2_0.playRound = -1
-	CrossRoadGameConst = var_1
-	arg_2_0.roleCrashCnt = #var_1.SHIP_TPL
+	arg_2_0.roleCrashCnt = #CrossRoadGameConst.SHIP_TPL
 	arg_2_0.itemGoList = {}
 
 	arg_2_0:InitAllRoads()
@@ -33,72 +30,78 @@ function var_0_0.Init(arg_2_0)
 end
 
 function var_0_0.InitAllRoads(arg_3_0)
-	local function var_3_0(arg_4_0, arg_4_1, arg_4_2)
-		local var_4_0 = arg_4_1
-		local var_4_1 = arg_4_1.Find
-
-		tostring = var_2_10006
-
-		if var_4_1(var_4_0, var_2_10006(arg_4_2)) == nil and arg_4_1:Find("content") == nil then
-			return
-		end
-
-		local var_4_2 = var_3:Find("startPoint")
-		local var_4_3 = var_3:Find("midPoint")
-		local var_4_4 = var_3:Find("endPoint")
-
-		arg_4_0[arg_4_2] = {
-			startTF = var_4_2,
-			midTF = var_4_3,
-			endTF = var_4_4
-		}
-
-		return
-	end
-
-	local var_3_1 = arg_3_0._sceneMaskTF
-
-	arg_3_0.sceneContainer = var_2.Find(var_3_1, "sceneContainer")
-
-	local var_3_2 = arg_3_0.sceneContainer
-
-	arg_3_0.backRoadTF = var_2.Find(var_3_2, "scene_background/content/road")
-
-	local var_3_3 = arg_3_0.sceneContainer
-
-	arg_3_0.sceneRoadTF = var_2.Find(var_3_3, "scene/content/road")
-
-	local var_3_4 = arg_3_0.sceneContainer
-
-	arg_3_0.frontRoadTF = var_2.Find(var_3_4, "scene_front")
+	arg_3_0.sceneContainer = arg_3_0._sceneMaskTF:Find("sceneContainer")
+	arg_3_0.backRoadTF = arg_3_0.sceneContainer:Find("scene_background/content/road")
+	arg_3_0.sceneRoadTF = arg_3_0.sceneContainer:Find("scene/content/road")
+	arg_3_0.frontRoadTF = arg_3_0.sceneContainer:Find("scene_front")
 	arg_3_0.backRoadList = {}
 	arg_3_0.sceneRoadList = {}
 	arg_3_0.frontRoadList = {}
 
 	for iter_3_0 = 1, arg_3_0.backRoadTF.childCount do
-		var_3_0(arg_3_0.backRoadList, arg_3_0.backRoadTF, iter_3_0)
+		(function(arg_4_0, arg_4_1, arg_4_2)
+			local var_4_0 = arg_4_1:Find(tostring(arg_4_2))
+
+			if var_4_0 == nil then
+				var_4_0 = arg_4_1:Find("content")
+
+				if var_4_0 == nil then
+					return
+				end
+			end
+
+			;({}).startTF = var_4_0:Find("startPoint")
+			;({}).midTF = var_4_0:Find("midPoint")
+			;({}).endTF = var_4_0:Find("endPoint")
+			arg_4_0[arg_4_2] = {}
+
+			return
+		end)(arg_3_0.backRoadList, arg_3_0.backRoadTF, iter_3_0)
 	end
 
 	for iter_3_1 = 1, arg_3_0.sceneRoadTF.childCount do
-		var_3_0(arg_3_0.sceneRoadList, arg_3_0.sceneRoadTF, iter_3_1)
+		(function(arg_4_0, arg_4_1, arg_4_2)
+			local var_4_0 = arg_4_1:Find(tostring(arg_4_2))
+
+			if var_4_0 == nil then
+				var_4_0 = arg_4_1:Find("content")
+
+				if var_4_0 == nil then
+					return
+				end
+			end
+
+			;({}).startTF = var_4_0:Find("startPoint")
+			;({}).midTF = var_4_0:Find("midPoint")
+			;({}).endTF = var_4_0:Find("endPoint")
+			arg_4_0[arg_4_2] = {}
+
+			return
+		end)(arg_3_0.sceneRoadList, arg_3_0.sceneRoadTF, iter_3_1)
 	end
 
-	var_3_0(arg_3_0.frontRoadList, arg_3_0.frontRoadTF, 1)
+	;(function(arg_4_0, arg_4_1, arg_4_2)
+		local var_4_0 = arg_4_1:Find(tostring(arg_4_2))
 
-	local var_3_5 = arg_3_0.frontRoadList[1]
-	local var_3_6 = arg_3_0.frontRoadTF
+		if var_4_0 == nil then
+			var_4_0 = arg_4_1:Find("content")
 
-	var_3_5.lightTF = var_3.Find(var_3_6, "content/lightPoint")
+			if var_4_0 == nil then
+				return
+			end
+		end
 
-	local var_3_7 = arg_3_0.frontRoadTF
-	local var_3_8 = var_2.Find(var_3_7, "content").anchoredPosition.y
+		;({}).startTF = var_4_0:Find("startPoint")
+		;({}).midTF = var_4_0:Find("midPoint")
+		;({}).endTF = var_4_0:Find("endPoint")
+		arg_4_0[arg_4_2] = {}
 
-	CrossRoadGameConst = var_3
-	arg_3_0.walkLineEnd = var_3_8 - var_3.WALKER_LINE_UNNDER
+		return
+	end)(arg_3_0.frontRoadList, arg_3_0.frontRoadTF, 1)
 
-	local var_3_9 = arg_3_0.frontRoadTF
-
-	arg_3_0.frontContentDis = var_2.Find(var_3_9, "content").anchoredPosition.y
+	arg_3_0.frontRoadList[1].lightTF = arg_3_0.frontRoadTF:Find("content/lightPoint")
+	arg_3_0.walkLineEnd = arg_3_0.frontRoadTF:Find("content").anchoredPosition.y - CrossRoadGameConst.WALKER_LINE_UNNDER
+	arg_3_0.frontContentDis = arg_3_0.frontRoadTF:Find("content").anchoredPosition.y
 
 	return
 end
@@ -107,75 +110,33 @@ function var_0_0.InitAllTpl(arg_5_0)
 	arg_5_0.allShipTpl = {}
 	arg_5_0.allItemTpl = {}
 	arg_5_0.allCarTpl = {}
-	ipairs = var_1
-	CrossRoadGameConst = var_1_10003
 
-	for iter_5_0, iter_5_1 in var_1(var_1_10003.SHIP_TPL) do
-		table = var_1_10006
-		var_1_10006 = var_1_10006.insert
-
-		local var_5_0 = arg_5_0.allShipTpl
-		local var_5_1 = arg_5_0._tpl
-
-		var_1_10006(var_5_0, var_9.Find(var_5_1, iter_5_1))
+	for iter_5_0, iter_5_1 in ipairs(CrossRoadGameConst.SHIP_TPL) do
+		table.insert(arg_5_0.allShipTpl, arg_5_0._tpl:Find(iter_5_1))
 	end
 
-	ipairs = var_1
-	CrossRoadGameConst = var_3
-
-	for iter_5_2, iter_5_3 in var_1(var_3.CAR_TPL) do
-		table = var_1_10006
-		var_1_10006 = var_1_10006.insert
-
-		local var_5_2 = arg_5_0.allCarTpl
-		local var_5_3 = arg_5_0._tpl
-
-		var_1_10006(var_5_2, var_9.Find(var_5_3, iter_5_3))
+	for iter_5_2, iter_5_3 in ipairs(CrossRoadGameConst.CAR_TPL) do
+		table.insert(arg_5_0.allCarTpl, arg_5_0._tpl:Find(iter_5_3))
 	end
 
-	ipairs = var_1
-	CrossRoadGameConst = var_3
-
-	for iter_5_4, iter_5_5 in var_1(var_3.ITEM_TPL) do
-		table = var_1_10006
-		var_1_10006 = var_1_10006.insert
-
-		local var_5_4 = arg_5_0.allItemTpl
-		local var_5_5 = arg_5_0._tpl
-
-		var_1_10006(var_5_4, var_9.Find(var_5_5, iter_5_5))
+	for iter_5_4, iter_5_5 in ipairs(CrossRoadGameConst.ITEM_TPL) do
+		table.insert(arg_5_0.allItemTpl, arg_5_0._tpl:Find(iter_5_5))
 	end
 
-	local var_5_6 = arg_5_0._tpl
-
-	arg_5_0.playerTF = var_1.Find(var_5_6, "zhihui_tpl")
+	arg_5_0.playerTF = arg_5_0._tpl:Find("zhihui_tpl")
 
 	return
 end
 
 function var_0_0.InitItemTF(arg_6_0)
 	arg_6_0.ItemSceneList = {}
-
-	local var_6_0 = arg_6_0.sceneContainer
-
-	arg_6_0.ItemSceneTF = var_1.Find(var_6_0, "scene_Item/content")
+	arg_6_0.ItemSceneTF = arg_6_0.sceneContainer:Find("scene_Item/content")
 
 	for iter_6_0 = 1, 6 do
-		table = var_1_10005
-		var_1_10005 = var_1_10005.insert
-
-		local var_6_1 = arg_6_0.ItemSceneList
-		local var_6_2 = arg_6_0.ItemSceneTF
-		local var_6_3 = var_8.Find
-
-		tostring = var_1_10011
-
-		var_1_10005(var_6_1, var_6_3(var_6_2, var_1_10011(iter_6_0)))
+		table.insert(arg_6_0.ItemSceneList, arg_6_0.ItemSceneTF:Find(tostring(iter_6_0)))
 	end
 
-	local var_6_4 = arg_6_0.ItemSceneTF
-
-	arg_6_0.hongChaItemTF = var_1.Find(var_6_4, "lightPoint")
+	arg_6_0.hongChaItemTF = arg_6_0.ItemSceneTF:Find("lightPoint")
 
 	return
 end
@@ -199,44 +160,24 @@ function var_0_0.SetRoleList(arg_9_0, arg_9_1)
 end
 
 function var_0_0.GetRoadList(arg_10_0, arg_10_1)
-	CrossRoadGameConst = var_1_10002
-
-	if arg_10_1 == var_1_10002.BACK_ROAD_NAME then
+	if arg_10_1 == CrossRoadGameConst.BACK_ROAD_NAME then
 		return arg_10_0.backRoadList
-	else
-		CrossRoadGameConst = var_2
-
-		if arg_10_1 == var_2.SCENE_ROAD_NAME then
-			return arg_10_0.sceneRoadList
-		else
-			CrossRoadGameConst = var_2
-
-			if arg_10_1 == var_2.FRONT_ROAD_NAME then
-				return arg_10_0.frontRoadList[1]
-			end
-		end
+	elseif arg_10_1 == CrossRoadGameConst.SCENE_ROAD_NAME then
+		return arg_10_0.sceneRoadList
+	elseif arg_10_1 == CrossRoadGameConst.FRONT_ROAD_NAME then
+		return arg_10_0.frontRoadList[1]
 	end
 
 	return
 end
 
 function var_0_0.GetRoadTF(arg_11_0, arg_11_1)
-	CrossRoadGameConst = var_1_10002
-
-	if arg_11_1 == var_1_10002.BACK_ROAD_NAME then
+	if arg_11_1 == CrossRoadGameConst.BACK_ROAD_NAME then
 		return arg_11_0.backRoadTF
-	else
-		CrossRoadGameConst = var_2
-
-		if arg_11_1 == var_2.SCENE_ROAD_NAME then
-			return arg_11_0.sceneRoadTF
-		else
-			CrossRoadGameConst = var_2
-
-			if arg_11_1 == var_2.FRONT_ROAD_NAME then
-				return arg_11_0.frontRoadTF
-			end
-		end
+	elseif arg_11_1 == CrossRoadGameConst.SCENE_ROAD_NAME then
+		return arg_11_0.sceneRoadTF
+	elseif arg_11_1 == CrossRoadGameConst.FRONT_ROAD_NAME then
+		return arg_11_0.frontRoadTF
 	end
 
 	return
@@ -350,8 +291,7 @@ end
 
 function var_0_0.RefreshRound(arg_36_0)
 	arg_36_0.playRound = arg_36_0.playRound + 1
-	CrossRoadGameConst = var_1
-	arg_36_0.roleCrashCnt = #var_1.SHIP_TPL
+	arg_36_0.roleCrashCnt = #CrossRoadGameConst.SHIP_TPL
 
 	return
 end
@@ -371,23 +311,24 @@ function var_0_0.CanRefreshRound(arg_39_0)
 end
 
 function var_0_0.FindRoleFa(arg_40_0, arg_40_1)
-	if arg_40_1:GetFatherID() == arg_40_1:GetID() then
-		return var_3
+	local var_40_0 = arg_40_1:GetFatherID()
+	local var_40_1 = arg_40_1:GetID()
+
+	if var_40_0 == var_40_1 then
+		return var_40_1
 	else
-		local var_40_0 = arg_40_0:FindRoleFa(arg_40_0._roleList[var_2])
+		local var_40_2 = arg_40_0:FindRoleFa(arg_40_0._roleList[var_40_0])
 
-		arg_40_1:SetFatherID(var_40_0)
+		arg_40_1:SetFatherID(var_40_2)
 
-		return var_40_0
+		return var_40_2
 	end
 
 	return
 end
 
 function var_0_0.upDateRoleFather(arg_41_0)
-	ipairs = var_1_10001
-
-	for iter_41_0, iter_41_1 in var_1_10001(arg_41_0._roleList) do
+	for iter_41_0, iter_41_1 in ipairs(arg_41_0._roleList) do
 		arg_41_0:FindRoleFa(iter_41_1)
 	end
 
@@ -396,29 +337,23 @@ end
 
 function var_0_0.OutRoleUnion(arg_42_0, arg_42_1, arg_42_2)
 	local var_42_0 = arg_42_1:GetID()
-	local var_42_1 = arg_42_0:FindRoleFa(arg_42_1)
-	local var_42_2 = arg_42_2:GetID()
-	local var_42_3 = arg_42_0:FindRoleFa(arg_42_2)
+	local var_42_1 = arg_42_2:GetID()
+	local var_42_2 = arg_42_0:FindRoleFa(arg_42_2)
 
-	if var_42_0 == var_42_1 then
-		arg_42_1:SetFatherID(var_42_2)
-		arg_42_2:SetFatherID(var_42_2)
+	if var_42_0 == arg_42_0:FindRoleFa(arg_42_1) then
+		arg_42_1:SetFatherID(var_42_1)
+		arg_42_2:SetFatherID(var_42_1)
 		arg_42_0:upDateRoleFather()
 		arg_42_1:SetFatherID(var_42_0)
 	else
-		arg_42_2:SetFatherID(var_42_2)
+		arg_42_2:SetFatherID(var_42_1)
 		arg_42_1:SetFatherID(var_42_0)
 
-		for iter_42_0 = var_42_2 + 1, #arg_42_0._roleList do
-			local var_42_4 = arg_42_0._roleList[iter_42_0]
-			local var_42_5 = var_11.GetRunState(var_42_4)
-
-			CrossRoadGameConst = var_1_10013
-
-			if var_42_5 == var_1_10013.SHIP_STATE.crash then
+		for iter_42_0 = var_42_1 + 1, #arg_42_0._roleList do
+			if arg_42_0._roleList[iter_42_0]:GetRunState() == CrossRoadGameConst.SHIP_STATE.crash then
 				-- block empty
-			elseif arg_42_0:FindRoleFa(var_11) == var_42_0 then
-				var_11:SetFatherID(var_42_2)
+			elseif arg_42_0:FindRoleFa(arg_42_0._roleList[iter_42_0]) == var_42_0 then
+				arg_42_0._roleList[iter_42_0]:SetFatherID(var_42_1)
 			else
 				break
 			end
@@ -430,12 +365,13 @@ end
 
 function var_0_0.InRoleUnion(arg_43_0, arg_43_1, arg_43_2)
 	local var_43_0 = arg_43_1:GetID()
+	local var_43_1 = arg_43_0:FindRoleFa(arg_43_2)
 
-	if arg_43_0:FindRoleFa(arg_43_1) == arg_43_0:FindRoleFa(arg_43_2) then
+	if arg_43_0:FindRoleFa(arg_43_1) == var_43_1 then
 		return
 	end
 
-	arg_43_1:SetFatherID(var_5)
+	arg_43_1:SetFatherID(var_43_1)
 
 	return
 end
@@ -444,21 +380,12 @@ function var_0_0.TryUpdateUnion(arg_44_0, arg_44_1)
 	local var_44_0 = -1
 
 	for iter_44_0 = arg_44_1:GetID() + 1, #arg_44_0._roleList do
-		local var_44_1 = arg_44_0._roleList[iter_44_0]
-		local var_44_2 = var_8.GetRunState(var_44_1)
-
-		CrossRoadGameConst = var_1_10009
-
-		if var_44_2 == var_1_10009.SHIP_STATE.crash then
+		if arg_44_0._roleList[iter_44_0]:GetRunState() == CrossRoadGameConst.SHIP_STATE.crash then
 			-- block empty
+		elseif CrossRoadGameHelper:CheckTwoRoleIsCrash(arg_44_1, arg_44_0._roleList[iter_44_0]) then
+			var_44_0 = iter_44_0
 		else
-			CrossRoadGameHelper = var_1_10009
-
-			if var_1_10009:CheckTwoRoleIsCrash(arg_44_1, arg_44_0._roleList[iter_44_0]) then
-				var_44_0 = iter_44_0
-			else
-				break
-			end
+			break
 		end
 	end
 
@@ -473,28 +400,15 @@ end
 
 function var_0_0.CheckCarCarshRole(arg_45_0, arg_45_1, arg_45_2)
 	local var_45_0, var_45_1, var_45_2, var_45_3 = arg_45_1:GetCarRectPoint()
-	local var_45_4 = var_45_1 - arg_45_0.frontContentDis
-	local var_45_5 = var_45_3 - arg_45_0.frontContentDis
-	local var_45_6, var_45_7, var_45_8, var_45_9 = arg_45_2:GetRoleRectPoint()
+	local var_45_4, var_45_5, var_45_6, var_45_7 = arg_45_2:GetRoleRectPoint()
 
-	CrossRoadGameHelper = var_1_10011
-
-	return var_1_10011:IsRectCross(var_45_0, var_45_4, var_45_2, var_45_5, var_45_6, var_45_7, var_45_8, var_45_9)
+	return CrossRoadGameHelper:IsRectCross(var_45_0, var_45_1 - arg_45_0.frontContentDis, var_45_2, var_45_3 - arg_45_0.frontContentDis, var_45_4, var_45_5, var_45_6, var_45_7)
 end
 
 function var_0_0.CheckCarCarshPlayer(arg_46_0, arg_46_1)
 	local var_46_0, var_46_1, var_46_2, var_46_3 = arg_46_1:GetCarRectPoint()
-	local var_46_4 = var_46_1 - arg_46_0.frontContentDis
-	local var_46_5 = var_46_3 - arg_46_0.frontContentDis
-	local var_46_6 = arg_46_0.playerTF.rect
-	local var_46_7 = arg_46_0.playerPosition.x - var_46_6.width / 2
-	local var_46_8 = arg_46_0.playerPosition.y - var_46_6.height / 2
-	local var_46_9 = arg_46_0.playerPosition.x + var_46_6.width / 2
-	local var_46_10 = arg_46_0.playerPosition.y + var_46_6.height / 2
 
-	CrossRoadGameHelper = var_11
-
-	return var_11:IsRectCross(var_46_0, var_46_4, var_46_2, var_46_5, var_46_7, var_46_8, var_46_9, var_46_10)
+	return CrossRoadGameHelper:IsRectCross(var_46_0, var_46_1 - arg_46_0.frontContentDis, var_46_2, var_46_3 - arg_46_0.frontContentDis, arg_46_0.playerPosition.x - arg_46_0.playerTF.rect.width / 2, arg_46_0.playerPosition.y - arg_46_0.playerTF.rect.height / 2, arg_46_0.playerPosition.x + arg_46_0.playerTF.rect.width / 2, arg_46_0.playerPosition.y + arg_46_0.playerTF.rect.height / 2)
 end
 
 function var_0_0.Clear(arg_47_0)
@@ -505,8 +419,7 @@ function var_0_0.Clear(arg_47_0)
 	arg_47_0.playerCrashDir = nil
 	arg_47_0.playerCrashSize = nil
 	arg_47_0.playRound = -1
-	CrossRoadGameConst = var_1
-	arg_47_0.roleCrashCnt = #var_1.SHIP_TPL
+	arg_47_0.roleCrashCnt = #CrossRoadGameConst.SHIP_TPL
 	arg_47_0.itemGoList = {}
 
 	return

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "return_pt_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "return_pt_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.return_pt_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.return_pt_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.return_pt_template = rawget(pg, "return_pt_template") or setmetatable({
+	__name = "return_pt_template"
+}, confNEO)
+pg.return_pt_template.all = {
 	1,
 	2,
 	3,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	29,
 	30
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.return_pt_template = {}
+pg.base = pg.base or {}
+pg.base.return_pt_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.return_pt_template
-
-	var_1_0[1] = {
+	pg.base.return_pt_template[1] = {
 		virtual_item = 59616,
 		pt_require = 50,
 		id = 1,
@@ -116,11 +79,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.return_pt_template
-
-	var_1_1[2] = {
+	pg.base.return_pt_template[2] = {
 		virtual_item = 59616,
 		pt_require = 100,
 		id = 2,
@@ -161,11 +120,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.return_pt_template
-
-	var_1_2[3] = {
+	pg.base.return_pt_template[3] = {
 		virtual_item = 59616,
 		pt_require = 150,
 		id = 3,
@@ -206,11 +161,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.return_pt_template
-
-	var_1_3[4] = {
+	pg.base.return_pt_template[4] = {
 		virtual_item = 59616,
 		pt_require = 200,
 		id = 4,
@@ -251,11 +202,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.return_pt_template
-
-	var_1_4[5] = {
+	pg.base.return_pt_template[5] = {
 		virtual_item = 59616,
 		pt_require = 250,
 		id = 5,
@@ -296,11 +243,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.return_pt_template
-
-	var_1_5[6] = {
+	pg.base.return_pt_template[6] = {
 		virtual_item = 59616,
 		pt_require = 300,
 		id = 6,
@@ -341,11 +284,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.return_pt_template
-
-	var_1_6[7] = {
+	pg.base.return_pt_template[7] = {
 		virtual_item = 59616,
 		pt_require = 350,
 		id = 7,
@@ -386,11 +325,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.return_pt_template
-
-	var_1_7[8] = {
+	pg.base.return_pt_template[8] = {
 		virtual_item = 59616,
 		pt_require = 400,
 		id = 8,
@@ -431,11 +366,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.return_pt_template
-
-	var_1_8[9] = {
+	pg.base.return_pt_template[9] = {
 		virtual_item = 59616,
 		pt_require = 460,
 		id = 9,
@@ -476,11 +407,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.return_pt_template
-
-	var_1_9[10] = {
+	pg.base.return_pt_template[10] = {
 		virtual_item = 59616,
 		pt_require = 520,
 		id = 10,
@@ -521,11 +448,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.return_pt_template
-
-	var_1_10[11] = {
+	pg.base.return_pt_template[11] = {
 		virtual_item = 59616,
 		pt_require = 580,
 		id = 11,
@@ -566,11 +489,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.return_pt_template
-
-	var_1_11[12] = {
+	pg.base.return_pt_template[12] = {
 		virtual_item = 59616,
 		pt_require = 640,
 		id = 12,
@@ -611,11 +530,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.return_pt_template
-
-	var_1_12[13] = {
+	pg.base.return_pt_template[13] = {
 		virtual_item = 59616,
 		pt_require = 700,
 		id = 13,
@@ -656,11 +571,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.return_pt_template
-
-	var_1_13[14] = {
+	pg.base.return_pt_template[14] = {
 		virtual_item = 59616,
 		pt_require = 780,
 		id = 14,
@@ -701,11 +612,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.return_pt_template
-
-	var_1_14[15] = {
+	pg.base.return_pt_template[15] = {
 		virtual_item = 59616,
 		pt_require = 860,
 		id = 15,
@@ -746,11 +653,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.return_pt_template
-
-	var_1_15[16] = {
+	pg.base.return_pt_template[16] = {
 		virtual_item = 59616,
 		pt_require = 940,
 		id = 16,
@@ -791,11 +694,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.return_pt_template
-
-	var_1_16[17] = {
+	pg.base.return_pt_template[17] = {
 		virtual_item = 59616,
 		pt_require = 1020,
 		id = 17,
@@ -836,11 +735,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.return_pt_template
-
-	var_1_17[18] = {
+	pg.base.return_pt_template[18] = {
 		virtual_item = 59616,
 		pt_require = 1100,
 		id = 18,
@@ -881,11 +776,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.return_pt_template
-
-	var_1_18[19] = {
+	pg.base.return_pt_template[19] = {
 		virtual_item = 59616,
 		pt_require = 1200,
 		id = 19,
@@ -926,11 +817,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.return_pt_template
-
-	var_1_19[20] = {
+	pg.base.return_pt_template[20] = {
 		virtual_item = 59616,
 		pt_require = 1300,
 		id = 20,
@@ -971,11 +858,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.return_pt_template
-
-	var_1_20[21] = {
+	pg.base.return_pt_template[21] = {
 		virtual_item = 59616,
 		pt_require = 1400,
 		id = 21,
@@ -1016,11 +899,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.return_pt_template
-
-	var_1_21[22] = {
+	pg.base.return_pt_template[22] = {
 		virtual_item = 59616,
 		pt_require = 1500,
 		id = 22,
@@ -1061,11 +940,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.return_pt_template
-
-	var_1_22[23] = {
+	pg.base.return_pt_template[23] = {
 		virtual_item = 59616,
 		pt_require = 1600,
 		id = 23,
@@ -1106,11 +981,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.return_pt_template
-
-	var_1_23[24] = {
+	pg.base.return_pt_template[24] = {
 		virtual_item = 59616,
 		pt_require = 1700,
 		id = 24,
@@ -1151,11 +1022,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.return_pt_template
-
-	var_1_24[25] = {
+	pg.base.return_pt_template[25] = {
 		virtual_item = 59616,
 		pt_require = 1800,
 		id = 25,
@@ -1196,11 +1063,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.return_pt_template
-
-	var_1_25[26] = {
+	pg.base.return_pt_template[26] = {
 		virtual_item = 59616,
 		pt_require = 1920,
 		id = 26,
@@ -1241,11 +1104,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.return_pt_template
-
-	var_1_26[27] = {
+	pg.base.return_pt_template[27] = {
 		virtual_item = 59616,
 		pt_require = 2040,
 		id = 27,
@@ -1286,11 +1145,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.return_pt_template
-
-	var_1_27[28] = {
+	pg.base.return_pt_template[28] = {
 		virtual_item = 59616,
 		pt_require = 2160,
 		id = 28,
@@ -1331,11 +1186,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.return_pt_template
-
-	var_1_28[29] = {
+	pg.base.return_pt_template[29] = {
 		virtual_item = 59616,
 		pt_require = 2280,
 		id = 29,
@@ -1376,8 +1227,7 @@ var_0_3.base.return_pt_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.return_pt_template[30] = {
+	pg.base.return_pt_template[30] = {
 		virtual_item = 59616,
 		pt_require = 2400,
 		id = 30,

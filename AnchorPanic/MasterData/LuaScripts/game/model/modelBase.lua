@@ -161,6 +161,7 @@ function loadFinish(self, go, finishCall, sorceId)
         end
 
         self.m_modelMaterials = self.m_model:GetComponent(ty.ModelMaterials)
+        self:_restoreCharacterState()
         if self.m_modelLodBeEnable == false then
             self:setModelLodEnable(self.m_modelLodBeEnable)
         end
@@ -481,6 +482,50 @@ function setTranparency(self, value)
     end
 end
 
+function _applyBlackEffect(self, isEnable)
+    if self.m_model then
+        local mat = self.m_model:GetComponent(ty.ModelMaterials)
+        if mat then
+            local matList = mat:getMatList()
+
+            if isEnable then
+                local sprite = gs.ResMgr:Load("arts/ui/bg/common/mask_bg.png")
+                for i = 0, matList.Count - 1 do
+                    matList[i]:EnableKeyword("_CHARACTOR_STATE")
+                    if sprite.texture then
+                        matList[i]:SetTexture("_CharactorStateTex", sprite.texture) -- 状态贴图
+                    else
+                        matList[i]:SetTexture("_CharactorStateTex", sprite)
+                    end
+                    matList[i]:SetFloat("_CharactorStateIntensity", 0.85) -- 越大越受状态贴图影响
+                    matList[i]:SetFloat("_MetaEffect", 0)
+                end
+            else
+                for i = 0, matList.Count - 1 do
+                    matList[i]:DisableKeyword("_CHARACTOR_STATE")
+                end
+            end
+        end
+    end
+end
+
+function _restoreCharacterState(self)
+    if self.m_model then
+        local mat = self.m_model:GetComponent(ty.ModelMaterials)
+        if mat then
+            if self.m_isMetalEnable then
+                mat:SetIsMetalEnable(true)
+                mat:SetMetalIntensity(1)
+            elseif self.m_isFrostEnable then
+                mat:SetIsFrostEnable(true)
+                mat:SetFrostIntensity(1)
+            elseif self.m_isBlackEnable then
+                self:_applyBlackEffect(true)
+            end
+        end
+    end
+end
+
 -- 冰冻效果
 function setIsFrostEnable(self, isEnable)
     if self.m_isFrostEnable == isEnable then
@@ -501,6 +546,8 @@ function setIsFrostEnable(self, isEnable)
                     mat:SetFrostIntensity(intensity)
                     intensity = intensity + 0.1
                 end)
+            else
+                self:_restoreCharacterState()
             end
         end
     end
@@ -526,6 +573,8 @@ function setIsMetalEnable(self, isEnable)
                     mat:SetMetalIntensity(intensity)
                     intensity = intensity + 0.1
                 end)
+            else
+                self:_restoreCharacterState()
             end
         end
     end
@@ -553,6 +602,22 @@ function setDofPrepare(self)
             mat:DofPrepare()
         end
     end
+end
+
+-- 黑化属性效果
+function setBlackEnable(self, isEnable)
+    if self.m_isBlackEnable == isEnable then
+        return
+    end
+
+    LoopManager:removeFrameByIndex(self.BlackIntensitySn)
+
+    self.m_isBlackEnable = isEnable
+    if self.m_isFrostEnable or self.m_isMetalEnable then
+        return
+    end
+
+    self:_applyBlackEffect(isEnable)
 end
 
 -- 添加到父节点

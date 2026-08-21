@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_mall_level") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_mall_level"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_mall_level = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_mall_level
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_mall_level = rawget(pg, "activity_mall_level") or setmetatable({
+	__name = "activity_mall_level"
+}, confNEO)
+pg.activity_mall_level.all = {
 	1,
 	2,
 	3,
@@ -35,25 +12,11 @@ var_0_3.all = {
 	7,
 	8
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_mall_level = {}
+pg.base = pg.base or {}
+pg.base.activity_mall_level = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_mall_level
-
-	var_1_0[1] = {
+	pg.base.activity_mall_level[1] = {
 		unlock_function = "",
 		lv = 1,
 		upgrade_task = {
@@ -229,11 +192,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_mall_level
-
-	var_1_1[2] = {
+	pg.base.activity_mall_level[2] = {
 		lv = 2,
 		upgrade_task = {
 			{
@@ -422,11 +381,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_mall_level
-
-	var_1_2[3] = {
+	pg.base.activity_mall_level[3] = {
 		unlock_function = "",
 		lv = 3,
 		upgrade_task = {
@@ -614,11 +569,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_mall_level
-
-	var_1_3[4] = {
+	pg.base.activity_mall_level[4] = {
 		lv = 4,
 		upgrade_task = {
 			{
@@ -808,11 +759,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_mall_level
-
-	var_1_4[5] = {
+	pg.base.activity_mall_level[5] = {
 		unlock_function = "",
 		lv = 5,
 		upgrade_task = {
@@ -1001,11 +948,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_mall_level
-
-	var_1_5[6] = {
+	pg.base.activity_mall_level[6] = {
 		lv = 6,
 		upgrade_task = {
 			{
@@ -1193,11 +1136,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_mall_level
-
-	var_1_6[7] = {
+	pg.base.activity_mall_level[7] = {
 		unlock_function = "",
 		lv = 7,
 		upgrade_task = {
@@ -1383,8 +1322,7 @@ var_0_3.base.activity_mall_level = {}
 			}
 		}
 	}
-	pg = var_1_6
-	var_1_6.base.activity_mall_level[8] = {
+	pg.base.activity_mall_level[8] = {
 		unlock_function = "",
 		lv = 8,
 		upgrade_task = {

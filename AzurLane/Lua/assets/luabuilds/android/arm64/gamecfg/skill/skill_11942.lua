@@ -22,9 +22,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_1_0, arg_1_1, arg_1_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_1_1.z) - arg_1_0
+						return Vector3(-100, 0, arg_1_1.z) - arg_1_0
 					end
 				}
 			},
@@ -54,9 +52,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_2_0, arg_2_1, arg_2_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_2_1.z) - arg_2_0
+						return Vector3(-100, 0, arg_2_1.z) - arg_2_0
 					end
 				}
 			},
@@ -86,9 +82,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_3_0, arg_3_1, arg_3_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_3_1.z) - arg_3_0
+						return Vector3(-100, 0, arg_3_1.z) - arg_3_0
 					end
 				}
 			},
@@ -118,9 +112,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_4_0, arg_4_1, arg_4_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_4_1.z) - arg_4_0
+						return Vector3(-100, 0, arg_4_1.z) - arg_4_0
 					end
 				}
 			},
@@ -150,9 +142,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_5_0, arg_5_1, arg_5_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_5_1.z) - arg_5_0
+						return Vector3(-100, 0, arg_5_1.z) - arg_5_0
 					end
 				}
 			},
@@ -182,9 +172,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_6_0, arg_6_1, arg_6_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_6_1.z) - arg_6_0
+						return Vector3(-100, 0, arg_6_1.z) - arg_6_0
 					end
 				}
 			},
@@ -214,9 +202,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_7_0, arg_7_1, arg_7_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_7_1.z) - arg_7_0
+						return Vector3(-100, 0, arg_7_1.z) - arg_7_0
 					end
 				}
 			},
@@ -246,9 +232,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_8_0, arg_8_1, arg_8_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_8_1.z) - arg_8_0
+						return Vector3(-100, 0, arg_8_1.z) - arg_8_0
 					end
 				}
 			},
@@ -278,9 +262,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_9_0, arg_9_1, arg_9_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_9_1.z) - arg_9_0
+						return Vector3(-100, 0, arg_9_1.z) - arg_9_0
 					end
 				}
 			},
@@ -310,9 +292,7 @@
 					time = 2,
 					effect = "feijiyingzi",
 					posFun = function(arg_10_0, arg_10_1, arg_10_2)
-						Vector3 = var_1_10003
-
-						return var_1_10003(-100, 0, arg_10_1.z) - arg_10_0
+						return Vector3(-100, 0, arg_10_1.z) - arg_10_0
 					end
 				}
 			},

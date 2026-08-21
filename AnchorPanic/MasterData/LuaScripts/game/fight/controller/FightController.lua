@@ -64,11 +64,14 @@ function registerMsgHandler(self)
         SC_BATTLE_OUTSIDE_SKIP_RESULT = self.onRecvSC_BATTLE_OUTSIDE_SKIP_RESULT,
         --- *s2c* 战斗外跳过结果重新确认 20143
         SC_BATTLE_OUTSIDE_SKIP_RECHECK = self.onBattleOutSideSkipRecheckHandler,
+        --- *s2c* 战员自动奥义规则更换返回 20145
+        SC_HERO_AUTO_AOYI_RULE_CHANGE = self.onRecvSC_HERO_AUTO_AOYI_RULE_CHANGE,
     }
 end
 
 --- *c2s* 战斗回放统计数据 20123
 function reqBattleRePlayDate(self, fightType, replayDataId)
+    fight.FightManager:setLastReqInfoBattleType(fightType)
     SOCKET_SEND(Protocol.CS_BATTLE_REPLAY_STATISTIC, { type = fightType, id = replayDataId })
 end
 
@@ -233,7 +236,7 @@ function onRecvSC_BATTLE_REPLAY(self, msg)
     if msg then
         if msg.result == fight.FightDef.REPLAY_NONE then
             -- gs.Message.Show("没有找到回放")
-            gs.Message.Show(_TT(1120))
+            gs.Message.Show(_TT(1200))
         elseif msg.result == fight.FightDef.REPLAY_VSN then
             -- gs.Message.Show("回放失效")
             gs.Message.Show(_TT(1199))
@@ -353,8 +356,9 @@ function onRecvSC_BATTLE_RESULT(self, msg)
 
     fight.FightManager:clearSyncWord()
     fight.FightManager:setResultData(msg)
+    fight.FightManager:stopZCBGM()
     if fight.FightManager:getIsFighting() then
-        if msg.result == 1 and fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp then
+        if msg.result == 1 and fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp and fight.FightManager:getBattleType() ~= PreFightBattleType.GuildWar then
             -- 胜利
             msg._actType = fight.FightDef.ACTION_TYPE_WIN
         elseif msg.result == 3 then
@@ -422,6 +426,14 @@ function onRecvSC_HERO_AUTO_RULE_CHANGE(self, msg)
     msg.hero_id = fight.FightManager:toUniqueID(1, msg.hero_id)
     local heroData = fight.FightManager:getHero(msg.hero_id)
     heroData.auto_battle_rule = msg.rule_type
+end
+
+--- *s2c* 战员自动奥义规则更换返回 20145
+function onRecvSC_HERO_AUTO_AOYI_RULE_CHANGE(self,msg)
+    print("==================onRecvSC_HERO_AUTO_AOYI_RULE_CHANGE", msg.rule_type)
+    msg.hero_id = fight.FightManager:toUniqueID(1, msg.hero_id)
+    local heroData = fight.FightManager:getHero(msg.hero_id)
+    heroData.auto_aoyi_rule = msg.rule_type
 end
 
 --- *s2c* 战斗中行动队列修改 20129 鹿灵额外技能特别协议（临时写死）

@@ -120,6 +120,14 @@ function SetOpenLowShader(self, enable)
 end
 
 function enterMap(self)
+    local cameraCom1 = gs.CameraMgr:GetSceneCamera()
+    if cameraCom1 and not gs.GoUtil.IsCompNull(cameraCom1) then
+        cameraCom1.allowMSAA = false
+    end
+    local cameraCom2 = gs.CameraMgr:GetDefSceneCamera()
+    if cameraCom2 and not gs.GoUtil.IsCompNull(cameraCom2) then
+        cameraCom2.allowMSAA = false
+    end
     -- Audio:stopMusic()
     local tmpObj = gs.GameObject.Find("[TEMP_GO]")
     if tmpObj then gs.GameObject.Destroy(tmpObj) end
@@ -452,9 +460,13 @@ function _getDupData(self)
     elseif battleType == PreFightBattleType.Doundless then
         return doundless.DoundlessManager:getDoundlessCityStageDataById(battleFieldID)
     elseif battleType == PreFightBattleType.Guild_Sweep then
-        return  guild.GuildManager:getSweepDupDataByDupId(battleFieldID)
+        return guild.GuildManager:getSweepDupDataByDupId(battleFieldID)
     elseif battleType == PreFightBattleType.Disaster or battleType == PreFightBattleType.Disater_imitate then
-        return  disaster.DisasterManager:getDisasterDupDataByDupId(battleFieldID)
+        return disaster.DisasterManager:getDisasterDupDataByDupId(battleFieldID)
+    elseif battleType == PreFightBattleType.HeroTrial then
+        return mainActivity.MainActivityManager:getTrialConfigVo(battleFieldID)
+    elseif battleType == PreFightBattleType.Seabed then
+        return seabed.SeabedManager:getSeabedDupDataById(battleFieldID)
     end
 end
 
@@ -489,6 +501,12 @@ function build(self, cusData)
             -- print("=================dupData:getSceneId()", dupData:getSceneId())
             self:setupMap(dupData:getSceneId())
         else
+            if fight.FightManager:getBattleType() == PreFightBattleType.GuildWar then
+                self:setupMap(112)
+            end
+            if fight.FightManager:getBattleType() == PreFightBattleType.Arena_Peak_Pvp then
+                self:setupMap(sysParam.SysParamManager:getValue(SysParamType.ARENA_DEF_SCENE_ID))
+            end
             if dupData then
                 logError("===============该玩法configVo没有预设getSceneId() 方法，发给前端检查" .. dupData.__cname)
             end
@@ -523,6 +541,8 @@ function build(self, cusData)
         vo:setAtt(AttConst.SKILL_SOUL, v.skill_soul)
         vo:setAtt(AttConst.STUN, v.hit_stun)
         vo:setAtt(AttConst.STUN_MAX, v.max_hit_stun)
+
+        vo:setIsMinion(v.source == 101)
         -- if (vo:isAttacker()==1) then
         --     print("loadHeroLive", v.rage)
         -- end

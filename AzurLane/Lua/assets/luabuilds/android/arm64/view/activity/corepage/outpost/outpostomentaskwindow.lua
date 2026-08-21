@@ -1,211 +1,101 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("OutPostOmenTaskWindow", import("view.base.BaseSubView"))
 
-local var_0_0 = "OutPostOmenTaskWindow"
+var_0_0.SKIP_TYPE_SCENE = 2
+var_0_0.SKIP_TYPE_ACTIVITY = 3
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-var_0_1.SKIP_TYPE_SCENE = 2
-var_0_1.SKIP_TYPE_ACTIVITY = 3
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 
 	return
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "OutPostOmenTaskWindow"
 end
 
-function var_0_1.OnLoaded(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.OnLoaded(arg_3_0)
+	arg_3_0.bg = arg_3_0._tf:Find("bg")
+	arg_3_0.btnClose = arg_3_0._tf:Find("window/btnClose")
 
-	arg_3_0.bg = var_1.Find(var_3_0, "bg")
-
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.btnClose = var_1.Find(var_3_1, "window/btnClose")
-	onButton = var_1
-
-	local var_3_2 = arg_3_0
-	local var_3_3 = arg_3_0.btnClose
-
-	local function var_3_4()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+	onButton(arg_3_0, arg_3_0.btnClose, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SOUND_BACK = var_1_10006
-
-	var_1(var_3_2, var_3_3, var_3_4, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_5 = arg_3_0
-	local var_3_6 = arg_3_0.bg
-
-	local function var_3_7()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SOUND_BACK)
+	onButton(arg_3_0, arg_3_0.bg, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SOUND_BACK = var_1_10006
-
-	var_1(var_3_5, var_3_6, var_3_7, var_1_10006)
+	end, SOUND_BACK)
 
 	return
 end
 
-function var_0_1.OnInit(arg_6_0)
-	findTF = var_1_10001
-	arg_6_0.page = var_1_10001(arg_6_0._tf, "window")
-	findTF = var_1
-	arg_6_0.list = var_1(arg_6_0.page, "list/Viewport/Content")
-	findTF = var_1
-	arg_6_0.list_tpl = var_1(arg_6_0.page, "list_tpl")
-	UIItemList = var_1
-	arg_6_0.uilist = var_1.New(arg_6_0.list, arg_6_0.list_tpl)
+function var_0_0.OnInit(arg_6_0)
+	arg_6_0.page = findTF(arg_6_0._tf, "window")
+	arg_6_0.list = findTF(arg_6_0.page, "list/Viewport/Content")
+	arg_6_0.list_tpl = findTF(arg_6_0.page, "list_tpl")
+	arg_6_0.uilist = UIItemList.New(arg_6_0.list, arg_6_0.list_tpl)
 
-	local var_6_0 = arg_6_0.uilist
-
-	var_1.make(var_6_0, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			local var_7_0 = arg_6_0
-
-			var_3.UpdateListItem(var_7_0, arg_7_1, arg_7_2)
+	arg_6_0.uilist:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_6_0:UpdateListItem(arg_7_1, arg_7_2)
 		end
 
 		return
 	end)
 
-	pg = var_1
-
-	local var_6_1 = var_1.TimeMgr.GetInstance()
-	local var_6_2 = var_1.GetServerTime(var_6_1)
-
-	ChineseCalendar = var_1_10002
-	arg_6_0.year, arg_6_0.month, arg_6_0.day = var_1_10002.GetCurrYearMonthDay(var_6_2)
+	arg_6_0.year, arg_6_0.month, arg_6_0.day = ChineseCalendar.GetCurrYearMonthDay((pg.TimeMgr.GetInstance():GetServerTime()))
 
 	return
 end
 
-function var_0_1.Show(arg_8_0, arg_8_1)
-	var_0_1.super.Show(arg_8_0)
-
-	pg = var_2
-
-	local var_8_0 = var_2.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_8_0, arg_8_0._tf, {
+function var_0_0.Show(arg_8_0, arg_8_1)
+	var_0_0.super.Show(arg_8_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf, {
 		staticBlur = true
 	})
 
 	arg_8_0.activity = arg_8_1
+	arg_8_0.nday = arg_8_0.activity:getNDay()
+	arg_8_0.taskProxy = getProxy(TaskProxy)
+	arg_8_0.taskGroup = arg_8_0.activity:getConfig("config_client").unlock_task
 
-	local var_8_1 = arg_8_0.activity
-
-	arg_8_0.nday = var_2.getNDay(var_8_1)
-	getProxy = var_2
-	TaskProxy = var_8_1
-	arg_8_0.taskProxy = var_2(var_8_1)
-
-	local var_8_2 = arg_8_0.activity
-
-	arg_8_0.taskGroup = var_2.getConfig(var_8_2, "config_client").unlock_task
-
-	local var_8_3 = arg_8_0.uilist
-
-	var_2.align(var_8_3, #arg_8_0.taskGroup)
+	arg_8_0.uilist:align(#arg_8_0.taskGroup)
 
 	return
 end
 
-function var_0_1.UpdateListItem(arg_9_0, arg_9_1, arg_9_2)
-	findTF = var_1_10003
+function var_0_0.UpdateListItem(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = findTF(arg_9_2, "default")
+	local var_9_1 = findTF(var_9_0, "tasks")
+	local var_9_2 = findTF(arg_9_2, "lock")
+	local var_9_3 = findTF(var_9_2, "desc")
+	local var_9_4 = arg_9_1 + 1
 
-	local var_9_0 = var_1_10003(arg_9_2, "default")
+	setText(findTF(var_9_0, "day"), "DAY " .. arg_9_1 + 1)
 
-	findTF = var_1_10004
-
-	local var_9_1 = var_1_10004(var_9_0, "day")
-
-	findTF = var_5
-
-	local var_9_2 = var_5(var_9_0, "tasks")
-
-	findTF = var_6
-
-	local var_9_3 = var_6(arg_9_2, "lock")
-
-	findTF = var_7
-
-	local var_9_4 = var_7(var_9_3, "desc")
-	local var_9_5 = arg_9_1 + 1
-
-	setText = var_9
-
-	var_9(var_9_1, "DAY " .. var_9_5)
-
-	for iter_9_0 = 0, var_9_2.childCount - 1 do
-		local var_9_6 = var_9_2:GetChild(iter_9_0)
-
-		var_1_10016 = arg_9_0
-
-		arg_9_0.UpdateTaskItem(var_1_10016, var_9_5, iter_9_0, var_9_6)
+	for iter_9_0 = 0, var_9_1.childCount - 1 do
+		arg_9_0:UpdateTaskItem(arg_9_1 + 1, iter_9_0, (var_9_1:GetChild(iter_9_0)))
 	end
 
-	local var_9_7 = arg_9_0
-	local var_9_8 = arg_9_0.isTaskLock(var_9_7, var_9_5) ~= 0
+	local var_9_5 = arg_9_0:isTaskLock(arg_9_1 + 1)
+	local var_9_6 = var_9_5 ~= 0
 
-	setActive = var_9_7
+	setActive(var_9_2, var_9_5 ~= 0)
 
-	var_9_7(var_9_3, var_9_8)
+	GetOrAddComponent(var_9_0, typeof(CanvasGroup)).alpha = var_9_6 and 0.5 or 1
 
-	GetOrAddComponent = var_9_7
-
-	local var_9_9 = var_9_0
-
-	typeof = var_14
-	CanvasGroup = var_1_10016
-
-	local var_9_10 = var_9_7(var_9_9, var_14(var_1_10016))
-
-	var_9_10.alpha = var_9_8 and 0.5 or 1
-	switch = var_9_10
-
-	var_9_10(var_9, {
+	switch(var_9_5, {
 		function()
-			local var_10_0 = arg_9_0
-			local var_10_1, var_10_2 = var_0.getDate(var_10_0, arg_9_0.month, arg_9_0.day + var_9_5 - arg_9_0.nday)
+			local var_10_0, var_10_1 = arg_9_0:getDate(arg_9_0.month, arg_9_0.day + var_9_4 - arg_9_0.nday)
 
-			setText = var_10_0
-
-			local var_10_3 = var_9_4
-
-			i18n = var_5
-
-			var_10_0(var_10_3, var_5("OutPostOmenPage_task_tip1", var_10_1, var_10_2))
+			setText(var_9_3, i18n("OutPostOmenPage_task_tip1", var_10_0, var_10_1))
 
 			return
 		end,
 		function()
-			setText = var_2_10000
-
-			local var_11_0 = var_9_4
-
-			i18n = var_2_10003
-
-			var_2_10000(var_11_0, var_2_10003("OutPostOmenPage_task_tip2"))
+			setText(var_9_3, i18n("OutPostOmenPage_task_tip2"))
 
 			return
 		end
@@ -214,86 +104,36 @@ function var_0_1.UpdateListItem(arg_9_0, arg_9_1, arg_9_2)
 	return
 end
 
-function var_0_1.UpdateTaskItem(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
-	local var_12_0 = arg_12_2 + 1
-	local var_12_1 = arg_12_3:Find("item")
-	local var_12_2 = arg_12_0.taskGroup[arg_12_1][var_12_0]
-	local var_12_3 = arg_12_0.taskProxy
-	local var_12_4
+function var_0_0.UpdateTaskItem(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+	local var_12_0 = arg_12_3:Find("item")
+	local var_12_1 = arg_12_0.taskProxy:getTaskById(arg_12_0.taskGroup[arg_12_1][arg_12_2 + 1]) or arg_12_0.taskProxy:getFinishTaskById(arg_12_0.taskGroup[arg_12_1][arg_12_2 + 1])
+	local var_12_2 = pg.task_data_template[arg_12_0.taskGroup[arg_12_1][arg_12_2 + 1]]
 
-	if not var_7.getTaskById(var_12_3, var_12_2) then
-		var_12_3 = arg_12_0.taskProxy
-		var_12_4 = var_7.getFinishTaskById(var_12_3, var_12_2)
-	end
-
-	pg = var_8
-
-	local var_12_5 = var_8.task_data_template[var_12_2]
-
-	Drop = var_12_3
-
-	local var_12_6 = var_12_3.Create(var_12_5.award_display[1])
-
-	updateDrop = var_10
-
-	var_10(var_12_1, var_12_6)
-
-	onButton = var_10
-
-	local var_12_7 = arg_12_0
-	local var_12_8 = var_12_1
-
-	local function var_12_9()
-		local var_13_0 = arg_12_0
-		local var_13_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_13_1(var_13_0, var_2_10003.ON_DROP, var_12_6)
+	updateDrop(var_12_0, (Drop.Create(pg.task_data_template[arg_12_0.taskGroup[arg_12_1][arg_12_2 + 1]].award_display[1])))
+	onButton(arg_12_0, var_12_0, function()
+		arg_12_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10015
+	local var_12_3 = var_12_1 and var_12_1:getProgress() or 0
+	local var_12_4 = var_12_2.target_num
 
-	var_10(var_12_7, var_12_8, var_12_9, var_1_10015)
+	setText(arg_12_3:Find("description"), var_12_2.desc)
+	setSlider(arg_12_3:Find("progress"), 0, var_12_4, var_12_3)
+	setText(arg_12_3:Find("progressText"), var_12_3 .. "/" .. var_12_4)
 
-	if var_12_4 then
-		var_12_7 = var_12_4
-
-		local var_12_10
-
-		if not var_12_4.getProgress(var_12_7) then
-			var_12_10 = 0
-		end
-
-		local var_12_11 = var_12_5.target_num
-
-		setText = var_12_7
-
-		var_12_7(arg_12_3:Find("description"), var_12_5.desc)
-
-		setSlider = var_12_7
-
-		var_12_7(arg_12_3:Find("progress"), 0, var_12_11, var_12_10)
-
-		setText = var_12_7
-
-		var_12_7(arg_12_3:Find("progressText"), var_12_10 .. "/" .. var_12_11)
-
-		return
-	end
+	return
 end
 
-function var_0_1.getDate(arg_14_0, arg_14_1, arg_14_2)
-	pg = var_1_10003
+function var_0_0.getDate(arg_14_0, arg_14_1, arg_14_2)
+	local var_14_0 = pg.TimeMgr.GetInstance():CalcMonthDays(arg_14_0.year, arg_14_1)
 
-	local var_14_0 = var_1_10003.TimeMgr.GetInstance()
+	if var_14_0 < arg_14_2 then
+		arg_14_2 = arg_14_2 - var_14_0
+		arg_14_1 = arg_14_1 + 1
 
-	if var_3.CalcMonthDays(var_14_0, arg_14_0.year, arg_14_1) < arg_14_2 then
-		arg_14_2 = arg_14_2 - var_3
-
-		if arg_14_1 + 1 > 12 then
+		if arg_14_1 > 12 then
 			arg_14_1 = 1
 			arg_14_0.year = arg_14_0.year + 1
 		end
@@ -302,31 +142,20 @@ function var_0_1.getDate(arg_14_0, arg_14_1, arg_14_2)
 	return arg_14_1, arg_14_2
 end
 
-function var_0_1.GetProgressColor(arg_15_0)
+function var_0_0.GetProgressColor(arg_15_0)
 	return nil
 end
 
-function var_0_1.isTaskLock(arg_16_0, arg_16_1)
+function var_0_0.isTaskLock(arg_16_0, arg_16_1)
 	if arg_16_1 > arg_16_0.nday then
 		return 1
 	end
 
 	for iter_16_0 = 1, arg_16_1 - 1 do
-		local var_16_0 = arg_16_0.taskGroup[iter_16_0]
+		for iter_16_1, iter_16_2 in ipairs(arg_16_0.taskGroup[iter_16_0]) do
+			local var_16_0 = arg_16_0.taskProxy:getTaskById(iter_16_2) or arg_16_0.taskProxy:getFinishTaskById(iter_16_2)
 
-		ipairs = var_1_10007
-
-		for iter_16_1, iter_16_2 in var_1_10007(var_16_0) do
-			local var_16_1 = arg_16_0.taskProxy
-			local var_16_3
-
-			if not var_12.getTaskById(var_16_1, iter_16_2) then
-				local var_16_2 = arg_16_0.taskProxy
-
-				var_16_3 = var_12.getFinishTaskById(var_16_2, iter_16_2)
-			end
-
-			if var_16_3:getTaskStatus() ~= 2 then
+			if var_16_0:getTaskStatus() ~= 2 then
 				return 2
 			end
 		end
@@ -335,18 +164,13 @@ function var_0_1.isTaskLock(arg_16_0, arg_16_1)
 	return 0
 end
 
-function var_0_1.Hide(arg_17_0)
+function var_0_0.Hide(arg_17_0)
 	if arg_17_0:isShowing() then
-		var_0_1.super.Hide(arg_17_0)
-
-		pg = var_1
-
-		local var_17_0 = var_1.UIMgr.GetInstance()
-
-		var_1.UnOverlayPanel(var_17_0, arg_17_0._tf, arg_17_0._parentTf)
+		var_0_0.super.Hide(arg_17_0)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_17_0._tf, arg_17_0._parentTf)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

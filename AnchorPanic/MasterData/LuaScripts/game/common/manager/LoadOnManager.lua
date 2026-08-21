@@ -17,13 +17,9 @@ end
 -- 初始化配置表
 function parseConfigData(self)
     self.m_loadOnConfigList = {}
-    local baseData = nil
-    local channelId, channelName = sdk.SdkManager:getChannelData()
-    if(GameManager:getIsInCommiting() and (channelId == sdk.AndroidChannelId.QIANYOU or channelId == sdk.AndroidChannelId.QUICK or channelId == sdk.AndroidChannelId.QUICK2 or channelId == sdk.AndroidChannelId.QUICK3))then
-        baseData = RefMgr:getData("loading_data_channel")
-    else
-        baseData = RefMgr:getData("loading_data")
-    end
+
+    local baseData = RefMgr:getData("loading_data")
+
     for refID, data in pairs(baseData) do
         local ro = LuaPoolMgr:poolGet(LoadingDataRo)
         ro:parseData(refID, data)

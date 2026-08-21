@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RectCollisionInfo")
+﻿local var_0_0 = class("RectCollisionInfo")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.above = false
@@ -13,8 +11,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.slidingDownMaxSlope = false
 	arg_1_0.slopeAngle = 0
 	arg_1_0.slopeAngleOld = 0
-	Vector3 = var_2
-	arg_1_0.slopeNormal = var_2.zero
+	arg_1_0.slopeNormal = Vector3.zero
 	arg_1_0.horizontalLeftTfs = {}
 	arg_1_0.horizontalRightTfs = {}
 	arg_1_0.verticalTopTfs = {}
@@ -24,22 +21,14 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.scriptTime = nil
 	arg_1_0.scriptOverrideAble = nil
 	arg_1_0.frameRate = 0.016666666666666666
-	RectCollisionData = var_2
-	arg_1_0.config = var_2.New(arg_1_1)
-	LayerMask = var_2
-	arg_1_0.layerMask = var_2.GetMask("Collider", "Character")
-
-	local var_1_0 = {}
-
-	LayerMask = var_1_10003
-	var_1_0[1] = var_1_10003.NameToLayer("Character")
-	arg_1_0.ignoreLayerMask = var_1_0
-	Vector2 = var_1_0
-	arg_1_0.playerInput = var_1_0(0, 0)
-	Vector2 = var_2
-	arg_1_0.directionalInput = var_2.zero
-	Vector3 = var_2
-	arg_1_0._velocity = var_2.zero
+	arg_1_0.config = RectCollisionData.New(arg_1_1)
+	arg_1_0.layerMask = LayerMask.GetMask("Collider", "Character")
+	arg_1_0.ignoreLayerMask = {
+		LayerMask.NameToLayer("Character")
+	}
+	arg_1_0.playerInput = Vector2(0, 0)
+	arg_1_0.directionalInput = Vector2.zero
+	arg_1_0._velocity = Vector3.zero
 	arg_1_0.standingOnPlatform = false
 	arg_1_0.velocityXSmoothing = 0
 	arg_1_0.moveAmountOld = 0
@@ -57,7 +46,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 
 	function arg_1_0.wallSliding()
 		if not arg_1_0.left or arg_1_0.FaceDir ~= -1 then
-			local var_2_0
+			local var_2_0 = arg_1_0.right
 
 			if arg_1_0.right then
 				if arg_1_0.FaceDir == 1 then
@@ -68,11 +57,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 					end
 				end
 
-				var_2_0 = false
-
-				if false then
-					var_2_0 = true
-				end
+				var_2_0 = false and true
 			end
 
 			::label_2_0::
@@ -82,19 +67,11 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	end
 
 	function arg_1_0.wallSlidingDown()
-		local var_3_0
-
-		if arg_1_0.wallSliding then
-			var_3_0 = arg_1_0.moveAmount < 0
-		end
-
-		return var_3_0
+		return arg_1_0.wallSliding and arg_1_0.moveAmount < 0
 	end
 
 	function arg_1_0.wallDirX()
-		local var_4_0 = arg_1_0
-
-		return var_0.getWallDirX(var_4_0)
+		return arg_1_0:getWallDirX()
 	end
 
 	return
@@ -127,14 +104,7 @@ function var_0_0.setPos(arg_8_0, arg_8_1)
 end
 
 function var_0_0.getPos(arg_9_0)
-	local var_9_0
-
-	if not arg_9_0._anchoredPosition then
-		Vector2 = var_9_0
-		var_9_0 = var_9_0.zero
-	end
-
-	return var_9_0
+	return arg_9_0._anchoredPosition or Vector2.zero
 end
 
 function var_0_0.setScript(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4)
@@ -148,9 +118,7 @@ end
 
 function var_0_0.removeScript(arg_11_0)
 	if arg_11_0.script then
-		local var_11_0 = arg_11_0.script
-
-		var_1.active(var_11_0, false)
+		arg_11_0.script:active(false)
 	end
 
 	arg_11_0.script = nil
@@ -184,8 +152,7 @@ function var_0_0.reset(arg_13_0)
 	arg_13_0.lockHorizontalMove = false
 	arg_13_0.lockVerticalMove = false
 	arg_13_0.fullSliding = false
-	Vector3 = var_1
-	arg_13_0.slopeNormal = var_1.zero
+	arg_13_0.slopeNormal = Vector3.zero
 	arg_13_0.slopeAngleOld = arg_13_0.slopeAngle
 	arg_13_0.slopeAngle = 0
 	arg_13_0.standingOnPlatform = false

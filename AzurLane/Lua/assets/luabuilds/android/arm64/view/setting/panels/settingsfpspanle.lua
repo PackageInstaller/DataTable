@@ -1,127 +1,61 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SettingsFpsPanle", import(".SettingsBasePanel"))
 
-local var_0_0 = "SettingsFpsPanle"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SettingsBasePanel"))
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsFPS"
 end
 
-function var_0_1.GetTitle(arg_2_0)
-	i18n = var_1_10001
-
-	return var_1_10001("Settings_title_FPS")
+function var_0_0.GetTitle(arg_2_0)
+	return i18n("Settings_title_FPS")
 end
 
-function var_0_1.GetTitleEn(arg_3_0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "  / FPS SETTING"
 end
 
-function var_0_1.OnInit(arg_4_0)
-	local var_4_0 = arg_4_0._tf
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.fps30Toggle = arg_4_0._tf:Find("options/30fps")
+	arg_4_0.fps60Toggle = arg_4_0._tf:Find("options/60fps")
 
-	arg_4_0.fps30Toggle = var_1.Find(var_4_0, "options/30fps")
-
-	local var_4_1 = arg_4_0._tf
-
-	arg_4_0.fps60Toggle = var_1.Find(var_4_1, "options/60fps")
-	onToggle = var_1
-
-	local var_4_2 = arg_4_0
-	local var_4_3 = arg_4_0.fps30Toggle
-
-	local function var_4_4(arg_5_0)
+	onToggle(arg_4_0, arg_4_0.fps30Toggle, function(arg_5_0)
 		if arg_5_0 then
-			QualitySettings = var_2_10001
-			var_2_10001.vSyncCount = 0
-			PlayerPrefs = var_2_10001
+			QualitySettings.vSyncCount = 0
 
-			var_2_10001.SetInt("fps_limit", 30)
+			PlayerPrefs.SetInt("fps_limit", 30)
 
-			Application = var_1
-			var_1.targetFrameRate = 30
+			Application.targetFrameRate = 30
 		end
 
 		return
-	end
-
-	SFX_UI_TAG = var_1_10006
-	SFX_UI_TAG = var_1_10007
-
-	var_1(var_4_2, var_4_3, var_4_4, var_1_10006, var_1_10007)
-
-	onToggle = var_1
-
-	local var_4_5 = arg_4_0
-	local var_4_6 = arg_4_0.fps60Toggle
-
-	local function var_4_7(arg_6_0)
+	end, SFX_UI_TAG, SFX_UI_TAG)
+	onToggle(arg_4_0, arg_4_0.fps60Toggle, function(arg_6_0)
 		if arg_6_0 then
-			QualitySettings = var_2_10001
-			var_2_10001.vSyncCount = 0
-			PlayerPrefs = var_2_10001
+			QualitySettings.vSyncCount = 0
 
-			var_2_10001.SetInt("fps_limit", 60)
+			PlayerPrefs.SetInt("fps_limit", 60)
 
-			Application = var_1
-			var_1.targetFrameRate = 60
+			Application.targetFrameRate = 60
 		end
 
 		return
-	end
-
-	SFX_UI_TAG = var_1_10006
-	SFX_UI_TAG = var_1_10007
-
-	var_1(var_4_5, var_4_6, var_4_7, var_1_10006, var_1_10007)
-
-	setText = var_1
-
-	local var_4_8 = arg_4_0._tf
-	local var_4_9 = var_3.Find(var_4_8, "options/30fps/Text")
-	local var_4_10 = "30"
-
-	i18n = var_4_8
-
-	var_1(var_4_9, var_4_10 .. var_4_8("word_frame"))
-
-	setText = var_1
-
-	local var_4_11 = arg_4_0._tf
-	local var_4_12 = var_3.Find(var_4_11, "options/60fps/Text")
-	local var_4_13 = "60"
-
-	i18n = var_4_11
-
-	var_1(var_4_12, var_4_13 .. var_4_11("word_frame"))
+	end, SFX_UI_TAG, SFX_UI_TAG)
+	setText(arg_4_0._tf:Find("options/30fps/Text"), "30" .. i18n("word_frame"))
+	setText(arg_4_0._tf:Find("options/60fps/Text"), "60" .. i18n("word_frame"))
 
 	return
 end
 
-function var_0_1.OnUpdate(arg_7_0)
-	PlayerPrefs = var_1_10001
+function var_0_0.OnUpdate(arg_7_0)
+	local var_7_0 = PlayerPrefs.GetInt("fps_limit", DevicePerformanceUtil.GetDefaultFps())
 
-	local var_7_0 = var_1_10001.GetInt
-	local var_7_1 = "fps_limit"
-
-	DevicePerformanceUtil = var_1_10004
-
-	if var_7_0(var_7_1, var_1_10004.GetDefaultFps()) == 30 then
-		triggerToggle = var_1_10002
-
-		var_1_10002(arg_7_0.fps30Toggle, true)
+	if var_7_0 == 30 then
+		triggerToggle(arg_7_0.fps30Toggle, true)
 	end
 
-	if var_1 == 60 then
-		triggerToggle = var_1_10002
-
-		var_1_10002(arg_7_0.fps60Toggle, true)
+	if var_7_0 == 60 then
+		triggerToggle(arg_7_0.fps60Toggle, true)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

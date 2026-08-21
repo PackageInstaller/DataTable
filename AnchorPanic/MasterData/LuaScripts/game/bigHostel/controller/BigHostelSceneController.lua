@@ -17,11 +17,6 @@ function reLogin(self)
     self:clearScene()
 end
 
---游戏开始的回调
-function gameStartCallBack(self)
-
-end
-
 --模块间事件监听
 function listNotification(self)
     GameDispatcher:addEventListener(EventName.SHOW_MAIN_UI, self.onShowMainUIHandler, self)
@@ -36,9 +31,14 @@ end
 
 -- 开始加载前
 function beforeLoad(self)
+    -- 关闭登录的初始加载界面
+    if (loginLoad.LoginLoadController:isLoginLoading()) then
+        loginLoad.LoginLoadController:destroyLoading()
+    end
+
     local model_data = bigHostel.BigHostelManager:getHostelHero()
     if model_data then
-        local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(model_data.heroConfigVo.tid, model_data.model_id)
+        local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(model_data.heroTid, model_data.model_id)
         if sceneData then
             UIFactory:startForcibly(sceneData:getRandomLoad())
             return
@@ -51,6 +51,7 @@ end
 -- 加载场景完的调用
 function enterMap(self)
     super.enterMap(self)
+    -- logAll(gs.Time.time, "场景加载完成-------")
 
     if not self.roomScene then
         self.roomScene = bigHostel.BigHostelScene.new()
@@ -58,19 +59,34 @@ function enterMap(self)
     self.roomScene:setup(function ()
         local model_data = bigHostel.BigHostelManager:getHostelHero()
         if model_data.main_type == BigHostelConst.SceneUI_Type.MIANUI then
-            GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_SHOW_BEFORE_UI)-- 通知打开战斗前的功能UI
+            mainCity.MainCityManager.isLoadCompleted = true
+            Perset3dHandler:toNormalShowData()
 
-            local waitOpenUIcode = mainui.MainUIManager:getWaitOpenUIcode()
-            if waitOpenUIcode > 0 then
-                UIFactory:closeForcibly()
-                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = waitOpenUIcode})
-                mainui.MainUIManager:setWaitOpenUIcode(0)
-            end
+            LoopManager:addFrame(1, 1, self, function()
+                local isGuide = guide.GuideManager:checkResetGuide()
+                if isGuide then
+                    -- 检查下新手引导
+                    if battleMap.MainMapManager.isDataInit then
+                        guide.GuideManager:startTodoEvent()
+                    end
+                else
+
+                    local waitOpenUIcode = mainui.MainUIManager:getWaitOpenUIcode()
+                    if waitOpenUIcode > 0 then
+                        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = waitOpenUIcode})
+                        mainui.MainUIManager:setWaitOpenUIcode(0)
+                    end
+
+                    GameDispatcher:dispatchEvent(EventName.START_CHECK_TRIGGER_DOWNLOADSTART_CHECK_TRIGGER_DOWNLOAD)
+                    GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_SHOW_BEFORE_UI)-- 通知打开战斗前的功能UI
+                end
+            end)
+        else
+            super.playSceneMusic(self)
         end
+        -- logAll(gs.Time.time, "模型加载完成-------")
 
         UIFactory:closeForcibly()
-
-        super.playSceneMusic(self)
     end)
 end
 
@@ -84,7 +100,7 @@ function clearMap(self)
     super.clearMap(self)
 
     local model_data = bigHostel.BigHostelManager:getHostelHero()
-    if model_data.main_type ~= BigHostelConst.SceneUI_Type.MIANUI or mainui.MainUIManager.isShowBigHostel ~= true then
+    if model_data.main_type ~= BigHostelConst.SceneUI_Type.MIANUI or bigHostel.BigHostelManager:getMainUIShow() ~= true then
         UIFactory:startForcibly()
     end
 
@@ -115,7 +131,7 @@ end
 function getMapID(self)
     local model_data = bigHostel.BigHostelManager:getHostelHero()
     if model_data then
-        local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(model_data.heroConfigVo.tid, model_data.model_id)
+        local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(model_data.heroTid, model_data.model_id)
         if sceneData then
             return sceneData.sceneId
         end
@@ -126,6 +142,8 @@ end
 function onShowMainUIHandler(self)
     if self:checkSceneActive() then
         super.playSceneMusic(self)
+    else
+        mainCity.MainCityController:playMainCityMusic()
     end
 end
 

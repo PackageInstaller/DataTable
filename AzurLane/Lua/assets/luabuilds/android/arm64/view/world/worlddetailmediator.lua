@@ -1,120 +1,54 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldDetailMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "WorldDetailMediator"
+var_0_0.OnShipInfo = "WorldDetailMediator:OnShipInfo"
+var_0_0.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.OnShipInfo = "WorldDetailMediator:OnShipInfo"
-var_0_1.OnCmdSkill = "WorldDetailMediator.OnCmdSkill"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.OnShipInfo, function(arg_2_0, arg_2_1, arg_2_2)
-		WorldConst = var_2_10003
-
-		local var_2_0 = var_2_10003.FetchWorldShip(arg_2_1)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OnShipInfo, function(arg_2_0, arg_2_1, arg_2_2)
+		local var_2_0 = WorldConst.FetchWorldShip(arg_2_1)
 
 		arg_1_0.contextData.fleetId = var_2_0.fleetId
+		arg_1_0.contextData.toggle = arg_2_2
 
-		local var_2_1 = arg_1_0.contextData
-
-		var_2_1.toggle = arg_2_2
-		nowWorld = var_2_1
-
-		local var_2_2 = var_2_1()
-		local var_2_3 = var_4.GetFleet(var_2_2, var_2_0.fleetId)
-		local var_2_4 = var_4.GetShipVOs(var_2_3, true)
-		local var_2_5 = arg_1_0
-		local var_2_6 = var_6.sendNotification
-
-		GAME = var_2_10009
-
-		local var_2_7 = var_2_10009.GO_SCENE
-
-		SCENE = var_2_10010
-
-		var_2_6(var_2_5, var_2_7, var_2_10010.SHIPINFO, {
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 			shipId = var_2_0.id,
-			shipVOs = var_2_4
+			shipVOs = nowWorld():GetFleet(var_2_0.fleetId):GetShipVOs(true)
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnCmdSkill, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_3_2 = var_2_10005.New
-		local var_3_3 = {}
-
-		CommanderSkillMediator = var_2_10008
-		var_3_3.mediator = var_2_10008
-		CommanderSkillLayer = var_2_10008
-		var_3_3.viewComponent = var_2_10008
-		var_3_3.data = {
-			isWorld = true,
-			skill = arg_3_1
-		}
-
-		var_3_1(var_3_0, var_3_2(var_3_3))
+	arg_1_0:bind(var_0_0.OnCmdSkill, function(arg_3_0, arg_3_1)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = CommanderSkillMediator,
+			viewComponent = CommanderSkillLayer,
+			data = {
+				isWorld = true,
+				skill = arg_3_1
+			}
+		}))
 
 		return
 	end)
-
-	local var_1_0 = arg_1_0.viewComponent
-	local var_1_1 = var_1.setPlayerInfo
-
-	getProxy = var_4
-	PlayerProxy = var_1_10006
-
-	local var_1_2 = var_4(var_1_10006)
-
-	var_1_1(var_1_0, var_4.getRawData(var_1_2))
-
-	local var_1_3 = arg_1_0.viewComponent
-	local var_1_4 = var_1.setFleets
-
-	nowWorld = var_4
-
-	local var_1_5 = var_4()
-
-	var_1_4(var_1_3, var_4.GetFleets(var_1_5))
+	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	arg_1_0.viewComponent:setFleets(nowWorld():GetFleets())
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_4_0)
-	local var_4_0 = {}
-
-	PlayerProxy = var_1_10002
-	var_4_0[1] = var_1_10002.UPDATED
-
-	return var_4_0
+function var_0_0.listNotificationInterests(arg_4_0)
+	return {
+		PlayerProxy.UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1
-	local var_5_1 = arg_5_1.getName(var_5_0)
-	local var_5_2 = arg_5_1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getBody()
 
-	PlayerProxy = var_5_0
-
-	if var_5_1 == var_5_0.UPDATED then
-		local var_5_3 = arg_5_0.viewComponent
-		local var_5_4 = var_4.setPlayerInfo
-
-		getProxy = var_1_10007
-		PlayerProxy = var_1_10009
-
-		local var_5_5 = var_1_10007(var_1_10009)
-
-		var_5_4(var_5_3, var_7.getRawData(var_5_5))
+	if arg_5_1:getName() == PlayerProxy.UPDATED then
+		arg_5_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

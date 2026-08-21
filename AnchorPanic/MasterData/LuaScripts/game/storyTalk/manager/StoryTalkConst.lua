@@ -78,6 +78,9 @@ storyTalk.PageShowEffect = {
     -- 需要结束的背景特效
     backgroundStopEffects = 13,
 
+    -- 背景饱和度，0=完全去色，1=原色（默认 1），对应 BG shader 的 _Saturation float 参数
+    saturation = 14,
+
 
 }
 --[[ 替换语言包自动生成，请勿修改！

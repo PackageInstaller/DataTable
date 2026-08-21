@@ -1,58 +1,44 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MainGuildSequence")
+﻿local var_0_0 = class("MainGuildSequence")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0.ignores = {}
-	pg = var_1
-
-	local var_1_0 = var_1.TimeMgr.GetInstance()
-
-	arg_1_0.refreshTime = var_1.GetServerTime(var_1_0)
+	arg_1_0.refreshTime = pg.TimeMgr.GetInstance():GetServerTime()
 
 	return
 end
 
 function var_0_0.Execute(arg_2_0, arg_2_1)
-	getProxy = var_1_10002
-	GuildProxy = var_1_10004
+	local var_2_0 = getProxy(GuildProxy):getRawData()
 
-	local var_2_0 = var_1_10002(var_1_10004)
-
-	if not var_2.getRawData(var_2_0) then
+	if not var_2_0 then
 		arg_2_1()
 
 		return
 	end
 
-	if not var_2:GetActiveEvent() or not var_3:IsParticipant() then
+	local var_2_1 = var_2_0:GetActiveEvent()
+
+	if not var_2_1 or not var_2_1:IsParticipant() then
 		arg_2_1()
 
 		return
 	end
 
-	local var_2_1 = var_3
-	local var_2_2, var_2_3 = var_3.AnyMissionFirstFleetCanFroamtion(var_2_1)
+	local var_2_2, var_2_3 = var_2_1:AnyMissionFirstFleetCanFroamtion()
 
-	if var_2_2 and var_2_3 then
-		table = var_2_1
+	if var_2_2 and var_2_3 and table.contains(arg_2_0.ignores, var_2_3.id) then
+		arg_2_1()
 
-		if var_2_1.contains(arg_2_0.ignores, var_2_3.id) then
-			arg_2_1()
-
-			return
-		end
+		return
 	end
 
 	if var_2_2 then
 		arg_2_0:Notify(arg_2_1)
 	else
-		pg = var_2_1
+		local var_2_4 = pg.TimeMgr.GetInstance()
 
-		local var_2_4 = var_2_1.TimeMgr.GetInstance()
-
-		if var_6.GetServerTime(var_2_4) - arg_2_0.refreshTime > 900 then
-			arg_2_0:RefreshEvent(var_3, false, arg_2_1)
+		if var_2_4:GetServerTime() - arg_2_0.refreshTime > 900 then
+			arg_2_0:RefreshEvent(var_2_1, false, arg_2_1)
 		else
 			arg_2_0:Notify(arg_2_1)
 		end
@@ -62,31 +48,20 @@ function var_0_0.Execute(arg_2_0, arg_2_1)
 end
 
 function var_0_0.RefreshEvent(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	if arg_3_1:GetUnlockMission() and (not arg_3_2 or var_4.id ~= arg_3_2.id) then
-		pg = var_1_10005
+	local var_3_0 = arg_3_1:GetUnlockMission()
 
-		local var_3_0 = var_1_10005.m02
-		local var_3_1 = var_5.sendNotification
-
-		GAME = var_1_10008
-
-		var_3_1(var_3_0, var_1_10008.GUILD_REFRESH_MISSION, {
+	if var_3_0 and (not arg_3_2 or var_3_0.id ~= arg_3_2.id) then
+		pg.m02:sendNotification(GAME.GUILD_REFRESH_MISSION, {
 			force = true,
-			id = var_4.id,
+			id = var_3_0.id,
 			callback = function()
-				local var_4_0 = arg_3_0
-
-				var_0.RefreshEvent(var_4_0, arg_3_1, var_0, arg_3_3)
+				arg_3_0:RefreshEvent(arg_3_1, var_3_0, arg_3_3)
 
 				return
 			end
 		})
 
-		pg = var_3_1
-
-		local var_3_2 = var_3_1.TimeMgr.GetInstance()
-
-		arg_3_0.refreshTime = var_5.GetServerTime(var_3_2)
+		arg_3_0.refreshTime = pg.TimeMgr.GetInstance():GetServerTime()
 	else
 		arg_3_0:Notify(arg_3_3)
 	end
@@ -95,61 +70,28 @@ function var_0_0.RefreshEvent(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 end
 
 function var_0_0.Notify(arg_5_0, arg_5_1)
-	pg = var_1_10002
-
-	local var_5_0 = var_1_10002.GuildMsgBoxMgr.GetInstance()
-	local var_5_1 = var_2.Notification
-	local var_5_2 = {
+	pg.GuildMsgBoxMgr.GetInstance():Notification({
 		condition = function()
-			getProxy = var_2_10000
-			GuildProxy = var_2_10002
+			local var_6_0, var_6_1 = getProxy(GuildProxy):getRawData():GetActiveEvent():AnyMissionFirstFleetCanFroamtion()
 
-			local var_6_0 = var_2_10000(var_2_10002)
-			local var_6_1 = var_0.getRawData(var_6_0)
-			local var_6_2 = var_0.GetActiveEvent(var_6_1)
-			local var_6_3, var_6_4 = var_1.AnyMissionFirstFleetCanFroamtion(var_6_2)
+			if var_6_0 and not table.contains(arg_5_0.ignores, var_6_1.id) then
+				table.insert(arg_5_0.ignores, var_6_1.id)
 
-			if var_6_3 then
-				table = var_6_2
-
-				if not var_6_2.contains(arg_5_0.ignores, var_6_4.id) then
-					table = var_4
-
-					var_4.insert(arg_5_0.ignores, var_6_4.id)
-
-					return true
-				end
+				return true
 			end
 
 			return false
-		end
-	}
+		end,
+		content = i18n("guild_operation_event_occurrence"),
+		OnYes = function()
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.GUILD, {
+				page = "battle"
+			})
 
-	i18n = var_6
-	var_5_2.content = var_6("guild_operation_event_occurrence")
-
-	function var_5_2.OnYes()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.m02
-		local var_7_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		local var_7_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_7_1(var_7_0, var_7_2, var_2_10004.GUILD, {
-			page = "battle"
-		})
-
-		return
-	end
-
-	var_5_2.OnNo = arg_5_1
-
-	var_5_1(var_5_0, var_5_2)
+			return
+		end,
+		OnNo = arg_5_1
+	})
 
 	return
 end

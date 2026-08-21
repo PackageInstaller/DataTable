@@ -1,16 +1,9 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SelectableSkin")
+﻿local var_0_0 = class("SelectableSkin")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.skinId = arg_1_1.id
 	arg_1_0.isTimeLimit = arg_1_1.isTimeLimit
-	getProxy = var_2
-	ShipSkinProxy = var_1_10004
-
-	local var_1_0 = var_2(var_1_10004)
-
-	arg_1_0.own = var_2.hasSkin(var_1_0, arg_1_0.skinId)
+	arg_1_0.own = getProxy(ShipSkinProxy):hasSkin(arg_1_0.skinId)
 
 	return
 end
@@ -24,9 +17,7 @@ function var_0_0.OwnSkin(arg_3_0)
 end
 
 function var_0_0.ToShipSkin(arg_4_0)
-	ShipSkin = var_1_10001
-
-	return var_1_10001.New({
+	return ShipSkin.New({
 		id = arg_4_0.skinId
 	})
 end

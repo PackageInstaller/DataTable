@@ -40,6 +40,31 @@ function updateImpeachMsgInfo(self, msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_MEMBER_PANEL)
 end
 
+function getGuildAllMembers(self)
+    local retList = {} 
+    local members = self.mGuildInfo.members
+    local robotList = self.mGuildInfo.robot_members
+
+    for i = 1, #members, 1 do
+        table.insert(retList, members[i])
+    end
+
+    for i = 1, #robotList, 1 do
+        table.insert(retList, robotList[i])
+    end
+    return retList
+end
+
+--是否建筑已经入驻机器人
+function getGuildRobotHas(self,buildId)
+    for i = 1,#self.mGuildInfo.robot_members do
+        if buildId == self.mGuildInfo.robot_members[i].build_info.build_id then
+            return true
+        end
+    end
+    return false
+end
+
 function getImpeachMsgTime(self)
     return self.mGuildInfo.leader_impeach_time
 end
@@ -50,6 +75,14 @@ end
 
 function getAwardPanelInfo(self)
     return self.mAwardInfo
+end
+
+function getIsJoinGuildWar(self)
+    return self.mGuildInfo.is_join_guild_war == 1
+end
+
+function getIsJoinGuildWarTop(self)
+    return self.mGuildInfo.is_join_guild_top_war == 1
 end
 
 function doPrepareInfo(self, msg)
@@ -79,14 +112,18 @@ function updateRequestInfo(self, msg, errorType)
         elseif errorType == 2 then
             gs.Message.Show(_TT(94574))
         end
-    elseif msg.result == 2 then
-        if errorType == 1 then
-            gs.Message.Show(_TT(94585))
-        end
     end
+    -- elseif msg.result == 2 then
+    --     if errorType == 1 then
+    --         gs.Message.Show(_TT(94585))
+    --     end
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(94594))
+    -- end
 end
 
 function updateMemberInfo(self, msg)
+    cusLog("更新成员信息")
     self:updateGuidInfo(msg.guild_info)
     GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_MANAGER_TAB_VIEW)
     GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_MAIN_PANEL)
@@ -167,6 +204,10 @@ function getChairmanNum(self)
     return num
 end
 
+function getGuildIconId(self)
+    return self.mGuildInfo.icon and self.mGuildInfo.icon or 1
+end
+
 function getGuildInfo(self)
     return self.mGuildInfo
 end
@@ -181,7 +222,7 @@ function getGuildCoin(self)
 end
 
 function getJoinGuilded(self)
-    return self.mGuildInfo.uid ~= "0"
+    return self.mGuildInfo and self.mGuildInfo.uid ~= "0"
 end
 
 function getGuildLv(self)
@@ -294,6 +335,10 @@ function checkIsRed(self)
     isRed = isRed or self:canUpSkillRed()
     isRed = isRed or self:canGetSweepRewardRed()
     isRed = isRed or self:canChallengeSweepRed()
+    isRed = isRed or guildWar.GuildWarManager:getGuildWarDefFormationRed()
+    isRed = isRed or guildWar.GuildWarManager:getGuildWarFightRed()
+    isRed = isRed or guildWar.GuildWarManager:getGuildWarCanJunRed()
+    isRed = isRed or guildWar.GuildWarManager:getGuildBetRed()
     return isRed
 end
 
@@ -351,7 +396,8 @@ end
 
 function canUpSkillRed(self)
     local isRed = false
-    for i = 0, 5 do
+    local eleTypeCount = sysParam.SysParamManager:getValue(SysParamType.FIGHT_ELETYPECOUNT)
+    for i = 0, eleTypeCount do
         isRed = isRed or self:canUpSkillSingle(i)
     end
     return isRed
@@ -676,6 +722,7 @@ function getGuildBossDupIdConfig(self, stage, dupId)
     local stageDupList = self:getGuildBossStageConfig(stage)
     for pos, dupConfigVo in pairs(stageDupList) do
         if dupConfigVo.dupId == dupId then
+            dupConfigVo.posEffectId = self.mGuildBossAllInfo.pos_effect
             return dupConfigVo
         end
     end
@@ -735,7 +782,8 @@ function setGuildBossInfo(self, msg)
         round = msg.round,
         guild_rank = msg.guild_rank,
         boss_list = boss_list,
-        lock_hero_list = msg.lock_hero_list
+        lock_hero_list = msg.lock_hero_list,
+        pos_effect = msg.pos_effect
     }
     self:updateRedInfo()
 end
@@ -1187,6 +1235,35 @@ function getSweepDupDataByDupId(self, dupId)
     return self.mGuildSweepDupDic[dupId]
 end
 
+function parseGuildIconData(self)
+    self.mGuildIconData = {}
+    local baseData = RefMgr:getData("guild_icon_data")
+    for id, data in pairs(baseData) do
+        local vo = LuaPoolMgr:poolGet(guild.GuildIconVo)
+        vo:parseData(id, data)
+        --table.insert(self.mGuildIconData, vo)
+        self.mGuildIconData[id] = vo
+    end
+end
+
+function getIconData(self)
+    if self.mGuildIconData == nil then
+        self:parseGuildIconData()
+    end
+    return self.mGuildIconData
+end
+
+function getIconDataById(self,id)
+    if self.mGuildIconData == nil then
+        self:parseGuildIconData()
+    end
+
+    if id == 0 then
+        id = 1
+    end
+    return self.mGuildIconData[id]
+end
+
 function setSweepBossName(self, name)
     self.mBossName = name
 end
@@ -1202,4 +1279,14 @@ end
 function getClickVo(self)
     return self.lastVo
 end
+
+function setTempIconId(self,tempId)
+    self.tempId = tempId
+end
+
+function getTempId(self)
+    return self.tempId and self.tempId or 1
+end
+
+
 return _M

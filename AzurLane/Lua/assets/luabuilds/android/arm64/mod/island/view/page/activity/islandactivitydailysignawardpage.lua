@@ -1,29 +1,23 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandActivityCheateTavernDailySignPage", import("Mod.Island.View.page.activity.IslandBaseActivityPage"))
 
-local var_0_0 = "IslandActivityCheateTavernDailySignPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("Mod.Island.View.page.activity.IslandBaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
+function var_0_0.OnInit(arg_1_0)
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
+function var_0_0.OnDataSetting(arg_2_0)
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_3_0)
+function var_0_0.OnFirstFlush(arg_3_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_4_0)
+function var_0_0.OnUpdateFlush(arg_4_0)
 	return
 end
 
-function var_0_1.OnShowFlush(arg_5_0)
+function var_0_0.OnShowFlush(arg_5_0)
 	return
 end
 
-return var_0_1
+return var_0_0

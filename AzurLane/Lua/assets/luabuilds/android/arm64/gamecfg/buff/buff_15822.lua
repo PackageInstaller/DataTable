@@ -26,14 +26,10 @@
 					}
 				},
 				centerPosFun = function(arg_1_0)
-					Vector3 = var_1_10001
-
-					return var_1_10001(1.2, -1.8, -1.2)
+					return Vector3(1.2, -1.8, -1.2)
 				end,
 				rotationFun = function(arg_2_0)
-					Vector3 = var_1_10001
-
-					return var_1_10001(0, 230, 0)
+					return Vector3(0, 230, 0)
 				end
 			}
 		},
@@ -63,14 +59,10 @@
 					}
 				},
 				centerPosFun = function(arg_3_0)
-					Vector3 = var_1_10001
-
-					return var_1_10001(1.2, -1.8, 2.8)
+					return Vector3(1.2, -1.8, 2.8)
 				end,
 				rotationFun = function(arg_4_0)
-					Vector3 = var_1_10001
-
-					return var_1_10001(0, 130, 0)
+					return Vector3(0, 130, 0)
 				end
 			}
 		}
@@ -103,14 +95,10 @@
 						}
 					},
 					centerPosFun = function(arg_5_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_6_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -140,14 +128,10 @@
 						}
 					},
 					centerPosFun = function(arg_7_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_8_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -181,14 +165,10 @@
 						}
 					},
 					centerPosFun = function(arg_9_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_10_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -218,14 +198,10 @@
 						}
 					},
 					centerPosFun = function(arg_11_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_12_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -259,14 +235,10 @@
 						}
 					},
 					centerPosFun = function(arg_13_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_14_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -296,14 +268,10 @@
 						}
 					},
 					centerPosFun = function(arg_15_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_16_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -337,14 +305,10 @@
 						}
 					},
 					centerPosFun = function(arg_17_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_18_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -374,14 +338,10 @@
 						}
 					},
 					centerPosFun = function(arg_19_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_20_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -415,14 +375,10 @@
 						}
 					},
 					centerPosFun = function(arg_21_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_22_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -452,14 +408,10 @@
 						}
 					},
 					centerPosFun = function(arg_23_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_24_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -493,14 +445,10 @@
 						}
 					},
 					centerPosFun = function(arg_25_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_26_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -530,14 +478,10 @@
 						}
 					},
 					centerPosFun = function(arg_27_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_28_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -571,14 +515,10 @@
 						}
 					},
 					centerPosFun = function(arg_29_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_30_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -608,14 +548,10 @@
 						}
 					},
 					centerPosFun = function(arg_31_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_32_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -649,14 +585,10 @@
 						}
 					},
 					centerPosFun = function(arg_33_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_34_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -686,14 +618,10 @@
 						}
 					},
 					centerPosFun = function(arg_35_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_36_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -727,14 +655,10 @@
 						}
 					},
 					centerPosFun = function(arg_37_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_38_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -764,14 +688,10 @@
 						}
 					},
 					centerPosFun = function(arg_39_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_40_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}
@@ -805,14 +725,10 @@
 						}
 					},
 					centerPosFun = function(arg_41_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, -1.2)
+						return Vector3(1.2, -1.8, -1.2)
 					end,
 					rotationFun = function(arg_42_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 230, 0)
+						return Vector3(0, 230, 0)
 					end
 				}
 			},
@@ -842,14 +758,10 @@
 						}
 					},
 					centerPosFun = function(arg_43_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(1.2, -1.8, 2.8)
+						return Vector3(1.2, -1.8, 2.8)
 					end,
 					rotationFun = function(arg_44_0)
-						Vector3 = var_1_10001
-
-						return var_1_10001(0, 130, 0)
+						return Vector3(0, 130, 0)
 					end
 				}
 			}

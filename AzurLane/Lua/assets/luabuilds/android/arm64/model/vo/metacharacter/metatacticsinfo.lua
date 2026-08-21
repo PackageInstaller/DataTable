@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MetaTacticsInfo")
+﻿local var_0_0 = class("MetaTacticsInfo")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	if arg_1_1 then
@@ -8,13 +6,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 		arg_1_0.curDayExp = arg_1_1.exp
 		arg_1_0.curSkillID = arg_1_1.skill_id
 		arg_1_0.skillExpInfoTable = {}
-		ipairs = var_2
 
-		for iter_1_0, iter_1_1 in var_2(arg_1_1.skill_exp) do
-			local var_1_0 = iter_1_1.skill_id
-			local var_1_1 = iter_1_1.exp
-
-			arg_1_0.skillExpInfoTable[var_1_0] = var_1_1
+		for iter_1_0, iter_1_1 in ipairs(arg_1_1.skill_exp) do
+			arg_1_0.skillExpInfoTable[iter_1_1.skill_id] = iter_1_1.exp
 		end
 	else
 		arg_1_0.shipID = nil
@@ -27,12 +21,8 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.updateExp(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_1.day_exp
-	local var_2_1 = arg_2_1.skill_id
-	local var_2_2 = arg_2_1.skill_exp
-
-	arg_2_0.curDayExp = var_2_0
-	arg_2_0.skillExpInfoTable[var_2_1] = var_2_2
+	arg_2_0.curDayExp = arg_2_1.day_exp
+	arg_2_0.skillExpInfoTable[arg_2_1.skill_id] = arg_2_1.skill_exp
 
 	return
 end
@@ -62,31 +52,15 @@ function var_0_0.unlockSkill(arg_5_0, arg_5_1, arg_5_2)
 end
 
 function var_0_0.getSkillExp(arg_6_0, arg_6_1)
-	local var_6_0
-
-	if not arg_6_0.skillExpInfoTable[arg_6_1] then
-		var_6_0 = 0
-	end
-
-	return var_6_0
+	return arg_6_0.skillExpInfoTable[arg_6_1] or 0
 end
 
 function var_0_0.isExpMaxPerDay(arg_7_0)
-	local var_7_0 = arg_7_0.curDayExp
-
-	pg = var_1_10002
-
-	return var_7_0 >= var_1_10002.gameset.meta_skill_exp_max.key_value
+	return arg_7_0.curDayExp >= pg.gameset.meta_skill_exp_max.key_value
 end
 
 function var_0_0.isAnyLearning(arg_8_0)
-	local var_8_0
-
-	if arg_8_0.curSkillID then
-		var_8_0 = arg_8_0.curSkillID > 0
-	end
-
-	return var_8_0
+	return arg_8_0.curSkillID and arg_8_0.curSkillID > 0
 end
 
 var_0_0.States = {
@@ -98,55 +72,28 @@ var_0_0.States = {
 
 function var_0_0.getTacticsStateForShow(arg_9_0)
 	local var_9_0 = arg_9_0:isAnyLearning()
+	local var_9_1 = getProxy(BayProxy):getShipById(arg_9_0.shipID)
+	local var_9_2 = var_9_1 and var_9_1:isAllMetaSkillLevelMax() or false
 
-	getProxy = var_1_10002
-	BayProxy = var_1_10004
-
-	local var_9_1 = var_1_10002(var_1_10004)
-
-	if var_2.getShipById(var_9_1, arg_9_0.shipID) then
-		local var_9_2 = var_2
-		local var_9_3
-
-		if not var_2.isAllMetaSkillLevelMax(var_9_2) then
-			var_9_3 = false
-		end
-
-		if not var_9_0 and not var_9_3 then
-			return var_0_0.States.LearnAble
-		elseif var_9_0 then
-			getProxy = var_9_1
-			BayProxy = var_1_10006
-
-			local var_9_4 = var_9_1(var_1_10006)
-			local var_9_5 = var_4.getShipById(var_9_4, arg_9_0.shipID)
-
-			if var_4.isSkillLevelMax(var_9_5, arg_9_0.curSkillID) then
-				if not var_9_3 then
-					getProxy = var_9_2
-					BayProxy = var_7
-
-					local var_9_6 = var_9_2(var_7)
-					local var_9_7 = var_5.getShipById(var_9_6, arg_9_0.shipID)
-					local var_9_8 = var_5.getGroupId(var_9_7)
-
-					MetaCharacterConst = var_9_5
-
-					if not var_9_5.isMetaTacticsRedTag(var_9_8) then
-						return var_0_0.States.LearnAble
-					end
+	if not var_9_0 and not var_9_2 then
+		return var_0_0.States.LearnAble
+	elseif var_9_0 then
+		if getProxy(BayProxy):getShipById(arg_9_0.shipID):isSkillLevelMax(arg_9_0.curSkillID) then
+			if not var_9_2 then
+				if not MetaCharacterConst.isMetaTacticsRedTag((getProxy(BayProxy):getShipById(arg_9_0.shipID):getGroupId())) then
+					return var_0_0.States.LearnAble
 				end
-
-				return var_0_0.States.LearnFinished
-			else
-				return var_0_0.States.Learning
 			end
-		else
-			return var_0_0.States.None
-		end
 
-		return
+			return var_0_0.States.LearnFinished
+		else
+			return var_0_0.States.Learning
+		end
+	else
+		return var_0_0.States.None
 	end
+
+	return
 end
 
 function var_0_0.printInfo(arg_10_0)

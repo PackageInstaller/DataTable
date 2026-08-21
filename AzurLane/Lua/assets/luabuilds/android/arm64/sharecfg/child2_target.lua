@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_target") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_target"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_target = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_target
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_target = rawget(pg, "child2_target") or setmetatable({
+	__name = "child2_target"
+}, confNEO)
+pg.child2_target.all = {
 	1,
 	2,
 	3,
@@ -59,25 +36,11 @@ var_0_3.all = {
 	219,
 	220
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child2_target = {}
+pg.base = pg.base or {}
+pg.base.child2_target = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_target
-
-	var_1_0[1] = {
+	pg.base.child2_target[1] = {
 		attr_sum = 200,
 		character = 1,
 		id = 1,
@@ -101,11 +64,7 @@ var_0_3.base.child2_target = {}
 			31007
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_target
-
-	var_1_1[2] = {
+	pg.base.child2_target[2] = {
 		attr_sum = 1000,
 		character = 1,
 		id = 2,
@@ -129,11 +88,7 @@ var_0_3.base.child2_target = {}
 			31017
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_target
-
-	var_1_2[3] = {
+	pg.base.child2_target[3] = {
 		attr_sum = 2000,
 		character = 1,
 		id = 3,
@@ -157,11 +112,7 @@ var_0_3.base.child2_target = {}
 			31027
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_target
-
-	var_1_3[4] = {
+	pg.base.child2_target[4] = {
 		attr_sum = 4000,
 		character = 1,
 		id = 4,
@@ -185,11 +136,7 @@ var_0_3.base.child2_target = {}
 			31037
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_target
-
-	var_1_4[101] = {
+	pg.base.child2_target[101] = {
 		attr_sum = 200,
 		character = 2,
 		id = 101,
@@ -213,11 +160,7 @@ var_0_3.base.child2_target = {}
 			3500007
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_target
-
-	var_1_5[102] = {
+	pg.base.child2_target[102] = {
 		attr_sum = 1000,
 		character = 2,
 		id = 102,
@@ -241,11 +184,7 @@ var_0_3.base.child2_target = {}
 			3500107
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_target
-
-	var_1_6[103] = {
+	pg.base.child2_target[103] = {
 		attr_sum = 2000,
 		character = 2,
 		id = 103,
@@ -269,11 +208,7 @@ var_0_3.base.child2_target = {}
 			3500207
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_target
-
-	var_1_7[104] = {
+	pg.base.child2_target[104] = {
 		attr_sum = 4000,
 		character = 2,
 		id = 104,
@@ -297,11 +232,7 @@ var_0_3.base.child2_target = {}
 			3500307
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_target
-
-	var_1_8[111] = {
+	pg.base.child2_target[111] = {
 		attr_sum = 6000,
 		character = 2,
 		id = 111,
@@ -325,11 +256,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_target
-
-	var_1_9[112] = {
+	pg.base.child2_target[112] = {
 		attr_sum = 8000,
 		character = 2,
 		id = 112,
@@ -353,11 +280,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_target
-
-	var_1_10[113] = {
+	pg.base.child2_target[113] = {
 		attr_sum = 10000,
 		character = 2,
 		id = 113,
@@ -381,11 +304,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_target
-
-	var_1_11[114] = {
+	pg.base.child2_target[114] = {
 		attr_sum = 15000,
 		character = 2,
 		id = 114,
@@ -409,11 +328,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_target
-
-	var_1_12[115] = {
+	pg.base.child2_target[115] = {
 		attr_sum = 20000,
 		character = 2,
 		id = 115,
@@ -437,11 +352,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_target
-
-	var_1_13[116] = {
+	pg.base.child2_target[116] = {
 		attr_sum = 25000,
 		character = 2,
 		id = 116,
@@ -465,11 +376,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_target
-
-	var_1_14[117] = {
+	pg.base.child2_target[117] = {
 		attr_sum = 30000,
 		character = 2,
 		id = 117,
@@ -493,11 +400,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_target
-
-	var_1_15[118] = {
+	pg.base.child2_target[118] = {
 		attr_sum = 40000,
 		character = 2,
 		id = 118,
@@ -521,11 +424,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_target
-
-	var_1_16[119] = {
+	pg.base.child2_target[119] = {
 		attr_sum = 50000,
 		character = 2,
 		id = 119,
@@ -549,11 +448,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_target
-
-	var_1_17[120] = {
+	pg.base.child2_target[120] = {
 		attr_sum = 70000,
 		character = 2,
 		id = 120,
@@ -577,11 +472,7 @@ var_0_3.base.child2_target = {}
 			3500407
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_target
-
-	var_1_18[201] = {
+	pg.base.child2_target[201] = {
 		attr_sum = 200,
 		character = 2,
 		id = 201,
@@ -605,11 +496,7 @@ var_0_3.base.child2_target = {}
 			3501007
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_target
-
-	var_1_19[202] = {
+	pg.base.child2_target[202] = {
 		attr_sum = 1000,
 		character = 2,
 		id = 202,
@@ -633,11 +520,7 @@ var_0_3.base.child2_target = {}
 			3501107
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_target
-
-	var_1_20[203] = {
+	pg.base.child2_target[203] = {
 		attr_sum = 2000,
 		character = 2,
 		id = 203,
@@ -661,11 +544,7 @@ var_0_3.base.child2_target = {}
 			3501207
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_target
-
-	var_1_21[204] = {
+	pg.base.child2_target[204] = {
 		attr_sum = 4000,
 		character = 2,
 		id = 204,
@@ -689,11 +568,7 @@ var_0_3.base.child2_target = {}
 			3501307
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_target
-
-	var_1_22[211] = {
+	pg.base.child2_target[211] = {
 		attr_sum = 6000,
 		character = 2,
 		id = 211,
@@ -717,11 +592,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_target
-
-	var_1_23[212] = {
+	pg.base.child2_target[212] = {
 		attr_sum = 8000,
 		character = 2,
 		id = 212,
@@ -745,11 +616,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_target
-
-	var_1_24[213] = {
+	pg.base.child2_target[213] = {
 		attr_sum = 10000,
 		character = 2,
 		id = 213,
@@ -773,11 +640,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_target
-
-	var_1_25[214] = {
+	pg.base.child2_target[214] = {
 		attr_sum = 15000,
 		character = 2,
 		id = 214,
@@ -801,11 +664,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_target
-
-	var_1_26[215] = {
+	pg.base.child2_target[215] = {
 		attr_sum = 20000,
 		character = 2,
 		id = 215,
@@ -829,11 +688,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_target
-
-	var_1_27[216] = {
+	pg.base.child2_target[216] = {
 		attr_sum = 25000,
 		character = 2,
 		id = 216,
@@ -857,11 +712,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_target
-
-	var_1_28[217] = {
+	pg.base.child2_target[217] = {
 		attr_sum = 30000,
 		character = 2,
 		id = 217,
@@ -885,11 +736,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_target
-
-	var_1_29[218] = {
+	pg.base.child2_target[218] = {
 		attr_sum = 40000,
 		character = 2,
 		id = 218,
@@ -913,11 +760,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_target
-
-	var_1_30[219] = {
+	pg.base.child2_target[219] = {
 		attr_sum = 50000,
 		character = 2,
 		id = 219,
@@ -941,8 +784,7 @@ var_0_3.base.child2_target = {}
 			3501407
 		}
 	}
-	pg = var_1_30
-	var_1_30.base.child2_target[220] = {
+	pg.base.child2_target[220] = {
 		attr_sum = 70000,
 		character = 2,
 		id = 220,

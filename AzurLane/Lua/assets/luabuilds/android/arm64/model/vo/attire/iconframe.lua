@@ -1,39 +1,27 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IconFrame", import(".AttireFrame"))
 
-local var_0_0 = "IconFrame"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".AttireFrame"))
-
-function var_0_1.GetIcon(arg_1_0)
+function var_0_0.GetIcon(arg_1_0)
 	return "IconFrame/" .. arg_1_0
 end
 
-function var_0_1.bindConfigTable(arg_2_0)
-	pg = var_1_10001
-
-	return var_1_10001.item_data_frame
+function var_0_0.bindConfigTable(arg_2_0)
+	return pg.item_data_frame
 end
 
-function var_0_1.getType(arg_3_0)
-	AttireConst = var_1_10001
-
-	return var_1_10001.TYPE_ICON_FRAME
+function var_0_0.getType(arg_3_0)
+	return AttireConst.TYPE_ICON_FRAME
 end
 
-function var_0_1.getDropType(arg_4_0)
-	DROP_TYPE_ICON_FRAME = var_1_10001
-
-	return var_1_10001
+function var_0_0.getDropType(arg_4_0)
+	return DROP_TYPE_ICON_FRAME
 end
 
-function var_0_1.getPrefabName(arg_5_0)
+function var_0_0.getPrefabName(arg_5_0)
 	return arg_5_0:getConfig("id")
 end
 
-function var_0_1.getIcon(arg_6_0)
-	return var_0_1.GetIcon(arg_6_0:getPrefabName())
+function var_0_0.getIcon(arg_6_0)
+	return var_0_0.GetIcon(arg_6_0:getPrefabName())
 end
 
-return var_0_1
+return var_0_0

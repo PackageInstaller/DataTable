@@ -564,3 +564,725 @@ CS_PASS_CIRCUIT =
     18180, 
     {"dup_id", "int16", "副本id"},
 }
+ 
+--- *s2c* 整理背包面板 18181
+SC_PACK_BAG_PANEL =
+{
+    18181, 
+    {"dup_list", "int16", "已通关关卡id", "repeated"},
+}
+ 
+--- *c2s* 通关整理背包玩法 18182
+CS_PASS_PACK_BAG =
+{
+    18182, 
+    {"dup_id", "int16", "副本id"},
+}
+ 
+--- *s2c* 通关整理背包玩法 18183
+SC_PASS_PACK_BAG_RESULT =
+{
+    18183, 
+    {"result", "int8", "结果0-失败1-成功"}, 
+    {"dup_id", "int16", "副本id"},
+}
+ 
+--- *s2c* 农场养|种植列表 18190
+SC_HAPPY_FARM_FIELD_LIST =
+{
+    18190, 
+    {"farm_field_list", pt_farm_field, "养|种植格子列表", "repeated"},
+}
+ 
+--- *s2c* 农场订单列表 18191
+SC_HAPPY_FARM_ORDER_LIST =
+{
+    18191, 
+    {"order_ids", "int32", "完成的订单", "repeated"},
+}
+ 
+--- *c2s* 农场操作 18192
+CS_FARM_OPERATE =
+{
+    18192, 
+    {"field_id", "int16", "养|种植格子id"}, 
+    {"args", "int32", "事件参数", "repeated"},
+}
+ 
+--- *c2s* 农场-提交订单 18193
+CS_SUBMIT_ORDER =
+{
+    18193, 
+    {"order_id", "int16", "订单id"},
+}
+ 
+--- *c2s* 农场-统一收获 18194
+CS_UNIFY_COLLECT =
+{
+    18194, 
+    {"seed_id", "int16", "动物id(种子)"},
+}
+ 
+--- *s2c* 羊了个羊面板 18200
+SC_THREE_TILES_PANEL =
+{
+    18200, 
+    {"dup_list", pt_three_tiles_dup, "副本列表", "repeated"}, 
+    {"star_reward_list", "int16", "收集星星奖励id", "repeated"},
+}
+ 
+--- *c2s* 羊了个羊-过关 18201
+CS_THREE_TILES_PASS_DUP =
+{
+    18201, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *s2c* 羊了个羊-过关-返回 18202
+SC_THREE_TILES_PASS_DUP =
+{
+    18202, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *c2s* 羊了个羊-收取星星奖励 18203
+CS_THREE_TILES_RECEIVE_STAR =
+{
+    18203, 
+    {"star_reward_id", "int16", "星星收集id", "repeated"},
+}
+ 
+--- *s2c* 打砖块面板 18206
+SC_BREAKOUT_PANEL =
+{
+    18206, 
+    {"dup_list", pt_breakout_dup, "副本列表", "repeated"}, 
+    {"star_reward_list", "int16", "收集星星奖励id", "repeated"},
+}
+ 
+--- *c2s* 打砖块-过关 18207
+CS_BREAKOUT_PASS_DUP =
+{
+    18207, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *s2c* 打砖块-过关-返回 18208
+SC_BREAKOUT_PASS_DUP =
+{
+    18208, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *c2s* 打砖块-收取星星奖励 18209
+CS_BREAKOUT_RECEIVE_STAR =
+{
+    18209, 
+    {"star_reward_id", "int16", "星星收集id", "repeated"},
+}
+ 
+--- *s2c* 拼图面板 18212
+SC_JIGSAW_PUZZLE_PANEL =
+{
+    18212, 
+    {"dup_list", "int16", "已通关关卡id", "repeated"},
+}
+ 
+--- *c2s* 拼图通关 18213
+CS_PASS_JIGSAW_PUZZLE =
+{
+    18213, 
+    {"dup_id", "int16", "副本id"},
+}
+ 
+--- *s2c* 连连看面板 18220
+SC_LINKLINK_PANEL =
+{
+    18220, 
+    {"dup_list", pt_linklink_dup, "副本列表", "repeated"}, 
+    {"star_reward_list", "int16", "收集星星奖励id", "repeated"},
+}
+ 
+--- *c2s* 连连看-过关 18221
+CS_LINKLINK_PASS_DUP =
+{
+    18221, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *s2c* 连连看-过关-返回 18222
+SC_LINKLINK_PASS_DUP =
+{
+    18222, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *c2s* 连连看-收取星星奖励 18223
+CS_LINKLINK_RECEIVE_STAR =
+{
+    18223, 
+    {"star_reward_id", "int16", "星星收集id", "repeated"},
+}
+ 
+--- *s2c* 打地鼠面板 18226
+SC_MOLE_PANEL =
+{
+    18226, 
+    {"dup_list", pt_mole_dup, "副本列表", "repeated"}, 
+    {"star_reward_list", "int16", "收集星星奖励id", "repeated"},
+}
+ 
+--- *c2s* 打地鼠-过关 18227
+CS_MOLE_PASS_DUP =
+{
+    18227, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *s2c* 打地鼠-过关-返回 18228
+SC_MOLE_PASS_DUP =
+{
+    18228, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *c2s* 打地鼠-收取星星奖励 18229
+CS_MOLE_RECEIVE_STAR =
+{
+    18229, 
+    {"star_reward_id", "int16", "星星收集id", "repeated"},
+}
+ 
+--- *s2c* 排位游戏面板 18230
+SC_RANKING_GAME_PANEL =
+{
+    18230, 
+    {"dup_list", pt_ranking_game_dup, "副本列表", "repeated"}, 
+    {"star_reward_list", "int16", "收集星星奖励id", "repeated"},
+}
+ 
+--- *c2s* 排位游戏-过关 18231
+CS_RANKING_GAME_PASS_DUP =
+{
+    18231, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *s2c* 排位游戏-过关-返回 18232
+SC_RANKING_GAME_PASS_DUP =
+{
+    18232, 
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "几星过关"},
+}
+ 
+--- *c2s* 排位游戏-收取星星奖励 18233
+CS_RANKING_GAME_RECEIVE_STAR =
+{
+    18233, 
+    {"star_reward_id", "int16", "星星收集id", "repeated"},
+}
+ 
+--- *s2c* 合成大西瓜信息 18235
+SC_WATERMELON_PANEL =
+{
+    18235, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"gained_list", "int16", "已领取奖励列表", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *c2s* 合成大西瓜事件触发通知 18236
+CS_WATERMELON_EVENT =
+{
+    18236,
+}
+ 
+--- *s2c* 合成大西瓜任务进度更新 18237
+SC_WATERMELON_TASK_UPDATE =
+{
+    18237, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 合成大西瓜任务领取 18238
+CS_WATERMELON_TASK_GAIN =
+{
+    18238, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 合成大西瓜任务领取 返回 18239
+SC_WATERMELON_TASK_GAIN_RETURN =
+{
+    18239, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关合成大西瓜玩法 18240
+CS_PASS_WATERMELON =
+{
+    18240, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新合成大西瓜信息 18241
+SC_UPDATE_WATERMELON_INFO =
+{
+    18241, 
+    {"dup_info", pt_mini_game_dup_base, "合成大西瓜信息"},
+}
+ 
+--- *s2c* 1024信息 18248
+SC_GHOST_PANEL =
+{
+    18248, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"gained_list", "int16", "已领取奖励列表", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 1024任务进度更新 18242
+SC_GHOST_TASK_UPDATE =
+{
+    18242, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 1024任务领取 18243
+CS_GHOST_TASK_GAIN =
+{
+    18243, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 1024任务领取 返回 18244
+SC_GHOST_TASK_GAIN_RETURN =
+{
+    18244, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关1024玩法 18245
+CS_PASS_GHOST =
+{
+    18245, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新1024信息 18246
+SC_UPDATE_GHOST_INFO =
+{
+    18246, 
+    {"dup_info", pt_mini_game_dup_base, "1024信息"},
+}
+ 
+--- *c2s* 1024事件触发通知 18247
+CS_GHOST_EVENT =
+{
+    18247, 
+    {"event_id", "int16", "任务信息"},
+}
+ 
+--- *s2c* 俄罗斯方块信息 18250
+SC_BLOCK_PANEL =
+{
+    18250, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"gained_list", "int16", "已领取奖励列表", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 俄罗斯方块任务进度更新 18251
+SC_BLOCK_TASK_UPDATE =
+{
+    18251, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 俄罗斯方块任务领取 18252
+CS_BLOCK_TASK_GAIN =
+{
+    18252, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 俄罗斯方块任务领取 返回 18253
+SC_BLOCK_TASK_GAIN_RETURN =
+{
+    18253, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关俄罗斯方块玩法 18254
+CS_PASS_BLOCK =
+{
+    18254, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新俄罗斯方块信息 18255
+SC_UPDATE_BLOCK_INFO =
+{
+    18255, 
+    {"dup_info", pt_mini_game_dup_base, "俄罗斯方块信息"},
+}
+ 
+--- *s2c* 泡泡龙信息 18260
+SC_BULLE_PANEL =
+{
+    18260, 
+    {"dup_list", pt_mini_game_dup_base, "已过关卡", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 泡泡龙任务进度更新 18261
+SC_BULLE_TASK_UPDATE =
+{
+    18261, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 泡泡龙任务领取 18262
+CS_BULLE_TASK_GAIN =
+{
+    18262, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 泡泡龙任务领取返回 18263
+SC_BULLE_TASK_GAIN_RETURN =
+{
+    18263, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关泡泡龙玩法 18264
+CS_PASS_BULLE =
+{
+    18264, 
+    {"dup_id", "int32", "副本id"}, 
+    {"score", "int64str", "过关分数"},
+}
+ 
+--- *s2c* 更新泡泡龙副本信息 18265
+SC_UPDATE_BULLE_INFO =
+{
+    18265, 
+    {"dup_info", pt_mini_game_dup_base, "泡泡龙副本信息"},
+}
+ 
+--- *c2s* 泡泡龙分数 18266
+CS_BULLE_SCORE =
+{
+    18266, 
+    {"score", "int64str", "分数"},
+}
+ 
+--- *s2c* 接元宝信息 18270
+SC_GOLD_PANEL =
+{
+    18270, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 接元宝任务进度更新 18271
+SC_GOLD_TASK_UPDATE =
+{
+    18271, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 接元宝任务领取 18272
+CS_GOLD_TASK_GAIN =
+{
+    18272, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 接元宝任务领取 返回 18273
+SC_GOLD_TASK_GAIN_RETURN =
+{
+    18273, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关接元宝玩法 18274
+CS_PASS_GOLD =
+{
+    18274, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新接元宝信息 18275
+SC_UPDATE_GOLD_INFO =
+{
+    18275, 
+    {"dup_info", pt_mini_game_dup_base, "接元宝信息"},
+}
+ 
+--- *s2c* 像素鸟信息 18280
+SC_BIRD_PANEL =
+{
+    18280, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 像素鸟任务进度更新 18281
+SC_BIRD_TASK_UPDATE =
+{
+    18281, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 像素鸟任务领取 18282
+CS_BIRD_TASK_GAIN =
+{
+    18282, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 像素鸟任务领取 返回 18283
+SC_BIRD_TASK_GAIN_RETURN =
+{
+    18283, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关像素鸟玩法 18284
+CS_PASS_BIRD =
+{
+    18284, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新像素鸟信息 18285
+SC_UPDATE_BIRD_INFO =
+{
+    18285, 
+    {"dup_info", pt_mini_game_dup_base, "像素鸟信息"},
+}
+ 
+--- *s2c* 饮料大作战信息 18290
+SC_DRINK_PANEL =
+{
+    18290, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 饮料大作战任务进度更新 18291
+SC_DRINK_TASK_UPDATE =
+{
+    18291, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 饮料大作战任务领取 18292
+CS_DRINK_TASK_GAIN =
+{
+    18292, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 饮料大作战任务领取 返回 18293
+SC_DRINK_TASK_GAIN_RETURN =
+{
+    18293, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关饮料大作战玩法 18294
+CS_PASS_DRINK =
+{
+    18294, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新饮料大作战信息 18295
+SC_UPDATE_DRINK_INFO =
+{
+    18295, 
+    {"dup_info", pt_mini_game_dup_base, "饮料大作战信息"},
+}
+ 
+--- *s2c* dessert信息 18300
+SC_DESSERT_PANEL =
+{
+    18300, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"gained_list", "int16", "已领取奖励列表", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* dessert任务进度更新 18301
+SC_DESSERT_TASK_UPDATE =
+{
+    18301, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* dessert任务领取 18302
+CS_DESSERT_TASK_GAIN =
+{
+    18302, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* dessert任务领取 返回 18303
+SC_DESSERT_TASK_GAIN_RETURN =
+{
+    18303, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关dessert玩法 18304
+CS_PASS_DESSERT =
+{
+    18304, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新dessert信息 18305
+SC_UPDATE_DESSERT_INFO =
+{
+    18305, 
+    {"dup_info", pt_mini_game_dup_base, "dessert信息"},
+}
+ 
+--- *c2s* dessert事件触发通知 18305
+CS_DESSERT_EVENT =
+{
+    18305, 
+    {"event_id", "int16", "任务信息"},
+}
+ 
+--- *s2c* 盖楼信息 18310
+SC_BUILD_PANEL =
+{
+    18310, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 盖楼任务进度更新 18311
+SC_BUILD_TASK_UPDATE =
+{
+    18311, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 盖楼任务领取 18312
+CS_BUILD_TASK_GAIN =
+{
+    18312, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 盖楼任务领取返回 18313
+SC_BUILD_TASK_GAIN_RETURN =
+{
+    18313, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关盖楼玩法 18314
+CS_PASS_BUILD =
+{
+    18314, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新盖楼信息 18315
+SC_UPDATE_BUILD_INFO =
+{
+    18315, 
+    {"dup_info", pt_mini_game_dup_base, "盖楼信息"},
+}
+ 
+--- *c2s* 盖楼事件触发通知 18316
+CS_BUILD_EVENT =
+{
+    18316, 
+    {"event_id", "int16", "任务信息"},
+}
+ 
+--- *s2c* 整理小游戏信息 18320
+SC_CLEAR_PANEL =
+{
+    18320, 
+    {"dup_list", pt_mini_game_dup_base, "关卡信息", "repeated"}, 
+    {"task_list", pt_task_info_base, "任务信息", "repeated"},
+}
+ 
+--- *s2c* 整理小游戏任务进度更新 18321
+SC_CLEAR_TASK_UPDATE =
+{
+    18321, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *c2s* 整理小游戏任务领取 18322
+CS_CLEAR_TASK_GAIN =
+{
+    18322, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 整理小游戏任务领取返回 18323
+SC_CLEAR_TASK_GAIN_RETURN =
+{
+    18323, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *c2s* 通关整理小游戏玩法 18324
+CS_PASS_CLEAR =
+{
+    18324, 
+    {"dup_id", "int32", "副本id"}, 
+    {"point", "int32", "通关分数"},
+}
+ 
+--- *s2c* 更新整理小游戏信息 18325
+SC_UPDATE_CLEAR_INFO =
+{
+    18325, 
+    {"dup_info", pt_mini_game_dup_base, "整理小游戏信息"},
+}
+ 
+--- *c2s* 整理小游戏事件触发通知 18326
+CS_CLEAR_EVENT =
+{
+    18326, 
+    {"event_id", "int16", "任务信息"},
+}

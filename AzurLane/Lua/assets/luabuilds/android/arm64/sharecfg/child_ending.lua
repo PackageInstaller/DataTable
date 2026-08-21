@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_ending") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_ending"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_ending = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_ending
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_ending = rawget(pg, "child_ending") or setmetatable({
+	__name = "child_ending"
+}, confNEO)
+pg.child_ending.all = {
 	1,
 	2,
 	3,
@@ -38,25 +15,11 @@ var_0_3.all = {
 	10,
 	11
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_ending = {}
+pg.base = pg.base or {}
+pg.base.child_ending = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_ending
-
-	var_1_0[1] = {
+	pg.base.child_ending[1] = {
 		name = "平面模特",
 		polaroid_condition = 201,
 		group = 1,
@@ -93,11 +56,7 @@ var_0_3.base.child_ending = {}
 			133
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_ending
-
-	var_1_1[2] = {
+	pg.base.child_ending[2] = {
 		name = "艺术家",
 		polaroid_condition = 201,
 		group = 2,
@@ -139,11 +98,7 @@ var_0_3.base.child_ending = {}
 			134
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_ending
-
-	var_1_2[3] = {
+	pg.base.child_ending[3] = {
 		name = "音乐人",
 		polaroid_condition = 201,
 		group = 3,
@@ -175,11 +130,7 @@ var_0_3.base.child_ending = {}
 			135
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_ending
-
-	var_1_3[4] = {
+	pg.base.child_ending[4] = {
 		name = "瞩目新星",
 		polaroid_condition = 203,
 		group = 4,
@@ -221,11 +172,7 @@ var_0_3.base.child_ending = {}
 			136
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_ending
-
-	var_1_4[5] = {
+	pg.base.child_ending[5] = {
 		name = "烘焙达人",
 		polaroid_condition = 203,
 		group = 5,
@@ -262,11 +209,7 @@ var_0_3.base.child_ending = {}
 			137
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_ending
-
-	var_1_5[6] = {
+	pg.base.child_ending[6] = {
 		name = "小说作家",
 		polaroid_condition = 203,
 		group = 6,
@@ -303,11 +246,7 @@ var_0_3.base.child_ending = {}
 			138
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_ending
-
-	var_1_6[7] = {
+	pg.base.child_ending[7] = {
 		name = "赛场新秀",
 		polaroid_condition = 202,
 		group = 7,
@@ -339,11 +278,7 @@ var_0_3.base.child_ending = {}
 			139
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_ending
-
-	var_1_7[8] = {
+	pg.base.child_ending[8] = {
 		name = "商业奇才",
 		polaroid_condition = 202,
 		group = 8,
@@ -380,11 +315,7 @@ var_0_3.base.child_ending = {}
 			140
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_ending
-
-	var_1_8[9] = {
+	pg.base.child_ending[9] = {
 		name = "农场能手",
 		polaroid_condition = 202,
 		group = 9,
@@ -426,11 +357,7 @@ var_0_3.base.child_ending = {}
 			141
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_ending
-
-	var_1_9[10] = {
+	pg.base.child_ending[10] = {
 		name = "日复一日",
 		polaroid_condition = 0,
 		group = 10,
@@ -468,8 +395,7 @@ var_0_3.base.child_ending = {}
 			142
 		}
 	}
-	pg = var_1_9
-	var_1_9.base.child_ending[11] = {
+	pg.base.child_ending[11] = {
 		name = "足不出户",
 		polaroid_condition = 0,
 		group = 11,

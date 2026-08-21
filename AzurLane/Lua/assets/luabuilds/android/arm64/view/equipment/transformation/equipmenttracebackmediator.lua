@@ -1,60 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EquipmentTraceBackMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "EquipmentTraceBackMediator"
+var_0_0.TRANSFORM_EQUIP = "transform equip"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.TRANSFORM_EQUIP = "transform equip"
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	arg_1_0:BindEvent()
 
 	arg_1_0.env = {}
 
-	local var_1_0 = arg_1_0:getViewComponent()
+	arg_1_0:getViewComponent():SetEnv(arg_1_0.env)
+	assert(arg_1_0.contextData.TargetEquipmentId, "Should Set TargetEquipment First")
 
-	var_1.SetEnv(var_1_0, arg_1_0.env)
+	arg_1_0.env.tracebackHelper = getProxy(EquipmentProxy):GetWeakEquipsDict()
 
-	assert = var_1
-
-	var_1(arg_1_0.contextData.TargetEquipmentId, "Should Set TargetEquipment First")
-
-	local var_1_1 = arg_1_0.env
-
-	getProxy = var_1_10002
-	EquipmentProxy = var_4
-
-	local var_1_2 = var_1_10002(var_4)
-
-	var_1_1.tracebackHelper = var_2.GetWeakEquipsDict(var_1_2)
-
-	local var_1_3 = arg_1_0:getViewComponent()
-	local var_1_4 = var_1.UpdatePlayer
-
-	getProxy = var_1_2
-	PlayerProxy = var_1_10006
-
-	local var_1_5 = var_1_2(var_1_10006)
-
-	var_1_4(var_1_3, var_4.getData(var_1_5))
+	arg_1_0:getViewComponent():UpdatePlayer(getProxy(PlayerProxy):getData())
 
 	arg_1_0.stopUpdateView = false
 
 	return
 end
 
-function var_0_1.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_1.TRANSFORM_EQUIP, function(arg_3_0, arg_3_1, arg_3_2)
+function var_0_0.BindEvent(arg_2_0)
+	arg_2_0:bind(var_0_0.TRANSFORM_EQUIP, function(arg_3_0, arg_3_1, arg_3_2)
 		arg_2_0.stopUpdateView = true
 
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_3_1(var_3_0, var_2_10006.TRANSFORM_EQUIPMENT, {
+		arg_2_0:sendNotification(GAME.TRANSFORM_EQUIPMENT, {
 			candicate = arg_3_1,
 			formulaIds = arg_3_2
 		})
@@ -65,162 +34,86 @@ function var_0_1.BindEvent(arg_2_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_4_0)
-	local var_4_0 = {}
-
-	PlayerProxy = var_1_10002
-	var_4_0[1] = var_1_10002.UPDATED
-	BagProxy = var_2
-	var_4_0[2] = var_2.ITEM_UPDATED
-	EquipmentProxy = var_2
-	var_4_0[3] = var_2.EQUIPMENT_UPDATED
-	GAME = var_2
-	var_4_0[4] = var_2.EQUIP_TO_SHIP_DONE
-	GAME = var_2
-	var_4_0[5] = var_2.UNEQUIP_FROM_SHIP_DONE
-	GAME = var_2
-	var_4_0[6] = var_2.TRANSFORM_EQUIPMENT_DONE
-	GAME = var_2
-	var_4_0[7] = var_2.TRANSFORM_EQUIPMENT_FAIL
-
-	return var_4_0
+function var_0_0.listNotificationInterests(arg_4_0)
+	return {
+		PlayerProxy.UPDATED,
+		BagProxy.ITEM_UPDATED,
+		EquipmentProxy.EQUIPMENT_UPDATED,
+		GAME.EQUIP_TO_SHIP_DONE,
+		GAME.UNEQUIP_FROM_SHIP_DONE,
+		GAME.TRANSFORM_EQUIPMENT_DONE,
+		GAME.TRANSFORM_EQUIPMENT_FAIL
+	}
 end
 
-function var_0_1.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1
-	local var_5_1 = arg_5_1.getName(var_5_0)
-	local var_5_2 = arg_5_1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	PlayerProxy = var_5_0
-
-	if var_5_1 == var_5_0.UPDATED then
-		var_1_10006 = arg_5_0
-		var_1_10007 = arg_5_0.getViewComponent(var_1_10006)
-
-		var_4.UpdatePlayer(var_1_10007, var_5_2)
-
-		goto label_5_0
-	end
-
-	BagProxy = var_4
-
-	if var_5_1 == var_4.ITEM_UPDATED then
+	if var_5_0 == PlayerProxy.UPDATED then
+		arg_5_0:getViewComponent():UpdatePlayer(var_5_1)
+	elseif var_5_0 == BagProxy.ITEM_UPDATED then
 		if arg_5_0.stopUpdateView then
 			return
 		end
 
-		var_1_10006 = arg_5_0
-		var_1_10007 = arg_5_0.getViewComponent(var_1_10006)
+		local var_5_2 = arg_5_0:getViewComponent()
 
-		var_4.UpdateSort(var_1_10007)
-
-		var_1_10007 = var_4
-
-		var_4.UpdateSourceList(var_1_10007)
-
-		var_1_10007 = var_4
-
-		var_4.UpdateFormula(var_1_10007)
-
-		goto label_5_0
-	end
-
-	EquipmentProxy = var_4
-
-	local var_5_3
-
-	if var_5_1 == var_4.EQUIPMENT_UPDATED then
+		var_5_2:UpdateSort()
+		var_5_2:UpdateSourceList()
+		var_5_2:UpdateFormula()
+	elseif var_5_0 == EquipmentProxy.EQUIPMENT_UPDATED then
 		if arg_5_0.stopUpdateView then
 			return
 		end
 
 		if arg_5_0.contextData.sourceEquipmentInstance then
-			var_5_3 = var_5_2.count == 0
+			local var_5_3 = arg_5_0.contextData.sourceEquipmentInstance
 
-			local var_5_4 = arg_5_0.contextData.sourceEquipmentInstance
-
-			if var_5_3 then
-				var_1_10006 = var_5_4.type
-				DROP_TYPE_EQUIP = var_1_10007
-
-				if var_1_10006 == var_1_10007 then
-					EquipmentProxy = var_1_10006
-
-					if var_1_10006.SameEquip(var_5_2, var_5_4.template) then
-						var_1_10006 = arg_5_0.contextData
-						var_1_10006.sourceEquipmentInstance = nil
-					end
-				end
+			if var_5_1.count == 0 and var_5_3.type == DROP_TYPE_EQUIP and EquipmentProxy.SameEquip(var_5_1, var_5_3.template) then
+				arg_5_0.contextData.sourceEquipmentInstance = nil
 			end
 		end
 
-		var_1_10006 = arg_5_0
+		local var_5_4 = arg_5_0:getViewComponent()
 
-		local var_5_5 = arg_5_0.getViewComponent(var_1_10006)
-
-		var_5_3.UpdateSourceEquipmentPaths(var_5_5)
-		var_5_3:UpdateSort()
-		var_5_3:UpdateSourceList()
-		var_5_3:UpdateFormula()
-
-		goto label_5_0
-	end
-
-	GAME = var_5_3
-
-	if var_5_1 ~= var_5_3.UNEQUIP_FROM_SHIP_DONE then
-		GAME = var_4
-
-		if var_5_1 == var_4.EQUIP_TO_SHIP_DONE then
-			if arg_5_0.stopUpdateView then
-				return
-			end
-
-			if arg_5_0.contextData.sourceEquipmentInstance then
-				local var_5_6 = var_4.type
-
-				DROP_TYPE_EQUIP = var_1_10006
-
-				if var_5_6 == var_1_10006 then
-					local var_5_7 = var_5_2:getEquip(var_4.template.shipPos)
-
-					if var_4.template.shipId == var_5_2.id and (not var_5_7 or var_5_7.id ~= var_4.id) then
-						arg_5_0.contextData.sourceEquipmentInstance = nil
-					end
-				end
-			end
-
-			local var_5_8 = arg_5_0:getViewComponent()
-
-			var_5.UpdateSourceEquipmentPaths(var_5_8)
-			var_5:UpdateSort()
-			var_5:UpdateSourceList()
-			var_5:UpdateFormula()
-
-			goto label_5_0
-		end
-
-		GAME = var_4
-
-		if var_5_1 ~= var_4.TRANSFORM_EQUIPMENT_DONE then
-			GAME = var_4
-
-			if var_5_1 == var_4.TRANSFORM_EQUIPMENT_FAIL then
-				arg_5_0.stopUpdateView = false
-
-				local var_5_9 = arg_5_0:getViewComponent()
-
-				var_4.UpdateSourceEquipmentPaths(var_5_9)
-				var_4:UpdateSort()
-				var_4:UpdateSourceList()
-				var_4:UpdateFormula()
-			end
-
-			::label_5_0::
-
+		var_5_4:UpdateSourceEquipmentPaths()
+		var_5_4:UpdateSort()
+		var_5_4:UpdateSourceList()
+		var_5_4:UpdateFormula()
+	elseif var_5_0 == GAME.UNEQUIP_FROM_SHIP_DONE or var_5_0 == GAME.EQUIP_TO_SHIP_DONE then
+		if arg_5_0.stopUpdateView then
 			return
 		end
+
+		local var_5_5 = arg_5_0.contextData.sourceEquipmentInstance
+
+		if arg_5_0.contextData.sourceEquipmentInstance and var_5_5.type == DROP_TYPE_EQUIP then
+			local var_5_6 = var_5_1:getEquip(var_5_5.template.shipPos)
+
+			if var_5_5.template.shipId == var_5_1.id and (not var_5_6 or var_5_6.id ~= var_5_5.id) then
+				arg_5_0.contextData.sourceEquipmentInstance = nil
+			end
+		end
+
+		local var_5_7 = arg_5_0:getViewComponent()
+
+		var_5_7:UpdateSourceEquipmentPaths()
+		var_5_7:UpdateSort()
+		var_5_7:UpdateSourceList()
+		var_5_7:UpdateFormula()
+	elseif var_5_0 == GAME.TRANSFORM_EQUIPMENT_DONE or var_5_0 == GAME.TRANSFORM_EQUIPMENT_FAIL then
+		arg_5_0.stopUpdateView = false
+
+		local var_5_8 = arg_5_0:getViewComponent()
+
+		var_5_8:UpdateSourceEquipmentPaths()
+		var_5_8:UpdateSort()
+		var_5_8:UpdateSourceList()
+		var_5_8:UpdateFormula()
 	end
+
+	return
 end
 
-return var_0_1
+return var_0_0

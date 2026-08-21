@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "expedition_data_by_chapter") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "expedition_data_by_chapter"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.expedition_data_by_chapter = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.expedition_data_by_chapter
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.expedition_data_by_chapter = rawget(pg, "expedition_data_by_chapter") or setmetatable({
+	__name = "expedition_data_by_chapter"
+}, confNEO)
+pg.expedition_data_by_chapter.all = {
 	101,
 	102,
 	103,
@@ -36,25 +13,11 @@ var_0_3.all = {
 	203,
 	204
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.expedition_data_by_chapter = {}
+pg.base = pg.base or {}
+pg.base.expedition_data_by_chapter = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.expedition_data_by_chapter
-
-	var_1_0[101] = {
+	pg.base.expedition_data_by_chapter[101] = {
 		map = 1,
 		pos_x = "0.2",
 		chapter_name = "1-1",
@@ -121,11 +84,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.expedition_data_by_chapter
-
-	var_1_1[102] = {
+	pg.base.expedition_data_by_chapter[102] = {
 		map = 1,
 		pos_x = "0.35",
 		chapter_name = "1-2",
@@ -213,11 +172,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.expedition_data_by_chapter
-
-	var_1_2[103] = {
+	pg.base.expedition_data_by_chapter[103] = {
 		map = 1,
 		pos_x = "0.51",
 		chapter_name = "1-3",
@@ -305,11 +260,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.expedition_data_by_chapter
-
-	var_1_3[104] = {
+	pg.base.expedition_data_by_chapter[104] = {
 		map = 1,
 		pos_x = "0.65",
 		chapter_name = "1-4",
@@ -397,11 +348,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.expedition_data_by_chapter
-
-	var_1_4[105] = {
+	pg.base.expedition_data_by_chapter[105] = {
 		map = 1,
 		pos_x = "0.76",
 		chapter_name = "1-5",
@@ -463,11 +410,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.expedition_data_by_chapter
-
-	var_1_5[201] = {
+	pg.base.expedition_data_by_chapter[201] = {
 		map = 2,
 		pos_x = "0.8",
 		chapter_name = "2-1",
@@ -522,11 +465,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.expedition_data_by_chapter
-
-	var_1_6[202] = {
+	pg.base.expedition_data_by_chapter[202] = {
 		map = 2,
 		pos_x = "0.6",
 		chapter_name = "2-2",
@@ -581,11 +520,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.expedition_data_by_chapter
-
-	var_1_7[203] = {
+	pg.base.expedition_data_by_chapter[203] = {
 		map = 2,
 		pos_x = "0.45",
 		chapter_name = "2-3",
@@ -640,8 +575,7 @@ var_0_3.base.expedition_data_by_chapter = {}
 			}
 		}
 	}
-	pg = var_1_7
-	var_1_7.base.expedition_data_by_chapter[204] = {
+	pg.base.expedition_data_by_chapter[204] = {
 		map = 2,
 		pos_x = "0.3",
 		chapter_name = "2-4",

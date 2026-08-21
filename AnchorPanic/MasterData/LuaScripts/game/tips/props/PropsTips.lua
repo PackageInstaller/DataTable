@@ -34,6 +34,14 @@ function configUI(self)
     self.mNumberStepper = self:getChildGO("mNumberStepper"):GetComponent(ty.LyNumberStepper)
     self.mNumberStepper:Init(1, 1, 1, -1, self.onStepChange, self)
 
+    self.mBtnAdd1 = self:getChildGO("mBtnAdd1")
+    self.mBtnAdd9999 = self:getChildGO("mBtnAdd9999")
+    self.mBtnCopyGm = self:getChildGO("mBtnCopyGm")
+    if self.mBtnAdd1 then
+        self.mBtnAdd1:SetActive(GameManager.IS_DEBUG)
+        self.mBtnAdd9999:SetActive(GameManager.IS_DEBUG)
+        self.mBtnCopyGm:SetActive(GameManager.IS_DEBUG)
+    end
 end
 
 function onStepChange(self, cusCount, cusType)
@@ -93,24 +101,51 @@ function initData(self)
     self.mSuitItemList = {}
 end
 
---[[ 
-    初始化界面的静态文本，图片字
+--[[    初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
 function initViewText(self)
     self.m_childGos["TextLinkTitle"]:GetComponent(ty.Text).text = _TT(25020) -- "获取途径"
+    self.m_childGos["mTxtUseLinkTitle"]:GetComponent(ty.Text).text = _TT(4068) -- "使用途径"
     self.mTxtTimeOneLab.text = _TT(1208) -- "恢复1ml"
     self.mTxtTimeAllLab.text = _TT(1209) -- "恢复全部"
     self.mTxtSuitTitle.text = _TT(1316)--套装属性
-    self:setBtnLabel(self.m_childGos["BtnUse"], 4029, "使用")
+
     self:setBtnLabel(self.m_childGos["mBtnGet"], 25018, "获取")
     self:setBtnLabel(self.m_childGos["mBtnInfo"], 25027, "详情")
+    self:setBtnLabel(self.m_childGos["mBtnInfo"], 25027, "详情")
+    self:setBtnLabel(self.m_childGos["mBtnFashionShow"], 50093, "预览")
+
+    if self.m_propsVo.id == nil or self.m_propsVo.id == 0 then
+        self:setBtnLabel(self.m_childGos["BtnUse"], 165, "查看")
+    else
+        self:setBtnLabel(self.m_childGos["BtnUse"], 4029, "使用")
+    end
 end
 
 function addAllUIEvent(self)
     self:addUIEvent(self.m_childGos["mBtnGet"], self.onGetBtnClick)
     self:addUIEvent(self.m_childGos["mBtnInfo"], self.onInfotBtnClick)
+    self:addUIEvent(self.m_childGos["mBtnFashionShow"], self.onFashionShowBtnClick)
     self:addUIEvent(self.mClose, self.onCloseHandler)
+
+    if self.mBtnAdd1 then
+        self:addUIEvent(self.mBtnAdd1, function()
+            local cmd = string.format("add_item %s 1", self.m_propsVo.tid)
+            GameDispatcher:dispatchEvent(EventName.REQ_GM_RUN, {command = cmd})
+            gs.Message.Show2("操作成功")
+        end)
+        self:addUIEvent(self.mBtnAdd9999, function()
+            local cmd = string.format("add_item %s 9999", self.m_propsVo.tid)
+            GameDispatcher:dispatchEvent(EventName.REQ_GM_RUN, {command = cmd})
+            gs.Message.Show2("操作成功")
+        end)
+        self:addUIEvent(self.mBtnCopyGm, function()
+            local cmd = string.format("add_item %s 1", self.m_propsVo.tid)
+            gs.SdkManager:Copy(cmd)
+            gs.Message.Show("复制命令成功")
+        end)
+    end
 end
 
 function onGetBtnClick(self)
@@ -121,6 +156,17 @@ end
 function onInfotBtnClick(self)
     self.mGroupUse:SetActive(true)
     self.mGroupGet:SetActive(false)
+end
+
+function onFashionShowBtnClick(self)
+    local heroTid = self.m_propsVo.effectList[1]
+    local fashionId = self.m_propsVo.effectList[2]
+    self:onCloseHandler()
+    GameDispatcher:dispatchEvent(EventName.OPEN_SKIN_SHOW_ONE_VIEW, {
+        heroTid = heroTid,
+        fashionId = fashionId,
+        isShow3D = true
+    })
 end
 
 function onCloseHandler(self)
@@ -148,9 +194,11 @@ function __updateView(self)
     self.mNumberStepper.gameObject:SetActive(false)
     local groupLink = self.m_childGos["mGetGroupLink"]
     groupLink:SetActive(false)
-
+    local useGroupLink = self.m_childGos["mUseGroupLink"]
+    useGroupLink:SetActive(false)
     self:__updateBottom()
     self:__updateGetInfo()
+    self:__updateUseLinkInfo()
 
     self.mGroupStamina:SetActive(false)
     if self.m_propsVo.tid == MoneyTid.ANTIEPIDEMIC_SERUM_TID then
@@ -161,7 +209,7 @@ function __updateView(self)
         self:recoverStaminaTime()
         self.timeId = LoopManager:addTimer(1, 0, self, self.updateStaminatime)
     end
-    if self.mNumberStepper.gameObject.activeSelf == true then
+    if self.mNumberStepper.gameObject.activeSelf == true or self.m_childGos["mBtnFashionShow"].gameObject.activeSelf == true then
         gs.TransQuick:SizeDelta02(self:getChildTrans("Scroller"), self.mScrollerMinHeight)
     else
         gs.TransQuick:SizeDelta02(self:getChildTrans("Scroller"), self.mScrollerMaxHeight)
@@ -257,21 +305,95 @@ function __updateTop(self)
 end
 
 function __updateBottom(self)
-    if self.m_propsVo.id == nil or self.m_propsVo.id == 0 then
-        return
+    local isShowUseBtn = false
+    local isShowLookBtn = self.m_propsVo.effectType == UseEffectType.ADD_FREE_PROPGIFT or self.m_propsVo.effectType == UseEffectType.ADD_FREE_HEROGIFT
+    if isShowLookBtn then
+        isShowUseBtn = true
+    else
+        if self.m_propsVo.id ~= nil and self.m_propsVo.id ~= 0 then
+            local maxCount = bag.BagManager:getPropsCountByTid(self.m_propsVo.tid)
+            local limCount = sysParam.SysParamManager:getValue(SysParamType.MAX_USE_PROPS_COUNT)
+            maxCount = math.min(limCount, maxCount)
+            local isHas = maxCount > 0
+            local isCanUse = self.m_propsVo.isCanUse
+            self.mNumberStepper.gameObject:SetActive(self.m_propsVo.isCanBatchUse ~= 0 and self.m_isShowUseBtn)
+            if (isHas and isCanUse and self.m_isShowUseBtn) then
+                self.mNumberStepper.CurrCount = 1
+                self.mNumberStepper.MaxCount = maxCount
+                isShowUseBtn = true
+            end
+        end
     end
+
     local btnUse = self.m_childGos["BtnUse"]
-    local maxCount = bag.BagManager:getPropsCountByTid(self.m_propsVo.tid)
-    local isHas = maxCount > 0
-    local isCanUse = self.m_propsVo.isCanUse
-    self.mNumberStepper.gameObject:SetActive(self.m_propsVo.isCanBatchUse ~= 0 and self.m_isShowUseBtn)
-    if (isHas and isCanUse and self.m_isShowUseBtn) then
-        self.mNumberStepper.CurrCount = 1
-        self.mNumberStepper.MaxCount = maxCount
+    if isShowUseBtn then
         btnUse:SetActive(true)
         self:addUIEvent(btnUse, self.__onOpenUseViewHandler)
     else
         btnUse:SetActive(false)
+    end
+
+    self.m_childGos["mBtnFashionShow"]:SetActive(self.m_propsVo.type == PropsType.FASHIONPERMIT and self.m_propsVo.subType == 2) --皮肤
+end
+
+function __updateUseLinkInfo(self)
+    local groupLink = self.m_childGos["mUseGroupLink"]
+    local useUiCodeList = self.m_propsVo.useUiCodeList
+    if (#useUiCodeList <= 0) then
+        groupLink:SetActive(false)
+    else
+        local _show = false
+        for i = 1, #useUiCodeList do
+            local configVo = link.LinkManager:getLinkData(useUiCodeList[i])
+            if configVo then
+                local propConfigVo = props.PropsManager:getPropsConfigVo(self.m_propsVo.tid)
+                local isOpen = funcopen.FuncOpenManager:isOpen(configVo.funcOpenId, false)
+                local item = SimpleInsItem:create(self.m_childGos["mLinkItem"], groupLink.transform, self:__getGoUniqueName("mLinkItem"))
+                local isMid, isCanTurn, tipsDes = dup.DupPotencyManager:getMaxStageIsOpen(configVo)
+                if isMid then
+                    item:getChildGO("GroupLinkLock"):SetActive(((not isOpen) or (not isCanTurn)))
+                    item:getChildGO("GroupLinkUnLock"):SetActive(isOpen and isCanTurn)
+                else
+                    item:getChildGO("GroupLinkLock"):SetActive(not isOpen)
+                    item:getChildGO("GroupLinkUnLock"):SetActive(isOpen)
+                end
+                local text = configVo:getLinkName2()
+                if (configVo.linkName2 == 2915) then
+                    text = _TT(2915, propConfigVo.mainCode[1], propConfigVo.mainCode[2])
+                end
+                item:getChildGO("TextLinkNameUnLock"):GetComponent(ty.Text).text = text
+                item:getChildGO("TextLinkNameLock"):GetComponent(ty.Text).text = text
+                item:getChildGO("TextLinkTip"):GetComponent(ty.Text).text = _TT(4062)
+                item:getChildGO("Text"):GetComponent(ty.Text).text = _TT(configVo.code)
+                local function _clickLinkFun()
+                    if fight.FightManager:getIsFighting() or map.MapLoader.m_curMapType == MAP_TYPE.DORMITORY then
+                        return
+                    end
+                    if isMid and (not isCanTurn) then
+                        gs.Message.Show(tipsDes)
+                        return
+                    end
+                    if (isOpen) then
+                        self:close()
+                        if (configVo.uiType == LinkUiType.FULL_SCREEN) then
+                            gs.PopPanelManager.CloseAll()
+                        end
+                        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = configVo.linkId, param = self.m_propsVo.tid})
+                    else
+                        funcopen.FuncOpenManager:isOpen(configVo.funcOpenId, true)
+                    end
+                end
+                if not fight.FightManager:getIsFighting() and map.MapLoader.m_curMapType == MAP_TYPE.MAIN_CITY then
+                    item:getChildGO("mImgGotoBg"):SetActive(true)
+                    item:addUIEvent("ImgClick", _clickLinkFun)
+                else
+                    item:getChildGO("mImgGotoBg"):SetActive(false)
+                end
+                table.insert(self.m_btnGoList, item)
+                _show = true
+            end
+        end
+        groupLink:SetActive(_show)
     end
 end
 
@@ -317,17 +439,32 @@ function __updateGetInfo(self)
                         if (configVo.uiType == LinkUiType.FULL_SCREEN) then
                             gs.PopPanelManager.CloseAll()
                         end
-                        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = configVo.linkId, param = self.m_propsVo.tid })
+                        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = configVo.linkId, param = self.m_propsVo.tid})
                     else
                         funcopen.FuncOpenManager:isOpen(configVo.funcOpenId, true)
                     end
                 end
-                if not fight.FightManager:getIsFighting() and map.MapLoader.m_curMapType == MAP_TYPE.MAIN_CITY then
+
+                local show = false
+
+                if not fight.FightManager:getIsFighting() then
+                    if map.MapLoader.m_curMapType == MAP_TYPE.MAIN_CITY then
+                        show = true
+                    elseif map.MapLoader.m_curMapType == MAP_TYPE.BIG_HOSTEL then
+                        local model_data = bigHostel.BigHostelManager:getHostelHero()
+                        if model_data and model_data.main_type == BigHostelConst.SceneUI_Type.MIANUI then
+                            show = true
+                        end
+                    end
+                end
+
+                if show then
                     item:getChildGO("mImgGotoBg"):SetActive(true)
                     item:addUIEvent("ImgClick", _clickLinkFun)
                 else
                     item:getChildGO("mImgGotoBg"):SetActive(false)
                 end
+
                 table.insert(self.m_btnGoList, item)
                 _show = true
             end
@@ -402,12 +539,12 @@ function __onOpenUseViewHandler(self, args)
     if (self.m_propsVo.effectType == UseEffectType.ADD_PERMIT_EXPERT or self.m_propsVo.effectType == UseEffectType.ADD_PERMIT) and (not activity.ActivityManager:getActivityVoById(101)) then
         gs.Message.Show(_TT(81014))
         return
-    elseif self.m_propsVo.effectType == 9 then
+    elseif self.m_propsVo.effectType == UseEffectType.ADD_FREE_HEROGIFT then
         -- 针对自选角色的特殊处理方式
         GameDispatcher:dispatchEvent(EventName.OPEN_SELECTEDHEROVIEW, self.m_propsVo)
         self:close()
         return
-    elseif self.m_propsVo.effectType == 20 then
+    elseif self.m_propsVo.effectType == UseEffectType.ADD_FREE_PROPGIFT then
         GameDispatcher:dispatchEvent(EventName.OPEN_SELECTEITEMVIEW, self.m_propsVo)
         self:close()
     elseif self.m_propsVo.effectType == UseEffectType.ADD_PERMIT and permit.PermitManager:getPermitedLv() > 40 then
@@ -417,11 +554,14 @@ function __onOpenUseViewHandler(self, args)
         end
         --使用类型为合约扩充凭证（通行证直升十级道具）并且等级大于40级触发判断 策划说暂时写死
         UIFactory:alertMessge(_TT(81013), true, function()
-            GameDispatcher:dispatchEvent(EventName.USE_PROPS_BY_ID, { id = self.m_propsVo.id, count = self.mNumberStepper.CurrCount, targetId = 0, uicode = self.m_propsVo.uiCode, use_args = {} })
+            GameDispatcher:dispatchEvent(EventName.USE_PROPS_BY_ID, {id = self.m_propsVo.id, count = self.mNumberStepper.CurrCount, targetId = 0, uicode = self.m_propsVo.uiCode, use_args = {}})
             self:close()
         end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
+    elseif self.m_propsVo.effectType == UseEffectType.USE_GET_HEROEGG then
+        GameDispatcher:dispatchEvent(EventName.USE_PROPS_BY_TID, {id = self.m_propsVo.tid, count = self.mNumberStepper.CurrCount, targetId = 0, uicode = self.m_propsVo.uiCode, use_args = {}})
+        self:close()
     else
-        GameDispatcher:dispatchEvent(EventName.USE_PROPS_BY_ID, { id = self.m_propsVo.id, count = self.mNumberStepper.CurrCount, targetId = 0, uicode = self.m_propsVo.uiCode, use_args = {} })
+        GameDispatcher:dispatchEvent(EventName.USE_PROPS_BY_ID, {id = self.m_propsVo.id, count = self.mNumberStepper.CurrCount, targetId = 0, uicode = self.m_propsVo.uiCode, use_args = {}})
         self:close()
     end
 
@@ -443,5 +583,5 @@ end
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！
-	语言包: _TT(4062):	"<未解锁>"
+语言包: _TT(4062):"<未解锁>"
 ]]

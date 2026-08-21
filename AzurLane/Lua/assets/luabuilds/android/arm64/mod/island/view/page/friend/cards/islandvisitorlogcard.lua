@@ -1,65 +1,27 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandVisitorLogCard")
+﻿local var_0_0 = class("IslandVisitorLogCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.transform
-
-	arg_1_0.mainTr = var_2.Find(var_1_0, "main")
-
-	local var_1_1 = arg_1_1.transform
-
-	arg_1_0.emptyTr = var_2.Find(var_1_1, "empty")
-
-	local var_1_2 = arg_1_1.transform
-	local var_1_3 = var_2.Find(var_1_2, "main/time")
-	local var_1_4 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.timeTxt = var_1_4(var_1_3, var_5(var_1_10007))
-
-	local var_1_5 = arg_1_1.transform
-	local var_1_6 = var_2.Find(var_1_5, "main/name")
-	local var_1_7 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTxt = var_1_7(var_1_6, var_5(var_1_10007))
-
-	local var_1_8 = arg_1_1.transform
-	local var_1_9 = var_2.Find(var_1_8, "main/op")
-	local var_1_10 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.opTxt = var_1_10(var_1_9, var_5(var_1_10007))
-
-	local var_1_11 = arg_1_1.transform
-	local var_1_12 = var_2.Find(var_1_11, "empty/time")
-	local var_1_13 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.emptyTimeTxt = var_1_13(var_1_12, var_5(var_1_10007))
+	arg_1_0.mainTr = arg_1_1.transform:Find("main")
+	arg_1_0.emptyTr = arg_1_1.transform:Find("empty")
+	arg_1_0.timeTxt = arg_1_1.transform:Find("main/time"):GetComponent(typeof(Text))
+	arg_1_0.nameTxt = arg_1_1.transform:Find("main/name"):GetComponent(typeof(Text))
+	arg_1_0.opTxt = arg_1_1.transform:Find("main/op"):GetComponent(typeof(Text))
+	arg_1_0.emptyTimeTxt = arg_1_1.transform:Find("empty/time"):GetComponent(typeof(Text))
 
 	return
 end
 
 function var_0_0.Update(arg_2_0, arg_2_1)
+	local var_2_0 = arg_2_1.id == -1
+
 	if arg_2_1.id == -1 then
 		arg_2_0:UpdateEmpty(arg_2_1)
 	else
 		arg_2_0:UpdateMain(arg_2_1)
 	end
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_2_0.mainTr, not var_2)
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_2_0.emptyTr, var_2)
+	setActive(arg_2_0.mainTr, not var_2_0)
+	setActive(arg_2_0.emptyTr, var_2_0)
 
 	return
 end

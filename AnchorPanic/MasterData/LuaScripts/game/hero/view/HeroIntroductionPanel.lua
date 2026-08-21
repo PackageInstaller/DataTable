@@ -73,6 +73,7 @@ function active(self, args)
 end
 
 function deActive(self)
+    GameDispatcher:dispatchEvent(EventName.RESET_HIDE_PROMO)
     super.deActive(self)
     self.isShutView = nil
     self:recoverModel(true)
@@ -165,7 +166,7 @@ function updateView(self)
     if (self.curHeroVo) then
         local heroVo = hero.HeroManager:getHeroConfigVo(self.curHeroTid)
         self.mTxtName.text = self.curHeroVo.name
-        self.mIsLimit:SetActive(heroVo.isLimit==1)
+        self.mIsLimit:SetActive(heroVo.isLimit == 1)
         self.mTxtCvZh.text = _TT(1015, self.curHeroVo.zhCVName)--"中：" .. self.curHeroVo.zhCVName
         self.mTxtCvJp.text = _TT(1016, self.curHeroVo.jpCVName)--"日：" .. self.curHeroVo.jpCVName
         for i = 1, 3 do
@@ -180,7 +181,7 @@ function updateView(self)
             end)
             table.insert(self.mReuseItemList, occItem)
         end
-        self.mImgHeroPic:SetImg(UrlManager:getBgPath(string.format("heroRecord/record_pic_%s.png", heroVo.showModel)))
+        self.mImgHeroPic:SetImg(UrlManager:getheroRecordUrl(heroVo.showModel))
         if heroVo.eleType ~= -1 then
             local eleItem = SimpleInsItem:create(self.mImgReuseBg, self.mGroupEleAndOcc, "heroEleReuseItem")
             eleItem:getChildGO("mIconReuse"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getHeroEleTypeIconUrl(heroVo.eleType), true)
@@ -208,6 +209,13 @@ end
 function updateModelView(self, heroVo)
     if (heroVo) then
         self.mModelPlayer:setModelData(heroVo:getUIModel(), false, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, UrlManager:getBgPath("hero5/details_bg_02.jpg"), self.mClickerArea, true, function()
+            local data = fashion.FashionManager:getModelHarData(heroVo:getUIModel())
+            if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                -- 替换材质球预览
+                self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                    self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                end)
+            end
         end)
     else
         self:recoverModel(false)

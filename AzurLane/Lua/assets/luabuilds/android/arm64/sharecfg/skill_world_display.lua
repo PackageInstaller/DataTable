@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "skill_world_display") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "skill_world_display"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.skill_world_display = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.skill_world_display
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.skill_world_display = rawget(pg, "skill_world_display") or setmetatable({
+	__name = "skill_world_display"
+}, confNEO)
+pg.skill_world_display.all = {
 	3631,
 	4161,
 	11460,
@@ -52,6 +29,7 @@ var_0_3.all = {
 	150760,
 	19260,
 	19510,
+	18980,
 	19980,
 	105010,
 	105020,
@@ -124,25 +102,11 @@ var_0_3.all = {
 	802301,
 	802302
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.skill_world_display = {}
+pg.base = pg.base or {}
+pg.base.skill_world_display = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.skill_world_display
-
-	var_1_0[3631] = {
+	pg.base.skill_world_display[3631] = {
 		desc_get = "",
 		id = 3631,
 		desc = "【大型作战效果】\n自身氧气存量额外提高$1点，大型作战中作为潜艇支援被呼叫时，消耗行动力减少$2",
@@ -241,11 +205,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.skill_world_display
-
-	var_1_1[4161] = {
+	pg.base.skill_world_display[4161] = {
 		desc_get = "",
 		id = 4161,
 		desc = "【大型作战效果】\n自身所在编队进入战斗时，若自身存活，提升队伍中所有正航、轻航的航空$1、装填$2，自身舰载机的第一轮空中支援加载时间缩短$3；关卡海域内其他编队进入战斗时，若自身存活，提升该队伍中所有正航、轻航的航空$4、装填$4，同名技能效果取最大值，不可叠加",
@@ -434,11 +394,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.skill_world_display
-
-	var_1_2[11460] = {
+	pg.base.skill_world_display[11460] = {
 		desc_get = "",
 		id = 11460,
 		desc = "【大型作战效果】\n若潜艇编队仅有自身一名角色，战斗中自身对战列舰(不包括战巡、航战)造成的伤害提高$1，大型作战中作为潜艇支援被呼叫时，消耗行动力减少$2、潜艇部队弹药量+2",
@@ -537,11 +493,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.skill_world_display
-
-	var_1_3[12440] = {
+	pg.base.skill_world_display[12440] = {
 		desc_get = "",
 		id = 12440,
 		desc = "【大型作战效果】\n自身所在编队每击破一个敌方编队，战斗中自身炮击提高$1，击破5个敌方编队后，战斗中我方主力编队受到的伤害降低$2；战斗中，自身每击破一个敌舰，自身炮击提高$1（该技能炮击加成最高叠加7层）【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -640,11 +592,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.skill_world_display
-
-	var_1_4[12610] = {
+	pg.base.skill_world_display[12610] = {
 		desc_get = "",
 		id = 12610,
 		desc = "【大型作战效果】\n开场时为自身及先锋领舰生成2枚护盾，每枚护盾可阻挡$1次鱼雷攻击；自身所在编队的前三次战斗自身炮击提升$2；【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -734,11 +682,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.skill_world_display
-
-	var_1_5[13030] = {
+	pg.base.skill_world_display[13030] = {
 		desc_get = "",
 		id = 13030,
 		desc = "【大型作战效果】\n自身所在编队的前两次战斗中，战斗开始时，自身编队每有一个北方联合或东煌阵营角色，自身炮击、命中属性提高$1，最高叠加4层【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -792,11 +736,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.skill_world_display
-
-	var_1_6[13080] = {
+	pg.base.skill_world_display[13080] = {
 		desc_get = "",
 		id = 13080,
 		desc = "【大型作战效果】\n自身所在编队的第1、3、5次战斗自身航空提升$1；第2、4、6次战斗自身受到的伤害降低$2【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -895,11 +835,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.skill_world_display
-
-	var_1_7[13120] = {
+	pg.base.skill_world_display[13120] = {
 		desc_get = "",
 		id = 13120,
 		desc = "【大型作战效果】\n战斗开始时，若队伍中存在轻航或正航，自身暴击率提高$1；主力舰队中每有一艘轻航或正航，提升自身对驱逐、轻巡造成的伤害$2，最高叠加三层；自身所在编队的前四次战斗，自身及队伍中的轻航、正航受到的伤害降低$3【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1043,11 +979,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.skill_world_display
-
-	var_1_8[13170] = {
+	pg.base.skill_world_display[13170] = {
 		desc_get = "",
 		id = 13170,
 		desc = "【大型作战效果】\n当自身受到伤害，或敌方进入防卫射程时，触发一轮特殊弹幕$1(威力依据技能等级)，触发后进入15秒冷却；关卡海域内其他旗舰为战列舰的编队进入该编队的第3、4场战斗时，若自身存活，战斗开始后20秒发动一轮支援弹幕$1【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1092,11 +1024,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.skill_world_display
-
-	var_1_9[13430] = {
+	pg.base.skill_world_display[13430] = {
 		desc_get = "",
 		id = 13430,
 		desc = "【大型作战效果】\n自身机库总容量扩充为3【该效果不受舰只破损状态影响】，战斗中自身所在编队的所有角色每$2秒回复1.0%耐久；关卡海域内其他编队进入战斗时，若自身存活，战斗开始20秒后，恢复该编队先锋舰队角色$1耐久",
@@ -1195,11 +1123,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.skill_world_display
-
-	var_1_10[13590] = {
+	pg.base.skill_world_display[13590] = {
 		desc_get = "",
 		id = 13590,
 		desc = "【大型作战效果】\n自身所在编队进入前2场战斗时，自身航空提升$1；战斗中每15秒，发动特殊弹幕进行一次攻击$2；海域内其他编队进入该编队的第3、4场战斗时，若自身存活，战斗开始后15秒发动一轮支援弹幕$2（弹幕威力依据航空属性及技能等级）【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1289,11 +1213,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.skill_world_display
-
-	var_1_11[13650] = {
+	pg.base.skill_world_display[13650] = {
 		desc_get = "",
 		id = 13650,
 		desc = "【大型作战效果】\n自身所在编队的前三次战斗中，自身受到的炮击伤害降低$1；战斗开始时，若队伍中存在至少2个重樱阵营角色，提高自身航速10【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1347,11 +1267,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.skill_world_display
-
-	var_1_12[13670] = {
+	pg.base.skill_world_display[13670] = {
 		desc_get = "",
 		id = 13670,
 		desc = "【大型作战效果】\n一场战斗中自身受到3次伤害后触发，自身受到的伤害降低$1，持续至战斗结束；战斗开始时，若队伍中存在至少2个重樱阵营角色，本场战斗强化全弹发射样式；自身所在编队的第2、4、6场战斗中，战斗开始60秒后回复自身$2耐久【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1450,11 +1366,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.skill_world_display
-
-	var_1_13[13840] = {
+	pg.base.skill_world_display[13840] = {
 		desc_get = "",
 		id = 13840,
 		desc = "【大型作战效果】\n自身所在编队的前三次战斗中，自身炮击提升$1，第四场战斗起自身防空提升$1【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1508,11 +1420,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.skill_world_display
-
-	var_1_14[14160] = {
+	pg.base.skill_world_display[14160] = {
 		desc_get = "",
 		id = 14160,
 		desc = "【大型作战效果】\n战斗中，自身剩余耐久高于60%时，自身炮击提升$1，被点燃时间减少3秒；在战斗中受到伤害，导致耐久低于50%时，8秒内回复自身9%耐久，每场战斗最多触发2次；在一次关卡出击中，自身所在编队的第三次战斗起，降低先锋舰队成员受到的伤害8%【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1566,11 +1474,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.skill_world_display
-
-	var_1_15[14330] = {
+	pg.base.skill_world_display[14330] = {
 		desc_get = "",
 		id = 14330,
 		desc = "【大型作战效果】\n进入战斗时，若队伍中存在其他撒丁帝国阵营角色，或自身装备穿甲弹主炮时触发，提高自身炮击属性$1；在一次关卡出击中，自身所在编队的前三次战斗，舰队成员受到的鱼雷伤害降低$2【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1669,11 +1573,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.skill_world_display
-
-	var_1_16[14440] = {
+	pg.base.skill_world_display[14440] = {
 		desc_get = "",
 		id = 14440,
 		desc = "【大型作战效果】\n自身所在编队的前三次战斗中，自身防空、机动提高$1，自身航速提高5；在一次关卡出击中，自身所在编队每击破一个敌方编队，战斗中自身炮击、雷击、装填提高$2，最高叠加3层【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -1772,11 +1672,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.skill_world_display
-
-	var_1_17[14630] = {
+	pg.base.skill_world_display[14630] = {
 		desc_get = "",
 		id = 14630,
 		desc = "【大型作战效果】\n本场战斗中由【天之骑士】技能触发的弹幕获得额外强化，并触发【空域辅助】技能效果：自身所在编队进入战斗时，若自身存活，提升队伍中所有正航、轻航的航空$1、装填$2，自身舰载机的第一轮空中支援加载时间缩短$3；关卡海域内其他编队进入战斗时，若自身存活，提升该队伍中所有正航、轻航的航空$4、装填$4（技能效果与【空域辅助】技能不叠加）",
@@ -1965,11 +1861,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.skill_world_display
-
-	var_1_18[14980] = {
+	pg.base.skill_world_display[14980] = {
 		desc_get = "",
 		id = 14980,
 		desc = "【大型作战效果】\n在一次关卡出击中，自身所在编队每击破一个敌方编队，战斗中自身造成的伤害提高$1（最多叠加4次):\n战斗中每击破一个敌舰，自身命中、机动属性上升$1（最多叠加4次）",
@@ -2023,11 +1915,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.skill_world_display
-
-	var_1_19[16190] = {
+	pg.base.skill_world_display[16190] = {
 		desc_get = "",
 		id = 16190,
 		desc = "【大型作战效果】\n战斗中，自身受到的伤害降低$1，自身炮击属性提高$2；进入战斗后，恢复自身$3耐久，自身在战斗中受到伤害，导致耐久首次低于50%后5秒，或自身参加作战超过60秒后，撤退并离开战斗【撤退条件不受舰只破损状态影响】",
@@ -2171,11 +2059,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.skill_world_display
-
-	var_1_20[16220] = {
+	pg.base.skill_world_display[16220] = {
 		desc_get = "",
 		id = 16220,
 		desc = "【大型作战效果】\n战斗开始时，若队伍中存在至少3个白鹰阵营角色，自身航空属性和命中属性提升$1；\n战斗开始后每18秒有$2概率触发一轮特殊弹幕$3(威力依据技能等级），并使自身被侦测条回复速率在接下来的5秒内提升2点/秒；\n关卡海域内其他编队进入该编队的前4场战斗时，若自身存活，队伍中的白鹰阵营主力角色炮击属性$4，并在战斗开始后20秒发动一轮支援弹幕$3【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -2355,11 +2239,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.skill_world_display
-
-	var_1_21[16450] = {
+	pg.base.skill_world_display[16450] = {
 		desc_get = "",
 		id = 16450,
 		desc = "【大型作战效果】\n自身发动空袭时有$1的概率使在场的所有敌方单位2秒内缓慢减速至航速为0，航速为0效果持续2秒，之后在2秒内缓慢恢复至原航速，并在6秒内降低一个敌方单位机动属性$2，该效果优先对精英目标生效；关卡海域内其他编队进入该编队的第1、2、3场战斗，旗舰第一轮主炮射击或第一轮发动空袭时消耗所有【怨仇】，2秒后根据消耗的【怨仇】层数获得以下效果：\n①3-5层，在场的敌方单位2秒内减速20%\n②6-8层，在场的敌方单位2秒内减速60%\n③9层，在场的敌方单位2秒内航速变为0【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -2458,11 +2338,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.skill_world_display
-
-	var_1_22[16510] = {
+	pg.base.skill_world_display[16510] = {
 		desc_get = "",
 		id = 16510,
 		desc = "【大型作战效果】\n战斗中，若队伍中的正航、轻航受到伤害导致耐久低于20%时，恢复该角色10%耐久，恢复效果每个角色一场战斗只能触发一次；自身所在编队进入战斗时，若自身存活，提升队伍中所有正航、轻航的航空$1、装填$2，自身舰载机的第一轮空中支援加载时间缩短$3；关卡海域内其他编队进入战斗时，若自身存活，提升该队伍中所有正航、轻航的航空$4、装填$4（技能效果与【空域辅助】技能不叠加）",
@@ -2651,11 +2527,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.skill_world_display
-
-	var_1_23[150760] = {
+	pg.base.skill_world_display[150760] = {
 		desc_get = "",
 		id = 150760,
 		desc = "【大型作战效果】\n自身第三武器栏装备轻巡主炮时，其索敌范围和射程提升至$1且发射的子弹无视护盾阻挡；自身装备特殊重巡主炮武器，该武器命中同一敌方单位8次，使其受到的伤害提高8%【该效果不受舰只破损状态影响】；战斗开始后每10秒触发一轮特殊弹幕$2（威力依据技能等级）",
@@ -2745,11 +2617,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.skill_world_display
-
-	var_1_24[19260] = {
+	pg.base.skill_world_display[19260] = {
 		desc_get = "",
 		id = 19260,
 		desc = "【大型作战效果】\n每次主炮射击均可独立瞄准【该效果不受舰只破损状态影响】，手动进行瞄准时，手动发射带来的跨射伤害增幅效果提高到$2；战斗开始后每20秒，有$1概率发射强力弹幕(威力随技能等级提升)",
@@ -2848,11 +2716,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.skill_world_display
-
-	var_1_25[19510] = {
+	pg.base.skill_world_display[19510] = {
 		desc_get = "",
 		id = 19510,
 		desc = "【大型作战效果】\n关卡出击中，自身所在编队每击破一个敌方舰队，自身防空、机动属性提高$1（最高叠加三层）；关卡海域内其他编队进入该编队的第1、2场战斗时，若自身存活，战斗开始后20秒发动一轮支援弹幕$2(威力依据技能等级)，进入该编队的第3、4场战斗时，若自身存活，战斗中撒丁帝国阵营角色受伤降低$3【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -2987,11 +2851,232 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.skill_world_display
-
-	var_1_26[19980] = {
+	pg.base.skill_world_display[18980] = {
+		desc_get = "",
+		id = 18980,
+		desc = "【大型作战效果】\n战斗开始时，自身主炮武器栏位武器效率提高10%，航速提高5点；战斗中，自身对航速低于自身的单位造成的伤害提高$5，自身主炮齐射时，最后一轮底座炮击会优先瞄准精英目标（人形单位）【该效果不受舰只破损状态影响】；战斗开始后每8秒触发，为自己叠加一层【蓄势】，每有一层【蓄势】，自身防空属性提高$1，【蓄势】最多叠加三层；战斗中，主炮开火时消耗自身所有【蓄势】并触发一轮特殊弹幕$2（威力依据技能等级），每消耗一层【蓄势】，自身炮击属性提高$1，持续5秒，并根据消耗的【蓄势】层数在接下来的5秒依次获得以下效果：①大于等于一层：自身主炮暴击率提高$3；②大于等于二层：自身造成的伤害提高$4；③三层：强化本轮开火触发的特殊弹幕，自身造成的暴击伤害提高$3",
+		desc_get_add = {
+			{
+				"1.5%",
+				"6.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.5%",
+					"+0.5%"
+				},
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_world_display[19980] = {
 		desc_get = "",
 		id = 19980,
 		desc = "【大型作战效果】\n自身战斗中主炮齐射时，最后一轮底座炮击会优先瞄准精英目标（人形单位）【该效果不受舰只破损状态影响】；战斗开始后每8秒触发，为自己叠加一层【蓄势】，每有一层【蓄势】，自身防空属性提高$1，【蓄势】最多叠加三层；战斗中，主炮开火时消耗自身所有【蓄势】并触发一轮特殊弹幕$2（威力依据技能等级），每消耗一层【蓄势】，自身炮击属性提高$1，持续5秒，并根据消耗的【蓄势】层数在接下来的5秒依次获得以下效果：①大于等于一层：自身主炮暴击率提高$3；②大于等于二层：自身造成的伤害提高$4；③三层：强化本轮开火触发的特殊弹幕，自身造成的暴击伤害提高$3",
@@ -3171,11 +3256,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.skill_world_display
-
-	var_1_27[105010] = {
+	pg.base.skill_world_display[105010] = {
 		desc_get = "",
 		id = 105010,
 		desc = "【大型作战效果】\n三号武器栏位变更为轰炸机栏位并统一将其武器外观替换为「2.25马赫狐笋」，由于不熟悉召唤方法，空袭需要的整备时间增加了100%【该效果不受舰只破损状态影响】；战斗中，每20秒额外召唤一轮场外航空支援$1(支援威力依据雷击属性和技能等级)",
@@ -3220,11 +3301,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.skill_world_display
-
-	var_1_28[105020] = {
+	pg.base.skill_world_display[105020] = {
 		desc_get = "",
 		id = 105020,
 		desc = "【大型作战效果】\n战斗开始时，提升自身炮击属性$1；自身所在编队击破3个敌方编队后，额外提升自身雷击属性$2【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -3323,11 +3400,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.skill_world_display
-
-	var_1_29[1019260] = {
+	pg.base.skill_world_display[1019260] = {
 		desc_get = "",
 		id = 1019260,
 		desc = "【大型作战效果】\n战斗中，自身炮击、命中属性提高$1，暴击率提高$2，每次主炮射击均可独立瞄准【该效果不受舰只破损状态影响】，手动进行瞄准时，手动发射带来的跨射伤害增幅效果提高到$4；战斗开始时，及之后每15秒，有$3概率发射强力弹幕(威力随技能等级提升)",
@@ -3516,11 +3589,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.skill_world_display
-
-	var_1_30[152370] = {
+	pg.base.skill_world_display[152370] = {
 		desc_get = "",
 		id = 152370,
 		desc = "【大型作战效果】\n大型作战中作为潜艇支援被呼叫时，消耗行动力减少$3，潜艇部队弹药量+1；进入战斗后，自身雷击、装填属性提高$1；战斗中，自身鱼雷武器命中敌人时，有$2概率为命中的敌人附加特殊进水效果（进水效果持续15秒，每3秒结算一次，威力依据雷击属性），U-2501对处于进水状态的角色造成的伤害提高$1；潜艇编队中其他队友鱼雷武器命中敌人时有$2概率触发，使自身命中属性提高1%，持续至自身从战场撤退，效果最多叠加10层，叠加至满层时回复自身最大耐久$1",
@@ -3664,11 +3733,7 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.skill_world_display
-
-	var_1_31[22] = {
+	pg.base.skill_world_display[22] = {
 		desc_get = "",
 		id = 800790,
 		desc = "【大型作战效果】\n大型作战中作为潜艇支援被呼叫时，消耗行动力减少$1；战斗开始时，若潜艇舰队有其他潜艇角色，自身雷击提高$2；氧气不足上浮时发射一轮鱼雷弹幕$3（威力依据技能等级)并回复自身500点耐久",
@@ -3799,341 +3864,217 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.skill_world_display
-
-	var_1_32[800121] = {
+	pg.base.skill_world_display[800121] = {
 		desc_get = "",
 		id = 800121,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，先锋舰队成员造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.skill_world_display
-
-	var_1_33[800122] = {
+	pg.base.skill_world_display[800122] = {
 		desc_get = "",
 		id = 800122,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，先锋舰队成员造成的所有伤害提高5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.skill_world_display
-
-	var_1_34[800451] = {
+	pg.base.skill_world_display[800451] = {
 		desc_get = "",
 		id = 800451,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，META角色受到的伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.skill_world_display
-
-	var_1_35[800452] = {
+	pg.base.skill_world_display[800452] = {
 		desc_get = "",
 		id = 800452,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，META角色受到的伤害降低5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.skill_world_display
-
-	var_1_36[19] = {
+	pg.base.skill_world_display[19] = {
 		desc_get = "",
 		id = 800531,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.skill_world_display
-
-	var_1_37[20] = {
+	pg.base.skill_world_display[20] = {
 		desc_get = "",
 		id = 800532,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.skill_world_display
-
-	var_1_38[800601] = {
+	pg.base.skill_world_display[800601] = {
 		desc_get = "",
 		id = 800601,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.skill_world_display
-
-	var_1_39[800602] = {
+	pg.base.skill_world_display[800602] = {
 		desc_get = "",
 		id = 800602,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.skill_world_display
-
-	var_1_40[800631] = {
+	pg.base.skill_world_display[800631] = {
 		desc_get = "",
 		id = 800631,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.skill_world_display
-
-	var_1_41[800632] = {
+	pg.base.skill_world_display[800632] = {
 		desc_get = "",
 		id = 800632,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.skill_world_display
-
-	var_1_42[800701] = {
+	pg.base.skill_world_display[800701] = {
 		desc_get = "",
 		id = 800701,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.skill_world_display
-
-	var_1_43[800702] = {
+	pg.base.skill_world_display[800702] = {
 		desc_get = "",
 		id = 800702,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.skill_world_display
-
-	var_1_44[3] = {
+	pg.base.skill_world_display[3] = {
 		desc_get = "",
 		id = 800771,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.skill_world_display
-
-	var_1_45[4] = {
+	pg.base.skill_world_display[4] = {
 		desc_get = "",
 		id = 800772,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.skill_world_display
-
-	var_1_46[800811] = {
+	pg.base.skill_world_display[800811] = {
 		desc_get = "",
 		id = 800811,
 		desc = "【大型作战效果】\n进入战斗时，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.skill_world_display
-
-	var_1_47[800812] = {
+	pg.base.skill_world_display[800812] = {
 		desc_get = "",
 		id = 800812,
 		desc = "【大型作战效果】\n进入战斗时，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.skill_world_display
-
-	var_1_48[800881] = {
+	pg.base.skill_world_display[800881] = {
 		desc_get = "",
 		id = 800881,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.skill_world_display
-
-	var_1_49[800882] = {
+	pg.base.skill_world_display[800882] = {
 		desc_get = "",
 		id = 800882,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.skill_world_display
-
-	var_1_50[15] = {
+	pg.base.skill_world_display[15] = {
 		desc_get = "",
 		id = 800911,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.skill_world_display
-
-	var_1_51[16] = {
+	pg.base.skill_world_display[16] = {
 		desc_get = "",
 		id = 800912,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.skill_world_display
-
-	var_1_52[800951] = {
+	pg.base.skill_world_display[800951] = {
 		desc_get = "",
 		id = 800951,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，队伍中META角色受到的所有伤害降低5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.skill_world_display
-
-	var_1_53[800952] = {
+	pg.base.skill_world_display[800952] = {
 		desc_get = "",
 		id = 800952,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，队伍中META角色受到的所有伤害降低8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.skill_world_display
-
-	var_1_54[27] = {
+	pg.base.skill_world_display[27] = {
 		desc_get = "",
 		id = 801051,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.skill_world_display
-
-	var_1_55[28] = {
+	pg.base.skill_world_display[28] = {
 		desc_get = "",
 		id = 801052,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.skill_world_display
-
-	var_1_56[801081] = {
+	pg.base.skill_world_display[801081] = {
 		desc_get = "",
 		id = 801081,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.skill_world_display
-
-	var_1_57[801082] = {
+	pg.base.skill_world_display[801082] = {
 		desc_get = "",
 		id = 801082,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.skill_world_display
-
-	var_1_58[801121] = {
+	pg.base.skill_world_display[801121] = {
 		desc_get = "",
 		id = 801121,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，自身处于【旧日荣光】状态时，特殊弹幕强化；与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.skill_world_display
-
-	var_1_59[801122] = {
+	pg.base.skill_world_display[801122] = {
 		desc_get = "",
 		id = 801122,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，自身处于【旧日荣光】状态时，特殊弹幕强化；与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.skill_world_display
-
-	var_1_60[801191] = {
+	pg.base.skill_world_display[801191] = {
 		desc_get = "",
 		id = 801191,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.skill_world_display
-
-	var_1_61[801192] = {
+	pg.base.skill_world_display[801192] = {
 		desc_get = "",
 		id = 801192,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.skill_world_display
-
-	var_1_62[801250] = {
+	pg.base.skill_world_display[801250] = {
 		desc_get = "",
 		id = 801250,
 		desc = "【大型作战效果】\n战斗开始后，自身炮击属性提高$1；在一次关卡出击中，自身所在编队每击破一个敌方编队，战斗中自身受到的伤害降低$2（最多叠加3次）；自身受到弹药匮乏状态的影响降低(弹药匮乏状态时造成的伤害提高$3)【大型作战内，战斗次数在开启新的海域，或重新编队时清零】",
@@ -4277,371 +4218,238 @@ var_0_3.base.skill_world_display = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.skill_world_display
-
-	var_1_63[801261] = {
+	pg.base.skill_world_display[801261] = {
 		desc_get = "",
 		id = 801261,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.skill_world_display
-
-	var_1_64[801262] = {
+	pg.base.skill_world_display[801262] = {
 		desc_get = "",
 		id = 801262,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.skill_world_display
-
-	var_1_65[21] = {
+	pg.base.skill_world_display[21] = {
 		desc_get = "",
 		id = 801301,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发破敌之炬·威奇塔I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.skill_world_display
-
-	var_1_66[22] = {
+	pg.base.skill_world_display[22] = {
 		desc_get = "",
 		id = 801302,
 		desc = "【大型作战效果】\n战斗中若自身耐久大于50%，主炮每进行8次攻击，扣减自身当前5%耐久值，触发破敌之炬·威奇塔II，并提升该次弹幕20%暴击率；战斗中若自身耐久不大于50%，主炮每进行4次攻击，触发破敌之炬·威奇塔II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.skill_world_display
-
-	var_1_67[801341] = {
+	pg.base.skill_world_display[801341] = {
 		desc_get = "",
 		id = 801341,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.skill_world_display
-
-	var_1_68[801342] = {
+	pg.base.skill_world_display[801342] = {
 		desc_get = "",
 		id = 801342,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.skill_world_display
-
-	var_1_69[25] = {
+	pg.base.skill_world_display[25] = {
 		desc_get = "",
 		id = 801561,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.skill_world_display
-
-	var_1_70[26] = {
+	pg.base.skill_world_display[26] = {
 		desc_get = "",
 		id = 801562,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，被特殊弹幕命中的敌方单位会进入【束缚之焰】状态，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.skill_world_display
-
-	var_1_71[801591] = {
+	pg.base.skill_world_display[801591] = {
 		desc_get = "",
 		id = 801591,
 		desc = "【大型作战效果】\n主炮每进行9次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.skill_world_display
-
-	var_1_72[801592] = {
+	pg.base.skill_world_display[801592] = {
 		desc_get = "",
 		id = 801592,
 		desc = "【大型作战效果】\n主炮每进行6次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.skill_world_display
-
-	var_1_73[801741] = {
+	pg.base.skill_world_display[801741] = {
 		desc_get = "",
 		id = 801741,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.skill_world_display
-
-	var_1_74[801742] = {
+	pg.base.skill_world_display[801742] = {
 		desc_get = "",
 		id = 801742,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的伤害提高6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.skill_world_display
-
-	var_1_75[801831] = {
+	pg.base.skill_world_display[801831] = {
 		desc_get = "",
 		id = 801831,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身暴击伤害提高5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.skill_world_display
-
-	var_1_76[801832] = {
+	pg.base.skill_world_display[801832] = {
 		desc_get = "",
 		id = 801832,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕，与精英舰队或BOSS舰队交战时，自身暴击伤害提高8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.skill_world_display
-
-	var_1_77[801901] = {
+	pg.base.skill_world_display[801901] = {
 		desc_get = "",
 		id = 801901,
 		desc = "【大型作战效果】\n主炮每进行24次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.skill_world_display
-
-	var_1_78[801902] = {
+	pg.base.skill_world_display[801902] = {
 		desc_get = "",
 		id = 801902,
 		desc = "【大型作战效果】\n主炮每进行16次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.skill_world_display
-
-	var_1_79[11] = {
+	pg.base.skill_world_display[11] = {
 		desc_get = "",
 		id = 801931,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.skill_world_display
-
-	var_1_80[12] = {
+	pg.base.skill_world_display[12] = {
 		desc_get = "",
 		id = 801932,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.skill_world_display
-
-	var_1_81[801961] = {
+	pg.base.skill_world_display[801961] = {
 		desc_get = "",
 		id = 801961,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.skill_world_display
-
-	var_1_82[801962] = {
+	pg.base.skill_world_display[801962] = {
 		desc_get = "",
 		id = 801962,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.skill_world_display
-
-	var_1_83[802041] = {
+	pg.base.skill_world_display[802041] = {
 		desc_get = "",
 		id = 802041,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.skill_world_display
-
-	var_1_84[802042] = {
+	pg.base.skill_world_display[802042] = {
 		desc_get = "",
 		id = 802042,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.skill_world_display
-
-	var_1_85[23] = {
+	pg.base.skill_world_display[23] = {
 		desc_get = "",
 		id = 802071,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.skill_world_display
-
-	var_1_86[24] = {
+	pg.base.skill_world_display[24] = {
 		desc_get = "",
 		id = 802072,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.skill_world_display
-
-	var_1_87[802171] = {
+	pg.base.skill_world_display[802171] = {
 		desc_get = "",
 		id = 802171,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.skill_world_display
-
-	var_1_88[802172] = {
+	pg.base.skill_world_display[802172] = {
 		desc_get = "",
 		id = 802172,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.skill_world_display
-
-	var_1_89[802141] = {
+	pg.base.skill_world_display[802141] = {
 		desc_get = "",
 		id = 802141,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高3%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.skill_world_display
-
-	var_1_90[802142] = {
+	pg.base.skill_world_display[802142] = {
 		desc_get = "",
 		id = 802142,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高8%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.skill_world_display
-
-	var_1_91[25] = {
+	pg.base.skill_world_display[25] = {
 		desc_get = "",
 		id = 802201,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.skill_world_display
-
-	var_1_92[26] = {
+	pg.base.skill_world_display[26] = {
 		desc_get = "",
 		id = 802202,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身造成的所有伤害提高5%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.skill_world_display
-
-	var_1_93[802271] = {
+	pg.base.skill_world_display[802271] = {
 		desc_get = "",
 		id = 802271,
 		desc = "【大型作战效果】\n主炮每进行15次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.skill_world_display
-
-	var_1_94[802272] = {
+	pg.base.skill_world_display[802272] = {
 		desc_get = "",
 		id = 802272,
 		desc = "【大型作战效果】\n主炮每进行10次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.skill_world_display
-
-	var_1_95[802301] = {
+	pg.base.skill_world_display[802301] = {
 		desc_get = "",
 		id = 802301,
 		desc = "【大型作战效果】\n主炮每进行12次攻击，触发一轮特殊弹幕I，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低2%",
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_95
-	var_1_95.base.skill_world_display[802302] = {
+	pg.base.skill_world_display[802302] = {
 		desc_get = "",
 		id = 802302,
 		desc = "【大型作战效果】\n主炮每进行8次攻击，触发一轮特殊弹幕II，与精英舰队或BOSS舰队交战时，自身受到的所有伤害降低6%",

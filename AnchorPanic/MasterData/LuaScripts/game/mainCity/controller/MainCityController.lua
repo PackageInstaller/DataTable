@@ -27,7 +27,13 @@ end
 
 --游戏开始的回调
 function gameStartCallBack(self)
-    self:loadScene()
+    local isShowBigHostel, hostel_data = bigHostel.BigHostelManager:getMainUIShow()
+    if not isShowBigHostel or subPack.SubDownLoadController:isExistNeedUpdate() then
+        self:loadScene()
+    else
+        bigHostel.BigHostelManager:setHostelData({model_id = hostel_data.model_id, heroTid = hostel_data.heroTid, main_type = BigHostelConst.SceneUI_Type.MIANUI})
+        GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.BIG_HOSTEL)
+    end
 end
 
 --模块间事件监听
@@ -54,6 +60,17 @@ function loadScene(self)
     local sceneRo = fight.SceneManager:getSceneData(self:getMapID())
     if sceneRo then
         StorageUtil:saveString0('pre_scene_name', UrlManager:getScenePath(sceneRo:getScene()))
+    end
+end
+
+function preloadCall(self, callFun)
+    local isShowBigHostel, hostel_data = bigHostel.BigHostelManager:getMainUIShow()
+    if not isShowBigHostel then
+        if callFun then
+            callFun()
+        end
+    else
+        GameDispatcher:dispatchEvent(EventName.OPEN_BIGHOSTEL_SCENE, {model_id = hostel_data.model_id, heroTid = hostel_data.heroTid, main_type = BigHostelConst.SceneUI_Type.MIANUI})
     end
 end
 
@@ -109,12 +126,11 @@ function enterMap(self)
     -- GameDispatcher:dispatchEvent(EventName.SHOW_MAIN_UI, { isShowTween = true,isFirstCV = true })
     mainCity.MainCityManager.isLoadCompleted = true
 
-
     -- 等待主场景加载完成后需要打开的uicode
     local waitOpenUIcode = mainui.MainUIManager:getWaitOpenUIcode()
     if waitOpenUIcode > 0 then
         UIFactory:closeForcibly()
-        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = waitOpenUIcode })
+        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = waitOpenUIcode})
         mainui.MainUIManager:setWaitOpenUIcode(0)
     end
 
@@ -162,9 +178,9 @@ function clearMap(self)
     --     self.videoPlayer = nil
     -- end
 end
-function playSceneMusic(self)
-    -- 主场景音乐自己管理
-end
+-- function playSceneMusic(self)
+--     -- 主场景音乐自己管理
+-- end
 
 -- 播放场景音乐,
 function playMainCityMusic(self)
@@ -231,12 +247,15 @@ function onUIClose(self, args)
     end
 
     self.closeTimeSn = LoopManager:addFrame(5, 1, self, function()
+        if bigHostel.BigHostelManager:getMainUIShow() and bigHostel.BigHostelSceneController:checkSceneActive() then
+            GameDispatcher:dispatchEvent(EventName.SHOW_MAIN_UI, {isShowTween = true, isFirstCV = false})
+            return
+        end
         if ((args.panelType == 1 or args.panelType == 3) and args.panelName ~= "login.DebugLoginView" and args.panelName ~= "login.LoginView") or args.panelName == "guide.GuidePanel"
-        then
+            then
             self:showMainScene()
         end
     end)
-
 
     -- LoopManager:removeFrameByIndex(self.showMainuiFrameSn)
     -- self.showMainuiFrameSn = LoopManager:addFrame(1, 1, self, function()
@@ -251,6 +270,9 @@ function onUIClose(self, args)
 end
 
 function showMainScene(self, isChange)
+    if bigHostel.BigHostelManager:getMainUIShow() then
+        return
+    end
     if self.m_scene then
         self.m_scene:setSceneActive(true, isChange)
     end
@@ -306,11 +328,13 @@ function onShowBoardHeroChangeHandler(self)
     if (not isAllClose) then
         return
     end
-    self:onShowBoardHeroInitHandler(true)
+    -- local bool = not mainui.MainUIManager.isDragSpine
+    self:onShowBoardHeroInitHandler(false)
 end
 
 -- 刷新主场景模型
 function refreshModel(self, isChange)
+    mainui.MainUIManager.isDragSpine = nil
     if isChange then
         mainui.MainUIManager:setIsShowDynamic(0)-- 切换模型，默认显示模型
     end

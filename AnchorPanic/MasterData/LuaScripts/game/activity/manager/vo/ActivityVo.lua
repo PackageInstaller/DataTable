@@ -25,6 +25,9 @@ end
 -- 是否活动开放状态
 function isOpen(self)
     local clientTime = GameManager:getClientTime()
+    if clientTime == nil then
+        return false
+    end
     if clientTime >= self.startTime and clientTime < self.overTime then
         return true
     end

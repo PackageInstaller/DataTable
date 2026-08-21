@@ -1,25 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("OtherworldMapMediator", import("view.activity.BossSingle.BossSingleMediatorTemplate"))
 
-local var_0_0 = "OtherworldMapMediator"
+var_0_0.ON_EVENT_TRIGGER = "OtherworldMapMediator.ON_EVENT_TRIGGER"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.BossSingle.BossSingleMediatorTemplate"))
-
-var_0_1.ON_EVENT_TRIGGER = "OtherworldMapMediator.ON_EVENT_TRIGGER"
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	arg_1_0:BindBattleEvents()
-
-	local var_1_0 = arg_1_0
-
-	arg_1_0.bind(var_1_0, var_0_1.ON_EVENT_TRIGGER, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.SINGLE_EVENT_TRIGGER, {
+	arg_1_0:bind(var_0_0.ON_EVENT_TRIGGER, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.SINGLE_EVENT_TRIGGER, {
 			actId = arg_2_1.actId,
 			eventId = arg_2_1.eventId
 		})
@@ -27,233 +13,125 @@ function var_0_1.register(arg_1_0)
 		return
 	end)
 
-	getProxy = var_1
-	ActivityProxy = var_1_0
+	local var_1_0 = getProxy(ActivityProxy)
+	local var_1_1 = var_1_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_EVENT_SINGLE)
 
-	local var_1_1 = var_1(var_1_0)
-	local var_1_2 = var_1.getActivityByType
-
-	ActivityConst = var_5
-
-	if var_1_2(var_1_1, var_5.ACTIVITY_TYPE_EVENT_SINGLE) and not var_2:isEnd() then
-		local var_1_3 = arg_1_0.viewComponent
-
-		var_3.SetEventAct(var_1_3, var_2)
+	if var_1_1 and not var_1_1:isEnd() then
+		arg_1_0.viewComponent:SetEventAct(var_1_1)
 	else
-		local var_1_4 = arg_1_0.viewComponent
-
-		var_3.SetEventAct(var_1_4, nil)
+		arg_1_0.viewComponent:SetEventAct(nil)
 	end
 
-	local var_1_5 = var_1
-	local var_1_6 = var_1.getActivityByType
+	local var_1_2 = var_1_0:getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	ActivityConst = var_1_10006
-
-	if not var_1_6(var_1_5, var_1_10006.ACTIVITY_TYPE_LOTTERY) then
-		assert = var_1_1
-
-		var_1_1(nil, "not exist lottery act")
+	if not var_1_2 then
+		assert(nil, "not exist lottery act")
 
 		return
 	end
 
-	local var_1_7 = var_3
-	local var_1_8 = var_3.getConfig(var_1_7, "config_data")[1]
-	local var_1_9 = arg_1_0.contextData
-
-	pg = var_1_7
-	var_1_9.resId = var_1_7.activity_random_award_template[var_1_8].resource_type
+	arg_1_0.contextData.resId = pg.activity_random_award_template[var_1_2:getConfig("config_data")[1]].resource_type
 
 	return
 end
 
-function var_0_1.initNotificationHandleDic(arg_3_0)
-	local var_3_0 = {}
+function var_0_0.initNotificationHandleDic(arg_3_0)
+	arg_3_0.handleDic = {
+		[GAME.BEGIN_STAGE_DONE] = function(arg_4_0, arg_4_1)
+			arg_4_0.contextData.editFleet = nil
 
-	GAME = var_1_10002
-	var_3_0[var_1_10002.BEGIN_STAGE_DONE] = function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_4_1:getBody()
-		local var_4_1 = arg_4_0.contextData
+			if not getProxy(ContextProxy):getContextByMediator(PreCombatMediator) then
+				arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, (arg_4_1:getBody()))
+			end
 
-		var_4_1.editFleet = nil
-		getProxy = var_4_1
-		ContextProxy = var_2_10005
-
-		local var_4_2 = var_4_1(var_2_10005)
-		local var_4_3 = var_3.getContextByMediator
-
-		PreCombatMediator = var_2_10007
-
-		if not var_4_3(var_4_2, var_2_10007) then
-			local var_4_4 = arg_4_0
-			local var_4_5 = arg_4_0.sendNotification
-
-			GAME = var_2_10007
-
-			local var_4_6 = var_2_10007.GO_SCENE
-
-			SCENE = var_2_10008
-
-			var_4_5(var_4_4, var_4_6, var_2_10008.COMBATLOAD, var_4_0)
-		end
-
-		return
-	end
-	GAME = var_2
-	var_3_0[var_2.COMMANDER_ACTIVITY_FORMATION_OP_DONE] = function(arg_5_0, arg_5_1)
-		local var_5_0 = arg_5_1:getBody()
-
-		getProxy = var_2_10003
-		FleetProxy = var_2_10005
-
-		local var_5_1 = var_2_10003(var_2_10005)
-		local var_5_2 = var_3.getActivityFleets(var_5_1)[var_5_0.actId]
-
-		arg_5_0.contextData.actFleets = var_5_2
-
-		local var_5_3 = arg_5_0.viewComponent
-
-		var_4.updateEditPanel(var_5_3)
-
-		local var_5_4 = arg_5_0.viewComponent
-
-		var_4.updateCommanderFleet(var_5_4, var_5_2[var_5_0.fleetId])
-
-		return
-	end
-	CommanderProxy = var_2
-	var_3_0[var_2.PREFAB_FLEET_UPDATE] = function(arg_6_0, arg_6_1)
-		local var_6_0 = arg_6_1:getBody()
-
-		getProxy = var_2_10003
-		CommanderProxy = var_2_10005
-
-		local var_6_1 = var_2_10003(var_2_10005)
-		local var_6_2 = var_3.getPrefabFleet(var_6_1)
-		local var_6_3 = arg_6_0.viewComponent
-
-		var_4.setCommanderPrefabs(var_6_3, var_6_2)
-
-		local var_6_4 = arg_6_0.viewComponent
-
-		var_4.updateCommanderPrefab(var_6_4)
-
-		return
-	end
-	PlayerProxy = var_2
-	var_3_0[var_2.UPDATED] = function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_7_0.viewComponent
-
-		var_2.UpdateRes(var_7_0)
-
-		local var_7_1 = arg_7_0.viewComponent
-
-		var_2.UpdateWangduBtn(var_7_1)
-
-		return
-	end
-	ActivityProxy = var_2
-	var_3_0[var_2.ACTIVITY_UPDATED] = function(arg_8_0, arg_8_1)
-		local var_8_0 = arg_8_1
-
-		if not arg_8_1.getBody(var_8_0) or var_2:isEnd() then
 			return
-		end
+		end,
+		[GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE] = function(arg_5_0, arg_5_1)
+			local var_5_0 = arg_5_1:getBody()
+			local var_5_1 = getProxy(FleetProxy):getActivityFleets()[var_5_0.actId]
 
-		local var_8_1 = var_2.id
+			arg_5_0.contextData.actFleets = var_5_1
 
-		ActivityConst = var_8_0
+			arg_5_0.viewComponent:updateEditPanel()
+			arg_5_0.viewComponent:updateCommanderFleet(var_5_1[var_5_0.fleetId])
 
-		if var_8_1 == var_8_0.OTHER_WORLD_TERMINAL_PT_ID then
-			local var_8_2 = arg_8_0.viewComponent
+			return
+		end,
+		[CommanderProxy.PREFAB_FLEET_UPDATE] = function(arg_6_0, arg_6_1)
+			local var_6_0 = arg_6_1:getBody()
 
-			var_3.UpdateTerminalTip(var_8_2)
-		end
+			arg_6_0.viewComponent:setCommanderPrefabs((getProxy(CommanderProxy):getPrefabFleet()))
+			arg_6_0.viewComponent:updateCommanderPrefab()
 
-		return
-	end
-	GAME = var_2
-	var_3_0[var_2.SINGLE_EVENT_TRIGGER_DONE] = function(arg_9_0, arg_9_1)
-		local var_9_0 = arg_9_1:getBody()
-		local var_9_1 = {}
+			return
+		end,
+		[PlayerProxy.UPDATED] = function(arg_7_0, arg_7_1)
+			arg_7_0.viewComponent:UpdateRes()
+			arg_7_0.viewComponent:UpdateWangduBtn()
 
-		if #var_9_0.awards > 0 then
-			table = var_4
+			return
+		end,
+		[ActivityProxy.ACTIVITY_UPDATED] = function(arg_8_0, arg_8_1)
+			local var_8_0 = arg_8_1:getBody()
 
-			var_4.insert(var_9_1, function(arg_10_0)
-				local var_10_0 = arg_9_0.viewComponent
-				local var_10_1 = var_1.emit
+			if not var_8_0 or var_8_0:isEnd() then
+				return
+			end
 
-				BaseUI = var_3_10004
+			if var_8_0.id == ActivityConst.OTHER_WORLD_TERMINAL_PT_ID then
+				arg_8_0.viewComponent:UpdateTerminalTip()
+			end
 
-				var_10_1(var_10_0, var_3_10004.ON_ACHIEVE, var_9_0.awards, arg_10_0)
+			return
+		end,
+		[GAME.SINGLE_EVENT_TRIGGER_DONE] = function(arg_9_0, arg_9_1)
+			if #arg_9_1:getBody().awards > 0 then
+				table.insert({}, function(arg_10_0)
+					arg_9_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_0.awards, arg_10_0)
+
+					return
+				end)
+			end
+
+			seriesAsync({}, function()
+				arg_9_0.viewComponent:SetEventAct(var_0.activity)
+				arg_9_0.viewComponent:UpdateEvents(var_0.eventId)
 
 				return
 			end)
-		end
-
-		seriesAsync = var_4
-
-		var_4(var_9_1, function()
-			local var_11_0 = arg_9_0.viewComponent
-
-			var_0.SetEventAct(var_11_0, var_9_0.activity)
-
-			local var_11_1 = arg_9_0.viewComponent
-
-			var_0.UpdateEvents(var_11_1, var_9_0.eventId)
 
 			return
-		end)
+		end,
+		[GAME.SINGLE_EVENT_REFRESH_DONE] = function(arg_12_0, arg_12_1)
+			arg_12_0.viewComponent:SetEventAct(arg_12_1:getBody().activity)
+			arg_12_0.viewComponent:UpdateEvents()
 
-		return
-	end
-	GAME = var_2
-	var_3_0[var_2.SINGLE_EVENT_REFRESH_DONE] = function(arg_12_0, arg_12_1)
-		local var_12_0 = arg_12_1:getBody()
-		local var_12_1 = arg_12_0.viewComponent
+			return
+		end,
+		[GAME.ACT_NEW_PT_DONE] = function(arg_13_0, arg_13_1)
+			local var_13_0 = arg_13_1:getBody()
 
-		var_3.SetEventAct(var_12_1, var_12_0.activity)
+			arg_13_0.viewComponent:UpdateTerminalTip()
 
-		local var_12_2 = arg_12_0.viewComponent
+			return
+		end,
+		[AvatarFrameProxy.FRAME_TASK_UPDATED] = function(arg_14_0, arg_14_1)
+			arg_14_0.viewComponent:UpdateWangduBtn()
 
-		var_3.UpdateEvents(var_12_2)
+			return
+		end,
+		[AvatarFrameProxy.FRAME_TASK_TIME_OUT] = function(arg_15_0, arg_15_1)
+			arg_15_0.viewComponent:UpdateWangduBtn()
 
-		return
-	end
-	GAME = var_2
-	var_3_0[var_2.ACT_NEW_PT_DONE] = function(arg_13_0, arg_13_1)
-		local var_13_0 = arg_13_1:getBody()
-		local var_13_1 = arg_13_0.viewComponent
-
-		var_3.UpdateTerminalTip(var_13_1)
-
-		return
-	end
-	AvatarFrameProxy = var_2
-	var_3_0[var_2.FRAME_TASK_UPDATED] = function(arg_14_0, arg_14_1)
-		local var_14_0 = arg_14_0.viewComponent
-
-		var_2.UpdateWangduBtn(var_14_0)
-
-		return
-	end
-	AvatarFrameProxy = var_2
-	var_3_0[var_2.FRAME_TASK_TIME_OUT] = function(arg_15_0, arg_15_1)
-		local var_15_0 = arg_15_0.viewComponent
-
-		var_2.UpdateWangduBtn(var_15_0)
-
-		return
-	end
-	arg_3_0.handleDic = var_3_0
+			return
+		end
+	}
 
 	return
 end
 
-function var_0_1.remove(arg_16_0)
+function var_0_0.remove(arg_16_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -49,6 +49,7 @@ end
 function active(self, args)
     super.active(self, args)
     self.mLogInfo = args.log
+    self.isTop = args.isTop
     self.isCanClose = false
 
     self:showPanel()
@@ -98,6 +99,13 @@ function showPanel(self)
     self.mTxtCurPoint2.text = _TT(149155) .. self.mLogInfo.enemy_day_point
     self.mTxtPoint.text = _TT(149192,self.mLogInfo.old_point,self.mLogInfo.add_point) 
     self.mTxtRank.text = _TT(149159,self.mLogInfo.rank)
+
+
+    -- self.mTxtCurPoint.gameObject:SetActive(not self.isTop)
+    -- self.mTxtCurPoint2.gameObject:SetActive(not self.isTop)
+    self.mTxtPoint.gameObject:SetActive(not self.isTop)
+
+    self.mTxtRank.gameObject:SetActive(not self.isTop)
 end
 
 return _M

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_ik_touch") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_ik_touch"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_ik_touch = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_ik_touch
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_ik_touch = rawget(pg, "dorm3d_ik_touch") or setmetatable({
+	__name = "dorm3d_ik_touch"
+}, confNEO)
+pg.dorm3d_ik_touch.all = {
 	1002101,
 	1003101,
 	1001301,
@@ -61,25 +38,11 @@ var_0_3.all = {
 	7001002,
 	7001003
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_ik_touch = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_ik_touch = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_ik_touch
-
-	var_1_0[1002101] = {
+	pg.base.dorm3d_ik_touch[1002101] = {
 		hold_time = 0,
 		body = "Chest",
 		tip_offset = "",
@@ -96,11 +59,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_ik_touch
-
-	var_1_1[1003101] = {
+	pg.base.dorm3d_ik_touch[1003101] = {
 		hold_time = 0,
 		body = "Head",
 		tip_offset = "",
@@ -117,11 +76,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_ik_touch
-
-	var_1_2[1001301] = {
+	pg.base.dorm3d_ik_touch[1001301] = {
 		hold_time = 0,
 		body = "Head",
 		tip_offset = "",
@@ -138,11 +93,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_ik_touch
-
-	var_1_3[1001302] = {
+	pg.base.dorm3d_ik_touch[1001302] = {
 		hold_time = 0,
 		body = "Chest",
 		tip_offset = "",
@@ -159,11 +110,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_ik_touch
-
-	var_1_4[1004101] = {
+	pg.base.dorm3d_ik_touch[1004101] = {
 		hold_time = 0,
 		body = "LeftHand",
 		tip_offset = "",
@@ -180,11 +127,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_ik_touch
-
-	var_1_5[1007101] = {
+	pg.base.dorm3d_ik_touch[1007101] = {
 		hold_time = 0,
 		body = "LeftFoot",
 		tip_offset = "",
@@ -201,11 +144,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_ik_touch
-
-	var_1_6[1002801] = {
+	pg.base.dorm3d_ik_touch[1002801] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -217,11 +156,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 1002801
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_ik_touch
-
-	var_1_7[2002501] = {
+	pg.base.dorm3d_ik_touch[2002501] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -233,11 +168,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 2002501
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_ik_touch
-
-	var_1_8[2002502] = {
+	pg.base.dorm3d_ik_touch[2002502] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -249,11 +180,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 2002502
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_ik_touch
-
-	var_1_9[3003321] = {
+	pg.base.dorm3d_ik_touch[3003321] = {
 		hold_time = 0,
 		body = "Butt",
 		tip_offset = "",
@@ -270,11 +197,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_ik_touch
-
-	var_1_10[3003322] = {
+	pg.base.dorm3d_ik_touch[3003322] = {
 		hold_time = 0,
 		body = "Chest",
 		tip_offset = "",
@@ -291,11 +214,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_ik_touch
-
-	var_1_11[3003323] = {
+	pg.base.dorm3d_ik_touch[3003323] = {
 		hold_time = 0,
 		body = "RightThigh",
 		tip_offset = "",
@@ -312,11 +231,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_ik_touch
-
-	var_1_12[3003324] = {
+	pg.base.dorm3d_ik_touch[3003324] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/130302/pre_db_ah_livingroom01(Clone)/all/pre_db_ah_toy06",
@@ -331,11 +246,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_ik_touch
-
-	var_1_13[3004000] = {
+	pg.base.dorm3d_ik_touch[3004000] = {
 		hold_time = 0,
 		body = "Back",
 		scene_item = "",
@@ -350,11 +261,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_ik_touch
-
-	var_1_14[3004001] = {
+	pg.base.dorm3d_ik_touch[3004001] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/130103/pre_db_aklq_sp_vd01(Clone)/pre_db_aklq_decoration01/all/xiong",
@@ -369,11 +276,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_ik_touch
-
-	var_1_15[3999991] = {
+	pg.base.dorm3d_ik_touch[3999991] = {
 		hold_time = 0,
 		body = "LeftFoot",
 		tip_offset = "",
@@ -390,11 +293,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_ik_touch
-
-	var_1_16[3999992] = {
+	pg.base.dorm3d_ik_touch[3999992] = {
 		hold_time = 0,
 		body = "RightThigh",
 		tip_offset = "",
@@ -411,11 +310,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_ik_touch
-
-	var_1_17[3999993] = {
+	pg.base.dorm3d_ik_touch[3999993] = {
 		hold_time = 0,
 		body = "RightThigh",
 		tip_offset = "",
@@ -432,11 +327,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_ik_touch
-
-	var_1_18[3999994] = {
+	pg.base.dorm3d_ik_touch[3999994] = {
 		hold_time = 0,
 		body = "LeftThigh",
 		tip_offset = "",
@@ -453,11 +344,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_ik_touch
-
-	var_1_19[1] = {
+	pg.base.dorm3d_ik_touch[1] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/1110204/pre_db_njh_kitchen01(Clone)/pre_db_njh_refrigerator01/all/fbx_db_food03",
@@ -472,11 +359,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_ik_touch
-
-	var_1_20[2] = {
+	pg.base.dorm3d_ik_touch[2] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/1110204/pre_db_njh_kitchen01(Clone)/pre_db_njh_refrigerator01/all/BX/BX_men",
@@ -491,11 +374,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_ik_touch
-
-	var_1_21[5004001] = {
+	pg.base.dorm3d_ik_touch[5004001] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/1120103/pre_db_df_bedroom_01(Clone)/pre_db_tool01_1",
@@ -510,11 +389,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_ik_touch
-
-	var_1_22[5004002] = {
+	pg.base.dorm3d_ik_touch[5004002] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/1120103/pre_db_df_bedroom_01(Clone)/pre_db_df_handcuffs_01",
@@ -529,11 +404,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_ik_touch
-
-	var_1_23[5005001] = {
+	pg.base.dorm3d_ik_touch[5005001] = {
 		hold_time = 0,
 		body = "RightThigh",
 		tip_offset = "",
@@ -550,11 +421,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_ik_touch
-
-	var_1_24[5005002] = {
+	pg.base.dorm3d_ik_touch[5005002] = {
 		hold_time = 0,
 		body = "LeftThigh",
 		tip_offset = "",
@@ -571,11 +438,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_ik_touch
-
-	var_1_25[5005003] = {
+	pg.base.dorm3d_ik_touch[5005003] = {
 		hold_time = 0,
 		body = "LeftThigh",
 		tip_offset = "",
@@ -592,11 +455,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_ik_touch
-
-	var_1_26[5005004] = {
+	pg.base.dorm3d_ik_touch[5005004] = {
 		hold_time = 0,
 		body = "",
 		scene_item = "FurnitureSlots/1120303/pre_db_df_livingroom_01(Clone)/all/ZZ/1/fbx_db_df_food01",
@@ -611,11 +470,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_ik_touch
-
-	var_1_27[6004001] = {
+	pg.base.dorm3d_ik_touch[6004001] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -627,11 +482,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 6004001
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_ik_touch
-
-	var_1_28[6004002] = {
+	pg.base.dorm3d_ik_touch[6004002] = {
 		hold_time = 0,
 		body = "RightHand",
 		tip_offset = "",
@@ -648,11 +499,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_ik_touch
-
-	var_1_29[6004003] = {
+	pg.base.dorm3d_ik_touch[6004003] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -664,11 +511,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 6004003
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_ik_touch
-
-	var_1_30[6004004] = {
+	pg.base.dorm3d_ik_touch[6004004] = {
 		hold_time = 0,
 		body = "LeftFoot",
 		scene_item = "",
@@ -688,11 +531,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 			0
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_ik_touch
-
-	var_1_31[7001001] = {
+	pg.base.dorm3d_ik_touch[7001001] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -704,11 +543,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 7001001
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_ik_touch
-
-	var_1_32[7001002] = {
+	pg.base.dorm3d_ik_touch[7001002] = {
 		hold_time = 0,
 		body = "",
 		tip_offset = "",
@@ -720,8 +555,7 @@ var_0_3.base.dorm3d_ik_touch = {}
 		action_emote = "",
 		id = 7001002
 	}
-	pg = var_1_32
-	var_1_32.base.dorm3d_ik_touch[7001003] = {
+	pg.base.dorm3d_ik_touch[7001003] = {
 		hold_time = 2,
 		body = "",
 		tip_offset = "",

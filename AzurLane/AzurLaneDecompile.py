@@ -7,6 +7,8 @@ import subprocess
 import sys
 import tempfile
 
+DEFAULT_JOBS = os.cpu_count() or 1
+
 import UnityPy
 
 from AzurLane2Std import convert
@@ -84,7 +86,9 @@ def extract_scripts(path, out_dir, limit=None):
     return bits, files
 
 
-def decompile_bundle(input_path, out_dir, bits="auto", limit=None, keep_std=False, jobs=16):
+def decompile_bundle(input_path, out_dir, bits="auto", limit=None, keep_std=False, jobs=None):
+    if not jobs or jobs < 1:
+        jobs = DEFAULT_JOBS
     dec = decompiler_binary()
     if not dec:
         print("未找到 luajit-decompiler 命令, 请通过 AUR 包安装:")
@@ -117,20 +121,27 @@ def decompile_bundle(input_path, out_dir, bits="auto", limit=None, keep_std=Fals
         out_dir = os.path.join(out_dir, bits) if bits else out_dir
     os.makedirs(out_dir, exist_ok=True)
 
-    converted = 0
-    meta = []
-    for src, out_name, container in files:
+    def convert_one(item):
+        src, out_name, container = item
         std_name = os.path.basename(src).rsplit(".", 1)[0]
-        try:
-            data = convert(open(src, "rb").read())
-        except Exception as exc:
-            print(f"[convert] FAIL {std_name}: {exc}")
-            continue
+        data = convert(open(src, "rb").read())
         std_path = os.path.join(std_dir, std_name + ".luac")
         open(std_path, "wb").write(data)
-        meta.append((std_path, out_name, container))
-        converted += 1
-    print(f"[convert] {converted}/{len(files)}")
+        return std_path, out_name, container, std_name
+
+    converted = 0
+    meta = []
+    with concurrent.futures.ThreadPoolExecutor(max_workers=jobs) as ex:
+        futures = [ex.submit(convert_one, item) for item in files]
+        for fut in concurrent.futures.as_completed(futures):
+            try:
+                std_path, out_name, container, std_name = fut.result()
+            except Exception as exc:
+                print(f"[convert] FAIL: {exc}")
+                continue
+            meta.append((std_path, out_name, container))
+            converted += 1
+    print(f"[convert] {converted}/{len(files)} ({jobs} 线程)")
 
     def run_one(path):
         return subprocess.run(
@@ -168,7 +179,7 @@ def decompile_bundle(input_path, out_dir, bits="auto", limit=None, keep_std=Fals
         os.makedirs(os.path.dirname(dst) or ".", exist_ok=True)
         os.replace(src_out, dst)
 
-    print(f"[decompile] {ok}/{len(files)} 个脚本已反编译到 {out_dir}")
+    print(f"[decompile] {ok}/{len(files)} 个脚本已反编译到 {out_dir} ({jobs} 线程)")
     if fails:
         print(f"[decompile] 失败 {len(fails)} 个:")
         for name in list(fails)[:10]:
@@ -188,8 +199,22 @@ def main():
     ap.add_argument("-b", "--bits", choices=("x64", "x86", "auto"), default="auto")
     ap.add_argument("-n", "--limit", type=int)
     ap.add_argument("-k", "--keep-std", action="store_true")
+    ap.add_argument(
+        "-j",
+        "--jobs",
+        type=int,
+        default=DEFAULT_JOBS,
+        help=f"并发线程数, 默认 CPU 核心数 ({DEFAULT_JOBS})",
+    )
     args = ap.parse_args()
-    decompile_bundle(args.input, args.output, bits=args.bits, limit=args.limit, keep_std=args.keep_std)
+    decompile_bundle(
+        args.input,
+        args.output,
+        bits=args.bits,
+        limit=args.limit,
+        keep_std=args.keep_std,
+        jobs=args.jobs,
+    )
     return 0
 
 

@@ -1,21 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainIslandActDelegationBtnMellowAdapt", import(".MainCommonSpActBtnAdapt"))
 
-local var_0_0 = "MainIslandActDelegationBtnMellowAdapt"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainCommonSpActBtnAdapt"))
-
-function var_0_1.GetContainer(arg_1_0)
-	local var_1_0 = arg_1_0.root
-
-	return var_1.Find(var_1_0, "right")
+function var_0_0.GetContainer(arg_1_0)
+	return arg_1_0.root:Find("right")
 end
 
-function var_0_1.OnInit(arg_2_0)
-	setAnchoredPosition = var_1_10001
-
-	var_1_10001(arg_2_0._tf, {
+function var_0_0.OnInit(arg_2_0)
+	setAnchoredPosition(arg_2_0._tf, {
 		x = 178,
 		y = 185
 	})
@@ -23,4 +13,4 @@ function var_0_1.OnInit(arg_2_0)
 	return
 end
 
-return var_0_1
+return var_0_0

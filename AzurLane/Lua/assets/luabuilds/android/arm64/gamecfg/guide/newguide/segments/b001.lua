@@ -1,13 +1,4 @@
-﻿local var_0_0 = {
-	"新兵，让我来教你如何控制舰队吧",
-	"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
-	"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
-	"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
-	"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
-	"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
-}
-
-return {
+﻿return {
 	id = "B001",
 	events = {
 		{
@@ -40,7 +31,14 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"新兵，让我来教你如何控制舰队吧",
+					"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
+					"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
+					"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
+					"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
+					"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
+				})[1]
 			}
 		},
 		{
@@ -53,7 +51,14 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"新兵，让我来教你如何控制舰队吧",
+					"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
+					"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
+					"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
+					"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
+					"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
+				})[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CombatUI(Clone)/Stick/Area",
@@ -72,7 +77,14 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = ({
+					"新兵，让我来教你如何控制舰队吧",
+					"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
+					"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
+					"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
+					"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
+					"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
+				})[3]
 			}
 		},
 		{
@@ -97,7 +109,14 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[4]
+				text = ({
+					"新兵，让我来教你如何控制舰队吧",
+					"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
+					"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
+					"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
+					"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
+					"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
+				})[4]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_2/ActCtl",
@@ -116,7 +135,14 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[5]
+				text = ({
+					"新兵，让我来教你如何控制舰队吧",
+					"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
+					"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
+					"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
+					"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
+					"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
+				})[5]
 			}
 		},
 		{
@@ -141,7 +167,14 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[6]
+				text = ({
+					"新兵，让我来教你如何控制舰队吧",
+					"首先，<color=#ff7d36>拖动摇杆</color>试着让舰队移动起来吧！",
+					"角色会<color=#ff7d36>自动使用武器</color>攻击，但还有更厉害的武器哦~",
+					"点击下方按钮<color=#ff7d36>发射鱼雷</color>！",
+					"面对敌方护盾防御时，就可以使用主力舰队<color=#ff7d36>主炮跨射</color>",
+					"点击主炮按钮发射主炮，<color=#ff7d36>长按主炮并拖动摇杆</color>可调整攻击位置"
+				})[6]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_1/ActCtl",

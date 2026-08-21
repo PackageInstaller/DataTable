@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("AttributeType")
+﻿local var_0_0 = class("AttributeType")
 
 var_0_0.Durability = "durability"
 var_0_0.Cannon = "cannon"
@@ -42,9 +40,7 @@ var_0_0.Tactics = "tactics"
 var_0_0.WorldPower = "world_power"
 
 function var_0_0.Type2Name(arg_1_0)
-	i18n = var_1_10001
-
-	return var_1_10001("attribute_" .. arg_1_0)
+	return i18n("attribute_" .. arg_1_0)
 end
 
 var_0_0.eliteConditionTip = {
@@ -69,42 +65,26 @@ local var_0_1 = {
 }
 
 function var_0_0.eliteConditionCompareTip(arg_2_0)
-	i18n = var_1_10001
-
-	return var_1_10001(var_0_1[arg_2_0])
+	return i18n(var_0_1[arg_2_0])
 end
 
 function var_0_0.EliteCondition2Name(arg_3_0, ...)
-	i18n = var_1_10001
-
-	return var_1_10001(var_0_0.eliteConditionTip[arg_3_0], ...)
+	return i18n(var_0_0.eliteConditionTip[arg_3_0], ...)
 end
 
 function var_0_0.EliteConditionCompare(arg_4_0, arg_4_1, arg_4_2)
 	if arg_4_0 == 0 then
-		var_1_10003 = arg_4_1 == arg_4_2
-
-		return var_1_10003
+		return arg_4_1 == arg_4_2
 	elseif arg_4_0 == 1 then
-		var_1_10003 = arg_4_2 < arg_4_1
-
-		return var_1_10003
+		return arg_4_2 < arg_4_1
 	elseif arg_4_0 == -1 then
-		var_1_10003 = arg_4_1 < arg_4_2
-
-		return var_1_10003
+		return arg_4_1 < arg_4_2
 	elseif arg_4_0 == 2 then
-		var_1_10003 = arg_4_2 <= arg_4_1
-
-		return var_1_10003
+		return arg_4_2 <= arg_4_1
 	elseif arg_4_0 == -2 then
-		var_1_10003 = arg_4_1 <= arg_4_2
-
-		return var_1_10003
+		return arg_4_1 <= arg_4_2
 	else
-		assert = var_1_10003
-
-		var_1_10003(false, "compare type error")
+		assert(false, "compare type error")
 	end
 
 	return

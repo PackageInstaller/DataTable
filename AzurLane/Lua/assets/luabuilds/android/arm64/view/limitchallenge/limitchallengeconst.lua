@@ -1,235 +1,122 @@
-﻿local var_0_0 = {}
+﻿LimitChallengeConst = {}
 
-LimitChallengeConst = LimitChallengeConst
-var_0.OPEN_PRE_COMBAT_LAYER = "OPEN_PRE_COMBAT_LAYER"
-var_0.REQ_CHALLENGE_INFO = "LimitChallengeConst.REQ_CHALLENGE_INFO"
-var_0.REQ_CHALLENGE_INFO_DONE = "LimitChallengeConst.REQ_CHALLENGE_INFO_DONE"
-var_0.GET_CHALLENGE_AWARD = "LimitChallengeConst.GET_CHALLENGE_AWARD"
-var_0.GET_CHALLENGE_AWARD_DONE = "LimitChallengeConst.GET_CHALLENGE_AWARD_DONE"
-var_0.UPDATE_PASS_TIME = "LimitChallengeConst.UPDATE_PASS_TIME"
+local var_0_0 = LimitChallengeConst
 
-function var_0.RequestInfo()
-	pg = var_1_10000
+LimitChallengeConst.OPEN_PRE_COMBAT_LAYER = "OPEN_PRE_COMBAT_LAYER"
+LimitChallengeConst.REQ_CHALLENGE_INFO = "LimitChallengeConst.REQ_CHALLENGE_INFO"
+LimitChallengeConst.REQ_CHALLENGE_INFO_DONE = "LimitChallengeConst.REQ_CHALLENGE_INFO_DONE"
+LimitChallengeConst.GET_CHALLENGE_AWARD = "LimitChallengeConst.GET_CHALLENGE_AWARD"
+LimitChallengeConst.GET_CHALLENGE_AWARD_DONE = "LimitChallengeConst.GET_CHALLENGE_AWARD_DONE"
+LimitChallengeConst.UPDATE_PASS_TIME = "LimitChallengeConst.UPDATE_PASS_TIME"
 
-	if var_1_10000.constellation_challenge_month then
-		pg = var_0
-
-		if #var_0.constellation_challenge_month.all > 0 then
-			LimitChallengeConst = var_0
-
-			if var_0.GetCurMonthConfig() then
-				pg = var_0
-
-				local var_1_0 = var_0.m02
-				local var_1_1 = var_0.sendNotification
-
-				LimitChallengeConst = var_1_10003
-
-				var_1_1(var_1_0, var_1_10003.REQ_CHALLENGE_INFO)
-			end
-		end
+function LimitChallengeConst.RequestInfo()
+	if pg.constellation_challenge_month and #pg.constellation_challenge_month.all > 0 and LimitChallengeConst.GetCurMonthConfig() then
+		pg.m02:sendNotification(LimitChallengeConst.REQ_CHALLENGE_INFO)
 	end
 
 	return
 end
 
-function var_0.GetNextMonthTS()
-	pg = var_1_10000
+function LimitChallengeConst.GetNextMonthTS()
+	local var_2_9000
+	local var_2_0 = pg.TimeMgr.GetInstance().GetServerTime(var_2_9000)
+	local var_2_1 = tonumber((pg.TimeMgr.GetInstance():STimeDescS(var_2_0, "%Y")))
+	local var_2_2 = tonumber((pg.TimeMgr.GetInstance():STimeDescS(var_2_0, "%m"))) + 1
 
-	local var_2_0 = var_1_10000.TimeMgr.GetInstance()
-	local var_2_1 = var_0.GetServerTime(var_2_0)
-
-	pg = var_1_10001
-
-	local var_2_2 = var_1_10001.TimeMgr.GetInstance()
-	local var_2_3 = var_1.STimeDescS(var_2_2, var_2_1, "%Y")
-
-	pg = var_2_0
-
-	local var_2_4 = var_2_0.TimeMgr.GetInstance()
-	local var_2_5 = var_2.STimeDescS(var_2_4, var_2_1, "%m")
-
-	tonumber = var_2_2
-
-	local var_2_6 = var_2_2(var_2_3)
-
-	tonumber = var_3
-
-	local var_2_7 = var_3(var_2_5) + 1
-
-	if 12 < var_2_7 then
-		var_2_7 = 1
-		var_2_6 = var_2_6 + 1
+	if var_2_2 > 12 then
+		var_2_2 = 1
+		var_2_1 = var_2_1 + 1
 	end
 
-	pg = var_3
-
-	local var_2_8 = var_3.TimeMgr.GetInstance()
-
-	return var_3.Table2ServerTime(var_2_8, {
+	return pg.TimeMgr.GetInstance():Table2ServerTime({
 		hour = 0,
 		min = 0,
 		sec = 0,
 		day = 1,
-		year = var_2_6,
-		month = var_2_7
+		year = var_2_1,
+		month = var_2_2
 	})
 end
 
-function var_0.GetCurMonth()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.TimeMgr.GetInstance()
-	local var_3_1 = var_0.GetServerTime(var_3_0)
-
-	pg = var_1_10001
-
-	local var_3_2 = var_1_10001.TimeMgr.GetInstance()
-	local var_3_3 = var_1.STimeDescS(var_3_2, var_3_1, "%m")
-
-	tonumber = var_3_0
-
-	return (var_3_0(var_3_3))
+function LimitChallengeConst.GetCurMonth()
+	return (tonumber((pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "%m"))))
 end
 
-function var_0.GetCurMonthConfig()
-	local var_4_0 = var_0.GetCurMonth()
-
-	pg = var_1_10001
-
-	return var_1_10001.constellation_challenge_month[var_4_0]
+function LimitChallengeConst.GetCurMonthConfig()
+	return pg.constellation_challenge_month[var_0_0.GetCurMonth()]
 end
 
-function var_0.GetChallengeIDByLevel(arg_5_0)
-	LimitChallengeConst = var_1_10001
-
-	return var_1_10001.GetCurMonthConfig().stage[arg_5_0]
+function LimitChallengeConst.GetChallengeIDByLevel(arg_5_0)
+	return LimitChallengeConst.GetCurMonthConfig().stage[arg_5_0]
 end
 
-function var_0.GetStageIDByLevel(arg_6_0)
-	local var_6_0 = var_0.GetChallengeIDByLevel(arg_6_0)
-
-	pg = var_1_10002
-
-	return var_1_10002.expedition_constellation_challenge_template[var_6_0].dungeon_id
+function LimitChallengeConst.GetStageIDByLevel(arg_6_0)
+	return pg.expedition_constellation_challenge_template[var_0_0.GetChallengeIDByLevel(arg_6_0)].dungeon_id
 end
 
-function var_0.GetChallengeIDByStageID(arg_7_0)
-	ipairs = var_1_10001
-	pg = var_1_10003
-
-	for iter_7_0, iter_7_1 in var_1_10001(var_1_10003.expedition_constellation_challenge_template.all) do
-		pg = var_1_10006
-
-		if arg_7_0 == var_1_10006.expedition_constellation_challenge_template[iter_7_1].dungeon_id then
-			return var_1_10006.id
+function LimitChallengeConst.GetChallengeIDByStageID(arg_7_0)
+	for iter_7_0, iter_7_1 in ipairs(pg.expedition_constellation_challenge_template.all) do
+		if arg_7_0 == pg.expedition_constellation_challenge_template[iter_7_1].dungeon_id then
+			return pg.expedition_constellation_challenge_template[iter_7_1].id
 		end
 	end
 
 	return
 end
 
-function var_0.IsOpen()
-	getProxy = var_1_10000
-	PlayerProxy = var_1_10002
+function LimitChallengeConst.IsOpen()
+	local var_8_9000
+	local var_8_0 = getProxy(PlayerProxy)
+	local var_8_1 = var_8_0.getRawData(var_8_9000).level
 
-	local var_8_0 = var_1_10000(var_1_10002)
-	local var_8_1 = var_0.getRawData(var_8_0).level
-
-	pg = var_1_10001
-
-	local var_8_2 = var_1_10001.SystemOpenMgr.GetInstance()
-	local var_8_3 = var_1.isOpenSystem(var_8_2, var_8_1, "LimitChallengeMediator")
-
-	pg = var_8_0
-
-	local var_8_4 = var_8_0.SystemOpenMgr.GetInstance()
-	local var_8_5 = var_2.isOpenSystem(var_8_4, var_8_1, "ChallengeMainMediator")
-
-	return var_8_3 and var_8_5
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(var_8_1, "LimitChallengeMediator") and pg.SystemOpenMgr.GetInstance().isOpenSystem(var_8_0, var_8_1, "ChallengeMainMediator")
 end
 
-function var_0.IsInAct()
-	pg = var_1_10000
-
-	if var_1_10000.constellation_challenge_month then
-		pg = var_9_0
-
-		local var_9_0 = #var_9_0.constellation_challenge_month.all
-
-		if 0 < var_9_0 then
-			LimitChallengeConst = var_9_0
-			var_9_0 = var_9_0.GetCurMonthConfig()
-		else
-			var_9_0 = false
-		end
-	end
+function LimitChallengeConst.IsInAct()
+	local var_9_0 = pg.constellation_challenge_month and (#pg.constellation_challenge_month.all > 0 and LimitChallengeConst.GetCurMonthConfig() or false)
 
 	if false then
 		var_9_0 = true
 	end
 
-	checkExist = var_1_10001
-	getProxy = var_1_10003
-	ActivityProxy = var_1_10005
-
-	local var_9_1 = var_1_10003(var_1_10005)
-	local var_9_2 = var_3.getActivityByType
-
-	ActivityConst = var_1_10006
-
-	local var_9_3 = var_1_10001(var_9_2(var_9_1, var_1_10006.ACTIVITY_TYPE_CHALLENGE), {
+	local var_9_1 = checkExist(getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_CHALLENGE), {
 		"isEnd"
 	}) == false
 
-	LOCK_LIMIT_CHALLENGE = var_1_10002
-
-	return var_1_10002 and var_9_3 or var_9_0
+	return LOCK_LIMIT_CHALLENGE and var_9_1 or var_9_0
 end
 
-var_0.RedPointKey = "LimitChallengeMonth"
+LimitChallengeConst.RedPointKey = "LimitChallengeMonth"
 
-function var_0.SetRedPointMonth()
-	PlayerPrefs = var_1_10000
-
-	var_1_10000.SetInt(var_0.RedPointKey, var_0.GetCurMonth())
+function LimitChallengeConst.SetRedPointMonth()
+	PlayerPrefs.SetInt(var_0_0.RedPointKey, var_0_0.GetCurMonth())
 
 	return
 end
 
-function var_0.GetRedPointMonth()
-	PlayerPrefs = var_1_10000
-
-	return var_1_10000.GetInt(var_0.RedPointKey, 0)
+function LimitChallengeConst.GetRedPointMonth()
+	return PlayerPrefs.GetInt(var_0_0.RedPointKey, 0)
 end
 
-function var_0.IsShowRedPoint()
-	LOCK_LIMIT_CHALLENGE = var_1_10000
-
-	if var_1_10000 then
+function LimitChallengeConst.IsShowRedPoint()
+	if LOCK_LIMIT_CHALLENGE then
 		return false
 	end
 
-	if not var_0.IsOpen() then
+	if not var_0_0.IsOpen() then
 		return false
 	end
 
-	if not var_0.IsInAct() then
+	if not var_0_0.IsInAct() then
 		return false
 	end
 
-	if var_0.GetRedPointMonth() == var_0.GetCurMonth() then
+	if var_0_0.GetRedPointMonth() == var_0_0.GetCurMonth() then
 		return false
 	else
-		getProxy = var_1_10002
-		LimitChallengeProxy = var_1_10004
+		local var_12_0 = getProxy(LimitChallengeProxy)
 
-		local var_12_0 = var_1_10002(var_1_10004)
-		local var_12_1 = var_0.GetCurMonthConfig().stage
-
-		ipairs = var_1_10004
-
-		for iter_12_0, iter_12_1 in var_1_10004(var_12_1) do
+		for iter_12_0, iter_12_1 in ipairs(var_0_0.GetCurMonthConfig().stage) do
 			if not var_12_0:isAwardedByChallengeID(iter_12_1) then
 				return true
 			end
@@ -241,4 +128,4 @@ function var_0.IsShowRedPoint()
 	return
 end
 
-return var_0
+return LimitChallengeConst

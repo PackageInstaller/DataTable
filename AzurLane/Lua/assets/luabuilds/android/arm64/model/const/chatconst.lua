@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChatConst")
+﻿local var_0_0 = class("ChatConst")
 
 var_0_0.CODE_BANED = 100
 var_0_0.CODE_ACTOBSS_MSG_WORD = 1000
@@ -26,15 +24,11 @@ var_0_0.RecvChannels = {
 }
 
 function var_0_0.GetChannelName(arg_1_0)
-	i18n = var_1_10001
-
-	return var_1_10001("channel_name_" .. arg_1_0)
+	return i18n("channel_name_" .. arg_1_0)
 end
 
 function var_0_0.GetChannelSprite(arg_2_0)
-	switch = var_1_10001
-
-	return var_1_10001(arg_2_0, {
+	return switch(arg_2_0, {
 		[var_0_0.ChannelWorld] = function()
 			return "world"
 		end,
@@ -60,9 +54,7 @@ function var_0_0.GetChannelSprite(arg_2_0)
 			return "room"
 		end
 	}, function()
-		assert = var_2_10000
-
-		var_2_10000(false)
+		assert(false)
 
 		return
 	end)
@@ -92,9 +84,7 @@ function var_0_0.GetEmojiSprite(arg_12_0)
 		return "tab_pixel"
 	end
 
-	assert = var_1
-
-	var_1(false)
+	assert(false)
 
 	return
 end

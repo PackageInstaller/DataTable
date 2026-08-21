@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_furniture_slot_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_furniture_slot_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_furniture_slot_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_furniture_slot_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_furniture_slot_template = rawget(pg, "dorm3d_furniture_slot_template") or setmetatable({
+	__name = "dorm3d_furniture_slot_template"
+}, confNEO)
+pg.dorm3d_furniture_slot_template.all = {
 	100101,
 	100102,
 	100201,
@@ -84,11 +61,7 @@ var_0_3.all = {
 	2210303,
 	2210304
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_furniture_slot_template
-
-var_0_4.get_id_list_by_room_id = {
+pg.dorm3d_furniture_slot_template.get_id_list_by_room_id = {
 	{
 		100101,
 		100102,
@@ -163,11 +136,7 @@ var_0_4.get_id_list_by_room_id = {
 		2210304
 	}
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.dorm3d_furniture_slot_template
-
-var_0_5.get_id_list_by_zone_id = {
+pg.dorm3d_furniture_slot_template.get_id_list_by_zone_id = {
 	[1001] = {
 		100101,
 		100102
@@ -272,25 +241,11 @@ var_0_5.get_id_list_by_zone_id = {
 		2210304
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.dorm3d_furniture_slot_template = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_furniture_slot_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_furniture_slot_template
-
-	var_1_0[5] = {
+	pg.base.dorm3d_furniture_slot_template[5] = {
 		default_furniture = 0,
 		name = "卧室桌子",
 		type = 3,
@@ -299,11 +254,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_chandelier07",
 		zone_id = 1001
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_furniture_slot_template
-
-	var_1_1[6] = {
+	pg.base.dorm3d_furniture_slot_template[6] = {
 		default_furniture = 4,
 		name = "卧室床",
 		type = 4,
@@ -312,11 +263,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_bed01",
 		zone_id = 1001
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_furniture_slot_template
-
-	var_1_2[100201] = {
+	pg.base.dorm3d_furniture_slot_template[100201] = {
 		default_furniture = 0,
 		name = "餐厅桌子",
 		type = 3,
@@ -325,11 +272,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_electrical03",
 		zone_id = 1002
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_furniture_slot_template
-
-	var_1_3[100202] = {
+	pg.base.dorm3d_furniture_slot_template[100202] = {
 		default_furniture = 1,
 		name = "餐厅椅子",
 		type = 6,
@@ -338,11 +281,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_chair05_01",
 		zone_id = 1002
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_furniture_slot_template
-
-	var_1_4[100301] = {
+	pg.base.dorm3d_furniture_slot_template[100301] = {
 		default_furniture = 3,
 		name = "客厅沙发",
 		type = 5,
@@ -351,11 +290,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_chair01",
 		zone_id = 1003
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_furniture_slot_template
-
-	var_1_5[100402] = {
+	pg.base.dorm3d_furniture_slot_template[100402] = {
 		default_furniture = 0,
 		name = "换衣间置物架",
 		type = 3,
@@ -364,11 +299,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_decoration03 (1)",
 		zone_id = 1004
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_furniture_slot_template
-
-	var_1_6[120101] = {
+	pg.base.dorm3d_furniture_slot_template[120101] = {
 		default_furniture = 0,
 		name = "卧室床边摆件",
 		type = 3,
@@ -377,11 +308,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nh_vase01",
 		zone_id = 2001
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_furniture_slot_template
-
-	var_1_7[120102] = {
+	pg.base.dorm3d_furniture_slot_template[120102] = {
 		default_furniture = 0,
 		name = "卧室床头摆件",
 		type = 3,
@@ -390,11 +317,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nh_toy02",
 		zone_id = 2001
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_furniture_slot_template
-
-	var_1_8[120103] = {
+	pg.base.dorm3d_furniture_slot_template[120103] = {
 		default_furniture = 201,
 		name = "卧室床",
 		type = 4,
@@ -403,11 +326,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_bed02",
 		zone_id = 2001
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_furniture_slot_template
-
-	var_1_9[9] = {
+	pg.base.dorm3d_furniture_slot_template[9] = {
 		default_furniture = 0,
 		name = "餐厅桌子摆件",
 		type = 3,
@@ -416,11 +335,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nh_tableware02",
 		zone_id = 2002
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_furniture_slot_template
-
-	var_1_10[10] = {
+	pg.base.dorm3d_furniture_slot_template[10] = {
 		default_furniture = 207,
 		name = "餐厅墙上装饰",
 		type = 3,
@@ -429,11 +344,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nh_decoration03",
 		zone_id = 2002
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_furniture_slot_template
-
-	var_1_11[11] = {
+	pg.base.dorm3d_furniture_slot_template[11] = {
 		default_furniture = 202,
 		name = "餐厅椅子",
 		type = 6,
@@ -442,11 +353,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_table05a",
 		zone_id = 2002
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_furniture_slot_template
-
-	var_1_12[120301] = {
+	pg.base.dorm3d_furniture_slot_template[120301] = {
 		default_furniture = 208,
 		name = "客厅窗边盆栽",
 		type = 3,
@@ -455,11 +362,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nh_flowerpot02",
 		zone_id = 2003
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_furniture_slot_template
-
-	var_1_13[120302] = {
+	pg.base.dorm3d_furniture_slot_template[120302] = {
 		default_furniture = 0,
 		name = "客厅柜子摆件",
 		type = 3,
@@ -468,11 +371,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nh_vase02",
 		zone_id = 2003
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_furniture_slot_template
-
-	var_1_14[120303] = {
+	pg.base.dorm3d_furniture_slot_template[120303] = {
 		default_furniture = 203,
 		name = "客厅沙发",
 		type = 5,
@@ -481,11 +380,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_chair07",
 		zone_id = 2003
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_furniture_slot_template
-
-	var_1_15[130101] = {
+	pg.base.dorm3d_furniture_slot_template[130101] = {
 		default_furniture = 0,
 		name = "卧室帐篷玩偶",
 		type = 3,
@@ -494,11 +389,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_ah_toy05",
 		zone_id = 3001
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_furniture_slot_template
-
-	var_1_16[130102] = {
+	pg.base.dorm3d_furniture_slot_template[130102] = {
 		default_furniture = 0,
 		name = "卧室床边摆件",
 		type = 3,
@@ -507,11 +398,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_ah_pottedplant01",
 		zone_id = 3001
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_furniture_slot_template
-
-	var_1_17[130103] = {
+	pg.base.dorm3d_furniture_slot_template[130103] = {
 		default_furniture = 301,
 		name = "卧室床",
 		type = 4,
@@ -520,11 +407,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_bed03",
 		zone_id = 3001
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_furniture_slot_template
-
-	var_1_18[25] = {
+	pg.base.dorm3d_furniture_slot_template[25] = {
 		default_furniture = 0,
 		name = "娱乐区画框",
 		type = 3,
@@ -533,11 +416,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_ah_billboard01_group01",
 		zone_id = 3002
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_furniture_slot_template
-
-	var_1_19[26] = {
+	pg.base.dorm3d_furniture_slot_template[26] = {
 		default_furniture = 302,
 		name = "娱乐区",
 		type = 6,
@@ -546,11 +425,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_carpet20",
 		zone_id = 3002
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_furniture_slot_template
-
-	var_1_20[130301] = {
+	pg.base.dorm3d_furniture_slot_template[130301] = {
 		default_furniture = 0,
 		name = "客厅窗户玩偶",
 		type = 3,
@@ -559,11 +434,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_ah_decoration02",
 		zone_id = 3003
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_furniture_slot_template
-
-	var_1_21[130302] = {
+	pg.base.dorm3d_furniture_slot_template[130302] = {
 		default_furniture = 303,
 		name = "客厅沙发",
 		type = 5,
@@ -572,11 +443,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_chair15",
 		zone_id = 3003
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_furniture_slot_template
-
-	var_1_22[140101] = {
+	pg.base.dorm3d_furniture_slot_template[140101] = {
 		default_furniture = 0,
 		name = "沙滩滑梯",
 		type = 3,
@@ -585,11 +452,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "Slide",
 		zone_id = 4005
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_furniture_slot_template
-
-	var_1_23[1110101] = {
+	pg.base.dorm3d_furniture_slot_template[1110101] = {
 		default_furniture = 0,
 		name = "卧室书架",
 		type = 3,
@@ -598,11 +461,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "no_bake_prop_substitute",
 		zone_id = 11001
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_furniture_slot_template
-
-	var_1_24[1110102] = {
+	pg.base.dorm3d_furniture_slot_template[1110102] = {
 		default_furniture = 1101,
 		name = "卧室床",
 		type = 4,
@@ -611,11 +470,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_bed04",
 		zone_id = 11001
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_furniture_slot_template
-
-	var_1_25[1110201] = {
+	pg.base.dorm3d_furniture_slot_template[1110201] = {
 		default_furniture = 0,
 		name = "餐厅微波炉",
 		type = 3,
@@ -624,11 +479,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_njh_electrical03",
 		zone_id = 11002
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_furniture_slot_template
-
-	var_1_26[1110202] = {
+	pg.base.dorm3d_furniture_slot_template[1110202] = {
 		default_furniture = 0,
 		name = "餐厅绿植",
 		type = 3,
@@ -637,11 +488,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_njh_pottedplant01",
 		zone_id = 11002
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_furniture_slot_template
-
-	var_1_27[1110203] = {
+	pg.base.dorm3d_furniture_slot_template[1110203] = {
 		default_furniture = 1102,
 		name = "冰箱",
 		type = 6,
@@ -650,11 +497,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_appliances04",
 		zone_id = 11002
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_furniture_slot_template
-
-	var_1_28[1110204] = {
+	pg.base.dorm3d_furniture_slot_template[1110204] = {
 		default_furniture = 0,
 		name = "冰箱",
 		type = 6,
@@ -663,11 +506,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_njh_kitchen01",
 		zone_id = 11002
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_furniture_slot_template
-
-	var_1_29[29] = {
+	pg.base.dorm3d_furniture_slot_template[29] = {
 		default_furniture = 0,
 		name = "客厅画框",
 		type = 3,
@@ -676,11 +515,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_njh_billboard01",
 		zone_id = 11003
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_furniture_slot_template
-
-	var_1_30[30] = {
+	pg.base.dorm3d_furniture_slot_template[30] = {
 		default_furniture = 0,
 		name = "客厅水缸",
 		type = 3,
@@ -689,11 +524,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_njh_fishtank01",
 		zone_id = 11003
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_furniture_slot_template
-
-	var_1_31[31] = {
+	pg.base.dorm3d_furniture_slot_template[31] = {
 		default_furniture = 1103,
 		name = "客厅沙发",
 		type = 5,
@@ -702,11 +533,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_chair19_group",
 		zone_id = 11003
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_furniture_slot_template
-
-	var_1_32[1120101] = {
+	pg.base.dorm3d_furniture_slot_template[1120101] = {
 		default_furniture = 0,
 		name = "卧室比基尼",
 		type = 3,
@@ -715,11 +542,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_cloth01",
 		zone_id = 12001
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_furniture_slot_template
-
-	var_1_33[1120102] = {
+	pg.base.dorm3d_furniture_slot_template[1120102] = {
 		default_furniture = 0,
 		name = "卧室屏风",
 		type = 3,
@@ -728,11 +551,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_frame01",
 		zone_id = 12001
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_furniture_slot_template
-
-	var_1_34[1120103] = {
+	pg.base.dorm3d_furniture_slot_template[1120103] = {
 		default_furniture = 1201,
 		name = "卧室床",
 		type = 4,
@@ -741,11 +560,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_bedroom01_0",
 		zone_id = 12001
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_furniture_slot_template
-
-	var_1_35[1120104] = {
+	pg.base.dorm3d_furniture_slot_template[1120104] = {
 		default_furniture = 0,
 		name = "卧室小灯",
 		type = 3,
@@ -754,11 +569,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_desklamp01",
 		zone_id = 12001
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_furniture_slot_template
-
-	var_1_36[1120203] = {
+	pg.base.dorm3d_furniture_slot_template[1120203] = {
 		default_furniture = 1202,
 		name = "餐厅餐桌",
 		type = 6,
@@ -767,11 +578,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_kitchen01_0",
 		zone_id = 12002
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_furniture_slot_template
-
-	var_1_37[1120301] = {
+	pg.base.dorm3d_furniture_slot_template[1120301] = {
 		default_furniture = 0,
 		name = "客厅挂画",
 		type = 3,
@@ -780,11 +587,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_wallscrolls01",
 		zone_id = 12003
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_furniture_slot_template
-
-	var_1_38[1120302] = {
+	pg.base.dorm3d_furniture_slot_template[1120302] = {
 		default_furniture = 0,
 		name = "客厅落地灯",
 		type = 3,
@@ -793,11 +596,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_floorlamp01",
 		zone_id = 12003
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_furniture_slot_template
-
-	var_1_39[1120303] = {
+	pg.base.dorm3d_furniture_slot_template[1120303] = {
 		default_furniture = 1203,
 		name = "客厅沙发",
 		type = 5,
@@ -806,11 +605,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_livingroom01_0",
 		zone_id = 12003
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_furniture_slot_template
-
-	var_1_40[1120304] = {
+	pg.base.dorm3d_furniture_slot_template[1120304] = {
 		default_furniture = 0,
 		name = "客厅特典",
 		type = 99,
@@ -819,11 +614,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_df_tedian01",
 		zone_id = 12003
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_furniture_slot_template
-
-	var_1_41[5] = {
+	pg.base.dorm3d_furniture_slot_template[5] = {
 		default_furniture = 1401,
 		name = "卧室床",
 		type = 4,
@@ -832,11 +623,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aijier_bed01_0",
 		zone_id = 14001
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_furniture_slot_template
-
-	var_1_42[6] = {
+	pg.base.dorm3d_furniture_slot_template[6] = {
 		default_furniture = 0,
 		name = "卧室相机",
 		type = 3,
@@ -845,11 +632,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aje_camera01",
 		zone_id = 14001
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_furniture_slot_template
-
-	var_1_43[7] = {
+	pg.base.dorm3d_furniture_slot_template[7] = {
 		default_furniture = 0,
 		name = "卧室台灯",
 		type = 3,
@@ -858,11 +641,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aje_desklamp01",
 		zone_id = 14001
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_furniture_slot_template
-
-	var_1_44[1140201] = {
+	pg.base.dorm3d_furniture_slot_template[1140201] = {
 		default_furniture = 1402,
 		name = "书房书桌",
 		type = 6,
@@ -871,11 +650,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aijier_study01_0",
 		zone_id = 14002
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_furniture_slot_template
-
-	var_1_45[1140202] = {
+	pg.base.dorm3d_furniture_slot_template[1140202] = {
 		default_furniture = 0,
 		name = "书房盆栽",
 		type = 3,
@@ -884,11 +659,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aje_bonsai01",
 		zone_id = 14002
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_furniture_slot_template
-
-	var_1_46[1140301] = {
+	pg.base.dorm3d_furniture_slot_template[1140301] = {
 		default_furniture = 1403,
 		name = "客厅沙发",
 		type = 5,
@@ -897,11 +668,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aijier_living01_0",
 		zone_id = 14003
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_furniture_slot_template
-
-	var_1_47[1140302] = {
+	pg.base.dorm3d_furniture_slot_template[1140302] = {
 		default_furniture = 0,
 		name = "客厅相框",
 		type = 3,
@@ -910,11 +677,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aje_billboard01",
 		zone_id = 14003
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_furniture_slot_template
-
-	var_1_48[1140303] = {
+	pg.base.dorm3d_furniture_slot_template[1140303] = {
 		default_furniture = 0,
 		name = "客厅蜡烛",
 		type = 3,
@@ -923,11 +686,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_aje_decoration01",
 		zone_id = 14003
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_furniture_slot_template
-
-	var_1_49[2210101] = {
+	pg.base.dorm3d_furniture_slot_template[2210101] = {
 		default_furniture = 2101,
 		name = "卧室床",
 		type = 4,
@@ -936,11 +695,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_naximofu_bed01_0",
 		zone_id = 21001
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_furniture_slot_template
-
-	var_1_50[2210102] = {
+	pg.base.dorm3d_furniture_slot_template[2210102] = {
 		default_furniture = 0,
 		name = "香薰瓶 ",
 		type = 3,
@@ -949,11 +704,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nxmf_cosmetic01",
 		zone_id = 21001
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_furniture_slot_template
-
-	var_1_51[2210103] = {
+	pg.base.dorm3d_furniture_slot_template[2210103] = {
 		default_furniture = 0,
 		name = "黄釉圆瓶 ",
 		type = 3,
@@ -962,11 +713,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nxmf_ceram01",
 		zone_id = 21001
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_furniture_slot_template
-
-	var_1_52[25] = {
+	pg.base.dorm3d_furniture_slot_template[25] = {
 		default_furniture = 2102,
 		name = "工房置物架",
 		type = 6,
@@ -975,11 +722,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_naximofu_basement01_0",
 		zone_id = 21002
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_furniture_slot_template
-
-	var_1_53[2210301] = {
+	pg.base.dorm3d_furniture_slot_template[2210301] = {
 		default_furniture = 2103,
 		name = "客厅沙发",
 		type = 5,
@@ -988,11 +731,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_naximofu_living01_0",
 		zone_id = 21003
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_furniture_slot_template
-
-	var_1_54[2210302] = {
+	pg.base.dorm3d_furniture_slot_template[2210302] = {
 		default_furniture = 0,
 		name = "原子球模型",
 		type = 3,
@@ -1001,11 +740,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nxmf_decoration01",
 		zone_id = 21003
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_furniture_slot_template
-
-	var_1_55[2210303] = {
+	pg.base.dorm3d_furniture_slot_template[2210303] = {
 		default_furniture = 0,
 		name = "窗边绿植 ",
 		type = 3,
@@ -1014,8 +749,7 @@ var_0_5.base.dorm3d_furniture_slot_template = {}
 		furniture_name = "pre_db_nxmf_flowerpot01",
 		zone_id = 21003
 	}
-	pg = var_1_55
-	var_1_55.base.dorm3d_furniture_slot_template[0] = {
+	pg.base.dorm3d_furniture_slot_template[0] = {
 		default_furniture = 0,
 		name = "猫猫坐垫 ",
 		type = 3,

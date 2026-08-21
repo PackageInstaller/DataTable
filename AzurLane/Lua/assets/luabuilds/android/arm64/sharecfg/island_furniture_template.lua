@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_furniture_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_furniture_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_furniture_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_furniture_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_furniture_template = rawget(pg, "island_furniture_template") or setmetatable({
+	__name = "island_furniture_template"
+}, confNEO)
+pg.island_furniture_template.all = {
 	1,
 	2,
 	3,
@@ -213,25 +190,11 @@ var_0_3.all = {
 	50348,
 	50349
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_furniture_template = {}
+pg.base = pg.base or {}
+pg.base.island_furniture_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_furniture_template
-
-	var_1_0[1] = {
+	pg.base.island_furniture_template[1] = {
 		setNum = 1,
 		describe = "坐落在森林中的宁静小屋，与自然为邻。",
 		name = "林中小屋",
@@ -252,11 +215,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_furniture_template
-
-	var_1_1[2] = {
+	pg.base.island_furniture_template[2] = {
 		setNum = 999,
 		describe = "叶片如火焰般绚烂的枫树，风吹过时洒落一地缤纷。",
 		name = "红枫树",
@@ -277,11 +236,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_furniture_template
-
-	var_1_2[3] = {
+	pg.base.island_furniture_template[3] = {
 		setNum = 999,
 		describe = "宽大叶片在风中沙沙作响，投下斑驳的荫凉~",
 		name = "阔叶树",
@@ -302,11 +257,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_furniture_template
-
-	var_1_3[4] = {
+	pg.base.island_furniture_template[4] = {
 		setNum = 999,
 		describe = "扇形叶片随风摇曳，洒落一地金黄小扇子~",
 		name = "银杏树",
@@ -332,11 +283,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_furniture_template
-
-	var_1_4[5] = {
+	pg.base.island_furniture_template[5] = {
 		setNum = 999,
 		describe = "一团浓密的绿色灌木，枝叶间偶尔传来窸窣的动静~",
 		name = "绿灌木丛",
@@ -357,11 +304,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_furniture_template
-
-	var_1_5[6] = {
+	pg.base.island_furniture_template[6] = {
 		setNum = 999,
 		describe = "开着明亮小黄花的灌木丛，引得蝴蝶在枝头歇脚~",
 		name = "黄花灌木",
@@ -382,11 +325,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_furniture_template
-
-	var_1_6[7] = {
+	pg.base.island_furniture_template[7] = {
 		setNum = 999,
 		describe = "低低矮矮的花丛，小花们正挤在一起说悄悄话~",
 		name = "矮丛花簇",
@@ -407,11 +346,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_furniture_template
-
-	var_1_7[8] = {
+	pg.base.island_furniture_template[8] = {
 		setNum = 999,
 		describe = "叶子是明亮的黄色，树影婆娑，阳光下格外醒目~",
 		name = "明黄木",
@@ -432,11 +367,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_furniture_template
-
-	var_1_8[9] = {
+	pg.base.island_furniture_template[9] = {
 		setNum = 999,
 		describe = "茂密的绿色树冠，随风轻晃时沙沙作响~",
 		name = "碧盖木",
@@ -462,11 +393,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_furniture_template
-
-	var_1_9[10] = {
+	pg.base.island_furniture_template[10] = {
 		setNum = 999,
 		describe = "嫩黄色的新生树苗，细枝上挂着小小的叶片~",
 		name = "黄枝小树",
@@ -487,11 +414,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_furniture_template
-
-	var_1_10[11] = {
+	pg.base.island_furniture_template[11] = {
 		setNum = 999,
 		describe = "新生的绿色树苗，叶片还带着晨露的湿润~",
 		name = "青嫩小树",
@@ -517,11 +440,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_furniture_template
-
-	var_1_11[12] = {
+	pg.base.island_furniture_template[12] = {
 		setNum = 999,
 		describe = "质朴的陶土地砖，带着手工铺就的独特美感。",
 		name = "陶土地砖(小)",
@@ -542,11 +461,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_furniture_template
-
-	var_1_12[13] = {
+	pg.base.island_furniture_template[13] = {
 		setNum = 999,
 		describe = "质朴的陶土地砖，带着手工铺就的独特美感。",
 		name = "陶土地砖(中)",
@@ -567,11 +482,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_furniture_template
-
-	var_1_13[14] = {
+	pg.base.island_furniture_template[14] = {
 		setNum = 999,
 		describe = "质朴的陶土地砖，带着手工铺就的独特美感。",
 		name = "陶土地砖(大)",
@@ -592,11 +503,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_furniture_template
-
-	var_1_14[15] = {
+	pg.base.island_furniture_template[15] = {
 		setNum = 999,
 		describe = "结实平整且好打理的砖石地，怎么用都行！",
 		name = "瓷面地砖(小)",
@@ -617,11 +524,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_furniture_template
-
-	var_1_15[16] = {
+	pg.base.island_furniture_template[16] = {
 		setNum = 999,
 		describe = "结实平整且好打理的砖石地，怎么用都行！",
 		name = "瓷面地砖(中)",
@@ -642,11 +545,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_furniture_template
-
-	var_1_16[17] = {
+	pg.base.island_furniture_template[17] = {
 		setNum = 999,
 		describe = "结实平整且好打理的砖石地，怎么用都行！",
 		name = "瓷面地砖(大)",
@@ -667,11 +566,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_furniture_template
-
-	var_1_17[18] = {
+	pg.base.island_furniture_template[18] = {
 		setNum = 999,
 		describe = "由不规则的石板拼接而成的地砖，美观精致~",
 		name = "拼花地砖(小)",
@@ -692,11 +587,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_furniture_template
-
-	var_1_18[19] = {
+	pg.base.island_furniture_template[19] = {
 		setNum = 999,
 		describe = "由不规则的石板拼接而成的地砖，美观精致~",
 		name = "拼花地砖(中)",
@@ -717,11 +608,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_furniture_template
-
-	var_1_19[20] = {
+	pg.base.island_furniture_template[20] = {
 		setNum = 999,
 		describe = "由不规则的石板拼接而成的地砖，美观精致~",
 		name = "拼花地砖(大)",
@@ -742,11 +629,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_furniture_template
-
-	var_1_20[21] = {
+	pg.base.island_furniture_template[21] = {
 		setNum = 999,
 		describe = "冷调灰色的石质地砖，沉稳耐磨易搭配~",
 		name = "灰石地砖(小)",
@@ -767,11 +650,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_furniture_template
-
-	var_1_21[22] = {
+	pg.base.island_furniture_template[22] = {
 		setNum = 999,
 		describe = "冷调灰色的石质地砖，沉稳耐磨易搭配~",
 		name = "灰石地砖(中)",
@@ -792,11 +671,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_furniture_template
-
-	var_1_22[23] = {
+	pg.base.island_furniture_template[23] = {
 		setNum = 999,
 		describe = "冷调灰色的石质地砖，沉稳耐磨易搭配~",
 		name = "灰石地砖(大)",
@@ -817,11 +692,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_furniture_template
-
-	var_1_23[100] = {
+	pg.base.island_furniture_template[100] = {
 		setNum = 1,
 		describe = "奖杯上，一片巨大的枫叶被丰收的麦穗环抱，能隐隐闻到一股令人安心的枫糖香气。",
 		name = "秋季开发奖杯",
@@ -847,11 +718,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_furniture_template
-
-	var_1_24[101] = {
+	pg.base.island_furniture_template[101] = {
 		setNum = 1,
 		describe = "奖杯上，三支风信子依偎绽放，花瓣如琉璃雕琢，隐逸着一缕清雅的芬芳。",
 		name = "春季开发奖杯",
@@ -877,11 +744,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_furniture_template
-
-	var_1_25[102] = {
+	pg.base.island_furniture_template[102] = {
 		setNum = 1,
 		describe = "奖杯上缀着向日葵与茉莉花，金黄与素白交织，定格了整季的灿烂。",
 		name = "夏季开发奖杯",
@@ -907,11 +770,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_furniture_template
-
-	var_1_26[103] = {
+	pg.base.island_furniture_template[103] = {
 		setNum = 1,
 		describe = "奖杯上，一片巨大的枫叶被丰收的麦穗环抱，能隐隐闻到一股令人安心的枫糖香气。",
 		name = "秋季开发奖杯II",
@@ -937,11 +796,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_furniture_template
-
-	var_1_27[10101] = {
+	pg.base.island_furniture_template[10101] = {
 		setNum = 1,
 		describe = "精致的森林小屋，享受美妙的田园生活吧~",
 		name = "林间居所",
@@ -967,11 +822,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_furniture_template
-
-	var_1_28[10201] = {
+	pg.base.island_furniture_template[10201] = {
 		setNum = 1,
 		describe = "超大型熊熊沙发套装！满足你对露营的一切需要！",
 		name = "熊熊沙发套装",
@@ -996,11 +847,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_furniture_template
-
-	var_1_29[10301] = {
+	pg.base.island_furniture_template[10301] = {
 		setNum = 999,
 		describe = "星星提灯照亮桌椅，氛围感拉满~",
 		name = "户外桌椅",
@@ -1028,11 +875,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_furniture_template
-
-	var_1_30[10302] = {
+	pg.base.island_furniture_template[10302] = {
 		setNum = 999,
 		describe = "钓鱼爱好者专属套装，坐在这里钓一整天也没问题！",
 		name = "悠然垂钓椅",
@@ -1055,11 +898,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_furniture_template
-
-	var_1_31[10303] = {
+	pg.base.island_furniture_template[10303] = {
 		setNum = 999,
 		describe = "敲击船锚可以当门铃哦~",
 		name = "营地木门",
@@ -1085,11 +924,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_furniture_template
-
-	var_1_32[10304] = {
+	pg.base.island_furniture_template[10304] = {
 		setNum = 999,
 		describe = "移动小屋，随时准备出发！",
 		name = "漫游房车",
@@ -1115,11 +950,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_furniture_template
-
-	var_1_33[10305] = {
+	pg.base.island_furniture_template[10305] = {
 		setNum = 999,
 		describe = "小熊的吊床，星星的摇篮~",
 		name = "小熊吊床",
@@ -1145,11 +976,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_furniture_template
-
-	var_1_34[10306] = {
+	pg.base.island_furniture_template[10306] = {
 		setNum = 999,
 		describe = "可快速搭建，方便携带又实用！",
 		name = "露营帐篷",
@@ -1175,11 +1002,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_furniture_template
-
-	var_1_35[10401] = {
+	pg.base.island_furniture_template[10401] = {
 		setNum = 999,
 		describe = "猫咪的晚餐就靠你了！你能钓上来鱼的对吧~",
 		name = "小船鱼塘",
@@ -1207,11 +1030,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_furniture_template
-
-	var_1_36[10402] = {
+	pg.base.island_furniture_template[10402] = {
 		setNum = 999,
 		describe = "围坐在篝火旁的烧烤和畅聊是露营的灵魂！",
 		name = "露营篝火",
@@ -1237,11 +1056,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_furniture_template
-
-	var_1_37[10403] = {
+	pg.base.island_furniture_template[10403] = {
 		setNum = 999,
 		describe = "挤一挤，两个人也塞得下~",
 		name = "露营浴桶",
@@ -1269,11 +1084,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_furniture_template
-
-	var_1_38[10404] = {
+	pg.base.island_furniture_template[10404] = {
 		setNum = 999,
 		describe = "由石块堆叠成的小熊模样装饰，憨态可掬。",
 		name = "熊熊石摆",
@@ -1299,11 +1110,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_furniture_template
-
-	var_1_39[10405] = {
+	pg.base.island_furniture_template[10405] = {
 		setNum = 999,
 		describe = "熊熊造型的候车亭，等车的时候顺便看看风景~",
 		name = "熊熊候车亭",
@@ -1329,11 +1136,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_furniture_template
-
-	var_1_40[10406] = {
+	pg.base.island_furniture_template[10406] = {
 		setNum = 999,
 		describe = "由层层落叶堆积而成，风过时发出细碎的沙沙声。",
 		name = "落叶堆",
@@ -1359,11 +1162,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_furniture_template
-
-	var_1_41[10407] = {
+	pg.base.island_furniture_template[10407] = {
 		setNum = 999,
 		describe = "标准户外烧烤用具套装，含烤架与基础工具。",
 		name = "便携烤架组",
@@ -1389,11 +1188,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_furniture_template
-
-	var_1_42[10408] = {
+	pg.base.island_furniture_template[10408] = {
 		setNum = 999,
 		describe = "充满童趣的跷跷板，适合戴上熊耳帽子一起玩！",
 		name = "熊熊跷跷板",
@@ -1421,11 +1216,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_furniture_template
-
-	var_1_43[10409] = {
+	pg.base.island_furniture_template[10409] = {
 		setNum = 999,
 		describe = "轻松压水，随时取用超方便！",
 		name = "抽水装置",
@@ -1451,11 +1242,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_furniture_template
-
-	var_1_44[10410] = {
+	pg.base.island_furniture_template[10410] = {
 		setNum = 999,
 		describe = "危险区域请注意，安全第一要牢记！",
 		name = "警示牌",
@@ -1481,11 +1268,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_furniture_template
-
-	var_1_45[10411] = {
+	pg.base.island_furniture_template[10411] = {
 		setNum = 999,
 		describe = "斧头配木桩，劈柴超顺手！",
 		name = "劈柴小帮手",
@@ -1511,11 +1294,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_furniture_template
-
-	var_1_46[10412] = {
+	pg.base.island_furniture_template[10412] = {
 		setNum = 999,
 		describe = "灯和栏杆的组合，夜晚照亮超安心！",
 		name = "照明护栏",
@@ -1541,11 +1320,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_furniture_template
-
-	var_1_47[10413] = {
+	pg.base.island_furniture_template[10413] = {
 		setNum = 999,
 		describe = "木质结构，安全又可靠！",
 		name = "木制拒马",
@@ -1571,11 +1346,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_furniture_template
-
-	var_1_48[10414] = {
+	pg.base.island_furniture_template[10414] = {
 		setNum = 999,
 		describe = "金属质感拉满的防护栏杆，沉稳可靠！",
 		name = "铁制栏杆",
@@ -1601,11 +1372,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_furniture_template
-
-	var_1_49[10415] = {
+	pg.base.island_furniture_template[10415] = {
 		setNum = 999,
 		describe = "初长成的针叶小树，生机勃勃~",
 		name = "新杉初秀",
@@ -1631,11 +1398,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_furniture_template
-
-	var_1_50[10416] = {
+	pg.base.island_furniture_template[10416] = {
 		setNum = 999,
 		describe = "挺拔矗立的深绿巨人，木质清香弥漫四周~",
 		name = "青松立影",
@@ -1661,11 +1424,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_furniture_template
-
-	var_1_51[10417] = {
+	pg.base.island_furniture_template[10417] = {
 		setNum = 999,
 		describe = "软乎乎的熊仔玩偶，抱着超治愈！",
 		name = "毛绒熊偶",
@@ -1691,11 +1450,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_furniture_template
-
-	var_1_52[10418] = {
+	pg.base.island_furniture_template[10418] = {
 		setNum = 999,
 		describe = "手工箍制的迷你容器，散发淡淡木香。",
 		name = "小木桶",
@@ -1721,11 +1476,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_furniture_template
-
-	var_1_53[10419] = {
+	pg.base.island_furniture_template[10419] = {
 		setNum = 999,
 		describe = "给里面放些野外生存装备准没错！",
 		name = "森林木屋",
@@ -1746,11 +1497,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_furniture_template
-
-	var_1_54[10420] = {
+	pg.base.island_furniture_template[10420] = {
 		setNum = 999,
 		describe = "笔直矗立的照明灯杆，为夜晚点亮温暖光芒。",
 		name = "街灯柱",
@@ -1776,11 +1523,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_furniture_template
-
-	var_1_55[10421] = {
+	pg.base.island_furniture_template[10421] = {
 		setNum = 999,
 		describe = "专业级天文望远镜，带你遨游宇宙深空~",
 		name = "深空探索者",
@@ -1806,11 +1549,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_furniture_template
-
-	var_1_56[10801] = {
+	pg.base.island_furniture_template[10801] = {
 		setNum = 999,
 		describe = "用木板制作的简易路面，漫步其上享片刻悠闲。",
 		name = "木制路面(小) ",
@@ -1831,11 +1570,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_furniture_template
-
-	var_1_57[10802] = {
+	pg.base.island_furniture_template[10802] = {
 		setNum = 999,
 		describe = "用木板制作的简易路面，漫步其上享片刻悠闲。",
 		name = "木制路面(中)",
@@ -1856,11 +1591,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_furniture_template
-
-	var_1_58[10803] = {
+	pg.base.island_furniture_template[10803] = {
 		setNum = 999,
 		describe = "用木板制作的简易路面，漫步其上享片刻悠闲。",
 		name = "木制路面(大)",
@@ -1881,11 +1612,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_furniture_template
-
-	var_1_59[20101] = {
+	pg.base.island_furniture_template[20101] = {
 		setNum = 1,
 		describe = "温馨舒适的宅邸，感受这份沉稳与静谧吧~",
 		name = "枫月馆",
@@ -1911,11 +1638,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_furniture_template
-
-	var_1_60[20201] = {
+	pg.base.island_furniture_template[20201] = {
 		setNum = 1,
 		describe = "浸入温泉，放松身心，享受片刻的宁静。",
 		name = "温泉浴场",
@@ -1944,11 +1667,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_furniture_template
-
-	var_1_61[20301] = {
+	pg.base.island_furniture_template[20301] = {
 		setNum = 999,
 		describe = "欢迎闲坐、喝茶、逗狸猫~",
 		name = "狸猫居",
@@ -1976,11 +1695,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_furniture_template
-
-	var_1_62[20302] = {
+	pg.base.island_furniture_template[20302] = {
 		setNum = 999,
 		describe = "适合舞剑、跳舞或展示技艺，来露两手看看？",
 		name = "松乐舞台",
@@ -2006,11 +1721,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_furniture_template
-
-	var_1_63[20303] = {
+	pg.base.island_furniture_template[20303] = {
 		setNum = 999,
 		describe = "好想吃油豆腐啊……",
 		name = "狐狸祠",
@@ -2036,11 +1747,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_furniture_template
-
-	var_1_64[20304] = {
+	pg.base.island_furniture_template[20304] = {
 		setNum = 999,
 		describe = "食材准备完毕！来一顿丰盛的寿司大餐吧！",
 		name = "寿司桌",
@@ -2066,11 +1773,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_furniture_template
-
-	var_1_65[20305] = {
+	pg.base.island_furniture_template[20305] = {
 		setNum = 999,
 		describe = "典雅屏风，既可作为装饰，又可隔断空间 。",
 		name = "屏风",
@@ -2096,11 +1799,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_furniture_template
-
-	var_1_66[20306] = {
+	pg.base.island_furniture_template[20306] = {
 		setNum = 999,
 		describe = "茶道伞下，遮风挡雨，还能品茶哦~",
 		name = "茶道伞下",
@@ -2126,11 +1825,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_furniture_template
-
-	var_1_67[20401] = {
+	pg.base.island_furniture_template[20401] = {
 		setNum = 999,
 		describe = "荡来~荡去~~荡来~荡去~~",
 		name = "枫树秋千",
@@ -2158,11 +1853,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_furniture_template
-
-	var_1_68[20402] = {
+	pg.base.island_furniture_template[20402] = {
 		setNum = 999,
 		describe = "横劈？竖劈？斜着劈！",
 		name = "练习竹排",
@@ -2188,11 +1879,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_furniture_template
-
-	var_1_69[20403] = {
+	pg.base.island_furniture_template[20403] = {
 		setNum = 999,
 		describe = "逍遥鱼儿游来游去，可别打扰它们哦~",
 		name = "金鱼川",
@@ -2218,11 +1905,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_furniture_template
-
-	var_1_70[20404] = {
+	pg.base.island_furniture_template[20404] = {
 		setNum = 999,
 		describe = "黑兔兔，白兔兔，黑白兔兔叠兔兔！",
 		name = "黑兔兔",
@@ -2248,11 +1931,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_furniture_template
-
-	var_1_71[20405] = {
+	pg.base.island_furniture_template[20405] = {
 		setNum = 999,
 		describe = "白兔兔，黑兔兔，白黑兔兔靠兔兔！",
 		name = "白兔兔",
@@ -2278,11 +1957,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_furniture_template
-
-	var_1_72[20406] = {
+	pg.base.island_furniture_template[20406] = {
 		setNum = 999,
 		describe = "想要礼物？好好许愿哦~",
 		name = "许愿狸猫",
@@ -2308,11 +1983,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_furniture_template
-
-	var_1_73[20407] = {
+	pg.base.island_furniture_template[20407] = {
 		setNum = 999,
 		describe = "超大超呆萌！洗完澡可以趴上面哦！",
 		name = "仰姿卡皮巴拉",
@@ -2340,11 +2011,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_furniture_template
-
-	var_1_74[20408] = {
+	pg.base.island_furniture_template[20408] = {
 		setNum = 999,
 		describe = "仰姿卧姿随时切换，怎么舒服怎么靠~",
 		name = "卧姿卡皮巴拉",
@@ -2370,11 +2037,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_furniture_template
-
-	var_1_75[20409] = {
+	pg.base.island_furniture_template[20409] = {
 		setNum = 999,
 		describe = "红叶飘摇，宛若蝴蝶纷飞，让秋日的浪漫气息蔓延~",
 		name = "浪漫红枫",
@@ -2400,11 +2063,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_furniture_template
-
-	var_1_76[20410] = {
+	pg.base.island_furniture_template[20410] = {
 		setNum = 999,
 		describe = "棕叶纷纷扬扬飘落，给周围增添一份秋日的诗意与静谧~",
 		name = "梧桐落叶",
@@ -2430,11 +2089,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_furniture_template
-
-	var_1_77[20411] = {
+	pg.base.island_furniture_template[20411] = {
 		setNum = 999,
 		describe = "金黄扇叶飘落成堆，为庭院增添温暖与宁静的气息~",
 		name = "银杏落叶",
@@ -2460,11 +2115,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_furniture_template
-
-	var_1_78[20412] = {
+	pg.base.island_furniture_template[20412] = {
 		setNum = 999,
 		describe = "蘑菇之间也会抱团取暖呐~",
 		name = "共生菌群",
@@ -2490,11 +2141,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_furniture_template
-
-	var_1_79[20413] = {
+	pg.base.island_furniture_template[20413] = {
 		setNum = 999,
 		describe = "岁月在树桩上留下痕迹，粗犷的纹理中透着自然的沧桑感。",
 		name = "老树桩",
@@ -2520,11 +2167,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_furniture_template
-
-	var_1_80[20414] = {
+	pg.base.island_furniture_template[20414] = {
 		setNum = 999,
 		describe = "未经雕琢的松木桩，散发着淡淡的松香~",
 		name = "松木桩",
@@ -2550,11 +2193,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_furniture_template
-
-	var_1_81[20415] = {
+	pg.base.island_furniture_template[20415] = {
 		setNum = 999,
 		describe = "一组错落有致的小树桩，仿佛从密林深处延伸而来。",
 		name = "小树桩群",
@@ -2580,11 +2219,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_furniture_template
-
-	var_1_82[20801] = {
+	pg.base.island_furniture_template[20801] = {
 		setNum = 999,
 		describe = "土石小径蜿蜒其间，显露出未经修缮的自然之美~",
 		name = "土石小径(小)",
@@ -2610,11 +2245,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_furniture_template
-
-	var_1_83[20802] = {
+	pg.base.island_furniture_template[20802] = {
 		setNum = 999,
 		describe = "土石小径蜿蜒其间，显露出未经修缮的自然之美~",
 		name = "土石小径(中)",
@@ -2640,11 +2271,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_furniture_template
-
-	var_1_84[20803] = {
+	pg.base.island_furniture_template[20803] = {
 		setNum = 999,
 		describe = "土石小径蜿蜒其间，显露出未经修缮的自然之美~",
 		name = "土石小径(大)",
@@ -2670,11 +2297,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_furniture_template
-
-	var_1_85[30001] = {
+	pg.base.island_furniture_template[30001] = {
 		setNum = 999,
 		describe = "传统石制庭院灯，常用于照亮庭园小径，营造宁静平和的夜间氛围。",
 		name = "暖色石灯（小）",
@@ -2695,11 +2318,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_furniture_template
-
-	var_1_86[30002] = {
+	pg.base.island_furniture_template[30002] = {
 		setNum = 999,
 		describe = "传统石制庭院灯，常用于照亮庭园小径，营造宁静平和的夜间氛围。 ",
 		name = "暖色石灯（中）",
@@ -2725,11 +2344,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_furniture_template
-
-	var_1_87[30003] = {
+	pg.base.island_furniture_template[30003] = {
 		setNum = 999,
 		describe = "以兔子为造型的可爱夜灯，灯光柔和，兼具装饰与微弱的照明功能。",
 		name = "兔兔夜灯",
@@ -2750,11 +2365,7 @@ var_0_3.base.island_furniture_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_furniture_template
-
-	var_1_88[30004] = {
+	pg.base.island_furniture_template[30004] = {
 		setNum = 999,
 		describe = "传统纸制灯笼，提供柔和的范围照明，是营造夜间宁静氛围的经典元素。 ",
 		name = "庭院纸灯 ",
@@ -2780,11 +2391,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_furniture_template
-
-	var_1_89[30005] = {
+	pg.base.island_furniture_template[30005] = {
 		setNum = 999,
 		describe = "一座简洁的拱形小木桥，用于跨越庭院中的池塘。",
 		name = "枫渡小桥",
@@ -2810,11 +2417,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_furniture_template
-
-	var_1_90[30006] = {
+	pg.base.island_furniture_template[30006] = {
 		setNum = 999,
 		describe = "由坚固石材制成的庭院护栏，手摸上去凉丝丝的~",
 		name = "石制护栏",
@@ -2840,11 +2443,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_furniture_template
-
-	var_1_91[30007] = {
+	pg.base.island_furniture_template[30007] = {
 		setNum = 999,
 		describe = "花朵样式的铁制围栏，兼具防护与装饰功能。",
 		name = "铁制围栏",
@@ -2870,11 +2469,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_furniture_template
-
-	var_1_92[30008] = {
+	pg.base.island_furniture_template[30008] = {
 		setNum = 999,
 		describe = "庭院中的骨干景观树，提供四季不变的苍翠视野。",
 		name = "云杉树",
@@ -2900,11 +2495,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_furniture_template
-
-	var_1_93[30009] = {
+	pg.base.island_furniture_template[30009] = {
 		setNum = 999,
 		describe = "经过精心修剪，呈现各类时髦造型的景观树木。",
 		name = "景观绿树",
@@ -2930,11 +2521,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_furniture_template
-
-	var_1_94[30010] = {
+	pg.base.island_furniture_template[30010] = {
 		setNum = 999,
 		describe = "色泽淡蓝呈五角星形的可爱花卉，适合装点花坛边缘或作为庭院的地被植物。",
 		name = "蓝星花",
@@ -2960,11 +2547,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_furniture_template
-
-	var_1_95[30101] = {
+	pg.base.island_furniture_template[30101] = {
 		setNum = 1,
 		describe = "一座与花园融为一体的庭院式建筑，可在赏花之余进行聚会与休憩。",
 		name = "谧静庭院",
@@ -2990,11 +2573,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_furniture_template
-
-	var_1_96[30201] = {
+	pg.base.island_furniture_template[30201] = {
 		setNum = 1,
 		describe = "阳光透过玻璃顶洒落，四季鲜花在此静谧盛放。",
 		name = "琉璃花房",
@@ -3023,11 +2602,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_furniture_template
-
-	var_1_97[30301] = {
+	pg.base.island_furniture_template[30301] = {
 		setNum = 999,
 		describe = "备好茶具，在此迎接今日的下午茶时间~",
 		name = "午后凉亭",
@@ -3055,11 +2630,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_furniture_template
-
-	var_1_98[30302] = {
+	pg.base.island_furniture_template[30302] = {
 		setNum = 999,
 		describe = "听说站在桥上许愿会有流星哦！",
 		name = "星愿桥",
@@ -3085,8 +2656,7 @@ var_0_3.base.island_furniture_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_furniture_template[30303] = {
+	pg.base.island_furniture_template[30303] = {
 		setNum = 999,
 		describe = "由茂密绿植修剪而成的拱门，顶部悬挂一盏古典吊灯，用于照亮并装饰花园的入口。",
 		name = "花园拱门",
@@ -3116,11 +2686,7 @@ var_0_3.base.island_furniture_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_furniture_template
-
-	var_2_0[30304] = {
+	pg.base.island_furniture_template[30304] = {
 		setNum = 999,
 		describe = "华丽的世界正向着所有人敞开！",
 		name = "庭院大门",
@@ -3146,11 +2712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_furniture_template
-
-	var_2_1[30305] = {
+	pg.base.island_furniture_template[30305] = {
 		setNum = 999,
 		describe = "等待一场充满点心香气的午后茶话~",
 		name = "庭院桌椅 ",
@@ -3176,11 +2738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_furniture_template
-
-	var_2_2[30401] = {
+	pg.base.island_furniture_template[30401] = {
 		setNum = 999,
 		describe = "沐浴阳光，在向日葵丛中随风轻轻摇摆吧~",
 		name = "花田秋千",
@@ -3208,11 +2766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_furniture_template
-
-	var_2_3[30402] = {
+	pg.base.island_furniture_template[30402] = {
 		setNum = 999,
 		describe = "投下一枚硬币，聆听水声与心愿的轻轻回响~",
 		name = "祈愿喷泉",
@@ -3240,11 +2794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_furniture_template
-
-	var_2_4[30403] = {
+	pg.base.island_furniture_template[30403] = {
 		setNum = 999,
 		describe = "摸摸头，一天都会好心情！",
 		name = "幸运啾啾雕塑",
@@ -3272,11 +2822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_furniture_template
-
-	var_2_5[30404] = {
+	pg.base.island_furniture_template[30404] = {
 		setNum = 999,
 		describe = "嘘——水盘边常有客来访，小心别惊扰它们~",
 		name = "鸟浴浅池",
@@ -3302,11 +2848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_furniture_template
-
-	var_2_6[30405] = {
+	pg.base.island_furniture_template[30405] = {
 		setNum = 999,
 		describe = "适合放松身心的古典浴池，要过来试试水温吗~",
 		name = "古典浴池",
@@ -3332,11 +2874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_furniture_template
-
-	var_2_7[30406] = {
+	pg.base.island_furniture_template[30406] = {
 		setNum = 999,
 		describe = "被蝴蝶眷恋的花丛，随时定格春日一瞬~",
 		name = "蝶栖花坛",
@@ -3362,11 +2900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_furniture_template
-
-	var_2_8[30407] = {
+	pg.base.island_furniture_template[30407] = {
 		setNum = 999,
 		describe = "摘一捧金灿灿的向日葵，把阳光带进屋里吧~",
 		name = "向日葵花束",
@@ -3392,11 +2926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_furniture_template
-
-	var_2_9[30408] = {
+	pg.base.island_furniture_template[30408] = {
 		setNum = 999,
 		describe = "柱身刻满古典纹样，静静诉说往昔时光",
 		name = "古典石柱",
@@ -3422,11 +2952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_furniture_template
-
-	var_2_10[30409] = {
+	pg.base.island_furniture_template[30409] = {
 		setNum = 999,
 		describe = "几乎完全破损的块状残骸，另一段沉默的见证者。",
 		name = "石柱残骸（小）",
@@ -3452,11 +2978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_furniture_template
-
-	var_2_11[30410] = {
+	pg.base.island_furniture_template[30410] = {
 		setNum = 999,
 		describe = "仅剩半截的破损石柱，残留些许昔日的雕痕。",
 		name = "石柱残骸（中）",
@@ -3482,11 +3004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_furniture_template
-
-	var_2_12[30411] = {
+	pg.base.island_furniture_template[30411] = {
 		setNum = 999,
 		describe = "昔日损毁的柱身，如今已成为小动物的临时居所。",
 		name = "石柱残骸（倒）",
@@ -3512,11 +3030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_furniture_template
-
-	var_2_13[30412] = {
+	pg.base.island_furniture_template[30412] = {
 		setNum = 999,
 		describe = "仅剩框架的石门残骸，仿佛仍通向某个失落的秘境。",
 		name = "石门残骸",
@@ -3542,11 +3056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_furniture_template
-
-	var_2_14[30413] = {
+	pg.base.island_furniture_template[30413] = {
 		setNum = 999,
 		describe = "超大号花瓶！庭院最气派的风景！",
 		name = "装饰花瓶",
@@ -3572,11 +3082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_furniture_template
-
-	var_2_15[30414] = {
+	pg.base.island_furniture_template[30414] = {
 		setNum = 999,
 		describe = "复古街灯照亮石板小径，温暖光芒守护每夜安宁。",
 		name = "复古庭院灯",
@@ -3602,11 +3108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_furniture_template
-
-	var_2_16[30415] = {
+	pg.base.island_furniture_template[30415] = {
 		setNum = 999,
 		describe = "整齐栽种于庭院道路两侧的观赏花丛。",
 		name = "景观花丛",
@@ -3632,11 +3134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_furniture_template
-
-	var_2_17[30416] = {
+	pg.base.island_furniture_template[30416] = {
 		setNum = 999,
 		describe = "经过精心设计与打理的花圃，展现出规整的园艺美感。",
 		name = "景观花圃",
@@ -3662,11 +3160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_furniture_template
-
-	var_2_18[30801] = {
+	pg.base.island_furniture_template[30801] = {
 		setNum = 999,
 		describe = "由大小不一的天然石材铺砌而成的庭院路面，坚固耐磨~",
 		name = "石制路面（小）",
@@ -3692,11 +3186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_furniture_template
-
-	var_2_19[30802] = {
+	pg.base.island_furniture_template[30802] = {
 		setNum = 999,
 		describe = "由大小不一的天然石材铺砌而成的庭院路面，坚固耐磨~",
 		name = "石制路面（中）",
@@ -3722,11 +3212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_furniture_template
-
-	var_2_20[30803] = {
+	pg.base.island_furniture_template[30803] = {
 		setNum = 999,
 		describe = "由大小不一的天然石材铺砌而成的庭院路面，坚固耐磨~",
 		name = "石制路面（大）",
@@ -3752,11 +3238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_furniture_template
-
-	var_2_21[40002] = {
+	pg.base.island_furniture_template[40002] = {
 		setNum = 999,
 		describe = "用竹子制成的长凳，清凉透气，适合夏夜纳凉小坐。",
 		name = "竹子长凳",
@@ -3777,11 +3259,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_furniture_template
-
-	var_2_22[40004] = {
+	pg.base.island_furniture_template[40004] = {
 		setNum = 999,
 		describe = "简朴的木制院门，热闹与安静的分界线。",
 		name = "木制院门",
@@ -3802,11 +3280,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_furniture_template
-
-	var_2_23[40005] = {
+	pg.base.island_furniture_template[40005] = {
 		setNum = 999,
 		describe = "探头往里看，好像能听见很久以前的水声。",
 		name = "石制古井",
@@ -3827,11 +3301,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_furniture_template
-
-	var_2_24[40006] = {
+	pg.base.island_furniture_template[40006] = {
 		setNum = 999,
 		describe = "天然石材堆砌的矮墙，既分隔空间，又保持通透。",
 		name = "石制矮墙",
@@ -3852,11 +3322,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_furniture_template
-
-	var_2_25[40007] = {
+	pg.base.island_furniture_template[40007] = {
 		setNum = 999,
 		describe = "细木条编成的栅栏，质朴自然。",
 		name = "木制栅栏",
@@ -3877,11 +3343,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_furniture_template
-
-	var_2_26[40101] = {
+	pg.base.island_furniture_template[40101] = {
 		setNum = 1,
 		describe = "矗立于乐园中央的童话城堡，是每段奇妙旅程的目的地。",
 		name = "童话城堡",
@@ -3907,11 +3369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_furniture_template
-
-	var_2_27[9] = {
+	pg.base.island_furniture_template[9] = {
 		setNum = 1,
 		describe = "感受云端坠落的快感，体验失重瞬间的刺激。",
 		name = "云端坠落塔",
@@ -3939,11 +3397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_furniture_template
-
-	var_2_28[40301] = {
+	pg.base.island_furniture_template[40301] = {
 		setNum = 999,
 		describe = "充满童话风趣的彩色拱门，穿过它就像是走进了童话世界。",
 		name = "彩虹拱门",
@@ -3969,11 +3423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_furniture_template
-
-	var_2_29[40302] = {
+	pg.base.island_furniture_template[40302] = {
 		setNum = 999,
 		describe = "进入梦幻游乐园，烦恼通通扔外面~",
 		name = "游乐园大门",
@@ -3999,11 +3449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_furniture_template
-
-	var_2_30[40303] = {
+	pg.base.island_furniture_template[40303] = {
 		setNum = 999,
 		describe = "随处可见的白色铸铁长椅，花纹精致，方便游客随时坐下休息。",
 		name = "休憩时光",
@@ -4029,11 +3475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_furniture_template
-
-	var_2_31[40304] = {
+	pg.base.island_furniture_template[40304] = {
 		setNum = 999,
 		describe = "弯月造型的座椅，适合躺着看星星，或坐着发呆。",
 		name = "弯月小憩",
@@ -4059,11 +3501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_furniture_template
-
-	var_2_32[40401] = {
+	pg.base.island_furniture_template[40401] = {
 		setNum = 999,
 		describe = "色彩斑斓的木马随音乐旋转升降，承载着最经典的游园记忆。",
 		name = "旋转木马",
@@ -4091,11 +3529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_furniture_template
-
-	var_2_33[40402] = {
+	pg.base.island_furniture_template[40402] = {
 		setNum = 999,
 		describe = "坐进彩色咖啡杯里自由旋转，晕乎乎也是快乐的一部分~",
 		name = "旋转咖啡杯",
@@ -4121,11 +3555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_furniture_template
-
-	var_2_34[40403] = {
+	pg.base.island_furniture_template[40403] = {
 		setNum = 999,
 		describe = "从高处滑入清凉的海浪，水花四溅的快乐无与伦比。",
 		name = "浪花滑梯",
@@ -4151,11 +3581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_furniture_template
-
-	var_2_35[40404] = {
+	pg.base.island_furniture_template[40404] = {
 		setNum = 999,
 		describe = "巨大的咖啡杯升至云端，将众人的欢笑带向整片天空。",
 		name = "咖啡摩天轮",
@@ -4183,11 +3609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_furniture_template
-
-	var_2_36[40405] = {
+	pg.base.island_furniture_template[40405] = {
 		setNum = 999,
 		describe = "白色小鸭造型的游船，在水面晃晃悠悠，童趣十足。",
 		name = "鸭鸭游船",
@@ -4215,11 +3637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_furniture_template
-
-	var_2_37[40406] = {
+	pg.base.island_furniture_template[40406] = {
 		setNum = 999,
 		describe = "星星造型的装饰摆件，像一颗从天空坠落的星辰。",
 		name = "星星摆件",
@@ -4245,11 +3663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_furniture_template
-
-	var_2_38[40407] = {
+	pg.base.island_furniture_template[40407] = {
 		setNum = 999,
 		describe = "圆滚滚的充气泡泡里，可爱的小玩偶们正安静地睡着觉呢~",
 		name = "玩偶泡泡",
@@ -4275,11 +3689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_furniture_template
-
-	var_2_39[40408] = {
+	pg.base.island_furniture_template[40408] = {
 		setNum = 999,
 		describe = "听说摸摸小马的翅膀，愿望就会实现哦~",
 		name = "小马摆件",
@@ -4305,11 +3715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_furniture_template
-
-	var_2_40[40409] = {
+	pg.base.island_furniture_template[40409] = {
 		setNum = 999,
 		describe = "快上来，云端专线就要出发了~",
 		name = "小马热气球",
@@ -4335,11 +3741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_furniture_template
-
-	var_2_41[40410] = {
+	pg.base.island_furniture_template[40410] = {
 		setNum = 999,
 		describe = "路灯上的星星变换着颜色，为夜路增添一抹梦幻色彩。",
 		name = "星星路灯",
@@ -4365,11 +3767,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_furniture_template
-
-	var_2_42[40411] = {
+	pg.base.island_furniture_template[40411] = {
 		setNum = 999,
 		describe = "城堡向右，游船向左，跟随指示，不会迷路~",
 		name = "乐园指示牌",
@@ -4395,11 +3793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_furniture_template
-
-	var_2_43[40412] = {
+	pg.base.island_furniture_template[40412] = {
 		setNum = 999,
 		describe = "该景点转为拍照设计，摆个pose，将笑容定格在大头贴里吧~",
 		name = "咔嚓驿站",
@@ -4425,11 +3819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_furniture_template
-
-	var_2_44[40413] = {
+	pg.base.island_furniture_template[40413] = {
 		setNum = 999,
 		describe = "高高~低低~起起~落落~",
 		name = "跷跷板",
@@ -4455,11 +3845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_furniture_template
-
-	var_2_45[40414] = {
+	pg.base.island_furniture_template[40414] = {
 		setNum = 999,
 		describe = "粉色玫瑰缠绕着白色栅栏，靠近便能闻到甜蜜的玫瑰花香。",
 		name = "玫瑰栅栏",
@@ -4485,11 +3871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_furniture_template
-
-	var_2_46[40415] = {
+	pg.base.island_furniture_template[40415] = {
 		setNum = 999,
 		describe = "五颜六色的气球系在栏杆上，像是在列队欢迎游人一般。",
 		name = "气球栏杆",
@@ -4515,11 +3897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_furniture_template
-
-	var_2_47[40416] = {
+	pg.base.island_furniture_template[40416] = {
 		setNum = 999,
 		describe = "叶片呈粉色的枫树，为乐园增添了一抹梦幻色彩",
 		name = "乐园粉枫",
@@ -4545,11 +3923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_furniture_template
-
-	var_2_48[40417] = {
+	pg.base.island_furniture_template[40417] = {
 		setNum = 999,
 		describe = "挂着糖果与星星的粉色松树，是乐园里最甜的风景线。",
 		name = "星冠糖果树",
@@ -4575,11 +3949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_furniture_template
-
-	var_2_49[40418] = {
+	pg.base.island_furniture_template[40418] = {
 		setNum = 999,
 		describe = "像是从童话书里长出来的糖果树，树顶的月亮正微微泛着暖光。",
 		name = "月亮糖果树",
@@ -4605,11 +3975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_furniture_template
-
-	var_2_50[40419] = {
+	pg.base.island_furniture_template[40419] = {
 		setNum = 999,
 		describe = "白色雕花围栏环绕着成片粉色的郁金香，如一幅精致的油画。",
 		name = "郁金香花圃",
@@ -4635,11 +4001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_furniture_template
-
-	var_2_51[40420] = {
+	pg.base.island_furniture_template[40420] = {
 		setNum = 999,
 		describe = "被修剪成兔兔造型的花圃，种的是花，长出来的是可爱~",
 		name = "兔兔花圃",
@@ -4665,11 +4027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_furniture_template
-
-	var_2_52[40801] = {
+	pg.base.island_furniture_template[40801] = {
 		setNum = 999,
 		describe = "彩色地砖拼出格子图案，每一步都像是踩在棋盘上移动~",
 		name = "花格地砖（小）",
@@ -4690,11 +4048,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_furniture_template
-
-	var_2_53[40802] = {
+	pg.base.island_furniture_template[40802] = {
 		setNum = 999,
 		describe = "彩色地砖拼出格子图案，每一步都像是踩在棋盘上移动~",
 		name = "花格地砖（中）",
@@ -4715,11 +4069,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_furniture_template
-
-	var_2_54[40803] = {
+	pg.base.island_furniture_template[40803] = {
 		setNum = 999,
 		describe = "彩色地砖拼出格子图案，每一步都像是踩在棋盘上移动~",
 		name = "花格地砖（大）",
@@ -4740,11 +4090,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_furniture_template
-
-	var_2_55[50173] = {
+	pg.base.island_furniture_template[50173] = {
 		setNum = 999,
 		describe = "洁白干净的金属栏杆，适合倚靠或拍照。",
 		name = "白漆铁栏",
@@ -4770,11 +4116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_furniture_template
-
-	var_2_56[0] = {
+	pg.base.island_furniture_template[0] = {
 		setNum = 999,
 		describe = "木头小马配弹簧底座，骑上去就化身西部牛仔~",
 		name = "欢乐小马",
@@ -4800,11 +4142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_furniture_template
-
-	var_2_57[3] = {
+	pg.base.island_furniture_template[3] = {
 		setNum = 999,
 		describe = "树冠如粉色云朵，风来时花瓣飘落显得异常浪漫。",
 		name = "樱花树",
@@ -4830,11 +4168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_furniture_template
-
-	var_2_58[27] = {
+	pg.base.island_furniture_template[27] = {
 		setNum = 999,
 		describe = "石桌上摆放着未完成的棋局，似乎在等某个有缘人完成它。",
 		name = "围棋石座",
@@ -4860,11 +4194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_furniture_template
-
-	var_2_59[31] = {
+	pg.base.island_furniture_template[31] = {
 		setNum = 999,
 		describe = "摆满花盆和园艺工具的小木桌，是园丁最顺手的操作台。",
 		name = "园艺木桌",
@@ -4890,11 +4220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_furniture_template
-
-	var_2_60[50234] = {
+	pg.base.island_furniture_template[50234] = {
 		setNum = 999,
 		describe = "简朴的竹篱笆，透着一股田园气息。",
 		name = "竹篱笆",
@@ -4920,11 +4246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_furniture_template
-
-	var_2_61[50300] = {
+	pg.base.island_furniture_template[50300] = {
 		setNum = 999,
 		describe = "由搁浅的木船改造而成的驿站小屋，在小镇中相当引人注目。",
 		name = "船屋驿站",
@@ -4950,11 +4272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_furniture_template
-
-	var_2_62[50301] = {
+	pg.base.island_furniture_template[50301] = {
 		setNum = 999,
 		describe = "用杂物堆砌而成的简易靶场，是“预备牛仔”测试弹弓准度的地方。",
 		name = "简易靶场",
@@ -4982,11 +4300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_furniture_template
-
-	var_2_63[50302] = {
+	pg.base.island_furniture_template[50302] = {
 		setNum = 999,
 		describe = "粗木条钉成的单人牢笼，勉强能塞一个人进去。",
 		name = "单人牢笼",
@@ -5014,11 +4328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_furniture_template
-
-	var_2_64[0] = {
+	pg.base.island_furniture_template[0] = {
 		setNum = 999,
 		describe = "慢节奏生活的标志，适合发呆或小憩。",
 		name = "悠闲摇摇椅",
@@ -5046,11 +4356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_furniture_template
-
-	var_2_65[1] = {
+	pg.base.island_furniture_template[1] = {
 		setNum = 999,
 		describe = "穿梭于荒野的运输车，支撑着整个小镇的运转。",
 		name = "流动杂货车",
@@ -5076,11 +4382,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_furniture_template
-
-	var_2_66[2] = {
+	pg.base.island_furniture_template[2] = {
 		setNum = 999,
 		describe = "夜晚最温暖的地方，故事和歌声在此交织。",
 		name = "夜话篝火堆",
@@ -5108,11 +4410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_furniture_template
-
-	var_2_67[3] = {
+	pg.base.island_furniture_template[3] = {
 		setNum = 999,
 		describe = "蔬菜筐和杂物堆在一起，翻一翻说不定能找到惊喜。",
 		name = "果蔬杂货堆",
@@ -5138,11 +4436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_furniture_template
-
-	var_2_68[4] = {
+	pg.base.island_furniture_template[4] = {
 		setNum = 999,
 		describe = "酒馆里最常见的摆设，飘散着麦芽的香气。",
 		name = "橡木酒桶",
@@ -5168,11 +4462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_furniture_template
-
-	var_2_69[5] = {
+	pg.base.island_furniture_template[5] = {
 		setNum = 999,
 		describe = "昏黄的灯光，为夜归的人指引方向。",
 		name = "街角路灯",
@@ -5198,11 +4488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_furniture_template
-
-	var_2_70[6] = {
+	pg.base.island_furniture_template[6] = {
 		setNum = 999,
 		describe = "可以加炭的火炉，是寒冬里的温暖依靠。",
 		name = "温暖火炉",
@@ -5228,11 +4514,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_furniture_template
-
-	var_2_71[7] = {
+	pg.base.island_furniture_template[7] = {
 		setNum = 999,
 		describe = "铁锤与铁砧的碰撞，火焰与金属的交响。",
 		name = "铁砧与锤",
@@ -5258,11 +4540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_furniture_template
-
-	var_2_72[8] = {
+	pg.base.island_furniture_template[8] = {
 		setNum = 999,
 		describe = "贴满通缉令和告示的木牌，是小镇的信息中心。",
 		name = "小镇公告栏",
@@ -5288,11 +4566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_furniture_template
-
-	var_2_73[9] = {
+	pg.base.island_furniture_template[9] = {
 		setNum = 999,
 		describe = "印着小镇标志的木制大门，欢迎每一位来客。",
 		name = "小镇大门",
@@ -5318,11 +4592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_furniture_template
-
-	var_2_74[10] = {
+	pg.base.island_furniture_template[10] = {
 		setNum = 999,
 		describe = "用摇杆控制小鼠的升降，是小镇中最滑稽的娱乐设施。",
 		name = "鼠鼠吊笼",
@@ -5350,11 +4620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_furniture_template
-
-	var_2_75[11] = {
+	pg.base.island_furniture_template[11] = {
 		setNum = 999,
 		describe = "已超过使用年限的风车塔，每次转动都会响起吱呀吱呀的声音。",
 		name = "吱呀风车塔",
@@ -5380,11 +4646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_furniture_template
-
-	var_2_76[12] = {
+	pg.base.island_furniture_template[12] = {
 		setNum = 999,
 		describe = "由原木打磨而成的栏杆，简单实用地划分着区域。",
 		name = "原木栏杆",
@@ -5410,11 +4672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_furniture_template
-
-	var_2_77[14] = {
+	pg.base.island_furniture_template[14] = {
 		setNum = 999,
 		describe = "曾经运送矿石的铁轨，如今只余锈迹和回忆。",
 		name = "废弃铁轨",
@@ -5440,11 +4698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_furniture_template
-
-	var_2_78[15] = {
+	pg.base.island_furniture_template[15] = {
 		setNum = 999,
 		describe = "木制的马匹雕像，用作店铺招牌或纯粹装饰。",
 		name = "木马雕像",
@@ -5470,11 +4724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_furniture_template
-
-	var_2_79[16] = {
+	pg.base.island_furniture_template[16] = {
 		setNum = 999,
 		describe = "圆滚滚的干草垛，散发着田野的清香。",
 		name = "干草垛",
@@ -5500,11 +4750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_furniture_template
-
-	var_2_80[17] = {
+	pg.base.island_furniture_template[17] = {
 		setNum = 999,
 		describe = "被风吹着到处翻滚的干草团，是西部独有的风景。",
 		name = "风滚草",
@@ -5530,11 +4776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_furniture_template
-
-	var_2_81[18] = {
+	pg.base.island_furniture_template[18] = {
 		setNum = 999,
 		describe = "西部荒原最常见的植物，顽强而孤独。",
 		name = "荒原仙人掌",
@@ -5560,11 +4802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_furniture_template
-
-	var_2_82[21] = {
+	pg.base.island_furniture_template[21] = {
 		setNum = 999,
 		describe = "风沙中依然高耸挺立的杉树，是旅人辨认方向的标志。",
 		name = "高耸冷杉",
@@ -5590,11 +4828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_furniture_template
-
-	var_2_83[50347] = {
+	pg.base.island_furniture_template[50347] = {
 		setNum = 999,
 		describe = "粗犷风格的地砖铺陈在沙地上，像是把西部片里的街道搬到了脚下~",
 		name = "荒野地砖（小）",
@@ -5615,11 +4849,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_furniture_template
-
-	var_2_84[50348] = {
+	pg.base.island_furniture_template[50348] = {
 		setNum = 999,
 		describe = "粗犷风格的地砖铺陈在沙地上，像是把西部片里的街道搬到了脚下~",
 		name = "荒野地砖（中）",
@@ -5640,8 +4870,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_84
-	var_2_84.base.island_furniture_template[50349] = {
+	pg.base.island_furniture_template[50349] = {
 		setNum = 999,
 		describe = "粗犷风格的地砖铺陈在沙地上，像是把西部片里的街道搬到了脚下~",
 		name = "荒野地砖（大）",

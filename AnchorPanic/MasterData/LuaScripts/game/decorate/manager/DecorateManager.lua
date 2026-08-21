@@ -112,6 +112,7 @@ end
 
 -- 解析玩家称号配置表
 function getChatBubbleConfig(self, bubble_id)
+    bubble_id = bubble_id == 0 and 4001 or bubble_id -- 0是老消息，默认转换为基础的
     if not self.mChatBubbleConfigDic then
         self.mChatBubbleConfigDic = {}
         local baseData = RefMgr:getData("dialog_box_data")
@@ -166,7 +167,7 @@ function praseDecorateListMsg(self, moduleType, msgList)
         vo:praseMsgData(msgVo)
         idDic[vo.id] = vo
     end
-    self:dispatchEvent(self.UPDATE_DECORATE_LIST, {moduleType = moduleType})
+    self:dispatchEvent(self.UPDATE_DECORATE_LIST, { moduleType = moduleType })
     self:updateBubble()
 end
 
@@ -182,7 +183,7 @@ function praseDecorateDelMsg(self, moduleType, deleteId)
             self.mDecorateDic[moduleType] = nil
         end
 
-        self:dispatchEvent(self.UPDATE_DECORATE_LIST, {moduleType = moduleType})
+        self:dispatchEvent(self.UPDATE_DECORATE_LIST, { moduleType = moduleType })
         self:updateBubble()
     end
 end
@@ -191,7 +192,7 @@ end
 function praseChatBubbleMsg(self, msg)
     self.mChatBubbleDic = {}
     for _, chatInfo in pairs(msg.dialog_box_list) do
-        self.mChatBubbleDic[chatInfo.dialog_box_id] = {expired_time = chatInfo.expired_time, is_like = chatInfo.is_like}
+        self.mChatBubbleDic[chatInfo.dialog_box_id] = { expired_time = chatInfo.expired_time, is_like = chatInfo.is_like }
     end
 
     GameDispatcher:dispatchEvent(EventName.REFRESH_CHATBUBBLE_REDSTATE)
@@ -436,6 +437,8 @@ function isModuleTypeBubble(self, moduleType)
         isOpen = funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HOME_TITLE, false)
     elseif (moduleType == decorate.ModuleType.BACKGROUND) then
         isOpen = funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HOME_BACKGROUND, false)
+    elseif (moduleType == decorate.ModuleType.FIGHTSKIN) then
+        isOpen = funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FIGHT_SKIN, false)
     end
     if (isOpen) then
         local idDic = self:getDicByModuleType(moduleType)
@@ -482,6 +485,7 @@ function getFrameUsingId(self)
     return self.mFrameUsingId
 end
 -- 修改头像当前假使用(刷新较慢)
+
 function setUsingId(self, id)
     self.mUsingId = id
 end
@@ -501,10 +505,24 @@ end
 function setSelectIndex(self, index)
     self.mSelectIndex = index
 end
+
 --获取当前显示头像的index
 function getSelectIndex(self)
     return self.mSelectIndex
 end
+
+
+function getIsFightSkinRed(self)
+    local list = role.RoleManager:getFightSkinData()
+    local isRed = false
+    for i = 1, #list, 1 do
+        if read.ReadManager:isModuleRead(ReadConst.FIGHT_SKIN_BUBBLE, list[i].id) == true then
+            isRed = true
+        end
+    end
+    return isRed
+end
+
 
 --析构函数
 function dtor(self)

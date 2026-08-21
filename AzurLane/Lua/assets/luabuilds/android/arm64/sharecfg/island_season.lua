@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_season") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_season"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_season = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_season
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_season = rawget(pg, "island_season") or setmetatable({
+	__name = "island_season"
+}, confNEO)
+pg.island_season.all = {
 	1,
 	2,
 	3,
 	4
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_season = {}
+pg.base = pg.base or {}
+pg.base.island_season = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_season
-
-	var_1_0[1] = {
+	pg.base.island_season[1] = {
 		id = 1,
 		name = "岛屿开发季I——启动时刻！",
 		name_short = "开发季I",
@@ -495,11 +458,7 @@ var_0_3.base.island_season = {}
 			ui_name = "diyisaijileijipt"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_season
-
-	var_1_1[2] = {
+	pg.base.island_season[2] = {
 		id = 2,
 		name = "岛屿开发季II——春日闲趣",
 		name_short = "开发季II",
@@ -929,11 +888,7 @@ var_0_3.base.island_season = {}
 			ui_name = "diyisaijileijipt"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_season
-
-	var_1_2[3] = {
+	pg.base.island_season[3] = {
 		id = 3,
 		name = "岛屿开发季III——夏日悠游",
 		name_short = "开发季III",
@@ -1363,8 +1318,7 @@ var_0_3.base.island_season = {}
 			ui_name = "diyisaijileijipt"
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.island_season[4] = {
+	pg.base.island_season[4] = {
 		id = 4,
 		name = "岛屿开发季IV——秋日絮语",
 		name_short = "开发季IV",

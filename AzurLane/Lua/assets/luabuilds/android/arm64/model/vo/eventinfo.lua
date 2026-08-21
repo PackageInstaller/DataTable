@@ -1,93 +1,46 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EventInfo", import(".BaseVO"))
 
-local var_0_0 = "EventInfo"
+var_0_0.StateExpire = -1
+var_0_0.StateNone = 0
+var_0_0.StateActive = 1
+var_0_0.StateFinish = 2
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BaseVO"))
-
-var_0_1.StateExpire = -1
-var_0_1.StateNone = 0
-var_0_1.StateActive = 1
-var_0_1.StateFinish = 2
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
-	pg = var_2
-	arg_1_0.template = var_2.collection_template[arg_1_0.id]
-	assert = var_2
+	arg_1_0.template = pg.collection_template[arg_1_0.id]
 
-	var_2(arg_1_0.template, "pg.collection_template>>>" .. arg_1_0.id)
+	assert(arg_1_0.template, "pg.collection_template>>>" .. arg_1_0.id)
 
-	local var_1_0
-
-	if not arg_1_1.finish_time then
-		var_1_0 = 0
-	end
-
-	arg_1_0.finishTime = var_1_0
-
-	local var_1_1
-
-	if not arg_1_1.over_time then
-		var_1_1 = 0
-	end
-
-	arg_1_0.overTime = var_1_1
-	underscore = var_1_1
-
-	local var_1_2
-
-	if not var_1_1.to_array(arg_1_1.ship_id_list) then
-		var_1_2 = {}
-	end
-
-	arg_1_0.shipIds = var_1_2
-
-	local var_1_3
-
-	if not arg_1_1.activity_id then
-		var_1_3 = 0
-	end
-
-	arg_1_0.activityId = var_1_3
+	arg_1_0.finishTime = arg_1_1.finish_time or 0
+	arg_1_0.overTime = arg_1_1.over_time or 0
+	arg_1_0.shipIds = underscore.to_array(arg_1_1.ship_id_list) or {}
+	arg_1_0.activityId = arg_1_1.activity_id or 0
 
 	if arg_1_0:IsActivityType() and arg_1_0.overTime == 0 then
-		GetZeroTime = var_2
-		arg_1_0.overTime = var_2()
+		arg_1_0.overTime = GetZeroTime()
 	end
 
 	return
 end
 
-function var_0_1.IsActivityType(arg_2_0)
+function var_0_0.IsActivityType(arg_2_0)
 	return arg_2_0.activityId > 0
 end
 
-function var_0_1.GetState(arg_3_0)
+function var_0_0.GetState(arg_3_0)
 	if arg_3_0.finishTime == 0 then
 		if arg_3_0.overTime ~= 0 then
-			pg = var_1
-
-			local var_3_0 = var_1.TimeMgr.GetInstance()
-
-			if var_1.GetServerTime(var_3_0) < arg_3_0.overTime then
-				return var_0_1.StateNone
+			if pg.TimeMgr.GetInstance():GetServerTime() < arg_3_0.overTime then
+				return var_0_0.StateNone
 			else
-				return var_0_1.StateExpire
+				return var_0_0.StateExpire
 			end
 
 			if false then
-				local var_3_1 = arg_3_0.finishTime
-
-				pg = var_1_10002
-
-				local var_3_2 = var_1_10002.TimeMgr.GetInstance()
-
-				if var_3_1 < var_2.GetServerTime(var_3_2) then
-					return var_0_1.StateFinish
+				if arg_3_0.finishTime < pg.TimeMgr.GetInstance():GetServerTime() then
+					return var_0_0.StateFinish
 				else
-					return var_0_1.StateActive
+					return var_0_0.StateActive
 				end
 			end
 
@@ -96,272 +49,155 @@ function var_0_1.GetState(arg_3_0)
 	end
 end
 
-function var_0_1.IsStarting(arg_4_0)
-	return arg_4_0:GetState() ~= var_0_1.StateNone
+function var_0_0.IsStarting(arg_4_0)
+	return arg_4_0:GetState() ~= var_0_0.StateNone
 end
 
-function var_0_1.SetActivityId(arg_5_0, arg_5_1)
+function var_0_0.SetActivityId(arg_5_0, arg_5_1)
 	arg_5_0.activityId = arg_5_1
 
 	return
 end
 
-function var_0_1.BelongActivity(arg_6_0, arg_6_1)
+function var_0_0.BelongActivity(arg_6_0, arg_6_1)
 	return arg_6_0.activityId > 0 and arg_6_0.activityId == arg_6_1
 end
 
-function var_0_1.setShipIds(arg_7_0, arg_7_1)
+function var_0_0.setShipIds(arg_7_0, arg_7_1)
 	arg_7_0.valid = false
-	underscore = var_2
-	arg_7_0.shipIds = var_2.to_array(arg_7_1)
+	arg_7_0.shipIds = underscore.to_array(arg_7_1)
 
 	return
 end
 
-function var_0_1.getShipList(arg_8_0)
-	local var_8_0 = arg_8_0
+function var_0_0.getShipList(arg_8_0)
+	arg_8_0:checkValid()
 
-	arg_8_0.checkValid(var_8_0)
-
-	getProxy = var_1
-	BayProxy = var_8_0
-
-	local var_8_1 = var_1(var_8_0)
-
-	return var_1.getShipList(var_8_1, arg_8_0.shipIds)
+	return getProxy(BayProxy):getShipList(arg_8_0.shipIds)
 end
 
-function var_0_1.checkValid(arg_9_0)
+function var_0_0.checkValid(arg_9_0)
 	if arg_9_0.valid then
 		return
 	end
 
 	arg_9_0.valid = true
-	getProxy = var_1
-	BayProxy = var_1_10003
 
-	local var_9_0 = var_1(var_1_10003)
+	local var_9_0 = getProxy(BayProxy)
 
-	underscore = var_1_10002
-	arg_9_0.shipIds = var_1_10002.filter(arg_9_0.shipIds, function(arg_10_0)
-		tobool = var_2_10001
-
-		local var_10_0 = var_9_0
-
-		return var_2_10001(var_3.RawGetShipById(var_10_0, arg_10_0))
+	arg_9_0.shipIds = underscore.filter(arg_9_0.shipIds, function(arg_10_0)
+		return tobool(var_9_0:RawGetShipById(arg_10_0))
 	end)
 
 	return
 end
 
-function var_0_1.reachNum(arg_11_0)
+function var_0_0.reachNum(arg_11_0)
 	arg_11_0:checkValid()
 
 	return arg_11_0.template.ship_num <= #arg_11_0.shipIds
 end
 
-function var_0_1.reachLevel(arg_12_0)
-	local var_12_0
+function var_0_0.reachLevel(arg_12_0)
+	local var_12_0 = arg_12_0:getShipList()
 
-	if #arg_12_0:getShipList() > 0 then
-		underscore = var_2
-		var_12_0 = var_2.any(var_1, function(arg_13_0)
-			return arg_13_0.level >= arg_12_0.template.ship_lv
-		end)
-	else
-		var_12_0 = false
-	end
-
-	if false then
-		var_12_0 = true
-	end
-
-	return var_12_0
+	return #var_12_0 > 0 and underscore.any(var_12_0, function(arg_13_0)
+		return arg_13_0.level >= arg_12_0.template.ship_lv
+	end)
 end
 
-function var_0_1.reachTypes(arg_14_0)
-	local var_14_0 = arg_14_0
-	local var_14_1 = arg_14_0.getShipList(var_14_0)
+function var_0_0.reachTypes(arg_14_0)
+	local var_14_0 = arg_14_0:getShipList()
 
-	table = var_1_10002
-
-	if var_1_10002.getCount(var_14_1) == 0 then
+	if table.getCount(var_14_0) == 0 then
 		return false
 	end
 
-	local var_14_2 = true
+	local var_14_1 = true
 
-	ipairs = var_14_0
-
-	for iter_14_0, iter_14_1 in var_14_0(var_14_1) do
-		local var_14_3 = iter_14_1:getShipType()
-
-		table = var_1_10009
-
-		if not var_1_10009.contains(arg_14_0.template.ship_type, var_14_3) then
-			var_14_2 = false
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		if not table.contains(arg_14_0.template.ship_type, (iter_14_1:getShipType())) then
+			var_14_1 = false
 
 			break
 		end
 	end
 
-	return var_14_2
+	return var_14_1
 end
 
-function var_0_1.getOilConsume(arg_15_0)
-	local var_15_0
-
-	if not arg_15_0.template.oil then
-		var_15_0 = 0
-	end
-
-	return var_15_0
+function var_0_0.getOilConsume(arg_15_0)
+	return arg_15_0.template.oil or 0
 end
 
-function var_0_1.getTypesStr(arg_16_0)
-	pg = var_1_10001
+function var_0_0.getTypesStr(arg_16_0)
+	local var_16_0 = pg.ship_data_by_type
+	local var_16_1 = false
 
-	local var_16_0 = var_1_10001.ship_data_by_type
-	local var_16_1 = arg_16_0.template.ship_type
-	local var_16_2 = false
+	if #arg_16_0.template.ship_type == #pg.ship_data_by_type.all then
+		var_16_1 = true
 
-	if #var_16_1 == #var_16_0.all then
-		var_16_2 = true
-		pairs = var_4
-
-		for iter_16_0, iter_16_1 in var_4(var_16_0.all) do
-			table = var_1_10009
-
-			if not var_1_10009.contains(var_16_1, iter_16_1) then
-				var_16_2 = false
+		for iter_16_0, iter_16_1 in pairs(var_16_0.all) do
+			if not table.contains(arg_16_0.template.ship_type, iter_16_1) then
+				var_16_1 = false
 
 				break
 			end
 		end
 	end
 
-	if var_16_2 then
-		i18n = var_4
-
-		return var_4("event_type_unlimit")
+	if var_16_1 then
+		return i18n("event_type_unlimit")
 	else
-		local var_16_3 = ""
+		local var_16_2 = ""
 
-		ipairs = var_5
-		ShipType = iter_16_0
-
-		for iter_16_2, iter_16_3 in var_5(iter_16_0.FilterOverQuZhuType(var_16_1)) do
-			local var_16_4 = iter_16_2 == #arg_16_0.template.ship_type and "" or "、"
-
-			var_16_3 = var_16_3 .. var_16_0[iter_16_3].type_name .. var_16_4
+		for iter_16_2, iter_16_3 in ipairs(ShipType.FilterOverQuZhuType(arg_16_0.template.ship_type)) do
+			var_16_2 = var_16_2 .. var_16_0[iter_16_3].type_name .. (iter_16_2 == #arg_16_0.template.ship_type and "" or "、")
 		end
 
-		i18n = var_5
-
-		return var_5("event_condition_ship_type", var_16_3)
+		return i18n("event_condition_ship_type", var_16_2)
 	end
 
 	return
 end
 
-local var_0_2 = "EVENTINFO_FORMATION_KEY_"
+local var_0_1 = "EVENTINFO_FORMATION_KEY_"
 
-function var_0_1.ExistPrevFormation(arg_17_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_17_0 = var_1_10001(var_1_10003)
-	local var_17_1 = var_1.getRawData(var_17_0).id
-
-	PlayerPrefs = var_1_10002
-
-	return var_1_10002.HasKey(var_0_2 .. var_17_1)
+function var_0_0.ExistPrevFormation(arg_17_0)
+	return PlayerPrefs.HasKey(var_0_1 .. getProxy(PlayerProxy):getRawData().id)
 end
 
-function var_0_1.GetPrevFormation(arg_18_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_18_0 = var_1_10001(var_1_10003)
-	local var_18_1 = var_1.getRawData(var_18_0).id
-
-	PlayerPrefs = var_1_10002
-
-	local var_18_2 = var_1_10002.GetString(var_0_2 .. var_18_1)
-
-	string = var_18_0
-
-	local var_18_3 = var_18_0.split(var_18_2, "#")
-
-	_ = var_4
-
-	return var_4.map(var_18_3, function(arg_19_0)
-		tonumber = var_2_10001
-
-		return var_2_10001(arg_19_0)
+function var_0_0.GetPrevFormation(arg_18_0)
+	return _.map(string.split(PlayerPrefs.GetString(var_0_1 .. getProxy(PlayerProxy):getRawData().id), "#"), function(arg_19_0)
+		return tonumber(arg_19_0)
 	end)
 end
 
-function var_0_1.SavePrevFormation(arg_20_0)
+function var_0_0.SavePrevFormation(arg_20_0)
 	arg_20_0:checkValid()
 
 	if not arg_20_0:CanRecordPrevFormation() then
 		return
 	end
 
-	table = var_1
-
-	local var_20_0 = var_1.concat(arg_20_0.shipIds, "#")
-
-	getProxy = var_1_10002
-	PlayerProxy = var_4
-
-	local var_20_1 = var_1_10002(var_4)
-	local var_20_2 = var_2.getRawData(var_20_1).id
-
-	PlayerPrefs = var_3
-
-	var_3.SetString(var_0_2 .. var_20_2, var_20_0)
-
-	PlayerPrefs = var_3
-
-	var_3.Save()
+	PlayerPrefs.SetString(var_0_1 .. getProxy(PlayerProxy):getRawData().id, (table.concat(arg_20_0.shipIds, "#")))
+	PlayerPrefs.Save()
 
 	return
 end
 
-function var_0_1.CanRecordPrevFormation(arg_21_0)
+function var_0_0.CanRecordPrevFormation(arg_21_0)
 	return arg_21_0.template.oil >= 800
 end
 
-function var_0_1.GetCountDownTime(arg_22_0)
-	local var_22_3
-
-	if not arg_22_0:IsActivityType() and arg_22_0:GetState() == var_0_1.StateNone then
-		local var_22_0 = arg_22_0.overTime
-
-		if 0 < var_22_0 then
-			local var_22_1 = arg_22_0.overTime
-
-			pg = var_2
-
-			local var_22_2 = var_2.TimeMgr.GetInstance()
-
-			var_22_3 = var_22_1 - var_2.GetServerTime(var_22_2)
-
-			goto label_22_0
-		end
-	end
-
-	var_22_3 = false
+function var_0_0.GetCountDownTime(arg_22_0)
+	local var_22_0 = not arg_22_0:IsActivityType() and arg_22_0:GetState() == var_0_0.StateNone and arg_22_0.overTime > 0 and arg_22_0.overTime - pg.TimeMgr.GetInstance():GetServerTime() or false
 
 	if false then
-		var_22_3 = true
+		var_22_0 = true
 	end
 
-	::label_22_0::
-
-	return var_22_3
+	return var_22_0
 end
 
-return var_0_1
+return var_0_0

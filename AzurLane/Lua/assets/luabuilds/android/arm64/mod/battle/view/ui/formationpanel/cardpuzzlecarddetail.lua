@@ -1,48 +1,25 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
+local var_0_2 = ys.Battle.BattleDataFunction
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.CardPuzzleCardDetail = class("CardPuzzleCardDetail")
+ys.Battle.CardPuzzleCardDetail.__name = "CardPuzzleCardDetail"
 
-local var_0_1 = var_0.Battle.BattleConfig
-local var_0_2 = var_0.Battle.BattleDataFunction
-local var_0_3 = var_0.Battle
-
-class = var_0_10004
-var_0_3.CardPuzzleCardDetail = var_0_10004("CardPuzzleCardDetail")
-
-local var_0_4 = var_0.Battle.CardPuzzleCardDetail
-
-var_0_4.__name = "CardPuzzleCardDetail"
-
-function var_0_4.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.CardPuzzleCardDetail.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 	arg_1_0._tf = arg_1_0._go.transform
-
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0._desc = var_2.Find(var_1_0, "Desc")
-
-	local var_1_1 = arg_1_0._tf
-
-	arg_1_0._affixList = var_2.Find(var_1_1, "affixList")
-
-	local var_1_2 = arg_1_0._affixList
-
-	arg_1_0._affixContainer = var_2.Find(var_1_2, "container")
-
-	local var_1_3 = arg_1_0._tf
-
-	arg_1_0._affixTpl = var_2.Find(var_1_3, "tpl")
+	arg_1_0._desc = arg_1_0._tf:Find("Desc")
+	arg_1_0._affixList = arg_1_0._tf:Find("affixList")
+	arg_1_0._affixContainer = arg_1_0._affixList:Find("container")
+	arg_1_0._affixTpl = arg_1_0._tf:Find("tpl")
 	arg_1_0._affixViewList = {}
-	rtf = var_2
-	arg_1_0._bound = 960 - var_2(arg_1_0._tf).rect.width * 0.5
+	arg_1_0._bound = 960 - rtf(arg_1_0._tf).rect.width * 0.5
 
 	return
 end
 
-function var_0_4.Dispose(arg_2_0)
+function ys.Battle.CardPuzzleCardDetail.Dispose(arg_2_0)
 	arg_2_0._affixList = nil
 	arg_2_0._affixContainer = nil
 	arg_2_0._affixTpl = nil
@@ -53,67 +30,43 @@ function var_0_4.Dispose(arg_2_0)
 	return
 end
 
-function var_0_4.Active(arg_3_0, arg_3_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_3_0._go, arg_3_1)
+function ys.Battle.CardPuzzleCardDetail.Active(arg_3_0, arg_3_1)
+	setActive(arg_3_0._go, arg_3_1)
 
 	return
 end
 
-function var_0_4.SetReferenceCard(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1:GetCardInfo()
-	local var_4_1 = var_2.GetCardID(var_4_0)
-	local var_4_2 = var_0_2.GetPuzzleCardDataTemplate(var_4_1)
+function ys.Battle.CardPuzzleCardDetail.SetReferenceCard(arg_4_0, arg_4_1)
+	local var_4_0 = var_0_2.GetPuzzleCardDataTemplate((arg_4_1:GetCardInfo():GetCardID()))
 
-	setText = var_4_0
+	setText(arg_4_0._desc, var_4_0.discript)
 
-	var_4_0(arg_4_0._desc, var_4_2.discript)
+	local var_4_1 = 0
 
-	local var_4_3 = #var_4_2.label
-	local var_4_4 = 0
+	while var_4_1 < #var_4_0.label do
+		var_4_1 = var_4_1 + 1
 
-	while var_4_4 < var_4_3 do
-		var_4_4 = var_4_4 + 1
+		local var_4_2 = arg_4_0._affixViewList[var_4_1]
 
-		local var_4_5, var_4_6
+		if arg_4_0._affixViewList[var_4_1] == nil then
+			var_4_2 = var_0_0.Battle.CardPuzzleCardDetailAffix.New((cloneTplTo(arg_4_0._affixTpl, arg_4_0._affixContainer)))
 
-		if arg_4_0._affixViewList[var_4_4] == nil then
-			cloneTplTo = var_4_5
-			var_4_5 = var_4_5(arg_4_0._affixTpl, arg_4_0._affixContainer)
-			var_4_6 = var_0.Battle.CardPuzzleCardDetailAffix.New(var_4_5)
-			table = var_8
-
-			var_8.insert(arg_4_0._affixViewList, var_4_6)
+			table.insert(arg_4_0._affixViewList, var_4_2)
 		end
 
-		var_4_6:SetAffixID(var_4_2.label[var_4_4])
+		var_4_2:SetAffixID(var_4_0.label[var_4_1])
 	end
 
-	ipairs = var_4_6
-
-	for iter_4_0, iter_4_1 in var_4_6(arg_4_0._affixViewList) do
-		local var_4_7 = iter_4_0 <= var_4_4
-
-		iter_4_1:SetActive(var_4_7)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._affixViewList) do
+		iter_4_1:SetActive(iter_4_0 <= var_4_1)
 	end
 
-	local var_4_8
+	arg_4_0._pos = arg_4_0._pos or Vector3.New(0, 0, 0)
 
-	if not arg_4_0._pos then
-		Vector3 = var_4_8
-		var_4_8 = var_4_8.New(0, 0, 0)
-	end
+	local var_4_3 = arg_4_1:GetUIPos()
 
-	arg_4_0._pos = var_4_8
-
-	if arg_4_1:GetUIPos().x > arg_4_0._bound then
-		arg_4_0._pos.x = arg_4_0._bound
-	else
-		arg_4_0._pos.x = var_6.x
-	end
-
-	arg_4_0._pos.y = var_6.y + 2
+	arg_4_0._pos.x = var_4_3.x > arg_4_0._bound and arg_4_0._bound or var_4_3.x
+	arg_4_0._pos.y = var_4_3.y + 2
 	arg_4_0._tf.anchoredPosition = arg_4_0._pos
 
 	return

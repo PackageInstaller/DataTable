@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_gift") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_gift"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_gift = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_gift
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_gift = rawget(pg, "dorm3d_gift") or setmetatable({
+	__name = "dorm3d_gift"
+}, confNEO)
+pg.dorm3d_gift.all = {
 	1021001,
 	1021002,
 	1021003,
@@ -44,11 +21,7 @@ var_0_3.all = {
 	7990201,
 	7990261
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_gift
-
-var_0_4.get_id_list_by_ship_group_id = {
+pg.dorm3d_gift.get_id_list_by_ship_group_id = {
 	[0] = {
 		1021001,
 		1021002,
@@ -83,25 +56,11 @@ var_0_4.get_id_list_by_ship_group_id = {
 		7990261
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_gift = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_gift = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_gift
-
-	var_1_0[1021001] = {
+	pg.base.dorm3d_gift[1021001] = {
 		display = "粉色的兔子布偶，采用柔软织物填充。抱在怀中十分舒适。",
 		name = "绒兔布偶",
 		unlock_dialogue_id = 0,
@@ -189,11 +148,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_gift
-
-	var_1_1[1021002] = {
+	pg.base.dorm3d_gift[1021002] = {
 		display = "花束散发着迷人的香气。玫瑰与其它红色为主的花卉彰显着它所代表的热烈与浪漫。",
 		name = "浪漫满分",
 		unlock_dialogue_id = 0,
@@ -287,11 +242,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_gift
-
-	var_1_2[1021003] = {
+	pg.base.dorm3d_gift[1021003] = {
 		display = "礼盒采用精致的包装，内含各种美味的蛋糕。无论是自己享用还是作为礼物，都是非常不错的选择。",
 		name = "蛋糕礼盒",
 		unlock_dialogue_id = 0,
@@ -382,11 +333,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_gift
-
-	var_1_3[2022001] = {
+	pg.base.dorm3d_gift[2022001] = {
 		display = "整理家居及办公室的必备良品。结实耐用的箱体可保护内部的工具免受损伤。",
 		name = "清扫工具箱",
 		unlock_dialogue_id = 10060,
@@ -418,11 +365,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_gift
-
-	var_1_4[2022002] = {
+	pg.base.dorm3d_gift[2022002] = {
 		display = "经典优雅的皇家茶具套组，清新的蓝白色调令人心旷神怡。\n让每一次品茶都成为一场雅致的享受。",
 		name = "茶享套装",
 		unlock_dialogue_id = 10070,
@@ -454,11 +397,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_gift
-
-	var_1_5[2022003] = {
+	pg.base.dorm3d_gift[2022003] = {
 		display = "作者通过深刻的洞察和生动的案例，详细阐述了成为一名完美女仆所需要具备的修养、技能和心态。\n教导读者如何在日常生活中充分发挥女仆的服侍精神。",
 		name = "《完美女仆守则》 ",
 		unlock_dialogue_id = 10080,
@@ -490,11 +429,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_gift
-
-	var_1_6[21] = {
+	pg.base.dorm3d_gift[21] = {
 		display = "纯色设计的制服鞋，鞋型舒适轻盈。\n舒适贴合足底弧度，陪你走过每段时光。",
 		name = "素色物语 ",
 		unlock_dialogue_id = 29991,
@@ -526,11 +461,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_gift
-
-	var_1_7[22] = {
+	pg.base.dorm3d_gift[22] = {
 		display = "修复心灵共振回忆， 探索能量注入动力。",
 		name = "能量修复仪",
 		unlock_dialogue_id = 20530,
@@ -562,11 +493,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_gift
-
-	var_1_8[29] = {
+	pg.base.dorm3d_gift[29] = {
 		display = "绽放着绚丽色彩的可爱画板，仿佛将整个世界浓缩其中，用它绘制的每一笔都交织着纯洁与童真。",
 		name = "彩虹心语",
 		unlock_dialogue_id = 30510,
@@ -598,11 +525,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_gift
-
-	var_1_9[30] = {
+	pg.base.dorm3d_gift[30] = {
 		display = "波浪般的丝带缠绕上原木画框，色彩与灵感即将在此交汇，让属于她的创作将在此间快乐绽放。 ",
 		name = "精致画框",
 		unlock_dialogue_id = 30550,
@@ -634,11 +557,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_gift
-
-	var_1_10[1051701] = {
+	pg.base.dorm3d_gift[1051701] = {
 		display = "透明的玻璃罐里，装满了晶莹剔透的彩色糖果。打开罐子，甜蜜的香气扑鼻而来，那是幸福的味道~",
 		name = "水晶糖",
 		unlock_dialogue_id = 110541,
@@ -670,11 +589,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_gift
-
-	var_1_11[1051702] = {
+	pg.base.dorm3d_gift[1051702] = {
 		display = "灵敏的触觉反馈，鲜亮的炫动光芒！\n无论是日常休闲还是激烈对战，都能畅快到底~",
 		name = "炫彩游戏手柄",
 		unlock_dialogue_id = 110551,
@@ -706,11 +621,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_gift
-
-	var_1_12[3070701] = {
+	pg.base.dorm3d_gift[3070701] = {
 		display = "与心形挂饰相扣的锁链，是简约却蕴含深意的设计。轻轻触摸，那冰凉的金属触感传递来的，是紧扣相连的爱~",
 		name = "相连的爱意",
 		unlock_dialogue_id = 120541,
@@ -742,11 +653,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_gift
-
-	var_1_13[3070702] = {
+	pg.base.dorm3d_gift[3070702] = {
 		display = "绯红裙摆如晚霞铺展，黑色蝴蝶已系成心结。期待你指尖抚过，感受那颤动的温热下，藏不住的爱与心意~",
 		name = "绯红邀约",
 		unlock_dialogue_id = 120551,
@@ -778,11 +685,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_gift
-
-	var_1_14[4990501] = {
+	pg.base.dorm3d_gift[4990501] = {
 		display = "优雅如晨光中的花苞，郁金香杯的弧度温柔地环绕双手。\n杯身的曲线承载着两个人共享的每一滴记忆，让其都凝结在这份细腻与温柔里。",
 		name = "郁金香杯",
 		unlock_dialogue_id = 140541,
@@ -814,11 +717,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_gift
-
-	var_1_15[7990201] = {
+	pg.base.dorm3d_gift[7990201] = {
 		display = "名为本能训练器的玩具，用一尾布鱼勾住所有的视线。\n每当它如活物般在空中划出弧线，都是在诱惑着被训练者显露出最纯粹的本能。",
 		name = "本能训练器",
 		unlock_dialogue_id = 210541,
@@ -850,8 +749,7 @@ var_0_4.base.dorm3d_gift = {}
 			}
 		}
 	}
-	pg = var_1_15
-	var_1_15.base.dorm3d_gift[7990261] = {
+	pg.base.dorm3d_gift[7990261] = {
 		display = "极地渔获造型的抱枕，手感柔软，抱在怀里十分暖和。\n不管是用来消磨闲暇时光，还是在休息时充当依靠，都很实用。",
 		name = "极地渔获抱枕",
 		unlock_dialogue_id = 0,

@@ -1,37 +1,11 @@
-﻿require = var_0_10000
-
-var_0_10000("Support/Object/Rect")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/Pool")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/LuaObPool")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/CldNode")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/ColliderTree")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/IsometricMap")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/DelegateInfo")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/AssetBundle")
-
-require = var_0_10000
-
-var_0_10000("Support/Object/AssetBundleEditor")
+﻿require("Support/Object/Rect")
+require("Support/Object/Pool")
+require("Support/Object/LuaObPool")
+require("Support/Object/CldNode")
+require("Support/Object/ColliderTree")
+require("Support/Object/IsometricMap")
+require("Support/Object/DelegateInfo")
+require("Support/Object/AssetBundle")
+require("Support/Object/AssetBundleEditor")
 
 return

@@ -1,230 +1,61 @@
-﻿require = var_0_10000
-
-var_0_10000("Mgr/TimeMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/EffectMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/UIMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SceneMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ConnectionMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/MsgboxMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/NewStyleMsgboxMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/TipsMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/NodeMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/FontMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ShaderMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/CriMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Pool/PoolMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SystemOpenMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ShareMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/PushNotificationMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Live2DMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SeriesGuideMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Guide/NewGuideMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/TrophyReminderMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/LayerWeightMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/const/LayerWeightConst")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ToastMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/WorldToastMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SecondaryPWDMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SystemGuideMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Sdk/SdkMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Tracker/TrackerMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Custom/DynamicBgMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Custom/CpkPlayMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/OSS/OSSMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ShipFlagMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Story/NewStoryMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/RedDot/EasyRedDotMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SimpleConnectionMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/UserAgreementMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/BrightnessMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ConfigTablePreloadMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Fix/CameraFixMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/BgmMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Download/FileDownloadMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Download/SettingsGroupMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/CipherGroupMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/RepairResMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/SceneAnimMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/Perform/PerformMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/NodeCanvasMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ClickEffectMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/CameraRTMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/GameTracker/GameTrackerMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/GMTMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/IKMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/ChangeSkinMgr")
-
-require = var_0_10000
-
-var_0_10000("Mgr/VoiceChat/Include")
-
-require = var_0_10000
-
-var_0_10000("Mgr/watermarking/WatermarkingMgr")
-
-PLATFORM_CODE = var_0_10000
-PLATFORM_CHT = var_0_10001
-
-if var_0_10000 == var_0_10001 then
-	require = var_0_10000
-
-	var_0_10000("Mgr/DeepLinking/YongshiDeepLinkingMgr")
+﻿require("Mgr/TimeMgr")
+require("Mgr/EffectMgr")
+require("Mgr/UIMgr")
+require("Mgr/SceneMgr")
+require("Mgr/ConnectionMgr")
+require("Mgr/MsgboxMgr")
+require("Mgr/NewStyleMsgboxMgr")
+require("Mgr/TipsMgr")
+require("Mgr/NodeMgr")
+require("Mgr/FontMgr")
+require("Mgr/ShaderMgr")
+require("Mgr/CriMgr")
+require("Mgr/Pool/PoolMgr")
+require("Mgr/SystemOpenMgr")
+require("Mgr/ShareMgr")
+require("Mgr/PushNotificationMgr")
+require("Mgr/Live2DMgr")
+require("Mgr/SeriesGuideMgr")
+require("Mgr/Guide/NewGuideMgr")
+require("Mgr/TrophyReminderMgr")
+require("Mgr/LayerWeightMgr")
+require("Mgr/const/LayerWeightConst")
+require("Mgr/ToastMgr")
+require("Mgr/WorldToastMgr")
+require("Mgr/SecondaryPWDMgr")
+require("Mgr/SystemGuideMgr")
+require("Mgr/Sdk/SdkMgr")
+require("Mgr/Tracker/TrackerMgr")
+require("Mgr/Custom/DynamicBgMgr")
+require("Mgr/Custom/CpkPlayMgr")
+require("Mgr/OSS/OSSMgr")
+require("Mgr/ShipFlagMgr")
+require("Mgr/Story/NewStoryMgr")
+require("Mgr/RedDot/EasyRedDotMgr")
+require("Mgr/SimpleConnectionMgr")
+require("Mgr/UserAgreementMgr")
+require("Mgr/BrightnessMgr")
+require("Mgr/ConfigTablePreloadMgr")
+require("Mgr/Fix/CameraFixMgr")
+require("Mgr/BgmMgr")
+require("Mgr/Download/FileDownloadMgr")
+require("Mgr/Download/SettingsGroupMgr")
+require("Mgr/CipherGroupMgr")
+require("Mgr/RepairResMgr")
+require("Mgr/SceneAnimMgr")
+require("Mgr/Perform/PerformMgr")
+require("Mgr/NodeCanvasMgr")
+require("Mgr/ClickEffectMgr")
+require("Mgr/CameraRTMgr")
+require("Mgr/GameTracker/GameTrackerMgr")
+require("Mgr/GMTMgr")
+require("Mgr/IKMgr")
+require("Mgr/ChangeSkinMgr")
+require("Mgr/VoiceChat/Include")
+require("Mgr/watermarking/WatermarkingMgr")
+
+if PLATFORM_CODE == PLATFORM_CHT then
+	require("Mgr/DeepLinking/YongshiDeepLinkingMgr")
 end
 
 return

@@ -1,299 +1,153 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShootingGameView", import("..BaseMiniGameView"))
 
-local var_0_0 = "ShootingGameView"
+var_0_0.animTime = 0.3333333333333333
+var_0_0.moveModulus = 120
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-
-var_0_1.animTime = 0.3333333333333333
-var_0_1.moveModulus = 120
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShootingGameUI"
 end
 
-function var_0_1.init(arg_2_0)
-	pg = var_1_10001
-	arg_2_0.uiMGR = var_1_10001.UIMgr.GetInstance()
+function var_0_0.init(arg_2_0)
+	arg_2_0.uiMGR = pg.UIMgr.GetInstance()
+	arg_2_0.blurPanel = arg_2_0._tf:Find("noAdaptPanel/blur_panel")
+	arg_2_0.top = arg_2_0.blurPanel:Find("top")
+	arg_2_0.backBtn = arg_2_0.top:Find("back")
+	arg_2_0.scoreTF = arg_2_0.top:Find("score/Text")
 
-	local var_2_0 = arg_2_0._tf
+	setText(arg_2_0.scoreTF, 0)
 
-	arg_2_0.blurPanel = var_1.Find(var_2_0, "noAdaptPanel/blur_panel")
+	arg_2_0.bestScoreTF = arg_2_0.top:Find("score_heightest/Text")
+	arg_2_0.ticketTF = arg_2_0.top:Find("ticket/Text")
+	arg_2_0.helpBtn = arg_2_0.top:Find("help_btn")
+	arg_2_0.sightTF = arg_2_0.blurPanel:Find("MoveArea/Sight")
 
-	local var_2_1 = arg_2_0.blurPanel
+	setActive(arg_2_0.sightTF, false)
 
-	arg_2_0.top = var_1.Find(var_2_1, "top")
-
-	local var_2_2 = arg_2_0.top
-
-	arg_2_0.backBtn = var_1.Find(var_2_2, "back")
-
-	local var_2_3 = arg_2_0.top
-
-	arg_2_0.scoreTF = var_1.Find(var_2_3, "score/Text")
-	setText = var_1
-
-	var_1(arg_2_0.scoreTF, 0)
-
-	local var_2_4 = arg_2_0.top
-
-	arg_2_0.bestScoreTF = var_1.Find(var_2_4, "score_heightest/Text")
-
-	local var_2_5 = arg_2_0.top
-
-	arg_2_0.ticketTF = var_1.Find(var_2_5, "ticket/Text")
-
-	local var_2_6 = arg_2_0.top
-
-	arg_2_0.helpBtn = var_1.Find(var_2_6, "help_btn")
-
-	local var_2_7 = arg_2_0.blurPanel
-
-	arg_2_0.sightTF = var_1.Find(var_2_7, "MoveArea/Sight")
-	setActive = var_1
-
-	var_1(arg_2_0.sightTF, false)
-
-	local var_2_8 = arg_2_0.blurPanel
-
-	arg_2_0.corners = var_1.Find(var_2_8, "Corners")
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.shootAreaTF = var_1.Find(var_2_9, "noAdaptPanel/ShootArea")
-
-	local var_2_10 = arg_2_0.shootAreaTF
-
-	arg_2_0.targetPanel = var_1.Find(var_2_10, "target_panel")
+	arg_2_0.corners = arg_2_0.blurPanel:Find("Corners")
+	arg_2_0.shootAreaTF = arg_2_0._tf:Find("noAdaptPanel/ShootArea")
+	arg_2_0.targetPanel = arg_2_0.shootAreaTF:Find("target_panel")
 	arg_2_0.targetTpl = {}
 
-	local var_2_11 = arg_2_0.shootAreaTF
-	local var_2_12 = var_1.Find(var_2_11, "tpl")
+	local var_2_0 = arg_2_0.shootAreaTF:Find("tpl")
 
-	for iter_2_0 = 1, var_2_12.childCount do
-		arg_2_0.targetTpl[iter_2_0] = var_2_12:GetChild(iter_2_0 - 1)
+	for iter_2_0 = 1, var_2_0.childCount do
+		arg_2_0.targetTpl[iter_2_0] = var_2_0:GetChild(iter_2_0 - 1)
 	end
 
-	setActive = var_2
+	setActive(var_2_0, false)
 
-	var_2(var_2_12, false)
+	arg_2_0.startMaskTF = arg_2_0.shootAreaTF:Find("start_mask")
+	arg_2_0.countdownTF = arg_2_0.startMaskTF:Find("count")
+	arg_2_0.lastTimeTF = arg_2_0.shootAreaTF:Find("time_word")
+	arg_2_0.bottomTF = arg_2_0._tf:Find("noAdaptPanel/bottom")
+	arg_2_0.joyStrickTF = arg_2_0.bottomTF:Find("Stick")
+	arg_2_0.fireBtn = arg_2_0.bottomTF:Find("fire/ActCtl")
+	arg_2_0.fireBtnDelegate = GetOrAddComponent(arg_2_0.fireBtn, "EventTriggerListener")
 
-	local var_2_13 = arg_2_0.shootAreaTF
+	setActive(arg_2_0.fireBtn:Find("block"), false)
 
-	arg_2_0.startMaskTF = var_2.Find(var_2_13, "start_mask")
+	arg_2_0.resultPanel = arg_2_0._tf:Find("result_panel")
 
-	local var_2_14 = arg_2_0.startMaskTF
-
-	arg_2_0.countdownTF = var_2.Find(var_2_14, "count")
-
-	local var_2_15 = arg_2_0.shootAreaTF
-
-	arg_2_0.lastTimeTF = var_2.Find(var_2_15, "time_word")
-
-	local var_2_16 = arg_2_0._tf
-
-	arg_2_0.bottomTF = var_2.Find(var_2_16, "noAdaptPanel/bottom")
-
-	local var_2_17 = arg_2_0.bottomTF
-
-	arg_2_0.joyStrickTF = var_2.Find(var_2_17, "Stick")
-
-	local var_2_18 = arg_2_0.bottomTF
-
-	arg_2_0.fireBtn = var_2.Find(var_2_18, "fire/ActCtl")
-	GetOrAddComponent = var_2
-	arg_2_0.fireBtnDelegate = var_2(arg_2_0.fireBtn, "EventTriggerListener")
-	setActive = var_2
-
-	local var_2_19 = arg_2_0.fireBtn
-
-	var_2(var_4.Find(var_2_19, "block"), false)
-
-	local var_2_20 = arg_2_0._tf
-
-	arg_2_0.resultPanel = var_2.Find(var_2_20, "result_panel")
-	setActive = var_2
-
-	var_2(arg_2_0.resultPanel, false)
+	setActive(arg_2_0.resultPanel, false)
 
 	return
 end
 
-function var_0_1.initData(arg_3_0)
-	local var_3_0 = arg_3_0:GetMGData()
-
-	arg_3_0.tempConfig = var_1.getConfig(var_3_0, "simple_config_data")
+function var_0_0.initData(arg_3_0)
+	arg_3_0.tempConfig = arg_3_0:GetMGData():getConfig("simple_config_data")
 	arg_3_0.tempConfig.waitCountdown = 3
 	arg_3_0.tempConfig.half = 56
 
 	return
 end
 
-function var_0_1.addTimer(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-	local var_4_0
+function var_0_0.addTimer(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_4_0.timerList = arg_4_0.timerList or {}
 
-	if not arg_4_0.timerList then
-		var_4_0 = {}
-	end
+	assert(arg_4_0.timerList[arg_4_1] == nil, "error Timers")
+	assert(arg_4_2 > 0, "duration must >0")
 
-	arg_4_0.timerList = var_4_0
-	assert = var_4_0
-
-	var_4_0(arg_4_0.timerList[arg_4_1] == nil, "error Timers")
-
-	assert = var_4_0
-
-	var_4_0(arg_4_2 > 0, "duration must >0")
-
-	local var_4_1 = arg_4_0.timerList
-	local var_4_2 = {}
-
-	Time = var_6
-	var_4_2.timeMark = var_6.realtimeSinceStartup + arg_4_2
-	var_4_2.func = arg_4_3
-	var_4_1[arg_4_1] = var_4_2
+	arg_4_0.timerList[arg_4_1] = {
+		timeMark = Time.realtimeSinceStartup + arg_4_2,
+		func = arg_4_3
+	}
 
 	return
 end
 
-function var_0_1.updateTimers(arg_5_0)
-	Time = var_1_10001
-
-	local var_5_0 = var_1_10001.realtimeSinceStartup
-
-	pairs = var_1_10002
-
-	for iter_5_0, iter_5_1 in var_1_10002(arg_5_0.timerList) do
-		if var_5_0 > iter_5_1.timeMark then
-			local var_5_1 = iter_5_1.func
-
+function var_0_0.updateTimers(arg_5_0)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.timerList) do
+		if Time.realtimeSinceStartup > iter_5_1.timeMark then
 			arg_5_0.timerList[iter_5_0] = nil
 
-			var_5_1()
+			iter_5_1.func()
 		end
 	end
 
 	return
 end
 
-function var_0_1.stopTimers(arg_6_0)
+function var_0_0.stopTimers(arg_6_0)
 	arg_6_0.isStopped = true
-	Time = var_1
 
-	local var_6_0 = var_1.realtimeSinceStartup
-
-	pairs = var_1_10002
-
-	for iter_6_0, iter_6_1 in var_1_10002(arg_6_0.timerList) do
-		iter_6_1.timeMark = iter_6_1.timeMark - var_6_0
+	for iter_6_0, iter_6_1 in pairs(arg_6_0.timerList) do
+		iter_6_1.timeMark = iter_6_1.timeMark - Time.realtimeSinceStartup
 	end
 
 	return
 end
 
-function var_0_1.restartTimers(arg_7_0)
+function var_0_0.restartTimers(arg_7_0)
 	arg_7_0.isStopped = false
-	Time = var_1
 
-	local var_7_0 = var_1.realtimeSinceStartup
-
-	pairs = var_1_10002
-
-	for iter_7_0, iter_7_1 in var_1_10002(arg_7_0.timerList) do
-		iter_7_1.timeMark = iter_7_1.timeMark + var_7_0
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.timerList) do
+		iter_7_1.timeMark = iter_7_1.timeMark + Time.realtimeSinceStartup
 	end
 
 	return
 end
 
-function var_0_1.clearTimers(arg_8_0)
+function var_0_0.clearTimers(arg_8_0)
 	arg_8_0.timerList = {}
 
 	return
 end
 
-function var_0_1.didEnter(arg_9_0)
-	onButton = var_1_10001
-
-	var_1_10001(arg_9_0, arg_9_0.backBtn, function()
+function var_0_0.didEnter(arg_9_0)
+	onButton(arg_9_0, arg_9_0.backBtn, function()
 		if arg_9_0.isPlaying then
-			local var_10_0 = arg_9_0
+			arg_9_0:stopTimers()
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("tips_summergame_exit"),
+				onYes = function()
+					arg_9_0:gameFinish(true)
+					arg_9_0:closeView()
 
-			var_0.stopTimers(var_10_0)
+					return
+				end,
+				onNo = function()
+					arg_9_0:restartTimers()
 
-			pg = var_0
-
-			local var_10_1 = var_0.MsgboxMgr.GetInstance()
-			local var_10_2 = var_0.ShowMsgBox
-			local var_10_3 = {}
-
-			i18n = var_2_10004
-			var_10_3.content = var_2_10004("tips_summergame_exit")
-
-			function var_10_3.onYes()
-				local var_11_0 = arg_9_0
-
-				var_0.gameFinish(var_11_0, true)
-
-				local var_11_1 = arg_9_0
-
-				var_0.closeView(var_11_1)
-
-				return
-			end
-
-			function var_10_3.onNo()
-				local var_12_0 = arg_9_0
-
-				var_0.restartTimers(var_12_0)
-
-				return
-			end
-
-			var_10_2(var_10_1, var_10_3)
+					return
+				end
+			})
 		else
-			local var_10_4 = arg_9_0
-
-			var_0.closeView(var_10_4)
+			arg_9_0:closeView()
 		end
 
 		return
 	end)
-
-	onButton = var_1_10001
-
-	local var_9_0 = arg_9_0
-	local var_9_1 = arg_9_0.helpBtn
-
-	local function var_9_2()
-		pg = var_2_10000
-
-		local var_13_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_13_1 = var_0.ShowMsgBox
-		local var_13_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_13_2.type = var_2_10004
-		pg = var_2_10004
-		var_13_2.helps = var_2_10004.gametip.help_summer_shooting.tip
-
-		var_13_1(var_13_0, var_13_2)
+	onButton(arg_9_0, arg_9_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.help_summer_shooting.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_9_0, var_9_1, var_9_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	var_1_10001(arg_9_0, arg_9_0.startMaskTF, function()
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_0.startMaskTF, function()
 		if not arg_9_0.isPlaying then
-			local var_14_0 = arg_9_0
-
-			var_0.gameStart(var_14_0)
+			arg_9_0:gameStart()
 		end
 
 		return
@@ -303,54 +157,38 @@ function var_0_1.didEnter(arg_9_0)
 	arg_9_0:resetTime()
 	arg_9_0:initFireFunc()
 	arg_9_0:setFireLink(false)
-
-	setActive = var_1
-
-	var_1(arg_9_0.startMaskTF, true)
+	setActive(arg_9_0.startMaskTF, true)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_15_0)
-	triggerButton = var_1_10001
-
-	var_1_10001(arg_15_0.backBtn)
+function var_0_0.onBackPressed(arg_15_0)
+	triggerButton(arg_15_0.backBtn)
 
 	return
 end
 
-local function var_0_2(arg_16_0, arg_16_1)
-	Vector2 = var_1_10002
-	math = var_1_10004
-
-	local var_16_0 = var_1_10004.clamp(arg_16_0.x, -arg_16_1.x, arg_16_1.x)
-
-	math = var_1_10005
-
-	return var_1_10002(var_16_0, var_1_10005.clamp(arg_16_0.y, -arg_16_1.y, arg_16_1.y))
+local function var_0_1(arg_16_0, arg_16_1)
+	return Vector2(math.clamp(arg_16_0.x, -arg_16_1.x, arg_16_1.x), math.clamp(arg_16_0.y, -arg_16_1.y, arg_16_1.y))
 end
 
-function var_0_1.update(arg_17_0)
-	Time = var_1_10001
-
-	local var_17_0 = var_1_10001.GetTimestamp()
+function var_0_0.update(arg_17_0)
+	local var_17_0 = Time.GetTimestamp()
 
 	if not arg_17_0.isStopped then
 		if arg_17_0.isAfterCount and arg_17_0.sightTimeMark then
-			local var_17_1
+			local var_17_2, var_17_3, var_17_4
 
 			if not arg_17_0.moveRect then
-				tf = var_17_1
-				var_17_1 = var_17_1(arg_17_0.sightTF.parent)
-				Vector2 = var_1_10003
-				arg_17_0.moveRect = var_1_10003(var_17_1.rect.width - arg_17_0.sightTF.rect.width, var_17_1.rect.height - arg_17_0.sightTF.rect.height) / 2
+				local var_17_1 = tf(arg_17_0.sightTF.parent)
+
+				arg_17_0.moveRect = Vector2(var_17_1.rect.width - arg_17_0.sightTF.rect.width, var_17_1.rect.height - arg_17_0.sightTF.rect.height) / 2
+				var_17_2 = arg_17_0.sightTF
+				var_17_3 = var_0_1
+				var_17_4 = arg_17_0.sightTF.anchoredPosition
 			end
 
-			Vector2 = var_17_1
-
-			local var_17_2 = var_17_1(arg_17_0.uiMGR.hrz, arg_17_0.uiMGR.vtc) * arg_17_0.tempConfig.moveSpeed * (var_17_0 - arg_17_0.sightTimeMark) * var_0_1.moveModulus
-
-			arg_17_0.sightTF.anchoredPosition = var_0_2(arg_17_0.sightTF.anchoredPosition + var_17_2 * (arg_17_0.isDown and 0.5 or 1), arg_17_0.moveRect)
+			var_17_2.anchoredPosition = var_17_3(var_17_4 + Vector2(arg_17_0.uiMGR.hrz, arg_17_0.uiMGR.vtc) * arg_17_0.tempConfig.moveSpeed * (var_17_0 - arg_17_0.sightTimeMark) * var_0_0.moveModulus * (arg_17_0.isDown and 0.5 or 1), arg_17_0.moveRect)
 		end
 
 		arg_17_0:updateTimers()
@@ -361,142 +199,122 @@ function var_0_1.update(arg_17_0)
 	return
 end
 
-function var_0_1.resetTime(arg_18_0)
+function var_0_0.resetTime(arg_18_0)
 	arg_18_0.countdown = arg_18_0.tempConfig.waitCountdown
-	setText = var_1
 
-	var_1(arg_18_0.countdownTF, arg_18_0.countdown)
+	setText(arg_18_0.countdownTF, arg_18_0.countdown)
 
 	arg_18_0.lastTime = arg_18_0.tempConfig.baseTime
-	setText = var_1
 
-	var_1(arg_18_0.lastTimeTF, arg_18_0.lastTime)
+	setText(arg_18_0.lastTimeTF, arg_18_0.lastTime)
 
 	return
 end
 
-function var_0_1.gameStart(arg_19_0)
+function var_0_0.gameStart(arg_19_0)
 	arg_19_0.isPlaying = true
-	UpdateBeat = var_1
 
-	var_1:Add(arg_19_0.update, arg_19_0)
-
-	setActive = var_1
-
-	var_1(arg_19_0.countdownTF, true)
-
-	setActive = var_1
-
-	local var_19_0 = arg_19_0.startMaskTF
-
-	var_1(var_3.Find(var_19_0, "word"), false)
+	UpdateBeat:Add(arg_19_0.update, arg_19_0)
+	setActive(arg_19_0.countdownTF, true)
+	setActive(arg_19_0.startMaskTF:Find("word"), false)
 	;(function(arg_20_0)
-		local var_20_0 = arg_19_0
+		arg_19_0:addTimer("start countdown", 1, function()
+			arg_19_0.countdown = arg_19_0.countdown - 1
 
-		var_1.addTimer(var_20_0, "start countdown", 1, function()
-			local var_21_0 = arg_19_0
-
-			var_21_0.countdown = arg_19_0.countdown - 1
-			setText = var_21_0
-
-			var_21_0(arg_19_0.countdownTF, arg_19_0.countdown)
+			setText(arg_19_0.countdownTF, arg_19_0.countdown)
 
 			if arg_19_0.countdown > 0 then
 				arg_20_0(arg_20_0)
 			else
-				local var_21_1 = arg_19_0
-
-				var_0.afterCountDown(var_21_1)
+				arg_19_0:afterCountDown()
 			end
 
 			return
 		end)
 
 		return
-	end)(var_1)
+	end)(function(arg_20_0)
+		arg_19_0:addTimer("start countdown", 1, function()
+			arg_19_0.countdown = arg_19_0.countdown - 1
+
+			setText(arg_19_0.countdownTF, arg_19_0.countdown)
+
+			if arg_19_0.countdown > 0 then
+				arg_20_0(arg_20_0)
+			else
+				arg_19_0:afterCountDown()
+			end
+
+			return
+		end)
+
+		return
+	end)
 
 	return
 end
 
-function var_0_1.afterCountDown(arg_22_0)
+function var_0_0.afterCountDown(arg_22_0)
 	arg_22_0.isAfterCount = true
 
-	local var_22_0 = arg_22_0.uiMGR
-
-	var_1.AttachStickOb(var_22_0, arg_22_0.joyStrickTF)
-
-	setActive = var_1
-
-	var_1(arg_22_0.sightTF, true)
-
-	setAnchoredPosition = var_1
-
-	local var_22_1 = arg_22_0.sightTF
-
-	Vector2 = var_4
-
-	var_1(var_22_1, var_4.zero)
+	arg_22_0.uiMGR:AttachStickOb(arg_22_0.joyStrickTF)
+	setActive(arg_22_0.sightTF, true)
+	setAnchoredPosition(arg_22_0.sightTF, Vector2.zero)
 	arg_22_0:setFireLink(true)
-
-	setActive = var_1
-
-	var_1(arg_22_0.startMaskTF, false)
+	setActive(arg_22_0.startMaskTF, false)
 
 	arg_22_0.score = 0
 
 	arg_22_0:flushTarget(true)
 	;(function(arg_23_0)
-		local var_23_0 = arg_22_0
+		arg_22_0:addTimer("gamefinish", 1, function()
+			arg_22_0.lastTime = arg_22_0.lastTime - 1
 
-		var_1.addTimer(var_23_0, "gamefinish", 1, function()
-			local var_24_0 = arg_22_0
-
-			var_24_0.lastTime = arg_22_0.lastTime - 1
-			setText = var_24_0
-
-			var_24_0(arg_22_0.lastTimeTF, arg_22_0.lastTime)
+			setText(arg_22_0.lastTimeTF, arg_22_0.lastTime)
 
 			if arg_22_0.lastTime > 0 then
 				arg_23_0(arg_23_0)
 			else
-				local var_24_1 = arg_22_0
-
-				var_0.gameFinish(var_24_1)
+				arg_22_0:gameFinish()
 			end
 
 			return
 		end)
 
 		return
-	end)(var_1)
+	end)(function(arg_23_0)
+		arg_22_0:addTimer("gamefinish", 1, function()
+			arg_22_0.lastTime = arg_22_0.lastTime - 1
+
+			setText(arg_22_0.lastTimeTF, arg_22_0.lastTime)
+
+			if arg_22_0.lastTime > 0 then
+				arg_23_0(arg_23_0)
+			else
+				arg_22_0:gameFinish()
+			end
+
+			return
+		end)
+
+		return
+	end)
 
 	return
 end
 
-function var_0_1.gameFinish(arg_25_0, arg_25_1)
+function var_0_0.gameFinish(arg_25_0, arg_25_1)
 	if arg_25_0.isAfterCount then
 		arg_25_0:setFireLink(false)
-
-		local var_25_0 = arg_25_0.uiMGR
-
-		var_2.ClearStick(var_25_0)
+		arg_25_0.uiMGR:ClearStick()
 
 		arg_25_0.isAfterCount = false
 	end
 
 	arg_25_0:clearTimers()
-
-	UpdateBeat = var_2
-
-	var_2:Remove(arg_25_0.update, arg_25_0)
-
-	setActive = var_2
-
-	var_2(arg_25_0.sightTF, false)
-
-	setActive = var_2
-
-	var_2(arg_25_0.countdownTF, false)
+	UpdateBeat:Remove(arg_25_0.update, arg_25_0)
+	setActive(arg_25_0.sightTF, false)
+	setActive(arg_25_0.countdownTF, false)
 	arg_25_0:resetTime()
 
 	arg_25_0.isPlaying = false
@@ -505,61 +323,38 @@ function var_0_1.gameFinish(arg_25_0, arg_25_1)
 		for iter_25_0 = 1, 3 do
 			for iter_25_1 = 1, 6 do
 				if arg_25_0.cell[iter_25_0][iter_25_1] then
-					local var_25_1 = arg_25_0.targetPanel
-					local var_25_2 = var_10.Find(var_25_1, "line_" .. iter_25_0)
-					local var_25_3 = var_10.GetChild(var_25_2, iter_25_1 - 1)
-					local var_25_4 = var_10.GetChild(var_25_3, 0)
-					local var_25_5 = var_10.GetComponent
-
-					typeof = var_13
-					Animator = var_1_10015
-
-					local var_25_6 = var_25_5(var_25_4, var_13(var_1_10015))
-
-					var_10.Play(var_25_6, "targetDown")
+					arg_25_0.targetPanel:Find("line_" .. iter_25_0):GetChild(iter_25_1 - 1):GetChild(0):GetComponent(typeof(Animator)):Play("targetDown")
 				end
 			end
 		end
 
-		Timer = var_2
-
-		local var_25_7 = var_2.New(function()
-			setActive = var_2_10000
-
-			var_2_10000(arg_25_0.startMaskTF, true)
-
-			setActive = var_2_10000
-
-			local var_26_0 = arg_25_0.startMaskTF
-
-			var_2_10000(var_2.Find(var_26_0, "word"), true)
+		Timer.New(function()
+			setActive(arg_25_0.startMaskTF, true)
+			setActive(arg_25_0.startMaskTF:Find("word"), true)
 
 			return
-		end, var_0_1.animTime)
-
-		var_2.Start(var_25_7)
+		end, var_0_0.animTime):Start()
 		arg_25_0:resultFinish()
 	end
 
 	return
 end
 
-function var_0_1.resultFinish(arg_27_0)
-	local var_27_0 = arg_27_0.tempConfig.score_level
-	local var_27_1
+function var_0_0.resultFinish(arg_27_0)
+	local var_27_0
 
-	for iter_27_0 = 1, #var_27_0 do
-		if arg_27_0.score >= var_27_0[#var_27_0 - iter_27_0 + 1] then
-			var_27_1 = iter_27_0
+	for iter_27_0 = 1, #arg_27_0.tempConfig.score_level do
+		if arg_27_0.score >= arg_27_0.tempConfig.score_level[#arg_27_0.tempConfig.score_level - iter_27_0 + 1] then
+			var_27_0 = iter_27_0
 
 			break
 		end
 	end
 
-	arg_27_0.awardLevel = var_27_1
+	arg_27_0.awardLevel = var_27_0
 
 	if arg_27_0:GetMGHubData().count > 0 then
-		arg_27_0:SendSuccess(var_27_1)
+		arg_27_0:SendSuccess(var_27_0)
 	else
 		arg_27_0:showResultPanel({})
 	end
@@ -567,273 +362,124 @@ function var_0_1.resultFinish(arg_27_0)
 	return
 end
 
-function var_0_1.showResultPanel(arg_28_0, arg_28_1, arg_28_2)
-	local function var_28_0()
-		setActive = var_2_10000
-
-		var_2_10000(arg_28_0.resultPanel, false)
+function var_0_0.showResultPanel(arg_28_0, arg_28_1, arg_28_2)
+	onButton(arg_28_0, arg_28_0.resultPanel:Find("bg"), function()
+		setActive(arg_28_0.resultPanel, false)
 
 		if arg_28_2 then
 			arg_28_2()
 		else
-			local var_29_0 = arg_28_0
-
-			var_0.updateCount(var_29_0)
+			arg_28_0:updateCount()
 		end
 
 		return
-	end
+	end)
+	onButton(arg_28_0, arg_28_0.resultPanel:Find("main/btn_confirm"), function()
+		setActive(arg_28_0.resultPanel, false)
 
-	onButton = var_1_10004
-
-	local var_28_1 = arg_28_0
-	local var_28_2 = arg_28_0.resultPanel
-
-	var_1_10004(var_28_1, var_7.Find(var_28_2, "bg"), var_28_0)
-
-	onButton = var_1_10004
-
-	local var_28_3 = arg_28_0
-	local var_28_4 = arg_28_0.resultPanel
-
-	var_1_10004(var_28_3, var_7.Find(var_28_4, "main/btn_confirm"), var_28_0)
-
-	local var_28_5 = arg_28_0.resultPanel
-	local var_28_6 = var_4.Find(var_28_5, "main")
-
-	if arg_28_0.score > arg_28_0.bestScore then
-		arg_28_0:StoreDataToServer({
-			arg_28_0.score
-		})
-
-		GetImageSpriteFromAtlasAsync = var_5
-
-		var_5("ui/minigameui/shootinggameui_atlas", "new_recode", var_28_6:Find("success"), true)
-	else
-		GetImageSpriteFromAtlasAsync = var_5
-
-		var_5("ui/minigameui/shootinggameui_atlas", "success", var_28_6:Find("success"), true)
-	end
-
-	GetImageSpriteFromAtlasAsync = var_5
-
-	var_5("ui/minigameui/shootinggameui_atlas", "level_" .. #arg_28_0.tempConfig.score_level - arg_28_0.awardLevel + 1, var_28_6:Find("success/level"), true)
-
-	setText = var_5
-
-	var_5(var_28_6:Find("right/score/number"), arg_28_0.score)
-
-	setActive = var_5
-
-	var_5(var_28_6:Find("right/awards/list"), #arg_28_1 > 0)
-
-	setActive = var_5
-
-	var_5(var_28_6:Find("right/awards/nothing"), #arg_28_1 == 0)
-
-	local var_28_7
-
-	if not arg_28_0.itemList then
-		UIItemList = var_28_7
-		var_28_7 = var_28_7.New(var_28_6:Find("right/awards/list"), var_28_6:Find("right/awards/list/item"))
-	end
-
-	arg_28_0.itemList = var_28_7
-
-	local var_28_8 = arg_28_0.itemList
-
-	var_5.make(var_28_8, function(arg_30_0, arg_30_1, arg_30_2)
-		UIItemList = var_2_10003
-
-		if arg_30_0 == var_2_10003.EventUpdate then
-			updateDrop = var_3
-
-			var_3(arg_30_2, arg_28_1[arg_30_1 + 1])
-
-			setText = var_3
-
-			var_3(arg_30_2:Find("number"), "x" .. arg_28_1[arg_30_1 + 1].count)
+		if arg_28_2 then
+			arg_28_2()
+		else
+			arg_28_0:updateCount()
 		end
 
 		return
 	end)
 
-	local var_28_9 = arg_28_0.itemList
+	local var_28_0 = arg_28_0.resultPanel:Find("main")
 
-	var_5.align(var_28_9, #arg_28_1)
-
-	setActive = var_5
-
-	var_5(arg_28_0.resultPanel, true)
-
-	return
-end
-
-function var_0_1.updateAfterFinish(arg_31_0)
-	getProxy = var_1_10001
-	MiniGameProxy = var_1_10003
-
-	local var_31_0 = var_1_10001(var_1_10003)
-	local var_31_1 = var_1.GetMiniGameData
-
-	MiniGameDataCreator = var_1_10004
-
-	local var_31_2 = var_31_1(var_31_0, var_1_10004.ShrineGameID)
-	local var_31_3
-
-	if not var_1.GetRuntimeData(var_31_2, "count") then
-		var_31_3 = 0
-	end
-
-	local var_31_4 = var_31_3 + 1
-
-	pg = var_31_2
-
-	local var_31_5 = var_31_2.m02
-	local var_31_6 = var_4.sendNotification
-
-	GAME = var_1_10007
-
-	local var_31_7 = var_1_10007.MODIFY_MINI_GAME_DATA
-	local var_31_8 = {}
-
-	MiniGameDataCreator = var_1_10009
-	var_31_8.id = var_1_10009.ShrineGameID
-	var_31_8.map = {
-		count = var_31_4
-	}
-
-	var_31_6(var_31_5, var_31_7, var_31_8)
-
-	return
-end
-
-function var_0_1.OnGetAwardDone(arg_32_0, arg_32_1)
-	local var_32_0 = arg_32_1.cmd
-
-	MiniGameOPCommand = var_1_10003
-
-	local var_32_1
-
-	if var_32_0 == var_1_10003.CMD_COMPLETE then
-		if arg_32_0:GetMGHubData().ultimate == 0 then
-			var_32_1 = var_2.usedtime
-
-			local var_32_2 = var_2
-
-			if var_32_1 >= var_2.getConfig(var_32_2, "reward_need") then
-				pg = var_32_1
-
-				local var_32_3 = var_32_1.m02
-
-				var_32_1 = var_32_1.sendNotification
-				GAME = var_32_2
-
-				local var_32_4 = var_32_2.SEND_MINI_GAME_OP
-				local var_32_5 = {
-					hubid = var_2.id
-				}
-
-				MiniGameOPCommand = var_8
-				var_32_5.cmd = var_8.CMD_ULTIMATE
-				var_32_5.args1 = {}
-
-				var_32_1(var_32_3, var_32_4, var_32_5)
-			end
-		end
+	if arg_28_0.score > arg_28_0.bestScore then
+		arg_28_0:StoreDataToServer({
+			arg_28_0.score
+		})
+		GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "new_recode", var_28_0:Find("success"), true)
 	else
-		local var_32_6 = arg_32_1.cmd
+		GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "success", var_28_0:Find("success"), true)
+	end
 
-		MiniGameOPCommand = var_32_1
+	GetImageSpriteFromAtlasAsync("ui/minigameui/shootinggameui_atlas", "level_" .. #arg_28_0.tempConfig.score_level - arg_28_0.awardLevel + 1, var_28_0:Find("success/level"), true)
+	setText(var_28_0:Find("right/score/number"), arg_28_0.score)
+	setActive(var_28_0:Find("right/awards/list"), #arg_28_1 > 0)
+	setActive(var_28_0:Find("right/awards/nothing"), #arg_28_1 == 0)
 
-		if var_32_6 == var_32_1.CMD_ULTIMATE then
-			pg = var_32_6
+	arg_28_0.itemList = arg_28_0.itemList or UIItemList.New(var_28_0:Find("right/awards/list"), var_28_0:Find("right/awards/list/item"))
 
-			local var_32_7 = var_32_6.NewStoryMgr.GetInstance()
-
-			var_2.Play(var_32_7, "TIANHOUYUYI2")
+	arg_28_0.itemList:make(function(arg_30_0, arg_30_1, arg_30_2)
+		if arg_30_0 == UIItemList.EventUpdate then
+			updateDrop(arg_30_2, arg_28_1[arg_30_1 + 1])
+			setText(arg_30_2:Find("number"), "x" .. arg_28_1[arg_30_1 + 1].count)
 		end
+
+		return
+	end)
+	arg_28_0.itemList:align(#arg_28_1)
+	setActive(arg_28_0.resultPanel, true)
+
+	return
+end
+
+function var_0_0.updateAfterFinish(arg_31_0)
+	local var_31_0 = getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.ShrineGameID):GetRuntimeData("count") or 0
+
+	pg.m02:sendNotification(GAME.MODIFY_MINI_GAME_DATA, {
+		id = MiniGameDataCreator.ShrineGameID,
+		map = {
+			count = var_31_0 + 1
+		}
+	})
+
+	return
+end
+
+function var_0_0.OnGetAwardDone(arg_32_0, arg_32_1)
+	if arg_32_1.cmd == MiniGameOPCommand.CMD_COMPLETE then
+		local var_32_0 = arg_32_0:GetMGHubData()
+
+		if var_32_0.ultimate == 0 and var_32_0.usedtime >= var_32_0:getConfig("reward_need") then
+			pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+				hubid = var_32_0.id,
+				cmd = MiniGameOPCommand.CMD_ULTIMATE,
+				args1 = {}
+			})
+		end
+	elseif arg_32_1.cmd == MiniGameOPCommand.CMD_ULTIMATE then
+		pg.NewStoryMgr.GetInstance():Play("TIANHOUYUYI2")
 	end
 
 	return
 end
 
-function var_0_1.OnSendMiniGameOPDone(arg_33_0, arg_33_1)
+function var_0_0.OnSendMiniGameOPDone(arg_33_0, arg_33_1)
 	arg_33_0:updateCount()
 
 	return
 end
 
-function var_0_1.updateCount(arg_34_0)
-	setText = var_1_10001
+function var_0_0.updateCount(arg_34_0)
+	setText(arg_34_0.ticketTF, arg_34_0:GetMGHubData().count)
 
-	var_1_10001(arg_34_0.ticketTF, arg_34_0:GetMGHubData().count)
-
-	checkExist = var_1_10001
-
-	local var_34_0 = arg_34_0:GetMGData()
-	local var_34_1
-
-	if not var_1_10001(var_3.GetRuntimeData(var_34_0, "elements"), {
+	arg_34_0.bestScore = checkExist(arg_34_0:GetMGData():GetRuntimeData("elements"), {
 		1
-	}) then
-		var_34_1 = 0
-	end
+	}) or 0
 
-	arg_34_0.bestScore = var_34_1
-	setText = var_34_1
-
-	var_34_1(arg_34_0.bestScoreTF, arg_34_0.bestScore)
+	setText(arg_34_0.bestScoreTF, arg_34_0.bestScore)
 
 	return
 end
 
-function var_0_1.initFireFunc(arg_35_0)
-	pg = var_1_10001
+function var_0_0.initFireFunc(arg_35_0)
+	local var_35_0 = pg.TipsMgr.GetInstance()
+	local var_35_1 = pg.TimeMgr.GetInstance()
+	local var_35_2 = arg_35_0.sightTF:Find("sight_ready")
 
-	local var_35_0 = var_1_10001.TipsMgr.GetInstance()
+	setImageAlpha(arg_35_0.sightTF:Find("sight_base"), 1)
+	setImageAlpha(arg_35_0.sightTF:Find("sight_ready"), 0)
 
-	pg = var_1_10002
-
-	local var_35_1 = var_1_10002.TimeMgr.GetInstance()
-	local var_35_2 = arg_35_0.sightTF
-	local var_35_3 = var_3.Find(var_35_2, "sight_base")
-	local var_35_4 = arg_35_0.sightTF
-	local var_35_5 = var_4.Find(var_35_4, "sight_ready")
-
-	setImageAlpha = var_35_2
-
-	var_35_2(var_35_3, 1)
-
-	setImageAlpha = var_35_2
-
-	var_35_2(var_35_5, 0)
-
-	local function var_35_6()
-		setActive = var_2_10000
-
-		var_2_10000(arg_35_0.corners, true)
-
-		LeanTween = var_2_10000
-
-		local var_36_0 = var_2_10000.scale
-		local var_36_1 = var_35_3
-
-		Vector3 = var_3
-
-		local var_36_2 = var_36_0(var_36_1, var_3(1.95, 1.95, 1), 0.1)
-		local var_36_3 = var_0.setOnComplete
-
-		System = var_3
-
-		var_36_3(var_36_2, var_3.Action(function()
-			LeanTween = var_3_10000
-
-			var_3_10000.alpha(var_35_3, 0, 0.1)
-
-			LeanTween = var_0
-
-			var_0.alpha(var_35_5, 1, 0.1)
+	local function var_35_3()
+		setActive(arg_35_0.corners, true)
+		LeanTween.scale(var_0, Vector3(1.95, 1.95, 1), 0.1):setOnComplete(System.Action(function()
+			LeanTween.alpha(var_0, 0, 0.1)
+			LeanTween.alpha(var_35_2, 1, 0.1)
 
 			return
 		end))
@@ -841,31 +487,11 @@ function var_0_1.initFireFunc(arg_35_0)
 		return
 	end
 
-	local function var_35_7()
-		setActive = var_2_10000
-
-		var_2_10000(arg_35_0.corners, false)
-
-		LeanTween = var_2_10000
-
-		var_2_10000.alpha(var_35_3, 1, 0.1)
-
-		LeanTween = var_0
-
-		local var_38_0 = var_0.alpha(var_35_5, 0, 0.1)
-		local var_38_1 = var_0.setOnComplete
-
-		System = var_3
-
-		var_38_1(var_38_0, var_3.Action(function()
-			LeanTween = var_3_10000
-
-			local var_39_0 = var_3_10000.scale
-			local var_39_1 = var_35_3
-
-			Vector3 = var_3_10003
-
-			var_39_0(var_39_1, var_3_10003.one, 0.1)
+	local function var_35_4()
+		setActive(arg_35_0.corners, false)
+		LeanTween.alpha(var_0, 1, 0.1)
+		LeanTween.alpha(var_35_2, 0, 0.1):setOnComplete(System.Action(function()
+			LeanTween.scale(var_0, Vector3.one, 0.1)
 
 			return
 		end))
@@ -874,39 +500,15 @@ function var_0_1.initFireFunc(arg_35_0)
 	end
 
 	function arg_35_0._downFunc()
-		var_35_6()
+		var_35_3()
 
 		return
 	end
 
 	function arg_35_0._upFunc()
-		LeanTween = var_2_10000
-
-		local var_41_0 = var_2_10000.scale
-		local var_41_1 = var_35_5
-
-		Vector3 = var_2_10003
-
-		local var_41_2 = var_41_0(var_41_1, var_2_10003(2, 2, 2), 0.03)
-		local var_41_3 = var_0.setOnComplete
-
-		System = var_3
-
-		var_41_3(var_41_2, var_3.Action(function()
-			LeanTween = var_3_10000
-
-			local var_42_0 = var_3_10000.scale
-			local var_42_1 = var_35_5
-
-			Vector3 = var_3_10003
-
-			local var_42_2 = var_42_0(var_42_1, var_3_10003.one, 0.07)
-			local var_42_3 = var_0.setOnComplete
-
-			System = var_3
-
-			var_42_3(var_42_2, var_3.Action(function()
-				var_35_7()
+		LeanTween.scale(var_35_2, Vector3(2, 2, 2), 0.03):setOnComplete(System.Action(function()
+			LeanTween.scale(var_35_2, Vector3.one, 0.07):setOnComplete(System.Action(function()
+				var_35_4()
 
 				return
 			end))
@@ -914,67 +516,32 @@ function var_0_1.initFireFunc(arg_35_0)
 			return
 		end))
 
-		local var_41_4 = arg_35_0
-		local var_41_5, var_41_6, var_41_7 = var_0.checkHit(var_41_4)
+		local var_41_0, var_41_1, var_41_2 = arg_35_0:checkHit()
 
-		if var_41_5 then
-			local var_41_8 = arg_35_0.cell[var_41_6][var_41_7]
+		if var_41_0 then
+			arg_35_0.cell[var_41_1][var_41_2] = nil
+			arg_35_0.score = arg_35_0.score + arg_35_0.tempConfig.targetScore[arg_35_0.cell[var_41_1][var_41_2]]
+			arg_35_0.targetCount[arg_35_0.cell[var_41_1][var_41_2]] = arg_35_0.targetCount[arg_35_0.cell[var_41_1][var_41_2]] - 1
+			arg_35_0.lastTime = arg_35_0.lastTime + arg_35_0.tempConfig.bonusTime
 
-			arg_35_0.cell[var_41_6][var_41_7] = nil
-			arg_35_0.score = arg_35_0.score + arg_35_0.tempConfig.targetScore[var_41_8]
-			arg_35_0.targetCount[var_41_8] = arg_35_0.targetCount[var_41_8] - 1
-
-			local var_41_9 = arg_35_0
-
-			var_41_9.lastTime = arg_35_0.lastTime + arg_35_0.tempConfig.bonusTime
-			setText = var_41_9
-
-			var_41_9(arg_35_0.lastTimeTF, arg_35_0.lastTime)
-
-			local var_41_10 = arg_35_0.targetPanel
-			local var_41_11 = var_4.Find(var_41_10, "line_" .. var_41_6)
-			local var_41_12 = var_4.GetChild(var_41_11, var_41_7 - 1)
-			local var_41_13 = var_4.GetChild(var_41_12, 0)
-			local var_41_14 = var_4.GetComponent
-
-			typeof = var_7
-			Animator = var_2_10009
-
-			local var_41_15 = var_41_14(var_41_13, var_7(var_2_10009))
-
-			var_4.Play(var_41_15, "targetDown")
-
-			local var_41_16 = arg_35_0
-
-			var_5.addTimer(var_41_16, "flush call", 0.2 + var_0_1.animTime, function()
-				local var_44_0 = arg_35_0
-
-				var_0.flushTarget(var_44_0)
+			setText(arg_35_0.lastTimeTF, arg_35_0.lastTime)
+			arg_35_0.targetPanel:Find("line_" .. var_41_1):GetChild(var_41_2 - 1):GetChild(0):GetComponent(typeof(Animator)):Play("targetDown")
+			arg_35_0:addTimer("flush call", 0.2 + var_0_0.animTime, function()
+				arg_35_0:flushTarget()
 
 				return
 			end)
 
-			_ = var_5
-
-			if not var_5.any(arg_35_0.targetCount, function(arg_45_0)
+			if not _.any(arg_35_0.targetCount, function(arg_45_0)
 				return arg_45_0 > 0
 			end) then
-				local var_41_17 = arg_35_0
-
-				var_5.gameFinish(var_41_17)
+				arg_35_0:gameFinish()
 			end
 		end
 
-		local var_41_18 = arg_35_0
-
-		var_3.setFireLink(var_41_18, false)
-
-		local var_41_19 = arg_35_0
-
-		var_3.addTimer(var_41_19, "fire cd", arg_35_0.tempConfig.fireCD, function()
-			local var_46_0 = arg_35_0
-
-			var_0.setFireLink(var_46_0, true)
+		arg_35_0:setFireLink(false)
+		arg_35_0:addTimer("fire cd", arg_35_0.tempConfig.fireCD, function()
+			arg_35_0:setFireLink(true)
 
 			return
 		end)
@@ -983,7 +550,7 @@ function var_0_1.initFireFunc(arg_35_0)
 	end
 
 	function arg_35_0._cancelFunc()
-		var_35_7()
+		var_35_4()
 
 		return
 	end
@@ -993,31 +560,21 @@ function var_0_1.initFireFunc(arg_35_0)
 	return
 end
 
-function var_0_1.setFireLink(arg_48_0, arg_48_1)
+function var_0_0.setFireLink(arg_48_0, arg_48_1)
 	if arg_48_1 then
-		setButtonEnabled = var_1_10002
-
-		var_1_10002(arg_48_0.fireBtn, true)
+		setButtonEnabled(arg_48_0.fireBtn, true)
 
 		if arg_48_0._downFunc ~= nil then
-			local var_48_0 = arg_48_0.fireBtnDelegate
-
-			var_2.AddPointDownFunc(var_48_0, function()
+			arg_48_0.fireBtnDelegate:AddPointDownFunc(function()
 				arg_48_0.isDown = true
 
 				if arg_48_0._main_cannon_sound then
-					local var_49_0 = arg_48_0._main_cannon_sound
-
-					var_0.Stop(var_49_0, true)
+					arg_48_0._main_cannon_sound:Stop(true)
 				end
 
-				local var_49_1 = arg_48_0
+				local var_49_0 = arg_48_0
 
-				pg = var_1
-
-				local var_49_2 = var_1.CriMgr.GetInstance()
-
-				var_49_1._main_cannon_sound = var_1.PlaySE_V3(var_49_2, "battle-cannon-main-prepared")
+				var_49_0._main_cannon_sound = pg.CriMgr.GetInstance():PlaySE_V3("battle-cannon-main-prepared")
 
 				arg_48_0._downFunc()
 
@@ -1026,21 +583,13 @@ function var_0_1.setFireLink(arg_48_0, arg_48_1)
 		end
 
 		if arg_48_0._upFunc ~= nil then
-			local var_48_1 = arg_48_0.fireBtnDelegate
-
-			var_2.AddPointUpFunc(var_48_1, function()
+			arg_48_0.fireBtnDelegate:AddPointUpFunc(function()
 				if arg_48_0.isDown then
 					if arg_48_0._main_cannon_sound then
-						local var_50_0 = arg_48_0._main_cannon_sound
-
-						var_0.Stop(var_50_0, true)
+						arg_48_0._main_cannon_sound:Stop(true)
 					end
 
-					pg = var_0
-
-					local var_50_1 = var_0.CriMgr.GetInstance()
-
-					var_0.PlaySoundEffect_V3(var_50_1, "event:/battle/boom2")
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/battle/boom2")
 
 					arg_48_0.isDown = false
 
@@ -1052,14 +601,10 @@ function var_0_1.setFireLink(arg_48_0, arg_48_1)
 		end
 
 		if arg_48_0._cancelFunc ~= nil then
-			local var_48_2 = arg_48_0.fireBtnDelegate
-
-			var_2.AddPointExitFunc(var_48_2, function()
+			arg_48_0.fireBtnDelegate:AddPointExitFunc(function()
 				if arg_48_0.isDown then
 					if arg_48_0._main_cannon_sound then
-						local var_51_0 = arg_48_0._main_cannon_sound
-
-						var_0.Stop(var_51_0, true)
+						arg_48_0._main_cannon_sound:Stop(true)
 					end
 
 					arg_48_0.isDown = false
@@ -1077,27 +622,16 @@ function var_0_1.setFireLink(arg_48_0, arg_48_1)
 			arg_48_0._cancelFunc()
 		end
 
-		setButtonEnabled = var_2
-
-		var_2(arg_48_0.fireBtn, false)
-
-		local var_48_3 = arg_48_0.fireBtnDelegate
-
-		var_2.RemovePointDownFunc(var_48_3)
-
-		local var_48_4 = arg_48_0.fireBtnDelegate
-
-		var_2.RemovePointUpFunc(var_48_4)
-
-		local var_48_5 = arg_48_0.fireBtnDelegate
-
-		var_2.RemovePointExitFunc(var_48_5)
+		setButtonEnabled(arg_48_0.fireBtn, false)
+		arg_48_0.fireBtnDelegate:RemovePointDownFunc()
+		arg_48_0.fireBtnDelegate:RemovePointUpFunc()
+		arg_48_0.fireBtnDelegate:RemovePointExitFunc()
 	end
 
 	return
 end
 
-function var_0_1.flushTarget(arg_52_0, arg_52_1)
+function var_0_0.flushTarget(arg_52_0, arg_52_1)
 	if arg_52_1 then
 		arg_52_0.targetCount = {
 			2,
@@ -1108,16 +642,13 @@ function var_0_1.flushTarget(arg_52_0, arg_52_1)
 
 	for iter_52_0 = 1, 3 do
 		for iter_52_1 = 1, 6 do
-			removeAllChildren = var_1_10010
+			local var_52_0 = arg_52_0.targetPanel:Find("line_" .. iter_52_0)
 
-			local var_52_0 = arg_52_0.targetPanel
-			local var_52_1 = var_1_10012.Find(var_52_0, "line_" .. iter_52_0)
-
-			var_1_10010(var_1_10012.GetChild(var_52_1, iter_52_1 - 1))
+			removeAllChildren(var_52_0:GetChild(iter_52_1 - 1))
 		end
 	end
 
-	local var_52_2 = {
+	local var_52_1 = {
 		0,
 		0,
 		0
@@ -1128,69 +659,39 @@ function var_0_1.flushTarget(arg_52_0, arg_52_1)
 		{},
 		{}
 	}
-	ipairs = var_3
 
-	for iter_52_2, iter_52_3 in var_3(arg_52_0.targetCount) do
+	for iter_52_2, iter_52_3 in ipairs(arg_52_0.targetCount) do
 		for iter_52_4 = 1, iter_52_3 do
-			math = var_1_10012
-			var_1_10012 = var_1_10012.random(3)
-			math = var_1_10013
-			var_1_10013 = var_1_10013.random(6)
+			local var_52_2 = math.random(3)
+			local var_52_3 = math.random(6)
 
-			::label_52_0::
-
-			if not arg_52_0.cell[var_1_10012][var_1_10013] then
-				if arg_52_1 then
-					local var_52_3 = var_52_2[var_1_10012]
-
-					if 4 <= var_52_3 then
-						repeat
-							math = var_52_3
-							var_52_3 = var_52_3.random(3)
-							math = var_15
-							var_1_10013 = var_15.random(6)
-							var_1_10012 = var_52_3
-
-							goto label_52_0
-						until true
-					end
-				end
-
-				var_52_2[var_1_10012] = var_52_2[var_1_10012] + 1
-
-				local var_52_4 = arg_52_0.cell[var_1_10012]
-
-				var_52_4[var_1_10013] = iter_52_2
-				cloneTplTo = var_52_4
-
-				local var_52_5 = arg_52_0.targetTpl[iter_52_2]
-				local var_52_6 = arg_52_0.targetPanel
-				local var_52_7 = var_17.Find(var_52_6, "line_" .. var_1_10012)
-
-				var_52_4(var_52_5, var_17.GetChild(var_52_7, var_1_10013 - 1))
+			while arg_52_0.cell[var_52_2][var_52_3] or arg_52_1 and var_52_1[var_52_2] >= 4 do
+				var_52_3 = math.random(6)
+				var_52_2 = math.random(3)
 			end
+
+			var_52_1[var_52_2] = var_52_1[var_52_2] + 1
+			arg_52_0.cell[var_52_2][var_52_3] = iter_52_2
+
+			local var_52_4 = arg_52_0.targetPanel:Find("line_" .. var_52_2)
+
+			cloneTplTo(arg_52_0.targetTpl[iter_52_2], var_52_4:GetChild(var_52_3 - 1))
 		end
 	end
 
-	setText = var_3
-
-	var_3(arg_52_0.scoreTF, arg_52_0.score)
+	setText(arg_52_0.scoreTF, arg_52_0.score)
 
 	return
 end
 
-function var_0_1.checkHit(arg_53_0)
+function var_0_0.checkHit(arg_53_0)
 	for iter_53_0 = 1, 3 do
 		for iter_53_1 = 1, 6 do
 			if arg_53_0.cell[iter_53_0][iter_53_1] then
-				local var_53_0 = arg_53_0.targetPanel
-				local var_53_1 = var_9.Find(var_53_0, "line_" .. iter_53_0)
-				local var_53_2 = var_9.GetChild(var_53_1, iter_53_1 - 1)
-				local var_53_3 = var_9.GetChild(var_53_2, 0)
-				local var_53_4 = var_9.Find(var_53_3, "icon/face")
-				local var_53_5 = arg_53_0.sightTF
+				local var_53_0 = arg_53_0.targetPanel:Find("line_" .. iter_53_0):GetChild(iter_53_1 - 1):GetChild(0):Find("icon/face")
+				local var_53_1 = arg_53_0.sightTF:InverseTransformPoint(var_53_0:TransformPoint(var_53_0.position))
 
-				if var_10.InverseTransformPoint(var_53_5, var_53_4:TransformPoint(var_53_4.position)).x * var_10.x + var_10.y * var_10.y < arg_53_0.tempConfig.half * arg_53_0.tempConfig.half then
+				if var_53_1.x * var_53_1.x + var_53_1.y * var_53_1.y < arg_53_0.tempConfig.half * arg_53_0.tempConfig.half then
 					return true, iter_53_0, iter_53_1
 				end
 			end
@@ -1200,8 +701,8 @@ function var_0_1.checkHit(arg_53_0)
 	return
 end
 
-function var_0_1.willExit(arg_54_0)
+function var_0_0.willExit(arg_54_0)
 	return
 end
 
-return var_0_1
+return var_0_0

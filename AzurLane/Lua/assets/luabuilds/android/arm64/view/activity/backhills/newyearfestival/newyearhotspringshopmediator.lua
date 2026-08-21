@@ -1,32 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewYearHotSpringShopMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "NewYearHotSpringShopMediator"
+var_0_0.ON_ACT_SHOPPING = "NewYearHotSpringShopMediator:ON_ACT_SHOPPING"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_ACT_SHOPPING = "NewYearHotSpringShopMediator:ON_ACT_SHOPPING"
-
-function var_0_1.register(arg_1_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_1_0 = var_1_10001(var_1_10003)
-	local var_1_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10005
-
-	local var_1_2 = var_1_1(var_1_0, var_1_10005.HOTSPRING_SHOP)
-
-	arg_1_0:TransActivity2ShopData(var_1_2)
-	arg_1_0:bind(var_0_1.ON_ACT_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_5.sendNotification
-
-		GAME = var_2_10008
-
-		var_2_1(var_2_0, var_2_10008.ACTIVITY_SHOP_PROGRESS_REWARD, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:TransActivity2ShopData((getProxy(ActivityProxy):getActivityById(ActivityConst.HOTSPRING_SHOP)))
+	arg_1_0:bind(var_0_0.ON_ACT_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+		arg_1_0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
 			activity_id = arg_2_1,
 			cmd = arg_2_2,
 			arg1 = arg_2_3,
@@ -35,19 +14,8 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-
-	local var_1_3 = arg_1_0
-	local var_1_4 = arg_1_0.bind
-
-	GAME = var_6
-
-	var_1_4(var_1_3, var_6.GO_SCENE, function(arg_3_0, arg_3_1, ...)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.GO_SCENE, arg_3_1, ...)
+	arg_1_0:bind(GAME.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 
 		return
 	end)
@@ -55,14 +23,11 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.TransActivity2ShopData(arg_4_0, arg_4_1)
+function var_0_0.TransActivity2ShopData(arg_4_0, arg_4_1)
 	if arg_4_1 and not arg_4_1:isEnd() then
-		ActivityShop = var_2
+		local var_4_0 = ActivityShop.New(arg_4_1)
 
-		local var_4_0 = var_2.New(arg_4_1)
-		local var_4_1 = arg_4_0.viewComponent
-
-		var_3.SetShop(var_4_1, var_4_0)
+		arg_4_0.viewComponent:SetShop(var_4_0)
 
 		return var_4_0
 	end
@@ -70,65 +35,32 @@ function var_0_1.TransActivity2ShopData(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_5_0[1] = var_1_10002.ACTIVITY_UPDATED
-	ActivityShopWithProgressRewardCommand = var_2
-	var_5_0[2] = var_2.SHOW_SHOP_REWARD
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		ActivityProxy.ACTIVITY_UPDATED,
+		ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1
-	local var_6_1 = arg_6_1.getName(var_6_0)
-	local var_6_2 = arg_6_1
-	local var_6_3 = arg_6_1.getBody(var_6_2)
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	ActivityProxy = var_6_0
-
-	local var_6_4
-
-	if var_6_1 == var_6_0.ACTIVITY_UPDATED then
-		var_6_4 = var_6_3.id
-		ActivityConst = var_6_2
-
-		if var_6_4 == var_6_2.HOTSPRING_SHOP then
-			var_6_4 = var_6_3
-			var_1_10007 = arg_6_0
-
-			arg_6_0.TransActivity2ShopData(var_1_10007, var_6_4)
-
-			var_1_10007 = arg_6_0.viewComponent
-
-			var_5.UpdateView(var_1_10007)
+	if var_6_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_6_1.id == ActivityConst.HOTSPRING_SHOP then
+			arg_6_0:TransActivity2ShopData(var_6_1)
+			arg_6_0.viewComponent:UpdateView()
 		end
-	else
-		ActivityShopWithProgressRewardCommand = var_6_4
+	elseif var_6_0 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_6_1.awards, function()
+			arg_6_0.viewComponent:OnShoppingDone()
+			existCall(var_6_1.callback)
 
-		if var_6_1 == var_6_4.SHOW_SHOP_REWARD then
-			local var_6_5 = arg_6_0.viewComponent
-			local var_6_6 = var_4.emit
-
-			BaseUI = var_1_10007
-
-			var_6_6(var_6_5, var_1_10007.ON_ACHIEVE, var_6_3.awards, function()
-				local var_7_0 = arg_6_0.viewComponent
-
-				var_0.OnShoppingDone(var_7_0)
-
-				existCall = var_0
-
-				var_0(var_6_3.callback)
-
-				return
-			end)
-		end
+			return
+		end)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

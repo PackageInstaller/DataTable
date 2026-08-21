@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CastleGameRemind")
+﻿local var_0_0 = class("CastleGameRemind")
 
 var_0_0.remind_type_1 = "remind_type_1"
 var_0_0.remind_type_2 = "remind_type_2"
@@ -37,9 +35,7 @@ end
 
 function var_0_0.setContent(arg_2_0, arg_2_1)
 	if not arg_2_1 then
-		print = var_1_10002
-
-		var_1_10002("地板的容器不能为nil")
+		print("地板的容器不能为nil")
 
 		return
 	end
@@ -51,10 +47,7 @@ end
 
 function var_0_0.start(arg_3_0)
 	for iter_3_0 = #arg_3_0.reminds, 1, -1 do
-		table = var_1_10005
-		var_1_10005 = var_1_10005.remove(arg_3_0.reminds, iter_3_0)
-
-		arg_3_0:returnRemind(var_1_10005)
+		arg_3_0:returnRemind((table.remove(arg_3_0.reminds, iter_3_0)))
 	end
 
 	return
@@ -62,23 +55,13 @@ end
 
 function var_0_0.step(arg_4_0)
 	for iter_4_0 = #arg_4_0.reminds, 1, -1 do
-		if arg_4_0.reminds[iter_4_0].removeTime then
-			local var_4_0 = var_5.removeTime
+		if arg_4_0.reminds[iter_4_0].removeTime and arg_4_0.reminds[iter_4_0].removeTime > 0 then
+			arg_4_0.reminds[iter_4_0].removeTime = arg_4_0.reminds[iter_4_0].removeTime - CastleGameVo.deltaTime
 
-			if 0 < var_4_0 then
-				local var_4_1 = var_5.removeTime
+			if arg_4_0.reminds[iter_4_0].removeTime <= 0 then
+				arg_4_0.reminds[iter_4_0].removeTime = nil
 
-				CastleGameVo = var_7
-				var_5.removeTime = var_4_1 - var_7.deltaTime
-
-				if var_5.removeTime <= 0 then
-					var_5.removeTime = nil
-					table = var_6
-
-					local var_4_2 = var_6.remove(arg_4_0.reminds, iter_4_0)
-
-					arg_4_0:returnRemind(var_4_2)
-				end
+				arg_4_0:returnRemind((table.remove(arg_4_0.reminds, iter_4_0)))
 			end
 		end
 	end
@@ -87,29 +70,16 @@ function var_0_0.step(arg_4_0)
 end
 
 function var_0_0.addRemind(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.getRemindByType(var_5_0, arg_5_3)
+	local var_5_0 = arg_5_0:getRemindByType(arg_5_3)
 
-	CastleGameVo = var_1_10005
-	var_5_1.removeTime = var_1_10005.item_ready_time
-	CastleGameVo = var_5
+	var_5_0.removeTime = CastleGameVo.item_ready_time
 
-	local var_5_2 = var_5.GetRotationPosByWH(arg_5_1, arg_5_2)
+	setActive(var_5_0.tf, false)
+	setActive(var_5_0.tf, true)
 
-	setActive = var_5_0
+	var_5_0.tf.anchoredPosition = CastleGameVo.GetRotationPosByWH(arg_5_1, arg_5_2)
 
-	var_5_0(var_5_1.tf, false)
-
-	setActive = var_5_0
-
-	var_5_0(var_5_1.tf, true)
-
-	local var_5_3 = var_5_1.tf
-
-	var_5_3.anchoredPosition = var_5_2
-	table = var_5_3
-
-	var_5_3.insert(arg_5_0.reminds, var_5_1)
+	table.insert(arg_5_0.reminds, var_5_0)
 
 	return
 end
@@ -119,37 +89,22 @@ function var_0_0.getRemindByType(arg_6_0, arg_6_1)
 
 	for iter_6_0 = 1, #arg_6_0.remindPool do
 		if arg_6_0.remindPool[iter_6_0].type == arg_6_1 then
-			table = var_7
+			var_6_0 = table.remove(arg_6_0.remindPool, iter_6_0)
 
-			return (var_7.remove(arg_6_0.remindPool, iter_6_0))
+			return var_6_0
 		end
 	end
 
 	if not var_6_0 then
 		for iter_6_1 = 1, #var_0_1 do
 			if arg_6_1 == var_0_1[iter_6_1].type then
-				tf = var_7
-				instantiate = var_1_10009
-				findTF = var_1_10011
+				local var_6_1 = tf(instantiate(findTF(arg_6_0._tplContent, var_0_1[iter_6_1].tpl)))
 
-				local var_6_1 = var_7(var_1_10009(var_1_10011(arg_6_0._tplContent, var_0_1[iter_6_1].tpl)))
-
-				setParent = var_1_10008
-
-				var_1_10008(var_6_1, arg_6_0._content)
-
-				GetComponent = var_1_10008
-				findTF = var_10
-
-				local var_6_2 = var_10(var_6_1, "zPos")
-
-				typeof = var_1_10011
-				DftAniEvent = var_13
-				var_1_10008 = var_1_10008(var_6_2, var_1_10011(var_13))
+				setParent(var_6_1, arg_6_0._content)
 
 				return {
 					tf = var_6_1,
-					dft = var_1_10008,
+					dft = GetComponent(findTF(var_6_1, "zPos"), typeof(DftAniEvent)),
 					type = arg_6_1
 				}
 			end
@@ -160,14 +115,11 @@ function var_0_0.getRemindByType(arg_6_0, arg_6_1)
 end
 
 function var_0_0.returnRemind(arg_7_0, arg_7_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_7_1.tf, false)
+	setActive(arg_7_1.tf, false)
 
 	arg_7_1.removeTime = nil
-	table = var_2
 
-	var_2.insert(arg_7_0.remindPool, arg_7_1)
+	table.insert(arg_7_0.remindPool, arg_7_1)
 
 	return
 end

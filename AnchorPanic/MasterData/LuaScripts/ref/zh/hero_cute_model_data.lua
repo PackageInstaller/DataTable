@@ -105,7 +105,45 @@ local hero_cute_model_data=
 },
 	[1023]={ model_prefab="arts/character/pet/4516_qb/model4516_qb.prefab", maze_once_move_time=70, dormitory_speed=70
 },
-	[9999]={ model_prefab="arts/character/pet/7118_qb/model7118_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+	[1024]={ model_prefab="arts/character/pet/4517_qb/model4517_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1025]={ model_prefab="arts/character/pet/4518_qb/model4518_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1026]={ model_prefab="arts/character/pet/4519_qb/model4519_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1027]={ model_prefab="arts/character/pet/4520_qb/model4520_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1028]={ model_prefab="arts/character/pet/4521_qb/model4521_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1029]={ model_prefab="arts/character/pet/4522_qb/model4522_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1030]={ model_prefab="arts/character/pet/4523_qb/model4523_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1031]={ model_prefab="arts/character/pet/4524_qb/model4524_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1032]={ model_prefab="arts/character/pet/4525_qb/model4525_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1033]={ model_prefab="arts/character/pet/4526_qb/model4526_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1034]={ model_prefab="arts/character/pet/4527_qb/model4527_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1035]={ model_prefab="arts/character/pet/4528_qb/model4528_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1036]={ model_prefab="arts/character/pet/4529_qb/model4529_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1037]={ model_prefab="arts/character/pet/4530_qb/model4530_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1038]={ model_prefab="arts/character/pet/4531_qb/model4531_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1039]={ model_prefab="arts/character/pet/4532_qb/model4532_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1040]={ model_prefab="arts/character/pet/4533_qb/model4533_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1041]={ model_prefab="arts/character/pet/4534_qb/model4534_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[1042]={ model_prefab="arts/character/pet/4535_qb/model4535_qb.prefab", maze_once_move_time=70, dormitory_speed=70
+},
+	[9999]={ model_prefab="arts/character/pet/7118_2_qb/model7118_2_qb.prefab", maze_once_move_time=70, dormitory_speed=70
 }
 }
 

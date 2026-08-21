@@ -294,7 +294,7 @@ end
 
 function updateTarget(self)
     local dupVo = self:getDupVo()
-    if dupVo ~= nil and dupVo.targetList then
+    if dupVo ~= nil and dupVo.targetList and #dupVo.targetList > 0 then
         self.mBtnTarget:SetActive(true)
     else
         self.mBtnTarget:SetActive(false)
@@ -718,10 +718,12 @@ function __onFormationDataUpdateHandler(self, args)
 end
 
 function updateLoopEleEff(self)
+
+    local eleAllCount = sysParam.SysParamManager:getValue(SysParamType.FIGHT_ELETYPECOUNT)
     self.m_sceneController:closeEffLoopPrefab()
     local heroList = self:getManager():getSelectFormationHeroList(self.m_teamId)
     local eleCountList = {}
-    for i = 0, 5 do
+    for i = 0, eleAllCount do
         eleCountList[i] = { count = 0, list = {} }
     end
     for k, v in pairs(heroList) do
@@ -749,7 +751,8 @@ function updateEleEff(self, isInit)
 
     local heroList = self:getManager():getSelectFormationHeroList(self.m_teamId)
     local eleCountList = {}
-    for i = 0, 5 do
+    local eleAllCount = sysParam.SysParamManager:getValue(SysParamType.FIGHT_ELETYPECOUNT)
+    for i = 0, eleAllCount do
         eleCountList[i] = { count = 0, list = {} }
     end
     for k, v in pairs(heroList) do
@@ -852,7 +855,13 @@ function onRestoreHandler(self, isInit)
         end
         self.mNowImgIcon:SetImg(UrlManager:getPackPath(string.format("formation5/formation_mini_icon_%s.png",
         self.m_formationId)), true)
-        self.mNowSelectFormation:SetActive(true)
+        local dataVo = self:getManager():getData()
+    
+        local isGuildImitate = dataVo and type(dataVo) == "table" and dataVo.dupType == DupType.GuildImitate
+      
+
+        self.mNowSelectFormation:SetActive(not isGuildImitate)
+        self.mBtnFormation:SetActive(not isGuildImitate)
         gs.TransQuick:SizeDelta02(self.mScrollerSelectTrans, self.mMinHeight)
         self.mFormationScrollerRect.enabled = false
     end
@@ -1057,7 +1066,7 @@ function updateHeroOrMonster(self)
             item:getChildGO("mGroupHero"):SetActive(true)
             item:getChildGO("mGroupStatr"):SetActive(heroVo.evolutionLvl > 0)
             item:getChildGO("mHerotype"):SetActive((heroConfigVo.eleType ~= nil))
-            item:getChildGO("mTxtHeroName"):GetComponent(ty.Text).text = heroConfigVo.name
+            item:getChildGO("mTxtHeroName"):GetComponent(ty.Text).text = heroVo:getHeroName()
             item:getChildGO("mTxtLv"):GetComponent(ty.Text).text = HtmlUtil:colorAndSize("Lv", "FFFFFF", 14) .. heroVo.lvl
             
             --item:getChildGO("mHeroStaminaItem"):SetActive(false)

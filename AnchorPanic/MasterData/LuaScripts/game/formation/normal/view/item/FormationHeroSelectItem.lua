@@ -101,8 +101,16 @@ function __onClickHeadHandler(self, args)
 	if(dataVo.__cname == hero.HeroVo.__cname) then
 		-- 我方英雄vo
 		local heroVo = dataVo
-		-- if(hero.HeroUseCodeManager:getIsCanUse(heroVo.id, true, {hero.HeroUseCodeManager.IN_TEAM_FORMATION, hero.HeroUseCodeManager.IN_ARENA_DEFENSE})) then
+        local data =  manager:getData()
+        local isReplaceHero = self.data:getDataVo().isReplaceHero
+		if data and data.dupType == DupType.GuildImitate and manager:getSelectFilterHeroCount(self.data:getDataVo().teamId) >= 5 and not self.m_isInFormation and not isReplaceHero then
+			gs.Message.Show(_TT(149267))
+		else
 			manager:dispatchEvent(manager.HERO_FORMATION_SELECT, {heroId = heroVo.id, heroTid = heroVo.tid, heroSourceType = formation.HERO_SOURCE_TYPE.OWN, isInFormation = self.m_isInFormation, isInAssist = self.m_isInAssist})
+		end
+
+		-- if(hero.HeroUseCodeManager:getIsCanUse(heroVo.id, true, {hero.HeroUseCodeManager.IN_TEAM_FORMATION, hero.HeroUseCodeManager.IN_ARENA_DEFENSE})) then
+			
 		-- end
 	elseif(dataVo.__cname == monster.MonsterTidConfigVo.__cname) then
 		-- 援助我方的怪物vo

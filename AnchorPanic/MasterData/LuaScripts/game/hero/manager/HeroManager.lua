@@ -109,17 +109,7 @@ function parseConfigData(self)
     self.m_heroConfigDic = {}
     self.mHeroConfigList = {}
 
-    local baseData = nil
-    local channelId, channelName = sdk.SdkManager:getChannelData()
-    if(GameManager:getIsInCommiting() and (channelId == sdk.AndroidChannelId.QIANYOU or channelId == sdk.AndroidChannelId.QUICK or channelId == sdk.AndroidChannelId.QUICK2 or channelId == sdk.AndroidChannelId.QUICK3))then
-        if(web.WebManager.net_type == web.NET_TYPE.OUTER_TEST)then
-            baseData = RefMgr:getData("hero_data_channel_test")
-        else
-            baseData = RefMgr:getData("hero_data_channel")
-        end
-    else
-        baseData = RefMgr:getData("hero_data")
-    end
+    local baseData = RefMgr:getData("hero_data")
     for key, data in pairs(baseData) do
         if data.is_hide == 0 then -- 策划配置不显示战员
             local vo = hero.HeroConfigVo.new()
@@ -257,7 +247,7 @@ function parseMsgUpdateHeroList(self, cusAddList, cusDelList)
             self.m_heroDic[heroId] = nil
         end
     end
-    GameDispatcher:dispatchEvent(EventName.HERO_LIST_UPDATE, {addList = addSucList, delList = cusDelList})
+    GameDispatcher:dispatchEvent(EventName.HERO_LIST_UPDATE, { addList = addSucList, delList = cusDelList })
 end
 
 -- 更新英雄详细数据
@@ -272,7 +262,7 @@ function parseMsgHeroDataUpdate(self, cusMsg)
         parseResult = heroVo:parseDetailMsgData(cusMsg)
     end
     if (parseResult) then
-        GameDispatcher:dispatchEvent(EventName.HERO_DATA_UPDATE, {heroId = heroVo.id})
+        GameDispatcher:dispatchEvent(EventName.HERO_DATA_UPDATE, { heroId = heroVo.id })
     end
 end
 
@@ -282,7 +272,7 @@ function parseMsgHeroEquipTotalAttrUpdate(self, cusMsg)
     local heroVo = self:getHeroVo(cusMsg.id)
     if (heroVo) then
         heroVo:setEquipAttrList(cusMsg.equip_attr_list)
-        GameDispatcher:dispatchEvent(EventName.HERO_DATA_UPDATE, {heroId = heroVo.id})
+        GameDispatcher:dispatchEvent(EventName.HERO_DATA_UPDATE, { heroId = heroVo.id })
     end
 end
 
@@ -293,7 +283,7 @@ function parseMsgHeroEquipAllTotalAttrUpdate(self, cusMsg)
     local heroVo = self:getHeroVo(cusMsg.id)
     if (heroVo and cusMsg.equip_type == 1) then
         heroVo:setEquipAttrListAll(cusMsg.equip_attr_list)
-        self:dispatchEvent(self.HERO_EQUIP_ALL_TOTAL_ATTR_UPDATE, {heroId = heroVo.id})
+        self:dispatchEvent(self.HERO_EQUIP_ALL_TOTAL_ATTR_UPDATE, { heroId = heroVo.id })
     end
 end
 
@@ -302,7 +292,7 @@ function parseMsgHeroAttrList(self, cusHeroId, pt_attr)
     local heroVo = self:getHeroVo(cusHeroId)
     if (heroVo) then
         heroVo:setAttrList(pt_attr)
-        self:dispatchEvent(self.HERO_ATTR_UPDATE, {heroId = cusHeroId})
+        self:dispatchEvent(self.HERO_ATTR_UPDATE, { heroId = cusHeroId })
     end
 end
 
@@ -313,7 +303,7 @@ function parseMsgHeroAddFightSkill(self, cusMsg)
         if (heroVo) then
             heroVo:setFightSkillList(cusMsg.fight_skill_list)
             local addSkillId = cusMsg.skill_id
-            self:dispatchEvent(self.HERO_ADD_FIGHT_SKILL_RESULT, {heroId = heroVo.id, addSkillId = addSkillId})
+            self:dispatchEvent(self.HERO_ADD_FIGHT_SKILL_RESULT, { heroId = heroVo.id, addSkillId = addSkillId })
         end
     end
 end
@@ -325,7 +315,7 @@ function parseMsgHeroDelFightSkill(self, cusMsg)
         if (heroVo) then
             heroVo:setFightSkillList(cusMsg.fight_skill_list)
             local delSkillId = cusMsg.skill_id
-            self:dispatchEvent(self.HERO_DEL_FIGHT_SKILL_RESULT, {heroId = heroVo.id, delSkillId = delSkillId})
+            self:dispatchEvent(self.HERO_DEL_FIGHT_SKILL_RESULT, { heroId = heroVo.id, delSkillId = delSkillId })
         end
     end
 end
@@ -409,10 +399,10 @@ function updateHeroField(self, heroVo, key, value, isDispatchAllField)
         end
 
         if (updateFieldType ~= "" and fieldType ~= "") then
-            self:dispatchEvent(updateFieldType, {fieldType = fieldType, heroId = heroId})
+            self:dispatchEvent(updateFieldType, { fieldType = fieldType, heroId = heroId })
         end
         if (isDispatchAllField) then
-            self:dispatchEvent(self.UPDATE_FIELD, {fieldType = fieldType, heroId = heroId})
+            self:dispatchEvent(self.UPDATE_FIELD, { fieldType = fieldType, heroId = heroId })
         end
     end
 end
@@ -511,7 +501,22 @@ function getAllHeroIdList(self)
             table.insert(idList, heroVo.id)
         end
     end
-    return idList
+
+    local list = {}
+    local likeList = {}
+    for i = 1, #idList, 1 do
+        local heroVo = hero.HeroManager:getHeroVo(idList[i])
+        if heroVo.isLike == 1 then
+            table.insert(likeList, idList[i])
+        else
+            table.insert(list, idList[i])
+        end
+    end
+
+    for i = 1, #list, 1 do
+        table.insert(likeList, list[i])
+    end
+    return list
 end
 
 -- 根据指定类型获取英雄列表
@@ -779,6 +784,34 @@ function getHeroResonanceConfigVo(self, heroTid)
     end
 
     return self.m_heroResonanceConfigDic[heroTid]
+end
+
+----------------------------------------------------------------------场景---------------------------
+
+function parseHeroSceneData(self, msg)
+    self.mHeroSceneDic = {}
+    for i = 1, #msg.fashion_scene_list do
+        self.mHeroSceneDic[msg.fashion_scene_list[i].hero_tid] = msg.fashion_scene_list[i].scene_list
+    end
+end
+
+function getHeroSceneUnlock(self, heroTid, sceneId)
+    if self.mHeroSceneDic and self.mHeroSceneDic[heroTid] then
+        for i = 1, #self.mHeroSceneDic[heroTid] do
+            return table.indexof01(self.mHeroSceneDic[heroTid], sceneId) > 0
+        end
+    end
+    return false
+end
+
+function parseHeroSceneUnlockData(self, msg)
+    if msg.result == 1 then
+        if not self.mHeroSceneDic[msg.hero_tid] then
+            self.mHeroSceneDic[msg.hero_tid] = {}
+        end
+
+        table.insert(self.mHeroSceneDic[msg.hero_tid], msg.fashion_id)
+    end
 end
 
 --析构函数

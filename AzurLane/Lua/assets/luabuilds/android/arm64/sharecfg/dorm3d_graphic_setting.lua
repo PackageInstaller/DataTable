@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_graphic_setting") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_graphic_setting"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_graphic_setting = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_graphic_setting
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_graphic_setting = rawget(pg, "dorm3d_graphic_setting") or setmetatable({
+	__name = "dorm3d_graphic_setting"
+}, confNEO)
+pg.dorm3d_graphic_setting.all = {
 	1,
 	2,
 	3,
@@ -46,25 +23,11 @@ var_0_3.all = {
 	18,
 	19
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_graphic_setting = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_graphic_setting = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_graphic_setting
-
-	var_1_0[1] = {
+	pg.base.dorm3d_graphic_setting[1] = {
 		parentSetting = 0,
 		displayType = 1,
 		id = 1,
@@ -72,11 +35,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "允许GPGPU",
 		isShow = 1
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_graphic_setting
-
-	var_1_1[2] = {
+	pg.base.dorm3d_graphic_setting[2] = {
 		parentSetting = 0,
 		displayType = 1,
 		id = 2,
@@ -84,11 +43,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "高精度渲染",
 		isShow = 1
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_graphic_setting
-
-	var_1_2[3] = {
+	pg.base.dorm3d_graphic_setting[3] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 3,
@@ -99,11 +54,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"强制启用"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_graphic_setting
-
-	var_1_3[4] = {
+	pg.base.dorm3d_graphic_setting[4] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 4,
@@ -115,11 +66,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"高"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_graphic_setting
-
-	var_1_4[5] = {
+	pg.base.dorm3d_graphic_setting[5] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 5,
@@ -132,11 +79,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"MSAA 8x"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_graphic_setting
-
-	var_1_5[6] = {
+	pg.base.dorm3d_graphic_setting[6] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 6,
@@ -149,11 +92,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"2k"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_graphic_setting
-
-	var_1_6[7] = {
+	pg.base.dorm3d_graphic_setting[7] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 7,
@@ -172,11 +111,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"10%"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_graphic_setting
-
-	var_1_7[8] = {
+	pg.base.dorm3d_graphic_setting[8] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 8,
@@ -188,11 +123,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"720P"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_graphic_setting
-
-	var_1_8[9] = {
+	pg.base.dorm3d_graphic_setting[9] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 9,
@@ -205,11 +136,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"最高"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_graphic_setting
-
-	var_1_9[10] = {
+	pg.base.dorm3d_graphic_setting[10] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 10,
@@ -221,11 +148,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"静态软阴影"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_graphic_setting
-
-	var_1_10[11] = {
+	pg.base.dorm3d_graphic_setting[11] = {
 		parentSetting = 0,
 		displayType = 1,
 		id = 11,
@@ -233,11 +156,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "实时阴影",
 		isShow = 1
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_graphic_setting
-
-	var_1_11[12] = {
+	pg.base.dorm3d_graphic_setting[12] = {
 		parentSetting = 0,
 		displayType = 1,
 		id = 12,
@@ -245,11 +164,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "反射",
 		isShow = 1
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_graphic_setting
-
-	var_1_12[13] = {
+	pg.base.dorm3d_graphic_setting[13] = {
 		parentSetting = 0,
 		displayType = 1,
 		id = 13,
@@ -257,11 +172,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "多光源",
 		isShow = 1
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_graphic_setting
-
-	var_1_13[14] = {
+	pg.base.dorm3d_graphic_setting[14] = {
 		parentSetting = 0,
 		displayType = 1,
 		id = 14,
@@ -269,11 +180,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "角色描边",
 		isShow = 1
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_graphic_setting
-
-	var_1_14[15] = {
+	pg.base.dorm3d_graphic_setting[15] = {
 		parentSetting = 0,
 		displayType = 2,
 		id = 15,
@@ -285,11 +192,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 			"高品质"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_graphic_setting
-
-	var_1_15[16] = {
+	pg.base.dorm3d_graphic_setting[16] = {
 		parentSetting = 15,
 		displayType = 1,
 		id = 16,
@@ -297,11 +200,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "抗锯齿",
 		isShow = 1
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_graphic_setting
-
-	var_1_16[17] = {
+	pg.base.dorm3d_graphic_setting[17] = {
 		parentSetting = 15,
 		displayType = 1,
 		id = 17,
@@ -309,11 +208,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "HDR",
 		isShow = 1
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_graphic_setting
-
-	var_1_17[18] = {
+	pg.base.dorm3d_graphic_setting[18] = {
 		parentSetting = 15,
 		displayType = 1,
 		id = 18,
@@ -321,8 +216,7 @@ var_0_3.base.dorm3d_graphic_setting = {}
 		settingName = "景深",
 		isShow = 1
 	}
-	pg = var_1_17
-	var_1_17.base.dorm3d_graphic_setting[19] = {
+	pg.base.dorm3d_graphic_setting[19] = {
 		parentSetting = 15,
 		displayType = 1,
 		id = 19,

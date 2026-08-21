@@ -97,10 +97,10 @@ local boundless_city_data=
 		[226]={ radio=3600, des=97876 },
 }
 },
-	[3]={ left_level=68, right_level=90, city_data={
+	[3]={ left_level=68, right_level=120, city_data={
 		[1]={ max_room_num=30, demote_num=0, stay_num=20, promote_num=10, disturbance_rank={1,10}, stay_point=10000, promote_drop=6507 },
 		[2]={ max_room_num=30, demote_num=10, stay_num=10, promote_num=10, disturbance_rank={1,10}, stay_point=12000, promote_drop=6508 },
-		[3]={ max_room_num=20, demote_num=10, stay_num=10, promote_num=10, disturbance_rank={1,10}, stay_point=16000, promote_drop=0 },
+		[3]={ max_room_num=20, demote_num=10, stay_num=10, promote_num=10, disturbance_rank={1,10}, stay_point=35000, promote_drop=0 },
 }, downtown_rewards_data={
 		[1]={ left_rank=1, right_rank=1, rewards=6551 },
 		[2]={ left_rank=2, right_rank=3, rewards=6552 },
@@ -135,13 +135,13 @@ local boundless_city_data=
 		[315]={ radio=2520, des=97855 },
 		[316]={ radio=3360, des=97856 },
 }, uptown_disturbance_data={
-		[320]={ radio=0, des=97800 },
-		[321]={ radio=400, des=97881 },
-		[322]={ radio=800, des=97882 },
-		[323]={ radio=1400, des=97883 },
-		[324]={ radio=2400, des=97884 },
-		[325]={ radio=3600, des=97885 },
-		[326]={ radio=4800, des=97886 },
+		[320]={ radio=4800, des=97881 },
+		[321]={ radio=6000, des=97882 },
+		[322]={ radio=7200, des=97883 },
+		[323]={ radio=8400, des=97884 },
+		[324]={ radio=9600, des=97885 },
+		[325]={ radio=10800, des=97886 },
+		[326]={ radio=12000, des=97887 },
 }
 }
 }

@@ -29,12 +29,17 @@ function active(self)
     GameDispatcher:addEventListener(EventName.HERO_LIST_INIT, self.onInitHeroListHandler, self)
     GameDispatcher:addEventListener(EventName.SET_MAIN_SCENE_GYRO, self.onGryoEnableHandler, self)
     GameDispatcher:addEventListener(EventName.MAINUI_SPINE_MODEL_CHANGE, self.onChangeDynamicPicHandler, self)
+    GameDispatcher:addEventListener(EventName.MAINUI_SPINE_DRAG_START, self.starDragSpine, self)
+    GameDispatcher:addEventListener(EventName.MAINUI_SPINE_DRAG_END, self.endDragSpine, self)
 end
 
 function deActive(self)
     GameDispatcher:removeEventListener(EventName.HERO_LIST_INIT, self.onInitHeroListHandler, self)
     GameDispatcher:removeEventListener(EventName.SET_MAIN_SCENE_GYRO, self.onGryoEnableHandler, self)
     GameDispatcher:removeEventListener(EventName.MAINUI_SPINE_MODEL_CHANGE, self.onChangeDynamicPicHandler, self)
+    GameDispatcher:removeEventListener(EventName.MAINUI_SPINE_DRAG_START, self.starDragSpine, self)
+    GameDispatcher:removeEventListener(EventName.MAINUI_SPINE_DRAG_END, self.endDragSpine, self)
+
     if self.sceneGyro then
         self.sceneGyro:removeGyro()
         self.sceneGyro = nil
@@ -118,11 +123,24 @@ function recyModel(self)
         self.m_modelView:destroy()
         self.m_modelView = nil
     end
+
+    LoopManager:removeTimerByIndex(self.mTimeSn)
+    LoopManager:removeFrame(self, self.onUpdate)
 end
 
 function updateModel(self, isChange)
     Perset3dHandler:setupShowData(MainCityConst.ROLE_MODE_MAIN, nil, nil, "")
-    if mainui.MainUIManager:getIsShowDynamic() == 1 and hero.HeroInteractManager:getShowBoardHeroDynamic() then
+
+    local groupData = role.RoleManager:getHeroGroup()
+    if not groupData or table.empty(groupData) and role.RoleManager:getHeroGroupShowSpine() == 1 then
+        -- 没有保存动态立绘设置，自动改回模型
+        -- gs.Message.Show("助理助未设置，已关闭使用动态立绘")
+        gs.Message.Show(_TT(41743))
+        mainui.MainUIManager:setIsShowDynamic(0)
+        role.RoleManager:setHeroGroupShowSpine(0)
+    end
+
+    if mainui.MainUIManager:getIsShowDynamic() == 1 and (hero.HeroInteractManager:getShowBoardHeroDynamic() or role.RoleManager:getHeroGroupShowSpine() == 1) and not isChange then
         self:updateShowSpine()
         return
     end
@@ -136,10 +154,19 @@ function updateModel(self, isChange)
         if self.m_modelView.tid ~= heroVo.tid then
             self.m_modelView:setHeroId(heroVo.id, true, nil, function()
                 self:__updateModelComplete(isChange)
+
+                local data = fashion.FashionManager:getModelHarData(heroVo:getHeroModel())
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious(sdk.ChannelData.HAR_LEVEL_0)) and data and self.m_modelView then
+                    -- 替换材质球预览
+                    self.m_modelView:updateMaterial(data.pos, data.materials, {})
+                end
             end)
             self.m_modelView:setModeType(MainCityConst.ROLE_MODE_MAIN)
             self.m_modelView:setDynamicBoneEnable(false)
             gs.GoUtil.AddComponent(self.m_modelView:getRootGO(), ty.LightRotate)
+
+            LoopManager:removeTimerByIndex(self.mTimeSn)
+            self.mTimeSn = LoopManager:addTimer(8, 1, self, self.onTimeOver) --8秒后强进
         end
 
         if self.sceneGyro then
@@ -155,11 +182,16 @@ function updateModel(self, isChange)
     end
 end
 
+function onTimeOver(self)
+    self:__updateModelComplete()
+end
+
 function __updateModelComplete(self, isChange)
     if self.isCompleteCall then
         return
     end
     self.isCompleteCall = true
+    LoopManager:removeTimerByIndex(self.mTimeSn)
 
     self:updateModelCamera()
     if isChange then
@@ -181,56 +213,118 @@ end
 
 -- 更新显示模型或spine
 function updateShowSpine(self)
-    self:clearSpine()
-    local modelId = hero.HeroInteractManager:getShowBoardHeroModelId()
-    if not modelId then
-        return
-    end
-
-    local onLoadSpineFinish = function(go)
-        self.mSpineGo = go
-        gs.TransQuick:SetParentOrg(self.mSpineGo.transform, GameView.scene)
-
-        local state = hero.HeroInteractManager:getShowBoardUnique()
-        if state then
-            self.spineInteract = require('game/spineInteract/SpineInteract_' .. modelId).new()
-            if self.spineInteract then
-                self.spineInteract:setup(self.mSpineGo, modelId)
-            end
+    local guradType, id = role.RoleManager:getMainUISpineTypeAndId()
+    if guradType == role.GuradType.Gurad_hero then
+        local modelId = hero.HeroInteractManager:getShowBoardHeroModelId()
+        if not modelId then
+            return
+        end
+        self:clearSpine()
+        local blackLayer = SubLayerMgr:getLayer(gud.SPINE_BLACK)
+        if blackLayer and not gs.GoUtil.IsTransNull(blackLayer) then
+            blackLayer.gameObject:SetActive(true)
         end
 
+        local onLoadSpineFinish = function(go)
+            self.mSpineGo = go
 
-        self:startInitMainUI()
+            gs.TransQuick:SetParentOrg(self.mSpineGo.transform, GameView.scene)
+
+            if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) then
+                self.mSpineGo:SetActive(false)
+
+                local heroImgHarLayer = SubLayerMgr:getLayer(gud.SPINE_IMG_HAR)
+                if heroImgHarLayer and not gs.GoUtil.IsTransNull(heroImgHarLayer) then
+                    heroImgHarLayer.gameObject:SetActive(true)
+                    heroImgHarLayer.gameObject:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPainImg(string.format("record_pic_%s.png", modelId)), true)
+                end
+            else
+
+                self.mImgHeroHar = gs.GameObject.Find("mImgHeroHar")
+                if self.mImgHeroHar then
+                    self.mImgHeroHar:SetActive(false)
+                end
+
+
+            end
+
+
+            local state = hero.HeroInteractManager:getShowBoardUnique()
+            if state then
+                self.spineInteract = require('game/spineInteract/SpineInteract_' .. modelId).new()
+                if self.spineInteract then
+                    self.spineInteract:setup(self.mSpineGo, modelId)
+                end
+            end
+
+
+            self:startInitMainUI()
+        end
+        self.mSpineLoadSn = gs.ResMgr:LoadGOAysn(string.format("arts/fx/spine/%s/spine_%s.prefab", modelId, modelId), onLoadSpineFinish)
+    else
+        if not id or id == "" then
+            return
+        end
+        self:clearSpine()
+
+        local blackLayer = SubLayerMgr:getLayer(gud.SPINE_BLACK)
+        if blackLayer and not gs.GoUtil.IsTransNull(blackLayer) then
+            blackLayer.gameObject:SetActive(true)
+        end
+
+        local onLoadSpineFinish = function(go)
+            self.mSpineGo = go
+
+            gs.TransQuick:SetParentOrg(self.mSpineGo.transform, GameView.scene)
+
+            -- local state = hero.HeroInteractManager:getShowBoardUnique()
+            -- if state then
+            --     self.spineInteract = require('game/spineInteract/SpineInteract_' .. modelId).new()
+            --     if self.spineInteract then
+            --         self.spineInteract:setup(self.mSpineGo, modelId)
+            --     end
+            -- end
+
+            self:startInitMainUI()
+        end
+        local paintingData = purchase.FashionShopManager:getPaintingDataById(tonumber(id))
+        self.mSpineLoadSn = gs.ResMgr:LoadGOAysn(string.format("arts/fx/spine/%s", paintingData.prefabPath), onLoadSpineFinish)
     end
-    self.mSpineLoadSn = gs.ResMgr:LoadGOAysn(string.format("arts/fx/spine/%s/spine_%s.prefab", modelId, modelId), onLoadSpineFinish)
 end
 
 function playSpineAnim(self)
     if not self.mSpineGo then
         return
     end
-    local modelId = hero.HeroInteractManager:getShowBoardHeroModelId()
-    if not modelId then
-        return
-    end
+    local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+    if saveType == role.GuradType.Gurad_hero then
 
-    local time = os.time()
-    if self.mClickTime and time < self.mClickTime then
-        return
-    end
-
-    local spineTrans = self.mSpineGo.transform:Find("mGroup/spine_" .. modelId)
-    local anim = spineTrans:GetComponent(ty.Animator)
-    if anim and not gs.GoUtil.IsCompNull(anim) then
-        local tweenTime = AnimatorUtil.getAnimatorClipTime(anim, "anim01")
-        if modelId == "4506_3" then
-            -- 先写死
-            self.mClickTime = time + 99999
-        else
-            self.mClickTime = time + tweenTime
+        local modelId = hero.HeroInteractManager:getShowBoardHeroModelId()
+        if not modelId then
+            return
         end
 
-        anim:SetTrigger("show")
+        local time = os.time()
+        if self.mClickTime and time < self.mClickTime then
+            return
+        end
+
+        local spineTrans = self.mSpineGo.transform:Find("mGroup/spine_" .. modelId)
+        local anim = spineTrans:GetComponent(ty.Animator)
+        if anim and not gs.GoUtil.IsCompNull(anim) then
+            local tweenTime = AnimatorUtil.getAnimatorClipTime(anim, "anim01")
+            if modelId == "4506_3" then
+                -- 先写死
+                self.mClickTime = time + 99999
+            else
+                self.mClickTime = time + tweenTime
+            end
+
+            anim:SetTrigger("show")
+        end
+    else
+        --预留给图册单动作播放
+
     end
 end
 
@@ -247,13 +341,29 @@ function clearSpine(self)
         gs.GameObject.Destroy(self.mSpineGo)
         self.mSpineGo = nil
     end
+
     self.mClickTime = 0
+
+    local blackLayer = SubLayerMgr:getLayer(gud.SPINE_BLACK)
+    if blackLayer and not gs.GoUtil.IsTransNull(blackLayer) then
+        blackLayer.gameObject:SetActive(false)
+    end
+    local heroImgHarLayer = SubLayerMgr:getLayer(gud.SPINE_IMG_HAR)
+    if heroImgHarLayer and not gs.GoUtil.IsTransNull(heroImgHarLayer) then
+        heroImgHarLayer.gameObject:SetActive(false)
+    end
+
+    LoopManager:removeFrame(self, self.onUpdate)
 end
 
 -- 切换动态立绘和模型
 function onChangeDynamicPicHandler(self)
     local state = mainui.MainUIManager:getIsShowDynamic()
     if state == 0 then
+
+        local modelId = hero.HeroInteractManager:getShowBoardHeroModelId()
+        role.RoleManager:setMainUISpineTypeAndId(role.GuradType.Gurad_hero, modelId)
+
         mainui.MainUIManager:setIsShowDynamic(1)
         self:recyModel()
         self:updateShowSpine()
@@ -264,9 +374,116 @@ function onChangeDynamicPicHandler(self)
     end
 end
 
+-- 开始拖拽spine准备切换
+function starDragSpine(self)
+    self.dragSpineMousePos = gs.Input.mousePosition
+    if not self.mSpineGo then
+        return
+    end
+
+    LoopManager:addFrame(1, 0, self, self.onUpdate)
+
+end
+
+-- 结束拖拽spine准备切换
+function endDragSpine(self)
+    LoopManager:removeFrame(self, self.onUpdate)
+    if not self.dragSpineMousePos then
+        return
+    end
+    if self.mSpineGo then
+        gs.TransQuick:LPosX(self.mSpineGo.transform, 0)
+    end
+
+    local pos = gs.Input.mousePosition - self.dragSpineMousePos
+    if math.abs(pos.x) > 500 then
+        local state = pos.x > 0 and 1 or 2
+        mainui.MainUIManager.isDragSpine = true
+
+        local tempIndex = 1
+        local currIndex = 1
+        local currId = 0
+        local groupData = role.RoleManager:getHeroGroup()
+        local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
+        local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+        if not groupData or table.empty(groupData) then
+            return
+        end
+        -- 表里最大最小键
+        local maxIndex, minIndex = nil, nil
+        local keys = table.keys(groupData)
+        table.sort(keys)
+        for key, v in pairs(groupData) do
+            local key = tonumber(key)
+            if maxIndex == nil or key > maxIndex then
+                maxIndex = key
+            end
+            if minIndex == nil or key < minIndex then
+                minIndex = key
+            end
+
+        end
+
+        -- 取当前的展示的key
+        for k, v in pairs(groupData) do
+            local guradType, id = role.RoleManager:getGuradTypeAndId(v)
+            if saveType == guradType and saveId == id then
+                currIndex = tonumber(k)
+                break
+            end
+        end
+
+        if state == 1 then
+            tempIndex = minIndex
+            if currIndex <= tempIndex then
+                currIndex = maxIndex + 1
+            end
+            for _, k in ipairs(keys) do
+                local v = groupData[k]
+                if tonumber(k) < currIndex and tonumber(k) >= tempIndex and v and v ~= "" then
+                    tempIndex = tonumber(k)
+                    currId = v
+                end
+            end
+        end
+        if state == 2 then
+            tempIndex = maxIndex
+            if currIndex >= tempIndex then
+                currIndex = minIndex - 1
+            end
+            for _, k in ipairs(keys) do
+                local v = groupData[k]
+                if tonumber(k) > currIndex and tonumber(k) <= tempIndex and v and v ~= "" then
+                    tempIndex = tonumber(k)
+                    currId = v
+                end
+            end
+        end
+        if currId then
+            local guradType, id = role.RoleManager:getGuradTypeAndId(currId)
+            if guradType == role.GuradType.Gurad_hero and id ~= saveId then
+                GameDispatcher:dispatchEvent(EventName.REQ_CHANGE_SHOW_BOARD_HERO, { heroId = id })
+            end
+            role.RoleManager:setMainUISpineTypeAndId(guradType, id)
+            role.RoleManager:getRoleVo():dispatchEvent(role.RoleVo.CHANGE_SHOW_BOARD_HERO)
+        end
+    end
+end
+
+-- 插值缓动
+function onUpdate(self)
+    local pos = gs.Input.mousePosition - self.dragSpineMousePos
+    local currX = pos.x * 0.2
+    currX = math.max(-230, math.min(currX, 230))
+    gs.TransQuick:LPosX(self.mSpineGo.transform, currX)
+end
 
 -- 开始进入主UI流程
 function startInitMainUI(self, isChange)
+    if mainui.MainUIController:checkWallpaperIsShow() then
+        -- 壁纸状态不走主UI流程
+        return
+    end
     -- 主UI进入流程，包括登录和其他场景退出等
     -- 延迟一帧，避免主UI动效显示第一帧异常
     LoopManager:addFrame(1, 1, self, function()
@@ -286,7 +503,7 @@ function startInitMainUI(self, isChange)
         end
 
     end)
-    mainCity.MainCityController:playMainCityMusic()
+    -- mainCity.MainCityController:playMainCityMusic()
     -- 通知打开战斗前的功能UI
     GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_SHOW_BEFORE_UI)
 end

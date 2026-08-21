@@ -16,9 +16,19 @@ function onInit(self, go)
     self.mGroupSelect = self:getChildGO("GroupSelect")
     self.mTxtSelect = self:getChildGO("mTxtSelect"):GetComponent(ty.Text)
 
+    self.mBtnTop = self:getChildGO("mBtnTop")
+    --self.mBtnBot = self:getChildGO("mBtnBot")
     self.mClick = self:getChildGO("mClick")
     self:addOnClick(self.mClick, self.onClickItemHandler)
+
+    self:addOnClick(self.mBtnTop, self.onClickTopHandler)
+    --self.addOnClick(self.mBtnBot, self.onClickBotHandler)
 end
+
+function onClickTopHandler(self)
+    GameDispatcher:dispatchEvent(EventName.REQ_EQUIP_PLANE_CHANGE,{planVo =self.data:getDataVo() })
+end
+
 
 function getGuideTrans(self)
     return nil
@@ -33,9 +43,19 @@ function setData(self, param)
         self.mTxtSelect.text = equipPlanVo.name
         self.mGroupUnSelect:SetActive(not selectVo:getSelect())
         self.mGroupSelect:SetActive(selectVo:getSelect())
+
+        local list = equipBuild.EquipPlanManager:getEquipPlanList()
+        if list and #list > 1 then
+            self.mBtnTop:SetActive(list ~=nil and equipPlanVo.sort ~= list[1].sort and equipPlanVo.name ~= _TT(1412))
+        else
+            self.mBtnTop:SetActive(false)
+        end
+       
     else
         super.deActive(self)
     end
+
+   
 end
 
 function onClickItemHandler(self)

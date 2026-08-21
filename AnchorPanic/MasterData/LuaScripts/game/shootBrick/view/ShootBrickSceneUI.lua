@@ -213,7 +213,7 @@ end
 function shootBall(self)
     if not self.m_shoot then
         if gs.Time.time - self.m_lastClickTime <= 0.3 then
-            self:onShootBall(self.m_brickBallList)
+            self:onShootBall(self.m_ballDic)
             self.m_shoot = true
         end
         self.m_lastClickTime = gs.Time.time
@@ -497,6 +497,7 @@ end
 --分裂球
 function divideBall(self, value)
     local ball_list = {}
+
     for ball_id, ball in pairs(self.m_ballDic) do
         local pos = ball:getTrans():GetComponent(ty.RectTransform).anchoredPosition
         local angle = nil
@@ -742,7 +743,7 @@ function initBrick(self)
                 if brick_list[row][col] then
                     local brick = shootBrick.ShootBrickBrick:create(self.mBrickItem, self.mBrickLayer, "ShootBrickSceneUI_BrickItem")
                     brick:setArgs({data = brick_list[row][col], col = col, row = row})
-                    brick:getGo().name = row .. "_" .. col
+                    brick:getGo().name = "brick_" .. row .. "_" .. col
 
                     self.m_brickDic[row][col] = brick
                 end
@@ -811,6 +812,7 @@ function onBrickHit(self, brick, damage)
         if self:createBrickDrop(brick_data, pos) == false then
             self:createDupDrop(brick_data.id, pos)
         end
+        -- self:createDrop(3, pos)
 
         self:deleteBrick(brick:getArgs().row, brick:getArgs().col)
         self:getBrickDieEffect(brick_pos.x, brick_pos.y)
@@ -828,10 +830,9 @@ function initBall(self)
     local ball = self:createBall(self.mImgBoard_rectTrans, {x = 0, y = 25.5})
     self.m_ballDic[ball:getArgs().id] = ball
 
-    self.m_brickBallList = {}
-    table.insert(self.m_brickBallList, ball)
-
     self.mImgBoard:SetActive(true)
+
+    gs.Physics2D.IgnoreLayerCollision(gs.LayerMask.NameToLayer("Physics_Move"), gs.LayerMask.NameToLayer("Physics_Move"), true)
 end
 
 function createBall(self, parent, pos)
@@ -845,7 +846,7 @@ function createBall(self, parent, pos)
     local data = {id = self.m_ballId, config = self.m_dupConfigVo:getBall(), size = self.mImgBall_Size}
     ball_item:setArgs(data)
     ball_item:setPos(pos.x, pos.y)
-    ball_item:setCheckCollision(self, self.ballCheckCollision)
+    ball_item:setCheckCollision(self, self.ballCheckBarrier, self.onBallCollision)
     ball_item:getGo().name = tostring(self.m_ballId)
 
     return ball_item
@@ -876,262 +877,52 @@ function onShootBall(self, ball_list)
     end
 end
 
-function checkBallPointHitBrick(self, point, radius)
-    local Screen_MinX = (ShootBrickConst.Screen_Width - (ShootBrickConst.BrickWidth * ShootBrickConst.MaxCol)) / 2
+function onBallCollision(self, ball, collision2D)
+    local name = collision2D.gameObject.name
+    if string.find(name, "Board") then
+        ball:addHorizontalOffset(self.m_lastDragDistance)--添加横向偏移
+        ball:addSpeed(self.m_dupConfigVo.add_speed, self.m_dupConfigVo.max_speed)--添加移动速度
 
-    local col = math.ceil(math.abs((point.x - Screen_MinX) / ShootBrickConst.BrickWidth))
-    local row = math.ceil(math.abs(point.y / ShootBrickConst.BrickHeight))
+        AudioManager:playSoundEffect("arts/audio/UI/minigames/mng_birck_6.prefab")
+    elseif string.find(name, "brick") then
+        local name_split = string.split(name, "_")
+        local row = tonumber(name_split[2])
+        local col = tonumber(name_split[3])
 
-    if self.m_brickDic[row] then
-        local brick = self.m_brickDic[row][col]
-        if brick then
-            local size = brick:getSize()
-            local brick_size = {height = size.height, width = size.width * 0.5}
-            local brick_pos = brick:getPos()
-            if point.y >= brick_pos.y - brick_size.height and point.y <= brick_pos.y + brick_size.height and point.x >= brick_pos.x - brick_size.width and point.x <= brick_pos.x + brick_size.width then
-                return brick
+        if self.m_brickDic[row] then
+            local brick = self.m_brickDic[row][col]
+            if brick then
+                self:onBrickHit(brick, ball:getDamage())
             end
         end
+    elseif string.find(name, "mWall_down") then
+        self:deleteBall(ball:getArgs().id)
+        self:checkBallSettlement()
     end
 end
 
 --球的碰撞检测
-function ballCheckCollision(self, ball, move_dir, ball_pos, radius)
-    local isCollider = false
-
-    --球的位置换算倒左上角
-    ball_pos.y = ball_pos.y - (self.m_sceneHeight * 0.5)
-    ball_pos.x = ball_pos.x + (self.m_sceneWith * 0.5)
-
-    --检测砖块
-    if self.m_brickDic then
-        local collider_brickDic = {}
-
-        if move_dir.y ~= 0 then
-            if move_dir.y > 0 then --球往上走
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x, ball_pos.y + radius), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.y = move_dir.y * -1
-
-                    isCollider = true
-                end
-            elseif move_dir.y < 0 then --球往下走
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x, ball_pos.y - radius), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.y = move_dir.y * -1
-
-                    isCollider = true
-                end
-            end
-
-            if isCollider == false then
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x - radius, ball_pos.y), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.x = move_dir.x * -1
-
-                    isCollider = true
-                end
-            end
-
-            if isCollider == false then
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x + radius, ball_pos.y), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.x = move_dir.x * -1
-
-                    isCollider = true
-                end
-            end
-        end
-
-        if move_dir.x ~= 0 then
-            if move_dir.x > 0 then --球往右走
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x + radius, ball_pos.y), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.x = move_dir.x * -1
-
-                    isCollider = true
-                end
-            elseif move_dir.x < 0 then --球往左走
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x - radius, ball_pos.y), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.x = move_dir.x * -1
-
-                    isCollider = true
-                end
-            end
-
-            if isCollider == false then
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x, ball_pos.y + radius), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.y = move_dir.y * -1
-
-                    isCollider = true
-                end
-            end
-
-            if isCollider == false then
-                local hitBrick = self:checkBallPointHitBrick(gs.Vector2(ball_pos.x, ball_pos.y - radius), radius)
-                if hitBrick then
-                    local args = hitBrick:getArgs()
-
-                    if collider_brickDic[args.row] == nil then
-                        collider_brickDic[args.row] = {}
-                    end
-                    collider_brickDic[args.row][args.col] = hitBrick
-
-                    move_dir.y = move_dir.y * -1
-
-                    isCollider = true
-                end
-            end
-        end
-
-        for row, cow_dic in pairs(collider_brickDic) do
-            for col, brick in pairs(cow_dic) do
-                self:onBrickHit(brick, ball:getDamage())
-            end
-        end
-
-        if not table.empty(collider_brickDic) then
-            return move_dir
-        end
-    end
-
-    --检测边缘
-    if move_dir.x < 0 then --往左走
-        if ball_pos.x - radius <= 0 then
-            move_dir.x = move_dir.x *- 1
-        end
-    elseif move_dir.x > 0 then --往右走
-        if ball_pos.x + radius >= 930 then
-            move_dir.x = move_dir.x *- 1
-        end
-    end
-
-    if move_dir.y > 0 then --球往上走
-        if ball_pos.y + radius >= 0 then
-            move_dir.y = move_dir.y * -1
-        end
-    elseif move_dir.y < 0 then --球往下走
-        local lowPoint_y = ball_pos.y - radius
+function ballCheckBarrier(self, ball, dir, ball_pos, radius)
+    if dir.y < 0 then
+        --球的位置换算倒左上角
+        ball_pos.y = ball_pos.y - (self.m_sceneHeight * 0.5)
+        ball_pos.x = ball_pos.x + (self.m_sceneWith * 0.5)
 
         --检测挡板道具
         if self.mImgBarrier.activeInHierarchy then
+            local lowPoint_y = ball_pos.y - radius
+
             local barrier_size = self.mImgBarrier_rect.rect
             local anchoredPosition = {x = self.mImgBarrier_rect.anchoredPosition.x + (self.m_sceneWith * 0.5), y = self.mImgBarrier_rect.anchoredPosition.y - (self.m_sceneHeight * 0.5)}
             local height = barrier_size.height * 0.5
             local width = barrier_size.width * 0.5
 
             if lowPoint_y <= anchoredPosition.y + height and lowPoint_y > anchoredPosition.y - height and (ball_pos.x >= anchoredPosition.x - width and ball_pos.x <= anchoredPosition.x + width) then
-                move_dir.y = move_dir.y * -1
-
                 AudioManager:playSoundEffect("arts/audio/UI/minigames/mng_birck_6.prefab")
-                return move_dir
+                return true
             end
-        end
-
-        local height = self.mImgBoard_rectTrans.rect.height * 0.5 + 1
-        local width = self.mImgBoard_rectTrans.rect.width * 0.5 + 10
-        local anchoredPosition = {x = self.mImgBoard_rectTrans.anchoredPosition.x + (self.m_sceneWith * 0.5), y = self.mImgBoard_rectTrans.anchoredPosition.y - (self.m_sceneHeight * 0.5)}
-
-        ---检测板子
-        --检测板子上方
-        if lowPoint_y <= anchoredPosition.y + height and lowPoint_y > anchoredPosition.y - height and (ball_pos.x >= anchoredPosition.x - width and ball_pos.x <= anchoredPosition.x + width) then
-            ball:addHorizontalOffset(self.m_lastDragDistance)--添加横向偏移
-            ball:addSpeed(self.m_dupConfigVo.add_speed, self.m_dupConfigVo.max_speed)--添加移动速度
-
-            move_dir.y = move_dir.y * -1
-
-            AudioManager:playSoundEffect("arts/audio/UI/minigames/mng_birck_6.prefab")
-            return move_dir
-        end
-
-        --检测板子侧面
-        local loowPoint_x = ball_pos.x - radius
-        if move_dir.x < 0 then --往左走
-            if loowPoint_x <= anchoredPosition.x + width and loowPoint_x > anchoredPosition.x - width and (lowPoint_y >= anchoredPosition.y - height and lowPoint_y <= anchoredPosition.y + height) then
-                ball:addHorizontalOffset(self.m_lastDragDistance)--添加横向偏移
-                ball:addSpeed(self.m_dupConfigVo.add_speed, self.m_dupConfigVo.max_speed)--添加移动速度
-                move_dir.x = move_dir.x *- 1
-                move_dir.y = move_dir.y * -1
-
-                AudioManager:playSoundEffect("arts/audio/UI/minigames/mng_birck_6.prefab")
-                return move_dir
-            end
-        elseif move_dir.x > 0 then --往右走
-            if loowPoint_x <= anchoredPosition.x + width and loowPoint_x > anchoredPosition.x - width and (lowPoint_y >= anchoredPosition.y - height and lowPoint_y <= anchoredPosition.y + height) then
-                ball:addHorizontalOffset(self.m_lastDragDistance)--添加横向偏移
-                ball:addSpeed(self.m_dupConfigVo.add_speed, self.m_dupConfigVo.max_speed)--添加移动速度
-                move_dir.x = move_dir.x *- 1
-                move_dir.y = move_dir.y * -1
-
-                AudioManager:playSoundEffect("arts/audio/UI/minigames/mng_birck_6.prefab")
-                return move_dir
-            end
-        end
-
-        --掉出屏幕了
-        if ball_pos.y + radius <= -self.m_sceneHeight then
-            self:deleteBall(ball:getArgs().id)
-            self:checkBallSettlement()
-            move_dir = nil
-
-            -- move_dir.y = move_dir.y * -1
-
-            return move_dir
         end
     end
-
-    return move_dir
 end
 
 function checkBallSettlement(self)

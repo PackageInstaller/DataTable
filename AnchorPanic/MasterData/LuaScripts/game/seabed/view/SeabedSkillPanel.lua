@@ -63,7 +63,7 @@ function initViewText(self)
 
     self:getChildGO("mTxtTips"):GetComponent(ty.Text).text = _TT(111041)
     self:getChildGO("mTxtFight"):GetComponent(ty.Text).text = _TT(111042)
-    
+
 end
 
 -- UI事件管理(关闭界面会自动移除)
@@ -82,18 +82,17 @@ function onBtnSureClickHandler(self)
 
     GameDispatcher:dispatchEvent(EventName.REQ_ENTER_SEABED, args)
 
-
-    --GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAP_PANEL)
+    -- GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAP_PANEL)
 end
 
 function onBtnCancelClickHandler(self)
-    self.mDefInfo:SetActive(true)  
+    self.mDefInfo:SetActive(true)
     self.mSelectInfo:SetActive(false)
 end
 
 function showPanel(self)
 
-    self.mDefInfo:SetActive(true)  
+    self.mDefInfo:SetActive(true)
     self.mSelectInfo:SetActive(false)
 
     local skillList = seabed.SeabedManager:getSeabedSkillData()
@@ -108,6 +107,12 @@ function showPanel(self)
         item:getChildGO("mTxtName"):GetComponent(ty.Text).text = skillVo:getName()
         item:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getSkillIconPath(skillVo:getIcon()),
             true)
+
+        item:getChildGO("mGroupNode"):GetComponent(ty.CanvasGroup).gameObject:SetActive(false)
+        LoopManager:setTimeout(i * 0.03, self, function()
+            item:getChildGO("mGroupNode"):GetComponent(ty.CanvasGroup).gameObject:SetActive(true)
+            item.m_go:GetComponent(ty.UIDoTween):BeginTween()
+        end)
 
         item:addUIEvent("mBtnClick", function()
             self:onClickSkillItem(i)

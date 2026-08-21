@@ -1,17 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ActivityTaskActivity", import("model.vo.ActivityVOs.ITaskActivity"))
 
-local var_0_0 = "ActivityTaskActivity"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.ActivityVOs.ITaskActivity"))
-
-function var_0_1.GetFinishedTaskIds(arg_1_0)
+function var_0_0.GetFinishedTaskIds(arg_1_0)
 	return arg_1_0:getData1List()
 end
 
-function var_0_1.GetTaskIdsByDay(arg_2_0)
+function var_0_0.GetTaskIdsByDay(arg_2_0)
 	return arg_2_0:getConfig("config_data")
 end
 
-return var_0_1
+return var_0_0

@@ -1,156 +1,61 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BlackFridayPage", import("...base.BaseActivityPage"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
 
-local var_0_0 = "BlackFridayPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-local var_0_2 = 1
-local var_0_3 = 2
-local var_0_4 = 3
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.shopBtn = var_1.Find(var_1_0, "AD/shop_btn")
-	UIItemList = var_1
-
-	local var_1_1 = var_1.New
-	local var_1_2 = arg_1_0._tf
-	local var_1_3 = var_3.Find(var_1_2, "AD/list")
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0.uiList = var_1_1(var_1_3, var_4.Find(var_1_4, "AD/list/award"))
-
-	local var_1_5 = arg_1_0._tf
-	local var_1_6 = var_1.Find(var_1_5, "AD/Text")
-	local var_1_7 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_4
-	arg_1_0.finishCntTxt = var_1_7(var_1_6, var_4(var_1_4))
-
-	local var_1_8 = arg_1_0._tf
-
-	arg_1_0.helpBtn = var_1.Find(var_1_8, "AD/help")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.shopBtn = arg_1_0._tf:Find("AD/shop_btn")
+	arg_1_0.uiList = UIItemList.New(arg_1_0._tf:Find("AD/list"), arg_1_0._tf:Find("AD/list/award"))
+	arg_1_0.finishCntTxt = arg_1_0._tf:Find("AD/Text"):GetComponent(typeof(Text))
+	arg_1_0.helpBtn = arg_1_0._tf:Find("AD/help")
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
+function var_0_0.OnDataSetting(arg_2_0)
 	if arg_2_0.ptData then
-		local var_2_0 = arg_2_0.ptData
-
-		var_1.Update(var_2_0, arg_2_0.activity)
+		arg_2_0.ptData:Update(arg_2_0.activity)
 	else
-		ActivityPtData = var_1
-		arg_2_0.ptData = var_1.New(arg_2_0.activity)
+		arg_2_0.ptData = ActivityPtData.New(arg_2_0.activity)
 	end
 
 	arg_2_0.endTime = arg_2_0.activity.stopTime
 
-	local var_2_1 = arg_2_0.activity
+	local var_2_0 = arg_2_0.activity:getConfig("config_client")
 
-	if var_1.getConfig(var_2_1, "config_client") and var_1[1] then
-		type = var_2
-
-		if var_2(var_1[1]) == "table" then
-			pg = var_2
-
-			local var_2_2 = var_2.TimeMgr.GetInstance()
-
-			arg_2_0.endTime = var_2.parseTimeFromConfig(var_2_2, var_1[1])
-		end
+	if var_2_0 and var_2_0[1] and type(var_2_0[1]) == "table" then
+		arg_2_0.endTime = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_2_0[1])
 	end
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_3_0)
-	IsNil = var_1_10001
-
-	if not var_1_10001(arg_3_0.helpBtn) then
-		onButton = var_1
-
-		local var_3_0 = arg_3_0
-		local var_3_1 = arg_3_0.helpBtn
-
-		local function var_3_2()
-			pg = var_2_10000
-
-			local var_4_0 = var_2_10000.MsgboxMgr.GetInstance()
-			local var_4_1 = var_0.ShowMsgBox
-			local var_4_2 = {}
-
-			MSGBOX_TYPE_HELP = var_2_10004
-			var_4_2.type = var_2_10004
-			pg = var_2_10004
-			var_4_2.helps = var_2_10004.gametip.blackfriday_help.tip
-
-			var_4_1(var_4_0, var_4_2)
+function var_0_0.OnFirstFlush(arg_3_0)
+	if not IsNil(arg_3_0.helpBtn) then
+		onButton(arg_3_0, arg_3_0.helpBtn, function()
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_HELP,
+				helps = pg.gametip.blackfriday_help.tip
+			})
 
 			return
-		end
-
-		SFX_PANEL = var_1_10006
-
-		var_1(var_3_0, var_3_1, var_3_2, var_1_10006)
+		end, SFX_PANEL)
 	end
 
-	onButton = var_1
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.shopBtn
-
-	local function var_3_5()
-		pg = var_2_10000
-
-		local var_5_0 = var_2_10000.TimeMgr.GetInstance()
-
-		if var_0.GetServerTime(var_5_0) >= arg_3_0.endTime then
-			pg = var_0
-
-			local var_5_1 = var_0.TipsMgr.GetInstance()
-			local var_5_2 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_5_2(var_5_1, var_2_10003("common_activity_end"))
+	onButton(arg_3_0, arg_3_0.shopBtn, function()
+		if pg.TimeMgr.GetInstance():GetServerTime() >= arg_3_0.endTime then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		else
-			local var_5_3 = arg_3_0
-			local var_5_4 = var_0.emit
-
-			ActivityMediator = var_2_10003
-
-			local var_5_5 = var_2_10003.EVENT_GO_SCENE
-
-			SCENE = var_2_10004
-
-			local var_5_6 = var_2_10004.SKINSHOP
-			local var_5_7 = {}
-
-			NewSkinShopScene = var_2_10006
-			var_5_7.page = var_2_10006.PAGE_RETURN
-
-			var_5_4(var_5_3, var_5_5, var_5_6, var_5_7)
+			arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP, {
+				page = NewSkinShopScene.PAGE_RETURN
+			})
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	local var_3_6 = arg_3_0.uiList
-
-	var_1.make(var_3_6, function(arg_6_0, arg_6_1, arg_6_2)
-		UIItemList = var_2_10003
-
-		if arg_6_0 == var_2_10003.EventUpdate then
-			local var_6_0 = arg_3_0
-
-			var_3.UpdateAward(var_6_0, arg_6_1 + 1, arg_6_2)
+	end, SFX_PANEL)
+	arg_3_0.uiList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateAward(arg_6_1 + 1, arg_6_2)
 		end
 
 		return
@@ -159,134 +64,77 @@ function var_0_1.OnFirstFlush(arg_3_0)
 	return
 end
 
-function var_0_1.GetState(arg_7_0, arg_7_1)
+function var_0_0.GetState(arg_7_0, arg_7_1)
 	local var_7_0 = arg_7_1 <= arg_7_0.finishCnt
-	local var_7_1 = arg_7_0.ptData.targets[arg_7_1]
+	local var_7_1 = table.contains(arg_7_0.finishList, arg_7_0.ptData.targets[arg_7_1])
 
-	table = var_1_10004
-
-	if var_1_10004.contains(arg_7_0.finishList, var_7_1) then
-		return var_0_4
-	elseif not var_4 and var_7_0 then
+	if var_7_1 then
 		return var_0_3
-	else
+	elseif not var_7_1 and var_7_0 then
 		return var_0_2
+	else
+		return var_0_1
 	end
 
 	return
 end
 
-function var_0_1.UpdateAward(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_0.awards[arg_8_1]
-	local var_8_1 = {
-		type = var_8_0[1],
-		id = var_8_0[2],
-		count = var_8_0[3]
+function var_0_0.UpdateAward(arg_8_0, arg_8_1, arg_8_2)
+	local var_8_0 = {
+		type = arg_8_0.awards[arg_8_1][1],
+		id = arg_8_0.awards[arg_8_1][2],
+		count = arg_8_0.awards[arg_8_1][3]
 	}
 
-	updateDrop = var_5
+	updateDrop(arg_8_2, {
+		type = arg_8_0.awards[arg_8_1][1],
+		id = arg_8_0.awards[arg_8_1][2],
+		count = arg_8_0.awards[arg_8_1][3]
+	})
+	setActive(arg_8_2:Find("icon_bg/count"), var_8_0.count > 0)
 
-	var_5(arg_8_2, var_8_1)
+	arg_8_2:Find("icon_bg/frame"):GetComponent(typeof(Image)).color = Color.New(0, 0, 0, 0)
 
-	setActive = var_5
+	local var_8_1 = arg_8_0:GetState(arg_8_1)
 
-	var_5(arg_8_2:Find("icon_bg/count"), var_8_1.count > 0)
+	setActive(arg_8_2:Find("got"), var_8_1 == var_0_3)
+	setActive(arg_8_2:Find("get"), var_8_1 == var_0_2)
+	setActive(arg_8_2:Find("lock"), var_8_1 == var_0_1)
 
-	local var_8_2 = arg_8_2:Find("icon_bg/frame")
-	local var_8_3 = var_5.GetComponent
-
-	typeof = var_8
-	Image = var_10
-
-	local var_8_4 = var_8_3(var_8_2, var_8(var_10))
-
-	Color = var_1_10006
-	var_8_4.color = var_1_10006.New(0, 0, 0, 0)
-
-	local var_8_5 = arg_8_0:GetState(arg_8_1)
-
-	setActive = var_6
-
-	var_6(arg_8_2:Find("got"), var_8_5 == var_0_4)
-
-	setActive = var_6
-
-	var_6(arg_8_2:Find("get"), var_8_5 == var_0_3)
-
-	setActive = var_6
-
-	var_6(arg_8_2:Find("lock"), var_8_5 == var_0_2)
-
-	if var_8_5 == var_0_3 then
-		onButton = var_6
-
-		local var_8_6 = arg_8_0
-		local var_8_7 = arg_8_2
-
-		local function var_8_8()
-			local var_9_0 = arg_8_0.ptData.targets[arg_8_1]
-			local var_9_1 = arg_8_0
-			local var_9_2 = var_1.emit
-
-			ActivityMediator = var_2_10004
-
-			local var_9_3 = var_2_10004.EVENT_PT_OPERATION
-			local var_9_4 = {
-				cmd = 1
-			}
-			local var_9_5 = arg_8_0.ptData
-
-			var_9_4.activity_id = var_6.GetId(var_9_5)
-			var_9_4.arg1 = var_9_0
-
-			var_9_2(var_9_1, var_9_3, var_9_4)
+	if var_8_1 == var_0_2 then
+		onButton(arg_8_0, arg_8_2, function()
+			arg_8_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+				cmd = 1,
+				activity_id = arg_8_0.ptData:GetId(),
+				arg1 = arg_8_0.ptData.targets[arg_8_1]
+			})
 
 			return
-		end
-
-		SFX_PANEL = var_11
-
-		var_6(var_8_6, var_8_7, var_8_8, var_11)
+		end, SFX_PANEL)
 	else
-		onButton = var_6
-
-		local var_8_9 = arg_8_0
-		local var_8_10 = arg_8_2
-
-		local function var_8_11()
-			local var_10_0 = arg_8_0
-			local var_10_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_10_1(var_10_0, var_2_10003.ON_DROP, var_8_1)
+		onButton(arg_8_0, arg_8_2, function()
+			arg_8_0:emit(BaseUI.ON_DROP, var_8_0)
 
 			return
-		end
-
-		SFX_PANEL = var_11
-
-		var_6(var_8_9, var_8_10, var_8_11, var_11)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_11_0)
+function var_0_0.OnUpdateFlush(arg_11_0)
 	arg_11_0.awards = arg_11_0.ptData.dropList
 	arg_11_0.finishCnt = arg_11_0.ptData.count
 	arg_11_0.finishList = arg_11_0.ptData.activity.data1_list
 	arg_11_0.finishCntTxt.text = "X" .. arg_11_0.finishCnt
 
-	local var_11_0 = arg_11_0.uiList
-
-	var_1.align(var_11_0, #arg_11_0.awards)
+	arg_11_0.uiList:align(#arg_11_0.awards)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_12_0)
+function var_0_0.OnDestroy(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

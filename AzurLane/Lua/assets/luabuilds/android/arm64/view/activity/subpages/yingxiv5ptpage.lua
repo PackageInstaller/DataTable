@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("YingxiV5PtPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "YingxiV5PtPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
-
-function var_0_1.OnUpdateFlush(arg_1_0)
-	var_0_1.super.OnUpdateFlush(arg_1_0)
+function var_0_0.OnUpdateFlush(arg_1_0)
+	var_0_0.super.OnUpdateFlush(arg_1_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

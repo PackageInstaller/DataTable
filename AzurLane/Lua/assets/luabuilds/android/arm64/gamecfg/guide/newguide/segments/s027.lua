@@ -1,9 +1,4 @@
-﻿local var_0_0 = {
-	"指挥官请点击<color=#ff7d36>出击</color>",
-	"敌方旗舰出现！点击目标继续前进！"
-}
-
-return {
+﻿return {
 	id = "S027",
 	events = {
 		{
@@ -13,17 +8,15 @@ return {
 				dir = 1,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"敌方旗舰出现！点击目标继续前进！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -53,7 +46,10 @@ return {
 				dir = 1,
 				posY = 218.62,
 				posX = 20.04,
-				text = var_0_0[2]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"敌方旗舰出现！点击目标继续前进！"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -91,7 +87,10 @@ return {
 				dir = 1,
 				posY = 218.62,
 				posX = 20.04,
-				text = var_0_0[2]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"敌方旗舰出现！点击目标继续前进！"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,

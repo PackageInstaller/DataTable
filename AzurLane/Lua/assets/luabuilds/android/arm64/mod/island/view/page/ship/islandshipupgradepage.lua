@@ -1,270 +1,85 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandShipUpgradePage", import("...base.IslandBasePage"))
 
-local var_0_0 = "IslandShipUpgradePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.IslandBasePage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandShipUpgradeUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.expBar = arg_2_0._tf:Find("frame/frame_1/exp/bar")
+	arg_2_0.expBarPre = arg_2_0._tf:Find("frame/frame_1/exp/bar_pre")
+	arg_2_0.levelTxt = arg_2_0._tf:Find("frame/frame_1/exp/level"):GetComponent(typeof(Text))
+	arg_2_0.expTxt = arg_2_0._tf:Find("frame/frame_1/exp/Text"):GetComponent(typeof(Text))
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/frame_1/close")
+	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/btn_confirm")
+	arg_2_0.delBtn = arg_2_0._tf:Find("frame/frame_2/del")
+	arg_2_0.maxBtn = arg_2_0._tf:Find("frame/frame_2/max")
+	arg_2_0.switchBtn = arg_2_0._tf:Find("frame/frame_1/switch")
+	arg_2_0.uiBreakList = UIItemList.New(arg_2_0._tf:Find("frame/frame_1/attr/stars"), arg_2_0._tf:Find("frame/frame_1/attr/stars/tpl"))
+	arg_2_0.uiAttrList = UIItemList.New(arg_2_0._tf:Find("frame/frame_1/attr/list"), arg_2_0._tf:Find("frame/frame_1/attr/list/tpl"))
+	arg_2_0.uiItemList = UIItemList.New(arg_2_0._tf:Find("frame/frame_2/items"), arg_2_0._tf:Find("frame/frame_2/items/tpl"))
 
-	arg_2_0.expBar = var_1.Find(var_2_0, "frame/frame_1/exp/bar")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.expBarPre = var_1.Find(var_2_1, "frame/frame_1/exp/bar_pre")
-
-	local var_2_2 = arg_2_0._tf
-	local var_2_3 = var_1.Find(var_2_2, "frame/frame_1/exp/level")
-	local var_2_4 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.levelTxt = var_2_4(var_2_3, var_4(var_1_10006))
-
-	local var_2_5 = arg_2_0._tf
-	local var_2_6 = var_1.Find(var_2_5, "frame/frame_1/exp/Text")
-	local var_2_7 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.expTxt = var_2_7(var_2_6, var_4(var_1_10006))
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_8, "frame/frame_1/close")
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.confirmBtn = var_1.Find(var_2_9, "frame/btn_confirm")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.delBtn = var_1.Find(var_2_10, "frame/frame_2/del")
-
-	local var_2_11 = arg_2_0._tf
-
-	arg_2_0.maxBtn = var_1.Find(var_2_11, "frame/frame_2/max")
-
-	local var_2_12 = arg_2_0._tf
-
-	arg_2_0.switchBtn = var_1.Find(var_2_12, "frame/frame_1/switch")
-	UIItemList = var_1
-
-	local var_2_13 = var_1.New
-	local var_2_14 = arg_2_0._tf
-	local var_2_15 = var_3.Find(var_2_14, "frame/frame_1/attr/stars")
-	local var_2_16 = arg_2_0._tf
-
-	arg_2_0.uiBreakList = var_2_13(var_2_15, var_4.Find(var_2_16, "frame/frame_1/attr/stars/tpl"))
-	UIItemList = var_1
-
-	local var_2_17 = var_1.New
-	local var_2_18 = arg_2_0._tf
-	local var_2_19 = var_3.Find(var_2_18, "frame/frame_1/attr/list")
-	local var_2_20 = arg_2_0._tf
-
-	arg_2_0.uiAttrList = var_2_17(var_2_19, var_4.Find(var_2_20, "frame/frame_1/attr/list/tpl"))
-	UIItemList = var_1
-
-	local var_2_21 = var_1.New
-	local var_2_22 = arg_2_0._tf
-	local var_2_23 = var_3.Find(var_2_22, "frame/frame_2/items")
-	local var_2_24 = arg_2_0._tf
-
-	arg_2_0.uiItemList = var_2_21(var_2_23, var_4.Find(var_2_24, "frame/frame_2/items/tpl"))
-	setText = var_1
-
-	local var_2_25 = arg_2_0._tf
-	local var_2_26 = var_3.Find(var_2_25, "frame/frame_1/title")
-
-	i18n = var_4
-
-	var_1(var_2_26, var_4("island_word_ship_level_upgrade"))
-
-	setText = var_1
-
-	local var_2_27 = arg_2_0._tf
-	local var_2_28 = var_3.Find(var_2_27, "frame/frame_2/sub_title/Text")
-
-	i18n = var_4
-
-	var_1(var_2_28, var_4("island_skill_consume_title"))
-
-	setText = var_1
-
-	local var_2_29 = arg_2_0._tf
-	local var_2_30 = var_3.Find(var_2_29, "frame/frame_1/attr/label")
-
-	i18n = var_4
-
-	var_1(var_2_30, var_4("island_word_ship_level_upgrade_1"))
-
-	setText = var_1
-
-	local var_2_31 = arg_2_0._tf
-	local var_2_32 = var_3.Find(var_2_31, "frame/frame_1/attr/title/Text")
-
-	i18n = var_4
-
-	var_1(var_2_32, var_4("island_word_ship_rank"))
-
-	setText = var_1
-
-	local var_2_33 = arg_2_0.confirmBtn
-	local var_2_34 = var_3.Find(var_2_33, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_34, var_4("island_chara_up_button"))
+	setText(arg_2_0._tf:Find("frame/frame_1/title"), i18n("island_word_ship_level_upgrade"))
+	setText(arg_2_0._tf:Find("frame/frame_2/sub_title/Text"), i18n("island_skill_consume_title"))
+	setText(arg_2_0._tf:Find("frame/frame_1/attr/label"), i18n("island_word_ship_level_upgrade_1"))
+	setText(arg_2_0._tf:Find("frame/frame_1/attr/title/Text"), i18n("island_word_ship_rank"))
+	setText(arg_2_0.confirmBtn:Find("Text"), i18n("island_chara_up_button"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.closeBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.confirmBtn
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-
-		if var_0.NothingSelected(var_6_0) then
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		if arg_3_0:NothingSelected() then
 			return
 		end
 
-		local var_6_1 = arg_3_0
-		local var_6_2 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_6_2(var_6_1, var_2_10003.USE_SHIP_EXP_BOOK, arg_3_0.ship.id, arg_3_0.selected)
-
-		local var_6_3 = arg_3_0
-
-		var_0.Hide(var_6_3)
+		arg_3_0:emit(IslandMediator.USE_SHIP_EXP_BOOK, arg_3_0.ship.id, arg_3_0.selected)
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_9 = arg_3_0
-	local var_3_10 = arg_3_0.delBtn
-
-	local function var_3_11()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.delBtn, function()
 		arg_3_0.selected = {}
 
-		local var_7_0 = arg_3_0
-
-		var_0.UpdateConsume(var_7_0, arg_3_0.ship)
-
-		local var_7_1 = arg_3_0
-
-		var_0.UpdateLevelPreview(var_7_1)
+		arg_3_0:UpdateConsume(arg_3_0.ship)
+		arg_3_0:UpdateLevelPreview()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_9, var_3_10, var_3_11, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_12 = arg_3_0
-	local var_3_13 = arg_3_0.maxBtn
-
-	local function var_3_14()
-		local var_8_0 = arg_3_0
-
-		var_0.FillSelected(var_8_0, arg_3_0.ship)
-
-		local var_8_1 = arg_3_0
-
-		var_0.UpdateLevelPreview(var_8_1)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.maxBtn, function()
+		arg_3_0:FillSelected(arg_3_0.ship)
+		arg_3_0:UpdateLevelPreview()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_12, var_3_13, var_3_14, var_1_10006)
+	end, SFX_PANEL)
 
 	arg_3_0.isShowAttrPanel = false
-	onToggle = var_1
 
-	local var_3_15 = arg_3_0
-	local var_3_16 = arg_3_0.switchBtn
-
-	local function var_3_17(arg_9_0)
+	onToggle(arg_3_0, arg_3_0.switchBtn, function(arg_9_0)
 		arg_3_0.isShowAttrPanel = arg_9_0
 
 		if arg_9_0 then
-			local var_9_0 = arg_3_0
-
-			var_1.UpdateAttrs(var_9_0, arg_3_0.ship)
-
-			local var_9_1 = arg_3_0
-
-			var_1.UpdateBreakOutLevel(var_9_1, arg_3_0.ship)
+			arg_3_0:UpdateAttrs(arg_3_0.ship)
+			arg_3_0:UpdateBreakOutLevel(arg_3_0.ship)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_15, var_3_16, var_3_17, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnShow(arg_10_0, arg_10_1)
+function var_0_0.OnShow(arg_10_0, arg_10_1)
 	arg_10_0.ship = arg_10_1
 	arg_10_0.selected = {}
 
@@ -275,27 +90,19 @@ function var_0_1.OnShow(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.UpdateLevelAndExp(arg_11_0, arg_11_1, arg_11_2)
-	setActive = var_1_10003
-
-	var_1_10003(arg_11_0.expBarPre, false)
+function var_0_0.UpdateLevelAndExp(arg_11_0, arg_11_1, arg_11_2)
+	setActive(arg_11_0.expBarPre, false)
 
 	local var_11_0 = arg_11_1:GetExp()
 	local var_11_1 = arg_11_1:GetTargetExp()
 	local var_11_2 = arg_11_1:GetLevel()
-	local var_11_3
 
 	if arg_11_1:IsMaxLevel() then
-		setFillAmount = var_11_3
+		setFillAmount(arg_11_0.expBar, 1)
 
-		var_11_3(arg_11_0.expBar, 1)
-
-		var_11_3 = arg_11_0.expTxt
-		var_11_3.text = ""
+		arg_11_0.expTxt.text = ""
 	else
-		setFillAmount = var_11_3
-
-		var_11_3(arg_11_0.expBar, var_11_0 / var_11_1)
+		setFillAmount(arg_11_0.expBar, var_11_0 / var_11_1)
 
 		arg_11_0.expTxt.text = "<color=#39BFFF>" .. var_11_0 .. "</color>/" .. var_11_1
 	end
@@ -305,101 +112,43 @@ function var_0_1.UpdateLevelAndExp(arg_11_0, arg_11_1, arg_11_2)
 	return
 end
 
-function var_0_1.UpdateConsume(arg_12_0, arg_12_1)
-	getProxy = var_1_10002
-	IslandProxy = var_1_10004
+function var_0_0.UpdateConsume(arg_12_0, arg_12_1)
+	local var_12_0 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetShipExpBooks()
 
-	local var_12_0 = var_1_10002(var_1_10004)
-	local var_12_1 = var_2.GetIsland(var_12_0)
-	local var_12_2 = var_2.GetInventoryAgency(var_12_1)
-	local var_12_3 = var_2.GetShipExpBooks(var_12_2)
-	local var_12_4 = arg_12_0.uiItemList
+	arg_12_0.uiItemList:make(function(arg_13_0, arg_13_1, arg_13_2)
+		if arg_13_0 == UIItemList.EventUpdate then
+			local var_13_0 = var_12_0[arg_13_1 + 1]
 
-	var_4.make(var_12_4, function(arg_13_0, arg_13_1, arg_13_2)
-		UIItemList = var_2_10003
-
-		if arg_13_0 == var_2_10003.EventUpdate then
-			local var_13_0 = var_12_3[arg_13_1 + 1]
-
-			updateCustomDrop = var_4
-
-			local var_13_1 = arg_13_2
-
-			Drop = var_2_10007
-
-			local var_13_2 = var_2_10007.New
-			local var_13_3 = {}
-
-			DROP_TYPE_ISLAND_ITEM = var_2_10010
-			var_13_3.type = var_2_10010
-			var_13_3.id = var_13_0.id
-			var_13_3.count = var_13_0.count
-
-			var_4(var_13_1, var_13_2(var_13_3))
-
-			setActive = var_4
-
-			var_4(arg_13_2:Find("icon_bg/count_bg"), true)
-
-			setText = var_4
-
-			var_4(arg_13_2:Find("icon_bg/count_bg/count"), "X" .. var_13_0.count)
-
-			onButton = var_4
-
-			local var_13_4 = arg_12_0
-			local var_13_5 = arg_13_2
-
-			local function var_13_6()
-				if not (var_13_0.count <= 0) then
-					local var_14_0 = arg_12_0
-
-					if var_0.CheckMaxLevel(var_14_0) then
-						return
-					end
-
-					local var_14_1 = arg_12_0
-
-					var_0.OpenCalcPanel(var_14_1, arg_13_2, var_13_0)
-
+			updateCustomDrop(arg_13_2, Drop.New({
+				type = DROP_TYPE_ISLAND_ITEM,
+				id = var_12_0[arg_13_1 + 1].id,
+				count = var_12_0[arg_13_1 + 1].count
+			}))
+			setActive(arg_13_2:Find("icon_bg/count_bg"), true)
+			setText(arg_13_2:Find("icon_bg/count_bg/count"), "X" .. var_12_0[arg_13_1 + 1].count)
+			onButton(arg_12_0, arg_13_2, function()
+				if var_13_0.count <= 0 or arg_12_0:CheckMaxLevel() then
 					return
 				end
-			end
 
-			SFX_PANEL = var_9
+				arg_12_0:OpenCalcPanel(arg_13_2, var_13_0)
 
-			var_4(var_13_4, var_13_5, var_13_6, var_9)
-
-			local var_13_7 = arg_12_0
-
-			var_4.UpdateCalcPanel(var_13_7, arg_13_2, var_13_0)
+				return
+			end, SFX_PANEL)
+			arg_12_0:UpdateCalcPanel(arg_13_2, var_12_0[arg_13_1 + 1])
 		end
 
 		return
 	end)
-
-	local var_12_5 = arg_12_0.uiItemList
-
-	var_4.align(var_12_5, #var_12_3)
+	arg_12_0.uiItemList:align(#getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetShipExpBooks())
 
 	return
 end
 
-function var_0_1.OpenCalcPanel(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = arg_15_0.selected
-	local var_15_1 = arg_15_2.id
+function var_0_0.OpenCalcPanel(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_0.selected[arg_15_2.id] or 0
 
-	math = var_1_10005
-
-	local var_15_2 = var_1_10005.min
-	local var_15_3 = arg_15_2.count
-	local var_15_4
-
-	if not arg_15_0.selected[arg_15_2.id] then
-		var_15_4 = 0
-	end
-
-	var_15_0[var_15_1] = var_15_2(var_15_3, var_15_4 + 1)
+	arg_15_0.selected[arg_15_2.id] = math.min(arg_15_2.count, var_15_0 + 1)
 
 	arg_15_0:UpdateCalcPanel(arg_15_1, arg_15_2)
 	arg_15_0:UpdateLevelPreview()
@@ -407,60 +156,42 @@ function var_0_1.OpenCalcPanel(arg_15_0, arg_15_1, arg_15_2)
 	return
 end
 
-function var_0_1.CheckMaxLevel(arg_16_0)
-	Clone = var_1_10001
+function var_0_0.CheckMaxLevel(arg_16_0)
+	local var_16_0 = Clone(arg_16_0.ship)
 
-	local var_16_0 = var_1_10001(arg_16_0.ship)
-	local var_16_1 = arg_16_0:CalcExpAddition(arg_16_0.selected)
-
-	var_16_0:AddExp(var_16_1)
+	var_16_0:AddExp((arg_16_0:CalcExpAddition(arg_16_0.selected)))
 
 	return var_16_0:IsMaxLevel()
 end
 
-function var_0_1.UpdateLevelPreview(arg_17_0)
-	Clone = var_1_10001
-
-	local var_17_0 = var_1_10001(arg_17_0.ship)
+function var_0_0.UpdateLevelPreview(arg_17_0)
+	local var_17_0 = Clone(arg_17_0.ship)
 	local var_17_1 = arg_17_0:CalcExpAddition(arg_17_0.selected)
 
 	var_17_0:AddExp(var_17_1)
+	setActive(arg_17_0.expBarPre, var_17_1 > 0)
 
-	setActive = var_3
-
-	var_3(arg_17_0.expBarPre, var_17_1 > 0)
-
-	local var_17_2 = arg_17_0.ship
-	local var_17_3 = var_3.GetLevel(var_17_2)
+	local var_17_2 = arg_17_0.ship:GetLevel()
 
 	if var_17_1 > 0 then
-		local var_17_4 = var_17_0:GetExp()
-		local var_17_5 = var_17_0:GetTargetExp()
-		local var_17_6 = var_17_0:GetLevel()
-		local var_17_7
+		local var_17_3 = var_17_0:GetExp()
+		local var_17_4 = var_17_0:GetTargetExp()
+		local var_17_5 = var_17_0:GetLevel()
 
 		if var_17_0:IsMaxLevel() then
-			setFillAmount = var_17_7
+			setFillAmount(arg_17_0.expBarPre, 1)
 
-			var_17_7(arg_17_0.expBarPre, 1)
-
-			var_17_7 = arg_17_0.expTxt
-			var_17_7.text = ""
+			arg_17_0.expTxt.text = ""
 		else
-			setFillAmount = var_17_7
+			setFillAmount(arg_17_0.expBarPre, var_17_3 / var_17_4)
 
-			var_17_7(arg_17_0.expBarPre, var_17_4 / var_17_5)
-
-			arg_17_0.expTxt.text = "<color=#39BFFF>" .. var_17_4 .. "</color>/" .. var_17_5
+			arg_17_0.expTxt.text = "<color=#39BFFF>" .. var_17_3 .. "</color>/" .. var_17_4
 		end
 
-		if var_17_3 < var_17_6 then
-			local var_17_8 = arg_17_0.levelTxt
+		if var_17_2 < var_17_5 then
+			arg_17_0.levelTxt.text = var_17_5
 
-			var_17_8.text = var_17_6
-			setFillAmount = var_17_8
-
-			var_17_8(arg_17_0.expBar, 0)
+			setFillAmount(arg_17_0.expBar, 0)
 		end
 	else
 		arg_17_0:UpdateLevelAndExp(arg_17_0.ship)
@@ -469,66 +200,30 @@ function var_0_1.UpdateLevelPreview(arg_17_0)
 	return
 end
 
-function var_0_1.UpdateCalcPanel(arg_18_0, arg_18_1, arg_18_2)
-	local var_18_0
+function var_0_0.UpdateCalcPanel(arg_18_0, arg_18_1, arg_18_2)
+	local var_18_0 = arg_18_0.selected[arg_18_2.id] or 0
 
-	if not arg_18_0.selected[arg_18_2.id] then
-		var_18_0 = 0
-	end
+	setText(arg_18_1:Find("calc/Text"), var_18_0)
+	setActive(arg_18_1:Find("calc"), var_18_0 > 0)
+	onButton(arg_18_0, arg_18_1:Find("calc/bg"), function()
+		local var_19_0 = arg_18_0.selected[arg_18_2.id] or 0
 
-	setText = var_4
+		arg_18_0.selected[arg_18_2.id] = var_19_0 - 1
 
-	var_4(arg_18_1:Find("calc/Text"), var_18_0)
-
-	setActive = var_4
-
-	var_4(arg_18_1:Find("calc"), var_18_0 > 0)
-
-	onButton = var_4
-
-	local var_18_1 = arg_18_0
-	local var_18_2 = arg_18_1
-	local var_18_3 = arg_18_1.Find(var_18_2, "calc/bg")
-
-	local function var_18_4()
-		local var_19_0 = arg_18_0.selected
-		local var_19_1 = arg_18_2.id
-		local var_19_2
-
-		if not arg_18_0.selected[arg_18_2.id] then
-			var_19_2 = 0
-		end
-
-		var_19_0[var_19_1] = var_19_2 - 1
-
-		local var_19_3 = arg_18_0
-
-		var_0.UpdateCalcPanel(var_19_3, arg_18_1, arg_18_2)
-
-		local var_19_4 = arg_18_0
-
-		var_0.UpdateLevelPreview(var_19_4)
+		arg_18_0:UpdateCalcPanel(arg_18_1, arg_18_2)
+		arg_18_0:UpdateLevelPreview()
 
 		return
-	end
-
-	SFX_PANEL = var_18_2
-
-	var_4(var_18_1, var_18_3, var_18_4, var_18_2)
-
-	setGray = var_4
-
-	var_4(arg_18_0.confirmBtn, arg_18_0:NothingSelected(), true)
+	end, SFX_PANEL)
+	setGray(arg_18_0.confirmBtn, arg_18_0:NothingSelected(), true)
 	arg_18_0:UpdateAttrs(arg_18_0.ship)
 	arg_18_0:UpdateBreakOutLevel(arg_18_0.ship)
 
 	return
 end
 
-function var_0_1.NothingSelected(arg_20_0)
-	pairs = var_1_10001
-
-	for iter_20_0, iter_20_1 in var_1_10001(arg_20_0.selected) do
+function var_0_0.NothingSelected(arg_20_0)
+	for iter_20_0, iter_20_1 in pairs(arg_20_0.selected) do
 		if iter_20_1 > 0 then
 			return false
 		end
@@ -537,49 +232,31 @@ function var_0_1.NothingSelected(arg_20_0)
 	return true
 end
 
-function var_0_1.FillSelected(arg_21_0, arg_21_1)
+function var_0_0.FillSelected(arg_21_0, arg_21_1)
 	arg_21_0.selected = {}
-	Clone = var_2
 
-	local var_21_0 = var_2(arg_21_1)
+	local var_21_0 = Clone(arg_21_1)
+	local var_21_1 = getProxy(IslandProxy):GetIsland():GetInventoryAgency():GetShipExpBooks()
 
-	getProxy = var_1_10003
-	IslandProxy = var_1_10005
-
-	local var_21_1 = var_1_10003(var_1_10005)
-	local var_21_2 = var_3.GetIsland(var_21_1)
-	local var_21_3 = var_3.GetInventoryAgency(var_21_2)
-	local var_21_4 = var_3.GetShipExpBooks(var_21_3)
-
-	table = var_21_2
-
-	var_21_2.sort(var_21_4, function(arg_22_0, arg_22_1)
+	table.sort(var_21_1, function(arg_22_0, arg_22_1)
 		return arg_22_0:GetRarity() > arg_22_1:GetRarity()
 	end)
 
-	ipairs = var_5
-
-	for iter_21_0, iter_21_1 in var_5(var_21_4) do
+	for iter_21_0, iter_21_1 in ipairs(var_21_1) do
 		for iter_21_2 = 1, iter_21_1.count do
+			local var_21_2
+
 			if var_21_0:IsMaxLevel() then
-				break
+				do break end
+
+				var_21_2 = var_21_0
 			end
 
-			tonumber = var_14
+			var_21_0:AddExp((tonumber(iter_21_1:GetUseArg())))
 
-			local var_21_5 = var_14(iter_21_1:GetUseArg())
+			local var_21_3 = arg_21_0.selected[iter_21_1.id] or 0
 
-			var_21_0:AddExp(var_21_5)
-
-			local var_21_6 = arg_21_0.selected
-			local var_21_7 = iter_21_1.id
-			local var_21_8
-
-			if not arg_21_0.selected[iter_21_1.id] then
-				var_21_8 = 0
-			end
-
-			var_21_6[var_21_7] = var_21_8 + 1
+			arg_21_0.selected[iter_21_1.id] = var_21_3 + 1
 		end
 	end
 
@@ -588,122 +265,64 @@ function var_0_1.FillSelected(arg_21_0, arg_21_1)
 	return
 end
 
-function var_0_1.CalcExpAddition(arg_23_0, arg_23_1)
+function var_0_0.CalcExpAddition(arg_23_0, arg_23_1)
 	local var_23_0 = 0
+	local var_23_1 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
 
-	getProxy = var_1_10003
-	IslandProxy = var_1_10005
-
-	local var_23_1 = var_1_10003(var_1_10005)
-	local var_23_2 = var_3.GetIsland(var_23_1)
-	local var_23_3 = var_3.GetInventoryAgency(var_23_2)
-
-	pairs = var_1_10004
-
-	for iter_23_0, iter_23_1 in var_1_10004(arg_23_1) do
+	for iter_23_0, iter_23_1 in pairs(arg_23_1) do
 		for iter_23_2 = 1, iter_23_1 do
-			local var_23_4 = var_23_3:GetItemById(iter_23_0)
+			local var_23_2 = var_23_1:GetItemById(iter_23_0)
 
-			tonumber = var_1_10014
-			var_23_0 = var_23_0 + var_1_10014(var_23_4:GetUseArg())
+			var_23_0 = var_23_0 + tonumber(var_23_2:GetUseArg())
 		end
 	end
 
 	return var_23_0
 end
 
-function var_0_1.UpdateAttrs(arg_24_0, arg_24_1)
+function var_0_0.UpdateAttrs(arg_24_0, arg_24_1)
 	if not arg_24_0.isShowAttrPanel then
 		return
 	end
 
 	local var_24_0 = arg_24_1:GetGrowthAtt()
-	local var_24_1 = arg_24_0.uiAttrList
 
-	var_3.make(var_24_1, function(arg_25_0, arg_25_1, arg_25_2)
-		UIItemList = var_2_10003
+	arg_24_0.uiAttrList:make(function(arg_25_0, arg_25_1, arg_25_2)
+		if arg_25_0 == UIItemList.EventUpdate then
+			arg_25_2:Find("grade_bg"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/IslandShipUI_atlas", IslandShipAttr.Grade2Img((arg_24_1:GetAttrGrade(IslandShipAttr.ATTRS[arg_25_1 + 1])))[2])
 
-		if arg_25_0 == var_2_10003.EventUpdate then
-			IslandShipAttr = var_3
+			setText(arg_25_2:Find("name"), IslandShipAttr.ToChinese(IslandShipAttr.ATTRS[arg_25_1 + 1]))
 
-			local var_25_0 = var_3.ATTRS[arg_25_1 + 1]
-			local var_25_1 = arg_24_1
-			local var_25_2 = var_4.GetAttrGrade(var_25_1, var_25_0)
+			local var_25_0 = var_24_0[IslandShipAttr.ATTRS[arg_25_1 + 1]] or 0
 
-			IslandShipAttr = var_2_10005
-
-			local var_25_3 = var_2_10005.Grade2Img(var_25_2)
-			local var_25_4 = arg_25_2:Find("grade_bg")
-			local var_25_5 = var_6.GetComponent
-
-			typeof = var_9
-			Image = var_2_10011
-
-			local var_25_6 = var_25_5(var_25_4, var_9(var_2_10011))
-
-			GetSpriteFromAtlas = var_7
-			var_25_6.sprite = var_7("ui/IslandShipUI_atlas", var_25_3[2])
-			setText = var_25_6
-
-			local var_25_7 = arg_25_2:Find("name")
-
-			IslandShipAttr = var_9
-
-			var_25_6(var_25_7, var_9.ToChinese(var_25_0))
-
-			setText = var_25_6
-
-			local var_25_8 = arg_25_2:Find("value")
-			local var_25_9 = "+"
-			local var_25_10
-
-			if not var_24_0[var_25_0] then
-				var_25_10 = 0
-			end
-
-			var_25_6(var_25_8, var_25_9 .. var_25_10)
+			setText(arg_25_2:Find("value"), "+" .. var_25_0)
 		end
 
 		return
 	end)
-
-	local var_24_2 = arg_24_0.uiAttrList
-	local var_24_3 = var_3.align
-
-	IslandShipAttr = var_6
-
-	var_24_3(var_24_2, #var_6.ATTRS)
+	arg_24_0.uiAttrList:align(#IslandShipAttr.ATTRS)
 
 	return
 end
 
-function var_0_1.UpdateBreakOutLevel(arg_26_0, arg_26_1)
+function var_0_0.UpdateBreakOutLevel(arg_26_0, arg_26_1)
 	if not arg_26_0.isShowAttrPanel then
 		return
 	end
 
-	local var_26_0 = arg_26_0.uiBreakList
-
-	var_2.make(var_26_0, function(arg_27_0, arg_27_1, arg_27_2)
-		UIItemList = var_2_10003
-
-		if arg_27_0 == var_2_10003.EventUpdate then
-			setActive = var_3
-
-			var_3(arg_27_2:Find("Image"), true)
+	arg_26_0.uiBreakList:make(function(arg_27_0, arg_27_1, arg_27_2)
+		if arg_27_0 == UIItemList.EventUpdate then
+			setActive(arg_27_2:Find("Image"), true)
 		end
 
 		return
 	end)
-
-	local var_26_1 = arg_26_0.uiBreakList
-
-	var_2.align(var_26_1, arg_26_1:GetBreakLevel())
+	arg_26_0.uiBreakList:align(arg_26_1:GetBreakLevel())
 
 	return
 end
 
-function var_0_1.OnHide(arg_28_0)
+function var_0_0.OnHide(arg_28_0)
 	arg_28_0:UnBlurPanel()
 
 	arg_28_0.selected = {}
@@ -711,4 +330,4 @@ function var_0_1.OnHide(arg_28_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,488 +1,221 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ClueGroupSingleView", import("view.base.BaseUI"))
+local var_0_1 = pg.activity_clue
+local var_0_2 = pg.activity_clue_group
+local var_0_3 = 0.6
+local var_0_4 = 1
 
-local var_0_0 = "ClueGroupSingleView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-pg = var_0_10001
-
-local var_0_2 = var_0_10001.activity_clue
-
-pg = var_0_0
-
-local var_0_3 = var_0_0.activity_clue_group
-local var_0_4 = 0.6
-local var_0_5 = 1
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ClueGroupSingleUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0.clueGroupTf = arg_2_0._tf:Find("clueGroup")
 
-	arg_2_0.clueGroupTf = var_1.Find(var_2_0, "clueGroup")
-	setText = var_1
-
-	local var_2_1 = arg_2_0.clueGroupTf
-	local var_2_2 = var_3.Find(var_2_1, "goBtn/Text")
-
-	i18n = var_4
-
-	var_1(var_2_2, var_4("clue_task_goto"))
-
-	setText = var_1
-
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_3.Find(var_2_3, "closeTip")
-
-	i18n = var_4
-
-	var_1(var_2_4, var_4("clue_close_tip"))
+	setText(arg_2_0.clueGroupTf:Find("goBtn/Text"), i18n("clue_task_goto"))
+	setText(arg_2_0._tf:Find("closeTip"), i18n("clue_close_tip"))
 
 	arg_2_0.timerList = {}
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	ActivityConst = var_1_10001
-	arg_3_0.activityId = var_1_10001.Valleyhospital_ACT_ID
-	getProxy = var_1
-	PlayerProxy = var_1_10003
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.activityId = ActivityConst.Valleyhospital_ACT_ID
+	arg_3_0.playerId = getProxy(PlayerProxy):getRawData().id
+	arg_3_0.investigatingGroupId = PlayerPrefs.GetInt("investigatingGroupId_" .. arg_3_0.activityId .. "_" .. arg_3_0.playerId)
+	arg_3_0.taskProxy = getProxy(TaskProxy)
 
-	local var_3_0 = var_1(var_1_10003)
-
-	arg_3_0.playerId = var_1.getRawData(var_3_0).id
-	PlayerPrefs = var_1
-	arg_3_0.investigatingGroupId = var_1.GetInt("investigatingGroupId_" .. arg_3_0.activityId .. "_" .. arg_3_0.playerId)
-	getProxy = var_1
-	TaskProxy = var_3
-	arg_3_0.taskProxy = var_1(var_3)
-	onButton = var_1
-
-	local var_3_1 = arg_3_0
-	local var_3_2 = arg_3_0._tf
-	local var_3_3 = var_4.Find(var_3_2, "mask")
-
-	local function var_3_4()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("mask"), function()
+		arg_3_0:closeView()
 
 		return
-	end
-
-	SFX_PANEL = var_3_2
-
-	var_1(var_3_1, var_3_3, var_3_4, var_3_2)
+	end, SFX_PANEL)
 	arg_3_0:SetClueGroup()
-
-	pg = var_1
-
-	local var_3_5 = var_1.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_3_5, arg_3_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 
 	return
 end
 
-function var_0_1.SetClueGroup(arg_5_0)
+function var_0_0.SetClueGroup(arg_5_0)
 	local var_5_0 = arg_5_0.contextData.clueGroupId
 	local var_5_1 = arg_5_0.contextData.submitClueIds
 	local var_5_2 = arg_5_0.clueGroupTf
-	local var_5_3 = var_0_3[var_5_0]
-	local var_5_4 = var_0_2.get_id_list_by_group[var_5_0]
+	local var_5_3 = var_0_2[arg_5_0.contextData.clueGroupId]
+	local var_5_4 = var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId]
 	local var_5_5 = {
-		var_0_2[var_5_4[1]],
-		var_0_2[var_5_4[2]],
-		var_0_2[var_5_4[3]]
+		var_0_1[var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId][1]],
+		var_0_1[var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId][2]],
+		var_0_1[var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId][3]]
 	}
-	local var_5_6 = arg_5_0.taskProxy
-	local var_5_7 = var_7.getTaskVO
-
-	tonumber = var_1_10010
-
-	local var_5_8 = var_5_7(var_5_6, var_1_10010(var_5_5[3].task_id))
-	local var_5_9 = var_7.getProgress(var_5_8)
-	local var_5_10 = {}
+	local var_5_6 = arg_5_0.taskProxy:getTaskVO(tonumber(({
+		var_0_1[var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId][1]],
+		var_0_1[var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId][2]],
+		var_0_1[var_0_1.get_id_list_by_group[arg_5_0.contextData.clueGroupId][3]]
+	})[3].task_id)):getProgress()
+	local var_5_7 = {}
 
 	for iter_5_0 = 1, 3 do
-		local var_5_11 = arg_5_0.taskProxy
-		local var_5_12 = var_13.getFinishTaskById
-
-		tonumber = var_1_10016
-		var_5_10[iter_5_0] = var_5_12(var_5_11, var_1_10016(var_5_5[iter_5_0].task_id))
+		var_5_7[iter_5_0] = arg_5_0.taskProxy:getFinishTaskById(tonumber(var_5_5[iter_5_0].task_id))
 	end
 
-	setText = var_9
+	setText(var_5_2:Find("title/Text"), var_5_3.title)
 
-	var_9(var_5_2:Find("title/Text"), var_5_3.title)
+	local var_5_8 = var_5_7[1] or var_5_7[2] or var_5_7[3]
 
-	setActive = var_9
+	setActive(var_5_2:Find("title/Text"), var_5_8)
+	setActive(var_5_2:Find("title/lock"), not var_5_7[1] and not var_5_7[2] and not var_5_7[3])
+	LoadImageSpriteAsync("cluepictures/" .. var_5_3.pic, var_5_2:Find("picture"), true)
 
-	local var_5_13 = var_5_2:Find("title/Text")
-	local var_5_14
+	var_5_2:Find("picture").localScale = var_5_3.type == 1 and Vector3(1, 1, 1) or Vector3(0.6, 0.6, 1)
 
-	if not var_5_10[1] and not var_5_10[2] then
-		var_5_14 = var_5_10[3]
-	end
-
-	var_9(var_5_13, var_5_14)
-
-	setActive = var_9
-
-	var_9(var_5_2:Find("title/lock"), not var_5_10[1] and not var_5_10[2] and not var_5_10[3])
-
-	LoadImageSpriteAsync = var_9
-
-	var_9("cluepictures/" .. var_5_3.pic, var_5_2:Find("picture"), true)
-
-	local var_5_15
-
-	if var_5_3.type == 1 then
-		var_5_15 = var_5_2:Find("picture")
-		Vector3 = var_10
-		var_5_15.localScale = var_10(1, 1, 1)
-	else
-		var_5_15 = var_5_2:Find("picture")
-		Vector3 = var_10
-		var_5_15.localScale = var_10(0.6, 0.6, 1)
-	end
-
-	setActive = var_5_15
-
-	var_5_15(var_5_2:Find("picture/lockSite"), var_5_3.type == 1 and not var_5_10[1] and not var_5_10[2] and not var_5_10[3])
-
-	setActive = var_5_15
-
-	var_5_15(var_5_2:Find("picture/lockChara"), var_5_3.type == 2 and not var_5_10[1] and not var_5_10[2] and not var_5_10[3])
-
-	local var_5_16 = false
+	setActive(var_5_2:Find("picture/lockSite"), var_5_3.type == 1 and not var_5_7[1] and not var_5_7[2] and not var_5_7[3])
+	setActive(var_5_2:Find("picture/lockChara"), var_5_3.type == 2 and not var_5_7[1] and not var_5_7[2] and not var_5_7[3])
 
 	for iter_5_1 = 1, 3 do
-		if var_5_10[iter_5_1] then
-			setText = var_14
-			var_1_10018 = var_5_2
+		local var_5_9
 
-			var_14(var_5_2.Find(var_1_10018, "clueScroll/Viewport/Content/clue" .. iter_5_1), var_5_5[iter_5_1].desc)
+		if var_5_7[iter_5_1] then
+			setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_1), var_5_5[iter_5_1].desc)
 		elseif arg_5_0.investigatingGroupId == var_5_0 then
-			setText = var_14
-			var_1_10018 = var_5_2
+			setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_1), "<color=#858593>" .. var_5_5[iter_5_1].unlock_desc .. var_5_5[iter_5_1].unlock_num .. i18n("clue_task_tip", var_5_6) .. "</color>")
+		elseif not false then
+			var_5_9 = true
 
-			local var_5_17 = var_5_2.Find(var_1_10018, "clueScroll/Viewport/Content/clue" .. iter_5_1)
-			local var_5_18 = "<color=#858593>"
-
-			var_1_10018 = var_5_5[iter_5_1].unlock_desc
-
-			local var_5_19 = var_5_5[iter_5_1].unlock_num
-
-			i18n = var_20
-
-			var_14(var_5_17, var_5_18 .. var_1_10018 .. var_5_19 .. var_20("clue_task_tip", var_5_9) .. "</color>")
-		elseif not var_5_16 then
-			var_5_16 = true
-			setText = var_14
-			var_1_10018 = var_5_2
-
-			local var_5_20 = var_5_2.Find(var_1_10018, "clueScroll/Viewport/Content/clue" .. iter_5_1)
-			local var_5_21 = "<color=#858593>"
-
-			var_1_10018 = var_5_5[iter_5_1].unlock_desc
-
-			local var_5_22 = var_5_5[iter_5_1].unlock_num
-
-			i18n = var_20
-
-			var_14(var_5_20, var_5_21 .. var_1_10018 .. var_5_22 .. var_20("clue_task_tip", var_5_9) .. "</color>")
+			setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_1), "<color=#858593>" .. var_5_5[iter_5_1].unlock_desc .. var_5_5[iter_5_1].unlock_num .. i18n("clue_task_tip", var_5_6) .. "</color>")
 		else
-			setText = var_14
-			var_1_10018 = var_5_2
-
-			var_14(var_5_2.Find(var_1_10018, "clueScroll/Viewport/Content/clue" .. iter_5_1), "<color=#858593>？？？</color>")
+			setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_1), "<color=#858593>？？？</color>")
 		end
 	end
 
-	setActive = var_10
+	setActive(var_5_2:Find("goBtn/selected"), arg_5_0.investigatingGroupId == var_5_0)
+	onButton(arg_5_0, var_5_2:Find("goBtn"), function()
+		arg_5_0.investigatingGroupId = var_5_0
 
-	var_10(var_5_2:Find("goBtn/selected"), arg_5_0.investigatingGroupId == var_5_0)
-
-	onButton = var_10
-
-	local var_5_23 = arg_5_0
-	local var_5_24 = var_5_2
-	local var_5_25 = var_5_2.Find(var_5_24, "goBtn")
-
-	local function var_5_26()
-		local var_6_0 = arg_5_0
-
-		var_6_0.investigatingGroupId = var_5_0
-		PlayerPrefs = var_6_0
-
-		var_6_0.SetInt("investigatingGroupId_" .. arg_5_0.activityId .. "_" .. arg_5_0.playerId, var_5_0)
-
-		setActive = var_0
-
-		local var_6_1 = var_5_2
-
-		var_0(var_2.Find(var_6_1, "goBtn/selected"), true)
+		PlayerPrefs.SetInt("investigatingGroupId_" .. arg_5_0.activityId .. "_" .. arg_5_0.playerId, var_5_0)
+		setActive(var_5_2:Find("goBtn/selected"), true)
 
 		if arg_5_0.pageIndex == 1 then
-			local var_6_2 = arg_5_0
-
-			var_0.ShowSitePage(var_6_2)
+			arg_5_0:ShowSitePage()
 		elseif arg_5_0.pageIndex == 2 then
-			local var_6_3 = arg_5_0
-
-			var_0.ShowCharaPage(var_6_3)
+			arg_5_0:ShowCharaPage()
 		end
 
-		local var_6_4 = arg_5_0
-
-		var_0.OpenChapter(var_6_4, var_5_0)
-
-		local var_6_5 = arg_5_0
-
-		var_0.closeView(var_6_5)
+		arg_5_0:OpenChapter(var_5_0)
+		arg_5_0:closeView()
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_5_24
-
-	var_10(var_5_23, var_5_25, var_5_26, var_5_24)
-
-	if not var_5_10[1] and not var_5_10[2] and not var_5_10[3] then
-		setActive = var_10
-
-		local var_5_27 = arg_5_0.clueGroupTf
-
-		var_10(var_12.Find(var_5_27, "triangle"), false)
+	if not var_5_7[1] and not var_5_7[2] and not var_5_7[3] then
+		setActive(arg_5_0.clueGroupTf:Find("triangle"), false)
 	else
-		setActive = var_10
+		setActive(arg_5_0.clueGroupTf:Find("triangle"), true)
 
-		local var_5_28 = arg_5_0.clueGroupTf
+		local var_5_10 = arg_5_0.clueGroupTf:Find("clueScroll")
 
-		var_10(var_12.Find(var_5_28, "triangle"), true)
-
-		setActive = var_10
-
-		local var_5_29 = arg_5_0.clueGroupTf
-		local var_5_30 = var_12.Find(var_5_29, "triangle")
-		local var_5_31 = arg_5_0.clueGroupTf
-		local var_5_32 = var_13.Find(var_5_31, "clueScroll")
-		local var_5_33 = var_13.GetComponent
-
-		typeof = var_16
-		ScrollRect = var_1_10018
-
-		var_10(var_5_30, var_5_33(var_5_32, var_16(var_1_10018)).normalizedPosition.y > 0.01)
-
-		onScroll = var_10
-
-		local var_5_34 = arg_5_0
-		local var_5_35 = arg_5_0.clueGroupTf
-
-		var_10(var_5_34, var_13.Find(var_5_35, "clueScroll"), function(arg_7_0)
-			setActive = var_2_10001
-
-			local var_7_0 = arg_5_0.clueGroupTf
-
-			var_2_10001(var_3.Find(var_7_0, "triangle"), arg_7_0.y > 0.01)
+		setActive(arg_5_0.clueGroupTf:Find("triangle"), var_5_10:GetComponent(typeof(ScrollRect)).normalizedPosition.y > 0.01)
+		onScroll(arg_5_0, arg_5_0.clueGroupTf:Find("clueScroll"), function(arg_7_0)
+			setActive(arg_5_0.clueGroupTf:Find("triangle"), arg_7_0.y > 0.01)
 
 			return
 		end)
 	end
 
-	setActive = var_10
-
-	local var_5_36 = arg_5_0._tf
-
-	var_10(var_12.Find(var_5_36, "top"), var_5_1 and #var_5_1 > 0)
+	setActive(arg_5_0._tf:Find("top"), var_5_1 and #var_5_1 > 0)
 
 	if var_5_1 and #var_5_1 > 0 then
-		table = var_10
-
-		if var_10.contains(var_5_1, var_5_4[1]) then
-			setActive = var_10
-
-			var_10(var_5_2:Find("title/Text"), false)
-
-			setActive = var_10
-
-			var_10(var_5_2:Find("title/lock"), true)
-
-			setActive = var_10
-
-			var_10(var_5_2:Find("picture/lockSite"), var_5_3.type == 1)
-
-			setActive = var_10
-
-			var_10(var_5_2:Find("picture/lockChara"), var_5_3.type == 2)
+		if table.contains(var_5_1, var_5_4[1]) then
+			setActive(var_5_2:Find("title/Text"), false)
+			setActive(var_5_2:Find("title/lock"), true)
+			setActive(var_5_2:Find("picture/lockSite"), var_5_3.type == 1)
+			setActive(var_5_2:Find("picture/lockChara"), var_5_3.type == 2)
 
 			for iter_5_2 = 1, #var_5_1 do
 				if arg_5_0.investigatingGroupId == var_5_0 then
-					setText = var_14
-
-					var_14(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_2), "<color=#858593>" .. var_5_5[iter_5_2].unlock_desc .. var_5_5[iter_5_2].unlock_num .. "</color>")
+					setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_2), "<color=#858593>" .. var_5_5[iter_5_2].unlock_desc .. var_5_5[iter_5_2].unlock_num .. "</color>")
 				else
-					setText = var_14
-
-					var_14(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_2), "<color=#858593>？？？</color>")
+					setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_2), "<color=#858593>？？？</color>")
 				end
 			end
 
 			arg_5_0:StartTimer(function()
-				setActive = var_2_10000
+				setActive(var_5_2:Find("title/Text"), true)
 
-				local var_8_0 = var_5_2
+				local var_8_0 = var_5_2:Find("title"):GetComponent(typeof(Animation)):Play("anim_clue_single_unlock1")
 
-				var_2_10000(var_2.Find(var_8_0, "title/Text"), true)
-
-				local var_8_1 = var_5_2
-				local var_8_2 = var_0.Find(var_8_1, "title")
-				local var_8_3 = var_0.GetComponent
-
-				typeof = var_3
-				Animation = var_5
-
-				local var_8_4 = var_8_3(var_8_2, var_3(var_5))
-				local var_8_5 = var_0.Play(var_8_4, "anim_clue_single_unlock1")
-				local var_8_6 = arg_5_0
-				local var_8_7 = var_1.SetEndAniEvent
-				local var_8_8 = var_5_2
-
-				var_8_7(var_8_6, var_4.Find(var_8_8, "title"), function()
-					setActive = var_3_10000
-
-					local var_9_0 = var_5_2
-
-					var_3_10000(var_2.Find(var_9_0, "title/lock"), false)
+				arg_5_0:SetEndAniEvent(var_5_2:Find("title"), function()
+					setActive(var_5_2:Find("title/lock"), false)
 
 					return
 				end)
 
 				return
-			end, var_0_4)
+			end, var_0_3)
 			arg_5_0:StartTimer(function()
-				local var_10_0 = var_5_2
-				local var_10_1 = var_0.Find(var_10_0, "picture")
-				local var_10_2 = var_0.GetComponent
+				local var_10_0 = var_5_2:Find("picture"):GetComponent(typeof(Animation)):Play("anim_clue_single_unlock")
 
-				typeof = var_3
-				Animation = var_2_10005
-
-				local var_10_3 = var_10_2(var_10_1, var_3(var_2_10005))
-				local var_10_4 = var_0.Play(var_10_3, "anim_clue_single_unlock")
-				local var_10_5 = arg_5_0
-				local var_10_6 = var_1.SetEndAniEvent
-				local var_10_7 = var_5_2
-
-				var_10_6(var_10_5, var_4.Find(var_10_7, "picture"), function()
-					setActive = var_3_10000
-
-					local var_11_0 = var_5_2
-
-					var_3_10000(var_2.Find(var_11_0, "picture/lockSite"), false)
-
-					setActive = var_3_10000
-
-					local var_11_1 = var_5_2
-
-					var_3_10000(var_2.Find(var_11_1, "picture/lockChara"), false)
+				arg_5_0:SetEndAniEvent(var_5_2:Find("picture"), function()
+					setActive(var_5_2:Find("picture/lockSite"), false)
+					setActive(var_5_2:Find("picture/lockChara"), false)
 
 					return
 				end)
 
 				return
-			end, var_0_4)
+			end, var_0_3)
 
 			for iter_5_3 = 1, #var_5_1 do
 				arg_5_0:StartTimer(function()
-					setText = var_2_10000
-
-					local var_12_0 = var_5_2
-
-					var_2_10000(var_2.Find(var_12_0, "clueScroll/Viewport/Content/clue" .. iter_5_3), var_5_5[iter_5_3].desc)
+					setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_3), var_5_5[iter_5_3].desc)
 
 					return
-				end, var_0_5 * iter_5_3 + var_0_4)
+				end, var_0_4 * iter_5_3 + var_0_3)
 			end
 		else
-			table = var_10
+			local var_5_11 = table.indexof(var_5_4, var_5_1[1])
 
-			for iter_5_4 = var_10.indexof(var_5_4, var_5_1[1]), 3 do
+			for iter_5_4 = var_5_11, 3 do
 				if arg_5_0.investigatingGroupId == var_5_0 then
-					setText = var_15
-
-					var_15(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_4), "<color=#858593>" .. var_5_5[iter_5_4].unlock_desc .. var_5_5[iter_5_4].unlock_num .. "</color>")
+					setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_4), "<color=#858593>" .. var_5_5[iter_5_4].unlock_desc .. var_5_5[iter_5_4].unlock_num .. "</color>")
 				else
-					setText = var_15
-
-					var_15(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_4), "<color=#858593>？？？</color>")
+					setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_4), "<color=#858593>？？？</color>")
 				end
 			end
 
-			local var_5_37 = 1
-
-			for iter_5_5 = var_10, var_10 + #var_5_1 - 1 do
+			for iter_5_5 = var_5_11, var_5_11 + #var_5_1 - 1 do
 				arg_5_0:StartTimer(function()
-					setText = var_2_10000
-
-					local var_13_0 = var_5_2
-
-					var_2_10000(var_2.Find(var_13_0, "clueScroll/Viewport/Content/clue" .. iter_5_5), var_5_5[iter_5_5].desc)
+					setText(var_5_2:Find("clueScroll/Viewport/Content/clue" .. iter_5_5), var_5_5[iter_5_5].desc)
 
 					return
-				end, var_0_5 * var_5_37)
-
-				var_5_37 = var_5_37 + 1
+				end, var_0_4 * 1)
 			end
 		end
 
-		setActive = var_10
-
-		var_10(var_5_2:Find("goBtn"), false)
+		setActive(var_5_2:Find("goBtn"), false)
 	else
-		setActive = var_10
-
-		var_10(var_5_2:Find("goBtn"), not var_5_10[1] or not var_5_10[2] or not var_5_10[3])
+		setActive(var_5_2:Find("goBtn"), not var_5_7[1] or not var_5_7[2] or not var_5_7[3])
 	end
 
 	return
 end
 
-function var_0_1.OpenChapter(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_0
-	local var_14_1 = arg_14_0.emit
-
-	ClueGroupSingleMediator = var_1_10005
-
-	var_14_1(var_14_0, var_1_10005.OPEN_CLUE_JUMP, arg_14_1)
+function var_0_0.OpenChapter(arg_14_0, arg_14_1)
+	arg_14_0:emit(ClueGroupSingleMediator.OPEN_CLUE_JUMP, arg_14_1)
 
 	return
 end
 
-function var_0_1.StartTimer(arg_15_0, arg_15_1, arg_15_2)
-	Timer = var_1_10003
+function var_0_0.StartTimer(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = Timer.New(arg_15_1, arg_15_2, 1)
 
-	local var_15_0 = var_1_10003.New(arg_15_1, arg_15_2, 1)
-
-	var_3.Start(var_15_0)
-
-	table = var_4
-
-	var_4.insert(arg_15_0.timerList, var_3)
+	var_15_0:Start()
+	table.insert(arg_15_0.timerList, var_15_0)
 
 	return
 end
 
-function var_0_1.RemoveAllTimer(arg_16_0)
-	ipairs = var_1_10001
-
-	for iter_16_0, iter_16_1 in var_1_10001(arg_16_0.timerList) do
+function var_0_0.RemoveAllTimer(arg_16_0)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.timerList) do
 		iter_16_1:Stop()
 	end
 
@@ -491,20 +224,13 @@ function var_0_1.RemoveAllTimer(arg_16_0)
 	return
 end
 
-function var_0_1.SetEndAniEvent(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_1
-	local var_17_1 = arg_17_1.GetComponent
+function var_0_0.SetEndAniEvent(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_1:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_1_10006
-	DftAniEvent = var_1_10008
-
-	if var_17_1(var_17_0, var_1_10006(var_1_10008)) then
-		var_3:SetEndEvent(function()
+	if var_17_0 then
+		var_17_0:SetEndEvent(function()
 			arg_17_2()
-
-			local var_18_0 = var_0
-
-			var_0.SetEndEvent(var_18_0, nil)
+			var_17_0:SetEndEvent(nil)
 
 			return
 		end)
@@ -513,16 +239,16 @@ function var_0_1.SetEndAniEvent(arg_17_0, arg_17_1, arg_17_2)
 	return
 end
 
-function var_0_1.willExit(arg_19_0)
+function var_0_0.willExit(arg_19_0)
 	arg_19_0:RemoveAllTimer()
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_20_0)
+function var_0_0.onBackPressed(arg_20_0)
 	arg_20_0:closeView()
 
 	return
 end
 
-return var_0_1
+return var_0_0

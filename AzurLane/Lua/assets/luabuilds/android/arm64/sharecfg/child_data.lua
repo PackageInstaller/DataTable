@@ -1,49 +1,15 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_data = rawget(pg, "child_data") or setmetatable({
+	__name = "child_data"
+}, confNEO)
+pg.child_data.all = {
 	1
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_data = {}
+pg.base = pg.base or {}
+pg.base.child_data = {}
 
 ;(function()
-	pg = var_1_10000
-	var_1_10000.base.child_data[1] = {
+	pg.base.child_data[1] = {
 		name = "领航员-TB",
 		attr_2_add = 5,
 		default_target = 99,

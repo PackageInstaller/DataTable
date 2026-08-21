@@ -5,19 +5,24 @@ UIRes = UrlManager:getUIPrefabPath("seabed/SeabedMapPanel.prefab")
 
 destroyTime = 0 -- 自动销毁时间-1默认 0即时销毁 999不销毁
 panelType = 1 -- 窗口类型 1 全屏 2 弹窗 -1无底图弹窗
-isShowBlackBg = 0 -- 是否显示全屏纯黑防穿帮底图
+isShowBlackBg = 1 --是否显示全屏纯黑防穿帮底图
+isScreensave = 1
 
 -- 构造函数
 function ctor(self)
     super.ctor(self)
     self:setSize(0, 0)
-    self:setTxtTitle("海底地图")
+    self:setTxtTitle(_TT(111017))
 
     -- self:setBg("seabed_main.jpg", false, "seabed")
 end
 
 -- 析构
 function dtor(self)
+end
+
+function getAdaptaTrans(self)
+    return self:getChildTrans("adaptaContent")
 end
 
 function initData(self)
@@ -27,6 +32,11 @@ function initData(self)
     self.mEventList = {}
 
     self.mShowBuffList = {}
+
+    self.mAniList = {}
+    self.mShowBuffAniList = {}
+
+    self.mAniTime = 0.1
 end
 
 -- 初始化
@@ -35,6 +45,7 @@ function configUI(self)
 
     self.mLineContent = self:getChildTrans("mLineContent")
     self.mLineItem = self:getChildGO("mLineItem")
+    self.mLineItem_main = self:getChildGO("mLineItem_main")
 
     self.mMapContent = self:getChildTrans("mMapContent")
     self.mMapContentImg = self.mMapContent:GetComponent(ty.AutoRefImage)
@@ -77,6 +88,13 @@ function configUI(self)
 
     self.mBuffItem = self:getChildGO("mBuffItem")
     self.mBtnMask = self:getChildGO("mBtnMask")
+
+    self:setGuideTrans("functips_seabed_function_buff", self:getChildTrans("mBtnBuff"))
+    self:setGuideTrans("functips_seabed_function_coll", self:getChildTrans("mBtnColl"))
+    self:setGuideTrans("functips_seabed_function_formation", self:getChildTrans("mBtnFormation"))
+    self:setGuideTrans("functips_seabed_function_eventContent", self:getChildTrans("mEventContent"))
+    self:setGuideTrans("functips_seabed_function_action", self:getChildTrans("mFunctionAction"))
+    self:setGuideTrans("functips_seabed_function_coin", self:getChildTrans("mFunctionCoin"))
 end
 
 function onClickClose(self)
@@ -87,11 +105,22 @@ end
 
 function active(self)
     super.active(self)
+    GameDispatcher:dispatchEvent(EventName.SHOW_SEABED_TOP_PANEL)
     MoneyManager:setMoneyTidList({})
     GameDispatcher:addEventListener(EventName.UPDATE_SEABED_MAP_PANEL, self.showPanel, self)
 
     GameDispatcher:addEventListener(EventName.UPDATE_SEABED_BUFF_OPT, self.updateBufOpt, self)
     gs.CameraMgr:SetUICameraProjetion(false, 1)
+    gs.CameraMgr:GetUICamera().farClipPlane = 1000
+
+    --LoopManager:setTimeout(1,self,function ()
+    --    self:showPanel()
+    --end)
+    
+end
+
+function open(self)
+    super.open(self)
     self:showPanel()
 end
 
@@ -102,7 +131,9 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_MAP_PANEL, self.showPanel, self)
     GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_BUFF_OPT, self.updateBufOpt, self)
     gs.CameraMgr:SetUICameraProjetion(true, 1)
-
+    gs.CameraMgr:GetUICamera().farClipPlane = 100
+    self:clearAniList()
+    self:clearShowBuffAniList()
     self:clearEventList()
     self:clearLineList()
     self:clearMapItemList()
@@ -111,8 +142,24 @@ function deActive(self)
         self:removeTimerByIndex(self.mTxtTime)
         self.mTxtTime = nil
     end
+
+
     -- GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_TOP_PANEL)
 
+end
+
+function clearAniList(self)
+    for i = 1, #self.mAniList do
+        LoopManager:clearTimeout(self.mAniList[i])
+    end
+    self.mAniList = {}
+end
+
+function clearShowBuffAniList(self)
+    for i = 1, #self.mShowBuffAniList do
+        LoopManager:clearTimeout(self.mShowBuffAniList[i])
+    end
+    self.mShowBuffAniList = {}
 end
 
 --[[ 
@@ -154,12 +201,19 @@ function onBtnBuffClickHandler(self)
     self.mTxtShowBuff.text = _TT(111047) .. #buffList
     self:clearShowBuffList()
     for i = 1, #buffList, 1 do
-        local item = SimpleInsItem:create(self.mBuffItem, self.mShowBuffScroll.content, "mSeabedBuffItem")
+        local item = SimpleInsItem:create(self.mBuffItem, self.mShowBuffScroll.content, "mSeabedBuffItemBuff")
         local vo = seabed.SeabedManager:getSeabedBuffDataById(buffList[i])
+        item:getChildGO("mGroupNode"):GetComponent(ty.CanvasGroup).gameObject:SetActive(false)
         item:getChildGO("mImgBuffIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(vo.icon), false)
         item:getChildGO("mTxtBuffName"):GetComponent(ty.Text).text = _TT(vo.name)
         item:getChildGO("mTxtBuffDes"):GetComponent(ty.Text).text = _TT(vo.des)
-        item:getChildGO("mImgColor"):GetComponent(ty.AutoRefImage):SetImg("seabed/color_0" .. vo.color .. ".png", false)
+        item:getChildGO("mImgColor"):GetComponent(ty.AutoRefImage):SetImg(
+            UrlManager:getIconPath("seabed/color_0" .. vo.color .. ".png"), false)
+        local timeSn = LoopManager:setTimeout(i * 0.03, self, function()
+            item:getChildGO("mGroupNode"):GetComponent(ty.CanvasGroup).gameObject:SetActive(true)
+            item.m_go:GetComponent(ty.UIDoTween):BeginTween()
+        end)
+        table.insert(self.mShowBuffAniList, timeSn)
         table.insert(self.mShowBuffList, item)
     end
     self.mShowBuffInfo:SetActive(true)
@@ -175,18 +229,28 @@ function onBtnCollClickHandler(self)
     self.mTxtShowCollection.text = _TT(111049) .. #collectionList
     self:clearShowBuffList()
     for i = 1, #collectionList, 1 do
-        local item = SimpleInsItem:create(self.mBuffItem, self.mShowCollectionScroll.content, "mSeabedBuffItem")
+        local item = SimpleInsItem:create(self.mBuffItem, self.mShowCollectionScroll.content, "mSeabedBuffItemColl")
         local vo = seabed.SeabedManager:getSeabedCollectionDataById(collectionList[i])
+        item:getChildGO("mGroupNode"):GetComponent(ty.CanvasGroup).gameObject:SetActive(false)
         item:getChildGO("mImgBuffIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(vo.icon), false)
         item:getChildGO("mTxtBuffName"):GetComponent(ty.Text).text = _TT(vo.name)
         item:getChildGO("mTxtBuffDes"):GetComponent(ty.Text).text = _TT(vo.des)
-        item:getChildGO("mImgColor"):GetComponent(ty.AutoRefImage):SetImg("seabed/color_0" .. vo.color .. ".png", false)
+        item:getChildGO("mImgColor"):GetComponent(ty.AutoRefImage):SetImg(
+            UrlManager:getIconPath("seabed/color_0" .. vo.color .. ".png"), false)
+        local timeSn = LoopManager:setTimeout(i * 0.03, self, function()
+            item:getChildGO("mGroupNode"):GetComponent(ty.CanvasGroup).gameObject:SetActive(true)
+            item.m_go:GetComponent(ty.UIDoTween):BeginTween()
+        end)
+        table.insert(self.mShowBuffAniList, timeSn)
         table.insert(self.mShowBuffList, item)
     end
     self.mShowCollectionInfo:SetActive(true)
 end
 
 function clearShowBuffList(self)
+
+    self:clearShowBuffAniList()
+
     for i = 1, #self.mShowBuffList, 1 do
         self.mShowBuffList[i]:poolRecover()
     end
@@ -228,11 +292,14 @@ function showPanel(self)
         return
     end
 
+    self.isFirstShowMap = seabed.SeabedManager:getIsFirstShowMap()
     self.mEventInfo:SetActive(false)
     self:updateBufOpt()
 
     self.curId = seabed.SeabedManager:getCurCellId()
     self.lineVo = seabed.SeabedManager:getCurSeabedLineData()
+
+    print("当前线段id：" .. self.lineVo.id)
     self.mMapContentImg:SetImg(UrlManager:getBgPath(self.lineVo.backGround), true)
 
     self:clearLineList()
@@ -241,7 +308,16 @@ function showPanel(self)
     local canClickIds = seabed.SeabedManager:getCanClickCell()
     self.cellDic = self.lineVo:getAllCell()
     for id, cellVo in pairs(self.cellDic) do
-        local item = SimpleInsItem:create(self.mMapItem, self.mRotateContent, "mSeabedMapItem")
+        local isEnd = table.indexof01(self.lineVo.endCell, id) > 0
+        local item
+        if isEnd then
+            item = SimpleInsItem:create(self.mMapBossItem, self.mRotateContent, "mSeabedMapBossItem")
+        else
+            item = SimpleInsItem:create(self.mMapItem, self.mRotateContent, "mSeabedMapItem")
+        end
+
+        item.m_go.gameObject:SetActive(false)
+
         gs.TransQuick:UIPos(item:getGo():GetComponent(ty.RectTransform), cellVo.rowNum, cellVo.colNum)
 
         local msgData = seabed.SeabedManager:getMsgCellDataById(id)
@@ -249,7 +325,6 @@ function showPanel(self)
 
         item:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(eventVo.eventIcon),
             false)
-        item:getChildGO("mTxtName"):GetComponent(ty.Text).text = _TT(eventVo.iconName)
 
         item:getChildGO("mImgSelect"):SetActive(self.curId == id)
 
@@ -257,17 +332,41 @@ function showPanel(self)
         item:getChildGO("mImgEnd"):SetActive(isEnd)
 
         local isPass = seabed.SeabedManager:getCellIsPass(id)
-        item:getChildGO("mImgPass"):SetActive(isPass)
-
         local curNotEvent = self.curId == 0 or self.curId == id
 
         local isCanClick = table.indexof01(canClickIds, id) > 0 and isPass == false and curNotEvent
         item:getChildGO("mImgNotClick"):SetActive(not isCanClick)
 
-        item:getChildGO("mTxtDebug"):GetComponent(ty.Text).text = "格子id:" .. id
+        item:getChildGO("mIsCanClick"):SetActive(isCanClick)
+
+        if isCanClick == false and isPass == false and isEnd == false then
+            gs.TransQuick:Scale(item.m_go:GetComponent(ty.RectTransform), 0.7, 0.7, 0.7)
+        else
+            gs.TransQuick:Scale(item.m_go:GetComponent(ty.RectTransform), 1, 1, 1)
+        end
+
+        item:getChildGO("mImgPass"):SetActive(isPass)
+        if isPass or isCanClick then
+            item:getChildGO("mTxtName"):GetComponent(ty.Text).text = _TT(eventVo.iconName)
+        else
+            item:getChildGO("mTxtName"):GetComponent(ty.Text).text = _TT(121196)
+        end
+
+        item:getChildGO("mTxtDebug"):GetComponent(ty.Text).text = "格子id:" .. id .. " 事件id:" .. msgData.event_id
         item:getChildGO("mTxtDebug"):SetActive(seabed.SeabedManager:getIsDebug())
 
-        -- isCanClick = true
+        if self.isFirstShowMap then
+            local timeSn = LoopManager:setTimeout(cellVo.aniIndex * self.mAniTime, self, function()
+                item.m_go.gameObject:SetActive(true)
+                item.m_go:GetComponent(ty.Animator):SetTrigger("show")
+            end)
+            table.insert(self.mAniList, timeSn)
+        else
+            item.m_go.gameObject:SetActive(true)
+        end
+
+        self:setGuideTrans("functips_seabed_mapItem_" .. id, item:getChildTrans("mBtnClick"))
+
         item:addUIEvent("mBtnClick", function()
             if isCanClick then
                 self:onClickMapItem(id)
@@ -278,7 +377,7 @@ function showPanel(self)
 
         if #cellVo.nextIds > 0 then
             for i = 1, #cellVo.nextIds do
-                self:drawLineItem(id, cellVo.nextIds[i])
+                self:drawLineItem(id, cellVo.nextIds[i], cellVo.aniIndex)
             end
         end
 
@@ -296,10 +395,6 @@ function showPanel(self)
         end
     end
 
-    self:setTimeout(0.1, function()
-        seabed.SeabedManager:getTodoSomeEvent(call)
-    end)
-
     local lastCellId = seabed.SeabedManager:getLastCellId()
     if lastCellId == 0 then
         lastCellId = 1
@@ -310,21 +405,36 @@ function showPanel(self)
     local h = lastCellVo.rowNum
     local w = lastCellVo.colNum
 
-    local needX = gs.Mathf.Clamp(h - screenW / 2,0, self.lineVo.long)
-    local needY = gs.Mathf.Clamp(w - screenH / 2,0, self.lineVo.wide)
+    local needX = gs.Mathf.Clamp(h - screenW / 2, 0, self.lineVo.long)
+    local needY = gs.Mathf.Clamp(w - screenH / 2, 0, self.lineVo.wide)
     gs.TransQuick:UIPos(self.mMapContent:GetComponent(ty.RectTransform), -needX, -needY)
+    -- GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_TOP_PANEL)
+    --self:setTimeout(0.1, function()
+        seabed.SeabedManager:getTodoSomeEvent(call)
+    --end)
 end
 
 function onClickMapItem(self, id)
-    self.mEventInfo:SetActive(true)
+    local function clickCall()
+        self.mEventInfo:SetActive(true)
 
-    local msgData = seabed.SeabedManager:getMsgCellDataById(id)
-    local eventVo = seabed.SeabedManager:getSeabedEventDataById(msgData.event_id)
+        local msgData = seabed.SeabedManager:getMsgCellDataById(id)
+        local eventVo = seabed.SeabedManager:getSeabedEventDataById(msgData.event_id)
 
-    self.mTxtEventName.text = _TT(eventVo.eventTitle)
-    self.mImgEventIcon:SetImg(UrlManager:getIconPath(eventVo.eventIcon), false)
-    self:clearEventList()
-    self:writeString(_TT(eventVo.eventDes), id, msgData.option_args)
+        self.mTxtEventName.text = _TT(eventVo.eventTitle)
+        self.mImgEventIcon:SetImg(UrlManager:getIconPath(eventVo.eventIcon), false)
+        self:clearEventList()
+        self:writeString(_TT(eventVo.eventDes), id, msgData.option_args)
+    end
+    local cellVo = self.lineVo:getSingleCellData(id)
+    if seabed.SeabedManager:getIsFirstBranchCell() and cellVo.isMain == 0 then
+        UIFactory:alertMessge(_TT(121197), true, function()
+            clickCall()
+        end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
+    else
+        clickCall()
+    end
+
 end
 
 function onBtnMaskClickHandler(self)
@@ -370,14 +480,15 @@ function finishCall(self, id, args, des)
     self:setTimeout(0.1, function()
         self.mEventDesScroll.verticalNormalizedPosition = 0
     end)
-    
+
     local optArgs = args
     for i = 1, #optArgs do
         local childEventVo = seabed.SeabedManager:getSeabedEventDataById(optArgs[i])
         local item = SimpleInsItem:create(self.mEventItem, self.mEventContent, "mSeabedEventItem")
         item:getChildGO("mTxtEvent"):GetComponent(ty.Text).text = _TT(childEventVo.btnTitle)
         item:getChildGO("mTxtDes"):GetComponent(ty.Text).text = _TT(childEventVo.btnDes)
-        item:getChildGO("mTxtEventCostCount"):GetComponent(ty.Text).text = childEventVo.needActionPoint
+        item:getChildGO("mTxtEventCostCount"):GetComponent(ty.Text).text = 
+            childEventVo.needActionPoint + seabed.SeabedManager:getExtraActionPoint()
 
         item:getChildGO("mTxtDebug"):GetComponent(ty.Text).text = "子事件id:" .. optArgs[i]
         item:getChildGO("mTxtDebug"):SetActive(seabed.SeabedManager:getIsDebug())
@@ -397,6 +508,13 @@ function onClickEventItem(self, index, id, cellId)
     if item.isSelect then
         if seabed.SeabedManager:getIsDebug() then
             gs.Message.Show("确认某个事件 cellId:" .. cellId .. " 事件Id:" .. id)
+        end
+
+        local newRunPoint, newCoin = seabed.SeabedManager:getSeabedResource()
+        local eventVo = seabed.SeabedManager:getSeabedEventDataById(id)
+        if newCoin < math.abs(eventVo.costCoin) then
+            gs.Message.Show(_TT(111145))
+            return
         end
 
         GameDispatcher:dispatchEvent(EventName.REQ_SEABED_EVENT, {
@@ -420,11 +538,23 @@ function clearEventList(self)
     self.mEventList = {}
 end
 
-function drawLineItem(self, startId, endId)
-    local item = SimpleInsItem:create(self.mLineItem, self.mLineContent, "mSeabeLineItem")
+function drawLineItem(self, startId, endId, aniIndex)
 
+    local startVo = self.lineVo:getSingleCellData(startId)
+    local endVo = self.lineVo:getSingleCellData(endId)
+    local isMain = endVo.isMain == 1
+
+    local item
+    if isMain then
+        item = SimpleInsItem:create(self.mLineItem_main, self.mLineContent, "mSeabeLineItem_main")
+    else
+        item = SimpleInsItem:create(self.mLineItem, self.mLineContent, "mSeabeLineItem")
+    end
+
+    item:getGo():SetActive(false)
     local lastId = seabed.SeabedManager:getLastCellId()
     local isPass = seabed.SeabedManager:getCellIsPass(endId)
+
     local isCanClick = lastId == startId and endId and isPass == false and self.curId == 0
 
     if isCanClick then
@@ -432,9 +562,6 @@ function drawLineItem(self, startId, endId)
     else
         item:getGo():GetComponent(ty.Image).color = gs.ColorUtil.GetColor("b2b2b2ff")
     end
-
-    local startVo = self.lineVo:getSingleCellData(startId)
-    local endVo = self.lineVo:getSingleCellData(endId)
 
     gs.TransQuick:UIPos(item:getGo():GetComponent(ty.RectTransform), startVo.rowNum, startVo.colNum)
 
@@ -444,6 +571,16 @@ function drawLineItem(self, startId, endId)
 
     gs.TransQuick:SetLRotation(item:getGo():GetComponent(ty.RectTransform), 0, 0,
         self:getAngle(startVo.rowNum, startVo.colNum, endVo.rowNum, endVo.colNum))
+
+    if self.isFirstShowMap then
+        local timeSn = LoopManager:setTimeout(aniIndex * self.mAniTime, self, function()
+            item:getGo():SetActive(true)
+            item:getGo():GetComponent(ty.Animator):SetTrigger("show")
+        end)
+        table.insert(self.mAniList, timeSn)
+    else
+        item:getGo():SetActive(true)
+    end
 
     table.insert(self.mLineList, item)
 end

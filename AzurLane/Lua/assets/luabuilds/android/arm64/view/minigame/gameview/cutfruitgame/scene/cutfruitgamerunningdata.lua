@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CutFruitGameRunningData")
+﻿local var_0_0 = class("CutFruitGameRunningData")
 
 function var_0_0.Ctor(arg_1_0)
 	return
@@ -14,24 +12,16 @@ end
 
 function var_0_0.SetCharData(arg_3_0, arg_3_1)
 	if arg_3_1 then
-		local var_3_0
+		if arg_3_1.char then
+			arg_3_0._char = arg_3_1.char or arg_3_0._char
 
-		if not arg_3_1.char or not arg_3_1.char then
-			var_3_0 = arg_3_0._char
+			if arg_3_1.npc then
+				arg_3_0._npc = arg_3_1.npc or arg_3_0._npc
+
+				return
+			end
 		end
-
-		arg_3_0._char = var_3_0
-
-		local var_3_1
-
-		if not arg_3_1.npc or not arg_3_1.npc then
-			var_3_1 = arg_3_0._npc
-		end
-
-		arg_3_0._npc = var_3_1
 	end
-
-	return
 end
 
 function var_0_0.GetConfig(arg_4_0, arg_4_1)

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_shop_extra") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_shop_extra"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_shop_extra = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_shop_extra
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_shop_extra = rawget(pg, "activity_shop_extra") or setmetatable({
+	__name = "activity_shop_extra"
+}, confNEO)
+pg.activity_shop_extra.all = {
 	1,
 	2,
 	3,
@@ -169,11 +146,7 @@ var_0_3.all = {
 	5008,
 	5009
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_shop_extra
-
-var_0_4.get_id_list_by_commodity_type = {
+pg.activity_shop_extra.get_id_list_by_commodity_type = {
 	[7] = {
 		1,
 		2,
@@ -319,25 +292,11 @@ var_0_4.get_id_list_by_commodity_type = {
 		5009
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_shop_extra = {}
+pg.base = pg.base or {}
+pg.base.activity_shop_extra = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_shop_extra
-
-	var_1_0[1] = {
+	pg.base.activity_shop_extra[1] = {
 		num_limit = 1,
 		activity = 15,
 		time = "",
@@ -350,11 +309,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 1,
 		order = 13
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_shop_extra
-
-	var_1_1[2] = {
+	pg.base.activity_shop_extra[2] = {
 		num_limit = 1,
 		activity = 18,
 		time = "",
@@ -367,11 +322,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 2,
 		order = 12
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_shop_extra
-
-	var_1_2[3] = {
+	pg.base.activity_shop_extra[3] = {
 		num_limit = 1,
 		activity = 27,
 		time = "",
@@ -384,11 +335,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 3,
 		order = 11
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_shop_extra
-
-	var_1_3[4] = {
+	pg.base.activity_shop_extra[4] = {
 		num_limit = 1,
 		activity = 0,
 		commodity_type = 7,
@@ -431,11 +378,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_shop_extra
-
-	var_1_4[6] = {
+	pg.base.activity_shop_extra[6] = {
 		num_limit = 1,
 		activity = 44,
 		time = "",
@@ -448,11 +391,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 6,
 		order = 99
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_shop_extra
-
-	var_1_5[7] = {
+	pg.base.activity_shop_extra[7] = {
 		num_limit = 1,
 		activity = 51,
 		time = "",
@@ -465,11 +404,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 7,
 		order = 1
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_shop_extra
-
-	var_1_6[8] = {
+	pg.base.activity_shop_extra[8] = {
 		num_limit = 1,
 		activity = 53,
 		time = "",
@@ -482,11 +417,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 8,
 		order = 1
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_shop_extra
-
-	var_1_7[10] = {
+	pg.base.activity_shop_extra[10] = {
 		num_limit = 1,
 		activity = 60,
 		commodity_type = 7,
@@ -524,11 +455,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_shop_extra
-
-	var_1_8[11] = {
+	pg.base.activity_shop_extra[11] = {
 		num_limit = 1,
 		activity = 80,
 		commodity_type = 7,
@@ -566,11 +493,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_shop_extra
-
-	var_1_9[12] = {
+	pg.base.activity_shop_extra[12] = {
 		num_limit = 1,
 		activity = 83,
 		commodity_type = 7,
@@ -608,11 +531,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_shop_extra
-
-	var_1_10[13] = {
+	pg.base.activity_shop_extra[13] = {
 		num_limit = 1,
 		activity = 86,
 		commodity_type = 7,
@@ -650,11 +569,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_shop_extra
-
-	var_1_11[14] = {
+	pg.base.activity_shop_extra[14] = {
 		num_limit = 1,
 		activity = 101,
 		commodity_type = 7,
@@ -692,11 +607,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_shop_extra
-
-	var_1_12[15] = {
+	pg.base.activity_shop_extra[15] = {
 		num_limit = 1,
 		activity = 109,
 		commodity_type = 7,
@@ -734,11 +645,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_shop_extra
-
-	var_1_13[16] = {
+	pg.base.activity_shop_extra[16] = {
 		num_limit = 1,
 		activity = 141,
 		commodity_type = 7,
@@ -776,11 +683,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_shop_extra
-
-	var_1_14[17] = {
+	pg.base.activity_shop_extra[17] = {
 		num_limit = 1,
 		activity = 146,
 		commodity_type = 7,
@@ -818,11 +721,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_shop_extra
-
-	var_1_15[18] = {
+	pg.base.activity_shop_extra[18] = {
 		num_limit = 1,
 		activity = 147,
 		commodity_type = 7,
@@ -860,11 +759,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_shop_extra
-
-	var_1_16[19] = {
+	pg.base.activity_shop_extra[19] = {
 		num_limit = 1,
 		activity = 157,
 		commodity_type = 7,
@@ -902,11 +797,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_shop_extra
-
-	var_1_17[20] = {
+	pg.base.activity_shop_extra[20] = {
 		num_limit = 1,
 		activity = 166,
 		commodity_type = 7,
@@ -944,11 +835,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_shop_extra
-
-	var_1_18[21] = {
+	pg.base.activity_shop_extra[21] = {
 		num_limit = 1,
 		activity = 180,
 		commodity_type = 7,
@@ -986,11 +873,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_shop_extra
-
-	var_1_19[22] = {
+	pg.base.activity_shop_extra[22] = {
 		num_limit = 1,
 		activity = 204,
 		commodity_type = 7,
@@ -1028,11 +911,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_shop_extra
-
-	var_1_20[23] = {
+	pg.base.activity_shop_extra[23] = {
 		num_limit = 1,
 		activity = 215,
 		commodity_type = 7,
@@ -1070,11 +949,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_shop_extra
-
-	var_1_21[24] = {
+	pg.base.activity_shop_extra[24] = {
 		num_limit = 1,
 		activity = 218,
 		commodity_type = 7,
@@ -1112,11 +987,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_shop_extra
-
-	var_1_22[25] = {
+	pg.base.activity_shop_extra[25] = {
 		num_limit = 1,
 		activity = 239,
 		commodity_type = 7,
@@ -1154,11 +1025,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_shop_extra
-
-	var_1_23[26] = {
+	pg.base.activity_shop_extra[26] = {
 		num_limit = 1,
 		activity = 240,
 		commodity_type = 7,
@@ -1196,11 +1063,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_shop_extra
-
-	var_1_24[27] = {
+	pg.base.activity_shop_extra[27] = {
 		num_limit = 1,
 		activity = 350,
 		commodity_type = 7,
@@ -1238,11 +1101,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_shop_extra
-
-	var_1_25[28] = {
+	pg.base.activity_shop_extra[28] = {
 		num_limit = 1,
 		activity = 355,
 		commodity_type = 7,
@@ -1280,11 +1139,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_shop_extra
-
-	var_1_26[29] = {
+	pg.base.activity_shop_extra[29] = {
 		num_limit = 1,
 		activity = 356,
 		commodity_type = 7,
@@ -1322,11 +1177,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_shop_extra
-
-	var_1_27[30] = {
+	pg.base.activity_shop_extra[30] = {
 		num_limit = 1,
 		activity = 375,
 		commodity_type = 7,
@@ -1364,11 +1215,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_shop_extra
-
-	var_1_28[31] = {
+	pg.base.activity_shop_extra[31] = {
 		num_limit = 1,
 		activity = 378,
 		commodity_type = 7,
@@ -1406,11 +1253,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_shop_extra
-
-	var_1_29[32] = {
+	pg.base.activity_shop_extra[32] = {
 		num_limit = 1,
 		activity = 379,
 		commodity_type = 7,
@@ -1448,11 +1291,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_shop_extra
-
-	var_1_30[33] = {
+	pg.base.activity_shop_extra[33] = {
 		num_limit = 1,
 		activity = 380,
 		commodity_type = 7,
@@ -1490,11 +1329,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_shop_extra
-
-	var_1_31[34] = {
+	pg.base.activity_shop_extra[34] = {
 		num_limit = 1,
 		activity = 387,
 		commodity_type = 7,
@@ -1532,11 +1367,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_shop_extra
-
-	var_1_32[35] = {
+	pg.base.activity_shop_extra[35] = {
 		num_limit = 1,
 		activity = 390,
 		commodity_type = 7,
@@ -1574,11 +1405,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_shop_extra
-
-	var_1_33[36] = {
+	pg.base.activity_shop_extra[36] = {
 		num_limit = 1,
 		activity = 398,
 		commodity_type = 7,
@@ -1616,11 +1443,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_shop_extra
-
-	var_1_34[37] = {
+	pg.base.activity_shop_extra[37] = {
 		num_limit = 1,
 		activity = 399,
 		commodity_type = 7,
@@ -1658,11 +1481,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_shop_extra
-
-	var_1_35[38] = {
+	pg.base.activity_shop_extra[38] = {
 		num_limit = 1,
 		activity = 409,
 		commodity_type = 7,
@@ -1700,11 +1519,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_shop_extra
-
-	var_1_36[39] = {
+	pg.base.activity_shop_extra[39] = {
 		num_limit = 1,
 		activity = 416,
 		commodity_type = 7,
@@ -1742,11 +1557,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_shop_extra
-
-	var_1_37[40] = {
+	pg.base.activity_shop_extra[40] = {
 		num_limit = 1,
 		activity = 422,
 		commodity_type = 7,
@@ -1784,11 +1595,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_shop_extra
-
-	var_1_38[41] = {
+	pg.base.activity_shop_extra[41] = {
 		num_limit = 1,
 		activity = 440,
 		commodity_type = 7,
@@ -1826,11 +1633,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_shop_extra
-
-	var_1_39[42] = {
+	pg.base.activity_shop_extra[42] = {
 		num_limit = 1,
 		activity = 451,
 		commodity_type = 7,
@@ -1868,11 +1671,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_shop_extra
-
-	var_1_40[43] = {
+	pg.base.activity_shop_extra[43] = {
 		num_limit = 1,
 		activity = 461,
 		commodity_type = 7,
@@ -1910,11 +1709,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_shop_extra
-
-	var_1_41[44] = {
+	pg.base.activity_shop_extra[44] = {
 		num_limit = 1,
 		activity = 459,
 		commodity_type = 7,
@@ -1952,11 +1747,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_shop_extra
-
-	var_1_42[45] = {
+	pg.base.activity_shop_extra[45] = {
 		num_limit = 1,
 		activity = 467,
 		commodity_type = 7,
@@ -1994,11 +1785,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_shop_extra
-
-	var_1_43[46] = {
+	pg.base.activity_shop_extra[46] = {
 		num_limit = 1,
 		activity = 474,
 		commodity_type = 7,
@@ -2036,11 +1823,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_shop_extra
-
-	var_1_44[47] = {
+	pg.base.activity_shop_extra[47] = {
 		num_limit = 1,
 		activity = 525,
 		commodity_type = 7,
@@ -2078,11 +1861,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_shop_extra
-
-	var_1_45[48] = {
+	pg.base.activity_shop_extra[48] = {
 		num_limit = 1,
 		activity = 532,
 		commodity_type = 7,
@@ -2120,11 +1899,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_shop_extra
-
-	var_1_46[51] = {
+	pg.base.activity_shop_extra[51] = {
 		num_limit = 1,
 		activity = 560,
 		commodity_type = 7,
@@ -2162,11 +1937,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_shop_extra
-
-	var_1_47[52] = {
+	pg.base.activity_shop_extra[52] = {
 		num_limit = 1,
 		activity = 582,
 		commodity_type = 7,
@@ -2204,11 +1975,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_shop_extra
-
-	var_1_48[53] = {
+	pg.base.activity_shop_extra[53] = {
 		num_limit = 1,
 		activity = 588,
 		commodity_type = 7,
@@ -2246,11 +2013,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_shop_extra
-
-	var_1_49[54] = {
+	pg.base.activity_shop_extra[54] = {
 		num_limit = 1,
 		activity = 606,
 		commodity_type = 7,
@@ -2288,11 +2051,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_shop_extra
-
-	var_1_50[55] = {
+	pg.base.activity_shop_extra[55] = {
 		num_limit = 1,
 		activity = 651,
 		time = "stop",
@@ -2305,11 +2064,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 55,
 		order = 2
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_shop_extra
-
-	var_1_51[56] = {
+	pg.base.activity_shop_extra[56] = {
 		num_limit = 1,
 		activity = 663,
 		commodity_type = 7,
@@ -2352,11 +2107,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_shop_extra
-
-	var_1_52[57] = {
+	pg.base.activity_shop_extra[57] = {
 		num_limit = 1,
 		activity = 671,
 		commodity_type = 7,
@@ -2394,11 +2145,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_shop_extra
-
-	var_1_53[58] = {
+	pg.base.activity_shop_extra[58] = {
 		num_limit = 1,
 		activity = 674,
 		time = "stop",
@@ -2411,11 +2158,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 58,
 		order = 5
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_shop_extra
-
-	var_1_54[59] = {
+	pg.base.activity_shop_extra[59] = {
 		num_limit = 1,
 		activity = 724,
 		time = "stop",
@@ -2428,11 +2171,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 59,
 		order = 9
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_shop_extra
-
-	var_1_55[60] = {
+	pg.base.activity_shop_extra[60] = {
 		num_limit = 1,
 		activity = 740,
 		commodity_type = 7,
@@ -2470,11 +2209,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_shop_extra
-
-	var_1_56[61] = {
+	pg.base.activity_shop_extra[61] = {
 		num_limit = 1,
 		activity = 741,
 		commodity_type = 7,
@@ -2512,11 +2247,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_shop_extra
-
-	var_1_57[62] = {
+	pg.base.activity_shop_extra[62] = {
 		num_limit = 1,
 		activity = 771,
 		commodity_type = 7,
@@ -2557,11 +2288,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_shop_extra
-
-	var_1_58[63] = {
+	pg.base.activity_shop_extra[63] = {
 		num_limit = 1,
 		activity = 495,
 		commodity_type = 7,
@@ -2602,11 +2329,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_shop_extra
-
-	var_1_59[64] = {
+	pg.base.activity_shop_extra[64] = {
 		num_limit = 1,
 		activity = 815,
 		commodity_type = 7,
@@ -2644,11 +2367,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_shop_extra
-
-	var_1_60[65] = {
+	pg.base.activity_shop_extra[65] = {
 		num_limit = 1,
 		activity = 814,
 		commodity_type = 7,
@@ -2686,11 +2405,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_shop_extra
-
-	var_1_61[66] = {
+	pg.base.activity_shop_extra[66] = {
 		num_limit = 1,
 		activity = 829,
 		commodity_type = 7,
@@ -2733,11 +2448,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_shop_extra
-
-	var_1_62[67] = {
+	pg.base.activity_shop_extra[67] = {
 		num_limit = 1,
 		activity = 862,
 		commodity_type = 7,
@@ -2775,11 +2486,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_shop_extra
-
-	var_1_63[68] = {
+	pg.base.activity_shop_extra[68] = {
 		num_limit = 1,
 		activity = 915,
 		time = "stop",
@@ -2792,11 +2499,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 68,
 		order = 4
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_shop_extra
-
-	var_1_64[69] = {
+	pg.base.activity_shop_extra[69] = {
 		num_limit = 1,
 		activity = 914,
 		time = "stop",
@@ -2809,11 +2512,7 @@ var_0_4.base.activity_shop_extra = {}
 		id = 69,
 		order = 4
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_shop_extra
-
-	var_1_65[70] = {
+	pg.base.activity_shop_extra[70] = {
 		num_limit = 1,
 		activity = 958,
 		commodity_type = 7,
@@ -2851,11 +2550,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_shop_extra
-
-	var_1_66[71] = {
+	pg.base.activity_shop_extra[71] = {
 		num_limit = 1,
 		activity = 984,
 		commodity_type = 7,
@@ -2893,11 +2588,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_shop_extra
-
-	var_1_67[72] = {
+	pg.base.activity_shop_extra[72] = {
 		num_limit = 1,
 		activity = 4007,
 		commodity_type = 7,
@@ -2935,11 +2626,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_shop_extra
-
-	var_1_68[73] = {
+	pg.base.activity_shop_extra[73] = {
 		num_limit = 1,
 		activity = 4013,
 		commodity_type = 7,
@@ -2977,11 +2664,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_shop_extra
-
-	var_1_69[74] = {
+	pg.base.activity_shop_extra[74] = {
 		num_limit = 1,
 		activity = 4067,
 		commodity_type = 7,
@@ -3019,11 +2702,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_shop_extra
-
-	var_1_70[75] = {
+	pg.base.activity_shop_extra[75] = {
 		num_limit = 1,
 		activity = 4076,
 		commodity_type = 7,
@@ -3061,11 +2740,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_shop_extra
-
-	var_1_71[76] = {
+	pg.base.activity_shop_extra[76] = {
 		num_limit = 1,
 		activity = 4131,
 		commodity_type = 7,
@@ -3103,11 +2778,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_shop_extra
-
-	var_1_72[77] = {
+	pg.base.activity_shop_extra[77] = {
 		num_limit = 1,
 		activity = 7001,
 		commodity_type = 7,
@@ -3148,11 +2819,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_shop_extra
-
-	var_1_73[78] = {
+	pg.base.activity_shop_extra[78] = {
 		num_limit = 1,
 		activity = 4138,
 		commodity_type = 7,
@@ -3190,11 +2857,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_shop_extra
-
-	var_1_74[79] = {
+	pg.base.activity_shop_extra[79] = {
 		num_limit = 1,
 		activity = 4156,
 		commodity_type = 7,
@@ -3232,11 +2895,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_shop_extra
-
-	var_1_75[80] = {
+	pg.base.activity_shop_extra[80] = {
 		num_limit = 1,
 		activity = 7002,
 		commodity_type = 7,
@@ -3277,11 +2936,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_shop_extra
-
-	var_1_76[81] = {
+	pg.base.activity_shop_extra[81] = {
 		num_limit = 1,
 		activity = 4601,
 		commodity_type = 7,
@@ -3319,11 +2974,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_shop_extra
-
-	var_1_77[82] = {
+	pg.base.activity_shop_extra[82] = {
 		num_limit = 1,
 		activity = 4218,
 		commodity_type = 7,
@@ -3361,11 +3012,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_shop_extra
-
-	var_1_78[83] = {
+	pg.base.activity_shop_extra[83] = {
 		num_limit = 1,
 		activity = 4232,
 		commodity_type = 7,
@@ -3403,11 +3050,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_shop_extra
-
-	var_1_79[84] = {
+	pg.base.activity_shop_extra[84] = {
 		num_limit = 1,
 		activity = 7003,
 		commodity_type = 7,
@@ -3448,11 +3091,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_shop_extra
-
-	var_1_80[85] = {
+	pg.base.activity_shop_extra[85] = {
 		num_limit = 1,
 		activity = 7004,
 		commodity_type = 7,
@@ -3493,11 +3132,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_shop_extra
-
-	var_1_81[86] = {
+	pg.base.activity_shop_extra[86] = {
 		num_limit = 1,
 		activity = 7005,
 		commodity_type = 7,
@@ -3538,11 +3173,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_shop_extra
-
-	var_1_82[87] = {
+	pg.base.activity_shop_extra[87] = {
 		num_limit = 1,
 		activity = 4425,
 		commodity_type = 7,
@@ -3580,11 +3211,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_shop_extra
-
-	var_1_83[88] = {
+	pg.base.activity_shop_extra[88] = {
 		num_limit = 1,
 		activity = 7006,
 		commodity_type = 7,
@@ -3625,11 +3252,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_shop_extra
-
-	var_1_84[89] = {
+	pg.base.activity_shop_extra[89] = {
 		num_limit = 1,
 		activity = 4496,
 		commodity_type = 7,
@@ -3667,11 +3290,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_shop_extra
-
-	var_1_85[90] = {
+	pg.base.activity_shop_extra[90] = {
 		num_limit = 1,
 		activity = 4482,
 		commodity_type = 7,
@@ -3710,11 +3329,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_shop_extra
-
-	var_1_86[91] = {
+	pg.base.activity_shop_extra[91] = {
 		num_limit = 1,
 		activity = 4537,
 		commodity_type = 7,
@@ -3752,11 +3367,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_shop_extra
-
-	var_1_87[92] = {
+	pg.base.activity_shop_extra[92] = {
 		num_limit = 1,
 		activity = 7007,
 		commodity_type = 7,
@@ -3797,11 +3408,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_shop_extra
-
-	var_1_88[93] = {
+	pg.base.activity_shop_extra[93] = {
 		num_limit = 1,
 		activity = 7008,
 		commodity_type = 7,
@@ -3842,11 +3449,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_shop_extra
-
-	var_1_89[94] = {
+	pg.base.activity_shop_extra[94] = {
 		num_limit = 1,
 		activity = 4602,
 		commodity_type = 7,
@@ -3886,11 +3489,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_shop_extra
-
-	var_1_90[95] = {
+	pg.base.activity_shop_extra[95] = {
 		num_limit = 1,
 		activity = 4665,
 		commodity_type = 7,
@@ -3930,11 +3529,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_shop_extra
-
-	var_1_91[96] = {
+	pg.base.activity_shop_extra[96] = {
 		num_limit = 1,
 		activity = 4665,
 		commodity_type = 7,
@@ -3974,11 +3569,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_shop_extra
-
-	var_1_92[97] = {
+	pg.base.activity_shop_extra[97] = {
 		num_limit = 1,
 		activity = 4636,
 		commodity_type = 7,
@@ -4016,11 +3607,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_shop_extra
-
-	var_1_93[98] = {
+	pg.base.activity_shop_extra[98] = {
 		num_limit = 1,
 		activity = 7009,
 		commodity_type = 7,
@@ -4061,11 +3648,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_shop_extra
-
-	var_1_94[99] = {
+	pg.base.activity_shop_extra[99] = {
 		num_limit = 1,
 		activity = 4683,
 		commodity_type = 7,
@@ -4103,11 +3686,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_shop_extra
-
-	var_1_95[100] = {
+	pg.base.activity_shop_extra[100] = {
 		num_limit = 1,
 		activity = 7010,
 		commodity_type = 7,
@@ -4148,11 +3727,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_shop_extra
-
-	var_1_96[101] = {
+	pg.base.activity_shop_extra[101] = {
 		num_limit = 1,
 		activity = 7011,
 		commodity_type = 7,
@@ -4193,11 +3768,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_shop_extra
-
-	var_1_97[102] = {
+	pg.base.activity_shop_extra[102] = {
 		num_limit = 1,
 		activity = 4871,
 		commodity_type = 7,
@@ -4235,11 +3806,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_shop_extra
-
-	var_1_98[103] = {
+	pg.base.activity_shop_extra[103] = {
 		num_limit = 1,
 		activity = 4883,
 		commodity_type = 7,
@@ -4277,8 +3844,7 @@ var_0_4.base.activity_shop_extra = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_shop_extra[104] = {
+	pg.base.activity_shop_extra[104] = {
 		num_limit = 1,
 		activity = 4888,
 		commodity_type = 7,
@@ -4320,11 +3886,7 @@ var_0_4.base.activity_shop_extra = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_shop_extra
-
-	var_2_0[105] = {
+	pg.base.activity_shop_extra[105] = {
 		num_limit = 1,
 		activity = 7012,
 		commodity_type = 7,
@@ -4365,11 +3927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_shop_extra
-
-	var_2_1[106] = {
+	pg.base.activity_shop_extra[106] = {
 		num_limit = 1,
 		activity = 4960,
 		commodity_type = 7,
@@ -4407,11 +3965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_shop_extra
-
-	var_2_2[107] = {
+	pg.base.activity_shop_extra[107] = {
 		num_limit = 1,
 		activity = 4971,
 		commodity_type = 7,
@@ -4449,11 +4003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_shop_extra
-
-	var_2_3[108] = {
+	pg.base.activity_shop_extra[108] = {
 		num_limit = 1,
 		activity = 7013,
 		commodity_type = 7,
@@ -4494,11 +4044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_shop_extra
-
-	var_2_4[109] = {
+	pg.base.activity_shop_extra[109] = {
 		num_limit = 1,
 		activity = 5022,
 		commodity_type = 7,
@@ -4536,11 +4082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_shop_extra
-
-	var_2_5[110] = {
+	pg.base.activity_shop_extra[110] = {
 		num_limit = 1,
 		activity = 7014,
 		commodity_type = 7,
@@ -4581,11 +4123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_shop_extra
-
-	var_2_6[111] = {
+	pg.base.activity_shop_extra[111] = {
 		num_limit = 1,
 		activity = 5140,
 		commodity_type = 7,
@@ -4623,11 +4161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_shop_extra
-
-	var_2_7[112] = {
+	pg.base.activity_shop_extra[112] = {
 		num_limit = 1,
 		activity = 7015,
 		commodity_type = 7,
@@ -4668,11 +4202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_shop_extra
-
-	var_2_8[113] = {
+	pg.base.activity_shop_extra[113] = {
 		num_limit = 1,
 		activity = 5188,
 		commodity_type = 7,
@@ -4715,11 +4245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_shop_extra
-
-	var_2_9[114] = {
+	pg.base.activity_shop_extra[114] = {
 		num_limit = 1,
 		activity = 5188,
 		commodity_type = 7,
@@ -4762,11 +4288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_shop_extra
-
-	var_2_10[115] = {
+	pg.base.activity_shop_extra[115] = {
 		num_limit = 1,
 		activity = 5243,
 		commodity_type = 7,
@@ -4804,11 +4326,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_shop_extra
-
-	var_2_11[116] = {
+	pg.base.activity_shop_extra[116] = {
 		num_limit = 1,
 		activity = 7016,
 		commodity_type = 7,
@@ -4849,11 +4367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_shop_extra
-
-	var_2_12[117] = {
+	pg.base.activity_shop_extra[117] = {
 		num_limit = 1,
 		activity = 5267,
 		commodity_type = 7,
@@ -4891,11 +4405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_shop_extra
-
-	var_2_13[118] = {
+	pg.base.activity_shop_extra[118] = {
 		num_limit = 1,
 		activity = 5324,
 		commodity_type = 7,
@@ -4933,11 +4443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_shop_extra
-
-	var_2_14[119] = {
+	pg.base.activity_shop_extra[119] = {
 		num_limit = 1,
 		activity = 5360,
 		commodity_type = 7,
@@ -4975,11 +4481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_shop_extra
-
-	var_2_15[120] = {
+	pg.base.activity_shop_extra[120] = {
 		num_limit = 1,
 		activity = 7017,
 		commodity_type = 7,
@@ -5020,11 +4522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_shop_extra
-
-	var_2_16[121] = {
+	pg.base.activity_shop_extra[121] = {
 		num_limit = 1,
 		activity = 5364,
 		commodity_type = 7,
@@ -5062,11 +4560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_shop_extra
-
-	var_2_17[122] = {
+	pg.base.activity_shop_extra[122] = {
 		num_limit = 1,
 		activity = 5415,
 		commodity_type = 7,
@@ -5104,11 +4598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_shop_extra
-
-	var_2_18[123] = {
+	pg.base.activity_shop_extra[123] = {
 		num_limit = 1,
 		activity = 7018,
 		commodity_type = 7,
@@ -5149,11 +4639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_shop_extra
-
-	var_2_19[124] = {
+	pg.base.activity_shop_extra[124] = {
 		num_limit = 1,
 		activity = 5548,
 		commodity_type = 7,
@@ -5191,11 +4677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_shop_extra
-
-	var_2_20[125] = {
+	pg.base.activity_shop_extra[125] = {
 		num_limit = 1,
 		activity = 7019,
 		commodity_type = 7,
@@ -5236,11 +4718,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_shop_extra
-
-	var_2_21[126] = {
+	pg.base.activity_shop_extra[126] = {
 		num_limit = 1,
 		activity = 7020,
 		commodity_type = 7,
@@ -5281,11 +4759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_shop_extra
-
-	var_2_22[127] = {
+	pg.base.activity_shop_extra[127] = {
 		num_limit = 1,
 		activity = 5779,
 		commodity_type = 7,
@@ -5325,11 +4799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_shop_extra
-
-	var_2_23[129] = {
+	pg.base.activity_shop_extra[129] = {
 		num_limit = 1,
 		activity = 7021,
 		commodity_type = 7,
@@ -5370,11 +4840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_shop_extra
-
-	var_2_24[131] = {
+	pg.base.activity_shop_extra[131] = {
 		num_limit = 1,
 		activity = 7022,
 		commodity_type = 7,
@@ -5415,11 +4881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_shop_extra
-
-	var_2_25[132] = {
+	pg.base.activity_shop_extra[132] = {
 		num_limit = 1,
 		activity = 5879,
 		commodity_type = 7,
@@ -5457,11 +4919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_shop_extra
-
-	var_2_26[133] = {
+	pg.base.activity_shop_extra[133] = {
 		num_limit = 1,
 		activity = 5922,
 		commodity_type = 7,
@@ -5499,11 +4957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_shop_extra
-
-	var_2_27[135] = {
+	pg.base.activity_shop_extra[135] = {
 		num_limit = 1,
 		activity = 7023,
 		commodity_type = 7,
@@ -5544,11 +4998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_shop_extra
-
-	var_2_28[136] = {
+	pg.base.activity_shop_extra[136] = {
 		num_limit = 1,
 		activity = 5979,
 		commodity_type = 7,
@@ -5586,11 +5036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_shop_extra
-
-	var_2_29[137] = {
+	pg.base.activity_shop_extra[137] = {
 		num_limit = 1,
 		activity = 5990,
 		commodity_type = 7,
@@ -5628,11 +5074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_shop_extra
-
-	var_2_30[138] = {
+	pg.base.activity_shop_extra[138] = {
 		num_limit = 1,
 		activity = 50033,
 		commodity_type = 7,
@@ -5670,11 +5112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_shop_extra
-
-	var_2_31[139] = {
+	pg.base.activity_shop_extra[139] = {
 		num_limit = 1,
 		activity = 7024,
 		commodity_type = 7,
@@ -5715,11 +5153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_shop_extra
-
-	var_2_32[140] = {
+	pg.base.activity_shop_extra[140] = {
 		num_limit = 1,
 		activity = 7025,
 		commodity_type = 7,
@@ -5760,11 +5194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_shop_extra
-
-	var_2_33[141] = {
+	pg.base.activity_shop_extra[141] = {
 		num_limit = 1,
 		activity = 7026,
 		commodity_type = 7,
@@ -5805,11 +5235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_shop_extra
-
-	var_2_34[142] = {
+	pg.base.activity_shop_extra[142] = {
 		num_limit = 1,
 		activity = 50296,
 		commodity_type = 7,
@@ -5847,11 +5273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_shop_extra
-
-	var_2_35[143] = {
+	pg.base.activity_shop_extra[143] = {
 		num_limit = 1,
 		activity = 7027,
 		commodity_type = 7,
@@ -5892,11 +5314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_shop_extra
-
-	var_2_36[144] = {
+	pg.base.activity_shop_extra[144] = {
 		num_limit = 1,
 		activity = 7028,
 		commodity_type = 7,
@@ -5937,11 +5355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_shop_extra
-
-	var_2_37[145] = {
+	pg.base.activity_shop_extra[145] = {
 		num_limit = 1,
 		activity = 7029,
 		commodity_type = 7,
@@ -5982,11 +5396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_shop_extra
-
-	var_2_38[146] = {
+	pg.base.activity_shop_extra[146] = {
 		num_limit = 1,
 		activity = 7030,
 		commodity_type = 7,
@@ -6027,11 +5437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_shop_extra
-
-	var_2_39[5007] = {
+	pg.base.activity_shop_extra[5007] = {
 		num_limit = 1,
 		activity = 50234,
 		commodity_type = 7,
@@ -6069,11 +5475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_shop_extra
-
-	var_2_40[5008] = {
+	pg.base.activity_shop_extra[5008] = {
 		num_limit = 1,
 		activity = 50416,
 		commodity_type = 7,
@@ -6111,8 +5513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-	var_2_40.base.activity_shop_extra[5009] = {
+	pg.base.activity_shop_extra[5009] = {
 		num_limit = 1,
 		activity = 50416,
 		commodity_type = 7,

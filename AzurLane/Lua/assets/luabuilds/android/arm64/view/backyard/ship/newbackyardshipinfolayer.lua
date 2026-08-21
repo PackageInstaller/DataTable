@@ -1,317 +1,103 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewBackYardShipInfoLayer", import("...base.BaseUI"))
 
-local var_0_0 = "NewBackYardShipInfoLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewBackYardShipInfoUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "frame/desc")
-	local var_2_2 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.descTxt = var_2_2(var_2_1, var_4(var_1_10006))
-
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_1.Find(var_2_3, "frame/top/value/Text")
-	local var_2_5 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.counterTxt = var_2_5(var_2_4, var_4(var_1_10006))
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.cardContainer = var_1.Find(var_2_6, "frame/panel")
-
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_7, "frame/top/close")
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.mainPanel = var_1.Find(var_2_8, "frame")
-
-	local var_2_9 = {}
-
-	DormShip = var_1_10002
-
-	local var_2_10 = var_1_10002.FLOOR_2
-	local var_2_11 = arg_2_0._tf
-
-	var_2_9[var_2_10] = var_3.Find(var_2_11, "frame/top/rest")
-	DormShip = var_2_10
-
-	local var_2_12 = var_2_10.FLOOR_1
-	local var_2_13 = arg_2_0._tf
-
-	var_2_9[var_2_12] = var_3.Find(var_2_13, "frame/top/train")
-	arg_2_0.toggles = var_2_9
-
-	local var_2_14 = {}
-
-	DormShip = var_2_12
-
-	local var_2_15 = var_2_12.FLOOR_2
-	local var_2_16 = arg_2_0._tf
-	local var_2_17 = var_3.Find(var_2_16, "frame/top/rest")
-	local var_2_18 = var_3.GetComponent
-
-	typeof = var_6
-	Animation = var_1_10008
-	var_2_14[var_2_15] = var_2_18(var_2_17, var_6(var_1_10008))
-	DormShip = var_2_15
-
-	local var_2_19 = var_2_15.FLOOR_1
-	local var_2_20 = arg_2_0._tf
-	local var_2_21 = var_3.Find(var_2_20, "frame/top/train")
-	local var_2_22 = var_3.GetComponent
-
-	typeof = var_6
-	Animation = var_1_10008
-	var_2_14[var_2_19] = var_2_22(var_2_21, var_6(var_1_10008))
-	arg_2_0.animations = var_2_14
-
-	local var_2_23 = {}
-
-	DormShip = var_2_19
-	var_2_23[var_2_19.FLOOR_2] = {
-		"anim_backyard_shipinfo_rest_Select",
-		"anim_backyard_shipinfo_rest_unSelect"
+function var_0_0.init(arg_2_0)
+	arg_2_0.descTxt = arg_2_0._tf:Find("frame/desc"):GetComponent(typeof(Text))
+	arg_2_0.counterTxt = arg_2_0._tf:Find("frame/top/value/Text"):GetComponent(typeof(Text))
+	arg_2_0.cardContainer = arg_2_0._tf:Find("frame/panel")
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/top/close")
+	arg_2_0.mainPanel = arg_2_0._tf:Find("frame")
+	arg_2_0.toggles = {
+		[DormShip.FLOOR_2] = arg_2_0._tf:Find("frame/top/rest"),
+		[DormShip.FLOOR_1] = arg_2_0._tf:Find("frame/top/train")
 	}
-	DormShip = var_2
-	var_2_23[var_2.FLOOR_1] = {
-		"anim_backyard_shipinfo_train_Select",
-		"anim_backyard_shipinfo_train_unSelect"
+	;({})[DormShip.FLOOR_2] = arg_2_0._tf:Find("frame/top/rest"):GetComponent(typeof(Animation))
+	;({})[DormShip.FLOOR_1] = arg_2_0._tf:Find("frame/top/train"):GetComponent(typeof(Animation))
+	arg_2_0.animations = {}
+	arg_2_0.animationName = {
+		[DormShip.FLOOR_2] = {
+			"anim_backyard_shipinfo_rest_Select",
+			"anim_backyard_shipinfo_rest_unSelect"
+		},
+		[DormShip.FLOOR_1] = {
+			"anim_backyard_shipinfo_train_Select",
+			"anim_backyard_shipinfo_train_unSelect"
+		}
 	}
-	arg_2_0.animationName = var_2_23
-
-	local var_2_24 = arg_2_0.cardContainer
-
-	arg_2_0.addShipTpl = var_1.Find(var_2_24, "AddShipTpl")
-
-	local var_2_25 = arg_2_0.cardContainer
-
-	arg_2_0.extendShipTpl = var_1.Find(var_2_25, "ExtendShipTpl")
-
-	local var_2_26 = arg_2_0.cardContainer
-
-	arg_2_0.shipCardTpl = var_1.Find(var_2_26, "ShipCardTpl")
+	arg_2_0.addShipTpl = arg_2_0.cardContainer:Find("AddShipTpl")
+	arg_2_0.extendShipTpl = arg_2_0.cardContainer:Find("ExtendShipTpl")
+	arg_2_0.shipCardTpl = arg_2_0.cardContainer:Find("ShipCardTpl")
 	arg_2_0.cards = {
 		{},
 		{},
 		{}
 	}
-	table = var_1
 
-	local var_2_27 = var_1.insert
-	local var_2_28 = arg_2_0.cards[1]
-
-	BackYardShipCard = var_4
-
-	var_2_27(var_2_28, var_4.New(arg_2_0.shipCardTpl, arg_2_0.event))
-
-	table = var_2_27
-
-	local var_2_29 = var_2_27.insert
-	local var_2_30 = arg_2_0.cards[2]
-
-	BackYardEmptyCard = var_4
-
-	var_2_29(var_2_30, var_4.New(arg_2_0.addShipTpl, arg_2_0.event))
-
-	table = var_2_29
-
-	local var_2_31 = var_2_29.insert
-	local var_2_32 = arg_2_0.cards[3]
-
-	BackYardExtendCard = var_4
-
-	var_2_31(var_2_32, var_4.New(arg_2_0.extendShipTpl, arg_2_0.event))
-
-	setText = var_2_31
-
-	local var_2_33 = arg_2_0._tf
-	local var_2_34 = var_3.Find(var_2_33, "frame/desc1")
-
-	i18n = var_4
-
-	var_2_31(var_2_34, var_4("backyard_longpress_ship_tip"))
-
-	setText = var_2_31
-
-	local var_2_35 = arg_2_0._tf
-	local var_2_36 = var_3.Find(var_2_35, "frame/top/rest/Text")
-
-	i18n = var_4
-
-	var_2_31(var_2_36, var_4("courtyard_label_rest"))
-
-	setText = var_2_31
-
-	local var_2_37 = arg_2_0._tf
-	local var_2_38 = var_3.Find(var_2_37, "frame/top/train/Text")
-
-	i18n = var_4
-
-	var_2_31(var_2_38, var_4("courtyard_label_train"))
-
-	setText = var_2_31
-
-	local var_2_39 = arg_2_0._tf
-	local var_2_40 = var_3.Find(var_2_39, "frame/top/rest/Text_un")
-
-	i18n = var_4
-
-	var_2_31(var_2_40, var_4("courtyard_label_rest"))
-
-	setText = var_2_31
-
-	local var_2_41 = arg_2_0._tf
-	local var_2_42 = var_3.Find(var_2_41, "frame/top/train/Text_un")
-
-	i18n = var_4
-
-	var_2_31(var_2_42, var_4("courtyard_label_train"))
+	table.insert(arg_2_0.cards[1], BackYardShipCard.New(arg_2_0.shipCardTpl, arg_2_0.event))
+	table.insert(arg_2_0.cards[2], BackYardEmptyCard.New(arg_2_0.addShipTpl, arg_2_0.event))
+	table.insert(arg_2_0.cards[3], BackYardExtendCard.New(arg_2_0.extendShipTpl, arg_2_0.event))
+	setText(arg_2_0._tf:Find("frame/desc1"), i18n("backyard_longpress_ship_tip"))
+	setText(arg_2_0._tf:Find("frame/top/rest/Text"), i18n("courtyard_label_rest"))
+	setText(arg_2_0._tf:Find("frame/top/train/Text"), i18n("courtyard_label_train"))
+	setText(arg_2_0._tf:Find("frame/top/rest/Text_un"), i18n("courtyard_label_rest"))
+	setText(arg_2_0._tf:Find("frame/top/train/Text_un"), i18n("courtyard_label_train"))
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.emit(var_4_0, var_0_1.ON_CLOSE)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.closeBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.emit(var_5_0, var_0_1.ON_CLOSE)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
+	local var_3_0 = Color.New(0.2235294, 0.227451, 0.2352941, 1)
+	local var_3_1 = Color.New(0.5137255, 0.5137255, 0.5137255, 1)
 
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	Color = var_1_10001
-
-	local var_3_6 = var_1_10001.New(0.2235294, 0.227451, 0.2352941, 1)
-
-	Color = var_1_10002
-
-	local var_3_7 = var_1_10002.New(0.5137255, 0.5137255, 0.5137255, 1)
-
-	pairs = var_3
-
-	for iter_3_0, iter_3_1 in var_3(arg_3_0.toggles) do
-		onToggle = var_1_10008
-
-		local var_3_8 = arg_3_0
-		local var_3_9 = iter_3_1
-
-		local function var_3_10(arg_6_0)
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.toggles) do
+		onToggle(arg_3_0, iter_3_1, function(arg_6_0)
 			if arg_6_0 then
-				local var_6_0 = arg_3_0
-
-				var_1.SwitchToPage(var_6_0, iter_3_0)
+				arg_3_0:SwitchToPage(iter_3_0)
 			end
 
-			local var_6_1 = iter_3_1
-			local var_6_2 = var_1.Find(var_6_1, "icon")
-			local var_6_3 = var_1.GetComponent
+			local var_6_0 = iter_3_1:Find("icon"):GetComponent(typeof(Image))
 
-			typeof = var_4
-			Image = var_2_10006
+			if arg_6_0 then
+				var_6_0.color = var_3_0 or var_3_1
 
-			local var_6_4 = var_6_3(var_6_2, var_4(var_2_10006))
-			local var_6_5
+				local var_6_1 = arg_3_0.animationName[iter_3_0]
+				local var_6_2 = arg_6_0 and 1 or 2
 
-			if not arg_6_0 or not var_3_6 then
-				var_6_5 = var_3_7
+				arg_3_0.animations[iter_3_0]:Play(arg_3_0.animationName[iter_3_0][arg_6_0 and 1 or 2])
+				print(var_6_1[var_6_2])
+
+				return
 			end
-
-			var_6_4.color = var_6_5
-
-			local var_6_6 = arg_3_0.animations[iter_3_0]
-			local var_6_7 = arg_3_0.animationName[iter_3_0]
-			local var_6_8 = arg_6_0 and 1 or 2
-
-			var_6_6:Play(var_6_7[var_6_8])
-
-			print = var_4
-
-			var_4(var_6_7[var_6_8])
-
-			return
-		end
-
-		SFX_PANEL = var_1_10013
-
-		var_1_10008(var_3_8, var_3_9, var_3_10, var_1_10013)
+		end, SFX_PANEL)
 	end
 
-	getProxy = var_3
-	DormProxy = var_5
-
-	local var_3_11 = var_3(var_5)
-	local var_3_12 = var_3.getRawData(var_3_11)
-
-	setActive = var_4
-
-	var_4(arg_3_0.toggles[2], var_3_12:isUnlockFloor(2))
-
-	onNextTick = var_4
-
-	var_4(function()
+	setActive(arg_3_0.toggles[2], getProxy(DormProxy):getRawData():isUnlockFloor(2))
+	onNextTick(function()
 		if arg_3_0.exited then
 			return
 		end
 
-		local var_7_0
+		local var_7_0 = arg_3_0.contextData.type or DormShip.FLOOR_1
 
-		if not arg_3_0.contextData.type then
-			DormShip = var_7_0
-			var_7_0 = var_7_0.FLOOR_1
-		end
-
-		local var_7_1 = {}
-
-		DormShip = var_2_10002
-		var_7_1[1] = var_2_10002.FLOOR_1
-		DormShip = var_2
-		var_7_1[2] = var_2.FLOOR_2
-		ipairs = var_2
-
-		for iter_7_0, iter_7_1 in var_2(var_7_1) do
-			triggerToggle = var_2_10007
-
-			var_2_10007(arg_3_0.toggles[iter_7_1], iter_7_1 == var_7_0)
+		for iter_7_0, iter_7_1 in ipairs({
+			DormShip.FLOOR_1,
+			DormShip.FLOOR_2
+		}) do
+			triggerToggle(arg_3_0.toggles[iter_7_1], iter_7_1 == var_7_0)
 		end
 
 		return
@@ -320,41 +106,29 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.GetCardTypeCnt(arg_8_0, arg_8_1)
-	getProxy = var_1_10002
-	DormProxy = var_1_10004
-
-	local var_8_0 = var_1_10002(var_1_10004)
-	local var_8_1 = var_2.getRawData(var_8_0)
+function var_0_0.GetCardTypeCnt(arg_8_0, arg_8_1)
+	local var_8_0 = getProxy(DormProxy):getRawData()
+	local var_8_1 = 0
 	local var_8_2 = 0
-	local var_8_3 = 0
-	local var_8_4 = 0
 
-	DormShip = var_1_10006
-
-	if arg_8_1 == var_1_10006.FLOOR_1 then
-		var_8_2 = var_8_1.exp_pos
-		var_8_3 = var_8_1:getConfig("training_ship_number")
-	else
-		DormShip = var_6
-
-		if arg_8_1 == var_6.FLOOR_2 then
-			var_8_2 = var_8_1.rest_pos
-			var_8_3 = var_8_1:getConfig("fix_ship_number")
-		end
+	if arg_8_1 == DormShip.FLOOR_1 then
+		var_8_1 = var_8_0.exp_pos
+		var_8_2 = var_8_0:getConfig("training_ship_number")
+	elseif arg_8_1 == DormShip.FLOOR_2 then
+		var_8_1 = var_8_0.rest_pos
+		var_8_2 = var_8_0:getConfig("fix_ship_number")
 	end
 
-	local var_8_5 = var_8_2 - var_8_1:GetFloorShipCnt(arg_8_1)
-	local var_8_6 = var_8_3 - var_8_2
+	local var_8_4 = var_8_0:GetFloorShipCnt(arg_8_1)
 
 	return {
-		var_6,
-		var_8_5,
-		var_8_6
+		var_8_4,
+		var_8_1 - var_8_4,
+		var_8_2 - var_8_1
 	}
 end
 
-function var_0_1.SwitchToPage(arg_9_0, arg_9_1)
+function var_0_0.SwitchToPage(arg_9_0, arg_9_1)
 	if arg_9_0.type == arg_9_1 then
 		return
 	end
@@ -363,98 +137,55 @@ function var_0_1.SwitchToPage(arg_9_0, arg_9_1)
 
 	arg_9_0:UpdateSlots()
 
-	DormShip = var_2
-
-	local var_9_0
-
-	if arg_9_1 == var_2.FLOOR_1 then
-		var_9_0 = arg_9_0.descTxt
-		i18n = var_1_10003
-		var_9_0.text = var_1_10003("backyard_traning_tip")
-	else
-		DormShip = var_9_0
-
-		if arg_9_1 == var_9_0.FLOOR_2 then
-			local var_9_1 = arg_9_0.descTxt
-
-			i18n = var_1_10003
-			var_9_1.text = var_1_10003("backyard_rest_tip")
-		end
+	if arg_9_1 == DormShip.FLOOR_1 then
+		arg_9_0.descTxt.text = i18n("backyard_traning_tip")
+	elseif arg_9_1 == DormShip.FLOOR_2 then
+		arg_9_0.descTxt.text = i18n("backyard_rest_tip")
 	end
 
 	return
 end
 
-function var_0_1.UpdateSlots(arg_10_0)
-	local var_10_0 = arg_10_0.type
-	local var_10_1 = arg_10_0:GetCardTypeCnt(var_10_0)
+function var_0_0.UpdateSlots(arg_10_0)
+	local var_10_0 = arg_10_0:GetCardTypeCnt(arg_10_0.type)
+	local var_10_1 = getProxy(DormProxy):getRawData():GetBayShipOnFloor(arg_10_0.type)
+	local var_10_2 = 0
 
-	getProxy = var_1_10003
-	DormProxy = var_5
+	for iter_10_0, iter_10_1 in ipairs(var_10_0) do
+		for iter_10_2, iter_10_3 in ipairs((arg_10_0:GetTypeCards(iter_10_0, iter_10_1))) do
+			var_10_2 = var_10_2 + 1
 
-	local var_10_2 = var_1_10003(var_5)
-	local var_10_3 = var_3.getRawData(var_10_2)
-	local var_10_4 = var_3.GetBayShipOnFloor(var_10_3, var_10_0)
-	local var_10_5 = 0
-	local var_10_6 = {}
-
-	ipairs = var_7
-
-	for iter_10_0, iter_10_1 in var_7(var_10_1) do
-		local var_10_7 = arg_10_0:GetTypeCards(iter_10_0, iter_10_1)
-
-		ipairs = var_1_10013
-
-		for iter_10_2, iter_10_3 in var_1_10013(var_10_7) do
-			var_10_5 = var_10_5 + 1
-
-			iter_10_3:Flush(var_10_0, var_10_4[iter_10_2])
-			iter_10_3:SetSiblingIndex(var_10_5)
+			iter_10_3:Flush(arg_10_0.type, var_10_1[iter_10_2])
+			iter_10_3:SetSiblingIndex(var_10_2)
 		end
 	end
 
-	arg_10_0.counterTxt.text = var_10_1[1] .. "/" .. var_10_1[2] + var_10_1[1]
+	arg_10_0.counterTxt.text = var_10_0[1] .. "/" .. var_10_0[2] + var_10_0[1]
 
 	return
 end
 
-function var_0_1.GetTypeCards(arg_11_0, arg_11_1, arg_11_2)
+function var_0_0.GetTypeCards(arg_11_0, arg_11_1, arg_11_2)
 	for iter_11_0 = #arg_11_0.cards[arg_11_1], arg_11_2 - 1 do
-		table = var_1_10008
-		var_1_10008 = var_1_10008.insert
-
-		local var_11_0 = var_3
-		local var_11_1 = var_3[1]
-
-		var_1_10008(var_11_0, var_11.Clone(var_11_1))
+		table.insert(arg_11_0.cards[arg_11_1], arg_11_0.cards[arg_11_1][1]:Clone())
 	end
 
-	for iter_11_1 = #var_3, arg_11_2 + 1, -1 do
-		local var_11_2 = var_3[iter_11_1]
-
-		var_8.Disable(var_11_2)
+	for iter_11_1 = #arg_11_0.cards[arg_11_1], arg_11_2 + 1, -1 do
+		arg_11_0.cards[arg_11_1][iter_11_1]:Disable()
 	end
-
-	local var_11_3 = {}
 
 	for iter_11_2 = 1, arg_11_2 do
-		local var_11_4 = var_3[iter_11_2]
+		arg_11_0.cards[arg_11_1][iter_11_2]:Enable()
 
-		var_9.Enable(var_11_4)
-
-		var_11_3[iter_11_2] = var_9
+		;({})[iter_11_2] = arg_11_0.cards[arg_11_1][iter_11_2]
 	end
 
-	return var_11_3
+	return {}
 end
 
-function var_0_1.willExit(arg_12_0)
-	ipairs = var_1_10001
-
-	for iter_12_0, iter_12_1 in var_1_10001(arg_12_0.cards) do
-		ipairs = var_1_10006
-
-		for iter_12_2, iter_12_3 in var_1_10006(iter_12_1) do
+function var_0_0.willExit(arg_12_0)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.cards) do
+		for iter_12_2, iter_12_3 in ipairs(iter_12_1) do
 			iter_12_3:Dispose()
 		end
 	end
@@ -462,4 +193,4 @@ function var_0_1.willExit(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

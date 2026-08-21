@@ -34,17 +34,7 @@ end
 -- 解析配置
 function parseConfigData(self)
     self.funcOpenBaseData = {}
-    local baseData = nil
-    local channelId, channelName = sdk.SdkManager:getChannelData()
-    if(GameManager:getIsInCommiting() and (channelId == sdk.AndroidChannelId.QIANYOU or channelId == sdk.AndroidChannelId.QUICK or channelId == sdk.AndroidChannelId.QUICK2 or channelId == sdk.AndroidChannelId.QUICK3))then
-        if(web.WebManager.net_type == web.NET_TYPE.OUTER_TEST)then
-            baseData = RefMgr:getData("function_open_channel_test")
-        else
-            baseData = RefMgr:getData("function_open_channel")
-        end
-    else
-        baseData = RefMgr:getData("function_open")
-    end
+    local baseData = RefMgr:getData("function_open")
     for key, data in pairs(baseData) do
         local vo = funcopen.FuncOpenConfigVo.new()
         vo:parseData(key, data)

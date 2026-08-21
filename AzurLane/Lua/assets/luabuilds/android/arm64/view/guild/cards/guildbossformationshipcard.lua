@@ -1,29 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GuildBossFormationShipCard")
+﻿local var_0_0 = class("GuildBossFormationShipCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._char = arg_1_1
 	arg_1_0._go = arg_1_1:GetModel()
-	tf = var_2
+	tf(arg_1_0._go).pivot = Vector2(0.5, 0)
+	tf(arg_1_0._go).sizeDelta = Vector2(200, 300)
 
-	local var_1_0 = var_2(arg_1_0._go)
-
-	Vector2 = var_1_10003
-	var_1_0.pivot = var_1_10003(0.5, 0)
-	tf = var_1_0
-
-	local var_1_1 = var_1_0(arg_1_0._go)
-
-	Vector2 = var_3
-	var_1_1.sizeDelta = var_3(200, 300)
-
-	local var_1_2 = arg_1_1
-	local var_1_3 = arg_1_1.SetLocalScale
-
-	Vector3 = var_5
-
-	var_1_3(var_1_2, var_5(0.6, 0.6, 0.6))
+	arg_1_1:SetLocalScale(Vector3(0.6, 0.6, 0.6))
 
 	return
 end
@@ -39,10 +22,7 @@ function var_0_0.RefreshPosition(arg_2_0, arg_2_1, arg_2_2)
 end
 
 function var_0_0.UpdateLocalPosition(arg_3_0)
-	local var_3_0 = arg_3_0._go.transform.parent
-	local var_3_1 = var_1.Find(var_3_0, arg_3_0.soltIndex).localPosition
-
-	arg_3_0:SetLocalPosition(var_3_1)
+	arg_3_0:SetLocalPosition(arg_3_0._go.transform.parent:Find(arg_3_0.soltIndex).localPosition)
 
 	return
 end
@@ -71,24 +51,14 @@ function var_0_0.Update(arg_7_0, arg_7_1, arg_7_2)
 end
 
 function var_0_0.Dispose(arg_8_0)
-	local var_8_0
-
 	if arg_8_0._go then
-		tf = var_8_0
-		var_8_0 = var_8_0(arg_8_0._go)
-		Vector2 = var_1_10002
-		var_8_0.pivot = var_1_10002(0.5, 0.5)
+		tf(arg_8_0._go).pivot = Vector2(0.5, 0.5)
 	end
 
-	ClearEventTrigger = var_8_0
-	GetOrAddComponent = var_1_10003
-
-	var_8_0(var_1_10003(arg_8_0._go, "EventTriggerListener"))
+	ClearEventTrigger(GetOrAddComponent(arg_8_0._go, "EventTriggerListener"))
 
 	if arg_8_0._char then
-		local var_8_1 = arg_8_0._char
-
-		var_1.Dispose(var_8_1)
+		arg_8_0._char:Dispose()
 	end
 
 	return

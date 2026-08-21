@@ -142,7 +142,10 @@ function onResSetDecorateHandler(self, msg)
             gs.Message.Show("设置称号成功")
         elseif (msg.type == decorate.ModuleType.BACKGROUND) then
             GameDispatcher:dispatchEvent(EventName.REQ_PLAYER_HOMEPAGE_INFO)
-            --gs.Message.Show("设置背景成功")
+        elseif (msg.type == decorate.ModuleType.FIGHTSKIN) then
+            role.RoleManager:updateCurSelectSkin()
+            GameDispatcher:dispatchEvent(EventName.UPDATE_FIGHT_SKIN_CHANGE)
+            gs.Message.Show("设置战斗皮肤成功")
         end
     else
         if (msg.type == decorate.ModuleType.HEAD) then
@@ -154,6 +157,9 @@ function onResSetDecorateHandler(self, msg)
         elseif (msg.type == decorate.ModuleType.BACKGROUND) then
             GameDispatcher:dispatchEvent(EventName.REQ_PLAYER_HOMEPAGE_INFO)
             gs.Message.Show("设置背景失败")
+        elseif (msg.type == decorate.ModuleType.FIGHTSKIN) then
+            GameDispatcher:dispatchEvent(EventName.UPDATE_FIGHT_SKIN_CHANGE)
+            gs.Message.Show("设置战斗皮肤失败")
         end
     end
 end

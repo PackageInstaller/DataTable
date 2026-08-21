@@ -1,158 +1,98 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleAntiSeaBulletFactory = singletonClass("BattleAntiSeaBulletFactory", ys.Battle.BattleBulletFactory)
+ys.Battle.BattleAntiSeaBulletFactory.__name = "BattleAntiSeaBulletFactory"
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleAntiSeaBulletFactory
 
-var_0_0 = var_0_10000 or {}
-ys = ys
-
-local var_0_1 = var_0.Battle
-
-singletonClass = var_0_10002
-var_0_1.BattleAntiSeaBulletFactory = var_0_10002("BattleAntiSeaBulletFactory", var_0.Battle.BattleBulletFactory)
-var_0.Battle.BattleAntiSeaBulletFactory.__name = "BattleAntiSeaBulletFactory"
-
-local var_0_2 = var_0.Battle.BattleAntiSeaBulletFactory
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0)
+function ys.Battle.BattleAntiSeaBulletFactory.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0)
 
 	arg_1_0._tmpTimerList = {}
 
 	return
 end
 
-function var_0_2.NeutralizeBullet(arg_2_0)
-	pairs = var_1_10001
+function ys.Battle.BattleAntiSeaBulletFactory.NeutralizeBullet(arg_2_0)
+	for iter_2_0, iter_2_1 in pairs(arg_2_0._tmpTimerList) do
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(iter_2_1)
 
-	for iter_2_0, iter_2_1 in var_1_10001(arg_2_0._tmpTimerList) do
-		pg = var_1_10006
-
-		local var_2_0 = var_1_10006.TimeMgr.GetInstance()
-
-		var_1_10006.RemoveBattleTimer(var_2_0, iter_2_1)
-
-		var_1_10006 = arg_2_0._tmpTimerList
-		var_1_10006[iter_2_1] = nil
+		arg_2_0._tmpTimerList[iter_2_1] = nil
 	end
 
 	return
 end
 
-function var_0_2.CreateBullet(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5)
-	local var_3_0 = arg_3_2:GetTemplate().hit_type
-	local var_3_1 = arg_3_0:GetDataProxy()
+function ys.Battle.BattleAntiSeaBulletFactory.CreateBullet(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5)
+	local var_3_0 = arg_3_0:GetDataProxy()
+	local var_3_1 = arg_3_2:GetDirectHitUnit()
 
-	if not arg_3_2:GetDirectHitUnit() then
-		var_3_1:RemoveBulletUnit(arg_3_2:GetUniqueID())
-
-		return
-	end
-
-	local var_3_2 = var_9:GetUniqueID()
-	local var_3_3 = arg_3_0:GetSceneMediator()
-
-	if not var_11.GetCharacter(var_3_3, var_3_2) then
-		var_3_1:RemoveBulletUnit(arg_3_2:GetUniqueID())
+	if not var_3_1 then
+		var_3_0:RemoveBulletUnit(arg_3_2:GetUniqueID())
 
 		return
 	end
 
-	local var_3_4 = var_3_0.range
-	local var_3_5
-	local var_3_6
-	local var_3_7
+	if not arg_3_0:GetSceneMediator():GetCharacter((var_3_1:GetUniqueID())) then
+		var_3_0:RemoveBulletUnit(arg_3_2:GetUniqueID())
 
-	local function var_3_8()
-		if var_3_5 then
-			local var_4_0
-			local var_4_1 = var_0
-			local var_4_2 = var_1.GetPosition(var_4_1)
-			local var_4_3 = var_1.Clone(var_4_2)
-			local var_4_4 = var_0
+		return
+	end
 
-			if var_2.IsAlive(var_4_4) and var_0 then
-				local var_4_5 = var_4_3
-				local var_4_6 = var_4_3.Add
+	local var_3_2 = arg_3_2:GetTemplate().hit_type.range
+	local var_3_3
 
-				Vector3 = var_2_10005
-				math = var_2_10007
-
-				local var_4_7 = var_2_10007.random(var_3_4) - var_3_4 * 0.5
-				local var_4_8 = 0
-
-				math = var_9
-				var_4_0 = var_4_6(var_4_5, var_2_10005(var_4_7, var_4_8, var_9.random(var_3_4) - var_3_4 * 0.5))
-			else
-				var_4_0 = var_4_3
-			end
-
-			local var_4_9 = arg_3_0
-			local var_4_10 = var_2.GetFXPool(var_4_9)
-			local var_4_11 = var_2.GetFX
-			local var_4_12 = arg_3_2
-			local var_4_13, var_4_14 = var_4_11(var_4_10, var_5.GetTemplate(var_4_12).hit_fx)
-
-			pg = var_4_10
-
-			local var_4_15 = var_4_10.EffectMgr.GetInstance()
-
-			var_4.PlayBattleEffect(var_4_15, var_4_13, var_4_14:Add(var_4_0), true)
+	var_3_3 = pg.TimeMgr.GetInstance():AddBattleTimer("antiAirTimer", 0, 0.5, function()
+		if var_3_1:IsAlive() then
+			var_3_0:HandleDamage(arg_3_2, var_3_1)
+			var_3_0:RemoveBulletUnit(arg_3_2:GetUniqueID())
 		end
 
-		return
-	end
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(var_3_3)
 
-	local function var_3_9()
-		local var_5_0 = var_0
-		local var_5_3
-
-		if var_0.IsAlive(var_5_0) then
-			local var_5_1 = var_3_1
-
-			var_5_3.HandleDamage(var_5_1, arg_3_2, var_0)
-
-			local var_5_2 = var_3_1
-
-			var_5_3 = var_5_3.RemoveBulletUnit
-
-			local var_5_4 = arg_3_2
-
-			var_5_3(var_5_2, var_3.GetUniqueID(var_5_4))
-		end
-
-		pg = var_5_3
-
-		local var_5_5 = var_5_3.TimeMgr.GetInstance()
-
-		var_0.RemoveBattleTimer(var_5_5, var_3_5)
-
-		arg_3_0._tmpTimerList[var_3_5] = nil
-		var_3_5 = nil
+		arg_3_0._tmpTimerList[var_3_3] = nil
+		var_3_3 = nil
 
 		return
-	end
-
-	pg = var_1_10018
-
-	local var_3_10 = var_1_10018.TimeMgr.GetInstance()
-
-	var_3_5 = var_18.AddBattleTimer(var_3_10, "antiAirTimer", 0, 0.5, var_3_9, true)
-	arg_3_0._tmpTimerList[var_3_5] = var_3_5
+	end, true)
+	arg_3_0._tmpTimerList[var_3_3] = var_3_3
 
 	if arg_3_4 ~= nil then
 		arg_3_0:PlayFireFX(arg_3_1, arg_3_2, arg_3_3, arg_3_4, arg_3_5, nil)
 
-		pg = var_18
+		local var_3_5 = pg.TimeMgr.GetInstance():AddBattleTimer("showHitFXTimer", -1, 0.1, function()
+			if var_3_3 then
+				local var_4_0
+				local var_4_1 = var_0:GetPosition():Clone()
 
-		local var_3_11 = var_18.TimeMgr.GetInstance()
-		local var_3_12 = var_18.AddBattleTimer(var_3_11, "showHitFXTimer", -1, 0.1, var_3_8, true)
+				var_4_0 = var_3_1:IsAlive() and var_0 and var_4_1:Add(Vector3(math.random(var_3_2) - var_3_2 * 0.5, 0, math.random(var_3_2) - var_3_2 * 0.5)) or var_4_1
 
-		arg_3_0._tmpTimerList[var_3_12] = var_3_12
+				local var_4_2, var_4_3 = arg_3_0:GetFXPool():GetFX(arg_3_2:GetTemplate().hit_fx)
 
-		var_3_8()
+				pg.EffectMgr.GetInstance():PlayBattleEffect(var_4_2, var_4_3:Add(var_4_0), true)
+			end
+
+			return
+		end, true)
+
+		arg_3_0._tmpTimerList[nil] = nil
+
+		;(function()
+			if var_3_3 then
+				local var_4_0
+				local var_4_1 = var_0:GetPosition():Clone()
+
+				var_4_0 = var_3_1:IsAlive() and var_0 and var_4_1:Add(Vector3(math.random(var_3_2) - var_3_2 * 0.5, 0, math.random(var_3_2) - var_3_2 * 0.5)) or var_4_1
+
+				local var_4_2, var_4_3 = arg_3_0:GetFXPool():GetFX(arg_3_2:GetTemplate().hit_fx)
+
+				pg.EffectMgr.GetInstance():PlayBattleEffect(var_4_2, var_4_3:Add(var_4_0), true)
+			end
+
+			return
+		end)()
 	else
-		var_3_1:HandleDamage(arg_3_2, var_9)
-		var_3_1:RemoveBulletUnit(arg_3_2:GetUniqueID())
+		var_3_0:HandleDamage(arg_3_2, var_3_1)
+		var_3_0:RemoveBulletUnit(arg_3_2:GetUniqueID())
 	end
 
 	return

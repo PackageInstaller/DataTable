@@ -1,31 +1,23 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LoadingPicProxy", import(".NetProxy"))
+local var_0_1 = false
+local var_0_2 = "LoadingPicProxy"
 
-local var_0_0 = "LoadingPicProxy"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".NetProxy"))
-local var_0_2 = false
-local var_0_3 = "LoadingPicProxy"
-
-local function var_0_4(...)
-	if var_0_2 then
-		print = var_0
-
-		var_0(var_0_3, ...)
+local function var_0_3(...)
+	if var_0_1 then
+		print(var_0_2, ...)
 	end
 
 	return
 end
 
-function var_0_1.register(arg_2_0)
+function var_0_0.register(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:addListener()
 
 	return
 end
 
-function var_0_1.initData(arg_3_0)
+function var_0_0.initData(arg_3_0)
 	arg_3_0.diyModeOpenFlag = false
 	arg_3_0.galleryPicIDList = {}
 	arg_3_0.mangaPicIDList = {}
@@ -37,23 +29,12 @@ function var_0_1.initData(arg_3_0)
 	return
 end
 
-function var_0_1.addListener(arg_4_0)
+function var_0_0.addListener(arg_4_0)
 	arg_4_0:on(11003, function(arg_5_0)
-		local var_5_0 = arg_4_0
-
-		var_1.updateDiyModeOpenFlag(var_5_0, arg_5_0.loading_pic_open_flag)
-
-		local var_5_1 = arg_4_0
-
-		var_1.updateGalleryPicIDList(var_5_1, arg_5_0.loading_pic_id_list_1)
-
-		local var_5_2 = arg_4_0
-
-		var_1.updateMangaPicIDList(var_5_2, arg_5_0.loading_pic_id_list_2)
-
-		local var_5_3 = arg_4_0
-
-		var_1.checkExistCount(var_5_3)
+		arg_4_0:updateDiyModeOpenFlag(arg_5_0.loading_pic_open_flag)
+		arg_4_0:updateGalleryPicIDList(arg_5_0.loading_pic_id_list_1)
+		arg_4_0:updateMangaPicIDList(arg_5_0.loading_pic_id_list_2)
+		arg_4_0:checkExistCount()
 
 		return
 	end)
@@ -61,10 +42,8 @@ function var_0_1.addListener(arg_4_0)
 	return
 end
 
-function var_0_1.updateDiyModeOpenFlag(arg_6_0, arg_6_1)
-	type = var_1_10002
-
-	if var_1_10002(arg_6_1) == "number" then
+function var_0_0.updateDiyModeOpenFlag(arg_6_0, arg_6_1)
+	if type(arg_6_1) == "number" then
 		if arg_6_1 == 1 then
 			arg_6_1 = true
 		elseif arg_6_1 == 0 then
@@ -72,193 +51,103 @@ function var_0_1.updateDiyModeOpenFlag(arg_6_0, arg_6_1)
 		end
 	end
 
-	tobool = var_2
-	arg_6_0.diyModeOpenFlag = var_2(arg_6_1)
+	arg_6_0.diyModeOpenFlag = tobool(arg_6_1)
 
-	local var_6_0 = var_0_4
-	local var_6_1 = "updateDiyModeOpenFlag"
-	local var_6_2 = arg_6_1
-
-	tostring = var_1_10006
-
-	var_6_0(var_6_1, var_6_2, var_1_10006(arg_6_0.diyModeOpenFlag))
+	var_0_3("updateDiyModeOpenFlag", arg_6_1, tostring(arg_6_0.diyModeOpenFlag))
 
 	return
 end
 
-function var_0_1.getDiyModeOpenFlag(arg_7_0)
-	local var_7_0 = var_0_4
-	local var_7_1 = "getDiyModeOpenFlag"
-
-	tostring = var_1_10004
-
-	var_7_0(var_7_1, var_1_10004(arg_7_0.diyModeOpenFlag))
+function var_0_0.getDiyModeOpenFlag(arg_7_0)
+	var_0_3("getDiyModeOpenFlag", tostring(arg_7_0.diyModeOpenFlag))
 
 	return arg_7_0.diyModeOpenFlag
 end
 
-function var_0_1.updateGalleryPicIDList(arg_8_0, arg_8_1)
+function var_0_0.updateGalleryPicIDList(arg_8_0, arg_8_1)
 	arg_8_0.galleryPicIDList = {}
-	ipairs = var_2
 
-	for iter_8_0, iter_8_1 in var_2(arg_8_1) do
-		tonumber = var_1_10007
-		iter_8_1 = var_1_10007(iter_8_1)
-		table = var_1_10007
+	for iter_8_0, iter_8_1 in ipairs(arg_8_1) do
+		iter_8_1 = tonumber(iter_8_1)
 
-		var_1_10007.insert(arg_8_0.galleryPicIDList, iter_8_1)
+		table.insert(arg_8_0.galleryPicIDList, iter_8_1)
 	end
 
-	local var_8_0 = var_0_4
-	local var_8_1 = "updateGalleryPicIDList"
-
-	table = iter_8_0
-
-	var_8_0(var_8_1, iter_8_0.concat(arg_8_0.galleryPicIDList, ","))
+	var_0_3("updateGalleryPicIDList", table.concat(arg_8_0.galleryPicIDList, ","))
 
 	return
 end
 
-function var_0_1.getGalleryPicIDList(arg_9_0, arg_9_1)
-	local var_9_0 = var_0_4
-	local var_9_1 = "getGalleryPicIDList"
+function var_0_0.getGalleryPicIDList(arg_9_0, arg_9_1)
+	var_0_3("getGalleryPicIDList", table.concat(arg_9_0.galleryPicIDList, ","))
 
-	table = var_1_10005
-
-	var_9_0(var_9_1, var_1_10005.concat(arg_9_0.galleryPicIDList, ","))
-
-	if not arg_9_1 or not arg_9_0.galleryPicIDList then
-		Clone = var_9_0
-		var_9_0 = var_9_0(arg_9_0.galleryPicIDList)
+	if arg_9_1 then
+		return arg_9_0.galleryPicIDList or Clone(arg_9_0.galleryPicIDList)
 	end
-
-	return var_9_0
 end
 
-function var_0_1.updateMangaPicIDList(arg_10_0, arg_10_1)
+function var_0_0.updateMangaPicIDList(arg_10_0, arg_10_1)
 	arg_10_0.mangaPicIDList = {}
-	ipairs = var_2
 
-	for iter_10_0, iter_10_1 in var_2(arg_10_1) do
-		tonumber = var_1_10007
-		iter_10_1 = var_1_10007(iter_10_1)
-		table = var_1_10007
+	for iter_10_0, iter_10_1 in ipairs(arg_10_1) do
+		iter_10_1 = tonumber(iter_10_1)
 
-		var_1_10007.insert(arg_10_0.mangaPicIDList, iter_10_1)
+		table.insert(arg_10_0.mangaPicIDList, iter_10_1)
 	end
 
-	local var_10_0 = var_0_4
-	local var_10_1 = "updateMangaPicIDList"
-
-	table = iter_10_0
-
-	var_10_0(var_10_1, iter_10_0.concat(arg_10_0.mangaPicIDList, ","))
+	var_0_3("updateMangaPicIDList", table.concat(arg_10_0.mangaPicIDList, ","))
 
 	return
 end
 
-function var_0_1.getMangaPicIDList(arg_11_0, arg_11_1)
-	local var_11_0 = var_0_4
-	local var_11_1 = "getMangaPicIDList"
+function var_0_0.getMangaPicIDList(arg_11_0, arg_11_1)
+	var_0_3("getMangaPicIDList", table.concat(arg_11_0.mangaPicIDList, ","))
 
-	table = var_1_10005
-
-	var_11_0(var_11_1, var_1_10005.concat(arg_11_0.mangaPicIDList, ","))
-
-	if not arg_11_1 or not arg_11_0.mangaPicIDList then
-		Clone = var_11_0
-		var_11_0 = var_11_0(arg_11_0.mangaPicIDList)
+	if arg_11_1 then
+		return arg_11_0.mangaPicIDList or Clone(arg_11_0.mangaPicIDList)
 	end
-
-	return var_11_0
 end
 
-function var_0_1.checkExistCount(arg_12_0)
-	AppreciatePicConst = var_1_10001
-
-	local var_12_0 = var_1_10001.filterExistGalleryPicIDList(arg_12_0:getGalleryPicIDList(true))
-
-	AppreciatePicConst = var_1_10002
-
-	local var_12_1 = var_1_10002.filterExistMangaPicIDList(arg_12_0:getMangaPicIDList(true))
-
-	if #var_12_0 + #var_12_1 == 0 then
-		AppreciatePicConst = var_4
-
-		local var_12_2 = var_4.getDefaultGalleryPicIDList()
-		local var_12_3 = {
-			galleryPicIDList = var_12_2
-		}
-		local var_12_4 = arg_12_0
-		local var_12_5 = arg_12_0.sendNotification
-
-		GAME = var_1_10009
-
-		var_12_5(var_12_4, var_1_10009.UPDATE_LOADING_PIC_DONE, var_12_3)
+function var_0_0.checkExistCount(arg_12_0)
+	if #AppreciatePicConst.filterExistGalleryPicIDList(arg_12_0:getGalleryPicIDList(true)) + #AppreciatePicConst.filterExistMangaPicIDList(arg_12_0:getMangaPicIDList(true)) == 0 then
+		arg_12_0:sendNotification(GAME.UPDATE_LOADING_PIC_DONE, {
+			galleryPicIDList = AppreciatePicConst.getDefaultGalleryPicIDList()
+		})
 	end
 
 	return
 end
 
-function var_0_1.initNewPicOpenList(arg_13_0)
-	PlayerPrefs = var_1_10001
-
-	local var_13_0 = var_1_10001.GetString("galleryNew_pic_open_list", "")
-
-	PlayerPrefs = var_1_10002
-
-	local var_13_1 = var_1_10002.GetString("mangaNew_pic_open_list", "")
-
+function var_0_0.initNewPicOpenList(arg_13_0)
 	arg_13_0.galleryNewPicOpenList = {}
 	arg_13_0.mangaNewPicOpenList = {}
-	ipairs = var_3
 
-	for iter_13_0, iter_13_1 in var_3(var_13_0:split(",")) do
-		tonumber = var_8
-		iter_13_1 = var_8(iter_13_1)
-		table = var_8
+	for iter_13_0, iter_13_1 in ipairs(PlayerPrefs.GetString("galleryNew_pic_open_list", ""):split(",")) do
+		iter_13_1 = tonumber(iter_13_1)
 
-		if not var_8.contains(arg_13_0.galleryNewPicOpenList, iter_13_1) then
-			table = var_8
-
-			var_8.insert(arg_13_0.galleryNewPicOpenList, iter_13_1)
+		if not table.contains(arg_13_0.galleryNewPicOpenList, iter_13_1) then
+			table.insert(arg_13_0.galleryNewPicOpenList, iter_13_1)
 		end
 	end
 
-	ipairs = var_3
+	for iter_13_2, iter_13_3 in ipairs(PlayerPrefs.GetString("mangaNew_pic_open_list", ""):split(",")) do
+		iter_13_3 = tonumber(iter_13_3)
 
-	for iter_13_2, iter_13_3 in var_3(var_13_1:split(",")) do
-		tonumber = var_8
-		iter_13_3 = var_8(iter_13_3)
-		table = var_8
-
-		if not var_8.contains(arg_13_0.mangaNewPicOpenList, iter_13_3) then
-			table = var_8
-
-			var_8.insert(arg_13_0.mangaNewPicOpenList, iter_13_3)
+		if not table.contains(arg_13_0.mangaNewPicOpenList, iter_13_3) then
+			table.insert(arg_13_0.mangaNewPicOpenList, iter_13_3)
 		end
 	end
 
 	return
 end
 
-function var_0_1.addGalleryNewPicOpenList(arg_14_0, arg_14_1)
-	AppreciatePicConst = var_1_10002
-
-	local var_14_0 = var_1_10002.getGalleryConfigNewIDList()
-
-	table = var_1_10003
-
-	if not var_1_10003.contains(var_14_0, arg_14_1) then
+function var_0_0.addGalleryNewPicOpenList(arg_14_0, arg_14_1)
+	if not table.contains(AppreciatePicConst.getGalleryConfigNewIDList(), arg_14_1) then
 		return
 	end
 
-	table = var_1_10004
-
-	if not var_1_10004.contains(arg_14_0.galleryNewPicOpenList, arg_14_1) then
-		table = var_4
-
-		var_4.insert(arg_14_0.galleryNewPicOpenList, arg_14_1)
+	if not table.contains(arg_14_0.galleryNewPicOpenList, arg_14_1) then
+		table.insert(arg_14_0.galleryNewPicOpenList, arg_14_1)
 	end
 
 	arg_14_0:saveNewPicOpenList()
@@ -266,23 +155,13 @@ function var_0_1.addGalleryNewPicOpenList(arg_14_0, arg_14_1)
 	return
 end
 
-function var_0_1.addMangaNewPicOpenList(arg_15_0, arg_15_1)
-	AppreciatePicConst = var_1_10002
-
-	local var_15_0 = var_1_10002.getMangaConfigNewIDList()
-
-	table = var_1_10003
-
-	if not var_1_10003.contains(var_15_0, arg_15_1) then
+function var_0_0.addMangaNewPicOpenList(arg_15_0, arg_15_1)
+	if not table.contains(AppreciatePicConst.getMangaConfigNewIDList(), arg_15_1) then
 		return
 	end
 
-	table = var_1_10004
-
-	if not var_1_10004.contains(arg_15_0.mangaNewPicOpenList, arg_15_1) then
-		table = var_4
-
-		var_4.insert(arg_15_0.mangaNewPicOpenList, arg_15_1)
+	if not table.contains(arg_15_0.mangaNewPicOpenList, arg_15_1) then
+		table.insert(arg_15_0.mangaNewPicOpenList, arg_15_1)
 	end
 
 	arg_15_0:saveNewPicOpenList()
@@ -290,48 +169,24 @@ function var_0_1.addMangaNewPicOpenList(arg_15_0, arg_15_1)
 	return
 end
 
-function var_0_1.saveNewPicOpenList(arg_16_0)
-	PlayerPrefs = var_1_10001
-
-	local var_16_0 = var_1_10001.SetString
-	local var_16_1 = "galleryNew_pic_open_list"
-
-	table = var_1_10004
-
-	var_16_0(var_16_1, var_1_10004.concat(arg_16_0.galleryNewPicOpenList, ","))
-
-	PlayerPrefs = var_16_0
-
-	local var_16_2 = var_16_0.SetString
-	local var_16_3 = "mangaNew_pic_open_list"
-
-	table = var_4
-
-	var_16_2(var_16_3, var_4.concat(arg_16_0.mangaNewPicOpenList, ","))
-
-	PlayerPrefs = var_16_2
-
-	var_16_2.Save()
+function var_0_0.saveNewPicOpenList(arg_16_0)
+	PlayerPrefs.SetString("galleryNew_pic_open_list", table.concat(arg_16_0.galleryNewPicOpenList, ","))
+	PlayerPrefs.SetString("mangaNew_pic_open_list", table.concat(arg_16_0.mangaNewPicOpenList, ","))
+	PlayerPrefs.Save()
 
 	return
 end
 
-function var_0_1.getGalleryNewPicOpenList(arg_17_0, arg_17_1)
-	if not arg_17_1 or not arg_17_0.galleryNewPicOpenList then
-		Clone = var_1_10002
-		var_1_10002 = var_1_10002(arg_17_0.galleryNewPicOpenList)
+function var_0_0.getGalleryNewPicOpenList(arg_17_0, arg_17_1)
+	if arg_17_1 then
+		return arg_17_0.galleryNewPicOpenList or Clone(arg_17_0.galleryNewPicOpenList)
 	end
-
-	return var_1_10002
 end
 
-function var_0_1.getMangaNewPicOpenList(arg_18_0, arg_18_1)
-	if not arg_18_1 or not arg_18_0.mangaNewPicOpenList then
-		Clone = var_1_10002
-		var_1_10002 = var_1_10002(arg_18_0.mangaNewPicOpenList)
+function var_0_0.getMangaNewPicOpenList(arg_18_0, arg_18_1)
+	if arg_18_1 then
+		return arg_18_0.mangaNewPicOpenList or Clone(arg_18_0.mangaNewPicOpenList)
 	end
-
-	return var_1_10002
 end
 
-return var_0_1
+return var_0_0

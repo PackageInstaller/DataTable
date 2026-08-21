@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_clue_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_clue_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_clue_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_clue_group
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_clue_group
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.activity_clue_group = rawget(pg, "activity_clue_group") or setmetatable({
+	__name = "activity_clue_group"
+}, confNEO)
+pg.activity_clue_group.__namecode__ = true
+pg.activity_clue_group.all = {
 	1,
 	2,
 	3,
@@ -67,25 +40,11 @@ var_0_4.all = {
 	34,
 	35
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_clue_group = {}
+pg.base = pg.base or {}
+pg.base.activity_clue_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_clue_group
-
-	var_1_0[1] = {
+	pg.base.activity_clue_group[1] = {
 		task_id = "21613",
 		type = 1,
 		id = 1,
@@ -98,11 +57,7 @@ var_0_4.base.activity_clue_group = {}
 			{}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_clue_group
-
-	var_1_1[2] = {
+	pg.base.activity_clue_group[2] = {
 		task_id = "21613",
 		type = 1,
 		id = 2,
@@ -115,11 +70,7 @@ var_0_4.base.activity_clue_group = {}
 			{}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_clue_group
-
-	var_1_2[3] = {
+	pg.base.activity_clue_group[3] = {
 		task_id = "21613",
 		type = 1,
 		id = 3,
@@ -132,11 +83,7 @@ var_0_4.base.activity_clue_group = {}
 			{}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_clue_group
-
-	var_1_3[4] = {
+	pg.base.activity_clue_group[4] = {
 		task_id = "21612",
 		type = 1,
 		id = 4,
@@ -154,11 +101,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_clue_group
-
-	var_1_4[5] = {
+	pg.base.activity_clue_group[5] = {
 		task_id = "21612",
 		type = 1,
 		id = 5,
@@ -176,11 +119,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_clue_group
-
-	var_1_5[6] = {
+	pg.base.activity_clue_group[6] = {
 		task_id = "21606",
 		type = 1,
 		id = 6,
@@ -196,11 +135,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_clue_group
-
-	var_1_6[7] = {
+	pg.base.activity_clue_group[7] = {
 		task_id = "21606",
 		type = 1,
 		id = 7,
@@ -217,11 +152,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_clue_group
-
-	var_1_7[8] = {
+	pg.base.activity_clue_group[8] = {
 		task_id = "21606",
 		type = 1,
 		id = 8,
@@ -238,11 +169,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_clue_group
-
-	var_1_8[9] = {
+	pg.base.activity_clue_group[9] = {
 		task_id = "21607",
 		type = 1,
 		id = 9,
@@ -259,11 +186,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_clue_group
-
-	var_1_9[10] = {
+	pg.base.activity_clue_group[10] = {
 		task_id = "21609",
 		type = 1,
 		id = 10,
@@ -279,11 +202,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_clue_group
-
-	var_1_10[11] = {
+	pg.base.activity_clue_group[11] = {
 		task_id = "21610",
 		type = 1,
 		id = 11,
@@ -301,11 +220,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_clue_group
-
-	var_1_11[12] = {
+	pg.base.activity_clue_group[12] = {
 		task_id = "21607",
 		type = 1,
 		id = 12,
@@ -321,11 +236,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_clue_group
-
-	var_1_12[13] = {
+	pg.base.activity_clue_group[13] = {
 		task_id = "21607",
 		type = 1,
 		id = 13,
@@ -343,11 +254,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_clue_group
-
-	var_1_13[14] = {
+	pg.base.activity_clue_group[14] = {
 		task_id = "21608",
 		type = 1,
 		id = 14,
@@ -363,11 +270,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_clue_group
-
-	var_1_14[15] = {
+	pg.base.activity_clue_group[15] = {
 		task_id = "21608",
 		type = 1,
 		id = 15,
@@ -383,11 +286,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_clue_group
-
-	var_1_15[16] = {
+	pg.base.activity_clue_group[16] = {
 		task_id = "21610",
 		type = 1,
 		id = 16,
@@ -404,11 +303,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_clue_group
-
-	var_1_16[17] = {
+	pg.base.activity_clue_group[17] = {
 		task_id = "21610",
 		type = 1,
 		id = 17,
@@ -426,11 +321,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_clue_group
-
-	var_1_17[18] = {
+	pg.base.activity_clue_group[18] = {
 		task_id = "21611",
 		type = 1,
 		id = 18,
@@ -447,11 +338,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_clue_group
-
-	var_1_18[19] = {
+	pg.base.activity_clue_group[19] = {
 		task_id = "21612",
 		type = 1,
 		id = 19,
@@ -469,11 +356,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_clue_group
-
-	var_1_19[20] = {
+	pg.base.activity_clue_group[20] = {
 		task_id = "21609",
 		type = 1,
 		id = 20,
@@ -491,11 +374,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_clue_group
-
-	var_1_20[21] = {
+	pg.base.activity_clue_group[21] = {
 		task_id = "21609",
 		type = 1,
 		id = 21,
@@ -513,11 +392,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_clue_group
-
-	var_1_21[22] = {
+	pg.base.activity_clue_group[22] = {
 		task_id = "21608",
 		type = 1,
 		id = 22,
@@ -535,11 +410,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_clue_group
-
-	var_1_22[23] = {
+	pg.base.activity_clue_group[23] = {
 		task_id = "21611",
 		type = 1,
 		id = 23,
@@ -555,11 +426,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_clue_group
-
-	var_1_23[24] = {
+	pg.base.activity_clue_group[24] = {
 		task_id = "21611",
 		type = 1,
 		id = 24,
@@ -577,11 +444,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_clue_group
-
-	var_1_24[25] = {
+	pg.base.activity_clue_group[25] = {
 		task_id = "21614",
 		type = 2,
 		id = 25,
@@ -594,11 +457,7 @@ var_0_4.base.activity_clue_group = {}
 			{}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_clue_group
-
-	var_1_25[26] = {
+	pg.base.activity_clue_group[26] = {
 		task_id = "21615",
 		type = 2,
 		id = 26,
@@ -613,11 +472,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_clue_group
-
-	var_1_26[27] = {
+	pg.base.activity_clue_group[27] = {
 		task_id = "21616",
 		type = 2,
 		id = 27,
@@ -635,11 +490,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_clue_group
-
-	var_1_27[28] = {
+	pg.base.activity_clue_group[28] = {
 		task_id = "21617",
 		type = 2,
 		id = 28,
@@ -654,11 +505,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_clue_group
-
-	var_1_28[29] = {
+	pg.base.activity_clue_group[29] = {
 		task_id = "21618",
 		type = 2,
 		id = 29,
@@ -676,11 +523,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_clue_group
-
-	var_1_29[30] = {
+	pg.base.activity_clue_group[30] = {
 		task_id = "21619",
 		type = 2,
 		id = 30,
@@ -696,11 +539,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_clue_group
-
-	var_1_30[31] = {
+	pg.base.activity_clue_group[31] = {
 		task_id = "21620",
 		type = 2,
 		id = 31,
@@ -715,11 +554,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_clue_group
-
-	var_1_31[32] = {
+	pg.base.activity_clue_group[32] = {
 		task_id = "21621",
 		type = 2,
 		id = 32,
@@ -734,11 +569,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_clue_group
-
-	var_1_32[33] = {
+	pg.base.activity_clue_group[33] = {
 		task_id = "21622",
 		type = 2,
 		id = 33,
@@ -756,11 +587,7 @@ var_0_4.base.activity_clue_group = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_clue_group
-
-	var_1_33[34] = {
+	pg.base.activity_clue_group[34] = {
 		task_id = "21623",
 		type = 2,
 		id = 34,
@@ -773,8 +600,7 @@ var_0_4.base.activity_clue_group = {}
 			{}
 		}
 	}
-	pg = var_1_33
-	var_1_33.base.activity_clue_group[35] = {
+	pg.base.activity_clue_group[35] = {
 		task_id = "21624",
 		type = 2,
 		id = 35,

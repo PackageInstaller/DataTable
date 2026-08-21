@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_main_btns") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_main_btns"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_main_btns = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_main_btns
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_main_btns = rawget(pg, "island_main_btns") or setmetatable({
+	__name = "island_main_btns"
+}, confNEO)
+pg.island_main_btns.all = {
 	1,
 	2,
 	3,
@@ -47,11 +24,7 @@ var_0_3.all = {
 	19,
 	20
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_main_btns
-
-var_0_4.get_id_list_by_main_type = {
+pg.island_main_btns.get_id_list_by_main_type = {
 	{
 		2,
 		3,
@@ -79,25 +52,11 @@ var_0_4.get_id_list_by_main_type = {
 		20
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_main_btns = {}
+pg.base = pg.base or {}
+pg.base.island_main_btns = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_main_btns
-
-	var_1_0[1] = {
+	pg.base.island_main_btns[1] = {
 		ability_id = 9,
 		name = "仓库",
 		main_type = 2,
@@ -108,11 +67,7 @@ var_0_4.base.island_main_btns = {}
 		order = 1,
 		page_param = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_main_btns
-
-	var_1_1[2] = {
+	pg.base.island_main_btns[2] = {
 		ability_id = 28,
 		name = "角色",
 		main_type = 1,
@@ -123,11 +78,7 @@ var_0_4.base.island_main_btns = {}
 		order = 5,
 		page_param = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_main_btns
-
-	var_1_2[3] = {
+	pg.base.island_main_btns[3] = {
 		ability_id = 6,
 		name = "地图",
 		main_type = 1,
@@ -138,11 +89,7 @@ var_0_4.base.island_main_btns = {}
 		order = 2,
 		page_param = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_main_btns
-
-	var_1_3[4] = {
+	pg.base.island_main_btns[4] = {
 		ability_id = 35,
 		name = "商店",
 		main_type = 1,
@@ -171,11 +118,7 @@ var_0_4.base.island_main_btns = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_main_btns
-
-	var_1_4[5] = {
+	pg.base.island_main_btns[5] = {
 		ability_id = 2,
 		name = "设备",
 		main_type = 1,
@@ -186,11 +129,7 @@ var_0_4.base.island_main_btns = {}
 		order = 6,
 		page_param = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_main_btns
-
-	var_1_5[6] = {
+	pg.base.island_main_btns[6] = {
 		ability_id = 7,
 		name = "岛屿订单",
 		main_type = 2,
@@ -201,11 +140,7 @@ var_0_4.base.island_main_btns = {}
 		order = 2,
 		page_param = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_main_btns
-
-	var_1_6[7] = {
+	pg.base.island_main_btns[7] = {
 		ability_id = 32,
 		name = "货运委托",
 		main_type = 2,
@@ -216,11 +151,7 @@ var_0_4.base.island_main_btns = {}
 		order = 3,
 		page_param = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_main_btns
-
-	var_1_7[8] = {
+	pg.base.island_main_btns[8] = {
 		ability_id = 37001,
 		name = "管理",
 		main_type = 2,
@@ -231,11 +162,7 @@ var_0_4.base.island_main_btns = {}
 		order = 4,
 		page_param = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_main_btns
-
-	var_1_8[9] = {
+	pg.base.island_main_btns[9] = {
 		ability_id = 29001,
 		name = "套餐图鉴",
 		main_type = 2,
@@ -246,11 +173,7 @@ var_0_4.base.island_main_btns = {}
 		order = 5,
 		page_param = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_main_btns
-
-	var_1_9[10] = {
+	pg.base.island_main_btns[10] = {
 		ability_id = 30,
 		name = "成就",
 		main_type = 2,
@@ -261,11 +184,7 @@ var_0_4.base.island_main_btns = {}
 		order = 6,
 		page_param = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_main_btns
-
-	var_1_10[11] = {
+	pg.base.island_main_btns[11] = {
 		ability_id = 31,
 		name = "开发季",
 		main_type = 1,
@@ -276,11 +195,7 @@ var_0_4.base.island_main_btns = {}
 		order = 3,
 		page_param = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_main_btns
-
-	var_1_11[12] = {
+	pg.base.island_main_btns[12] = {
 		ability_id = 28,
 		name = "科技研发",
 		main_type = 1,
@@ -291,11 +206,7 @@ var_0_4.base.island_main_btns = {}
 		order = 4,
 		page_param = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_main_btns
-
-	var_1_12[13] = {
+	pg.base.island_main_btns[13] = {
 		ability_id = 27,
 		name = "好友",
 		main_type = 2,
@@ -306,11 +217,7 @@ var_0_4.base.island_main_btns = {}
 		order = 7,
 		page_param = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_main_btns
-
-	var_1_13[14] = {
+	pg.base.island_main_btns[14] = {
 		ability_id = 33,
 		name = "装扮",
 		main_type = 2,
@@ -321,11 +228,7 @@ var_0_4.base.island_main_btns = {}
 		order = 8,
 		page_param = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_main_btns
-
-	var_1_14[15] = {
+	pg.base.island_main_btns[15] = {
 		ability_id = 2,
 		name = "计划",
 		main_type = 2,
@@ -336,11 +239,7 @@ var_0_4.base.island_main_btns = {}
 		order = 9,
 		page_param = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_main_btns
-
-	var_1_15[16] = {
+	pg.base.island_main_btns[16] = {
 		ability_id = 0,
 		name = "邮件",
 		main_type = 2,
@@ -351,11 +250,7 @@ var_0_4.base.island_main_btns = {}
 		order = 10,
 		page_param = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_main_btns
-
-	var_1_16[17] = {
+	pg.base.island_main_btns[17] = {
 		ability_id = 0,
 		name = "设置",
 		main_type = 2,
@@ -366,11 +261,7 @@ var_0_4.base.island_main_btns = {}
 		order = 11,
 		page_param = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_main_btns
-
-	var_1_17[18] = {
+	pg.base.island_main_btns[18] = {
 		ability_id = 0,
 		name = "图鉴",
 		main_type = 2,
@@ -381,11 +272,7 @@ var_0_4.base.island_main_btns = {}
 		order = 12,
 		page_param = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_main_btns
-
-	var_1_18[19] = {
+	pg.base.island_main_btns[19] = {
 		ability_id = 41,
 		name = "拍照",
 		main_type = 2,
@@ -396,8 +283,7 @@ var_0_4.base.island_main_btns = {}
 		order = 13,
 		page_param = {}
 	}
-	pg = var_1_18
-	var_1_18.base.island_main_btns[20] = {
+	pg.base.island_main_btns[20] = {
 		ability_id = 47,
 		name = "钓鱼图鉴",
 		main_type = 3,

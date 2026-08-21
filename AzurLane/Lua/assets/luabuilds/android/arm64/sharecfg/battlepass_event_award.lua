@@ -1,45 +1,12 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "battlepass_event_award") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "battlepass_event_award"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.battlepass_event_award = var_0_2
-pg = var_0
-pg = var_0_2
-
-local var_0_3
-
-if not var_0_2.base then
-	var_0_3 = {}
-end
-
-var_0.base = var_0_3
-pg = var_0
-var_0.base.battlepass_event_award = {}
+﻿pg = pg or {}
+pg.battlepass_event_award = rawget(pg, "battlepass_event_award") or setmetatable({
+	__name = "battlepass_event_award"
+}, confNEO)
+pg.base = pg.base or {}
+pg.base.battlepass_event_award = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.battlepass_event_award
-
-	var_1_0[1] = {
+	pg.base.battlepass_event_award[1] = {
 		id = 1,
 		drop_client = {
 			1,
@@ -47,11 +14,7 @@ var_0.base.battlepass_event_award = {}
 			2000
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.battlepass_event_award
-
-	var_1_1[2] = {
+	pg.base.battlepass_event_award[2] = {
 		id = 2,
 		drop_client = {
 			2,
@@ -59,11 +22,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.battlepass_event_award
-
-	var_1_2[3] = {
+	pg.base.battlepass_event_award[3] = {
 		id = 3,
 		drop_client = {
 			2,
@@ -71,11 +30,7 @@ var_0.base.battlepass_event_award = {}
 			5
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.battlepass_event_award
-
-	var_1_3[4] = {
+	pg.base.battlepass_event_award[4] = {
 		id = 4,
 		drop_client = {
 			2,
@@ -83,11 +38,7 @@ var_0.base.battlepass_event_award = {}
 			100
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.battlepass_event_award
-
-	var_1_4[5] = {
+	pg.base.battlepass_event_award[5] = {
 		id = 5,
 		drop_client = {
 			2,
@@ -95,11 +46,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.battlepass_event_award
-
-	var_1_5[6] = {
+	pg.base.battlepass_event_award[6] = {
 		id = 6,
 		drop_client = {
 			2,
@@ -107,11 +54,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.battlepass_event_award
-
-	var_1_6[7] = {
+	pg.base.battlepass_event_award[7] = {
 		id = 7,
 		drop_client = {
 			2,
@@ -119,11 +62,7 @@ var_0.base.battlepass_event_award = {}
 			15
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.battlepass_event_award
-
-	var_1_7[8] = {
+	pg.base.battlepass_event_award[8] = {
 		id = 8,
 		drop_client = {
 			2,
@@ -131,11 +70,7 @@ var_0.base.battlepass_event_award = {}
 			5
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.battlepass_event_award
-
-	var_1_8[9] = {
+	pg.base.battlepass_event_award[9] = {
 		id = 9,
 		drop_client = {
 			2,
@@ -143,11 +78,7 @@ var_0.base.battlepass_event_award = {}
 			5
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.battlepass_event_award
-
-	var_1_9[10] = {
+	pg.base.battlepass_event_award[10] = {
 		id = 10,
 		drop_client = {
 			2,
@@ -155,11 +86,7 @@ var_0.base.battlepass_event_award = {}
 			5
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.battlepass_event_award
-
-	var_1_10[11] = {
+	pg.base.battlepass_event_award[11] = {
 		id = 11,
 		drop_client = {
 			2,
@@ -167,11 +94,7 @@ var_0.base.battlepass_event_award = {}
 			2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.battlepass_event_award
-
-	var_1_11[12] = {
+	pg.base.battlepass_event_award[12] = {
 		id = 12,
 		drop_client = {
 			2,
@@ -179,11 +102,7 @@ var_0.base.battlepass_event_award = {}
 			2
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.battlepass_event_award
-
-	var_1_12[13] = {
+	pg.base.battlepass_event_award[13] = {
 		id = 13,
 		drop_client = {
 			2,
@@ -191,11 +110,7 @@ var_0.base.battlepass_event_award = {}
 			2
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.battlepass_event_award
-
-	var_1_13[14] = {
+	pg.base.battlepass_event_award[14] = {
 		id = 14,
 		drop_client = {
 			2,
@@ -203,11 +118,7 @@ var_0.base.battlepass_event_award = {}
 			2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.battlepass_event_award
-
-	var_1_14[15] = {
+	pg.base.battlepass_event_award[15] = {
 		id = 15,
 		drop_client = {
 			2,
@@ -215,11 +126,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.battlepass_event_award
-
-	var_1_15[16] = {
+	pg.base.battlepass_event_award[16] = {
 		id = 16,
 		drop_client = {
 			2,
@@ -227,11 +134,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.battlepass_event_award
-
-	var_1_16[17] = {
+	pg.base.battlepass_event_award[17] = {
 		id = 17,
 		drop_client = {
 			2,
@@ -239,11 +142,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.battlepass_event_award
-
-	var_1_17[18] = {
+	pg.base.battlepass_event_award[18] = {
 		id = 18,
 		drop_client = {
 			2,
@@ -251,11 +150,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.battlepass_event_award
-
-	var_1_18[19] = {
+	pg.base.battlepass_event_award[19] = {
 		id = 19,
 		drop_client = {
 			2,
@@ -263,11 +158,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.battlepass_event_award
-
-	var_1_19[20] = {
+	pg.base.battlepass_event_award[20] = {
 		id = 20,
 		drop_client = {
 			2,
@@ -275,11 +166,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.battlepass_event_award
-
-	var_1_20[21] = {
+	pg.base.battlepass_event_award[21] = {
 		id = 21,
 		drop_client = {
 			2,
@@ -287,11 +174,7 @@ var_0.base.battlepass_event_award = {}
 			25
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.battlepass_event_award
-
-	var_1_21[22] = {
+	pg.base.battlepass_event_award[22] = {
 		id = 22,
 		drop_client = {
 			2,
@@ -299,11 +182,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.battlepass_event_award
-
-	var_1_22[23] = {
+	pg.base.battlepass_event_award[23] = {
 		id = 23,
 		drop_client = {
 			2,
@@ -311,11 +190,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.battlepass_event_award
-
-	var_1_23[24] = {
+	pg.base.battlepass_event_award[24] = {
 		id = 24,
 		drop_client = {
 			2,
@@ -323,11 +198,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.battlepass_event_award
-
-	var_1_24[25] = {
+	pg.base.battlepass_event_award[25] = {
 		id = 25,
 		drop_client = {
 			2,
@@ -335,11 +206,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.battlepass_event_award
-
-	var_1_25[26] = {
+	pg.base.battlepass_event_award[26] = {
 		id = 26,
 		drop_client = {
 			2,
@@ -347,11 +214,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.battlepass_event_award
-
-	var_1_26[27] = {
+	pg.base.battlepass_event_award[27] = {
 		id = 27,
 		drop_client = {
 			2,
@@ -359,11 +222,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.battlepass_event_award
-
-	var_1_27[28] = {
+	pg.base.battlepass_event_award[28] = {
 		id = 28,
 		drop_client = {
 			2,
@@ -371,11 +230,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.battlepass_event_award
-
-	var_1_28[29] = {
+	pg.base.battlepass_event_award[29] = {
 		id = 29,
 		drop_client = {
 			1,
@@ -383,11 +238,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.battlepass_event_award
-
-	var_1_29[30] = {
+	pg.base.battlepass_event_award[30] = {
 		id = 30,
 		drop_client = {
 			1,
@@ -395,11 +246,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.battlepass_event_award
-
-	var_1_30[31] = {
+	pg.base.battlepass_event_award[31] = {
 		id = 31,
 		drop_client = {
 			2,
@@ -407,11 +254,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.battlepass_event_award
-
-	var_1_31[32] = {
+	pg.base.battlepass_event_award[32] = {
 		id = 32,
 		drop_client = {
 			4,
@@ -419,11 +262,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.battlepass_event_award
-
-	var_1_32[33] = {
+	pg.base.battlepass_event_award[33] = {
 		id = 33,
 		drop_client = {
 			2,
@@ -431,11 +270,7 @@ var_0.base.battlepass_event_award = {}
 			40
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.battlepass_event_award
-
-	var_1_33[34] = {
+	pg.base.battlepass_event_award[34] = {
 		id = 34,
 		drop_client = {
 			2,
@@ -443,11 +278,7 @@ var_0.base.battlepass_event_award = {}
 			60
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.battlepass_event_award
-
-	var_1_34[35] = {
+	pg.base.battlepass_event_award[35] = {
 		id = 35,
 		drop_client = {
 			2,
@@ -455,11 +286,7 @@ var_0.base.battlepass_event_award = {}
 			2
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.battlepass_event_award
-
-	var_1_35[36] = {
+	pg.base.battlepass_event_award[36] = {
 		id = 36,
 		drop_client = {
 			2,
@@ -467,11 +294,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.battlepass_event_award
-
-	var_1_36[37] = {
+	pg.base.battlepass_event_award[37] = {
 		id = 37,
 		drop_client = {
 			2,
@@ -479,11 +302,7 @@ var_0.base.battlepass_event_award = {}
 			7
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.battlepass_event_award
-
-	var_1_37[38] = {
+	pg.base.battlepass_event_award[38] = {
 		id = 38,
 		drop_client = {
 			2,
@@ -491,11 +310,7 @@ var_0.base.battlepass_event_award = {}
 			8
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.battlepass_event_award
-
-	var_1_38[101] = {
+	pg.base.battlepass_event_award[101] = {
 		id = 101,
 		drop_client = {
 			1,
@@ -503,11 +318,7 @@ var_0.base.battlepass_event_award = {}
 			400
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.battlepass_event_award
-
-	var_1_39[102] = {
+	pg.base.battlepass_event_award[102] = {
 		id = 102,
 		drop_client = {
 			2,
@@ -515,11 +326,7 @@ var_0.base.battlepass_event_award = {}
 			10
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.battlepass_event_award
-
-	var_1_40[103] = {
+	pg.base.battlepass_event_award[103] = {
 		id = 103,
 		drop_client = {
 			1,
@@ -527,11 +334,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.battlepass_event_award
-
-	var_1_41[104] = {
+	pg.base.battlepass_event_award[104] = {
 		id = 104,
 		drop_client = {
 			2,
@@ -539,11 +342,7 @@ var_0.base.battlepass_event_award = {}
 			5
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.battlepass_event_award
-
-	var_1_42[105] = {
+	pg.base.battlepass_event_award[105] = {
 		id = 105,
 		drop_client = {
 			2,
@@ -551,11 +350,7 @@ var_0.base.battlepass_event_award = {}
 			4
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.battlepass_event_award
-
-	var_1_43[106] = {
+	pg.base.battlepass_event_award[106] = {
 		id = 106,
 		drop_client = {
 			4,
@@ -563,11 +358,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.battlepass_event_award
-
-	var_1_44[107] = {
+	pg.base.battlepass_event_award[107] = {
 		id = 107,
 		drop_client = {
 			2,
@@ -575,11 +366,7 @@ var_0.base.battlepass_event_award = {}
 			2
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.battlepass_event_award
-
-	var_1_45[108] = {
+	pg.base.battlepass_event_award[108] = {
 		id = 108,
 		drop_client = {
 			2,
@@ -587,11 +374,7 @@ var_0.base.battlepass_event_award = {}
 			3
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.battlepass_event_award
-
-	var_1_46[109] = {
+	pg.base.battlepass_event_award[109] = {
 		id = 109,
 		drop_client = {
 			2,
@@ -599,11 +382,7 @@ var_0.base.battlepass_event_award = {}
 			40
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.battlepass_event_award
-
-	var_1_47[110] = {
+	pg.base.battlepass_event_award[110] = {
 		id = 110,
 		drop_client = {
 			2,
@@ -611,11 +390,7 @@ var_0.base.battlepass_event_award = {}
 			4
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.battlepass_event_award
-
-	var_1_48[111] = {
+	pg.base.battlepass_event_award[111] = {
 		id = 111,
 		drop_client = {
 			2,
@@ -623,11 +398,7 @@ var_0.base.battlepass_event_award = {}
 			6
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.battlepass_event_award
-
-	var_1_49[501] = {
+	pg.base.battlepass_event_award[501] = {
 		id = 501,
 		drop_client = {
 			2,
@@ -635,11 +406,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.battlepass_event_award
-
-	var_1_50[502] = {
+	pg.base.battlepass_event_award[502] = {
 		id = 502,
 		drop_client = {
 			2,
@@ -647,11 +414,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.battlepass_event_award
-
-	var_1_51[503] = {
+	pg.base.battlepass_event_award[503] = {
 		id = 503,
 		drop_client = {
 			2,
@@ -659,11 +422,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.battlepass_event_award
-
-	var_1_52[504] = {
+	pg.base.battlepass_event_award[504] = {
 		id = 504,
 		drop_client = {
 			2,
@@ -671,11 +430,7 @@ var_0.base.battlepass_event_award = {}
 			50
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.battlepass_event_award
-
-	var_1_53[511] = {
+	pg.base.battlepass_event_award[511] = {
 		id = 511,
 		drop_client = {
 			2,
@@ -683,11 +438,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.battlepass_event_award
-
-	var_1_54[512] = {
+	pg.base.battlepass_event_award[512] = {
 		id = 512,
 		drop_client = {
 			2,
@@ -695,11 +446,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.battlepass_event_award
-
-	var_1_55[513] = {
+	pg.base.battlepass_event_award[513] = {
 		id = 513,
 		drop_client = {
 			2,
@@ -707,11 +454,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.battlepass_event_award
-
-	var_1_56[514] = {
+	pg.base.battlepass_event_award[514] = {
 		id = 514,
 		drop_client = {
 			2,
@@ -719,11 +462,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.battlepass_event_award
-
-	var_1_57[10015] = {
+	pg.base.battlepass_event_award[10015] = {
 		id = 10015,
 		drop_client = {
 			2,
@@ -731,11 +470,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.battlepass_event_award
-
-	var_1_58[10016] = {
+	pg.base.battlepass_event_award[10016] = {
 		id = 10016,
 		drop_client = {
 			2,
@@ -743,11 +478,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.battlepass_event_award
-
-	var_1_59[10017] = {
+	pg.base.battlepass_event_award[10017] = {
 		id = 10017,
 		drop_client = {
 			2,
@@ -755,11 +486,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.battlepass_event_award
-
-	var_1_60[10018] = {
+	pg.base.battlepass_event_award[10018] = {
 		id = 10018,
 		drop_client = {
 			2,
@@ -767,11 +494,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.battlepass_event_award
-
-	var_1_61[10019] = {
+	pg.base.battlepass_event_award[10019] = {
 		id = 10019,
 		drop_client = {
 			2,
@@ -779,11 +502,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.battlepass_event_award
-
-	var_1_62[10020] = {
+	pg.base.battlepass_event_award[10020] = {
 		id = 10020,
 		drop_client = {
 			2,
@@ -791,11 +510,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.battlepass_event_award
-
-	var_1_63[10021] = {
+	pg.base.battlepass_event_award[10021] = {
 		id = 10021,
 		drop_client = {
 			2,
@@ -803,11 +518,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.battlepass_event_award
-
-	var_1_64[10022] = {
+	pg.base.battlepass_event_award[10022] = {
 		id = 10022,
 		drop_client = {
 			2,
@@ -815,11 +526,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.battlepass_event_award
-
-	var_1_65[10023] = {
+	pg.base.battlepass_event_award[10023] = {
 		id = 10023,
 		drop_client = {
 			2,
@@ -827,11 +534,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.battlepass_event_award
-
-	var_1_66[10024] = {
+	pg.base.battlepass_event_award[10024] = {
 		id = 10024,
 		drop_client = {
 			2,
@@ -839,11 +542,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.battlepass_event_award
-
-	var_1_67[10025] = {
+	pg.base.battlepass_event_award[10025] = {
 		id = 10025,
 		drop_client = {
 			2,
@@ -851,11 +550,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.battlepass_event_award
-
-	var_1_68[10026] = {
+	pg.base.battlepass_event_award[10026] = {
 		id = 10026,
 		drop_client = {
 			2,
@@ -863,11 +558,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.battlepass_event_award
-
-	var_1_69[10027] = {
+	pg.base.battlepass_event_award[10027] = {
 		id = 10027,
 		drop_client = {
 			2,
@@ -875,11 +566,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.battlepass_event_award
-
-	var_1_70[10028] = {
+	pg.base.battlepass_event_award[10028] = {
 		id = 10028,
 		drop_client = {
 			2,
@@ -887,11 +574,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.battlepass_event_award
-
-	var_1_71[10029] = {
+	pg.base.battlepass_event_award[10029] = {
 		id = 10029,
 		drop_client = {
 			2,
@@ -899,11 +582,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.battlepass_event_award
-
-	var_1_72[10030] = {
+	pg.base.battlepass_event_award[10030] = {
 		id = 10030,
 		drop_client = {
 			2,
@@ -911,11 +590,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.battlepass_event_award
-
-	var_1_73[11015] = {
+	pg.base.battlepass_event_award[11015] = {
 		id = 11015,
 		drop_client = {
 			2,
@@ -923,11 +598,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.battlepass_event_award
-
-	var_1_74[11016] = {
+	pg.base.battlepass_event_award[11016] = {
 		id = 11016,
 		drop_client = {
 			2,
@@ -935,11 +606,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.battlepass_event_award
-
-	var_1_75[11017] = {
+	pg.base.battlepass_event_award[11017] = {
 		id = 11017,
 		drop_client = {
 			2,
@@ -947,11 +614,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.battlepass_event_award
-
-	var_1_76[11018] = {
+	pg.base.battlepass_event_award[11018] = {
 		id = 11018,
 		drop_client = {
 			2,
@@ -959,11 +622,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.battlepass_event_award
-
-	var_1_77[11019] = {
+	pg.base.battlepass_event_award[11019] = {
 		id = 11019,
 		drop_client = {
 			2,
@@ -971,11 +630,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.battlepass_event_award
-
-	var_1_78[11020] = {
+	pg.base.battlepass_event_award[11020] = {
 		id = 11020,
 		drop_client = {
 			2,
@@ -983,11 +638,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.battlepass_event_award
-
-	var_1_79[11021] = {
+	pg.base.battlepass_event_award[11021] = {
 		id = 11021,
 		drop_client = {
 			2,
@@ -995,11 +646,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.battlepass_event_award
-
-	var_1_80[11022] = {
+	pg.base.battlepass_event_award[11022] = {
 		id = 11022,
 		drop_client = {
 			2,
@@ -1007,11 +654,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.battlepass_event_award
-
-	var_1_81[11023] = {
+	pg.base.battlepass_event_award[11023] = {
 		id = 11023,
 		drop_client = {
 			2,
@@ -1019,11 +662,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.battlepass_event_award
-
-	var_1_82[11024] = {
+	pg.base.battlepass_event_award[11024] = {
 		id = 11024,
 		drop_client = {
 			2,
@@ -1031,11 +670,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.battlepass_event_award
-
-	var_1_83[11025] = {
+	pg.base.battlepass_event_award[11025] = {
 		id = 11025,
 		drop_client = {
 			2,
@@ -1043,11 +678,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.battlepass_event_award
-
-	var_1_84[11026] = {
+	pg.base.battlepass_event_award[11026] = {
 		id = 11026,
 		drop_client = {
 			2,
@@ -1055,11 +686,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.battlepass_event_award
-
-	var_1_85[11027] = {
+	pg.base.battlepass_event_award[11027] = {
 		id = 11027,
 		drop_client = {
 			2,
@@ -1067,11 +694,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.battlepass_event_award
-
-	var_1_86[11028] = {
+	pg.base.battlepass_event_award[11028] = {
 		id = 11028,
 		drop_client = {
 			2,
@@ -1079,11 +702,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.battlepass_event_award
-
-	var_1_87[11029] = {
+	pg.base.battlepass_event_award[11029] = {
 		id = 11029,
 		drop_client = {
 			2,
@@ -1091,11 +710,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.battlepass_event_award
-
-	var_1_88[11030] = {
+	pg.base.battlepass_event_award[11030] = {
 		id = 11030,
 		drop_client = {
 			2,
@@ -1103,11 +718,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.battlepass_event_award
-
-	var_1_89[12015] = {
+	pg.base.battlepass_event_award[12015] = {
 		id = 12015,
 		drop_client = {
 			2,
@@ -1115,11 +726,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.battlepass_event_award
-
-	var_1_90[12016] = {
+	pg.base.battlepass_event_award[12016] = {
 		id = 12016,
 		drop_client = {
 			2,
@@ -1127,11 +734,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.battlepass_event_award
-
-	var_1_91[12017] = {
+	pg.base.battlepass_event_award[12017] = {
 		id = 12017,
 		drop_client = {
 			2,
@@ -1139,11 +742,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.battlepass_event_award
-
-	var_1_92[12018] = {
+	pg.base.battlepass_event_award[12018] = {
 		id = 12018,
 		drop_client = {
 			2,
@@ -1151,11 +750,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.battlepass_event_award
-
-	var_1_93[12019] = {
+	pg.base.battlepass_event_award[12019] = {
 		id = 12019,
 		drop_client = {
 			2,
@@ -1163,11 +758,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.battlepass_event_award
-
-	var_1_94[12020] = {
+	pg.base.battlepass_event_award[12020] = {
 		id = 12020,
 		drop_client = {
 			2,
@@ -1175,11 +766,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.battlepass_event_award
-
-	var_1_95[12021] = {
+	pg.base.battlepass_event_award[12021] = {
 		id = 12021,
 		drop_client = {
 			2,
@@ -1187,11 +774,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.battlepass_event_award
-
-	var_1_96[12022] = {
+	pg.base.battlepass_event_award[12022] = {
 		id = 12022,
 		drop_client = {
 			2,
@@ -1199,11 +782,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.battlepass_event_award
-
-	var_1_97[12023] = {
+	pg.base.battlepass_event_award[12023] = {
 		id = 12023,
 		drop_client = {
 			2,
@@ -1211,11 +790,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.battlepass_event_award
-
-	var_1_98[12024] = {
+	pg.base.battlepass_event_award[12024] = {
 		id = 12024,
 		drop_client = {
 			2,
@@ -1223,8 +798,7 @@ var_0.base.battlepass_event_award = {}
 			1
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.battlepass_event_award[12025] = {
+	pg.base.battlepass_event_award[12025] = {
 		id = 12025,
 		drop_client = {
 			2,
@@ -1236,11 +810,7 @@ var_0.base.battlepass_event_award = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.battlepass_event_award
-
-	var_2_0[12026] = {
+	pg.base.battlepass_event_award[12026] = {
 		id = 12026,
 		drop_client = {
 			2,
@@ -1248,11 +818,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.battlepass_event_award
-
-	var_2_1[12027] = {
+	pg.base.battlepass_event_award[12027] = {
 		id = 12027,
 		drop_client = {
 			2,
@@ -1260,11 +826,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.battlepass_event_award
-
-	var_2_2[12028] = {
+	pg.base.battlepass_event_award[12028] = {
 		id = 12028,
 		drop_client = {
 			2,
@@ -1272,11 +834,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.battlepass_event_award
-
-	var_2_3[12029] = {
+	pg.base.battlepass_event_award[12029] = {
 		id = 12029,
 		drop_client = {
 			2,
@@ -1284,11 +842,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.battlepass_event_award
-
-	var_2_4[12030] = {
+	pg.base.battlepass_event_award[12030] = {
 		id = 12030,
 		drop_client = {
 			2,
@@ -1296,11 +850,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.battlepass_event_award
-
-	var_2_5[13015] = {
+	pg.base.battlepass_event_award[13015] = {
 		id = 13015,
 		drop_client = {
 			9,
@@ -1308,11 +858,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.battlepass_event_award
-
-	var_2_6[13017] = {
+	pg.base.battlepass_event_award[13017] = {
 		id = 13017,
 		drop_client = {
 			9,
@@ -1320,11 +866,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.battlepass_event_award
-
-	var_2_7[13018] = {
+	pg.base.battlepass_event_award[13018] = {
 		id = 13018,
 		drop_client = {
 			9,
@@ -1332,11 +874,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.battlepass_event_award
-
-	var_2_8[13019] = {
+	pg.base.battlepass_event_award[13019] = {
 		id = 13019,
 		drop_client = {
 			9,
@@ -1344,11 +882,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.battlepass_event_award
-
-	var_2_9[13020] = {
+	pg.base.battlepass_event_award[13020] = {
 		id = 13020,
 		drop_client = {
 			9,
@@ -1356,11 +890,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.battlepass_event_award
-
-	var_2_10[13021] = {
+	pg.base.battlepass_event_award[13021] = {
 		id = 13021,
 		drop_client = {
 			9,
@@ -1368,11 +898,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.battlepass_event_award
-
-	var_2_11[13022] = {
+	pg.base.battlepass_event_award[13022] = {
 		id = 13022,
 		drop_client = {
 			9,
@@ -1380,11 +906,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.battlepass_event_award
-
-	var_2_12[13023] = {
+	pg.base.battlepass_event_award[13023] = {
 		id = 13023,
 		drop_client = {
 			9,
@@ -1392,11 +914,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.battlepass_event_award
-
-	var_2_13[13024] = {
+	pg.base.battlepass_event_award[13024] = {
 		id = 13024,
 		drop_client = {
 			9,
@@ -1404,11 +922,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.battlepass_event_award
-
-	var_2_14[13025] = {
+	pg.base.battlepass_event_award[13025] = {
 		id = 13025,
 		drop_client = {
 			9,
@@ -1416,11 +930,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.battlepass_event_award
-
-	var_2_15[13026] = {
+	pg.base.battlepass_event_award[13026] = {
 		id = 13026,
 		drop_client = {
 			9,
@@ -1428,11 +938,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.battlepass_event_award
-
-	var_2_16[13027] = {
+	pg.base.battlepass_event_award[13027] = {
 		id = 13027,
 		drop_client = {
 			9,
@@ -1440,11 +946,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.battlepass_event_award
-
-	var_2_17[13028] = {
+	pg.base.battlepass_event_award[13028] = {
 		id = 13028,
 		drop_client = {
 			9,
@@ -1452,11 +954,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.battlepass_event_award
-
-	var_2_18[13029] = {
+	pg.base.battlepass_event_award[13029] = {
 		id = 13029,
 		drop_client = {
 			9,
@@ -1464,11 +962,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.battlepass_event_award
-
-	var_2_19[13030] = {
+	pg.base.battlepass_event_award[13030] = {
 		id = 13030,
 		drop_client = {
 			9,
@@ -1476,11 +970,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.battlepass_event_award
-
-	var_2_20[14015] = {
+	pg.base.battlepass_event_award[14015] = {
 		id = 14015,
 		drop_client = {
 			9,
@@ -1488,11 +978,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.battlepass_event_award
-
-	var_2_21[14016] = {
+	pg.base.battlepass_event_award[14016] = {
 		id = 14016,
 		drop_client = {
 			9,
@@ -1500,11 +986,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.battlepass_event_award
-
-	var_2_22[14017] = {
+	pg.base.battlepass_event_award[14017] = {
 		id = 14017,
 		drop_client = {
 			9,
@@ -1512,11 +994,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.battlepass_event_award
-
-	var_2_23[14018] = {
+	pg.base.battlepass_event_award[14018] = {
 		id = 14018,
 		drop_client = {
 			9,
@@ -1524,11 +1002,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.battlepass_event_award
-
-	var_2_24[14019] = {
+	pg.base.battlepass_event_award[14019] = {
 		id = 14019,
 		drop_client = {
 			9,
@@ -1536,11 +1010,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.battlepass_event_award
-
-	var_2_25[14020] = {
+	pg.base.battlepass_event_award[14020] = {
 		id = 14020,
 		drop_client = {
 			9,
@@ -1548,11 +1018,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.battlepass_event_award
-
-	var_2_26[14021] = {
+	pg.base.battlepass_event_award[14021] = {
 		id = 14021,
 		drop_client = {
 			9,
@@ -1560,11 +1026,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.battlepass_event_award
-
-	var_2_27[14022] = {
+	pg.base.battlepass_event_award[14022] = {
 		id = 14022,
 		drop_client = {
 			9,
@@ -1572,11 +1034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.battlepass_event_award
-
-	var_2_28[14023] = {
+	pg.base.battlepass_event_award[14023] = {
 		id = 14023,
 		drop_client = {
 			9,
@@ -1584,11 +1042,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.battlepass_event_award
-
-	var_2_29[14024] = {
+	pg.base.battlepass_event_award[14024] = {
 		id = 14024,
 		drop_client = {
 			9,
@@ -1596,11 +1050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.battlepass_event_award
-
-	var_2_30[14025] = {
+	pg.base.battlepass_event_award[14025] = {
 		id = 14025,
 		drop_client = {
 			9,
@@ -1608,11 +1058,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.battlepass_event_award
-
-	var_2_31[14026] = {
+	pg.base.battlepass_event_award[14026] = {
 		id = 14026,
 		drop_client = {
 			9,
@@ -1620,11 +1066,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.battlepass_event_award
-
-	var_2_32[14027] = {
+	pg.base.battlepass_event_award[14027] = {
 		id = 14027,
 		drop_client = {
 			9,
@@ -1632,11 +1074,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.battlepass_event_award
-
-	var_2_33[14028] = {
+	pg.base.battlepass_event_award[14028] = {
 		id = 14028,
 		drop_client = {
 			9,
@@ -1644,11 +1082,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.battlepass_event_award
-
-	var_2_34[14029] = {
+	pg.base.battlepass_event_award[14029] = {
 		id = 14029,
 		drop_client = {
 			9,
@@ -1656,11 +1090,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.battlepass_event_award
-
-	var_2_35[14030] = {
+	pg.base.battlepass_event_award[14030] = {
 		id = 14030,
 		drop_client = {
 			9,
@@ -1668,11 +1098,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.battlepass_event_award
-
-	var_2_36[15015] = {
+	pg.base.battlepass_event_award[15015] = {
 		id = 15015,
 		drop_client = {
 			9,
@@ -1680,11 +1106,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.battlepass_event_award
-
-	var_2_37[15016] = {
+	pg.base.battlepass_event_award[15016] = {
 		id = 15016,
 		drop_client = {
 			9,
@@ -1692,11 +1114,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.battlepass_event_award
-
-	var_2_38[15017] = {
+	pg.base.battlepass_event_award[15017] = {
 		id = 15017,
 		drop_client = {
 			9,
@@ -1704,11 +1122,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.battlepass_event_award
-
-	var_2_39[15018] = {
+	pg.base.battlepass_event_award[15018] = {
 		id = 15018,
 		drop_client = {
 			9,
@@ -1716,11 +1130,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.battlepass_event_award
-
-	var_2_40[15019] = {
+	pg.base.battlepass_event_award[15019] = {
 		id = 15019,
 		drop_client = {
 			9,
@@ -1728,11 +1138,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.battlepass_event_award
-
-	var_2_41[15020] = {
+	pg.base.battlepass_event_award[15020] = {
 		id = 15020,
 		drop_client = {
 			9,
@@ -1740,11 +1146,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.battlepass_event_award
-
-	var_2_42[15021] = {
+	pg.base.battlepass_event_award[15021] = {
 		id = 15021,
 		drop_client = {
 			9,
@@ -1752,11 +1154,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.battlepass_event_award
-
-	var_2_43[15022] = {
+	pg.base.battlepass_event_award[15022] = {
 		id = 15022,
 		drop_client = {
 			9,
@@ -1764,11 +1162,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.battlepass_event_award
-
-	var_2_44[15023] = {
+	pg.base.battlepass_event_award[15023] = {
 		id = 15023,
 		drop_client = {
 			9,
@@ -1776,11 +1170,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.battlepass_event_award
-
-	var_2_45[15024] = {
+	pg.base.battlepass_event_award[15024] = {
 		id = 15024,
 		drop_client = {
 			9,
@@ -1788,11 +1178,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.battlepass_event_award
-
-	var_2_46[15025] = {
+	pg.base.battlepass_event_award[15025] = {
 		id = 15025,
 		drop_client = {
 			9,
@@ -1800,11 +1186,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.battlepass_event_award
-
-	var_2_47[15026] = {
+	pg.base.battlepass_event_award[15026] = {
 		id = 15026,
 		drop_client = {
 			9,
@@ -1812,11 +1194,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.battlepass_event_award
-
-	var_2_48[15027] = {
+	pg.base.battlepass_event_award[15027] = {
 		id = 15027,
 		drop_client = {
 			9,
@@ -1824,11 +1202,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.battlepass_event_award
-
-	var_2_49[15028] = {
+	pg.base.battlepass_event_award[15028] = {
 		id = 15028,
 		drop_client = {
 			9,
@@ -1836,11 +1210,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.battlepass_event_award
-
-	var_2_50[15029] = {
+	pg.base.battlepass_event_award[15029] = {
 		id = 15029,
 		drop_client = {
 			9,
@@ -1848,11 +1218,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.battlepass_event_award
-
-	var_2_51[15030] = {
+	pg.base.battlepass_event_award[15030] = {
 		id = 15030,
 		drop_client = {
 			9,
@@ -1860,11 +1226,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.battlepass_event_award
-
-	var_2_52[16015] = {
+	pg.base.battlepass_event_award[16015] = {
 		id = 16015,
 		drop_client = {
 			9,
@@ -1872,11 +1234,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.battlepass_event_award
-
-	var_2_53[16016] = {
+	pg.base.battlepass_event_award[16016] = {
 		id = 16016,
 		drop_client = {
 			9,
@@ -1884,11 +1242,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.battlepass_event_award
-
-	var_2_54[16017] = {
+	pg.base.battlepass_event_award[16017] = {
 		id = 16017,
 		drop_client = {
 			9,
@@ -1896,11 +1250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.battlepass_event_award
-
-	var_2_55[16018] = {
+	pg.base.battlepass_event_award[16018] = {
 		id = 16018,
 		drop_client = {
 			9,
@@ -1908,11 +1258,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.battlepass_event_award
-
-	var_2_56[16020] = {
+	pg.base.battlepass_event_award[16020] = {
 		id = 16020,
 		drop_client = {
 			9,
@@ -1920,11 +1266,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.battlepass_event_award
-
-	var_2_57[16021] = {
+	pg.base.battlepass_event_award[16021] = {
 		id = 16021,
 		drop_client = {
 			9,
@@ -1932,11 +1274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.battlepass_event_award
-
-	var_2_58[16022] = {
+	pg.base.battlepass_event_award[16022] = {
 		id = 16022,
 		drop_client = {
 			9,
@@ -1944,11 +1282,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.battlepass_event_award
-
-	var_2_59[16023] = {
+	pg.base.battlepass_event_award[16023] = {
 		id = 16023,
 		drop_client = {
 			9,
@@ -1956,11 +1290,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.battlepass_event_award
-
-	var_2_60[16024] = {
+	pg.base.battlepass_event_award[16024] = {
 		id = 16024,
 		drop_client = {
 			9,
@@ -1968,11 +1298,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.battlepass_event_award
-
-	var_2_61[16025] = {
+	pg.base.battlepass_event_award[16025] = {
 		id = 16025,
 		drop_client = {
 			9,
@@ -1980,11 +1306,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.battlepass_event_award
-
-	var_2_62[16026] = {
+	pg.base.battlepass_event_award[16026] = {
 		id = 16026,
 		drop_client = {
 			9,
@@ -1992,11 +1314,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.battlepass_event_award
-
-	var_2_63[16027] = {
+	pg.base.battlepass_event_award[16027] = {
 		id = 16027,
 		drop_client = {
 			9,
@@ -2004,11 +1322,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.battlepass_event_award
-
-	var_2_64[16028] = {
+	pg.base.battlepass_event_award[16028] = {
 		id = 16028,
 		drop_client = {
 			9,
@@ -2016,11 +1330,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.battlepass_event_award
-
-	var_2_65[16029] = {
+	pg.base.battlepass_event_award[16029] = {
 		id = 16029,
 		drop_client = {
 			9,
@@ -2028,11 +1338,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.battlepass_event_award
-
-	var_2_66[16030] = {
+	pg.base.battlepass_event_award[16030] = {
 		id = 16030,
 		drop_client = {
 			9,
@@ -2040,11 +1346,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.battlepass_event_award
-
-	var_2_67[17016] = {
+	pg.base.battlepass_event_award[17016] = {
 		id = 17016,
 		drop_client = {
 			2,
@@ -2052,11 +1354,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.battlepass_event_award
-
-	var_2_68[17019] = {
+	pg.base.battlepass_event_award[17019] = {
 		id = 17019,
 		drop_client = {
 			2,
@@ -2064,11 +1362,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.battlepass_event_award
-
-	var_2_69[20015] = {
+	pg.base.battlepass_event_award[20015] = {
 		id = 20015,
 		drop_client = {
 			4,
@@ -2076,11 +1370,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.battlepass_event_award
-
-	var_2_70[20016] = {
+	pg.base.battlepass_event_award[20016] = {
 		id = 20016,
 		drop_client = {
 			4,
@@ -2088,11 +1378,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.battlepass_event_award
-
-	var_2_71[20017] = {
+	pg.base.battlepass_event_award[20017] = {
 		id = 20017,
 		drop_client = {
 			4,
@@ -2100,11 +1386,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.battlepass_event_award
-
-	var_2_72[20018] = {
+	pg.base.battlepass_event_award[20018] = {
 		id = 20018,
 		drop_client = {
 			4,
@@ -2112,11 +1394,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.battlepass_event_award
-
-	var_2_73[20019] = {
+	pg.base.battlepass_event_award[20019] = {
 		id = 20019,
 		drop_client = {
 			4,
@@ -2124,11 +1402,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.battlepass_event_award
-
-	var_2_74[20020] = {
+	pg.base.battlepass_event_award[20020] = {
 		id = 20020,
 		drop_client = {
 			4,
@@ -2136,11 +1410,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.battlepass_event_award
-
-	var_2_75[20021] = {
+	pg.base.battlepass_event_award[20021] = {
 		id = 20021,
 		drop_client = {
 			4,
@@ -2148,11 +1418,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.battlepass_event_award
-
-	var_2_76[20022] = {
+	pg.base.battlepass_event_award[20022] = {
 		id = 20022,
 		drop_client = {
 			4,
@@ -2160,11 +1426,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.battlepass_event_award
-
-	var_2_77[20023] = {
+	pg.base.battlepass_event_award[20023] = {
 		id = 20023,
 		drop_client = {
 			4,
@@ -2172,11 +1434,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.battlepass_event_award
-
-	var_2_78[20024] = {
+	pg.base.battlepass_event_award[20024] = {
 		id = 20024,
 		drop_client = {
 			4,
@@ -2184,11 +1442,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.battlepass_event_award
-
-	var_2_79[20025] = {
+	pg.base.battlepass_event_award[20025] = {
 		id = 20025,
 		drop_client = {
 			4,
@@ -2196,11 +1450,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.battlepass_event_award
-
-	var_2_80[20026] = {
+	pg.base.battlepass_event_award[20026] = {
 		id = 20026,
 		drop_client = {
 			4,
@@ -2208,11 +1458,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.battlepass_event_award
-
-	var_2_81[20027] = {
+	pg.base.battlepass_event_award[20027] = {
 		id = 20027,
 		drop_client = {
 			4,
@@ -2220,11 +1466,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.battlepass_event_award
-
-	var_2_82[20028] = {
+	pg.base.battlepass_event_award[20028] = {
 		id = 20028,
 		drop_client = {
 			4,
@@ -2232,11 +1474,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.battlepass_event_award
-
-	var_2_83[20029] = {
+	pg.base.battlepass_event_award[20029] = {
 		id = 20029,
 		drop_client = {
 			4,
@@ -2244,11 +1482,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.battlepass_event_award
-
-	var_2_84[20030] = {
+	pg.base.battlepass_event_award[20030] = {
 		id = 20030,
 		drop_client = {
 			4,
@@ -2256,11 +1490,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.battlepass_event_award
-
-	var_2_85[21015] = {
+	pg.base.battlepass_event_award[21015] = {
 		id = 21015,
 		drop_client = {
 			7,
@@ -2268,11 +1498,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.battlepass_event_award
-
-	var_2_86[21016] = {
+	pg.base.battlepass_event_award[21016] = {
 		id = 21016,
 		drop_client = {
 			7,
@@ -2280,11 +1506,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.battlepass_event_award
-
-	var_2_87[21017] = {
+	pg.base.battlepass_event_award[21017] = {
 		id = 21017,
 		drop_client = {
 			7,
@@ -2292,11 +1514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.battlepass_event_award
-
-	var_2_88[21018] = {
+	pg.base.battlepass_event_award[21018] = {
 		id = 21018,
 		drop_client = {
 			7,
@@ -2304,11 +1522,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.battlepass_event_award
-
-	var_2_89[21019] = {
+	pg.base.battlepass_event_award[21019] = {
 		id = 21019,
 		drop_client = {
 			7,
@@ -2316,11 +1530,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.battlepass_event_award
-
-	var_2_90[21020] = {
+	pg.base.battlepass_event_award[21020] = {
 		id = 21020,
 		drop_client = {
 			7,
@@ -2328,11 +1538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.battlepass_event_award
-
-	var_2_91[21021] = {
+	pg.base.battlepass_event_award[21021] = {
 		id = 21021,
 		drop_client = {
 			7,
@@ -2340,11 +1546,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.battlepass_event_award
-
-	var_2_92[21022] = {
+	pg.base.battlepass_event_award[21022] = {
 		id = 21022,
 		drop_client = {
 			7,
@@ -2352,11 +1554,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.battlepass_event_award
-
-	var_2_93[21023] = {
+	pg.base.battlepass_event_award[21023] = {
 		id = 21023,
 		drop_client = {
 			7,
@@ -2364,11 +1562,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.battlepass_event_award
-
-	var_2_94[21024] = {
+	pg.base.battlepass_event_award[21024] = {
 		id = 21024,
 		drop_client = {
 			7,
@@ -2376,11 +1570,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.battlepass_event_award
-
-	var_2_95[21025] = {
+	pg.base.battlepass_event_award[21025] = {
 		id = 21025,
 		drop_client = {
 			7,
@@ -2388,11 +1578,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.battlepass_event_award
-
-	var_2_96[21026] = {
+	pg.base.battlepass_event_award[21026] = {
 		id = 21026,
 		drop_client = {
 			7,
@@ -2400,11 +1586,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.battlepass_event_award
-
-	var_2_97[21027] = {
+	pg.base.battlepass_event_award[21027] = {
 		id = 21027,
 		drop_client = {
 			7,
@@ -2412,11 +1594,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.battlepass_event_award
-
-	var_2_98[21028] = {
+	pg.base.battlepass_event_award[21028] = {
 		id = 21028,
 		drop_client = {
 			7,
@@ -2424,8 +1602,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.battlepass_event_award[21029] = {
+	pg.base.battlepass_event_award[21029] = {
 		id = 21029,
 		drop_client = {
 			7,
@@ -2437,11 +1614,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.battlepass_event_award
-
-	var_3_0[21030] = {
+	pg.base.battlepass_event_award[21030] = {
 		id = 21030,
 		drop_client = {
 			7,
@@ -2449,11 +1622,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.battlepass_event_award
-
-	var_3_1[30001] = {
+	pg.base.battlepass_event_award[30001] = {
 		id = 30001,
 		drop_client = {
 			2,
@@ -2461,11 +1630,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.battlepass_event_award
-
-	var_3_2[30002] = {
+	pg.base.battlepass_event_award[30002] = {
 		id = 30002,
 		drop_client = {
 			2,
@@ -2473,11 +1638,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.battlepass_event_award
-
-	var_3_3[30003] = {
+	pg.base.battlepass_event_award[30003] = {
 		id = 30003,
 		drop_client = {
 			2,
@@ -2485,11 +1646,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.battlepass_event_award
-
-	var_3_4[30004] = {
+	pg.base.battlepass_event_award[30004] = {
 		id = 30004,
 		drop_client = {
 			2,
@@ -2497,11 +1654,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.battlepass_event_award
-
-	var_3_5[30005] = {
+	pg.base.battlepass_event_award[30005] = {
 		id = 30005,
 		drop_client = {
 			2,
@@ -2509,11 +1662,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.battlepass_event_award
-
-	var_3_6[30006] = {
+	pg.base.battlepass_event_award[30006] = {
 		id = 30006,
 		drop_client = {
 			2,
@@ -2521,11 +1670,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.battlepass_event_award
-
-	var_3_7[31005] = {
+	pg.base.battlepass_event_award[31005] = {
 		id = 31005,
 		drop_client = {
 			2,
@@ -2533,11 +1678,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.battlepass_event_award
-
-	var_3_8[31006] = {
+	pg.base.battlepass_event_award[31006] = {
 		id = 31006,
 		drop_client = {
 			2,
@@ -2545,11 +1686,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.battlepass_event_award
-
-	var_3_9[31007] = {
+	pg.base.battlepass_event_award[31007] = {
 		id = 31007,
 		drop_client = {
 			2,
@@ -2557,11 +1694,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.battlepass_event_award
-
-	var_3_10[31008] = {
+	pg.base.battlepass_event_award[31008] = {
 		id = 31008,
 		drop_client = {
 			2,
@@ -2569,11 +1702,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.battlepass_event_award
-
-	var_3_11[31009] = {
+	pg.base.battlepass_event_award[31009] = {
 		id = 31009,
 		drop_client = {
 			2,
@@ -2581,11 +1710,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.battlepass_event_award
-
-	var_3_12[32051] = {
+	pg.base.battlepass_event_award[32051] = {
 		id = 32051,
 		drop_client = {
 			2,
@@ -2593,11 +1718,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.battlepass_event_award
-
-	var_3_13[32052] = {
+	pg.base.battlepass_event_award[32052] = {
 		id = 32052,
 		drop_client = {
 			2,
@@ -2605,11 +1726,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.battlepass_event_award
-
-	var_3_14[32053] = {
+	pg.base.battlepass_event_award[32053] = {
 		id = 32053,
 		drop_client = {
 			2,
@@ -2617,11 +1734,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.battlepass_event_award
-
-	var_3_15[32061] = {
+	pg.base.battlepass_event_award[32061] = {
 		id = 32061,
 		drop_client = {
 			2,
@@ -2629,11 +1742,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.battlepass_event_award
-
-	var_3_16[32062] = {
+	pg.base.battlepass_event_award[32062] = {
 		id = 32062,
 		drop_client = {
 			2,
@@ -2641,11 +1750,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.battlepass_event_award
-
-	var_3_17[32063] = {
+	pg.base.battlepass_event_award[32063] = {
 		id = 32063,
 		drop_client = {
 			2,
@@ -2653,11 +1758,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.battlepass_event_award
-
-	var_3_18[32064] = {
+	pg.base.battlepass_event_award[32064] = {
 		id = 32064,
 		drop_client = {
 			2,
@@ -2665,11 +1766,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.battlepass_event_award
-
-	var_3_19[32065] = {
+	pg.base.battlepass_event_award[32065] = {
 		id = 32065,
 		drop_client = {
 			2,
@@ -2677,11 +1774,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.battlepass_event_award
-
-	var_3_20[32066] = {
+	pg.base.battlepass_event_award[32066] = {
 		id = 32066,
 		drop_client = {
 			2,
@@ -2689,11 +1782,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.battlepass_event_award
-
-	var_3_21[32081] = {
+	pg.base.battlepass_event_award[32081] = {
 		id = 32081,
 		drop_client = {
 			2,
@@ -2701,11 +1790,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.battlepass_event_award
-
-	var_3_22[32082] = {
+	pg.base.battlepass_event_award[32082] = {
 		id = 32082,
 		drop_client = {
 			2,
@@ -2713,11 +1798,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.battlepass_event_award
-
-	var_3_23[32083] = {
+	pg.base.battlepass_event_award[32083] = {
 		id = 32083,
 		drop_client = {
 			2,
@@ -2725,11 +1806,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.battlepass_event_award
-
-	var_3_24[32091] = {
+	pg.base.battlepass_event_award[32091] = {
 		id = 32091,
 		drop_client = {
 			2,
@@ -2737,11 +1814,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.battlepass_event_award
-
-	var_3_25[32092] = {
+	pg.base.battlepass_event_award[32092] = {
 		id = 32092,
 		drop_client = {
 			2,
@@ -2749,11 +1822,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.battlepass_event_award
-
-	var_3_26[32093] = {
+	pg.base.battlepass_event_award[32093] = {
 		id = 32093,
 		drop_client = {
 			2,
@@ -2761,11 +1830,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.battlepass_event_award
-
-	var_3_27[40019] = {
+	pg.base.battlepass_event_award[40019] = {
 		id = 40019,
 		drop_client = {
 			31,
@@ -2773,11 +1838,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.battlepass_event_award
-
-	var_3_28[40020] = {
+	pg.base.battlepass_event_award[40020] = {
 		id = 40020,
 		drop_client = {
 			31,
@@ -2785,11 +1846,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.battlepass_event_award
-
-	var_3_29[40021] = {
+	pg.base.battlepass_event_award[40021] = {
 		id = 40021,
 		drop_client = {
 			31,
@@ -2797,11 +1854,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.battlepass_event_award
-
-	var_3_30[40022] = {
+	pg.base.battlepass_event_award[40022] = {
 		id = 40022,
 		drop_client = {
 			31,
@@ -2809,11 +1862,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.battlepass_event_award
-
-	var_3_31[40023] = {
+	pg.base.battlepass_event_award[40023] = {
 		id = 40023,
 		drop_client = {
 			31,
@@ -2821,11 +1870,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.battlepass_event_award
-
-	var_3_32[40024] = {
+	pg.base.battlepass_event_award[40024] = {
 		id = 40024,
 		drop_client = {
 			31,
@@ -2833,11 +1878,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.battlepass_event_award
-
-	var_3_33[40025] = {
+	pg.base.battlepass_event_award[40025] = {
 		id = 40025,
 		drop_client = {
 			31,
@@ -2845,11 +1886,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.battlepass_event_award
-
-	var_3_34[40026] = {
+	pg.base.battlepass_event_award[40026] = {
 		id = 40026,
 		drop_client = {
 			31,
@@ -2857,11 +1894,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.battlepass_event_award
-
-	var_3_35[40027] = {
+	pg.base.battlepass_event_award[40027] = {
 		id = 40027,
 		drop_client = {
 			31,
@@ -2869,11 +1902,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.battlepass_event_award
-
-	var_3_36[40028] = {
+	pg.base.battlepass_event_award[40028] = {
 		id = 40028,
 		drop_client = {
 			31,
@@ -2881,11 +1910,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.battlepass_event_award
-
-	var_3_37[40029] = {
+	pg.base.battlepass_event_award[40029] = {
 		id = 40029,
 		drop_client = {
 			31,
@@ -2893,8 +1918,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_37
-	var_3_37.base.battlepass_event_award[40030] = {
+	pg.base.battlepass_event_award[40030] = {
 		id = 40030,
 		drop_client = {
 			31,

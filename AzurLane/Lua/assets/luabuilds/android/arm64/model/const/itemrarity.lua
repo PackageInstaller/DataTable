@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ItemRarity")
+﻿local var_0_0 = class("ItemRarity")
 
 var_0_0.Gray = 1
 var_0_0.Blue = 2
@@ -9,12 +7,8 @@ var_0_0.Gold = 4
 var_0_0.SSR = 5
 
 function var_0_0.Rarity2Print(arg_1_0)
-	math = var_1_10001
-
-	if var_1_10001.clamp(arg_1_0, 1, 9) == arg_1_0 then
-		tostring = var_1
-
-		return var_1(arg_1_0)
+	if math.clamp(arg_1_0, 1, 9) == arg_1_0 then
+		return tostring(arg_1_0)
 	else
 		return var_0_0.Gray
 	end

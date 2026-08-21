@@ -38,6 +38,11 @@ end
     @clickPosData 点击弹出区域信息
 ]]
 function TipsFactory:propsTips(cusData, clickPosData)
+    if cusData.propsVo.effectType == UseEffectType.USE_GET_HEROEGG then
+        TipsFactory:heroEggTips(cusData, clickPosData)
+        return
+    end
+
     local destroyView = function()
         self.propsTipsView:removeEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
         self.propsTipsView = nil
@@ -50,6 +55,26 @@ function TipsFactory:propsTips(cusData, clickPosData)
     self.propsTipsView:open(data)
     return self.propsTipsView
 end
+
+--[[ 
+    战员蛋道具tips
+    @cusData tips数据
+    @clickPosData 点击弹出区域信息
+]]
+function TipsFactory:heroEggTips(cusData, clickPosData)
+    local destroyView = function()
+        self.heroEggTipsView:removeEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
+        self.heroEggTipsView = nil
+    end
+    if self.heroEggTipsView == nil then
+        self.heroEggTipsView = tips.HeroEggTips.new()
+        self.heroEggTipsView:addEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
+    end
+    local data = { data = cusData, clickPos = clickPosData }
+    self.heroEggTipsView:open(data)
+    return self.heroEggTipsView
+end
+
 --[[ 
     装备tips
     @cusData 数据vo

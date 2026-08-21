@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "extraenemy_challenge_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "extraenemy_challenge_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.extraenemy_challenge_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.extraenemy_challenge_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.extraenemy_challenge_template = rawget(pg, "extraenemy_challenge_template") or setmetatable({
+	__name = "extraenemy_challenge_template"
+}, confNEO)
+pg.extraenemy_challenge_template.all = {
 	1,
 	2,
 	3,
 	4
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.extraenemy_challenge_template = {}
+pg.base = pg.base or {}
+pg.base.extraenemy_challenge_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.extraenemy_challenge_template
-
-	var_1_0[1] = {
+	pg.base.extraenemy_challenge_template[1] = {
 		ex_challenge_enemy = 1729005,
 		id = 1,
 		score_pt = {
@@ -281,11 +244,7 @@ var_0_3.base.extraenemy_challenge_template = {}
 			1020
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.extraenemy_challenge_template
-
-	var_1_1[2] = {
+	pg.base.extraenemy_challenge_template[2] = {
 		ex_challenge_enemy = 1789005,
 		id = 2,
 		score_pt = {
@@ -518,11 +477,7 @@ var_0_3.base.extraenemy_challenge_template = {}
 			1020
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.extraenemy_challenge_template
-
-	var_1_2[3] = {
+	pg.base.extraenemy_challenge_template[3] = {
 		ex_challenge_enemy = 1889005,
 		id = 3,
 		score_pt = {
@@ -754,8 +709,7 @@ var_0_3.base.extraenemy_challenge_template = {}
 			1020
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.extraenemy_challenge_template[4] = {
+	pg.base.extraenemy_challenge_template[4] = {
 		ex_challenge_enemy = 1999905,
 		id = 4,
 		score_pt = {

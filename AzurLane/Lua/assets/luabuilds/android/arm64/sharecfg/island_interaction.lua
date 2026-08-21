@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_interaction") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_interaction"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_interaction = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_interaction
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_interaction
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_interaction = rawget(pg, "island_interaction") or setmetatable({
+	__name = "island_interaction"
+}, confNEO)
+pg.island_interaction.__namecode__ = true
+pg.island_interaction.all = {
 	101,
 	102,
 	103,
@@ -446,11 +419,7 @@ var_0_4.all = {
 	8401,
 	8501
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.island_interaction
-
-var_0_5.get_id_list_by_groupId = {
+pg.island_interaction.get_id_list_by_groupId = {
 	{
 		101,
 		102,
@@ -1038,25 +1007,11 @@ var_0_5.get_id_list_by_groupId = {
 		2706
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.island_interaction = {}
+pg.base = pg.base or {}
+pg.base.island_interaction = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_interaction
-
-	var_1_0[101] = {
+	pg.base.island_interaction[101] = {
 		text = "与{namecode:98:明石}交谈",
 		groupId = 1,
 		only_self = 0,
@@ -1066,11 +1021,7 @@ var_0_5.base.island_interaction = {}
 		param = "island_1",
 		show_condition = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_interaction
-
-	var_1_1[102] = {
+	pg.base.island_interaction[102] = {
 		text = "询问岛屿详情",
 		groupId = 1,
 		only_self = 0,
@@ -1080,11 +1031,7 @@ var_0_5.base.island_interaction = {}
 		param = "island_3",
 		show_condition = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_interaction
-
-	var_1_2[103] = {
+	pg.base.island_interaction[103] = {
 		text = "{namecode:98:明石}躲避游戏",
 		groupId = 1,
 		only_self = 0,
@@ -1094,11 +1041,7 @@ var_0_5.base.island_interaction = {}
 		param = "10090001",
 		show_condition = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_interaction
-
-	var_1_3[201] = {
+	pg.base.island_interaction[201] = {
 		text = "坐下",
 		groupId = 2,
 		only_self = 0,
@@ -1108,11 +1051,7 @@ var_0_5.base.island_interaction = {}
 		param = "sit_1__s2",
 		show_condition = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_interaction
-
-	var_1_4[301] = {
+	pg.base.island_interaction[301] = {
 		text = "与芒交谈",
 		groupId = 3,
 		only_self = 0,
@@ -1122,11 +1061,7 @@ var_0_5.base.island_interaction = {}
 		param = "island_2",
 		show_condition = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_interaction
-
-	var_1_5[401] = {
+	pg.base.island_interaction[401] = {
 		text = "互动",
 		groupId = 4,
 		only_self = 1,
@@ -1136,11 +1071,7 @@ var_0_5.base.island_interaction = {}
 		param = "1",
 		show_condition = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_interaction
-
-	var_1_6[501] = {
+	pg.base.island_interaction[501] = {
 		text = "停止",
 		groupId = 5,
 		only_self = 1,
@@ -1150,11 +1081,7 @@ var_0_5.base.island_interaction = {}
 		param = "",
 		show_condition = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_interaction
-
-	var_1_7[701] = {
+	pg.base.island_interaction[701] = {
 		text = "前往繁荫农圃",
 		groupId = 7,
 		only_self = 0,
@@ -1164,11 +1091,7 @@ var_0_5.base.island_interaction = {}
 		param = "10050001",
 		show_condition = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_interaction
-
-	var_1_8[801] = {
+	pg.base.island_interaction[801] = {
 		text = "交谈",
 		groupId = 8,
 		only_self = 0,
@@ -1178,11 +1101,7 @@ var_0_5.base.island_interaction = {}
 		param = "ISLANDTALK10061",
 		show_condition = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_interaction
-
-	var_1_9[803] = {
+	pg.base.island_interaction[803] = {
 		text = "乔安，这些够了吗？",
 		groupId = 8,
 		only_self = 0,
@@ -1197,11 +1116,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_interaction
-
-	var_1_10[804] = {
+	pg.base.island_interaction[804] = {
 		text = "管理矿场",
 		groupId = 8,
 		only_self = 0,
@@ -1219,11 +1134,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_interaction
-
-	var_1_11[805] = {
+	pg.base.island_interaction[805] = {
 		text = "乔安？",
 		groupId = 8,
 		only_self = 0,
@@ -1238,11 +1149,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_interaction
-
-	var_1_12[806] = {
+	pg.base.island_interaction[806] = {
 		text = "乔安——",
 		groupId = 8,
 		only_self = 0,
@@ -1257,11 +1164,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_interaction
-
-	var_1_13[807] = {
+	pg.base.island_interaction[807] = {
 		text = "乔安——！",
 		groupId = 8,
 		only_self = 0,
@@ -1276,11 +1179,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_interaction
-
-	var_1_14[808] = {
+	pg.base.island_interaction[808] = {
 		text = "乔安，我找到了！",
 		groupId = 8,
 		only_self = 0,
@@ -1295,11 +1194,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_interaction
-
-	var_1_15[809] = {
+	pg.base.island_interaction[809] = {
 		text = "呼……",
 		groupId = 8,
 		only_self = 0,
@@ -1314,11 +1209,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_interaction
-
-	var_1_16[814] = {
+	pg.base.island_interaction[814] = {
 		text = "乔安，你要的东西……",
 		groupId = 8,
 		only_self = 0,
@@ -1334,11 +1225,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_interaction
-
-	var_1_17[815] = {
+	pg.base.island_interaction[815] = {
 		text = "乔安，你要的东西……",
 		groupId = 8,
 		only_self = 0,
@@ -1354,11 +1241,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_interaction
-
-	var_1_18[816] = {
+	pg.base.island_interaction[816] = {
 		text = "乔安，你要的东西……",
 		groupId = 8,
 		only_self = 0,
@@ -1374,11 +1257,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_interaction
-
-	var_1_19[901] = {
+	pg.base.island_interaction[901] = {
 		text = "邀请跟随",
 		groupId = 9,
 		only_self = 1,
@@ -1388,11 +1267,7 @@ var_0_5.base.island_interaction = {}
 		param = "",
 		show_condition = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_interaction
-
-	var_1_20[1001] = {
+	pg.base.island_interaction[1001] = {
 		text = "传送点",
 		groupId = 10,
 		only_self = 0,
@@ -1402,11 +1277,7 @@ var_0_5.base.island_interaction = {}
 		param = "10040001",
 		show_condition = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_interaction
-
-	var_1_21[1101] = {
+	pg.base.island_interaction[1101] = {
 		text = "进入啾咖啡",
 		groupId = 11,
 		only_self = 0,
@@ -1421,11 +1292,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_interaction
-
-	var_1_22[1102] = {
+	pg.base.island_interaction[1102] = {
 		text = "进入啾咖啡",
 		groupId = 11,
 		only_self = 0,
@@ -1440,11 +1307,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_interaction
-
-	var_1_23[1103] = {
+	pg.base.island_interaction[1103] = {
 		text = "进入啾咖啡",
 		groupId = 11,
 		only_self = 0,
@@ -1459,11 +1322,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_interaction
-
-	var_1_24[1104] = {
+	pg.base.island_interaction[1104] = {
 		text = "前往基地",
 		groupId = 11,
 		only_self = 0,
@@ -1478,11 +1337,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_interaction
-
-	var_1_25[1201] = {
+	pg.base.island_interaction[1201] = {
 		text = "交谈",
 		groupId = 12,
 		only_self = 0,
@@ -1492,11 +1347,7 @@ var_0_5.base.island_interaction = {}
 		param = "ISLANDTALK10121",
 		show_condition = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_interaction
-
-	var_1_26[1202] = {
+	pg.base.island_interaction[1202] = {
 		text = "你好，布莱梅。",
 		groupId = 12,
 		only_self = 0,
@@ -1511,11 +1362,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_interaction
-
-	var_1_27[1203] = {
+	pg.base.island_interaction[1203] = {
 		text = "布莱梅！",
 		groupId = 12,
 		only_self = 0,
@@ -1530,11 +1377,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_interaction
-
-	var_1_28[1204] = {
+	pg.base.island_interaction[1204] = {
 		text = "耐心等待",
 		groupId = 12,
 		only_self = 0,
@@ -1549,11 +1392,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_interaction
-
-	var_1_29[1205] = {
+	pg.base.island_interaction[1205] = {
 		text = "制作商品",
 		groupId = 12,
 		only_self = 0,
@@ -1571,11 +1410,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_interaction
-
-	var_1_30[1206] = {
+	pg.base.island_interaction[1206] = {
 		text = "经营管理",
 		groupId = 12,
 		only_self = 0,
@@ -1593,11 +1428,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_interaction
-
-	var_1_31[1207] = {
+	pg.base.island_interaction[1207] = {
 		text = "布莱梅！",
 		groupId = 12,
 		only_self = 0,
@@ -1612,11 +1443,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_interaction
-
-	var_1_32[1208] = {
+	pg.base.island_interaction[1208] = {
 		text = "布莱梅，不好了",
 		groupId = 12,
 		only_self = 0,
@@ -1631,11 +1458,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_interaction
-
-	var_1_33[1209] = {
+	pg.base.island_interaction[1209] = {
 		text = "布莱梅，打扰了",
 		groupId = 12,
 		only_self = 0,
@@ -1650,11 +1473,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_interaction
-
-	var_1_34[1210] = {
+	pg.base.island_interaction[1210] = {
 		text = "呼……布莱梅！",
 		groupId = 12,
 		only_self = 0,
@@ -1669,11 +1488,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_interaction
-
-	var_1_35[1211] = {
+	pg.base.island_interaction[1211] = {
 		text = "布莱梅……",
 		groupId = 12,
 		only_self = 0,
@@ -1688,11 +1503,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_interaction
-
-	var_1_36[1212] = {
+	pg.base.island_interaction[1212] = {
 		text = "布莱梅，事情是这样的……",
 		groupId = 12,
 		only_self = 0,
@@ -1707,11 +1518,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_interaction
-
-	var_1_37[1213] = {
+	pg.base.island_interaction[1213] = {
 		text = "布莱梅，给你配方——",
 		groupId = 12,
 		only_self = 0,
@@ -1726,11 +1533,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_interaction
-
-	var_1_38[1214] = {
+	pg.base.island_interaction[1214] = {
 		text = "布莱梅，我回来啦！",
 		groupId = 12,
 		only_self = 0,
@@ -1745,11 +1548,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_interaction
-
-	var_1_39[1215] = {
+	pg.base.island_interaction[1215] = {
 		text = "布莱梅，看我带来了什么？",
 		groupId = 12,
 		only_self = 0,
@@ -1765,11 +1564,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_interaction
-
-	var_1_40[1216] = {
+	pg.base.island_interaction[1216] = {
 		text = "布莱梅，看我带来了什么？",
 		groupId = 12,
 		only_self = 0,
@@ -1785,11 +1580,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_interaction
-
-	var_1_41[1217] = {
+	pg.base.island_interaction[1217] = {
 		text = "布莱梅！",
 		groupId = 12,
 		only_self = 0,
@@ -1804,11 +1595,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_interaction
-
-	var_1_42[1218] = {
+	pg.base.island_interaction[1218] = {
 		text = "我回来了",
 		groupId = 12,
 		only_self = 0,
@@ -1823,11 +1610,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_interaction
-
-	var_1_43[1219] = {
+	pg.base.island_interaction[1219] = {
 		text = "找到胡萝卜了！",
 		groupId = 12,
 		only_self = 0,
@@ -1842,11 +1625,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_interaction
-
-	var_1_44[1220] = {
+	pg.base.island_interaction[1220] = {
 		text = "怎么办呢……",
 		groupId = 12,
 		only_self = 0,
@@ -1861,11 +1640,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_interaction
-
-	var_1_45[1221] = {
+	pg.base.island_interaction[1221] = {
 		text = "布莱梅，我想问问……",
 		groupId = 12,
 		only_self = 0,
@@ -1880,11 +1655,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_interaction
-
-	var_1_46[1222] = {
+	pg.base.island_interaction[1222] = {
 		text = "新鲜的鸡蛋带回来了。",
 		groupId = 12,
 		only_self = 0,
@@ -1899,11 +1670,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_interaction
-
-	var_1_47[1223] = {
+	pg.base.island_interaction[1223] = {
 		text = "成功了！",
 		groupId = 12,
 		only_self = 0,
@@ -1918,11 +1685,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_interaction
-
-	var_1_48[1224] = {
+	pg.base.island_interaction[1224] = {
 		text = "布莱梅！",
 		groupId = 12,
 		only_self = 0,
@@ -1937,11 +1700,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_interaction
-
-	var_1_49[1225] = {
+	pg.base.island_interaction[1225] = {
 		text = "布莱梅，这是你要的柑橘！",
 		groupId = 12,
 		only_self = 0,
@@ -1956,11 +1715,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_interaction
-
-	var_1_50[1301] = {
+	pg.base.island_interaction[1301] = {
 		text = "休息",
 		groupId = 13,
 		only_self = 1,
@@ -1970,11 +1725,7 @@ var_0_5.base.island_interaction = {}
 		param = "",
 		show_condition = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_interaction
-
-	var_1_51[1401] = {
+	pg.base.island_interaction[1401] = {
 		text = "取消",
 		groupId = 14,
 		only_self = 1,
@@ -1984,11 +1735,7 @@ var_0_5.base.island_interaction = {}
 		param = "",
 		show_condition = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_interaction
-
-	var_1_52[1501] = {
+	pg.base.island_interaction[1501] = {
 		text = "开门",
 		groupId = 15,
 		only_self = 1,
@@ -1998,11 +1745,7 @@ var_0_5.base.island_interaction = {}
 		param = "1",
 		show_condition = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_interaction
-
-	var_1_53[1601] = {
+	pg.base.island_interaction[1601] = {
 		text = "关门",
 		groupId = 16,
 		only_self = 1,
@@ -2012,11 +1755,7 @@ var_0_5.base.island_interaction = {}
 		param = "2",
 		show_condition = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_interaction
-
-	var_1_54[1701] = {
+	pg.base.island_interaction[1701] = {
 		text = "交谈",
 		groupId = 17,
 		only_self = 0,
@@ -2026,11 +1765,7 @@ var_0_5.base.island_interaction = {}
 		param = "ISLANDTALK10071",
 		show_condition = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_interaction
-
-	var_1_55[1702] = {
+	pg.base.island_interaction[1702] = {
 		text = "嗨~奥布莱恩。",
 		groupId = 17,
 		only_self = 0,
@@ -2045,11 +1780,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_interaction
-
-	var_1_56[1703] = {
+	pg.base.island_interaction[1703] = {
 		text = "奥布莱恩……",
 		groupId = 17,
 		only_self = 0,
@@ -2064,11 +1795,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_interaction
-
-	var_1_57[1704] = {
+	pg.base.island_interaction[1704] = {
 		text = "伐木管理",
 		groupId = 17,
 		only_self = 0,
@@ -2086,11 +1813,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_interaction
-
-	var_1_58[1705] = {
+	pg.base.island_interaction[1705] = {
 		text = "奥布莱恩？",
 		groupId = 17,
 		only_self = 0,
@@ -2105,11 +1828,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_interaction
-
-	var_1_59[1706] = {
+	pg.base.island_interaction[1706] = {
 		text = "奥布莱恩……",
 		groupId = 17,
 		only_self = 0,
@@ -2124,11 +1843,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_interaction
-
-	var_1_60[1707] = {
+	pg.base.island_interaction[1707] = {
 		text = "奥布莱恩，你要的木材！",
 		groupId = 17,
 		only_self = 0,
@@ -2143,11 +1858,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_interaction
-
-	var_1_61[1708] = {
+	pg.base.island_interaction[1708] = {
 		text = "奥布莱恩——",
 		groupId = 17,
 		only_self = 0,
@@ -2162,11 +1873,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_interaction
-
-	var_1_62[1709] = {
+	pg.base.island_interaction[1709] = {
 		text = "奥布莱恩……",
 		groupId = 17,
 		only_self = 0,
@@ -2181,11 +1888,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_interaction
-
-	var_1_63[1710] = {
+	pg.base.island_interaction[1710] = {
 		text = "奥布莱恩！",
 		groupId = 17,
 		only_self = 0,
@@ -2200,11 +1903,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_interaction
-
-	var_1_64[1711] = {
+	pg.base.island_interaction[1711] = {
 		text = "奥布莱恩，委托……",
 		groupId = 17,
 		only_self = 0,
@@ -2219,11 +1918,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_interaction
-
-	var_1_65[1714] = {
+	pg.base.island_interaction[1714] = {
 		text = "给，你的物资——",
 		groupId = 17,
 		only_self = 0,
@@ -2239,11 +1934,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_interaction
-
-	var_1_66[1715] = {
+	pg.base.island_interaction[1715] = {
 		text = "商区外送——",
 		groupId = 17,
 		only_self = 0,
@@ -2259,11 +1950,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_interaction
-
-	var_1_67[1716] = {
+	pg.base.island_interaction[1716] = {
 		text = "商区外送——",
 		groupId = 17,
 		only_self = 0,
@@ -2279,11 +1966,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_interaction
-
-	var_1_68[1717] = {
+	pg.base.island_interaction[1717] = {
 		text = "商区外送——",
 		groupId = 17,
 		only_self = 0,
@@ -2299,11 +1982,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_interaction
-
-	var_1_69[1718] = {
+	pg.base.island_interaction[1718] = {
 		text = "奥布莱恩，露西的修枝剪坏了",
 		groupId = 17,
 		only_self = 0,
@@ -2318,11 +1997,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_interaction
-
-	var_1_70[1801] = {
+	pg.base.island_interaction[1801] = {
 		text = "看来这里就是车站了……",
 		groupId = 18,
 		only_self = 0,
@@ -2337,11 +2012,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_interaction
-
-	var_1_71[1901] = {
+	pg.base.island_interaction[1901] = {
 		text = "交谈",
 		groupId = 19,
 		only_self = 0,
@@ -2351,11 +2022,7 @@ var_0_5.base.island_interaction = {}
 		param = "ISLANDTALK10021",
 		show_condition = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_interaction
-
-	var_1_72[1902] = {
+	pg.base.island_interaction[1902] = {
 		text = "好繁忙的码头……",
 		groupId = 19,
 		only_self = 0,
@@ -2370,11 +2037,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_interaction
-
-	var_1_73[1903] = {
+	pg.base.island_interaction[1903] = {
 		text = "帕特莉看起来很忙碌",
 		groupId = 19,
 		only_self = 0,
@@ -2389,11 +2052,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_interaction
-
-	var_1_74[1904] = {
+	pg.base.island_interaction[1904] = {
 		text = "帕特莉~",
 		groupId = 19,
 		only_self = 0,
@@ -2408,11 +2067,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_interaction
-
-	var_1_75[1905] = {
+	pg.base.island_interaction[1905] = {
 		text = "岛屿订单",
 		groupId = 19,
 		only_self = 0,
@@ -2429,11 +2084,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_interaction
-
-	var_1_76[1906] = {
+	pg.base.island_interaction[1906] = {
 		text = "帕特莉……",
 		groupId = 19,
 		only_self = 0,
@@ -2448,11 +2099,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_interaction
-
-	var_1_77[1907] = {
+	pg.base.island_interaction[1907] = {
 		text = "帕特莉……",
 		groupId = 19,
 		only_self = 0,
@@ -2467,11 +2114,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_interaction
-
-	var_1_78[1908] = {
+	pg.base.island_interaction[1908] = {
 		text = "搞定了！",
 		groupId = 19,
 		only_self = 0,
@@ -2486,11 +2129,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_interaction
-
-	var_1_79[1909] = {
+	pg.base.island_interaction[1909] = {
 		text = "帕特莉……",
 		groupId = 19,
 		only_self = 0,
@@ -2505,11 +2144,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_interaction
-
-	var_1_80[1910] = {
+	pg.base.island_interaction[1910] = {
 		text = "帕特莉，你在记什么呢？",
 		groupId = 19,
 		only_self = 0,
@@ -2524,11 +2159,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_interaction
-
-	var_1_81[1911] = {
+	pg.base.island_interaction[1911] = {
 		text = "帕特莉，订单完成了！",
 		groupId = 19,
 		only_self = 0,
@@ -2543,11 +2174,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_interaction
-
-	var_1_82[1912] = {
+	pg.base.island_interaction[1912] = {
 		text = "帕特莉看起来很忙……",
 		groupId = 19,
 		only_self = 0,
@@ -2562,11 +2189,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_interaction
-
-	var_1_83[1923] = {
+	pg.base.island_interaction[1923] = {
 		text = "帕特莉……",
 		groupId = 19,
 		only_self = 0,
@@ -2581,11 +2204,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_interaction
-
-	var_1_84[1913] = {
+	pg.base.island_interaction[1913] = {
 		text = "帕特莉……",
 		groupId = 19,
 		only_self = 0,
@@ -2600,11 +2219,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_interaction
-
-	var_1_85[1914] = {
+	pg.base.island_interaction[1914] = {
 		text = "帕特莉——",
 		groupId = 19,
 		only_self = 0,
@@ -2619,11 +2234,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_interaction
-
-	var_1_86[1915] = {
+	pg.base.island_interaction[1915] = {
 		text = "帕特莉——",
 		groupId = 19,
 		only_self = 0,
@@ -2638,11 +2249,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_interaction
-
-	var_1_87[1916] = {
+	pg.base.island_interaction[1916] = {
 		text = "帕特莉——",
 		groupId = 19,
 		only_self = 0,
@@ -2657,11 +2264,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_interaction
-
-	var_1_88[1917] = {
+	pg.base.island_interaction[1917] = {
 		text = "帕特莉——",
 		groupId = 19,
 		only_self = 0,
@@ -2676,11 +2279,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_interaction
-
-	var_1_89[1918] = {
+	pg.base.island_interaction[1918] = {
 		text = "商区外送——",
 		groupId = 19,
 		only_self = 0,
@@ -2695,11 +2294,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_interaction
-
-	var_1_90[1919] = {
+	pg.base.island_interaction[1919] = {
 		text = "帕特莉——",
 		groupId = 19,
 		only_self = 0,
@@ -2714,11 +2309,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_interaction
-
-	var_1_91[1920] = {
+	pg.base.island_interaction[1920] = {
 		text = "露西让我来确认一下订单",
 		groupId = 19,
 		only_self = 0,
@@ -2733,11 +2324,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_interaction
-
-	var_1_92[1921] = {
+	pg.base.island_interaction[1921] = {
 		text = "帕特莉——",
 		groupId = 19,
 		only_self = 0,
@@ -2752,11 +2339,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_interaction
-
-	var_1_93[1922] = {
+	pg.base.island_interaction[1922] = {
 		text = "我带包裹来了",
 		groupId = 19,
 		only_self = 0,
@@ -2771,11 +2354,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_interaction
-
-	var_1_94[2001] = {
+	pg.base.island_interaction[2001] = {
 		text = "打开门",
 		groupId = 20,
 		only_self = 0,
@@ -2785,11 +2364,7 @@ var_0_5.base.island_interaction = {}
 		param = "",
 		show_condition = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_interaction
-
-	var_1_95[2101] = {
+	pg.base.island_interaction[2101] = {
 		text = "抓住你啦！",
 		groupId = 21,
 		only_self = 0,
@@ -2807,11 +2382,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_interaction
-
-	var_1_96[2102] = {
+	pg.base.island_interaction[2102] = {
 		text = "把手放上去……",
 		groupId = 211,
 		only_self = 0,
@@ -2826,11 +2397,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_interaction
-
-	var_1_97[2103] = {
+	pg.base.island_interaction[2103] = {
 		text = "这个就是……？",
 		groupId = 21,
 		only_self = 0,
@@ -2845,11 +2412,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_interaction
-
-	var_1_98[2104] = {
+	pg.base.island_interaction[2104] = {
 		text = "{namecode:98:明石}……",
 		groupId = 21,
 		only_self = 0,
@@ -2864,8 +2427,7 @@ var_0_5.base.island_interaction = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_interaction[2105] = {
+	pg.base.island_interaction[2105] = {
 		text = "{namecode:98:明石}",
 		groupId = 21,
 		only_self = 0,
@@ -2884,11 +2446,7 @@ var_0_5.base.island_interaction = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_interaction
-
-	var_2_0[2201] = {
+	pg.base.island_interaction[2201] = {
 		text = "这下好了吧？",
 		groupId = 22,
 		only_self = 0,
@@ -2903,11 +2461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_interaction
-
-	var_2_1[2202] = {
+	pg.base.island_interaction[2202] = {
 		text = "看来这里就是车站了……",
 		groupId = 22,
 		only_self = 0,
@@ -2922,11 +2476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_interaction
-
-	var_2_2[2301] = {
+	pg.base.island_interaction[2301] = {
 		text = "交谈",
 		groupId = 23,
 		only_self = 0,
@@ -2936,11 +2486,7 @@ end)()
 		param = "ISLANDTALK10031",
 		show_condition = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_interaction
-
-	var_2_3[2302] = {
+	pg.base.island_interaction[2302] = {
 		text = "斯蒂芬妮~",
 		groupId = 23,
 		only_self = 0,
@@ -2955,11 +2501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_interaction
-
-	var_2_4[2303] = {
+	pg.base.island_interaction[2303] = {
 		text = "斯蒂芬妮，你还好吧？",
 		groupId = 23,
 		only_self = 0,
@@ -2974,11 +2516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_interaction
-
-	var_2_5[2304] = {
+	pg.base.island_interaction[2304] = {
 		text = "货运委托",
 		groupId = 23,
 		only_self = 0,
@@ -2995,11 +2533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_interaction
-
-	var_2_6[2305] = {
+	pg.base.island_interaction[2305] = {
 		text = "斯蒂芬妮——",
 		groupId = 23,
 		only_self = 0,
@@ -3014,11 +2548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_interaction
-
-	var_2_7[2306] = {
+	pg.base.island_interaction[2306] = {
 		text = "斯蒂芬妮，听说……",
 		groupId = 23,
 		only_self = 0,
@@ -3033,11 +2563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_interaction
-
-	var_2_8[2307] = {
+	pg.base.island_interaction[2307] = {
 		text = "斯蒂芬妮，木材取来了！",
 		groupId = 23,
 		only_self = 0,
@@ -3052,11 +2578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_interaction
-
-	var_2_9[2308] = {
+	pg.base.island_interaction[2308] = {
 		text = "斯蒂芬妮，煤炭取来了！",
 		groupId = 23,
 		only_self = 0,
@@ -3071,11 +2593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_interaction
-
-	var_2_10[2309] = {
+	pg.base.island_interaction[2309] = {
 		text = "斯蒂芬妮，听说你找我？",
 		groupId = 23,
 		only_self = 0,
@@ -3090,11 +2608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_interaction
-
-	var_2_11[2310] = {
+	pg.base.island_interaction[2310] = {
 		text = "斯蒂芬妮，委托完成了",
 		groupId = 23,
 		only_self = 0,
@@ -3109,11 +2623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_interaction
-
-	var_2_12[2311] = {
+	pg.base.island_interaction[2311] = {
 		text = "斯蒂芬妮……",
 		groupId = 23,
 		only_self = 0,
@@ -3128,11 +2638,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_interaction
-
-	var_2_13[2312] = {
+	pg.base.island_interaction[2312] = {
 		text = "关于肥料……",
 		groupId = 23,
 		only_self = 0,
@@ -3147,11 +2653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_interaction
-
-	var_2_14[2313] = {
+	pg.base.island_interaction[2313] = {
 		text = "看我给你带了什么？",
 		groupId = 23,
 		only_self = 0,
@@ -3166,11 +2668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_interaction
-
-	var_2_15[2401] = {
+	pg.base.island_interaction[2401] = {
 		text = "前往集会岛",
 		groupId = 24,
 		only_self = 0,
@@ -3185,11 +2683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_interaction
-
-	var_2_16[2402] = {
+	pg.base.island_interaction[2402] = {
 		text = "前往集会岛",
 		groupId = 24,
 		only_self = 0,
@@ -3204,11 +2698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_interaction
-
-	var_2_17[2501] = {
+	pg.base.island_interaction[2501] = {
 		text = "交谈",
 		groupId = 25,
 		only_self = 0,
@@ -3223,11 +2713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_interaction
-
-	var_2_18[2502] = {
+	pg.base.island_interaction[2502] = {
 		text = "玛丽……你怎么在这里……",
 		groupId = 25,
 		only_self = 0,
@@ -3242,11 +2728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_interaction
-
-	var_2_19[2503] = {
+	pg.base.island_interaction[2503] = {
 		text = "这就是宝藏？",
 		groupId = 25,
 		only_self = 0,
@@ -3261,11 +2743,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_interaction
-
-	var_2_20[2504] = {
+	pg.base.island_interaction[2504] = {
 		text = "玛丽，我拿到了。",
 		groupId = 25,
 		only_self = 0,
@@ -3280,11 +2758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_interaction
-
-	var_2_21[2505] = {
+	pg.base.island_interaction[2505] = {
 		text = "战术推演",
 		groupId = 25,
 		only_self = 0,
@@ -3304,11 +2778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_interaction
-
-	var_2_22[2601] = {
+	pg.base.island_interaction[2601] = {
 		text = "前往港口",
 		groupId = 26,
 		only_self = 0,
@@ -3323,11 +2793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_interaction
-
-	var_2_23[2602] = {
+	pg.base.island_interaction[2602] = {
 		text = "前往港口",
 		groupId = 26,
 		only_self = 0,
@@ -3342,11 +2808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_interaction
-
-	var_2_24[2603] = {
+	pg.base.island_interaction[2603] = {
 		text = "乘坐飞行器",
 		groupId = 26,
 		only_self = 0,
@@ -3361,11 +2823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_interaction
-
-	var_2_25[2701] = {
+	pg.base.island_interaction[2701] = {
 		text = "交谈",
 		groupId = 27,
 		only_self = 0,
@@ -3375,11 +2833,7 @@ end)()
 		param = "ISLANDTALK10101",
 		show_condition = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_interaction
-
-	var_2_26[2702] = {
+	pg.base.island_interaction[2702] = {
 		text = "莉莎——",
 		groupId = 27,
 		only_self = 0,
@@ -3394,11 +2848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_interaction
-
-	var_2_27[2703] = {
+	pg.base.island_interaction[2703] = {
 		text = "莉莎——",
 		groupId = 27,
 		only_self = 0,
@@ -3413,11 +2863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_interaction
-
-	var_2_28[2704] = {
+	pg.base.island_interaction[2704] = {
 		text = "集会岛建造",
 		groupId = 27,
 		only_self = 0,
@@ -3432,11 +2878,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_interaction
-
-	var_2_29[2705] = {
+	pg.base.island_interaction[2705] = {
 		text = "集会岛扩建",
 		groupId = 9999,
 		only_self = 0,
@@ -3446,11 +2888,7 @@ end)()
 		param = "",
 		show_condition = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_interaction
-
-	var_2_30[2706] = {
+	pg.base.island_interaction[2706] = {
 		text = "岛屿主题更换",
 		groupId = 9999,
 		only_self = 0,
@@ -3460,11 +2898,7 @@ end)()
 		param = "",
 		show_condition = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_interaction
-
-	var_2_31[2707] = {
+	pg.base.island_interaction[2707] = {
 		text = "给，你的物资——",
 		groupId = 27,
 		only_self = 0,
@@ -3480,11 +2914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_interaction
-
-	var_2_32[2708] = {
+	pg.base.island_interaction[2708] = {
 		text = "给，你的物资——",
 		groupId = 27,
 		only_self = 0,
@@ -3500,11 +2930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_interaction
-
-	var_2_33[2709] = {
+	pg.base.island_interaction[2709] = {
 		text = "商区外送——",
 		groupId = 27,
 		only_self = 0,
@@ -3520,11 +2946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_interaction
-
-	var_2_34[2710] = {
+	pg.base.island_interaction[2710] = {
 		text = "商区外送——",
 		groupId = 27,
 		only_self = 0,
@@ -3540,11 +2962,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_interaction
-
-	var_2_35[2711] = {
+	pg.base.island_interaction[2711] = {
 		text = "商区外送——",
 		groupId = 27,
 		only_self = 0,
@@ -3560,11 +2978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_interaction
-
-	var_2_36[2712] = {
+	pg.base.island_interaction[2712] = {
 		text = "商区外送——",
 		groupId = 27,
 		only_self = 0,
@@ -3580,11 +2994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_interaction
-
-	var_2_37[2713] = {
+	pg.base.island_interaction[2713] = {
 		text = "这样就建好了？",
 		groupId = 27,
 		only_self = 0,
@@ -3599,11 +3009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_interaction
-
-	var_2_38[2714] = {
+	pg.base.island_interaction[2714] = {
 		text = "莉莎！",
 		groupId = 27,
 		only_self = 0,
@@ -3618,11 +3024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_interaction
-
-	var_2_39[2715] = {
+	pg.base.island_interaction[2715] = {
 		text = "莉莎——",
 		groupId = 27,
 		only_self = 0,
@@ -3637,11 +3039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_interaction
-
-	var_2_40[2801] = {
+	pg.base.island_interaction[2801] = {
 		text = "交谈",
 		groupId = 28,
 		only_self = 0,
@@ -3651,11 +3049,7 @@ end)()
 		param = "ISLANDTALK10011",
 		show_condition = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_interaction
-
-	var_2_41[2802] = {
+	pg.base.island_interaction[2802] = {
 		text = "查看磨坊",
 		groupId = 28,
 		only_self = 0,
@@ -3682,11 +3076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_interaction
-
-	var_2_42[2803] = {
+	pg.base.island_interaction[2803] = {
 		text = "奥林匹克，快醒醒！",
 		groupId = 28,
 		only_self = 0,
@@ -3701,11 +3091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_interaction
-
-	var_2_43[2804] = {
+	pg.base.island_interaction[2804] = {
 		text = "奥林匹克，醒醒……",
 		groupId = 28,
 		only_self = 0,
@@ -3721,11 +3107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_interaction
-
-	var_2_44[2805] = {
+	pg.base.island_interaction[2805] = {
 		text = "奥林匹克……",
 		groupId = 28,
 		only_self = 0,
@@ -3740,11 +3122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_interaction
-
-	var_2_45[2806] = {
+	pg.base.island_interaction[2806] = {
 		text = "需要打起精神的人……",
 		groupId = 28,
 		only_self = 0,
@@ -3759,11 +3137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_interaction
-
-	var_2_46[2807] = {
+	pg.base.island_interaction[2807] = {
 		text = "奥林匹克，快醒醒。",
 		groupId = 28,
 		only_self = 0,
@@ -3778,11 +3152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_interaction
-
-	var_2_47[2901] = {
+	pg.base.island_interaction[2901] = {
 		text = "交谈",
 		groupId = 29,
 		only_self = 0,
@@ -3792,11 +3162,7 @@ end)()
 		param = "ISLANDTALK10051",
 		show_condition = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_interaction
-
-	var_2_48[2902] = {
+	pg.base.island_interaction[2902] = {
 		text = "梅莉？",
 		groupId = 29,
 		only_self = 0,
@@ -3811,11 +3177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_interaction
-
-	var_2_49[2903] = {
+	pg.base.island_interaction[2903] = {
 		text = "梅莉！",
 		groupId = 29,
 		only_self = 0,
@@ -3830,11 +3192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_interaction
-
-	var_2_50[2904] = {
+	pg.base.island_interaction[2904] = {
 		text = "梅莉，我回来啦~",
 		groupId = 29,
 		only_self = 0,
@@ -3849,11 +3207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_interaction
-
-	var_2_51[2905] = {
+	pg.base.island_interaction[2905] = {
 		text = "管理牧场",
 		groupId = 29,
 		only_self = 0,
@@ -3871,11 +3225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_interaction
-
-	var_2_52[2906] = {
+	pg.base.island_interaction[2906] = {
 		text = "梅莉，你好……",
 		groupId = 29,
 		only_self = 0,
@@ -3891,11 +3241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_interaction
-
-	var_2_53[2907] = {
+	pg.base.island_interaction[2907] = {
 		text = "梅莉……",
 		groupId = 29,
 		only_self = 0,
@@ -3910,11 +3256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_interaction
-
-	var_2_54[2908] = {
+	pg.base.island_interaction[2908] = {
 		text = "梅莉，查清楚了。",
 		groupId = 29,
 		only_self = 0,
@@ -3929,11 +3271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_interaction
-
-	var_2_55[2909] = {
+	pg.base.island_interaction[2909] = {
 		text = "梅莉，发生什么事了？",
 		groupId = 29,
 		only_self = 0,
@@ -3948,11 +3286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_interaction
-
-	var_2_56[2910] = {
+	pg.base.island_interaction[2910] = {
 		text = "这是……鸡蛋？",
 		groupId = 29,
 		only_self = 0,
@@ -3967,11 +3301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_interaction
-
-	var_2_57[2911] = {
+	pg.base.island_interaction[2911] = {
 		text = "梅莉——",
 		groupId = 29,
 		only_self = 0,
@@ -3986,11 +3316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_interaction
-
-	var_2_58[2912] = {
+	pg.base.island_interaction[2912] = {
 		text = "梅莉！",
 		groupId = 29,
 		only_self = 0,
@@ -4005,11 +3331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_interaction
-
-	var_2_59[2913] = {
+	pg.base.island_interaction[2913] = {
 		text = "修补围栏",
 		groupId = 29,
 		only_self = 0,
@@ -4024,11 +3346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_interaction
-
-	var_2_60[2914] = {
+	pg.base.island_interaction[2914] = {
 		text = "梅莉……",
 		groupId = 29,
 		only_self = 0,
@@ -4043,11 +3361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_interaction
-
-	var_2_61[3001] = {
+	pg.base.island_interaction[3001] = {
 		text = "交谈",
 		groupId = 30,
 		only_self = 0,
@@ -4057,11 +3371,7 @@ end)()
 		param = "ISLANDTALK10041",
 		show_condition = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_interaction
-
-	var_2_62[3003] = {
+	pg.base.island_interaction[3003] = {
 		text = "我播种好了！",
 		groupId = 30,
 		only_self = 0,
@@ -4076,11 +3386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_interaction
-
-	var_2_63[3004] = {
+	pg.base.island_interaction[3004] = {
 		text = "梅莉……你跑得太快了。",
 		groupId = 30,
 		only_self = 0,
@@ -4095,11 +3401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_interaction
-
-	var_2_64[3005] = {
+	pg.base.island_interaction[3005] = {
 		text = "管理农田",
 		groupId = 30,
 		only_self = 0,
@@ -4117,11 +3419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_interaction
-
-	var_2_65[3006] = {
+	pg.base.island_interaction[3006] = {
 		text = "商区外送——",
 		groupId = 30,
 		only_self = 0,
@@ -4137,11 +3435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_interaction
-
-	var_2_66[3007] = {
+	pg.base.island_interaction[3007] = {
 		text = "你好啊，赫莫！",
 		groupId = 30,
 		only_self = 0,
@@ -4156,11 +3450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_interaction
-
-	var_2_67[3008] = {
+	pg.base.island_interaction[3008] = {
 		text = "赫莫，你听我说……",
 		groupId = 30,
 		only_self = 0,
@@ -4175,11 +3465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_interaction
-
-	var_2_68[3009] = {
+	pg.base.island_interaction[3009] = {
 		text = "赫莫，打扰一下",
 		groupId = 30,
 		only_self = 0,
@@ -4194,11 +3480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_interaction
-
-	var_2_69[3010] = {
+	pg.base.island_interaction[3010] = {
 		text = "胡萝卜……",
 		groupId = 30,
 		only_self = 0,
@@ -4213,11 +3495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_interaction
-
-	var_2_70[3011] = {
+	pg.base.island_interaction[3011] = {
 		text = "赫莫！",
 		groupId = 30,
 		only_self = 0,
@@ -4232,11 +3510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_interaction
-
-	var_2_71[3012] = {
+	pg.base.island_interaction[3012] = {
 		text = "查看种子商店",
 		groupId = 30,
 		only_self = 0,
@@ -4263,11 +3537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_interaction
-
-	var_2_72[3101] = {
+	pg.base.island_interaction[3101] = {
 		text = "前往繁荫农圃",
 		groupId = 31,
 		only_self = 0,
@@ -4282,11 +3552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_interaction
-
-	var_2_73[3201] = {
+	pg.base.island_interaction[3201] = {
 		text = "前往港口",
 		groupId = 32,
 		only_self = 0,
@@ -4301,11 +3567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_interaction
-
-	var_2_74[3202] = {
+	pg.base.island_interaction[3202] = {
 		text = "前往栖风原野",
 		groupId = 32,
 		only_self = 0,
@@ -4320,11 +3582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_interaction
-
-	var_2_75[3203] = {
+	pg.base.island_interaction[3203] = {
 		text = "前往繁荫农圃",
 		groupId = 32,
 		only_self = 0,
@@ -4339,11 +3597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_interaction
-
-	var_2_76[3301] = {
+	pg.base.island_interaction[3301] = {
 		text = "使用岛屿权限认证函",
 		groupId = 33,
 		only_self = 0,
@@ -4360,11 +3614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_interaction
-
-	var_2_77[3401] = {
+	pg.base.island_interaction[3401] = {
 		text = "科技研发",
 		groupId = 34,
 		only_self = 0,
@@ -4381,11 +3631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_interaction
-
-	var_2_78[3402] = {
+	pg.base.island_interaction[3402] = {
 		text = "嗯，这机器怎么卡住了？",
 		groupId = 34,
 		only_self = 0,
@@ -4400,11 +3646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_interaction
-
-	var_2_79[3501] = {
+	pg.base.island_interaction[3501] = {
 		text = "前往啾咖啡",
 		groupId = 35,
 		only_self = 0,
@@ -4414,11 +3656,7 @@ end)()
 		param = "10090012",
 		show_condition = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_interaction
-
-	var_2_80[3601] = {
+	pg.base.island_interaction[3601] = {
 		text = "观察",
 		groupId = 36,
 		only_self = 0,
@@ -4433,11 +3671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_interaction
-
-	var_2_81[3602] = {
+	pg.base.island_interaction[3602] = {
 		text = "前往基地",
 		groupId = 36,
 		only_self = 0,
@@ -4452,11 +3686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_interaction
-
-	var_2_82[3701] = {
+	pg.base.island_interaction[3701] = {
 		text = "前往港口",
 		groupId = 37,
 		only_self = 0,
@@ -4466,11 +3696,7 @@ end)()
 		param = "10020011",
 		show_condition = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_interaction
-
-	var_2_83[3801] = {
+	pg.base.island_interaction[3801] = {
 		text = "前往港口",
 		groupId = 38,
 		only_self = 0,
@@ -4485,11 +3711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_interaction
-
-	var_2_84[3802] = {
+	pg.base.island_interaction[3802] = {
 		text = "前往晨露农场",
 		groupId = 38,
 		only_self = 0,
@@ -4504,11 +3726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_interaction
-
-	var_2_85[3803] = {
+	pg.base.island_interaction[3803] = {
 		text = "前往繁荫农圃",
 		groupId = 38,
 		only_self = 0,
@@ -4523,11 +3741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_interaction
-
-	var_2_86[3902] = {
+	pg.base.island_interaction[3902] = {
 		text = "{namecode:98:明石}，你点的欧姆蛋",
 		groupId = 39,
 		only_self = 0,
@@ -4542,11 +3756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_interaction
-
-	var_2_87[3903] = {
+	pg.base.island_interaction[3903] = {
 		text = "{namecode:98:明石}，你找我有事？",
 		groupId = 39,
 		only_self = 0,
@@ -4561,11 +3771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_interaction
-
-	var_2_88[3904] = {
+	pg.base.island_interaction[3904] = {
 		text = "{namecode:98:明石}——",
 		groupId = 39,
 		only_self = 0,
@@ -4580,11 +3786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_interaction
-
-	var_2_89[3905] = {
+	pg.base.island_interaction[3905] = {
 		text = "{namecode:98:明石}！",
 		groupId = 39,
 		only_self = 0,
@@ -4599,11 +3801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_interaction
-
-	var_2_90[4001] = {
+	pg.base.island_interaction[4001] = {
 		text = "日常补给",
 		groupId = 40,
 		only_self = 0,
@@ -4622,11 +3820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_interaction
-
-	var_2_91[4002] = {
+	pg.base.island_interaction[4002] = {
 		text = "下次补给时间",
 		groupId = 40,
 		only_self = 0,
@@ -4641,11 +3835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_interaction
-
-	var_2_92[4101] = {
+	pg.base.island_interaction[4101] = {
 		text = "接收补给",
 		groupId = 41,
 		only_self = 1,
@@ -4660,11 +3850,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_interaction
-
-	var_2_93[4102] = {
+	pg.base.island_interaction[4102] = {
 		text = "分享剩余补给",
 		groupId = 41,
 		only_self = 0,
@@ -4685,11 +3871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_interaction
-
-	var_2_94[4201] = {
+	pg.base.island_interaction[4201] = {
 		text = "抓到你了",
 		groupId = 42,
 		only_self = 0,
@@ -4704,11 +3886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_interaction
-
-	var_2_95[4301] = {
+	pg.base.island_interaction[4301] = {
 		text = "前往栖风原野",
 		groupId = 43,
 		only_self = 0,
@@ -4723,11 +3901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_interaction
-
-	var_2_96[4302] = {
+	pg.base.island_interaction[4302] = {
 		text = "前往晨露农场",
 		groupId = 43,
 		only_self = 0,
@@ -4742,11 +3916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_interaction
-
-	var_2_97[4303] = {
+	pg.base.island_interaction[4303] = {
 		text = "前往港口商区",
 		groupId = 43,
 		only_self = 0,
@@ -4761,11 +3931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_interaction
-
-	var_2_98[4401] = {
+	pg.base.island_interaction[4401] = {
 		text = "欢迎来到岛屿开发区！",
 		groupId = 44,
 		only_self = 0,
@@ -4780,8 +3946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.island_interaction[4501] = {
+	pg.base.island_interaction[4501] = {
 		text = "交谈",
 		groupId = 45,
 		only_self = 0,
@@ -4795,11 +3960,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_interaction
-
-	var_3_0[4502] = {
+	pg.base.island_interaction[4502] = {
 		text = "阿莫玛…",
 		groupId = 45,
 		only_self = 0,
@@ -4814,11 +3975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_interaction
-
-	var_3_1[4503] = {
+	pg.base.island_interaction[4503] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -4833,11 +3990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.island_interaction
-
-	var_3_2[4504] = {
+	pg.base.island_interaction[4504] = {
 		text = "阿莫玛，快看！",
 		groupId = 45,
 		only_self = 0,
@@ -4852,11 +4005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.island_interaction
-
-	var_3_3[4506] = {
+	pg.base.island_interaction[4506] = {
 		text = "商区管理 ",
 		groupId = 45,
 		only_self = 0,
@@ -4871,11 +4020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.island_interaction
-
-	var_3_4[4507] = {
+	pg.base.island_interaction[4507] = {
 		text = "经营管理",
 		groupId = 45,
 		only_self = 0,
@@ -4890,11 +4035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.island_interaction
-
-	var_3_5[4508] = {
+	pg.base.island_interaction[4508] = {
 		text = "阿莫玛，你在想什么？",
 		groupId = 45,
 		only_self = 0,
@@ -4909,11 +4050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.island_interaction
-
-	var_3_6[4509] = {
+	pg.base.island_interaction[4509] = {
 		text = "给，你的物资——",
 		groupId = 45,
 		only_self = 0,
@@ -4929,11 +4066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.island_interaction
-
-	var_3_7[4510] = {
+	pg.base.island_interaction[4510] = {
 		text = "给，你的物资——",
 		groupId = 45,
 		only_self = 0,
@@ -4949,11 +4082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.island_interaction
-
-	var_3_8[4511] = {
+	pg.base.island_interaction[4511] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -4968,11 +4097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.island_interaction
-
-	var_3_9[4512] = {
+	pg.base.island_interaction[4512] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -4987,11 +4112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.island_interaction
-
-	var_3_10[4513] = {
+	pg.base.island_interaction[4513] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -5006,11 +4127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.island_interaction
-
-	var_3_11[4514] = {
+	pg.base.island_interaction[4514] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -5025,11 +4142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.island_interaction
-
-	var_3_12[4515] = {
+	pg.base.island_interaction[4515] = {
 		text = "阿莫玛……",
 		groupId = 45,
 		only_self = 0,
@@ -5044,11 +4157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.island_interaction
-
-	var_3_13[4516] = {
+	pg.base.island_interaction[4516] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -5063,11 +4172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.island_interaction
-
-	var_3_14[4517] = {
+	pg.base.island_interaction[4517] = {
 		text = "阿莫玛，你在想什么？",
 		groupId = 45,
 		only_self = 0,
@@ -5082,11 +4187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.island_interaction
-
-	var_3_15[4518] = {
+	pg.base.island_interaction[4518] = {
 		text = "阿莫玛！",
 		groupId = 45,
 		only_self = 0,
@@ -5101,11 +4202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.island_interaction
-
-	var_3_16[4519] = {
+	pg.base.island_interaction[4519] = {
 		text = "阿莫玛！",
 		groupId = 45,
 		only_self = 0,
@@ -5120,11 +4217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.island_interaction
-
-	var_3_17[4520] = {
+	pg.base.island_interaction[4520] = {
 		text = "阿莫玛，看！",
 		groupId = 45,
 		only_self = 0,
@@ -5139,11 +4232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.island_interaction
-
-	var_3_18[4521] = {
+	pg.base.island_interaction[4521] = {
 		text = "阿莫玛——",
 		groupId = 45,
 		only_self = 0,
@@ -5158,11 +4247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.island_interaction
-
-	var_3_19[4601] = {
+	pg.base.island_interaction[4601] = {
 		text = "有鱼餐馆",
 		groupId = 46,
 		only_self = 0,
@@ -5180,11 +4265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.island_interaction
-
-	var_3_20[4602] = {
+	pg.base.island_interaction[4602] = {
 		text = "白熊饮品",
 		groupId = 46,
 		only_self = 0,
@@ -5202,11 +4283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.island_interaction
-
-	var_3_21[4603] = {
+	pg.base.island_interaction[4603] = {
 		text = "啾啾简餐",
 		groupId = 46,
 		only_self = 0,
@@ -5224,11 +4301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.island_interaction
-
-	var_3_22[4604] = {
+	pg.base.island_interaction[4604] = {
 		text = "乌鱼烤肉",
 		groupId = 46,
 		only_self = 0,
@@ -5246,11 +4319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.island_interaction
-
-	var_3_23[4605] = {
+	pg.base.island_interaction[4605] = {
 		text = "返回",
 		groupId = 46,
 		only_self = 0,
@@ -5260,11 +4329,7 @@ end)()
 		param = "45",
 		show_condition = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.island_interaction
-
-	var_3_24[4701] = {
+	pg.base.island_interaction[4701] = {
 		text = "{namecode:98:明石}——",
 		groupId = 47,
 		only_self = 0,
@@ -5279,11 +4344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.island_interaction
-
-	var_3_25[4702] = {
+	pg.base.island_interaction[4702] = {
 		text = "这是我的……飞行器？",
 		groupId = 47,
 		only_self = 0,
@@ -5298,11 +4359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.island_interaction
-
-	var_3_26[4801] = {
+	pg.base.island_interaction[4801] = {
 		text = "检查木头堆",
 		groupId = 48,
 		only_self = 0,
@@ -5317,11 +4374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.island_interaction
-
-	var_3_27[4901] = {
+	pg.base.island_interaction[4901] = {
 		text = "寻找乔安订购的零件",
 		groupId = 49,
 		only_self = 0,
@@ -5339,11 +4392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.island_interaction
-
-	var_3_28[5001] = {
+	pg.base.island_interaction[5001] = {
 		text = "重启服务器",
 		groupId = 50,
 		only_self = 0,
@@ -5358,11 +4407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.island_interaction
-
-	var_3_29[5101] = {
+	pg.base.island_interaction[5101] = {
 		text = "查看资金余额",
 		groupId = 51,
 		only_self = 0,
@@ -5377,11 +4422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.island_interaction
-
-	var_3_30[5201] = {
+	pg.base.island_interaction[5201] = {
 		text = "开始挖掘",
 		groupId = 52,
 		only_self = 0,
@@ -5396,11 +4437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.island_interaction
-
-	var_3_31[5300] = {
+	pg.base.island_interaction[5300] = {
 		text = "交谈",
 		groupId = 53,
 		only_self = 0,
@@ -5410,11 +4447,7 @@ end)()
 		param = "ISLANDTALK10111",
 		show_condition = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.island_interaction
-
-	var_3_32[5301] = {
+	pg.base.island_interaction[5301] = {
 		text = "管理果园",
 		groupId = 53,
 		only_self = 0,
@@ -5432,11 +4465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.island_interaction
-
-	var_3_33[5302] = {
+	pg.base.island_interaction[5302] = {
 		text = "给，你的物资——",
 		groupId = 53,
 		only_self = 0,
@@ -5452,11 +4481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.island_interaction
-
-	var_3_34[5303] = {
+	pg.base.island_interaction[5303] = {
 		text = "商区外送——",
 		groupId = 53,
 		only_self = 0,
@@ -5472,11 +4497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.island_interaction
-
-	var_3_35[5304] = {
+	pg.base.island_interaction[5304] = {
 		text = "商区外送——",
 		groupId = 53,
 		only_self = 0,
@@ -5492,11 +4513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.island_interaction
-
-	var_3_36[5305] = {
+	pg.base.island_interaction[5305] = {
 		text = "这样就能收获苹果了吧 ",
 		groupId = 53,
 		only_self = 0,
@@ -5511,11 +4528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.island_interaction
-
-	var_3_37[5306] = {
+	pg.base.island_interaction[5306] = {
 		text = "露西，我把修枝剪带过来了",
 		groupId = 53,
 		only_self = 0,
@@ -5530,11 +4543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.island_interaction
-
-	var_3_38[5307] = {
+	pg.base.island_interaction[5307] = {
 		text = "奥布莱恩说你很久没换农具了",
 		groupId = 53,
 		only_self = 0,
@@ -5549,11 +4558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.island_interaction
-
-	var_3_39[5308] = {
+	pg.base.island_interaction[5308] = {
 		text = "露西，肥料都撒好了",
 		groupId = 53,
 		only_self = 0,
@@ -5568,11 +4573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.island_interaction
-
-	var_3_40[5309] = {
+	pg.base.island_interaction[5309] = {
 		text = "柑橘摘回来了",
 		groupId = 53,
 		only_self = 0,
@@ -5587,11 +4588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.island_interaction
-
-	var_3_41[5310] = {
+	pg.base.island_interaction[5310] = {
 		text = "这是布莱梅送来的柑橘咖啡",
 		groupId = 53,
 		only_self = 0,
@@ -5606,11 +4603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.island_interaction
-
-	var_3_42[5311] = {
+	pg.base.island_interaction[5311] = {
 		text = "你的防虫剂到了，露西",
 		groupId = 53,
 		only_self = 0,
@@ -5625,11 +4618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.island_interaction
-
-	var_3_43[5312] = {
+	pg.base.island_interaction[5312] = {
 		text = "露西……",
 		groupId = 53,
 		only_self = 0,
@@ -5644,11 +4633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.island_interaction
-
-	var_3_44[5313] = {
+	pg.base.island_interaction[5313] = {
 		text = "发生什么事了？",
 		groupId = 53,
 		only_self = 0,
@@ -5663,11 +4648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.island_interaction
-
-	var_3_45[5314] = {
+	pg.base.island_interaction[5314] = {
 		text = "查看种子商店",
 		groupId = 53,
 		only_self = 0,
@@ -5694,11 +4675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.island_interaction
-
-	var_3_46[5401] = {
+	pg.base.island_interaction[5401] = {
 		text = "萝莎？",
 		groupId = 54,
 		only_self = 0,
@@ -5713,11 +4690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.island_interaction
-
-	var_3_47[5501] = {
+	pg.base.island_interaction[5501] = {
 		text = "嗨~奥布莱恩。",
 		groupId = 55,
 		only_self = 0,
@@ -5732,11 +4705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.island_interaction
-
-	var_3_48[5502] = {
+	pg.base.island_interaction[5502] = {
 		text = "奥布莱恩……",
 		groupId = 55,
 		only_self = 0,
@@ -5751,11 +4720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.island_interaction
-
-	var_3_49[5601] = {
+	pg.base.island_interaction[5601] = {
 		text = "赫莫？",
 		groupId = 56,
 		only_self = 0,
@@ -5770,11 +4735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.island_interaction
-
-	var_3_50[5700] = {
+	pg.base.island_interaction[5700] = {
 		text = "交谈",
 		groupId = 57,
 		only_self = 0,
@@ -5784,11 +4745,7 @@ end)()
 		param = "ISLANDTALK10141",
 		show_condition = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.island_interaction
-
-	var_3_51[5701] = {
+	pg.base.island_interaction[5701] = {
 		text = "露西？",
 		groupId = 57,
 		only_self = 0,
@@ -5803,11 +4760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.island_interaction
-
-	var_3_52[5702] = {
+	pg.base.island_interaction[5702] = {
 		text = "管理苗圃",
 		groupId = 57,
 		only_self = 0,
@@ -5825,11 +4778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.island_interaction
-
-	var_3_53[5703] = {
+	pg.base.island_interaction[5703] = {
 		text = "给，你的物资——",
 		groupId = 57,
 		only_self = 0,
@@ -5845,11 +4794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.island_interaction
-
-	var_3_54[5704] = {
+	pg.base.island_interaction[5704] = {
 		text = "给，你的物资——",
 		groupId = 57,
 		only_self = 0,
@@ -5865,11 +4810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.island_interaction
-
-	var_3_55[5705] = {
+	pg.base.island_interaction[5705] = {
 		text = "商区外送——",
 		groupId = 57,
 		only_self = 0,
@@ -5885,11 +4826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.island_interaction
-
-	var_3_56[5706] = {
+	pg.base.island_interaction[5706] = {
 		text = "拉科尼娅？",
 		groupId = 57,
 		only_self = 0,
@@ -5904,11 +4841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.island_interaction
-
-	var_3_57[5707] = {
+	pg.base.island_interaction[5707] = {
 		text = "拉科尼娅—— ",
 		groupId = 57,
 		only_self = 0,
@@ -5923,11 +4856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.island_interaction
-
-	var_3_58[5708] = {
+	pg.base.island_interaction[5708] = {
 		text = "拉科尼娅。",
 		groupId = 57,
 		only_self = 0,
@@ -5942,11 +4871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.island_interaction
-
-	var_3_59[5709] = {
+	pg.base.island_interaction[5709] = {
 		text = "拉科尼娅—— ",
 		groupId = 57,
 		only_self = 0,
@@ -5961,11 +4886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.island_interaction
-
-	var_3_60[5710] = {
+	pg.base.island_interaction[5710] = {
 		text = "发生什么事了？",
 		groupId = 57,
 		only_self = 0,
@@ -5980,11 +4901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.island_interaction
-
-	var_3_61[5711] = {
+	pg.base.island_interaction[5711] = {
 		text = "拉科尼娅……",
 		groupId = 57,
 		only_self = 0,
@@ -5999,11 +4916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.island_interaction
-
-	var_3_62[5712] = {
+	pg.base.island_interaction[5712] = {
 		text = "找到肥料了",
 		groupId = 57,
 		only_self = 0,
@@ -6018,11 +4931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.island_interaction
-
-	var_3_63[5713] = {
+	pg.base.island_interaction[5713] = {
 		text = "全都种好了",
 		groupId = 57,
 		only_self = 0,
@@ -6037,11 +4946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.island_interaction
-
-	var_3_64[5714] = {
+	pg.base.island_interaction[5714] = {
 		text = "薰衣草收获完成了",
 		groupId = 57,
 		only_self = 0,
@@ -6056,11 +4961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.island_interaction
-
-	var_3_65[5715] = {
+	pg.base.island_interaction[5715] = {
 		text = "查看种子商店",
 		groupId = 57,
 		only_self = 0,
@@ -6087,11 +4988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.island_interaction
-
-	var_3_66[5800] = {
+	pg.base.island_interaction[5800] = {
 		text = "交谈",
 		groupId = 58,
 		only_self = 0,
@@ -6101,11 +4998,7 @@ end)()
 		param = "ISLANDTALK10161",
 		show_condition = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.island_interaction
-
-	var_3_67[5801] = {
+	pg.base.island_interaction[5801] = {
 		text = "开发季",
 		groupId = 58,
 		only_self = 0,
@@ -6123,11 +5016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.island_interaction
-
-	var_3_68[5802] = {
+	pg.base.island_interaction[5802] = {
 		text = "佩芮……",
 		groupId = 58,
 		only_self = 0,
@@ -6142,11 +5031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.island_interaction
-
-	var_3_69[5803] = {
+	pg.base.island_interaction[5803] = {
 		text = "佩芮!",
 		groupId = 58,
 		only_self = 0,
@@ -6161,11 +5046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.island_interaction
-
-	var_3_70[5804] = {
+	pg.base.island_interaction[5804] = {
 		text = "秋季特产采集（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6180,11 +5061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.island_interaction
-
-	var_3_71[5805] = {
+	pg.base.island_interaction[5805] = {
 		text = "秋季特产采集（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6203,11 +5080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.island_interaction
-
-	var_3_72[5806] = {
+	pg.base.island_interaction[5806] = {
 		text = "秋季特产采集（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6226,11 +5099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.island_interaction
-
-	var_3_73[5807] = {
+	pg.base.island_interaction[5807] = {
 		text = "秋季特产采集（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6249,11 +5118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.island_interaction
-
-	var_3_74[5808] = {
+	pg.base.island_interaction[5808] = {
 		text = "秋季特产采集（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6272,11 +5137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.island_interaction
-
-	var_3_75[5809] = {
+	pg.base.island_interaction[5809] = {
 		text = "秋季特产采集（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6295,11 +5156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.island_interaction
-
-	var_3_76[5810] = {
+	pg.base.island_interaction[5810] = {
 		text = "秋季特产采集（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6318,11 +5175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.island_interaction
-
-	var_3_77[5811] = {
+	pg.base.island_interaction[5811] = {
 		text = "秋季特产制作（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6337,11 +5190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.island_interaction
-
-	var_3_78[5812] = {
+	pg.base.island_interaction[5812] = {
 		text = "秋季特产制作（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6360,11 +5209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.island_interaction
-
-	var_3_79[5813] = {
+	pg.base.island_interaction[5813] = {
 		text = "秋季特产制作（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6383,11 +5228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.island_interaction
-
-	var_3_80[5814] = {
+	pg.base.island_interaction[5814] = {
 		text = "秋季特产制作（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6406,11 +5247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.island_interaction
-
-	var_3_81[5815] = {
+	pg.base.island_interaction[5815] = {
 		text = "秋季特产制作（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6429,11 +5266,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.island_interaction
-
-	var_3_82[5816] = {
+	pg.base.island_interaction[5816] = {
 		text = "秋季特产制作（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6452,11 +5285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.island_interaction
-
-	var_3_83[5817] = {
+	pg.base.island_interaction[5817] = {
 		text = "秋季特产制作（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6475,11 +5304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.island_interaction
-
-	var_3_84[5818] = {
+	pg.base.island_interaction[5818] = {
 		text = "秋季特产订单（1/4）",
 		groupId = 58,
 		only_self = 0,
@@ -6494,11 +5319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.island_interaction
-
-	var_3_85[5819] = {
+	pg.base.island_interaction[5819] = {
 		text = "秋季特产订单（2/4）",
 		groupId = 58,
 		only_self = 0,
@@ -6517,11 +5338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.island_interaction
-
-	var_3_86[5820] = {
+	pg.base.island_interaction[5820] = {
 		text = "秋季特产订单（3/4）",
 		groupId = 58,
 		only_self = 0,
@@ -6540,11 +5357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.island_interaction
-
-	var_3_87[5821] = {
+	pg.base.island_interaction[5821] = {
 		text = "秋季特产订单（4/4）",
 		groupId = 58,
 		only_self = 0,
@@ -6563,11 +5376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.island_interaction
-
-	var_3_88[5822] = {
+	pg.base.island_interaction[5822] = {
 		text = "菜？佩芮？……你？！",
 		groupId = 58,
 		only_self = 0,
@@ -6582,11 +5391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.island_interaction
-
-	var_3_89[5823] = {
+	pg.base.island_interaction[5823] = {
 		text = "珍珠采购",
 		groupId = 58,
 		only_self = 1,
@@ -6604,11 +5409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.island_interaction
-
-	var_3_90[5824] = {
+	pg.base.island_interaction[5824] = {
 		text = "佩芮——",
 		groupId = 58,
 		only_self = 0,
@@ -6623,11 +5424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.island_interaction
-
-	var_3_91[5825] = {
+	pg.base.island_interaction[5825] = {
 		text = "佩芮——",
 		groupId = 58,
 		only_self = 0,
@@ -6642,11 +5439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.island_interaction
-
-	var_3_92[5826] = {
+	pg.base.island_interaction[5826] = {
 		text = "新季度的开发… ",
 		groupId = 58,
 		only_self = 0,
@@ -6661,11 +5454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.island_interaction
-
-	var_3_93[5827] = {
+	pg.base.island_interaction[5827] = {
 		text = "春季特产采集（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6680,11 +5469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.island_interaction
-
-	var_3_94[5828] = {
+	pg.base.island_interaction[5828] = {
 		text = "春季特产采集（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6703,11 +5488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.island_interaction
-
-	var_3_95[5829] = {
+	pg.base.island_interaction[5829] = {
 		text = "春季特产采集（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6726,11 +5507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.island_interaction
-
-	var_3_96[5830] = {
+	pg.base.island_interaction[5830] = {
 		text = "春季特产采集（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6749,11 +5526,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.island_interaction
-
-	var_3_97[5831] = {
+	pg.base.island_interaction[5831] = {
 		text = "春季特产采集（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6772,11 +5545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.island_interaction
-
-	var_3_98[5832] = {
+	pg.base.island_interaction[5832] = {
 		text = "春季特产采集（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6795,8 +5564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.island_interaction[5833] = {
+	pg.base.island_interaction[5833] = {
 		text = "春季特产采集（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6819,11 +5587,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.island_interaction
-
-	var_4_0[5834] = {
+	pg.base.island_interaction[5834] = {
 		text = "春季特产制作（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6838,11 +5602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.island_interaction
-
-	var_4_1[5835] = {
+	pg.base.island_interaction[5835] = {
 		text = "春季特产制作（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6861,11 +5621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.island_interaction
-
-	var_4_2[5836] = {
+	pg.base.island_interaction[5836] = {
 		text = "春季特产制作（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6884,11 +5640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.island_interaction
-
-	var_4_3[5837] = {
+	pg.base.island_interaction[5837] = {
 		text = "春季特产制作（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6907,11 +5659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.island_interaction
-
-	var_4_4[5838] = {
+	pg.base.island_interaction[5838] = {
 		text = "春季特产制作（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6930,11 +5678,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.island_interaction
-
-	var_4_5[5839] = {
+	pg.base.island_interaction[5839] = {
 		text = "春季特产制作（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6953,11 +5697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.island_interaction
-
-	var_4_6[5840] = {
+	pg.base.island_interaction[5840] = {
 		text = "春季特产制作（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -6976,11 +5716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.island_interaction
-
-	var_4_7[5841] = {
+	pg.base.island_interaction[5841] = {
 		text = "春季特产订单（1/4）",
 		groupId = 58,
 		only_self = 0,
@@ -6995,11 +5731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.island_interaction
-
-	var_4_8[5842] = {
+	pg.base.island_interaction[5842] = {
 		text = "春季特产订单（2/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7018,11 +5750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.island_interaction
-
-	var_4_9[5843] = {
+	pg.base.island_interaction[5843] = {
 		text = "春季特产订单（3/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7041,11 +5769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.island_interaction
-
-	var_4_10[5844] = {
+	pg.base.island_interaction[5844] = {
 		text = "春季特产订单（4/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7064,11 +5788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.island_interaction
-
-	var_4_11[5845] = {
+	pg.base.island_interaction[5845] = {
 		text = "佩芮？",
 		groupId = 58,
 		only_self = 0,
@@ -7083,11 +5803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.island_interaction
-
-	var_4_12[5846] = {
+	pg.base.island_interaction[5846] = {
 		text = "夏季特产采集（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7102,11 +5818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.island_interaction
-
-	var_4_13[5847] = {
+	pg.base.island_interaction[5847] = {
 		text = "夏季特产采集（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7125,11 +5837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.island_interaction
-
-	var_4_14[5848] = {
+	pg.base.island_interaction[5848] = {
 		text = "夏季特产采集（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7148,11 +5856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.island_interaction
-
-	var_4_15[5849] = {
+	pg.base.island_interaction[5849] = {
 		text = "夏季特产采集（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7171,11 +5875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.island_interaction
-
-	var_4_16[5850] = {
+	pg.base.island_interaction[5850] = {
 		text = "夏季特产采集（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7194,11 +5894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.island_interaction
-
-	var_4_17[5851] = {
+	pg.base.island_interaction[5851] = {
 		text = "夏季特产采集（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7217,11 +5913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.island_interaction
-
-	var_4_18[5852] = {
+	pg.base.island_interaction[5852] = {
 		text = "夏季特产采集（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7240,11 +5932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.island_interaction
-
-	var_4_19[5853] = {
+	pg.base.island_interaction[5853] = {
 		text = "夏季特产制作（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7259,11 +5947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.island_interaction
-
-	var_4_20[5854] = {
+	pg.base.island_interaction[5854] = {
 		text = "夏季特产制作（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7282,11 +5966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.island_interaction
-
-	var_4_21[5855] = {
+	pg.base.island_interaction[5855] = {
 		text = "夏季特产制作（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7305,11 +5985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.island_interaction
-
-	var_4_22[5856] = {
+	pg.base.island_interaction[5856] = {
 		text = "夏季特产制作（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7328,11 +6004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.island_interaction
-
-	var_4_23[5857] = {
+	pg.base.island_interaction[5857] = {
 		text = "夏季特产制作（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7351,11 +6023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.island_interaction
-
-	var_4_24[5858] = {
+	pg.base.island_interaction[5858] = {
 		text = "夏季特产制作（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7374,11 +6042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.island_interaction
-
-	var_4_25[5859] = {
+	pg.base.island_interaction[5859] = {
 		text = "夏季特产制作（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7397,11 +6061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.island_interaction
-
-	var_4_26[5860] = {
+	pg.base.island_interaction[5860] = {
 		text = "夏季特产订单（1/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7416,11 +6076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.island_interaction
-
-	var_4_27[5861] = {
+	pg.base.island_interaction[5861] = {
 		text = "夏季特产订单（2/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7439,11 +6095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.island_interaction
-
-	var_4_28[5862] = {
+	pg.base.island_interaction[5862] = {
 		text = "夏季特产订单（3/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7462,11 +6114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.island_interaction
-
-	var_4_29[5863] = {
+	pg.base.island_interaction[5863] = {
 		text = "夏季特产订单（4/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7485,11 +6133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.island_interaction
-
-	var_4_30[5864] = {
+	pg.base.island_interaction[5864] = {
 		text = "秋季特产采集（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7504,11 +6148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.island_interaction
-
-	var_4_31[5865] = {
+	pg.base.island_interaction[5865] = {
 		text = "秋季特产采集（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7527,11 +6167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.island_interaction
-
-	var_4_32[5866] = {
+	pg.base.island_interaction[5866] = {
 		text = "秋季特产采集（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7550,11 +6186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.island_interaction
-
-	var_4_33[5867] = {
+	pg.base.island_interaction[5867] = {
 		text = "秋季特产采集（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7573,11 +6205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.island_interaction
-
-	var_4_34[5868] = {
+	pg.base.island_interaction[5868] = {
 		text = "秋季特产采集（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7596,11 +6224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.island_interaction
-
-	var_4_35[5869] = {
+	pg.base.island_interaction[5869] = {
 		text = "秋季特产采集（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7619,11 +6243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.island_interaction
-
-	var_4_36[5870] = {
+	pg.base.island_interaction[5870] = {
 		text = "秋季特产采集（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7642,11 +6262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.island_interaction
-
-	var_4_37[5871] = {
+	pg.base.island_interaction[5871] = {
 		text = "秋季特产制作（1/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7661,11 +6277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.island_interaction
-
-	var_4_38[5872] = {
+	pg.base.island_interaction[5872] = {
 		text = "秋季特产制作（2/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7684,11 +6296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.island_interaction
-
-	var_4_39[5873] = {
+	pg.base.island_interaction[5873] = {
 		text = "秋季特产制作（3/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7707,11 +6315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.island_interaction
-
-	var_4_40[5874] = {
+	pg.base.island_interaction[5874] = {
 		text = "秋季特产制作（4/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7730,11 +6334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.island_interaction
-
-	var_4_41[5875] = {
+	pg.base.island_interaction[5875] = {
 		text = "秋季特产制作（5/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7753,11 +6353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.island_interaction
-
-	var_4_42[5876] = {
+	pg.base.island_interaction[5876] = {
 		text = "秋季特产制作（6/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7776,11 +6372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.island_interaction
-
-	var_4_43[5877] = {
+	pg.base.island_interaction[5877] = {
 		text = "秋季特产制作（7/7）",
 		groupId = 58,
 		only_self = 0,
@@ -7799,11 +6391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.island_interaction
-
-	var_4_44[5878] = {
+	pg.base.island_interaction[5878] = {
 		text = "秋季特产订单（1/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7818,11 +6406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.island_interaction
-
-	var_4_45[5879] = {
+	pg.base.island_interaction[5879] = {
 		text = "秋季特产订单（2/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7841,11 +6425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.island_interaction
-
-	var_4_46[5880] = {
+	pg.base.island_interaction[5880] = {
 		text = "秋季特产订单（3/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7864,11 +6444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.island_interaction
-
-	var_4_47[5881] = {
+	pg.base.island_interaction[5881] = {
 		text = "秋季特产订单（4/4）",
 		groupId = 58,
 		only_self = 0,
@@ -7887,11 +6463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.island_interaction
-
-	var_4_48[5882] = {
+	pg.base.island_interaction[5882] = {
 		text = "佩芮？",
 		groupId = 58,
 		only_self = 0,
@@ -7906,11 +6478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.island_interaction
-
-	var_4_49[5901] = {
+	pg.base.island_interaction[5901] = {
 		text = "你又有什么鬼点子？",
 		groupId = 59,
 		only_self = 0,
@@ -7925,11 +6493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.island_interaction
-
-	var_4_50[5902] = {
+	pg.base.island_interaction[5902] = {
 		text = "这些够了吧？",
 		groupId = 59,
 		only_self = 0,
@@ -7944,11 +6508,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.island_interaction
-
-	var_4_51[6001] = {
+	pg.base.island_interaction[6001] = {
 		text = "交谈",
 		groupId = 60,
 		only_self = 0,
@@ -7958,11 +6518,7 @@ end)()
 		param = "ISLANDTALK10091",
 		show_condition = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.island_interaction
-
-	var_4_52[6002] = {
+	pg.base.island_interaction[6002] = {
 		text = "管理工厂",
 		groupId = 60,
 		only_self = 0,
@@ -7977,11 +6533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.island_interaction
-
-	var_4_53[6101] = {
+	pg.base.island_interaction[6101] = {
 		text = "木料加工设备",
 		groupId = 61,
 		only_self = 0,
@@ -7999,11 +6551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.island_interaction
-
-	var_4_54[6102] = {
+	pg.base.island_interaction[6102] = {
 		text = "工业生产设备",
 		groupId = 61,
 		only_self = 0,
@@ -8021,11 +6569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.island_interaction
-
-	var_4_55[6103] = {
+	pg.base.island_interaction[6103] = {
 		text = "电子加工设备",
 		groupId = 61,
 		only_self = 0,
@@ -8043,11 +6587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.island_interaction
-
-	var_4_56[6104] = {
+	pg.base.island_interaction[6104] = {
 		text = "手工制作设备",
 		groupId = 61,
 		only_self = 0,
@@ -8065,11 +6605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.island_interaction
-
-	var_4_57[6105] = {
+	pg.base.island_interaction[6105] = {
 		text = "返回",
 		groupId = 61,
 		only_self = 0,
@@ -8084,11 +6620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.island_interaction
-
-	var_4_58[6201] = {
+	pg.base.island_interaction[6201] = {
 		text = "抚摸",
 		groupId = 62,
 		only_self = 0,
@@ -8101,11 +6633,7 @@ end)()
 		},
 		show_condition = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.island_interaction
-
-	var_4_59[6301] = {
+	pg.base.island_interaction[6301] = {
 		text = "有鱼餐馆",
 		groupId = 63,
 		only_self = 0,
@@ -8123,11 +6651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.island_interaction
-
-	var_4_60[6302] = {
+	pg.base.island_interaction[6302] = {
 		text = "白熊饮品",
 		groupId = 63,
 		only_self = 0,
@@ -8145,11 +6669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.island_interaction
-
-	var_4_61[6303] = {
+	pg.base.island_interaction[6303] = {
 		text = "啾啾简餐",
 		groupId = 63,
 		only_self = 0,
@@ -8167,11 +6687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.island_interaction
-
-	var_4_62[6304] = {
+	pg.base.island_interaction[6304] = {
 		text = "乌鱼烤肉",
 		groupId = 63,
 		only_self = 0,
@@ -8189,11 +6705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.island_interaction
-
-	var_4_63[6305] = {
+	pg.base.island_interaction[6305] = {
 		text = "返回",
 		groupId = 63,
 		only_self = 0,
@@ -8203,11 +6715,7 @@ end)()
 		param = "45",
 		show_condition = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.island_interaction
-
-	var_4_64[6401] = {
+	pg.base.island_interaction[6401] = {
 		text = "收集蜂巢",
 		groupId = 64,
 		only_self = 0,
@@ -8222,11 +6730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.island_interaction
-
-	var_4_65[6501] = {
+	pg.base.island_interaction[6501] = {
 		text = "那声音是……",
 		groupId = 65,
 		only_self = 0,
@@ -8241,11 +6745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.island_interaction
-
-	var_4_66[6601] = {
+	pg.base.island_interaction[6601] = {
 		text = "就是这里了？",
 		groupId = 66,
 		only_self = 0,
@@ -8260,11 +6760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.island_interaction
-
-	var_4_67[6602] = {
+	pg.base.island_interaction[6602] = {
 		text = "观察痕迹",
 		groupId = 66,
 		only_self = 0,
@@ -8279,11 +6775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.island_interaction
-
-	var_4_68[6603] = {
+	pg.base.island_interaction[6603] = {
 		text = "抓住咩咩羊",
 		groupId = 66,
 		only_self = 0,
@@ -8298,11 +6790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.island_interaction
-
-	var_4_69[6701] = {
+	pg.base.island_interaction[6701] = {
 		text = "牵羊",
 		groupId = 67,
 		only_self = 0,
@@ -8320,11 +6808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.island_interaction
-
-	var_4_70[6801] = {
+	pg.base.island_interaction[6801] = {
 		text = "牵羊",
 		groupId = 68,
 		only_self = 0,
@@ -8342,11 +6826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.island_interaction
-
-	var_4_71[6901] = {
+	pg.base.island_interaction[6901] = {
 		text = "牵羊",
 		groupId = 69,
 		only_self = 0,
@@ -8364,11 +6844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.island_interaction
-
-	var_4_72[7001] = {
+	pg.base.island_interaction[7001] = {
 		text = "拆除蜂巢",
 		groupId = 70,
 		only_self = 0,
@@ -8386,11 +6862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.island_interaction
-
-	var_4_73[7002] = {
+	pg.base.island_interaction[7002] = {
 		text = "拆除蜂巢",
 		groupId = 70,
 		only_self = 0,
@@ -8408,11 +6880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.island_interaction
-
-	var_4_74[7003] = {
+	pg.base.island_interaction[7003] = {
 		text = "拆除蜂巢",
 		groupId = 70,
 		only_self = 0,
@@ -8430,11 +6898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.island_interaction
-
-	var_4_75[7004] = {
+	pg.base.island_interaction[7004] = {
 		text = "这里面……好像有什么声音？",
 		groupId = 70,
 		only_self = 0,
@@ -8449,11 +6913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.island_interaction
-
-	var_4_76[7005] = {
+	pg.base.island_interaction[7005] = {
 		text = "你好？",
 		groupId = 70,
 		only_self = 0,
@@ -8468,11 +6928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.island_interaction
-
-	var_4_77[7006] = {
+	pg.base.island_interaction[7006] = {
 		text = "是哪里还有声音？",
 		groupId = 70,
 		only_self = 0,
@@ -8487,11 +6943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.island_interaction
-
-	var_4_78[7007] = {
+	pg.base.island_interaction[7007] = {
 		text = "是你在叫我？",
 		groupId = 70,
 		only_self = 0,
@@ -8506,11 +6958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.island_interaction
-
-	var_4_79[7008] = {
+	pg.base.island_interaction[7008] = {
 		text = "现在怎么样？",
 		groupId = 70,
 		only_self = 0,
@@ -8525,11 +6973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.island_interaction
-
-	var_4_80[7009] = {
+	pg.base.island_interaction[7009] = {
 		text = "现在应该没有声音了吧？",
 		groupId = 70,
 		only_self = 0,
@@ -8544,11 +6988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.island_interaction
-
-	var_4_81[7010] = {
+	pg.base.island_interaction[7010] = {
 		text = "现在岛上的蜂巢都没了……",
 		groupId = 70,
 		only_self = 0,
@@ -8563,11 +7003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.island_interaction
-
-	var_4_82[7011] = {
+	pg.base.island_interaction[7011] = {
 		text = "寻找蜂蜜水配方",
 		groupId = 70,
 		only_self = 0,
@@ -8582,11 +7018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.island_interaction
-
-	var_4_83[7012] = {
+	pg.base.island_interaction[7012] = {
 		text = "寻找迷迭香",
 		groupId = 70,
 		only_self = 0,
@@ -8604,11 +7036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.island_interaction
-
-	var_4_84[7013] = {
+	pg.base.island_interaction[7013] = {
 		text = "我带来了独特的蜂蜜水！",
 		groupId = 70,
 		only_self = 0,
@@ -8623,11 +7051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.island_interaction
-
-	var_4_85[7101] = {
+	pg.base.island_interaction[7101] = {
 		text = "{namecode:98:明石}，你要的东西运到了",
 		groupId = 71,
 		only_self = 0,
@@ -8642,11 +7066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.island_interaction
-
-	var_4_86[7201] = {
+	pg.base.island_interaction[7201] = {
 		text = "施肥",
 		groupId = 72,
 		only_self = 0,
@@ -8664,11 +7084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.island_interaction
-
-	var_4_87[7202] = {
+	pg.base.island_interaction[7202] = {
 		text = "添加土壤防虫剂",
 		groupId = 72,
 		only_self = 0,
@@ -8686,11 +7102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.island_interaction
-
-	var_4_88[7301] = {
+	pg.base.island_interaction[7301] = {
 		text = "寻找肥料",
 		groupId = 73,
 		only_self = 0,
@@ -8705,11 +7117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.island_interaction
-
-	var_4_89[7401] = {
+	pg.base.island_interaction[7401] = {
 		text = "这里……",
 		groupId = 74,
 		only_self = 0,
@@ -8724,11 +7132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.island_interaction
-
-	var_4_90[7501] = {
+	pg.base.island_interaction[7501] = {
 		text = "调查木材",
 		groupId = 75,
 		only_self = 0,
@@ -8743,11 +7147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.island_interaction
-
-	var_4_91[7601] = {
+	pg.base.island_interaction[7601] = {
 		text = "前往港口",
 		groupId = 76,
 		only_self = 0,
@@ -8757,11 +7157,7 @@ end)()
 		param = "10020001",
 		show_condition = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.island_interaction
-
-	var_4_92[7701] = {
+	pg.base.island_interaction[7701] = {
 		text = "前往栖风原野",
 		groupId = 77,
 		only_self = 0,
@@ -8776,11 +7172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.island_interaction
-
-	var_4_93[7702] = {
+	pg.base.island_interaction[7702] = {
 		text = "前往晨露农场",
 		groupId = 77,
 		only_self = 0,
@@ -8795,11 +7187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.island_interaction
-
-	var_4_94[7801] = {
+	pg.base.island_interaction[7801] = {
 		text = "交谈",
 		groupId = 78,
 		only_self = 0,
@@ -8814,11 +7202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.island_interaction
-
-	var_4_95[7802] = {
+	pg.base.island_interaction[7802] = {
 		text = "玛丽……你怎么在这里……",
 		groupId = 78,
 		only_self = 0,
@@ -8833,11 +7217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.island_interaction
-
-	var_4_96[7803] = {
+	pg.base.island_interaction[7803] = {
 		text = "这就是宝藏？",
 		groupId = 78,
 		only_self = 0,
@@ -8852,11 +7232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.island_interaction
-
-	var_4_97[7804] = {
+	pg.base.island_interaction[7804] = {
 		text = "玛丽，我拿到了。",
 		groupId = 78,
 		only_self = 0,
@@ -8871,11 +7247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.island_interaction
-
-	var_4_98[7901] = {
+	pg.base.island_interaction[7901] = {
 		text = "交谈",
 		groupId = 79,
 		only_self = 0,
@@ -8890,8 +7262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.island_interaction[7902] = {
+	pg.base.island_interaction[7902] = {
 		text = "玛丽……你怎么在这里……",
 		groupId = 79,
 		only_self = 0,
@@ -8910,11 +7281,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.island_interaction
-
-	var_5_0[7903] = {
+	pg.base.island_interaction[7903] = {
 		text = "这就是宝藏？",
 		groupId = 79,
 		only_self = 0,
@@ -8929,11 +7296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.island_interaction
-
-	var_5_1[7904] = {
+	pg.base.island_interaction[7904] = {
 		text = "玛丽，我拿到了。",
 		groupId = 79,
 		only_self = 0,
@@ -8948,11 +7311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.island_interaction
-
-	var_5_2[8001] = {
+	pg.base.island_interaction[8001] = {
 		text = "交谈",
 		groupId = 80,
 		only_self = 0,
@@ -8962,11 +7321,7 @@ end)()
 		param = "ISLANDTALK10181",
 		show_condition = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.island_interaction
-
-	var_5_3[8002] = {
+	pg.base.island_interaction[8002] = {
 		text = "管理渔场",
 		groupId = 80,
 		only_self = 0,
@@ -8984,11 +7339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.island_interaction
-
-	var_5_4[8003] = {
+	pg.base.island_interaction[8003] = {
 		text = "鱼肉加工",
 		groupId = 80,
 		only_self = 0,
@@ -9008,11 +7359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.island_interaction
-
-	var_5_5[8004] = {
+	pg.base.island_interaction[8004] = {
 		text = "查看渔具商店",
 		groupId = 80,
 		only_self = 0,
@@ -9039,11 +7386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.island_interaction
-
-	var_5_6[8005] = {
+	pg.base.island_interaction[8005] = {
 		text = "布莉缇？",
 		groupId = 80,
 		only_self = 0,
@@ -9058,11 +7401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.island_interaction
-
-	var_5_7[8006] = {
+	pg.base.island_interaction[8006] = {
 		text = "布莉缇！",
 		groupId = 80,
 		only_self = 0,
@@ -9077,11 +7416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.island_interaction
-
-	var_5_8[8101] = {
+	pg.base.island_interaction[8101] = {
 		text = "解锁渔场",
 		groupId = 81,
 		only_self = 0,
@@ -9096,11 +7431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.island_interaction
-
-	var_5_9[8201] = {
+	pg.base.island_interaction[8201] = {
 		text = "交谈",
 		groupId = 82,
 		only_self = 0,
@@ -9110,11 +7441,7 @@ end)()
 		param = "ISLANDTALK10151",
 		show_condition = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.island_interaction
-
-	var_5_10[8202] = {
+	pg.base.island_interaction[8202] = {
 		text = "珍珠售卖",
 		groupId = 82,
 		only_self = 1,
@@ -9132,11 +7459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.island_interaction
-
-	var_5_11[8301] = {
+	pg.base.island_interaction[8301] = {
 		text = "交互",
 		groupId = 83,
 		only_self = 1,
@@ -9146,11 +7469,7 @@ end)()
 		param = "1",
 		show_condition = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.island_interaction
-
-	var_5_12[8401] = {
+	pg.base.island_interaction[8401] = {
 		text = "交互",
 		groupId = 84,
 		only_self = 1,
@@ -9160,8 +7479,7 @@ end)()
 		param = "2",
 		show_condition = {}
 	}
-	pg = var_5_12
-	var_5_12.base.island_interaction[8501] = {
+	pg.base.island_interaction[8501] = {
 		text = "交互",
 		groupId = 85,
 		only_self = 1,

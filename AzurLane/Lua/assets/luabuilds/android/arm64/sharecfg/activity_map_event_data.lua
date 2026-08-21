@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_map_event_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_map_event_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_map_event_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_map_event_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_map_event_data = rawget(pg, "activity_map_event_data") or setmetatable({
+	__name = "activity_map_event_data"
+}, confNEO)
+pg.activity_map_event_data.all = {
 	1001,
 	1002,
 	1003,
@@ -126,415 +103,245 @@ var_0_3.all = {
 	3004,
 	3005
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_map_event_data = {}
+pg.base = pg.base or {}
+pg.base.activity_map_event_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_map_event_data
-
-	var_1_0[1001] = {
+	pg.base.activity_map_event_data[1001] = {
 		id = 1001,
 		story = "HAIDAORICHANG3",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_map_event_data
-
-	var_1_1[1002] = {
+	pg.base.activity_map_event_data[1002] = {
 		id = 1002,
 		story = "HAIDAORICHANG5",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_map_event_data
-
-	var_1_2[1003] = {
+	pg.base.activity_map_event_data[1003] = {
 		id = 1003,
 		story = "HAIDAORICHANG4",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_map_event_data
-
-	var_1_3[1004] = {
+	pg.base.activity_map_event_data[1004] = {
 		id = 1004,
 		story = "HAIDAORICHANG6",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_map_event_data
-
-	var_1_4[1005] = {
+	pg.base.activity_map_event_data[1005] = {
 		id = 1005,
 		story = "HAIDAORICHANG7",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_map_event_data
-
-	var_1_5[1006] = {
+	pg.base.activity_map_event_data[1006] = {
 		id = 1006,
 		story = "HAIDAORICHANG14",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_map_event_data
-
-	var_1_6[1007] = {
+	pg.base.activity_map_event_data[1007] = {
 		id = 1007,
 		story = "HAIDAORICHANG12",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_map_event_data
-
-	var_1_7[1008] = {
+	pg.base.activity_map_event_data[1008] = {
 		id = 1008,
 		story = "HAIDAORICHANG11",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_map_event_data
-
-	var_1_8[1009] = {
+	pg.base.activity_map_event_data[1009] = {
 		id = 1009,
 		story = "HAIDAORICHANG9",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_map_event_data
-
-	var_1_9[1010] = {
+	pg.base.activity_map_event_data[1010] = {
 		id = 1010,
 		story = "HAIDAORICHANG10",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_map_event_data
-
-	var_1_10[1011] = {
+	pg.base.activity_map_event_data[1011] = {
 		id = 1011,
 		story = "HAIDAORICHANG13",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_map_event_data
-
-	var_1_11[1012] = {
+	pg.base.activity_map_event_data[1012] = {
 		id = 1012,
 		story = "HAIDAORICHANG15",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_map_event_data
-
-	var_1_12[1013] = {
+	pg.base.activity_map_event_data[1013] = {
 		id = 1013,
 		story = "HAIDAORICHANG16",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_map_event_data
-
-	var_1_13[1014] = {
+	pg.base.activity_map_event_data[1014] = {
 		id = 1014,
 		story = "HAIDAORICHANG20",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_map_event_data
-
-	var_1_14[1015] = {
+	pg.base.activity_map_event_data[1015] = {
 		id = 1015,
 		story = "HAIDAORICHANG19",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_map_event_data
-
-	var_1_15[1016] = {
+	pg.base.activity_map_event_data[1016] = {
 		id = 1016,
 		story = "HAIDAORICHANG21",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_map_event_data
-
-	var_1_16[1017] = {
+	pg.base.activity_map_event_data[1017] = {
 		id = 1017,
 		story = "HAIDAORICHANG17",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_map_event_data
-
-	var_1_17[1018] = {
+	pg.base.activity_map_event_data[1018] = {
 		id = 1018,
 		story = "HAIDAORICHANG18",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_map_event_data
-
-	var_1_18[1019] = {
+	pg.base.activity_map_event_data[1019] = {
 		id = 1019,
 		story = "HAIDAORICHANG22",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_map_event_data
-
-	var_1_19[1020] = {
+	pg.base.activity_map_event_data[1020] = {
 		id = 1020,
 		story = "HAIDAORICHANG23",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_map_event_data
-
-	var_1_20[1021] = {
+	pg.base.activity_map_event_data[1021] = {
 		id = 1021,
 		story = "HAIDAORICHANG24",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_map_event_data
-
-	var_1_21[1022] = {
+	pg.base.activity_map_event_data[1022] = {
 		id = 1022,
 		story = "HAIDAORICHANG25",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_map_event_data
-
-	var_1_22[1024] = {
+	pg.base.activity_map_event_data[1024] = {
 		id = 1024,
 		story = "HAIDAORICHANG31",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_map_event_data
-
-	var_1_23[1025] = {
+	pg.base.activity_map_event_data[1025] = {
 		id = 1025,
 		story = "HAIDAORICHANG27",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_map_event_data
-
-	var_1_24[1026] = {
+	pg.base.activity_map_event_data[1026] = {
 		id = 1026,
 		story = "HAIDAORICHANG29",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_map_event_data
-
-	var_1_25[1027] = {
+	pg.base.activity_map_event_data[1027] = {
 		id = 1027,
 		story = "HAIDAORICHANG32",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_map_event_data
-
-	var_1_26[1028] = {
+	pg.base.activity_map_event_data[1028] = {
 		id = 1028,
 		story = "HAIDAORICHANG28",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_map_event_data
-
-	var_1_27[1029] = {
+	pg.base.activity_map_event_data[1029] = {
 		id = 1029,
 		story = "HAIDAORICHANG33",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_map_event_data
-
-	var_1_28[1030] = {
+	pg.base.activity_map_event_data[1030] = {
 		id = 1030,
 		story = "HAIDAORICHANG34",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_map_event_data
-
-	var_1_29[1050] = {
+	pg.base.activity_map_event_data[1050] = {
 		id = 1050,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_map_event_data
-
-	var_1_30[1051] = {
+	pg.base.activity_map_event_data[1051] = {
 		id = 1051,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_map_event_data
-
-	var_1_31[1052] = {
+	pg.base.activity_map_event_data[1052] = {
 		id = 1052,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_map_event_data
-
-	var_1_32[1053] = {
+	pg.base.activity_map_event_data[1053] = {
 		id = 1053,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_map_event_data
-
-	var_1_33[1054] = {
+	pg.base.activity_map_event_data[1054] = {
 		id = 1054,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_map_event_data
-
-	var_1_34[1055] = {
+	pg.base.activity_map_event_data[1055] = {
 		id = 1055,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_map_event_data
-
-	var_1_35[1056] = {
+	pg.base.activity_map_event_data[1056] = {
 		id = 1056,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_map_event_data
-
-	var_1_36[1101] = {
+	pg.base.activity_map_event_data[1101] = {
 		id = 1101,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_map_event_data
-
-	var_1_37[1102] = {
+	pg.base.activity_map_event_data[1102] = {
 		id = 1102,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_map_event_data
-
-	var_1_38[1103] = {
+	pg.base.activity_map_event_data[1103] = {
 		id = 1103,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_map_event_data
-
-	var_1_39[1201] = {
+	pg.base.activity_map_event_data[1201] = {
 		id = 1201,
 		story = "HAIDAOSUIJI1",
 		type = 3,
@@ -542,11 +349,7 @@ var_0_3.base.activity_map_event_data = {}
 			"Qgame1"
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_map_event_data
-
-	var_1_40[1202] = {
+	pg.base.activity_map_event_data[1202] = {
 		id = 1202,
 		story = "HAIDAOSUIJI2",
 		type = 3,
@@ -554,11 +357,7 @@ var_0_3.base.activity_map_event_data = {}
 			"Qgame2"
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_map_event_data
-
-	var_1_41[1203] = {
+	pg.base.activity_map_event_data[1203] = {
 		id = 1203,
 		story = "HAIDAOSUIJI3",
 		type = 3,
@@ -566,11 +365,7 @@ var_0_3.base.activity_map_event_data = {}
 			"Qgame3"
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_map_event_data
-
-	var_1_42[1204] = {
+	pg.base.activity_map_event_data[1204] = {
 		id = 1204,
 		story = "HAIDAOSUIJI4",
 		type = 3,
@@ -578,11 +373,7 @@ var_0_3.base.activity_map_event_data = {}
 			"Qgame4"
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_map_event_data
-
-	var_1_43[1205] = {
+	pg.base.activity_map_event_data[1205] = {
 		id = 1205,
 		story = "HAIDAOSUIJI5",
 		type = 3,
@@ -590,11 +381,7 @@ var_0_3.base.activity_map_event_data = {}
 			"Qgame5"
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_map_event_data
-
-	var_1_44[2001] = {
+	pg.base.activity_map_event_data[2001] = {
 		id = 2001,
 		story = "HAIDAOSUIJI6",
 		type = 2,
@@ -607,41 +394,25 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_map_event_data
-
-	var_1_45[2002] = {
+	pg.base.activity_map_event_data[2002] = {
 		id = 2002,
 		story = "HAIDAOSUIJI6-1",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_map_event_data
-
-	var_1_46[2003] = {
+	pg.base.activity_map_event_data[2003] = {
 		id = 2003,
 		story = "HAIDAOSUIJI6-2",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_map_event_data
-
-	var_1_47[2004] = {
+	pg.base.activity_map_event_data[2004] = {
 		id = 2004,
 		story = "HAIDAOSUIJI6-3",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_map_event_data
-
-	var_1_48[2101] = {
+	pg.base.activity_map_event_data[2101] = {
 		id = 2101,
 		story = "HAIDAOSUIJI7",
 		type = 2,
@@ -654,31 +425,19 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_map_event_data
-
-	var_1_49[2102] = {
+	pg.base.activity_map_event_data[2102] = {
 		id = 2102,
 		story = "HAIDAOSUIJI7-1",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_map_event_data
-
-	var_1_50[2103] = {
+	pg.base.activity_map_event_data[2103] = {
 		id = 2103,
 		story = "HAIDAOSUIJI7-2",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_map_event_data
-
-	var_1_51[2201] = {
+	pg.base.activity_map_event_data[2201] = {
 		id = 2201,
 		story = "HAIDAOSUIJI8",
 		type = 2,
@@ -704,61 +463,37 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_map_event_data
-
-	var_1_52[2202] = {
+	pg.base.activity_map_event_data[2202] = {
 		id = 2202,
 		story = "HAIDAOSUIJI8-5",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_map_event_data
-
-	var_1_53[2203] = {
+	pg.base.activity_map_event_data[2203] = {
 		id = 2203,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_map_event_data
-
-	var_1_54[2204] = {
+	pg.base.activity_map_event_data[2204] = {
 		id = 2204,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_map_event_data
-
-	var_1_55[2205] = {
+	pg.base.activity_map_event_data[2205] = {
 		id = 2205,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_map_event_data
-
-	var_1_56[2206] = {
+	pg.base.activity_map_event_data[2206] = {
 		id = 2206,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_map_event_data
-
-	var_1_57[2207] = {
+	pg.base.activity_map_event_data[2207] = {
 		id = 2207,
 		story = "HAIDAOSUIJI8-1",
 		type = 2,
@@ -784,11 +519,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_map_event_data
-
-	var_1_58[2208] = {
+	pg.base.activity_map_event_data[2208] = {
 		id = 2208,
 		story = "HAIDAOSUIJI8-2",
 		type = 2,
@@ -814,11 +545,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_map_event_data
-
-	var_1_59[2209] = {
+	pg.base.activity_map_event_data[2209] = {
 		id = 2209,
 		story = "HAIDAOSUIJI8-3",
 		type = 2,
@@ -844,11 +571,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_map_event_data
-
-	var_1_60[2210] = {
+	pg.base.activity_map_event_data[2210] = {
 		id = 2210,
 		story = "HAIDAOSUIJI8-4",
 		type = 2,
@@ -874,51 +597,31 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_map_event_data
-
-	var_1_61[2211] = {
+	pg.base.activity_map_event_data[2211] = {
 		id = 2211,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_map_event_data
-
-	var_1_62[2212] = {
+	pg.base.activity_map_event_data[2212] = {
 		id = 2212,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_map_event_data
-
-	var_1_63[2213] = {
+	pg.base.activity_map_event_data[2213] = {
 		id = 2213,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_map_event_data
-
-	var_1_64[2214] = {
+	pg.base.activity_map_event_data[2214] = {
 		id = 2214,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_map_event_data
-
-	var_1_65[2215] = {
+	pg.base.activity_map_event_data[2215] = {
 		id = 2215,
 		story = "HAIDAOSUIJI8-1",
 		type = 2,
@@ -944,11 +647,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_map_event_data
-
-	var_1_66[2216] = {
+	pg.base.activity_map_event_data[2216] = {
 		id = 2216,
 		story = "HAIDAOSUIJI8-2",
 		type = 2,
@@ -974,11 +673,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_map_event_data
-
-	var_1_67[2217] = {
+	pg.base.activity_map_event_data[2217] = {
 		id = 2217,
 		story = "HAIDAOSUIJI8-3",
 		type = 2,
@@ -1004,11 +699,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_map_event_data
-
-	var_1_68[2218] = {
+	pg.base.activity_map_event_data[2218] = {
 		id = 2218,
 		story = "HAIDAOSUIJI8-4",
 		type = 2,
@@ -1034,91 +725,55 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_map_event_data
-
-	var_1_69[2219] = {
+	pg.base.activity_map_event_data[2219] = {
 		id = 2219,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_map_event_data
-
-	var_1_70[2220] = {
+	pg.base.activity_map_event_data[2220] = {
 		id = 2220,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_map_event_data
-
-	var_1_71[2221] = {
+	pg.base.activity_map_event_data[2221] = {
 		id = 2221,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_map_event_data
-
-	var_1_72[2222] = {
+	pg.base.activity_map_event_data[2222] = {
 		id = 2222,
 		story = "",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_map_event_data
-
-	var_1_73[2223] = {
+	pg.base.activity_map_event_data[2223] = {
 		id = 2223,
 		story = "HAIDAOSUIJI8-7",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_map_event_data
-
-	var_1_74[2224] = {
+	pg.base.activity_map_event_data[2224] = {
 		id = 2224,
 		story = "HAIDAOSUIJI8-8",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_map_event_data
-
-	var_1_75[2225] = {
+	pg.base.activity_map_event_data[2225] = {
 		id = 2225,
 		story = "HAIDAOSUIJI8-9",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_map_event_data
-
-	var_1_76[2226] = {
+	pg.base.activity_map_event_data[2226] = {
 		id = 2226,
 		story = "HAIDAOSUIJI8-10",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_map_event_data
-
-	var_1_77[2301] = {
+	pg.base.activity_map_event_data[2301] = {
 		id = 2301,
 		story = "HAIDAOSUIJI9",
 		type = 2,
@@ -1131,11 +786,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_map_event_data
-
-	var_1_78[2302] = {
+	pg.base.activity_map_event_data[2302] = {
 		id = 2302,
 		story = "HAIDAOSUIJI9-1",
 		type = 2,
@@ -1148,61 +799,37 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_map_event_data
-
-	var_1_79[2303] = {
+	pg.base.activity_map_event_data[2303] = {
 		id = 2303,
 		story = "HAIDAOSUIJI9-2",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_map_event_data
-
-	var_1_80[2304] = {
+	pg.base.activity_map_event_data[2304] = {
 		id = 2304,
 		story = "HAIDAOSUIJI9-4",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_map_event_data
-
-	var_1_81[2305] = {
+	pg.base.activity_map_event_data[2305] = {
 		id = 2305,
 		story = "HAIDAOSUIJI9-3",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_map_event_data
-
-	var_1_82[2306] = {
+	pg.base.activity_map_event_data[2306] = {
 		id = 2306,
 		story = "HAIDAOSUIJI9-6",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_map_event_data
-
-	var_1_83[2307] = {
+	pg.base.activity_map_event_data[2307] = {
 		id = 2307,
 		story = "HAIDAOSUIJI9-5",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_map_event_data
-
-	var_1_84[2401] = {
+	pg.base.activity_map_event_data[2401] = {
 		id = 2401,
 		story = "HAIDAOSUIJI10",
 		type = 2,
@@ -1220,11 +847,7 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_map_event_data
-
-	var_1_85[2402] = {
+	pg.base.activity_map_event_data[2402] = {
 		id = 2402,
 		story = "HAIDAOSUIJI10-1",
 		type = 2,
@@ -1242,21 +865,13 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_map_event_data
-
-	var_1_86[2403] = {
+	pg.base.activity_map_event_data[2403] = {
 		id = 2403,
 		story = "HAIDAOSUIJI10-2",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_map_event_data
-
-	var_1_87[2404] = {
+	pg.base.activity_map_event_data[2404] = {
 		id = 2404,
 		story = "HAIDAOSUIJI10-3",
 		type = 2,
@@ -1274,31 +889,19 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_map_event_data
-
-	var_1_88[2405] = {
+	pg.base.activity_map_event_data[2405] = {
 		id = 2405,
 		story = "HAIDAOSUIJI10-4",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_map_event_data
-
-	var_1_89[2406] = {
+	pg.base.activity_map_event_data[2406] = {
 		id = 2406,
 		story = "HAIDAOSUIJI10-5",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_map_event_data
-
-	var_1_90[2501] = {
+	pg.base.activity_map_event_data[2501] = {
 		id = 2501,
 		story = "HAIDAOSUIJI11",
 		type = 2,
@@ -1314,78 +917,49 @@ var_0_3.base.activity_map_event_data = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_map_event_data
-
-	var_1_91[2502] = {
+	pg.base.activity_map_event_data[2502] = {
 		id = 2502,
 		story = "HAIDAOSUIJI11-1",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_map_event_data
-
-	var_1_92[2503] = {
+	pg.base.activity_map_event_data[2503] = {
 		id = 2503,
 		story = "HAIDAOSUIJI11-2",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_map_event_data
-
-	var_1_93[2504] = {
+	pg.base.activity_map_event_data[2504] = {
 		id = 2504,
 		story = "HAIDAOSUIJI11-3",
 		type = 1,
 		params = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_map_event_data
-
-	var_1_94[3001] = {
+	pg.base.activity_map_event_data[3001] = {
 		id = 3001,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_map_event_data
-
-	var_1_95[3002] = {
+	pg.base.activity_map_event_data[3002] = {
 		id = 3002,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_map_event_data
-
-	var_1_96[3003] = {
+	pg.base.activity_map_event_data[3003] = {
 		id = 3003,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_map_event_data
-
-	var_1_97[3004] = {
+	pg.base.activity_map_event_data[3004] = {
 		id = 3004,
 		story = "",
 		type = 4,
 		params = {}
 	}
-	pg = var_1_97
-	var_1_97.base.activity_map_event_data[3005] = {
+	pg.base.activity_map_event_data[3005] = {
 		id = 3005,
 		story = "",
 		type = 4,

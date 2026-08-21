@@ -44,6 +44,10 @@ function ctor(self)
     local shieldAddFont = gs.ResMgr:Load(UrlManager:getFntPath("shield_add_num.fontsettings"))
     local shieldCutFont = gs.ResMgr:Load(UrlManager:getFntPath("shield_cut_num.fontsettings"))
 
+    -- 场景盾量
+    local shieldAddFont2 = gs.ResMgr:Load(UrlManager:getFntPath("shield_add_num2.fontsettings"))
+    local shieldCutFont2 = gs.ResMgr:Load(UrlManager:getFntPath("shield_cut_num2.fontsettings"))
+
     -- 反伤
     local antiFont = gs.ResMgr:Load(UrlManager:getFntPath("anti_num.fontsettings"))
     -- 留血
@@ -65,6 +69,9 @@ function ctor(self)
     -- 自然
     local natureFont = gs.ResMgr:Load(UrlManager:getFntPath("nature_num.fontsettings"))
     local natureCritFont = gs.ResMgr:Load(UrlManager:getFntPath("nature_crit_num.fontsettings"))
+    -- 虚黯
+    local drakFont = gs.ResMgr:Load(UrlManager:getFntPath("drak_num.fontsettings"))
+    local drakCritFont = gs.ResMgr:Load(UrlManager:getFntPath("drak_crit_num.fontsettings"))
 
 
     self.m_fontType = {}
@@ -89,18 +96,23 @@ function ctor(self)
     self.m_fontType[fight.FightDef.BATTLE_TYPE_SHIELD_ADD] = shieldAddFont
     self.m_fontType[fight.FightDef.BATTLE_TYPE_HURT_ON_SHIELD] = shieldCutFont
 
+    self.m_fontType[fight.FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD] = shieldAddFont2
+    self.m_fontType[fight.FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD] = shieldCutFont2
+
     -- 元素伤害
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_THUNDER] = electrocuteFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_FIRE] = burnFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_ICE] = iceFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_LIGHT] = lightFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_NATURE] = natureFont
+    self.m_fontType[fight.FightDef.ATTR_ELE_HURT_DRAK] = drakFont
 
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_THUNDER .. "crit"] = electrocuteCritFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_FIRE .. "crit"] = burnCritFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_ICE .. "crit"] = iceCritFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_LIGHT .. "crit"] = lightCritFont
     self.m_fontType[fight.FightDef.ATTR_ELE_HURT_NATURE .. "crit"] = natureCritFont
+    self.m_fontType[fight.FightDef.ATTR_ELE_HURT_DRAK .. "crit"] = drakCritFont
 
     self.fly3DtextFinish = {}
 

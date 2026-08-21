@@ -12,16 +12,54 @@ end
 
 function active(self, args)
     super.active(self, args)
-    self.base_childGos["mGroupTop"]:SetActive(false)
+    GameDispatcher:dispatchEvent(EventName.SHOW_CYCLE_TOP_PANEL)
+    GameDispatcher:dispatchEvent(EventName.SET_CYCLE_TOP_PANEL_INFO, {
+        title = "",
+        showTypeList = {TOP_SHOW_TYPE.LV, TOP_SHOW_TYPE.REASON, TOP_SHOW_TYPE.COIN, TOP_SHOW_TYPE.HOPE,
+                        TOP_SHOW_TYPE.RET_MAIN, TOP_SHOW_TYPE.TOPBAR}
+    })
+
+    --self.base_childGos["mGroupTop"]:SetActive(false)
 
     local data = self:getManager():getData()
     cycle.CycleManager:setIsPre(data.dupId == 0,true)
 end
 
 function deActive(self)
+    --GameDispatcher:dispatchEvent(EventName.CLOSE_CYCLE_TOP_PANEL)
+    if self.IS_CHECK_FOR_CLOSE then
+        self:getManager():dispatchEvent(self:getManager().REQ_FORMATION_HERO_LIST, {})
+    end
+   
     super.deActive(self)
     local data = self:getManager():getData()
     cycle.CycleManager:setIsPre(data.dupId == 0,false)
+
+    GameDispatcher:dispatchEvent(EventName.SET_CYCLE_CONTENT_PARENT, {
+        parentTrans =  GameView.story,
+        isShow = false
+    })
+
+    --cusLog("close=================")
+end
+
+-- 打开培养界面
+function __onClickDevelopHandler(self, args)
+    if self.mIsSelectHero then
+        return
+    end
+
+    GameDispatcher:dispatchEvent(EventName.CLOSE_CYCLE_TOP_PANEL)
+
+    local targetId = args
+    hero.HeroManager:setPanelShowHeroId(targetId)
+    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DEVELOP_PANEL, {
+        heroId = targetId,
+        tabType = hero.DevelopTabType.LVL_UP,
+        subData = {},
+        teamId = self.m_teamId,
+        isPrepare = true
+    })
 end
 
 function updateChildCustom(self)
@@ -40,9 +78,10 @@ function updateChildCustom(self)
         self.mBtnEnemyInfo:SetActive(true)
         -- self.base_childGos["mGroupTop"]:SetActive(false)
     end
-    self.base_childGos["mGroupTop"]:SetActive(false)
+    --self.base_childGos["mGroupTop"]:SetActive(false)
     GameDispatcher:dispatchEvent(EventName.SET_CYCLE_CONTENT_PARENT, {
-        parentTrans =  self.mCycContent
+        parentTrans =  self.mCycContent,
+        isShow = false
     })
     GameDispatcher:dispatchEvent(EventName.SET_CYCLE_TOP_PANEL_INFO, {
         title = "",
@@ -55,7 +94,7 @@ end
 
 
 function closeHeroSelectEvnt(self)
-    self.base_childGos["mGroupTop"]:SetActive(false)
+    --self.base_childGos["mGroupTop"]:SetActive(false)
 end
 
 -- 阵型瓦片点击事件
@@ -64,7 +103,7 @@ function __onClickFormationTileHandler(self, args)
         return
     end
 
-    self.base_childGos["mGroupTop"]:SetActive(true)
+    --self.base_childGos["mGroupTop"]:SetActive(true)
     if args == nil then
         return
     end

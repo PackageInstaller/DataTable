@@ -1,57 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ActivityUnlockStoryCommand", pm.SimpleCommand)
 
-local var_0_0 = "ActivityUnlockStoryCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(ActivityProxy):getActivityById(var_1_0.activity_id)
 
-pm = var_0_10003
+	assert(var_1_1)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
+	local var_1_2 = var_1_1:getConfig("type")
 
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0)
-
-	getProxy = var_1_10003
-	ActivityProxy = var_1_10005
-
-	local var_1_2 = var_1_10003(var_1_10005)
-	local var_1_3 = var_3.getActivityById(var_1_2, var_1_1.activity_id)
-
-	assert = var_1_0
-
-	var_1_0(var_1_3)
-
-	local var_1_4 = var_1_3:getConfig("type")
-
-	pg = var_1_2
-
-	local var_1_5 = var_1_2.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_5, 11202, {
-		activity_id = var_1_1.activity_id,
-		cmd = var_1_1.cmd,
-		arg1 = var_1_1.arg1
+	pg.ConnectionMgr.GetInstance():Send(11202, {
+		activity_id = var_1_0.activity_id,
+		cmd = var_1_0.cmd,
+		arg1 = var_1_0.arg1
 	}, 11203, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			ActivityProxy = var_2_10003
+			local var_2_0 = getProxy(ActivityProxy):getActivityById(var_1_0.activity_id)
 
-			local var_2_0 = var_1(var_2_10003)
+			var_2_0.data1 = var_2_0.data1 - 1
 
-			var_1.data1 = var_1.getActivityById(var_2_0, var_1_1.activity_id).data1 - 1
-			getProxy = var_2
-			ActivityProxy = var_4
-
-			local var_2_1 = var_2(var_4)
-
-			var_2.updateActivity(var_2_1, var_1)
-
-			local var_2_2 = arg_1_0
-			local var_2_3 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_3(var_2_2, var_5.ACTIVITY_STORYUNLOCKED_DONE, {
-				storyId = var_1_1.arg1
+			getProxy(ActivityProxy):updateActivity(var_2_0)
+			arg_1_0:sendNotification(GAME.ACTIVITY_STORYUNLOCKED_DONE, {
+				storyId = var_1_0.arg1
 			})
 		end
 
@@ -61,4 +30,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

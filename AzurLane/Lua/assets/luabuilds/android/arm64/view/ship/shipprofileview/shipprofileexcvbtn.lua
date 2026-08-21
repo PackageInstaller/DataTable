@@ -1,76 +1,40 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShipProfileExCvBtn", import(".ShipProfileCvBtn"))
 
-local var_0_0 = "ShipProfileExCvBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".ShipProfileCvBtn"))
-
-function var_0_1.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
-	var_0_1.super.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+function var_0_0.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5)
+	var_0_0.super.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 
 	arg_1_0.favor = arg_1_5
 
-	local var_1_0 = arg_1_4.key
+	local var_1_0
 	local var_1_1
-	local var_1_2
 
-	string = var_9
-
-	local var_1_3 = var_9.find
-	local var_1_4 = var_1_0
-
-	ShipWordHelper = var_12
-
-	local var_1_5
-
-	if var_1_3(var_1_4, var_12.WORD_TYPE_MAIN) then
-		string = var_1_5
-		var_1_5 = var_1_5.gsub
-
-		local var_1_6 = var_1_0
-
-		ShipWordHelper = var_12
-		var_1_5 = var_1_5(var_1_6, var_12.WORD_TYPE_MAIN, "")
-		tonumber = var_10
-
-		local var_1_7 = var_10(var_1_5)
-
-		ShipWordHelper = mainIndex
-
-		local var_1_8 = var_10.ExistExCv
-		local var_1_9 = arg_1_2.id
-
-		ShipWordHelper = var_13
-
-		local var_1_10 = var_13.WORD_TYPE_MAIN
-
-		mainIndex = var_1_10014
-		var_1_1, var_1_2 = var_1_8(var_1_9, var_1_10, var_1_10014, arg_1_5)
+	if string.find(arg_1_4.key, ShipWordHelper.WORD_TYPE_MAIN) then
+		mainIndex = tonumber((string.gsub(arg_1_4.key, ShipWordHelper.WORD_TYPE_MAIN, "")))
+		var_1_0, var_1_1 = ShipWordHelper.ExistExCv(arg_1_2.id, ShipWordHelper.WORD_TYPE_MAIN, mainIndex, arg_1_5)
 	else
-		ShipWordHelper = var_1_5
-		var_1_1, var_1_2 = var_1_5.ExistExCv(arg_1_2.id, var_1_0, nil, arg_1_5)
+		var_1_0, var_1_1 = ShipWordHelper.ExistExCv(arg_1_2.id, arg_1_4.key, nil, arg_1_5)
 	end
 
-	if arg_1_0.wordData.cvPath and var_1_2 then
-		arg_1_0.wordData.cvPath = arg_1_0.wordData.cvPath .. "_ex" .. var_1_2
+	if arg_1_0.wordData.cvPath and var_1_1 then
+		arg_1_0.wordData.cvPath = arg_1_0.wordData.cvPath .. "_ex" .. var_1_1
 	end
 
-	arg_1_0.wordData.matchFavor = var_1_2
-	arg_1_0.wordData.textContent = var_1_1
+	arg_1_0.wordData.matchFavor = var_1_1
+	arg_1_0.wordData.textContent = var_1_0
 	arg_1_0.wordData.maxfavor = arg_1_5
 
 	return
 end
 
-function var_0_1.Update(arg_2_0)
+function var_0_0.Update(arg_2_0)
 	local var_2_0 = arg_2_0.voice.unlock_condition[1] < 0
 	local var_2_1 = arg_2_0.wordData.textContent == nil or arg_2_0.wordData.textContent == "nil" or arg_2_0.wordData.textContent == ""
 
-	var_2_0 = var_2_0 or var_2_1
-	setActive = var_1_10004
+	if arg_2_0.voice.unlock_condition[1] >= 0 then
+		var_2_0 = var_2_1
+	end
 
-	var_1_10004(arg_2_0._tf, not var_2_0)
+	setActive(arg_2_0._tf, not var_2_0)
 
 	if not var_2_0 then
 		arg_2_0:UpdateCvBtn()
@@ -80,55 +44,28 @@ function var_0_1.Update(arg_2_0)
 	return
 end
 
-function var_0_1.UpdateCvBtn(arg_3_0)
-	local var_3_0 = arg_3_0.voice
-	local var_3_1 = arg_3_0.shipGroup
-	local var_3_2, var_3_3 = var_2.VoiceReplayCodition(var_3_1, var_3_0)
-	local var_3_4
+function var_0_0.UpdateCvBtn(arg_3_0)
+	local var_3_0, var_3_1 = arg_3_0.shipGroup:VoiceReplayCodition(arg_3_0.voice)
 
-	if not var_3_2 or not (var_3_0.voice_name .. "Ex") then
-		var_3_4 = "???"
-	end
+	if var_3_0 then
+		arg_3_0.nameTxt.text = arg_3_0.voice.voice_name .. "Ex" or "???"
 
-	local var_3_5 = arg_3_0.nameTxt
+		setActive(arg_3_0.tagDiff, (ShipWordHelper.ExistDifferentExWord(arg_3_0.skin.id, arg_3_0.voice.key, arg_3_0.wordData.mainIndex, arg_3_0.favor)))
 
-	var_3_5.text = var_3_4
-	ShipWordHelper = var_3_5
+		if not var_3_0 then
+			onButton(nil, arg_3_0._tf, function()
+				pg.TipsMgr.GetInstance():ShowTips(var_3_1)
 
-	local var_3_6 = var_3_5.ExistDifferentExWord(arg_3_0.skin.id, var_3_0.key, arg_3_0.wordData.mainIndex, arg_3_0.favor)
-
-	setActive = var_1_10007
-
-	var_1_10007(arg_3_0.tagDiff, var_3_6)
-
-	if not var_3_2 then
-		onButton = var_1_10007
-
-		local var_3_7
-		local var_3_8 = arg_3_0._tf
-
-		local function var_3_9()
-			pg = var_2_10000
-
-			local var_4_0 = var_2_10000.TipsMgr.GetInstance()
-
-			var_0.ShowTips(var_4_0, var_3_3)
-
-			return
+				return
+			end, SFX_PANEL)
 		end
 
-		SFX_PANEL = var_1_10012
-
-		var_1_10007(var_3_7, var_3_8, var_3_9, var_1_10012)
+		return
 	end
-
-	return
 end
 
-function var_0_1.isEx(arg_5_0)
-	local var_5_0 = arg_5_0.shipGroup
-
-	return var_1.VoiceReplayCodition(var_5_0, arg_5_0.voice)
+function var_0_0.isEx(arg_5_0)
+	return arg_5_0.shipGroup:VoiceReplayCodition(arg_5_0.voice)
 end
 
-return var_0_1
+return var_0_0

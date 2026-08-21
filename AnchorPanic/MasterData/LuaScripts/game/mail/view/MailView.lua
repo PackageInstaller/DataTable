@@ -119,7 +119,7 @@ function addAllUIEvent(self)
 end
 
 function onBtnCollectionListHandler(self)
-    GameDispatcher:dispatchEvent(EventName.REQ_OPEN_COLLECTION_LIST)
+    GameDispatcher:dispatchEvent(EventName.OPEN_COLLECTION_LIST_PANEL)
 end
 
 --添加收藏邮件
@@ -296,7 +296,8 @@ end
 
 function onBtnGetHandler(self)
     local vo = mail.MailManager:getMailVoById(self.childShowId)
-    if not vo:getHasAward() or vo.state == 2 then
+
+    local function reqCall()
         GameDispatcher:dispatchEvent(EventName.MAIL_DEL_REQ, { self.childShowId })
         local list = mail.MailManager:getMailList()
         local openIndex = 0
@@ -310,8 +311,17 @@ function onBtnGetHandler(self)
         end
         gs.Message.Show(_TT(405))
         self.childShowId = openIndex
-    else
+    end
+    if vo:getHasAward() and vo.state ~= 2 then
         GameDispatcher:dispatchEvent(EventName.MAIL_AWARD_REQ, { self.childShowId })
+    else
+        if vo.isCollection then
+            UIFactory:alertMessge(_TT(423), true, function()
+                reqCall()
+            end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
+        else
+            reqCall()
+        end
     end
 end
 

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandBasePerformancePlayer")
+﻿local var_0_0 = class("IslandBasePerformancePlayer")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.view = arg_1_1
@@ -9,9 +7,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.emit(arg_2_0, ...)
-	local var_2_0 = arg_2_0.view
-
-	var_1.emit(var_2_0, ...)
+	arg_2_0.view:emit(...)
 
 	return
 end

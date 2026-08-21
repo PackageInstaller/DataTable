@@ -117,6 +117,9 @@ function configUI(self)
 
     self.mBtnClose = self:getChildGO("mBtnClose")
     self.mTxtTitle = self:getChildGO("mTxtTitle"):GetComponent(ty.Text)
+
+    self.mTxtRemaid = self:getChildGO("mTxtRemaid"):GetComponent(ty.Text)
+    self.mToggleRemaid = self:getChildGO("mToggleRemaid"):GetComponent(ty.Toggle)
 end
 
 -- 移除
@@ -179,6 +182,8 @@ function initViewText(self)
 
     self.mTxtSelectTips.text = _TT(71467)
     self.mTxtTitle.text = _TT(4030)
+
+    self.mTxtRemaid.text = _TT(71487)
     -- self.mTxtSelectValue.text = "可选0/300"
 end
 
@@ -311,6 +316,10 @@ function __onClickAllSelectHandler(self)
 
         local isNotSelect = not has
         local isNotNew = read.ReadManager:isModuleRead(ReadConst.NEW_EQUIP, scrollItem:getDataVo().id) == false
+        if self.mToggleRemaid.isOn then
+            isNotNew = true
+        end
+
         if isNotLock and isNotSelect and isNotNew then
             
             if addCount == canSelectCount then

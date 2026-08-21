@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TowerClimbingPlayerVO")
+﻿local var_0_0 = class("TowerClimbingPlayerVO")
 local var_0_1 = 0
 local var_0_2 = 1
 local var_0_3 = 2
@@ -14,33 +12,14 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.id = arg_1_2.id
 	arg_1_0.life = arg_1_2.life
 	arg_1_0.pageIndex = arg_1_2.pageIndex
-
-	local var_1_0
-
-	if not arg_1_2.higestscore then
-		var_1_0 = 0
-	end
-
-	arg_1_0.higestscore = var_1_0
-	pg = var_1_0
-	arg_1_0.shipConfig = var_1_0.ship_data_statistics[arg_1_0.id]
+	arg_1_0.higestscore = arg_1_2.higestscore or 0
+	arg_1_0.shipConfig = pg.ship_data_statistics[arg_1_0.id]
 	arg_1_0.skinId = arg_1_0.shipConfig.skin_id
-	pg = var_3
-	arg_1_0.shipName = var_3.ship_skin_template[arg_1_0.skinId].prefab
-
-	local var_1_1
-
-	if not arg_1_2.mapScore then
-		var_1_1 = 0
-	end
-
-	arg_1_0.mapScore = var_1_1
-	TowerClimbingGameSettings = var_1_1
-	arg_1_0.verticalVelocity = var_1_1.JUMP_VELOCITY
-	TowerClimbingGameSettings = var_3
-	arg_1_0.horizontalVelocity = var_3.MOVE_VELOCITY
-	TowerClimbingGameSettings = var_3
-	arg_1_0.beInjuredVelocity = var_3.BEINJURED_VELOCITY
+	arg_1_0.shipName = pg.ship_skin_template[arg_1_0.skinId].prefab
+	arg_1_0.mapScore = arg_1_2.mapScore or 0
+	arg_1_0.verticalVelocity = TowerClimbingGameSettings.JUMP_VELOCITY
+	arg_1_0.horizontalVelocity = TowerClimbingGameSettings.MOVE_VELOCITY
+	arg_1_0.beInjuredVelocity = TowerClimbingGameSettings.BEINJURED_VELOCITY
 	arg_1_0.state = var_0_1
 	arg_1_0.isStand = true
 	arg_1_0.prevMoveDir = var_0_3
@@ -217,12 +196,12 @@ function var_0_0.AddScore(arg_17_0)
 end
 
 function var_0_0.AddInvincibleEffect(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0:IsInvincible()
-
 	arg_18_0.InvincibleTime = arg_18_1
 
-	if var_18_0 ~= arg_18_0:IsInvincible() then
-		arg_18_0:SendPlayerEvent("Invincible", var_3)
+	local var_18_0 = arg_18_0:IsInvincible()
+
+	if arg_18_0:IsInvincible() ~= var_18_0 then
+		arg_18_0:SendPlayerEvent("Invincible", var_18_0)
 	end
 
 	return
@@ -243,13 +222,9 @@ function var_0_0.IsInvincible(arg_21_0)
 end
 
 function var_0_0.SendPlayerEvent(arg_22_0, arg_22_1, ...)
-	local var_22_0 = arg_22_0.view.map
-	local var_22_1 = var_2.GetPlayer(var_22_0)[arg_22_1]
-	local var_22_2 = var_2
+	local var_22_0 = arg_22_0.view.map:GetPlayer()
 
-	unpack = var_1_10006
-
-	var_22_1(var_22_2, var_1_10006({
+	var_22_0[arg_22_1](var_22_0, unpack({
 		...
 	}))
 
@@ -257,12 +232,7 @@ function var_0_0.SendPlayerEvent(arg_22_0, arg_22_1, ...)
 end
 
 function var_0_0.SendMapEvent(arg_23_0, arg_23_1, ...)
-	local var_23_0 = arg_23_0.view.map[arg_23_1]
-	local var_23_1 = var_2
-
-	unpack = var_1_10006
-
-	var_23_0(var_23_1, var_1_10006({
+	arg_23_0.view.map[arg_23_1](arg_23_0.view.map, unpack({
 		...
 	}))
 

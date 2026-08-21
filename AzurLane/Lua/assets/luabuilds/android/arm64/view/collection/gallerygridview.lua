@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GalleryGridView")
+﻿local var_0_0 = class("GalleryGridView")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.owner = arg_1_2
@@ -16,30 +14,19 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
 function var_0_0.initUIRefs(arg_2_0)
-	local var_2_0 = arg_2_0.gridPanel
+	arg_2_0.scrollListContainer = arg_2_0.gridPanel:Find("Content")
+	arg_2_0.scrollRect = GetComponent(arg_2_0.scrollListContainer, "LScrollRect")
 
-	arg_2_0.scrollListContainer = var_1.Find(var_2_0, "Content")
-	GetComponent = var_1
-	arg_2_0.scrollRect = var_1(arg_2_0.scrollListContainer, "LScrollRect")
+	arg_2_0.scrollRect:BeginLayout()
+	arg_2_0.scrollRect:EndLayout()
 
-	local var_2_1 = arg_2_0.scrollRect
-
-	var_1.BeginLayout(var_2_1)
-
-	local var_2_2 = arg_2_0.scrollRect
-
-	var_1.EndLayout(var_2_2)
-
-	local var_2_3 = arg_2_0.gridPanel
-
-	arg_2_0.cardTpl = var_1.Find(var_2_3, "Card")
+	arg_2_0.cardTpl = arg_2_0.gridPanel:Find("Card")
 
 	return
 end
 
 function var_0_0.initData(arg_3_0)
-	AutoLoader = var_1_10001
-	arg_3_0.resLoader = var_1_10001.New()
+	arg_3_0.resLoader = AutoLoader.New()
 	arg_3_0.cardTFList = {}
 
 	return
@@ -48,44 +35,30 @@ end
 function var_0_0.dispose(arg_4_0)
 	arg_4_0.isDisposed = true
 
-	local var_4_0 = arg_4_0.resLoader
-
-	var_1.Clear(var_4_0)
+	arg_4_0.resLoader:Clear()
 
 	return
 end
 
 function var_0_0.isDestroyed(arg_5_0)
-	local var_5_0
-
-	if not arg_5_0.isDisposed then
-		var_5_0 = not arg_5_0.owner or arg_5_0.owner.exited
-	end
-
-	return var_5_0
+	return arg_5_0.isDisposed or not arg_5_0.owner or arg_5_0.owner.exited
 end
 
 function var_0_0.initScrollCallbacks(arg_6_0)
 	function arg_6_0.scrollRect.onInitItem(arg_7_0)
-		local var_7_0 = arg_6_0
-
-		var_1.onInitItem(var_7_0, arg_7_0)
+		arg_6_0:onInitItem(arg_7_0)
 
 		return
 	end
 
 	function arg_6_0.scrollRect.onUpdateItem(arg_8_0, arg_8_1)
-		local var_8_0 = arg_6_0
-
-		var_2.onUpdateItem(var_8_0, arg_8_0, arg_8_1)
+		arg_6_0:onUpdateItem(arg_8_0, arg_8_1)
 
 		return
 	end
 
 	function arg_6_0.scrollRect.onReturnItem(arg_9_0, arg_9_1)
-		local var_9_0 = arg_6_0
-
-		var_2.onReturnItem(var_9_0, arg_9_0, arg_9_1)
+		arg_6_0:onReturnItem(arg_9_0, arg_9_1)
 
 		return
 	end
@@ -94,30 +67,20 @@ function var_0_0.initScrollCallbacks(arg_6_0)
 end
 
 function var_0_0.onInitItem(arg_10_0, arg_10_1)
-	tf = var_1_10002
-
-	local var_10_0 = var_1_10002(arg_10_1)
-
-	setActive = var_1_10003
-
-	var_1_10003(var_10_0, true)
+	setActive(tf(arg_10_1), true)
 
 	return
 end
 
 function var_0_0.onUpdateItem(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = arg_11_1 + 1
+	local var_11_0 = tf(arg_11_2)
 
-	tf = var_1_10004
+	arg_11_0.cardTFList[arg_11_1 + 1] = var_11_0
 
-	local var_11_1 = var_1_10004(arg_11_2)
-
-	arg_11_0.cardTFList[var_11_0] = var_11_1
-
-	if arg_11_0:getPicInfoForShowByIndex(var_11_0) == false then
-		arg_11_0:updateEmptyCard(var_11_1)
+	if arg_11_0:getPicInfoForShowByIndex(arg_11_1 + 1) == false then
+		arg_11_0:updateEmptyCard(var_11_0)
 	else
-		arg_11_0:updateCard(var_11_0, var_11_1)
+		arg_11_0:updateCard(arg_11_1 + 1, var_11_0)
 	end
 
 	return
@@ -137,54 +100,35 @@ function var_0_0.refresh(arg_13_0, arg_13_1)
 	arg_13_1 = arg_13_1 or {}
 	arg_13_0.cardTFList = {}
 
-	local var_13_0 = arg_13_0.resLoader
-
-	var_2.Clear(var_13_0)
-
-	local var_13_1 = arg_13_0.scrollRect
-
-	var_2.SetTotalCount(var_13_1, #arg_13_1, -1)
+	arg_13_0.resLoader:Clear()
+	arg_13_0.scrollRect:SetTotalCount(#arg_13_1, -1)
 
 	return
 end
 
 function var_0_0.openPicViewLayer(arg_14_0, arg_14_1)
-	if not arg_14_0:getPicInfoForShowByIndex(arg_14_1) then
+	local var_14_0 = arg_14_0:getPicInfoForShowByIndex(arg_14_1)
+
+	if not var_14_0 then
 		return
 	end
 
-	LoadContextCommand = var_1_10003
+	LoadContextCommand.LoadLayerOnTopContext(Context.New({
+		mediator = AppreciatePicViewMediator,
+		viewComponent = AppreciatePicViewLayer,
+		data = {
+			isShowLikeBtn = true,
+			curPicInfo = var_14_0,
+			picInfoList = arg_14_0:getPicInfoListForShow()
+		},
+		onRemoved = function()
+			if not arg_14_0:isDestroyed() then
+				arg_14_0:refreshVisibleCards()
+			end
 
-	local var_14_0 = var_1_10003.LoadLayerOnTopContext
-
-	Context = var_5
-
-	local var_14_1 = var_5.New
-	local var_14_2 = {}
-
-	AppreciatePicViewMediator = var_1_10008
-	var_14_2.mediator = var_1_10008
-	AppreciatePicViewLayer = var_1_10008
-	var_14_2.viewComponent = var_1_10008
-	var_14_2.data = {
-		isShowLikeBtn = true,
-		curPicInfo = var_2,
-		picInfoList = arg_14_0:getPicInfoListForShow()
-	}
-
-	function var_14_2.onRemoved()
-		local var_15_0 = arg_14_0
-
-		if not var_0.isDestroyed(var_15_0) then
-			local var_15_1 = arg_14_0
-
-			var_0.refreshVisibleCards(var_15_1)
+			return
 		end
-
-		return
-	end
-
-	var_14_0(var_14_1(var_14_2))
+	}))
 
 	return
 end
@@ -192,119 +136,50 @@ end
 function var_0_0.updateCard(arg_16_0, arg_16_1, arg_16_2)
 	local var_16_0 = arg_16_0:getPicInfoForShowByIndex(arg_16_1)
 
-	setActive = var_1_10004
+	setActive(arg_16_2, true)
 
-	var_1_10004(arg_16_2, true)
+	local var_16_1 = arg_16_2:Find("Update")
 
-	local var_16_1 = arg_16_2
-	local var_16_2 = arg_16_2.Find(var_16_1, "Update")
-	local var_16_3 = var_4.Find(var_16_2, "Progress")
+	setActive(var_16_1, false)
+	setActive(var_16_1:Find("Progress"), false)
 
-	setActive = var_16_1
+	local var_16_2 = arg_16_2:Find("NumText")
 
-	var_16_1(var_4, false)
-
-	setActive = var_16_1
-
-	var_16_1(var_16_3, false)
-
-	local var_16_4 = arg_16_2:Find("Image")
-	local var_16_5 = arg_16_2:Find("NumText")
-	local var_16_6 = arg_16_2:Find("NewTag")
-
-	arg_16_0:updateCardImg(var_16_0, var_16_4)
-
-	setActive = var_9
-
-	var_9(var_16_5, true)
-
-	setText = var_9
-
-	local var_16_7 = var_16_5
-
-	string = var_12
-
-	var_9(var_16_7, var_12.format("%d", arg_16_1))
-
-	setActive = var_9
-
-	local var_16_8 = var_16_6
-	local var_16_9 = arg_16_0
-
-	var_9(var_16_8, arg_16_0.isPicNew(var_16_9, var_16_0))
-
-	onButton = var_9
-
-	local var_16_10 = arg_16_0.owner
-	local var_16_11 = arg_16_2
-
-	local function var_16_12()
-		local var_17_0 = arg_16_0
-
-		var_0.openPicViewLayer(var_17_0, arg_16_1)
+	arg_16_0:updateCardImg(var_16_0, (arg_16_2:Find("Image")))
+	setActive(var_16_2, true)
+	setText(var_16_2, string.format("%d", arg_16_1))
+	setActive(arg_16_2:Find("NewTag"), arg_16_0:isPicNew(var_16_0))
+	onButton(arg_16_0.owner, arg_16_2, function()
+		arg_16_0:openPicViewLayer(arg_16_1)
 
 		return
-	end
-
-	SFX_PANEL = var_16_9
-
-	var_9(var_16_10, var_16_11, var_16_12, var_16_9)
+	end, SFX_PANEL)
 
 	return
 end
 
 function var_0_0.updateCardImg(arg_18_0, arg_18_1, arg_18_2)
-	local var_18_0 = arg_18_0
-	local var_18_1 = arg_18_0.getPreviewPicPath(var_18_0, arg_18_1)
+	local var_18_0 = arg_18_0:getPreviewPicPath(arg_18_1)
+	local var_18_1 = GetFileName(var_18_0)
+	local var_18_2 = GetComponent(arg_18_2, typeof(Image)).sprite
 
-	GetFileName = var_1_10004
-
-	local var_18_2 = var_1_10004(var_18_1)
-
-	GetComponent = var_18_0
-
-	local var_18_3 = arg_18_2
-
-	typeof = var_1_10008
-	Image = var_1_10010
-
-	local var_18_4 = var_18_0(var_18_3, var_1_10008(var_1_10010)).sprite
-
-	IsNil = var_6
-
-	if not var_6(var_18_4) then
-		local var_18_5 = var_18_4.name
-
-		string = var_18_3
-
-		local var_18_6 = var_18_3.lower(var_18_5)
-
-		string = var_8
-
-		if var_18_6 ~= var_8.lower(var_18_2) then
-			local var_18_7 = arg_18_0.resLoader
-
-			var_7.LoadSprite(var_18_7, var_18_1, var_18_2, arg_18_2, false)
+	if not IsNil(var_18_2) then
+		if string.lower(var_18_2.name) ~= string.lower(var_18_1) then
+			arg_18_0.resLoader:LoadSprite(var_18_0, var_18_1, arg_18_2, false)
 		end
 	else
-		local var_18_8 = arg_18_0.resLoader
-
-		var_6.LoadSprite(var_18_8, var_18_1, var_18_2, arg_18_2, false)
+		arg_18_0.resLoader:LoadSprite(var_18_0, var_18_1, arg_18_2, false)
 	end
 
 	return
 end
 
 function var_0_0.updateEmptyCard(arg_19_0, arg_19_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_19_1, true)
+	setActive(arg_19_1, true)
 
 	local var_19_0
 
-	ipairs = var_1_10003
-
-	for iter_19_0, iter_19_1 in var_1_10003(arg_19_0.owner.picInfoListForShow) do
+	for iter_19_0, iter_19_1 in ipairs(arg_19_0.owner.picInfoListForShow) do
 		if iter_19_1 then
 			var_19_0 = iter_19_1
 
@@ -316,19 +191,9 @@ function var_0_0.updateEmptyCard(arg_19_0, arg_19_1)
 		return
 	end
 
-	local var_19_1 = arg_19_1:Find("Image")
-	local var_19_2 = arg_19_1:Find("NumText")
-	local var_19_3 = arg_19_1:Find("NewTag")
-
-	arg_19_0:updateCardImg(var_19_0, var_19_1)
-
-	setActive = var_6
-
-	var_6(var_19_2, false)
-
-	setActive = var_6
-
-	var_6(var_19_3, false)
+	arg_19_0:updateCardImg(var_19_0, (arg_19_1:Find("Image")))
+	setActive(arg_19_1:Find("NumText"), false)
+	setActive(arg_19_1:Find("NewTag"), false)
 	arg_19_0:updateEmptyCardDownloadState(arg_19_1)
 
 	return
@@ -336,92 +201,33 @@ end
 
 function var_0_0.updateEmptyCardDownloadState(arg_20_0, arg_20_1)
 	local var_20_0 = arg_20_1:Find("Update")
-	local var_20_1 = var_2.Find(var_20_0, "Btn")
-	local var_20_2 = var_3.Find(var_20_1, "Text")
-	local var_20_3 = var_2:Find("Progress")
-	local var_20_4 = var_5.Find(var_20_3, "Slider")
-	local var_20_5 = arg_20_0.owner
-	local var_20_6 = var_7.isGalleryDownloading(var_20_5)
-	local var_20_7 = arg_20_0.owner
-	local var_20_8, var_20_9 = var_8.getGalleryDownloadProgress(var_20_7)
+	local var_20_1 = var_20_0:Find("Btn")
+	local var_20_2 = var_20_1:Find("Text")
+	local var_20_3 = var_20_0:Find("Progress")
+	local var_20_4 = var_20_3:Find("Slider")
+	local var_20_5 = arg_20_0.owner:isGalleryDownloading()
+	local var_20_6, var_20_7 = arg_20_0.owner:getGalleryDownloadProgress()
 
-	setActive = var_20_7
+	setActive(var_20_0, true)
+	setActive(var_20_1, not var_20_5)
+	setActive(var_20_3, var_20_5)
 
-	var_20_7(var_2, true)
-
-	setActive = var_20_7
-
-	var_20_7(var_3, not var_20_6)
-
-	setActive = var_20_7
-
-	var_20_7(var_5, var_20_6)
-
-	local var_20_12
-
-	if var_20_6 then
-		setText = var_20_7
-
-		local var_20_10 = var_20_2
-
-		i18n = var_20_12
-
-		var_20_7(var_20_10, var_20_12("word_manga_updating", var_20_8, var_20_9))
-
-		setSlider = var_20_7
-
-		local var_20_11 = var_20_4
-
-		var_20_12 = 0
-		math = var_1_10014
-
-		var_20_7(var_20_11, var_20_12, var_1_10014.max(var_20_9, 1), var_20_8)
+	if var_20_5 then
+		setText(var_20_2, i18n("word_manga_updating", var_20_6, var_20_7))
+		setSlider(var_20_4, 0, math.max(var_20_7, 1), var_20_6)
+	elseif arg_20_0.owner:isGalleryDownloadFailed() then
+		setText(var_20_2, i18n("word_manga_updatefailure"))
+		setSlider(var_20_4, 0, 1, 0)
 	else
-		local var_20_13 = arg_20_0.owner
-
-		if var_20_7.isGalleryDownloadFailed(var_20_13) then
-			setText = var_20_7
-
-			local var_20_14 = var_20_2
-
-			i18n = var_20_12
-
-			var_20_7(var_20_14, var_20_12("word_manga_updatefailure"))
-
-			setSlider = var_20_7
-
-			var_20_7(var_20_4, 0, 1, 0)
-		else
-			setText = var_20_7
-
-			local var_20_15 = var_20_2
-
-			i18n = var_20_12
-
-			var_20_7(var_20_15, var_20_12("word_manga_checktoupdate"))
-
-			setSlider = var_20_7
-
-			var_20_7(var_20_4, 0, 1, 0)
-		end
+		setText(var_20_2, i18n("word_manga_checktoupdate"))
+		setSlider(var_20_4, 0, 1, 0)
 	end
 
-	onButton = var_20_7
-
-	local var_20_16 = arg_20_0.owner
-	local var_20_17 = var_3
-
-	local function var_20_18()
-		local var_21_0 = arg_20_0.owner
-
-		var_0.showDownloadMsgBox(var_21_0)
+	onButton(arg_20_0.owner, var_20_1, function()
+		arg_20_0.owner:showDownloadMsgBox()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10015
-
-	var_20_7(var_20_16, var_20_17, var_20_18, var_1_10015)
+	end, SFX_PANEL)
 
 	return
 end
@@ -431,9 +237,7 @@ function var_0_0.updateEmptyCardDownloadStateList(arg_22_0)
 		return
 	end
 
-	pairs = var_1
-
-	for iter_22_0, iter_22_1 in var_1(arg_22_0.cardTFList) do
+	for iter_22_0, iter_22_1 in pairs(arg_22_0.cardTFList) do
 		if iter_22_1 and arg_22_0:getPicInfoForShowByIndex(iter_22_0) == false then
 			arg_22_0:updateEmptyCardDownloadState(iter_22_1)
 
@@ -449,9 +253,7 @@ function var_0_0.refreshVisibleCards(arg_23_0)
 		return
 	end
 
-	pairs = var_1
-
-	for iter_23_0, iter_23_1 in var_1(arg_23_0.cardTFList) do
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.cardTFList) do
 		local var_23_0 = arg_23_0:getPicInfoForShowByIndex(iter_23_0)
 
 		if iter_23_1 and var_23_0 then
@@ -463,37 +265,25 @@ function var_0_0.refreshVisibleCards(arg_23_0)
 end
 
 function var_0_0.getPreviewPicPath(arg_24_0, arg_24_1)
-	GalleryConst = var_1_10002
-
-	return var_1_10002.GetGalleryPicPathByID(arg_24_1.id)
+	return GalleryConst.GetGalleryPicPathByID(arg_24_1.id)
 end
 
 function var_0_0.isPicNew(arg_25_0, arg_25_1)
-	AppreciatePicConst = var_1_10002
-
-	return var_1_10002.isNewPicInfo(arg_25_1)
+	return AppreciatePicConst.isNewPicInfo(arg_25_1)
 end
 
 function var_0_0.getPicInfoListForShow(arg_26_0)
-	local var_26_0 = {}
-
-	ipairs = var_1_10002
-
-	for iter_26_0, iter_26_1 in var_1_10002(arg_26_0.owner.picInfoListForShow) do
+	for iter_26_0, iter_26_1 in ipairs(arg_26_0.owner.picInfoListForShow) do
 		if iter_26_1 then
-			table = var_1_10007
-
-			var_1_10007.insert(var_26_0, iter_26_1)
+			table.insert({}, iter_26_1)
 		end
 	end
 
-	return var_26_0
+	return {}
 end
 
 function var_0_0.getPicInfoForShowByIndex(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_0.owner
-
-	return var_2.getPicInfoForShowByIndex(var_27_0, arg_27_1)
+	return arg_27_0.owner:getPicInfoForShowByIndex(arg_27_1)
 end
 
 return var_0_0

@@ -1,181 +1,90 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateRankLayer", import("view.newEducate.base.NewEducateBaseUI"))
 
-local var_0_0 = "NewEducateRankLayer"
+var_0_0.TYPE = {
+	ATTR = PowerRank.TYPE_TB_ATTR_SUM,
+	ENDLESS = PowerRank.TYPE_TB_ENDLESS_WAVE
+}
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.newEducate.base.NewEducateBaseUI"))
-local var_0_2 = {}
-
-PowerRank = var_0_0
-var_0_2.ATTR = var_0_0.TYPE_TB_ATTR_SUM
-PowerRank = var_2
-var_0_2.ENDLESS = var_2.TYPE_TB_ENDLESS_WAVE
-var_0_1.TYPE = var_0_2
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewEducateRankUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "window")
+function var_0_0.init(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("window")
 
-	setText = var_1_10002
+	setText(var_2_0:Find("tip"), i18n("child2_rank_refresh_tip"))
 
-	local var_2_2 = var_2_1
-	local var_2_3 = var_2_1.Find(var_2_2, "tip")
+	local var_2_1 = var_2_0:Find("header")
 
-	i18n = var_1_10005
+	setText(var_2_1:Find("rank"), i18n("child2_rank_header_rank"))
+	setText(var_2_1:Find("info"), i18n("child2_rank_header_info"))
 
-	var_1_10002(var_2_3, var_1_10005("child2_rank_refresh_tip"))
-
-	local var_2_4 = var_2_1:Find("header")
-
-	setText = var_2_0
-
-	local var_2_5 = var_2_4:Find("rank")
-
-	i18n = var_2_2
-
-	var_2_0(var_2_5, var_2_2("child2_rank_header_rank"))
-
-	setText = var_2_0
-
-	local var_2_6 = var_2_4:Find("info")
-
-	i18n = var_6
-
-	var_2_0(var_2_6, var_6("child2_rank_header_info"))
-
-	arg_2_0.headerValueTF = var_2_4:Find("value")
+	arg_2_0.headerValueTF = var_2_1:Find("value")
 	arg_2_0.toggleTFs = {}
+	arg_2_0.toggleTFs[var_0_0.TYPE.ATTR] = var_2_0:Find("toggles/attr")
 
-	local var_2_7 = arg_2_0.toggleTFs
+	setText(var_2_0:Find("toggles/attr/Text"), i18n("child2_rank_toggle_attr"))
 
-	var_2_7[var_0_1.TYPE.ATTR] = var_2_1:Find("toggles/attr")
-	setText = var_2_7
+	arg_2_0.toggleTFs[var_0_0.TYPE.ENDLESS] = var_2_0:Find("toggles/endless")
 
-	local var_2_8 = var_2_1:Find("toggles/attr/Text")
+	setText(var_2_0:Find("toggles/endless/Text"), i18n("child2_rank_toggle_endless"))
 
-	i18n = var_6
-
-	var_2_7(var_2_8, var_6("child2_rank_toggle_attr"))
-
-	local var_2_9 = arg_2_0.toggleTFs
-
-	var_2_9[var_0_1.TYPE.ENDLESS] = var_2_1:Find("toggles/endless")
-	setText = var_2_9
-
-	local var_2_10 = var_2_1:Find("toggles/endless/Text")
-
-	i18n = var_6
-
-	var_2_9(var_2_10, var_6("child2_rank_toggle_endless"))
-
-	arg_2_0.playerRankTF = var_2_1:Find("player")
-
-	local var_2_11 = var_2_1:Find("view/content")
-
-	arg_2_0.rankRect = var_3.GetComponent(var_2_11, "LScrollRect")
+	arg_2_0.playerRankTF = var_2_0:Find("player")
+	arg_2_0.rankRect = var_2_0:Find("view/content"):GetComponent("LScrollRect")
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0:OverlayPanel(arg_3_0._tf, {
 		groupDelta = 1
 	})
-
-	onButton = var_1
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "mask")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("mask"), function()
+		arg_3_0:closeView()
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_3_1
+	for iter_3_0, iter_3_1 in pairs(arg_3_0.toggleTFs) do
+		onToggle(arg_3_0, iter_3_1, function(arg_5_0)
+			local var_5_0
 
-	var_1(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	pairs = var_1
-
-	for iter_3_0, iter_3_1 in var_1(arg_3_0.toggleTFs) do
-		onToggle = var_3_1
-
-		local var_3_4 = arg_3_0
-		local var_3_5 = iter_3_1
-
-		local function var_3_6(arg_5_0)
 			if arg_5_0 and (not arg_3_0.curType or arg_3_0.curType ~= iter_3_0) then
 				arg_3_0.curType = iter_3_0
 
-				local var_5_0 = arg_3_0
+				arg_3_0:UpdateView()
 
-				var_1.UpdateView(var_5_0)
+				var_5_0 = quickPlayAnimation
 			end
 
-			local var_5_1 = arg_5_0 and "Anim_NewEducateRankUI_sel" or "Anim_NewEducateRankUI_sel2"
-
-			quickPlayAnimation = var_2_10002
-
-			var_2_10002(iter_3_1, var_5_1)
+			var_5_0(iter_3_1, arg_5_0 and "Anim_NewEducateRankUI_sel" or "Anim_NewEducateRankUI_sel2")
 
 			return
-		end
-
-		SFX_PANEL = var_1_10011
-
-		var_3_1(var_3_4, var_3_5, var_3_6, var_1_10011)
+		end, SFX_PANEL)
 	end
 
 	function arg_3_0.rankRect.onInitItem(arg_6_0)
-		local var_6_0 = arg_3_0
-
-		var_1.OnInitItem(var_6_0, arg_6_0)
+		arg_3_0:OnInitItem(arg_6_0)
 
 		return
 	end
 
-	local var_3_7 = arg_3_0.rankRect
-
-	function var_3_7.onUpdateItem(arg_7_0, arg_7_1)
-		local var_7_0 = arg_3_0
-
-		var_2.OnUpdateItem(var_7_0, arg_7_0, arg_7_1)
+	function arg_3_0.rankRect.onUpdateItem(arg_7_0, arg_7_1)
+		arg_3_0:OnUpdateItem(arg_7_0, arg_7_1)
 
 		return
 	end
 
-	NewEducateRankCard = var_3_7
-
-	local var_3_8 = var_3_7.New
-	local var_3_9 = arg_3_0.playerRankTF
-
-	NewEducateRankCard = iter_3_0
-	arg_3_0.playerCard = var_3_8(var_3_9, iter_3_0.TYPE_SELF, arg_3_0)
+	arg_3_0.playerCard = NewEducateRankCard.New(arg_3_0.playerRankTF, NewEducateRankCard.TYPE_SELF, arg_3_0)
 
 	arg_3_0:InitData()
-
-	triggerToggle = var_1
-
-	var_1(arg_3_0.toggleTFs[var_0_1.TYPE.ATTR], true)
-
-	NewEducateGuideSequence = var_1
-
-	var_1.CheckGuide(arg_3_0.__cname)
+	triggerToggle(arg_3_0.toggleTFs[var_0_0.TYPE.ATTR], true)
+	NewEducateGuideSequence.CheckGuide(arg_3_0.__cname)
 
 	return
 end
 
-function var_0_1.InitData(arg_8_0)
+function var_0_0.InitData(arg_8_0)
 	arg_8_0.cards = {}
 	arg_8_0.rankVOs = {}
 	arg_8_0.playerRankVOs = {}
@@ -184,107 +93,56 @@ function var_0_1.InitData(arg_8_0)
 	return
 end
 
-function var_0_1.OnInitItem(arg_9_0, arg_9_1)
-	NewEducateRankCard = var_1_10002
-
-	local var_9_0 = var_1_10002.New
-	local var_9_1 = arg_9_1
-
-	NewEducateRankCard = var_1_10005
-
-	local var_9_2 = var_9_0(var_9_1, var_1_10005.TYPE_OTHER, arg_9_0)
-
-	arg_9_0.cards[arg_9_1] = var_9_2
+function var_0_0.OnInitItem(arg_9_0, arg_9_1)
+	arg_9_0.cards[arg_9_1] = NewEducateRankCard.New(arg_9_1, NewEducateRankCard.TYPE_OTHER, arg_9_0)
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0
-
+function var_0_0.OnUpdateItem(arg_10_0, arg_10_1, arg_10_2)
 	if not arg_10_0.cards[arg_10_2] then
 		arg_10_0:OnInitItem(arg_10_2)
-
-		var_10_0 = arg_10_0.cards[arg_10_2]
 	end
 
-	local var_10_1 = arg_10_0.displayRankVOs[arg_10_1 + 1]
-
-	var_10_0:Update(var_10_1, arg_10_0.curType)
+	arg_10_0.cards[arg_10_2]:Update(arg_10_0.displayRankVOs[arg_10_1 + 1], arg_10_0.curType)
 
 	return
 end
 
-function var_0_1.UpdateView(arg_11_0)
-	if arg_11_0.curType == var_0_1.TYPE.ATTR then
-		i18n = var_11_0
+function var_0_0.UpdateView(arg_11_0)
+	local var_11_0 = arg_11_0.curType == var_0_0.TYPE.ATTR and i18n("child2_rank_header_attr") or i18n("child2_rank_header_wave")
 
-		local var_11_0
+	setText(arg_11_0.headerValueTF, var_11_0)
 
-		if not var_11_0("child2_rank_header_attr") then
-			i18n = var_11_0
-			var_11_0 = var_11_0("child2_rank_header_wave")
+	if arg_11_0.rankVOs[arg_11_0.curType] then
+		if getProxy(BillboardProxy):canFetch(arg_11_0.curType, arg_11_0.charId) then
+			arg_11_0:emit(NewEducateRankMediator.ON_GET_RANK, arg_11_0.curType, arg_11_0.charId)
+		else
+			arg_11_0:UpdataRankList()
 		end
 
-		setText = var_2
-
-		var_2(arg_11_0.headerValueTF, var_11_0)
-
-		if arg_11_0.rankVOs[arg_11_0.curType] then
-			getProxy = var_3
-			BillboardProxy = var_5
-
-			local var_11_1 = var_3(var_5)
-
-			if var_3.canFetch(var_11_1, arg_11_0.curType, arg_11_0.charId) then
-				local var_11_2 = arg_11_0
-				local var_11_3 = arg_11_0.emit
-
-				NewEducateRankMediator = var_1_10006
-
-				var_11_3(var_11_2, var_1_10006.ON_GET_RANK, arg_11_0.curType, arg_11_0.charId)
-			else
-				arg_11_0:UpdataRankList()
-			end
-
-			return
-		end
+		return
 	end
 end
 
-function var_0_1.UpdataRankList(arg_12_0)
+function var_0_0.UpdataRankList(arg_12_0)
 	arg_12_0.displayRankVOs = {}
 
-	local var_12_0 = arg_12_0.rankVOs[arg_12_0.curType]
-
-	ipairs = var_2
-
-	for iter_12_0, iter_12_1 in var_2(arg_12_0.rankVOs[arg_12_0.curType]) do
-		table = var_1_10007
-
-		var_1_10007.insert(arg_12_0.displayRankVOs, iter_12_1)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.rankVOs[arg_12_0.curType]) do
+		table.insert(arg_12_0.displayRankVOs, iter_12_1)
 	end
 
-	local var_12_1 = arg_12_0.rankRect
+	arg_12_0.rankRect:SetTotalCount(#arg_12_0.displayRankVOs)
+	setActive(arg_12_0.playerRankTF, arg_12_0.playerRankVOs[arg_12_0.curType])
 
-	var_2.SetTotalCount(var_12_1, #arg_12_0.displayRankVOs)
-
-	local var_12_2 = arg_12_0.playerRankVOs[arg_12_0.curType]
-
-	setActive = var_3
-
-	var_3(arg_12_0.playerRankTF, var_12_2)
-
-	if var_12_2 then
-		local var_12_3 = arg_12_0.playerCard
-
-		var_3.Update(var_12_3, var_12_2, arg_12_0.curType)
+	if arg_12_0.playerRankVOs[arg_12_0.curType] then
+		arg_12_0.playerCard:Update(arg_12_0.playerRankVOs[arg_12_0.curType], arg_12_0.curType)
 	end
 
 	return
 end
 
-function var_0_1.OnGetRankDone(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
+function var_0_0.OnGetRankDone(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
 	arg_13_0.rankVOs[arg_13_1] = arg_13_3
 	arg_13_0.playerRankVOs[arg_13_1] = arg_13_4
 
@@ -293,25 +151,19 @@ function var_0_1.OnGetRankDone(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
 	return
 end
 
-function var_0_1.willExit(arg_14_0)
-	ClearLScrollrect = var_1_10001
+function var_0_0.willExit(arg_14_0)
+	ClearLScrollrect(arg_14_0.rankRect)
 
-	var_1_10001(arg_14_0.rankRect)
-
-	ipairs = var_1_10001
-
-	for iter_14_0, iter_14_1 in var_1_10001(arg_14_0.cards) do
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.cards) do
 		iter_14_1:Dispose()
 	end
 
 	arg_14_0.cards = nil
 
-	local var_14_0 = arg_14_0.playerCard
-
-	var_1.Dispose(var_14_0)
+	arg_14_0.playerCard:Dispose()
 	arg_14_0:UnOverlayPanel(arg_14_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

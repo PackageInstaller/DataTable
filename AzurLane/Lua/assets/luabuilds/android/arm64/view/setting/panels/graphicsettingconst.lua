@@ -1,25 +1,26 @@
-﻿local var_0_0 = {}
+﻿GraphicSettingConst = {}
 
-GraphicSettingConst = GraphicSettingConst
-var_0.PlayerGraphicLevelDorm = "dorm3d_graphics_settings_new"
-var_0.PlayerGraphicLevelIsland = "island3d_graphics_settings_new"
-var_0.SettingType = {
+local var_0_0 = GraphicSettingConst
+
+GraphicSettingConst.PlayerGraphicLevelDorm = "dorm3d_graphics_settings_new"
+GraphicSettingConst.PlayerGraphicLevelIsland = "island3d_graphics_settings_new"
+GraphicSettingConst.SettingType = {
 	select = 2,
 	toggle = 1
 }
-var_0.SettingLevel = {
+GraphicSettingConst.SettingLevel = {
 	High = 3,
 	Mid = 2,
 	Low = 1,
 	Custom = 4
 }
-var_0.assetPath = {
+GraphicSettingConst.assetPath = {
 	"Default_LowQualitySettings",
 	"Default_MediumQualitySettings",
 	"Default_HighQualitySettings",
 	"Default_QualitySettings"
 }
-var_0.settings = {
+GraphicSettingConst.settings = {
 	{
 		tips = "grapihcs3d_setting_gpgpu_warning",
 		parameterId = 0,
@@ -419,171 +420,99 @@ var_0.settings = {
 	}
 }
 
-function var_0.InitDefautQuality(arg_1_0)
-	local var_1_0
+function GraphicSettingConst.InitDefautQuality(arg_1_0)
+	if arg_1_0 then
+		local var_1_0 = var_0_0.PlayerGraphicLevelIsland or var_0_0.PlayerGraphicLevelDorm
 
-	if not arg_1_0 or not var_0.PlayerGraphicLevelIsland then
-		var_1_0 = var_0.PlayerGraphicLevelDorm
-	end
+		if PlayerPrefs.GetInt(var_1_0, 0) == 0 then
+			local var_1_1 = DevicePerformanceUtil.GetDevicePerformanceLevel()
 
-	PlayerPrefs = var_1_10002
+			if PLATFORM == PLATFORM_IPHONEPLAYER then
+				local var_1_2 = SystemInfo.deviceModel or ""
 
-	if var_1_10002.GetInt(var_1_0, 0) == 0 then
-		DevicePerformanceUtil = var_1_10003
+				if (function(arg_2_0)
+					local var_2_0 = tonumber((string.match(arg_2_0, "iPad(%d+)")))
 
-		local var_1_1 = var_1_10003.GetDevicePerformanceLevel()
+					if var_2_0 and var_2_0 >= 8 then
+						return true
+					end
 
-		PLATFORM = var_1_2
-		PLATFORM_IPHONEPLAYER = var_5
+					return false
+				end)(var_1_2) or (function(arg_3_0)
+					local var_3_0 = tonumber((string.match(arg_3_0, "iPhone(%d+)")))
 
-		local var_1_2
+					if var_3_0 and var_3_0 >= 13 then
+						return true
+					end
 
-		if var_1_2 == var_5 then
-			SystemInfo = var_1_2
-
-			if not var_1_2.deviceModel then
-				var_1_2 = ""
-			end
-
-			local function var_1_3(arg_2_0)
-				string = var_2_10001
-
-				local var_2_0 = var_2_10001.match(arg_2_0, "iPad(%d+)")
-
-				tonumber = var_2_10002
-
-				if var_2_10002(var_2_0) and var_2 >= 8 then
-					return true
+					return false
+				end)(var_1_2) then
+					var_1_1 = DevicePerformanceLevel.High
 				end
-
-				return false
 			end
 
-			local function var_1_4(arg_3_0)
-				string = var_2_10001
+			local var_1_3 = var_1_1 == DevicePerformanceLevel.High and 3 or var_1_1 == DevicePerformanceLevel.Mid and 2 or 1
 
-				local var_3_0 = var_2_10001.match(arg_3_0, "iPhone(%d+)")
-
-				tonumber = var_2_10002
-
-				if var_2_10002(var_3_0) and var_2 >= 13 then
-					return true
-				end
-
-				return false
+			if arg_1_0 then
+				PlayerPrefs.SetInt(var_1_0, 1)
+			else
+				PlayerPrefs.SetInt(var_1_0, var_1_3)
 			end
 
-			if var_1_3(var_1_2) or var_1_4(var_1_2) then
-				DevicePerformanceLevel = var_7
-				var_1_1 = var_7.High
+			if not arg_1_0 then
+				Dorm3dRoomTemplateScene.FirstDefaultSetting = var_1_3
 			end
-		end
-
-		DevicePerformanceLevel = var_1_2
-
-		local var_1_5
-
-		if var_1_1 == var_1_2.High then
-			var_1_5 = 3
-		else
-			DevicePerformanceLevel = var_4
-			var_1_5 = var_1_1 == var_4.Mid and 2 or 1
-		end
-
-		if arg_1_0 then
-			PlayerPrefs = var_4
-
-			var_4.SetInt(var_1_0, 1)
-		else
-			PlayerPrefs = var_4
-
-			var_4.SetInt(var_1_0, var_1_5)
-		end
-
-		if not arg_1_0 then
-			Dorm3dRoomTemplateScene = var_4
-			var_4.FirstDefaultSetting = var_1_5
-		end
-	end
-
-	return
-end
-
-function var_0.SettingQuality(arg_4_0)
-	local var_4_0
-
-	if not arg_4_0 or not var_0.PlayerGraphicLevelIsland then
-		var_4_0 = var_0.PlayerGraphicLevelDorm
-	end
-
-	PlayerPrefs = var_1_10002
-
-	if var_1_10002.GetInt(var_4_0, 4) ~= 4 then
-		ipairs = var_1_10003
-
-		for iter_4_0, iter_4_1 in var_1_10003(var_0.settings) do
-			local var_4_1 = iter_4_1.parameterId
-			local var_4_2 = iter_4_1.defaultValues[var_2]
-
-			GraphicsInterface = var_1_10010
-
-			local var_4_3 = var_1_10010.Instance
-
-			var_1_10010.SetQualitySettings(var_4_3, var_4_1, var_4_2)
 		end
 
 		return
 	end
-
-	ipairs = var_1_10003
-
-	for iter_4_2, iter_4_3 in var_1_10003(var_0.settings) do
-		local var_4_4 = iter_4_3.parameterId
-		local var_4_5
-
-		if not arg_4_0 or not (iter_4_3.playerPrefsname .. "island") then
-			var_4_5 = iter_4_3.playerPrefsname
-		end
-
-		PlayerPrefs = var_1_10010
-		var_1_10010 = var_1_10010.GetInt(var_4_5, -1)
-
-		local var_4_6 = iter_4_3.defaultValues[4]
-
-		if var_1_10010 ~= -1 then
-			var_4_6 = var_1_10010
-		end
-
-		GraphicsInterface = var_12
-
-		local var_4_7 = var_12.Instance
-
-		var_12.SetQualitySettings(var_4_7, var_4_4, var_4_6)
-	end
-
-	return
 end
 
-function var_0.ClearPlayerPrefs()
-	PlayerPrefs = var_1_10000
+function GraphicSettingConst.SettingQuality(arg_4_0)
+	if arg_4_0 then
+		local var_4_0 = var_0_0.PlayerGraphicLevelIsland or var_0_0.PlayerGraphicLevelDorm
+		local var_4_1 = PlayerPrefs.GetInt(var_4_0, 4)
 
-	if var_1_10000.GetInt("dorm3d_graphics_settings_changeed", 0) == 1 then
+		if var_4_1 ~= 4 then
+			for iter_4_0, iter_4_1 in ipairs(var_0_0.settings) do
+				GraphicsInterface.Instance:SetQualitySettings(iter_4_1.parameterId, iter_4_1.defaultValues[var_4_1])
+			end
+
+			return
+		end
+
+		for iter_4_2, iter_4_3 in ipairs(var_0_0.settings) do
+			local var_4_2 = iter_4_3.parameterId
+
+			if arg_4_0 then
+				local var_4_3 = iter_4_3.playerPrefsname .. "island" or iter_4_3.playerPrefsname
+				local var_4_4 = PlayerPrefs.GetInt(var_4_3, -1)
+				local var_4_5 = iter_4_3.defaultValues[4]
+
+				if var_4_4 ~= -1 then
+					var_4_5 = var_4_4
+				end
+
+				GraphicsInterface.Instance:SetQualitySettings(var_4_2, var_4_5)
+			end
+		end
+
+		return
+	end
+end
+
+function GraphicSettingConst.ClearPlayerPrefs()
+	if PlayerPrefs.GetInt("dorm3d_graphics_settings_changeed", 0) == 1 then
 		return
 	end
 
-	PlayerPrefs = var_0
+	PlayerPrefs.SetInt("dorm3d_graphics_settings_changeed", 1)
 
-	var_0.SetInt("dorm3d_graphics_settings_changeed", 1)
-
-	ipairs = var_0
-
-	for iter_5_0, iter_5_1 in var_0(var_0.settings) do
-		PlayerPrefs = var_1_10005
-
-		var_1_10005.DeleteKey(iter_5_1.playerPrefsname)
+	for iter_5_0, iter_5_1 in ipairs(var_0_0.settings) do
+		PlayerPrefs.DeleteKey(iter_5_1.playerPrefsname)
 	end
 
 	return
 end
 
-return var_0
+return GraphicSettingConst

@@ -1,88 +1,34 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShinanoLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-local var_0_0 = "ShinanoLoginPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.LoginTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0.bg
-
-	arg_1_0.bar = var_1.Find(var_1_0, "bar")
+	arg_1_0.bar = arg_1_0.bg:Find("bar")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_2_0.item, false)
-
-	local var_2_0 = arg_2_0.itemList
-
-	var_1.make(var_2_0, function(arg_3_0, arg_3_1, arg_3_2)
-		UIItemList = var_2_10003
-
-		local var_3_0
-
-		if arg_3_0 == var_2_10003.EventInit then
-			var_3_0 = arg_3_2:Find("item")
-			var_2_10004 = arg_2_0.config.front_drops[arg_3_1 + 1]
-
-			local var_3_1 = {
-				type = var_2_10004[1],
-				id = var_2_10004[2],
-				count = var_2_10004[3]
-			}
-
-			updateDrop = var_6
-
-			var_6(var_3_0, var_3_1)
-
-			onButton = var_6
-
-			local var_3_2 = arg_2_0
-			local var_3_3 = arg_3_2
-
-			local function var_3_4()
-				local var_4_0 = arg_2_0
-				local var_4_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_4_1(var_4_0, var_3_10003.ON_DROP, var_3_1)
+function var_0_0.OnFirstFlush(arg_2_0)
+	setActive(arg_2_0.item, false)
+	arg_2_0.itemList:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventInit then
+			updateDrop(arg_3_2:Find("item"), {
+				type = arg_2_0.config.front_drops[arg_3_1 + 1][1],
+				id = arg_2_0.config.front_drops[arg_3_1 + 1][2],
+				count = arg_2_0.config.front_drops[arg_3_1 + 1][3]
+			})
+			onButton(arg_2_0, arg_3_2, function()
+				arg_2_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
+			end, SFX_PANEL)
+			GetImageSpriteFromAtlasAsync("ui/share/light_login_atlas", "DAY" .. arg_3_1 + 1, arg_3_2:Find("day"), true)
+		elseif arg_3_0 == UIItemList.EventUpdate then
+			local var_3_0 = arg_3_1 < arg_2_0.nday
 
-			SFX_PANEL = var_2_10011
-
-			var_6(var_3_2, var_3_3, var_3_4, var_2_10011)
-
-			GetImageSpriteFromAtlasAsync = var_6
-
-			var_6("ui/share/light_login_atlas", "DAY" .. arg_3_1 + 1, arg_3_2:Find("day"), true)
-		else
-			UIItemList = var_3_0
-
-			if arg_3_0 == var_3_0.EventUpdate then
-				local var_3_5 = arg_3_1 < arg_2_0.nday
-
-				setActive = var_2_10004
-
-				var_2_10004(arg_3_2:Find("got"), var_3_5)
-
-				setActive = var_2_10004
-
-				var_2_10004(arg_3_2:Find("get"), var_3_5)
-
-				setActive = var_2_10004
-
-				var_2_10004(arg_3_2:Find("bg"), not var_3_5)
-			end
+			setActive(arg_3_2:Find("got"), arg_3_1 < arg_2_0.nday)
+			setActive(arg_3_2:Find("get"), var_3_0)
+			setActive(arg_3_2:Find("bg"), not var_3_0)
 		end
 
 		return
@@ -91,18 +37,15 @@ function var_0_1.OnFirstFlush(arg_2_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_5_0)
-	var_0_1.super.OnUpdateFlush(arg_5_0)
-
-	setFillAmount = var_1
-
-	var_1(arg_5_0.bar, arg_5_0.nday / arg_5_0.Day)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	var_0_0.super.OnUpdateFlush(arg_5_0)
+	setFillAmount(arg_5_0.bar, arg_5_0.nday / arg_5_0.Day)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_6_0)
+function var_0_0.OnDestroy(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

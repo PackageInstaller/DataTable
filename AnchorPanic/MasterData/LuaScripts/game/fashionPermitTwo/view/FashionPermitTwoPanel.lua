@@ -181,11 +181,11 @@ function updateView(self)
     self.mLyScroller:SetItemIndex(fashionPermitTwo.FashionPermitTwoManager:getPermitIndex(), 0, 0, 0.1)
 
     -- 部分渠道需要特殊处理
-    local isHar = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious())
+    local isHar = (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())
     self.mImgHeroHar.gameObject:SetActive(isHar)
     self:getChildGO("Spine"):SetActive(not isHar)
     local fashionData = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self.heroTid, self.fashionId)
-    self.mImgHeroHar:SetImg(UrlManager:getBgPath("heroRecord_Har/" .. fashionData:getUrlBody()))
+    self.mImgHeroHar:SetImg(UrlManager:getHeroRecoedUrlByDetail(fashionData:getUrlBody()))
 end
 function closeAllProps(self)
     if self.mPropsList then

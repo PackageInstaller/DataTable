@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "music_collect_config") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "music_collect_config"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.music_collect_config = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.music_collect_config
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.music_collect_config = rawget(pg, "music_collect_config") or setmetatable({
+	__name = "music_collect_config"
+}, confNEO)
+pg.music_collect_config.all = {
 	1,
 	2,
 	3,
@@ -81,11 +58,7 @@ var_0_3.all = {
 	53,
 	54
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.music_collect_config
-
-var_0_4.get_id_list_by_album_id = {
+pg.music_collect_config.get_id_list_by_album_id = {
 	{
 		1,
 		2,
@@ -161,25 +134,11 @@ var_0_4.get_id_list_by_album_id = {
 		54
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.music_collect_config = {}
+pg.base = pg.base or {}
+pg.base.music_collect_config = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.music_collect_config
-
-	var_1_0[1] = {
+	pg.base.music_collect_config[1] = {
 		name = "灾厄之始",
 		unlock_other = 0,
 		album_id = 1,
@@ -193,11 +152,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.music_collect_config
-
-	var_1_1[2] = {
+	pg.base.music_collect_config[2] = {
 		name = "过去的观测者",
 		unlock_other = 0,
 		album_id = 1,
@@ -211,11 +166,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.music_collect_config
-
-	var_1_2[3] = {
+	pg.base.music_collect_config[3] = {
 		name = "背水一战",
 		unlock_other = 0,
 		album_id = 1,
@@ -229,11 +180,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.music_collect_config
-
-	var_1_3[4] = {
+	pg.base.music_collect_config[4] = {
 		name = "危机",
 		unlock_other = 0,
 		album_id = 1,
@@ -247,11 +194,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.music_collect_config
-
-	var_1_4[5] = {
+	pg.base.music_collect_config[5] = {
 		name = "神圣的悲喜剧",
 		unlock_other = 0,
 		album_id = 2,
@@ -265,11 +208,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.music_collect_config
-
-	var_1_5[6] = {
+	pg.base.music_collect_config[6] = {
 		name = "虚妄与荣光",
 		unlock_other = 0,
 		album_id = 2,
@@ -283,11 +222,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.music_collect_config
-
-	var_1_6[7] = {
+	pg.base.music_collect_config[7] = {
 		name = "黄昏的祈祷",
 		unlock_other = 0,
 		album_id = 2,
@@ -301,11 +236,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.music_collect_config
-
-	var_1_7[8] = {
+	pg.base.music_collect_config[8] = {
 		name = "浴火而行",
 		unlock_other = 0,
 		album_id = 3,
@@ -319,11 +250,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.music_collect_config
-
-	var_1_8[9] = {
+	pg.base.music_collect_config[9] = {
 		name = "自律式作战系统",
 		unlock_other = 0,
 		album_id = 3,
@@ -337,11 +264,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.music_collect_config
-
-	var_1_9[10] = {
+	pg.base.music_collect_config[10] = {
 		name = "恶魔的裁决",
 		unlock_other = 0,
 		album_id = 3,
@@ -355,11 +278,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.music_collect_config
-
-	var_1_10[11] = {
+	pg.base.music_collect_config[11] = {
 		name = "仲裁者赫米忒",
 		unlock_other = 0,
 		album_id = 3,
@@ -373,11 +292,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.music_collect_config
-
-	var_1_11[12] = {
+	pg.base.music_collect_config[12] = {
 		name = "仲裁者托瓦",
 		unlock_other = 0,
 		album_id = 3,
@@ -391,11 +306,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.music_collect_config
-
-	var_1_12[13] = {
+	pg.base.music_collect_config[13] = {
 		name = "智者与蜘蛛",
 		unlock_other = 0,
 		album_id = 3,
@@ -409,11 +320,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.music_collect_config
-
-	var_1_13[14] = {
+	pg.base.music_collect_config[14] = {
 		name = "铁与血之路",
 		unlock_other = 0,
 		album_id = 3,
@@ -427,11 +334,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.music_collect_config
-
-	var_1_14[15] = {
+	pg.base.music_collect_config[15] = {
 		name = "起航的冒险者",
 		unlock_other = 0,
 		album_id = 4,
@@ -445,11 +348,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.music_collect_config
-
-	var_1_15[16] = {
+	pg.base.music_collect_config[16] = {
 		name = "平静的海",
 		unlock_other = 0,
 		album_id = 4,
@@ -463,11 +362,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.music_collect_config
-
-	var_1_16[17] = {
+	pg.base.music_collect_config[17] = {
 		name = "黄金鹿与白银蛸",
 		unlock_other = 0,
 		album_id = 4,
@@ -481,11 +376,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.music_collect_config
-
-	var_1_17[18] = {
+	pg.base.music_collect_config[18] = {
 		name = "海风与夏日的无人岛",
 		unlock_other = 0,
 		album_id = 4,
@@ -499,11 +390,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.music_collect_config
-
-	var_1_18[19] = {
+	pg.base.music_collect_config[19] = {
 		name = "起航~Weigh Anchor~",
 		unlock_other = 0,
 		album_id = 5,
@@ -517,11 +404,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.music_collect_config
-
-	var_1_19[20] = {
+	pg.base.music_collect_config[20] = {
 		name = "港区",
 		unlock_other = 0,
 		album_id = 5,
@@ -535,11 +418,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.music_collect_config
-
-	var_1_20[21] = {
+	pg.base.music_collect_config[21] = {
 		name = "悠哉一刻",
 		unlock_other = 0,
 		album_id = 5,
@@ -553,11 +432,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.music_collect_config
-
-	var_1_21[22] = {
+	pg.base.music_collect_config[22] = {
 		name = "日常",
 		unlock_other = 0,
 		album_id = 5,
@@ -571,11 +446,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.music_collect_config
-
-	var_1_22[23] = {
+	pg.base.music_collect_config[23] = {
 		name = "思绪",
 		unlock_other = 0,
 		album_id = 5,
@@ -589,11 +460,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.music_collect_config
-
-	var_1_23[24] = {
+	pg.base.music_collect_config[24] = {
 		name = "征程",
 		unlock_other = 0,
 		album_id = 5,
@@ -607,11 +474,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.music_collect_config
-
-	var_1_24[25] = {
+	pg.base.music_collect_config[25] = {
 		name = "蔚蓝之风",
 		unlock_other = 0,
 		album_id = 5,
@@ -625,11 +488,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.music_collect_config
-
-	var_1_25[26] = {
+	pg.base.music_collect_config[26] = {
 		name = "所罗门之夜",
 		unlock_other = 0,
 		album_id = 5,
@@ -643,11 +502,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.music_collect_config
-
-	var_1_26[27] = {
+	pg.base.music_collect_config[27] = {
 		name = "激战",
 		unlock_other = 0,
 		album_id = 5,
@@ -661,11 +516,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.music_collect_config
-
-	var_1_27[28] = {
+	pg.base.music_collect_config[28] = {
 		name = "决意",
 		unlock_other = 0,
 		album_id = 5,
@@ -679,11 +530,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.music_collect_config
-
-	var_1_28[29] = {
+	pg.base.music_collect_config[29] = {
 		name = "危机迫近",
 		unlock_other = 0,
 		album_id = 5,
@@ -697,11 +544,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.music_collect_config
-
-	var_1_29[30] = {
+	pg.base.music_collect_config[30] = {
 		name = "使命",
 		unlock_other = 0,
 		album_id = 5,
@@ -715,11 +558,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.music_collect_config
-
-	var_1_30[31] = {
+	pg.base.music_collect_config[31] = {
 		name = "DISPOSE THE PAWNS",
 		unlock_other = 0,
 		album_id = 5,
@@ -733,11 +572,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.music_collect_config
-
-	var_1_31[32] = {
+	pg.base.music_collect_config[32] = {
 		name = "誓约之时",
 		unlock_other = 0,
 		album_id = 5,
@@ -751,11 +586,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.music_collect_config
-
-	var_1_32[33] = {
+	pg.base.music_collect_config[33] = {
 		name = "扬帆~Set Sail~",
 		unlock_other = 0,
 		album_id = 5,
@@ -769,11 +600,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.music_collect_config
-
-	var_1_33[34] = {
+	pg.base.music_collect_config[34] = {
 		name = "清茶氤氲",
 		unlock_other = 0,
 		album_id = 6,
@@ -787,11 +614,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.music_collect_config
-
-	var_1_34[35] = {
+	pg.base.music_collect_config[35] = {
 		name = "鲜逸如初",
 		unlock_other = 0,
 		album_id = 6,
@@ -805,11 +628,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.music_collect_config
-
-	var_1_35[36] = {
+	pg.base.music_collect_config[36] = {
 		name = "丝路弥音",
 		unlock_other = 0,
 		album_id = 7,
@@ -823,11 +642,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.music_collect_config
-
-	var_1_36[37] = {
+	pg.base.music_collect_config[37] = {
 		name = "凯尔盖朗的风",
 		unlock_other = 0,
 		album_id = 8,
@@ -841,11 +656,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.music_collect_config
-
-	var_1_37[38] = {
+	pg.base.music_collect_config[38] = {
 		name = "圣堂",
 		unlock_other = 0,
 		album_id = 8,
@@ -859,11 +670,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.music_collect_config
-
-	var_1_38[39] = {
+	pg.base.music_collect_config[39] = {
 		name = "审判的象征",
 		unlock_other = 0,
 		album_id = 8,
@@ -877,11 +684,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.music_collect_config
-
-	var_1_39[40] = {
+	pg.base.music_collect_config[40] = {
 		name = "审判型机甲武装",
 		unlock_other = 0,
 		album_id = 8,
@@ -895,11 +698,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.music_collect_config
-
-	var_1_40[41] = {
+	pg.base.music_collect_config[41] = {
 		name = "陛下的荣光",
 		unlock_other = 0,
 		album_id = 8,
@@ -913,11 +712,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.music_collect_config
-
-	var_1_41[42] = {
+	pg.base.music_collect_config[42] = {
 		name = "不准确狩猎",
 		unlock_other = 0,
 		album_id = 8,
@@ -931,11 +726,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.music_collect_config
-
-	var_1_42[43] = {
+	pg.base.music_collect_config[43] = {
 		name = "World-Spanning Arclight",
 		unlock_other = 0,
 		album_id = 9,
@@ -949,11 +740,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.music_collect_config
-
-	var_1_43[44] = {
+	pg.base.music_collect_config[44] = {
 		name = "Piano and Guitar",
 		unlock_other = 0,
 		album_id = 9,
@@ -967,11 +754,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.music_collect_config
-
-	var_1_44[45] = {
+	pg.base.music_collect_config[45] = {
 		name = "All This Siren",
 		unlock_other = 0,
 		album_id = 9,
@@ -985,11 +768,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.music_collect_config
-
-	var_1_45[46] = {
+	pg.base.music_collect_config[46] = {
 		name = "Shining Electronic Beating",
 		unlock_other = 0,
 		album_id = 9,
@@ -1003,11 +782,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.music_collect_config
-
-	var_1_46[47] = {
+	pg.base.music_collect_config[47] = {
 		name = "Attendre et espérer.",
 		unlock_other = 0,
 		album_id = 10,
@@ -1021,11 +796,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.music_collect_config
-
-	var_1_47[48] = {
+	pg.base.music_collect_config[48] = {
 		name = "破碎之光",
 		unlock_other = 0,
 		album_id = 10,
@@ -1039,11 +810,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.music_collect_config
-
-	var_1_48[49] = {
+	pg.base.music_collect_config[49] = {
 		name = "像神圣的白百合那般",
 		unlock_other = 0,
 		album_id = 10,
@@ -1057,11 +824,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.music_collect_config
-
-	var_1_49[50] = {
+	pg.base.music_collect_config[50] = {
 		name = "自由的意志",
 		unlock_other = 0,
 		album_id = 10,
@@ -1075,11 +838,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.music_collect_config
-
-	var_1_50[51] = {
+	pg.base.music_collect_config[51] = {
 		name = "于鸢尾的旗帜下",
 		unlock_other = 0,
 		album_id = 10,
@@ -1093,11 +852,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.music_collect_config
-
-	var_1_51[52] = {
+	pg.base.music_collect_config[52] = {
 		name = "神圣夺还",
 		unlock_other = 0,
 		album_id = 10,
@@ -1111,11 +866,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.music_collect_config
-
-	var_1_52[53] = {
+	pg.base.music_collect_config[53] = {
 		name = "鸢尾佳人",
 		unlock_other = 0,
 		album_id = 10,
@@ -1129,8 +880,7 @@ var_0_4.base.music_collect_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_52
-	var_1_52.base.music_collect_config[54] = {
+	pg.base.music_collect_config[54] = {
 		name = "庆典与金色乐章",
 		unlock_other = 0,
 		album_id = 10,

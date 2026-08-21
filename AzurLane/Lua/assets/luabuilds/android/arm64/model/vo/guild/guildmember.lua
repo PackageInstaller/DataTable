@@ -1,86 +1,33 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildMember", import("..Friend"))
+local var_0_1 = {
+	i18n("guild_word_commder"),
+	i18n("guild_word_deputy_commder"),
+	i18n("guild_word_picked"),
+	i18n("guild_word_ordinary")
+}
 
-local var_0_0 = "GuildMember"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..Friend"))
-local var_0_2 = {}
-
-i18n = var_0_0
-var_0_2[1] = var_0_0("guild_word_commder")
-i18n = var_2
-var_0_2[2] = var_2("guild_word_deputy_commder")
-i18n = var_2
-var_0_2[3] = var_2("guild_word_picked")
-i18n = var_2
-var_0_2[4] = var_2("guild_word_ordinary")
-
-function var_0_1.IsAdministrator(arg_1_0)
-	GuildConst = var_1_10001
-
-	local var_1_0
-
-	if arg_1_0 ~= var_1_10001.DUTY_COMMANDER then
-		GuildConst = var_1
-
-		if arg_1_0 ~= var_1.DUTY_DEPUTY_COMMANDER then
-			var_1_0 = false
-
-			goto label_1_0
-		end
-	end
-
-	var_1_0 = true
-
-	::label_1_0::
-
-	return var_1_0
+function var_0_0.IsAdministrator(arg_1_0)
+	return arg_1_0 == GuildConst.DUTY_COMMANDER or arg_1_0 == GuildConst.DUTY_DEPUTY_COMMANDER
 end
 
-function var_0_1.isCommander(arg_2_0)
-	GuildConst = var_1_10001
-
-	return arg_2_0 == var_1_10001.DUTY_COMMANDER
+function var_0_0.isCommander(arg_2_0)
+	return arg_2_0 == GuildConst.DUTY_COMMANDER
 end
 
-function var_0_1.dutyId2Name(arg_3_0)
-	return var_0_2[arg_3_0]
+function var_0_0.dutyId2Name(arg_3_0)
+	return var_0_1[arg_3_0]
 end
 
-function var_0_1.Ctor(arg_4_0, arg_4_1)
-	var_0_1.super.Ctor(arg_4_0, arg_4_1)
+function var_0_0.Ctor(arg_4_0, arg_4_1)
+	var_0_0.super.Ctor(arg_4_0, arg_4_1)
 
-	local var_4_0
-
-	if not arg_4_1.liveness then
-		var_4_0 = 0
-	end
-
-	arg_4_0.liveness = var_4_0
-
-	local var_4_1
-
-	if not arg_4_1.duty then
-		GuildConst = var_4_1
-		var_4_1 = var_4_1.DUTY_RECRUIT
-	end
-
-	arg_4_0.duty = var_4_1
-
-	local var_4_2
-
-	if not arg_4_1.join_time then
-		var_4_2 = 0
-	end
-
-	arg_4_0.joinTime = var_4_2
-	GuildAssaultFleet = var_4_2
-	arg_4_0.assaultFleet = var_4_2.New({
+	arg_4_0.liveness = arg_4_1.liveness or 0
+	arg_4_0.duty = arg_4_1.duty or GuildConst.DUTY_RECRUIT
+	arg_4_0.joinTime = arg_4_1.join_time or 0
+	arg_4_0.assaultFleet = GuildAssaultFleet.New({
 		user_id = arg_4_0.id
 	})
-	GuildAssaultFleet = var_2
-	arg_4_0.externalAssaultFleet = var_2.New({
+	arg_4_0.externalAssaultFleet = GuildAssaultFleet.New({
 		user_id = arg_4_0.id
 	})
 
@@ -91,22 +38,16 @@ function var_0_1.Ctor(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_1.GetLiveness(arg_5_0)
+function var_0_0.GetLiveness(arg_5_0)
 	return arg_5_0.liveness
 end
 
-function var_0_1.IsRecruit(arg_6_0)
-	local var_6_0 = arg_6_0.duty
-
-	GuildConst = var_1_10002
-
-	return var_6_0 == var_1_10002.DUTY_RECRUIT
+function var_0_0.IsRecruit(arg_6_0)
+	return arg_6_0.duty == GuildConst.DUTY_RECRUIT
 end
 
-function var_0_1.AddLiveness(arg_7_0, arg_7_1)
-	print = var_1_10002
-
-	var_1_10002("add member liveness", arg_7_1)
+function var_0_0.AddLiveness(arg_7_0, arg_7_1)
+	print("add member liveness", arg_7_1)
 
 	arg_7_0.liveness = arg_7_0.liveness + arg_7_1
 
@@ -117,110 +58,79 @@ function var_0_1.AddLiveness(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.CanUpgradeDuty(arg_8_0)
-	local var_8_0 = arg_8_0.duty
-
-	GuildConst = var_1_10002
-
-	if var_8_0 == var_1_10002.DUTY_RECRUIT then
-		local var_8_1 = arg_8_0.liveness
-
-		pg = var_2
-
-		local var_8_2
-
-		if not (var_8_1 >= var_2.guildset.guild_active_become_regular.key_value) then
-			var_8_2 = false
-		else
-			var_8_2 = true
-		end
-
-		return var_8_2
-	end
+function var_0_0.CanUpgradeDuty(arg_8_0)
+	return arg_8_0.duty == GuildConst.DUTY_RECRUIT and arg_8_0.liveness >= pg.guildset.guild_active_become_regular.key_value
 end
 
-function var_0_1.UpdateExternalAssaultFleet(arg_9_0, arg_9_1)
+function var_0_0.UpdateExternalAssaultFleet(arg_9_0, arg_9_1)
 	arg_9_0.externalAssaultFleet = arg_9_1
 
 	return
 end
 
-function var_0_1.GetExternalAssaultFleet(arg_10_0)
+function var_0_0.GetExternalAssaultFleet(arg_10_0)
 	return arg_10_0.externalAssaultFleet
 end
 
-function var_0_1.UpdateAssaultFleet(arg_11_0, arg_11_1)
+function var_0_0.UpdateAssaultFleet(arg_11_0, arg_11_1)
 	arg_11_0.assaultFleet = arg_11_1
 
 	return
 end
 
-function var_0_1.GetAssaultFleet(arg_12_0)
+function var_0_0.GetAssaultFleet(arg_12_0)
 	return arg_12_0.assaultFleet
 end
 
-function var_0_1.UpdateAssaultFleetShips(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = arg_13_0.assaultFleet
-
-	var_3.InitShips(var_13_0, arg_13_1, arg_13_2)
+function var_0_0.UpdateAssaultFleetShips(arg_13_0, arg_13_1, arg_13_2)
+	arg_13_0.assaultFleet:InitShips(arg_13_1, arg_13_2)
 
 	return
 end
 
-function var_0_1.UpdateExternalAssaultFleetShips(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = arg_14_0.externalAssaultFleet
-
-	var_3.InitShips(var_14_0, arg_14_1, arg_14_2)
+function var_0_0.UpdateExternalAssaultFleetShips(arg_14_0, arg_14_1, arg_14_2)
+	arg_14_0.externalAssaultFleet:InitShips(arg_14_1, arg_14_2)
 
 	return
 end
 
-function var_0_1.isNewMember(arg_15_0)
-	pg = var_1_10001
+function var_0_0.isNewMember(arg_15_0)
+	local var_15_0 = pg.TimeMgr.GetInstance()
 
-	local var_15_0 = var_1_10001.TimeMgr.GetInstance()
-	local var_15_1 = var_1.GetServerTime(var_15_0)
-
-	if arg_15_0.joinTime ~= 0 and var_1:IsSameDay(var_15_1, arg_15_0.joinTime) then
+	if arg_15_0.joinTime ~= 0 and var_15_0:IsSameDay(var_15_0:GetServerTime(), arg_15_0.joinTime) then
 		return true
 	end
 
 	return false
 end
 
-function var_0_1.setDuty(arg_16_0, arg_16_1)
+function var_0_0.setDuty(arg_16_0, arg_16_1)
 	arg_16_0.duty = arg_16_1
 
 	return
 end
 
-function var_0_1.GetDuty(arg_17_0)
+function var_0_0.GetDuty(arg_17_0)
 	return arg_17_0.duty
 end
 
-function var_0_1.IsCommander(arg_18_0)
-	local var_18_0 = arg_18_0.duty
-
-	GuildConst = var_1_10002
-
-	return var_18_0 == var_1_10002.DUTY_COMMANDER
+function var_0_0.IsCommander(arg_18_0)
+	return arg_18_0.duty == GuildConst.DUTY_COMMANDER
 end
 
-function var_0_1.isLongOffLine(arg_19_0)
-	pg = var_1_10001
+function var_0_0.isLongOffLine(arg_19_0)
+	local var_19_0 = pg.TimeMgr.GetInstance():GetServerTime() - arg_19_0.preOnLineTime
 
-	local var_19_0 = var_1_10001.TimeMgr.GetInstance()
-
-	return var_1.GetServerTime(var_19_0) - arg_19_0.preOnLineTime > 0
+	return var_19_0 > 0
 end
 
-function var_0_1.setDamage(arg_20_0, arg_20_1)
+function var_0_0.setDamage(arg_20_0, arg_20_1)
 	arg_20_0.damage = arg_20_1
 
 	return
 end
 
-function var_0_1.getDamage(arg_21_0)
+function var_0_0.getDamage(arg_21_0)
 	if arg_21_0.damage then
 		return arg_21_0.damage
 	end
@@ -228,22 +138,16 @@ function var_0_1.getDamage(arg_21_0)
 	return 0
 end
 
-function var_0_1.GetShip(arg_22_0)
-	Ship = var_1_10001
-
-	return var_1_10001.New({
+function var_0_0.GetShip(arg_22_0)
+	return Ship.New({
 		configId = arg_22_0.icon,
 		skin_id = arg_22_0.skinId,
 		name = arg_22_0.name
 	})
 end
 
-function var_0_1.GetJoinZeroTime(arg_23_0)
-	pg = var_1_10001
-
-	local var_23_0 = var_1_10001.TimeMgr.GetInstance()
-
-	return var_1.GetNextTimeByTimeStamp(var_23_0, arg_23_0.joinTime)
+function var_0_0.GetJoinZeroTime(arg_23_0)
+	return pg.TimeMgr.GetInstance():GetNextTimeByTimeStamp(arg_23_0.joinTime)
 end
 
-return var_0_1
+return var_0_0

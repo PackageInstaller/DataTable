@@ -22,6 +22,7 @@ function configUI(self)
 	super.configUI(self)
     
     self.mGoTipBg = self:getChildGO("mImgTipBg")
+    self.mGoTipBg:SetActive(false)
 
     self.m_btnClose = self:getChildGO("gBtnClose")
     self.m_btnNo = self:getChildGO("BtnNo")
@@ -33,7 +34,6 @@ function configUI(self)
     self.m_textTitle = self:getChildGO('gTxtTitle'):GetComponent(ty.Text)
     self.m_textContent = self:getChildGO('mTxtContent'):GetComponent(ty.Text)
     self.m_rectContent = self:getChildGO('mTxtContent'):GetComponent(ty.RectTransform)
-    self.mClickEvent = self.mGoTipBg:GetComponent(ty.LongPressOrClickEventTrigger)
 
     self.mGroupNormal = self:getChildGO("mGroupNormal")
     self.mGroupSecret = self:getChildGO("mGroupSecret")
@@ -51,7 +51,6 @@ function active(self)
 	self:addOnClick(self.m_btnNo, self.__onClickNoHandler)
 	self:addOnClick(self.m_btnYes, self.__onClickYesHandler)
 	self:addOnClick(self.m_btnConfirm, self.__onClickConfrimHandler)
-    self.mClickEvent.onLongPress:AddListener(function() self:__onLongPressHandler() end)
 	self:addOnClick(self.mBtnSecretBack, self.__onClickSecretBackHandler)
 	self:addOnClick(self.mBtnSecretCollect, self.__onClickSecretCollectHandler)
 end
@@ -63,7 +62,6 @@ function deActive(self)
 	self:removeOnClick(self.m_btnNo, self.__onClickNoHandler)
 	self:removeOnClick(self.m_btnYes, self.__onClickYesHandler)
 	self:removeOnClick(self.m_btnConfirm, self.__onClickConfrimHandler)
-    self.mClickEvent.onLongPress:RemoveAllListeners()
 	self:removeOnClick(self.mBtnSecretBack, self.__onClickSecretBackHandler)
 	self:removeOnClick(self.mBtnSecretCollect, self.__onClickSecretCollectHandler)
 end
@@ -91,17 +89,13 @@ function setData(self, data)
     self.m_textConfirm.text = yesStr or ""
 
     if(noStr == nil and self.m_noFun == nil)then
-        self.mGoTipBg:SetActive(true)
         self.m_btnNo:SetActive(false)
         self.m_btnYes:SetActive(false)
         self.m_btnConfirm:SetActive(true)
-        gs.TransQuick:UIPosY(self.m_rectContent, -63)
     else
-        self.mGoTipBg:SetActive(false)
         self.m_btnNo:SetActive(true)
         self.m_btnYes:SetActive(true)
         self.m_btnConfirm:SetActive(false)
-        gs.TransQuick:UIPosY(self.m_rectContent, 0)
     end
 end
 
@@ -133,9 +127,6 @@ function __onClickConfrimHandler(self)
         self:close()
         self.m_yesFun()
     end
-end
-
-function __onLongPressHandler(self)
 end
 
 function __onClickSecretBackHandler(self)

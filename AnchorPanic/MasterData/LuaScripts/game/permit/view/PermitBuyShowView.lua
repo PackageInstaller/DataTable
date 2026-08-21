@@ -42,12 +42,15 @@ function configUI(self)
     self.mTxtTopDes = self:getChildGO("mTxtTopDes"):GetComponent(ty.Text)
     self.mTxtBuyTop = self:getChildGO("mTxtBuyTop"):GetComponent(ty.Text)
     self.mTxtBuyDown = self:getChildGO("mTxtBuyDown"):GetComponent(ty.Text)
+    self.mImgHeroHar = self:getChildGO("mImgHeroHar"):GetComponent(ty.AutoRefImage)
 end
 
 function active(self, args)
     super.active(self, args)
     GameDispatcher:addEventListener(EventName.UPDATE_PERMIT_PANEL, self.updateView, self)
     self:updateView()
+    local isHar = (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())
+    self.mImgHeroHar.gameObject:SetActive(isHar)
     --self:updateTime()
     --self:addTimer(1, 0, self.updateTime)
 end

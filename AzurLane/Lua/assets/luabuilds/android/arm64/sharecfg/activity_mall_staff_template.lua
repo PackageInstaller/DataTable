@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_mall_staff_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_mall_staff_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_mall_staff_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_mall_staff_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_mall_staff_template = rawget(pg, "activity_mall_staff_template") or setmetatable({
+	__name = "activity_mall_staff_template"
+}, confNEO)
+pg.activity_mall_staff_template.all = {
 	65891,
 	65892,
 	65893,
@@ -87,25 +64,11 @@ var_0_3.all = {
 	65986,
 	65987
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_mall_staff_template = {}
+pg.base = pg.base or {}
+pg.base.activity_mall_staff_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_mall_staff_template
-
-	var_1_0[65891] = {
+	pg.base.activity_mall_staff_template[65891] = {
 		id = 65891,
 		attr = {
 			{
@@ -127,11 +90,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_mall_staff_template
-
-	var_1_1[65892] = {
+	pg.base.activity_mall_staff_template[65892] = {
 		id = 65892,
 		attr = {
 			{
@@ -153,11 +112,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_mall_staff_template
-
-	var_1_2[65893] = {
+	pg.base.activity_mall_staff_template[65893] = {
 		id = 65893,
 		attr = {
 			{
@@ -179,11 +134,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_mall_staff_template
-
-	var_1_3[65894] = {
+	pg.base.activity_mall_staff_template[65894] = {
 		id = 65894,
 		attr = {
 			{
@@ -205,11 +156,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_mall_staff_template
-
-	var_1_4[65895] = {
+	pg.base.activity_mall_staff_template[65895] = {
 		id = 65895,
 		attr = {
 			{
@@ -231,11 +178,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_mall_staff_template
-
-	var_1_5[65896] = {
+	pg.base.activity_mall_staff_template[65896] = {
 		id = 65896,
 		attr = {
 			{
@@ -257,11 +200,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_mall_staff_template
-
-	var_1_6[65897] = {
+	pg.base.activity_mall_staff_template[65897] = {
 		id = 65897,
 		attr = {
 			{
@@ -283,11 +222,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_mall_staff_template
-
-	var_1_7[65898] = {
+	pg.base.activity_mall_staff_template[65898] = {
 		id = 65898,
 		attr = {
 			{
@@ -309,11 +244,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_mall_staff_template
-
-	var_1_8[65899] = {
+	pg.base.activity_mall_staff_template[65899] = {
 		id = 65899,
 		attr = {
 			{
@@ -335,11 +266,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_mall_staff_template
-
-	var_1_9[65900] = {
+	pg.base.activity_mall_staff_template[65900] = {
 		id = 65900,
 		attr = {
 			{
@@ -361,11 +288,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_mall_staff_template
-
-	var_1_10[18] = {
+	pg.base.activity_mall_staff_template[18] = {
 		id = 65938,
 		attr = {
 			{
@@ -387,11 +310,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_mall_staff_template
-
-	var_1_11[19] = {
+	pg.base.activity_mall_staff_template[19] = {
 		id = 65939,
 		attr = {
 			{
@@ -413,11 +332,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_mall_staff_template
-
-	var_1_12[20] = {
+	pg.base.activity_mall_staff_template[20] = {
 		id = 65940,
 		attr = {
 			{
@@ -439,11 +354,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_mall_staff_template
-
-	var_1_13[21] = {
+	pg.base.activity_mall_staff_template[21] = {
 		id = 65941,
 		attr = {
 			{
@@ -465,11 +376,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_mall_staff_template
-
-	var_1_14[22] = {
+	pg.base.activity_mall_staff_template[22] = {
 		id = 65942,
 		attr = {
 			{
@@ -491,11 +398,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_mall_staff_template
-
-	var_1_15[23] = {
+	pg.base.activity_mall_staff_template[23] = {
 		id = 65943,
 		attr = {
 			{
@@ -517,11 +420,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_mall_staff_template
-
-	var_1_16[24] = {
+	pg.base.activity_mall_staff_template[24] = {
 		id = 65944,
 		attr = {
 			{
@@ -543,11 +442,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_mall_staff_template
-
-	var_1_17[25] = {
+	pg.base.activity_mall_staff_template[25] = {
 		id = 65945,
 		attr = {
 			{
@@ -569,11 +464,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_mall_staff_template
-
-	var_1_18[26] = {
+	pg.base.activity_mall_staff_template[26] = {
 		id = 65946,
 		attr = {
 			{
@@ -595,11 +486,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_mall_staff_template
-
-	var_1_19[27] = {
+	pg.base.activity_mall_staff_template[27] = {
 		id = 65947,
 		attr = {
 			{
@@ -621,11 +508,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_mall_staff_template
-
-	var_1_20[28] = {
+	pg.base.activity_mall_staff_template[28] = {
 		id = 65948,
 		attr = {
 			{
@@ -647,11 +530,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_mall_staff_template
-
-	var_1_21[29] = {
+	pg.base.activity_mall_staff_template[29] = {
 		id = 65949,
 		attr = {
 			{
@@ -673,11 +552,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_mall_staff_template
-
-	var_1_22[30] = {
+	pg.base.activity_mall_staff_template[30] = {
 		id = 65950,
 		attr = {
 			{
@@ -699,11 +574,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_mall_staff_template
-
-	var_1_23[31] = {
+	pg.base.activity_mall_staff_template[31] = {
 		id = 65951,
 		attr = {
 			{
@@ -725,11 +596,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_mall_staff_template
-
-	var_1_24[65952] = {
+	pg.base.activity_mall_staff_template[65952] = {
 		id = 65952,
 		attr = {
 			{
@@ -751,11 +618,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_mall_staff_template
-
-	var_1_25[65953] = {
+	pg.base.activity_mall_staff_template[65953] = {
 		id = 65953,
 		attr = {
 			{
@@ -777,11 +640,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_mall_staff_template
-
-	var_1_26[65954] = {
+	pg.base.activity_mall_staff_template[65954] = {
 		id = 65954,
 		attr = {
 			{
@@ -803,11 +662,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_mall_staff_template
-
-	var_1_27[65955] = {
+	pg.base.activity_mall_staff_template[65955] = {
 		id = 65955,
 		attr = {
 			{
@@ -829,11 +684,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_mall_staff_template
-
-	var_1_28[65956] = {
+	pg.base.activity_mall_staff_template[65956] = {
 		id = 65956,
 		attr = {
 			{
@@ -855,11 +706,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_mall_staff_template
-
-	var_1_29[65957] = {
+	pg.base.activity_mall_staff_template[65957] = {
 		id = 65957,
 		attr = {
 			{
@@ -881,11 +728,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_mall_staff_template
-
-	var_1_30[65958] = {
+	pg.base.activity_mall_staff_template[65958] = {
 		id = 65958,
 		attr = {
 			{
@@ -907,11 +750,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_mall_staff_template
-
-	var_1_31[65959] = {
+	pg.base.activity_mall_staff_template[65959] = {
 		id = 65959,
 		attr = {
 			{
@@ -933,11 +772,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_mall_staff_template
-
-	var_1_32[65960] = {
+	pg.base.activity_mall_staff_template[65960] = {
 		id = 65960,
 		attr = {
 			{
@@ -959,11 +794,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_mall_staff_template
-
-	var_1_33[65961] = {
+	pg.base.activity_mall_staff_template[65961] = {
 		id = 65961,
 		attr = {
 			{
@@ -985,11 +816,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_mall_staff_template
-
-	var_1_34[65962] = {
+	pg.base.activity_mall_staff_template[65962] = {
 		id = 65962,
 		attr = {
 			{
@@ -1011,11 +838,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_mall_staff_template
-
-	var_1_35[65963] = {
+	pg.base.activity_mall_staff_template[65963] = {
 		id = 65963,
 		attr = {
 			{
@@ -1037,11 +860,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_mall_staff_template
-
-	var_1_36[65964] = {
+	pg.base.activity_mall_staff_template[65964] = {
 		id = 65964,
 		attr = {
 			{
@@ -1063,11 +882,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_mall_staff_template
-
-	var_1_37[65965] = {
+	pg.base.activity_mall_staff_template[65965] = {
 		id = 65965,
 		attr = {
 			{
@@ -1089,11 +904,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_mall_staff_template
-
-	var_1_38[65966] = {
+	pg.base.activity_mall_staff_template[65966] = {
 		id = 65966,
 		attr = {
 			{
@@ -1115,11 +926,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_mall_staff_template
-
-	var_1_39[65967] = {
+	pg.base.activity_mall_staff_template[65967] = {
 		id = 65967,
 		attr = {
 			{
@@ -1141,11 +948,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_mall_staff_template
-
-	var_1_40[65968] = {
+	pg.base.activity_mall_staff_template[65968] = {
 		id = 65968,
 		attr = {
 			{
@@ -1167,11 +970,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_mall_staff_template
-
-	var_1_41[65969] = {
+	pg.base.activity_mall_staff_template[65969] = {
 		id = 65969,
 		attr = {
 			{
@@ -1193,11 +992,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_mall_staff_template
-
-	var_1_42[65970] = {
+	pg.base.activity_mall_staff_template[65970] = {
 		id = 65970,
 		attr = {
 			{
@@ -1219,11 +1014,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_mall_staff_template
-
-	var_1_43[65971] = {
+	pg.base.activity_mall_staff_template[65971] = {
 		id = 65971,
 		attr = {
 			{
@@ -1245,11 +1036,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_mall_staff_template
-
-	var_1_44[65972] = {
+	pg.base.activity_mall_staff_template[65972] = {
 		id = 65972,
 		attr = {
 			{
@@ -1271,11 +1058,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_mall_staff_template
-
-	var_1_45[65973] = {
+	pg.base.activity_mall_staff_template[65973] = {
 		id = 65973,
 		attr = {
 			{
@@ -1297,11 +1080,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_mall_staff_template
-
-	var_1_46[65974] = {
+	pg.base.activity_mall_staff_template[65974] = {
 		id = 65974,
 		attr = {
 			{
@@ -1323,11 +1102,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_mall_staff_template
-
-	var_1_47[65975] = {
+	pg.base.activity_mall_staff_template[65975] = {
 		id = 65975,
 		attr = {
 			{
@@ -1349,11 +1124,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_mall_staff_template
-
-	var_1_48[65976] = {
+	pg.base.activity_mall_staff_template[65976] = {
 		id = 65976,
 		attr = {
 			{
@@ -1375,11 +1146,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_mall_staff_template
-
-	var_1_49[65977] = {
+	pg.base.activity_mall_staff_template[65977] = {
 		id = 65977,
 		attr = {
 			{
@@ -1401,11 +1168,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face1"
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_mall_staff_template
-
-	var_1_50[65978] = {
+	pg.base.activity_mall_staff_template[65978] = {
 		id = 65978,
 		attr = {
 			{
@@ -1427,11 +1190,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_mall_staff_template
-
-	var_1_51[65979] = {
+	pg.base.activity_mall_staff_template[65979] = {
 		id = 65979,
 		attr = {
 			{
@@ -1453,11 +1212,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_mall_staff_template
-
-	var_1_52[65980] = {
+	pg.base.activity_mall_staff_template[65980] = {
 		id = 65980,
 		attr = {
 			{
@@ -1479,11 +1234,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_mall_staff_template
-
-	var_1_53[65981] = {
+	pg.base.activity_mall_staff_template[65981] = {
 		id = 65981,
 		attr = {
 			{
@@ -1505,11 +1256,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_mall_staff_template
-
-	var_1_54[65982] = {
+	pg.base.activity_mall_staff_template[65982] = {
 		id = 65982,
 		attr = {
 			{
@@ -1531,11 +1278,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_mall_staff_template
-
-	var_1_55[65983] = {
+	pg.base.activity_mall_staff_template[65983] = {
 		id = 65983,
 		attr = {
 			{
@@ -1557,11 +1300,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face5"
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_mall_staff_template
-
-	var_1_56[65984] = {
+	pg.base.activity_mall_staff_template[65984] = {
 		id = 65984,
 		attr = {
 			{
@@ -1583,11 +1322,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face4"
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_mall_staff_template
-
-	var_1_57[65985] = {
+	pg.base.activity_mall_staff_template[65985] = {
 		id = 65985,
 		attr = {
 			{
@@ -1609,11 +1344,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face3"
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_mall_staff_template
-
-	var_1_58[65986] = {
+	pg.base.activity_mall_staff_template[65986] = {
 		id = 65986,
 		attr = {
 			{
@@ -1635,8 +1366,7 @@ var_0_3.base.activity_mall_staff_template = {}
 			"face2"
 		}
 	}
-	pg = var_1_58
-	var_1_58.base.activity_mall_staff_template[65987] = {
+	pg.base.activity_mall_staff_template[65987] = {
 		id = 65987,
 		attr = {
 			{

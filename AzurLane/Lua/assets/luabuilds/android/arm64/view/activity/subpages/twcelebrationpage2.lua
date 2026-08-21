@@ -1,119 +1,46 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("TWCelebrationPage2", import("...base.BaseActivityPage"))
 
-local var_0_0 = "TWCelebrationPage2"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0._tf
-
-	arg_1_0.getBtn = var_1.Find(var_1_1, "AD/get_btn")
-
-	local var_1_2 = arg_1_0._tf
-
-	arg_1_0.gotBtn = var_1.Find(var_1_2, "AD/got_btn")
-
-	local var_1_3 = arg_1_0._tf
-
-	arg_1_0.goBtn = var_1.Find(var_1_3, "AD/battle_btn")
-
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0.mark = var_1.Find(var_1_4, "AD/mark")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.getBtn = arg_1_0._tf:Find("AD/get_btn")
+	arg_1_0.gotBtn = arg_1_0._tf:Find("AD/got_btn")
+	arg_1_0.goBtn = arg_1_0._tf:Find("AD/battle_btn")
+	arg_1_0.mark = arg_1_0._tf:Find("AD/mark")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
+function var_0_0.OnFirstFlush(arg_2_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_3_0)
-	local var_3_0 = arg_3_0.activity
-	local var_3_1 = var_1.getConfig(var_3_0, "config_data")[1]
+function var_0_0.OnUpdateFlush(arg_3_0)
+	local var_3_0 = arg_3_0.activity:getConfig("config_data")[1]
+	local var_3_1 = getProxy(TaskProxy)
+	local var_3_2 = var_3_1:getTaskById(var_3_0) or var_3_1:getFinishTaskById(var_3_0) or Task.New({
+		id = var_3_0
+	})
+	local var_3_3 = var_3_2:isFinish()
+	local var_3_4 = var_3_2:isReceive()
 
-	getProxy = var_1_10002
-	TaskProxy = var_4
-
-	local var_3_2 = var_1_10002(var_4)
-	local var_3_3
-
-	if not var_2.getTaskById(var_3_2, var_3_1) and not var_2:getFinishTaskById(var_3_1) then
-		Task = var_3_3
-		var_3_3 = var_3_3.New({
-			id = var_3_1
-		})
-	end
-
-	local var_3_4 = var_3_3
-	local var_3_5 = var_3_3.isFinish(var_3_4)
-	local var_3_6 = var_3_3:isReceive()
-
-	setActive = var_3_4
-
-	var_3_4(arg_3_0.getBtn, var_3_3 and var_3_5 and not var_3_6)
-
-	setActive = var_3_4
-
-	var_3_4(arg_3_0.gotBtn, var_3_3 and var_3_6)
-
-	setActive = var_3_4
-
-	var_3_4(arg_3_0.mark, var_3_3 and var_3_6)
-
-	setActive = var_3_4
-
-	var_3_4(arg_3_0.goBtn, var_3_3 and not var_3_5)
-
-	onButton = var_3_4
-
-	local var_3_7 = arg_3_0
-	local var_3_8 = arg_3_0.goBtn
-
-	local function var_3_9()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.SPECIAL_BATTLE_OPERA)
+	setActive(arg_3_0.getBtn, var_3_2 and var_3_3 and not var_3_4)
+	setActive(arg_3_0.gotBtn, var_3_2 and var_3_4)
+	setActive(arg_3_0.mark, var_3_2 and var_3_4)
+	setActive(arg_3_0.goBtn, var_3_2 and not var_3_3)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		arg_3_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10011
-
-	var_3_4(var_3_7, var_3_8, var_3_9, var_1_10011)
-
-	onButton = var_3_4
-
-	local var_3_10 = arg_3_0
-	local var_3_11 = arg_3_0.getBtn
-
-	local function var_3_12()
-		if var_3_3 and var_3_5 and not var_3_6 then
-			local var_5_0 = arg_3_0
-			local var_5_1 = var_0.emit
-
-			ActivityMediator = var_2_10003
-
-			var_5_1(var_5_0, var_2_10003.ON_TASK_SUBMIT, var_3_3)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		if var_3_2 and var_3_3 and not var_3_4 then
+			arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_3_2)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10011
-
-	var_3_4(var_3_10, var_3_11, var_3_12, var_1_10011)
+	end, SFX_PANEL)
 
 	return
 end
 
-return var_0_1
+return var_0_0

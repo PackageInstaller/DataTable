@@ -29,6 +29,8 @@ function __init(self)
     self.mIsSort = false
     --邮箱列表
     self.mMailList = {}
+    -- nil表示尚未收到收藏邮件列表，空表表示服务端返回空列表
+    self.collectionMsg = nil
 end
 
 -- 解析邮件msg
@@ -159,7 +161,9 @@ function getKeyDelIdList(self)
     local list = {}
     for _, mailVo in pairs(self.m_mailDic) do
         if (not mailVo:getHasAward() and mailVo.state == 1) or mailVo.state == 2 then
-            table.insert(list, mailVo.id)
+            if mailVo.isCollection == false then
+                table.insert(list, mailVo.id)
+            end
         end
     end
     return list
@@ -217,6 +221,72 @@ function checkFlag(self)
     end
 
     mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_MAIL, isFlag)
+end
+
+-- Clear collection data before a new request
+function clearCollectionMsg(self)
+    self.collectionMsg = nil
+end
+
+function setCollectionMsg(self, msg)
+    -- Collection mail list may be split across messages; keep entries by mail id
+    if self.collectionMsg == nil then
+        self.collectionMsg = {}
+    end
+    if msg and msg.mail_list then
+        for _, mailInfo in ipairs(msg.mail_list) do
+            if mailInfo and mailInfo.id ~= nil then
+                self.collectionMsg[mailInfo.id] = mailInfo
+            end
+        end
+    end
+    GameDispatcher:dispatchEvent(EventName.UPDATE_COLLECTION_PANEL)
+end
+
+-- Add collection mail and update the normal mail collection state
+function addCollectionMail(self, mailInfo)
+    if not mailInfo then
+        return
+    end
+
+    if self.collectionMsg == nil then
+        self.collectionMsg = {}
+    end
+    self.collectionMsg[mailInfo.id] = mailInfo
+
+    local mailVo = self.m_mailDic[mailInfo.id]
+    if mailVo then
+        mailVo.isCollection = false
+    end
+    self:dispatchEvent(MAIL_UPDATE)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_COLLECTION_PANEL)
+end
+
+-- Remove collection mail and restore the normal mail collection state
+function removeCollectionMail(self, mailIdList)
+    if not mailIdList then
+        return
+    end
+
+    for _, mailId in ipairs(mailIdList) do
+        local mailVo = self.m_mailDic[mailId]
+        if mailVo then
+            mailVo.isCollection = true
+        end
+        if self.collectionMsg then
+            self.collectionMsg[mailId] = nil
+        end
+    end
+
+    self:dispatchEvent(MAIL_UPDATE)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_COLLECTION_PANEL)
+end
+
+function getMailCollectionList(self)
+    if self.collectionMsg == nil then
+        return nil
+    end
+    return table.values(self.collectionMsg)
 end
 
 return _M

@@ -136,20 +136,20 @@ function onAttackerMoveStart(self, arg)
                 local v = arg.aniLenght / nowDis
                 local t = v * (nowDis - 1)
                 RateLooper:addTimer(t, 1, self,
-                function()
-                    thing:setVisibleByCamera(false, self)
-                end)
-                return
+                    function()
+                        thing:setVisibleByCamera(false, self)
+                    end)
+                    return
+                end
             end
         end
     end
-end
 
--- 攻击者移动结束
-function onAttackerMoveEnd(self, arg)
+    -- 攻击者移动结束
+    function onAttackerMoveEnd(self, arg)
 
-end
-return _M
+    end
+    return _M
 
---[[ 替换语言包自动生成，请勿修改！
+    --[[ 替换语言包自动生成，请勿修改！
 ]]

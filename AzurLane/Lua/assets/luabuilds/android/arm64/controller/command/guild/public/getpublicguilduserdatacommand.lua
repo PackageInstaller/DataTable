@@ -1,45 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GetPublicGuildUserDataCommand", pm.SimpleCommand)
 
-local var_0_0 = "GetPublicGuildUserDataCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 
-	seriesAsync = var_1_10003
-
-	var_1_10003({
+	seriesAsync({
 		function(arg_2_0)
-			local var_2_0 = arg_1_0
-
-			var_1.CreatePublicGuild(var_2_0, arg_2_0)
+			arg_1_0:CreatePublicGuild(arg_2_0)
 
 			return
 		end,
 		function(arg_3_0)
-			local var_3_0 = arg_1_0
-
-			var_1.InitPublicGuild(var_3_0, arg_3_0)
+			arg_1_0:InitPublicGuild(arg_3_0)
 
 			return
 		end
 	}, function()
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH)
-
-		local var_4_2 = arg_1_0
-		local var_4_3 = var_0.sendNotification
-
-		GAME = var_3
-
-		var_4_3(var_4_2, var_3.GET_PUBLIC_GUILD_USER_DATA_DONE)
+		arg_1_0:sendNotification(GAME.HANDLE_GUILD_AND_PUBLIC_GUILD_TECH)
+		arg_1_0:sendNotification(GAME.GET_PUBLIC_GUILD_USER_DATA_DONE)
 
 		return
 	end)
@@ -47,24 +24,11 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.CreatePublicGuild(arg_5_0, arg_5_1)
-	pg = var_1_10002
-
-	local var_5_0 = var_1_10002.ConnectionMgr.GetInstance()
-
-	var_2.Send(var_5_0, 20, {
+function var_0_0.CreatePublicGuild(arg_5_0, arg_5_1)
+	pg.ConnectionMgr.GetInstance():Send(20, {
 		type = 0
 	}, 21, function(arg_6_0)
-		PublicGuild = var_2_10001
-
-		local var_6_0 = var_2_10001.New(arg_6_0)
-
-		getProxy = var_2_10002
-		GuildProxy = var_2_10004
-
-		local var_6_1 = var_2_10002(var_2_10004)
-
-		var_2.AddPublicGuild(var_6_1, var_6_0)
+		getProxy(GuildProxy):AddPublicGuild((PublicGuild.New(arg_6_0)))
 		arg_5_1()
 
 		return
@@ -73,21 +37,11 @@ function var_0_1.CreatePublicGuild(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.InitPublicGuild(arg_7_0, arg_7_1)
-	pg = var_1_10002
-
-	local var_7_0 = var_1_10002.ConnectionMgr.GetInstance()
-
-	var_2.Send(var_7_0, 60102, {
+function var_0_0.InitPublicGuild(arg_7_0, arg_7_1)
+	pg.ConnectionMgr.GetInstance():Send(60102, {
 		type = 0
 	}, 60103, function(arg_8_0)
-		getProxy = var_2_10001
-		GuildProxy = var_2_10003
-
-		local var_8_0 = var_2_10001(var_2_10003)
-		local var_8_1 = var_1.GetPublicGuild(var_8_0)
-
-		var_1.InitUser(var_8_1, arg_8_0.user_info)
+		getProxy(GuildProxy):GetPublicGuild():InitUser(arg_8_0.user_info)
 		arg_7_1()
 
 		return
@@ -96,4 +50,4 @@ function var_0_1.InitPublicGuild(arg_7_0, arg_7_1)
 	return
 end
 
-return var_0_1
+return var_0_0

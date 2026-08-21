@@ -254,7 +254,7 @@ function updateTime(self)
         local clientTime = GameManager:getClientTime()
         local remainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.SelectBuy):getEndTime() -
                                   clientTime
-        local timeTxt = remainingTime <= 0 and "活动已结束" or _TT(3530) ..
+        local timeTxt = remainingTime <= 0 and "活动已结束" or _TT(94557) ..
                             HtmlUtil:colorAndSize(TimeUtil.getFormatTimeBySeconds_9(remainingTime), "ffffffff", 20)
 
         self.mTxtEndTimer.text = timeTxt

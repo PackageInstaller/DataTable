@@ -1,49 +1,15 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "arena_data_shop") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "arena_data_shop"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.arena_data_shop = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.arena_data_shop
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.arena_data_shop = rawget(pg, "arena_data_shop") or setmetatable({
+	__name = "arena_data_shop"
+}, confNEO)
+pg.arena_data_shop.all = {
 	1
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.arena_data_shop = {}
+pg.base = pg.base or {}
+pg.base.arena_data_shop = {}
 
 ;(function()
-	pg = var_1_10000
-	var_1_10000.base.arena_data_shop[1] = {
+	pg.base.arena_data_shop[1] = {
 		id = 1,
 		commodity_list_1 = {
 			{

@@ -23,6 +23,12 @@ function onInit(self, go)
     self.mGroup = self:getChildGO("mGroupItem")
 
     self.mHeadGridNode = self:getChildTrans("mHeadGridNode")
+
+    self.mBtnMessage = self:getChildGO("mBtnMessage")
+
+    self:addOnClick(self.mBtnMessage, function ()
+        gs.Message.Show(self.data.damage) -- 功能暂未开启
+    end)
 end
 
 function setData(self, data)
@@ -50,7 +56,7 @@ function setData(self, data)
     self.mTxtRank.text = self.data.rank
     self.mTxtRankBig.text = self.data.rank
     self.mTxtName.text = self.data.player_name
-    self.mTxtDamage.text = self.data.damage
+    self.mTxtDamage.text = string.formatChineseNumber(self.data.damage)
 
     if (not self.mPlayerHeadGrid) then
         self.mPlayerHeadGrid = PlayerHeadGrid:poolGet()

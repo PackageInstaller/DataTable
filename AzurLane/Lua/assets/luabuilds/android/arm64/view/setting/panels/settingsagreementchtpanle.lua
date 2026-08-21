@@ -1,73 +1,25 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SettingsAgreementCHTPanle", import(".SettingsAgreementPanle"))
 
-local var_0_0 = "SettingsAgreementCHTPanle"
+function var_0_0.OnInit(arg_1_0)
+	local var_1_0 = arg_1_0._tf:Find("private")
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SettingsAgreementPanle"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-	local var_1_1 = var_1.Find(var_1_0, "private")
-
-	onButton = var_1_10002
-
-	local var_1_2 = arg_1_0
-	local var_1_3 = var_1_1
-
-	local function var_1_4()
-		pg = var_2_10000
-
-		local var_2_0 = var_2_10000.UserAgreementMgr.GetInstance()
-
-		var_0.ShowChtPrivate(var_2_0)
+	onButton(arg_1_0, var_1_0, function()
+		pg.UserAgreementMgr.GetInstance():ShowChtPrivate()
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10007
+	local var_1_1 = arg_1_0._tf:Find("licence")
 
-	var_1_10002(var_1_2, var_1_3, var_1_4, var_1_10007)
-
-	local var_1_5 = arg_1_0._tf
-	local var_1_6 = var_2.Find(var_1_5, "licence")
-
-	onButton = var_1_0
-
-	local var_1_7 = arg_1_0
-	local var_1_8 = var_1_6
-
-	local function var_1_9()
-		pg = var_2_10000
-
-		local var_3_0 = var_2_10000.UserAgreementMgr.GetInstance()
-
-		var_0.ShowChtLicence(var_3_0)
+	onButton(arg_1_0, var_1_1, function()
+		pg.UserAgreementMgr.GetInstance():ShowChtLicence()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_0(var_1_7, var_1_8, var_1_9, var_1_10008)
-
-	setText = var_1_0
-
-	local var_1_10 = var_1_1:Find("Text")
-
-	i18n = var_1_8
-
-	var_1_0(var_1_10, var_1_8("setting_label_private"))
-
-	setText = var_1_0
-
-	local var_1_11 = var_1_6:Find("Text")
-
-	i18n = var_6
-
-	var_1_0(var_1_11, var_6("setting_label_licence"))
+	end, SFX_PANEL)
+	setText(var_1_0:Find("Text"), i18n("setting_label_private"))
+	setText(var_1_1:Find("Text"), i18n("setting_label_licence"))
 
 	return
 end
 
-return var_0_1
+return var_0_0

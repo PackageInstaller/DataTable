@@ -1,313 +1,153 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BuildShipHelpWindow", import("...base.BaseSubView"))
 
-local var_0_0 = "BuildShipHelpWindow"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "BuildShipHelpWindowUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.shipListTF = arg_2_0._tf:Find("window/list/scrollview/list")
+	arg_2_0.shipListTpl = arg_2_0._tf:Find("window/list/scrollview/item")
 
-	arg_2_0.shipListTF = var_1.Find(var_2_0, "window/list/scrollview/list")
+	setActive(arg_2_0.shipListTpl, false)
 
-	local var_2_1 = arg_2_0._tf
+	arg_2_0.tipListTF = arg_2_0._tf:Find("window/rateList/scrollview/list")
+	arg_2_0.tipListTpl = arg_2_0._tf:Find("window/rateList/scrollview/item")
 
-	arg_2_0.shipListTpl = var_1.Find(var_2_1, "window/list/scrollview/item")
-	setActive = var_1
-
-	var_1(arg_2_0.shipListTpl, false)
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.tipListTF = var_1.Find(var_2_2, "window/rateList/scrollview/list")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.tipListTpl = var_1.Find(var_2_3, "window/rateList/scrollview/item")
-	setText = var_1
-
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_3.Find(var_2_4, "window/confirm_btn/Image/Image (1)")
-
-	i18n = var_4
-
-	var_1(var_2_5, var_4("text_confirm"))
+	setText(arg_2_0._tf:Find("window/confirm_btn/Image/Image (1)"), i18n("text_confirm"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "window/close_btn")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("window/close_btn"), function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_1
-
-	var_1_10001(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	onButton = var_1_10001
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = arg_3_0._tf
-	local var_3_6 = var_4.Find(var_3_5, "window/confirm_btn")
-
-	local function var_3_7()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("window/confirm_btn"), function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_5
-
-	var_1_10001(var_3_4, var_3_6, var_3_7, var_3_5)
-
-	onButton = var_1_10001
-
-	local var_3_8 = arg_3_0
-	local var_3_9 = arg_3_0._tf
-
-	local function var_3_10()
-		local var_6_0 = arg_3_0
-
-		var_0.Hide(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_5
-
-	var_1_10001(var_3_8, var_3_9, var_3_10, var_3_5)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-	pg = var_1_10004
-
-	local var_7_0 = var_1_10004.UIMgr.GetInstance()
-
-	var_4.BlurPanel(var_7_0, arg_7_0._tf)
+function var_0_0.Show(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf)
 
 	arg_7_0.isSupport = arg_7_2 == "support"
 
-	local var_7_1 = arg_7_0._tf
-	local var_7_2 = var_4.Find(var_7_1, "window/rateList/title/Text")
+	local var_7_0 = arg_7_0._tf:Find("window/rateList/title/Text")
 
 	if arg_7_0.isSupport then
-		setText = var_5
-
-		local var_7_3 = var_7_2
-
-		i18n = var_1_10008
-
-		var_5(var_7_3, var_1_10008("support_rate_title"))
+		setText(var_7_0, i18n("support_rate_title"))
 	else
-		setText = var_5
-
-		local var_7_4 = var_7_2
-
-		i18n = var_1_10008
-
-		var_5(var_7_4, var_1_10008("build_rate_title"))
+		setText(var_7_0, i18n("build_rate_title"))
 	end
 
-	setActive = var_5
-
-	var_5(var_7_2, false)
-
-	setActive = var_5
-
-	var_5(var_7_2, true)
+	setActive(var_7_0, false)
+	setActive(var_7_0, true)
 	arg_7_0:OnShow(arg_7_1, arg_7_3)
-
-	setActiveViaLayer = var_5
-
-	var_5(arg_7_0._tf, true)
+	setActiveViaLayer(arg_7_0._tf, true)
 	arg_7_0:PlayOpenAnimation()
 
 	return
 end
 
-function var_0_1.OnShow(arg_8_0, arg_8_1, arg_8_2)
+function var_0_0.OnShow(arg_8_0, arg_8_1, arg_8_2)
 	arg_8_0.showing = true
 
-	local var_8_0 = arg_8_1
-	local var_8_1 = arg_8_0.shipListTF.childCount
+	for iter_8_0 = 1, arg_8_0.shipListTF.childCount do
+		local var_8_0 = arg_8_0.shipListTF:GetChild(iter_8_0 - 1)
 
-	for iter_8_0 = 1, var_8_1 do
-		var_1_10011 = arg_8_0.shipListTF
-
-		if var_9.GetChild(var_1_10011, iter_8_0 - 1) then
-			setActive = var_1_10010
-
-			var_1_10010(var_9, false)
+		if var_8_0 then
+			setActive(var_8_0, false)
 		end
 	end
 
-	local var_8_2 = arg_8_0.tipListTF.childCount
+	local var_8_1 = arg_8_0.tipListTF.childCount
 
-	for iter_8_1 = 1, var_8_2 do
-		local var_8_3 = arg_8_0.tipListTF
+	for iter_8_1 = 1, arg_8_0.tipListTF.childCount do
+		local var_8_2 = arg_8_0.tipListTF:GetChild(iter_8_1 - 1)
 
-		if var_10.GetChild(var_8_3, iter_8_1 - 1) then
-			setActive = var_1_10011
-
-			var_1_10011(var_10, false)
+		if var_8_2 then
+			setActive(var_8_2, false)
 		end
 	end
 
-	getProxy = var_6
-	ActivityProxy = var_8
-
-	local var_8_4 = var_6(var_8)
-	local var_8_5
+	local var_8_3 = getProxy(ActivityProxy)
+	local var_8_4
 
 	if not arg_8_0.isSupport then
-		if arg_8_2 then
-			var_8_5 = var_8_4:getBuildActivityCfgByID(var_8_0.id)
-		else
-			var_8_5 = var_8_4:getNoneActBuildActivityCfgByID(var_8_0.id)
-		end
+		var_8_4 = arg_8_2 and var_8_3:getBuildActivityCfgByID(arg_8_1.id) or var_8_3:getNoneActBuildActivityCfgByID(arg_8_1.id)
 	end
 
-	local var_8_6
+	if var_8_4 then
+		local var_8_5 = var_8_4.rate_tip or arg_8_1.rate_tip
 
-	if not var_8_5 or not var_8_5.rate_tip then
-		var_8_6 = var_8_0.rate_tip
-	end
+		for iter_8_2 = 1, #var_8_5 do
+			local var_8_6 = iter_8_2 <= var_8_1 and arg_8_0.tipListTF:GetChild(iter_8_2 - 1) or cloneTplTo(arg_8_0.tipListTpl, arg_8_0.tipListTF)
 
-	for iter_8_2 = 1, #var_8_6 do
-		local var_8_7
-
-		if iter_8_2 <= var_8_2 then
-			local var_8_8 = arg_8_0.tipListTF
-
-			var_8_7 = var_1_10014.GetChild(var_8_8, iter_8_2 - 1)
-		else
-			cloneTplTo = var_1_10014
-			var_8_7 = var_1_10014(arg_8_0.tipListTpl, arg_8_0.tipListTF)
+			if var_8_6 then
+				setActive(var_8_6, true)
+				setText(var_8_6, HXSet.hxLan(var_8_5[iter_8_2]))
+			end
 		end
 
-		if var_8_7 then
-			setActive = var_1_10014
-
-			var_1_10014(var_8_7, true)
-
-			setText = var_1_10014
-
-			local var_8_9 = var_8_7
-
-			HXSet = var_17
-
-			var_1_10014(var_8_9, var_17.hxLan(var_8_6[iter_8_2]))
-		end
+		return
 	end
-
-	return
 end
 
-function var_0_1.Hide(arg_9_0)
+function var_0_0.Hide(arg_9_0)
 	arg_9_0.showing = false
-	setActiveViaLayer = var_1
 
-	var_1(arg_9_0._tf, false)
-
-	pg = var_1
-
-	local var_9_0 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_9_0, arg_9_0._tf, arg_9_0._tf)
+	setActiveViaLayer(arg_9_0._tf, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_9_0._tf, arg_9_0._tf)
 
 	return
 end
 
-function var_0_1.isShowing(arg_10_0)
+function var_0_0.isShowing(arg_10_0)
 	return arg_10_0.showing
 end
 
-function var_0_1.OnDestroy(arg_11_0)
+function var_0_0.OnDestroy(arg_11_0)
 	return
 end
 
-function var_0_1.PlayOpenAnimation(arg_12_0)
-	local var_12_0 = arg_12_0._tf
-	local var_12_1 = var_1.Find(var_12_0, "window/bg_decorations")
-	local var_12_2 = var_1.GetComponent
+function var_0_0.PlayOpenAnimation(arg_12_0)
+	local var_12_0 = arg_12_0._tf:Find("window/bg_decorations"):GetComponent(typeof(Animation))
 
-	typeof = var_1_10005
-	Animation = var_1_10007
+	var_12_0:Stop()
+	var_12_0:Play("anim_window_bg")
 
-	local var_12_3 = var_12_2(var_12_1, var_1_10005(var_1_10007))
+	local var_12_1 = arg_12_0._tf:Find("window/title"):GetComponent(typeof(Animation))
 
-	var_2.Stop(var_12_3)
-	var_2:Play("anim_window_bg")
+	var_12_1:Stop()
+	var_12_1:Play("anim_top")
 
-	local var_12_4 = arg_12_0._tf
-	local var_12_5 = var_3.Find(var_12_4, "window/title")
-	local var_12_6 = var_3.GetComponent
+	local var_12_2 = arg_12_0._tf:Find("window"):GetComponent(typeof(Animation))
 
-	typeof = var_1_10007
-	Animation = var_1_10009
+	var_12_2:Stop()
+	var_12_2:Play("anim_content")
 
-	local var_12_7 = var_12_6(var_12_5, var_1_10007(var_1_10009))
+	local var_12_3 = arg_12_0._tf:Find("print"):GetComponent(typeof(Animation))
 
-	var_4.Stop(var_12_7)
-	var_4:Play("anim_top")
+	var_12_3:Stop()
+	var_12_3:Play("anim_bg_plus")
 
-	local var_12_8 = arg_12_0._tf
-	local var_12_9 = var_5.Find(var_12_8, "window")
-	local var_12_10 = var_5.GetComponent
+	local var_12_4 = arg_12_0._tf:Find("window/confirm_btn"):GetComponent(typeof(Animation))
 
-	typeof = var_1_10009
-	Animation = var_1_10011
-
-	local var_12_11 = var_12_10(var_12_9, var_1_10009(var_1_10011))
-
-	var_6.Stop(var_12_11)
-	var_6:Play("anim_content")
-
-	local var_12_12 = arg_12_0._tf
-	local var_12_13 = var_7.Find(var_12_12, "print")
-	local var_12_14 = var_7.GetComponent
-
-	typeof = var_1_10011
-	Animation = var_1_10013
-
-	local var_12_15 = var_12_14(var_12_13, var_1_10011(var_1_10013))
-
-	var_8.Stop(var_12_15)
-	var_8:Play("anim_bg_plus")
-
-	local var_12_16 = arg_12_0._tf
-	local var_12_17 = var_9.Find(var_12_16, "window/confirm_btn")
-	local var_12_18 = var_9.GetComponent
-
-	typeof = var_1_10013
-	Animation = var_1_10015
-
-	local var_12_19 = var_12_18(var_12_17, var_1_10013(var_1_10015))
-
-	var_10.Stop(var_12_19)
-	var_10:Play("anim_button_container")
+	var_12_4:Stop()
+	var_12_4:Play("anim_button_container")
 
 	return
 end
 
-return var_0_1
+return var_0_0

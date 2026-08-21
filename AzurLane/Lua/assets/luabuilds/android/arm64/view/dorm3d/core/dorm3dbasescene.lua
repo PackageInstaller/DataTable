@@ -1,69 +1,47 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dBaseScene", import("view.base.BaseUI"))
 
-local var_0_0 = "Dorm3dBaseScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.GetDefaultSystemClasses()
-	DormConst = var_1_10000
-
-	return var_1_10000.GetDefaultSystemClasses()
+function var_0_0.GetDefaultSystemClasses()
+	return DormConst.GetDefaultSystemClasses()
 end
 
-function var_0_1.InitExtraSystem(arg_2_0, arg_2_1)
-	if not arg_2_0.systemManager then
-		ExtraSystemManager = var_2
-		arg_2_0.systemManager = var_2.New(arg_2_0.event, arg_2_0)
-	end
-
+function var_0_0.InitExtraSystem(arg_2_0, arg_2_1)
+	arg_2_0.systemManager = arg_2_0.systemManager or ExtraSystemManager.New(arg_2_0.event, arg_2_0)
 	arg_2_1 = arg_2_1 or arg_2_0.GetDefaultSystemClasses()
-	ipairs = var_2
 
-	for iter_2_0, iter_2_1 in var_2(arg_2_1) do
-		local var_2_0 = arg_2_0.systemManager
-
-		var_7.Register(var_2_0, iter_2_1)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1) do
+		arg_2_0.systemManager:Register(iter_2_1)
 	end
 
 	return
 end
 
-function var_0_1.RemoveExtraSystem(arg_3_0, arg_3_1)
+function var_0_0.RemoveExtraSystem(arg_3_0, arg_3_1)
 	if not arg_3_0.systemManager then
 		return
 	end
 
 	arg_3_1 = arg_3_1 or arg_3_0.GetDefaultSystemClasses()
-	ipairs = var_2
 
-	for iter_3_0, iter_3_1 in var_2(arg_3_1) do
-		local var_3_0 = arg_3_0.systemManager
-
-		var_7.Remove(var_3_0, iter_3_1)
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
+		arg_3_0.systemManager:Remove(iter_3_1)
 	end
 
 	return
 end
 
-function var_0_1.GetExtraSystem(arg_4_0, arg_4_1)
+function var_0_0.GetExtraSystem(arg_4_0, arg_4_1)
 	if not arg_4_0.systemManager then
 		return nil
 	end
 
-	local var_4_0 = arg_4_0.systemManager
-
-	return var_2.Get(var_4_0, arg_4_1)
+	return arg_4_0.systemManager:Get(arg_4_1)
 end
 
-function var_0_1.willExit(arg_5_0)
+function var_0_0.willExit(arg_5_0)
 	arg_5_0:RemoveExtraSystem()
 
 	if arg_5_0.systemManager then
-		local var_5_0 = arg_5_0.systemManager
-
-		var_1.Dispose(var_5_0)
+		arg_5_0.systemManager:Dispose()
 
 		arg_5_0.systemManager = nil
 	end
@@ -71,4 +49,4 @@ function var_0_1.willExit(arg_5_0)
 	return
 end
 
-return var_0_1
+return var_0_0

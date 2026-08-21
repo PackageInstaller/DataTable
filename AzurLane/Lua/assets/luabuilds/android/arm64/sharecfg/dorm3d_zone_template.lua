@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_zone_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_zone_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_zone_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_zone_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_zone_template = rawget(pg, "dorm3d_zone_template") or setmetatable({
+	__name = "dorm3d_zone_template"
+}, confNEO)
+pg.dorm3d_zone_template.all = {
 	1000,
 	1001,
 	1002,
@@ -61,11 +38,7 @@ var_0_3.all = {
 	26002,
 	26003
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_zone_template
-
-var_0_4.get_id_list_by_room_id = {
+pg.dorm3d_zone_template.get_id_list_by_room_id = {
 	{
 		1000,
 		1001,
@@ -121,25 +94,11 @@ var_0_4.get_id_list_by_room_id = {
 		26003
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_zone_template = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_zone_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_zone_template
-
-	var_1_0[1000] = {
+	pg.base.dorm3d_zone_template[1000] = {
 		is_global = 1,
 		name = "全局区域",
 		type_prioritys = "",
@@ -149,11 +108,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "",
 		special_action = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_zone_template
-
-	var_1_1[1001] = {
+	pg.base.dorm3d_zone_template[1001] = {
 		is_global = 0,
 		name = "卧室",
 		touch_id = "",
@@ -176,11 +131,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_zone_template
-
-	var_1_2[1002] = {
+	pg.base.dorm3d_zone_template[1002] = {
 		is_global = 0,
 		name = "餐厅",
 		type_prioritys = "",
@@ -198,11 +149,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_zone_template
-
-	var_1_3[1003] = {
+	pg.base.dorm3d_zone_template[1003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -220,11 +167,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_zone_template
-
-	var_1_4[2001] = {
+	pg.base.dorm3d_zone_template[2001] = {
 		is_global = 0,
 		name = "卧室",
 		type_prioritys = "",
@@ -234,11 +177,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Bed",
 		special_action = ""
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_zone_template
-
-	var_1_5[2002] = {
+	pg.base.dorm3d_zone_template[2002] = {
 		is_global = 0,
 		name = "餐厅",
 		type_prioritys = "",
@@ -248,11 +187,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Table",
 		special_action = ""
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_zone_template
-
-	var_1_6[2003] = {
+	pg.base.dorm3d_zone_template[2003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -262,11 +197,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Chair",
 		special_action = ""
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_zone_template
-
-	var_1_7[3001] = {
+	pg.base.dorm3d_zone_template[3001] = {
 		is_global = 0,
 		name = "卧室",
 		type_prioritys = "",
@@ -276,11 +207,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Bed",
 		special_action = ""
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_zone_template
-
-	var_1_8[3002] = {
+	pg.base.dorm3d_zone_template[3002] = {
 		is_global = 0,
 		name = "娱乐区",
 		type_prioritys = "",
@@ -290,11 +217,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Table",
 		special_action = ""
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_zone_template
-
-	var_1_9[3003] = {
+	pg.base.dorm3d_zone_template[3003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -304,11 +227,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Chair",
 		special_action = ""
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_zone_template
-
-	var_1_10[4001] = {
+	pg.base.dorm3d_zone_template[4001] = {
 		is_global = 0,
 		name = "入口",
 		type_prioritys = "",
@@ -331,11 +250,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_zone_template
-
-	var_1_11[4002] = {
+	pg.base.dorm3d_zone_template[4002] = {
 		is_global = 0,
 		name = "沙滩椅",
 		type_prioritys = "",
@@ -358,11 +273,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_zone_template
-
-	var_1_12[4003] = {
+	pg.base.dorm3d_zone_template[4003] = {
 		is_global = 0,
 		name = "遮阳伞",
 		type_prioritys = "",
@@ -377,11 +288,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		},
 		special_action = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_zone_template
-
-	var_1_13[4004] = {
+	pg.base.dorm3d_zone_template[4004] = {
 		is_global = 0,
 		name = "海滩",
 		type_prioritys = "",
@@ -396,11 +303,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		},
 		special_action = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_zone_template
-
-	var_1_14[4005] = {
+	pg.base.dorm3d_zone_template[4005] = {
 		is_global = 0,
 		name = "滑梯",
 		type_prioritys = "",
@@ -415,11 +318,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		},
 		special_action = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_zone_template
-
-	var_1_15[11001] = {
+	pg.base.dorm3d_zone_template[11001] = {
 		is_global = 0,
 		name = "卧室",
 		type_prioritys = "",
@@ -429,11 +328,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Bed",
 		special_action = ""
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_zone_template
-
-	var_1_16[11002] = {
+	pg.base.dorm3d_zone_template[11002] = {
 		is_global = 0,
 		name = "餐厅",
 		type_prioritys = "",
@@ -443,11 +338,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Table",
 		special_action = ""
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_zone_template
-
-	var_1_17[11003] = {
+	pg.base.dorm3d_zone_template[11003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -457,11 +348,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Chair",
 		special_action = ""
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_zone_template
-
-	var_1_18[12001] = {
+	pg.base.dorm3d_zone_template[12001] = {
 		is_global = 0,
 		name = "卧室",
 		type_prioritys = "",
@@ -471,11 +358,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Bed",
 		special_action = ""
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_zone_template
-
-	var_1_19[12002] = {
+	pg.base.dorm3d_zone_template[12002] = {
 		is_global = 0,
 		name = "餐厅",
 		type_prioritys = "",
@@ -485,11 +368,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Table",
 		special_action = ""
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_zone_template
-
-	var_1_20[12003] = {
+	pg.base.dorm3d_zone_template[12003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -499,11 +378,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Chair",
 		special_action = ""
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_zone_template
-
-	var_1_21[14001] = {
+	pg.base.dorm3d_zone_template[14001] = {
 		is_global = 0,
 		name = "卧室",
 		type_prioritys = "",
@@ -513,11 +388,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Bed",
 		special_action = ""
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_zone_template
-
-	var_1_22[14002] = {
+	pg.base.dorm3d_zone_template[14002] = {
 		is_global = 0,
 		name = "书房",
 		type_prioritys = "",
@@ -527,11 +398,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Table",
 		special_action = ""
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_zone_template
-
-	var_1_23[14003] = {
+	pg.base.dorm3d_zone_template[14003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -541,11 +408,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Chair",
 		special_action = ""
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_zone_template
-
-	var_1_24[16001] = {
+	pg.base.dorm3d_zone_template[16001] = {
 		is_global = 0,
 		name = "舞池",
 		type_prioritys = "",
@@ -560,11 +423,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_zone_template
-
-	var_1_25[16002] = {
+	pg.base.dorm3d_zone_template[16002] = {
 		is_global = 0,
 		name = "吧台",
 		type_prioritys = "",
@@ -579,11 +438,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_zone_template
-
-	var_1_26[16003] = {
+	pg.base.dorm3d_zone_template[16003] = {
 		is_global = 0,
 		name = "卡座",
 		type_prioritys = "",
@@ -598,11 +453,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_zone_template
-
-	var_1_27[16004] = {
+	pg.base.dorm3d_zone_template[16004] = {
 		is_global = 0,
 		name = "休息区",
 		type_prioritys = "",
@@ -617,11 +468,7 @@ var_0_4.base.dorm3d_zone_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_zone_template
-
-	var_1_28[21001] = {
+	pg.base.dorm3d_zone_template[21001] = {
 		is_global = 0,
 		name = "卧室",
 		type_prioritys = "",
@@ -631,11 +478,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Bed",
 		special_action = ""
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_zone_template
-
-	var_1_29[21002] = {
+	pg.base.dorm3d_zone_template[21002] = {
 		is_global = 0,
 		name = "工房",
 		type_prioritys = "",
@@ -645,11 +488,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Table",
 		special_action = ""
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_zone_template
-
-	var_1_30[21003] = {
+	pg.base.dorm3d_zone_template[21003] = {
 		is_global = 0,
 		name = "客厅",
 		type_prioritys = "",
@@ -659,11 +498,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Chair",
 		special_action = ""
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_zone_template
-
-	var_1_31[26001] = {
+	pg.base.dorm3d_zone_template[26001] = {
 		is_global = 0,
 		name = "停车间",
 		type_prioritys = "",
@@ -673,11 +508,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Parking",
 		special_action = ""
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_zone_template
-
-	var_1_32[26002] = {
+	pg.base.dorm3d_zone_template[26002] = {
 		is_global = 0,
 		name = "休息区",
 		type_prioritys = "",
@@ -687,8 +518,7 @@ var_0_4.base.dorm3d_zone_template = {}
 		watch_camera = "Relax",
 		special_action = ""
 	}
-	pg = var_1_32
-	var_1_32.base.dorm3d_zone_template[26003] = {
+	pg.base.dorm3d_zone_template[26003] = {
 		is_global = 0,
 		name = "训练区",
 		type_prioritys = "",

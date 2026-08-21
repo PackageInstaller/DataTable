@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_collection_record_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_collection_record_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_collection_record_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_collection_record_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_collection_record_group = rawget(pg, "world_collection_record_group") or setmetatable({
+	__name = "world_collection_record_group"
+}, confNEO)
+pg.world_collection_record_group.all = {
 	1,
 	2,
 	3,
@@ -33,25 +10,11 @@ var_0_3.all = {
 	5,
 	6
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_collection_record_group = {}
+pg.base = pg.base or {}
+pg.base.world_collection_record_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_collection_record_group
-
-	var_1_0[1] = {
+	pg.base.world_collection_record_group[1] = {
 		id = 1,
 		name_abbreviate = "Chapter1-银翼苍穹",
 		type = 1,
@@ -82,11 +45,7 @@ var_0_3.base.world_collection_record_group = {}
 			100024
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_collection_record_group
-
-	var_1_1[2] = {
+	pg.base.world_collection_record_group[2] = {
 		id = 2,
 		name_abbreviate = "Chapter2-皇家号令",
 		type = 1,
@@ -107,11 +66,7 @@ var_0_3.base.world_collection_record_group = {}
 			100038
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_collection_record_group
-
-	var_1_2[3] = {
+	pg.base.world_collection_record_group[3] = {
 		id = 3,
 		name_abbreviate = "Chapter3-渐入迷踪",
 		type = 1,
@@ -132,11 +87,7 @@ var_0_3.base.world_collection_record_group = {}
 			100052
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_collection_record_group
-
-	var_1_3[4] = {
+	pg.base.world_collection_record_group[4] = {
 		id = 4,
 		name_abbreviate = "Chapter4-红樱远航",
 		type = 1,
@@ -157,11 +108,7 @@ var_0_3.base.world_collection_record_group = {}
 			100066
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_collection_record_group
-
-	var_1_4[5] = {
+	pg.base.world_collection_record_group[5] = {
 		id = 5,
 		name_abbreviate = "Chapter5-火烬余辉",
 		type = 1,
@@ -190,8 +137,7 @@ var_0_3.base.world_collection_record_group = {}
 			100097
 		}
 	}
-	pg = var_1_4
-	var_1_4.base.world_collection_record_group[6] = {
+	pg.base.world_collection_record_group[6] = {
 		id = 6,
 		name_abbreviate = "情报片段",
 		type = 3,

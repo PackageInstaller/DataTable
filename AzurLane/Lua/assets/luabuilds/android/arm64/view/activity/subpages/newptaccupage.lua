@@ -1,54 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewPtAccuPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "NewPtAccuPage"
+var_0_0.TIME = 300
 
-import = var_0_10003
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
-
-var_0_1.TIME = 300
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.value2 = var_1.Find(var_1_0, "AD/value2")
-
-	local var_1_1 = arg_1_0._tf
-
-	arg_1_0.sliderTxt = var_1.Find(var_1_1, "AD/slider/Text")
+	arg_1_0.value2 = arg_1_0._tf:Find("AD/value2")
+	arg_1_0.sliderTxt = arg_1_0._tf:Find("AD/slider/Text")
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_2_0)
-	var_0_1.super.OnUpdateFlush(arg_2_0)
+function var_0_0.OnUpdateFlush(arg_2_0)
+	var_0_0.super.OnUpdateFlush(arg_2_0)
+	setText(arg_2_0.value2, arg_2_0.ptData:GetValue2())
 
-	setText = var_1
+	local var_2_0, var_2_1, var_2_2 = arg_2_0.ptData:GetResProgress()
 
-	local var_2_0 = arg_2_0.value2
-	local var_2_1 = arg_2_0.ptData
-
-	var_1(var_2_0, var_4.GetValue2(var_2_1))
-
-	local var_2_2 = arg_2_0.ptData
-	local var_2_3, var_2_4, var_2_5 = var_1.GetResProgress(var_2_2)
-
-	setText = var_4
-
-	local var_2_6 = arg_2_0.sliderTxt
-
-	math = var_1_10007
-
-	local var_2_7 = var_1_10007.floor
-
-	math = var_1_10009
-
-	var_4(var_2_6, var_2_7(var_1_10009.min(var_2_5, 1) * 100) .. "%")
-	arg_2_0:GetWorldPtData(var_0_1.TIME)
+	setText(arg_2_0.sliderTxt, math.floor(math.min(var_2_2, 1) * 100) .. "%")
+	arg_2_0:GetWorldPtData(var_0_0.TIME)
 
 	return
 end
 
-return var_0_1
+return var_0_0

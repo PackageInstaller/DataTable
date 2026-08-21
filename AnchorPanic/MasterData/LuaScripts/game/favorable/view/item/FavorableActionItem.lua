@@ -96,6 +96,7 @@ end
 
 function onClick(self)
     if not self.isLock then
+                
         if self.isPlaying then
             self.isPlaying = false
             -- gs.TransQuick:SizeDelta01(self.mImgPro, 0)

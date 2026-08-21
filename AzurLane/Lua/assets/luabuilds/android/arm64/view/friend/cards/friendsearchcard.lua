@@ -1,31 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FriendSearchCard", import(".FriendCard"))
 
-local var_0_0 = "FriendSearchCard"
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".FriendCard"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
-
-	local var_1_0 = arg_1_0.tf
-
-	arg_1_0.addBtn = var_2.Find(var_1_0, "frame/add_btn")
-
-	local var_1_1 = arg_1_0.tf
-	local var_1_2 = var_2.Find(var_1_1, "frame/request_info/lv_bg/Text")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.levelTF = var_1_3(var_1_2, var_5(var_1_10007))
+	arg_1_0.addBtn = arg_1_0.tf:Find("frame/add_btn")
+	arg_1_0.levelTF = arg_1_0.tf:Find("frame/request_info/lv_bg/Text"):GetComponent(typeof(Text))
 
 	return
 end
 
-function var_0_1.update(arg_2_0, arg_2_1)
-	var_0_1.super.update(arg_2_0, arg_2_1)
+function var_0_0.update(arg_2_0, arg_2_1)
+	var_0_0.super.update(arg_2_0, arg_2_1)
 
 	arg_2_0.manifestoTF.text = arg_2_1:GetManifesto()
 	arg_2_0.levelTF.text = "Lv." .. arg_2_1.level
@@ -33,4 +18,4 @@ function var_0_1.update(arg_2_0, arg_2_1)
 	return
 end
 
-return var_0_1
+return var_0_0

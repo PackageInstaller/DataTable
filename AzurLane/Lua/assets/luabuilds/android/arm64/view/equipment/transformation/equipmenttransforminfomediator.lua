@@ -1,7 +1,1 @@
-﻿class = var_0_10000
-
-local var_0_0 = "EquipmentTransformInfoMediator"
-
-import = var_0_10003
-
-return (var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator")))
+﻿return (class("EquipmentTransformInfoMediator", import("view.base.ContextMediator")))

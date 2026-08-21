@@ -3,6 +3,9 @@ module("equipBuild.EquipRemakeManager", Class.impl(Manager))
 -- 装备强化材料选择
 EQUIP_REMAKE_MATERIAL_SELECT = "EQUIP_REMAKE_MATERIAL_SELECT"
 
+-- 装备强化材料选择 多选
+EQUIP_REMAKE_MATERIAL_SELECT_MUL = "EQUIP_REMAKE_MATERIAL_SELECT_MUL"
+
 --构造函数
 function ctor(self)
     super.ctor(self)
@@ -157,6 +160,8 @@ function sortHandler(self, propsScrollList, selectSortType, isDescending, isSort
             table.sort(propsScrollList, isDescending and self.__descendingLvlFun or self.__ascendingLvlFun)
         elseif (selectSortType == equipBuild.panelSortType.COLOR) then
             table.sort(propsScrollList, isDescending and self.__descendingColorFun or self.__ascendingColorFun)
+        elseif (selectSortType == equipBuild.panelSortType.POS) then
+            table.sort(propsScrollList, isDescending and self.__descendingPosFun or self.__ascendingPosFun)
         end
     else
         if (not selectSortType or selectSortType == equipBuild.panelSortType.DEFAULT) then
@@ -165,6 +170,8 @@ function sortHandler(self, propsScrollList, selectSortType, isDescending, isSort
             table.sort(propsScrollList, isDescending and self.__descendingLvlLockFun or self.__ascendingLvlLockFun)
         elseif (selectSortType == equipBuild.panelSortType.COLOR) then
             table.sort(propsScrollList, isDescending and self.__descendingColorLockFun or self.__ascendingColorLockFun)
+        elseif (selectSortType == equipBuild.panelSortType.POS) then
+            table.sort(propsScrollList, isDescending and self.__descendingPosLockFun or self.__ascendingPosLockFun)
         end
 
     end
@@ -358,6 +365,19 @@ function __descendingColorFun(selectVo1, selectVo2)
     return false
 end
 
+function __descendingPosFun(selectVo1,selectVo2)
+    if (selectVo1:getDataVo().subType < selectVo2:getDataVo().subType) then return true end
+    if (selectVo1:getDataVo().subType > selectVo2:getDataVo().subType) then return false end
+
+    -- 创建时间从小到大
+    if (selectVo1:getDataVo().color < selectVo2:getDataVo().color) then return true end
+    if (selectVo1:getDataVo().color > selectVo2:getDataVo().color) then return false end
+    -- 按照id排序从小到大
+    if (selectVo1:getDataVo().id < selectVo2:getDataVo().id) then return true end
+    if (selectVo1:getDataVo().id > selectVo2:getDataVo().id) then return false end
+    return false
+end
+
 -- 品质从大到小
 function __descendingColorLockFun(selectVo1, selectVo2)
     -- 锁定的排最后
@@ -379,6 +399,28 @@ function __descendingColorLockFun(selectVo1, selectVo2)
 
     return false
 end
+
+function __descendingPosLockFun(selectVo1,selectVo2)
+    -- 锁定的排最后
+    if (selectVo1:getDataVo().isLock < selectVo2:getDataVo().isLock) then
+        return true
+    end
+    if (selectVo1:getDataVo().isLock > selectVo2:getDataVo().isLock) then
+        return false
+    end
+    if (selectVo1:getDataVo().subType < selectVo2:getDataVo().subType) then return true end
+    if (selectVo1:getDataVo().subType > selectVo2:getDataVo().subType) then return false end
+
+    -- 创建时间从小到大
+    if (selectVo1:getDataVo().color < selectVo2:getDataVo().color) then return true end
+    if (selectVo1:getDataVo().color > selectVo2:getDataVo().color) then return false end
+    -- 按照id排序从小到大
+    if (selectVo1:getDataVo().id < selectVo2:getDataVo().id) then return true end
+    if (selectVo1:getDataVo().id > selectVo2:getDataVo().id) then return false end
+
+    return false
+end
+
 -- 品质从小到大
 function __ascendingColorFun(selectVo1, selectVo2)
     if (selectVo1:getDataVo().color < selectVo2:getDataVo().color) then return true end
@@ -387,6 +429,19 @@ function __ascendingColorFun(selectVo1, selectVo2)
     -- 创建时间从小到大
     if (selectVo1:getDataVo().createdTime < selectVo2:getDataVo().createdTime) then return true end
     if (selectVo1:getDataVo().createdTime > selectVo2:getDataVo().createdTime) then return false end
+    -- 按照id排序从小到大
+    if (selectVo1:getDataVo().id < selectVo2:getDataVo().id) then return true end
+    if (selectVo1:getDataVo().id > selectVo2:getDataVo().id) then return false end
+    return false
+end
+
+function __ascendingPosFun(selectVo1,selectVo2)
+    if (selectVo1:getDataVo().subType > selectVo2:getDataVo().subType) then return true end
+    if (selectVo1:getDataVo().subType < selectVo2:getDataVo().subType) then return false end
+
+    -- 创建时间从小到大
+    if (selectVo1:getDataVo().color < selectVo2:getDataVo().color) then return true end
+    if (selectVo1:getDataVo().color > selectVo2:getDataVo().color) then return false end
     -- 按照id排序从小到大
     if (selectVo1:getDataVo().id < selectVo2:getDataVo().id) then return true end
     if (selectVo1:getDataVo().id > selectVo2:getDataVo().id) then return false end
@@ -414,6 +469,90 @@ function __ascendingColorLockFun(selectVo1, selectVo2)
     return false
 end
 
+function __ascendingPosLockFun(selectVo1, selectVo2)
+       -- 锁定的排最后
+       if (selectVo1:getDataVo().isLock < selectVo2:getDataVo().isLock) then
+        return true
+    end
+    if (selectVo1:getDataVo().isLock > selectVo2:getDataVo().isLock) then
+        return false
+    end
+    if (selectVo1:getDataVo().subType > selectVo2:getDataVo().subType) then return true end
+    if (selectVo1:getDataVo().subType < selectVo2:getDataVo().subType) then return false end
+
+    -- 创建时间从小到大
+    if (selectVo1:getDataVo().color < selectVo2:getDataVo().color) then return true end
+    if (selectVo1:getDataVo().color > selectVo2:getDataVo().color) then return false end
+    -- 按照id排序从小到大
+    if (selectVo1:getDataVo().id < selectVo2:getDataVo().id) then return true end
+    if (selectVo1:getDataVo().id > selectVo2:getDataVo().id) then return false end
+
+    return false
+end
+
+function parseRemakeAttrData(self)
+    self.mRemakeAttrDic = {}
+    local baseData = RefMgr:getData('equip_remake_show_data') 
+    for key, data in pairs(baseData) do
+        local ro = LuaPoolMgr:poolGet(equipBuild.EquipRemakeShowDataVo)
+        ro:parseData(key, data)
+        self.mRemakeAttrDic[key] = ro
+    end
+end
+
+function getRemakeAttrData(self)
+    if self.mRemakeAttrDic == nil then
+        self:parseRemakeAttrData(self)
+    end
+    return self.mRemakeAttrDic  
+end
+
+function getRemakeAttrDataById(self,id)
+    if self.mRemakeAttrDic == nil then
+        self:parseRemakeAttrData(self)
+    end
+    return self.mRemakeAttrDic[id]
+end
+
+function setNeedRemakeAgentInfo(self,equipVo,needPos,selectAttId,selectAttColor)
+    self.needEquipVo = equipVo
+    self.needPos = needPos
+    self.selectAttIdList = selectAttId
+    self.selectAttColorList = selectAttColor
+end
+
+function getNeedRemakeAgentInfo(self)
+    return self.needEquipVo,self.needPos,self.selectAttIdList,self.selectAttColorList
+end
+
+function setSelectPropsList(self,propsVoList)
+    self.selectPropsVoList = propsVoList
+end
+
+function getSelectPropsList(self)
+    return self.selectPropsVoList
+end
+
+function changePropsInfo(self,propsVo)
+end
+
+function setCurrentIsAgentOpt(self,isAgentOpt)
+    self.isAgentOpt = isAgentOpt
+end
+
+function getIsAgentOpt(self)
+    return self.isAgentOpt
+end
+
+function setAgentSuc(self,isAgentSuc)
+    self.isAgentSuc = isAgentSuc    
+end
+
+function getAgentSuc(self)
+    local isAgentSuc = self.isAgentSuc
+    self.isAgentSuc = false
+    return isAgentSuc
+end
 
 --析构函数
 function dtor(self)

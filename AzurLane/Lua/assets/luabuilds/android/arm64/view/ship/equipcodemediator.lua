@@ -1,158 +1,77 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EquipCodeMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "EquipCodeMediator"
+var_0_0.SHARE_EQUIP_CODE = "EquipCodeMediator.SHARE_EQUIP_CODE"
+var_0_0.IMPORT_SHIP_EQUIP = "EquipCodeMediator.IMPORT_SHIP_EQUIP"
+var_0_0.OPEN_CUSTOM_INDEX = "EquipCodeMediator.OPEN_CUSTOM_INDEX"
+var_0_0.OPEN_EQUIP_CODE_SHARE = "EquipCodeMediator.OPEN_EQUIP_CODE_SHARE"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.SHARE_EQUIP_CODE = "EquipCodeMediator.SHARE_EQUIP_CODE"
-var_0_1.IMPORT_SHIP_EQUIP = "EquipCodeMediator.IMPORT_SHIP_EQUIP"
-var_0_1.OPEN_CUSTOM_INDEX = "EquipCodeMediator.OPEN_CUSTOM_INDEX"
-var_0_1.OPEN_EQUIP_CODE_SHARE = "EquipCodeMediator.OPEN_EQUIP_CODE_SHARE"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.SHARE_EQUIP_CODE, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_1(var_2_0, var_2_10006.EQUIP_CODE_SHARE, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SHARE_EQUIP_CODE, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.EQUIP_CODE_SHARE, {
 			groupId = arg_2_1,
 			code = arg_2_2
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.IMPORT_SHIP_EQUIP, function(arg_3_0, arg_3_1, arg_3_2)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_3_1(var_3_0, var_2_10006.SHIP_EQUIP_ALL_CHANGE, {
+	arg_1_0:bind(var_0_0.IMPORT_SHIP_EQUIP, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.SHIP_EQUIP_ALL_CHANGE, {
 			shipId = arg_3_1,
 			equipData = arg_3_2
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_CUSTOM_INDEX, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_2.addSubLayers
+	arg_1_0:bind(var_0_0.OPEN_CUSTOM_INDEX, function(arg_4_0, arg_4_1)
+		arg_1_0:addSubLayers(Context.New({
+			viewComponent = CustomIndexLayer,
+			mediator = CustomIndexMediator,
+			data = arg_4_1
+		}))
 
-		Context = var_2_10005
-
-		local var_4_2 = var_2_10005.New
-		local var_4_3 = {}
-
-		CustomIndexLayer = var_2_10008
-		var_4_3.viewComponent = var_2_10008
-		CustomIndexMediator = var_2_10008
-		var_4_3.mediator = var_2_10008
-		var_4_3.data = arg_4_1
-
-		var_4_1(var_4_0, var_4_2(var_4_3))
+		return
+	end)
+	arg_1_0:bind(var_0_0.OPEN_EQUIP_CODE_SHARE, function(arg_5_0, arg_5_1)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = EquipCodeShareMediator,
+			viewComponent = EquipCodeShareLayer,
+			data = {
+				shipGroupId = arg_5_1
+			}
+		}))
 
 		return
 	end)
 
-	local var_1_0 = arg_1_0
+	local var_1_0 = getProxy(EquipmentProxy):getEquipments(true)
 
-	arg_1_0.bind(var_1_0, var_0_1.OPEN_EQUIP_CODE_SHARE, function(arg_5_0, arg_5_1)
-		local var_5_0 = arg_1_0
-		local var_5_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_5_2 = var_2_10005.New
-		local var_5_3 = {}
-
-		EquipCodeShareMediator = var_2_10008
-		var_5_3.mediator = var_2_10008
-		EquipCodeShareLayer = var_2_10008
-		var_5_3.viewComponent = var_2_10008
-		var_5_3.data = {
-			shipGroupId = arg_5_1
-		}
-
-		var_5_1(var_5_0, var_5_2(var_5_3))
-
-		return
-	end)
-
-	getProxy = var_1
-	EquipmentProxy = var_1_0
-
-	local var_1_1 = var_1(var_1_0)
-	local var_1_2 = var_1.getEquipments(var_1_1, true)
-
-	ipairs = var_1_10002
-	getProxy = var_4
-	BayProxy = var_1_10006
-
-	local var_1_3 = var_4(var_1_10006)
-
-	for iter_1_0, iter_1_1 in var_1_10002(var_4.getEquipsInShips(var_1_3)) do
-		table = var_1_10007
-
-		var_1_10007.insert(var_1_2, iter_1_1)
+	for iter_1_0, iter_1_1 in ipairs(getProxy(BayProxy):getEquipsInShips()) do
+		table.insert(var_1_0, iter_1_1)
 	end
 
-	underscore = var_2
+	local var_1_1 = underscore.values(getProxy(EquipmentProxy):GetSpWeapons())
 
-	local var_1_4 = var_2.values
-
-	getProxy = var_4
-	EquipmentProxy = iter_1_1
-
-	local var_1_5 = var_4(iter_1_1)
-	local var_1_6 = var_1_4(var_4.GetSpWeapons(var_1_5))
-
-	ipairs = var_3
-	getProxy = iter_1_0
-	BayProxy = var_1_10007
-
-	local var_1_7 = iter_1_0(var_1_10007)
-
-	for iter_1_2, iter_1_3 in var_3(var_5.GetSpWeaponsInShips(var_1_7)) do
-		table = var_1_10008
-
-		var_1_10008.insert(var_1_6, iter_1_3)
+	for iter_1_2, iter_1_3 in ipairs(getProxy(BayProxy):GetSpWeaponsInShips()) do
+		table.insert(var_1_1, iter_1_3)
 	end
 
-	local var_1_8 = arg_1_0.viewComponent
-
-	var_3.setEquipments(var_1_8, var_1_2, var_1_6)
-
-	local var_1_9 = arg_1_0.viewComponent
-
-	var_3.setShip(var_1_9, arg_1_0.contextData.shipId)
+	arg_1_0.viewComponent:setEquipments(var_1_0, var_1_1)
+	arg_1_0.viewComponent:setShip(arg_1_0.contextData.shipId)
 
 	return
 end
 
-function var_0_1.initNotificationHandleDic(arg_6_0)
-	local var_6_0 = {}
+function var_0_0.initNotificationHandleDic(arg_6_0)
+	arg_6_0.handleDic = {
+		[GAME.SHIP_EQUIP_ALL_CHANGE_DONE] = function(arg_7_0, arg_7_1)
+			assert(arg_7_1:getBody() == arg_7_0.contextData.shipId)
+			arg_7_0.viewComponent:closeView()
 
-	GAME = var_1_10002
-	var_6_0[var_1_10002.SHIP_EQUIP_ALL_CHANGE_DONE] = function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_7_1:getBody()
-
-		assert = var_2_10003
-
-		var_2_10003(var_7_0 == arg_7_0.contextData.shipId)
-
-		local var_7_1 = arg_7_0.viewComponent
-
-		var_3.closeView(var_7_1)
-
-		return
-	end
-	arg_6_0.handleDic = var_6_0
+			return
+		end
+	}
 
 	return
 end
 
-return var_0_1
+return var_0_0

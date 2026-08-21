@@ -112,8 +112,9 @@ end
 function updateView(self)
     self.mTxtName.text = self.heroConfigVo.name
     self.mImgPosIcon:SetImg(UrlManager:getHeroJobSmallIconUrl(self.heroConfigVo.professionType), false)
-    self.mImgHeroIcon:SetImg(UrlManager:getBgPath(string.format("heroRecord/%s", self.fashionVo.imgbody)), true)
-    self.mImgHeroIcon_bg:SetImg(UrlManager:getBgPath(string.format("heroRecord/%s", self.fashionVo.imgbody)), true)
+    self.mImgHeroIcon:SetImg(UrlManager:getHeroRecoedUrlByDetail(self.fashionVo.imgbody), true)
+    self.mImgHeroIcon_bg:SetImg(UrlManager:getHeroRecoedUrlByDetail(self.fashionVo.imgbody), true)
+    
 
     if self.heroConfigVo.eleType >= 0 then
         self.mImgEleType.gameObject:SetActive(true)
