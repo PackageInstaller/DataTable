@@ -1,0 +1,21 @@
+﻿return {
+	ENTITY_OR_BUILD_STATE_TIP_BUILD = 1001,
+	ENTITY_OR_BUILD_STATE_TIP_USER = 1000,
+	BossBoxTimeTick = 200,
+	EntityActive = 103,
+	EntityDestroy = 102,
+	EntityUpdatePos = 101,
+	EntityAdd = 100,
+	KnightInAttacking = 12,
+	KnightToBuild = 11,
+	KnightTalk = 10,
+	BossIsActive = 9,
+	RoleMoveToBossEnd = 8,
+	RoleUpdateCostValue = 7,
+	RoleOutBuild = 6,
+	RoleInBuild = 5,
+	RoleUpdateFightEffect = 4,
+	RoleIdle = 3,
+	RoleAtk = 2,
+	RoleMove = 1
+}

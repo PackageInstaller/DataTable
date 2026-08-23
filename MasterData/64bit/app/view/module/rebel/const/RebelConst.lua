@@ -1,0 +1,11 @@
+﻿return {
+	REBEL_TYPE = {
+		DEFAULT_1 = 1,
+		DUNGEON_TRIGGER = 3,
+		DEFAULT_2 = 2
+	},
+	FEATURE_TYPE = {
+		UNITE_TOKEN = 1,
+		KNIGHT = 2
+	}
+}

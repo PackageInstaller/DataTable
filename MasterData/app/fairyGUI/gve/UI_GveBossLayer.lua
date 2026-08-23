@@ -1,0 +1,40 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://9n9qtghbshxi7v"
+
+function var_0_0:__ctor()
+	self.m_showStateController = self:getController("showState")
+	self.m_isAwardController = self:getController("isAward")
+	self.m_bossTypeController = self:getController("bossType")
+	self.m_hasRewardController = self:getController("hasReward")
+	self.m_isFinalBossController = self:getController("isFinalBoss")
+	self.m_knightImg = self:getChild("knightImg")
+	self.m_bossNameText = self:getChild("bossNameText")
+	self.m_descComp = self:getChild("descComp")
+	self.m_skillComp = self:getChild("skillComp")
+	self.m_skillComp1 = self:getChild("skillComp1")
+	self.m_limitTimeText = self:getChild("limitTimeText")
+	self.m_attrComp = self:getChild("attrComp")
+	self.m_monsterDetailsBtn = self:getChild("monsterDetailsBtn")
+	self.m_bossTip = self:getChild("bossTip")
+	self.m_monsterList = self:getChild("monsterList")
+	self.m_bossNameComp = self:getChild("bossNameComp")
+	self.m_detailBtn = self:getChild("detailBtn")
+	self.m_bossEquip1 = self:getChild("bossEquip1")
+	self.m_bossEquip2 = self:getChild("bossEquip2")
+	self.m_rankBtn = self:getChild("rankBtn")
+	self.m_awardList = self:getChild("awardList")
+	self.m_rankBtn2 = self:getChild("rankBtn2")
+	self.m_awardList2 = self:getChild("awardList2")
+	self.m_finalRewardTimeTxt = self:getChild("finalRewardTimeTxt")
+	self.m_fianlBossDesc = self:getChild("fianlBossDesc")
+	self.m_finalDamageTxt = self:getChild("finalDamageTxt")
+	self.m_content = self:getChild("content")
+	self.m_challengeBtn = self:getChild("challengeBtn")
+	self.m_topBarComp = self:getChild("topBarComp")
+	self.m_rewardTimesTxt = self:getChild("rewardTimesTxt")
+	self.m_allRewardTimesTxt = self:getChild("allRewardTimesTxt")
+	self.m_enterTransition = self:getTransition("enter")
+end
+
+return var_0_0

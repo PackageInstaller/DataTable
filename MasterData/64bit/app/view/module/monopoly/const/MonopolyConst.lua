@@ -1,0 +1,18 @@
+﻿return {
+	RUN_DICE_SPEED_ADD = 50,
+	RUN_DICE_SPEED = 800,
+	PER_GRID_RUN_TIME = 0.3,
+	EVENT_TYPE = {
+		BEHIND_GRIDS = 5,
+		FRONT_GRIDS = 4,
+		REWARD_3 = 3,
+		REWARD_2 = 2,
+		REWARD_1 = 1,
+		START = 0
+	},
+	TASK_STATE = {
+		REWARD = 2,
+		FINISH = 1,
+		NOT_FINISH = 0
+	}
+}

@@ -1,0 +1,15 @@
+﻿return {
+	PAY_TYPE = {
+		PAY_TYPE_ADVANCE = 2,
+		PAY_TYPE_NORMAL = 1,
+		FREE = 0
+	},
+	AWARD_STATUE = {
+		GOT = 2,
+		CAN_GET = 1,
+		LOCK = 0
+	},
+	PARAMETER_ID = {
+		PRIVILEGE_LIMIT_LEVEL_ID = 24053
+	}
+}

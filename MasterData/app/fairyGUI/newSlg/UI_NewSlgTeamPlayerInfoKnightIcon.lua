@@ -1,0 +1,15 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://pwjd9dt9ni5y68sk"
+
+function var_0_0:__ctor()
+	self.m_isEmptyController = self:getController("isEmpty")
+	self.m_knightIcon = self:getChild("knightIcon")
+end
+
+var_0_0.IsEmptyCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+
+return var_0_0

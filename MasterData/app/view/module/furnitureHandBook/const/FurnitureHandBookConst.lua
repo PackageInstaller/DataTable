@@ -1,0 +1,4 @@
+﻿return {
+	HOME_LAND_TYPE = 8,
+	FURNITURE_TYPE = 13
+}

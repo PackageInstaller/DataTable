@@ -1,0 +1,9 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://7ex6tye9iqj72a"
+
+function var_0_0:__ctor()
+	self.m_awardList = self:getChild("awardList")
+end
+
+return var_0_0

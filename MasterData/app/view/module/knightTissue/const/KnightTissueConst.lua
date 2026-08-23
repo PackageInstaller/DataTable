@@ -1,0 +1,22 @@
+﻿return {
+	TISSUE_UI_URL = "ui://knightTissue/",
+	TISSUE_UNKOWN_KNIGHT = 1,
+	TISSUE_KNIGHT_MAX = 6,
+	TISSUE_AWARD_STAGE = 3,
+	TISSUE_OUTVIEW_RANGE = 300,
+	TISSUE_CTRL_STATE = {
+		NOCFG = 1,
+		NORMAL = 0,
+		UNKNOW = 2
+	},
+	TISSUE_AWARD_STATE = {
+		DONE = 2,
+		CANGET = 1,
+		UNDONE = 0
+	},
+	STAR_ENUM = {
+		INDEX = 3,
+		STYLE = 2,
+		GAP = -5
+	}
+}

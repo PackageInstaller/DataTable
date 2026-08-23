@@ -1,0 +1,20 @@
+﻿return {
+	SECTION_BOX_NUM = 3,
+	RANK_CROSS_TYPE = 89,
+	RANK_LOCAL_TYPE = 88,
+	SCORE_PROGRESS_MAX = 120,
+	SCORE_RES_ID = 98,
+	REWARD_STATE = {
+		REWARDED = 2,
+		MATCH = 1,
+		NONE = 0
+	},
+	TASK_TYPE = {
+		DAILY = 2,
+		PHASE = 1
+	},
+	SERVER_TYPE = {
+		LOCAL = 1,
+		CROSS = 2
+	}
+}

@@ -1,0 +1,41 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://18k9xvs2mj4b2c"
+
+function var_0_0:__ctor()
+	self.m_Comp_left1 = self:getChild("Comp_left1")
+	self.m_Comp_left2 = self:getChild("Comp_left2")
+	self.m_Comp_left3 = self:getChild("Comp_left3")
+	self.m_Comp_left4 = self:getChild("Comp_left4")
+	self.m_Comp_left5 = self:getChild("Comp_left5")
+	self.m_Comp_left6 = self:getChild("Comp_left6")
+	self.m_Comp_left7 = self:getChild("Comp_left7")
+	self.m_Comp_left8 = self:getChild("Comp_left8")
+	self.m_Comp_left9 = self:getChild("Comp_left9")
+	self.m_Comp_right1 = self:getChild("Comp_right1")
+	self.m_Comp_right2 = self:getChild("Comp_right2")
+	self.m_Comp_right3 = self:getChild("Comp_right3")
+	self.m_Comp_right4 = self:getChild("Comp_right4")
+	self.m_Comp_right5 = self:getChild("Comp_right5")
+	self.m_Comp_right6 = self:getChild("Comp_right6")
+	self.m_Comp_right7 = self:getChild("Comp_right7")
+	self.m_Comp_right8 = self:getChild("Comp_right8")
+	self.m_Comp_right9 = self:getChild("Comp_right9")
+	self.m_effPetDown = self:getChild("effPetDown")
+	self.m_Comp_pet_left = self:getChild("Comp_pet_left")
+	self.m_Comp_pet_right = self:getChild("Comp_pet_right")
+	self.m_effPetUp = self:getChild("effPetUp")
+	self.m_Comp_parent = self:getChild("Comp_parent")
+	self.m_Comp_left_pet3 = self:getChild("Comp_left_pet3")
+	self.m_Comp_left_pet1 = self:getChild("Comp_left_pet1")
+	self.m_Comp_left_pet2 = self:getChild("Comp_left_pet2")
+	self.m_Comp_left_pet4 = self:getChild("Comp_left_pet4")
+	self.m_Comp_right_pet3 = self:getChild("Comp_right_pet3")
+	self.m_Comp_right_pet1 = self:getChild("Comp_right_pet1")
+	self.m_Comp_right_pet2 = self:getChild("Comp_right_pet2")
+	self.m_Comp_right_pet4 = self:getChild("Comp_right_pet4")
+	self.m_Comp_effect = self:getChild("Comp_effect")
+	self.m_Comp_petCurtain = self:getChild("Comp_petCurtain")
+end
+
+return var_0_0

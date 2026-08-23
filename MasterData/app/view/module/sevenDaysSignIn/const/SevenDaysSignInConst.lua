@@ -1,0 +1,8 @@
+﻿return {
+	TOTAL_SIGN_IN_DAYS = 7,
+	RECEIVE_STATE = {
+		CAN_RECEIVE = 1,
+		NOT_RECEIVED = 0,
+		RECEIVED = 2
+	}
+}

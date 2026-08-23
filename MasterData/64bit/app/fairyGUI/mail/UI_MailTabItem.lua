@@ -1,0 +1,28 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://p5u2oelkbdr82u"
+
+function var_0_0:__ctor()
+	self.m_buttonController = self:getController("button")
+	self.m_statusController = self:getController("status")
+	self.m_newStatusController = self:getController("newStatus")
+	self.m_scrollTxtComp = self:getChild("scrollTxtComp")
+	self.m_timeText = self:getChild("timeText")
+end
+
+var_0_0.ButtonCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.StatusCtrl = {
+	page1 = 1,
+	page0 = 0,
+	page2 = 3,
+	page3 = 4
+}
+var_0_0.NewStatusCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+
+return var_0_0

@@ -1,0 +1,24 @@
+﻿return {
+	WEDDING_COND_FAVOR = 1,
+	WEDDING_ITEM_VALUE = 401,
+	TOUCH_GUIDE_TIME = 3,
+	GOTO_ROUTE_ID = 332,
+	TOUCH_OFF_Y = 100,
+	REQUEST_FAVOR_TIME = 3600,
+	WEDDING_ITEM_SIZE = 1,
+	WEDDING_COND_ITEM = 2,
+	NODE_TYPE = {
+		SMALL = 1,
+		NONE = 0,
+		BIG = 2
+	},
+	ATTR_TARGET = {
+		ALL = 2,
+		KNIGHT = 1
+	},
+	HAND_STATE = {
+		IDLE = "idle_",
+		ON = "on_",
+		IN = "in_"
+	}
+}

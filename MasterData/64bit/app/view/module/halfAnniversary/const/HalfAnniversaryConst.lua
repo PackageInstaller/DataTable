@@ -1,0 +1,6 @@
+﻿return {
+	POINT_SUB = 3,
+	POINT_MAIN = 8,
+	SPECIAL_ID = 2,
+	AWARDS_COUNT = 3
+}

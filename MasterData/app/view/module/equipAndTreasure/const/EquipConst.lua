@@ -1,0 +1,36 @@
+﻿return {
+	EQUIP_FIELDNUM = 4,
+	EQUIP_STRENGTH_CRI = 1,
+	EQUIP_STRENGTH_BIGCRI = 2,
+	EQUIP_GLYPH_OFF = true,
+	EQUIP_ATTR_CTRL = {
+		NOTOPEN = 2,
+		NOTDEVLOP = 0,
+		CANDEVLOP = 1
+	},
+	EQUIP_TYPE = {
+		ATTACK = 0,
+		DEFENSE = 1
+	},
+	MAGICAL_SHOW_TYPE = {
+		SHOW_5 = 1,
+		NOT_SHOW = 0
+	},
+	MAGICAL_MAX_STAGE = {
+		0,
+		0,
+		0,
+		5,
+		5
+	},
+	EQUIP_SUIT_MAX_STAGE = {
+		0,
+		0,
+		0,
+		5
+	},
+	EQUIP_SUIT_TYPE = {
+		TWO = 0,
+		FOUR = 1
+	}
+}

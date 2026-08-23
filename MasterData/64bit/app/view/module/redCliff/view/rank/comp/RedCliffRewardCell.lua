@@ -1,0 +1,39 @@
+﻿local RedCliffRewardCell = class("RedCliffRewardCell", require("app.fairyGUI.redCliff.UI_RedCliffRewardCell"))
+
+function RedCliffRewardCell:ctor()
+	self._rewardList = {}
+
+	self.m_rewardList:setVirtual()
+	self.m_rewardList:doFairyBatching(false)
+	self.m_rewardList:setItemRenderer(handler(self, self._onRenderRewardList))
+end
+
+function RedCliffRewardCell:updateCell(arg_2_1, arg_2_2)
+	self.m_hasBgController:setSelectedIndex(arg_2_1 % 2)
+
+	self._rewardList = arg_2_2.data
+
+	if arg_2_2.minRank == arg_2_2.maxRank then
+		self.m_rankTxt:updateRankIndex({
+			rank = arg_2_2.minRank
+		})
+	else
+		self.m_rankTxt:setCtrlState("rank", {
+			index = 0
+		})
+		self.m_rankTxt:setTitle(g.core.lang:get(302510, {
+			rank1 = arg_2_2.minRank,
+			rank2 = arg_2_2.maxRank
+		}))
+	end
+
+	self.m_rewardList:setNumItems(#self._rewardList)
+end
+
+function RedCliffRewardCell:_onRenderRewardList(arg_3_1, arg_3_2)
+	self._rewardList[arg_3_1 + 1].scaleIndex = 4
+
+	arg_3_2:updateIcon(self._rewardList[arg_3_1 + 1])
+end
+
+return RedCliffRewardCell

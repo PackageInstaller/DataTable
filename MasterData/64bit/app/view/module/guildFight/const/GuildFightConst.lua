@@ -1,0 +1,26 @@
+﻿return {
+	RANKTYPE = 21,
+	CHARIOTNUM = 3,
+	CHARIOT_AREA_NUM = 8,
+	NORMAL_AREA_NUM = 6,
+	RECORD2 = 28,
+	RECORD1 = 27,
+	AWARDMAX = 4,
+	NORMAL = {
+		1,
+		2,
+		3,
+		5,
+		6,
+		7
+	},
+	CHARIOT = {
+		4
+	},
+	TARGET_TYPE = {
+		NOR_ROBOT = 3,
+		NOR_PLAYER = 1,
+		CHARIOT_ROBOT = 4,
+		CHARIOT_PLAYER = 2
+	}
+}

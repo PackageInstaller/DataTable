@@ -1,0 +1,26 @@
+﻿return {
+	JSON_NAME = "achievement.json",
+	GUILD_CONTINUOUS_MIN_CHARGE = 297,
+	GUILD_CONTINUOUS_PERFECT_CHARGE = 296,
+	BIO_TEAM_CHAPTER_START = 1000,
+	LEFT_TAB_RED_POINT_ID = 152,
+	RECEIVE_STATE = {
+		CAN_RECEIVE = 0,
+		HAS_RECEIVED = 2,
+		NOT_ACHIEVE = 1
+	},
+	Type = {
+		NORMAL = 0,
+		HIDE = 1
+	},
+	Target = {
+		FURNITURE_SUIT_MAX = 5030,
+		FURNITURE_SUIT_MIN = 5001,
+		BIO_TEAM_CHAPTER = 35,
+		ARENA = 3
+	},
+	PromptOnReach = {
+		YES = 1,
+		NO = 0
+	}
+}

@@ -1,0 +1,109 @@
+﻿return {
+	MAX_HELPER_COUNT = 3,
+	SHOW_RANK_COUNT = 2000,
+	MAX_PREVIEW_LEVEL = 5,
+	MAX_HELPER_LINE_UP_COUNT = 1,
+	WEEK_BUFF_POP_JSON_NAME = "fogNightmareBuffPop.json",
+	FORMATION_TIP_COUNT = 6,
+	FORMATION_MAX_COUNT = 4,
+	NOT_POP_JSON_NAME = "fogNightmareNotPop.json",
+	SHOW_RED_TALENT_COUNT = 150,
+	FORMATION_STATE = {
+		BATTLED = 1,
+		NONE = 0
+	},
+	BUFF_EFFECT_TYPE = {
+		RECOVER_UP = 1,
+		REVIVAL_NUM_UP = 9,
+		FAST_CHALLENGE_KEEPSAKE_LEVEL_UP = 18,
+		KEEPSAKE_LEVEL_UP = 8,
+		SACRIFICE_DOWN = 2,
+		KEEPSAKE_RESET_TIMES_UP = 7,
+		RECOVER_SHELL = 6
+	},
+	WEEK_BUFF_TYPE = {
+		TALENT = 1,
+		PASSIVE = 2,
+		NEW_EFFECT_ENUM = 3
+	},
+	NEW_EFFECT_ENUM = {
+		IDLE = 1,
+		EXTRA_TALENT = 2
+	},
+	ACTIVITY_STATE = {
+		OPEN = 2,
+		END = 4,
+		NONE = 0
+	},
+	FLOOR_STATE = {
+		RECEIVED = 7,
+		PASS = 5,
+		WAIT_SELECT_KEEPSAKE = 4,
+		WAIT_SELECT = 2,
+		SELECTED = 3,
+		LOCK = 1,
+		NONE = 0
+	},
+	STAGE_STATE = {
+		WAIT_PASS = 2,
+		PASS = 3,
+		LOCK = 1,
+		NONE = 0
+	},
+	TOWER_REWARD_STATE = {
+		RECEIVED = 3,
+		WAIT_RECEIVE = 1,
+		LOCK = 1,
+		NONE = 0
+	},
+	STAGE_WAVE_STATE = {
+		NOT_PASS = 1,
+		PASSED = 2,
+		NONE = 0
+	},
+	WAVE_EFFECT_TYPE = {
+		MONSTER_HARD = 2,
+		EFFECT_CHOICE = 6,
+		EFFECT_RECOVER = 4,
+		MONSTER_BOSS = 3,
+		MONSTER_NORMAL = 1,
+		EFFECT_REVIVAL = 5,
+		EFFECT_SACRIFICE = 7,
+		NONE = 0
+	},
+	EFFECT_CHOICE_SUB_TYPE = {
+		RECOVER = 1,
+		PASSIVE = 4,
+		KEEPSAKE_LEVELUP = 3,
+		KEEPSAKE_RANDOM = 5,
+		REVIVAL = 2,
+		NONE = 0
+	},
+	KNIGHT_DEVELOP_KEY = {
+		KEEPSAKE = "keepsake",
+		ARTIFACT = "artifact",
+		NONE = "none"
+	},
+	DEVELOP_STATE = {
+		BATTLED = 2,
+		EQUIPPED = 1,
+		LINKED = 3,
+		NONE = 0
+	},
+	DEVELOP_EQUIP_TYPE = {
+		FORMATION_POS = 2,
+		KNIGHT = 1,
+		FORMATION = 3,
+		NONE = 0
+	},
+	SWITCH_LIMIT = {
+		REJECTED = 2,
+		INVALID = 1,
+		NONE = 0
+	},
+	MOVE_COMP = {
+		ALL = "FogNightmareExploreFormationKnightComp",
+		KNIGHT = "FogNightmareExploreKnightComp",
+		ARTIFACT = "FogNightmareExploreKnightDevComp"
+	}
+}

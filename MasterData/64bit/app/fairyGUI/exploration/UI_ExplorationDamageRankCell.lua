@@ -1,0 +1,32 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://vhnpxv25btydg"
+
+function var_0_0:__ctor()
+	self.m_hasPlayerController = self:getController("hasPlayer")
+	self.m_hasBgController = self:getController("hasBg")
+	self.m_allianceStateController = self:getController("allianceState")
+	self.m_rankTxt = self:getChild("rankTxt")
+	self.m_userHeadComp = self:getChild("userHeadComp")
+	self.m_lvText = self:getChild("lvText")
+	self.m_nameTxt = self:getChild("nameTxt")
+	self.m_serverTxt = self:getChild("serverTxt")
+	self.m_allianceTxt = self:getChild("allianceTxt")
+	self.m_allianceIcon = self:getChild("allianceIcon")
+	self.m_damageTxt = self:getChild("damageTxt")
+end
+
+var_0_0.HasPlayerCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.HasBgCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.AllianceStateCtrl = {
+	alliance = 1,
+	none = 0
+}
+
+return var_0_0

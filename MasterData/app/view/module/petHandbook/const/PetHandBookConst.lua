@@ -1,0 +1,18 @@
+﻿local var_0_0 = {
+	CELL_STATE = {
+		ACTIVATED_NORMAL = 2,
+		CAN_NOT_ACTIVATE = 0,
+		CAN_STAR_UP = 3,
+		CAN_ACTIVATE = 1
+	}
+}
+
+var_0_0.ATTR_NUM = 4
+var_0_0.GROUP_UPGRADE_TYPE = {
+	UPGRADE = 1,
+	ACTIVATE = 0,
+	MAX_LEVEL = 2
+}
+var_0_0.GROUP_ATTR_MAX = 6
+
+return var_0_0

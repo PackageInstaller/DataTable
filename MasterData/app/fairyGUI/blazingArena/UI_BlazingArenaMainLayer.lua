@@ -1,0 +1,42 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://7ex6tye9now70"
+
+function var_0_0:__ctor()
+	self.m_haveRankController = self:getController("haveRank")
+	self.m_isLocalController = self:getController("isLocal")
+	self.m_knightPicComp = self:getChild("knightPicComp")
+	self.m_myRankText = self:getChild("myRankText")
+	self.m_noRankText = self:getChild("noRankText")
+	self.m_rankGroup = self:getChild("rankGroup")
+	self.m_rankBtn = self:getChild("rankBtn")
+	self.m_shopBtn = self:getChild("shopBtn")
+	self.m_taskBtn = self:getChild("taskBtn")
+	self.m_btnGroup = self:getChild("btnGroup")
+	self.m_seasonText = self:getChild("seasonText")
+	self.m_seasonTimeText = self:getChild("seasonTimeText")
+	self.m_serverTipBtn = self:getChild("serverTipBtn")
+	self.m_seasonGroup = self:getChild("seasonGroup")
+	self.m_borrowBtn = self:getChild("borrowBtn")
+	self.m_effBorrow = self:getChild("effBorrow")
+	self.m_borrowRedPointComp = self:getChild("borrowRedPointComp")
+	self.m_borrowGroup = self:getChild("borrowGroup")
+	self.m_lineupBtn = self:getChild("lineupBtn")
+	self.m_fightValuePreText = self:getChild("fightValuePreText")
+	self.m_fightValueText = self:getChild("fightValueText")
+	self.m_formationLineComp = self:getChild("formationLineComp")
+	self.m_lineupHolder = self:getChild("lineupHolder")
+	self.m_lineUpTouch = self:getChild("lineUpTouch")
+	self.m_lineUpGroup = self:getChild("lineUpGroup")
+	self.m_effArrowLeft = self:getChild("effArrowLeft")
+	self.m_effArrowright = self:getChild("effArrowright")
+	self.m_challengeList = self:getChild("challengeList")
+	self.m_effRoll = self:getChild("effRoll")
+	self.m_robotHolder = self:getChild("robotHolder")
+	self.m_challengesNumComp = self:getChild("challengesNumComp")
+	self.m_skipFormation = self:getChild("skipFormation")
+	self.m_topBarComp = self:getChild("topBarComp")
+	self.m_enterTransition = self:getTransition("enter")
+end
+
+return var_0_0

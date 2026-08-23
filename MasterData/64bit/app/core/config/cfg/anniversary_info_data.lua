@@ -1,0 +1,20 @@
+﻿return {
+	{
+		0,
+		0
+	},
+	{
+		2,
+		"957_2_name",
+		3002008,
+		"957_2_file_type",
+		"957_1_shop_not_enough",
+		"957_2_shop_not_enough",
+		"957_1_shop_not_enough",
+		385,
+		"957_2_entry_button",
+		386,
+		595592707,
+		6
+	}
+}

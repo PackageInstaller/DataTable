@@ -1,0 +1,31 @@
+﻿return {
+	MAIN_FORMATION_INDEX = 0,
+	SHARE_IS_PRESET = "isPreset",
+	MAX_FORMATION_CNT = 3,
+	TAB_INDEX = {
+		HELPER = 2,
+		PET = 1,
+		SUCCUBA = 3,
+		UNITE = 0
+	},
+	USE_CONDITION_STATE = {
+		PET = 2,
+		KNIGHT = 1,
+		NONE = 0
+	},
+	POP_TYPE = {
+		ONEKEY = 2,
+		MYTEAM = 1,
+		PRESET = 0
+	},
+	GOODS_TYPE_PROCESS_MAP = {
+		[g.core.common.Goods.TYPE_KNIGHT] = g.core.const.ConstMgr.PARAMETER_CONST.FORMATION_PROCESS_VALUE_KNIGHT,
+		[g.core.common.Goods.TYPE_ARTIFACT] = g.core.const.ConstMgr.PARAMETER_CONST.FORMATION_PROCESS_VALUE_ARTIFACT,
+		[g.core.common.Goods.TYPE_UNITETOKEN] = g.core.const.ConstMgr.PARAMETER_CONST.FORMATION_PROCESS_VALUE_UNITE_TOKEN,
+		[g.core.common.Goods.TYPE_PET] = g.core.const.ConstMgr.PARAMETER_CONST.FORMATION_PROCESS_VALUE_PET
+	},
+	PRESET_FORMATION_TYPE = {
+		GVE = 2,
+		MAIN = 1
+	}
+}

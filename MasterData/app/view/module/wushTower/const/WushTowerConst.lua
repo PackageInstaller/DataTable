@@ -1,0 +1,50 @@
+﻿return {
+	CAN_MOVE_INDEX = 3,
+	WUSH_HARD = 2,
+	RECOMMEND_NUM = 2,
+	SUBLAYER_BG_URL = "bg/wushTower/bg_srhy_guanqia%s.jpg",
+	WUSHTOWER_MAIN_TOPBAR = 304,
+	AWARD_COUNT = 3,
+	WUSH_TOWER_STAGE_COUNT = 13,
+	WUSHTOWER_SUB_TOPBAR = 305,
+	CHOOSE_LAYER_TOPBAR = 303,
+	MAINLAYER_BG_URL = "bg/wushTower/bg_shenruheiyuan_%s.jpg",
+	WUSH_NORMAL = 1,
+	DEPTH_UPDOWN_NUM = 5,
+	WUSH_HARD_REDID = 611,
+	WUSH_NORAML_REDID = 610,
+	MONSTER_BATTLE_BG = 156,
+	BOSS_BATTLE_BG = 157,
+	STAGE_TYPE = {
+		MONSTER = 1,
+		CARD = 2
+	},
+	STAGE_STATE = {
+		UNOPEN = 0,
+		OFF = 3,
+		PASS = 2,
+		CHOOSE = 1
+	},
+	WUSH_TOWER_LINE_ARRAY = {
+		"line0_1",
+		"line0_2",
+		"line1_3",
+		"line1_4",
+		"line2_4",
+		"line2_5",
+		"line3_6",
+		"line4_6",
+		"line4_7",
+		"line5_7",
+		"line6_8",
+		"line6_9",
+		"line7_9",
+		"line7_10",
+		"line8_11",
+		"line9_11",
+		"line9_12",
+		"line10_12",
+		"line11_13",
+		"line12_13"
+	}
+}

@@ -1,0 +1,47 @@
+﻿return {
+	RESULT_STAGE_TOP_ID = 378,
+	ELDER_GAME_STAGE_TOP_ID = 377,
+	CHOOSE_BUFF_STAGE_TOP_ID = 376,
+	PLAY_NUM_ID = 103,
+	RANK_AWARD_TYPE_TOTAL = 110,
+	RANK_AWARD_TYPE_GUILD = 111,
+	MAX_SHOW_USER_COUNT = 4,
+	RANK_SHOW_SIZE = 200,
+	REPORT_SIZE_LIMIT_PARAMETER = 24044,
+	RANK_AWARD_TYPE_MAX = 109,
+	MAX_HONNOR_RANK_SIZE = 3,
+	MAX_BUFF_NUM = 5,
+	STAGE = {
+		GAME = 1,
+		SHOW_RESULT = 2,
+		NOT_OPEN = 3
+	},
+	ELDER_BOSS_LEVEL_LIMIT = g.core.config.parameter_info.get(24034).parameter,
+	MAX_HONNOR_RANK_ID = {
+		g.core.network.proto.ELDER_BOSS_MAX_HONOR_WATER,
+		g.core.network.proto.ELDER_BOSS_MAX_HONOR_FIRE,
+		g.core.network.proto.ELDER_BOSS_MAX_HONOR_WIND,
+		g.core.network.proto.ELDER_BOSS_MAX_HONOR_THUNDER,
+		g.core.network.proto.ELDER_BOSS_MAX_HONOR_EARTH
+	},
+	TOTAL_HONNOR_RANK_ID = {
+		g.core.network.proto.ELDER_BOSS_TOTAL_HONOR_WATER,
+		g.core.network.proto.ELDER_BOSS_TOTAL_HONOR_FIRE,
+		g.core.network.proto.ELDER_BOSS_TOTAL_HONOR_WIND,
+		g.core.network.proto.ELDER_BOSS_TOTAL_HONOR_THUNDER,
+		g.core.network.proto.ELDER_BOSS_TOTAL_HONOR_EARTH
+	},
+	GUILD_HONNOR_RANK_ID = g.core.network.proto.ELDER_BOSS_GUILD_HONOR,
+	RANK_MAIN_TAB = {
+		TOTAL = 1,
+		GUILD = 2,
+		MAX = 0
+	},
+	RANK_ELEMENT_TAB = {
+		WIND = 2,
+		WATER = 0,
+		FIRE = 1,
+		THUNDER = 3,
+		EARTH = 4
+	}
+}

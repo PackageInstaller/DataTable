@@ -1,0 +1,34 @@
+﻿local var_0_0 = {
+	PHASE_1 = 1,
+	PHASE_2 = 2
+}
+
+return {
+	SHOW_UNITE_TOKEN_ID = 50050,
+	JSON_NAME = "seven_days_activity.json",
+	TARGET_BIO_TEAM_CHAPTER = 35,
+	DAY_TAB_NUM = 7,
+	BIO_TEAM_CHAPTER_START = 1000,
+	TARGET_ARENA_RANKING = 3,
+	SHOW_KNIGHT_ID = 17008,
+	RECEIVE_STATE = {
+		CAN_RECEIVE = 0,
+		LOCKED = 2,
+		RECEIVED = 3,
+		NOT_ACHIEVED = 1
+	},
+	INTEGRAL_AWARD_TYPE = {
+		NORMAL = 0,
+		SPECIAL = 1
+	},
+	DAY_TAB_STATE = {
+		LOCKED = 0,
+		UNLOCKED = 1,
+		COMPLETED = 2
+	},
+	ACT_VALUE = var_0_0,
+	TOP_BAR_ID = {
+		[var_0_0.PHASE_1] = 67,
+		[var_0_0.PHASE_2] = 80
+	}
+}

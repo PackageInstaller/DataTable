@@ -1,0 +1,16 @@
+﻿return {
+	CENSOR_TYPE = {
+		FUNCTION = 11,
+		KNIGHT = 1,
+		PV = 6,
+		CG = 3,
+		RIGID = 12,
+		UI = 4,
+		OPEN_ADV = 100,
+		BANNER = 101,
+		SIGN_ACTIVITY = 10,
+		THEME_ACTIVITY = 8,
+		RECRUIT_ACTIVITY = 9,
+		SKIN = 2
+	}
+}

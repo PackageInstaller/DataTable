@@ -1,0 +1,13 @@
+﻿return {
+	SUB_HIDE = 0,
+	SUB_DEADBOX = 5,
+	SUB_ITEM = 2,
+	SUB_TRAP = 4,
+	SUB_STONE = 10,
+	SUB_TOUCH = 6,
+	SUB_MAGMA = 9,
+	SUB_BLOCK = 1,
+	SUB_BOMB = 7,
+	SUB_LIFE = 3,
+	SUB_WATER = 8
+}

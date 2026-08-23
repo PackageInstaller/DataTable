@@ -1,0 +1,117 @@
+﻿return {
+	KNIGHT_NEW_SHOW_LIMIT_QUALITY_ID = 24049,
+	SHOW_SPINE_NUM = 1,
+	RECRUIT_SP_ID = {
+		ARTIFACT_BASE_NORMAL_ID = 100007,
+		PREMIUM_KNIGHT_NORMAL_ID = 100002
+	},
+	RECRUIT_TAB_TYPE = {
+		UNITE_TAB = "unite",
+		KNIGHT_SOUL_TAB = "knight_soul",
+		ARTIFACT_TAB = "artifact",
+		PET_TAB = "pet",
+		KNIGHT_TAB = "knight",
+		DAILY_RECRUIT = "daily_recruit",
+		SUCCUBA_TAB = "succuba",
+		PRECIOUS_TAB = "precious"
+	},
+	RECRUIT_ACTIVITY_ID = {
+		PRIMARY_LIMIT = 100301
+	},
+	RECRUIT_TYPE = {
+		RECRUIT_KNIGHT_SPRING = 29,
+		LIMIT_ROUND = 16,
+		UNITE_TOKEN_LIMIT = 7,
+		PRIMARY = 9,
+		LIMIT_ACTIVE = 18,
+		RECRUIT_ACT_UNITE_TOKEN = 27,
+		PRIMARY_LIMIT = 26,
+		PRECIOUS = 25,
+		KNIGHT_SOUL_RECRUIT = 23,
+		RECRUIT_RETURN_KNIGHT = 28,
+		PET_LIMIT = 21,
+		RECRUIT_RETURN_ARTIFACT = 30,
+		LIMIT_KNIGHT_SOUL_RECRUIT = 24,
+		RECRUIT_SUCCUBA = 31,
+		NEW_LIMIT_ARTIFACT_RECRUIT = 33,
+		ARTIFACT_LIMIT = 19,
+		UNITE_TOKEN_OPEN_SERVER = 8,
+		UNITE_TOKEN_NORMAL = 6,
+		DAILY_RECRUIT = 22,
+		PREMIUM = 2,
+		RECRUIT_RESONATOR_CAPTAIN = 34,
+		ARTIFACT_BASE = 12,
+		NEW_LIMIT_KNIGHT_RECRUIT = 32,
+		PET_BASE = 20,
+		LIMIT = 3,
+		NONE = 0
+	},
+	RECRUIT_FUNC_ID = {
+		ARTIFACT_LIMIT_FUNC_ID = 1906,
+		PET_LIMIT_FUNC_ID = 2006,
+		KNIGHT_LIMIT_FUNC_ID = 20109,
+		KNIGHT_PRIMARY_FUNC = 25020,
+		UNITE_TOKEN_LIMIT_FUNC_ID = 25024
+	},
+	PRIMARY_TASK_STATE = {
+		RECEIVED = "received",
+		MATCH = "match",
+		NONE = "lock"
+	},
+	RECRUIT_LIMIT_INDEX = {
+		[290001] = {
+			ctrlIdx = 1,
+			topId = 346,
+			luckHelpId = 374
+		},
+		[290002] = {
+			ctrlIdx = 2,
+			topId = 351,
+			luckHelpId = 387
+		},
+		[290003] = {
+			ctrlIdx = 3,
+			topId = 361,
+			luckHelpId = 399
+		},
+		[290004] = {
+			ctrlIdx = 4,
+			topId = 515,
+			luckHelpId = 516
+		},
+		[290005] = {
+			ctrlIdx = 5,
+			topId = 652,
+			luckHelpId = 548
+		},
+		[290006] = {
+			ctrlIdx = 6,
+			topId = 653,
+			luckHelpId = 387
+		}
+	},
+	RECRUIT_ROUTE_TYPE = {
+		ROUTE_TYPE_RECRUIT_TYPE = 6,
+		ROUTE_TYPE_UNITE_TOKEN_NORMAL = 3,
+		ROUTE_TYPE_RECRUIT_ID = 4,
+		ROUTE_TYPE_ARTIFACT_BASE = 5,
+		ROUTE_TYPE_LOW = 1,
+		ROUTE_TYPE_PREMIUM = 2
+	},
+	IS_OTHER_TIP = {
+		OTHER_TIP = 1,
+		NORMAL = 0,
+		NEW_PLAYER = 2
+	},
+	ACTION_RECRUIT_ITEM_NOT_ENOUGH_ID = {
+		["3_55"] = 1442,
+		["3_5"] = 1441,
+		["3_51"] = 1443,
+		["3_165"] = 1442,
+		["3_96"] = 1455,
+		["3_6"] = 1441,
+		["3_60"] = 1444,
+		["3_133"] = 1484,
+		["3_93"] = 1445
+	}
+}

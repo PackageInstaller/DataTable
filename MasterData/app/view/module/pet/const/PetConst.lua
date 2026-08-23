@@ -1,0 +1,19 @@
+﻿return {
+	FORMATION_NUM = 6,
+	SERVER_LINEUP_MAX = 6,
+	ATTR_NUM = 5,
+	MAX_LINK_NUM = 1,
+	ADVANCE_MAX = 7,
+	LINEUP_MAX = 5,
+	ATTR_HP_POP = 3,
+	STAR_MAX = 7,
+	PET_ABLE_FRAGMENT_TYPE = 82,
+	LV_ATTR_NUM = 6,
+	ATTR_BASE_POP = 1,
+	ATTR_DEV_POP = 2,
+	DevType = {
+		ADVANCE = 3,
+		INFO = 1,
+		STAR_UP = 2
+	}
+}

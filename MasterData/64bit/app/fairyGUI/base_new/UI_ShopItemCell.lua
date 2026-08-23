@@ -1,0 +1,86 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://kvb3zneppfm05"
+
+function var_0_0:__ctor()
+	self.m_typeController = self:getController("type")
+	self.m_cornerController = self:getController("corner")
+	self.m_isUnBuyController = self:getController("isUnBuy")
+	self.m_bgStateController = self:getController("bgState")
+	self.m_isShopUnLockController = self:getController("isShopUnLock")
+	self.m_isTimeLimitController = self:getController("isTimeLimit")
+	self.m_isFragController = self:getController("isFrag")
+	self.m_LUStateController = self:getController("LUState")
+	self.m_showWeddingController = self:getController("showWedding")
+	self.m_itemBg = self:getChild("itemBg")
+	self.m_qualityBg = self:getChild("qualityBg")
+	self.m_effectBg = self:getChild("effectBg")
+	self.m_item = self:getChild("item")
+	self.m_weddingKnight = self:getChild("weddingKnight")
+	self.m_effectIcon = self:getChild("effectIcon")
+	self.m_comfortBgImg = self:getChild("comfortBgImg")
+	self.m_comfortIconLoader = self:getChild("comfortIconLoader")
+	self.m_comfortTxt = self:getChild("comfortTxt")
+	self.m_comfortGroup = self:getChild("comfortGroup")
+	self.m_tipBg = self:getChild("tipBg")
+	self.m_tips = self:getChild("tips")
+	self.m_num = self:getChild("num")
+	self.m_nameTxt = self:getChild("nameTxt")
+	self.m_cornerTxt = self:getChild("cornerTxt")
+	self.m_limitTimeTxt = self:getChild("limitTimeTxt")
+	self.m_oneCostComp = self:getChild("oneCostComp")
+	self.m_twoCostComp = self:getChild("twoCostComp")
+	self.m_freeTxt = self:getChild("freeTxt")
+	self.m_limitTxt = self:getChild("limitTxt")
+	self.m_touchBg = self:getChild("touchBg")
+	self.m_buyBg = self:getChild("buyBg")
+	self.m_attentNameTxt = self:getChild("attentNameTxt")
+	self.m_attentGroup = self:getChild("attentGroup")
+	self.m_attentCheckBtn = self:getChild("attentCheckBtn")
+	self.m_redPointComp = self:getChild("redPointComp")
+end
+
+var_0_0.TypeCtrl = {
+	page2 = 2,
+	page1 = 1,
+	page0 = 0,
+	page4 = 4,
+	page3 = 3
+}
+var_0_0.CornerCtrl = {
+	page2 = 2,
+	page1 = 1,
+	page0 = 0,
+	page3 = 3
+}
+var_0_0.IsUnBuyCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.BgStateCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.IsShopUnLockCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.IsTimeLimitCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.IsFragCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.LUStateCtrl = {
+	page2 = 2,
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.ShowWeddingCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+
+return var_0_0

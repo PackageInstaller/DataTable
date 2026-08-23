@@ -1,0 +1,19 @@
+﻿return {
+	REFRESH_COST_SHOP_ID = 145,
+	BUY_PRICE_ID = 68,
+	TASK_STATE = {
+		NOT_FINISH = 0,
+		REWARD = 2,
+		FINISH = 1
+	},
+	TASK_TYPE = {
+		DAILY = 1,
+		STAGE = 3,
+		PERIOD = 2
+	},
+	BOX_QUALITY = {
+		NORMAL = 1,
+		SUPER = 3,
+		HIGHER = 2
+	}
+}

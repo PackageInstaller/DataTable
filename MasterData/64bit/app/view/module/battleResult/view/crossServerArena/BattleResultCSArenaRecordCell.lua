@@ -1,0 +1,86 @@
+﻿local var_0_0 = g.core.const.ConstMgr.CrossServerArenaConst
+local var_0_2 = g.core.config.knight_info
+local KnightStruct = require("app.view.module.knight.model.KnightStruct")
+local BattleResultCSArenaRecordCell = class("BattleResultCSArenaRecordCell", require("app.fairyGUI.battleResult.UI_BattleResultCSArenaRecordCell"))
+
+function BattleResultCSArenaRecordCell:ctor()
+	self.m_myTeamList:setVirtual()
+	self.m_myTeamList:setItemRenderer(handler(self, self._onRenderMyTeamList))
+	self.m_myTeamList:setScrollEnabled(false)
+	self.m_rivalTeamList:setVirtual()
+	self.m_rivalTeamList:setItemRenderer(handler(self, self._onRenderRivalTeamList))
+	self.m_rivalTeamList:setScrollEnabled(false)
+end
+
+function BattleResultCSArenaRecordCell:updateCell(arg_2_1)
+	if not arg_2_1 then
+		return
+	end
+
+	self._params = arg_2_1
+
+	local var_2_0 = arg_2_1.roundNum or 1
+
+	self._mulFormationStruct = arg_2_1.myMulTeam[var_2_0]
+	self._ownUnits = arg_2_1.ownUnits
+	self._rivalTeamList = arg_2_1.formations[var_2_0]
+	self._enemyUnits = arg_2_1.enemyUnits
+
+	self.m_roundTxt:setText(arg_2_1.roundNum or "")
+	self.m_resultController:setSelectedIndex(arg_2_1.result == var_0_0.CTRL_WIN and 1 or 0)
+	self.m_myTeamList:setNumItems(6)
+	self.m_rivalTeamList:setNumItems(6)
+end
+
+function BattleResultCSArenaRecordCell:_onRenderMyTeamList(arg_3_1, arg_3_2)
+	local var_3_0 = self._mulFormationStruct:getKnightSid(arg_3_1 + 1)
+	local var_3_1
+
+	if var_3_0 ~= 0 then
+		var_3_1 = {
+			sid = var_3_0
+		}
+	end
+
+	if var_3_1 then
+		arg_3_2:getController("isDie"):setSelectedIndex((self._ownUnits[arg_3_1 + 1] or 1) > 0 and 0 or 1)
+	end
+
+	arg_3_2:updateComp(arg_3_1 + 1, var_3_1, nil, false)
+end
+
+function BattleResultCSArenaRecordCell:_onRenderRivalTeamList(arg_4_1, arg_4_2)
+	local var_4_0
+
+	if self._rivalTeamList.knight_id[arg_4_1 + 1] and self._rivalTeamList.knight_id[arg_4_1 + 1] ~= 0 then
+		var_4_0 = self:_getKnightStructByBaseId(self._rivalTeamList.knight_id[arg_4_1 + 1])
+	end
+
+	if var_4_0 then
+		arg_4_2:getController("isDie"):setSelectedIndex((self._enemyUnits[arg_4_1 + 1] or 1) > 0 and 0 or 1)
+	end
+
+	if var_4_0 then
+		arg_4_2:updateComp(arg_4_1 + 1, {
+			struct = var_4_0
+		}, true)
+	else
+		arg_4_2:updateComp(arg_4_1 + 1, nil, true)
+	end
+end
+
+function BattleResultCSArenaRecordCell:_getKnightStructByBaseId(arg_5_1)
+	local var_5_0
+
+	if arg_5_1 > 0 then
+		local var_5_1 = var_0_2.get(arg_5_1)
+
+		var_5_0 = KnightStruct.new(var_5_1.advance_id)
+
+		var_5_0:addCfgInfo(var_5_1)
+	end
+
+	return var_5_0
+end
+
+return BattleResultCSArenaRecordCell

@@ -1,0 +1,8 @@
+﻿return {
+	DUNGEON_TYPE = {
+		COIN = 2,
+		UNITE_TOKEN_SELECT = 3,
+		TREASURE_EXP = 4,
+		KNIGHT_EXP = 1
+	}
+}

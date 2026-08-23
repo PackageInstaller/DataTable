@@ -1,0 +1,55 @@
+﻿return {
+	MOVE_MAX_POS = 20000,
+	FIRST_PASS_REWARD_TYPE = 1,
+	SUB_TOWER_MAP_COUNT = 10,
+	TOUCH_MOVE_DELTA = 30,
+	FIRST_PASS_LIST_MAX_COUNT = 20,
+	SUB_TOWER_MAP_X = 2225,
+	FORMATION_JSON_NAME = "tower_knight_ids.json",
+	TOWER_MULTI_TEAM_MAX = 5,
+	SUB_TOWER_JSON_NAME = "tower_sub_progress.json",
+	HARD_SUB_TOWER_JSON_NAME = "hard_tower_sub_progress.json",
+	STAGE_TYPE = {
+		LIN_DONG = 3,
+		JIAO_GUO = 2,
+		DONG_XI = 4,
+		MAIN = 1,
+		LI_JIN = 5
+	},
+	STAGE_TYPE_HARD = {
+		LIN_DONG = 8,
+		JIAO_GUO = 7,
+		DONG_XI = 9,
+		MAIN = 6,
+		LI_JIN = 10
+	},
+	STAGE_REQUIRE_TYPE = {
+		ALL = 1,
+		JIAO_GUO = 2,
+		DONG_XI = 4,
+		HARD_JIAO_GUO = 7,
+		HARD_LIN_DONG = 8,
+		HARD_DONG_XI = 9,
+		HARD_ALL = 6,
+		LIN_DONG = 3,
+		HARD_LI_JIN = 10,
+		LI_JIN = 5,
+		NONE = 0
+	},
+	SUB_TOWER_STAGE_POSLIST = {
+		[0] = 1933,
+		49,
+		219,
+		377,
+		546,
+		825,
+		1159,
+		1329,
+		1488,
+		1657
+	},
+	TOWER_DIFFICULTY = {
+		NORMAL = 1,
+		HARD = 2
+	}
+}

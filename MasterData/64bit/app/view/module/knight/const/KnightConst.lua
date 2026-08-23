@@ -1,0 +1,122 @@
+﻿local var_0_0 = {
+	KNIGHT_SOURCE_MAIN = "main",
+	NPC_PET_SHOP = 600080,
+	NPC_CAT_ID = 300420,
+	NPC_BUSINESS_ID = 300480,
+	NPC_RES_ID_MAJIA = 210012,
+	NPC_RES_ID1 = 500150,
+	NPC_RES_ID = 100000,
+	KNIGHT_WOMAN_ID = 200000,
+	KNIGHT_MAN_ID = 210000,
+	ADVANCE_COMMON_CONVERT_ITEM_ID = 86,
+	KNIGHT_TRAIN_AWAKE_TAB = 2,
+	KNIGHT_AWAKE_MAX = 2,
+	PENDANT_MAX_LV = 147,
+	PENDANT_STAGE_NUM = 7,
+	PENDANT_MAX_LV_ONESTAGE = 7,
+	HALO_QUALITY_LIMIT = 3,
+	SHOW_PARTNER_NUM = 20,
+	HALO_LIMIT_CNT = 3,
+	BACKUP_TOTAL = 5,
+	KNIGHT_BACKUP_MAX = 26,
+	KNIGHT_PARTNER_MAX = 26,
+	TRAIN_MAX = 20,
+	STAR_TALENT = 7,
+	STAR_MAX = 7,
+	MAT_ATTR_NUM = 4,
+	ADV_MAT_MAX = 4,
+	CHILD_MAT_MAX = 3,
+	ADV_LEVEL_MAX = 10,
+	PARTNER_TOTAL = 15,
+	PET_INDEX = 8,
+	PARTNER_INDEX = 7,
+	ASSCT_ACTIVE_MAX = 6,
+	ASSCT_MAX = 18,
+	ASS_COND_MAX = 5,
+	LINEUP_MAX = 6,
+	KNIGHT_SOURCE_BLAZING_ARENA = "blazing_arena",
+	KNIGHT_SOURCE_TEAM_BATTLE = "team_battle",
+	KNIGHT_SOURCE_EXPLORATION = "exploration",
+	KNIGHT_SOURCE_GVE = "gve",
+	KNIGHT_SOURCE_FOG = "fog",
+	ASS_TYPE = {
+		KNIGHT = 1,
+		TREATURE = 3,
+		EQUIP = 2
+	},
+	SHOW_ASS_TYPE = {
+		ASSO = 1,
+		HALO = 2
+	},
+	GROUP_TYPE = {
+		LI_JIN = 4,
+		DONG_XI = 3,
+		LIN_DONG = 2,
+		JIAO_GUO = 1,
+		DEFAULT = 0
+	},
+	KNIGHT_PROFESSION = {
+		g.core.lang:get(6),
+		g.core.lang:get(7),
+		g.core.lang:get(8),
+		g.core.lang:get(9),
+		(g.core.lang:get(10))
+	}
+}
+
+var_0_0.KNIGHT_SOURCE_TYPE = {
+	[0] = var_0_0.KNIGHT_SOURCE_MAIN,
+	var_0_0.KNIGHT_SOURCE_FOG,
+	var_0_0.KNIGHT_SOURCE_FOG,
+	var_0_0.KNIGHT_SOURCE_GVE,
+	[g.core.const.ConstMgr.ExplorationConst.KNIGHT_TYPE_RES.SELF] = var_0_0.KNIGHT_SOURCE_EXPLORATION,
+	[g.core.const.ConstMgr.ExplorationConst.KNIGHT_TYPE_RES.OTHER] = var_0_0.KNIGHT_SOURCE_EXPLORATION,
+	[g.core.const.ConstMgr.ExplorationConst.KNIGHT_TYPE_RES.WITHIN] = var_0_0.KNIGHT_SOURCE_EXPLORATION,
+	[g.core.const.ConstMgr.TeamBattleConst.KNIGHT_TYPE_RES.SELF] = var_0_0.KNIGHT_SOURCE_TEAM_BATTLE,
+	[g.core.const.ConstMgr.TeamBattleConst.KNIGHT_TYPE_RES.WITHIN] = var_0_0.KNIGHT_SOURCE_TEAM_BATTLE,
+	[g.core.const.ConstMgr.BlazingArenaConst.SOURCE_TYPE] = var_0_0.KNIGHT_SOURCE_BLAZING_ARENA
+}
+var_0_0.SPECIAL_KNIGHT_STATE = {
+	REVIVAL = 2,
+	DEFEATED = 1,
+	INJURED = 0,
+	FULL_HP = 3
+}
+var_0_0.DevType = {
+	WEDDING = 6,
+	PROTECT = 5,
+	SOUL = 4,
+	ADVANCE = 3,
+	STAR_UP = 2,
+	INFO = 1
+}
+var_0_0.SKIN_STATE = {
+	STATE_6 = 6,
+	STATE_5 = 5,
+	STATE_4 = 4,
+	STATE_3 = 3,
+	STATE_2 = 2,
+	STATE_1 = 1,
+	STATE_0 = 0
+}
+var_0_0.SKILL_STATE = {
+	NO_TALENT = 2,
+	IS_MAX = 1,
+	NOT_MAX = 0
+}
+var_0_0.ADVANCE_PASSIVE_SKILL_TYPE = {
+	BLOOD = 2,
+	PASSIVE = 1,
+	NONE = 0
+}
+var_0_0.VIDEO_SHOW_TYPE = {
+	NONE = 0,
+	ASSISTANT = 2,
+	ALL = 1
+}
+var_0_0.MR_PROTECT_UNLOCK_COND = {
+	ASSISTANT_KNIGHT_STAR = 2,
+	SOUL_LEVEL = 1
+}
+
+return var_0_0

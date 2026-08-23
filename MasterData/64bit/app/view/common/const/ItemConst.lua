@@ -1,0 +1,13 @@
+﻿return {
+	ITEM_TYPE = {
+		WORLD_RED_PACKET = 89,
+		PET_EXP = 41,
+		COMMANDER_LVUP_MAT = 37,
+		STORM = 28,
+		FRAME = 26,
+		SEVEN_DAYS = 23,
+		KNIGHT_LVUP_MAT = 1,
+		NEW_SLG = 130,
+		DAILY_BOX_GAME = 91
+	}
+}

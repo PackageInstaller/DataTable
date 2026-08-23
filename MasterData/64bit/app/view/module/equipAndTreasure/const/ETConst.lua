@@ -1,0 +1,24 @@
+﻿return {
+	POSITION_TYPE = {
+		TREASURE2 = 6,
+		TREASURE1 = 5,
+		EQUIP4 = 4,
+		EQUIP3 = 3,
+		EQUIP2 = 2,
+		EQUIP1 = 1
+	},
+	MASTER_TYPE = {
+		EQUIP_LEVEL = 1,
+		EQUIP_RESONANCE = 5,
+		TREASURE_REFINE = 4,
+		TREASURE_LEVEL = 3,
+		EQUIP_REFINE = 2
+	},
+	DEV_TYPE = {
+		GLYPH = 5,
+		MAGICAL = 3,
+		RESONANCE = 4,
+		REFINE = 2,
+		STRENGTH = 1
+	}
+}

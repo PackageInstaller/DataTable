@@ -1,0 +1,15 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://ziwfw8v5l2657ez"
+
+function var_0_0:__ctor()
+	self.m_bgPanel = self:getChild("bgPanel")
+	self.m_equipComp = self:getChild("equipComp")
+	self.m_starComp = self:getChild("starComp")
+	self.m_attrNameTxt = self:getChild("attrNameTxt")
+	self.m_defValueTxt = self:getChild("defValueTxt")
+	self.m_attrList = self:getChild("attrList")
+	self.m_content = self:getChild("content")
+end
+
+return var_0_0

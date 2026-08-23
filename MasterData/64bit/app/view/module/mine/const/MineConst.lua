@@ -1,0 +1,33 @@
+﻿return {
+	TYPE_CAPITAL = 1,
+	TYPE_CITY = 2,
+	PLAYER_SHOW_MAX = 9,
+	BLITZ_NUM = 5,
+	NOT_OCCU = 0,
+	OCCU_STATE = 1,
+	UNIQUE_STATE = 2,
+	X_ROTATE = -25,
+	TIME_STAGE = {
+		TOTAL_WAR = 2,
+		NORMAL = 1,
+		NOT_AVAILABLE = 0,
+		RESULT = 3
+	},
+	EVENT_ID = {
+		CAPITAL = 2,
+		BONUS = 1,
+		ADVANCE_BONUS = 3
+	},
+	IF_EVENT = {
+		NORMAL = 2,
+		BONUS = 1
+	},
+	ACTIVITY_TYPE = {
+		LOCAL_SERVER = 1,
+		CROSS_SERVER = 2
+	},
+	PRODUCT_ITEM = {
+		type = 1,
+		value = 54
+	}
+}

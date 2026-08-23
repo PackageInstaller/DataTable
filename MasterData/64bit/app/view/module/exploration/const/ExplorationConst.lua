@@ -1,0 +1,131 @@
+﻿local var_0_0 = {
+	SHOP_COIN_RES_ID = 70,
+	MAP_DEBUG_COLORF = false,
+	MAP_DRAG_ACCELERATE = 0,
+	MAP_DRAG_RATIO = 1,
+	MAP_DEBUG_TILED = false,
+	MAP_CELL_NUM = 9,
+	MAP_DEBUG_GRID = false,
+	MAP_DRAG_INERTIA_CLOSE = true,
+	MAP_DRAG_SENSITIVE = 1,
+	MAP = {
+		DRAG_SENSITIVE = 1,
+		DRAG_ACCELERATE = 0,
+		DRAG_RATIO = 1,
+		DRAG_INERTIA_CLOSE = true,
+		DEBUG_COLORF = false,
+		DEBUG_GRID = false,
+		ROOM_STATE_UNLOCK = 1,
+		TILED_STATE_LOCK = 0,
+		UES_EFFECT = true,
+		TILED_STATE_UNLOCK = 2,
+		TILED_STATE_CAN_UNLOCK = 1,
+		CELL_NUM = 9,
+		ROOM_STATE_PASS = 2,
+		ROOM_STATE_LOCK = 0,
+		MAP_DEBUG_COLORF = cc.c4f(0.15, 0.9, 0.9, 1),
+		MAP_DEBUG_COLORB = cc.c4b(30, 230, 230, 255)
+	},
+	GRID_TYPE = {
+		GUARD = 12,
+		BIRTH = 4,
+		RANDOM = 3,
+		SHOP = 2,
+		MIRROR = 1,
+		NONE = 0
+	},
+	EVENT_TYPE = {
+		ULTIMATUM = 1,
+		TIP_TASK = 10,
+		GUARD = 12,
+		ROBBER = 11,
+		NONE = 0,
+		GAME_WALLET = 9,
+		GAME_TURNTABLE = 8,
+		GAME_FLOP = 7,
+		TYPE_BUFF = 6,
+		ARTIFACT_SHOP = 5,
+		PET_SHOP = 4,
+		UNITE_SHOP = 3,
+		KNIGHT_SHOP = 2
+	},
+	EVENT_SOURCE_TYPE = {
+		LOCAL = "local",
+		SERVER = "server"
+	},
+	DIRECTION = {
+		DOWN = 4,
+		LEFT = 3,
+		RIGHT = 2,
+		UP = 1
+	}
+}
+
+var_0_0.LINE_ROTATION = {
+	[var_0_0.DIRECTION.UP] = 153.5,
+	[var_0_0.DIRECTION.RIGHT] = 206.5,
+	[var_0_0.DIRECTION.LEFT] = 26.5,
+	[var_0_0.DIRECTION.DOWN] = 333.5
+}
+var_0_0.ASSISTANT_TYPE = {
+	LEND = 0,
+	BORROW = 1
+}
+var_0_0.BAG_MAX_PARAMETER_ID = 6
+var_0_0.BAG_TYPE = {
+	UNITE_TOKEN = 2,
+	ARTIFACT = 1,
+	KNIGHT = 0,
+	PET = 3
+}
+var_0_0.MAX_HELP_NUM = 3
+var_0_0.OPEN_STATE = {
+	NORMAL = 1,
+	FINISH = 2,
+	NONE = 0
+}
+var_0_0.KNIGHT_TYPE_RES = {
+	OTHER = 5,
+	SELF = 4,
+	WITHIN = 6
+}
+var_0_0.CHALLENGE_COST = {
+	FRESH = 5,
+	PARAM_ID = 4
+}
+var_0_0.RANK_TYPE = {
+	GUILD = 2,
+	DAMAGE = 1,
+	CLEAR = 0
+}
+var_0_0.BUFF = {
+	SELECT_TYPE = 1,
+	GUILD_TYPE = 2
+}
+var_0_0.GUILD_BUFF_PLAYER_NUM = 3
+var_0_0.SHOP_ITEM_TYPE = {
+	KNIGHT = 4
+}
+var_0_0.SHOW_RANK_SIZE = 50
+var_0_0.EMBRYO_TYPE = {
+	[0] = 4
+}
+var_0_0.RANK_AWARD_TYPE = {
+	GUILD = 93,
+	DAMAGE = 94,
+	CLEAR = 92
+}
+var_0_0.GAME_STAGE = {
+	MIRROR = 1,
+	BOSS = 2
+}
+var_0_0.TASK_STATE = {
+	MATCH = "match",
+	COMPLETE = "complete",
+	NONE = "none"
+}
+var_0_0.PARAMETER_ACTION_NUM = 7
+var_0_0.PARAMETER_BOSS_NUM = 7
+var_0_0.PARAMETER_ACTION_COST_ID = 1
+
+return var_0_0

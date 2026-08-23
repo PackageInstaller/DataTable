@@ -1,0 +1,4758 @@
+﻿local var_0_0 = ...
+local protobuf = require("protobuf.protobuf")
+local descriptor_helper = require("protobuf.descriptor_helper")
+local var_0_6 = {
+	STATUS_EXPLORATION = 22,
+	STATUS_BOUNTY = 23,
+	STATUS_PASSCARD_ACTIVITY = 24,
+	STATUS_RERUN = 25,
+	STATUS_RICH_MAN = 26,
+	STATUS_GUILD_ALLIANCE = 27,
+	STATUS_RETRO = 28,
+	STATUS_PUBG = 29,
+	STATUS_BLAZING_ARENA = 30,
+	STATUS_NEW_SLG_TECHNOLOGY = 31,
+	STATUS_RELEASE = 32,
+	KNIGHT_MOOD = 5,
+	KNIGHT_FATIGUE = 4,
+	KNIGHT_HUNGER = 3,
+	KNIGHT_DEMONIC = 2,
+	KNIGHT_HP = 1,
+	ALL = 2,
+	ONE = 1,
+	GUILD = 2,
+	ALLIANCE = 1,
+	PAY = 2,
+	FREE = 1,
+	PEACE = 3,
+	LOSE = 2,
+	WIN = 1,
+	NONE = 0,
+	MASTER = 3,
+	BAGGAGE = 2,
+	ASSASSIN = 1,
+	UNKNOWN = 0,
+	ENEMY_HP_ZERO = 1,
+	NORMAL = 0,
+	GROUP = 3,
+	DIFFICULTY = 2,
+	REGULAR = 1,
+	TYPE_SUCCUBA = 9,
+	TYPE_PRECIOUS_SUIT = 8,
+	TYPE_PET_EQUIPMENT = 7,
+	TYPE_PET = 6,
+	TYPE_ARTIFACT = 5,
+	TYPE_TREASURE = 4,
+	TYPE_EQUIPMENT = 3,
+	TYPE_UNITE_TOKEN = 2,
+	TYPE_KNIGHT = 1,
+	PEAK_ARENA_FINAL = 2,
+	PEAK_ARENA = 1,
+	DEFAULT = 0,
+	TOWER_STAGE_NEBU_DIFF = 10,
+	TOWER_STAGE_EASTRISE_DIFF = 9,
+	TOWER_STAGE_BIFROST_DIFF = 8,
+	TOWER_STAGE_EMPIRE_DIFF = 7,
+	TOWER_STAGE_MAIN_DIFF = 6,
+	TOWER_STAGE_NEBU = 5,
+	TOWER_STAGE_EASTRISE = 4,
+	TOWER_STAGE_BIFROST = 3,
+	TOWER_STAGE_EMPIRE = 2,
+	TOWER_STAGE_MAIN = 1,
+	WING_WEAR = 1,
+	WING_UNWEAR = 0,
+	RIT_RECHARGE_MAX = 4,
+	RIT_RECHARGE_INHERIT_TOTAL = 3,
+	RIT_RECHARGE_FUND_ACTIVE = 2,
+	RIT_RECHARGE_DAILY_TOTAL = 1,
+	RIT_RECHARGE_TOTAL = 0,
+	CST_ANNIVERSARY = 25,
+	CST_PRESET_FORMATION = 8,
+	CST_BATTLE_RES = 1,
+	UT_UNITETOKEN = 2,
+	UT_KNIGHT = 1,
+	BIOGRAPHY = 1,
+	HERO = 2,
+	MAIN = 1,
+	SHOW_KNIGHT_ID = 5,
+	AVATA = 3,
+	TALK = 4,
+	NAME = 2,
+	FRAME = 1,
+	ALL_PURPOSE_EXCHANGE = 99,
+	RESOLVE = 2,
+	REBIRTH = 1,
+	R_ITEM = 11,
+	R_FURNISHING = 10,
+	R_KSOUL_BOOK = 9,
+	R_PET = 8,
+	R_PET_EQUIPMENT = 7,
+	R_ARTIFACT = 6,
+	R_DRESS = 5,
+	R_TREASURE = 4,
+	R_EQUIPMENT = 3,
+	R_UNITE_TOKEN = 2,
+	R_KNIGHT = 1,
+	STATUS_DOMAIN = 33,
+	STATUS_GROUP_BATTLE = 21,
+	STATUS_WEEKLY_COMPETITION = 20,
+	STATUS_LOTTERY = 19,
+	STATUS_COMPETITION = 18,
+	STATUS_DEAD_TOWER = 17,
+	STATUS_GVE = 16,
+	STATUS_SUPPORT = 15,
+	STATUS_RECHARGE_TOTAL = 14,
+	STATUS_GOLD_SAVING = 13,
+	STATUS_FRIEND_RECOMMEND = 12,
+	STATUS_THEME = 11,
+	STATUS_PASSCARD = 10,
+	STATUS_ORDER = 8,
+	STATUS_HOLIDAY = 7,
+	STATUS_FOURTEEN = 6,
+	STATUS_GUIDE_TASK = 5,
+	STATUS_SEVENDAYS = 4,
+	STATUS_DAILY_TASK = 3,
+	STATUS_SHOP = 2,
+	STATUS_ACHIEVEMENT = 1,
+	UR_PET_HB = 8,
+	UR_ARTIFACT_HB = 7,
+	PET_HB = 6,
+	ARTIFACT_HB = 5,
+	SKIN_HB = 4,
+	BIOBOSS_HB = 3,
+	DRESS_HB = 2,
+	KNIGHT_HB = 1,
+	THEME_DEMON_BOSS_12 = 50015,
+	THEME_DEMON_BOSS_11 = 50014,
+	THEME_DEMON_BOSS_10 = 50013,
+	THEME_DEMON_BOSS_9 = 50012,
+	THEME_DEMON_BOSS_8 = 50011,
+	THEME_DEMON_BOSS_7 = 50010,
+	THEME_DEMON_BOSS_6 = 50009,
+	THEME_DEMON_BOSS_5 = 50008,
+	THEME_DEMON_BOSS_4 = 50007,
+	THEME_DEMON_BOSS_3 = 50006,
+	THEME_DEMON_BOSS_2 = 50005,
+	THEME_DEMON_BOSS_1 = 50004,
+	ELDER_BOSS_GUILD_HONOR = 146,
+	ELDER_BOSS_TOTAL_HONOR_EARTH = 145,
+	ELDER_BOSS_TOTAL_HONOR_THUNDER = 144,
+	ELDER_BOSS_TOTAL_HONOR_WIND = 143,
+	ELDER_BOSS_TOTAL_HONOR_FIRE = 142,
+	ELDER_BOSS_TOTAL_HONOR_WATER = 141,
+	ELDER_BOSS_MAX_HONOR_EARTH = 140,
+	ELDER_BOSS_MAX_HONOR_THUNDER = 139,
+	ELDER_BOSS_MAX_HONOR_WIND = 138,
+	ELDER_BOSS_MAX_HONOR_FIRE = 137,
+	ELDER_BOSS_MAX_HONOR_WATER = 136,
+	SPIRE_SCORE_CROSS = 135,
+	SPIRE_SCORE_LOCAL = 134,
+	PUBG_USER_SCORE_CROSS = 133,
+	GVE_BOSS_USER_TOTAL_DAMAGE_CROSS = 132,
+	GVE_BOSS_USER_MAX_DAMAGE_CROSS = 131,
+	GVE_ALLIANCE_TOTAL_DAMAGE_CROSS = 130,
+	GVE_BOSS9_ALLIANCE_TOTAL_DAMAGE_CROSS = 129,
+	CHIBI_ACHIEVEMENT_ALL_SERVER = 128,
+	CHIBI_ACHIEVEMENT_CROSS = 127,
+	EXPLORATION_BOSS_GUILD_CROSS = 126,
+	EXPLORATION_BOSS_USER_CROSS = 125,
+	EXPLORATION_PASS_CROSS = 124,
+	GVE_BOSS9_USER_TOTAL_DAMAGE_CROSS = 123,
+	WEEKLY_COMPETITION_SCORE_CROSS = 122,
+	WEEKLY_COMPETITION_SCORE_LOCAL = 121,
+	KSOUL_COMPETITION = 100,
+	FATIGUE = 24,
+	FOURTEEN_COURAGE = 23,
+	COURAGE = 22,
+	BUCKET = 21,
+	ACHIEVEMENT_POINT = 19,
+	GUILD_DUNGEON_COUNT = 15,
+	GUILD_DUNGEON_SCORE = 14,
+	REBEL_SCORE = 13,
+	REBEL_ATTACK = 12,
+	GUILD_CONTRIBUTE = 11,
+	CONTEND_TREASURE_SCORE = 10,
+	CONTEND_TREASURE_TIMES = 9,
+	PRESTIGE = 8,
+	DBATTLE_SCORE = 6,
+	VIT = 4,
+	SILVER = 3,
+	VIPEXP = 2,
+	ROLEEXP = 1,
+	LIMIT = 10000,
+	KNIGHT_GROUP = 1002,
+	DROP = 1000,
+	GOLD = 999,
+	OUTPOST = 38,
+	SUCCUBA = 37,
+	SKIN_PART = 36,
+	PRECIOUS = 35,
+	EXPIRABLE_ITEM = 34,
+	THEME_BIOGRAPHY_ITEM = 33,
+	GVE_HALIDOM = 27,
+	TALK_SHOW = 26,
+	BG_BOOK = 25,
+	HEAD_FRAME = 24,
+	HEAD_AVATA = 23,
+	FURNITURE = 21,
+	FAV = 20,
+	KSOUL = 19,
+	PET_EQUIPMENT = 18,
+	PET = 17,
+	WING = 16,
+	CARD = 15,
+	ARTIFACT_RC = 29,
+	ARTIFACT_COIN = 28,
+	ARTIFACT = 14,
+	SKIN = 13,
+	BIOGRAPHY_ITEM = 12,
+	DRESS = 11,
+	RED_PACKET = 10,
+	TITLE = 9,
+	TREASURE = 8,
+	EQUIPMENT = 7,
+	ADVANCE_EQUIPMENT = 6,
+	UNITETOKEN = 5,
+	KNIGHT = 4,
+	ITEM = 3,
+	FRAGMENT = 2,
+	RESOURCE = 1,
+	STAR_TRAIN_TMP_MAG_DEFENCE = 10008,
+	STAR_TRAIN_TMP_PHY_DEFENCE = 10007,
+	STAR_TRAIN_TMP_ATTACK = 10006,
+	STAR_TRAIN_TMP_HP = 10005,
+	STAR_TRAIN_MAG_DEFENCE = 10004,
+	STAR_TRAIN_PHY_DEFENCE = 10003,
+	STAR_TRAIN_ATTACK = 10002,
+	STAR_TRAIN_HP = 10001,
+	CLASSICAL_CRIT_DAMAGE_DEC = 1510,
+	CLASSICAL_CRIT_DAMAGE_ADD = 1509,
+	CLASSICAL_BLOCK_DAMAGE_DEC = 1508,
+	CLASSICAL_BLOCK_DAMAGE_ADD = 1507,
+	CLASSICAL_PIERCE_RATE = 1506,
+	CLASSICAL_BLOCK_RATE = 1505,
+	CLASSICAL_HARDEN_RATE = 1504,
+	CLASSICAL_CRIT_RATE = 1503,
+	CLASSICAL_DODGE_RATE = 1502,
+	CLASSICAL_ACCURACY_RATE = 1501,
+	CLASSICAL_DAMAGE_ADD = 1412,
+	CLASSICAL_DAMAGE_DEC = 1411,
+	CLASSICAL_SOIL_DAMAGE_ADD = 1410,
+	CLASSICAL_SOIL_DAMAGE_DEC = 1409,
+	CLASSICAL_THUNDER_DAMAGE_ADD = 1408,
+	CLASSICAL_THUNDER_DAMAGE_DEC = 1407,
+	CLASSICAL_WIND_DAMAGE_ADD = 1406,
+	CLASSICAL_WIND_DAMAGE_DEC = 1405,
+	CLASSICAL_FIRE_DAMAGE_ADD = 1404,
+	CLASSICAL_FIRE_DAMAGE_DEC = 1403,
+	CLASSICAL_WATER_DAMAGE_ADD = 1402,
+	CLASSICAL_WATER_DAMAGE_DEC = 1401,
+	KNIGHT_DAMAGE_DEC = 911,
+	KNIGHT_DAMAGE_ADD = 910,
+	MONSTER_COMBO_DAMAGE_DEC = 904,
+	MONSTER_COMBO_DAMAGE_ADD = 903,
+	MONSTER_KNIGHT_DAMAGE_DEC = 902,
+	MONSTER_KNIGHT_DAMAGE_ADD = 901,
+	COMBO_FIGHT_VALUE_RATEB = 803,
+	COMBO_FIGHT_VALUE_RATEA = 802,
+	SKILL_FIGHT_VALUE_RATE = 801,
+	BATTLE_COMBO = 703,
+	BATTLE_ANGER = 702,
+	BATTLE_HP = 701,
+	COMBO_DAMAGE_DEC = 611,
+	COMBO_DAMAGE_ADD = 610,
+	COMBO_CRIT_DAMAGE_DEC = 609,
+	COMBO_CRIT_DAMAGE_ADD = 608,
+	COMBO_HARDEN_RATE = 607,
+	COMBO_CRIT_RATE = 606,
+	COMBO_RECOVER_ROUND = 605,
+	COMBO_RECOVER_SKILL = 604,
+	COMBO_RECOVER_ACTION = 603,
+	MAXIMUM_COMBO = 602,
+	INITIAL_COMBO = 601,
+	DEBUFF_ACCURATY_DEC = 520,
+	DEBUFF_ACCURATY_ADD = 519,
+	REANGER_ACCURATY_DEC = 518,
+	REANGER_ACCURATY_ADD = 517,
+	MAG_HITBACK_PCT_DEC = 516,
+	MAG_HITBACK_PCT_ADD = 515,
+	MAG_HITBACK_RATE_DEC = 514,
+	MAG_HITBACK_RATE_ADD = 513,
+	PHY_HITBACK_PCT_DEC = 512,
+	PHY_HITBACK_PCT_ADD = 511,
+	PHY_HITBACK_RATE_DEC = 510,
+	PHY_HITBACK_RATE_ADD = 509,
+	DRAIN_LIFE_DEC_PCT = 508,
+	DRAIN_LIFE_ADD_PCT = 507,
+	DRAIN_LIFE_DEC_RATE = 506,
+	DRAIN_LIFE_ADD_RATE = 505,
+	DRAIN_LIFE_DEC = 504,
+	DRAIN_LIFE_ADD = 503,
+	IGNORE_DEF_DEC = 502,
+	IGNORE_DEF_ADD = 501,
+	ANGER_RECOVER = 402,
+	INITIAL_ANGER = 401,
+	KONGZHI_DAMAGE_ADD = 359,
+	TANKE_DAMAGE_ADD = 358,
+	ZHILIAO_DAMAGE_ADD = 357,
+	FUZHU_DAMAGE_ADD = 356,
+	SHUCHU_DAMAGE_ADD = 355,
+	KONGZHI_DAMAGE_DEC = 354,
+	TANKE_DAMAGE_DEC = 353,
+	ZHILIAO_DAMAGE_DEC = 352,
+	FUZHU_DAMAGE_DEC = 351,
+	SHUCHU_DAMAGE_DEC = 350,
+	LIJIN_ADD_DAMAGE = 324,
+	DONGXI_ADD_DAMAGE = 323,
+	LINDONG_ADD_DAMAGE = 322,
+	SHENGGUO_ADD_DAMAGE = 321,
+	BOSS_DEFENDER_DAMAGE_DEC = 310,
+	BOSS_ATTACKER_DAMAGE_ADD = 309,
+	QUN_DAMAGE_ADD = 308,
+	WU_DAMAGE_ADD = 307,
+	SHU_DAMAGE_ADD = 306,
+	WEI_DAMAGE_ADD = 305,
+	QUN_DAMAGE_DEC = 304,
+	WU_DAMAGE_DEC = 303,
+	SHU_DAMAGE_DEC = 302,
+	WEI_DAMAGE_DEC = 301,
+	HEAL_DEC = 212,
+	HEAL_ADD = 211,
+	FIN_DAMAGE_DEC = 210,
+	FIN_DAMAGE_ADD = 209,
+	DAMAGE_DEC = 208,
+	DAMAGE_ADD = 207,
+	PVP_DAMAGE_DEC = 206,
+	PVP_DAMAGE_ADD = 205,
+	CRIT_DAMAGE_DEC = 204,
+	CRIT_DAMAGE_ADD = 203,
+	BLOCK_DAMAGE_DEC = 202,
+	BLOCK_DAMAGE_ADD = 201,
+	PIERCE_RATE = 106,
+	BLOCK_RATE = 105,
+	HARDEN_RATE = 104,
+	CRIT_RATE = 103,
+	DODGE_RATE = 102,
+	ACCURACY_RATE = 101,
+	ALL_PCT = 16,
+	DEFENCE_PCT = 15,
+	MAG_DEFENCE_PCT = 14,
+	PHY_DEFENCE_PCT = 13,
+	ATTACK_PCT = 12,
+	HP_PCT = 11,
+	DEFENCE = 5,
+	MAG_DEFENCE = 4,
+	PHY_DEFENCE = 3,
+	ATTACK = 2,
+	HP = 1,
+	MAXINDEX = 6,
+	KONGZHI = 5,
+	TANKE = 4,
+	ZHILIAO = 3,
+	FUZHU = 2,
+	SHUCHU = 1,
+	MAX = 5,
+	QUN = 4,
+	WU = 3,
+	SHU = 2,
+	WEI = 1,
+	FIGHT_FOREVER = 4,
+	WIN_MORE = 3,
+	LOSE_END = 2,
+	DEATH_FIGHT = 1,
+	ENEMY = 2,
+	OWN = 1,
+	GVE = 4,
+	ARENA = 3,
+	PVP = 2,
+	PVE = 1,
+	EQUIPMENT_COMPETITION = 99,
+	PET_COMPETITION = 98,
+	EGG_COMPETITION = 97,
+	UNITE_TOKEN_COMPETITION = 96,
+	FURNITURE_COMPETITION = 95,
+	ARTIFACT_COMPETITION = 94,
+	HANDBOOK_COMPETITION = 93,
+	FOG_CROSS_AREA = 92,
+	DEAD_TOWER_LOCAL = 91,
+	TOWER_NEBU_DIFF = 90,
+	TOWER_EASTRISE_DIFF = 89,
+	TOWER_BIFROST_DIFF = 88,
+	TOWER_EMPIRE_DIFF = 87,
+	TOWER_MAIN_DIFF = 86,
+	FOG_CROSS = 85,
+	ARENA_LOCAL = 84,
+	TURN_CARD_RANK_10 = 83,
+	TURN_CARD_RANK_9 = 82,
+	TURN_CARD_RANK_8 = 81,
+	TURN_CARD_RANK_7 = 80,
+	TURN_CARD_RANK_6 = 79,
+	TURN_CARD_RANK_5 = 78,
+	TURN_CARD_RANK_4 = 77,
+	TURN_CARD_RANK_3 = 76,
+	TURN_CARD_RANK_2 = 75,
+	TURN_CARD_RANK_1 = 74,
+	GUILD_WAR_PRACTICE_SCORE_CROSS = 73,
+	GUILD_WAR_GUILD_CROSS_ELITE = 72,
+	GUILD_WAR_GUILD_CROSS_MASTER = 71,
+	GUILD_WAR_GUILD_CROSS_KING = 70,
+	DISABLED_2 = 69,
+	DISABLED_1 = 68,
+	DAILY_REPORT_BIOGRAPHY_LOCAL = 67,
+	DAILY_REPORT_RECRUIT_LOCAL = 66,
+	DAILY_REPORT_CONTRIBUTION_LOCAL = 65,
+	DAILY_REPORT_FURNITURE_LOCAL = 64,
+	DAILY_REPORT_TOTAL_GRADE_UP_LOCAL = 63,
+	DAILY_REPORT_DUNGEON_FAIL_LOCAL = 62,
+	DAILY_REPORT_PHYSICAL_PAY_LOCAL = 61,
+	DAILY_REPORT_ACT_LOCAL = 60,
+	FURNITURE_SUM_CHARM_LOCAL = 59,
+	FURNITURE_NUM_LOCAL = 58,
+	THEME_DEMON_BOSS_TOTAL_LOCAL_4 = 57,
+	THEME_DEMON_BOSS_DAILY_LOCAL_4 = 56,
+	FURNITURE_CHARM_LOCAL = 55,
+	THEME_DEMON_BOSS_TOTAL_LOCAL_3 = 54,
+	THEME_DEMON_BOSS_DAILY_LOCAL_3 = 53,
+	THEME_DEMON_BOSS_TOTAL_LOCAL_2 = 52,
+	THEME_DEMON_BOSS_DAILY_LOCAL_2 = 51,
+	THEME_DEMON_BOSS_TOTAL_LOCAL_1 = 50,
+	THEME_DEMON_BOSS_DAILY_LOCAL_1 = 49,
+	TOWER_NEBU = 48,
+	TOWER_EASTRISE = 47,
+	TOWER_BIFROST = 46,
+	TOWER_EMPIRE = 45,
+	TOWER_MAIN = 44,
+	GUILD_BATTLE_SCORE_CROSS = 43,
+	KSOUL_HONOR_CROSS = 42,
+	KSOUL_HONOR_LOCAL = 41,
+	WREST_GOLD_UNION_CROSS = 40,
+	WREST_BATTLE_UNION_CROSS = 39,
+	WREST_GUILD_SCORE_CROSS = 38,
+	WREST_GOLD_CROSS = 37,
+	WREST_BATTLE_CROSS = 36,
+	PEAK_ARENA_SCORE_ALL_SERVER = 35,
+	PEAK_ARENA_SCORE_CROSS = 34,
+	PEAK_ARENA_SCORE_LOCAL = 33,
+	GROUP_BATTLE_HONOR_ALL_SERVER = 32,
+	GROUP_BATTLE_HONOR_CROSS = 31,
+	ORDER_WORLD_SCORE_CROSS = 28,
+	ORDER_WORLD_SCORE_LOCAL = 27,
+	BIOGRAPHY_PROGRESS = 26,
+	MINE_GOLD_CROSS = 25,
+	GUILD_BOSS_GUILD_CROSS = 20,
+	GUILD_BOSS_USER_CROSS = 19,
+	GUILD_BOSS_GUILD_LOCAL = 18,
+	GUILD_BOSS_USER_LOCAL = 17,
+	STORM_PROGRESS = 14,
+	GUILD_STATUE_PROGRESS = 13,
+	GUILD_EXPERIENCE = 12,
+	GUILD_DUNGEON_DAMAGE = 11,
+	REDPACKET_LUCK = 10,
+	REDPACKET_POINT = 9,
+	REBEL_MAX = 8,
+	REBEL_TOTAL = 7,
+	GUILD_LEVEL = 6,
+	GUILD_FIGHT_VALUE = 5,
+	DEADBATTLE_WEEK = 4,
+	DEADBATTLE_RECORD = 3,
+	DUNGEON_STAR = 1,
+	CHIEF_ARENA_PRESTIGE = 5000001,
+	PASSCARD = 2010,
+	ABYSS_CRYSTAL = 2009,
+	ATTR_TEST_POINT = 1001,
+	OUTPOST_SHOP_COINS = 123,
+	ANNIVERSARY_ACTIVITY = 120,
+	ANNIVERSARY_COIN = 119,
+	NEW_SLG_TECHNOLOGY_POINT = 118,
+	SUCCUBA_ACTIVITY_COIN = 116,
+	GUILD_ALLIANCE_EXP = 109,
+	TEAM_BATTLE_SHOP = 108,
+	TEAM_BATTLE_GAME = 107,
+	PASSCARD_ACTIVITY_EXP = 105,
+	BOUNTY_SCORE = 104,
+	CHIBI_SHOP = 102,
+	EXPLORATION_COIN = 101,
+	RECHARGE_REBATE_SCORE = 100,
+	EXPLORATION_SHOP = 99,
+	WEEKLY_COMPETITION_SCORE = 98,
+	GROUP_BATTLE_SCORE = 97,
+	LOTTERY_DRAW = 96,
+	CHIEF_ARENA_POINT = 92,
+	GOLD_SAVING_PROGRESS = 86,
+	COMPETITION_SCORE = 85,
+	WISHPOOL_BAIT = 82,
+	MINE_SHIELD = 81,
+	VOUCHER_MONEY = 77,
+	GVE_SHOP_HIGH = 72,
+	GVE_SHOP_LOW = 71,
+	GVE_HALIDOM_MATERIAL = 70,
+	FOG_ITEM_MAX = 67,
+	FOG_ITEM_MIN = 66,
+	FOG_EXP = 65,
+	DAILY_SALE_SCORE = 61,
+	MONTH_CARD_SCORE = 60,
+	GUILD_WAR_ATTACK_TIMES = 59,
+	MINE_SCORE = 54,
+	PEAK_AWARD_COUPON = 52,
+	SKIN_FRAGMENT = 51,
+	HOMELAND_MATERIAL = 50,
+	HOMELAND_TRIM = 47,
+	GUILD_EXP = 46,
+	GUILD_MISSION_SCORE = 45,
+	PDD_SCORE = 39,
+	STORM_LORD_POINT = 38,
+	MINE_POWER = 36,
+	MINE_JUNLING = 35,
+	MINE_RICE = 34,
+	BIOGRAPHY_NUM = 33,
+	COURAGE2 = 27,
+	STORM_SKILL = 26,
+	STORM_SCORE = 25,
+	BATTLE_TYPE_E = protobuf.EnumDescriptor(),
+	BATTLE_TYPE_PVE_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_TYPE_PVP_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_TYPE_ARENA_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_TYPE_GVE_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_IDENTITY_TYPE_E = protobuf.EnumDescriptor(),
+	BATTLE_IDENTITY_TYPE_OWN_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_IDENTITY_TYPE_ENEMY_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_MULTI_MODE_E = protobuf.EnumDescriptor(),
+	BATTLE_MULTI_MODE_DEATH_FIGHT_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_MULTI_MODE_LOSE_END_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_MULTI_MODE_WIN_MORE_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_MULTI_MODE_FIGHT_FOREVER_EI = protobuf.EnumValueDescriptor(),
+	GROUP_TYPE_E = protobuf.EnumDescriptor(),
+	GROUP_TYPE_WEI_EI = protobuf.EnumValueDescriptor(),
+	GROUP_TYPE_SHU_EI = protobuf.EnumValueDescriptor(),
+	GROUP_TYPE_WU_EI = protobuf.EnumValueDescriptor(),
+	GROUP_TYPE_QUN_EI = protobuf.EnumValueDescriptor(),
+	GROUP_TYPE_MAX_EI = protobuf.EnumValueDescriptor(),
+	PROFESSION_TYPE_E = protobuf.EnumDescriptor(),
+	PROFESSION_TYPE_SHUCHU_EI = protobuf.EnumValueDescriptor(),
+	PROFESSION_TYPE_FUZHU_EI = protobuf.EnumValueDescriptor(),
+	PROFESSION_TYPE_ZHILIAO_EI = protobuf.EnumValueDescriptor(),
+	PROFESSION_TYPE_TANKE_EI = protobuf.EnumValueDescriptor(),
+	PROFESSION_TYPE_KONGZHI_EI = protobuf.EnumValueDescriptor(),
+	PROFESSION_TYPE_MAXINDEX_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_E = protobuf.EnumDescriptor(),
+	ATTR_TYPE_HP_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ATTACK_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PHY_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAG_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_HP_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ATTACK_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PHY_DEFENCE_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAG_DEFENCE_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DEFENCE_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ALL_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ACCURACY_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DODGE_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CRIT_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_HARDEN_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BLOCK_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PIERCE_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BLOCK_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BLOCK_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CRIT_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CRIT_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PVP_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PVP_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_FIN_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_FIN_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_HEAL_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_HEAL_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_WEI_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_SHU_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_WU_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_QUN_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_WEI_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_SHU_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_WU_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_QUN_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BOSS_ATTACKER_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BOSS_DEFENDER_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_SHENGGUO_ADD_DAMAGE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_LINDONG_ADD_DAMAGE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DONGXI_ADD_DAMAGE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_LIJIN_ADD_DAMAGE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_SHUCHU_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_FUZHU_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ZHILIAO_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_TANKE_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_KONGZHI_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_SHUCHU_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_FUZHU_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ZHILIAO_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_TANKE_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_KONGZHI_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_INITIAL_ANGER_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_ANGER_RECOVER_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_IGNORE_DEF_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_IGNORE_DEF_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DRAIN_LIFE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DRAIN_LIFE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DRAIN_LIFE_ADD_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DRAIN_LIFE_DEC_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DRAIN_LIFE_ADD_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DRAIN_LIFE_DEC_PCT_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PHY_HITBACK_RATE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PHY_HITBACK_RATE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PHY_HITBACK_PCT_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_PHY_HITBACK_PCT_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAG_HITBACK_RATE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAG_HITBACK_RATE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAG_HITBACK_PCT_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAG_HITBACK_PCT_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_REANGER_ACCURATY_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_REANGER_ACCURATY_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DEBUFF_ACCURATY_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_DEBUFF_ACCURATY_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_INITIAL_COMBO_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MAXIMUM_COMBO_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_RECOVER_ACTION_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_RECOVER_SKILL_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_RECOVER_ROUND_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_CRIT_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_HARDEN_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_CRIT_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_CRIT_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BATTLE_HP_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BATTLE_ANGER_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_BATTLE_COMBO_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_SKILL_FIGHT_VALUE_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_FIGHT_VALUE_RATEA_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_COMBO_FIGHT_VALUE_RATEB_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MONSTER_KNIGHT_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MONSTER_KNIGHT_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MONSTER_COMBO_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_MONSTER_COMBO_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_KNIGHT_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_KNIGHT_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_WATER_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_WATER_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_FIRE_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_FIRE_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_WIND_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_WIND_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_THUNDER_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_THUNDER_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_SOIL_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_SOIL_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_ACCURACY_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_DODGE_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_CRIT_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_HARDEN_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_BLOCK_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_PIERCE_RATE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_BLOCK_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_BLOCK_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_CRIT_DAMAGE_ADD_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_CLASSICAL_CRIT_DAMAGE_DEC_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_HP_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_ATTACK_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_PHY_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_MAG_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_TMP_HP_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_TMP_ATTACK_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_TMP_PHY_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	ATTR_TYPE_STAR_TRAIN_TMP_MAG_DEFENCE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_E = protobuf.EnumDescriptor(),
+	AWARD_TYPE_RESOURCE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_FRAGMENT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_ITEM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_KNIGHT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_UNITETOKEN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_ADVANCE_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_TREASURE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_TITLE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_RED_PACKET_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_DRESS_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_BIOGRAPHY_ITEM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_SKIN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_ARTIFACT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_ARTIFACT_COIN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_ARTIFACT_RC_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_CARD_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_WING_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_PET_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_PET_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_KSOUL_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_FAV_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_FURNITURE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_HEAD_AVATA_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_HEAD_FRAME_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_BG_BOOK_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_TALK_SHOW_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_GVE_HALIDOM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_THEME_BIOGRAPHY_ITEM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_EXPIRABLE_ITEM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_PRECIOUS_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_SKIN_PART_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_SUCCUBA_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_OUTPOST_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_GOLD_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_DROP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_KNIGHT_GROUP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_TYPE_LIMIT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_E = protobuf.EnumDescriptor(),
+	AWARD_VALUE_TYPE_ROLEEXP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_VIPEXP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_SILVER_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_VIT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_DBATTLE_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_PRESTIGE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_CONTEND_TREASURE_TIMES_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_CONTEND_TREASURE_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_CONTRIBUTE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_REBEL_ATTACK_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_REBEL_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_DUNGEON_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_DUNGEON_COUNT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_ACHIEVEMENT_POINT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_BUCKET_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_COURAGE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_FOURTEEN_COURAGE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_FATIGUE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_STORM_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_STORM_SKILL_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_COURAGE2_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_BIOGRAPHY_NUM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_MINE_RICE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_MINE_JUNLING_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_MINE_POWER_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_STORM_LORD_POINT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_PDD_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_MISSION_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_EXP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_HOMELAND_TRIM_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_HOMELAND_MATERIAL_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_SKIN_FRAGMENT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_PEAK_AWARD_COUPON_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_MINE_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_WAR_ATTACK_TIMES_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_MONTH_CARD_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_DAILY_SALE_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_FOG_EXP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_FOG_ITEM_MIN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_FOG_ITEM_MAX_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GVE_HALIDOM_MATERIAL_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GVE_SHOP_LOW_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GVE_SHOP_HIGH_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_VOUCHER_MONEY_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_MINE_SHIELD_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_WISHPOOL_BAIT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_COMPETITION_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GOLD_SAVING_PROGRESS_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_CHIEF_ARENA_POINT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_LOTTERY_DRAW_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GROUP_BATTLE_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_WEEKLY_COMPETITION_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_EXPLORATION_SHOP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_RECHARGE_REBATE_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_EXPLORATION_COIN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_CHIBI_SHOP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_BOUNTY_SCORE_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_PASSCARD_ACTIVITY_EXP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_TEAM_BATTLE_GAME_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_TEAM_BATTLE_SHOP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_GUILD_ALLIANCE_EXP_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_SUCCUBA_ACTIVITY_COIN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_NEW_SLG_TECHNOLOGY_POINT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_ANNIVERSARY_COIN_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_ANNIVERSARY_ACTIVITY_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_OUTPOST_SHOP_COINS_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_ATTR_TEST_POINT_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_ABYSS_CRYSTAL_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_PASSCARD_EI = protobuf.EnumValueDescriptor(),
+	AWARD_VALUE_TYPE_CHIEF_ARENA_PRESTIGE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_E = protobuf.EnumDescriptor(),
+	RANK_ID_TYPE_DUNGEON_STAR_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DEADBATTLE_RECORD_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DEADBATTLE_WEEK_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_FIGHT_VALUE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_LEVEL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_REBEL_TOTAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_REBEL_MAX_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_REDPACKET_POINT_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_REDPACKET_LUCK_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_DUNGEON_DAMAGE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_EXPERIENCE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_STATUE_PROGRESS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_STORM_PROGRESS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_BOSS_USER_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_BOSS_GUILD_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_BOSS_USER_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_BOSS_GUILD_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_MINE_GOLD_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_BIOGRAPHY_PROGRESS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ORDER_WORLD_SCORE_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ORDER_WORLD_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GROUP_BATTLE_HONOR_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GROUP_BATTLE_HONOR_ALL_SERVER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_PEAK_ARENA_SCORE_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_PEAK_ARENA_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_PEAK_ARENA_SCORE_ALL_SERVER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WREST_BATTLE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WREST_GOLD_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WREST_GUILD_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WREST_BATTLE_UNION_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WREST_GOLD_UNION_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_KSOUL_HONOR_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_KSOUL_HONOR_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_BATTLE_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_MAIN_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_EMPIRE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_BIFROST_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_EASTRISE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_NEBU_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_1_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_1_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_2_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_2_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_3_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_3_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_FURNITURE_CHARM_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_4_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_4_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_FURNITURE_NUM_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_FURNITURE_SUM_CHARM_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_ACT_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_PHYSICAL_PAY_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_DUNGEON_FAIL_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_TOTAL_GRADE_UP_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_FURNITURE_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_CONTRIBUTION_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_RECRUIT_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DAILY_REPORT_BIOGRAPHY_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DISABLED_1_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DISABLED_2_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_KING_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_MASTER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_ELITE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GUILD_WAR_PRACTICE_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_1_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_2_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_3_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_4_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_5_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_6_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_7_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_8_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_9_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TURN_CARD_RANK_10_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ARENA_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_FOG_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_MAIN_DIFF_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_EMPIRE_DIFF_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_BIFROST_DIFF_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_EASTRISE_DIFF_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_TOWER_NEBU_DIFF_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_DEAD_TOWER_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_FOG_CROSS_AREA_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_HANDBOOK_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ARTIFACT_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_FURNITURE_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_UNITE_TOKEN_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_EGG_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_PET_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_EQUIPMENT_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_KSOUL_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WEEKLY_COMPETITION_SCORE_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_WEEKLY_COMPETITION_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GVE_BOSS9_USER_TOTAL_DAMAGE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_EXPLORATION_PASS_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_EXPLORATION_BOSS_USER_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_EXPLORATION_BOSS_GUILD_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_CHIBI_ACHIEVEMENT_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_CHIBI_ACHIEVEMENT_ALL_SERVER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GVE_BOSS9_ALLIANCE_TOTAL_DAMAGE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GVE_ALLIANCE_TOTAL_DAMAGE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GVE_BOSS_USER_MAX_DAMAGE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_GVE_BOSS_USER_TOTAL_DAMAGE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_PUBG_USER_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_SPIRE_SCORE_LOCAL_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_SPIRE_SCORE_CROSS_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_WATER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_FIRE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_WIND_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_THUNDER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_EARTH_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_WATER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_FIRE_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_WIND_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_THUNDER_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_EARTH_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_ELDER_BOSS_GUILD_HONOR_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_1_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_2_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_3_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_4_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_5_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_6_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_7_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_8_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_9_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_10_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_11_EI = protobuf.EnumValueDescriptor(),
+	RANK_ID_TYPE_THEME_DEMON_BOSS_12_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_E = protobuf.EnumDescriptor(),
+	HANDBOOK_TYPE_KNIGHT_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_DRESS_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_BIOBOSS_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_SKIN_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_ARTIFACT_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_PET_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_UR_ARTIFACT_HB_EI = protobuf.EnumValueDescriptor(),
+	HANDBOOK_TYPE_UR_PET_HB_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_E = protobuf.EnumDescriptor(),
+	ACTION_TYPE_STATUS_ACHIEVEMENT_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_SHOP_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_DAILY_TASK_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_SEVENDAYS_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_GUIDE_TASK_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_FOURTEEN_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_HOLIDAY_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_ORDER_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_PASSCARD_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_THEME_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_FRIEND_RECOMMEND_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_GOLD_SAVING_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_RECHARGE_TOTAL_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_SUPPORT_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_GVE_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_DEAD_TOWER_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_LOTTERY_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_WEEKLY_COMPETITION_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_GROUP_BATTLE_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_EXPLORATION_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_BOUNTY_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_PASSCARD_ACTIVITY_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_RERUN_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_RICH_MAN_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_GUILD_ALLIANCE_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_RETRO_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_PUBG_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_BLAZING_ARENA_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_NEW_SLG_TECHNOLOGY_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_RELEASE_EI = protobuf.EnumValueDescriptor(),
+	ACTION_TYPE_STATUS_DOMAIN_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_E = protobuf.EnumDescriptor(),
+	REBORN_SYS_TYPE_R_KNIGHT_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_UNITE_TOKEN_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_TREASURE_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_DRESS_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_ARTIFACT_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_PET_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_PET_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_KSOUL_BOOK_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_FURNISHING_EI = protobuf.EnumValueDescriptor(),
+	REBORN_SYS_TYPE_R_ITEM_EI = protobuf.EnumValueDescriptor(),
+	REBORN_OP_TYPE_E = protobuf.EnumDescriptor(),
+	REBORN_OP_TYPE_REBIRTH_EI = protobuf.EnumValueDescriptor(),
+	REBORN_OP_TYPE_RESOLVE_EI = protobuf.EnumValueDescriptor(),
+	REBORN_OP_TYPE_ALL_PURPOSE_EXCHANGE_EI = protobuf.EnumValueDescriptor(),
+	USER_INFO_TYPE_E = protobuf.EnumDescriptor(),
+	USER_INFO_TYPE_FRAME_EI = protobuf.EnumValueDescriptor(),
+	USER_INFO_TYPE_NAME_EI = protobuf.EnumValueDescriptor(),
+	USER_INFO_TYPE_TALK_EI = protobuf.EnumValueDescriptor(),
+	USER_INFO_TYPE_AVATA_EI = protobuf.EnumValueDescriptor(),
+	USER_INFO_TYPE_SHOW_KNIGHT_ID_EI = protobuf.EnumValueDescriptor(),
+	SCROLL_TYPE_E = protobuf.EnumDescriptor(),
+	SCROLL_TYPE_MAIN_EI = protobuf.EnumValueDescriptor(),
+	SCROLL_TYPE_HERO_EI = protobuf.EnumValueDescriptor(),
+	STATE_MODULE_E = protobuf.EnumDescriptor(),
+	STATE_MODULE_BIOGRAPHY_EI = protobuf.EnumValueDescriptor(),
+	UNIT_TYPE_E = protobuf.EnumDescriptor(),
+	UNIT_TYPE_UT_KNIGHT_EI = protobuf.EnumValueDescriptor(),
+	UNIT_TYPE_UT_UNITETOKEN_EI = protobuf.EnumValueDescriptor(),
+	CHAT_SHARE_TYPE_E = protobuf.EnumDescriptor(),
+	CHAT_SHARE_TYPE_CST_BATTLE_RES_EI = protobuf.EnumValueDescriptor(),
+	CHAT_SHARE_TYPE_CST_PRESET_FORMATION_EI = protobuf.EnumValueDescriptor(),
+	CHAT_SHARE_TYPE_CST_ANNIVERSARY_EI = protobuf.EnumValueDescriptor(),
+	RECHARGE_INFO_TYPE_E = protobuf.EnumDescriptor(),
+	RECHARGE_INFO_TYPE_RIT_RECHARGE_TOTAL_EI = protobuf.EnumValueDescriptor(),
+	RECHARGE_INFO_TYPE_RIT_RECHARGE_DAILY_TOTAL_EI = protobuf.EnumValueDescriptor(),
+	RECHARGE_INFO_TYPE_RIT_RECHARGE_FUND_ACTIVE_EI = protobuf.EnumValueDescriptor(),
+	RECHARGE_INFO_TYPE_RIT_RECHARGE_INHERIT_TOTAL_EI = protobuf.EnumValueDescriptor(),
+	RECHARGE_INFO_TYPE_RIT_RECHARGE_MAX_EI = protobuf.EnumValueDescriptor(),
+	WING_WEAR_OP_TYPE_E = protobuf.EnumDescriptor(),
+	WING_WEAR_OP_TYPE_WING_UNWEAR_EI = protobuf.EnumValueDescriptor(),
+	WING_WEAR_OP_TYPE_WING_WEAR_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_E = protobuf.EnumDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_MAIN_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_EMPIRE_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_BIFROST_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_EASTRISE_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_NEBU_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_MAIN_DIFF_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_EMPIRE_DIFF_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_BIFROST_DIFF_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_EASTRISE_DIFF_EI = protobuf.EnumValueDescriptor(),
+	TOWER_STAGE_TYPE_TOWER_STAGE_NEBU_DIFF_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_VIDEO_TYPE_E = protobuf.EnumDescriptor(),
+	BATTLE_VIDEO_TYPE_DEFAULT_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_VIDEO_TYPE_PEAK_ARENA_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_VIDEO_TYPE_PEAK_ARENA_FINAL_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_E = protobuf.EnumDescriptor(),
+	FORMATION_TYPE_KNIGHT_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_UNITE_TOKEN_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_TREASURE_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_ARTIFACT_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_PET_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_PET_EQUIPMENT_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_PRECIOUS_SUIT_EI = protobuf.EnumValueDescriptor(),
+	FORMATION_TYPE_SUCCUBA_EI = protobuf.EnumValueDescriptor(),
+	TOWER_PLAY_TYPE_E = protobuf.EnumDescriptor(),
+	TOWER_PLAY_TYPE_REGULAR_EI = protobuf.EnumValueDescriptor(),
+	TOWER_PLAY_TYPE_DIFFICULTY_EI = protobuf.EnumValueDescriptor(),
+	TOWER_PLAY_TYPE_GROUP_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_VICTORY_MODE_E = protobuf.EnumDescriptor(),
+	BATTLE_VICTORY_MODE_NORMAL_EI = protobuf.EnumValueDescriptor(),
+	BATTLE_VICTORY_MODE_ENEMY_HP_ZERO_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_NPC_TYPE_E = protobuf.EnumDescriptor(),
+	GROUP_BATTLE_NPC_TYPE_UNKNOWN_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_NPC_TYPE_ASSASSIN_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_NPC_TYPE_BAGGAGE_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_NPC_TYPE_MASTER_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_RESULT_TYPE_E = protobuf.EnumDescriptor(),
+	GROUP_BATTLE_RESULT_TYPE_NONE_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_RESULT_TYPE_WIN_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_RESULT_TYPE_LOSE_EI = protobuf.EnumValueDescriptor(),
+	GROUP_BATTLE_RESULT_TYPE_PEACE_EI = protobuf.EnumValueDescriptor(),
+	COMMON_PASSCARD_LEVEL_AWARD_TYPE_E = protobuf.EnumDescriptor(),
+	COMMON_PASSCARD_LEVEL_AWARD_TYPE_FREE_EI = protobuf.EnumValueDescriptor(),
+	COMMON_PASSCARD_LEVEL_AWARD_TYPE_PAY_EI = protobuf.EnumValueDescriptor(),
+	SNAPSHOT_ONLINE_USERS_TYPE_E = protobuf.EnumDescriptor(),
+	SNAPSHOT_ONLINE_USERS_TYPE_ALLIANCE_EI = protobuf.EnumValueDescriptor(),
+	SNAPSHOT_ONLINE_USERS_TYPE_GUILD_EI = protobuf.EnumValueDescriptor(),
+	RETRO_BOX_AWARD_TYPE_E = protobuf.EnumDescriptor(),
+	RETRO_BOX_AWARD_TYPE_ONE_EI = protobuf.EnumValueDescriptor(),
+	RETRO_BOX_AWARD_TYPE_ALL_EI = protobuf.EnumValueDescriptor(),
+	OUTPOST_STATE_TYPE_E = protobuf.EnumDescriptor(),
+	OUTPOST_STATE_TYPE_KNIGHT_HP_EI = protobuf.EnumValueDescriptor(),
+	OUTPOST_STATE_TYPE_KNIGHT_DEMONIC_EI = protobuf.EnumValueDescriptor(),
+	OUTPOST_STATE_TYPE_KNIGHT_HUNGER_EI = protobuf.EnumValueDescriptor(),
+	OUTPOST_STATE_TYPE_KNIGHT_FATIGUE_EI = protobuf.EnumValueDescriptor(),
+	OUTPOST_STATE_TYPE_KNIGHT_MOOD_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_TYPE_ME = protobuf.Descriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_E = protobuf.EnumDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_HP_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_ROUND_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_E = protobuf.EnumDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_HP_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_TYPE_ENUM_ROUND_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ME = protobuf.Descriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_E = protobuf.EnumDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_S_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_A_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_B_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_C_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_E = protobuf.EnumDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_S_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_A_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_B_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_GRADE_VALUE_ENUM_C_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ME = protobuf.Descriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_E = protobuf.EnumDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_TURNTABLE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_SLOT_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_E = protobuf.EnumDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_TURNTABLE_EI = protobuf.EnumValueDescriptor(),
+	DOMAIN_SURPRISE_TYPE_ENUM_SLOT_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ME = protobuf.Descriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_E = protobuf.EnumDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_FORMATION_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_MATCH_FORMATION_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_BATTLE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_MAX_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_E = protobuf.EnumDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_FORMATION_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_MATCH_FORMATION_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_BATTLE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_OPERATE_STATUS_ENUM_MAX_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ME = protobuf.Descriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_E = protobuf.EnumDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_DONE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_NOT_OPEN_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_MAX_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_E = protobuf.EnumDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_DONE_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_NOT_OPEN_EI = protobuf.EnumValueDescriptor(),
+	ANCIENT_LOOT_STATUS_ENUM_MAX_EI = protobuf.EnumValueDescriptor(),
+	NEW_SLG_TEAM_SOURCE_ME = protobuf.Descriptor(),
+	NEW_SLG_TEAM_SOURCE_ENUM_E = protobuf.EnumDescriptor(),
+	NEW_SLG_TEAM_SOURCE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	NEW_SLG_TEAM_SOURCE_ENUM_PASSCARD_EI = protobuf.EnumValueDescriptor(),
+	NEW_SLG_TEAM_SOURCE_ENUM_E = protobuf.EnumDescriptor(),
+	NEW_SLG_TEAM_SOURCE_ENUM_NONE_EI = protobuf.EnumValueDescriptor(),
+	NEW_SLG_TEAM_SOURCE_ENUM_PASSCARD_EI = protobuf.EnumValueDescriptor()
+}
+
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_TYPE_PVE_EI, {
+	"PVE",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_TYPE_PVP_EI, {
+	"PVP",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_TYPE_ARENA_EI, {
+	"ARENA",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_TYPE_GVE_EI, {
+	"GVE",
+	3,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.BATTLE_TYPE_E, {
+	"BATTLE_TYPE",
+	".enums.BATTLE_TYPE",
+	{
+		var_0_6.BATTLE_TYPE_PVE_EI,
+		var_0_6.BATTLE_TYPE_PVP_EI,
+		var_0_6.BATTLE_TYPE_ARENA_EI,
+		var_0_6.BATTLE_TYPE_GVE_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_IDENTITY_TYPE_OWN_EI, {
+	"OWN",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_IDENTITY_TYPE_ENEMY_EI, {
+	"ENEMY",
+	1,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.BATTLE_IDENTITY_TYPE_E, {
+	"BATTLE_IDENTITY_TYPE",
+	".enums.BATTLE_IDENTITY_TYPE",
+	{
+		var_0_6.BATTLE_IDENTITY_TYPE_OWN_EI,
+		var_0_6.BATTLE_IDENTITY_TYPE_ENEMY_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_MULTI_MODE_DEATH_FIGHT_EI, {
+	"DEATH_FIGHT",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_MULTI_MODE_LOSE_END_EI, {
+	"LOSE_END",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_MULTI_MODE_WIN_MORE_EI, {
+	"WIN_MORE",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_MULTI_MODE_FIGHT_FOREVER_EI, {
+	"FIGHT_FOREVER",
+	3,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.BATTLE_MULTI_MODE_E, {
+	"BATTLE_MULTI_MODE",
+	".enums.BATTLE_MULTI_MODE",
+	{
+		var_0_6.BATTLE_MULTI_MODE_DEATH_FIGHT_EI,
+		var_0_6.BATTLE_MULTI_MODE_LOSE_END_EI,
+		var_0_6.BATTLE_MULTI_MODE_WIN_MORE_EI,
+		var_0_6.BATTLE_MULTI_MODE_FIGHT_FOREVER_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_TYPE_WEI_EI, {
+	"WEI",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_TYPE_SHU_EI, {
+	"SHU",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_TYPE_WU_EI, {
+	"WU",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_TYPE_QUN_EI, {
+	"QUN",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_TYPE_MAX_EI, {
+	"MAX",
+	4,
+	5
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.GROUP_TYPE_E, {
+	"GROUP_TYPE",
+	".enums.GROUP_TYPE",
+	{
+		var_0_6.GROUP_TYPE_WEI_EI,
+		var_0_6.GROUP_TYPE_SHU_EI,
+		var_0_6.GROUP_TYPE_WU_EI,
+		var_0_6.GROUP_TYPE_QUN_EI,
+		var_0_6.GROUP_TYPE_MAX_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.PROFESSION_TYPE_SHUCHU_EI, {
+	"SHUCHU",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.PROFESSION_TYPE_FUZHU_EI, {
+	"FUZHU",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.PROFESSION_TYPE_ZHILIAO_EI, {
+	"ZHILIAO",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.PROFESSION_TYPE_TANKE_EI, {
+	"TANKE",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.PROFESSION_TYPE_KONGZHI_EI, {
+	"KONGZHI",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.PROFESSION_TYPE_MAXINDEX_EI, {
+	"MAXINDEX",
+	5,
+	6
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.PROFESSION_TYPE_E, {
+	"PROFESSION_TYPE",
+	".enums.PROFESSION_TYPE",
+	{
+		var_0_6.PROFESSION_TYPE_SHUCHU_EI,
+		var_0_6.PROFESSION_TYPE_FUZHU_EI,
+		var_0_6.PROFESSION_TYPE_ZHILIAO_EI,
+		var_0_6.PROFESSION_TYPE_TANKE_EI,
+		var_0_6.PROFESSION_TYPE_KONGZHI_EI,
+		var_0_6.PROFESSION_TYPE_MAXINDEX_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_HP_EI, {
+	"HP",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ATTACK_EI, {
+	"ATTACK",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PHY_DEFENCE_EI, {
+	"PHY_DEFENCE",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAG_DEFENCE_EI, {
+	"MAG_DEFENCE",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DEFENCE_EI, {
+	"DEFENCE",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_HP_PCT_EI, {
+	"HP_PCT",
+	5,
+	11
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ATTACK_PCT_EI, {
+	"ATTACK_PCT",
+	6,
+	12
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PHY_DEFENCE_PCT_EI, {
+	"PHY_DEFENCE_PCT",
+	7,
+	13
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAG_DEFENCE_PCT_EI, {
+	"MAG_DEFENCE_PCT",
+	8,
+	14
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DEFENCE_PCT_EI, {
+	"DEFENCE_PCT",
+	9,
+	15
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ALL_PCT_EI, {
+	"ALL_PCT",
+	10,
+	16
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ACCURACY_RATE_EI, {
+	"ACCURACY_RATE",
+	11,
+	101
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DODGE_RATE_EI, {
+	"DODGE_RATE",
+	12,
+	102
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CRIT_RATE_EI, {
+	"CRIT_RATE",
+	13,
+	103
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_HARDEN_RATE_EI, {
+	"HARDEN_RATE",
+	14,
+	104
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BLOCK_RATE_EI, {
+	"BLOCK_RATE",
+	15,
+	105
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PIERCE_RATE_EI, {
+	"PIERCE_RATE",
+	16,
+	106
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BLOCK_DAMAGE_ADD_EI, {
+	"BLOCK_DAMAGE_ADD",
+	17,
+	201
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BLOCK_DAMAGE_DEC_EI, {
+	"BLOCK_DAMAGE_DEC",
+	18,
+	202
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CRIT_DAMAGE_ADD_EI, {
+	"CRIT_DAMAGE_ADD",
+	19,
+	203
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CRIT_DAMAGE_DEC_EI, {
+	"CRIT_DAMAGE_DEC",
+	20,
+	204
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PVP_DAMAGE_ADD_EI, {
+	"PVP_DAMAGE_ADD",
+	21,
+	205
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PVP_DAMAGE_DEC_EI, {
+	"PVP_DAMAGE_DEC",
+	22,
+	206
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DAMAGE_ADD_EI, {
+	"DAMAGE_ADD",
+	23,
+	207
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DAMAGE_DEC_EI, {
+	"DAMAGE_DEC",
+	24,
+	208
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_FIN_DAMAGE_ADD_EI, {
+	"FIN_DAMAGE_ADD",
+	25,
+	209
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_FIN_DAMAGE_DEC_EI, {
+	"FIN_DAMAGE_DEC",
+	26,
+	210
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_HEAL_ADD_EI, {
+	"HEAL_ADD",
+	27,
+	211
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_HEAL_DEC_EI, {
+	"HEAL_DEC",
+	28,
+	212
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_WEI_DAMAGE_DEC_EI, {
+	"WEI_DAMAGE_DEC",
+	29,
+	301
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_SHU_DAMAGE_DEC_EI, {
+	"SHU_DAMAGE_DEC",
+	30,
+	302
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_WU_DAMAGE_DEC_EI, {
+	"WU_DAMAGE_DEC",
+	31,
+	303
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_QUN_DAMAGE_DEC_EI, {
+	"QUN_DAMAGE_DEC",
+	32,
+	304
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_WEI_DAMAGE_ADD_EI, {
+	"WEI_DAMAGE_ADD",
+	33,
+	305
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_SHU_DAMAGE_ADD_EI, {
+	"SHU_DAMAGE_ADD",
+	34,
+	306
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_WU_DAMAGE_ADD_EI, {
+	"WU_DAMAGE_ADD",
+	35,
+	307
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_QUN_DAMAGE_ADD_EI, {
+	"QUN_DAMAGE_ADD",
+	36,
+	308
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BOSS_ATTACKER_DAMAGE_ADD_EI, {
+	"BOSS_ATTACKER_DAMAGE_ADD",
+	37,
+	309
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BOSS_DEFENDER_DAMAGE_DEC_EI, {
+	"BOSS_DEFENDER_DAMAGE_DEC",
+	38,
+	310
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_SHENGGUO_ADD_DAMAGE_EI, {
+	"SHENGGUO_ADD_DAMAGE",
+	39,
+	321
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_LINDONG_ADD_DAMAGE_EI, {
+	"LINDONG_ADD_DAMAGE",
+	40,
+	322
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DONGXI_ADD_DAMAGE_EI, {
+	"DONGXI_ADD_DAMAGE",
+	41,
+	323
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_LIJIN_ADD_DAMAGE_EI, {
+	"LIJIN_ADD_DAMAGE",
+	42,
+	324
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_SHUCHU_DAMAGE_DEC_EI, {
+	"SHUCHU_DAMAGE_DEC",
+	43,
+	350
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_FUZHU_DAMAGE_DEC_EI, {
+	"FUZHU_DAMAGE_DEC",
+	44,
+	351
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ZHILIAO_DAMAGE_DEC_EI, {
+	"ZHILIAO_DAMAGE_DEC",
+	45,
+	352
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_TANKE_DAMAGE_DEC_EI, {
+	"TANKE_DAMAGE_DEC",
+	46,
+	353
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_KONGZHI_DAMAGE_DEC_EI, {
+	"KONGZHI_DAMAGE_DEC",
+	47,
+	354
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_SHUCHU_DAMAGE_ADD_EI, {
+	"SHUCHU_DAMAGE_ADD",
+	48,
+	355
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_FUZHU_DAMAGE_ADD_EI, {
+	"FUZHU_DAMAGE_ADD",
+	49,
+	356
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ZHILIAO_DAMAGE_ADD_EI, {
+	"ZHILIAO_DAMAGE_ADD",
+	50,
+	357
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_TANKE_DAMAGE_ADD_EI, {
+	"TANKE_DAMAGE_ADD",
+	51,
+	358
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_KONGZHI_DAMAGE_ADD_EI, {
+	"KONGZHI_DAMAGE_ADD",
+	52,
+	359
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_INITIAL_ANGER_EI, {
+	"INITIAL_ANGER",
+	53,
+	401
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_ANGER_RECOVER_EI, {
+	"ANGER_RECOVER",
+	54,
+	402
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_IGNORE_DEF_ADD_EI, {
+	"IGNORE_DEF_ADD",
+	55,
+	501
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_IGNORE_DEF_DEC_EI, {
+	"IGNORE_DEF_DEC",
+	56,
+	502
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DRAIN_LIFE_ADD_EI, {
+	"DRAIN_LIFE_ADD",
+	57,
+	503
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DRAIN_LIFE_DEC_EI, {
+	"DRAIN_LIFE_DEC",
+	58,
+	504
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DRAIN_LIFE_ADD_RATE_EI, {
+	"DRAIN_LIFE_ADD_RATE",
+	59,
+	505
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DRAIN_LIFE_DEC_RATE_EI, {
+	"DRAIN_LIFE_DEC_RATE",
+	60,
+	506
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DRAIN_LIFE_ADD_PCT_EI, {
+	"DRAIN_LIFE_ADD_PCT",
+	61,
+	507
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DRAIN_LIFE_DEC_PCT_EI, {
+	"DRAIN_LIFE_DEC_PCT",
+	62,
+	508
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PHY_HITBACK_RATE_ADD_EI, {
+	"PHY_HITBACK_RATE_ADD",
+	63,
+	509
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PHY_HITBACK_RATE_DEC_EI, {
+	"PHY_HITBACK_RATE_DEC",
+	64,
+	510
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PHY_HITBACK_PCT_ADD_EI, {
+	"PHY_HITBACK_PCT_ADD",
+	65,
+	511
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_PHY_HITBACK_PCT_DEC_EI, {
+	"PHY_HITBACK_PCT_DEC",
+	66,
+	512
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAG_HITBACK_RATE_ADD_EI, {
+	"MAG_HITBACK_RATE_ADD",
+	67,
+	513
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAG_HITBACK_RATE_DEC_EI, {
+	"MAG_HITBACK_RATE_DEC",
+	68,
+	514
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAG_HITBACK_PCT_ADD_EI, {
+	"MAG_HITBACK_PCT_ADD",
+	69,
+	515
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAG_HITBACK_PCT_DEC_EI, {
+	"MAG_HITBACK_PCT_DEC",
+	70,
+	516
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_REANGER_ACCURATY_ADD_EI, {
+	"REANGER_ACCURATY_ADD",
+	71,
+	517
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_REANGER_ACCURATY_DEC_EI, {
+	"REANGER_ACCURATY_DEC",
+	72,
+	518
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DEBUFF_ACCURATY_ADD_EI, {
+	"DEBUFF_ACCURATY_ADD",
+	73,
+	519
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_DEBUFF_ACCURATY_DEC_EI, {
+	"DEBUFF_ACCURATY_DEC",
+	74,
+	520
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_INITIAL_COMBO_EI, {
+	"INITIAL_COMBO",
+	75,
+	601
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MAXIMUM_COMBO_EI, {
+	"MAXIMUM_COMBO",
+	76,
+	602
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_RECOVER_ACTION_EI, {
+	"COMBO_RECOVER_ACTION",
+	77,
+	603
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_RECOVER_SKILL_EI, {
+	"COMBO_RECOVER_SKILL",
+	78,
+	604
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_RECOVER_ROUND_EI, {
+	"COMBO_RECOVER_ROUND",
+	79,
+	605
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_CRIT_RATE_EI, {
+	"COMBO_CRIT_RATE",
+	80,
+	606
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_HARDEN_RATE_EI, {
+	"COMBO_HARDEN_RATE",
+	81,
+	607
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_CRIT_DAMAGE_ADD_EI, {
+	"COMBO_CRIT_DAMAGE_ADD",
+	82,
+	608
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_CRIT_DAMAGE_DEC_EI, {
+	"COMBO_CRIT_DAMAGE_DEC",
+	83,
+	609
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_DAMAGE_ADD_EI, {
+	"COMBO_DAMAGE_ADD",
+	84,
+	610
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_DAMAGE_DEC_EI, {
+	"COMBO_DAMAGE_DEC",
+	85,
+	611
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BATTLE_HP_EI, {
+	"BATTLE_HP",
+	86,
+	701
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BATTLE_ANGER_EI, {
+	"BATTLE_ANGER",
+	87,
+	702
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_BATTLE_COMBO_EI, {
+	"BATTLE_COMBO",
+	88,
+	703
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_SKILL_FIGHT_VALUE_RATE_EI, {
+	"SKILL_FIGHT_VALUE_RATE",
+	89,
+	801
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_FIGHT_VALUE_RATEA_EI, {
+	"COMBO_FIGHT_VALUE_RATEA",
+	90,
+	802
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_COMBO_FIGHT_VALUE_RATEB_EI, {
+	"COMBO_FIGHT_VALUE_RATEB",
+	91,
+	803
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MONSTER_KNIGHT_DAMAGE_ADD_EI, {
+	"MONSTER_KNIGHT_DAMAGE_ADD",
+	92,
+	901
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MONSTER_KNIGHT_DAMAGE_DEC_EI, {
+	"MONSTER_KNIGHT_DAMAGE_DEC",
+	93,
+	902
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MONSTER_COMBO_DAMAGE_ADD_EI, {
+	"MONSTER_COMBO_DAMAGE_ADD",
+	94,
+	903
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_MONSTER_COMBO_DAMAGE_DEC_EI, {
+	"MONSTER_COMBO_DAMAGE_DEC",
+	95,
+	904
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_KNIGHT_DAMAGE_ADD_EI, {
+	"KNIGHT_DAMAGE_ADD",
+	96,
+	910
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_KNIGHT_DAMAGE_DEC_EI, {
+	"KNIGHT_DAMAGE_DEC",
+	97,
+	911
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_WATER_DAMAGE_DEC_EI, {
+	"CLASSICAL_WATER_DAMAGE_DEC",
+	98,
+	1401
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_WATER_DAMAGE_ADD_EI, {
+	"CLASSICAL_WATER_DAMAGE_ADD",
+	99,
+	1402
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_FIRE_DAMAGE_DEC_EI, {
+	"CLASSICAL_FIRE_DAMAGE_DEC",
+	100,
+	1403
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_FIRE_DAMAGE_ADD_EI, {
+	"CLASSICAL_FIRE_DAMAGE_ADD",
+	101,
+	1404
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_WIND_DAMAGE_DEC_EI, {
+	"CLASSICAL_WIND_DAMAGE_DEC",
+	102,
+	1405
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_WIND_DAMAGE_ADD_EI, {
+	"CLASSICAL_WIND_DAMAGE_ADD",
+	103,
+	1406
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_THUNDER_DAMAGE_DEC_EI, {
+	"CLASSICAL_THUNDER_DAMAGE_DEC",
+	104,
+	1407
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_THUNDER_DAMAGE_ADD_EI, {
+	"CLASSICAL_THUNDER_DAMAGE_ADD",
+	105,
+	1408
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_SOIL_DAMAGE_DEC_EI, {
+	"CLASSICAL_SOIL_DAMAGE_DEC",
+	106,
+	1409
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_SOIL_DAMAGE_ADD_EI, {
+	"CLASSICAL_SOIL_DAMAGE_ADD",
+	107,
+	1410
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_DAMAGE_DEC_EI, {
+	"CLASSICAL_DAMAGE_DEC",
+	108,
+	1411
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_DAMAGE_ADD_EI, {
+	"CLASSICAL_DAMAGE_ADD",
+	109,
+	1412
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_ACCURACY_RATE_EI, {
+	"CLASSICAL_ACCURACY_RATE",
+	110,
+	1501
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_DODGE_RATE_EI, {
+	"CLASSICAL_DODGE_RATE",
+	111,
+	1502
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_CRIT_RATE_EI, {
+	"CLASSICAL_CRIT_RATE",
+	112,
+	1503
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_HARDEN_RATE_EI, {
+	"CLASSICAL_HARDEN_RATE",
+	113,
+	1504
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_BLOCK_RATE_EI, {
+	"CLASSICAL_BLOCK_RATE",
+	114,
+	1505
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_PIERCE_RATE_EI, {
+	"CLASSICAL_PIERCE_RATE",
+	115,
+	1506
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_BLOCK_DAMAGE_ADD_EI, {
+	"CLASSICAL_BLOCK_DAMAGE_ADD",
+	116,
+	1507
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_BLOCK_DAMAGE_DEC_EI, {
+	"CLASSICAL_BLOCK_DAMAGE_DEC",
+	117,
+	1508
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_CRIT_DAMAGE_ADD_EI, {
+	"CLASSICAL_CRIT_DAMAGE_ADD",
+	118,
+	1509
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_CLASSICAL_CRIT_DAMAGE_DEC_EI, {
+	"CLASSICAL_CRIT_DAMAGE_DEC",
+	119,
+	1510
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_HP_EI, {
+	"STAR_TRAIN_HP",
+	120,
+	10001
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_ATTACK_EI, {
+	"STAR_TRAIN_ATTACK",
+	121,
+	10002
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_PHY_DEFENCE_EI, {
+	"STAR_TRAIN_PHY_DEFENCE",
+	122,
+	10003
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_MAG_DEFENCE_EI, {
+	"STAR_TRAIN_MAG_DEFENCE",
+	123,
+	10004
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_HP_EI, {
+	"STAR_TRAIN_TMP_HP",
+	124,
+	10005
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_ATTACK_EI, {
+	"STAR_TRAIN_TMP_ATTACK",
+	125,
+	10006
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_PHY_DEFENCE_EI, {
+	"STAR_TRAIN_TMP_PHY_DEFENCE",
+	126,
+	10007
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_MAG_DEFENCE_EI, {
+	"STAR_TRAIN_TMP_MAG_DEFENCE",
+	127,
+	10008
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.ATTR_TYPE_E, {
+	"ATTR_TYPE",
+	".enums.ATTR_TYPE",
+	{
+		var_0_6.ATTR_TYPE_HP_EI,
+		var_0_6.ATTR_TYPE_ATTACK_EI,
+		var_0_6.ATTR_TYPE_PHY_DEFENCE_EI,
+		var_0_6.ATTR_TYPE_MAG_DEFENCE_EI,
+		var_0_6.ATTR_TYPE_DEFENCE_EI,
+		var_0_6.ATTR_TYPE_HP_PCT_EI,
+		var_0_6.ATTR_TYPE_ATTACK_PCT_EI,
+		var_0_6.ATTR_TYPE_PHY_DEFENCE_PCT_EI,
+		var_0_6.ATTR_TYPE_MAG_DEFENCE_PCT_EI,
+		var_0_6.ATTR_TYPE_DEFENCE_PCT_EI,
+		var_0_6.ATTR_TYPE_ALL_PCT_EI,
+		var_0_6.ATTR_TYPE_ACCURACY_RATE_EI,
+		var_0_6.ATTR_TYPE_DODGE_RATE_EI,
+		var_0_6.ATTR_TYPE_CRIT_RATE_EI,
+		var_0_6.ATTR_TYPE_HARDEN_RATE_EI,
+		var_0_6.ATTR_TYPE_BLOCK_RATE_EI,
+		var_0_6.ATTR_TYPE_PIERCE_RATE_EI,
+		var_0_6.ATTR_TYPE_BLOCK_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_BLOCK_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CRIT_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CRIT_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_PVP_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_PVP_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_FIN_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_FIN_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_HEAL_ADD_EI,
+		var_0_6.ATTR_TYPE_HEAL_DEC_EI,
+		var_0_6.ATTR_TYPE_WEI_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_SHU_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_WU_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_QUN_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_WEI_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_SHU_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_WU_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_QUN_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_BOSS_ATTACKER_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_BOSS_DEFENDER_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_SHENGGUO_ADD_DAMAGE_EI,
+		var_0_6.ATTR_TYPE_LINDONG_ADD_DAMAGE_EI,
+		var_0_6.ATTR_TYPE_DONGXI_ADD_DAMAGE_EI,
+		var_0_6.ATTR_TYPE_LIJIN_ADD_DAMAGE_EI,
+		var_0_6.ATTR_TYPE_SHUCHU_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_FUZHU_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_ZHILIAO_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_TANKE_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_KONGZHI_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_SHUCHU_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_FUZHU_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_ZHILIAO_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_TANKE_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_KONGZHI_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_INITIAL_ANGER_EI,
+		var_0_6.ATTR_TYPE_ANGER_RECOVER_EI,
+		var_0_6.ATTR_TYPE_IGNORE_DEF_ADD_EI,
+		var_0_6.ATTR_TYPE_IGNORE_DEF_DEC_EI,
+		var_0_6.ATTR_TYPE_DRAIN_LIFE_ADD_EI,
+		var_0_6.ATTR_TYPE_DRAIN_LIFE_DEC_EI,
+		var_0_6.ATTR_TYPE_DRAIN_LIFE_ADD_RATE_EI,
+		var_0_6.ATTR_TYPE_DRAIN_LIFE_DEC_RATE_EI,
+		var_0_6.ATTR_TYPE_DRAIN_LIFE_ADD_PCT_EI,
+		var_0_6.ATTR_TYPE_DRAIN_LIFE_DEC_PCT_EI,
+		var_0_6.ATTR_TYPE_PHY_HITBACK_RATE_ADD_EI,
+		var_0_6.ATTR_TYPE_PHY_HITBACK_RATE_DEC_EI,
+		var_0_6.ATTR_TYPE_PHY_HITBACK_PCT_ADD_EI,
+		var_0_6.ATTR_TYPE_PHY_HITBACK_PCT_DEC_EI,
+		var_0_6.ATTR_TYPE_MAG_HITBACK_RATE_ADD_EI,
+		var_0_6.ATTR_TYPE_MAG_HITBACK_RATE_DEC_EI,
+		var_0_6.ATTR_TYPE_MAG_HITBACK_PCT_ADD_EI,
+		var_0_6.ATTR_TYPE_MAG_HITBACK_PCT_DEC_EI,
+		var_0_6.ATTR_TYPE_REANGER_ACCURATY_ADD_EI,
+		var_0_6.ATTR_TYPE_REANGER_ACCURATY_DEC_EI,
+		var_0_6.ATTR_TYPE_DEBUFF_ACCURATY_ADD_EI,
+		var_0_6.ATTR_TYPE_DEBUFF_ACCURATY_DEC_EI,
+		var_0_6.ATTR_TYPE_INITIAL_COMBO_EI,
+		var_0_6.ATTR_TYPE_MAXIMUM_COMBO_EI,
+		var_0_6.ATTR_TYPE_COMBO_RECOVER_ACTION_EI,
+		var_0_6.ATTR_TYPE_COMBO_RECOVER_SKILL_EI,
+		var_0_6.ATTR_TYPE_COMBO_RECOVER_ROUND_EI,
+		var_0_6.ATTR_TYPE_COMBO_CRIT_RATE_EI,
+		var_0_6.ATTR_TYPE_COMBO_HARDEN_RATE_EI,
+		var_0_6.ATTR_TYPE_COMBO_CRIT_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_COMBO_CRIT_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_COMBO_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_COMBO_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_BATTLE_HP_EI,
+		var_0_6.ATTR_TYPE_BATTLE_ANGER_EI,
+		var_0_6.ATTR_TYPE_BATTLE_COMBO_EI,
+		var_0_6.ATTR_TYPE_SKILL_FIGHT_VALUE_RATE_EI,
+		var_0_6.ATTR_TYPE_COMBO_FIGHT_VALUE_RATEA_EI,
+		var_0_6.ATTR_TYPE_COMBO_FIGHT_VALUE_RATEB_EI,
+		var_0_6.ATTR_TYPE_MONSTER_KNIGHT_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_MONSTER_KNIGHT_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_MONSTER_COMBO_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_MONSTER_COMBO_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_KNIGHT_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_KNIGHT_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_WATER_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_WATER_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_FIRE_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_FIRE_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_WIND_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_WIND_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_THUNDER_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_THUNDER_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_SOIL_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_SOIL_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_ACCURACY_RATE_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_DODGE_RATE_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_CRIT_RATE_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_HARDEN_RATE_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_BLOCK_RATE_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_PIERCE_RATE_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_BLOCK_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_BLOCK_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_CRIT_DAMAGE_ADD_EI,
+		var_0_6.ATTR_TYPE_CLASSICAL_CRIT_DAMAGE_DEC_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_HP_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_ATTACK_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_PHY_DEFENCE_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_MAG_DEFENCE_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_HP_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_ATTACK_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_PHY_DEFENCE_EI,
+		var_0_6.ATTR_TYPE_STAR_TRAIN_TMP_MAG_DEFENCE_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_RESOURCE_EI, {
+	"RESOURCE",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_FRAGMENT_EI, {
+	"FRAGMENT",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_ITEM_EI, {
+	"ITEM",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_KNIGHT_EI, {
+	"KNIGHT",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_UNITETOKEN_EI, {
+	"UNITETOKEN",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_ADVANCE_EQUIPMENT_EI, {
+	"ADVANCE_EQUIPMENT",
+	5,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_EQUIPMENT_EI, {
+	"EQUIPMENT",
+	6,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_TREASURE_EI, {
+	"TREASURE",
+	7,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_TITLE_EI, {
+	"TITLE",
+	8,
+	9
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_RED_PACKET_EI, {
+	"RED_PACKET",
+	9,
+	10
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_DRESS_EI, {
+	"DRESS",
+	10,
+	11
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_BIOGRAPHY_ITEM_EI, {
+	"BIOGRAPHY_ITEM",
+	11,
+	12
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_SKIN_EI, {
+	"SKIN",
+	12,
+	13
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_ARTIFACT_EI, {
+	"ARTIFACT",
+	13,
+	14
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_ARTIFACT_COIN_EI, {
+	"ARTIFACT_COIN",
+	14,
+	28
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_ARTIFACT_RC_EI, {
+	"ARTIFACT_RC",
+	15,
+	29
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_CARD_EI, {
+	"CARD",
+	16,
+	15
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_WING_EI, {
+	"WING",
+	17,
+	16
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_PET_EI, {
+	"PET",
+	18,
+	17
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_PET_EQUIPMENT_EI, {
+	"PET_EQUIPMENT",
+	19,
+	18
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_KSOUL_EI, {
+	"KSOUL",
+	20,
+	19
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_FAV_EI, {
+	"FAV",
+	21,
+	20
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_FURNITURE_EI, {
+	"FURNITURE",
+	22,
+	21
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_HEAD_AVATA_EI, {
+	"HEAD_AVATA",
+	23,
+	23
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_HEAD_FRAME_EI, {
+	"HEAD_FRAME",
+	24,
+	24
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_BG_BOOK_EI, {
+	"BG_BOOK",
+	25,
+	25
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_TALK_SHOW_EI, {
+	"TALK_SHOW",
+	26,
+	26
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_GVE_HALIDOM_EI, {
+	"GVE_HALIDOM",
+	27,
+	27
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_THEME_BIOGRAPHY_ITEM_EI, {
+	"THEME_BIOGRAPHY_ITEM",
+	28,
+	33
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_EXPIRABLE_ITEM_EI, {
+	"EXPIRABLE_ITEM",
+	29,
+	34
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_PRECIOUS_EI, {
+	"PRECIOUS",
+	30,
+	35
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_SKIN_PART_EI, {
+	"SKIN_PART",
+	31,
+	36
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_SUCCUBA_EI, {
+	"SUCCUBA",
+	32,
+	37
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_OUTPOST_EI, {
+	"OUTPOST",
+	33,
+	38
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_GOLD_EI, {
+	"GOLD",
+	34,
+	999
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_DROP_EI, {
+	"DROP",
+	35,
+	1000
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_KNIGHT_GROUP_EI, {
+	"KNIGHT_GROUP",
+	36,
+	1002
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_TYPE_LIMIT_EI, {
+	"LIMIT",
+	37,
+	10000
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.AWARD_TYPE_E, {
+	"AWARD_TYPE",
+	".enums.AWARD_TYPE",
+	{
+		var_0_6.AWARD_TYPE_RESOURCE_EI,
+		var_0_6.AWARD_TYPE_FRAGMENT_EI,
+		var_0_6.AWARD_TYPE_ITEM_EI,
+		var_0_6.AWARD_TYPE_KNIGHT_EI,
+		var_0_6.AWARD_TYPE_UNITETOKEN_EI,
+		var_0_6.AWARD_TYPE_ADVANCE_EQUIPMENT_EI,
+		var_0_6.AWARD_TYPE_EQUIPMENT_EI,
+		var_0_6.AWARD_TYPE_TREASURE_EI,
+		var_0_6.AWARD_TYPE_TITLE_EI,
+		var_0_6.AWARD_TYPE_RED_PACKET_EI,
+		var_0_6.AWARD_TYPE_DRESS_EI,
+		var_0_6.AWARD_TYPE_BIOGRAPHY_ITEM_EI,
+		var_0_6.AWARD_TYPE_SKIN_EI,
+		var_0_6.AWARD_TYPE_ARTIFACT_EI,
+		var_0_6.AWARD_TYPE_ARTIFACT_COIN_EI,
+		var_0_6.AWARD_TYPE_ARTIFACT_RC_EI,
+		var_0_6.AWARD_TYPE_CARD_EI,
+		var_0_6.AWARD_TYPE_WING_EI,
+		var_0_6.AWARD_TYPE_PET_EI,
+		var_0_6.AWARD_TYPE_PET_EQUIPMENT_EI,
+		var_0_6.AWARD_TYPE_KSOUL_EI,
+		var_0_6.AWARD_TYPE_FAV_EI,
+		var_0_6.AWARD_TYPE_FURNITURE_EI,
+		var_0_6.AWARD_TYPE_HEAD_AVATA_EI,
+		var_0_6.AWARD_TYPE_HEAD_FRAME_EI,
+		var_0_6.AWARD_TYPE_BG_BOOK_EI,
+		var_0_6.AWARD_TYPE_TALK_SHOW_EI,
+		var_0_6.AWARD_TYPE_GVE_HALIDOM_EI,
+		var_0_6.AWARD_TYPE_THEME_BIOGRAPHY_ITEM_EI,
+		var_0_6.AWARD_TYPE_EXPIRABLE_ITEM_EI,
+		var_0_6.AWARD_TYPE_PRECIOUS_EI,
+		var_0_6.AWARD_TYPE_SKIN_PART_EI,
+		var_0_6.AWARD_TYPE_SUCCUBA_EI,
+		var_0_6.AWARD_TYPE_OUTPOST_EI,
+		var_0_6.AWARD_TYPE_GOLD_EI,
+		var_0_6.AWARD_TYPE_DROP_EI,
+		var_0_6.AWARD_TYPE_KNIGHT_GROUP_EI,
+		var_0_6.AWARD_TYPE_LIMIT_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_ROLEEXP_EI, {
+	"ROLEEXP",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_VIPEXP_EI, {
+	"VIPEXP",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_SILVER_EI, {
+	"SILVER",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_VIT_EI, {
+	"VIT",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_DBATTLE_SCORE_EI, {
+	"DBATTLE_SCORE",
+	4,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_PRESTIGE_EI, {
+	"PRESTIGE",
+	5,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_CONTEND_TREASURE_TIMES_EI, {
+	"CONTEND_TREASURE_TIMES",
+	6,
+	9
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_CONTEND_TREASURE_SCORE_EI, {
+	"CONTEND_TREASURE_SCORE",
+	7,
+	10
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_CONTRIBUTE_EI, {
+	"GUILD_CONTRIBUTE",
+	8,
+	11
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_REBEL_ATTACK_EI, {
+	"REBEL_ATTACK",
+	9,
+	12
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_REBEL_SCORE_EI, {
+	"REBEL_SCORE",
+	10,
+	13
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_DUNGEON_SCORE_EI, {
+	"GUILD_DUNGEON_SCORE",
+	11,
+	14
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_DUNGEON_COUNT_EI, {
+	"GUILD_DUNGEON_COUNT",
+	12,
+	15
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_ACHIEVEMENT_POINT_EI, {
+	"ACHIEVEMENT_POINT",
+	13,
+	19
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_BUCKET_EI, {
+	"BUCKET",
+	14,
+	21
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_COURAGE_EI, {
+	"COURAGE",
+	15,
+	22
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_FOURTEEN_COURAGE_EI, {
+	"FOURTEEN_COURAGE",
+	16,
+	23
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_FATIGUE_EI, {
+	"FATIGUE",
+	17,
+	24
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_STORM_SCORE_EI, {
+	"STORM_SCORE",
+	18,
+	25
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_STORM_SKILL_EI, {
+	"STORM_SKILL",
+	19,
+	26
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_COURAGE2_EI, {
+	"COURAGE2",
+	20,
+	27
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_BIOGRAPHY_NUM_EI, {
+	"BIOGRAPHY_NUM",
+	21,
+	33
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_MINE_RICE_EI, {
+	"MINE_RICE",
+	22,
+	34
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_MINE_JUNLING_EI, {
+	"MINE_JUNLING",
+	23,
+	35
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_MINE_POWER_EI, {
+	"MINE_POWER",
+	24,
+	36
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_STORM_LORD_POINT_EI, {
+	"STORM_LORD_POINT",
+	25,
+	38
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_PDD_SCORE_EI, {
+	"PDD_SCORE",
+	26,
+	39
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_MISSION_SCORE_EI, {
+	"GUILD_MISSION_SCORE",
+	27,
+	45
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_EXP_EI, {
+	"GUILD_EXP",
+	28,
+	46
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_HOMELAND_TRIM_EI, {
+	"HOMELAND_TRIM",
+	29,
+	47
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_HOMELAND_MATERIAL_EI, {
+	"HOMELAND_MATERIAL",
+	30,
+	50
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_SKIN_FRAGMENT_EI, {
+	"SKIN_FRAGMENT",
+	31,
+	51
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_PEAK_AWARD_COUPON_EI, {
+	"PEAK_AWARD_COUPON",
+	32,
+	52
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_MINE_SCORE_EI, {
+	"MINE_SCORE",
+	33,
+	54
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_WAR_ATTACK_TIMES_EI, {
+	"GUILD_WAR_ATTACK_TIMES",
+	34,
+	59
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_MONTH_CARD_SCORE_EI, {
+	"MONTH_CARD_SCORE",
+	35,
+	60
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_DAILY_SALE_SCORE_EI, {
+	"DAILY_SALE_SCORE",
+	36,
+	61
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_FOG_EXP_EI, {
+	"FOG_EXP",
+	37,
+	65
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_FOG_ITEM_MIN_EI, {
+	"FOG_ITEM_MIN",
+	38,
+	66
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_FOG_ITEM_MAX_EI, {
+	"FOG_ITEM_MAX",
+	39,
+	67
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GVE_HALIDOM_MATERIAL_EI, {
+	"GVE_HALIDOM_MATERIAL",
+	40,
+	70
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GVE_SHOP_LOW_EI, {
+	"GVE_SHOP_LOW",
+	41,
+	71
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GVE_SHOP_HIGH_EI, {
+	"GVE_SHOP_HIGH",
+	42,
+	72
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_VOUCHER_MONEY_EI, {
+	"VOUCHER_MONEY",
+	43,
+	77
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_MINE_SHIELD_EI, {
+	"MINE_SHIELD",
+	44,
+	81
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_WISHPOOL_BAIT_EI, {
+	"WISHPOOL_BAIT",
+	45,
+	82
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_COMPETITION_SCORE_EI, {
+	"COMPETITION_SCORE",
+	46,
+	85
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GOLD_SAVING_PROGRESS_EI, {
+	"GOLD_SAVING_PROGRESS",
+	47,
+	86
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_CHIEF_ARENA_POINT_EI, {
+	"CHIEF_ARENA_POINT",
+	48,
+	92
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_LOTTERY_DRAW_EI, {
+	"LOTTERY_DRAW",
+	49,
+	96
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GROUP_BATTLE_SCORE_EI, {
+	"GROUP_BATTLE_SCORE",
+	50,
+	97
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_WEEKLY_COMPETITION_SCORE_EI, {
+	"WEEKLY_COMPETITION_SCORE",
+	51,
+	98
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_EXPLORATION_SHOP_EI, {
+	"EXPLORATION_SHOP",
+	52,
+	99
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_RECHARGE_REBATE_SCORE_EI, {
+	"RECHARGE_REBATE_SCORE",
+	53,
+	100
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_EXPLORATION_COIN_EI, {
+	"EXPLORATION_COIN",
+	54,
+	101
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_CHIBI_SHOP_EI, {
+	"CHIBI_SHOP",
+	55,
+	102
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_BOUNTY_SCORE_EI, {
+	"BOUNTY_SCORE",
+	56,
+	104
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_PASSCARD_ACTIVITY_EXP_EI, {
+	"PASSCARD_ACTIVITY_EXP",
+	57,
+	105
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_TEAM_BATTLE_GAME_EI, {
+	"TEAM_BATTLE_GAME",
+	58,
+	107
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_TEAM_BATTLE_SHOP_EI, {
+	"TEAM_BATTLE_SHOP",
+	59,
+	108
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_GUILD_ALLIANCE_EXP_EI, {
+	"GUILD_ALLIANCE_EXP",
+	60,
+	109
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_SUCCUBA_ACTIVITY_COIN_EI, {
+	"SUCCUBA_ACTIVITY_COIN",
+	61,
+	116
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_NEW_SLG_TECHNOLOGY_POINT_EI, {
+	"NEW_SLG_TECHNOLOGY_POINT",
+	62,
+	118
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_ANNIVERSARY_COIN_EI, {
+	"ANNIVERSARY_COIN",
+	63,
+	119
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_ANNIVERSARY_ACTIVITY_EI, {
+	"ANNIVERSARY_ACTIVITY",
+	64,
+	120
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_OUTPOST_SHOP_COINS_EI, {
+	"OUTPOST_SHOP_COINS",
+	65,
+	123
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_ATTR_TEST_POINT_EI, {
+	"ATTR_TEST_POINT",
+	66,
+	1001
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_ABYSS_CRYSTAL_EI, {
+	"ABYSS_CRYSTAL",
+	67,
+	2009
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_PASSCARD_EI, {
+	"PASSCARD",
+	68,
+	2010
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_CHIEF_ARENA_PRESTIGE_EI, {
+	"CHIEF_ARENA_PRESTIGE",
+	69,
+	5000001
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.AWARD_VALUE_TYPE_E, {
+	"AWARD_VALUE_TYPE",
+	".enums.AWARD_VALUE_TYPE",
+	{
+		var_0_6.AWARD_VALUE_TYPE_ROLEEXP_EI,
+		var_0_6.AWARD_VALUE_TYPE_VIPEXP_EI,
+		var_0_6.AWARD_VALUE_TYPE_SILVER_EI,
+		var_0_6.AWARD_VALUE_TYPE_VIT_EI,
+		var_0_6.AWARD_VALUE_TYPE_DBATTLE_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_PRESTIGE_EI,
+		var_0_6.AWARD_VALUE_TYPE_CONTEND_TREASURE_TIMES_EI,
+		var_0_6.AWARD_VALUE_TYPE_CONTEND_TREASURE_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_CONTRIBUTE_EI,
+		var_0_6.AWARD_VALUE_TYPE_REBEL_ATTACK_EI,
+		var_0_6.AWARD_VALUE_TYPE_REBEL_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_DUNGEON_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_DUNGEON_COUNT_EI,
+		var_0_6.AWARD_VALUE_TYPE_ACHIEVEMENT_POINT_EI,
+		var_0_6.AWARD_VALUE_TYPE_BUCKET_EI,
+		var_0_6.AWARD_VALUE_TYPE_COURAGE_EI,
+		var_0_6.AWARD_VALUE_TYPE_FOURTEEN_COURAGE_EI,
+		var_0_6.AWARD_VALUE_TYPE_FATIGUE_EI,
+		var_0_6.AWARD_VALUE_TYPE_STORM_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_STORM_SKILL_EI,
+		var_0_6.AWARD_VALUE_TYPE_COURAGE2_EI,
+		var_0_6.AWARD_VALUE_TYPE_BIOGRAPHY_NUM_EI,
+		var_0_6.AWARD_VALUE_TYPE_MINE_RICE_EI,
+		var_0_6.AWARD_VALUE_TYPE_MINE_JUNLING_EI,
+		var_0_6.AWARD_VALUE_TYPE_MINE_POWER_EI,
+		var_0_6.AWARD_VALUE_TYPE_STORM_LORD_POINT_EI,
+		var_0_6.AWARD_VALUE_TYPE_PDD_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_MISSION_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_EXP_EI,
+		var_0_6.AWARD_VALUE_TYPE_HOMELAND_TRIM_EI,
+		var_0_6.AWARD_VALUE_TYPE_HOMELAND_MATERIAL_EI,
+		var_0_6.AWARD_VALUE_TYPE_SKIN_FRAGMENT_EI,
+		var_0_6.AWARD_VALUE_TYPE_PEAK_AWARD_COUPON_EI,
+		var_0_6.AWARD_VALUE_TYPE_MINE_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_WAR_ATTACK_TIMES_EI,
+		var_0_6.AWARD_VALUE_TYPE_MONTH_CARD_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_DAILY_SALE_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_FOG_EXP_EI,
+		var_0_6.AWARD_VALUE_TYPE_FOG_ITEM_MIN_EI,
+		var_0_6.AWARD_VALUE_TYPE_FOG_ITEM_MAX_EI,
+		var_0_6.AWARD_VALUE_TYPE_GVE_HALIDOM_MATERIAL_EI,
+		var_0_6.AWARD_VALUE_TYPE_GVE_SHOP_LOW_EI,
+		var_0_6.AWARD_VALUE_TYPE_GVE_SHOP_HIGH_EI,
+		var_0_6.AWARD_VALUE_TYPE_VOUCHER_MONEY_EI,
+		var_0_6.AWARD_VALUE_TYPE_MINE_SHIELD_EI,
+		var_0_6.AWARD_VALUE_TYPE_WISHPOOL_BAIT_EI,
+		var_0_6.AWARD_VALUE_TYPE_COMPETITION_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_GOLD_SAVING_PROGRESS_EI,
+		var_0_6.AWARD_VALUE_TYPE_CHIEF_ARENA_POINT_EI,
+		var_0_6.AWARD_VALUE_TYPE_LOTTERY_DRAW_EI,
+		var_0_6.AWARD_VALUE_TYPE_GROUP_BATTLE_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_WEEKLY_COMPETITION_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_EXPLORATION_SHOP_EI,
+		var_0_6.AWARD_VALUE_TYPE_RECHARGE_REBATE_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_EXPLORATION_COIN_EI,
+		var_0_6.AWARD_VALUE_TYPE_CHIBI_SHOP_EI,
+		var_0_6.AWARD_VALUE_TYPE_BOUNTY_SCORE_EI,
+		var_0_6.AWARD_VALUE_TYPE_PASSCARD_ACTIVITY_EXP_EI,
+		var_0_6.AWARD_VALUE_TYPE_TEAM_BATTLE_GAME_EI,
+		var_0_6.AWARD_VALUE_TYPE_TEAM_BATTLE_SHOP_EI,
+		var_0_6.AWARD_VALUE_TYPE_GUILD_ALLIANCE_EXP_EI,
+		var_0_6.AWARD_VALUE_TYPE_SUCCUBA_ACTIVITY_COIN_EI,
+		var_0_6.AWARD_VALUE_TYPE_NEW_SLG_TECHNOLOGY_POINT_EI,
+		var_0_6.AWARD_VALUE_TYPE_ANNIVERSARY_COIN_EI,
+		var_0_6.AWARD_VALUE_TYPE_ANNIVERSARY_ACTIVITY_EI,
+		var_0_6.AWARD_VALUE_TYPE_OUTPOST_SHOP_COINS_EI,
+		var_0_6.AWARD_VALUE_TYPE_ATTR_TEST_POINT_EI,
+		var_0_6.AWARD_VALUE_TYPE_ABYSS_CRYSTAL_EI,
+		var_0_6.AWARD_VALUE_TYPE_PASSCARD_EI,
+		var_0_6.AWARD_VALUE_TYPE_CHIEF_ARENA_PRESTIGE_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DUNGEON_STAR_EI, {
+	"DUNGEON_STAR",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DEADBATTLE_RECORD_EI, {
+	"DEADBATTLE_RECORD",
+	1,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DEADBATTLE_WEEK_EI, {
+	"DEADBATTLE_WEEK",
+	2,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_FIGHT_VALUE_EI, {
+	"GUILD_FIGHT_VALUE",
+	3,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_LEVEL_EI, {
+	"GUILD_LEVEL",
+	4,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_REBEL_TOTAL_EI, {
+	"REBEL_TOTAL",
+	5,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_REBEL_MAX_EI, {
+	"REBEL_MAX",
+	6,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_REDPACKET_POINT_EI, {
+	"REDPACKET_POINT",
+	7,
+	9
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_REDPACKET_LUCK_EI, {
+	"REDPACKET_LUCK",
+	8,
+	10
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_DUNGEON_DAMAGE_EI, {
+	"GUILD_DUNGEON_DAMAGE",
+	9,
+	11
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_EXPERIENCE_EI, {
+	"GUILD_EXPERIENCE",
+	10,
+	12
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_STATUE_PROGRESS_EI, {
+	"GUILD_STATUE_PROGRESS",
+	11,
+	13
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_STORM_PROGRESS_EI, {
+	"STORM_PROGRESS",
+	12,
+	14
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_BOSS_USER_LOCAL_EI, {
+	"GUILD_BOSS_USER_LOCAL",
+	13,
+	17
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_BOSS_GUILD_LOCAL_EI, {
+	"GUILD_BOSS_GUILD_LOCAL",
+	14,
+	18
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_BOSS_USER_CROSS_EI, {
+	"GUILD_BOSS_USER_CROSS",
+	15,
+	19
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_BOSS_GUILD_CROSS_EI, {
+	"GUILD_BOSS_GUILD_CROSS",
+	16,
+	20
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_MINE_GOLD_CROSS_EI, {
+	"MINE_GOLD_CROSS",
+	17,
+	25
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_BIOGRAPHY_PROGRESS_EI, {
+	"BIOGRAPHY_PROGRESS",
+	18,
+	26
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ORDER_WORLD_SCORE_LOCAL_EI, {
+	"ORDER_WORLD_SCORE_LOCAL",
+	19,
+	27
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ORDER_WORLD_SCORE_CROSS_EI, {
+	"ORDER_WORLD_SCORE_CROSS",
+	20,
+	28
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GROUP_BATTLE_HONOR_CROSS_EI, {
+	"GROUP_BATTLE_HONOR_CROSS",
+	21,
+	31
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GROUP_BATTLE_HONOR_ALL_SERVER_EI, {
+	"GROUP_BATTLE_HONOR_ALL_SERVER",
+	22,
+	32
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_PEAK_ARENA_SCORE_LOCAL_EI, {
+	"PEAK_ARENA_SCORE_LOCAL",
+	23,
+	33
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_PEAK_ARENA_SCORE_CROSS_EI, {
+	"PEAK_ARENA_SCORE_CROSS",
+	24,
+	34
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_PEAK_ARENA_SCORE_ALL_SERVER_EI, {
+	"PEAK_ARENA_SCORE_ALL_SERVER",
+	25,
+	35
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WREST_BATTLE_CROSS_EI, {
+	"WREST_BATTLE_CROSS",
+	26,
+	36
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WREST_GOLD_CROSS_EI, {
+	"WREST_GOLD_CROSS",
+	27,
+	37
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WREST_GUILD_SCORE_CROSS_EI, {
+	"WREST_GUILD_SCORE_CROSS",
+	28,
+	38
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WREST_BATTLE_UNION_CROSS_EI, {
+	"WREST_BATTLE_UNION_CROSS",
+	29,
+	39
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WREST_GOLD_UNION_CROSS_EI, {
+	"WREST_GOLD_UNION_CROSS",
+	30,
+	40
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_KSOUL_HONOR_LOCAL_EI, {
+	"KSOUL_HONOR_LOCAL",
+	31,
+	41
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_KSOUL_HONOR_CROSS_EI, {
+	"KSOUL_HONOR_CROSS",
+	32,
+	42
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_BATTLE_SCORE_CROSS_EI, {
+	"GUILD_BATTLE_SCORE_CROSS",
+	33,
+	43
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_MAIN_EI, {
+	"TOWER_MAIN",
+	34,
+	44
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_EMPIRE_EI, {
+	"TOWER_EMPIRE",
+	35,
+	45
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_BIFROST_EI, {
+	"TOWER_BIFROST",
+	36,
+	46
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_EASTRISE_EI, {
+	"TOWER_EASTRISE",
+	37,
+	47
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_NEBU_EI, {
+	"TOWER_NEBU",
+	38,
+	48
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_1_EI, {
+	"THEME_DEMON_BOSS_DAILY_LOCAL_1",
+	39,
+	49
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_1_EI, {
+	"THEME_DEMON_BOSS_TOTAL_LOCAL_1",
+	40,
+	50
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_2_EI, {
+	"THEME_DEMON_BOSS_DAILY_LOCAL_2",
+	41,
+	51
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_2_EI, {
+	"THEME_DEMON_BOSS_TOTAL_LOCAL_2",
+	42,
+	52
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_3_EI, {
+	"THEME_DEMON_BOSS_DAILY_LOCAL_3",
+	43,
+	53
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_3_EI, {
+	"THEME_DEMON_BOSS_TOTAL_LOCAL_3",
+	44,
+	54
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_FURNITURE_CHARM_LOCAL_EI, {
+	"FURNITURE_CHARM_LOCAL",
+	45,
+	55
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_4_EI, {
+	"THEME_DEMON_BOSS_DAILY_LOCAL_4",
+	46,
+	56
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_4_EI, {
+	"THEME_DEMON_BOSS_TOTAL_LOCAL_4",
+	47,
+	57
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_FURNITURE_NUM_LOCAL_EI, {
+	"FURNITURE_NUM_LOCAL",
+	48,
+	58
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_FURNITURE_SUM_CHARM_LOCAL_EI, {
+	"FURNITURE_SUM_CHARM_LOCAL",
+	49,
+	59
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_ACT_LOCAL_EI, {
+	"DAILY_REPORT_ACT_LOCAL",
+	50,
+	60
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_PHYSICAL_PAY_LOCAL_EI, {
+	"DAILY_REPORT_PHYSICAL_PAY_LOCAL",
+	51,
+	61
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_DUNGEON_FAIL_LOCAL_EI, {
+	"DAILY_REPORT_DUNGEON_FAIL_LOCAL",
+	52,
+	62
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_TOTAL_GRADE_UP_LOCAL_EI, {
+	"DAILY_REPORT_TOTAL_GRADE_UP_LOCAL",
+	53,
+	63
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_FURNITURE_LOCAL_EI, {
+	"DAILY_REPORT_FURNITURE_LOCAL",
+	54,
+	64
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_CONTRIBUTION_LOCAL_EI, {
+	"DAILY_REPORT_CONTRIBUTION_LOCAL",
+	55,
+	65
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_RECRUIT_LOCAL_EI, {
+	"DAILY_REPORT_RECRUIT_LOCAL",
+	56,
+	66
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DAILY_REPORT_BIOGRAPHY_LOCAL_EI, {
+	"DAILY_REPORT_BIOGRAPHY_LOCAL",
+	57,
+	67
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DISABLED_1_EI, {
+	"DISABLED_1",
+	58,
+	68
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DISABLED_2_EI, {
+	"DISABLED_2",
+	59,
+	69
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_KING_EI, {
+	"GUILD_WAR_GUILD_CROSS_KING",
+	60,
+	70
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_MASTER_EI, {
+	"GUILD_WAR_GUILD_CROSS_MASTER",
+	61,
+	71
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_ELITE_EI, {
+	"GUILD_WAR_GUILD_CROSS_ELITE",
+	62,
+	72
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GUILD_WAR_PRACTICE_SCORE_CROSS_EI, {
+	"GUILD_WAR_PRACTICE_SCORE_CROSS",
+	63,
+	73
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_1_EI, {
+	"TURN_CARD_RANK_1",
+	64,
+	74
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_2_EI, {
+	"TURN_CARD_RANK_2",
+	65,
+	75
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_3_EI, {
+	"TURN_CARD_RANK_3",
+	66,
+	76
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_4_EI, {
+	"TURN_CARD_RANK_4",
+	67,
+	77
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_5_EI, {
+	"TURN_CARD_RANK_5",
+	68,
+	78
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_6_EI, {
+	"TURN_CARD_RANK_6",
+	69,
+	79
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_7_EI, {
+	"TURN_CARD_RANK_7",
+	70,
+	80
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_8_EI, {
+	"TURN_CARD_RANK_8",
+	71,
+	81
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_9_EI, {
+	"TURN_CARD_RANK_9",
+	72,
+	82
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_10_EI, {
+	"TURN_CARD_RANK_10",
+	73,
+	83
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ARENA_LOCAL_EI, {
+	"ARENA_LOCAL",
+	74,
+	84
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_FOG_CROSS_EI, {
+	"FOG_CROSS",
+	75,
+	85
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_MAIN_DIFF_EI, {
+	"TOWER_MAIN_DIFF",
+	76,
+	86
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_EMPIRE_DIFF_EI, {
+	"TOWER_EMPIRE_DIFF",
+	77,
+	87
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_BIFROST_DIFF_EI, {
+	"TOWER_BIFROST_DIFF",
+	78,
+	88
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_EASTRISE_DIFF_EI, {
+	"TOWER_EASTRISE_DIFF",
+	79,
+	89
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_TOWER_NEBU_DIFF_EI, {
+	"TOWER_NEBU_DIFF",
+	80,
+	90
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_DEAD_TOWER_LOCAL_EI, {
+	"DEAD_TOWER_LOCAL",
+	81,
+	91
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_FOG_CROSS_AREA_EI, {
+	"FOG_CROSS_AREA",
+	82,
+	92
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_HANDBOOK_COMPETITION_EI, {
+	"HANDBOOK_COMPETITION",
+	83,
+	93
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ARTIFACT_COMPETITION_EI, {
+	"ARTIFACT_COMPETITION",
+	84,
+	94
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_FURNITURE_COMPETITION_EI, {
+	"FURNITURE_COMPETITION",
+	85,
+	95
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_UNITE_TOKEN_COMPETITION_EI, {
+	"UNITE_TOKEN_COMPETITION",
+	86,
+	96
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_EGG_COMPETITION_EI, {
+	"EGG_COMPETITION",
+	87,
+	97
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_PET_COMPETITION_EI, {
+	"PET_COMPETITION",
+	88,
+	98
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_EQUIPMENT_COMPETITION_EI, {
+	"EQUIPMENT_COMPETITION",
+	89,
+	99
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_KSOUL_COMPETITION_EI, {
+	"KSOUL_COMPETITION",
+	90,
+	100
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WEEKLY_COMPETITION_SCORE_LOCAL_EI, {
+	"WEEKLY_COMPETITION_SCORE_LOCAL",
+	91,
+	121
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_WEEKLY_COMPETITION_SCORE_CROSS_EI, {
+	"WEEKLY_COMPETITION_SCORE_CROSS",
+	92,
+	122
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GVE_BOSS9_USER_TOTAL_DAMAGE_CROSS_EI, {
+	"GVE_BOSS9_USER_TOTAL_DAMAGE_CROSS",
+	93,
+	123
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_EXPLORATION_PASS_CROSS_EI, {
+	"EXPLORATION_PASS_CROSS",
+	94,
+	124
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_EXPLORATION_BOSS_USER_CROSS_EI, {
+	"EXPLORATION_BOSS_USER_CROSS",
+	95,
+	125
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_EXPLORATION_BOSS_GUILD_CROSS_EI, {
+	"EXPLORATION_BOSS_GUILD_CROSS",
+	96,
+	126
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_CHIBI_ACHIEVEMENT_CROSS_EI, {
+	"CHIBI_ACHIEVEMENT_CROSS",
+	97,
+	127
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_CHIBI_ACHIEVEMENT_ALL_SERVER_EI, {
+	"CHIBI_ACHIEVEMENT_ALL_SERVER",
+	98,
+	128
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GVE_BOSS9_ALLIANCE_TOTAL_DAMAGE_CROSS_EI, {
+	"GVE_BOSS9_ALLIANCE_TOTAL_DAMAGE_CROSS",
+	99,
+	129
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GVE_ALLIANCE_TOTAL_DAMAGE_CROSS_EI, {
+	"GVE_ALLIANCE_TOTAL_DAMAGE_CROSS",
+	100,
+	130
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GVE_BOSS_USER_MAX_DAMAGE_CROSS_EI, {
+	"GVE_BOSS_USER_MAX_DAMAGE_CROSS",
+	101,
+	131
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_GVE_BOSS_USER_TOTAL_DAMAGE_CROSS_EI, {
+	"GVE_BOSS_USER_TOTAL_DAMAGE_CROSS",
+	102,
+	132
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_PUBG_USER_SCORE_CROSS_EI, {
+	"PUBG_USER_SCORE_CROSS",
+	103,
+	133
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_SPIRE_SCORE_LOCAL_EI, {
+	"SPIRE_SCORE_LOCAL",
+	104,
+	134
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_SPIRE_SCORE_CROSS_EI, {
+	"SPIRE_SCORE_CROSS",
+	105,
+	135
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_WATER_EI, {
+	"ELDER_BOSS_MAX_HONOR_WATER",
+	106,
+	136
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_FIRE_EI, {
+	"ELDER_BOSS_MAX_HONOR_FIRE",
+	107,
+	137
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_WIND_EI, {
+	"ELDER_BOSS_MAX_HONOR_WIND",
+	108,
+	138
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_THUNDER_EI, {
+	"ELDER_BOSS_MAX_HONOR_THUNDER",
+	109,
+	139
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_EARTH_EI, {
+	"ELDER_BOSS_MAX_HONOR_EARTH",
+	110,
+	140
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_WATER_EI, {
+	"ELDER_BOSS_TOTAL_HONOR_WATER",
+	111,
+	141
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_FIRE_EI, {
+	"ELDER_BOSS_TOTAL_HONOR_FIRE",
+	112,
+	142
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_WIND_EI, {
+	"ELDER_BOSS_TOTAL_HONOR_WIND",
+	113,
+	143
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_THUNDER_EI, {
+	"ELDER_BOSS_TOTAL_HONOR_THUNDER",
+	114,
+	144
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_EARTH_EI, {
+	"ELDER_BOSS_TOTAL_HONOR_EARTH",
+	115,
+	145
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_ELDER_BOSS_GUILD_HONOR_EI, {
+	"ELDER_BOSS_GUILD_HONOR",
+	116,
+	146
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_1_EI, {
+	"THEME_DEMON_BOSS_1",
+	117,
+	50004
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_2_EI, {
+	"THEME_DEMON_BOSS_2",
+	118,
+	50005
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_3_EI, {
+	"THEME_DEMON_BOSS_3",
+	119,
+	50006
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_4_EI, {
+	"THEME_DEMON_BOSS_4",
+	120,
+	50007
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_5_EI, {
+	"THEME_DEMON_BOSS_5",
+	121,
+	50008
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_6_EI, {
+	"THEME_DEMON_BOSS_6",
+	122,
+	50009
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_7_EI, {
+	"THEME_DEMON_BOSS_7",
+	123,
+	50010
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_8_EI, {
+	"THEME_DEMON_BOSS_8",
+	124,
+	50011
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_9_EI, {
+	"THEME_DEMON_BOSS_9",
+	125,
+	50012
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_10_EI, {
+	"THEME_DEMON_BOSS_10",
+	126,
+	50013
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_11_EI, {
+	"THEME_DEMON_BOSS_11",
+	127,
+	50014
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_12_EI, {
+	"THEME_DEMON_BOSS_12",
+	128,
+	50015
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.RANK_ID_TYPE_E, {
+	"RANK_ID_TYPE",
+	".enums.RANK_ID_TYPE",
+	{
+		var_0_6.RANK_ID_TYPE_DUNGEON_STAR_EI,
+		var_0_6.RANK_ID_TYPE_DEADBATTLE_RECORD_EI,
+		var_0_6.RANK_ID_TYPE_DEADBATTLE_WEEK_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_FIGHT_VALUE_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_LEVEL_EI,
+		var_0_6.RANK_ID_TYPE_REBEL_TOTAL_EI,
+		var_0_6.RANK_ID_TYPE_REBEL_MAX_EI,
+		var_0_6.RANK_ID_TYPE_REDPACKET_POINT_EI,
+		var_0_6.RANK_ID_TYPE_REDPACKET_LUCK_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_DUNGEON_DAMAGE_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_EXPERIENCE_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_STATUE_PROGRESS_EI,
+		var_0_6.RANK_ID_TYPE_STORM_PROGRESS_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_BOSS_USER_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_BOSS_GUILD_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_BOSS_USER_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_BOSS_GUILD_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_MINE_GOLD_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_BIOGRAPHY_PROGRESS_EI,
+		var_0_6.RANK_ID_TYPE_ORDER_WORLD_SCORE_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_ORDER_WORLD_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GROUP_BATTLE_HONOR_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GROUP_BATTLE_HONOR_ALL_SERVER_EI,
+		var_0_6.RANK_ID_TYPE_PEAK_ARENA_SCORE_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_PEAK_ARENA_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_PEAK_ARENA_SCORE_ALL_SERVER_EI,
+		var_0_6.RANK_ID_TYPE_WREST_BATTLE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_WREST_GOLD_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_WREST_GUILD_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_WREST_BATTLE_UNION_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_WREST_GOLD_UNION_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_KSOUL_HONOR_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_KSOUL_HONOR_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_BATTLE_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_MAIN_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_EMPIRE_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_BIFROST_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_EASTRISE_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_NEBU_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_1_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_1_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_2_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_2_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_3_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_3_EI,
+		var_0_6.RANK_ID_TYPE_FURNITURE_CHARM_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_DAILY_LOCAL_4_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_TOTAL_LOCAL_4_EI,
+		var_0_6.RANK_ID_TYPE_FURNITURE_NUM_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_FURNITURE_SUM_CHARM_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_ACT_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_PHYSICAL_PAY_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_DUNGEON_FAIL_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_TOTAL_GRADE_UP_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_FURNITURE_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_CONTRIBUTION_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_RECRUIT_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DAILY_REPORT_BIOGRAPHY_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_DISABLED_1_EI,
+		var_0_6.RANK_ID_TYPE_DISABLED_2_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_KING_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_MASTER_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_WAR_GUILD_CROSS_ELITE_EI,
+		var_0_6.RANK_ID_TYPE_GUILD_WAR_PRACTICE_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_1_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_2_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_3_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_4_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_5_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_6_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_7_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_8_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_9_EI,
+		var_0_6.RANK_ID_TYPE_TURN_CARD_RANK_10_EI,
+		var_0_6.RANK_ID_TYPE_ARENA_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_FOG_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_MAIN_DIFF_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_EMPIRE_DIFF_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_BIFROST_DIFF_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_EASTRISE_DIFF_EI,
+		var_0_6.RANK_ID_TYPE_TOWER_NEBU_DIFF_EI,
+		var_0_6.RANK_ID_TYPE_DEAD_TOWER_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_FOG_CROSS_AREA_EI,
+		var_0_6.RANK_ID_TYPE_HANDBOOK_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_ARTIFACT_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_FURNITURE_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_UNITE_TOKEN_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_EGG_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_PET_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_EQUIPMENT_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_KSOUL_COMPETITION_EI,
+		var_0_6.RANK_ID_TYPE_WEEKLY_COMPETITION_SCORE_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_WEEKLY_COMPETITION_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GVE_BOSS9_USER_TOTAL_DAMAGE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_EXPLORATION_PASS_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_EXPLORATION_BOSS_USER_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_EXPLORATION_BOSS_GUILD_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_CHIBI_ACHIEVEMENT_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_CHIBI_ACHIEVEMENT_ALL_SERVER_EI,
+		var_0_6.RANK_ID_TYPE_GVE_BOSS9_ALLIANCE_TOTAL_DAMAGE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GVE_ALLIANCE_TOTAL_DAMAGE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GVE_BOSS_USER_MAX_DAMAGE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_GVE_BOSS_USER_TOTAL_DAMAGE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_PUBG_USER_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_SPIRE_SCORE_LOCAL_EI,
+		var_0_6.RANK_ID_TYPE_SPIRE_SCORE_CROSS_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_WATER_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_FIRE_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_WIND_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_THUNDER_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_MAX_HONOR_EARTH_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_WATER_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_FIRE_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_WIND_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_THUNDER_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_TOTAL_HONOR_EARTH_EI,
+		var_0_6.RANK_ID_TYPE_ELDER_BOSS_GUILD_HONOR_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_1_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_2_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_3_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_4_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_5_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_6_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_7_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_8_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_9_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_10_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_11_EI,
+		var_0_6.RANK_ID_TYPE_THEME_DEMON_BOSS_12_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_KNIGHT_HB_EI, {
+	"KNIGHT_HB",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_DRESS_HB_EI, {
+	"DRESS_HB",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_BIOBOSS_HB_EI, {
+	"BIOBOSS_HB",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_SKIN_HB_EI, {
+	"SKIN_HB",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_ARTIFACT_HB_EI, {
+	"ARTIFACT_HB",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_PET_HB_EI, {
+	"PET_HB",
+	5,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_UR_ARTIFACT_HB_EI, {
+	"UR_ARTIFACT_HB",
+	6,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.HANDBOOK_TYPE_UR_PET_HB_EI, {
+	"UR_PET_HB",
+	7,
+	8
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.HANDBOOK_TYPE_E, {
+	"HANDBOOK_TYPE",
+	".enums.HANDBOOK_TYPE",
+	{
+		var_0_6.HANDBOOK_TYPE_KNIGHT_HB_EI,
+		var_0_6.HANDBOOK_TYPE_DRESS_HB_EI,
+		var_0_6.HANDBOOK_TYPE_BIOBOSS_HB_EI,
+		var_0_6.HANDBOOK_TYPE_SKIN_HB_EI,
+		var_0_6.HANDBOOK_TYPE_ARTIFACT_HB_EI,
+		var_0_6.HANDBOOK_TYPE_PET_HB_EI,
+		var_0_6.HANDBOOK_TYPE_UR_ARTIFACT_HB_EI,
+		var_0_6.HANDBOOK_TYPE_UR_PET_HB_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_ACHIEVEMENT_EI, {
+	"STATUS_ACHIEVEMENT",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_SHOP_EI, {
+	"STATUS_SHOP",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_DAILY_TASK_EI, {
+	"STATUS_DAILY_TASK",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_SEVENDAYS_EI, {
+	"STATUS_SEVENDAYS",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_GUIDE_TASK_EI, {
+	"STATUS_GUIDE_TASK",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_FOURTEEN_EI, {
+	"STATUS_FOURTEEN",
+	5,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_HOLIDAY_EI, {
+	"STATUS_HOLIDAY",
+	6,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_ORDER_EI, {
+	"STATUS_ORDER",
+	7,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_PASSCARD_EI, {
+	"STATUS_PASSCARD",
+	8,
+	10
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_THEME_EI, {
+	"STATUS_THEME",
+	9,
+	11
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_FRIEND_RECOMMEND_EI, {
+	"STATUS_FRIEND_RECOMMEND",
+	10,
+	12
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_GOLD_SAVING_EI, {
+	"STATUS_GOLD_SAVING",
+	11,
+	13
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_RECHARGE_TOTAL_EI, {
+	"STATUS_RECHARGE_TOTAL",
+	12,
+	14
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_SUPPORT_EI, {
+	"STATUS_SUPPORT",
+	13,
+	15
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_GVE_EI, {
+	"STATUS_GVE",
+	14,
+	16
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_DEAD_TOWER_EI, {
+	"STATUS_DEAD_TOWER",
+	15,
+	17
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_COMPETITION_EI, {
+	"STATUS_COMPETITION",
+	16,
+	18
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_LOTTERY_EI, {
+	"STATUS_LOTTERY",
+	17,
+	19
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_WEEKLY_COMPETITION_EI, {
+	"STATUS_WEEKLY_COMPETITION",
+	18,
+	20
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_GROUP_BATTLE_EI, {
+	"STATUS_GROUP_BATTLE",
+	19,
+	21
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_EXPLORATION_EI, {
+	"STATUS_EXPLORATION",
+	20,
+	22
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_BOUNTY_EI, {
+	"STATUS_BOUNTY",
+	21,
+	23
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_PASSCARD_ACTIVITY_EI, {
+	"STATUS_PASSCARD_ACTIVITY",
+	22,
+	24
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_RERUN_EI, {
+	"STATUS_RERUN",
+	23,
+	25
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_RICH_MAN_EI, {
+	"STATUS_RICH_MAN",
+	24,
+	26
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_GUILD_ALLIANCE_EI, {
+	"STATUS_GUILD_ALLIANCE",
+	25,
+	27
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_RETRO_EI, {
+	"STATUS_RETRO",
+	26,
+	28
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_PUBG_EI, {
+	"STATUS_PUBG",
+	27,
+	29
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_BLAZING_ARENA_EI, {
+	"STATUS_BLAZING_ARENA",
+	28,
+	30
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_NEW_SLG_TECHNOLOGY_EI, {
+	"STATUS_NEW_SLG_TECHNOLOGY",
+	29,
+	31
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_RELEASE_EI, {
+	"STATUS_RELEASE",
+	30,
+	32
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ACTION_TYPE_STATUS_DOMAIN_EI, {
+	"STATUS_DOMAIN",
+	31,
+	33
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.ACTION_TYPE_E, {
+	"ACTION_TYPE",
+	".enums.ACTION_TYPE",
+	{
+		var_0_6.ACTION_TYPE_STATUS_ACHIEVEMENT_EI,
+		var_0_6.ACTION_TYPE_STATUS_SHOP_EI,
+		var_0_6.ACTION_TYPE_STATUS_DAILY_TASK_EI,
+		var_0_6.ACTION_TYPE_STATUS_SEVENDAYS_EI,
+		var_0_6.ACTION_TYPE_STATUS_GUIDE_TASK_EI,
+		var_0_6.ACTION_TYPE_STATUS_FOURTEEN_EI,
+		var_0_6.ACTION_TYPE_STATUS_HOLIDAY_EI,
+		var_0_6.ACTION_TYPE_STATUS_ORDER_EI,
+		var_0_6.ACTION_TYPE_STATUS_PASSCARD_EI,
+		var_0_6.ACTION_TYPE_STATUS_THEME_EI,
+		var_0_6.ACTION_TYPE_STATUS_FRIEND_RECOMMEND_EI,
+		var_0_6.ACTION_TYPE_STATUS_GOLD_SAVING_EI,
+		var_0_6.ACTION_TYPE_STATUS_RECHARGE_TOTAL_EI,
+		var_0_6.ACTION_TYPE_STATUS_SUPPORT_EI,
+		var_0_6.ACTION_TYPE_STATUS_GVE_EI,
+		var_0_6.ACTION_TYPE_STATUS_DEAD_TOWER_EI,
+		var_0_6.ACTION_TYPE_STATUS_COMPETITION_EI,
+		var_0_6.ACTION_TYPE_STATUS_LOTTERY_EI,
+		var_0_6.ACTION_TYPE_STATUS_WEEKLY_COMPETITION_EI,
+		var_0_6.ACTION_TYPE_STATUS_GROUP_BATTLE_EI,
+		var_0_6.ACTION_TYPE_STATUS_EXPLORATION_EI,
+		var_0_6.ACTION_TYPE_STATUS_BOUNTY_EI,
+		var_0_6.ACTION_TYPE_STATUS_PASSCARD_ACTIVITY_EI,
+		var_0_6.ACTION_TYPE_STATUS_RERUN_EI,
+		var_0_6.ACTION_TYPE_STATUS_RICH_MAN_EI,
+		var_0_6.ACTION_TYPE_STATUS_GUILD_ALLIANCE_EI,
+		var_0_6.ACTION_TYPE_STATUS_RETRO_EI,
+		var_0_6.ACTION_TYPE_STATUS_PUBG_EI,
+		var_0_6.ACTION_TYPE_STATUS_BLAZING_ARENA_EI,
+		var_0_6.ACTION_TYPE_STATUS_NEW_SLG_TECHNOLOGY_EI,
+		var_0_6.ACTION_TYPE_STATUS_RELEASE_EI,
+		var_0_6.ACTION_TYPE_STATUS_DOMAIN_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_KNIGHT_EI, {
+	"R_KNIGHT",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_UNITE_TOKEN_EI, {
+	"R_UNITE_TOKEN",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_EQUIPMENT_EI, {
+	"R_EQUIPMENT",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_TREASURE_EI, {
+	"R_TREASURE",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_DRESS_EI, {
+	"R_DRESS",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_ARTIFACT_EI, {
+	"R_ARTIFACT",
+	5,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_PET_EQUIPMENT_EI, {
+	"R_PET_EQUIPMENT",
+	6,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_PET_EI, {
+	"R_PET",
+	7,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_KSOUL_BOOK_EI, {
+	"R_KSOUL_BOOK",
+	8,
+	9
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_FURNISHING_EI, {
+	"R_FURNISHING",
+	9,
+	10
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_SYS_TYPE_R_ITEM_EI, {
+	"R_ITEM",
+	10,
+	11
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.REBORN_SYS_TYPE_E, {
+	"REBORN_SYS_TYPE",
+	".enums.REBORN_SYS_TYPE",
+	{
+		var_0_6.REBORN_SYS_TYPE_R_KNIGHT_EI,
+		var_0_6.REBORN_SYS_TYPE_R_UNITE_TOKEN_EI,
+		var_0_6.REBORN_SYS_TYPE_R_EQUIPMENT_EI,
+		var_0_6.REBORN_SYS_TYPE_R_TREASURE_EI,
+		var_0_6.REBORN_SYS_TYPE_R_DRESS_EI,
+		var_0_6.REBORN_SYS_TYPE_R_ARTIFACT_EI,
+		var_0_6.REBORN_SYS_TYPE_R_PET_EQUIPMENT_EI,
+		var_0_6.REBORN_SYS_TYPE_R_PET_EI,
+		var_0_6.REBORN_SYS_TYPE_R_KSOUL_BOOK_EI,
+		var_0_6.REBORN_SYS_TYPE_R_FURNISHING_EI,
+		var_0_6.REBORN_SYS_TYPE_R_ITEM_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_OP_TYPE_REBIRTH_EI, {
+	"REBIRTH",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_OP_TYPE_RESOLVE_EI, {
+	"RESOLVE",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.REBORN_OP_TYPE_ALL_PURPOSE_EXCHANGE_EI, {
+	"ALL_PURPOSE_EXCHANGE",
+	2,
+	99
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.REBORN_OP_TYPE_E, {
+	"REBORN_OP_TYPE",
+	".enums.REBORN_OP_TYPE",
+	{
+		var_0_6.REBORN_OP_TYPE_REBIRTH_EI,
+		var_0_6.REBORN_OP_TYPE_RESOLVE_EI,
+		var_0_6.REBORN_OP_TYPE_ALL_PURPOSE_EXCHANGE_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.USER_INFO_TYPE_FRAME_EI, {
+	"FRAME",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.USER_INFO_TYPE_NAME_EI, {
+	"NAME",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.USER_INFO_TYPE_TALK_EI, {
+	"TALK",
+	2,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.USER_INFO_TYPE_AVATA_EI, {
+	"AVATA",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.USER_INFO_TYPE_SHOW_KNIGHT_ID_EI, {
+	"SHOW_KNIGHT_ID",
+	4,
+	5
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.USER_INFO_TYPE_E, {
+	"USER_INFO_TYPE",
+	".enums.USER_INFO_TYPE",
+	{
+		var_0_6.USER_INFO_TYPE_FRAME_EI,
+		var_0_6.USER_INFO_TYPE_NAME_EI,
+		var_0_6.USER_INFO_TYPE_TALK_EI,
+		var_0_6.USER_INFO_TYPE_AVATA_EI,
+		var_0_6.USER_INFO_TYPE_SHOW_KNIGHT_ID_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.SCROLL_TYPE_MAIN_EI, {
+	"MAIN",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.SCROLL_TYPE_HERO_EI, {
+	"HERO",
+	1,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.SCROLL_TYPE_E, {
+	"SCROLL_TYPE",
+	".enums.SCROLL_TYPE",
+	{
+		var_0_6.SCROLL_TYPE_MAIN_EI,
+		var_0_6.SCROLL_TYPE_HERO_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.STATE_MODULE_BIOGRAPHY_EI, {
+	"BIOGRAPHY",
+	0,
+	1
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.STATE_MODULE_E, {
+	"STATE_MODULE",
+	".enums.STATE_MODULE",
+	{
+		var_0_6.STATE_MODULE_BIOGRAPHY_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.UNIT_TYPE_UT_KNIGHT_EI, {
+	"UT_KNIGHT",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.UNIT_TYPE_UT_UNITETOKEN_EI, {
+	"UT_UNITETOKEN",
+	1,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.UNIT_TYPE_E, {
+	"UNIT_TYPE",
+	".enums.UNIT_TYPE",
+	{
+		var_0_6.UNIT_TYPE_UT_KNIGHT_EI,
+		var_0_6.UNIT_TYPE_UT_UNITETOKEN_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.CHAT_SHARE_TYPE_CST_BATTLE_RES_EI, {
+	"CST_BATTLE_RES",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.CHAT_SHARE_TYPE_CST_PRESET_FORMATION_EI, {
+	"CST_PRESET_FORMATION",
+	1,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.CHAT_SHARE_TYPE_CST_ANNIVERSARY_EI, {
+	"CST_ANNIVERSARY",
+	2,
+	25
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.CHAT_SHARE_TYPE_E, {
+	"CHAT_SHARE_TYPE",
+	".enums.CHAT_SHARE_TYPE",
+	{
+		var_0_6.CHAT_SHARE_TYPE_CST_BATTLE_RES_EI,
+		var_0_6.CHAT_SHARE_TYPE_CST_PRESET_FORMATION_EI,
+		var_0_6.CHAT_SHARE_TYPE_CST_ANNIVERSARY_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_TOTAL_EI, {
+	"RIT_RECHARGE_TOTAL",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_DAILY_TOTAL_EI, {
+	"RIT_RECHARGE_DAILY_TOTAL",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_FUND_ACTIVE_EI, {
+	"RIT_RECHARGE_FUND_ACTIVE",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_INHERIT_TOTAL_EI, {
+	"RIT_RECHARGE_INHERIT_TOTAL",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_MAX_EI, {
+	"RIT_RECHARGE_MAX",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.RECHARGE_INFO_TYPE_E, {
+	"RECHARGE_INFO_TYPE",
+	".enums.RECHARGE_INFO_TYPE",
+	{
+		var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_TOTAL_EI,
+		var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_DAILY_TOTAL_EI,
+		var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_FUND_ACTIVE_EI,
+		var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_INHERIT_TOTAL_EI,
+		var_0_6.RECHARGE_INFO_TYPE_RIT_RECHARGE_MAX_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.WING_WEAR_OP_TYPE_WING_UNWEAR_EI, {
+	"WING_UNWEAR",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.WING_WEAR_OP_TYPE_WING_WEAR_EI, {
+	"WING_WEAR",
+	1,
+	1
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.WING_WEAR_OP_TYPE_E, {
+	"WING_WEAR_OP_TYPE",
+	".enums.WING_WEAR_OP_TYPE",
+	{
+		var_0_6.WING_WEAR_OP_TYPE_WING_UNWEAR_EI,
+		var_0_6.WING_WEAR_OP_TYPE_WING_WEAR_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_MAIN_EI, {
+	"TOWER_STAGE_MAIN",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EMPIRE_EI, {
+	"TOWER_STAGE_EMPIRE",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_BIFROST_EI, {
+	"TOWER_STAGE_BIFROST",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EASTRISE_EI, {
+	"TOWER_STAGE_EASTRISE",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_NEBU_EI, {
+	"TOWER_STAGE_NEBU",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_MAIN_DIFF_EI, {
+	"TOWER_STAGE_MAIN_DIFF",
+	5,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EMPIRE_DIFF_EI, {
+	"TOWER_STAGE_EMPIRE_DIFF",
+	6,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_BIFROST_DIFF_EI, {
+	"TOWER_STAGE_BIFROST_DIFF",
+	7,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EASTRISE_DIFF_EI, {
+	"TOWER_STAGE_EASTRISE_DIFF",
+	8,
+	9
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_NEBU_DIFF_EI, {
+	"TOWER_STAGE_NEBU_DIFF",
+	9,
+	10
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.TOWER_STAGE_TYPE_E, {
+	"TOWER_STAGE_TYPE",
+	".enums.TOWER_STAGE_TYPE",
+	{
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_MAIN_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EMPIRE_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_BIFROST_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EASTRISE_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_NEBU_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_MAIN_DIFF_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EMPIRE_DIFF_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_BIFROST_DIFF_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_EASTRISE_DIFF_EI,
+		var_0_6.TOWER_STAGE_TYPE_TOWER_STAGE_NEBU_DIFF_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_VIDEO_TYPE_DEFAULT_EI, {
+	"DEFAULT",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_VIDEO_TYPE_PEAK_ARENA_EI, {
+	"PEAK_ARENA",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_VIDEO_TYPE_PEAK_ARENA_FINAL_EI, {
+	"PEAK_ARENA_FINAL",
+	2,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.BATTLE_VIDEO_TYPE_E, {
+	"BATTLE_VIDEO_TYPE",
+	".enums.BATTLE_VIDEO_TYPE",
+	{
+		var_0_6.BATTLE_VIDEO_TYPE_DEFAULT_EI,
+		var_0_6.BATTLE_VIDEO_TYPE_PEAK_ARENA_EI,
+		var_0_6.BATTLE_VIDEO_TYPE_PEAK_ARENA_FINAL_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_KNIGHT_EI, {
+	"TYPE_KNIGHT",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_UNITE_TOKEN_EI, {
+	"TYPE_UNITE_TOKEN",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_EQUIPMENT_EI, {
+	"TYPE_EQUIPMENT",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_TREASURE_EI, {
+	"TYPE_TREASURE",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_ARTIFACT_EI, {
+	"TYPE_ARTIFACT",
+	4,
+	5
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_PET_EI, {
+	"TYPE_PET",
+	5,
+	6
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_PET_EQUIPMENT_EI, {
+	"TYPE_PET_EQUIPMENT",
+	6,
+	7
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_PRECIOUS_SUIT_EI, {
+	"TYPE_PRECIOUS_SUIT",
+	7,
+	8
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.FORMATION_TYPE_SUCCUBA_EI, {
+	"TYPE_SUCCUBA",
+	8,
+	9
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.FORMATION_E, {
+	"FORMATION",
+	".enums.FORMATION",
+	{
+		var_0_6.FORMATION_TYPE_KNIGHT_EI,
+		var_0_6.FORMATION_TYPE_UNITE_TOKEN_EI,
+		var_0_6.FORMATION_TYPE_EQUIPMENT_EI,
+		var_0_6.FORMATION_TYPE_TREASURE_EI,
+		var_0_6.FORMATION_TYPE_ARTIFACT_EI,
+		var_0_6.FORMATION_TYPE_PET_EI,
+		var_0_6.FORMATION_TYPE_PET_EQUIPMENT_EI,
+		var_0_6.FORMATION_TYPE_PRECIOUS_SUIT_EI,
+		var_0_6.FORMATION_TYPE_SUCCUBA_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_PLAY_TYPE_REGULAR_EI, {
+	"REGULAR",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_PLAY_TYPE_DIFFICULTY_EI, {
+	"DIFFICULTY",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.TOWER_PLAY_TYPE_GROUP_EI, {
+	"GROUP",
+	2,
+	3
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.TOWER_PLAY_TYPE_E, {
+	"TOWER_PLAY_TYPE",
+	".enums.TOWER_PLAY_TYPE",
+	{
+		var_0_6.TOWER_PLAY_TYPE_REGULAR_EI,
+		var_0_6.TOWER_PLAY_TYPE_DIFFICULTY_EI,
+		var_0_6.TOWER_PLAY_TYPE_GROUP_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_VICTORY_MODE_NORMAL_EI, {
+	"NORMAL",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.BATTLE_VICTORY_MODE_ENEMY_HP_ZERO_EI, {
+	"ENEMY_HP_ZERO",
+	1,
+	1
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.BATTLE_VICTORY_MODE_E, {
+	"BATTLE_VICTORY_MODE",
+	".enums.BATTLE_VICTORY_MODE",
+	{
+		var_0_6.BATTLE_VICTORY_MODE_NORMAL_EI,
+		var_0_6.BATTLE_VICTORY_MODE_ENEMY_HP_ZERO_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_NPC_TYPE_UNKNOWN_EI, {
+	"UNKNOWN",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_NPC_TYPE_ASSASSIN_EI, {
+	"ASSASSIN",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_NPC_TYPE_BAGGAGE_EI, {
+	"BAGGAGE",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_NPC_TYPE_MASTER_EI, {
+	"MASTER",
+	3,
+	3
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.GROUP_BATTLE_NPC_TYPE_E, {
+	"GROUP_BATTLE_NPC_TYPE",
+	".enums.GROUP_BATTLE_NPC_TYPE",
+	{
+		var_0_6.GROUP_BATTLE_NPC_TYPE_UNKNOWN_EI,
+		var_0_6.GROUP_BATTLE_NPC_TYPE_ASSASSIN_EI,
+		var_0_6.GROUP_BATTLE_NPC_TYPE_BAGGAGE_EI,
+		var_0_6.GROUP_BATTLE_NPC_TYPE_MASTER_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_RESULT_TYPE_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_RESULT_TYPE_WIN_EI, {
+	"WIN",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_RESULT_TYPE_LOSE_EI, {
+	"LOSE",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.GROUP_BATTLE_RESULT_TYPE_PEACE_EI, {
+	"PEACE",
+	3,
+	3
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.GROUP_BATTLE_RESULT_TYPE_E, {
+	"GROUP_BATTLE_RESULT_TYPE",
+	".enums.GROUP_BATTLE_RESULT_TYPE",
+	{
+		var_0_6.GROUP_BATTLE_RESULT_TYPE_NONE_EI,
+		var_0_6.GROUP_BATTLE_RESULT_TYPE_WIN_EI,
+		var_0_6.GROUP_BATTLE_RESULT_TYPE_LOSE_EI,
+		var_0_6.GROUP_BATTLE_RESULT_TYPE_PEACE_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.COMMON_PASSCARD_LEVEL_AWARD_TYPE_FREE_EI, {
+	"FREE",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.COMMON_PASSCARD_LEVEL_AWARD_TYPE_PAY_EI, {
+	"PAY",
+	1,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.COMMON_PASSCARD_LEVEL_AWARD_TYPE_E, {
+	"COMMON_PASSCARD_LEVEL_AWARD_TYPE",
+	".enums.COMMON_PASSCARD_LEVEL_AWARD_TYPE",
+	{
+		var_0_6.COMMON_PASSCARD_LEVEL_AWARD_TYPE_FREE_EI,
+		var_0_6.COMMON_PASSCARD_LEVEL_AWARD_TYPE_PAY_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.SNAPSHOT_ONLINE_USERS_TYPE_ALLIANCE_EI, {
+	"ALLIANCE",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.SNAPSHOT_ONLINE_USERS_TYPE_GUILD_EI, {
+	"GUILD",
+	1,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.SNAPSHOT_ONLINE_USERS_TYPE_E, {
+	"SNAPSHOT_ONLINE_USERS_TYPE",
+	".enums.SNAPSHOT_ONLINE_USERS_TYPE",
+	{
+		var_0_6.SNAPSHOT_ONLINE_USERS_TYPE_ALLIANCE_EI,
+		var_0_6.SNAPSHOT_ONLINE_USERS_TYPE_GUILD_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RETRO_BOX_AWARD_TYPE_ONE_EI, {
+	"ONE",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.RETRO_BOX_AWARD_TYPE_ALL_EI, {
+	"ALL",
+	1,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.RETRO_BOX_AWARD_TYPE_E, {
+	"RETRO_BOX_AWARD_TYPE",
+	".enums.RETRO_BOX_AWARD_TYPE",
+	{
+		var_0_6.RETRO_BOX_AWARD_TYPE_ONE_EI,
+		var_0_6.RETRO_BOX_AWARD_TYPE_ALL_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.OUTPOST_STATE_TYPE_KNIGHT_HP_EI, {
+	"KNIGHT_HP",
+	0,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.OUTPOST_STATE_TYPE_KNIGHT_DEMONIC_EI, {
+	"KNIGHT_DEMONIC",
+	1,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.OUTPOST_STATE_TYPE_KNIGHT_HUNGER_EI, {
+	"KNIGHT_HUNGER",
+	2,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.OUTPOST_STATE_TYPE_KNIGHT_FATIGUE_EI, {
+	"KNIGHT_FATIGUE",
+	3,
+	4
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.OUTPOST_STATE_TYPE_KNIGHT_MOOD_EI, {
+	"KNIGHT_MOOD",
+	4,
+	5
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.OUTPOST_STATE_TYPE_E, {
+	"OUTPOST_STATE_TYPE",
+	".enums.OUTPOST_STATE_TYPE",
+	{
+		var_0_6.OUTPOST_STATE_TYPE_KNIGHT_HP_EI,
+		var_0_6.OUTPOST_STATE_TYPE_KNIGHT_DEMONIC_EI,
+		var_0_6.OUTPOST_STATE_TYPE_KNIGHT_HUNGER_EI,
+		var_0_6.OUTPOST_STATE_TYPE_KNIGHT_FATIGUE_EI,
+		var_0_6.OUTPOST_STATE_TYPE_KNIGHT_MOOD_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_HP_EI, {
+	"HP",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_ROUND_EI, {
+	"ROUND",
+	2,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_E, {
+	"ENUM",
+	".enums.DOMAIN_GRADE_TYPE.ENUM",
+	{
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_NONE_EI,
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_HP_EI,
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_ROUND_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_HP_EI, {
+	"HP",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_ROUND_EI, {
+	"ROUND",
+	2,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ENUM_E, {
+	"ENUM",
+	".enums.DOMAIN_GRADE_TYPE.ENUM",
+	{
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_NONE_EI,
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_HP_EI,
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_ROUND_EI
+	}
+})
+descriptor_helper.descriptorFunc(var_0_6.DOMAIN_GRADE_TYPE_ME, {
+	"DOMAIN_GRADE_TYPE",
+	".enums.DOMAIN_GRADE_TYPE",
+	{},
+	{
+		var_0_6.DOMAIN_GRADE_TYPE_ENUM_E
+	},
+	{},
+	false,
+	{}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_S_EI, {
+	"S",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_A_EI, {
+	"A",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_B_EI, {
+	"B",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_C_EI, {
+	"C",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_E, {
+	"ENUM",
+	".enums.DOMAIN_GRADE_VALUE.ENUM",
+	{
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_NONE_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_S_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_A_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_B_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_C_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_S_EI, {
+	"S",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_A_EI, {
+	"A",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_B_EI, {
+	"B",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_C_EI, {
+	"C",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ENUM_E, {
+	"ENUM",
+	".enums.DOMAIN_GRADE_VALUE.ENUM",
+	{
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_NONE_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_S_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_A_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_B_EI,
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_C_EI
+	}
+})
+descriptor_helper.descriptorFunc(var_0_6.DOMAIN_GRADE_VALUE_ME, {
+	"DOMAIN_GRADE_VALUE",
+	".enums.DOMAIN_GRADE_VALUE",
+	{},
+	{
+		var_0_6.DOMAIN_GRADE_VALUE_ENUM_E
+	},
+	{},
+	false,
+	{}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_TURNTABLE_EI, {
+	"TURNTABLE",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_SLOT_EI, {
+	"SLOT",
+	2,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_E, {
+	"ENUM",
+	".enums.DOMAIN_SURPRISE_TYPE.ENUM",
+	{
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_NONE_EI,
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_TURNTABLE_EI,
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_SLOT_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_TURNTABLE_EI, {
+	"TURNTABLE",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_SLOT_EI, {
+	"SLOT",
+	2,
+	2
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_E, {
+	"ENUM",
+	".enums.DOMAIN_SURPRISE_TYPE.ENUM",
+	{
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_NONE_EI,
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_TURNTABLE_EI,
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_SLOT_EI
+	}
+})
+descriptor_helper.descriptorFunc(var_0_6.DOMAIN_SURPRISE_TYPE_ME, {
+	"DOMAIN_SURPRISE_TYPE",
+	".enums.DOMAIN_SURPRISE_TYPE",
+	{},
+	{
+		var_0_6.DOMAIN_SURPRISE_TYPE_ENUM_E
+	},
+	{},
+	false,
+	{}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_FORMATION_EI, {
+	"FORMATION",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MATCH_FORMATION_EI, {
+	"MATCH_FORMATION",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_BATTLE_EI, {
+	"BATTLE",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MAX_EI, {
+	"MAX",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_E, {
+	"ENUM",
+	".enums.ANCIENT_OPERATE_STATUS.ENUM",
+	{
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_NONE_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_FORMATION_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MATCH_FORMATION_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_BATTLE_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MAX_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_FORMATION_EI, {
+	"FORMATION",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MATCH_FORMATION_EI, {
+	"MATCH_FORMATION",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_BATTLE_EI, {
+	"BATTLE",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MAX_EI, {
+	"MAX",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ENUM_E, {
+	"ENUM",
+	".enums.ANCIENT_OPERATE_STATUS.ENUM",
+	{
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_NONE_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_FORMATION_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MATCH_FORMATION_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_BATTLE_EI,
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_MAX_EI
+	}
+})
+descriptor_helper.descriptorFunc(var_0_6.ANCIENT_OPERATE_STATUS_ME, {
+	"ANCIENT_OPERATE_STATUS",
+	".enums.ANCIENT_OPERATE_STATUS",
+	{},
+	{
+		var_0_6.ANCIENT_OPERATE_STATUS_ENUM_E
+	},
+	{},
+	false,
+	{}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_EI, {
+	"DISTRIBUTE",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_DONE_EI, {
+	"DISTRIBUTE_DONE",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_NOT_OPEN_EI, {
+	"NOT_OPEN",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_MAX_EI, {
+	"MAX",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_E, {
+	"ENUM",
+	".enums.ANCIENT_LOOT_STATUS.ENUM",
+	{
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_NONE_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_DONE_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_NOT_OPEN_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_MAX_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_EI, {
+	"DISTRIBUTE",
+	1,
+	1
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_DONE_EI, {
+	"DISTRIBUTE_DONE",
+	2,
+	2
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_NOT_OPEN_EI, {
+	"NOT_OPEN",
+	3,
+	3
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_MAX_EI, {
+	"MAX",
+	4,
+	4
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ENUM_E, {
+	"ENUM",
+	".enums.ANCIENT_LOOT_STATUS.ENUM",
+	{
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_NONE_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_DISTRIBUTE_DONE_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_NOT_OPEN_EI,
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_MAX_EI
+	}
+})
+descriptor_helper.descriptorFunc(var_0_6.ANCIENT_LOOT_STATUS_ME, {
+	"ANCIENT_LOOT_STATUS",
+	".enums.ANCIENT_LOOT_STATUS",
+	{},
+	{
+		var_0_6.ANCIENT_LOOT_STATUS_ENUM_E
+	},
+	{},
+	false,
+	{}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_PASSCARD_EI, {
+	"PASSCARD",
+	1,
+	1
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_E, {
+	"ENUM",
+	".enums.NEW_SLG_TEAM_SOURCE.ENUM",
+	{
+		var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_NONE_EI,
+		var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_PASSCARD_EI
+	}
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_NONE_EI, {
+	"NONE",
+	0,
+	0
+})
+descriptor_helper.enumValueDescriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_PASSCARD_EI, {
+	"PASSCARD",
+	1,
+	1
+})
+descriptor_helper.enumDescriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_E, {
+	"ENUM",
+	".enums.NEW_SLG_TEAM_SOURCE.ENUM",
+	{
+		var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_NONE_EI,
+		var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_PASSCARD_EI
+	}
+})
+descriptor_helper.descriptorFunc(var_0_6.NEW_SLG_TEAM_SOURCE_ME, {
+	"NEW_SLG_TEAM_SOURCE",
+	".enums.NEW_SLG_TEAM_SOURCE",
+	{},
+	{
+		var_0_6.NEW_SLG_TEAM_SOURCE_ENUM_E
+	},
+	{},
+	false,
+	{}
+})
+
+var_0_6.ANCIENT_LOOT_STATUS = protobuf.Message(var_0_6.ANCIENT_LOOT_STATUS_ME)
+var_0_6.ANCIENT_OPERATE_STATUS = protobuf.Message(var_0_6.ANCIENT_OPERATE_STATUS_ME)
+var_0_6.DOMAIN_GRADE_TYPE = protobuf.Message(var_0_6.DOMAIN_GRADE_TYPE_ME)
+var_0_6.DOMAIN_GRADE_VALUE = protobuf.Message(var_0_6.DOMAIN_GRADE_VALUE_ME)
+var_0_6.DOMAIN_SURPRISE_TYPE = protobuf.Message(var_0_6.DOMAIN_SURPRISE_TYPE_ME)
+var_0_6.NEW_SLG_TEAM_SOURCE = protobuf.Message(var_0_6.NEW_SLG_TEAM_SOURCE_ME)
+
+return var_0_6

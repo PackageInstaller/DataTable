@@ -1,0 +1,40 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://qzlsgbi1nc3mh"
+
+function var_0_0:__ctor()
+	self.m_isStarMaxController = self:getController("isStarMax")
+	self.m_costNumController = self:getController("costNum")
+	self.m_flowerController = self:getController("flower")
+	self.m_lvText = self:getChild("lvText")
+	self.m_flowerImg1 = self:getChild("flowerImg1")
+	self.m_eff1 = self:getChild("eff1")
+	self.m_flowerImg2 = self:getChild("flowerImg2")
+	self.m_eff2 = self:getChild("eff2")
+	self.m_flowerImg3 = self:getChild("flowerImg3")
+	self.m_eff3 = self:getChild("eff3")
+	self.m_flowerImg4 = self:getChild("flowerImg4")
+	self.m_eff4 = self:getChild("eff4")
+	self.m_flowerImg5 = self:getChild("flowerImg5")
+	self.m_eff5 = self:getChild("eff5")
+	self.m_attrBg1 = self:getChild("attrBg1")
+	self.m_attrComp1 = self:getChild("attrComp1")
+	self.m_attrBg2 = self:getChild("attrBg2")
+	self.m_attrComp2 = self:getChild("attrComp2")
+	self.m_attrBg3 = self:getChild("attrBg3")
+	self.m_attrComp3 = self:getChild("attrComp3")
+	self.m_attrBg4 = self:getChild("attrBg4")
+	self.m_attrComp4 = self:getChild("attrComp4")
+	self.m_attrBg5 = self:getChild("attrBg5")
+	self.m_attrComp5 = self:getChild("attrComp5")
+	self.m_talentSkillComp = self:getChild("talentSkillComp")
+	self.m_resIcon1 = self:getChild("resIcon1")
+	self.m_resIcon2 = self:getChild("resIcon2")
+	self.m_LvUpBtn = self:getChild("LvUpBtn")
+	self.m_maxComp = self:getChild("maxComp")
+	self.m_enterTransition = self:getTransition("enter")
+	self.m_backTransition = self:getTransition("back")
+	self.m_advanceTransition = self:getTransition("advance")
+end
+
+return var_0_0

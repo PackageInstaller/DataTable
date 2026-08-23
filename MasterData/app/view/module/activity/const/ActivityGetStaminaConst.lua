@@ -1,0 +1,9 @@
+﻿return {
+	TIME_EVENT_INFO_ID = 4,
+	RECEIVE_STATE = {
+		CAN_RECEIVE = 0,
+		NOT_RECEIVED = 2,
+		RECEIVED = 3,
+		CAN_RETROACTIVE = 1
+	}
+}

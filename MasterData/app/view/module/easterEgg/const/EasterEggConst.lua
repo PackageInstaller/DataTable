@@ -1,0 +1,14 @@
+﻿return {
+	TIP_TIME_INTERVAL = 5,
+	PASSWORD_NUM = 4,
+	USER_LIKE_MAX_COUNT = 1,
+	TALK_NUM = 6,
+	EGG_TYPE = {
+		CLICK_TYPE = 1,
+		MOVE_POS_TYPE = 2
+	},
+	OPEN_TYPE = {
+		PASSWORD = 1,
+		NONE = 0
+	}
+}

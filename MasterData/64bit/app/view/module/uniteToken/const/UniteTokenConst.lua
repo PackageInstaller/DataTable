@@ -1,0 +1,73 @@
+﻿local var_0_0 = {
+	STAR_MAX = 5,
+	CTRL_SKILL_TIPS_RIGHT = 1,
+	CTRL_SKILL_TIPS_LEFT = 0,
+	CTRL_TOKEN_OWN = 1,
+	CTRL_TOKEN_UNOWN = 0,
+	CTRL_SKILLINFO_POP = 1,
+	CTRL_SKILLINFO_COMP = 0,
+	CTRL_TOKEN_FORMAT = 1,
+	CTRL_TOKEN_UNFORMAT = 0,
+	CTRL_FORMAT_UNLV = 2,
+	CTRL_FORMAT_TODO = 1,
+	CTRL_FORMAT_DONE = 0,
+	CTRL_TALENT_ACTIVE = 1,
+	CTRL_TALENT_UNACTIVE = 0,
+	CTRL_UNOWN_KNIGHT = 1,
+	CTRL_OWN_KNIGHT = 0,
+	CTRL_ATTR_MAX = 2,
+	CTRL_ATTR_SELECT = 1,
+	CTRL_ATTR_NORMAL = 0,
+	CTRL_COST_UNENOUGH = 1,
+	CTRL_COST_ENOUGH = 0,
+	CTRL_AWAKEN_DONE = 2,
+	CTRL_AWAKEN_TODO = 1,
+	CTRL_AWAKEN_NO = 0,
+	CTRL_STAR_MAX = 1,
+	CTRL_STAR_UNMAX = 0,
+	CTRL_LV_MAX = 1,
+	CTRL_LV_UNMAX = 0,
+	LVUP_COST_TYPE2 = 32,
+	LVUP_COST_TYPE1 = 35,
+	COMMON_TOKEN_PICEC_ID = 17,
+	TOTAL_UNITE_VALUE_ID = 602,
+	INIT_UNITE_VALUE_ID = 601,
+	FORMAT_UNITE_NUM_MAX = 4,
+	COMPOSE_KNIGHT_MAX = 3,
+	AWAKEN_ATTR_NUM = 4,
+	STAR_ATTR_NUM = 4,
+	LV_ATTR_NUM = 4,
+	BASE_ATTR_NUM = 4,
+	DEV_TYPE = {
+		INFO = 1,
+		STAR_UP = 3,
+		LV_UP = 2
+	},
+	SUCCESS_TYPE = {
+		COMPOSE = 1,
+		INCREASE = 4,
+		START_UP = 3,
+		AWAKEN = 2
+	}
+}
+
+var_0_0.URL = {
+	[var_0_0.SUCCESS_TYPE.COMPOSE] = {
+		pkg = "uniteToken",
+		comp = "UniteTokenComposeBottomComp"
+	},
+	[var_0_0.SUCCESS_TYPE.AWAKEN] = {
+		pkg = "uniteToken",
+		comp = "UniteTokenAwakeBottomComp"
+	},
+	[var_0_0.SUCCESS_TYPE.START_UP] = {
+		pkg = "uniteToken",
+		comp = "UniteTokenSkillBottomComp"
+	},
+	[var_0_0.SUCCESS_TYPE.INCREASE] = {
+		pkg = "uniteToken",
+		comp = "UniteTokenSkillBottomComp"
+	}
+}
+
+return var_0_0

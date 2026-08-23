@@ -1,0 +1,23 @@
+﻿return {
+	RANK_AWARD_TYPE = 98,
+	NOMARL_PLAY_NUM = 90,
+	LIMIT_SPECIAL_POS = 1,
+	LIMIT_POS_NUM = 7,
+	LIMIT_PLAY_NUM = 91,
+	NORMAL_POS_NUM = 6,
+	BOSS_TYPE = {
+		LIMIT = 2,
+		NOMARL = 1
+	},
+	BOSS_STATE = {
+		FIGHTING = 2,
+		WAIT = 3,
+		UNOPEN_LIMIT = 4,
+		LOCK = 0,
+		CAN_BATTLE = 1
+	},
+	TIME_TYPE = {
+		DAILY = 1,
+		WEEKDAY = 2
+	}
+}

@@ -1,0 +1,109 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://qrucqci6oqi7kk38e"
+
+function var_0_0:__ctor()
+	self.m_isGameController = self:getController("isGame")
+	self.m_pauseGameController = self:getController("pauseGame")
+	self.m_typeController = self:getController("type")
+	self.m_infoComp = self:getChild("infoComp")
+	self.m_inGameComp = self:getChild("inGameComp")
+	self.m_cardConsoleComp = self:getChild("cardConsoleComp")
+	self.m_topBarComp = self:getChild("topBarComp")
+	self.m_pauseComp = self:getChild("pauseComp")
+	self.m_effRefresh = self:getChild("effRefresh")
+	self.m_enterTransition = self:getTransition("enter")
+	self.m_refreshTransition = self:getTransition("refresh")
+end
+
+var_0_0.IsGameCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.PauseGameCtrl = {
+	page0 = 0,
+	page1 = 1
+}
+var_0_0.TypeCtrl = {
+	page51 = 62,
+	page23 = 34,
+	page59 = 70,
+	page8 = 19,
+	page43 = 54,
+	page36 = 47,
+	page34 = 45,
+	page32 = 43,
+	page49 = 60,
+	page17 = 28,
+	page19 = 30,
+	page45 = 56,
+	page66 = 77,
+	page29 = 40,
+	page70 = 81,
+	page72 = 83,
+	page73 = 84,
+	page76 = 87,
+	page13 = 24,
+	page77 = 88,
+	page64 = 75,
+	page22 = 33,
+	page38 = 49,
+	page5 = 5,
+	page24 = 35,
+	page47 = 58,
+	page40 = 51,
+	page10 = 21,
+	page1 = 1,
+	page67 = 78,
+	page0 = 0,
+	page16 = 27,
+	page35 = 46,
+	page61 = 72,
+	page6 = 6,
+	page74 = 85,
+	page50 = 61,
+	page68 = 79,
+	page33 = 44,
+	page20 = 31,
+	page7 = 18,
+	page55 = 66,
+	page12 = 23,
+	page53 = 64,
+	page15 = 26,
+	page65 = 76,
+	page62 = 73,
+	page78 = 89,
+	page25 = 36,
+	page41 = 52,
+	page27 = 38,
+	page31 = 42,
+	page48 = 59,
+	page2 = 2,
+	page18 = 29,
+	page9 = 20,
+	page57 = 68,
+	page44 = 55,
+	page69 = 80,
+	page42 = 53,
+	page58 = 69,
+	page21 = 32,
+	page3 = 3,
+	page26 = 37,
+	page54 = 65,
+	page28 = 39,
+	page52 = 63,
+	page71 = 82,
+	page14 = 25,
+	page63 = 74,
+	page39 = 50,
+	page46 = 57,
+	page11 = 22,
+	page30 = 41,
+	page37 = 48,
+	page4 = 4,
+	page60 = 71,
+	page56 = 67,
+	page75 = 86
+}
+
+return var_0_0

@@ -1,0 +1,16 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://kvb3znepq7aaibna"
+
+function var_0_0:__ctor()
+	self.m_isShowTxtController = self:getController("isShowTxt")
+	self.m_bgLoader = self:getChild("bgLoader")
+	self.m_clickComp = self:getChild("clickComp")
+end
+
+var_0_0.IsShowTxtCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+
+return var_0_0

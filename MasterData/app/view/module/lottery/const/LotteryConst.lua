@@ -1,0 +1,10 @@
+﻿return {
+	COST_ID = 96,
+	MAX_RECEIVE_NUM = 100,
+	MAP_GRID_COUNT = 20,
+	GRID_STATE = {
+		MASK = 1,
+		REWARDED = 2,
+		NONE = 0
+	}
+}

@@ -1,0 +1,9 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://gc6wunfkh36u23"
+
+function var_0_0:__ctor()
+	self.m_headIcon = self:getChild("headIcon")
+end
+
+return var_0_0

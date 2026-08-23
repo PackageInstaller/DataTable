@@ -1,0 +1,40 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://ziwfw8v5116r73q"
+
+function var_0_0:__ctor()
+	self.m_selIndexController = self:getController("selIndex")
+	self.m_emptyController = self:getController("empty")
+	self.m_knightList = self:getChild("knightList")
+	self.m_quickUpBtn = self:getChild("quickUpBtn")
+	self.m_tabAll = self:getChild("tabAll")
+	self.m_tab1 = self:getChild("tab1")
+	self.m_tab2 = self:getChild("tab2")
+	self.m_tab3 = self:getChild("tab3")
+	self.m_tab4 = self:getChild("tab4")
+	self.m_tab5 = self:getChild("tab5")
+	self.m_lineUpNumTxt = self:getChild("lineUpNumTxt")
+	self.m_allNumTxt = self:getChild("allNumTxt")
+	self.m_fightValueTxt = self:getChild("fightValueTxt")
+	self.m_knightPos1 = self:getChild("knightPos1")
+	self.m_knightPos2 = self:getChild("knightPos2")
+	self.m_knightPos3 = self:getChild("knightPos3")
+	self.m_knightPos4 = self:getChild("knightPos4")
+	self.m_knightPos5 = self:getChild("knightPos5")
+	self.m_knightPos6 = self:getChild("knightPos6")
+	self.m_knightPos7 = self:getChild("knightPos7")
+	self.m_knightPos8 = self:getChild("knightPos8")
+	self.m_knightPos9 = self:getChild("knightPos9")
+	self.m_knightPos10 = self:getChild("knightPos10")
+	self.m_knightPos11 = self:getChild("knightPos11")
+	self.m_knightPos12 = self:getChild("knightPos12")
+	self.m_knightPos13 = self:getChild("knightPos13")
+	self.m_knightPos14 = self:getChild("knightPos14")
+	self.m_knightPos15 = self:getChild("knightPos15")
+	self.m_knightPos16 = self:getChild("knightPos16")
+	self.m_knights = self:getChild("knights")
+	self.m_topBarComp = self:getChild("topBarComp")
+	self.m_enterTransition = self:getTransition("enter")
+end
+
+return var_0_0

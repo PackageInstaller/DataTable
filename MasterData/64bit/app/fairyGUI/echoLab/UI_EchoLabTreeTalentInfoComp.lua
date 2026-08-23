@@ -1,0 +1,45 @@
+﻿local var_0_0 = {}
+
+var_0_0.URL = "ui://2egchbz1jth63g"
+
+function var_0_0:__ctor()
+	self.m_nodeTypeController = self:getController("nodeType")
+	self.m_isActiveController = self:getController("isActive")
+	self.m_costNumController = self:getController("costNum")
+	self.m_isBigNodeController = self:getController("isBigNode")
+	self.m_hasConditionController = self:getController("hasCondition")
+	self.m_bg = self:getChild("bg")
+	self.m_talentIcon = self:getChild("talentIcon")
+	self.m_talentName = self:getChild("talentName")
+	self.m_attrList = self:getChild("attrList")
+	self.m_bigNodeDescText = self:getChild("bigNodeDescText")
+	self.m_conditionList = self:getChild("conditionList")
+	self.m_resComp1 = self:getChild("resComp1")
+	self.m_resComp2 = self:getChild("resComp2")
+	self.m_activeBtn = self:getChild("activeBtn")
+end
+
+var_0_0.NodeTypeCtrl = {
+	page3 = 2,
+	page2 = 3,
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.IsActiveCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.CostNumCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.IsBigNodeCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+var_0_0.HasConditionCtrl = {
+	page1 = 1,
+	page0 = 0
+}
+
+return var_0_0
