@@ -17,63 +17,63 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 
 ## 分支列表
 
-| 分支 | 游戏 |
-|---|---|
-| `game/AetherGazer` | AetherGazer |
-| `game/AlchemyStars` | AlchemyStars |
-| `game/AnchorPanic` | AnchorPanic |
-| `game/AngelicaAsterR` | AngelicaAsterR |
-| `game/AzurLane` | AzurLane |
-| `game/BlackBeacon` | BlackBeacon |
-| `game/CounterSide` | CounterSide |
-| `game/CuisineDimension` | CuisineDimension |
-| `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID |
-| `game/DotAbyss` | DotAbyss |
-| `game/Echocalypse` | Echocalypse |
-| `game/Echonox24⁄36` | Echonox24⁄36 |
-| `game/Embers` | Embers |
-| `game/ErrorGameReset` | ErrorGameReset |
-| `game/EverSoul` | EverSoul |
-| `game/FalloutTamira` | FalloutTamira |
-| `game/FyorasSouls` | FyorasSouls |
-| `game/GirlsCreationR` | GirlsCreationR |
-| `game/GoddessOrder` | GoddessOrder |
-| `game/IMYSR` | IMYSR |
-| `game/KalpaOfUniverse` | KalpaOfUniverse |
-| `game/LostSword` | LostSword |
-| `game/MAkeDrama` | MAkeDrama |
-| `game/ManasisRefranin` | ManasisRefranin |
-| `game/MementoMori` | MementoMori |
-| `game/MillenniumWarAigis` | MillenniumWarAigis |
-| `game/MirrenStarLegends` | MirrenStarLegends |
-| `game/ModelWarGirl` | ModelWarGirl |
-| `game/MoeCove` | MoeCove |
-| `game/MonmusuTDx` | MonmusuTDx |
-| `game/MuvLuvGirlsGardenX` | MuvLuvGirlsGardenX |
-| `game/OZRewrite` | OZRewrite |
-| `game/OrphansOrder` | OrphansOrder |
-| `game/OshiroProjectRE` | OshiroProjectRE |
-| `game/OtogiFrontierR` | OtogiFrontierR |
-| `game/PathToNowhere` | PathToNowhere |
-| `game/ReverseBlue` | ReverseBlue |
-| `game/RevivedWitch` | RevivedWitch |
-| `game/RezoririX` | RezoririX |
-| `game/RlyehShoujotaiX` | RlyehShoujotaiX |
-| `game/SakunaHinuka` | SakunaHinuka |
-| `game/SonOfShenyin` | SonOfShenyin |
-| `game/SoulOfDragon` | SoulOfDragon |
-| `game/SoulTide` | SoulTide |
-| `game/SphereSeven` | SphereSeven |
-| `game/StarResonance` | StarResonance |
-| `game/StarSavior` | StarSavior |
-| `game/StarseedAsniaTrigger` | StarseedAsniaTrigger |
-| `game/TaimaninSquad` | TaimaninSquad |
-| `game/Techcronossx` | Techcronossx |
-| `game/TenkeiParadox` | TenkeiParadox |
-| `game/TrickcalChibiGo` | TrickcalChibiGo |
-| `game/TwinkleStarKnights` | TwinkleStarKnights |
-| `game/WitchSpring` | WitchSpring |
+| 分支 | 游戏 | 中文名 |
+|---|---|---|
+| `game/AetherGazer` | AetherGazer | 大眼(深空之眼) |
+| `game/AlchemyStars` | AlchemyStars | 白鸡 |
+| `game/AnchorPanic` | AnchorPanic | 锚点降临 |
+| `game/AngelicaAsterR` | AngelicaAsterR | 当归紫苑 |
+| `game/AzurLane` | AzurLane | 碧蓝航线 |
+| `game/BlackBeacon` | BlackBeacon | 黑色信标 |
+| `game/CounterSide` | CounterSide | 未来战 |
+| `game/CuisineDimension` | CuisineDimension | 料理次元 |
+| `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID | 电击文库灵境交错 |
+| `game/DotAbyss` | DotAbyss | 鸡渊 |
+| `game/Echocalypse` | Echocalypse | 绯红神约 |
+| `game/Echonox24⁄36` | Echonox24⁄36 | 时序残响 |
+| `game/Embers` | Embers | 辉烬 |
+| `game/ErrorGameReset` | ErrorGameReset | 404错误游戏 |
+| `game/EverSoul` | EverSoul | 永远之魂(误) |
+| `game/FalloutTamira` | FalloutTamira | 异尘：达米拉 |
+| `game/FyorasSouls` | FyorasSouls | 芙娅之魂 |
+| `game/GirlsCreationR` | GirlsCreationR | 草画 |
+| `game/GoddessOrder` | GoddessOrder | 最速关服二游 |
+| `game/IMYSR` | IMYSR | 爱丽丝圣礼 |
+| `game/KalpaOfUniverse` | KalpaOfUniverse | 天地劫 |
+| `game/LostSword` | LostSword | 丢剑 |
+| `game/MAkeDrama` | MAkeDrama | MAkeDrama |
+| `game/ManasisRefranin` | ManasisRefranin | 麻辣鸡丝 |
+| `game/MementoMori` | MementoMori | 妹妹头 |
+| `game/MillenniumWarAigis` | MillenniumWarAigis | 千年战争 |
+| `game/MirrenStarLegends` | MirrenStarLegends | 碳猫语录 |
+| `game/ModelWarGirl` | ModelWarGirl | 高能手办团 |
+| `game/MoeCove` | MoeCove | 苍蓝避风港 |
+| `game/MonmusuTDx` | MonmusuTDx | 草正太 |
+| `game/MuvLuvGirlsGardenX` | MuvLuvGirlsGardenX | 抹布 |
+| `game/OZRewrite` | OZRewrite | OZRewrite |
+| `game/OrphansOrder` | OrphansOrder | 孤儿的工作 |
+| `game/OshiroProjectRE` | OshiroProjectRE | 我去没r18(御城) |
+| `game/OtogiFrontierR` | OtogiFrontierR | 村人 |
+| `game/PathToNowhere` | PathToNowhere | 无期迷途 |
+| `game/ReverseBlue` | ReverseBlue | 反向蓝 |
+| `game/RevivedWitch` | RevivedWitch | 复苏的魔女 |
+| `game/RezoririX` | RezoririX | レゾリリ |
+| `game/RlyehShoujotaiX` | RlyehShoujotaiX | 邪神酱(误) |
+| `game/SakunaHinuka` | SakunaHinuka | 天穗手游 |
+| `game/SonOfShenyin` | SonOfShenyin | 神隐之子 |
+| `game/SoulOfDragon` | SoulOfDragon | 龙魂旅人 |
+| `game/SoulTide` | SoulTide | 灵魂潮汐 |
+| `game/SphereSeven` | SphereSeven | 七星传 |
+| `game/StarResonance` | StarResonance | 我去星批 |
+| `game/StarSavior` | StarSavior | 你也是救援者？ |
+| `game/StarseedAsniaTrigger` | StarseedAsniaTrigger | 星链计划：未来少女 |
+| `game/TaimaninSquad` | TaimaninSquad | 对魔忍特遣队 |
+| `game/Techcronossx` | Techcronossx | 铁扣连接 |
+| `game/TenkeiParadox` | TenkeiParadox | 天启 |
+| `game/TrickcalChibiGo` | TrickcalChibiGo | 坨坨可爱捏 |
+| `game/TwinkleStarKnights` | TwinkleStarKnights | 闪耀星骑士 |
+| `game/WitchSpring` | WitchSpring | 第五部啥时候出？ |
 
 ## 更新数据
 
-每个游戏的数据更新直接提交到对应的 `game/<游戏名>` 分支，`master` 只维护上面的索引。
+每个游戏的数据更新直接提交到对应的 `game/<游戏名>` 分支，`master` 只维护上面的索引。游戏分支不放这份索引；只有原来就自带 README 的游戏（目前是 `AetherGazer`）会保留自己的说明。
