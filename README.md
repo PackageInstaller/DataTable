@@ -29,6 +29,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/CuisineDimension` | CuisineDimension |
 | `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID |
 | `game/DotAbyss` | DotAbyss |
+| `game/Echocalypse` | Echocalypse |
 | `game/Echonox24⁄36` | Echonox24⁄36 |
 | `game/Embers` | Embers |
 | `game/ErrorGameReset` | ErrorGameReset |
