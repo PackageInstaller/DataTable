@@ -1,0 +1,684 @@
+{
+  "packVer": 1,
+  "charID": 1206,
+  "bgmID": 45,
+  "grpCnt": [],
+  "actGrp": [
+    {
+      "grpID": 1,
+      "touch": 0,
+      "clothToy": 0,
+      "idle": {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          110,
+          210,
+          310
+        ]
+      },
+      "acts": [
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            112,
+            212,
+            312
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            111,
+            211,
+            311
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            113,
+            213,
+            313
+          ]
+        }
+      ],
+      "finish": [
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            171,
+            271,
+            371
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            175,
+            275,
+            375
+          ]
+        }
+      ],
+      "finEffect": [
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "diff": 0,
+      "triggerSound": 0,
+      "effectId": 0,
+      "effectTriggerKind": 0,
+      "effectPosKind": 0,
+      "effectPosSetting": 0,
+      "actTalks": []
+    },
+    {
+      "grpID": 2,
+      "touch": 1,
+      "clothToy": 2,
+      "idle": {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          120,
+          220,
+          320
+        ]
+      },
+      "acts": [
+        {
+          "isLoop": false,
+          "seID1": 2109,
+          "seID2": 2111,
+          "talkAry": [
+            121,
+            221,
+            321
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2109,
+          "seID2": 2111,
+          "talkAry": [
+            121,
+            221,
+            321
+          ]
+        }
+      ],
+      "finish": [
+        {
+          "isLoop": false,
+          "seID1": 2109,
+          "seID2": 2111,
+          "talkAry": [
+            172,
+            272,
+            372
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            175,
+            275,
+            375
+          ]
+        }
+      ],
+      "finEffect": [
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "diff": 2,
+      "triggerSound": 2006,
+      "effectId": 0,
+      "effectTriggerKind": 0,
+      "effectPosKind": 0,
+      "effectPosSetting": 0,
+      "actTalks": [
+        {
+          "val": 80,
+          "talkAry": [
+            122,
+            222,
+            322
+          ],
+          "actTalks": [
+            [
+              123,
+              223,
+              323
+            ],
+            [
+              123,
+              223,
+              323
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "grpID": 3,
+      "touch": 1,
+      "clothToy": 0,
+      "idle": {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          130,
+          230,
+          330
+        ]
+      },
+      "acts": [
+        {
+          "isLoop": false,
+          "seID1": 2113,
+          "seID2": 2115,
+          "talkAry": [
+            131,
+            231,
+            331
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2113,
+          "seID2": 2115,
+          "talkAry": [
+            131,
+            231,
+            331
+          ]
+        }
+      ],
+      "finish": [
+        {
+          "isLoop": false,
+          "seID1": 2113,
+          "seID2": 2115,
+          "talkAry": [
+            173,
+            273,
+            373
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            175,
+            275,
+            375
+          ]
+        }
+      ],
+      "finEffect": [
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "diff": 0,
+      "triggerSound": 0,
+      "effectId": 0,
+      "effectTriggerKind": 0,
+      "effectPosKind": 0,
+      "effectPosSetting": 0,
+      "actTalks": [
+        {
+          "val": 80,
+          "talkAry": [
+            132,
+            232,
+            332
+          ],
+          "actTalks": [
+            [
+              133,
+              233,
+              333
+            ],
+            [
+              133,
+              233,
+              333
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "grpID": 4,
+      "touch": 1,
+      "clothToy": 2,
+      "idle": {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          140,
+          240,
+          340
+        ]
+      },
+      "acts": [
+        {
+          "isLoop": false,
+          "seID1": 2101,
+          "seID2": 2106,
+          "talkAry": [
+            141,
+            241,
+            341
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2106,
+          "seID2": 2106,
+          "talkAry": [
+            141,
+            241,
+            341
+          ]
+        }
+      ],
+      "finish": [
+        {
+          "isLoop": false,
+          "seID1": 2101,
+          "seID2": 2106,
+          "talkAry": [
+            174,
+            274,
+            374
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 0,
+          "seID2": 0,
+          "talkAry": [
+            175,
+            275,
+            375
+          ]
+        }
+      ],
+      "finEffect": [
+        {
+          "isLoop": false,
+          "seID1": 2021,
+          "seID2": 2024,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "isLoop": false,
+          "seID1": 2011,
+          "seID2": 2014,
+          "talkAry": [
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "diff": 2,
+      "triggerSound": 2006,
+      "effectId": 0,
+      "effectTriggerKind": 0,
+      "effectPosKind": 0,
+      "effectPosSetting": 0,
+      "actTalks": [
+        {
+          "val": 80,
+          "talkAry": [
+            142,
+            242,
+            342
+          ],
+          "actTalks": [
+            [
+              143,
+              243,
+              343
+            ],
+            [
+              143,
+              243,
+              343
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "cloths": [],
+  "toys": [
+    [
+      {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "isLoop": true,
+        "seID1": 2031,
+        "seID2": 0,
+        "talkAry": [
+          160,
+          260,
+          360
+        ]
+      }
+    ],
+    [
+      {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "isLoop": false,
+        "seID1": 0,
+        "seID2": 0,
+        "talkAry": [
+          150,
+          250,
+          350
+        ]
+      }
+    ]
+  ],
+  "events": [
+    {
+      "minVal": 0,
+      "maxVal": 100,
+      "kind": 3,
+      "pra1": 5,
+      "pra2": 0,
+      "pra3": 0,
+      "pra4": 0,
+      "pra5": 0,
+      "praStr1": "",
+      "praBool": true,
+      "praList1": []
+    },
+    {
+      "minVal": 101,
+      "maxVal": 300,
+      "kind": 3,
+      "pra1": 5,
+      "pra2": 1,
+      "pra3": 0,
+      "pra4": 0,
+      "pra5": 0,
+      "praStr1": "",
+      "praBool": true,
+      "praList1": []
+    },
+    {
+      "minVal": 200,
+      "maxVal": 300,
+      "kind": 4,
+      "pra1": 1,
+      "pra2": 1,
+      "pra3": 100,
+      "pra4": 2,
+      "pra5": 15,
+      "praStr1": "",
+      "praBool": false,
+      "praList1": []
+    },
+    {
+      "minVal": 80,
+      "maxVal": 80,
+      "kind": 4,
+      "pra1": 1,
+      "pra2": 1,
+      "pra3": 100,
+      "pra4": 1,
+      "pra5": 14,
+      "praStr1": "",
+      "praBool": false,
+      "praList1": []
+    },
+    {
+      "minVal": 180,
+      "maxVal": 180,
+      "kind": 4,
+      "pra1": 1,
+      "pra2": 1,
+      "pra3": 100,
+      "pra4": 1,
+      "pra5": 14,
+      "praStr1": "",
+      "praBool": false,
+      "praList1": []
+    },
+    {
+      "minVal": 280,
+      "maxVal": 280,
+      "kind": 4,
+      "pra1": 1,
+      "pra2": 1,
+      "pra3": 100,
+      "pra4": 1,
+      "pra5": 14,
+      "praStr1": "",
+      "praBool": false,
+      "praList1": []
+    },
+    {
+      "minVal": 101,
+      "maxVal": 300,
+      "kind": 4,
+      "pra1": 5,
+      "pra2": 1,
+      "pra3": 100,
+      "pra4": 0,
+      "pra5": 15,
+      "praStr1": "",
+      "praBool": false,
+      "praList1": []
+    }
+  ],
+  "counts": [
+    {
+      "objID": 1,
+      "kind": 0,
+      "grpID": 254,
+      "objKeep": true,
+      "Datas": [
+        {
+          "count": 1,
+          "objVal": 1
+        },
+        {
+          "count": 2,
+          "objVal": 2
+        }
+      ]
+    },
+    {
+      "objID": 2,
+      "kind": 0,
+      "grpID": 30,
+      "objKeep": true,
+      "Datas": [
+        {
+          "count": 4,
+          "objVal": 1
+        }
+      ]
+    },
+    {
+      "objID": 3,
+      "kind": 0,
+      "grpID": 30,
+      "objKeep": true,
+      "Datas": [
+        {
+          "count": 2,
+          "objVal": 1
+        },
+        {
+          "count": 3,
+          "objVal": 2
+        }
+      ]
+    },
+    {
+      "objID": 4,
+      "kind": 0,
+      "grpID": 254,
+      "objKeep": true,
+      "Datas": [
+        {
+          "count": 1,
+          "objVal": 1
+        }
+      ]
+    },
+    {
+      "objID": 7,
+      "kind": 0,
+      "grpID": 30,
+      "objKeep": true,
+      "Datas": [
+        {
+          "count": 1,
+          "objVal": 1
+        }
+      ]
+    }
+  ],
+  "drags": [],
+  "otherSettings": {
+    "actIcon": [
+      8,
+      103,
+      403,
+      101
+    ],
+    "clothIcon": [
+      9,
+      10,
+      11
+    ],
+    "toyIcon": [
+      601,
+      714
+    ],
+    "takeOffIcon": [
+      5
+    ],
+    "actAddValue": [
+      2,
+      2,
+      2,
+      2
+    ],
+    "toyAddValue": [
+      2,
+      0
+    ]
+  }
+}
