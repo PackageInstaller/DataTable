@@ -1,19 +1,12 @@
 # DataTable
 
-各游戏数据表快照仓库。`master` 只保留索引和 git 相关文件，每个游戏一个独立的快照分支（`game/<游戏名>`），方便只拉取自己需要的数据。
+`master` 只保留索引和 git 相关文件，每个游戏一个独立的快照分支（`game/<游戏名>`），方便只拉取自己需要的数据。
 
 ## 克隆单个游戏
 
 ```bash
 git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/PackageInstaller/DataTable.git
 ```
-
-注意：
-
-- 必须带 `--single-branch`，否则 Git 会把所有分支都拉下来，失去按游戏拆分的意义。
-- 仓库使用 Git LFS，请先安装 [git-lfs](https://git-lfs.com)。克隆时只会下载该分支引用到的大文件。
-- `MuvLuvGirlsGardenX` 包含 submodule，需要时在 clone 命令后加 `--recurse-submodules`。
-- `full` 分支保留拆分前的全量 monorepo（包含所有游戏的历史），一般不需要克隆。
 
 ## 分支列表
 
@@ -73,7 +66,3 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/TrickcalChibiGo` | TrickcalChibiGo | 坨坨可爱捏 |
 | `game/TwinkleStarKnights` | TwinkleStarKnights | 闪耀星骑士 |
 | `game/WitchSpring` | WitchSpring | 第五部啥时候出？ |
-
-## 更新数据
-
-每个游戏的数据更新直接提交到对应的 `game/<游戏名>` 分支，`master` 只维护上面的索引。游戏分支不放这份索引；只有原来就自带 README 的游戏（目前是 `AetherGazer`）会保留自己的说明。
