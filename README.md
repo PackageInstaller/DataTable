@@ -44,6 +44,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/MonmusuTDx` | MonmusuTDx | 草正太 |
 | `game/MuvLuvGirlsGardenX` | MuvLuvGirlsGardenX | 抹布 |
 | `game/OZRewrite` | OZRewrite | OZRewrite |
+| `game/Orisries` | Orisries | 万源圣魔录 |
 | `game/OrphansOrder` | OrphansOrder | 孤儿的工作 |
 | `game/OshiroProjectRE` | OshiroProjectRE | 我去没r18(御城) |
 | `game/OtogiFrontierR` | OtogiFrontierR | 村人 |
