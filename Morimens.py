@@ -5,6 +5,8 @@ import hashlib
 import json
 import multiprocessing
 import os
+import re
+import shutil
 import struct
 import sys
 import threading
@@ -80,6 +82,12 @@ class TaskSpeedColumn(ProgressColumn):
 
 
 class _ProgressPump:
+    """下载线程只改计数，单独线程定时写进 Progress。
+
+    Rich Live 刷新也要 GIL；UnityPy 解密若在同进程里跑，转圈会停。
+    Worker 再直接 advance，还会和 Live 抢同一把锁。
+    """
+
     def __init__(self, progress: Progress, t_bytes, t_files):
         self.progress = progress
         self.t_bytes = t_bytes
@@ -216,6 +224,7 @@ def install_unitycn():
 
 
 def decrypt_unitycn(src: Path, dst: Path) -> str:
+    """解密 UnityCN AssetBundle，返回 decompiled / skip / raw。"""
     with src.open("rb") as f:
         magic = f.read(7)
     if magic != b"UnityFS":
@@ -237,6 +246,7 @@ def decrypt_unitycn(src: Path, dst: Path) -> str:
 
 
 def _decrypt_process_init() -> None:
+    """子进程独立 stdout，避免 UnityPy 打印把父进程 Live 进度条打乱。"""
     try:
         dn = os.open(os.devnull, os.O_WRONLY)
         os.dup2(dn, 1)
@@ -681,6 +691,301 @@ def run(args: argparse.Namespace) -> int:
     return 1 if fail else 0
 
 
+# ---- 立绘名称还原 -----------------------------------------------------------
+
+_LUA_PIPE = re.compile(r"^[^|]*\|(.*)$")
+_FACE_SUF = ("_AF", "_NF", "_HF")
+_BAD_NAMES = {"", "？", "?", "？？", "？？？", "临时文本", "testonly"}
+_SKIP_AWAKER_CN = ("测试", "训练模式")
+_UNSAFE_FS = re.compile(r'[<>:"/\\|?*]')
+
+
+def _lua_text(s: Optional[str]) -> str:
+    if not s:
+        return ""
+    m = _LUA_PIPE.match(s)
+    return (m.group(1) if m else s).strip()
+
+
+def _lua_field_str(body: str, name: str) -> str:
+    m = re.search(rf"{re.escape(name)}\s*=\s*\"([^\"]*)\"", body)
+    return m.group(1) if m else ""
+
+
+def _lua_field_int(body: str, name: str, default: int = 0) -> int:
+    m = re.search(rf"{re.escape(name)}\s*=\s*(-?\d+)", body)
+    return int(m.group(1)) if m else default
+
+
+def _iter_lua_records(path: Path):
+    text = path.read_text(encoding="utf-8", errors="replace")
+    for m in re.finditer(r"\[(\d+)\]\s*=\s*\{", text):
+        start = m.end()
+        depth = 1
+        i = start
+        while i < len(text) and depth:
+            c = text[i]
+            if c == "{":
+                depth += 1
+            elif c == "}":
+                depth -= 1
+            i += 1
+        yield int(m.group(1)), text[start : i - 1]
+
+
+def _is_bad_name(s: str) -> bool:
+    t = s.strip().strip("「」\"'")
+    return t.lower() in _BAD_NAMES or t.startswith("SpChar_") or t.startswith("Awaker")
+
+
+def _safe_filename(s: str) -> str:
+    s = _UNSAFE_FS.sub("、", s).strip(" .")
+    return s or "未命名"
+
+
+def _pick_awaker(cands: List[Dict[str, Any]]) -> Dict[str, Any]:
+    def score(r: Dict[str, Any]) -> Tuple[int, int]:
+        cn = r.get("cnid") or ""
+        en = (r.get("name_en") or "").strip()
+        sc = 0
+        if any(x in cn for x in _SKIP_AWAKER_CN):
+            sc -= 100
+        if en.lower() in ("testonly", "？", "?", ""):
+            sc -= 10
+        q = r.get("quality") or ""
+        if q in ("UR", "Orange", "Purple"):
+            sc += 5
+        return sc, -r.get("basesort", 10**9)
+
+    return max(cands, key=score)
+
+
+def _load_awaker_maps(master: Path) -> Tuple[Dict[int, Dict[str, Any]], Dict[str, Dict[str, Any]]]:
+    by_id: Dict[int, Dict[str, Any]] = {}
+    by_res: Dict[str, List[Dict[str, Any]]] = {}
+    path = master / "config" / "AwakerConfig.lua"
+    for rid, body in _iter_lua_records(path):
+        rec = {
+            "id": rid,
+            "cnid": _lua_field_str(body, "CnID"),
+            "name": _lua_text(_lua_field_str(body, "Name")),
+            "name_en": _lua_field_str(body, "NameEn"),
+            "res": _lua_field_str(body, "AwakerResNum"),
+            "quality": _lua_field_str(body, "Quality"),
+            "basesort": _lua_field_int(body, "BaseSortID", 10**9),
+        }
+        if not rec["name"] and rec["cnid"]:
+            rec["name"] = rec["cnid"].split("@")[-1]
+        by_id[rid] = rec
+        if rec["res"]:
+            by_res.setdefault(rec["res"], []).append(rec)
+    chosen = {res: _pick_awaker(cands) for res, cands in by_res.items()}
+    return by_id, chosen
+
+
+def _load_skin_map(master: Path, awakers: Dict[int, Dict[str, Any]]) -> Dict[str, Dict[str, str]]:
+    out: Dict[str, Dict[str, str]] = {}
+    path = master / "config" / "AwakerSkin.lua"
+    for _rid, body in _iter_lua_records(path):
+        res = _lua_field_str(body, "ClothersResNum")
+        if not res:
+            continue
+        owner = _lua_field_int(body, "OwnerAwaker")
+        name = _lua_text(_lua_field_str(body, "Name"))
+        cnid = _lua_field_str(body, "CnID")
+        if _is_bad_name(name):
+            tail = cnid.split("@")[-1]
+            char = (awakers.get(owner) or {}).get("name") or ""
+            if char and tail.startswith(char):
+                tail = tail[len(char) :]
+            name = tail.replace("时装", "").strip() or tail
+        char = (awakers.get(owner) or {}).get("name") or ""
+        out[res] = {"char": char, "skin": name or "默认"}
+    return out
+
+
+def _paren_name(cnid: str) -> str:
+    m = re.search(r"[（(]([^）)]+)[）)]", cnid)
+    return m.group(1).strip() if m else ""
+
+
+def _avg_names(cnid: str, role: str) -> Tuple[str, str]:
+    role = _lua_text(role)
+    inner = _paren_name(cnid)
+    if role.startswith("「") or role.startswith("『"):
+        char = re.sub(r"(特制NF|特制|纸板|无猫版)$", "", cnid).strip("？? ") or role
+        extra = cnid
+        if char and extra.startswith(char):
+            extra = extra[len(char) :]
+        extra = re.sub(r"(特制)?NF$", "特制" if "特制" in extra else "", extra)
+        extra = extra.strip("_ ")
+        return char, extra or "默认"
+    if not _is_bad_name(role):
+        char = role
+        extra = cnid
+        if char and char in extra:
+            extra = extra.replace(char, "", 1)
+        extra = extra.strip("_ ")
+        if extra.endswith("无猫版"):
+            extra = "无猫"
+        extra = re.sub(r"(特制)?NF$", lambda m: "特制" if m.group(1) else "", extra)
+        extra = extra.strip("_ ")
+        return char, extra or "默认"
+    if inner and not _is_bad_name(inner):
+        return inner, "默认"
+    raw = re.sub(r"^[？?]+", "", cnid).strip("（）() ")
+    raw = re.sub(r"(特制)?NF$", lambda m: "特制" if m.group(1) else "", raw)
+    m = re.match(r"^(.+?)(纸板|特制|无猫|精二|太阳帽|冰淇淋)$", raw)
+    if m:
+        return m.group(1), m.group(2)
+    return raw or "未知", "默认"
+
+
+def _load_spchar_map(master: Path) -> Dict[str, Tuple[str, str]]:
+    """AwakerResource -> (角色名, 皮肤名)，先出现的有效条目优先。"""
+    path = master / "config" / "AvgRole.lua"
+    out: Dict[str, Tuple[str, str]] = {}
+    for _rid, body in _iter_lua_records(path):
+        res = _lua_field_str(body, "AwakerResource")
+        if not res or res in out:
+            continue
+        cnid = _lua_field_str(body, "CnID")
+        role = _lua_field_str(body, "RoleName")
+        char, skin = _avg_names(cnid, role)
+        if _is_bad_name(char):
+            continue
+        out[res] = (char, skin)
+        if res.endswith("_NF"):
+            out.setdefault(res[:-3] + "_AF", (char, skin))
+            out.setdefault(res[:-3], (char, skin))
+    return out
+
+
+def _split_face(res: str) -> Tuple[str, str]:
+    for suf in _FACE_SUF:
+        if res.endswith(suf):
+            return res[: -len(suf)], suf[1:]
+    return res, ""
+
+
+def _lookup_portrait(
+    stem: str,
+    awaker_by_res: Dict[str, Dict[str, Any]],
+    skins: Dict[str, Dict[str, str]],
+    spchars: Dict[str, Tuple[str, str]],
+) -> Tuple[str, str, str]:
+    """返回 (角色, 皮肤, 表情)。表情 AF 为空。"""
+    name = stem
+    if name.startswith("Portrait_Full_"):
+        name = name[len("Portrait_Full_") :]
+    face = ""
+
+    if name.startswith("SpChar_") or "SpChar_" in name:
+        key = name
+        hit = spchars.get(key) or spchars.get(key + "_NF")
+        core, face = _split_face(name)
+        if not hit:
+            hit = spchars.get(core) or spchars.get(core + "_NF")
+        if hit:
+            return hit[0], hit[1], ""
+        pretty = core.replace("SpChar_", "")
+        return pretty, "默认", ""
+
+    res_full = name[len("Awaker_") :] if name.startswith("Awaker_") else name
+    res_core, res_face = _split_face(res_full)
+    face = res_face or "AF"
+    res_full = f"{res_core}_{face}"
+
+    m = re.match(r"^(.+?)Skin(\d+)$", res_core)
+    if m:
+        base, idx = m.group(1), m.group(2)
+        alt = f"{base}S{int(idx):02d}_{face}"
+        if alt in skins:
+            rec = skins[alt]
+            return rec["char"], rec["skin"] + "·动态", "" if face == "AF" else face
+        aw = awaker_by_res.get(f"{base}_{face}") or awaker_by_res.get(f"{base}_AF")
+        return (aw or {}).get("name") or base, "动态", "" if face == "AF" else face
+
+    if res_full in skins:
+        rec = skins[res_full]
+        return rec["char"], rec["skin"] or "默认", "" if face == "AF" else face
+    aw = awaker_by_res.get(res_full)
+    if aw:
+        return aw["name"], "默认", "" if face == "AF" else face
+    aw = awaker_by_res.get(res_core + "_AF")
+    if aw:
+        return aw["name"], "默认", "" if face == "AF" else face
+    m = re.match(r"^(.+?)S(\d+)$", res_core)
+    if m:
+        base = m.group(1)
+        aw = awaker_by_res.get(f"{base}_AF")
+        char = (aw or {}).get("name") or base
+        sk = skins.get(res_full) or skins.get(res_core + "_AF")
+        return char, (sk or {}).get("skin") or f"皮肤{m.group(2)}", "" if face == "AF" else face
+    return res_core, "默认", "" if face == "AF" else face
+
+
+def _portrait_dest_name(char: str, skin: str, face: str) -> str:
+    char = _safe_filename(char or "未知")
+    skin = _safe_filename(skin or "默认")
+    if face and face != "AF":
+        return f"忘却前夜_{char}_{skin}_{face}.png"
+    return f"忘却前夜_{char}_{skin}.png"
+
+
+def run_portraits(args: argparse.Namespace) -> int:
+    src = Path(args.portraits).expanduser().resolve()
+    if not src.is_dir():
+        raise FileNotFoundError(f"立绘目录不存在: {src}")
+    master = Path(args.master).expanduser().resolve() if args.master else SCRIPT_DIR / "MasterData"
+    if not (master / "config" / "AwakerConfig.lua").is_file():
+        alt = SCRIPT_DIR / "lua_readable"
+        if (alt / "config" / "AwakerConfig.lua").is_file():
+            master = alt
+        else:
+            raise FileNotFoundError(f"找不到 MasterData: {master}")
+    out = Path(args.painting).expanduser().resolve() if args.painting else SCRIPT_DIR / "Painting"
+    out.mkdir(parents=True, exist_ok=True)
+
+    console.print(f"[bold]立绘还原[/bold] 源={src}")
+    console.print(f"  表 {master}")
+    console.print(f"  输出 {out}")
+
+    awakers, awaker_by_res = _load_awaker_maps(master)
+    skins = _load_skin_map(master, awakers)
+    spchars = _load_spchar_map(master)
+
+    files = sorted(
+        p for p in src.iterdir() if p.is_file() and p.suffix.lower() in (".png", ".jpg", ".webp")
+    )
+    if not files:
+        console.print("[yellow]目录里没有图片[/yellow]")
+        return 1
+
+    ok = miss = 0
+    used: Dict[str, int] = {}
+    for p in files:
+        char, skin, face = _lookup_portrait(p.stem, awaker_by_res, skins, spchars)
+        dest_name = _portrait_dest_name(char, skin, face)
+        n = used.get(dest_name, 0)
+        used[dest_name] = n + 1
+        if n:
+            dest_name = dest_name[:-4] + f"_{n + 1}.png"
+        dest = out / dest_name
+        shutil.copy2(p, dest)
+        known = bool(char) and char not in ("未知",) and not re.match(
+            r"^(Awaker_|[A-Z]\d{2})", char
+        )
+        tag = "green" if known else "yellow"
+        if known:
+            ok += 1
+        else:
+            miss += 1
+        console.print(f"  [{tag}]{p.name}[/] → {dest_name}")
+    console.print(f"[bold]完成[/bold] 命名={ok} 兜底={miss} 共 {len(files)} → {out}")
+    return 0
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="忘却前夜热更下载（Steam/Android QZ CDN）")
     ap.add_argument(
@@ -702,8 +1007,18 @@ def main() -> int:
     ap.add_argument("--fresh", action="store_true", help="忽略本地清单，全部重下")
     ap.add_argument("--no-decrypt", action="store_true", help="只下载，不解密 UnityCN")
     ap.add_argument("--limit", type=int, default=0, help="最多下载 N 个文件（调试）")
+    ap.add_argument(
+        "--portraits",
+        metavar="DIR",
+        default="",
+        help="立绘还原：指定立绘文件夹（如 assets/artres/portraits/full）",
+    )
+    ap.add_argument("--master", default="", help="MasterData 目录，默认脚本旁 MasterData")
+    ap.add_argument("--painting", default="", help="立绘输出目录，默认脚本旁 Painting")
     args = ap.parse_args()
     try:
+        if args.portraits:
+            return run_portraits(args)
         return run(args)
     except KeyboardInterrupt:
         console.print("\n[yellow]已中断[/yellow]")
