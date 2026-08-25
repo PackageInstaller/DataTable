@@ -42,7 +42,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/ModelWarGirl` | ModelWarGirl | 高能手办团 |
 | `game/MoeCove` | MoeCove | 苍蓝避风港 |
 | `game/MonmusuTDx` | MonmusuTDx | 草正太 |
-| `game/Morimens` | Morimens |
+| `game/Morimens` | Morimens | 忘却前夜 |
 | `game/MuvLuvGirlsGardenX` | MuvLuvGirlsGardenX | 抹布 |
 | `game/OZRewrite` | OZRewrite | OZRewrite |
 | `game/Orisries` | Orisries | 万源圣魔录 |
