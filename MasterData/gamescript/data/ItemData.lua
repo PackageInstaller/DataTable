@@ -1,0 +1,20 @@
+local ItemData = Vue.reactive({})
+ItemData.MockItemData = {}
+ItemData.BagItemData = {}
+ItemData.TrinketPosMap = {}
+ItemData.TrinketSuitNumMap = {}
+ItemData.CurrencyData = {}
+ItemData.Coin = 100
+ItemData.Talent = 1000
+ItemData.ExclusiveCoin = 101
+ItemData.EquipItemDataMap = {}
+ItemData.EquipableGoodWeaponMap = {}
+ItemData.ExpiredItems = {}
+ItemData.ShowRewardList = {}
+ItemData.IsRewardRandom = nil
+ItemData.itemTidToUidMap = {}
+ItemData.KeeperSkill2Item = {}
+ItemData.Item2KeeperSkill = {}
+ItemData.ActivedKeeperSkill = {}
+ItemData.keeperSkillIds = {}
+return ItemData

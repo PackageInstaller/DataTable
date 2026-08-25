@@ -1,0 +1,2 @@
+local WorldStageDataList = {}
+return WorldStageDataList

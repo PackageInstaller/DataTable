@@ -1,0 +1,44 @@
+local CopiesData = Vue.reactive({})
+CopiesData.CopiesId = 0
+CopiesData.storyLineTid = 0
+CopiesData.BarrierId = 0
+CopiesData.isRecover = false
+CopiesData.recoverType = "Copies"
+CopiesData.DontTriggerBattle = false
+CopiesData.EnergyLessTip = false
+CopiesData.GiveUpGold = false
+CopiesData.ShowBattleGoldCount = 0
+CopiesData.prizeShowQueue = {}
+CopiesData.ItemAwardType = System.NewEnum({
+  First = 0,
+  Complete = 1,
+  Explore = 2,
+  Loot = 3,
+  Extra = 4,
+  Normal = 5,
+  Advance = 6,
+  First3Star = 7,
+  GM = 100
+})
+CopiesData.bagCardSortType = 2
+CopiesData.bagCardSortSubType = 1
+CopiesData.isShowUpgradeCard = false
+CopiesData.copiesSettleData = nil
+CopiesData.GMEventIdTextShow = false
+CopiesData.alreadyCostEnergy = 0
+CopiesData.isGiveUp = nil
+CopiesData.AwakerShowLikeList = {}
+CopiesData.AwakerFavorLvUpGradeList = {}
+CopiesData.FirstEnterCopies = false
+CopiesData.Backpack = {}
+CopiesData.BornKeyId = 0
+CopiesData.Topology = {
+  barrier = {},
+  event = {}
+}
+CopiesData.battleAwakerMap = {}
+CopiesData.ItemDataMap = {}
+CopiesData.AssistAwakerTid = 0
+CopiesData.AssistPlayerUid = 0
+CopiesData.ShowRuneGainTipPanel = true
+return CopiesData

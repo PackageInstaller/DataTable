@@ -1,0 +1,31 @@
+local BarrierData = Vue.reactive({})
+BarrierData.EventInfos = {}
+BarrierData.eventExistStatus = {}
+BarrierData.curTriggerEventUid = 0
+BarrierData.nextTriggerNodeId = 0
+BarrierData.curTriggerNodeId = 0
+BarrierData.triggerGiveUpEvent = false
+BarrierData.sceneSize = nil
+BarrierData.boundsPos = nil
+BarrierData.movePath = {}
+BarrierData.sightRadius = 0
+BarrierData.enableShowEvents = {}
+BarrierData.showLevelName = false
+BarrierData.InBattle = false
+BarrierData.pos = {
+  x = 0,
+  y = 0,
+  z = 0
+}
+BarrierData.currArea = 0
+BarrierData.passArea = {}
+BarrierData.needUpdateGuides = false
+BarrierData.areaGroupInfo = {}
+BarrierData.showStack = {}
+BarrierData.showTopBag = true
+BarrierData.showHp = true
+BarrierData.showCurrencyBanner = true
+BarrierData.areas = {}
+BarrierData.triggeredEvents = {}
+BarrierData.triggerBeginGroup = 0
+return BarrierData

@@ -1,0 +1,84 @@
+__reload_all = true
+local System = require("System.System")
+local readonly = System.readonly
+local Text_Shop = readonly({
+  Shop_120531_UnlockText = {
+    Text = "通關調查行動星辰篇第4章解鎖"
+  },
+  Shop_126405_UnlockText = {
+    Text = "通關調查行動星辰篇第5章解鎖"
+  },
+  Shop_146564_UnlockText = {
+    Text = "通關調查行動星辰篇第6章解鎖"
+  },
+  Shop_17629_UnlockText = {
+    Text = "通關調查行動第7章解鎖"
+  },
+  Shop_17631_UnlockText = {
+    Text = "通關調查行動第3章解鎖"
+  },
+  Shop_17632_UnlockText = {
+    Text = "通關調查行動第2章解鎖"
+  },
+  Shop_17633_UnlockText = {
+    Text = "通關調查行動第5章解鎖"
+  },
+  Shop_17634_UnlockText = {
+    Text = "通關調查行動第4章解鎖"
+  },
+  Shop_17637_UnlockText = {
+    Text = "通關調查行動第1章解鎖"
+  },
+  Shop_17651_UnlockText = {
+    Text = "通關調查行動第6章解鎖"
+  },
+  Shop_17693_UnlockText = {
+    Text = "通關調查行動第8章解鎖"
+  },
+  Shop_41347_UnlockText = {
+    Text = "通關調查行動第4章解鎖"
+  },
+  Shop_41348_UnlockText = {
+    Text = "通關調查行動第5章解鎖"
+  },
+  Shop_41349_UnlockText = {
+    Text = "通關調查行動第3章解鎖"
+  },
+  Shop_41350_UnlockText = {
+    Text = "通關調查行動第1章解鎖"
+  },
+  Shop_41351_UnlockText = {
+    Text = "通關調查行動第6章解鎖"
+  },
+  Shop_41352_UnlockText = {
+    Text = "通關調查行動第2章解鎖"
+  },
+  Shop_49317_UnlockText = {
+    Text = "通關調查行動第7章解鎖"
+  },
+  Shop_61151_UnlockText = {
+    Text = "通關調查行動第8章解鎖"
+  },
+  Shop_68283_UnlockText = {
+    Text = "通關調查行動第9章解鎖"
+  },
+  Shop_76296_UnlockText = {
+    Text = "通關調查行動星辰篇第1章解鎖"
+  },
+  Shop_81068_UnlockText = {
+    Text = "通關調查行動星辰篇第2章解鎖"
+  },
+  Shop_91378_UnlockText = {
+    Text = "通關調查行動星辰篇第3章解鎖"
+  },
+  Shop_99172_UnlockText = {
+    Text = "通關星辰篇第3章解鎖"
+  },
+  Shop_99181_UnlockText = {
+    Text = "通關星辰篇第1章解鎖"
+  },
+  Shop_99182_UnlockText = {
+    Text = "通關星辰篇第2章解鎖"
+  }
+})
+return Text_Shop

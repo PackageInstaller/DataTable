@@ -1,0 +1,3 @@
+local ActivitySummerSevenDaySignPanel, Super = System.NewClass("ActivitySummerSevenDaySignPanel", ActivityKarenSevenDaySignPanel)
+ActivitySummerSevenDaySignPanel.uiResCls = UI_Event_Activity_SummerSignResource
+return ActivitySummerSevenDaySignPanel
