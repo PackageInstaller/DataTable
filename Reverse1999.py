@@ -6,6 +6,7 @@ import hashlib
 import io
 import json
 import os
+import re
 import shutil
 import struct
 import subprocess
@@ -20,6 +21,8 @@ from typing import Any, Callable, Iterable
 from urllib.parse import urlencode
 
 import requests
+from Crypto.Cipher import AES
+from Crypto.Util.Padding import unpad
 from rich.console import Console
 from rich.progress import (
     BarColumn,
@@ -28,6 +31,7 @@ from rich.progress import (
     ProgressColumn,
     SpinnerColumn,
     TextColumn,
+    TimeElapsedColumn,
     TimeRemainingColumn,
     TransferSpeedColumn,
 )
@@ -36,6 +40,7 @@ from rich.text import Text
 SCRIPT_DIR = Path(__file__).resolve().parent
 ASSETS_DIR = SCRIPT_DIR / "Assets"
 MASTER_DIR = SCRIPT_DIR / "MasterData"
+PORTRAIT_DIR = SCRIPT_DIR / "Painting"
 MANIFEST_PATH = ASSETS_DIR / ".manifest.json"
 RESINFO_CACHE = ASSETS_DIR / ".resinfo.json"
 
@@ -66,7 +71,9 @@ TIMEOUT = (15, 300)
 AES_PASSWORD = "@_#*&Reverse2806".ljust(32).encode("utf-8")
 AES_IV = b"!_#@2022_Skyfly)"
 SIG_LEN = 48
-
+AB_MAGICS = (b"UnityFS", b"UnityRaw", b"UnityWeb", b"UnityNEt")
+PORTRAIT_AB_DIR = "singlebg/headicon_img"
+GAME_TITLE = "重返未来1999"
 LUA_PACKS_64 = {
     "e4aa0a3b862979c25941c15c5d99a547": "tolua_64",
     "9981b62cca43bcb97f4b9a8f14b534de": "booter_64",
@@ -162,6 +169,23 @@ def maybe_gunzip(data: bytes) -> bytes:
     if data[:2] == b"\x1f\x8b":
         return gzip.decompress(data)
     return data
+
+
+def aes_decrypt(data: bytes) -> bytes:
+    """RsaVerity：跳过 48 字节签名后 AES-256-CBC PKCS7。"""
+    if len(data) <= SIG_LEN:
+        raise ValueError(f"too short for AES: {len(data)}")
+    blob = data[SIG_LEN:]
+    if len(blob) % 16:
+        raise ValueError(f"AES payload not block-aligned: {len(blob)}")
+    cipher = AES.new(AES_PASSWORD, AES.MODE_CBC, AES_IV)
+    return unpad(cipher.decrypt(blob), 16)
+
+
+def unwrap_config(data: bytes, *, encrypted: bool) -> bytes:
+    if encrypted and not data.startswith(b"{") and data[:2] != b"\x1f\x8b":
+        data = aes_decrypt(data)
+    return maybe_gunzip(data)
 
 
 def read_7bit(buf: io.BytesIO) -> int:
@@ -311,7 +335,9 @@ def collect_items(resinfo: dict, lua_only: bool, include_dlc: bool) -> list[dict
         if section == "dlc" and not include_dlc:
             continue
         path = meta["path"]
-        if lua_only and not path.startswith("luabytes/"):
+        if lua_only and not (
+            path.startswith("luabytes/") or path.startswith("configs/")
+        ):
             continue
         if path in seen:
             continue
@@ -320,8 +346,76 @@ def collect_items(resinfo: dict, lua_only: bool, include_dlc: bool) -> list[dict
     return items
 
 
+def collect_paths(resinfo: dict, paths: Iterable[str]) -> list[dict]:
+    want = {p.replace("\\", "/").lstrip("/") for p in paths}
+    items: list[dict] = []
+    seen: set[str] = set()
+    for section, group, meta in iter_resinfo(resinfo):
+        path = meta["path"]
+        if path not in want or path in seen:
+            continue
+        seen.add(path)
+        items.append({**meta, "section": section, "group": group})
+    missing = want - seen
+    if missing:
+        console.print(f"[yellow]resinfo 缺少 {len(missing)} 个路径[/yellow]")
+    return items
+
+
 def file_url(item: dict, host: str) -> str:
     return f"{host.rstrip('/')}/{GAME_ID}/{PLATFORM}/{item['v']}/{item['path']}"
+
+
+def is_bundle_path(path: str) -> bool:
+    return path.startswith("bundles/") and path.endswith(".dat")
+
+
+def ab_encrypt_offset(md5_name: str) -> int:
+    """FileLoader.GetAbEncryptKey：对 MD5 文件名（不含路径/.dat）逐字符求和。
+
+    偶数再 +2，奇数再 +4，然后 (sum % 8) + 1，得到 1–8。
+    游戏用 AssetBundle.LoadFromFile(path, crc=0, offset=key) 跳过这段头部
+    """
+    total = sum(ord(c) for c in md5_name)
+    extra = 4 if total & 1 else 2
+    return (total + extra) % 8 + 1
+
+
+def looks_like_unityfs(buf: bytes) -> bool:
+    return any(buf.startswith(m) for m in AB_MAGICS)
+
+
+def strip_ab_header(dest: Path, rel_path: str) -> int:
+    """去掉 bundles/*.dat 头部字节。返回去掉的长度，已是 UnityFS 则返回 0。"""
+    if not is_bundle_path(rel_path) or not dest.is_file():
+        return 0
+    off = ab_encrypt_offset(Path(rel_path).stem)
+    with dest.open("rb") as f:
+        head = f.read(off + 8)
+    if looks_like_unityfs(head):
+        return 0
+    if len(head) < off + 7 or not looks_like_unityfs(head[off:]):
+        return 0
+    tmp = dest.with_name(dest.name + ".strip")
+    with dest.open("rb") as src, tmp.open("wb") as out:
+        src.seek(off)
+        shutil.copyfileobj(src, out, CHUNK_SIZE)
+    os.replace(tmp, dest)
+    return off
+
+
+def finalize_asset(dest: Path, item: dict) -> int:
+    """校验通过后处理本地文件。返回实际去掉的 AB 头长度。"""
+    if is_bundle_path(item["path"]):
+        return strip_ab_header(dest, item["path"])
+    return 0
+
+
+def expected_local_size(item: dict) -> int:
+    size = int(item.get("size") or 0)
+    if is_bundle_path(item["path"]):
+        return max(0, size - ab_encrypt_offset(Path(item["path"]).stem))
+    return size
 
 
 def existing_copy(rel: str, expect_md5: str) -> Path | None:
@@ -399,6 +493,7 @@ def download_one(item: dict, dest: Path, on_bytes: Callable[[int], None] | None)
             if size and n != size:
                 raise RuntimeError(f"大小不符 {n} != {size}")
             os.replace(tmp, dest)
+            finalize_asset(dest, item)
             if size and reported != size:
                 report(size - reported)
             return "ok"
@@ -433,16 +528,28 @@ def download_items(items: list[dict], threads: int, force: bool, version: str) -
         dest = ASSETS_DIR / it["path"]
         rec = local_files.get(it["path"]) or {}
         if not force:
+            if dest.is_file() and rec.get("md5") == it["md5"]:
+                local_sz = dest.stat().st_size
+                if local_sz == expected_local_size(it):
+                    skipped += 1
+                    continue
+                if local_sz == it["size"]:
+                    rec["offset"] = finalize_asset(dest, it)
+                    local_files[it["path"]] = rec
+                    skipped += 1
+                    continue
             hit = existing_copy(it["path"], it["md5"])
             if hit is not None:
+                dest.parent.mkdir(parents=True, exist_ok=True)
                 if hit != dest:
-                    dest.parent.mkdir(parents=True, exist_ok=True)
-                    if not dest.is_file():
-                        shutil.copy2(hit, dest)
-                local_files[it["path"]] = {"md5": it["md5"], "size": it["size"], "v": it["v"]}
-                skipped += 1
-                continue
-            if dest.is_file() and rec.get("md5") == it["md5"] and dest.stat().st_size == it["size"]:
+                    shutil.copy2(hit, dest)
+                off = finalize_asset(dest, it)
+                local_files[it["path"]] = {
+                    "md5": it["md5"],
+                    "size": it["size"],
+                    "v": it["v"],
+                    "offset": off,
+                }
                 skipped += 1
                 continue
         pending.append(it)
@@ -499,6 +606,9 @@ def download_items(items: list[dict], threads: int, force: bool, version: str) -
                                 "md5": it["md5"],
                                 "size": it["size"],
                                 "v": it["v"],
+                                "offset": ab_encrypt_offset(Path(it["path"]).stem)
+                                if is_bundle_path(it["path"])
+                                else 0,
                             }
                         else:
                             fail += 1
@@ -591,6 +701,380 @@ def convert_lua(threads: int) -> int:
     return 0
 
 
+def find_configs_dir() -> Path | None:
+    for p in (ASSETS_DIR / "configs", SCRIPT_DIR / "configs"):
+        if p.is_dir():
+            return p
+    return None
+
+
+def _write_bytes(dest: Path, data: bytes) -> None:
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(data)
+
+
+def convert_configs() -> int:
+    """AES/gzip 解开 Assets/configs，拆成 MasterData/configs 下的 JSON 表。"""
+    src_root = find_configs_dir()
+    if src_root is None:
+        console.print("[yellow]没有 configs 目录，跳过配表解密[/yellow]")
+        return 0
+
+    excel_dir = MASTER_DIR / "configs" / "excel2json"
+    lang_dir = MASTER_DIR / "configs" / "language"
+    excel_dir.mkdir(parents=True, exist_ok=True)
+    lang_dir.mkdir(parents=True, exist_ok=True)
+
+    fail = 0
+    tables = 0
+    written: set[str] = set()
+
+    datacfgs = sorted(src_root.glob("datacfg_*.dat"))
+    if not datacfgs:
+        console.print(f"[yellow]{src_root} 里没有 datacfg_*.dat[/yellow]")
+
+    for src in datacfgs:
+        try:
+            obj = json.loads(unwrap_config(src.read_bytes(), encrypted=True))
+            if not isinstance(obj, dict):
+                raise ValueError(f"不是 JSON 对象: {type(obj)}")
+            for key, blob in obj.items():
+                name = str(key)
+                if not name.endswith(".json"):
+                    name = name + ".json"
+                dest = excel_dir / Path(name).name
+                if isinstance(blob, str):
+                    dest.write_text(blob, encoding="utf-8")
+                else:
+                    dest.write_text(
+                        json.dumps(blob, ensure_ascii=False, indent=2),
+                        encoding="utf-8",
+                    )
+                written.add(dest.name)
+                tables += 1
+            console.print(f"  [cyan]拆表[/cyan] {src.name} -> {len(obj)} 张")
+        except Exception as exc:
+            fail += 1
+            console.print(f"[red]失败[/red] {src.name}: {exc}")
+
+    for old in excel_dir.glob("json_*.json"):
+        if old.name not in written:
+            old.unlink()
+
+    lang_src = src_root / "language"
+    lang_n = 0
+    if lang_src.is_dir():
+        for src in sorted(lang_src.glob("*.dat")):
+            try:
+                data = unwrap_config(src.read_bytes(), encrypted=True)
+                dest = lang_dir / src.name[:-4] if src.name.endswith(".dat") else lang_dir / src.name
+                _write_bytes(dest, data)
+                lang_n += 1
+            except Exception as exc:
+                fail += 1
+                console.print(f"[red]失败[/red] {src.name}: {exc}")
+
+    extras = (
+        ("langcfg.dat", True, "langcfg.json"),
+        ("metainfo.dat", False, "metainfo.json"),
+        ("aotdlls.json", False, "aotdlls.json"),
+    )
+    extra_n = 0
+    for name, encrypted, out_name in extras:
+        src = src_root / name
+        if not src.is_file():
+            continue
+        try:
+            raw = src.read_bytes()
+            data = unwrap_config(raw, encrypted=encrypted) if name.endswith(".dat") else raw
+            _write_bytes(MASTER_DIR / "configs" / out_name, data)
+            extra_n += 1
+        except Exception as exc:
+            fail += 1
+            console.print(f"[red]失败[/red] {name}: {exc}")
+
+    console.print(
+        f"[bold green]Configs[/bold green] {tables} 张表"
+        f"{f' + {lang_n} 语言' if lang_n else ''}"
+        f"{f' + {extra_n} 其它' if extra_n else ''}"
+        f" -> {MASTER_DIR / 'configs'}"
+    )
+    return 1 if fail else 0
+
+
+def _first_existing(*cands: Path) -> Path | None:
+    for p in cands:
+        if p.is_file():
+            return p
+    return None
+
+
+def load_allmanifest_bytes() -> bytes:
+    hit = _first_existing(
+        ASSETS_DIR / "configs" / "allmanifest.dat",
+        SCRIPT_DIR / "configs" / "allmanifest.dat",
+        SCRIPT_DIR / "decrypted" / "configs" / "allmanifest",
+    )
+    if hit is None:
+        raise FileNotFoundError("找不到 configs/allmanifest")
+    return maybe_gunzip(hit.read_bytes())
+
+
+def load_datacfg(index: int) -> dict:
+    name = f"datacfg_{index}"
+    encrypted = _first_existing(
+        ASSETS_DIR / "configs" / f"{name}.dat",
+        SCRIPT_DIR / "configs" / f"{name}.dat",
+    )
+    plain = SCRIPT_DIR / "decrypted" / "configs" / name
+    if encrypted is not None:
+        try:
+            return json.loads(unwrap_config(encrypted.read_bytes(), encrypted=True))
+        except Exception:
+            pass
+    if plain.is_file():
+        return json.loads(maybe_gunzip(plain.read_bytes()))
+    raise FileNotFoundError(f"找不到 configs/{name}")
+
+
+def parse_excel_rows(blob: Any) -> list[list]:
+    if isinstance(blob, str):
+        blob = json.loads(blob)
+    if isinstance(blob, list) and len(blob) >= 2 and isinstance(blob[1], list):
+        return blob[1]
+    if isinstance(blob, list):
+        return blob
+    return []
+
+
+def is_portrait_ab(ab_name: str) -> bool:
+    return ab_name == PORTRAIT_AB_DIR or ab_name.startswith(PORTRAIT_AB_DIR + "_")
+
+
+def recover_ab_names(allmanifest: bytes, bundle_stems: set[str]) -> dict[str, str]:
+    """从 BinaryFormatter 明文串还原 abName -> md5 文件名。"""
+    names: dict[str, str] = {}
+    for m in re.finditer(rb"[\x20-\x7e]{4,}", allmanifest):
+        s = m.group().decode("ascii")
+        h = hashlib.md5(s.encode("utf-8")).hexdigest()
+        if h in bundle_stems:
+            names[s] = h
+    return names
+
+
+def sanitize_filename(name: str) -> str:
+    name = re.sub(r'[\\/:*?"<>|\x00-\x1f]', "_", name).strip().rstrip(".")
+    return name or "unnamed"
+
+
+def _cell(row: list, idx: int) -> str:
+    if idx >= len(row) or row[idx] is None:
+        return ""
+    return str(row[idx]).strip()
+
+
+def load_portrait_mappings() -> dict[str, tuple[str, str, str]]:
+    """资源名（皮肤 id / drawing / headIcon）-> (角色名, 皮肤名, 皮肤id)。"""
+    cfg = load_datacfg(4)
+    skins = parse_excel_rows(cfg.get("json_skin"))
+    chars = parse_excel_rows(cfg.get("json_character"))
+    char_name = {_cell(r, 0): _cell(r, 1) for r in chars if _cell(r, 0)}
+    mapping: dict[str, tuple[str, str, str]] = {}
+    for row in skins:
+        skin_id = _cell(row, 0)
+        if not skin_id:
+            continue
+        hero = char_name.get(_cell(row, 5)) or _cell(row, 1)
+        title = _cell(row, 58) or ""
+        if not title:
+            raw_name = _cell(row, 1)
+            if raw_name and raw_name != hero:
+                title = raw_name
+        stems = {skin_id, _cell(row, 14), _cell(row, 25), _cell(row, 27)}
+        for stem in stems:
+            if stem and stem not in mapping:
+                mapping[stem] = (hero, title, skin_id)
+    return mapping
+
+
+def portrait_basename(stem: str, mapping: dict[str, tuple[str, str, str]]) -> str:
+    hero, title, skin_id = mapping.get(stem, ("", "", stem))
+    if hero and title:
+        base = f"{GAME_TITLE}_{hero}_{title}"
+    elif hero:
+        base = f"{GAME_TITLE}_{hero}"
+    else:
+        base = f"{GAME_TITLE}_{stem}"
+    return sanitize_filename(base)
+
+
+def portrait_dest(stem: str, mapping: dict[str, tuple[str, str, str]], used: set[str]) -> Path:
+    base = portrait_basename(stem, mapping)
+    name = base + ".png"
+    if name in used:
+        _, _, skin_id = mapping.get(stem, ("", "", stem))
+        name = sanitize_filename(f"{base}_{skin_id or stem}") + ".png"
+    used.add(name)
+    return PORTRAIT_DIR / name
+
+
+def _texture_stem(container: str, tex_name: str) -> str:
+    if container:
+        raw = Path(container.replace("\\", "/")).name
+        return Path(raw).stem
+    return Path(tex_name).stem
+
+
+def is_portrait_container(path: str) -> bool:
+    p = path.replace("\\", "/").lower()
+    return "/singlebg/headicon_img/" in p or p.startswith("singlebg/headicon_img/")
+
+
+def extract_portrait_textures(bundle: Path) -> list[tuple[str, str, Any]]:
+    """返回 (container路径, Texture2D 名, PIL Image)。"""
+    import UnityPy
+
+    env = UnityPy.load(str(bundle))
+    hits: list[tuple[str, str, Any]] = []
+    seen: set[int] = set()
+
+    def take(obj, container: str) -> None:
+        try:
+            if getattr(getattr(obj, "type", None), "name", None) != "Texture2D":
+                return
+            if obj.path_id in seen:
+                return
+            tex = obj.read()
+            img = getattr(tex, "image", None)
+            if img is None:
+                return
+            seen.add(obj.path_id)
+            hits.append((container, str(getattr(tex, "m_Name", "") or ""), img))
+        except Exception:
+            return
+
+    for cpath, obj in (getattr(env, "container", None) or {}).items():
+        if not is_portrait_container(str(cpath)):
+            continue
+        entries = obj if isinstance(obj, (list, tuple)) else [obj]
+        for one in entries:
+            take(one, str(cpath))
+    if not hits:
+        for obj in env.objects:
+            take(obj, "")
+    return hits
+
+
+def export_portraits(
+    bundles: list[Path], mapping: dict[str, tuple[str, str, str]], force: bool
+) -> tuple[int, int, int]:
+    PORTRAIT_DIR.mkdir(parents=True, exist_ok=True)
+    used: set[str] = set()
+    seen_stems: set[str] = set()
+    ok = skip = fail = 0
+    failures: dict[str, str] = {}
+    progress = Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        "[progress.percentage]{task.percentage:>3.1f}%",
+        TimeElapsedColumn(),
+        TimeRemainingColumn(),
+        console=console,
+        transient=False,
+        refresh_per_second=8,
+    )
+    with progress:
+        task = progress.add_task("[cyan]导出立绘", total=len(bundles))
+        for bundle in bundles:
+            try:
+                textures = extract_portrait_textures(bundle)
+                if not textures:
+                    raise ValueError("没有 Texture2D")
+                for container, tex_name, img in textures:
+                    stem = _texture_stem(container, tex_name)
+                    if stem in seen_stems:
+                        skip += 1
+                        continue
+                    seen_stems.add(stem)
+                    dest = portrait_dest(stem, mapping, used)
+                    if dest.exists() and not force:
+                        skip += 1
+                        continue
+                    if getattr(img, "mode", "") not in ("RGB", "RGBA"):
+                        img = img.convert("RGBA")
+                    img.save(dest, "PNG")
+                    ok += 1
+            except Exception as exc:
+                fail += 1
+                failures[bundle.name] = str(exc)
+                progress.live.print(f"[red]失败[/red] {bundle.name}: {exc}")
+            progress.advance(task)
+    if failures:
+        (SCRIPT_DIR / "portrait_failed.txt").write_text(
+            "\n".join(f"{k}\t{v}" for k, v in failures.items()), encoding="utf-8"
+        )
+    return ok, skip, fail
+
+
+def run_portrait(threads: int, force: bool) -> int:
+    console.print("[bold]查询热更[/bold] Android / 国服 50001  立绘模式")
+    version_info, resource = query_latest()
+    latest = version_info.get("latestVersion") or "?"
+    console.print(f"  远程版本 [green]{latest}[/green]")
+    resinfo = load_resinfo(resource)
+
+    cfg_items = collect_paths(
+        resinfo, ["configs/allmanifest.dat", "configs/datacfg_4.dat"]
+    )
+    if cfg_items:
+        console.print(f"  配置 {len(cfg_items)} 个")
+        download_items(cfg_items, threads, force, latest)
+
+    allmanifest = load_allmanifest_bytes()
+    bundle_stems = {
+        Path(meta["path"]).stem
+        for _, _, meta in iter_resinfo(resinfo)
+        if is_bundle_path(meta["path"])
+    }
+    ab_names = recover_ab_names(allmanifest, bundle_stems)
+    portrait_abs = {name: md5 for name, md5 in ab_names.items() if is_portrait_ab(name)}
+    if not portrait_abs:
+        console.print("[red]allmanifest 里没有 singlebg/headicon_img 相关 bundle[/red]")
+        return 1
+    console.print(f"  识别到 {len(portrait_abs)} 个立绘目录（MD5(abName)=文件名）")
+
+    bundle_paths = [f"bundles/{md5}.dat" for md5 in portrait_abs.values()]
+    items = collect_paths(resinfo, bundle_paths)
+    total = sum(it["size"] for it in items)
+    console.print(
+        f"  立绘 bundle {len(items)} 个 / {total / 1024 ** 2:.1f} MB"
+        f"（{threads} 线程）  CDN {CDN_HOSTS[0]}"
+    )
+    ok, fail, skipped = download_items(items, threads, force, latest)
+    console.print(
+        f"[bold]下载完成[/bold] 成功={ok} 失败={fail} 跳过={skipped}  -> {ASSETS_DIR}"
+    )
+    if fail:
+        console.print("[yellow]存在失败文件，仍尝试导出已有 bundle[/yellow]")
+
+    mapping = load_portrait_mappings()
+    console.print(f"  皮肤映射 {len(mapping)} 条")
+
+    local_bundles = []
+    for it in items:
+        dest = ASSETS_DIR / it["path"]
+        if dest.is_file():
+            local_bundles.append(dest)
+    exported, skipped_png, exp_fail = export_portraits(local_bundles, mapping, force)
+    pngs = sum(1 for _ in PORTRAIT_DIR.glob("*.png"))
+    console.print(
+        f"[bold green]Painting[/bold green] 新导出={exported} 跳过={skipped_png} "
+        f"失败={exp_fail}  共 {pngs} 张 -> {PORTRAIT_DIR}"
+    )
+    return 1 if fail or exp_fail else 0
+
+
 def run(lua_only: bool, threads: int, force: bool, include_dlc: bool) -> int:
     console.print("[bold]查询热更[/bold] Android / 国服 50001")
     version_info, resource = query_latest()
@@ -602,7 +1086,7 @@ def run(lua_only: bool, threads: int, force: bool, include_dlc: bool) -> int:
     resinfo = load_resinfo(resource)
     items = collect_items(resinfo, lua_only=lua_only, include_dlc=include_dlc)
     total = sum(it["size"] for it in items)
-    label = "Lua 包" if lua_only else "资产"
+    label = "Lua / 配表" if lua_only else "资产"
     console.print(
         f"  {label} {len(items)} 个 / {total / 1024 ** 3:.2f} GB"
         f"（{threads} 线程）  CDN {CDN_HOSTS[0]}"
@@ -612,9 +1096,10 @@ def run(lua_only: bool, threads: int, force: bool, include_dlc: bool) -> int:
         f"[bold]下载完成[/bold] 成功={ok} 失败={fail} 跳过={skipped}  -> {ASSETS_DIR}"
     )
     if fail:
-        console.print("[yellow]存在失败文件，仍尝试转换已有 Lua[/yellow]")
+        console.print("[yellow]存在失败文件，仍尝试转换已有 Lua / 配表[/yellow]")
+    rc_cfg = convert_configs()
     rc = convert_lua(threads)
-    return 1 if fail or rc else 0
+    return 1 if fail or rc or rc_cfg else 0
 
 
 def main() -> int:
@@ -624,8 +1109,8 @@ def main() -> int:
     parser.add_argument(
         "mode",
         nargs="?",
-        choices=("lua", "masterdata", "data"),
-        help="只下 luabytes 并转换到 MasterData；省略则下载全部资产",
+        choices=("lua", "masterdata", "data", "portrait", "painting"),
+        help="lua=只转 Lua+配表；portrait=只导出角色立绘到 Painting/；省略则下载全部资产",
     )
     parser.add_argument(
         "--threads",
@@ -642,10 +1127,13 @@ def main() -> int:
         help="全量模式排除 dlc（语音/活动包）",
     )
     args = parser.parse_args()
+    threads = max(1, args.threads)
+    if args.mode in ("portrait", "painting"):
+        return run_portrait(threads, args.force)
     lua_only = args.mode in ("lua", "masterdata", "data")
     return run(
         lua_only=lua_only,
-        threads=max(1, args.threads),
+        threads=threads,
         force=args.force,
         include_dlc=not args.no_dlc,
     )
