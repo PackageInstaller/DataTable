@@ -1,0 +1,104 @@
+[
+  {
+    "Id": 3,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 3,
+        "Delay": 10
+      },
+      {
+        "To": 6,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Delay": 400,
+    "Transition": [
+      {
+        "To": 5,
+        "Delay": 200
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 6,
+        "Delay": 10
+      },
+      {
+        "To": 7,
+        "Delay": 200
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Delay": 200,
+    "Transition": [
+      {
+        "To": 7,
+        "Delay": 200
+      }
+    ]
+  },
+  {
+    "Id": 90,
+    "Delay": 100,
+    "Transition": [
+      {
+        "To": 90,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 92,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 92,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 93,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 93,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 94,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 94,
+        "Delay": 10
+      },
+      {
+        "To": 6,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 95,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 95,
+        "Delay": 10
+      }
+    ]
+  }
+]

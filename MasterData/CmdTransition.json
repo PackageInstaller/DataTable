@@ -1,0 +1,180 @@
+[
+  {
+    "Id": 3,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 3,
+        "Delay": 10
+      },
+      {
+        "To": 6,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "Delay": 400,
+    "Transition": [
+      {
+        "To": 5,
+        "Delay": 200
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 6,
+        "Delay": 10
+      },
+      {
+        "To": 7,
+        "Delay": 200
+      }
+    ]
+  },
+  {
+    "Id": 7,
+    "Delay": 200,
+    "Transition": [
+      {
+        "To": 7,
+        "Delay": 200
+      }
+    ]
+  },
+  {
+    "Id": 24,
+    "Delay": 500,
+    "Transition": [
+      {}
+    ]
+  },
+  {
+    "Id": 90,
+    "Delay": 100,
+    "Transition": [
+      {
+        "To": 90,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 92,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 92,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 93,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 93,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 94,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 94,
+        "Delay": 10
+      },
+      {
+        "To": 6,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 95,
+    "Delay": 10,
+    "Transition": [
+      {
+        "To": 95,
+        "Delay": 10
+      }
+    ]
+  },
+  {
+    "Id": 131,
+    "Delay": 800,
+    "Transition": [
+      {
+        "To": 132
+      }
+    ]
+  },
+  {
+    "Id": 132,
+    "Delay": 600,
+    "Transition": [
+      {
+        "To": 133
+      }
+    ]
+  },
+  {
+    "Id": 133,
+    "Delay": 1000,
+    "Transition": [
+      {
+        "To": 135
+      }
+    ]
+  },
+  {
+    "Id": 135,
+    "Delay": 1000,
+    "Transition": [
+      {}
+    ]
+  },
+  {
+    "Id": 139,
+    "Delay": 500,
+    "Transition": [
+      {}
+    ]
+  },
+  {
+    "Id": 331,
+    "Delay": 1500,
+    "Transition": [
+      {
+        "To": 13,
+        "Delay": 1500
+      },
+      {
+        "To": 2,
+        "Delay": 1
+      },
+      {
+        "To": 3,
+        "Delay": 1
+      }
+    ]
+  },
+  {
+    "Id": 332,
+    "Delay": 3000,
+    "Transition": [
+      {
+        "To": 13,
+        "Delay": 3000
+      }
+    ]
+  }
+]

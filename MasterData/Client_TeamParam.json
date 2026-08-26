@@ -1,0 +1,136 @@
+{
+  "AtkBoostLimit": [
+    1000,
+    1000,
+    1000,
+    1000,
+    50,
+    10000,
+    10000,
+    10000,
+    10000,
+    10000
+  ],
+  "HpBoostLimit": [
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000,
+    1000
+  ],
+  "CriRateLimit": [
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100,
+    100
+  ],
+  "CaRateLimit": [
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75,
+    75
+  ],
+  "LBDmgLimit": [
+    30,
+    30,
+    30,
+    50,
+    30,
+    10,
+    10,
+    50,
+    50,
+    50
+  ],
+  "HpBoost": [
+    {
+      "Section": 1,
+      "Param": [
+        18446744069414584250,
+        9999
+      ]
+    },
+    {
+      "Section": 2,
+      "Param": [
+        18446744069414584250,
+        9999
+      ]
+    },
+    {
+      "Section": 3,
+      "Param": [
+        18446744069414584250,
+        9999
+      ]
+    },
+    {
+      "Section": 10,
+      "Param": [
+        18446744069414584250,
+        9999
+      ]
+    }
+  ],
+  "MinHp": -99.98999786376953,
+  "MaxHp": 9999,
+  "MaxDa": 75,
+  "MaxTa": 75,
+  "SkillDmgCap": [
+    50,
+    50,
+    50,
+    50
+  ],
+  "LbDmgCap": [
+    50,
+    50,
+    50,
+    50
+  ],
+  "SADmgCap": [
+    20,
+    20,
+    20,
+    20
+  ],
+  "NormalDmgCap": [
+    50,
+    50,
+    50,
+    50
+  ],
+  "ElementDmgPerLimit": [
+    100,
+    100,
+    100
+  ],
+  "DmgIncreaseLimit": 100000,
+  "SkillDmgIncreaseLimit": 400000,
+  "LBDmgIncreaseLimit": 2400000,
+  "CriDmgIncreaseLimit": 100000,
+  "TaDmgIncreaseLimit": 600000,
+  "DmgIncreaseLimitEx": 1000000,
+  "DmgBonusLimit": 100,
+  "SkillDmgBonusLimit": 100,
+  "LBDmgBonusLimit": 100,
+  "CriDmgBonusLimit": 100,
+  "TaDmgBonusLimit": 100
+}

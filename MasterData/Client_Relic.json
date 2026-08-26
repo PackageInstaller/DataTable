@@ -1,0 +1,8494 @@
+[
+  {
+    "Id": 1,
+    "StartPos": 1,
+    "RelicElementBuff": 2,
+    "RelicBuff": [
+      802,
+      807
+    ],
+    "Element": 1,
+    "OutputTips": 1,
+    "PointStage": [
+      50,
+      200,
+      350,
+      500,
+      650
+    ],
+    "TotalGain": [
+      {
+        "Type": 6,
+        "id": 2,
+        "Count": 800
+      }
+    ],
+    "C": [
+      5,
+      5
+    ],
+    "Area": [
+      {
+        "MainRoomId": 1,
+        "MainRoomName": "起点",
+        "FollowMainRoomList": [
+          11,
+          31,
+          51
+        ],
+        "Y": 2,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 11,
+        "MainRoomName": "房间11",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          101
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 12,
+        "MainRoomName": "房间12",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 13,
+        "MainRoomName": "房间13",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541007,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          102,
+          103
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 14,
+        "MainRoomName": "房间14",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          104
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 15,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541010,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 16,
+        "MainRoomName": "房间16",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 17,
+        "MainRoomName": "房间17",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541028,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          105,
+          106
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 18,
+        "MainRoomName": "房间18",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          107,
+          108
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 19,
+        "MainRoomName": "房间19",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 20,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541031,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 21,
+        "MainRoomName": "房间21",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          109
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 22,
+        "MainRoomName": "房间22",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541049,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 23,
+        "MainRoomName": "房间23",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          110,
+          111
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 24,
+        "MainRoomName": "房间24",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          112
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 25,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541052,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 26,
+        "MainRoomName": "房间26",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541064,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          113,
+          114
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 27,
+        "MainRoomName": "房间27",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          115
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 28,
+        "MainRoomName": "房间28",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 541092,
+        "Rewards": 1670163,
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 29,
+        "MainRoomName": "房间29",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541067,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          155
+        ],
+        "RandomEventList": [
+          116,
+          117
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 30,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 541073,
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 31,
+        "MainRoomName": "房间31",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          118
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 32,
+        "MainRoomName": "房间32",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          119,
+          120
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 33,
+        "MainRoomName": "房间33",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 34,
+        "MainRoomName": "房间34",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541008,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          121,
+          122
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 35,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541011,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 36,
+        "MainRoomName": "房间36",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          123
+        ],
+        "MainRoomPointCoefficient": 27,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 37,
+        "MainRoomName": "房间37",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541023,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          124
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 38,
+        "MainRoomName": "房间38",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 541093,
+        "Rewards": 1670146,
+        "RandomEventList": [
+          125,
+          126
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 39,
+        "MainRoomName": "房间39",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541029,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          127
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 40,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541032,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 41,
+        "MainRoomName": "房间41",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 42,
+        "MainRoomName": "房间42",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541050,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          128,
+          129
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 43,
+        "MainRoomName": "房间43",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          130
+        ],
+        "MainRoomPointCoefficient": 27,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 44,
+        "MainRoomName": "房间44",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          131
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 45,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541053,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 46,
+        "MainRoomName": "房间46",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541071,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          132
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 47,
+        "MainRoomName": "房间47",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 27,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 48,
+        "MainRoomName": "房间48",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541065,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          133,
+          134
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 49,
+        "MainRoomName": "房间49",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 541089,
+        "Rewards": 1670161,
+        "FixedEventList": [
+          156
+        ],
+        "RandomEventList": [
+          135
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 50,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 541074,
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 51,
+        "MainRoomName": "房间51",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          136,
+          137
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 52,
+        "MainRoomName": "房间52",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 541094,
+        "Rewards": 1670138,
+        "RandomEventList": [
+          138
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 53,
+        "MainRoomName": "房间53",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          139
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 54,
+        "MainRoomName": "房间54",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541009,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 55,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541012,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 56,
+        "MainRoomName": "房间56",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          140,
+          141
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 57,
+        "MainRoomName": "房间57",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541024,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          142
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 58,
+        "MainRoomName": "房间58",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541027,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 59,
+        "MainRoomName": "房间59",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          143,
+          144
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 60,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541033,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 61,
+        "MainRoomName": "房间61",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 62,
+        "MainRoomName": "房间62",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541048,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          145
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 63,
+        "MainRoomName": "房间63",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 541090,
+        "Rewards": 1670153,
+        "RandomEventList": [
+          146,
+          147
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 64,
+        "MainRoomName": "房间64",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541051,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          148,
+          149
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 65,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 541054,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 66,
+        "MainRoomName": "房间66",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 541066,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          150,
+          151
+        ],
+        "MainRoomPointCoefficient": 32,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 67,
+        "MainRoomName": "房间67",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 541072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 68,
+        "MainRoomName": "房间68",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          152,
+          153
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 69,
+        "MainRoomName": "房间69",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 541069,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          157
+        ],
+        "RandomEventList": [
+          154
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 70,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 541075,
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "StartPos": 1,
+    "RelicElementBuff": 1,
+    "RelicBuff": [
+      801,
+      807
+    ],
+    "Element": 4,
+    "OutputTips": 2,
+    "PointStage": [
+      50,
+      200,
+      350,
+      500,
+      650
+    ],
+    "TotalGain": [
+      {
+        "Type": 6,
+        "id": 2,
+        "Count": 800
+      }
+    ],
+    "C": [
+      5,
+      5
+    ],
+    "Area": [
+      {
+        "MainRoomId": 1,
+        "MainRoomName": "起点",
+        "FollowMainRoomList": [
+          11,
+          31,
+          51
+        ],
+        "Y": 2,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 11,
+        "MainRoomName": "房间11",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 544088,
+        "Rewards": 1710187,
+        "RandomEventList": [
+          201
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 12,
+        "MainRoomName": "房间12",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544007,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 13,
+        "MainRoomName": "房间13",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          202,
+          203
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 14,
+        "MainRoomName": "房间14",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          204
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 15,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544010,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 16,
+        "MainRoomName": "房间16",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 17,
+        "MainRoomName": "房间17",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          205,
+          206
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 18,
+        "MainRoomName": "房间18",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          207,
+          208
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 19,
+        "MainRoomName": "房间19",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544028,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 20,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544031,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 21,
+        "MainRoomName": "房间21",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          209
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 22,
+        "MainRoomName": "房间22",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          210
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 23,
+        "MainRoomName": "房间23",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          211,
+          212
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 24,
+        "MainRoomName": "房间24",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544049,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          213
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 25,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544052,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 26,
+        "MainRoomName": "房间26",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544070,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          214,
+          215
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 27,
+        "MainRoomName": "房间27",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          216
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 28,
+        "MainRoomName": "房间28",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544064,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 29,
+        "MainRoomName": "房间29",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544067,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          255
+        ],
+        "RandomEventList": [
+          217
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 30,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 544073,
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 31,
+        "MainRoomName": "房间31",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          218,
+          219
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 32,
+        "MainRoomName": "房间32",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          220
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 33,
+        "MainRoomName": "房间33",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          221
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 34,
+        "MainRoomName": "房间34",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544008,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          222
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 35,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544011,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 36,
+        "MainRoomName": "房间36",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544023,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          223
+        ],
+        "MainRoomPointCoefficient": 27,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 37,
+        "MainRoomName": "房间37",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544026,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          224
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 38,
+        "MainRoomName": "房间38",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          225,
+          226
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 39,
+        "MainRoomName": "房间39",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          227
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 40,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544032,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 41,
+        "MainRoomName": "房间41",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 42,
+        "MainRoomName": "房间42",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544050,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          228
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 43,
+        "MainRoomName": "房间43",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 544093,
+        "Rewards": 1710209,
+        "RandomEventList": [
+          229
+        ],
+        "MainRoomPointCoefficient": 27,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 44,
+        "MainRoomName": "房间44",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          230
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 45,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544053,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 46,
+        "MainRoomName": "房间46",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544071,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          231
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 47,
+        "MainRoomName": "房间47",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          232
+        ],
+        "MainRoomPointCoefficient": 27,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 48,
+        "MainRoomName": "房间48",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544065,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          233,
+          234
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 49,
+        "MainRoomName": "房间49",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          256
+        ],
+        "RandomEventList": [
+          235
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 50,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 544074,
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 51,
+        "MainRoomName": "房间51",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          236,
+          237
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 52,
+        "MainRoomName": "房间52",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          238
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 53,
+        "MainRoomName": "房间53",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544009,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          239
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 54,
+        "MainRoomName": "房间54",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544006,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 55,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544012,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 56,
+        "MainRoomName": "房间56",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          240,
+          241
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 57,
+        "MainRoomName": "房间57",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544027,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          242
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 58,
+        "MainRoomName": "房间58",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 544094,
+        "Rewards": 1710201,
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 59,
+        "MainRoomName": "房间59",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544024,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          243,
+          244
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 60,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544033,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 61,
+        "MainRoomName": "房间61",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          245
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 62,
+        "MainRoomName": "房间62",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544045,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          246
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 63,
+        "MainRoomName": "房间63",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 544048,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          247,
+          248
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 64,
+        "MainRoomName": "房间64",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544051,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          249,
+          250
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 65,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 544054,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 66,
+        "MainRoomName": "房间66",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 544066,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          251
+        ],
+        "MainRoomPointCoefficient": 32,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 67,
+        "MainRoomName": "房间67",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 544072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 68,
+        "MainRoomName": "房间68",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          252,
+          253
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 69,
+        "MainRoomName": "房间69",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 544090,
+        "Rewards": 1710216,
+        "FixedEventList": [
+          257
+        ],
+        "RandomEventList": [
+          254
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 70,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 544075,
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "StartPos": 1,
+    "RelicElementBuff": 4,
+    "RelicBuff": [
+      804,
+      807
+    ],
+    "Element": 3,
+    "OutputTips": 3,
+    "PointStage": [
+      50,
+      200,
+      350,
+      500,
+      650
+    ],
+    "TotalGain": [
+      {
+        "Type": 6,
+        "id": 2,
+        "Count": 800
+      }
+    ],
+    "C": [
+      5,
+      5
+    ],
+    "Area": [
+      {
+        "MainRoomId": 1,
+        "MainRoomName": "起点",
+        "FollowMainRoomList": [
+          11,
+          31,
+          51
+        ],
+        "Y": 2,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 11,
+        "MainRoomName": "房间11",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543007,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          301,
+          302
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 12,
+        "MainRoomName": "房间12",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 13,
+        "MainRoomName": "房间13",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 14,
+        "MainRoomName": "房间14",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          303,
+          304
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 15,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543010,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 16,
+        "MainRoomName": "房间16",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543028,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          305,
+          306
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 17,
+        "MainRoomName": "房间17",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          307
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 18,
+        "MainRoomName": "房间18",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          308
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 19,
+        "MainRoomName": "房间19",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 20,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543031,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 21,
+        "MainRoomName": "房间21",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 543092,
+        "Rewards": 1711583,
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 22,
+        "MainRoomName": "房间22",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          309,
+          310
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 23,
+        "MainRoomName": "房间23",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          311,
+          312
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 24,
+        "MainRoomName": "房间24",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          313
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 25,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543052,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 26,
+        "MainRoomName": "房间26",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543067,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 27,
+        "MainRoomName": "房间27",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543064,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          314
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 28,
+        "MainRoomName": "房间28",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          315,
+          316
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 29,
+        "MainRoomName": "房间29",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543070,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          355
+        ],
+        "RandomEventList": [
+          317
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 30,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 543073,
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 31,
+        "MainRoomName": "房间31",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 32,
+        "MainRoomName": "房间32",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543008,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          318,
+          319
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 33,
+        "MainRoomName": "房间33",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          320
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 34,
+        "MainRoomName": "房间34",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          321
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 35,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543011,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 36,
+        "MainRoomName": "房间36",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          322,
+          323
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 37,
+        "MainRoomName": "房间37",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543026,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          324,
+          325
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 38,
+        "MainRoomName": "房间38",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543029,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          326
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 39,
+        "MainRoomName": "房间39",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543023,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 40,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543032,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 41,
+        "MainRoomName": "房间41",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          327,
+          328
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 42,
+        "MainRoomName": "房间42",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          329
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 43,
+        "MainRoomName": "房间43",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543044,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 44,
+        "MainRoomName": "房间44",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          330
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 45,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543053,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 46,
+        "MainRoomName": "房间46",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          331,
+          332
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 47,
+        "MainRoomName": "房间47",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          333
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 48,
+        "MainRoomName": "房间48",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 543093,
+        "Rewards": 1711593,
+        "RandomEventList": [
+          334
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 49,
+        "MainRoomName": "房间49",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543065,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          356
+        ],
+        "RandomEventList": [
+          335
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 50,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 543074,
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 51,
+        "MainRoomName": "房间51",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543006,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          336,
+          337
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 52,
+        "MainRoomName": "房间52",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 53,
+        "MainRoomName": "房间53",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          338
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 54,
+        "MainRoomName": "房间54",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 543094,
+        "Rewards": 1711567,
+        "RandomEventList": [
+          339
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 55,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543012,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 56,
+        "MainRoomName": "房间56",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          340
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 57,
+        "MainRoomName": "房间57",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          341
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 58,
+        "MainRoomName": "房间58",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 543090,
+        "Rewards": 1711573,
+        "RandomEventList": [
+          342,
+          343
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 59,
+        "MainRoomName": "房间59",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 543027,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          344
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 60,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543033,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 61,
+        "MainRoomName": "房间61",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543045,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 62,
+        "MainRoomName": "房间62",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543051,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          345
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 63,
+        "MainRoomName": "房间63",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543045,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          346,
+          347
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 64,
+        "MainRoomName": "房间64",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543051,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          348,
+          349
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 65,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 543054,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 66,
+        "MainRoomName": "房间66",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          350
+        ],
+        "MainRoomPointCoefficient": 32,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 67,
+        "MainRoomName": "房间67",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 543066,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 68,
+        "MainRoomName": "房间68",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          351,
+          352
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 69,
+        "MainRoomName": "房间69",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 543072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          357
+        ],
+        "RandomEventList": [
+          353,
+          354
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 70,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 543075,
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      }
+    ]
+  },
+  {
+    "Id": 4,
+    "StartPos": 1,
+    "RelicElementBuff": 3,
+    "RelicBuff": [
+      803,
+      807
+    ],
+    "Element": 2,
+    "OutputTips": 4,
+    "PointStage": [
+      50,
+      200,
+      350,
+      500,
+      650
+    ],
+    "TotalGain": [
+      {
+        "Type": 6,
+        "id": 2,
+        "Count": 800
+      }
+    ],
+    "C": [
+      5,
+      5
+    ],
+    "Area": [
+      {
+        "MainRoomId": 1,
+        "MainRoomName": "起点",
+        "FollowMainRoomList": [
+          11,
+          31,
+          51
+        ],
+        "Y": 2,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 11,
+        "MainRoomName": "房间11",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542004,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          401
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 12,
+        "MainRoomName": "房间12",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 542092,
+        "Rewards": 1711874,
+        "RandomEventList": [
+          402,
+          403
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 13,
+        "MainRoomName": "房间13",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542007,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          404,
+          405
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 14,
+        "MainRoomName": "房间14",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 15,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542010,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 16,
+        "MainRoomName": "房间16",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          406,
+          407
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 17,
+        "MainRoomName": "房间17",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 18,
+        "MainRoomName": "房间18",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          408
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 19,
+        "MainRoomName": "房间19",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          409
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 20,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542031,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 21,
+        "MainRoomName": "房间21",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 22,
+        "MainRoomName": "房间22",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542049,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          410,
+          411
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 23,
+        "MainRoomName": "房间23",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          412,
+          413
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 24,
+        "MainRoomName": "房间24",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 25,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542052,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 26,
+        "MainRoomName": "房间26",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542067,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          414
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 27,
+        "MainRoomName": "房间27",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          415,
+          416
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 28,
+        "MainRoomName": "房间28",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542064,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          417
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 29,
+        "MainRoomName": "房间29",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542070,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          455
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 30,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 542073,
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 31,
+        "MainRoomName": "房间31",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          418
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 32,
+        "MainRoomName": "房间32",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          419,
+          420
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 33,
+        "MainRoomName": "房间33",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542008,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 34,
+        "MainRoomName": "房间34",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          421,
+          422
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 35,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542011,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 36,
+        "MainRoomName": "房间36",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542029,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          423
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 37,
+        "MainRoomName": "房间37",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542023,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          424,
+          425
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 38,
+        "MainRoomName": "房间38",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 542089,
+        "Rewards": 1711881,
+        "RandomEventList": [
+          426
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 39,
+        "MainRoomName": "房间39",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542023,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 40,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542032,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 41,
+        "MainRoomName": "房间41",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          427
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 42,
+        "MainRoomName": "房间42",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          428
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 43,
+        "MainRoomName": "房间43",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          429
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 44,
+        "MainRoomName": "房间44",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542050,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          430
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 45,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542053,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 46,
+        "MainRoomName": "房间46",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542065,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          431,
+          432
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 47,
+        "MainRoomName": "房间47",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 542089,
+        "Rewards": 1711899,
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 48,
+        "MainRoomName": "房间48",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          433,
+          434
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 49,
+        "MainRoomName": "房间49",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542071,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          456
+        ],
+        "RandomEventList": [
+          435
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 50,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 542074,
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 51,
+        "MainRoomName": "房间51",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          436,
+          437
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 52,
+        "MainRoomName": "房间52",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 53,
+        "MainRoomName": "房间53",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          438,
+          439
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 54,
+        "MainRoomName": "房间54",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542009,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          440
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 55,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542012,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 56,
+        "MainRoomName": "房间56",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          441
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 57,
+        "MainRoomName": "房间57",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          442,
+          443
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 58,
+        "MainRoomName": "房间58",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542027,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          444,
+          445
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 59,
+        "MainRoomName": "房间59",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 60,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542033,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 61,
+        "MainRoomName": "房间61",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 542045,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          446
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 62,
+        "MainRoomName": "房间62",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          447,
+          448
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 63,
+        "MainRoomName": "房间63",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 542094,
+        "Rewards": 1711894,
+        "RandomEventList": [
+          449
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 64,
+        "MainRoomName": "房间64",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542051,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          450
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 65,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 542054,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 66,
+        "MainRoomName": "房间66",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          451
+        ],
+        "MainRoomPointCoefficient": 32,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 67,
+        "MainRoomName": "房间67",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542069,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          452,
+          453
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 68,
+        "MainRoomName": "房间68",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 542069,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 69,
+        "MainRoomName": "房间69",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 542072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          457
+        ],
+        "RandomEventList": [
+          454
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 70,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 542075,
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      }
+    ]
+  },
+  {
+    "Id": 5,
+    "StartPos": 1,
+    "RelicElementBuff": 5,
+    "RelicBuff": [
+      805,
+      807
+    ],
+    "Element": 6,
+    "OutputTips": 5,
+    "PointStage": [
+      50,
+      200,
+      350,
+      500,
+      650
+    ],
+    "TotalGain": [
+      {
+        "Type": 6,
+        "id": 2,
+        "Count": 800
+      }
+    ],
+    "C": [
+      5,
+      5
+    ],
+    "Area": [
+      {
+        "MainRoomId": 1,
+        "MainRoomName": "起点",
+        "FollowMainRoomList": [
+          11,
+          31,
+          51
+        ],
+        "Y": 2,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 11,
+        "MainRoomName": "房间11",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 546088,
+        "Rewards": 1712489,
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 12,
+        "MainRoomName": "房间12",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546004,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          501
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 13,
+        "MainRoomName": "房间13",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          502
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 14,
+        "MainRoomName": "房间14",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          503,
+          504
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 15,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546010,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 16,
+        "MainRoomName": "房间16",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          505,
+          506
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 17,
+        "MainRoomName": "房间17",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          507
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 18,
+        "MainRoomName": "房间18",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          508
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 19,
+        "MainRoomName": "房间19",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546028,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 20,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546031,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 21,
+        "MainRoomName": "房间21",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          509
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 22,
+        "MainRoomName": "房间22",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          510
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 23,
+        "MainRoomName": "房间23",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          511
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 24,
+        "MainRoomName": "房间24",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          512
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 25,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546052,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 26,
+        "MainRoomName": "房间26",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546070,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          513,
+          514
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 27,
+        "MainRoomName": "房间27",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 546092,
+        "Rewards": 1712519,
+        "RandomEventList": [
+          515,
+          516
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 28,
+        "MainRoomName": "房间28",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 29,
+        "MainRoomName": "房间29",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546070,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          555
+        ],
+        "RandomEventList": [
+          517
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 30,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 546073,
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 31,
+        "MainRoomName": "房间31",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          518,
+          519
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 32,
+        "MainRoomName": "房间32",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 33,
+        "MainRoomName": "房间33",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          520,
+          521
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 34,
+        "MainRoomName": "房间34",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546008,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          522
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 35,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546011,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 36,
+        "MainRoomName": "房间36",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546023,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 37,
+        "MainRoomName": "房间37",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546026,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          523,
+          524
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 38,
+        "MainRoomName": "房间38",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 39,
+        "MainRoomName": "房间39",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546029,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          525,
+          526
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 40,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546032,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 41,
+        "MainRoomName": "房间41",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 546089,
+        "Rewards": 1712508,
+        "RandomEventList": [
+          527
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 42,
+        "MainRoomName": "房间42",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546050,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 43,
+        "MainRoomName": "房间43",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546044,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          528
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 44,
+        "MainRoomName": "房间44",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          529,
+          530
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 45,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546053,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 46,
+        "MainRoomName": "房间46",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          531
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 47,
+        "MainRoomName": "房间47",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          532,
+          533
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 48,
+        "MainRoomName": "房间48",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          534,
+          535
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 49,
+        "MainRoomName": "房间49",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546065,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          556
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 50,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 546074,
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 51,
+        "MainRoomName": "房间51",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          536
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 52,
+        "MainRoomName": "房间52",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546009,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          537,
+          538
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 53,
+        "MainRoomName": "房间53",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          539
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 54,
+        "MainRoomName": "房间54",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546006,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 55,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546012,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 56,
+        "MainRoomName": "房间56",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546024,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          540,
+          541
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 57,
+        "MainRoomName": "房间57",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 546094,
+        "Rewards": 1712503,
+        "RandomEventList": [
+          542
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 58,
+        "MainRoomName": "房间58",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          543
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 59,
+        "MainRoomName": "房间59",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          544,
+          545
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 60,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546033,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 61,
+        "MainRoomName": "房间61",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          546
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 62,
+        "MainRoomName": "房间62",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 546045,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          547
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 63,
+        "MainRoomName": "房间63",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 64,
+        "MainRoomName": "房间64",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546048,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          548,
+          549
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 65,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 546054,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 66,
+        "MainRoomName": "房间66",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 546072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          550,
+          551
+        ],
+        "MainRoomPointCoefficient": 32,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 67,
+        "MainRoomName": "房间67",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          552
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 68,
+        "MainRoomName": "房间68",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546069,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 69,
+        "MainRoomName": "房间69",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 546069,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          557
+        ],
+        "RandomEventList": [
+          553,
+          554
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 70,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 546075,
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      }
+    ]
+  },
+  {
+    "Id": 6,
+    "StartPos": 1,
+    "RelicElementBuff": 6,
+    "RelicBuff": [
+      806,
+      807
+    ],
+    "Element": 5,
+    "OutputTips": 6,
+    "PointStage": [
+      50,
+      200,
+      350,
+      500,
+      650
+    ],
+    "TotalGain": [
+      {
+        "Type": 6,
+        "id": 2,
+        "Count": 800
+      }
+    ],
+    "C": [
+      5,
+      5
+    ],
+    "Area": [
+      {
+        "MainRoomId": 1,
+        "MainRoomName": "起点",
+        "FollowMainRoomList": [
+          11,
+          31,
+          51
+        ],
+        "Y": 2,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 11,
+        "MainRoomName": "房间11",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          601,
+          602
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 12,
+        "MainRoomName": "房间12",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545007,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 13,
+        "MainRoomName": "房间13",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545001,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          603
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 14,
+        "MainRoomName": "房间14",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          604
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 15,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545010,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 16,
+        "MainRoomName": "房间16",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          605
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 17,
+        "MainRoomName": "房间17",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          606,
+          607
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 18,
+        "MainRoomName": "房间18",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545025,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          608,
+          609
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 19,
+        "MainRoomName": "房间19",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545022,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 20,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545031,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 21,
+        "MainRoomName": "房间21",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545043,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          610
+        ],
+        "MainRoomPointCoefficient": 35,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 22,
+        "MainRoomName": "房间22",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 3,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 545088,
+        "Rewards": 1712198,
+        "RandomEventList": [
+          611
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 23,
+        "MainRoomName": "房间23",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          612
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 24,
+        "MainRoomName": "房间24",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545046,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          613
+        ],
+        "MainRoomPointCoefficient": 16,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 25,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545052,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 26,
+        "MainRoomName": "房间26",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545067,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 10,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 27,
+        "MainRoomName": "房间27",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          614
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 28,
+        "MainRoomName": "房间28",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545067,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          615
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 29,
+        "MainRoomName": "房间29",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 3,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "FixedEventList": [
+          655
+        ],
+        "RandomEventList": [
+          616,
+          617
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 30,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 3,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 545073,
+        "MainRoomPointCoefficient": 45,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 31,
+        "MainRoomName": "房间31",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          618,
+          619
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 32,
+        "MainRoomName": "房间32",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 545093,
+        "Rewards": 1712184,
+        "RandomEventList": [
+          620
+        ],
+        "MainRoomPointCoefficient": 24,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 33,
+        "MainRoomName": "房间33",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545005,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 34,
+        "MainRoomName": "房间34",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545002,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          621,
+          622
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 35,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545011,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 36,
+        "MainRoomName": "房间36",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545026,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          623
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 37,
+        "MainRoomName": "房间37",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          624,
+          625
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 38,
+        "MainRoomName": "房间38",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545029,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          626
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 39,
+        "MainRoomName": "房间39",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          627
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 40,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545032,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 41,
+        "MainRoomName": "房间41",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545050,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 42,
+        "MainRoomName": "房间42",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          628,
+          629
+        ],
+        "MainRoomPointCoefficient": 36,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 43,
+        "MainRoomName": "房间43",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545047,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          630
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 44,
+        "MainRoomName": "房间44",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          631
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 45,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545053,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 46,
+        "MainRoomName": "房间46",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545068,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          632
+        ],
+        "MainRoomPointCoefficient": 53,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 47,
+        "MainRoomName": "房间47",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 2,
+        "MainRoomFunction": 2,
+        "Type": 6,
+        "MainBattleStage": 545089,
+        "Rewards": 1712208,
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 48,
+        "MainRoomName": "房间48",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545065,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          633,
+          634
+        ],
+        "MainRoomPointCoefficient": 15,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 49,
+        "MainRoomName": "房间49",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 2,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "FixedEventList": [
+          656
+        ],
+        "RandomEventList": [
+          635
+        ],
+        "MainRoomPointCoefficient": 30,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 50,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 2,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 545074,
+        "MainRoomPointCoefficient": 68,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 51,
+        "MainRoomName": "房间51",
+        "FollowMainRoomList": [
+          12,
+          32,
+          52
+        ],
+        "X": 1,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545009,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          636,
+          637
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 52,
+        "MainRoomName": "房间52",
+        "FollowMainRoomList": [
+          13,
+          33,
+          53
+        ],
+        "X": 2,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545006,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          638
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 53,
+        "MainRoomName": "房间53",
+        "FollowMainRoomList": [
+          14,
+          34,
+          54
+        ],
+        "X": 3,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545003,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 54,
+        "MainRoomName": "房间54",
+        "FollowMainRoomList": [
+          15,
+          35,
+          55
+        ],
+        "X": 4,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545009,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          639,
+          640
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 55,
+        "MainRoomName": "阶段BOSS1",
+        "FollowMainRoomList": [
+          16,
+          36,
+          56
+        ],
+        "X": 5,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545012,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 56,
+        "MainRoomName": "房间56",
+        "FollowMainRoomList": [
+          17,
+          37,
+          57
+        ],
+        "X": 6,
+        "Y": 1,
+        "MainRoomFunction": 2,
+        "Type": 7,
+        "MainBattleStage": 545094,
+        "Rewards": 1712194,
+        "RandomEventList": [
+          641
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 57,
+        "MainRoomName": "房间57",
+        "FollowMainRoomList": [
+          18,
+          38,
+          58
+        ],
+        "X": 7,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545027,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 20,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 58,
+        "MainRoomName": "房间58",
+        "FollowMainRoomList": [
+          19,
+          39,
+          59
+        ],
+        "X": 8,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545024,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          642
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 59,
+        "MainRoomName": "房间59",
+        "FollowMainRoomList": [
+          20,
+          40,
+          60
+        ],
+        "X": 9,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545030,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          643,
+          644
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 60,
+        "MainRoomName": "阶段BOSS2",
+        "FollowMainRoomList": [
+          21,
+          41,
+          61
+        ],
+        "X": 10,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545033,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 61,
+        "MainRoomName": "房间61",
+        "FollowMainRoomList": [
+          22,
+          42,
+          62
+        ],
+        "X": 11,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545048,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          645
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 62,
+        "MainRoomName": "房间62",
+        "FollowMainRoomList": [
+          23,
+          43,
+          63
+        ],
+        "X": 12,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545051,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          646,
+          647
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 63,
+        "MainRoomName": "房间63",
+        "FollowMainRoomList": [
+          24,
+          44,
+          64
+        ],
+        "X": 13,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545045,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          648,
+          649
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 64,
+        "MainRoomName": "房间64",
+        "FollowMainRoomList": [
+          25,
+          45,
+          65
+        ],
+        "X": 14,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 2,
+        "MainBattleStage": 545048,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "MainRoomPointCoefficient": 70,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 65,
+        "MainRoomName": "阶段BOSS3",
+        "FollowMainRoomList": [
+          26,
+          46,
+          66
+        ],
+        "X": 15,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 4,
+        "MainBattleStage": 545054,
+        "IsRondomBonus": [
+          4,
+          5,
+          6
+        ],
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 160,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 66,
+        "MainRoomName": "房间66",
+        "FollowMainRoomList": [
+          27,
+          47,
+          67
+        ],
+        "X": 16,
+        "Y": 1,
+        "MainRoomFunction": 3,
+        "Type": 9,
+        "RandomEventList": [
+          650,
+          651
+        ],
+        "MainRoomPointCoefficient": 32,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 67,
+        "MainRoomName": "房间67",
+        "FollowMainRoomList": [
+          28,
+          48,
+          68
+        ],
+        "X": 17,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545066,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          652
+        ],
+        "MainRoomPointCoefficient": 48,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 68,
+        "MainRoomName": "房间68",
+        "FollowMainRoomList": [
+          29,
+          49,
+          69
+        ],
+        "X": 18,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 3,
+        "MainBattleStage": 545072,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "RandomEventList": [
+          653,
+          654
+        ],
+        "MainRoomPointCoefficient": 18,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 69,
+        "MainRoomName": "房间69",
+        "FollowMainRoomList": [
+          30,
+          50,
+          70
+        ],
+        "X": 19,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 1,
+        "MainBattleStage": 545066,
+        "IsRondomBonus": [
+          1,
+          2,
+          3
+        ],
+        "FixedEventList": [
+          657
+        ],
+        "MainRoomPointCoefficient": 40,
+        "TotalGain": 800
+      },
+      {
+        "MainRoomId": 70,
+        "MainRoomName": "最终BOSS",
+        "X": 20,
+        "Y": 1,
+        "MainRoomFunction": 1,
+        "Type": 5,
+        "MainBattleStage": 545075,
+        "MainRoomPointCoefficient": 90,
+        "MainOutputShow": [
+          {
+            "Type": 6,
+            "Id": 2
+          }
+        ],
+        "Gain": 320,
+        "TotalGain": 800
+      }
+    ]
+  }
+]

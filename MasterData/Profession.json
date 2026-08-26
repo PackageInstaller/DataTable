@@ -1,0 +1,3704 @@
+[
+  {
+    "Id": 110001,
+    "ProfessionSeries": 1,
+    "ProfessionClass": 1,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 2,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601001
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601001
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 601002
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620001
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 611001
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 700101,
+        "Count": 1
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 35,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 110001,
+    "ProSkinList": [
+      110001,
+      400002,
+      400003,
+      400004
+    ],
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      35,
+      16,
+      2
+    ]
+  },
+  {
+    "Id": 110002,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 1,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 2,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601002
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601002
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620002
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 612001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 612002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360001
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110001,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 10,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 110002,
+    "ProSkinList": [
+      110002,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203001,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      36,
+      16,
+      4
+    ]
+  },
+  {
+    "Id": 110003,
+    "ProfessionSeries": 3,
+    "ProfessionClass": 1,
+    "ProfessionType": 2,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 3,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601003
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601003
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620003
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 613001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 613002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360002
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110001,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 34,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 110003,
+    "ProSkinList": [
+      110003,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203002,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      34,
+      16,
+      4
+    ]
+  },
+  {
+    "Id": 110004,
+    "ProfessionSeries": 4,
+    "ProfessionClass": 1,
+    "ProfessionType": 3,
+    "ProfessionWeaponType1": 4,
+    "ProfessionWeaponType2": 5,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601004
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601004
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620004
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 614001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 614002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360003
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110001,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 12,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 110004,
+    "ProSkinList": [
+      110004,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203003,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      12,
+      16,
+      4
+    ]
+  },
+  {
+    "Id": 110005,
+    "ProfessionSeries": 5,
+    "ProfessionClass": 1,
+    "ProfessionType": 4,
+    "ProfessionWeaponType1": 5,
+    "ProfessionWeaponType2": 6,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601005
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601005
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620005
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 615001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 615002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360004
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110001,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 14,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 110005,
+    "ProSkinList": [
+      110005,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203004,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      14,
+      16,
+      4
+    ]
+  },
+  {
+    "Id": 120002,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 2,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 2,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601006
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601006
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620006
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 616001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 616002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360005
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360006
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110002,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 10,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120002,
+    "ProSkinList": [
+      120002,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203101,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      36,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120003,
+    "ProfessionSeries": 3,
+    "ProfessionClass": 2,
+    "ProfessionType": 2,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 3,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620007
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 617001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 617002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360007
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360008
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110003,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 34,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120003,
+    "ProSkinList": [
+      120003,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203102,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      34,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120004,
+    "ProfessionSeries": 4,
+    "ProfessionClass": 2,
+    "ProfessionType": 3,
+    "ProfessionWeaponType1": 4,
+    "ProfessionWeaponType2": 5,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601008
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620008
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 618001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 618002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360009
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360010
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110004,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 12,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120004,
+    "ProSkinList": [
+      120004,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203103,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      12,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120005,
+    "ProfessionSeries": 5,
+    "ProfessionClass": 2,
+    "ProfessionType": 4,
+    "ProfessionWeaponType1": 5,
+    "ProfessionWeaponType2": 6,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601009
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620009
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 619001
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 619002
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360011
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360012
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110005,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 14,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120005,
+    "ProSkinList": [
+      120005,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203104,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      14,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120006,
+    "ProfessionSeries": 5,
+    "ProfessionClass": 2,
+    "ProfessionType": 4,
+    "ProfessionWeaponType1": 6,
+    "ProfessionWeaponType2": 5,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601010
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620010
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611011
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611012
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360013
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360014
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110005,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 23,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120006,
+    "ProSkinList": [
+      120006,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203105,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      13,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120007,
+    "ProfessionSeries": 3,
+    "ProfessionClass": 2,
+    "ProfessionType": 2,
+    "ProfessionWeaponType1": 2,
+    "ProfessionWeaponType2": 3,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601012
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620012
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611031
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611032
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360017
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360018
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110003,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 9,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120007,
+    "ProSkinList": [
+      120007,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203107,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      9,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120008,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 2,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 5,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601013
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620013
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611041
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611042
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360019
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360020
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110002,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 23,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120008,
+    "ProSkinList": [
+      120008,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203108,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      13,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 120009,
+    "ProfessionSeries": 4,
+    "ProfessionClass": 2,
+    "ProfessionType": 3,
+    "ProfessionWeaponType1": 6,
+    "ProfessionWeaponType2": 4,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601011
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620011
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611021
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611022
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360015
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360016
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 110004,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 12,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 120009,
+    "ProSkinList": [
+      120009,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203106,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      12,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 130002,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 4,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 2,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 200,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601017
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620017
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611081
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611082
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611083
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360027
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360028
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360029
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120002,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 120008,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 702201,
+        "Count": 1
+      },
+      {
+        "ItemId": 702032,
+        "Count": 3
+      },
+      {
+        "ItemId": 700420,
+        "Count": 1
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 22,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 130002,
+    "ProSkinList": [
+      130002,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203112,
+    "CharacterUseLbValue": 100,
+    "MasterMaxLevel": 30,
+    "MasterUnlockItems": [
+      {
+        "ItemId": 702210,
+        "Count": 32
+      },
+      {
+        "ItemId": 702211,
+        "Count": 10
+      },
+      {
+        "ItemId": 702205,
+        "Count": 1
+      }
+    ],
+    "MasterTalent": [
+      {
+        "MasterLevel": 5,
+        "TalentId": 101
+      },
+      {
+        "MasterLevel": 10,
+        "TalentId": 102
+      },
+      {
+        "MasterLevel": 20,
+        "TalentId": 103
+      },
+      {
+        "MasterLevel": 30,
+        "TalentId": 104
+      }
+    ],
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      22,
+      16,
+      5
+    ],
+    "ProLevel": [
+      {
+        "ProfessionLevel": 1,
+        "ProfessionLevelExp": 40000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 2,
+        "ProfessionLevelExp": 42000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 3,
+        "ProfessionLevelExp": 44000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 4,
+        "ProfessionLevelExp": 46000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 5,
+        "ProfessionLevelExp": 48000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 5,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 6,
+        "ProfessionLevelExp": 50000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 7,
+        "ProfessionLevelExp": 52000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 8,
+        "ProfessionLevelExp": 54000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 9,
+        "ProfessionLevelExp": 56000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 10,
+        "ProfessionLevelExp": 58000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 6,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 11,
+        "ProfessionLevelExp": 60000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 12,
+        "ProfessionLevelExp": 62000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 13,
+        "ProfessionLevelExp": 64000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 14,
+        "ProfessionLevelExp": 66000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 15,
+        "ProfessionLevelExp": 68000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 11,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 16,
+        "ProfessionLevelExp": 70000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 17,
+        "ProfessionLevelExp": 72000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 18,
+        "ProfessionLevelExp": 74000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 19,
+        "ProfessionLevelExp": 76500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 20,
+        "ProfessionLevelExp": 79000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 11,
+            "Value": 10
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 21,
+        "ProfessionLevelExp": 81500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 22,
+        "ProfessionLevelExp": 84000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 23,
+        "ProfessionLevelExp": 86500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 24,
+        "ProfessionLevelExp": 89000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 25,
+        "ProfessionLevelExp": 91500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 11,
+            "Value": 15
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 26,
+        "ProfessionLevelExp": 94000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 27,
+        "ProfessionLevelExp": 96500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 28,
+        "ProfessionLevelExp": 99000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 29,
+        "ProfessionLevelExp": 101500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 30,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 130003,
+    "ProfessionSeries": 3,
+    "ProfessionClass": 4,
+    "ProfessionType": 2,
+    "ProfessionWeaponType1": 6,
+    "ProfessionWeaponType2": 3,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601018
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620018
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611091
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611092
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611093
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360030
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360031
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360032
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120003,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 120007,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 702202,
+        "Count": 1
+      },
+      {
+        "ItemId": 702032,
+        "Count": 3
+      },
+      {
+        "ItemId": 700420,
+        "Count": 1
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 44,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 130003,
+    "ProSkinList": [
+      130003,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203113,
+    "CharacterUseLbValue": 100,
+    "MasterMaxLevel": 30,
+    "MasterUnlockItems": [
+      {
+        "ItemId": 702220,
+        "Count": 32
+      },
+      {
+        "ItemId": 702221,
+        "Count": 10
+      },
+      {
+        "ItemId": 702206,
+        "Count": 1
+      }
+    ],
+    "MasterTalent": [
+      {
+        "MasterLevel": 5,
+        "TalentId": 115
+      },
+      {
+        "MasterLevel": 10,
+        "TalentId": 116
+      },
+      {
+        "MasterLevel": 20,
+        "TalentId": 117
+      },
+      {
+        "MasterLevel": 30,
+        "TalentId": 118
+      }
+    ],
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      34,
+      16,
+      5
+    ],
+    "ProLevel": [
+      {
+        "ProfessionLevel": 1,
+        "ProfessionLevelExp": 40000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 2,
+        "ProfessionLevelExp": 42000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 3,
+        "ProfessionLevelExp": 44000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 4,
+        "ProfessionLevelExp": 46000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 5,
+        "ProfessionLevelExp": 48000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 34,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 6,
+        "ProfessionLevelExp": 50000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 7,
+        "ProfessionLevelExp": 52000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 8,
+        "ProfessionLevelExp": 54000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 9,
+        "ProfessionLevelExp": 56000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 10,
+        "ProfessionLevelExp": 58000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 34,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 11,
+        "ProfessionLevelExp": 60000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 12,
+        "ProfessionLevelExp": 62000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 13,
+        "ProfessionLevelExp": 64000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 14,
+        "ProfessionLevelExp": 66000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 15,
+        "ProfessionLevelExp": 68000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 34,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 16,
+        "ProfessionLevelExp": 70000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 17,
+        "ProfessionLevelExp": 72000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 18,
+        "ProfessionLevelExp": 74000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 19,
+        "ProfessionLevelExp": 76500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 20,
+        "ProfessionLevelExp": 79000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 34,
+            "Value": 10
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 21,
+        "ProfessionLevelExp": 81500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 22,
+        "ProfessionLevelExp": 84000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 23,
+        "ProfessionLevelExp": 86500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 24,
+        "ProfessionLevelExp": 89000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 25,
+        "ProfessionLevelExp": 91500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 5,
+            "Value": 15
+          },
+          {
+            "ParamId": 6,
+            "Value": 15
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 26,
+        "ProfessionLevelExp": 94000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 44,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 27,
+        "ProfessionLevelExp": 96500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 44,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 28,
+        "ProfessionLevelExp": 99000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 44,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 29,
+        "ProfessionLevelExp": 101500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 44,
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 30,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 44,
+            "Value": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 130004,
+    "ProfessionSeries": 4,
+    "ProfessionClass": 4,
+    "ProfessionType": 3,
+    "ProfessionWeaponType1": 4,
+    "ProfessionWeaponType2": 2,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601020
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620020
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611111
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611112
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611113
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360036
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360037
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360038
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120004,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 120009,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 702203,
+        "Count": 1
+      },
+      {
+        "ItemId": 702032,
+        "Count": 3
+      },
+      {
+        "ItemId": 700420,
+        "Count": 1
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 24,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 130004,
+    "ProSkinList": [
+      130004,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203114,
+    "CharacterUseLbValue": 100,
+    "MasterMaxLevel": 30,
+    "MasterUnlockItems": [
+      {
+        "ItemId": 702230,
+        "Count": 32
+      },
+      {
+        "ItemId": 702231,
+        "Count": 10
+      },
+      {
+        "ItemId": 702207,
+        "Count": 1
+      }
+    ],
+    "MasterTalent": [
+      {
+        "MasterLevel": 5,
+        "TalentId": 119
+      },
+      {
+        "MasterLevel": 10,
+        "TalentId": 120
+      },
+      {
+        "MasterLevel": 20,
+        "TalentId": 121
+      },
+      {
+        "MasterLevel": 30,
+        "TalentId": 122
+      }
+    ],
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      24,
+      16,
+      10
+    ],
+    "ProLevel": [
+      {
+        "ProfessionLevel": 1,
+        "ProfessionLevelExp": 40000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 2,
+        "ProfessionLevelExp": 42000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 3,
+        "ProfessionLevelExp": 44000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 4,
+        "ProfessionLevelExp": 46000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 5,
+        "ProfessionLevelExp": 48000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 15,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 6,
+        "ProfessionLevelExp": 50000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 7,
+        "ProfessionLevelExp": 52000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 8,
+        "ProfessionLevelExp": 54000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 9,
+        "ProfessionLevelExp": 56000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 10,
+        "ProfessionLevelExp": 58000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 15,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 11,
+        "ProfessionLevelExp": 60000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 12,
+        "ProfessionLevelExp": 62000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 13,
+        "ProfessionLevelExp": 64000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 14,
+        "ProfessionLevelExp": 66000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 15,
+        "ProfessionLevelExp": 68000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 15,
+            "Value": 10
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 16,
+        "ProfessionLevelExp": 70000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 17,
+        "ProfessionLevelExp": 72000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 18,
+        "ProfessionLevelExp": 74000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 19,
+        "ProfessionLevelExp": 76500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 20,
+        "ProfessionLevelExp": 79000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 34,
+            "Value": 10
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 21,
+        "ProfessionLevelExp": 81500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 22,
+        "ProfessionLevelExp": 84000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 23,
+        "ProfessionLevelExp": 86500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 24,
+        "ProfessionLevelExp": 89000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 25,
+        "ProfessionLevelExp": 91500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 11,
+            "Value": 10
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 26,
+        "ProfessionLevelExp": 94000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 27,
+        "ProfessionLevelExp": 96500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 28,
+        "ProfessionLevelExp": 99000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 29,
+        "ProfessionLevelExp": 101500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 30,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 22,
+            "Value": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 130005,
+    "ProfessionSeries": 5,
+    "ProfessionClass": 4,
+    "ProfessionType": 4,
+    "ProfessionWeaponType1": 5,
+    "ProfessionWeaponType2": 5,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601019
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620019
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611101
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611102
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611103
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360033
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360034
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360035
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120005,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 120006,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 702204,
+        "Count": 1
+      },
+      {
+        "ItemId": 702032,
+        "Count": 3
+      },
+      {
+        "ItemId": 700420,
+        "Count": 1
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 23,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 130005,
+    "ProSkinList": [
+      130005,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203115,
+    "CharacterUseLbValue": 100,
+    "MasterMaxLevel": 30,
+    "MasterUnlockItems": [
+      {
+        "ItemId": 702240,
+        "Count": 32
+      },
+      {
+        "ItemId": 702241,
+        "Count": 10
+      },
+      {
+        "ItemId": 702208,
+        "Count": 1
+      }
+    ],
+    "MasterTalent": [
+      {
+        "MasterLevel": 5,
+        "TalentId": 105
+      },
+      {
+        "MasterLevel": 10,
+        "TalentId": 106
+      },
+      {
+        "MasterLevel": 20,
+        "TalentId": 107
+      },
+      {
+        "MasterLevel": 30,
+        "TalentId": 108
+      }
+    ],
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      23,
+      16,
+      5
+    ],
+    "ProLevel": [
+      {
+        "ProfessionLevel": 1,
+        "ProfessionLevelExp": 40000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 2,
+        "ProfessionLevelExp": 42000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 3,
+        "ProfessionLevelExp": 44000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 4,
+        "ProfessionLevelExp": 46000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 5,
+        "ProfessionLevelExp": 48000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 14,
+            "Value": 5
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 6,
+        "ProfessionLevelExp": 50000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 7,
+        "ProfessionLevelExp": 52000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 8,
+        "ProfessionLevelExp": 54000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 9,
+        "ProfessionLevelExp": 56000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 10,
+        "ProfessionLevelExp": 58000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 14,
+            "Value": 10
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 11,
+        "ProfessionLevelExp": 60000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 12,
+        "ProfessionLevelExp": 62000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 13,
+        "ProfessionLevelExp": 64000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 14,
+        "ProfessionLevelExp": 66000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 15,
+        "ProfessionLevelExp": 68000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 14,
+            "Value": 15
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 16,
+        "ProfessionLevelExp": 70000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 17,
+        "ProfessionLevelExp": 72000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 18,
+        "ProfessionLevelExp": 74000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 19,
+        "ProfessionLevelExp": 76500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 20,
+        "ProfessionLevelExp": 79000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 14,
+            "Value": 20
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 21,
+        "ProfessionLevelExp": 81500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 22,
+        "ProfessionLevelExp": 84000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 23,
+        "ProfessionLevelExp": 86500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 1,
+            "Value": 300
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 24,
+        "ProfessionLevelExp": 89000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 2,
+            "Value": 150
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 25,
+        "ProfessionLevelExp": 91500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 13,
+            "Value": 30
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 26,
+        "ProfessionLevelExp": 94000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 23,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 27,
+        "ProfessionLevelExp": 96500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 23,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 28,
+        "ProfessionLevelExp": 99000,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 23,
+            "Value": 1
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 29,
+        "ProfessionLevelExp": 101500,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 23,
+            "Value": 2
+          }
+        ]
+      },
+      {
+        "ProfessionLevel": 30,
+        "ProLevelAddParam": [
+          {
+            "ParamId": 23,
+            "Value": 5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "Id": 130006,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 4,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 4,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 200,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601021
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620021
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611121
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611122
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611123
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360039
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360040
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360041
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120002,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 150001,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 703201,
+        "Count": 1
+      },
+      {
+        "ItemId": 702032,
+        "Count": 3
+      },
+      {
+        "ItemId": 700420,
+        "Count": 1
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 23,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 130006,
+    "ProSkinList": [
+      130006,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203116,
+    "CharacterUseLbValue": 100,
+    "MasterUnlockItems": [
+      {
+        "ItemId": 702250,
+        "Count": 32
+      },
+      {
+        "ItemId": 702231,
+        "Count": 10
+      },
+      {
+        "ItemId": 702207,
+        "Count": 1
+      }
+    ],
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      23,
+      16,
+      5
+    ],
+    "ProLevel": [
+      {
+        "ProfessionLevel": 1,
+        "ProfessionLevelExp": 40000
+      },
+      {
+        "ProfessionLevel": 2,
+        "ProfessionLevelExp": 42000
+      },
+      {
+        "ProfessionLevel": 3,
+        "ProfessionLevelExp": 44000
+      },
+      {
+        "ProfessionLevel": 4,
+        "ProfessionLevelExp": 46000
+      },
+      {
+        "ProfessionLevel": 5,
+        "ProfessionLevelExp": 48000
+      },
+      {
+        "ProfessionLevel": 6,
+        "ProfessionLevelExp": 50000
+      },
+      {
+        "ProfessionLevel": 7,
+        "ProfessionLevelExp": 52000
+      },
+      {
+        "ProfessionLevel": 8,
+        "ProfessionLevelExp": 54000
+      },
+      {
+        "ProfessionLevel": 9,
+        "ProfessionLevelExp": 56000
+      },
+      {
+        "ProfessionLevel": 10,
+        "ProfessionLevelExp": 58000
+      },
+      {
+        "ProfessionLevel": 11,
+        "ProfessionLevelExp": 60000
+      },
+      {
+        "ProfessionLevel": 12,
+        "ProfessionLevelExp": 62000
+      },
+      {
+        "ProfessionLevel": 13,
+        "ProfessionLevelExp": 64000
+      },
+      {
+        "ProfessionLevel": 14,
+        "ProfessionLevelExp": 66000
+      },
+      {
+        "ProfessionLevel": 15,
+        "ProfessionLevelExp": 68000
+      },
+      {
+        "ProfessionLevel": 16,
+        "ProfessionLevelExp": 70000
+      },
+      {
+        "ProfessionLevel": 17,
+        "ProfessionLevelExp": 72000
+      },
+      {
+        "ProfessionLevel": 18,
+        "ProfessionLevelExp": 74000
+      },
+      {
+        "ProfessionLevel": 19,
+        "ProfessionLevelExp": 76500
+      },
+      {
+        "ProfessionLevel": 20,
+        "ProfessionLevelExp": 79000
+      },
+      {
+        "ProfessionLevel": 21,
+        "ProfessionLevelExp": 81500
+      },
+      {
+        "ProfessionLevel": 22,
+        "ProfessionLevelExp": 84000
+      },
+      {
+        "ProfessionLevel": 23,
+        "ProfessionLevelExp": 86500
+      },
+      {
+        "ProfessionLevel": 24,
+        "ProfessionLevelExp": 89000
+      },
+      {
+        "ProfessionLevel": 25,
+        "ProfessionLevelExp": 91500
+      },
+      {
+        "ProfessionLevel": 26,
+        "ProfessionLevelExp": 94000
+      },
+      {
+        "ProfessionLevel": 27,
+        "ProfessionLevelExp": 96500
+      },
+      {
+        "ProfessionLevel": 28,
+        "ProfessionLevelExp": 99000
+      },
+      {
+        "ProfessionLevel": 29,
+        "ProfessionLevelExp": 101500
+      },
+      {
+        "ProfessionLevel": 30
+      }
+    ]
+  },
+  {
+    "Id": 150001,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 3,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 4,
+    "ProfessionWeaponType2": 4,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601014
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620014
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611051
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611052
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360021
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360022
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120002,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 36,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 150001,
+    "ProSkinList": [
+      150001,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203109,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      36,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 150002,
+    "ProfessionSeries": 3,
+    "ProfessionClass": 3,
+    "ProfessionType": 2,
+    "ProfessionWeaponType1": 1,
+    "ProfessionWeaponType2": 1,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601015
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620015
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611061
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611062
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360023
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360024
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120003,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 29,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 150002,
+    "ProSkinList": [
+      150002,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203110,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      29,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 150003,
+    "ProfessionSeries": 4,
+    "ProfessionClass": 3,
+    "ProfessionType": 3,
+    "ProfessionWeaponType1": 4,
+    "ProfessionWeaponType2": 4,
+    "ProfessionMaxLevel": 20,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601016
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620016
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611071
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611072
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360025
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 360026
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120004,
+        "ProLevel": 20
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 12,
+        "Value": 1.5
+      }
+    ],
+    "InitialSkin": 150003,
+    "ProSkinList": [
+      150003,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203111,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      20,
+      26,
+      4,
+      8,
+      12,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 150004,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 4,
+    "ProfessionType": 1,
+    "ProfessionWeaponType1": 3,
+    "ProfessionWeaponType2": 6,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601023
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620023
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611141
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611142
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611143
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360045
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360046
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360047
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120003,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 120005,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 703202,
+        "Count": 1
+      },
+      {
+        "ItemId": 742100,
+        "Count": 666
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 44,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 150004,
+    "ProSkinList": [
+      150004,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203118,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      44,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 150005,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 3,
+    "ProfessionType": 4,
+    "ProfessionWeaponType1": 7,
+    "ProfessionWeaponType2": 7,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 200,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601022
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 611134
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 611135
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 611136
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 611137
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 611138
+      },
+      {
+        "ProLevel": 1,
+        "SkillId": 611139
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620022
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611131
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611132
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611133
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360042
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360043
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360044
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 703408,
+        "Count": 1
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 21,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 150005,
+    "ProSkinList": [
+      150005,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203117,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000003,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      35,
+      16,
+      5
+    ]
+  },
+  {
+    "Id": 150006,
+    "ProfessionSeries": 2,
+    "ProfessionClass": 4,
+    "ProfessionType": 4,
+    "ProfessionWeaponType1": 5,
+    "ProfessionWeaponType2": 3,
+    "ProfessionMaxLevel": 30,
+    "ProfessionMaxLbParam": 100,
+    "DefaultLB": 790001,
+    "LinkSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601007
+      }
+    ],
+    "ProperSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 601024
+      }
+    ],
+    "FreeSkillCountLimit": 3,
+    "CommonSkillCountLimit": 1,
+    "SeriesSkillCountLimit": 1,
+    "CommonSkill": [
+      {
+        "ProLevel": 20,
+        "SkillId": 620024
+      }
+    ],
+    "SeriesSkill": [
+      {
+        "ProLevel": 5,
+        "SkillId": 611151
+      },
+      {
+        "ProLevel": 15,
+        "SkillId": 611152
+      },
+      {
+        "ProLevel": 25,
+        "SkillId": 611153
+      }
+    ],
+    "PaSkill": [
+      {
+        "ProLevel": 1,
+        "SkillId": 360048
+      },
+      {
+        "ProLevel": 10,
+        "SkillId": 360049
+      },
+      {
+        "ProLevel": 30,
+        "SkillId": 360050
+      }
+    ],
+    "FrontProfessionId": [
+      {
+        "ProfessionId": 120005,
+        "ProLevel": 20
+      },
+      {
+        "ProfessionId": 120006,
+        "ProLevel": 20
+      }
+    ],
+    "ProfessionUnlockItems": [
+      {
+        "ItemId": 703204,
+        "Count": 1
+      },
+      {
+        "ItemId": 702033,
+        "Count": 3
+      },
+      {
+        "ItemId": 700460,
+        "Count": 10
+      },
+      {
+        "ItemId": 910025,
+        "Count": 10
+      }
+    ],
+    "ProMaxLevelBonusParam": [
+      {
+        "ParamId": 22,
+        "Value": 1.0
+      }
+    ],
+    "InitialSkin": 150006,
+    "ProSkinList": [
+      150006,
+      400002,
+      400003,
+      400004
+    ],
+    "UnlockWeapon": 203119,
+    "CharacterUseLbValue": 100,
+    "DefaultBurst": 1000002,
+    "IsShow": [
+      8,
+      30,
+      26,
+      4,
+      8,
+      22,
+      16,
+      5
+    ]
+  }
+]

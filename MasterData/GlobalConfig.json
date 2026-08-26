@@ -1,0 +1,1308 @@
+{
+  "PrologueGuides": [
+    "newbie",
+    "new1",
+    "new22",
+    "new23",
+    "new2"
+  ],
+  "LastPrologueGuide": "new2",
+  "DailyUpdateBlacklist": [
+    "Login",
+    "CreateRole",
+    "Loading",
+    "GachaShowGetInformationPanel",
+    "GachaProbabilityPanel",
+    "GetCharacterInfoPanel"
+  ],
+  "DailyUpdateCloseAllDialogList": [
+    {
+      "UI": "StoreDetailsPanel"
+    },
+    {
+      "UI": "MakeObject"
+    },
+    {
+      "UI": "WorkShopSellDismantlePanel"
+    },
+    {
+      "UI": "GachaPagePanel"
+    }
+  ],
+  "RelicDiceConfig": [
+    {
+      "Id": 701901,
+      "Type": 1,
+      "Param": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "Id": 701902,
+      "Type": 1,
+      "Param": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "Id": 701903,
+      "Type": 2
+    }
+  ],
+  "EmojiDisappear": 5000,
+  "TaskCountDown": 2000,
+  "CVStandTime": [
+    60,
+    120
+  ],
+  "DefaltWallPaper": 2000000,
+  "BattleCmdDelay": 100,
+  "CmdDelayWhiteList": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    11,
+    12,
+    90,
+    92,
+    93,
+    94,
+    95
+  ],
+  "InvitationCd": 15000,
+  "MultiAllDieEmoji": 501,
+  "OdAtkBonus": 30,
+  "BreakDefReduce": 20,
+  "MultiRetreatEmoji": 502,
+  "InvitationCountDown": 10000,
+  "CharacterDrawItem": 701101,
+  "CoreDrawItem": 701101,
+  "BattleCmdInterval": 2000,
+  "NormalSignLevel": 1,
+  "PlayerLevelFirstLimit": 150,
+  "BuffTimeAppearLimit": 10000,
+  "FriendsCountLimit": 50,
+  "ChangeNameDayLimit": 30,
+  "GlobalApMaxLimit": 999,
+  "GlobalApRecoverTime": 5,
+  "GlobalRemainRecoverCount": 999,
+  "MaxRemainsPoint": 999,
+  "RemainCostItem": 701502,
+  "MainMaxBp": 10,
+  "GlobalBpMaxLimit": 999,
+  "GlobalBpRecoverTime": 30,
+  "DailyEndTime": 14400,
+  "MaxEnergy": 100,
+  "EachTurnGetEnergy": 5,
+  "EachTurnUseSummonCount": 1,
+  "LbGetEnergy": 10,
+  "SupportSkillConutLimit": 1,
+  "PlayerBaseProfession": 110001,
+  "DefaltSummonId": 12019,
+  "GlobalGachaOnceGem": 280,
+  "GlobalGacha10PartGem": 2800,
+  "PartyCountLimit": 6,
+  "InitialGroupCount": 6,
+  "GroupCountLimit": 6,
+  "PartyFowardMemberCountLimit": 5,
+  "PartySummonsCountLimit": 4,
+  "PartyCoreCountLimit": 13,
+  "PartyPlayerSkillCountLimit": 4,
+  "NetWaitingConnect": 2.0,
+  "NetWaitingDisconnect": 30.0,
+  "RoomHostChangeTime": 30,
+  "PartyExSummonsCountLimit": 3,
+  "PartyExCoreCountLimit": 3,
+  "UltCoreLimit": 1,
+  "ApItems": [
+    701301,
+    701302
+  ],
+  "BpItems": [
+    701303,
+    701304
+  ],
+  "RelicPowerItems": [
+    711004
+  ],
+  "MultiChapterList": [
+    2000001,
+    2000000
+  ],
+  "GeneralEntranceType": 1,
+  "MultiplayerEntranceType": 2,
+  "RaidEntranceType": 3,
+  "NoneEntranceType": 9,
+  "RoomOfflineTime": 90,
+  "WaitingSeconds": 4,
+  "RoomAddLevel": [
+    5,
+    100,
+    12
+  ],
+  "RoomListLimit": 10,
+  "AutoEnterStage": [
+    6,
+    10
+  ],
+  "ButtonInterval": 3,
+  "MvpRewardChance": [
+    1,
+    0
+  ],
+  "AutoCmdMaxCount": 1,
+  "ManualCmdMaxCount": 9,
+  "ProfessionBaseElement": 1,
+  "ProfessionBaseLBId": 290001,
+  "ChipSlotCountLimit": 4,
+  "GroupUnlockNeedGem": 580,
+  "EnhanceSellLimit": 50,
+  "EnhanceDismantleLimit": 50,
+  "RareCoreRarity": 3,
+  "PrologueLabel": "CompetePrologue",
+  "ChipFastCompleteItemNeed": {
+    "Id": 700701,
+    "Count": 1
+  },
+  "CharacterHitY": 1,
+  "CharacterHitRadius": 0.6000000238418579,
+  "MonsterHitRadius": 1,
+  "DailyStoreRandomCount": 1,
+  "DailyStoreTime": 1400007,
+  "WeeklyStoreRandomCount": 4,
+  "weeklyStoreTime": 1400020,
+  "StoreCurrencyItemA": 700701,
+  "MaxSupportAmount": 8,
+  "MaxFriendsSupportAmount": 4,
+  "BuffInterval": 0.10000000149011612,
+  "BuffWaitingTime": 0.10000000149011612,
+  "UIPartTopIn": 0.20000000298023224,
+  "UIPartTopOut": 0.10000000149011612,
+  "UIPartCenterIn": 0.20000000298023224,
+  "UIPartCenterOut": 0.10000000149011612,
+  "UIPartBottomIn": 0.20000000298023224,
+  "UIPartBottomOut": 0.10000000149011612,
+  "UIPartLeftIn": 0.20000000298023224,
+  "UIPartLeftOut": 0.10000000149011612,
+  "UIPartRightIn": 0.20000000298023224,
+  "UIPartRightOut": 0.10000000149011612,
+  "RelifeItems": [
+    3,
+    6
+  ],
+  "AttackEndTime": 1.5,
+  "AttackShockTime": 0.5,
+  "InitialFormationList": [
+    2200001
+  ],
+  "DefaltFormationId": 2200001,
+  "MapEfxScaleX": 0.30000001192092896,
+  "MapEfxScaleY": 0.3499999940395355,
+  "MapEfxScaleZ": 0.15000000596046448,
+  "InitialMasteryPages": 2,
+  "MaxRoleNameLenth": 14,
+  "MaxMasteryPages": 6,
+  "AddMasteryPageGem": 360,
+  "SignForTask": 106004,
+  "NewbieScoreTask": 9,
+  "GachaBonusItem": {
+    "Id": 701302,
+    "Count": 1
+  },
+  "RBonusItem": {
+    "Id": 700801,
+    "Count": 2
+  },
+  "SRBonusItem": {
+    "Id": 700802,
+    "Count": 2
+  },
+  "SSRBonusItem": {
+    "Id": 700802,
+    "Count": 10
+  },
+  "RWishItem": {
+    "Id": 701005,
+    "Count": 1
+  },
+  "SRWishItem": {
+    "Id": 701007,
+    "Count": 1
+  },
+  "SSRWishItem": {
+    "Id": 701007,
+    "Count": 5
+  },
+  "GoldItemId": 701308,
+  "GemItemId": 701309,
+  "InitialCharacter": 108010,
+  "CoreOverStageSpItem": {
+    "Id": 701002,
+    "Count": 1
+  },
+  "CoreSkillSpItem": {
+    "Id": 701002,
+    "Count": 1
+  },
+  "SummonOverStageSpItem": {
+    "Id": 701004,
+    "Count": 1
+  },
+  "MailOnePageMax": 20,
+  "DefaltStoryProfession": 110001,
+  "TyranoLiteralInterval": 0.029999999329447746,
+  "TyranoNewlineWaitTime": 2.5,
+  "MultiBattleMinNumber": 1,
+  "PlayerFixedWeight": 25,
+  "EnemyFixedWeight": 50,
+  "BattleGlobalAccelerate": [
+    1.600000023841858,
+    3.5999999046325684
+  ],
+  "BattleStageCameraMoveDuration": 200,
+  "BattleCameraMovePlayerFixedIndex": 4,
+  "RebattleEventID": 99,
+  "Ourvalue": 12,
+  "Foevalue": 48,
+  "Cameraspeed": 0.029999999329447746,
+  "Ratio_atkown": 60,
+  "Ratio_atkfoe": 30,
+  "Ratio_noatk": 20,
+  "Ratio_endall": 30,
+  "Zoom_multiple": 0.20000000298023224,
+  "Zoom_scale": 1,
+  "BattleSuccessEfxDuration": 2.200000047683716,
+  "BattleWinDelay": 1.5,
+  "BattleDyingHPThreshold": 0.20000000298023224,
+  "ActionFilter": [
+    6
+  ],
+  "AddBuffFilter": [
+    1300091
+  ],
+  "BuffOpFilter": [
+    4
+  ],
+  "BattleCurrencyEffect": {
+    "Heal": 2500002,
+    "Relife": 2500009,
+    "Clear": 2500010,
+    "Disapear": 2500011,
+    "SkillAddCd": 2500023,
+    "SkillReduceCd": 2500022,
+    "HighlightEfx": 3000002
+  },
+  "BattlePreloadEfx": [
+    2500002,
+    2500009,
+    2500010,
+    2500011,
+    2500023,
+    2500022,
+    3000002
+  ],
+  "GeneralElement": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 100
+  },
+  "GeneralEvolution": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 200
+  },
+  "GeneralContentType": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1100
+  },
+  "GeneralLocation": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1200
+  },
+  "GeneralNotices": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 2000
+  },
+  "GeneralRarity": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 300
+  },
+  "GeneralCharacterType": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 400
+  },
+  "GeneralCharacterTypeImg": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 400
+  },
+  "GeneralCharacterWeapon": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 600
+  },
+  "GeneralJobIcon": {
+    "Bundle": "rtgeneraldynamic"
+  },
+  "GeneralJobIconImage": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 10000
+  },
+  "GeneralFomationBonus": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1000
+  },
+  "GeneralCritical": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 10
+  },
+  "GeneralWeakPoint": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 20
+  },
+  "GeneralGacha": {
+    "Bundle": "rtgeneraldynamic"
+  },
+  "GeneralCurrency": {
+    "Bundle": "rtgeneraldynamic"
+  },
+  "GeneralStore": {
+    "Bundle": "rtgeneraldynamic"
+  },
+  "GeneralWeaponSeries": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1300
+  },
+  "GeneralCoreSeries": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1400
+  },
+  "GeneralGachaResource": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1500
+  },
+  "GeneralGachaTitle": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1600
+  },
+  "GeneralParamIcon": {
+    "Bundle": "rtgeneraldynamic",
+    "Increment": 1000000
+  },
+  "LocationStartReviseX": 560,
+  "LocationStartReviseY": 560,
+  "BattleStageLeftUpRegion": {
+    "X": 18446744069414584070,
+    "Y": 30
+  },
+  "BattleStageRightUpRegion": {
+    "Y": 30
+  },
+  "BattleStageLeftDownRegion": {
+    "X": 18446744069414584070,
+    "Y": 18446744069414584290
+  },
+  "BattleStageRightDownRegion": {
+    "Y": 18446744069414584290
+  },
+  "BattleMoveSpeed": 1000,
+  "FontSize": 32,
+  "LineSpacing": 1,
+  "ParagraphSpacing": 5,
+  "WaitSilentConnect": 6,
+  "SilentConnectTimes": 5,
+  "TowerTicketsLimit": 5,
+  "GlobalTowerTicketRecoverCount": 5,
+  "InitialTowerTicketsResource": 5,
+  "CommonTalentItem": 701501,
+  "RelicStartStory": 1000001,
+  "TowerStartStory": 590030,
+  "CoreUnlock": [
+    0,
+    0,
+    0,
+    500201,
+    500201,
+    500201,
+    500201,
+    500209,
+    500209,
+    500209,
+    500617,
+    524002,
+    532001
+  ],
+  "ExsumUnlock": [
+    524002,
+    524002,
+    740012,
+    527002
+  ],
+  "ExSlotUnlock": [
+    740003
+  ],
+  "GameNameCvRemoveCharacter": [
+    100032,
+    103003,
+    103015,
+    106007,
+    106012,
+    106018,
+    106020
+  ],
+  "SilentTextCloseTime": 20,
+  "DailyTaskFinishId": 1800008,
+  "RelicUnlock": 500411,
+  "RelicPower": 10,
+  "RelicReply": 10,
+  "MaxRelicPower": 10,
+  "RelicStoreId": [
+    5,
+    401
+  ],
+  "ActiveSign": [
+    30001,
+    1400048
+  ],
+  "GachaVoiceDuration": 4,
+  "MaxTowerTickets": 99,
+  "TowerTicketsRecoverItem": [
+    711005
+  ],
+  "CoreMaxNumber": 700,
+  "WeaponMaxNumber": 100,
+  "SummonMaxNumber": 100,
+  "CurrencyExchangeRate": 1,
+  "MonthCardRemindTime": 259200,
+  "RaidItem": 701311,
+  "CurrentEventId": [
+    {
+      "Param": [
+        12,
+        1,
+        0,
+        0,
+        3044
+      ]
+    }
+  ],
+  "CurrentEventType": [
+    1,
+    3000003
+  ],
+  "BonusNumberMax": 5,
+  "FirstMainStage": 500101,
+  "RaidMaxCount": 60,
+  "IntegralStory": [
+    0,
+    11001000,
+    11001001,
+    11001002,
+    30000000,
+    30000001,
+    30000002,
+    40000001,
+    40000002,
+    40000003,
+    30106080,
+    30106081,
+    30106082,
+    30106083,
+    30106084,
+    30106085
+  ],
+  "LostLandStoreId": [
+    7,
+    137
+  ],
+  "LostLandLinkParam": [
+    5,
+    1,
+    5,
+    0
+  ],
+  "ReLoginTime": 4,
+  "ReturnSignId": 40000,
+  "ReturnActiveUnlock": 500116,
+  "ReturnActiveDay": 14,
+  "ReturnActiveTriggerDay": 30,
+  "ReturnSignList": [
+    40000
+  ],
+  "ReturnTaskList": [
+    2100010,
+    2100011,
+    2100012,
+    2100013,
+    2100014,
+    2100015,
+    2100016,
+    2100017,
+    2100018,
+    2100019,
+    2100020,
+    2100021,
+    2100022,
+    2100023,
+    2100024,
+    2100025,
+    2100026,
+    2100027,
+    2100028,
+    2100029,
+    2100030,
+    2100031,
+    2100032,
+    2100033,
+    2100034,
+    2100035,
+    2100036,
+    2100037,
+    2100038,
+    2100039,
+    2100040,
+    2100041,
+    2100042,
+    2100043,
+    2100044,
+    2100045,
+    2100046,
+    2100047,
+    2100048,
+    2100049,
+    2100050,
+    2100051,
+    2100052,
+    2100053,
+    2100054,
+    2100055,
+    2100056,
+    2100057,
+    2100058,
+    2100059,
+    2100060,
+    2100061,
+    2100062,
+    2100063,
+    2100064,
+    2100065,
+    2100066,
+    2100067,
+    2100068,
+    2100069,
+    2100070,
+    2100071,
+    2100072,
+    2100073,
+    2100074,
+    2100075,
+    2100076,
+    2100077,
+    2100078,
+    2100079,
+    2100080,
+    2100081,
+    2100082,
+    2100083,
+    2100084,
+    2100085,
+    2100086,
+    2100087,
+    2100088,
+    2100089,
+    2100090,
+    2100091,
+    2100092,
+    2100093,
+    2100094,
+    2100095,
+    2100096,
+    2200444,
+    2200445,
+    2200446,
+    2200447,
+    2200448,
+    2200449,
+    2200450,
+    2200451,
+    2200452,
+    2200453,
+    2200454,
+    2200455,
+    2100109,
+    2100110,
+    2100111,
+    2100112,
+    2100113,
+    2100114,
+    2100115,
+    2100116,
+    2100117,
+    2100118,
+    2100119,
+    2100120,
+    2100121,
+    2100122,
+    2100123
+  ],
+  "ReturnTradeList": [
+    990001,
+    990002,
+    990003,
+    990004,
+    990005,
+    990006,
+    990007,
+    990008,
+    990009,
+    990010,
+    990011,
+    990012,
+    990013,
+    990014
+  ],
+  "ReturnShopLinkParam": [
+    6,
+    2,
+    999,
+    0
+  ],
+  "ReturnActiveLinkParam": [
+    14,
+    100,
+    0,
+    0
+  ],
+  "RaidContainerGroup": [
+    {
+      "ChapterId": 1001101,
+      "ContainerGroup": [
+        100110101,
+        100110102,
+        100110103,
+        100110104,
+        100110105
+      ]
+    },
+    {
+      "ChapterId": 1001102,
+      "ContainerGroup": [
+        100110201,
+        100110202,
+        100110203,
+        100110204,
+        100110205
+      ]
+    },
+    {
+      "ChapterId": 1001103,
+      "ContainerGroup": [
+        100110301,
+        100110302,
+        100110303,
+        100110304,
+        100110305
+      ]
+    },
+    {
+      "ChapterId": 1001104,
+      "ContainerGroup": [
+        100110401,
+        100110402,
+        100110403,
+        100110404,
+        100110405
+      ]
+    },
+    {
+      "ChapterId": 1001105,
+      "ContainerGroup": [
+        100110501,
+        100110502,
+        100110503,
+        100110504,
+        100110505
+      ]
+    },
+    {
+      "ChapterId": 1001106,
+      "ContainerGroup": [
+        100110601,
+        100110602,
+        100110603,
+        100110604,
+        100110605
+      ]
+    },
+    {
+      "ChapterId": 1001107,
+      "ContainerGroup": [
+        100110701,
+        100110702,
+        100110703,
+        100110704,
+        100110705
+      ]
+    },
+    {
+      "ChapterId": 1001108,
+      "ContainerGroup": [
+        100110801,
+        100110802,
+        100110803,
+        100110804,
+        100110805
+      ]
+    },
+    {
+      "ChapterId": 1001109,
+      "ContainerGroup": [
+        100110901,
+        100110902,
+        100110903,
+        100110904,
+        100110905
+      ]
+    },
+    {
+      "ChapterId": 1001110,
+      "ContainerGroup": [
+        100111001,
+        100111002,
+        100111003,
+        100111004,
+        100111005
+      ]
+    },
+    {
+      "ChapterId": 1001201,
+      "ContainerGroup": [
+        100120101,
+        100120102,
+        100120103,
+        100120104,
+        100120105
+      ]
+    },
+    {
+      "ChapterId": 1001202,
+      "ContainerGroup": [
+        100120201,
+        100120202,
+        100120203,
+        100120204,
+        100120205
+      ]
+    },
+    {
+      "ChapterId": 1001203,
+      "ContainerGroup": [
+        100120301,
+        100120302,
+        100120303,
+        100120304,
+        100120305
+      ]
+    },
+    {
+      "ChapterId": 1001204,
+      "ContainerGroup": [
+        100120401,
+        100120402,
+        100120403,
+        100120404,
+        100120405
+      ]
+    },
+    {
+      "ChapterId": 1001205,
+      "ContainerGroup": [
+        100120501,
+        100120502,
+        100120503,
+        100120504,
+        100120505
+      ]
+    },
+    {
+      "ChapterId": 1001206,
+      "ContainerGroup": [
+        100120601,
+        100120602,
+        100120603,
+        100120604,
+        100120605
+      ]
+    }
+  ],
+  "MultiRaidContainerGroup": [
+    {
+      "ChapterId": 2000001,
+      "Difficulty": 2,
+      "ContainerGroup": [
+        5310021,
+        5310122,
+        5310223,
+        5310324,
+        5310425,
+        5310526,
+        5310041,
+        5310142,
+        5310243,
+        5310344,
+        5310445,
+        5310546
+      ]
+    },
+    {
+      "ChapterId": 2000002,
+      "Difficulty": 4,
+      "ContainerGroup": [
+        5230011,
+        5230112,
+        5230213,
+        5230314,
+        5230415,
+        5230516
+      ]
+    }
+  ],
+  "PledgeItem": [
+    {
+      "ItemId": 702401,
+      "Count": 1
+    }
+  ],
+  "RefreshItem": [
+    {
+      "ItemId": 702402,
+      "Count": 1
+    },
+    {
+      "ItemId": 702402,
+      "Count": 1
+    }
+  ],
+  "LockItem": [
+    {
+      "ItemId": 702403,
+      "Count": 1
+    }
+  ],
+  "Slot2UnlockItem": [
+    {
+      "ItemId": 702402,
+      "Count": 1
+    }
+  ],
+  "AssignSkillsCost": [
+    {
+      "Count": 1,
+      "Gold": 10000
+    }
+  ],
+  "GainProtagonistSkin": [
+    {
+      "Xanadumanufacture": 7,
+      "DoneItem": 900023
+    },
+    {
+      "Xanadumanufacture": 8,
+      "DoneItem": 900026
+    },
+    {
+      "Xanadumanufacture": 9,
+      "DoneItem": 900025
+    },
+    {
+      "Xanadumanufacture": 10,
+      "DoneItem": 900024
+    },
+    {
+      "Xanadumanufacture": 11,
+      "DoneItem": 900027
+    },
+    {
+      "Xanadumanufacture": 12,
+      "DoneItem": 900028
+    }
+  ],
+  "GainXanaduSkin": [
+    {
+      "Xanadumanufacture": 21,
+      "DoneItem": 900151
+    },
+    {
+      "Xanadumanufacture": 22,
+      "DoneItem": 900152
+    },
+    {
+      "Xanadumanufacture": 23,
+      "DoneItem": 900153
+    },
+    {
+      "Xanadumanufacture": 24,
+      "DoneItem": 900154
+    },
+    {
+      "Xanadumanufacture": 25,
+      "DoneItem": 900156
+    },
+    {
+      "Xanadumanufacture": 26,
+      "DoneItem": 900155
+    }
+  ],
+  "GainXanaduSkinTrade": 1000524,
+  "FestivalCV": [
+    {
+      "StartTime": 1704038400,
+      "EndTime": 1705284000,
+      "CvId": 102
+    },
+    {
+      "StartTime": 1738080000,
+      "EndTime": 1738684800,
+      "CvId": 103
+    },
+    {
+      "StartTime": 1739376000,
+      "EndTime": 1739980800,
+      "CvId": 104
+    },
+    {
+      "StartTime": 1765987200,
+      "EndTime": 1767196800,
+      "CvId": 105
+    }
+  ],
+  "Order": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110,
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139,
+    140,
+    141,
+    142,
+    143,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150
+  ],
+  "FirstOpenTime": "2023-05-31 10:00:00",
+  "StageOpen": 432000,
+  "StageBuffer": 1800,
+  "SettlingAccounts": 171000,
+  "StageCount": 5,
+  "NewRelicShop": [
+    6,
+    8,
+    153,
+    0
+  ],
+  "TrainingGroundtransfer": [
+    {
+      "Param": [
+        2,
+        1,
+        100600101,
+        0
+      ]
+    }
+  ],
+  "HelpEnableMstrItem": 980001,
+  "HelpEnableStuLevel": 80,
+  "RecycleMaxNumber": 10,
+  "XanaduIndex": 11,
+  "XanaduExpeditionCount": 3,
+  "MaxBurstEnergy": 100,
+  "GetBurstEnergy": 10,
+  "EachTurnUseBurstCount": 1,
+  "HonorHeadTaskSet": 115,
+  "HonorHeadListTaskSet": [
+    116,
+    0,
+    118
+  ],
+  "HonorHeadTaskScoreId": [
+    117,
+    0,
+    119
+  ],
+  "KochabList": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "DismantleCoreSeries": [
+    {
+      "Id": 1,
+      "Param": [
+        132000,
+        132001,
+        132002,
+        132003,
+        132004,
+        132005,
+        132006,
+        132007,
+        132008,
+        132009,
+        132010,
+        132011,
+        132012,
+        132013,
+        132014,
+        132015,
+        132016,
+        132017,
+        132018,
+        132019,
+        132020,
+        132021,
+        132022,
+        132023,
+        132024,
+        132025,
+        132026,
+        132027,
+        132028,
+        132029,
+        132030,
+        132031,
+        132032,
+        132033,
+        132034,
+        132035,
+        132044,
+        132045,
+        132046,
+        132047,
+        132038,
+        132039,
+        132044,
+        132045,
+        132040,
+        132041,
+        132046,
+        132047,
+        132036,
+        132037,
+        132042,
+        132043
+      ]
+    },
+    {
+      "Id": 2,
+      "Param": [
+        132122,
+        132121,
+        132222,
+        132221,
+        132322,
+        132321,
+        132422,
+        132421,
+        132522,
+        132521,
+        132622,
+        132621
+      ]
+    },
+    {
+      "Id": 3,
+      "Param": [
+        132127,
+        132128,
+        132227,
+        132228,
+        132327,
+        132328,
+        132427,
+        132428,
+        132527,
+        132528,
+        132627,
+        132628
+      ]
+    },
+    {
+      "Id": 701903,
+      "Type": 2
+    }
+  ],
+  "OrleshGem": 9000,
+  "LevelBattleEventId": 111,
+  "NewBieRankId": 1,
+  "PlayerNewbieIndexOpen": "2025-05-21 10:00:00",
+  "PlayerNewbieWeek": 5,
+  "ShopNewbiePeriod": 56,
+  "socialreward": [
+    {
+      "Task": 3200001,
+      "Link": "https://discord.gg/R8ncRWMEjc"
+    },
+    {
+      "Task": 3200002,
+      "Link": "https://x.com/ReEternalTreejp"
+    },
+    {
+      "Task": 3200003,
+      "Link": "https://www.youtube.com/@EternalTreeRebirth"
+    },
+    {
+      "Task": 3200004,
+      "Link": "https://www.tiktok.com/@eternaltree2025?_t=ZP-8ycXf4jPAuU&_r=1"
+    },
+    {
+      "Task": 3200005,
+      "Link": "https://lin.ee/K3m5JPt"
+    }
+  ]
+}
