@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import subprocess
 import sys
 import threading
 import time
@@ -29,6 +30,8 @@ import PathToNowhereExtract
 PLATFORM = "android"
 RETRY_COUNT = 5
 CHUNK_SIZE = 1024 * 1024
+HERE = os.path.dirname(os.path.abspath(__file__))
+UNLUAC_JAR = os.path.join(HERE, "unluac", "unluac-ptn.jar")
 
 HARDCODED_CDN = [
     "https://xoneoversea-hotupdatecdn.shziyi.com",
@@ -256,16 +259,24 @@ class AssetDownloader:
         return False
 
 
+def find_apk(explicit: Optional[str]) -> Optional[str]:
+    if explicit:
+        return explicit
+    apks = sorted(Path(HERE).glob("*.apk"))
+    return str(apks[0]) if apks else None
+
+
 def collect_blocks_dirs(
-    game_dir: str, out_dir: str, apk: Optional[str]
+    game_dir: str, out_dir: str, apk: Optional[str], apk_only: bool = False
 ) -> List[str]:
     dirs = []
-    downloaded = os.path.join(out_dir, "decrypted_assets", "assets", "blocks")
-    if os.path.isdir(downloaded) and any(Path(downloaded).glob("*/*.bundle")):
-        dirs.append(downloaded)
-    local = os.path.join(game_dir, "assets", "blocks")
-    if os.path.isdir(local) and any(Path(local).glob("*/*.bundle")):
-        dirs.append(local)
+    if not apk_only:
+        downloaded = os.path.join(out_dir, "decrypted_assets", "assets", "blocks")
+        if os.path.isdir(downloaded) and any(Path(downloaded).glob("*/*.bundle")):
+            dirs.append(downloaded)
+        local = os.path.join(game_dir, "assets", "blocks")
+        if os.path.isdir(local) and any(Path(local).glob("*/*.bundle")):
+            dirs.append(local)
     if apk and os.path.isfile(apk):
         apk_blocks = os.path.join(out_dir, "apk_blocks")
         os.makedirs(apk_blocks, exist_ok=True)
@@ -433,16 +444,126 @@ def struct_unpack(b: bytes) -> int:
     return struct.unpack("<I", b)[0]
 
 
+def _lua_stem(name: str) -> str:
+    if name.endswith(".lua54"):
+        name = name[:-6]
+    if name.endswith(".luac"):
+        name = name[:-5]
+    return name
+
+
+def convert_batch(lua_scripts_dir: str, luac_dir: str, keep_opcodes: bool) -> Tuple[int, int]:
+    os.makedirs(luac_dir, exist_ok=True)
+    ok = fail = 0
+    for p in sorted(Path(lua_scripts_dir).glob("*.luac")):
+        try:
+            PathToNowhereConvert.convert(
+                str(p), os.path.join(luac_dir, p.name + ".lua54"), keep_opcodes=keep_opcodes
+            )
+            ok += 1
+        except Exception as e:
+            fail += 1
+            console.print(f"[red]转换失败 {p.name}: {e}[/red]")
+    label = "lua54_ptn" if keep_opcodes else "lua54"
+    console.print(f"[green]{label}: 成功 {ok}, 失败 {fail} -> {luac_dir}[/green]")
+    return ok, fail
+
+
+def write_source_map(lua_scripts_dir: str, dest_dir: str) -> None:
+    src_map: Dict[str, str] = {}
+    for p in sorted(Path(lua_scripts_dir).glob("*.luac")):
+        try:
+            _, main, _ = PathToNowhereConvert.decode_chunk(p.read_bytes())
+            src = (main.source or b"").rstrip(b"\x00").decode("utf-8", "replace")
+            src_map[p.name] = src
+        except Exception:
+            pass
+    map_path = os.path.join(dest_dir, "_source_paths.json")
+    with open(map_path, "w", encoding="utf-8") as f:
+        json.dump(src_map, f, ensure_ascii=False, indent=1)
+    console.print(f"[green]source 映射: {len(src_map)} 条 -> {map_path}[/green]")
+
+
+def decompile_ptn(luac_dir: str, lua_dir: str, jar: str, threads: int = 8) -> Tuple[int, int]:
+    if not os.path.isfile(jar):
+        console.print(f"[red]找不到 unluac jar: {jar}[/red]")
+        return 0, 0
+    os.makedirs(lua_dir, exist_ok=True)
+    files = sorted(p for p in Path(luac_dir).glob("*.lua54") if p.name != "_source_paths.json")
+    if not files:
+        console.print(f"[yellow]没有可反编译的 .lua54: {luac_dir}[/yellow]")
+        return 0, 0
+
+    def one(src: Path) -> Tuple[str, bool, str]:
+        dst = os.path.join(lua_dir, _lua_stem(src.name) + ".lua")
+        try:
+            r = subprocess.run(
+                ["java", "-Xmx1g", "-jar", jar, "--ptn", "--rawstring", "--output", dst, str(src)],
+                capture_output=True,
+                text=True,
+                timeout=120,
+            )
+        except subprocess.TimeoutExpired:
+            return src.name, False, "TIMEOUT"
+        if r.returncode == 0 and os.path.isfile(dst) and os.path.getsize(dst) > 0:
+            return src.name, True, ""
+        if os.path.isfile(dst):
+            try:
+                os.remove(dst)
+            except OSError:
+                pass
+        err = ""
+        for line in (r.stderr or "").splitlines():
+            if "Exception" in line:
+                err = line.replace('Exception in thread "main" ', "")[:120]
+                break
+        return src.name, False, err or (r.stderr or "empty")[:120]
+
+    ok = fail = 0
+    err_counts: Dict[str, int] = {}
+    workers = max(1, threads)
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TimeRemainingColumn(),
+        console=console,
+    ) as progress:
+        task = progress.add_task("unluac --ptn", total=len(files))
+        with ThreadPoolExecutor(max_workers=workers) as pool:
+            futs = [pool.submit(one, p) for p in files]
+            for fut in as_completed(futs):
+                name, success, err = fut.result()
+                if success:
+                    ok += 1
+                else:
+                    fail += 1
+                    key = (err.split(":")[0] if err else "fail")[:80]
+                    err_counts[key] = err_counts.get(key, 0) + 1
+                progress.advance(task)
+    console.print(f"[green]unluac: 成功 {ok}, 失败 {fail} -> {lua_dir}[/green]")
+    for msg, n in sorted(err_counts.items(), key=lambda kv: -kv[1])[:8]:
+        console.print(f"  [yellow]{n}x[/yellow] {msg}")
+    return ok, fail
+
+
 def convert_lua_to_luac(
-    game_dir: str, chunk_dir: str, out_dir: str, apk: Optional[str] = None
+    game_dir: str,
+    out_dir: str,
+    apk: Optional[str] = None,
+    apk_only: bool = False,
+    to_luac: bool = True,
+    to_lua: bool = False,
+    unluac_jar: str = UNLUAC_JAR,
+    threads: int = 8,
 ) -> None:
-    if not os.path.isdir(game_dir):
+    if not apk_only and not os.path.isdir(game_dir):
         console.print(f"[red]game-dir 不存在: {game_dir}[/red]")
         return
-    sys.path.insert(0, game_dir)
     lua_scripts_dir = os.path.join(out_dir, "lua_scripts")
     os.makedirs(lua_scripts_dir, exist_ok=True)
-    blocks_dirs = collect_blocks_dirs(game_dir, out_dir, apk)
+    blocks_dirs = collect_blocks_dirs(game_dir, out_dir, apk, apk_only=apk_only)
     if not blocks_dirs:
         console.print("[yellow]未找到任何 assets/blocks 源[/yellow]")
         return
@@ -467,82 +588,84 @@ def convert_lua_to_luac(
                 n_files += 1
     console.print(f"[green]Lua 包: {n_pkg}, 文件: {n_files} -> {lua_scripts_dir}[/green]")
 
-    luac_dir = os.path.join(out_dir, "lua54")
-    os.makedirs(luac_dir, exist_ok=True)
-    ok = fail = 0
-    for p in sorted(Path(lua_scripts_dir).glob("*.luac")):
-        try:
-            PathToNowhereConvert.convert(str(p), os.path.join(luac_dir, p.name + ".lua54"))
-            ok += 1
-        except Exception as e:
-            fail += 1
-            console.print(f"[red]转换失败 {p.name}: {e}[/red]")
-    console.print(f"[green]luac: 成功 {ok}, 失败 {fail} -> {luac_dir}[/green]")
+    if to_luac:
+        luac_dir = os.path.join(out_dir, "lua54")
+        convert_batch(lua_scripts_dir, luac_dir, keep_opcodes=False)
+        write_source_map(lua_scripts_dir, luac_dir)
 
-    src_map = {}
-    for p in sorted(Path(lua_scripts_dir).glob("*.luac")):
-        try:
-            _, main, _ = PathToNowhereConvert.decode_chunk(p.read_bytes())
-            src = (main.source or b"").rstrip(b"\x00").decode("utf-8", "replace")
-            src_map[p.name] = src
-        except Exception:
-            pass
-    map_path = os.path.join(luac_dir, "_source_paths.json")
-    with open(map_path, "w", encoding="utf-8") as f:
-        json.dump(src_map, f, ensure_ascii=False, indent=1)
-    console.print(f"[green]source 映射: {len(src_map)} 条 -> {map_path}[/green]")
+    if to_lua:
+        ptn_dir = os.path.join(out_dir, "lua54_ptn")
+        convert_batch(lua_scripts_dir, ptn_dir, keep_opcodes=True)
+        write_source_map(lua_scripts_dir, ptn_dir)
+        decompile_ptn(ptn_dir, os.path.join(out_dir, "lua"), unluac_jar, threads=threads)
 
 
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--game-dir", default="/home/rikka/Games/无期迷途", help="游戏工作目录 (含 decrypted_cfg/ 与解密脚本)")
     ap.add_argument("--config-dir", default=None, help="解密配置目录, 默认 <game-dir>/decrypted_cfg")
-    ap.add_argument("--outdir", default="downloads", help="下载输出目录")
+    ap.add_argument("--outdir", default="downloads", help="下载 / 提取输出目录")
     ap.add_argument("--category", choices=["all", "chunk", "base", "classify"], default="all")
     ap.add_argument("--cdn-base", default=None, help="覆盖 CDN 地址")
     ap.add_argument("--threads", type=int, default=8)
     ap.add_argument("--limit", type=int, default=0, help="只下载前 N 个文件 (测试用)")
     ap.add_argument("--dry-run", action="store_true", help="只打印清单")
     ap.add_argument("--no-verify", action="store_true", help="跳过 MD5 校验")
-    ap.add_argument("--to-luac", action="store_true", help="下载后把 chunk 里的 Lua 转成标准 luac")
+    ap.add_argument("--skip-download", action="store_true", help="不拉 CDN，只做解密/提取/反编译")
+    ap.add_argument("--to-luac", action="store_true", help="把 Lua 转成标准 5.4 luac (lua54/)")
+    ap.add_argument("--to-lua", action="store_true", help="保留 88 槽编号并用 unluac-ptn.jar --ptn 反编译 (lua/)")
+    ap.add_argument("--unluac-jar", default=UNLUAC_JAR, help="unluac jar 路径")
     ap.add_argument("--no-decrypt", action="store_true", help="下载后不解密 chunk")
     ap.add_argument("--no-slice", action="store_true", help="下载后不提取 slice")
-    ap.add_argument("--apk", default=None, help="APK 路径 (Lua blocks 不在 CDN 时从 APK 提取)")
+    ap.add_argument("--apk", default=None, help="APK 路径；省略时使用本目录下第一个 .apk")
+    ap.add_argument("--apk-only", action="store_true", help="只从 APK 抽 Lua，不用 game-dir / 已下载 chunk")
     args = ap.parse_args()
 
-    cfg_dir = args.config_dir or os.path.join(args.game_dir, "decrypted_cfg")
-    app_config = load_json(os.path.join(cfg_dir, "app_config.json"))
-    app_version = load_json(os.path.join(args.game_dir, "assets", "app_version.json"))
-    cdn = args.cdn_base or fetch_cdn_candidates(app_config)[0]
-    console.print(f"[cyan]CDN: {cdn}[/cyan]")
-    items = build_ptn_items(cfg_dir, app_config, app_version, cdn, args.category)
+    apk = find_apk(args.apk)
+    if (args.to_luac or args.to_lua) and apk:
+        console.print(f"[cyan]APK: {apk}[/cyan]")
 
-    if args.limit > 0:
-        items = items[: args.limit]
-    total = sum(int(i.get("size", 0)) for i in items)
-    console.print(f"[cyan]下载清单: {len(items)} 个文件, {total/1024**3:.2f} GiB[/cyan]")
-    if args.dry_run:
-        for it in items[:30]:
-            console.print(f"  {it['name']:48s} {int(it['size'])/1024**2:9.1f} MiB  {it['url']}")
-        if len(items) > 30:
-            console.print(f"  ... 共 {len(items)} 个")
+    if not args.skip_download:
+        cfg_dir = args.config_dir or os.path.join(args.game_dir, "decrypted_cfg")
+        app_config = load_json(os.path.join(cfg_dir, "app_config.json"))
+        app_version = load_json(os.path.join(args.game_dir, "assets", "app_version.json"))
+        cdn = args.cdn_base or fetch_cdn_candidates(app_config)[0]
+        console.print(f"[cyan]CDN: {cdn}[/cyan]")
+        items = build_ptn_items(cfg_dir, app_config, app_version, cdn, args.category)
+
+        if args.limit > 0:
+            items = items[: args.limit]
+        total = sum(int(i.get("size", 0)) for i in items)
+        console.print(f"[cyan]下载清单: {len(items)} 个文件, {total/1024**3:.2f} GiB[/cyan]")
+        if args.dry_run:
+            for it in items[:30]:
+                console.print(f"  {it['name']:48s} {int(it['size'])/1024**2:9.1f} MiB  {it['url']}")
+            if len(items) > 30:
+                console.print(f"  ... 共 {len(items)} 个")
+            return
+
+        dl = AssetDownloader(threads=args.threads, verify=not args.no_verify)
+        dl.download_all(items, args.outdir)
+
+        if not args.no_decrypt:
+            decrypt_downloaded_chunks(cfg_dir, os.path.join(args.outdir, "chunk"), args.outdir)
+
+        if not args.no_slice:
+            extract_slices(args.outdir)
+    elif args.dry_run:
+        console.print("[cyan]--skip-download: 无下载清单[/cyan]")
         return
 
-    dl = AssetDownloader(threads=args.threads, verify=not args.no_verify)
-    dl.download_all(items, args.outdir)
-
-    if not args.no_decrypt:
-        decrypt_downloaded_chunks(cfg_dir, os.path.join(args.outdir, "chunk"), args.outdir)
-
-    if not args.no_slice:
-        extract_slices(args.outdir)
-
-    if args.to_luac:
+    if args.to_luac or args.to_lua:
         convert_lua_to_luac(
             args.game_dir,
-            os.path.join(args.outdir, "chunk"),
             args.outdir,
-            args.apk,
+            apk,
+            apk_only=args.apk_only,
+            to_luac=args.to_luac,
+            to_lua=args.to_lua,
+            unluac_jar=args.unluac_jar,
+            threads=args.threads,
         )
 
 

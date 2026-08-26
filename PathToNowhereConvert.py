@@ -72,6 +72,8 @@ class Proto:
         self.custom_opcodes = [] # 含自定义 opcode 的指令序号 (libxlua 特有)
 
 
+KEEP_OPCODES = False  # True: 保留 libxlua 88 槽编号 (给 unluac --ptn)
+
 # libxlua opcode 顺序 (DWARF L_OP_* 枚举, 88 个) -> 标准 Lua 5.4 编号
 XLUA_OPCODES = [
     "MOVE","LOADI","LOADF","LOADFIX32","LOADK","LOADKX","LOADFALSE","LFALSESKIP",
@@ -173,6 +175,10 @@ def expand_code(insns):
     STD_NEWTABLE = 19
     STD_SETLIST = 78
     STD_EXTRAARG = 82
+    XLUA_NEWTABLE = XLUA_OPCODES.index("NEWTABLE")
+    XLUA_SETLIST = XLUA_OPCODES.index("SETLIST")
+    XLUA_EXTRAARG = XLUA_OPCODES.index("EXTRAARG")
+    XLUA_SELF = XLUA_OPCODES.index("SELF")
     out = []
     pc_map = []
     custom = []
@@ -183,46 +189,57 @@ def expand_code(insns):
         if op in CUSTOM_OP:
             custom.append(len(out))
         remap = OP_REMAP.get(op)
-        if remap is not None:
-            ins = (ins & ~0x7F) | remap
-        op = ins & 0x7F
-        if op == STD_NEWTABLE:
+        work = ins
+        if not KEEP_OPCODES and remap is not None:
+            work = (ins & ~0x7F) | remap
+        wop = work & 0x7F
+        is_newtable = op == XLUA_NEWTABLE
+        is_setlist = op == XLUA_SETLIST
+        if is_newtable:
             a = (ins >> 7) & 0xFF
             hash_exp = (ins >> 16) & 0x3F
             c10 = (ins >> 22) & 0x3FF
             k = (ins >> 15) & 1
             ax = 0
-            if k and i + 1 < len(insns) and (insns[i+1] & 0x7F) == 87:  # 游戏 EXTRAARG
-                ax = insns[i+1] >> 7
+            # VM 总是消费下一条 EXTRAARG（luaK_settablesize 永远写出）
+            if i + 1 < len(insns) and (insns[i + 1] & 0x7F) == XLUA_EXTRAARG:
+                ax = insns[i + 1] >> 7
                 i += 1
             asize = c10 + (ax << 10 if k else 0)
             k2 = 1 if asize >= 256 else 0
             c8 = asize & 0xFF
             ax2 = asize >> 8
-            out.append(STD_NEWTABLE | (a << 7) | (k2 << 15) | (hash_exp << 16) | (c8 << 24))
+            nt_op = XLUA_NEWTABLE if KEEP_OPCODES else STD_NEWTABLE
+            ea_op = XLUA_EXTRAARG if KEEP_OPCODES else STD_EXTRAARG
+            out.append(nt_op | (a << 7) | (k2 << 15) | (hash_exp << 16) | (c8 << 24))
             pc_map.append(i)
-            out.append(STD_EXTRAARG | (ax2 << 7))
+            out.append(ea_op | (ax2 << 7))
             pc_map.append(i)
-        elif op == STD_SETLIST:
+        elif is_setlist:
             a = (ins >> 7) & 0xFF
             tostore = (ins >> 16) & 0x3F
             c10 = (ins >> 22) & 0x3FF
             k = (ins >> 15) & 1
             ax = 0
-            if k and i + 1 < len(insns) and (insns[i+1] & 0x7F) == 87:
-                ax = insns[i+1] >> 7
+            if i + 1 < len(insns) and (insns[i + 1] & 0x7F) == XLUA_EXTRAARG:
+                ax = insns[i + 1] >> 7
                 i += 1
             nelems = c10 + (ax << 10 if k else 0)
             k2 = 1 if nelems >= 256 else 0
             c8 = nelems & 0xFF
             ax2 = nelems >> 8
-            out.append(STD_SETLIST | (a << 7) | (k2 << 15) | (tostore << 16) | (c8 << 24))
+            sl_op = XLUA_SETLIST if KEEP_OPCODES else STD_SETLIST
+            ea_op = XLUA_EXTRAARG if KEEP_OPCODES else STD_EXTRAARG
+            out.append(sl_op | (a << 7) | (k2 << 15) | (tostore << 16) | (c8 << 24))
             pc_map.append(i)
             if k2:
-                out.append(STD_EXTRAARG | (ax2 << 7))
+                out.append(ea_op | (ax2 << 7))
                 pc_map.append(i)
         else:
-            out.append(ins)
+            # libxlua SELF is 5.5-style (C always K). Standard 5.4 SELF54 needs k=1.
+            if op == XLUA_SELF:
+                work |= (1 << 15)
+            out.append(work)
             pc_map.append(i)
         i += 1
     code = b''.join(x.to_bytes(4, 'little') for x in out)
@@ -318,7 +335,9 @@ def to_lua54(nup, main):
     return bytes(dump_function(out, main))
 
 
-def convert(src, dst):
+def convert(src, dst, keep_opcodes=False):
+    global KEEP_OPCODES
+    KEEP_OPCODES = keep_opcodes
     data = open(src, 'rb').read()
     nup, main, end = decode_chunk(data)
     if end != len(data):
@@ -330,30 +349,33 @@ def convert(src, dst):
 
 
 def main():
-    if len(sys.argv) < 2:
+    args = [a for a in sys.argv[1:] if a != '--keep-opcodes']
+    keep = '--keep-opcodes' in sys.argv
+    if len(args) < 1:
         print(__doc__)
+        print('  --keep-opcodes  保留 libxlua 88 槽编号 (配合 unluac --ptn)')
         sys.exit(1)
-    src = sys.argv[1]
-    dst = sys.argv[2] if len(sys.argv) > 2 else src + '.lua54'
+    src = args[0]
+    dst = args[1] if len(args) > 1 else src + ('.ptn.luac' if keep else '.lua54')
     if os.path.isdir(src):
         files = sorted(glob.glob(os.path.join(src, '*.luac')))
-        if len(sys.argv) > 2:
+        if len(args) > 1:
             outdir = dst
             os.makedirs(outdir, exist_ok=True)
         else:
-            outdir = src + '_std'
+            outdir = src + ('_ptn' if keep else '_std')
             os.makedirs(outdir, exist_ok=True)
         ok = fail = 0
         for fp in files:
             try:
-                m = convert(fp, os.path.join(outdir, os.path.basename(fp) + '.lua54'))
+                m = convert(fp, os.path.join(outdir, os.path.basename(fp) + '.lua54'), keep)
                 ok += 1
             except Exception as e:
                 fail += 1
                 print(f'[FAIL] {fp}: {e}')
         print(f'完成 {ok}/{len(files)} -> {outdir}/, 失败 {fail}')
         return
-    m = convert(src, dst)
+    m = convert(src, dst, keep)
     print(f'{src} -> {dst}: code={len(m.code)//4} instr, consts={len(m.constants)}, '
           f'upvals={len(m.upvalues)}, protos={len(m.protos)}')
 
