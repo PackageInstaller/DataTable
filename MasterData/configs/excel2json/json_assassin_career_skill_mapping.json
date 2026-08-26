@@ -1,0 +1,22 @@
+[
+    "assassin_career_skill_mapping",
+    [
+        [1,1,3123,"刺客技能","assassin2_skill_1","通过刺杀击败1名敌人时，额外击败同格子内随机1名敌人，进入战斗时，行动点+1",22900030,"Passive","","","","",0,"","3","SerialAssassinations",0,0],
+        [2,2,3051,"刺客技能","assassin2_skill_14","敌人对温妮弗雷德的侦查率提高50%，单独一人进入战斗时，行动点+3",22900031,"Passive","","","","",0,"","1","ProbabilityFix#500",0,0],
+        [3,2,3052,"刺客技能","assassin2_skill_2","进入战斗时，召唤2个魔精协助战斗",22900032,"","","","","",0,"","","",0,0],
+        [4,3,3052,"刺客技能","assassin2_skill_16","自身1格范围内，友方进入战斗时，随同进入战斗",0,"Passive","","","","",0,"FriendEnterBattle","2","HelpStraightLine#1",0,0],
+        [5,3,3028,"刺客技能","assassin2_skill_8","全图范围内，友方进入战斗时，随同进入战斗，并附加持续恢复效果",22900033,"Passive","","","","",0,"","2","HelpSquare#5",0,0],
+        [6,4,3087,"刺客技能","assassin2_skill_13","消耗：1行动力\n选择自身1格范围内1名友方，回复100%生命，可救援濒死的队友",0,"Active","actionability#1","StraightLine#1","","friend",17,"","","RestoreLifeResurrection",1,0],
+        [7,4,3009,"刺客技能","assassin2_skill_10","消耗：1行动力\n回复所有友方25%生命",0,"Active","actionability#1","","","",17,"","","RestoreLifeAllFriendlyCharacter#25",1,0],
+        [8,5,3116,"刺客技能","assassin2_skill_5","消耗：2行动力\n选择全场任意1格，石化以目标格为中心3*3范围内的所有敌人，被石化的敌人无法攻击和侦查，持续2回合",0,"Active","actionability#2","","","grid",7,"","","AddBuffAoe#1#2#2",1,0],
+        [9,5,3087,"刺客技能","assassin2_skill_12","消耗：1行动力\n刺杀任意水域中的1名敌人",0,"Active","actionability#1","","1#3","enemy",14,"","","Assassinate",1,0],
+        [10,6,3065,"刺客技能","assassin2_skill_6","消耗：1行动力\n选择全场任意1格，探明以目标格为中心3*3范围内的所有未知区域",0,"Active","actionability#1","","","grid",9,"","","Light#1",1,0],
+        [11,6,3062,"刺客技能","assassin2_skill_17","消耗：2行动力\n将自身传送至全场的任意1格",0,"Active","actionability#2","","","grid",11,"","","Fly",1,0],
+        [12,7,3062,"刺客技能","assassin2_skill_3","消耗：1行动力\n选择自身1格范围内的1名敌人进行偷窃",0,"Active","actionability#1","StraightLine#1","","enemy",12,"","","Steal#1",1,0],
+        [13,7,3065,"刺客技能","assassin2_skill_7","消耗：1点行动力\n将警铃变为常规状态",0,"Active","actionability#1","","","",10,"","","BellChangeGreen",1,0],
+        [14,8,3028,"刺客技能","assassin2_skill_9","消耗：1行动力\n选择1名友方，使其行动力+1",0,"Active","actionability#1","","","friend",5,"","","AddActionability#1",1,0],
+        [15,8,3051,"刺客技能","assassin2_skill_15","消耗：1行动力\n迷惑自身十字范围内的所有敌人，被迷惑的敌人会朝施放者所在的方向移动，持续1回合",0,"Active","actionability#1","","","",0,"","","AddBuffStraightLine#1#1",1,0],
+        [16,9,3009,"刺客技能","assassin2_skill_11","消耗：1行动力\n选择全场任意1格放置毒药陷阱，进入此格子的敌人会直接死亡，持续1回合",0,"Active","actionability#1","","","grid",0,"","","AddPitfallTileGrids#1001#1",1,0],
+        [17,9,3116,"刺客技能","assassin2_skill_4","消耗：1行动力\n选择全场任意1格敌人刷新点，对其进行封锁，被封锁的刷新点无法生成新的敌人，持续1回合",0,"Active","actionability#1","","2","grid",8,"","","AddPitfallTileGridsOnRefreshPoint#1002#1",1,0]
+    ]
+]

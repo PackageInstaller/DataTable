@@ -1,0 +1,27 @@
+[
+    "stronghold_skill",
+    [
+        [22210401,"HasDiamondFromPutChess#red&&CurrStrongholdIsPutChess",204,"AddMatch3ExtraMove#1",1,0],
+        [22210402,"",101,"SummonChess#222002#2",0,1],
+        [22210403,"HasDiamondFromPutChess#blue&&CurrStrongholdIsPutChess",204,"AddMatch3ExtraMove#1",1,0],
+        [22210703,"",909,"IncrDiamondByPutChessCost#red,green,blue,yellow#10",0,0],
+        [22220101,"",909,"DecrDiamondByPutChessCost#red#5",0,0],
+        [22220102,"",909,"DecrDiamondByPutChessCost#blue#5",0,0],
+        [22220201,"",909,"DecrDiamondByPutChessCost#red,blue#10",0,0],
+        [22220202,"",909,"FullStrongholdAddDiamond#30#red,green,blue,yellow",0,1],
+        [22220502,"",101,"SummonChess#222017#1",0,1],
+        [22220601,"",909,"IncrDiamondByPutChessCost#green,blue#10",0,0],
+        [22220702,"",4005,"AddBattleFromPutChess#2",0,0],
+        [22220703,"HasDiamondFromPutChess#blue,green&&CurrStrongholdIsPutChess",204,"IncrDiamondByPutChessCost#red,yellow,blue,green#5",0,0],
+        [22220801,"CurrStrongholdIsPutChess",204,"CopyChessPieceToRandomOtherStronghold",0,0],
+        [22230201,"",908,"ColorWeightUp#2#blue",0,0],
+        [22230102,"",909,"IncrDiamondByPutChessCost#blue#10",0,0],
+        [22230301,"",4005,"AddBattleFromPutChess#2",0,0],
+        [22230302,"",101,"SummonChess#222025#2",0,1],
+        [22230602,"",908,"ColorWeightUp#2#green",0,0],
+        [22230701,"",908,"ColorWeightUp#2#blue",0,0],
+        [22230702,"",908,"ColorWeightUp#2#red",0,0],
+        [22230802,"",909,"DecrDiamondByPutChessCost#red,green,blue,yellow#5",0,0],
+        [22240403,"MySideStage",101,"IncrDiamondByPutChessCost#red,yellow,blue,green#50",0,1]
+    ]
+]
