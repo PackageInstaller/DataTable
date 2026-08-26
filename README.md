@@ -26,6 +26,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/Echonox24⁄36` | Echonox24⁄36 | 时序残响 |
 | `game/Embers` | Embers | 辉烬 |
 | `game/ErrorGameReset` | ErrorGameReset | 404错误游戏 |
+| `game/EternalTree` | EternalTree |
 | `game/EverSoul` | EverSoul | 永远之魂(误) |
 | `game/FalloutTamira` | FalloutTamira | 异尘：达米拉 |
 | `game/FyorasSouls` | FyorasSouls | 芙娅之魂 |
