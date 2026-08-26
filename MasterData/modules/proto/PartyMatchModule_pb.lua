@@ -1,0 +1,877 @@
+﻿-- chunkname: @modules/proto/PartyMatchModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.PartyMatchModule_pb", package.seeall)
+
+local PartyMatchModule_pb = {}
+
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PROCESSINFO_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PROCESSINFOIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHINFOPUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHFAILPUSH_MSG = protobuf.Descriptor()
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD = protobuf.FieldDescriptor()
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.name = "PartyServerListRequest"
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.full_name = ".PartyServerListRequest"
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.fields = {}
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG.extensions = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.name = "TriggerPartyResultRequest"
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.full_name = ".TriggerPartyResultRequest"
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.fields = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.full_name = ".PartyMatchHotfix2Reply.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.full_name = ".PartyMatchHotfix2Reply.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.full_name = ".PartyMatchHotfix2Reply.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.name = "PartyMatchHotfix2Reply"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.full_name = ".PartyMatchHotfix2Reply"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLYLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.full_name = ".PartyMatchHotfix1Push.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.full_name = ".PartyMatchHotfix1Push.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.full_name = ".PartyMatchHotfix1Push.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.name = "PartyMatchHotfix1Push"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.full_name = ".PartyMatchHotfix1Push"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSHLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG.extensions = {}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.name = "version"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.full_name = ".SingleStartPartyMatchRequest.version"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.number = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.index = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.type = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD.cpp_type = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.name = "area"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.full_name = ".SingleStartPartyMatchRequest.area"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.number = 2
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.index = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.type = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD.cpp_type = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.name = "SingleStartPartyMatchRequest"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.full_name = ".SingleStartPartyMatchRequest"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.fields = {
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTVERSIONFIELD,
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUESTAREAFIELD
+}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG.extensions = {}
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.name = "partyServers"
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.full_name = ".PartyServerListReply.partyServers"
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.number = 1
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.index = 0
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.label = 3
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.default_value = {}
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.message_type = PartyMatchModule_pb.PROCESSINFO_MSG
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.type = 11
+PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD.cpp_type = 10
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.name = "PartyServerListReply"
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.full_name = ".PartyServerListReply"
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.fields = {
+	PartyMatchModule_pb.PARTYSERVERLISTREPLYPARTYSERVERSFIELD
+}
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.full_name = ".PartyMatchHotfix3Request.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.full_name = ".PartyMatchHotfix3Request.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.full_name = ".PartyMatchHotfix3Request.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.name = "PartyMatchHotfix3Request"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.full_name = ".PartyMatchHotfix3Request"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUESTLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.full_name = ".PartyMatchHotfix1Request.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.full_name = ".PartyMatchHotfix1Request.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.full_name = ".PartyMatchHotfix1Request.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.name = "PartyMatchHotfix1Request"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.full_name = ".PartyMatchHotfix1Request"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUESTLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.full_name = ".PartyMatchHotfix2Request.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.full_name = ".PartyMatchHotfix2Request.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.full_name = ".PartyMatchHotfix2Request.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.name = "PartyMatchHotfix2Request"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.full_name = ".PartyMatchHotfix2Request"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUESTLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG.extensions = {}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.full_name = ".SingleStartPartyMatchReply.roomId"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.number = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.index = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.type = 4
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.name = "waitingStatus"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.full_name = ".SingleStartPartyMatchReply.waitingStatus"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.number = 2
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.index = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.type = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD.cpp_type = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.name = "version"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.full_name = ".SingleStartPartyMatchReply.version"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.number = 3
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.index = 2
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.type = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD.cpp_type = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.name = "matchTime"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.full_name = ".SingleStartPartyMatchReply.matchTime"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.number = 4
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.index = 3
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.type = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD.cpp_type = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.name = "area"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.full_name = ".SingleStartPartyMatchReply.area"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.number = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.index = 4
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.label = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.has_default_value = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.default_value = 0
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.type = 5
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD.cpp_type = 1
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.name = "SingleStartPartyMatchReply"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.full_name = ".SingleStartPartyMatchReply"
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.nested_types = {}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.enum_types = {}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.fields = {
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYROOMIDFIELD,
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYWAITINGSTATUSFIELD,
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYVERSIONFIELD,
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYMATCHTIMEFIELD,
+	PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLYAREAFIELD
+}
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.is_extendable = false
+PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG.extensions = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.name = "TriggerPartyResultReply"
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.full_name = ".TriggerPartyResultReply"
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.nested_types = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.enum_types = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.fields = {}
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.is_extendable = false
+PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG.extensions = {}
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.full_name = ".CancelPartyMatchRequest.roomId"
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.number = 1
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.index = 0
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.label = 1
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.type = 4
+PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.name = "CancelPartyMatchRequest"
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.full_name = ".CancelPartyMatchRequest"
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.fields = {
+	PartyMatchModule_pb.CANCELPARTYMATCHREQUESTROOMIDFIELD
+}
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG.extensions = {}
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.full_name = ".PartyNeedLogoutPush.roomId"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.number = 1
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.index = 0
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.label = 1
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.type = 4
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.name = "roomVersion"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.full_name = ".PartyNeedLogoutPush.roomVersion"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.number = 2
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.index = 1
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.label = 1
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.default_value = 0
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.type = 5
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.name = "needLogoutUserIds"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.full_name = ".PartyNeedLogoutPush.needLogoutUserIds"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.number = 3
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.index = 2
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.label = 3
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.default_value = {}
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.type = 4
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD.cpp_type = 4
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.name = "PartyNeedLogoutPush"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.full_name = ".PartyNeedLogoutPush"
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.fields = {
+	PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMIDFIELD,
+	PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHROOMVERSIONFIELD,
+	PartyMatchModule_pb.PARTYNEEDLOGOUTPUSHNEEDLOGOUTUSERIDSFIELD
+}
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.full_name = ".PartyMatchHotfix2Push.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.full_name = ".PartyMatchHotfix2Push.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.full_name = ".PartyMatchHotfix2Push.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.name = "PartyMatchHotfix2Push"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.full_name = ".PartyMatchHotfix2Push"
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSHLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG.extensions = {}
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.full_name = ".StartPartyMatchRequest.roomId"
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.number = 1
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.index = 0
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.label = 1
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.type = 4
+PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.name = "StartPartyMatchRequest"
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.full_name = ".StartPartyMatchRequest"
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.nested_types = {}
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.enum_types = {}
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.fields = {
+	PartyMatchModule_pb.STARTPARTYMATCHREQUESTROOMIDFIELD
+}
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.is_extendable = false
+PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG.extensions = {}
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.full_name = ".CancelPartyMatchReply.roomId"
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.number = 1
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.index = 0
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.label = 1
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.type = 4
+PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.name = "CancelPartyMatchReply"
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.full_name = ".CancelPartyMatchReply"
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.nested_types = {}
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.enum_types = {}
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.fields = {
+	PartyMatchModule_pb.CANCELPARTYMATCHREPLYROOMIDFIELD
+}
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.is_extendable = false
+PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.full_name = ".PartyMatchHotfix1Reply.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.full_name = ".PartyMatchHotfix1Reply.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.full_name = ".PartyMatchHotfix1Reply.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.name = "PartyMatchHotfix1Reply"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.full_name = ".PartyMatchHotfix1Reply"
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLYLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG.extensions = {}
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.full_name = ".MatchStatusPush.roomId"
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.number = 1
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.index = 0
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.label = 1
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.type = 4
+PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.name = "matchStatus"
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.full_name = ".MatchStatusPush.matchStatus"
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.number = 2
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.index = 1
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.label = 1
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.default_value = 0
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.type = 5
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD.cpp_type = 1
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.name = "matchTime"
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.full_name = ".MatchStatusPush.matchTime"
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.number = 3
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.index = 2
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.label = 1
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.default_value = 0
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.type = 5
+PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD.cpp_type = 1
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.name = "MatchStatusPush"
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.full_name = ".MatchStatusPush"
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.nested_types = {}
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.enum_types = {}
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.fields = {
+	PartyMatchModule_pb.MATCHSTATUSPUSHROOMIDFIELD,
+	PartyMatchModule_pb.MATCHSTATUSPUSHMATCHSTATUSFIELD,
+	PartyMatchModule_pb.MATCHSTATUSPUSHMATCHTIMEFIELD
+}
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.is_extendable = false
+PartyMatchModule_pb.MATCHSTATUSPUSH_MSG.extensions = {}
+PartyMatchModule_pb.PROCESSINFOIDFIELD.name = "id"
+PartyMatchModule_pb.PROCESSINFOIDFIELD.full_name = ".ProcessInfo.id"
+PartyMatchModule_pb.PROCESSINFOIDFIELD.number = 1
+PartyMatchModule_pb.PROCESSINFOIDFIELD.index = 0
+PartyMatchModule_pb.PROCESSINFOIDFIELD.label = 1
+PartyMatchModule_pb.PROCESSINFOIDFIELD.has_default_value = false
+PartyMatchModule_pb.PROCESSINFOIDFIELD.default_value = 0
+PartyMatchModule_pb.PROCESSINFOIDFIELD.type = 5
+PartyMatchModule_pb.PROCESSINFOIDFIELD.cpp_type = 1
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.name = "outerIp"
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.full_name = ".ProcessInfo.outerIp"
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.number = 2
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.index = 1
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.label = 1
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.has_default_value = false
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.default_value = ""
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.type = 9
+PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD.cpp_type = 9
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.name = "outerPort"
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.full_name = ".ProcessInfo.outerPort"
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.number = 3
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.index = 2
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.label = 1
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.has_default_value = false
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.default_value = 0
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.type = 5
+PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD.cpp_type = 1
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.name = "innerIp"
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.full_name = ".ProcessInfo.innerIp"
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.number = 4
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.index = 3
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.label = 1
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.has_default_value = false
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.default_value = ""
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.type = 9
+PartyMatchModule_pb.PROCESSINFOINNERIPFIELD.cpp_type = 9
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.name = "innerPort"
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.full_name = ".ProcessInfo.innerPort"
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.number = 5
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.index = 4
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.label = 1
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.has_default_value = false
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.default_value = 0
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.type = 5
+PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD.cpp_type = 1
+PartyMatchModule_pb.PROCESSINFO_MSG.name = "ProcessInfo"
+PartyMatchModule_pb.PROCESSINFO_MSG.full_name = ".ProcessInfo"
+PartyMatchModule_pb.PROCESSINFO_MSG.nested_types = {}
+PartyMatchModule_pb.PROCESSINFO_MSG.enum_types = {}
+PartyMatchModule_pb.PROCESSINFO_MSG.fields = {
+	PartyMatchModule_pb.PROCESSINFOIDFIELD,
+	PartyMatchModule_pb.PROCESSINFOOUTERIPFIELD,
+	PartyMatchModule_pb.PROCESSINFOOUTERPORTFIELD,
+	PartyMatchModule_pb.PROCESSINFOINNERIPFIELD,
+	PartyMatchModule_pb.PROCESSINFOINNERPORTFIELD
+}
+PartyMatchModule_pb.PROCESSINFO_MSG.is_extendable = false
+PartyMatchModule_pb.PROCESSINFO_MSG.extensions = {}
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.name = "tokens"
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.full_name = ".MatchInfoPush.tokens"
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.number = 1
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.index = 0
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.label = 1
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.default_value = ""
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.type = 9
+PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD.cpp_type = 9
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.name = "partyServer"
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.full_name = ".MatchInfoPush.partyServer"
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.number = 2
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.index = 1
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.label = 1
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.default_value = nil
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.message_type = PartyMatchModule_pb.PROCESSINFO_MSG
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.type = 11
+PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD.cpp_type = 10
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.name = "version"
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.full_name = ".MatchInfoPush.version"
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.number = 3
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.index = 2
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.label = 1
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.default_value = 0
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.type = 5
+PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD.cpp_type = 1
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.name = "MatchInfoPush"
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.full_name = ".MatchInfoPush"
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.nested_types = {}
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.enum_types = {}
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.fields = {
+	PartyMatchModule_pb.MATCHINFOPUSHTOKENSFIELD,
+	PartyMatchModule_pb.MATCHINFOPUSHPARTYSERVERFIELD,
+	PartyMatchModule_pb.MATCHINFOPUSHVERSIONFIELD
+}
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.is_extendable = false
+PartyMatchModule_pb.MATCHINFOPUSH_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.full_name = ".PartyMatchHotfix3Push.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.full_name = ".PartyMatchHotfix3Push.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.full_name = ".PartyMatchHotfix3Push.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.name = "PartyMatchHotfix3Push"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.full_name = ".PartyMatchHotfix3Push"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSHLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG.extensions = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.name = "data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.full_name = ".PartyMatchHotfix3Reply.data"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.number = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.index = 0
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD.cpp_type = 9
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.name = "intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.full_name = ".PartyMatchHotfix3Reply.intData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.number = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.index = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.type = 5
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD.cpp_type = 1
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.name = "longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.full_name = ".PartyMatchHotfix3Reply.longData"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.number = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.index = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.label = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.has_default_value = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.default_value = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.type = 3
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD.cpp_type = 2
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.name = "PartyMatchHotfix3Reply"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.full_name = ".PartyMatchHotfix3Reply"
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.nested_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.enum_types = {}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.fields = {
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYINTDATAFIELD,
+	PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLYLONGDATAFIELD
+}
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.is_extendable = false
+PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG.extensions = {}
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.full_name = ".StartPartyMatchReply.roomId"
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.number = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.index = 0
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.label = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.type = 4
+PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.name = "waitingStatus"
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.full_name = ".StartPartyMatchReply.waitingStatus"
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.number = 2
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.index = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.label = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.has_default_value = false
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.default_value = 0
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.type = 5
+PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD.cpp_type = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.name = "matchTime"
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.full_name = ".StartPartyMatchReply.matchTime"
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.number = 3
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.index = 2
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.label = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.has_default_value = false
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.default_value = 0
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.type = 5
+PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD.cpp_type = 1
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.name = "StartPartyMatchReply"
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.full_name = ".StartPartyMatchReply"
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.nested_types = {}
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.enum_types = {}
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.fields = {
+	PartyMatchModule_pb.STARTPARTYMATCHREPLYROOMIDFIELD,
+	PartyMatchModule_pb.STARTPARTYMATCHREPLYWAITINGSTATUSFIELD,
+	PartyMatchModule_pb.STARTPARTYMATCHREPLYMATCHTIMEFIELD
+}
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.is_extendable = false
+PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG.extensions = {}
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.name = "roomId"
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.full_name = ".MatchFailPush.roomId"
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.number = 1
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.index = 0
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.label = 1
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.default_value = 0
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.type = 4
+PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD.cpp_type = 4
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.name = "version"
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.full_name = ".MatchFailPush.version"
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.number = 2
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.index = 1
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.label = 1
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.has_default_value = false
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.default_value = 0
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.type = 5
+PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD.cpp_type = 1
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.name = "MatchFailPush"
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.full_name = ".MatchFailPush"
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.nested_types = {}
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.enum_types = {}
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.fields = {
+	PartyMatchModule_pb.MATCHFAILPUSHROOMIDFIELD,
+	PartyMatchModule_pb.MATCHFAILPUSHVERSIONFIELD
+}
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.is_extendable = false
+PartyMatchModule_pb.MATCHFAILPUSH_MSG.extensions = {}
+PartyMatchModule_pb.CancelPartyMatchReply = protobuf.Message(PartyMatchModule_pb.CANCELPARTYMATCHREPLY_MSG)
+PartyMatchModule_pb.CancelPartyMatchRequest = protobuf.Message(PartyMatchModule_pb.CANCELPARTYMATCHREQUEST_MSG)
+PartyMatchModule_pb.MatchFailPush = protobuf.Message(PartyMatchModule_pb.MATCHFAILPUSH_MSG)
+PartyMatchModule_pb.MatchInfoPush = protobuf.Message(PartyMatchModule_pb.MATCHINFOPUSH_MSG)
+PartyMatchModule_pb.MatchStatusPush = protobuf.Message(PartyMatchModule_pb.MATCHSTATUSPUSH_MSG)
+PartyMatchModule_pb.PartyMatchHotfix1Push = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX1PUSH_MSG)
+PartyMatchModule_pb.PartyMatchHotfix1Reply = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX1REPLY_MSG)
+PartyMatchModule_pb.PartyMatchHotfix1Request = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX1REQUEST_MSG)
+PartyMatchModule_pb.PartyMatchHotfix2Push = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX2PUSH_MSG)
+PartyMatchModule_pb.PartyMatchHotfix2Reply = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX2REPLY_MSG)
+PartyMatchModule_pb.PartyMatchHotfix2Request = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX2REQUEST_MSG)
+PartyMatchModule_pb.PartyMatchHotfix3Push = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX3PUSH_MSG)
+PartyMatchModule_pb.PartyMatchHotfix3Reply = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX3REPLY_MSG)
+PartyMatchModule_pb.PartyMatchHotfix3Request = protobuf.Message(PartyMatchModule_pb.PARTYMATCHHOTFIX3REQUEST_MSG)
+PartyMatchModule_pb.PartyNeedLogoutPush = protobuf.Message(PartyMatchModule_pb.PARTYNEEDLOGOUTPUSH_MSG)
+PartyMatchModule_pb.PartyServerListReply = protobuf.Message(PartyMatchModule_pb.PARTYSERVERLISTREPLY_MSG)
+PartyMatchModule_pb.PartyServerListRequest = protobuf.Message(PartyMatchModule_pb.PARTYSERVERLISTREQUEST_MSG)
+PartyMatchModule_pb.ProcessInfo = protobuf.Message(PartyMatchModule_pb.PROCESSINFO_MSG)
+PartyMatchModule_pb.SingleStartPartyMatchReply = protobuf.Message(PartyMatchModule_pb.SINGLESTARTPARTYMATCHREPLY_MSG)
+PartyMatchModule_pb.SingleStartPartyMatchRequest = protobuf.Message(PartyMatchModule_pb.SINGLESTARTPARTYMATCHREQUEST_MSG)
+PartyMatchModule_pb.StartPartyMatchReply = protobuf.Message(PartyMatchModule_pb.STARTPARTYMATCHREPLY_MSG)
+PartyMatchModule_pb.StartPartyMatchRequest = protobuf.Message(PartyMatchModule_pb.STARTPARTYMATCHREQUEST_MSG)
+PartyMatchModule_pb.TriggerPartyResultReply = protobuf.Message(PartyMatchModule_pb.TRIGGERPARTYRESULTREPLY_MSG)
+PartyMatchModule_pb.TriggerPartyResultRequest = protobuf.Message(PartyMatchModule_pb.TRIGGERPARTYRESULTREQUEST_MSG)
+
+return PartyMatchModule_pb

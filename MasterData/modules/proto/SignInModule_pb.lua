@@ -1,0 +1,511 @@
+﻿-- chunkname: @modules/proto/SignInModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.SignInModule_pb", package.seeall)
+
+local SignInModule_pb = {}
+
+SignInModule_pb.MATERIALMODULE_PB = require("modules.proto.MaterialModule_pb")
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.MONTHCARDHISTORY_MSG = protobuf.Descriptor()
+SignInModule_pb.MONTHCARDHISTORYIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINHISTORYREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINADDUPREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINREPLYDAYFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLY_MSG = protobuf.Descriptor()
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINADDUPREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD = protobuf.FieldDescriptor()
+SignInModule_pb.GETSIGNININFOREQUEST_MSG = protobuf.Descriptor()
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.name = "month"
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.full_name = ".SignInHistoryRequest.month"
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.number = 1
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.index = 0
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.label = 1
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.has_default_value = false
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.default_value = 0
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.type = 5
+SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD.cpp_type = 1
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.name = "SignInHistoryRequest"
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.full_name = ".SignInHistoryRequest"
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.nested_types = {}
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.enum_types = {}
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.fields = {
+	SignInModule_pb.SIGNINHISTORYREQUESTMONTHFIELD
+}
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.is_extendable = false
+SignInModule_pb.SIGNINHISTORYREQUEST_MSG.extensions = {}
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.name = "heroId"
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.full_name = ".GetHeroBirthdayRequest.heroId"
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.number = 1
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.index = 0
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.label = 1
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.has_default_value = false
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.default_value = 0
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.type = 5
+SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD.cpp_type = 1
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.name = "GetHeroBirthdayRequest"
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.full_name = ".GetHeroBirthdayRequest"
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.nested_types = {}
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.enum_types = {}
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.fields = {
+	SignInModule_pb.GETHEROBIRTHDAYREQUESTHEROIDFIELD
+}
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.is_extendable = false
+SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG.extensions = {}
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.name = "heroId"
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.full_name = ".GetHeroBirthdayReply.heroId"
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.number = 1
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.index = 0
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.label = 1
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.has_default_value = false
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.default_value = 0
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.type = 5
+SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD.cpp_type = 1
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.name = "GetHeroBirthdayReply"
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.full_name = ".GetHeroBirthdayReply"
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.nested_types = {}
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.enum_types = {}
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.fields = {
+	SignInModule_pb.GETHEROBIRTHDAYREPLYHEROIDFIELD
+}
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.is_extendable = false
+SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG.extensions = {}
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.name = "id"
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.full_name = ".SignInTotalRewardRequest.id"
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.number = 1
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.index = 0
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.label = 1
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.has_default_value = false
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.default_value = 0
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.type = 5
+SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD.cpp_type = 1
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.name = "SignInTotalRewardRequest"
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.full_name = ".SignInTotalRewardRequest"
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.nested_types = {}
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.enum_types = {}
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.fields = {
+	SignInModule_pb.SIGNINTOTALREWARDREQUESTIDFIELD
+}
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.is_extendable = false
+SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG.extensions = {}
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.name = "id"
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.full_name = ".SignInTotalRewardReply.id"
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.number = 1
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.index = 0
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.label = 1
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.has_default_value = false
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.default_value = 0
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.type = 5
+SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD.cpp_type = 1
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.name = "mark"
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.full_name = ".SignInTotalRewardReply.mark"
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.number = 2
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.index = 1
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.label = 1
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.has_default_value = false
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.default_value = 0
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.type = 5
+SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD.cpp_type = 1
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.name = "SignInTotalRewardReply"
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.full_name = ".SignInTotalRewardReply"
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.nested_types = {}
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.enum_types = {}
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.fields = {
+	SignInModule_pb.SIGNINTOTALREWARDREPLYIDFIELD,
+	SignInModule_pb.SIGNINTOTALREWARDREPLYMARKFIELD
+}
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.is_extendable = false
+SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG.extensions = {}
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.name = "id"
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.full_name = ".MonthCardHistory.id"
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.number = 1
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.index = 0
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.label = 1
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.has_default_value = false
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.default_value = 0
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.type = 5
+SignInModule_pb.MONTHCARDHISTORYIDFIELD.cpp_type = 1
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.name = "startTime"
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.full_name = ".MonthCardHistory.startTime"
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.number = 2
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.index = 1
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.label = 1
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.has_default_value = false
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.default_value = 0
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.type = 5
+SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD.cpp_type = 1
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.name = "endTime"
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.full_name = ".MonthCardHistory.endTime"
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.number = 3
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.index = 2
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.label = 1
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.has_default_value = false
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.default_value = 0
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.type = 5
+SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD.cpp_type = 1
+SignInModule_pb.MONTHCARDHISTORY_MSG.name = "MonthCardHistory"
+SignInModule_pb.MONTHCARDHISTORY_MSG.full_name = ".MonthCardHistory"
+SignInModule_pb.MONTHCARDHISTORY_MSG.nested_types = {}
+SignInModule_pb.MONTHCARDHISTORY_MSG.enum_types = {}
+SignInModule_pb.MONTHCARDHISTORY_MSG.fields = {
+	SignInModule_pb.MONTHCARDHISTORYIDFIELD,
+	SignInModule_pb.MONTHCARDHISTORYSTARTTIMEFIELD,
+	SignInModule_pb.MONTHCARDHISTORYENDTIMEFIELD
+}
+SignInModule_pb.MONTHCARDHISTORY_MSG.is_extendable = false
+SignInModule_pb.MONTHCARDHISTORY_MSG.extensions = {}
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.name = "month"
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.full_name = ".SignInHistoryReply.month"
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.number = 1
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.index = 0
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.label = 1
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.has_default_value = false
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.default_value = 0
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.type = 5
+SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD.cpp_type = 1
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.name = "hasSignInDays"
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.full_name = ".SignInHistoryReply.hasSignInDays"
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.number = 2
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.index = 1
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.label = 3
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.has_default_value = false
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.default_value = {}
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.type = 5
+SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD.cpp_type = 1
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.name = "hasMonthCardDays"
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.full_name = ".SignInHistoryReply.hasMonthCardDays"
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.number = 3
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.index = 2
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.label = 3
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.has_default_value = false
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.default_value = {}
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.type = 5
+SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD.cpp_type = 1
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.name = "birthdayHeroIds"
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.full_name = ".SignInHistoryReply.birthdayHeroIds"
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.number = 4
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.index = 3
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.label = 3
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.has_default_value = false
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.default_value = {}
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.type = 5
+SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD.cpp_type = 1
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.name = "SignInHistoryReply"
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.full_name = ".SignInHistoryReply"
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.nested_types = {}
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.enum_types = {}
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.fields = {
+	SignInModule_pb.SIGNINHISTORYREPLYMONTHFIELD,
+	SignInModule_pb.SIGNINHISTORYREPLYHASSIGNINDAYSFIELD,
+	SignInModule_pb.SIGNINHISTORYREPLYHASMONTHCARDDAYSFIELD,
+	SignInModule_pb.SIGNINHISTORYREPLYBIRTHDAYHEROIDSFIELD
+}
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.is_extendable = false
+SignInModule_pb.SIGNINHISTORYREPLY_MSG.extensions = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.name = "SupplementMonthCardRequest"
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.full_name = ".SupplementMonthCardRequest"
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.nested_types = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.enum_types = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.fields = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.is_extendable = false
+SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG.extensions = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.name = "days"
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.full_name = ".SupplementMonthCardReply.days"
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.number = 1
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.index = 0
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.label = 1
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.has_default_value = false
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.default_value = 0
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.type = 5
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD.cpp_type = 1
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.name = "SupplementMonthCardReply"
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.full_name = ".SupplementMonthCardReply"
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.nested_types = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.enum_types = {}
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.fields = {
+	SignInModule_pb.SUPPLEMENTMONTHCARDREPLYDAYSFIELD
+}
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.is_extendable = false
+SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG.extensions = {}
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.name = "id"
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.full_name = ".SignInAddupReply.id"
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.number = 1
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.index = 0
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.label = 1
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.has_default_value = false
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.default_value = 0
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.type = 5
+SignInModule_pb.SIGNINADDUPREPLYIDFIELD.cpp_type = 1
+SignInModule_pb.SIGNINADDUPREPLY_MSG.name = "SignInAddupReply"
+SignInModule_pb.SIGNINADDUPREPLY_MSG.full_name = ".SignInAddupReply"
+SignInModule_pb.SIGNINADDUPREPLY_MSG.nested_types = {}
+SignInModule_pb.SIGNINADDUPREPLY_MSG.enum_types = {}
+SignInModule_pb.SIGNINADDUPREPLY_MSG.fields = {
+	SignInModule_pb.SIGNINADDUPREPLYIDFIELD
+}
+SignInModule_pb.SIGNINADDUPREPLY_MSG.is_extendable = false
+SignInModule_pb.SIGNINADDUPREPLY_MSG.extensions = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.name = "mark"
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.full_name = ".SignInTotalRewardAllReply.mark"
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.number = 1
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.index = 0
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.label = 1
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.has_default_value = false
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.default_value = 0
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.type = 5
+SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD.cpp_type = 1
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.name = "SignInTotalRewardAllReply"
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.full_name = ".SignInTotalRewardAllReply"
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.nested_types = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.enum_types = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.fields = {
+	SignInModule_pb.SIGNINTOTALREWARDALLREPLYMARKFIELD
+}
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.is_extendable = false
+SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG.extensions = {}
+SignInModule_pb.SIGNINREPLYDAYFIELD.name = "day"
+SignInModule_pb.SIGNINREPLYDAYFIELD.full_name = ".SignInReply.day"
+SignInModule_pb.SIGNINREPLYDAYFIELD.number = 1
+SignInModule_pb.SIGNINREPLYDAYFIELD.index = 0
+SignInModule_pb.SIGNINREPLYDAYFIELD.label = 1
+SignInModule_pb.SIGNINREPLYDAYFIELD.has_default_value = false
+SignInModule_pb.SIGNINREPLYDAYFIELD.default_value = 0
+SignInModule_pb.SIGNINREPLYDAYFIELD.type = 5
+SignInModule_pb.SIGNINREPLYDAYFIELD.cpp_type = 1
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.name = "birthdayHeroIds"
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.full_name = ".SignInReply.birthdayHeroIds"
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.number = 2
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.index = 1
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.label = 3
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.has_default_value = false
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.default_value = {}
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.type = 5
+SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD.cpp_type = 1
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.name = "signInReward"
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.full_name = ".SignInReply.signInReward"
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.number = 3
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.index = 2
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.label = 3
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.has_default_value = false
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.default_value = {}
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.message_type = SignInModule_pb.MATERIALMODULE_PB.MATERIALDATA_MSG
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.type = 11
+SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD.cpp_type = 10
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.name = "monthReward"
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.full_name = ".SignInReply.monthReward"
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.number = 4
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.index = 3
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.label = 3
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.has_default_value = false
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.default_value = {}
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.message_type = SignInModule_pb.MATERIALMODULE_PB.MATERIALDATA_MSG
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.type = 11
+SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD.cpp_type = 10
+SignInModule_pb.SIGNINREPLY_MSG.name = "SignInReply"
+SignInModule_pb.SIGNINREPLY_MSG.full_name = ".SignInReply"
+SignInModule_pb.SIGNINREPLY_MSG.nested_types = {}
+SignInModule_pb.SIGNINREPLY_MSG.enum_types = {}
+SignInModule_pb.SIGNINREPLY_MSG.fields = {
+	SignInModule_pb.SIGNINREPLYDAYFIELD,
+	SignInModule_pb.SIGNINREPLYBIRTHDAYHEROIDSFIELD,
+	SignInModule_pb.SIGNINREPLYSIGNINREWARDFIELD,
+	SignInModule_pb.SIGNINREPLYMONTHREWARDFIELD
+}
+SignInModule_pb.SIGNINREPLY_MSG.is_extendable = false
+SignInModule_pb.SIGNINREPLY_MSG.extensions = {}
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.name = "hasSignInDays"
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.full_name = ".GetSignInInfoReply.hasSignInDays"
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.number = 1
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.index = 0
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.label = 3
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.default_value = {}
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.name = "addupSignInDay"
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.full_name = ".GetSignInInfoReply.addupSignInDay"
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.number = 2
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.index = 1
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.label = 1
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.default_value = 0
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.name = "hasGetAddupBonus"
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.full_name = ".GetSignInInfoReply.hasGetAddupBonus"
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.number = 3
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.index = 2
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.label = 3
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.default_value = {}
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.name = "openFunctionTime"
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.full_name = ".GetSignInInfoReply.openFunctionTime"
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.number = 4
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.index = 3
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.label = 1
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.default_value = 0
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.name = "hasMonthCardDays"
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.full_name = ".GetSignInInfoReply.hasMonthCardDays"
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.number = 5
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.index = 4
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.label = 3
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.default_value = {}
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.name = "monthCardHistory"
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.full_name = ".GetSignInInfoReply.monthCardHistory"
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.number = 6
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.index = 5
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.label = 3
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.default_value = {}
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.message_type = SignInModule_pb.MONTHCARDHISTORY_MSG
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.type = 11
+SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD.cpp_type = 10
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.name = "birthdayHeroIds"
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.full_name = ".GetSignInInfoReply.birthdayHeroIds"
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.number = 7
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.index = 6
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.label = 3
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.default_value = {}
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.name = "rewardMark"
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.full_name = ".GetSignInInfoReply.rewardMark"
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.number = 8
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.index = 7
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.label = 1
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.default_value = 0
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.name = "supplementMonthCardDays"
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.full_name = ".GetSignInInfoReply.supplementMonthCardDays"
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.number = 9
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.index = 8
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.label = 1
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.has_default_value = false
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.default_value = 0
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.type = 5
+SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD.cpp_type = 1
+SignInModule_pb.GETSIGNININFOREPLY_MSG.name = "GetSignInInfoReply"
+SignInModule_pb.GETSIGNININFOREPLY_MSG.full_name = ".GetSignInInfoReply"
+SignInModule_pb.GETSIGNININFOREPLY_MSG.nested_types = {}
+SignInModule_pb.GETSIGNININFOREPLY_MSG.enum_types = {}
+SignInModule_pb.GETSIGNININFOREPLY_MSG.fields = {
+	SignInModule_pb.GETSIGNININFOREPLYHASSIGNINDAYSFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYADDUPSIGNINDAYFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYHASGETADDUPBONUSFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYOPENFUNCTIONTIMEFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYHASMONTHCARDDAYSFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYMONTHCARDHISTORYFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYBIRTHDAYHEROIDSFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYREWARDMARKFIELD,
+	SignInModule_pb.GETSIGNININFOREPLYSUPPLEMENTMONTHCARDDAYSFIELD
+}
+SignInModule_pb.GETSIGNININFOREPLY_MSG.is_extendable = false
+SignInModule_pb.GETSIGNININFOREPLY_MSG.extensions = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.name = "SignInTotalRewardAllRequest"
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.full_name = ".SignInTotalRewardAllRequest"
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.nested_types = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.enum_types = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.fields = {}
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.is_extendable = false
+SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG.extensions = {}
+SignInModule_pb.SIGNINREQUEST_MSG.name = "SignInRequest"
+SignInModule_pb.SIGNINREQUEST_MSG.full_name = ".SignInRequest"
+SignInModule_pb.SIGNINREQUEST_MSG.nested_types = {}
+SignInModule_pb.SIGNINREQUEST_MSG.enum_types = {}
+SignInModule_pb.SIGNINREQUEST_MSG.fields = {}
+SignInModule_pb.SIGNINREQUEST_MSG.is_extendable = false
+SignInModule_pb.SIGNINREQUEST_MSG.extensions = {}
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.name = "id"
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.full_name = ".SignInAddupRequest.id"
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.number = 1
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.index = 0
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.label = 1
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.has_default_value = false
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.default_value = 0
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.type = 5
+SignInModule_pb.SIGNINADDUPREQUESTIDFIELD.cpp_type = 1
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.name = "SignInAddupRequest"
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.full_name = ".SignInAddupRequest"
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.nested_types = {}
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.enum_types = {}
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.fields = {
+	SignInModule_pb.SIGNINADDUPREQUESTIDFIELD
+}
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.is_extendable = false
+SignInModule_pb.SIGNINADDUPREQUEST_MSG.extensions = {}
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.name = "GetSignInInfoRequest"
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.full_name = ".GetSignInInfoRequest"
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.nested_types = {}
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.enum_types = {}
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.fields = {}
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.is_extendable = false
+SignInModule_pb.GETSIGNININFOREQUEST_MSG.extensions = {}
+SignInModule_pb.GetHeroBirthdayReply = protobuf.Message(SignInModule_pb.GETHEROBIRTHDAYREPLY_MSG)
+SignInModule_pb.GetHeroBirthdayRequest = protobuf.Message(SignInModule_pb.GETHEROBIRTHDAYREQUEST_MSG)
+SignInModule_pb.GetSignInInfoReply = protobuf.Message(SignInModule_pb.GETSIGNININFOREPLY_MSG)
+SignInModule_pb.GetSignInInfoRequest = protobuf.Message(SignInModule_pb.GETSIGNININFOREQUEST_MSG)
+SignInModule_pb.MonthCardHistory = protobuf.Message(SignInModule_pb.MONTHCARDHISTORY_MSG)
+SignInModule_pb.SignInAddupReply = protobuf.Message(SignInModule_pb.SIGNINADDUPREPLY_MSG)
+SignInModule_pb.SignInAddupRequest = protobuf.Message(SignInModule_pb.SIGNINADDUPREQUEST_MSG)
+SignInModule_pb.SignInHistoryReply = protobuf.Message(SignInModule_pb.SIGNINHISTORYREPLY_MSG)
+SignInModule_pb.SignInHistoryRequest = protobuf.Message(SignInModule_pb.SIGNINHISTORYREQUEST_MSG)
+SignInModule_pb.SignInReply = protobuf.Message(SignInModule_pb.SIGNINREPLY_MSG)
+SignInModule_pb.SignInRequest = protobuf.Message(SignInModule_pb.SIGNINREQUEST_MSG)
+SignInModule_pb.SignInTotalRewardAllReply = protobuf.Message(SignInModule_pb.SIGNINTOTALREWARDALLREPLY_MSG)
+SignInModule_pb.SignInTotalRewardAllRequest = protobuf.Message(SignInModule_pb.SIGNINTOTALREWARDALLREQUEST_MSG)
+SignInModule_pb.SignInTotalRewardReply = protobuf.Message(SignInModule_pb.SIGNINTOTALREWARDREPLY_MSG)
+SignInModule_pb.SignInTotalRewardRequest = protobuf.Message(SignInModule_pb.SIGNINTOTALREWARDREQUEST_MSG)
+SignInModule_pb.SupplementMonthCardReply = protobuf.Message(SignInModule_pb.SUPPLEMENTMONTHCARDREPLY_MSG)
+SignInModule_pb.SupplementMonthCardRequest = protobuf.Message(SignInModule_pb.SUPPLEMENTMONTHCARDREQUEST_MSG)
+
+return SignInModule_pb

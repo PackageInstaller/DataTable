@@ -1,0 +1,469 @@
+﻿-- chunkname: @modules/proto/CommandPostModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.CommandPostModule_pb", package.seeall)
+
+local CommandPostModule_pb = {}
+
+CommandPostModule_pb.TASKMODULE_PB = require("modules.proto.TaskModule_pb")
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG = protobuf.Descriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG = protobuf.Descriptor()
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD = protobuf.FieldDescriptor()
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.name = "id"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.full_name = ".CommandPostEventReadRequest.id"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.name = "CommandPostEventReadRequest"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.full_name = ".CommandPostEventReadRequest"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTEVENTREADREQUESTIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.name = "CommandPostPaperRequest"
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.full_name = ".CommandPostPaperRequest"
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.fields = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.name = "bonusId"
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.full_name = ".CommandPostBonusReply.bonusId"
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.name = "CommandPostBonusReply"
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.full_name = ".CommandPostBonusReply"
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTBONUSREPLYBONUSIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG.extensions = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.name = "GetCommandPostInfoRequest"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.full_name = ".GetCommandPostInfoRequest"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.fields = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.name = "id"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.full_name = ".CommandPostEventReadReply.id"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.name = "CommandPostEventReadReply"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.full_name = ".CommandPostEventReadReply"
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTEVENTREADREPLYIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.name = "paper"
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.full_name = ".CommandPostPaperReply.paper"
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.name = "CommandPostPaperReply"
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.full_name = ".CommandPostPaperReply"
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTPAPERREPLYPAPERFIELD
+}
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.name = "bonusId"
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.full_name = ".CommandPostBonusAllReply.bonusId"
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.label = 3
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.default_value = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.name = "CommandPostBonusAllReply"
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.full_name = ".CommandPostBonusAllReply"
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTBONUSALLREPLYBONUSIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.name = "id"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.full_name = ".CommandPostCharacterReadRequest.id"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.name = "CommandPostCharacterReadRequest"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.full_name = ".CommandPostCharacterReadRequest"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUESTIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG.extensions = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.name = "eventList"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.full_name = ".GetCommandPostInfoReply.eventList"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.number = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.index = 0
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.label = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.default_value = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.message_type = CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.type = 11
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD.cpp_type = 10
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.name = "tasks"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.full_name = ".GetCommandPostInfoReply.tasks"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.number = 2
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.index = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.label = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.default_value = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.message_type = CommandPostModule_pb.TASKMODULE_PB.TASK_MSG
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.type = 11
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD.cpp_type = 10
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.name = "catchTasks"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.full_name = ".GetCommandPostInfoReply.catchTasks"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.number = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.index = 2
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.label = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.default_value = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.message_type = CommandPostModule_pb.TASKMODULE_PB.TASK_MSG
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.type = 11
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD.cpp_type = 10
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.name = "gainBonus"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.full_name = ".GetCommandPostInfoReply.gainBonus"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.number = 4
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.index = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.label = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.default_value = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.type = 5
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD.cpp_type = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.name = "paper"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.full_name = ".GetCommandPostInfoReply.paper"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.number = 5
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.index = 4
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.label = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.default_value = 0
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.type = 5
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD.cpp_type = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.name = "catchNum"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.full_name = ".GetCommandPostInfoReply.catchNum"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.number = 6
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.index = 5
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.label = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.default_value = 0
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.type = 5
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD.cpp_type = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.name = "characterState"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.full_name = ".GetCommandPostInfoReply.characterState"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.number = 7
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.index = 6
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.label = 3
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.has_default_value = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.default_value = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.type = 5
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD.cpp_type = 1
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.name = "GetCommandPostInfoReply"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.full_name = ".GetCommandPostInfoReply"
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.nested_types = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.enum_types = {}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.fields = {
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYEVENTLISTFIELD,
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYTASKSFIELD,
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHTASKSFIELD,
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYGAINBONUSFIELD,
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYPAPERFIELD,
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCATCHNUMFIELD,
+	CommandPostModule_pb.GETCOMMANDPOSTINFOREPLYCHARACTERSTATEFIELD
+}
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.is_extendable = false
+CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.name = "id"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.full_name = ".CommandPostCharacterReadReply.id"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.name = "CommandPostCharacterReadReply"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.full_name = ".CommandPostCharacterReadReply"
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLYIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG.extensions = {}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.name = "id"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.full_name = ".FinishCommandPostEventReply.id"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.number = 1
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.index = 0
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.label = 1
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.has_default_value = false
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.default_value = 0
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.type = 5
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD.cpp_type = 1
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.name = "FinishCommandPostEventReply"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.full_name = ".FinishCommandPostEventReply"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.nested_types = {}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.enum_types = {}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.fields = {
+	CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLYIDFIELD
+}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.is_extendable = false
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.name = "bonusId"
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.full_name = ".CommandPostBonusRequest.bonusId"
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.name = "CommandPostBonusRequest"
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.full_name = ".CommandPostBonusRequest"
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTBONUSREQUESTBONUSIDFIELD
+}
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.name = "eventId"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.full_name = ".CommandPostDispatchRequest.eventId"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.name = "heroIds"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.full_name = ".CommandPostDispatchRequest.heroIds"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.number = 2
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.index = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.label = 3
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.default_value = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.name = "CommandPostDispatchRequest"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.full_name = ".CommandPostDispatchRequest"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTEVENTIDFIELD,
+	CommandPostModule_pb.COMMANDPOSTDISPATCHREQUESTHEROIDSFIELD
+}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.name = "event"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.full_name = ".CommandPostDispatchReply.event"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.default_value = nil
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.message_type = CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.type = 11
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD.cpp_type = 10
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.name = "CommandPostDispatchReply"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.full_name = ".CommandPostDispatchReply"
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTDISPATCHREPLYEVENTFIELD
+}
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.name = "id"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.full_name = ".CommandPostEventInfo.id"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.number = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.index = 0
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.name = "state"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.full_name = ".CommandPostEventInfo.state"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.number = 2
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.index = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.name = "heroIds"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.full_name = ".CommandPostEventInfo.heroIds"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.number = 3
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.index = 2
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.label = 3
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.default_value = {}
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.type = 5
+CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD.cpp_type = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.name = "startTime"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.full_name = ".CommandPostEventInfo.startTime"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.number = 4
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.index = 3
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.type = 4
+CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD.cpp_type = 4
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.name = "endTime"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.full_name = ".CommandPostEventInfo.endTime"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.number = 5
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.index = 4
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.default_value = 0
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.type = 4
+CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD.cpp_type = 4
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.name = "read"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.full_name = ".CommandPostEventInfo.read"
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.number = 6
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.index = 5
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.label = 1
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.has_default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.default_value = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.type = 8
+CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD.cpp_type = 7
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.name = "CommandPostEventInfo"
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.full_name = ".CommandPostEventInfo"
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.fields = {
+	CommandPostModule_pb.COMMANDPOSTEVENTINFOIDFIELD,
+	CommandPostModule_pb.COMMANDPOSTEVENTINFOSTATEFIELD,
+	CommandPostModule_pb.COMMANDPOSTEVENTINFOHEROIDSFIELD,
+	CommandPostModule_pb.COMMANDPOSTEVENTINFOSTARTTIMEFIELD,
+	CommandPostModule_pb.COMMANDPOSTEVENTINFOENDTIMEFIELD,
+	CommandPostModule_pb.COMMANDPOSTEVENTINFOREADFIELD
+}
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG.extensions = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.name = "CommandPostBonusAllRequest"
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.full_name = ".CommandPostBonusAllRequest"
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.fields = {}
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG.extensions = {}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.name = "id"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.full_name = ".FinishCommandPostEventRequest.id"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.number = 1
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.index = 0
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.label = 1
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.has_default_value = false
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.default_value = 0
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.type = 5
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD.cpp_type = 1
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.name = "FinishCommandPostEventRequest"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.full_name = ".FinishCommandPostEventRequest"
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.nested_types = {}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.enum_types = {}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.fields = {
+	CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUESTIDFIELD
+}
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.is_extendable = false
+CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG.extensions = {}
+CommandPostModule_pb.CommandPostBonusAllReply = protobuf.Message(CommandPostModule_pb.COMMANDPOSTBONUSALLREPLY_MSG)
+CommandPostModule_pb.CommandPostBonusAllRequest = protobuf.Message(CommandPostModule_pb.COMMANDPOSTBONUSALLREQUEST_MSG)
+CommandPostModule_pb.CommandPostBonusReply = protobuf.Message(CommandPostModule_pb.COMMANDPOSTBONUSREPLY_MSG)
+CommandPostModule_pb.CommandPostBonusRequest = protobuf.Message(CommandPostModule_pb.COMMANDPOSTBONUSREQUEST_MSG)
+CommandPostModule_pb.CommandPostCharacterReadReply = protobuf.Message(CommandPostModule_pb.COMMANDPOSTCHARACTERREADREPLY_MSG)
+CommandPostModule_pb.CommandPostCharacterReadRequest = protobuf.Message(CommandPostModule_pb.COMMANDPOSTCHARACTERREADREQUEST_MSG)
+CommandPostModule_pb.CommandPostDispatchReply = protobuf.Message(CommandPostModule_pb.COMMANDPOSTDISPATCHREPLY_MSG)
+CommandPostModule_pb.CommandPostDispatchRequest = protobuf.Message(CommandPostModule_pb.COMMANDPOSTDISPATCHREQUEST_MSG)
+CommandPostModule_pb.CommandPostEventInfo = protobuf.Message(CommandPostModule_pb.COMMANDPOSTEVENTINFO_MSG)
+CommandPostModule_pb.CommandPostEventReadReply = protobuf.Message(CommandPostModule_pb.COMMANDPOSTEVENTREADREPLY_MSG)
+CommandPostModule_pb.CommandPostEventReadRequest = protobuf.Message(CommandPostModule_pb.COMMANDPOSTEVENTREADREQUEST_MSG)
+CommandPostModule_pb.CommandPostPaperReply = protobuf.Message(CommandPostModule_pb.COMMANDPOSTPAPERREPLY_MSG)
+CommandPostModule_pb.CommandPostPaperRequest = protobuf.Message(CommandPostModule_pb.COMMANDPOSTPAPERREQUEST_MSG)
+CommandPostModule_pb.FinishCommandPostEventReply = protobuf.Message(CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREPLY_MSG)
+CommandPostModule_pb.FinishCommandPostEventRequest = protobuf.Message(CommandPostModule_pb.FINISHCOMMANDPOSTEVENTREQUEST_MSG)
+CommandPostModule_pb.GetCommandPostInfoReply = protobuf.Message(CommandPostModule_pb.GETCOMMANDPOSTINFOREPLY_MSG)
+CommandPostModule_pb.GetCommandPostInfoRequest = protobuf.Message(CommandPostModule_pb.GETCOMMANDPOSTINFOREQUEST_MSG)
+
+return CommandPostModule_pb

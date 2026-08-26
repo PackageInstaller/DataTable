@@ -1,0 +1,638 @@
+﻿-- chunkname: @modules/versionactivitybase/fixed/dungeon/view/map/scene/VersionActivityFixedDungeonMapSceneElements.lua
+
+module("modules.versionactivitybase.fixed.dungeon.view.map.scene.VersionActivityFixedDungeonMapSceneElements", package.seeall)
+
+local VersionActivityFixedDungeonMapSceneElements = class("VersionActivityFixedDungeonMapSceneElements", BaseView)
+local FOCUS_TIME = 0.5
+local WAIT_TIME = 0.5
+
+function VersionActivityFixedDungeonMapSceneElements:onInitView()
+	self._gofullscreen = gohelper.findChild(self.viewGO, "#go_fullscreen")
+	self._click = SLFramework.UGUI.UIClickListener.Get(self._gofullscreen)
+	self._goarrow = gohelper.findChild(self.viewGO, "#go_arrow")
+
+	if self._editableInitView then
+		self:_editableInitView()
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:addEvents()
+	if GamepadController.instance:isOpen() then
+		self.addEventCb(self, GamepadController.instance, GamepadEvent.KeyDown, self.onGamepadKeyDown, self)
+	end
+
+	self.addEventCb(self, DungeonController.instance, DungeonEvent.OnBeginDragMap, self.onBeginDragMap, self)
+	self.addEventCb(self, DungeonController.instance, DungeonEvent.OnCreateMapRootGoDone, self.onCreateMapRootGoDone, self)
+	self.addEventCb(self, DungeonController.instance, DungeonEvent.BeginShowRewardView, self.beginShowRewardView, self)
+	self.addEventCb(self, DungeonController.instance, DungeonEvent.EndShowRewardView, self.endShowRewardView, self)
+	self.addEventCb(self, DungeonController.instance, DungeonEvent.OnRemoveElement, self.onRemoveElement, self)
+	self.addEventCb(self, DungeonController.instance, DungeonEvent.GuideClickElement, self.manualClickElement, self)
+	self.addEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnUpdateElementArrow, self._updateElementArrow, self)
+	self.addEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnInitElements, self.showElements, self)
+	self.addEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnLoadSceneFinish, self.loadSceneFinish, self)
+	self.addEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnDisposeOldMap, self.onDisposeOldMap, self)
+	self.addEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnDisposeScene, self.onDisposeScene, self)
+	self.addEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnChangeMap, self.onChangeMap, self)
+	self.addEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnClickElement, self.onClickElement, self)
+	self.addEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnHideInteractUI, self.onHideInteractUI, self)
+
+	if self._click then
+		self._click:AddClickUpListener(self.onClickUp, self)
+		self._click:AddClickDownListener(self.onClickDown, self)
+	end
+
+	TimeDispatcher.instance:registerCallback(TimeDispatcher.OnDailyRefresh, self.showNewElements, self)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:removeEvents()
+	self.removeEventCb(self, GamepadController.instance, GamepadEvent.KeyDown, self.onGamepadKeyDown, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonEvent.OnBeginDragMap, self.onBeginDragMap, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonEvent.OnCreateMapRootGoDone, self.onCreateMapRootGoDone, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonEvent.BeginShowRewardView, self.beginShowRewardView, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonEvent.EndShowRewardView, self.endShowRewardView, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonEvent.OnRemoveElement, self.onRemoveElement, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonEvent.GuideClickElement, self.manualClickElement, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnUpdateElementArrow, self._updateElementArrow, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnInitElements, self.showElements, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnLoadSceneFinish, self.loadSceneFinish, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnDisposeOldMap, self.onDisposeOldMap, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnDisposeScene, self.onDisposeScene, self)
+	self.removeEventCb(self, DungeonController.instance, DungeonMapElementEvent.OnChangeMap, self.onChangeMap, self)
+	self.removeEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnClickElement, self.onClickElement, self)
+	self.removeEventCb(self, VersionActivityFixedDungeonController.instance, VersionActivityFixedDungeonEvent.OnHideInteractUI, self.onHideInteractUI, self)
+
+	if self._click then
+		self._click:RemoveClickUpListener()
+		self._click:RemoveClickDownListener()
+	end
+
+	TimeDispatcher.instance:unregisterCallback(TimeDispatcher.OnDailyRefresh, self.showNewElements, self)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_editableInitView()
+	self._elementCompDict = {}
+	self._elementCompPoolDict = {}
+	self._arrowList = {}
+	self.hadEverySecondTask = false
+	self.tempPos = Vector3.New(0, 0, 0)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onOpen()
+	self._bigVersion, self._smallVersion = VersionActivityFixedDungeonController.instance:getEnterVerison()
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onGamepadKeyDown(key)
+	if key ~= GamepadEnum.KeyCode.A then
+		return
+	end
+
+	local screenPos = GamepadController.instance:getScreenPos()
+	local ray = CameraMgr.instance:getMainCamera():ScreenPointToRay(screenPos)
+	local allRaycastHit = UnityEngine.Physics2D.RaycastAll(ray.origin, ray.direction)
+	local maxIndex = allRaycastHit.Length - 1
+
+	for i = 0, maxIndex do
+		local hitInfo = allRaycastHit[i]
+		local _comp = VersionActivityFixedHelper.getVersionActivityDungeonMapElement(self._bigVersion, self._smallVersion)
+		local comp = MonoHelper.getLuaComFromGo(hitInfo.transform.parent.gameObject, _comp)
+
+		if comp then
+			comp:_onClickDown()
+		end
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onBeginDragMap()
+	self._clickDown = false
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onCreateMapRootGoDone(sceneRoot)
+	if self.elementPoolRoot then
+		return
+	end
+
+	self.elementPoolRoot = UnityEngine.GameObject.New("elementPoolRoot")
+
+	gohelper.addChild(sceneRoot, self.elementPoolRoot)
+	gohelper.setActive(self.elementPoolRoot, false)
+	transformhelper.setLocalPos(self.elementPoolRoot.transform, 0, 0, 0)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:loadSceneFinish(param)
+	self._mapCfg = param.mapConfig
+	self._sceneGo = param.mapSceneGo
+	self._elementRoot = UnityEngine.GameObject.New("elementRoot")
+
+	gohelper.addChild(self._sceneGo, self._elementRoot)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:manualClickElement(id)
+	local mapElement = self:getElementComp(tonumber(id))
+
+	if not mapElement then
+		return
+	end
+
+	if not mapElement:isValid() then
+		return
+	end
+
+	mapElement:onClick()
+end
+
+function VersionActivityFixedDungeonMapSceneElements:setMouseElementDown(elementComp)
+	self.mouseDownElement = elementComp
+end
+
+function VersionActivityFixedDungeonMapSceneElements:getElementComp(elementId)
+	return self._elementCompDict[elementId]
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onClickElement(elementId)
+	self:hideAllElements()
+end
+
+function VersionActivityFixedDungeonMapSceneElements:hideAllElements()
+	for _, elementComp in pairs(self._elementCompDict) do
+		elementComp:hideElement()
+	end
+
+	gohelper.setActive(self._goarrow, false)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onHideInteractUI()
+	self:showAllElements()
+end
+
+function VersionActivityFixedDungeonMapSceneElements:showAllElements()
+	for _, elementComp in pairs(self._elementCompDict) do
+		elementComp:showElement()
+	end
+
+	gohelper.setActive(self._goarrow, true)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_updateElementArrow()
+	for _, v in pairs(self._elementCompDict) do
+		self:_updateArrow(v)
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:beginShowRewardView()
+	self._showRewardView = true
+end
+
+function VersionActivityFixedDungeonMapSceneElements:endShowRewardView()
+	self._showRewardView = false
+
+	if self._needRemoveElementId then
+		self:_removeElement(self._needRemoveElementId)
+		TaskDispatcher.runDelay(self.showNewElements, self, DungeonEnum.ShowNewElementsTimeAfterShowReward)
+
+		self._needRemoveElementId = nil
+	else
+		self:showNewElements()
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onRemoveElement(id)
+	if not self._showRewardView then
+		self:_removeElement(id)
+		self:showNewElements()
+	else
+		self._needRemoveElementId = id
+
+		local config = lua_chapter_map_element.configDict[id]
+		local isDialog = config.type == DungeonEnum.ElementType.EnterDialogue
+
+		if isDialog then
+			DungeonController.instance:dispatchEvent(DungeonEvent.EndShowRewardView)
+		end
+	end
+
+	local arrowItem = self._arrowList[id]
+
+	if arrowItem then
+		arrowItem.arrowClick:RemoveClickListener()
+
+		self._arrowList[id] = nil
+
+		gohelper.destroy(arrowItem.go)
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_removeElement(id)
+	local elementComp = self._elementCompDict[id]
+
+	self._elementCompDict[id] = nil
+
+	if elementComp then
+		elementComp:setFinish()
+
+		self._elementCompPoolDict[id] = elementComp
+	end
+
+	VersionActivityFixedDungeonController.instance:dispatchEvent(VersionActivityFixedDungeonEvent.OnRemoveElement, elementComp)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:showNewElements()
+	local newElements = DungeonMapModel.instance:getNewElements()
+
+	if not newElements then
+		return
+	end
+
+	local animElements = {}
+
+	for _, elementId in ipairs(newElements) do
+		local elementCo = DungeonConfig.instance:getChapterMapElement(elementId)
+		local isBelongCurMap = VersionActivityFixedDungeonConfig.instance:checkElementBelongMapId(elementCo, self._mapCfg.id)
+
+		if isBelongCurMap and elementCo.showCamera == 1 then
+			animElements[#animElements + 1] = elementId
+		end
+	end
+
+	if #animElements <= 0 then
+		return
+	end
+
+	self:_showElementAnim(animElements)
+	DungeonMapModel.instance:clearNewElements()
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_showElementAnim(animElements, normalElements)
+	if not animElements or #animElements <= 0 then
+		VersionActivityFixedDungeonMapSceneElements._addAnimElementDone({
+			self,
+			normalElements
+		})
+
+		return
+	end
+
+	self:_stopShowSequence()
+
+	self._showSequence = FlowSequence.New()
+
+	self._showSequence:addWork(TimerWork.New(WAIT_TIME))
+	table.sort(animElements)
+
+	for _, id in ipairs(animElements) do
+		self._showSequence:addWork(FunctionWork.New(VersionActivityFixedDungeonMapSceneElements._doFocusElement, {
+			self,
+			id
+		}))
+		self._showSequence:addWork(TimerWork.New(FOCUS_TIME))
+		self._showSequence:addWork(FunctionWork.New(VersionActivityFixedDungeonMapSceneElements._doAddElement, {
+			self,
+			id
+		}))
+		self._showSequence:addWork(TimerWork.New(WAIT_TIME))
+	end
+
+	self._showSequence:addWork(FunctionWork.New(VersionActivityFixedDungeonMapSceneElements._addAnimElementDone, {
+		self,
+		normalElements
+	}))
+	self._showSequence:registerDoneListener(self._stopShowSequence, self)
+	self._showSequence:start()
+	UIBlockMgrExtend.setNeedCircleMv(false)
+	UIBlockMgr.instance:startBlock(VersionActivityFixedHelper.getVersionActivityDungeonEnum(self._bigVersion, self._smallVersion).BlockKey.FocusNewElement)
+end
+
+function VersionActivityFixedDungeonMapSceneElements._doFocusElement(params)
+	local elementId = params[2]
+
+	VersionActivityFixedDungeonController.instance:dispatchEvent(VersionActivityFixedDungeonEvent.FocusElement, elementId, true)
+end
+
+function VersionActivityFixedDungeonMapSceneElements._doAddElement(params)
+	local self, elementId = params[1], params[2]
+
+	self:_addElementById(elementId)
+
+	local comp = self._elementCompDict[elementId]
+
+	if not comp then
+		return
+	end
+
+	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_checkpoint_elementappear)
+end
+
+function VersionActivityFixedDungeonMapSceneElements._addAnimElementDone(params)
+	local self = params[1]
+	local normalElements = params[2]
+
+	if not normalElements or #normalElements <= 0 then
+		return
+	end
+
+	for _, v in ipairs(normalElements) do
+		self:_addElement(v)
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_addElementById(id)
+	local config = lua_chapter_map_element.configDict[id]
+
+	self:_addElement(config)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_addElement(elementConfig)
+	if self._elementCompDict[elementConfig.id] then
+		return
+	end
+
+	local elementComp = self._elementCompPoolDict[elementConfig.id]
+
+	if elementComp then
+		self._elementCompPoolDict[elementConfig.id] = nil
+
+		gohelper.addChild(self._elementRoot, elementComp._go)
+		elementComp:updatePos()
+	else
+		local go = UnityEngine.GameObject.New(tostring(elementConfig.id))
+
+		gohelper.addChild(self._elementRoot, go)
+
+		local _comp = VersionActivityFixedHelper.getVersionActivityDungeonMapElement(self._bigVersion, self._smallVersion)
+
+		elementComp = MonoHelper.addLuaComOnceToGo(go, _comp, {
+			elementConfig,
+			self
+		})
+	end
+
+	self._elementCompDict[elementConfig.id] = elementComp
+
+	local hasArrow = elementComp:isConfigShowArrow()
+
+	if hasArrow then
+		local itemPath = self.viewContainer:getSetting().otherRes[3]
+		local itemGo = self:getResInst(itemPath, self._goarrow)
+		local rotationGo = gohelper.findChild(itemGo, "mesh")
+		local rx, ry, rz = transformhelper.getLocalRotation(rotationGo.transform)
+		local arrowClick = gohelper.getClick(gohelper.findChild(itemGo, "click"))
+
+		arrowClick:AddClickListener(self._arrowClick, self, elementConfig.id)
+
+		local arrowItem = self:getUserDataTb_()
+
+		arrowItem.go = itemGo
+		arrowItem.rotationTrans = rotationGo.transform
+		arrowItem.initRotation = {
+			rx,
+			ry,
+			rz
+		}
+		arrowItem.arrowClick = arrowClick
+		self._arrowList[elementConfig.id] = arrowItem
+
+		self:_updateArrow(elementComp)
+	end
+
+	VersionActivityFixedDungeonController.instance:dispatchEvent(VersionActivityFixedDungeonEvent.OnAddOneElement, elementComp)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:showElements()
+	if not self._mapCfg then
+		return
+	end
+
+	if self.activityDungeonMo:isHardMode() then
+		self:recycleAllElements()
+
+		for _, v in pairs(self._arrowList) do
+			v.arrowClick:RemoveClickListener()
+			gohelper.destroy(v.go)
+		end
+
+		self._arrowList = self:getUserDataTb_()
+
+		return
+	end
+
+	local animElements = {}
+	local normalElements = {}
+	local newElements = DungeonMapModel.instance:getNewElements()
+	local elementCoList = VersionActivityFixedDungeonModel.instance:getElementCoList(self._mapCfg.id)
+
+	for _, elementCo in ipairs(elementCoList) do
+		local isNew = newElements and tabletool.indexOf(newElements, elementCo.id)
+
+		if isNew and elementCo.showCamera == 1 then
+			table.insert(animElements, elementCo.id)
+		else
+			table.insert(normalElements, elementCo)
+		end
+	end
+
+	self:_showElementAnim(animElements, normalElements)
+	DungeonMapModel.instance:clearNewElements()
+
+	if self._initClickElementId then
+		self:manualClickElement(self._initClickElementId)
+
+		self._initClickElementId = nil
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:recycleAllElements()
+	if self._elementCompDict then
+		for _, elementComp in pairs(self._elementCompDict) do
+			local elementId = elementComp:getElementId()
+
+			self._elementCompPoolDict[elementId] = elementComp
+
+			gohelper.addChild(self.elementPoolRoot, elementComp._go)
+		end
+
+		tabletool.clear(self._elementCompDict)
+	end
+
+	VersionActivityFixedDungeonController.instance:dispatchEvent(VersionActivityFixedDungeonEvent.OnRecycleAllElement)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_arrowClick(elementId)
+	self.mouseDownElement = nil
+
+	AudioMgr.instance:trigger(AudioEnum.UI.play_ui_checkpoint_element_arrow_click)
+	VersionActivityFixedDungeonController.instance:dispatchEvent(VersionActivityFixedDungeonEvent.FocusElement, elementId)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_updateArrow(elementComp)
+	local arrowItem = self._arrowList[elementComp:getElementId()]
+
+	if not arrowItem then
+		return
+	end
+
+	local isShowArrow = elementComp:isConfigShowArrow()
+
+	if not isShowArrow then
+		gohelper.setActive(arrowItem.go, false)
+
+		return
+	end
+
+	local t = elementComp._transform
+	local camera = CameraMgr.instance:getMainCamera()
+	local pos = camera:WorldToViewportPoint(t.position)
+	local x = pos.x
+	local y = pos.y
+	local isShowElement = x >= 0 and x <= 1 and y >= 0 and y <= 1
+
+	gohelper.setActive(arrowItem.go, not isShowElement)
+
+	if isShowElement then
+		return
+	end
+
+	local viewportX = math.max(0.02, math.min(x, 0.98))
+	local viewportY = math.max(0.035, math.min(y, 0.965))
+	local width = recthelper.getWidth(self._goarrow.transform)
+	local height = recthelper.getHeight(self._goarrow.transform)
+
+	recthelper.setAnchor(arrowItem.go.transform, width * (viewportX - 0.5), height * (viewportY - 0.5))
+
+	local initRotation = arrowItem.initRotation
+
+	if x >= 0 and x <= 1 then
+		if y < 0 then
+			transformhelper.setLocalRotation(arrowItem.rotationTrans, initRotation[1], initRotation[2], 180)
+
+			return
+		elseif y > 1 then
+			transformhelper.setLocalRotation(arrowItem.rotationTrans, initRotation[1], initRotation[2], 0)
+
+			return
+		end
+	end
+
+	if y >= 0 and y <= 1 then
+		if x < 0 then
+			transformhelper.setLocalRotation(arrowItem.rotationTrans, initRotation[1], initRotation[2], 270)
+
+			return
+		elseif x > 1 then
+			transformhelper.setLocalRotation(arrowItem.rotationTrans, initRotation[1], initRotation[2], 90)
+
+			return
+		end
+	end
+
+	local angle = 90 - Mathf.Atan2(y, x) * Mathf.Rad2Deg
+
+	transformhelper.setLocalRotation(arrowItem.rotationTrans, initRotation[1], initRotation[2], angle)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onClickUp()
+	local element = self.mouseDownElement
+
+	self.mouseDownElement = nil
+
+	if not self._clickDown or not element then
+		return
+	end
+
+	local id = element:getElementId()
+	local isFinish = DungeonMapModel.instance:elementIsFinished(id)
+
+	if isFinish then
+		return
+	end
+
+	local isValid = element:isValid()
+
+	if not isValid then
+		return
+	end
+
+	element:onClick()
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onClickDown()
+	self._clickDown = true
+end
+
+function VersionActivityFixedDungeonMapSceneElements:setInitClickElement(elementId)
+	self._initClickElementId = elementId
+end
+
+function VersionActivityFixedDungeonMapSceneElements:clearElements()
+	if self._elementCompDict then
+		for _, v in pairs(self._elementCompDict) do
+			v:onDestroy()
+		end
+	end
+
+	if self._elementCompPoolDict then
+		for _, v in pairs(self._elementCompPoolDict) do
+			v:onDestroy()
+		end
+	end
+
+	self._elementRoot = nil
+
+	tabletool.clear(self._elementCompDict)
+	tabletool.clear(self._elementCompPoolDict)
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onChangeMap()
+	self.hadEverySecondTask = false
+
+	self:_stopShowSequence()
+
+	self._needRemoveElementId = nil
+end
+
+function VersionActivityFixedDungeonMapSceneElements:_stopShowSequence()
+	if self._showSequence then
+		self._showSequence:unregisterDoneListener(self._stopShowSequence, self)
+		self._showSequence:destroy()
+
+		self._showSequence = nil
+
+		UIBlockMgr.instance:endBlock(VersionActivityFixedHelper.getVersionActivityDungeonEnum(self._bigVersion, self._smallVersion).BlockKey.FocusNewElement)
+	end
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onDisposeScene()
+	self:clearElements()
+	self:_stopShowSequence()
+
+	self._needRemoveElementId = nil
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onDisposeOldMap(viewName)
+	self:recycleAllElements()
+
+	self._elementRoot = nil
+
+	for _, v in pairs(self._arrowList) do
+		v.arrowClick:RemoveClickListener()
+		gohelper.destroy(v.go)
+	end
+
+	self._arrowList = self:getUserDataTb_()
+
+	self:_stopShowSequence()
+
+	self._needRemoveElementId = nil
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onClose()
+	return
+end
+
+function VersionActivityFixedDungeonMapSceneElements:onDestroyView()
+	self:clearElements()
+	DungeonMapModel.instance:clearNewElements()
+	self:_stopShowSequence()
+	TaskDispatcher.cancelTask(self.showNewElements, self)
+	self:onDisposeOldMap()
+end
+
+return VersionActivityFixedDungeonMapSceneElements

@@ -1,0 +1,227 @@
+﻿-- chunkname: @modules/proto/Activity158Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity158Module_pb", package.seeall)
+
+local Activity158Module_pb = {}
+
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG = protobuf.Descriptor()
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG = protobuf.Descriptor()
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.GET158INFOSREQUEST_MSG = protobuf.Descriptor()
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG = protobuf.Descriptor()
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG = protobuf.Descriptor()
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158INFO_MSG = protobuf.Descriptor()
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.GET158INFOSREPLY_MSG = protobuf.Descriptor()
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD = protobuf.FieldDescriptor()
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.name = "info"
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.full_name = ".Act158StartChallengeReply.info"
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.number = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.index = 0
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.label = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.has_default_value = false
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.default_value = nil
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.message_type = Activity158Module_pb.ACT158INFO_MSG
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.type = 11
+Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD.cpp_type = 10
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.name = "Act158StartChallengeReply"
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.full_name = ".Act158StartChallengeReply"
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.nested_types = {}
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.enum_types = {}
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.fields = {
+	Activity158Module_pb.ACT158STARTCHALLENGEREPLYINFOFIELD
+}
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.is_extendable = false
+Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG.extensions = {}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.name = "info"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.full_name = ".Act158AbandonChallengeReply.info"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.number = 1
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.index = 0
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.label = 1
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.has_default_value = false
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.default_value = nil
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.message_type = Activity158Module_pb.ACT158INFO_MSG
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.type = 11
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD.cpp_type = 10
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.name = "Act158AbandonChallengeReply"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.full_name = ".Act158AbandonChallengeReply"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.nested_types = {}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.enum_types = {}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.fields = {
+	Activity158Module_pb.ACT158ABANDONCHALLENGEREPLYINFOFIELD
+}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.is_extendable = false
+Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG.extensions = {}
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.full_name = ".Get158InfosRequest.activityId"
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.number = 1
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.index = 0
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.label = 1
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.type = 5
+Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity158Module_pb.GET158INFOSREQUEST_MSG.name = "Get158InfosRequest"
+Activity158Module_pb.GET158INFOSREQUEST_MSG.full_name = ".Get158InfosRequest"
+Activity158Module_pb.GET158INFOSREQUEST_MSG.nested_types = {}
+Activity158Module_pb.GET158INFOSREQUEST_MSG.enum_types = {}
+Activity158Module_pb.GET158INFOSREQUEST_MSG.fields = {
+	Activity158Module_pb.GET158INFOSREQUESTACTIVITYIDFIELD
+}
+Activity158Module_pb.GET158INFOSREQUEST_MSG.is_extendable = false
+Activity158Module_pb.GET158INFOSREQUEST_MSG.extensions = {}
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.full_name = ".Act158StartChallengeRequest.activityId"
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.number = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.index = 0
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.label = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.type = 5
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.name = "difficulty"
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.full_name = ".Act158StartChallengeRequest.difficulty"
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.number = 2
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.index = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.label = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.has_default_value = false
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.default_value = 0
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.type = 5
+Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD.cpp_type = 1
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.name = "Act158StartChallengeRequest"
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.full_name = ".Act158StartChallengeRequest"
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.nested_types = {}
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.enum_types = {}
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.fields = {
+	Activity158Module_pb.ACT158STARTCHALLENGEREQUESTACTIVITYIDFIELD,
+	Activity158Module_pb.ACT158STARTCHALLENGEREQUESTDIFFICULTYFIELD
+}
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.is_extendable = false
+Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG.extensions = {}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.full_name = ".Act158AbandonChallengeRequest.activityId"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.number = 1
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.index = 0
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.label = 1
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.type = 5
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.name = "Act158AbandonChallengeRequest"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.full_name = ".Act158AbandonChallengeRequest"
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.nested_types = {}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.enum_types = {}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.fields = {
+	Activity158Module_pb.ACT158ABANDONCHALLENGEREQUESTACTIVITYIDFIELD
+}
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.is_extendable = false
+Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG.extensions = {}
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.name = "activityId"
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.full_name = ".Act158Info.activityId"
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.number = 1
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.index = 0
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.label = 1
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.has_default_value = false
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.default_value = 0
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.type = 5
+Activity158Module_pb.ACT158INFOACTIVITYIDFIELD.cpp_type = 1
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.name = "openChallenge"
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.full_name = ".Act158Info.openChallenge"
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.number = 2
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.index = 1
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.label = 1
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.has_default_value = false
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.default_value = false
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.type = 8
+Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD.cpp_type = 7
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.name = "currDifficulty"
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.full_name = ".Act158Info.currDifficulty"
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.number = 3
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.index = 2
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.label = 1
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.has_default_value = false
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.default_value = 0
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.type = 5
+Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD.cpp_type = 1
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.name = "passDifficulty"
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.full_name = ".Act158Info.passDifficulty"
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.number = 4
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.index = 3
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.label = 3
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.has_default_value = false
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.default_value = {}
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.type = 5
+Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD.cpp_type = 1
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.name = "enterDifficulty"
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.full_name = ".Act158Info.enterDifficulty"
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.number = 5
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.index = 4
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.label = 3
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.has_default_value = false
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.default_value = {}
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.type = 5
+Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD.cpp_type = 1
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.name = "passChallengeIds"
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.full_name = ".Act158Info.passChallengeIds"
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.number = 6
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.index = 5
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.label = 3
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.has_default_value = false
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.default_value = {}
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.type = 5
+Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD.cpp_type = 1
+Activity158Module_pb.ACT158INFO_MSG.name = "Act158Info"
+Activity158Module_pb.ACT158INFO_MSG.full_name = ".Act158Info"
+Activity158Module_pb.ACT158INFO_MSG.nested_types = {}
+Activity158Module_pb.ACT158INFO_MSG.enum_types = {}
+Activity158Module_pb.ACT158INFO_MSG.fields = {
+	Activity158Module_pb.ACT158INFOACTIVITYIDFIELD,
+	Activity158Module_pb.ACT158INFOOPENCHALLENGEFIELD,
+	Activity158Module_pb.ACT158INFOCURRDIFFICULTYFIELD,
+	Activity158Module_pb.ACT158INFOPASSDIFFICULTYFIELD,
+	Activity158Module_pb.ACT158INFOENTERDIFFICULTYFIELD,
+	Activity158Module_pb.ACT158INFOPASSCHALLENGEIDSFIELD
+}
+Activity158Module_pb.ACT158INFO_MSG.is_extendable = false
+Activity158Module_pb.ACT158INFO_MSG.extensions = {}
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.name = "info"
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.full_name = ".Get158InfosReply.info"
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.number = 1
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.index = 0
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.label = 1
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.has_default_value = false
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.default_value = nil
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.message_type = Activity158Module_pb.ACT158INFO_MSG
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.type = 11
+Activity158Module_pb.GET158INFOSREPLYINFOFIELD.cpp_type = 10
+Activity158Module_pb.GET158INFOSREPLY_MSG.name = "Get158InfosReply"
+Activity158Module_pb.GET158INFOSREPLY_MSG.full_name = ".Get158InfosReply"
+Activity158Module_pb.GET158INFOSREPLY_MSG.nested_types = {}
+Activity158Module_pb.GET158INFOSREPLY_MSG.enum_types = {}
+Activity158Module_pb.GET158INFOSREPLY_MSG.fields = {
+	Activity158Module_pb.GET158INFOSREPLYINFOFIELD
+}
+Activity158Module_pb.GET158INFOSREPLY_MSG.is_extendable = false
+Activity158Module_pb.GET158INFOSREPLY_MSG.extensions = {}
+Activity158Module_pb.Act158AbandonChallengeReply = protobuf.Message(Activity158Module_pb.ACT158ABANDONCHALLENGEREPLY_MSG)
+Activity158Module_pb.Act158AbandonChallengeRequest = protobuf.Message(Activity158Module_pb.ACT158ABANDONCHALLENGEREQUEST_MSG)
+Activity158Module_pb.Act158Info = protobuf.Message(Activity158Module_pb.ACT158INFO_MSG)
+Activity158Module_pb.Act158StartChallengeReply = protobuf.Message(Activity158Module_pb.ACT158STARTCHALLENGEREPLY_MSG)
+Activity158Module_pb.Act158StartChallengeRequest = protobuf.Message(Activity158Module_pb.ACT158STARTCHALLENGEREQUEST_MSG)
+Activity158Module_pb.Get158InfosReply = protobuf.Message(Activity158Module_pb.GET158INFOSREPLY_MSG)
+Activity158Module_pb.Get158InfosRequest = protobuf.Message(Activity158Module_pb.GET158INFOSREQUEST_MSG)
+
+return Activity158Module_pb

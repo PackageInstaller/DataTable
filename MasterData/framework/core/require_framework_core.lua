@@ -1,0 +1,17 @@
+﻿-- chunkname: @framework/core/require_framework_core.lua
+
+addGlobalModule("framework.core.userdata.UserDataDispose", "UserDataDispose")
+addGlobalModule("framework.core.callback.LuaGeneralCallback", "LuaGeneralCallback")
+addGlobalModule("framework.core.datastruct.PriorityQueue", "PriorityQueue")
+addGlobalModule("framework.core.eventsystem.DispatchItem", "DispatchItem")
+addGlobalModule("framework.core.eventsystem.EventItem", "EventItem")
+addGlobalModule("framework.core.eventsystem.LuaEventSystem", "LuaEventSystem")
+addGlobalModule("framework.core.pool.LuaObjPool", "LuaObjPool")
+addGlobalModule("framework.core.taskdispatcher.TaskDispatcher", "TaskDispatcher")
+addGlobalModule("framework.core.taskdispatcher.TaskItem", "TaskItem")
+addGlobalModule("framework.core.workflow.work.BaseWork", "BaseWork")
+addGlobalModule("framework.core.workflow.flow.BaseFlow", "BaseFlow")
+addGlobalModule("framework.core.workflow.work.WorkStatus", "WorkStatus")
+addGlobalModule("framework.core.workflow.flow.FlowSequence", "FlowSequence")
+addGlobalModule("framework.core.workflow.flow.FlowParallel", "FlowParallel")
+addGlobalModule("framework.core.workflow.work.impl.WorkWaitSeconds", "WorkWaitSeconds")

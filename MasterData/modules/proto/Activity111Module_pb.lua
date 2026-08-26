@@ -1,0 +1,455 @@
+﻿-- chunkname: @modules/proto/Activity111Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity111Module_pb", package.seeall)
+
+local Activity111Module_pb = {}
+
+Activity111Module_pb.GET111INFOSREQUEST_MSG = protobuf.Descriptor()
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREPLY_MSG = protobuf.Descriptor()
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG = protobuf.Descriptor()
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.ACT111INFO_MSG = protobuf.Descriptor()
+Activity111Module_pb.ACT111INFOIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.ACT111INFOSTATEFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG = protobuf.Descriptor()
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG = protobuf.Descriptor()
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG = protobuf.Descriptor()
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.GET111INFOSREPLY_MSG = protobuf.Descriptor()
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG = protobuf.Descriptor()
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.ACT111INFOPUSH_MSG = protobuf.Descriptor()
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.PUSHBOXTASKINFO_MSG = protobuf.Descriptor()
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG = protobuf.Descriptor()
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD = protobuf.FieldDescriptor()
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.full_name = ".Get111InfosRequest.activityId"
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.number = 1
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.index = 0
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.label = 1
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.type = 5
+Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.GET111INFOSREQUEST_MSG.name = "Get111InfosRequest"
+Activity111Module_pb.GET111INFOSREQUEST_MSG.full_name = ".Get111InfosRequest"
+Activity111Module_pb.GET111INFOSREQUEST_MSG.nested_types = {}
+Activity111Module_pb.GET111INFOSREQUEST_MSG.enum_types = {}
+Activity111Module_pb.GET111INFOSREQUEST_MSG.fields = {
+	Activity111Module_pb.GET111INFOSREQUESTACTIVITYIDFIELD
+}
+Activity111Module_pb.GET111INFOSREQUEST_MSG.is_extendable = false
+Activity111Module_pb.GET111INFOSREQUEST_MSG.extensions = {}
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.full_name = ".FinishEpisodeReply.activityId"
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.number = 1
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.index = 0
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.type = 5
+Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.name = "episodeId"
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.full_name = ".FinishEpisodeReply.episodeId"
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.number = 2
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.index = 1
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.default_value = 0
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.type = 5
+Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD.cpp_type = 1
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.name = "FinishEpisodeReply"
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.full_name = ".FinishEpisodeReply"
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.nested_types = {}
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.enum_types = {}
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.fields = {
+	Activity111Module_pb.FINISHEPISODEREPLYACTIVITYIDFIELD,
+	Activity111Module_pb.FINISHEPISODEREPLYEPISODEIDFIELD
+}
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.is_extendable = false
+Activity111Module_pb.FINISHEPISODEREPLY_MSG.extensions = {}
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.full_name = ".MarkRedDot1039Reply.activityId"
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.number = 1
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.index = 0
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.label = 1
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.type = 5
+Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.name = "MarkRedDot1039Reply"
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.full_name = ".MarkRedDot1039Reply"
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.nested_types = {}
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.enum_types = {}
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.fields = {
+	Activity111Module_pb.MARKREDDOT1039REPLYACTIVITYIDFIELD
+}
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.is_extendable = false
+Activity111Module_pb.MARKREDDOT1039REPLY_MSG.extensions = {}
+Activity111Module_pb.ACT111INFOIDFIELD.name = "id"
+Activity111Module_pb.ACT111INFOIDFIELD.full_name = ".Act111Info.id"
+Activity111Module_pb.ACT111INFOIDFIELD.number = 1
+Activity111Module_pb.ACT111INFOIDFIELD.index = 0
+Activity111Module_pb.ACT111INFOIDFIELD.label = 1
+Activity111Module_pb.ACT111INFOIDFIELD.has_default_value = false
+Activity111Module_pb.ACT111INFOIDFIELD.default_value = 0
+Activity111Module_pb.ACT111INFOIDFIELD.type = 5
+Activity111Module_pb.ACT111INFOIDFIELD.cpp_type = 1
+Activity111Module_pb.ACT111INFOSTATEFIELD.name = "state"
+Activity111Module_pb.ACT111INFOSTATEFIELD.full_name = ".Act111Info.state"
+Activity111Module_pb.ACT111INFOSTATEFIELD.number = 2
+Activity111Module_pb.ACT111INFOSTATEFIELD.index = 1
+Activity111Module_pb.ACT111INFOSTATEFIELD.label = 1
+Activity111Module_pb.ACT111INFOSTATEFIELD.has_default_value = false
+Activity111Module_pb.ACT111INFOSTATEFIELD.default_value = 0
+Activity111Module_pb.ACT111INFOSTATEFIELD.type = 5
+Activity111Module_pb.ACT111INFOSTATEFIELD.cpp_type = 1
+Activity111Module_pb.ACT111INFO_MSG.name = "Act111Info"
+Activity111Module_pb.ACT111INFO_MSG.full_name = ".Act111Info"
+Activity111Module_pb.ACT111INFO_MSG.nested_types = {}
+Activity111Module_pb.ACT111INFO_MSG.enum_types = {}
+Activity111Module_pb.ACT111INFO_MSG.fields = {
+	Activity111Module_pb.ACT111INFOIDFIELD,
+	Activity111Module_pb.ACT111INFOSTATEFIELD
+}
+Activity111Module_pb.ACT111INFO_MSG.is_extendable = false
+Activity111Module_pb.ACT111INFO_MSG.extensions = {}
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.full_name = ".FinishEpisodeRequest.activityId"
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.number = 1
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.index = 0
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.type = 5
+Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.full_name = ".FinishEpisodeRequest.episodeId"
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.number = 2
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.index = 1
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.default_value = 0
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.type = 5
+Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.name = "step"
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.full_name = ".FinishEpisodeRequest.step"
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.number = 3
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.index = 2
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.default_value = 0
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.type = 5
+Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD.cpp_type = 1
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.name = "alarm"
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.full_name = ".FinishEpisodeRequest.alarm"
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.number = 4
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.index = 3
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.default_value = 0
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.type = 5
+Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD.cpp_type = 1
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.name = "timestamp"
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.full_name = ".FinishEpisodeRequest.timestamp"
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.number = 5
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.index = 4
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.default_value = ""
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.type = 9
+Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD.cpp_type = 9
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.name = "sign"
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.full_name = ".FinishEpisodeRequest.sign"
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.number = 6
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.index = 5
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.label = 1
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.has_default_value = false
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.default_value = ""
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.type = 9
+Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD.cpp_type = 9
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.name = "FinishEpisodeRequest"
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.full_name = ".FinishEpisodeRequest"
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.nested_types = {}
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.enum_types = {}
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.fields = {
+	Activity111Module_pb.FINISHEPISODEREQUESTACTIVITYIDFIELD,
+	Activity111Module_pb.FINISHEPISODEREQUESTEPISODEIDFIELD,
+	Activity111Module_pb.FINISHEPISODEREQUESTSTEPFIELD,
+	Activity111Module_pb.FINISHEPISODEREQUESTALARMFIELD,
+	Activity111Module_pb.FINISHEPISODEREQUESTTIMESTAMPFIELD,
+	Activity111Module_pb.FINISHEPISODEREQUESTSIGNFIELD
+}
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.is_extendable = false
+Activity111Module_pb.FINISHEPISODEREQUEST_MSG.extensions = {}
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.full_name = ".MarkRedDot1039Request.activityId"
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.number = 1
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.index = 0
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.label = 1
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.type = 5
+Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.name = "MarkRedDot1039Request"
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.full_name = ".MarkRedDot1039Request"
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.nested_types = {}
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.enum_types = {}
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.fields = {
+	Activity111Module_pb.MARKREDDOT1039REQUESTACTIVITYIDFIELD
+}
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.is_extendable = false
+Activity111Module_pb.MARKREDDOT1039REQUEST_MSG.extensions = {}
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.full_name = ".PushBoxTaskPush.activityId"
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.number = 1
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.index = 0
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.label = 1
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.type = 5
+Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.name = "pushBoxTasks"
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.full_name = ".PushBoxTaskPush.pushBoxTasks"
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.number = 2
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.index = 1
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.label = 3
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.has_default_value = false
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.default_value = {}
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.message_type = Activity111Module_pb.PUSHBOXTASKINFO_MSG
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.type = 11
+Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD.cpp_type = 10
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.name = "deleteTasks"
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.full_name = ".PushBoxTaskPush.deleteTasks"
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.number = 3
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.index = 2
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.label = 3
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.has_default_value = false
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.default_value = {}
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.message_type = Activity111Module_pb.PUSHBOXTASKINFO_MSG
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.type = 11
+Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD.cpp_type = 10
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.name = "PushBoxTaskPush"
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.full_name = ".PushBoxTaskPush"
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.nested_types = {}
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.enum_types = {}
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.fields = {
+	Activity111Module_pb.PUSHBOXTASKPUSHACTIVITYIDFIELD,
+	Activity111Module_pb.PUSHBOXTASKPUSHPUSHBOXTASKSFIELD,
+	Activity111Module_pb.PUSHBOXTASKPUSHDELETETASKSFIELD
+}
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.is_extendable = false
+Activity111Module_pb.PUSHBOXTASKPUSH_MSG.extensions = {}
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.full_name = ".Get111InfosReply.activityId"
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.number = 1
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.index = 0
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.label = 1
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.type = 5
+Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.name = "infos"
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.full_name = ".Get111InfosReply.infos"
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.number = 2
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.index = 1
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.label = 3
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.has_default_value = false
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.default_value = {}
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.message_type = Activity111Module_pb.ACT111INFO_MSG
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.type = 11
+Activity111Module_pb.GET111INFOSREPLYINFOSFIELD.cpp_type = 10
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.name = "stageIds"
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.full_name = ".Get111InfosReply.stageIds"
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.number = 3
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.index = 2
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.label = 3
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.has_default_value = false
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.default_value = {}
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.type = 5
+Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD.cpp_type = 1
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.name = "pushBoxTasks"
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.full_name = ".Get111InfosReply.pushBoxTasks"
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.number = 4
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.index = 3
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.label = 3
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.has_default_value = false
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.default_value = {}
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.message_type = Activity111Module_pb.PUSHBOXTASKINFO_MSG
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.type = 11
+Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD.cpp_type = 10
+Activity111Module_pb.GET111INFOSREPLY_MSG.name = "Get111InfosReply"
+Activity111Module_pb.GET111INFOSREPLY_MSG.full_name = ".Get111InfosReply"
+Activity111Module_pb.GET111INFOSREPLY_MSG.nested_types = {}
+Activity111Module_pb.GET111INFOSREPLY_MSG.enum_types = {}
+Activity111Module_pb.GET111INFOSREPLY_MSG.fields = {
+	Activity111Module_pb.GET111INFOSREPLYACTIVITYIDFIELD,
+	Activity111Module_pb.GET111INFOSREPLYINFOSFIELD,
+	Activity111Module_pb.GET111INFOSREPLYSTAGEIDSFIELD,
+	Activity111Module_pb.GET111INFOSREPLYPUSHBOXTASKSFIELD
+}
+Activity111Module_pb.GET111INFOSREPLY_MSG.is_extendable = false
+Activity111Module_pb.GET111INFOSREPLY_MSG.extensions = {}
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.full_name = ".ReceiveTaskRewardReply.activityId"
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.number = 1
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.index = 0
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.label = 1
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.type = 5
+Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.name = "taskId"
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.full_name = ".ReceiveTaskRewardReply.taskId"
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.number = 2
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.index = 1
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.label = 1
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.has_default_value = false
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.default_value = 0
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.type = 5
+Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD.cpp_type = 1
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.name = "ReceiveTaskRewardReply"
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.full_name = ".ReceiveTaskRewardReply"
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.nested_types = {}
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.enum_types = {}
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.fields = {
+	Activity111Module_pb.RECEIVETASKREWARDREPLYACTIVITYIDFIELD,
+	Activity111Module_pb.RECEIVETASKREWARDREPLYTASKIDFIELD
+}
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.is_extendable = false
+Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG.extensions = {}
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.full_name = ".Act111InfoPush.activityId"
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.number = 1
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.index = 0
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.label = 1
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.type = 5
+Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.name = "act111Info"
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.full_name = ".Act111InfoPush.act111Info"
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.number = 2
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.index = 1
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.label = 3
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.has_default_value = false
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.default_value = {}
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.message_type = Activity111Module_pb.ACT111INFO_MSG
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.type = 11
+Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD.cpp_type = 10
+Activity111Module_pb.ACT111INFOPUSH_MSG.name = "Act111InfoPush"
+Activity111Module_pb.ACT111INFOPUSH_MSG.full_name = ".Act111InfoPush"
+Activity111Module_pb.ACT111INFOPUSH_MSG.nested_types = {}
+Activity111Module_pb.ACT111INFOPUSH_MSG.enum_types = {}
+Activity111Module_pb.ACT111INFOPUSH_MSG.fields = {
+	Activity111Module_pb.ACT111INFOPUSHACTIVITYIDFIELD,
+	Activity111Module_pb.ACT111INFOPUSHACT111INFOFIELD
+}
+Activity111Module_pb.ACT111INFOPUSH_MSG.is_extendable = false
+Activity111Module_pb.ACT111INFOPUSH_MSG.extensions = {}
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.name = "taskId"
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.full_name = ".PushBoxTaskInfo.taskId"
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.number = 1
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.index = 0
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.label = 1
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.has_default_value = false
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.default_value = 0
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.type = 5
+Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD.cpp_type = 1
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.name = "progress"
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.full_name = ".PushBoxTaskInfo.progress"
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.number = 2
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.index = 1
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.label = 1
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.has_default_value = false
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.default_value = 0
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.type = 5
+Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD.cpp_type = 1
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.name = "hasGetBonus"
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.full_name = ".PushBoxTaskInfo.hasGetBonus"
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.number = 3
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.index = 2
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.label = 1
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.has_default_value = false
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.default_value = false
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.type = 8
+Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD.cpp_type = 7
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.name = "PushBoxTaskInfo"
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.full_name = ".PushBoxTaskInfo"
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.nested_types = {}
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.enum_types = {}
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.fields = {
+	Activity111Module_pb.PUSHBOXTASKINFOTASKIDFIELD,
+	Activity111Module_pb.PUSHBOXTASKINFOPROGRESSFIELD,
+	Activity111Module_pb.PUSHBOXTASKINFOHASGETBONUSFIELD
+}
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.is_extendable = false
+Activity111Module_pb.PUSHBOXTASKINFO_MSG.extensions = {}
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.full_name = ".ReceiveTaskRewardRequest.activityId"
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.number = 1
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.index = 0
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.label = 1
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.default_value = 0
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.type = 5
+Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.name = "taskId"
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.full_name = ".ReceiveTaskRewardRequest.taskId"
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.number = 2
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.index = 1
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.label = 1
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.has_default_value = false
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.default_value = 0
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.type = 5
+Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD.cpp_type = 1
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.name = "ReceiveTaskRewardRequest"
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.full_name = ".ReceiveTaskRewardRequest"
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.nested_types = {}
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.enum_types = {}
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.fields = {
+	Activity111Module_pb.RECEIVETASKREWARDREQUESTACTIVITYIDFIELD,
+	Activity111Module_pb.RECEIVETASKREWARDREQUESTTASKIDFIELD
+}
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.is_extendable = false
+Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG.extensions = {}
+Activity111Module_pb.Act111Info = protobuf.Message(Activity111Module_pb.ACT111INFO_MSG)
+Activity111Module_pb.Act111InfoPush = protobuf.Message(Activity111Module_pb.ACT111INFOPUSH_MSG)
+Activity111Module_pb.FinishEpisodeReply = protobuf.Message(Activity111Module_pb.FINISHEPISODEREPLY_MSG)
+Activity111Module_pb.FinishEpisodeRequest = protobuf.Message(Activity111Module_pb.FINISHEPISODEREQUEST_MSG)
+Activity111Module_pb.Get111InfosReply = protobuf.Message(Activity111Module_pb.GET111INFOSREPLY_MSG)
+Activity111Module_pb.Get111InfosRequest = protobuf.Message(Activity111Module_pb.GET111INFOSREQUEST_MSG)
+Activity111Module_pb.MarkRedDot1039Reply = protobuf.Message(Activity111Module_pb.MARKREDDOT1039REPLY_MSG)
+Activity111Module_pb.MarkRedDot1039Request = protobuf.Message(Activity111Module_pb.MARKREDDOT1039REQUEST_MSG)
+Activity111Module_pb.PushBoxTaskInfo = protobuf.Message(Activity111Module_pb.PUSHBOXTASKINFO_MSG)
+Activity111Module_pb.PushBoxTaskPush = protobuf.Message(Activity111Module_pb.PUSHBOXTASKPUSH_MSG)
+Activity111Module_pb.ReceiveTaskRewardReply = protobuf.Message(Activity111Module_pb.RECEIVETASKREWARDREPLY_MSG)
+Activity111Module_pb.ReceiveTaskRewardRequest = protobuf.Message(Activity111Module_pb.RECEIVETASKREWARDREQUEST_MSG)
+
+return Activity111Module_pb

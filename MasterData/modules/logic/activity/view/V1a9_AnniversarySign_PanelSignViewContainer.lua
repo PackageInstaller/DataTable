@@ -1,0 +1,11 @@
+﻿-- chunkname: @modules/logic/activity/view/V1a9_AnniversarySign_PanelSignViewContainer.lua
+
+module("modules.logic.activity.view.V1a9_AnniversarySign_PanelSignViewContainer", package.seeall)
+
+local V1a9_AnniversarySign_PanelSignViewContainer = class("V1a9_AnniversarySign_PanelSignViewContainer", V1a9_AnniversarySign_SignItem_SignViewContainer)
+
+function V1a9_AnniversarySign_PanelSignViewContainer:onGetMainViewClassType()
+	return V1a9_AnniversarySign_PanelSignView
+end
+
+return V1a9_AnniversarySign_PanelSignViewContainer

@@ -1,0 +1,41 @@
+﻿-- chunkname: @modules/logic/versionactivity2_8/nuodika/define/NuoDiKaEvent.lua
+
+module("modules.logic.versionactivity2_8.nuodika.define.NuoDiKaEvent", package.seeall)
+
+local NuoDiKaEvent = _M
+
+NuoDiKaEvent.JumpToEpisode = GameUtil.getUniqueTb()
+NuoDiKaEvent.EpisodeFinished = GameUtil.getUniqueTb()
+NuoDiKaEvent.OnBackToLevel = GameUtil.getUniqueTb()
+NuoDiKaEvent.OnActiveClose = GameUtil.getUniqueTb()
+NuoDiKaEvent.OneClickClaimReward = GameUtil.getUniqueTb()
+NuoDiKaEvent.OnCloseTask = GameUtil.getUniqueTb()
+NuoDiKaEvent.NodeClicked = GameUtil.getUniqueTb()
+NuoDiKaEvent.MapResetClicked = GameUtil.getUniqueTb()
+NuoDiKaEvent.GameRestart = GameUtil.getUniqueTb()
+NuoDiKaEvent.MapRefresh = GameUtil.getUniqueTb()
+NuoDiKaEvent.GameItemUnlockSuccess = GameUtil.getUniqueTb()
+NuoDiKaEvent.GameSuccess = GameUtil.getUniqueTb()
+NuoDiKaEvent.GameFailed = GameUtil.getUniqueTb()
+NuoDiKaEvent.ItemStartSkill = GameUtil.getUniqueTb()
+NuoDiKaEvent.ClearNodeItem = GameUtil.getUniqueTb()
+NuoDiKaEvent.HideOtherNodeTips = GameUtil.getUniqueTb()
+NuoDiKaEvent.ShowInteractAttackWarn = GameUtil.getUniqueTb()
+NuoDiKaEvent.StartInteract = GameUtil.getUniqueTb()
+NuoDiKaEvent.EnemyDead = GameUtil.getUniqueTb()
+NuoDiKaEvent.UnlockAllNodesEnemyDead = GameUtil.getUniqueTb()
+NuoDiKaEvent.UnlockSuccessItem = GameUtil.getUniqueTb()
+NuoDiKaEvent.ItemWarnAttackEnemy = GameUtil.getUniqueTb()
+NuoDiKaEvent.ShowItemScan = GameUtil.getUniqueTb()
+NuoDiKaEvent.AttackEnemy = GameUtil.getUniqueTb()
+NuoDiKaEvent.AttackMainRole = GameUtil.getUniqueTb()
+NuoDiKaEvent.WarnEnemyNode = GameUtil.getUniqueTb()
+NuoDiKaEvent.CheckShowEnemyDetail = GameUtil.getUniqueTb()
+NuoDiKaEvent.CheckShowItemDetail = GameUtil.getUniqueTb()
+NuoDiKaEvent.NodeUnitDraging = GameUtil.getUniqueTb()
+NuoDiKaEvent.NodeUnitDragEnd = GameUtil.getUniqueTb()
+NuoDiKaEvent.NodeUnitPlaced = GameUtil.getUniqueTb()
+NuoDiKaEvent.NodeUnitPlaceBack = GameUtil.getUniqueTb()
+NuoDiKaEvent.OnUnlockGuideNode = GameUtil.getUniqueTb()
+
+return NuoDiKaEvent

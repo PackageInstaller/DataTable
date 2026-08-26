@@ -1,0 +1,106 @@
+﻿-- chunkname: @modules/proto/Activity189Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity189Module_pb", package.seeall)
+
+local Activity189Module_pb = {}
+
+Activity189Module_pb.GETACT189INFOREQUEST_MSG = protobuf.Descriptor()
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity189Module_pb.GETACT189INFOREPLY_MSG = protobuf.Descriptor()
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD = protobuf.FieldDescriptor()
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG = protobuf.Descriptor()
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG = protobuf.Descriptor()
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct189InfoRequest.activityId"
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.name = "GetAct189InfoRequest"
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.full_name = ".GetAct189InfoRequest"
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.nested_types = {}
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.enum_types = {}
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.fields = {
+	Activity189Module_pb.GETACT189INFOREQUESTACTIVITYIDFIELD
+}
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.is_extendable = false
+Activity189Module_pb.GETACT189INFOREQUEST_MSG.extensions = {}
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.full_name = ".GetAct189InfoReply.activityId"
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.number = 1
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.index = 0
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.label = 1
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.type = 5
+Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.name = "hasGetOnceBonus"
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.full_name = ".GetAct189InfoReply.hasGetOnceBonus"
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.number = 2
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.index = 1
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.label = 1
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.has_default_value = false
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.default_value = false
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.type = 8
+Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD.cpp_type = 7
+Activity189Module_pb.GETACT189INFOREPLY_MSG.name = "GetAct189InfoReply"
+Activity189Module_pb.GETACT189INFOREPLY_MSG.full_name = ".GetAct189InfoReply"
+Activity189Module_pb.GETACT189INFOREPLY_MSG.nested_types = {}
+Activity189Module_pb.GETACT189INFOREPLY_MSG.enum_types = {}
+Activity189Module_pb.GETACT189INFOREPLY_MSG.fields = {
+	Activity189Module_pb.GETACT189INFOREPLYACTIVITYIDFIELD,
+	Activity189Module_pb.GETACT189INFOREPLYHASGETONCEBONUSFIELD
+}
+Activity189Module_pb.GETACT189INFOREPLY_MSG.is_extendable = false
+Activity189Module_pb.GETACT189INFOREPLY_MSG.extensions = {}
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.full_name = ".GetAct189OnceBonusReply.activityId"
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.number = 1
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.index = 0
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.label = 1
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.default_value = 0
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.type = 5
+Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.name = "GetAct189OnceBonusReply"
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.full_name = ".GetAct189OnceBonusReply"
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.nested_types = {}
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.enum_types = {}
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.fields = {
+	Activity189Module_pb.GETACT189ONCEBONUSREPLYACTIVITYIDFIELD
+}
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.is_extendable = false
+Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG.extensions = {}
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.full_name = ".GetAct189OnceBonusRequest.activityId"
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.number = 1
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.index = 0
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.label = 1
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.type = 5
+Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.name = "GetAct189OnceBonusRequest"
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.full_name = ".GetAct189OnceBonusRequest"
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.nested_types = {}
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.enum_types = {}
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.fields = {
+	Activity189Module_pb.GETACT189ONCEBONUSREQUESTACTIVITYIDFIELD
+}
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.is_extendable = false
+Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG.extensions = {}
+Activity189Module_pb.GetAct189InfoReply = protobuf.Message(Activity189Module_pb.GETACT189INFOREPLY_MSG)
+Activity189Module_pb.GetAct189InfoRequest = protobuf.Message(Activity189Module_pb.GETACT189INFOREQUEST_MSG)
+Activity189Module_pb.GetAct189OnceBonusReply = protobuf.Message(Activity189Module_pb.GETACT189ONCEBONUSREPLY_MSG)
+Activity189Module_pb.GetAct189OnceBonusRequest = protobuf.Message(Activity189Module_pb.GETACT189ONCEBONUSREQUEST_MSG)
+
+return Activity189Module_pb

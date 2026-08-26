@@ -1,0 +1,118 @@
+﻿-- chunkname: @modules/proto/Activity172Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity172Module_pb", package.seeall)
+
+local Activity172Module_pb = {}
+
+Activity172Module_pb.GETACT172INFOREPLY_MSG = protobuf.Descriptor()
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD = protobuf.FieldDescriptor()
+Activity172Module_pb.GETACT172INFOREQUEST_MSG = protobuf.Descriptor()
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity172Module_pb.ACT172INFO_MSG = protobuf.Descriptor()
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD = protobuf.FieldDescriptor()
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG = protobuf.Descriptor()
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD = protobuf.FieldDescriptor()
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.full_name = ".GetAct172InfoReply.activityId"
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.number = 1
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.index = 0
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.label = 1
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.type = 5
+Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.name = "info"
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.full_name = ".GetAct172InfoReply.info"
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.number = 2
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.index = 1
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.label = 1
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.has_default_value = false
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.default_value = nil
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.message_type = Activity172Module_pb.ACT172INFO_MSG
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.type = 11
+Activity172Module_pb.GETACT172INFOREPLYINFOFIELD.cpp_type = 10
+Activity172Module_pb.GETACT172INFOREPLY_MSG.name = "GetAct172InfoReply"
+Activity172Module_pb.GETACT172INFOREPLY_MSG.full_name = ".GetAct172InfoReply"
+Activity172Module_pb.GETACT172INFOREPLY_MSG.nested_types = {}
+Activity172Module_pb.GETACT172INFOREPLY_MSG.enum_types = {}
+Activity172Module_pb.GETACT172INFOREPLY_MSG.fields = {
+	Activity172Module_pb.GETACT172INFOREPLYACTIVITYIDFIELD,
+	Activity172Module_pb.GETACT172INFOREPLYINFOFIELD
+}
+Activity172Module_pb.GETACT172INFOREPLY_MSG.is_extendable = false
+Activity172Module_pb.GETACT172INFOREPLY_MSG.extensions = {}
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct172InfoRequest.activityId"
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.name = "GetAct172InfoRequest"
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.full_name = ".GetAct172InfoRequest"
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.nested_types = {}
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.enum_types = {}
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.fields = {
+	Activity172Module_pb.GETACT172INFOREQUESTACTIVITYIDFIELD
+}
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.is_extendable = false
+Activity172Module_pb.GETACT172INFOREQUEST_MSG.extensions = {}
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.name = "useItemTaskIds"
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.full_name = ".Act172Info.useItemTaskIds"
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.number = 1
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.index = 0
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.label = 3
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.has_default_value = false
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.default_value = {}
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.type = 5
+Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD.cpp_type = 1
+Activity172Module_pb.ACT172INFO_MSG.name = "Act172Info"
+Activity172Module_pb.ACT172INFO_MSG.full_name = ".Act172Info"
+Activity172Module_pb.ACT172INFO_MSG.nested_types = {}
+Activity172Module_pb.ACT172INFO_MSG.enum_types = {}
+Activity172Module_pb.ACT172INFO_MSG.fields = {
+	Activity172Module_pb.ACT172INFOUSEITEMTASKIDSFIELD
+}
+Activity172Module_pb.ACT172INFO_MSG.is_extendable = false
+Activity172Module_pb.ACT172INFO_MSG.extensions = {}
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.name = "activityId"
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.full_name = ".Act172UseItemTaskIdsUpdatePush.activityId"
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.number = 1
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.index = 0
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.label = 1
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.has_default_value = false
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.default_value = 0
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.type = 5
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.name = "useItemTaskIds"
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.full_name = ".Act172UseItemTaskIdsUpdatePush.useItemTaskIds"
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.number = 2
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.index = 1
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.label = 3
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.has_default_value = false
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.default_value = {}
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.type = 5
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD.cpp_type = 1
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.name = "Act172UseItemTaskIdsUpdatePush"
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.full_name = ".Act172UseItemTaskIdsUpdatePush"
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.nested_types = {}
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.enum_types = {}
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.fields = {
+	Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHACTIVITYIDFIELD,
+	Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSHUSEITEMTASKIDSFIELD
+}
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.is_extendable = false
+Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG.extensions = {}
+Activity172Module_pb.Act172Info = protobuf.Message(Activity172Module_pb.ACT172INFO_MSG)
+Activity172Module_pb.Act172UseItemTaskIdsUpdatePush = protobuf.Message(Activity172Module_pb.ACT172USEITEMTASKIDSUPDATEPUSH_MSG)
+Activity172Module_pb.GetAct172InfoReply = protobuf.Message(Activity172Module_pb.GETACT172INFOREPLY_MSG)
+Activity172Module_pb.GetAct172InfoRequest = protobuf.Message(Activity172Module_pb.GETACT172INFOREQUEST_MSG)
+
+return Activity172Module_pb

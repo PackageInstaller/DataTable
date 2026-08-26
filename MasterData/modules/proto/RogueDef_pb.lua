@@ -1,0 +1,825 @@
+﻿-- chunkname: @modules/proto/RogueDef_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.RogueDef_pb", package.seeall)
+
+local RogueDef_pb = {}
+
+RogueDef_pb.HERODEF_PB = require("modules.proto.HeroDef_pb")
+RogueDef_pb.FIGHTDEF_PB = require("modules.proto.FightDef_pb")
+RogueDef_pb.ROGUEINFO_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOLAYERFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOROOMFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOCOINFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOCURRENCYFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOHEARTFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOISFINISHFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOSCOREFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOSCENEIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFO_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEEVENT_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEEVENTSTATUSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEEVENTOPTIONFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUECOLLECTION_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUECOLLECTIONIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEHEROLIFE_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEFIGHTDROP_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPE = protobuf.EnumDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPENONEENUM = protobuf.EnumValueDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOINENUM = protobuf.EnumValueDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECURRENCYENUM = protobuf.EnumValueDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEHEARTENUM = protobuf.EnumValueDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEEVENTENUM = protobuf.EnumValueDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOLLECTIONENUM = protobuf.EnumValueDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEGROUPINFO_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUEGROUPINFOIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFO_MSG = protobuf.Descriptor()
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD = protobuf.FieldDescriptor()
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.name = "activityId"
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.full_name = ".RogueInfo.activityId"
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.number = 1
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.index = 0
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.label = 1
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.type = 5
+RogueDef_pb.ROGUEINFOACTIVITYIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.name = "difficulty"
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.full_name = ".RogueInfo.difficulty"
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.number = 2
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.index = 1
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.label = 1
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.default_value = 0
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.type = 5
+RogueDef_pb.ROGUEINFODIFFICULTYFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.name = "teamInfo"
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.full_name = ".RogueInfo.teamInfo"
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.number = 3
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.index = 2
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.label = 1
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.default_value = nil
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.message_type = RogueDef_pb.ROGUETEAMINFO_MSG
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.type = 11
+RogueDef_pb.ROGUEINFOTEAMINFOFIELD.cpp_type = 10
+RogueDef_pb.ROGUEINFOLAYERFIELD.name = "layer"
+RogueDef_pb.ROGUEINFOLAYERFIELD.full_name = ".RogueInfo.layer"
+RogueDef_pb.ROGUEINFOLAYERFIELD.number = 4
+RogueDef_pb.ROGUEINFOLAYERFIELD.index = 3
+RogueDef_pb.ROGUEINFOLAYERFIELD.label = 1
+RogueDef_pb.ROGUEINFOLAYERFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOLAYERFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOLAYERFIELD.type = 5
+RogueDef_pb.ROGUEINFOLAYERFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOROOMFIELD.name = "room"
+RogueDef_pb.ROGUEINFOROOMFIELD.full_name = ".RogueInfo.room"
+RogueDef_pb.ROGUEINFOROOMFIELD.number = 5
+RogueDef_pb.ROGUEINFOROOMFIELD.index = 4
+RogueDef_pb.ROGUEINFOROOMFIELD.label = 1
+RogueDef_pb.ROGUEINFOROOMFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOROOMFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOROOMFIELD.type = 5
+RogueDef_pb.ROGUEINFOROOMFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.name = "currentEvents"
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.full_name = ".RogueInfo.currentEvents"
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.number = 6
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.index = 5
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.label = 3
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.default_value = {}
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.message_type = RogueDef_pb.ROGUEEVENT_MSG
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.type = 11
+RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD.cpp_type = 10
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.name = "nextEvents"
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.full_name = ".RogueInfo.nextEvents"
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.number = 7
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.index = 6
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.label = 3
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.default_value = {}
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.message_type = RogueDef_pb.ROGUEEVENT_MSG
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.type = 11
+RogueDef_pb.ROGUEINFONEXTEVENTSFIELD.cpp_type = 10
+RogueDef_pb.ROGUEINFOCOINFIELD.name = "coin"
+RogueDef_pb.ROGUEINFOCOINFIELD.full_name = ".RogueInfo.coin"
+RogueDef_pb.ROGUEINFOCOINFIELD.number = 8
+RogueDef_pb.ROGUEINFOCOINFIELD.index = 7
+RogueDef_pb.ROGUEINFOCOINFIELD.label = 1
+RogueDef_pb.ROGUEINFOCOINFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOCOINFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOCOINFIELD.type = 5
+RogueDef_pb.ROGUEINFOCOINFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.name = "currency"
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.full_name = ".RogueInfo.currency"
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.number = 9
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.index = 8
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.label = 1
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.type = 5
+RogueDef_pb.ROGUEINFOCURRENCYFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOHEARTFIELD.name = "heart"
+RogueDef_pb.ROGUEINFOHEARTFIELD.full_name = ".RogueInfo.heart"
+RogueDef_pb.ROGUEINFOHEARTFIELD.number = 10
+RogueDef_pb.ROGUEINFOHEARTFIELD.index = 9
+RogueDef_pb.ROGUEINFOHEARTFIELD.label = 1
+RogueDef_pb.ROGUEINFOHEARTFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOHEARTFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOHEARTFIELD.type = 5
+RogueDef_pb.ROGUEINFOHEARTFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.name = "collections"
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.full_name = ".RogueInfo.collections"
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.number = 11
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.index = 10
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.label = 3
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.default_value = {}
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.message_type = RogueDef_pb.ROGUECOLLECTION_MSG
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.type = 11
+RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD.cpp_type = 10
+RogueDef_pb.ROGUEINFOISFINISHFIELD.name = "isFinish"
+RogueDef_pb.ROGUEINFOISFINISHFIELD.full_name = ".RogueInfo.isFinish"
+RogueDef_pb.ROGUEINFOISFINISHFIELD.number = 12
+RogueDef_pb.ROGUEINFOISFINISHFIELD.index = 11
+RogueDef_pb.ROGUEINFOISFINISHFIELD.label = 1
+RogueDef_pb.ROGUEINFOISFINISHFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOISFINISHFIELD.default_value = false
+RogueDef_pb.ROGUEINFOISFINISHFIELD.type = 8
+RogueDef_pb.ROGUEINFOISFINISHFIELD.cpp_type = 7
+RogueDef_pb.ROGUEINFOSCOREFIELD.name = "score"
+RogueDef_pb.ROGUEINFOSCOREFIELD.full_name = ".RogueInfo.score"
+RogueDef_pb.ROGUEINFOSCOREFIELD.number = 13
+RogueDef_pb.ROGUEINFOSCOREFIELD.index = 12
+RogueDef_pb.ROGUEINFOSCOREFIELD.label = 1
+RogueDef_pb.ROGUEINFOSCOREFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOSCOREFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOSCOREFIELD.type = 5
+RogueDef_pb.ROGUEINFOSCOREFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.name = "selectedEvents"
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.full_name = ".RogueInfo.selectedEvents"
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.number = 14
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.index = 13
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.label = 3
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.default_value = {}
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.message_type = RogueDef_pb.ROGUEEVENT_MSG
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.type = 11
+RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD.cpp_type = 10
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.name = "currencyTotal"
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.full_name = ".RogueInfo.currencyTotal"
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.number = 15
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.index = 14
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.label = 1
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.type = 5
+RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.name = "sceneId"
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.full_name = ".RogueInfo.sceneId"
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.number = 16
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.index = 15
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.label = 1
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.has_default_value = false
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.default_value = 0
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.type = 5
+RogueDef_pb.ROGUEINFOSCENEIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUEINFO_MSG.name = "RogueInfo"
+RogueDef_pb.ROGUEINFO_MSG.full_name = ".RogueInfo"
+RogueDef_pb.ROGUEINFO_MSG.nested_types = {}
+RogueDef_pb.ROGUEINFO_MSG.enum_types = {}
+RogueDef_pb.ROGUEINFO_MSG.fields = {
+	RogueDef_pb.ROGUEINFOACTIVITYIDFIELD,
+	RogueDef_pb.ROGUEINFODIFFICULTYFIELD,
+	RogueDef_pb.ROGUEINFOTEAMINFOFIELD,
+	RogueDef_pb.ROGUEINFOLAYERFIELD,
+	RogueDef_pb.ROGUEINFOROOMFIELD,
+	RogueDef_pb.ROGUEINFOCURRENTEVENTSFIELD,
+	RogueDef_pb.ROGUEINFONEXTEVENTSFIELD,
+	RogueDef_pb.ROGUEINFOCOINFIELD,
+	RogueDef_pb.ROGUEINFOCURRENCYFIELD,
+	RogueDef_pb.ROGUEINFOHEARTFIELD,
+	RogueDef_pb.ROGUEINFOCOLLECTIONSFIELD,
+	RogueDef_pb.ROGUEINFOISFINISHFIELD,
+	RogueDef_pb.ROGUEINFOSCOREFIELD,
+	RogueDef_pb.ROGUEINFOSELECTEDEVENTSFIELD,
+	RogueDef_pb.ROGUEINFOCURRENCYTOTALFIELD,
+	RogueDef_pb.ROGUEINFOSCENEIDFIELD
+}
+RogueDef_pb.ROGUEINFO_MSG.is_extendable = false
+RogueDef_pb.ROGUEINFO_MSG.extensions = {}
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.name = "fightHeros"
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.full_name = ".RogueTeamInfo.fightHeros"
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.number = 1
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.index = 0
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.label = 3
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.default_value = {}
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.message_type = RogueDef_pb.HERODEF_PB.HEROINFO_MSG
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.type = 11
+RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD.cpp_type = 10
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.name = "supportHeros"
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.full_name = ".RogueTeamInfo.supportHeros"
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.number = 2
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.index = 1
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.label = 3
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.default_value = {}
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.message_type = RogueDef_pb.HERODEF_PB.HEROINFO_MSG
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.type = 11
+RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD.cpp_type = 10
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.name = "lifes"
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.full_name = ".RogueTeamInfo.lifes"
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.number = 3
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.index = 2
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.label = 3
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.default_value = {}
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.message_type = RogueDef_pb.ROGUEHEROLIFE_MSG
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.type = 11
+RogueDef_pb.ROGUETEAMINFOLIFESFIELD.cpp_type = 10
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.name = "groupIdx"
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.full_name = ".RogueTeamInfo.groupIdx"
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.number = 4
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.index = 3
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.label = 1
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.default_value = 0
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.type = 5
+RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD.cpp_type = 1
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.name = "groupInfos"
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.full_name = ".RogueTeamInfo.groupInfos"
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.number = 5
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.index = 4
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.label = 3
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.default_value = {}
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.message_type = RogueDef_pb.ROGUEGROUPINFO_MSG
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.type = 11
+RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD.cpp_type = 10
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.name = "groupBoxStar"
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.full_name = ".RogueTeamInfo.groupBoxStar"
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.number = 6
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.index = 5
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.label = 3
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.default_value = {}
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.type = 5
+RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD.cpp_type = 1
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.name = "equipUids"
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.full_name = ".RogueTeamInfo.equipUids"
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.number = 7
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.index = 6
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.label = 3
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.has_default_value = false
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.default_value = {}
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.type = 3
+RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD.cpp_type = 2
+RogueDef_pb.ROGUETEAMINFO_MSG.name = "RogueTeamInfo"
+RogueDef_pb.ROGUETEAMINFO_MSG.full_name = ".RogueTeamInfo"
+RogueDef_pb.ROGUETEAMINFO_MSG.nested_types = {}
+RogueDef_pb.ROGUETEAMINFO_MSG.enum_types = {}
+RogueDef_pb.ROGUETEAMINFO_MSG.fields = {
+	RogueDef_pb.ROGUETEAMINFOFIGHTHEROSFIELD,
+	RogueDef_pb.ROGUETEAMINFOSUPPORTHEROSFIELD,
+	RogueDef_pb.ROGUETEAMINFOLIFESFIELD,
+	RogueDef_pb.ROGUETEAMINFOGROUPIDXFIELD,
+	RogueDef_pb.ROGUETEAMINFOGROUPINFOSFIELD,
+	RogueDef_pb.ROGUETEAMINFOGROUPBOXSTARFIELD,
+	RogueDef_pb.ROGUETEAMINFOEQUIPUIDSFIELD
+}
+RogueDef_pb.ROGUETEAMINFO_MSG.is_extendable = false
+RogueDef_pb.ROGUETEAMINFO_MSG.extensions = {}
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.name = "eventId"
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.full_name = ".RogueEvent.eventId"
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.number = 1
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.index = 0
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.label = 1
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.has_default_value = false
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.default_value = 0
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.type = 5
+RogueDef_pb.ROGUEEVENTEVENTIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.name = "status"
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.full_name = ".RogueEvent.status"
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.number = 2
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.index = 1
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.label = 1
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.has_default_value = false
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.default_value = 0
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.type = 5
+RogueDef_pb.ROGUEEVENTSTATUSFIELD.cpp_type = 1
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.name = "eventData"
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.full_name = ".RogueEvent.eventData"
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.number = 3
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.index = 2
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.label = 1
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.has_default_value = false
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.default_value = ""
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.type = 9
+RogueDef_pb.ROGUEEVENTEVENTDATAFIELD.cpp_type = 9
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.name = "option"
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.full_name = ".RogueEvent.option"
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.number = 4
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.index = 3
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.label = 1
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.has_default_value = false
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.default_value = 0
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.type = 5
+RogueDef_pb.ROGUEEVENTOPTIONFIELD.cpp_type = 1
+RogueDef_pb.ROGUEEVENT_MSG.name = "RogueEvent"
+RogueDef_pb.ROGUEEVENT_MSG.full_name = ".RogueEvent"
+RogueDef_pb.ROGUEEVENT_MSG.nested_types = {}
+RogueDef_pb.ROGUEEVENT_MSG.enum_types = {}
+RogueDef_pb.ROGUEEVENT_MSG.fields = {
+	RogueDef_pb.ROGUEEVENTEVENTIDFIELD,
+	RogueDef_pb.ROGUEEVENTSTATUSFIELD,
+	RogueDef_pb.ROGUEEVENTEVENTDATAFIELD,
+	RogueDef_pb.ROGUEEVENTOPTIONFIELD
+}
+RogueDef_pb.ROGUEEVENT_MSG.is_extendable = false
+RogueDef_pb.ROGUEEVENT_MSG.extensions = {}
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.name = "uid"
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.full_name = ".RogueCollection.uid"
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.number = 1
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.index = 0
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.label = 1
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.has_default_value = false
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.default_value = 0
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.type = 5
+RogueDef_pb.ROGUECOLLECTIONUIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.name = "id"
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.full_name = ".RogueCollection.id"
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.number = 2
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.index = 1
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.label = 1
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.has_default_value = false
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.default_value = 0
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.type = 5
+RogueDef_pb.ROGUECOLLECTIONIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.name = "leftUid"
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.full_name = ".RogueCollection.leftUid"
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.number = 3
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.index = 2
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.label = 1
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.has_default_value = false
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.default_value = 0
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.type = 5
+RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.name = "rightUid"
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.full_name = ".RogueCollection.rightUid"
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.number = 4
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.index = 3
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.label = 1
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.has_default_value = false
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.default_value = 0
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.type = 5
+RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.name = "baseId"
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.full_name = ".RogueCollection.baseId"
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.number = 5
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.index = 4
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.label = 1
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.has_default_value = false
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.default_value = 0
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.type = 5
+RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.name = "enchantUid"
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.full_name = ".RogueCollection.enchantUid"
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.number = 6
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.index = 5
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.label = 1
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.has_default_value = false
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.default_value = 0
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.type = 5
+RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUECOLLECTION_MSG.name = "RogueCollection"
+RogueDef_pb.ROGUECOLLECTION_MSG.full_name = ".RogueCollection"
+RogueDef_pb.ROGUECOLLECTION_MSG.nested_types = {}
+RogueDef_pb.ROGUECOLLECTION_MSG.enum_types = {}
+RogueDef_pb.ROGUECOLLECTION_MSG.fields = {
+	RogueDef_pb.ROGUECOLLECTIONUIDFIELD,
+	RogueDef_pb.ROGUECOLLECTIONIDFIELD,
+	RogueDef_pb.ROGUECOLLECTIONLEFTUIDFIELD,
+	RogueDef_pb.ROGUECOLLECTIONRIGHTUIDFIELD,
+	RogueDef_pb.ROGUECOLLECTIONBASEIDFIELD,
+	RogueDef_pb.ROGUECOLLECTIONENCHANTUIDFIELD
+}
+RogueDef_pb.ROGUECOLLECTION_MSG.is_extendable = false
+RogueDef_pb.ROGUECOLLECTION_MSG.extensions = {}
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.name = "heroId"
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.full_name = ".RogueHeroLife.heroId"
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.number = 1
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.index = 0
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.label = 1
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.has_default_value = false
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.default_value = 0
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.type = 5
+RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.name = "life"
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.full_name = ".RogueHeroLife.life"
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.number = 2
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.index = 1
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.label = 1
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.has_default_value = false
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.default_value = 0
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.type = 5
+RogueDef_pb.ROGUEHEROLIFELIFEFIELD.cpp_type = 1
+RogueDef_pb.ROGUEHEROLIFE_MSG.name = "RogueHeroLife"
+RogueDef_pb.ROGUEHEROLIFE_MSG.full_name = ".RogueHeroLife"
+RogueDef_pb.ROGUEHEROLIFE_MSG.nested_types = {}
+RogueDef_pb.ROGUEHEROLIFE_MSG.enum_types = {}
+RogueDef_pb.ROGUEHEROLIFE_MSG.fields = {
+	RogueDef_pb.ROGUEHEROLIFEHEROIDFIELD,
+	RogueDef_pb.ROGUEHEROLIFELIFEFIELD
+}
+RogueDef_pb.ROGUEHEROLIFE_MSG.is_extendable = false
+RogueDef_pb.ROGUEHEROLIFE_MSG.extensions = {}
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPENONEENUM.name = "NONE"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPENONEENUM.index = 0
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPENONEENUM.number = 0
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOINENUM.name = "COIN"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOINENUM.index = 1
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOINENUM.number = 1
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECURRENCYENUM.name = "CURRENCY"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECURRENCYENUM.index = 2
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECURRENCYENUM.number = 2
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEHEARTENUM.name = "HEART"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEHEARTENUM.index = 3
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEHEARTENUM.number = 3
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEEVENTENUM.name = "EVENT"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEEVENTENUM.index = 4
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEEVENTENUM.number = 4
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOLLECTIONENUM.name = "COLLECTION"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOLLECTIONENUM.index = 5
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOLLECTIONENUM.number = 5
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPE.name = "RogueFightDropType"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPE.full_name = ".RogueFightDrop.RogueFightDropType"
+RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPE.values = {
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPENONEENUM,
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOINENUM,
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECURRENCYENUM,
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEHEARTENUM,
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPEEVENTENUM,
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPECOLLECTIONENUM
+}
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.name = "idx"
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.full_name = ".RogueFightDrop.idx"
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.number = 1
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.index = 0
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.label = 1
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.has_default_value = false
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.default_value = 0
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.type = 5
+RogueDef_pb.ROGUEFIGHTDROPIDXFIELD.cpp_type = 1
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.name = "type"
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.full_name = ".RogueFightDrop.type"
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.number = 2
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.index = 1
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.label = 1
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.has_default_value = false
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.default_value = nil
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.enum_type = RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPE_ENUM
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.type = 14
+RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD.cpp_type = 8
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.name = "value"
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.full_name = ".RogueFightDrop.value"
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.number = 3
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.index = 2
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.label = 1
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.has_default_value = false
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.default_value = 0
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.type = 5
+RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD.cpp_type = 1
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.name = "status"
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.full_name = ".RogueFightDrop.status"
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.number = 4
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.index = 3
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.label = 1
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.has_default_value = false
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.default_value = 0
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.type = 5
+RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD.cpp_type = 1
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.name = "colletionList"
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.full_name = ".RogueFightDrop.colletionList"
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.number = 5
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.index = 4
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.label = 3
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.has_default_value = false
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.default_value = {}
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.type = 5
+RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD.cpp_type = 1
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.name = "valuePercent"
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.full_name = ".RogueFightDrop.valuePercent"
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.number = 6
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.index = 5
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.label = 1
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.has_default_value = false
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.default_value = 0
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.type = 5
+RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD.cpp_type = 1
+RogueDef_pb.ROGUEFIGHTDROP_MSG.name = "RogueFightDrop"
+RogueDef_pb.ROGUEFIGHTDROP_MSG.full_name = ".RogueFightDrop"
+RogueDef_pb.ROGUEFIGHTDROP_MSG.nested_types = {}
+RogueDef_pb.ROGUEFIGHTDROP_MSG.enum_types = {
+	RogueDef_pb.ROGUEFIGHTDROPROGUEFIGHTDROPTYPE
+}
+RogueDef_pb.ROGUEFIGHTDROP_MSG.fields = {
+	RogueDef_pb.ROGUEFIGHTDROPIDXFIELD,
+	RogueDef_pb.ROGUEFIGHTDROPTYPEFIELD,
+	RogueDef_pb.ROGUEFIGHTDROPVALUEFIELD,
+	RogueDef_pb.ROGUEFIGHTDROPSTATUSFIELD,
+	RogueDef_pb.ROGUEFIGHTDROPCOLLETIONLISTFIELD,
+	RogueDef_pb.ROGUEFIGHTDROPVALUEPERCENTFIELD
+}
+RogueDef_pb.ROGUEFIGHTDROP_MSG.is_extendable = false
+RogueDef_pb.ROGUEFIGHTDROP_MSG.extensions = {}
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.name = "id"
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.full_name = ".RogueGroupInfo.id"
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.number = 1
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.index = 0
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.label = 1
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.has_default_value = false
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.default_value = 0
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.type = 5
+RogueDef_pb.ROGUEGROUPINFOIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.name = "heroList"
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.full_name = ".RogueGroupInfo.heroList"
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.number = 2
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.index = 1
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.label = 3
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.has_default_value = false
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.default_value = {}
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.type = 5
+RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD.cpp_type = 1
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.name = "name"
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.full_name = ".RogueGroupInfo.name"
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.number = 3
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.index = 2
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.label = 1
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.has_default_value = false
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.default_value = ""
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.type = 9
+RogueDef_pb.ROGUEGROUPINFONAMEFIELD.cpp_type = 9
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.name = "clothId"
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.full_name = ".RogueGroupInfo.clothId"
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.number = 4
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.index = 3
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.label = 1
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.has_default_value = false
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.default_value = 0
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.type = 5
+RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.name = "equips"
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.full_name = ".RogueGroupInfo.equips"
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.number = 5
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.index = 4
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.label = 3
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.has_default_value = false
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.default_value = {}
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.message_type = RogueDef_pb.HERODEF_PB.HEROGROUPEQUIP_MSG
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.type = 11
+RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD.cpp_type = 10
+RogueDef_pb.ROGUEGROUPINFO_MSG.name = "RogueGroupInfo"
+RogueDef_pb.ROGUEGROUPINFO_MSG.full_name = ".RogueGroupInfo"
+RogueDef_pb.ROGUEGROUPINFO_MSG.nested_types = {}
+RogueDef_pb.ROGUEGROUPINFO_MSG.enum_types = {}
+RogueDef_pb.ROGUEGROUPINFO_MSG.fields = {
+	RogueDef_pb.ROGUEGROUPINFOIDFIELD,
+	RogueDef_pb.ROGUEGROUPINFOHEROLISTFIELD,
+	RogueDef_pb.ROGUEGROUPINFONAMEFIELD,
+	RogueDef_pb.ROGUEGROUPINFOCLOTHIDFIELD,
+	RogueDef_pb.ROGUEGROUPINFOEQUIPSFIELD
+}
+RogueDef_pb.ROGUEGROUPINFO_MSG.is_extendable = false
+RogueDef_pb.ROGUEGROUPINFO_MSG.extensions = {}
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.name = "activityId"
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.full_name = ".RogueStateInfo.activityId"
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.number = 1
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.index = 0
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.name = "start"
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.full_name = ".RogueStateInfo.start"
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.number = 2
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.index = 1
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.default_value = false
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.type = 8
+RogueDef_pb.ROGUESTATEINFOSTARTFIELD.cpp_type = 7
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.name = "hasCollections"
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.full_name = ".RogueStateInfo.hasCollections"
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.number = 3
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.index = 2
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.label = 3
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.default_value = {}
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.name = "unlockCollections"
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.full_name = ".RogueStateInfo.unlockCollections"
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.number = 4
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.index = 3
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.label = 3
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.default_value = {}
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.name = "weekScore"
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.full_name = ".RogueStateInfo.weekScore"
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.number = 5
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.index = 4
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.name = "totalScore"
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.full_name = ".RogueStateInfo.totalScore"
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.number = 6
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.index = 5
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.name = "scoreLimit"
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.full_name = ".RogueStateInfo.scoreLimit"
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.number = 7
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.index = 6
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.name = "getRewards"
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.full_name = ".RogueStateInfo.getRewards"
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.number = 8
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.index = 7
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.label = 3
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.default_value = {}
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.name = "passDifficulty"
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.full_name = ".RogueStateInfo.passDifficulty"
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.number = 9
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.index = 8
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.label = 3
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.default_value = {}
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.name = "stage"
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.full_name = ".RogueStateInfo.stage"
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.number = 10
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.index = 9
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOSTAGEFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.name = "nextStageSecond"
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.full_name = ".RogueStateInfo.nextStageSecond"
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.number = 11
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.index = 10
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.type = 3
+RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD.cpp_type = 2
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.name = "difficulty"
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.full_name = ".RogueStateInfo.difficulty"
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.number = 12
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.index = 11
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.name = "layer"
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.full_name = ".RogueStateInfo.layer"
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.number = 13
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.index = 12
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.default_value = 0
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOLAYERFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.name = "unlockCollectionsNew"
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.full_name = ".RogueStateInfo.unlockCollectionsNew"
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.number = 14
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.index = 13
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.label = 3
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.default_value = {}
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.type = 5
+RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD.cpp_type = 1
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.name = "lastGroup"
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.full_name = ".RogueStateInfo.lastGroup"
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.number = 15
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.index = 14
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.default_value = nil
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.message_type = RogueDef_pb.ROGUEGROUPINFO_MSG
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.type = 11
+RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD.cpp_type = 10
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.name = "lastBackupGroup"
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.full_name = ".RogueStateInfo.lastBackupGroup"
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.number = 16
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.index = 15
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.label = 1
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.has_default_value = false
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.default_value = nil
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.message_type = RogueDef_pb.ROGUEGROUPINFO_MSG
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.type = 11
+RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD.cpp_type = 10
+RogueDef_pb.ROGUESTATEINFO_MSG.name = "RogueStateInfo"
+RogueDef_pb.ROGUESTATEINFO_MSG.full_name = ".RogueStateInfo"
+RogueDef_pb.ROGUESTATEINFO_MSG.nested_types = {}
+RogueDef_pb.ROGUESTATEINFO_MSG.enum_types = {}
+RogueDef_pb.ROGUESTATEINFO_MSG.fields = {
+	RogueDef_pb.ROGUESTATEINFOACTIVITYIDFIELD,
+	RogueDef_pb.ROGUESTATEINFOSTARTFIELD,
+	RogueDef_pb.ROGUESTATEINFOHASCOLLECTIONSFIELD,
+	RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSFIELD,
+	RogueDef_pb.ROGUESTATEINFOWEEKSCOREFIELD,
+	RogueDef_pb.ROGUESTATEINFOTOTALSCOREFIELD,
+	RogueDef_pb.ROGUESTATEINFOSCORELIMITFIELD,
+	RogueDef_pb.ROGUESTATEINFOGETREWARDSFIELD,
+	RogueDef_pb.ROGUESTATEINFOPASSDIFFICULTYFIELD,
+	RogueDef_pb.ROGUESTATEINFOSTAGEFIELD,
+	RogueDef_pb.ROGUESTATEINFONEXTSTAGESECONDFIELD,
+	RogueDef_pb.ROGUESTATEINFODIFFICULTYFIELD,
+	RogueDef_pb.ROGUESTATEINFOLAYERFIELD,
+	RogueDef_pb.ROGUESTATEINFOUNLOCKCOLLECTIONSNEWFIELD,
+	RogueDef_pb.ROGUESTATEINFOLASTGROUPFIELD,
+	RogueDef_pb.ROGUESTATEINFOLASTBACKUPGROUPFIELD
+}
+RogueDef_pb.ROGUESTATEINFO_MSG.is_extendable = false
+RogueDef_pb.ROGUESTATEINFO_MSG.extensions = {}
+RogueDef_pb.RogueCollection = protobuf.Message(RogueDef_pb.ROGUECOLLECTION_MSG)
+RogueDef_pb.RogueEvent = protobuf.Message(RogueDef_pb.ROGUEEVENT_MSG)
+RogueDef_pb.RogueFightDrop = protobuf.Message(RogueDef_pb.ROGUEFIGHTDROP_MSG)
+RogueDef_pb.RogueGroupInfo = protobuf.Message(RogueDef_pb.ROGUEGROUPINFO_MSG)
+RogueDef_pb.RogueHeroLife = protobuf.Message(RogueDef_pb.ROGUEHEROLIFE_MSG)
+RogueDef_pb.RogueInfo = protobuf.Message(RogueDef_pb.ROGUEINFO_MSG)
+RogueDef_pb.RogueStateInfo = protobuf.Message(RogueDef_pb.ROGUESTATEINFO_MSG)
+RogueDef_pb.RogueTeamInfo = protobuf.Message(RogueDef_pb.ROGUETEAMINFO_MSG)
+
+return RogueDef_pb

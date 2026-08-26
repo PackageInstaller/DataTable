@@ -1,0 +1,526 @@
+﻿-- chunkname: @modules/proto/AtomicDef_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.AtomicDef_pb", package.seeall)
+
+local AtomicDef_pb = {}
+
+AtomicDef_pb.ATOMICELEMENT_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICELEMENTIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAP_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICMAPIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICTALENTINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICARENAINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAPINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG = protobuf.Descriptor()
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD = protobuf.FieldDescriptor()
+AtomicDef_pb.ATOMICELEMENTIDFIELD.name = "id"
+AtomicDef_pb.ATOMICELEMENTIDFIELD.full_name = ".AtomicElement.id"
+AtomicDef_pb.ATOMICELEMENTIDFIELD.number = 1
+AtomicDef_pb.ATOMICELEMENTIDFIELD.index = 0
+AtomicDef_pb.ATOMICELEMENTIDFIELD.label = 1
+AtomicDef_pb.ATOMICELEMENTIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICELEMENTIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICELEMENTIDFIELD.type = 5
+AtomicDef_pb.ATOMICELEMENTIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.name = "status"
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.full_name = ".AtomicElement.status"
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.number = 2
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.index = 1
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.label = 1
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.default_value = 0
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.type = 5
+AtomicDef_pb.ATOMICELEMENTSTATUSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.name = "optionEle"
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.full_name = ".AtomicElement.optionEle"
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.number = 3
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.index = 2
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.label = 1
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.has_default_value = false
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.default_value = nil
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.message_type = AtomicDef_pb.ATOMICOPTIONELEMENT_MSG
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.type = 11
+AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.name = "emergencyCurrentSeconds"
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.full_name = ".AtomicElement.emergencyCurrentSeconds"
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.number = 4
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.index = 3
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.label = 1
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.default_value = 0
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.type = 5
+AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.name = "record"
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.full_name = ".AtomicElement.record"
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.number = 5
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.index = 4
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.label = 1
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.default_value = ""
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.type = 9
+AtomicDef_pb.ATOMICELEMENTRECORDFIELD.cpp_type = 9
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.name = "fightEpisodeId"
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.full_name = ".AtomicElement.fightEpisodeId"
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.number = 6
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.index = 5
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.label = 1
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.type = 5
+AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICELEMENT_MSG.name = "AtomicElement"
+AtomicDef_pb.ATOMICELEMENT_MSG.full_name = ".AtomicElement"
+AtomicDef_pb.ATOMICELEMENT_MSG.nested_types = {}
+AtomicDef_pb.ATOMICELEMENT_MSG.enum_types = {}
+AtomicDef_pb.ATOMICELEMENT_MSG.fields = {
+	AtomicDef_pb.ATOMICELEMENTIDFIELD,
+	AtomicDef_pb.ATOMICELEMENTSTATUSFIELD,
+	AtomicDef_pb.ATOMICELEMENTOPTIONELEFIELD,
+	AtomicDef_pb.ATOMICELEMENTEMERGENCYCURRENTSECONDSFIELD,
+	AtomicDef_pb.ATOMICELEMENTRECORDFIELD,
+	AtomicDef_pb.ATOMICELEMENTFIGHTEPISODEIDFIELD
+}
+AtomicDef_pb.ATOMICELEMENT_MSG.is_extendable = false
+AtomicDef_pb.ATOMICELEMENT_MSG.extensions = {}
+AtomicDef_pb.ATOMICMAPIDFIELD.name = "id"
+AtomicDef_pb.ATOMICMAPIDFIELD.full_name = ".AtomicMap.id"
+AtomicDef_pb.ATOMICMAPIDFIELD.number = 1
+AtomicDef_pb.ATOMICMAPIDFIELD.index = 0
+AtomicDef_pb.ATOMICMAPIDFIELD.label = 1
+AtomicDef_pb.ATOMICMAPIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICMAPIDFIELD.type = 5
+AtomicDef_pb.ATOMICMAPIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.name = "exploreValue"
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.full_name = ".AtomicMap.exploreValue"
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.number = 2
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.index = 1
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.label = 1
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.default_value = 0
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.type = 5
+AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICMAP_MSG.name = "AtomicMap"
+AtomicDef_pb.ATOMICMAP_MSG.full_name = ".AtomicMap"
+AtomicDef_pb.ATOMICMAP_MSG.nested_types = {}
+AtomicDef_pb.ATOMICMAP_MSG.enum_types = {}
+AtomicDef_pb.ATOMICMAP_MSG.fields = {
+	AtomicDef_pb.ATOMICMAPIDFIELD,
+	AtomicDef_pb.ATOMICMAPEXPLOREVALUEFIELD
+}
+AtomicDef_pb.ATOMICMAP_MSG.is_extendable = false
+AtomicDef_pb.ATOMICMAP_MSG.extensions = {}
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.name = "arenaInfos"
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.full_name = ".AtomicOutsideInfo.arenaInfos"
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.number = 1
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.index = 0
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.label = 3
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.default_value = {}
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.message_type = AtomicDef_pb.ATOMICARENAINFO_MSG
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.type = 11
+AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.name = "unlockProgresses"
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.full_name = ".AtomicOutsideInfo.unlockProgresses"
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.number = 2
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.index = 1
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.label = 3
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.has_default_value = false
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.default_value = {}
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.message_type = AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.type = 11
+AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.name = "params"
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.full_name = ".AtomicOutsideInfo.params"
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.number = 3
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.index = 2
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.label = 1
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.default_value = ""
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.type = 9
+AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD.cpp_type = 9
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.name = "AtomicOutsideInfo"
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.full_name = ".AtomicOutsideInfo"
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICOUTSIDEINFOARENAINFOSFIELD,
+	AtomicDef_pb.ATOMICOUTSIDEINFOUNLOCKPROGRESSESFIELD,
+	AtomicDef_pb.ATOMICOUTSIDEINFOPARAMSFIELD
+}
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICOUTSIDEINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.name = "result"
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.full_name = ".AtomicOptionElement.result"
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.number = 1
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.index = 0
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.label = 1
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.has_default_value = false
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.default_value = 0
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.type = 5
+AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.name = "AtomicOptionElement"
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.full_name = ".AtomicOptionElement"
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.nested_types = {}
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.enum_types = {}
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.fields = {
+	AtomicDef_pb.ATOMICOPTIONELEMENTRESULTFIELD
+}
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.is_extendable = false
+AtomicDef_pb.ATOMICOPTIONELEMENT_MSG.extensions = {}
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.name = "unlockBranchIds"
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.full_name = ".AtomicTalentInfo.unlockBranchIds"
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.number = 1
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.index = 0
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.label = 3
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.default_value = {}
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.type = 5
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.name = "unlockNodeIds"
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.full_name = ".AtomicTalentInfo.unlockNodeIds"
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.number = 2
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.index = 1
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.label = 3
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.default_value = {}
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.type = 5
+AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.name = "skillNodeIds"
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.full_name = ".AtomicTalentInfo.skillNodeIds"
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.number = 3
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.index = 2
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.label = 3
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.default_value = {}
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.type = 5
+AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICTALENTINFO_MSG.name = "AtomicTalentInfo"
+AtomicDef_pb.ATOMICTALENTINFO_MSG.full_name = ".AtomicTalentInfo"
+AtomicDef_pb.ATOMICTALENTINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICTALENTINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICTALENTINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICTALENTINFOUNLOCKBRANCHIDSFIELD,
+	AtomicDef_pb.ATOMICTALENTINFOUNLOCKNODEIDSFIELD,
+	AtomicDef_pb.ATOMICTALENTINFOSKILLNODEIDSFIELD
+}
+AtomicDef_pb.ATOMICTALENTINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICTALENTINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.name = "polygons"
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.full_name = ".AtomicPolygonInfo.polygons"
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.number = 1
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.index = 0
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.label = 3
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.default_value = {}
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.message_type = AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.type = 11
+AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.name = "AtomicPolygonInfo"
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.full_name = ".AtomicPolygonInfo"
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICPOLYGONINFOPOLYGONSFIELD
+}
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICPOLYGONINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.name = "outsideInfo"
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.full_name = ".AtomicInfo.outsideInfo"
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.number = 1
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.index = 0
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.label = 1
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.has_default_value = false
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.default_value = nil
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.message_type = AtomicDef_pb.ATOMICOUTSIDEINFO_MSG
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.type = 11
+AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.name = "talentInfo"
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.full_name = ".AtomicInfo.talentInfo"
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.number = 2
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.index = 1
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.label = 1
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.has_default_value = false
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.default_value = nil
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.message_type = AtomicDef_pb.ATOMICTALENTINFO_MSG
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.type = 11
+AtomicDef_pb.ATOMICINFOTALENTINFOFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.name = "mapInfo"
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.full_name = ".AtomicInfo.mapInfo"
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.number = 3
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.index = 2
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.label = 1
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.has_default_value = false
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.default_value = nil
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.message_type = AtomicDef_pb.ATOMICMAPINFO_MSG
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.type = 11
+AtomicDef_pb.ATOMICINFOMAPINFOFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.name = "polygonInfo"
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.full_name = ".AtomicInfo.polygonInfo"
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.number = 4
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.index = 3
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.label = 1
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.has_default_value = false
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.default_value = nil
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.message_type = AtomicDef_pb.ATOMICPOLYGONINFO_MSG
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.type = 11
+AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.name = "libraryInfo"
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.full_name = ".AtomicInfo.libraryInfo"
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.number = 5
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.index = 4
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.label = 1
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.has_default_value = false
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.default_value = nil
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.message_type = AtomicDef_pb.ATOMICLIBRARYINFO_MSG
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.type = 11
+AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICINFO_MSG.name = "AtomicInfo"
+AtomicDef_pb.ATOMICINFO_MSG.full_name = ".AtomicInfo"
+AtomicDef_pb.ATOMICINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICINFOOUTSIDEINFOFIELD,
+	AtomicDef_pb.ATOMICINFOTALENTINFOFIELD,
+	AtomicDef_pb.ATOMICINFOMAPINFOFIELD,
+	AtomicDef_pb.ATOMICINFOPOLYGONINFOFIELD,
+	AtomicDef_pb.ATOMICINFOLIBRARYINFOFIELD
+}
+AtomicDef_pb.ATOMICINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.name = "arenaId"
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.full_name = ".AtomicArenaInfo.arenaId"
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.number = 1
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.index = 0
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.label = 1
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.type = 5
+AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.name = "oldAlarm"
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.full_name = ".AtomicArenaInfo.oldAlarm"
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.number = 2
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.index = 1
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.label = 1
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.has_default_value = false
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.default_value = 0
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.type = 5
+AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.name = "currentAlarm"
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.full_name = ".AtomicArenaInfo.currentAlarm"
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.number = 3
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.index = 2
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.label = 1
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.has_default_value = false
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.default_value = 0
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.type = 5
+AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICARENAINFO_MSG.name = "AtomicArenaInfo"
+AtomicDef_pb.ATOMICARENAINFO_MSG.full_name = ".AtomicArenaInfo"
+AtomicDef_pb.ATOMICARENAINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICARENAINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICARENAINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICARENAINFOARENAIDFIELD,
+	AtomicDef_pb.ATOMICARENAINFOOLDALARMFIELD,
+	AtomicDef_pb.ATOMICARENAINFOCURRENTALARMFIELD
+}
+AtomicDef_pb.ATOMICARENAINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICARENAINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.name = "mapId"
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.full_name = ".AtomicMapUnlockProgress.mapId"
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.number = 1
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.index = 0
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.label = 1
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.type = 5
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.name = "finishConditionCount"
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.full_name = ".AtomicMapUnlockProgress.finishConditionCount"
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.number = 2
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.index = 1
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.label = 1
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.default_value = 0
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.type = 5
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.name = "AtomicMapUnlockProgress"
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.full_name = ".AtomicMapUnlockProgress"
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.nested_types = {}
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.enum_types = {}
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.fields = {
+	AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSMAPIDFIELD,
+	AtomicDef_pb.ATOMICMAPUNLOCKPROGRESSFINISHCONDITIONCOUNTFIELD
+}
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.is_extendable = false
+AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG.extensions = {}
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.name = "id"
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.full_name = ".AtomicSinglePolygon.id"
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.number = 1
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.index = 0
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.label = 1
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.type = 5
+AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.name = "unlockDifs"
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.full_name = ".AtomicSinglePolygon.unlockDifs"
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.number = 2
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.index = 1
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.label = 3
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.default_value = {}
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.type = 5
+AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.name = "passDifs"
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.full_name = ".AtomicSinglePolygon.passDifs"
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.number = 3
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.index = 2
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.label = 3
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.default_value = {}
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.type = 5
+AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.name = "AtomicSinglePolygon"
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.full_name = ".AtomicSinglePolygon"
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.nested_types = {}
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.enum_types = {}
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.fields = {
+	AtomicDef_pb.ATOMICSINGLEPOLYGONIDFIELD,
+	AtomicDef_pb.ATOMICSINGLEPOLYGONUNLOCKDIFSFIELD,
+	AtomicDef_pb.ATOMICSINGLEPOLYGONPASSDIFSFIELD
+}
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.is_extendable = false
+AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG.extensions = {}
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.name = "currEleId"
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.full_name = ".AtomicMapInfo.currEleId"
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.number = 1
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.index = 0
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.label = 1
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.type = 5
+AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.name = "maps"
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.full_name = ".AtomicMapInfo.maps"
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.number = 2
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.index = 1
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.label = 3
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.default_value = {}
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.message_type = AtomicDef_pb.ATOMICMAP_MSG
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.type = 11
+AtomicDef_pb.ATOMICMAPINFOMAPSFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.name = "elements"
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.full_name = ".AtomicMapInfo.elements"
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.number = 3
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.index = 2
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.label = 3
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.default_value = {}
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.message_type = AtomicDef_pb.ATOMICELEMENT_MSG
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.type = 11
+AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD.cpp_type = 10
+AtomicDef_pb.ATOMICMAPINFO_MSG.name = "AtomicMapInfo"
+AtomicDef_pb.ATOMICMAPINFO_MSG.full_name = ".AtomicMapInfo"
+AtomicDef_pb.ATOMICMAPINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICMAPINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICMAPINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICMAPINFOCURRELEIDFIELD,
+	AtomicDef_pb.ATOMICMAPINFOMAPSFIELD,
+	AtomicDef_pb.ATOMICMAPINFOELEMENTSFIELD
+}
+AtomicDef_pb.ATOMICMAPINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICMAPINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.name = "unlockLibraryIds"
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.full_name = ".AtomicLibraryInfo.unlockLibraryIds"
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.number = 1
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.index = 0
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.label = 3
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.has_default_value = false
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.default_value = {}
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.type = 5
+AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.name = "AtomicLibraryInfo"
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.full_name = ".AtomicLibraryInfo"
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.nested_types = {}
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.enum_types = {}
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.fields = {
+	AtomicDef_pb.ATOMICLIBRARYINFOUNLOCKLIBRARYIDSFIELD
+}
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.is_extendable = false
+AtomicDef_pb.ATOMICLIBRARYINFO_MSG.extensions = {}
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.name = "optionId"
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.full_name = ".AtomicInteractOptionParam.optionId"
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.number = 1
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.index = 0
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.label = 1
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.has_default_value = false
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.default_value = 0
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.type = 5
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD.cpp_type = 1
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.name = "AtomicInteractOptionParam"
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.full_name = ".AtomicInteractOptionParam"
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.nested_types = {}
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.enum_types = {}
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.fields = {
+	AtomicDef_pb.ATOMICINTERACTOPTIONPARAMOPTIONIDFIELD
+}
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.is_extendable = false
+AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG.extensions = {}
+AtomicDef_pb.AtomicArenaInfo = protobuf.Message(AtomicDef_pb.ATOMICARENAINFO_MSG)
+AtomicDef_pb.AtomicElement = protobuf.Message(AtomicDef_pb.ATOMICELEMENT_MSG)
+AtomicDef_pb.AtomicInfo = protobuf.Message(AtomicDef_pb.ATOMICINFO_MSG)
+AtomicDef_pb.AtomicInteractOptionParam = protobuf.Message(AtomicDef_pb.ATOMICINTERACTOPTIONPARAM_MSG)
+AtomicDef_pb.AtomicLibraryInfo = protobuf.Message(AtomicDef_pb.ATOMICLIBRARYINFO_MSG)
+AtomicDef_pb.AtomicMap = protobuf.Message(AtomicDef_pb.ATOMICMAP_MSG)
+AtomicDef_pb.AtomicMapInfo = protobuf.Message(AtomicDef_pb.ATOMICMAPINFO_MSG)
+AtomicDef_pb.AtomicMapUnlockProgress = protobuf.Message(AtomicDef_pb.ATOMICMAPUNLOCKPROGRESS_MSG)
+AtomicDef_pb.AtomicOptionElement = protobuf.Message(AtomicDef_pb.ATOMICOPTIONELEMENT_MSG)
+AtomicDef_pb.AtomicOutsideInfo = protobuf.Message(AtomicDef_pb.ATOMICOUTSIDEINFO_MSG)
+AtomicDef_pb.AtomicPolygonInfo = protobuf.Message(AtomicDef_pb.ATOMICPOLYGONINFO_MSG)
+AtomicDef_pb.AtomicSinglePolygon = protobuf.Message(AtomicDef_pb.ATOMICSINGLEPOLYGON_MSG)
+AtomicDef_pb.AtomicTalentInfo = protobuf.Message(AtomicDef_pb.ATOMICTALENTINFO_MSG)
+
+return AtomicDef_pb

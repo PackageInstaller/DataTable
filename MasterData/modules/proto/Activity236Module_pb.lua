@@ -1,0 +1,183 @@
+﻿-- chunkname: @modules/proto/Activity236Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity236Module_pb", package.seeall)
+
+local Activity236Module_pb = {}
+
+Activity236Module_pb.GETACT236INFOREPLY_MSG = protobuf.Descriptor()
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG = protobuf.Descriptor()
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.GETACT236INFOREQUEST_MSG = protobuf.Descriptor()
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG = protobuf.Descriptor()
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG = protobuf.Descriptor()
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236INFO_MSG = protobuf.Descriptor()
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236INFOSCOREFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD = protobuf.FieldDescriptor()
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.name = "info"
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.full_name = ".GetAct236InfoReply.info"
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.number = 1
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.index = 0
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.label = 1
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.has_default_value = false
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.default_value = nil
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.message_type = Activity236Module_pb.ACT236INFO_MSG
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.type = 11
+Activity236Module_pb.GETACT236INFOREPLYINFOFIELD.cpp_type = 10
+Activity236Module_pb.GETACT236INFOREPLY_MSG.name = "GetAct236InfoReply"
+Activity236Module_pb.GETACT236INFOREPLY_MSG.full_name = ".GetAct236InfoReply"
+Activity236Module_pb.GETACT236INFOREPLY_MSG.nested_types = {}
+Activity236Module_pb.GETACT236INFOREPLY_MSG.enum_types = {}
+Activity236Module_pb.GETACT236INFOREPLY_MSG.fields = {
+	Activity236Module_pb.GETACT236INFOREPLYINFOFIELD
+}
+Activity236Module_pb.GETACT236INFOREPLY_MSG.is_extendable = false
+Activity236Module_pb.GETACT236INFOREPLY_MSG.extensions = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.full_name = ".Act236GetAutoGainRewardRequest.activityId"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.number = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.index = 0
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.label = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.default_value = 0
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.type = 5
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.name = "rewardIds"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.full_name = ".Act236GetAutoGainRewardRequest.rewardIds"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.number = 2
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.index = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.label = 3
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.has_default_value = false
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.default_value = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.type = 5
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD.cpp_type = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.name = "Act236GetAutoGainRewardRequest"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.full_name = ".Act236GetAutoGainRewardRequest"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.nested_types = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.enum_types = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.fields = {
+	Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTACTIVITYIDFIELD,
+	Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUESTREWARDIDSFIELD
+}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.is_extendable = false
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG.extensions = {}
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct236InfoRequest.activityId"
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.name = "GetAct236InfoRequest"
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.full_name = ".GetAct236InfoRequest"
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.nested_types = {}
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.enum_types = {}
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.fields = {
+	Activity236Module_pb.GETACT236INFOREQUESTACTIVITYIDFIELD
+}
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.is_extendable = false
+Activity236Module_pb.GETACT236INFOREQUEST_MSG.extensions = {}
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.name = "info"
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.full_name = ".Act236UpdateInfoPush.info"
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.number = 1
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.index = 0
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.label = 1
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.has_default_value = false
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.default_value = nil
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.message_type = Activity236Module_pb.ACT236INFO_MSG
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.type = 11
+Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD.cpp_type = 10
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.name = "Act236UpdateInfoPush"
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.full_name = ".Act236UpdateInfoPush"
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.nested_types = {}
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.enum_types = {}
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.fields = {
+	Activity236Module_pb.ACT236UPDATEINFOPUSHINFOFIELD
+}
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.is_extendable = false
+Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG.extensions = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.name = "activityId"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.full_name = ".Act236GetAutoGainRewardReply.activityId"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.number = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.index = 0
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.label = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.has_default_value = false
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.default_value = 0
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.type = 5
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.name = "gainRewardIds"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.full_name = ".Act236GetAutoGainRewardReply.gainRewardIds"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.number = 2
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.index = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.label = 3
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.has_default_value = false
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.default_value = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.type = 5
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD.cpp_type = 1
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.name = "Act236GetAutoGainRewardReply"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.full_name = ".Act236GetAutoGainRewardReply"
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.nested_types = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.enum_types = {}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.fields = {
+	Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYACTIVITYIDFIELD,
+	Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLYGAINREWARDIDSFIELD
+}
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.is_extendable = false
+Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG.extensions = {}
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.name = "activityId"
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.full_name = ".Act236Info.activityId"
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.number = 1
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.index = 0
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.label = 1
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.has_default_value = false
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.default_value = 0
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.type = 5
+Activity236Module_pb.ACT236INFOACTIVITYIDFIELD.cpp_type = 1
+Activity236Module_pb.ACT236INFOSCOREFIELD.name = "score"
+Activity236Module_pb.ACT236INFOSCOREFIELD.full_name = ".Act236Info.score"
+Activity236Module_pb.ACT236INFOSCOREFIELD.number = 2
+Activity236Module_pb.ACT236INFOSCOREFIELD.index = 1
+Activity236Module_pb.ACT236INFOSCOREFIELD.label = 1
+Activity236Module_pb.ACT236INFOSCOREFIELD.has_default_value = false
+Activity236Module_pb.ACT236INFOSCOREFIELD.default_value = 0
+Activity236Module_pb.ACT236INFOSCOREFIELD.type = 5
+Activity236Module_pb.ACT236INFOSCOREFIELD.cpp_type = 1
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.name = "gainRewardIds"
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.full_name = ".Act236Info.gainRewardIds"
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.number = 3
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.index = 2
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.label = 3
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.has_default_value = false
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.default_value = {}
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.type = 5
+Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD.cpp_type = 1
+Activity236Module_pb.ACT236INFO_MSG.name = "Act236Info"
+Activity236Module_pb.ACT236INFO_MSG.full_name = ".Act236Info"
+Activity236Module_pb.ACT236INFO_MSG.nested_types = {}
+Activity236Module_pb.ACT236INFO_MSG.enum_types = {}
+Activity236Module_pb.ACT236INFO_MSG.fields = {
+	Activity236Module_pb.ACT236INFOACTIVITYIDFIELD,
+	Activity236Module_pb.ACT236INFOSCOREFIELD,
+	Activity236Module_pb.ACT236INFOGAINREWARDIDSFIELD
+}
+Activity236Module_pb.ACT236INFO_MSG.is_extendable = false
+Activity236Module_pb.ACT236INFO_MSG.extensions = {}
+Activity236Module_pb.Act236GetAutoGainRewardReply = protobuf.Message(Activity236Module_pb.ACT236GETAUTOGAINREWARDREPLY_MSG)
+Activity236Module_pb.Act236GetAutoGainRewardRequest = protobuf.Message(Activity236Module_pb.ACT236GETAUTOGAINREWARDREQUEST_MSG)
+Activity236Module_pb.Act236Info = protobuf.Message(Activity236Module_pb.ACT236INFO_MSG)
+Activity236Module_pb.Act236UpdateInfoPush = protobuf.Message(Activity236Module_pb.ACT236UPDATEINFOPUSH_MSG)
+Activity236Module_pb.GetAct236InfoReply = protobuf.Message(Activity236Module_pb.GETACT236INFOREPLY_MSG)
+Activity236Module_pb.GetAct236InfoRequest = protobuf.Message(Activity236Module_pb.GETACT236INFOREQUEST_MSG)
+
+return Activity236Module_pb

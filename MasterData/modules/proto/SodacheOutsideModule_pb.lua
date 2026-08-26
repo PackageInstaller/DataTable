@@ -1,0 +1,608 @@
+﻿-- chunkname: @modules/proto/SodacheOutsideModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.SodacheOutsideModule_pb", package.seeall)
+
+local SodacheOutsideModule_pb = {}
+
+SodacheOutsideModule_pb.SODACHEDEF_PB = require("modules.proto.SodacheDef_pb")
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG = protobuf.Descriptor()
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD = protobuf.FieldDescriptor()
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.full_name = ".SodacheTaskAcceptReply.id"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.label = 3
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.name = "SodacheTaskAcceptReply"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.full_name = ".SodacheTaskAcceptReply"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKACCEPTREPLYIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.name = "intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.full_name = ".SodacheOutsideHotfix1Reply.intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.name = "strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.full_name = ".SodacheOutsideHotfix1Reply.strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.name = "SodacheOutsideHotfix1Reply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.full_name = ".SodacheOutsideHotfix1Reply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYINTPARAMFIELD,
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLYSTRPARAMFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.full_name = ".SodacheTaskAbandonReply.id"
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.label = 3
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.name = "SodacheTaskAbandonReply"
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.full_name = ".SodacheTaskAbandonReply"
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKABANDONREPLYIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.full_name = ".SodacheTaskSubmitReply.id"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.label = 1
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.default_value = 0
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.name = "SodacheTaskSubmitReply"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.full_name = ".SodacheTaskSubmitReply"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKSUBMITREPLYIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.name = "scene"
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.full_name = ".SodacheOutsideGetSceneReply.scene"
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.label = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.default_value = nil
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHEOUTSIDESCENE_MSG
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.type = 11
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.name = "SodacheOutsideGetSceneReply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.full_name = ".SodacheOutsideGetSceneReply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLYSCENEFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.full_name = ".SodacheTaskAbandonRequest.id"
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.label = 3
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.name = "SodacheTaskAbandonRequest"
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.full_name = ".SodacheTaskAbandonRequest"
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKABANDONREQUESTIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.full_name = ".SodacheTaskGainRewardReply.id"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.label = 3
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.name = "SodacheTaskGainRewardReply"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.full_name = ".SodacheTaskGainRewardReply"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLYIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.name = "SodacheRelicOneKeyUpgradeRequest"
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.full_name = ".SodacheRelicOneKeyUpgradeRequest"
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.fields = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.name = "intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.full_name = ".SodacheOutsideHotfix3Reply.intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.name = "strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.full_name = ".SodacheOutsideHotfix3Reply.strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.name = "SodacheOutsideHotfix3Reply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.full_name = ".SodacheOutsideHotfix3Reply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYINTPARAMFIELD,
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLYSTRPARAMFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.name = "SodacheOutsideGetSceneRequest"
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.full_name = ".SodacheOutsideGetSceneRequest"
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.fields = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.name = "relic"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.full_name = ".SodacheRelicUpgradeReply.relic"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.number = 1
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.index = 0
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.label = 1
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.default_value = nil
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHERELIC_MSG
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.type = 11
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.name = "SodacheRelicUpgradeReply"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.full_name = ".SodacheRelicUpgradeReply"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLYRELICFIELD
+}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.full_name = ".SodacheTaskAcceptRequest.id"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.label = 3
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.name = "SodacheTaskAcceptRequest"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.full_name = ".SodacheTaskAcceptRequest"
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKACCEPTREQUESTIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.name = "type"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.full_name = ".SodacheBagUpdatePush.type"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.label = 1
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.default_value = 0
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.type = 5
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.name = "updates"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.full_name = ".SodacheBagUpdatePush.updates"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHEITEM_MSG
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.type = 11
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.name = "deletes"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.full_name = ".SodacheBagUpdatePush.deletes"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.number = 3
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.index = 2
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.type = 3
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD.cpp_type = 2
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.name = "SodacheBagUpdatePush"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.full_name = ".SodacheBagUpdatePush"
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHTYPEFIELD,
+	SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHUPDATESFIELD,
+	SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSHDELETESFIELD
+}
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.name = "updates"
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.full_name = ".SodacheAttrPush.updates"
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHEATTRVALUE_MSG
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.type = 11
+SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.name = "SodacheAttrPush"
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.full_name = ".SodacheAttrPush"
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEATTRPUSHUPDATESFIELD
+}
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.name = "intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.full_name = ".SodacheOutsideHotfix1Request.intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.name = "strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.full_name = ".SodacheOutsideHotfix1Request.strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.name = "SodacheOutsideHotfix1Request"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.full_name = ".SodacheOutsideHotfix1Request"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTINTPARAMFIELD,
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUESTSTRPARAMFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.name = "intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.full_name = ".SodacheOutsideHotfix2Request.intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.name = "strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.full_name = ".SodacheOutsideHotfix2Request.strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.name = "SodacheOutsideHotfix2Request"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.full_name = ".SodacheOutsideHotfix2Request"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTINTPARAMFIELD,
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUESTSTRPARAMFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.name = "intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.full_name = ".SodacheOutsideHotfix3Request.intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.name = "strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.full_name = ".SodacheOutsideHotfix3Request.strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.name = "SodacheOutsideHotfix3Request"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.full_name = ".SodacheOutsideHotfix3Request"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTINTPARAMFIELD,
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUESTSTRPARAMFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.name = "relics"
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.full_name = ".SodacheRelicOneKeyUpgradeReply.relics"
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.number = 1
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.index = 0
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.label = 3
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHERELIC_MSG
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.type = 11
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.name = "SodacheRelicOneKeyUpgradeReply"
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.full_name = ".SodacheRelicOneKeyUpgradeReply"
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLYRELICSFIELD
+}
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.name = "type"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.full_name = ".SodacheBuildingUpgradeRequest.type"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.label = 1
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.default_value = 0
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.type = 5
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.name = "SodacheBuildingUpgradeRequest"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.full_name = ".SodacheBuildingUpgradeRequest"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUESTTYPEFIELD
+}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.full_name = ".SodacheRelicUpgradeRequest.id"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.label = 1
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.default_value = 0
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.name = "SodacheRelicUpgradeRequest"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.full_name = ".SodacheRelicUpgradeRequest"
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUESTIDFIELD
+}
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.full_name = ".SodacheTaskGainRewardRequest.id"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.label = 3
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.name = "SodacheTaskGainRewardRequest"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.full_name = ".SodacheTaskGainRewardRequest"
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUESTIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.name = "building"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.full_name = ".SodacheBuildingUpgradeReply.building"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.label = 1
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.default_value = nil
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHEBUILDING_MSG
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.type = 11
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.name = "SodacheBuildingUpgradeReply"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.full_name = ".SodacheBuildingUpgradeReply"
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLYBUILDINGFIELD
+}
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.name = "intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.full_name = ".SodacheOutsideHotfix2Reply.intParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.number = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.index = 0
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.name = "strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.full_name = ".SodacheOutsideHotfix2Reply.strParam"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.number = 2
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.index = 1
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.label = 3
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD.cpp_type = 9
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.name = "SodacheOutsideHotfix2Reply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.full_name = ".SodacheOutsideHotfix2Reply"
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYINTPARAMFIELD,
+	SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLYSTRPARAMFIELD
+}
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.name = "steps"
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.full_name = ".SodacheStepPush.steps"
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.number = 1
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.index = 0
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.label = 3
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.default_value = {}
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.message_type = SodacheOutsideModule_pb.SODACHEDEF_PB.SODACHESTEP_MSG
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.type = 11
+SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD.cpp_type = 10
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.name = "SodacheStepPush"
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.full_name = ".SodacheStepPush"
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHESTEPPUSHSTEPSFIELD
+}
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG.extensions = {}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.name = "id"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.full_name = ".SodacheTaskSubmitRequest.id"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.number = 1
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.index = 0
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.label = 1
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.has_default_value = false
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.default_value = 0
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.type = 5
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD.cpp_type = 1
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.name = "SodacheTaskSubmitRequest"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.full_name = ".SodacheTaskSubmitRequest"
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.nested_types = {}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.enum_types = {}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.fields = {
+	SodacheOutsideModule_pb.SODACHETASKSUBMITREQUESTIDFIELD
+}
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.is_extendable = false
+SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG.extensions = {}
+SodacheOutsideModule_pb.SodacheAttrPush = protobuf.Message(SodacheOutsideModule_pb.SODACHEATTRPUSH_MSG)
+SodacheOutsideModule_pb.SodacheBagUpdatePush = protobuf.Message(SodacheOutsideModule_pb.SODACHEBAGUPDATEPUSH_MSG)
+SodacheOutsideModule_pb.SodacheBuildingUpgradeReply = protobuf.Message(SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREPLY_MSG)
+SodacheOutsideModule_pb.SodacheBuildingUpgradeRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHEBUILDINGUPGRADEREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheOutsideGetSceneReply = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREPLY_MSG)
+SodacheOutsideModule_pb.SodacheOutsideGetSceneRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEGETSCENEREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheOutsideHotfix1Reply = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REPLY_MSG)
+SodacheOutsideModule_pb.SodacheOutsideHotfix1Request = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX1REQUEST_MSG)
+SodacheOutsideModule_pb.SodacheOutsideHotfix2Reply = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REPLY_MSG)
+SodacheOutsideModule_pb.SodacheOutsideHotfix2Request = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX2REQUEST_MSG)
+SodacheOutsideModule_pb.SodacheOutsideHotfix3Reply = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REPLY_MSG)
+SodacheOutsideModule_pb.SodacheOutsideHotfix3Request = protobuf.Message(SodacheOutsideModule_pb.SODACHEOUTSIDEHOTFIX3REQUEST_MSG)
+SodacheOutsideModule_pb.SodacheRelicOneKeyUpgradeReply = protobuf.Message(SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREPLY_MSG)
+SodacheOutsideModule_pb.SodacheRelicOneKeyUpgradeRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHERELICONEKEYUPGRADEREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheRelicUpgradeReply = protobuf.Message(SodacheOutsideModule_pb.SODACHERELICUPGRADEREPLY_MSG)
+SodacheOutsideModule_pb.SodacheRelicUpgradeRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHERELICUPGRADEREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheStepPush = protobuf.Message(SodacheOutsideModule_pb.SODACHESTEPPUSH_MSG)
+SodacheOutsideModule_pb.SodacheTaskAbandonReply = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKABANDONREPLY_MSG)
+SodacheOutsideModule_pb.SodacheTaskAbandonRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKABANDONREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheTaskAcceptReply = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKACCEPTREPLY_MSG)
+SodacheOutsideModule_pb.SodacheTaskAcceptRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKACCEPTREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheTaskGainRewardReply = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKGAINREWARDREPLY_MSG)
+SodacheOutsideModule_pb.SodacheTaskGainRewardRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKGAINREWARDREQUEST_MSG)
+SodacheOutsideModule_pb.SodacheTaskSubmitReply = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKSUBMITREPLY_MSG)
+SodacheOutsideModule_pb.SodacheTaskSubmitRequest = protobuf.Message(SodacheOutsideModule_pb.SODACHETASKSUBMITREQUEST_MSG)
+
+return SodacheOutsideModule_pb

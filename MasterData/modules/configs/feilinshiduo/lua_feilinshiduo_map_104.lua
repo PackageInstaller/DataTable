@@ -1,0 +1,250 @@
+﻿-- chunkname: @modules/configs/feilinshiduo/lua_feilinshiduo_map_104.lua
+
+return {
+	gameConfig = {
+		sceneScale = 1.5,
+		playerForward = 1
+	},
+	mapConfig = {
+		{
+			id = 1,
+			height = "200",
+			pos = "-200#-600",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0|300#0|400#0|500#0|600#0|700#0|800#0|900#0|1000#0|1100#0|1200#0|1300#0|1400#0|1500#0|1600#0|1700#0|1800#0|1900#0|2000#0|0#100|100#100|200#100|300#100|400#100|500#100|600#100|700#100|800#100|900#100|1100#100|1200#100|1300#100|1500#100|1600#100|1700#100|1800#100|1900#100|2000#100|1000#100|1400#100",
+			params = "",
+			color = 0,
+			width = "2100"
+		},
+		{
+			id = 2,
+			height = "100",
+			pos = "-1100#300",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0|300#0|400#0|500#0|600#0|700#0|800#0|900#0|1000#0|1100#0|1200#0|1300#0|1400#0|1500#0|1600#0|1700#0|1800#0|1900#0|2000#0|2100#0|2200#0|2300#0|2400#0|2500#0|2600#0|2700#0|2800#0|2900#0",
+			params = "",
+			color = 0,
+			width = "3000"
+		},
+		{
+			id = 3,
+			height = "900",
+			pos = "-1100#-600",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100|0#200|0#300|0#400|0#500|0#600|0#700|0#800",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 4,
+			height = "100",
+			pos = "-100#-100",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0",
+			params = "",
+			color = 0,
+			width = "300"
+		},
+		{
+			id = 5,
+			height = "100",
+			pos = "400#-100",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0",
+			params = "",
+			color = 0,
+			width = "300"
+		},
+		{
+			id = 6,
+			height = "100",
+			pos = "1000#-100",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0|300#0|400#0",
+			params = "",
+			color = 0,
+			width = "500"
+		},
+		{
+			id = 7,
+			height = "1000",
+			pos = "1900#-600",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100|0#200|0#300|0#400|0#500|0#600|0#700|0#800|0#900",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 8,
+			height = "200",
+			pos = "-300#-600",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 9,
+			height = "200",
+			pos = "-1000#-600",
+			type = 1,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0|300#0|0#100|100#100|200#100|300#100",
+			params = "",
+			color = 0,
+			width = "400"
+		},
+		{
+			id = 10,
+			height = "100",
+			pos = "-100#-400",
+			type = 3,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 11,
+			height = "100",
+			pos = "0#0",
+			type = 3,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0",
+			params = "",
+			color = 1,
+			width = "100"
+		},
+		{
+			id = 12,
+			height = "100",
+			pos = "500#0",
+			type = 3,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0",
+			params = "",
+			color = 2,
+			width = "100"
+		},
+		{
+			id = 13,
+			height = "200",
+			pos = "400#-400",
+			type = 3,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|0#100|100#100|200#0|200#100",
+			params = "",
+			color = 1,
+			width = "300"
+		},
+		{
+			id = 14,
+			height = "200",
+			pos = "1100#0",
+			type = 3,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100|100#0|100#100",
+			params = "",
+			color = 3,
+			width = "200"
+		},
+		{
+			id = 15,
+			height = "100",
+			pos = "-600#-600",
+			type = 4,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|100#0|200#0",
+			params = "",
+			color = 0,
+			width = "300"
+		},
+		{
+			id = 16,
+			height = "200",
+			pos = "200#-200",
+			type = 8,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 17,
+			height = "200",
+			pos = "700#-200",
+			type = 8,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 18,
+			height = "400",
+			pos = "1500#-400",
+			type = 8,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0|0#100|0#200|0#300",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 19,
+			height = "100",
+			pos = "1000#-400",
+			type = 9,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0",
+			params = "",
+			color = 0,
+			width = "100"
+		},
+		{
+			id = 20,
+			height = "100",
+			pos = "-900#-400",
+			type = 10,
+			scale = "1#1",
+			refId = 0,
+			subGOPosList = "0#0",
+			params = "",
+			color = 0,
+			width = "100"
+		}
+	}
+}

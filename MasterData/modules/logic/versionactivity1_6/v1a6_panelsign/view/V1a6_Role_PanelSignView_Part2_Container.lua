@@ -1,0 +1,11 @@
+﻿-- chunkname: @modules/logic/versionactivity1_6/v1a6_panelsign/view/V1a6_Role_PanelSignView_Part2_Container.lua
+
+module("modules.logic.versionactivity1_6.v1a6_panelsign.view.V1a6_Role_PanelSignView_Part2_Container", package.seeall)
+
+local V1a6_Role_PanelSignView_Part2_Container = class("V1a6_Role_PanelSignView_Part2_Container", V1a6_Role_SignItem_SignViewContainer)
+
+function V1a6_Role_PanelSignView_Part2_Container:onGetMainViewClassType()
+	return V1a6_Role_PanelSignView_Part2
+end
+
+return V1a6_Role_PanelSignView_Part2_Container

@@ -1,0 +1,118 @@
+﻿-- chunkname: @modules/proto/Activity153Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity153Module_pb", package.seeall)
+
+local Activity153Module_pb = {}
+
+Activity153Module_pb.GET153INFOSREQUEST_MSG = protobuf.Descriptor()
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.GET153INFOSREPLY_MSG = protobuf.Descriptor()
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG = protobuf.Descriptor()
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD = protobuf.FieldDescriptor()
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.full_name = ".Get153InfosRequest.activityId"
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.number = 1
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.index = 0
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.label = 1
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.type = 5
+Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity153Module_pb.GET153INFOSREQUEST_MSG.name = "Get153InfosRequest"
+Activity153Module_pb.GET153INFOSREQUEST_MSG.full_name = ".Get153InfosRequest"
+Activity153Module_pb.GET153INFOSREQUEST_MSG.nested_types = {}
+Activity153Module_pb.GET153INFOSREQUEST_MSG.enum_types = {}
+Activity153Module_pb.GET153INFOSREQUEST_MSG.fields = {
+	Activity153Module_pb.GET153INFOSREQUESTACTIVITYIDFIELD
+}
+Activity153Module_pb.GET153INFOSREQUEST_MSG.is_extendable = false
+Activity153Module_pb.GET153INFOSREQUEST_MSG.extensions = {}
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.full_name = ".Get153InfosReply.activityId"
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.number = 1
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.index = 0
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.label = 1
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.default_value = 0
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.type = 5
+Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.name = "totalCount"
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.full_name = ".Get153InfosReply.totalCount"
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.number = 2
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.index = 1
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.label = 1
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.has_default_value = false
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.default_value = 0
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.type = 13
+Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD.cpp_type = 3
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.name = "dailyCount"
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.full_name = ".Get153InfosReply.dailyCount"
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.number = 3
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.index = 2
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.label = 1
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.has_default_value = false
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.default_value = 0
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.type = 13
+Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD.cpp_type = 3
+Activity153Module_pb.GET153INFOSREPLY_MSG.name = "Get153InfosReply"
+Activity153Module_pb.GET153INFOSREPLY_MSG.full_name = ".Get153InfosReply"
+Activity153Module_pb.GET153INFOSREPLY_MSG.nested_types = {}
+Activity153Module_pb.GET153INFOSREPLY_MSG.enum_types = {}
+Activity153Module_pb.GET153INFOSREPLY_MSG.fields = {
+	Activity153Module_pb.GET153INFOSREPLYACTIVITYIDFIELD,
+	Activity153Module_pb.GET153INFOSREPLYTOTALCOUNTFIELD,
+	Activity153Module_pb.GET153INFOSREPLYDAILYCOUNTFIELD
+}
+Activity153Module_pb.GET153INFOSREPLY_MSG.is_extendable = false
+Activity153Module_pb.GET153INFOSREPLY_MSG.extensions = {}
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.name = "activityId"
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.full_name = ".Act153CountChangePush.activityId"
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.number = 1
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.index = 0
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.label = 1
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.has_default_value = false
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.default_value = 0
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.type = 5
+Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.name = "totalCount"
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.full_name = ".Act153CountChangePush.totalCount"
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.number = 2
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.index = 1
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.label = 1
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.has_default_value = false
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.default_value = 0
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.type = 13
+Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD.cpp_type = 3
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.name = "dailyCount"
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.full_name = ".Act153CountChangePush.dailyCount"
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.number = 3
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.index = 2
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.label = 1
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.has_default_value = false
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.default_value = 0
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.type = 13
+Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD.cpp_type = 3
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.name = "Act153CountChangePush"
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.full_name = ".Act153CountChangePush"
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.nested_types = {}
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.enum_types = {}
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.fields = {
+	Activity153Module_pb.ACT153COUNTCHANGEPUSHACTIVITYIDFIELD,
+	Activity153Module_pb.ACT153COUNTCHANGEPUSHTOTALCOUNTFIELD,
+	Activity153Module_pb.ACT153COUNTCHANGEPUSHDAILYCOUNTFIELD
+}
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.is_extendable = false
+Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG.extensions = {}
+Activity153Module_pb.Act153CountChangePush = protobuf.Message(Activity153Module_pb.ACT153COUNTCHANGEPUSH_MSG)
+Activity153Module_pb.Get153InfosReply = protobuf.Message(Activity153Module_pb.GET153INFOSREPLY_MSG)
+Activity153Module_pb.Get153InfosRequest = protobuf.Message(Activity153Module_pb.GET153INFOSREQUEST_MSG)
+
+return Activity153Module_pb

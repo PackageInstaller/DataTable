@@ -1,0 +1,178 @@
+﻿-- chunkname: @modules/logic/versionactivity2_0/enter/view/subview/V2a0_DungeonEnterView.lua
+
+module("modules.logic.versionactivity2_0.enter.view.subview.V2a0_DungeonEnterView", package.seeall)
+
+local V2a0_DungeonEnterView = class("V2a0_DungeonEnterView", BaseView)
+
+function V2a0_DungeonEnterView:onInitView()
+	self._txtdesc = gohelper.findChildText(self.viewGO, "logo/#txt_dec")
+	self._gotime = gohelper.findChild(self.viewGO, "logo/actbg")
+	self._txttime = gohelper.findChildText(self.viewGO, "logo/actbg/Layout/#txt_time")
+	self._btntask = gohelper.findChildButtonWithAudio(self.viewGO, "entrance/#btn_task")
+	self._gotaskreddot = gohelper.findChild(self.viewGO, "entrance/#btn_task/#go_reddot")
+	self._btnstore = gohelper.findChildButtonWithAudio(self.viewGO, "entrance/#btn_store")
+	self._txtStoreNum = gohelper.findChildText(self.viewGO, "entrance/#btn_store/normal/#txt_num")
+	self._txtStoreTime = gohelper.findChildText(self.viewGO, "entrance/#btn_store/#go_time/#txt_time")
+	self._btnenter = gohelper.findChildButtonWithAudio(self.viewGO, "entrance/#btn_enter")
+	self._goreddot = gohelper.findChild(self.viewGO, "entrance/#btn_enter/#go_reddot")
+	self._btnFinished = gohelper.findChildButtonWithAudio(self.viewGO, "entrance/#btn_Finished")
+	self.anim = self.viewGO:GetComponent(gohelper.Type_Animator)
+
+	if self._editableInitView then
+		self:_editableInitView()
+	end
+end
+
+function V2a0_DungeonEnterView:addEvents()
+	self.addEventCb(self, CurrencyController.instance, CurrencyEvent.CurrencyChange, self.refreshStoreCurrency, self)
+	self.addEventCb(self, ActivityController.instance, ActivityEvent.RefreshActivityState, self.onRefreshActivity, self)
+	self._btntask:AddClickListener(self._btntaskOnClick, self)
+	self._btnstore:AddClickListener(self._btnstoreOnClick, self)
+	self._btnenter:AddClickListener(self._btnenterOnClick, self)
+	self._btnFinished:AddClickListener(self._btnFinishedOnClick, self)
+end
+
+function V2a0_DungeonEnterView:removeEvents()
+	self.removeEventCb(self, CurrencyController.instance, CurrencyEvent.CurrencyChange, self.refreshStoreCurrency, self)
+	self.removeEventCb(self, ActivityController.instance, ActivityEvent.RefreshActivityState, self.onRefreshActivity, self)
+	self._btntask:RemoveClickListener()
+	self._btnstore:RemoveClickListener()
+	self._btnenter:RemoveClickListener()
+	self._btnFinished:RemoveClickListener()
+end
+
+function V2a0_DungeonEnterView:onRefreshActivity(actId)
+	if actId ~= self.actId then
+		return
+	end
+
+	self:refreshActivityState()
+end
+
+function V2a0_DungeonEnterView:_btntaskOnClick()
+	VersionActivity2_0DungeonController.instance:openTaskView()
+end
+
+function V2a0_DungeonEnterView:_btnstoreOnClick()
+	VersionActivity2_0DungeonController.instance:openStoreView()
+end
+
+function V2a0_DungeonEnterView:_btnenterOnClick()
+	VersionActivity2_0DungeonController.instance:openVersionActivityDungeonMapView()
+end
+
+function V2a0_DungeonEnterView:_btnFinishedOnClick()
+	return
+end
+
+function V2a0_DungeonEnterView:_editableInitView()
+	self.actId = VersionActivity2_0Enum.ActivityId.Dungeon
+	self.animComp = VersionActivitySubAnimatorComp.get(self.viewGO, self)
+	self.goEnter = self._btnenter.gameObject
+	self.goFinish = self._btnFinished.gameObject
+	self.goStore = self._btnstore.gameObject
+	self.actId = VersionActivity2_0Enum.ActivityId.Dungeon
+	self.actCo = ActivityConfig.instance:getActivityCo(self.actId)
+
+	self:_setDesc()
+	RedDotController.instance:addRedDot(self._goreddot, RedDotEnum.DotNode.V2a0DungeonEnter)
+	RedDotController.instance:addRedDot(self._gotaskreddot, RedDotEnum.DotNode.V2a0DungeonTask)
+end
+
+function V2a0_DungeonEnterView:_setDesc()
+	if not self.actCo or not self._txtdesc then
+		return
+	end
+
+	self._txtdesc.text = self.actCo.actDesc
+end
+
+function V2a0_DungeonEnterView:onUpdateParam()
+	self:refreshUI()
+end
+
+function V2a0_DungeonEnterView:onOpen()
+	self:refreshUI()
+
+	local isFirstInView = self.viewContainer:getIsFirstPlaySubViewAnim()
+
+	if isFirstInView then
+		self.animComp.animator:Play("open1", 0, 0)
+
+		self.animComp.animator.speed = 1
+
+		self.viewContainer:markPlayedSubViewAnim()
+	else
+		self.animComp.animator:Play(UIAnimationName.Open, 0, 0)
+
+		self.animComp.animator.speed = 1
+	end
+
+	TaskDispatcher.runRepeat(self.everyMinuteCall, self, TimeUtil.OneMinuteSecond)
+end
+
+function V2a0_DungeonEnterView:everyMinuteCall()
+	self:refreshUI()
+end
+
+function V2a0_DungeonEnterView:refreshUI()
+	self:refreshRemainTime()
+	self:refreshActivityState()
+	self:refreshStoreCurrency()
+end
+
+function V2a0_DungeonEnterView:refreshRemainTime()
+	local actInfoMo = ActivityModel.instance:getActivityInfo()[self.actId]
+	local offsetSecond = actInfoMo:getRealEndTimeStamp() - ServerTime.now()
+
+	if offsetSecond > 0 then
+		self._txttime.text = TimeUtil.SecondToActivityTimeFormat(offsetSecond)
+
+		gohelper.setActive(self._txttime, true)
+	else
+		gohelper.setActive(self._txttime, false)
+	end
+
+	local storeActInfoMo = ActivityModel.instance:getActivityInfo()[VersionActivity2_0Enum.ActivityId.DungeonStore]
+
+	self._txtStoreTime.text = storeActInfoMo:getRemainTimeStr2ByEndTime(true)
+end
+
+function V2a0_DungeonEnterView:refreshActivityState()
+	local status = ActivityHelper.getActivityStatusAndToast(self.actId)
+	local isNormal = status == ActivityEnum.ActivityStatus.Normal
+
+	gohelper.setActive(self.goEnter, isNormal)
+	gohelper.setActive(self.goFinish, not isNormal)
+
+	local isExpired = status == ActivityEnum.ActivityStatus.Expired
+
+	gohelper.setActive(self._gotime, not isExpired)
+
+	local storeStatus = ActivityHelper.getActivityStatusAndToast(VersionActivity2_0Enum.ActivityId.DungeonStore)
+	local isStoreNormal = storeStatus == ActivityEnum.ActivityStatus.Normal
+
+	gohelper.setActive(self.goStore, isStoreNormal)
+end
+
+function V2a0_DungeonEnterView:refreshStoreCurrency()
+	local currencyMO = CurrencyModel.instance:getCurrency(CurrencyEnum.CurrencyType.V2a0Dungeon)
+
+	if currencyMO then
+		if not currencyMO.quantity then
+			local quantity = 0
+
+			self._txtStoreNum.text = GameUtil.numberDisplay(quantity)
+		end
+	end
+end
+
+function V2a0_DungeonEnterView:onClose()
+	TaskDispatcher.cancelTask(self.everyMinuteCall, self)
+end
+
+function V2a0_DungeonEnterView:onDestroyView()
+	self.animComp:destroy()
+end
+
+return V2a0_DungeonEnterView

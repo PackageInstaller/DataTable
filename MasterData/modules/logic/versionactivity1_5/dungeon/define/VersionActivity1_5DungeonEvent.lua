@@ -1,0 +1,35 @@
+﻿-- chunkname: @modules/logic/versionactivity1_5/dungeon/define/VersionActivity1_5DungeonEvent.lua
+
+module("modules.logic.versionactivity1_5.dungeon.define.VersionActivity1_5DungeonEvent", package.seeall)
+
+local VersionActivity1_5DungeonEvent = _M
+
+VersionActivity1_5DungeonEvent.ChangeDispatchHeroContainerEvent = 1
+VersionActivity1_5DungeonEvent.ChangeSelectedHero = 2
+VersionActivity1_5DungeonEvent.AddDispatchInfo = 3
+VersionActivity1_5DungeonEvent.RemoveDispatchInfo = 4
+VersionActivity1_5DungeonEvent.OnDispatchFinish = 5
+VersionActivity1_5DungeonEvent.OnMapPosChanged = 10
+VersionActivity1_5DungeonEvent.OnClickElement = 11
+VersionActivity1_5DungeonEvent.OnHideInteractUI = 12
+VersionActivity1_5DungeonEvent.FocusElement = 13
+VersionActivity1_5DungeonEvent.OnAddOneElement = 14
+VersionActivity1_5DungeonEvent.OnRemoveElement = 15
+VersionActivity1_5DungeonEvent.OnRecycleAllElement = 16
+VersionActivity1_5DungeonEvent.TweenMapPosDone = 17
+VersionActivity1_5DungeonEvent.SelectHeroTaskTabChange = 100
+VersionActivity1_5DungeonEvent.OnGainedExploreReward = 101
+VersionActivity1_5DungeonEvent.OnGainedHeroTaskReward = 102
+VersionActivity1_5DungeonEvent.OnGainedSubHeroTaskReward = 103
+VersionActivity1_5DungeonEvent.ShowSubTaskDetail = 104
+VersionActivity1_5DungeonEvent.ShowExploreTip = 105
+VersionActivity1_5DungeonEvent.HideExploreTip = 106
+VersionActivity1_5DungeonEvent.OpenAnimPlayingStatusChange = 107
+VersionActivity1_5DungeonEvent.OnUpdateBuildInfo = 200
+VersionActivity1_5DungeonEvent.OnUpdateSelectBuild = 201
+VersionActivity1_5DungeonEvent.OnUpdateGainedBuildReward = 202
+VersionActivity1_5DungeonEvent.OnSwitchSelectGroupBuild = 203
+VersionActivity1_5DungeonEvent.SetRevivalTaskBtnActive = 901
+VersionActivity1_5DungeonEvent.SetBuildingBtnActive = 902
+
+return VersionActivity1_5DungeonEvent

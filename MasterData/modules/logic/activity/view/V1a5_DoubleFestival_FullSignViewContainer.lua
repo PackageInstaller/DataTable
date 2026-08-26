@@ -1,0 +1,11 @@
+﻿-- chunkname: @modules/logic/activity/view/V1a5_DoubleFestival_FullSignViewContainer.lua
+
+module("modules.logic.activity.view.V1a5_DoubleFestival_FullSignViewContainer", package.seeall)
+
+local V1a5_DoubleFestival_FullSignViewContainer = class("V1a5_DoubleFestival_FullSignViewContainer", V1a5_DoubleFestival_SignItem_SignViewContainer)
+
+function V1a5_DoubleFestival_FullSignViewContainer:onGetMainViewClassType()
+	return V1a5_DoubleFestival_FullSignView
+end
+
+return V1a5_DoubleFestival_FullSignViewContainer

@@ -1,0 +1,225 @@
+﻿-- chunkname: @modules/proto/Activity241Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity241Module_pb", package.seeall)
+
+local Activity241Module_pb = {}
+
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG = protobuf.Descriptor()
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG = protobuf.Descriptor()
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETINFOREPLY_MSG = protobuf.Descriptor()
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG = protobuf.Descriptor()
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241VOTEREQUEST_MSG = protobuf.Descriptor()
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241VOTEREPLY_MSG = protobuf.Descriptor()
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD = protobuf.FieldDescriptor()
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.full_name = ".Act241GetInfoRequest.activityId"
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.number = 1
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.index = 0
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.label = 1
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.type = 5
+Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.name = "Act241GetInfoRequest"
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.full_name = ".Act241GetInfoRequest"
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.nested_types = {}
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.enum_types = {}
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.fields = {
+	Activity241Module_pb.ACT241GETINFOREQUESTACTIVITYIDFIELD
+}
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.is_extendable = false
+Activity241Module_pb.ACT241GETINFOREQUEST_MSG.extensions = {}
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.full_name = ".Act241GetBonusRequest.activityId"
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.number = 1
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.index = 0
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.label = 1
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.type = 5
+Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.name = "Act241GetBonusRequest"
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.full_name = ".Act241GetBonusRequest"
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.nested_types = {}
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.enum_types = {}
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.fields = {
+	Activity241Module_pb.ACT241GETBONUSREQUESTACTIVITYIDFIELD
+}
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.is_extendable = false
+Activity241Module_pb.ACT241GETBONUSREQUEST_MSG.extensions = {}
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.full_name = ".Act241GetInfoReply.activityId"
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.number = 1
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.index = 0
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.label = 1
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.type = 5
+Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.name = "loginCount"
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.full_name = ".Act241GetInfoReply.loginCount"
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.number = 2
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.index = 1
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.label = 1
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.default_value = 0
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.type = 5
+Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.name = "votedCount"
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.full_name = ".Act241GetInfoReply.votedCount"
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.number = 3
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.index = 2
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.label = 1
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.default_value = 0
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.type = 5
+Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.name = "getBonusVotes"
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.full_name = ".Act241GetInfoReply.getBonusVotes"
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.number = 4
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.index = 3
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.label = 1
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.default_value = 0
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.type = 5
+Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.name = "Act241GetInfoReply"
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.full_name = ".Act241GetInfoReply"
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.nested_types = {}
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.enum_types = {}
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.fields = {
+	Activity241Module_pb.ACT241GETINFOREPLYACTIVITYIDFIELD,
+	Activity241Module_pb.ACT241GETINFOREPLYLOGINCOUNTFIELD,
+	Activity241Module_pb.ACT241GETINFOREPLYVOTEDCOUNTFIELD,
+	Activity241Module_pb.ACT241GETINFOREPLYGETBONUSVOTESFIELD
+}
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.is_extendable = false
+Activity241Module_pb.ACT241GETINFOREPLY_MSG.extensions = {}
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.full_name = ".Act241GetBonusReply.activityId"
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.number = 1
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.index = 0
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.label = 1
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.default_value = 0
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.type = 5
+Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.name = "getBonusVotes"
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.full_name = ".Act241GetBonusReply.getBonusVotes"
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.number = 2
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.index = 1
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.label = 1
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.has_default_value = false
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.default_value = 0
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.type = 5
+Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD.cpp_type = 1
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.name = "Act241GetBonusReply"
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.full_name = ".Act241GetBonusReply"
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.nested_types = {}
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.enum_types = {}
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.fields = {
+	Activity241Module_pb.ACT241GETBONUSREPLYACTIVITYIDFIELD,
+	Activity241Module_pb.ACT241GETBONUSREPLYGETBONUSVOTESFIELD
+}
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.is_extendable = false
+Activity241Module_pb.ACT241GETBONUSREPLY_MSG.extensions = {}
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.full_name = ".Act241VoteRequest.activityId"
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.number = 1
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.index = 0
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.label = 1
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.type = 5
+Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.name = "voteNum"
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.full_name = ".Act241VoteRequest.voteNum"
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.number = 2
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.index = 1
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.label = 1
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.has_default_value = false
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.default_value = 0
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.type = 5
+Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD.cpp_type = 1
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.name = "optionId"
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.full_name = ".Act241VoteRequest.optionId"
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.number = 3
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.index = 2
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.label = 1
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.default_value = 0
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.type = 5
+Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.name = "Act241VoteRequest"
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.full_name = ".Act241VoteRequest"
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.nested_types = {}
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.enum_types = {}
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.fields = {
+	Activity241Module_pb.ACT241VOTEREQUESTACTIVITYIDFIELD,
+	Activity241Module_pb.ACT241VOTEREQUESTVOTENUMFIELD,
+	Activity241Module_pb.ACT241VOTEREQUESTOPTIONIDFIELD
+}
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.is_extendable = false
+Activity241Module_pb.ACT241VOTEREQUEST_MSG.extensions = {}
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.name = "activityId"
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.full_name = ".Act241VoteReply.activityId"
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.number = 1
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.index = 0
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.label = 1
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.default_value = 0
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.type = 5
+Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.name = "voteNum"
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.full_name = ".Act241VoteReply.voteNum"
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.number = 2
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.index = 1
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.label = 1
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.has_default_value = false
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.default_value = 0
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.type = 5
+Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD.cpp_type = 1
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.name = "optionId"
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.full_name = ".Act241VoteReply.optionId"
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.number = 3
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.index = 2
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.label = 1
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.has_default_value = false
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.default_value = 0
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.type = 5
+Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD.cpp_type = 1
+Activity241Module_pb.ACT241VOTEREPLY_MSG.name = "Act241VoteReply"
+Activity241Module_pb.ACT241VOTEREPLY_MSG.full_name = ".Act241VoteReply"
+Activity241Module_pb.ACT241VOTEREPLY_MSG.nested_types = {}
+Activity241Module_pb.ACT241VOTEREPLY_MSG.enum_types = {}
+Activity241Module_pb.ACT241VOTEREPLY_MSG.fields = {
+	Activity241Module_pb.ACT241VOTEREPLYACTIVITYIDFIELD,
+	Activity241Module_pb.ACT241VOTEREPLYVOTENUMFIELD,
+	Activity241Module_pb.ACT241VOTEREPLYOPTIONIDFIELD
+}
+Activity241Module_pb.ACT241VOTEREPLY_MSG.is_extendable = false
+Activity241Module_pb.ACT241VOTEREPLY_MSG.extensions = {}
+Activity241Module_pb.Act241GetBonusReply = protobuf.Message(Activity241Module_pb.ACT241GETBONUSREPLY_MSG)
+Activity241Module_pb.Act241GetBonusRequest = protobuf.Message(Activity241Module_pb.ACT241GETBONUSREQUEST_MSG)
+Activity241Module_pb.Act241GetInfoReply = protobuf.Message(Activity241Module_pb.ACT241GETINFOREPLY_MSG)
+Activity241Module_pb.Act241GetInfoRequest = protobuf.Message(Activity241Module_pb.ACT241GETINFOREQUEST_MSG)
+Activity241Module_pb.Act241VoteReply = protobuf.Message(Activity241Module_pb.ACT241VOTEREPLY_MSG)
+Activity241Module_pb.Act241VoteRequest = protobuf.Message(Activity241Module_pb.ACT241VOTEREQUEST_MSG)
+
+return Activity241Module_pb

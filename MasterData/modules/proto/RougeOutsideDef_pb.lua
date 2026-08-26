@@ -1,0 +1,528 @@
+﻿-- chunkname: @modules/proto/RougeOutsideDef_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.RougeOutsideDef_pb", package.seeall)
+
+local RougeOutsideDef_pb = {}
+
+RougeOutsideDef_pb.ROUGEDEF_PB = require("modules.proto.RougeDef_pb")
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.NEWREDDOTNO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG = protobuf.Descriptor()
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD = protobuf.FieldDescriptor()
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.name = "bonusStages"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.full_name = ".RougeOutsideBonusNO.bonusStages"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.number = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.index = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.label = 3
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.message_type = RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.type = 11
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.name = "isNewStage"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.full_name = ".RougeOutsideBonusNO.isNewStage"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.number = 2
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.index = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.type = 8
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD.cpp_type = 7
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.name = "RougeOutsideBonusNO"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.full_name = ".RougeOutsideBonusNO"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOBONUSSTAGESFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNOISNEWSTAGEFIELD
+}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG.extensions = {}
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.name = "limitIds"
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.full_name = ".RougeLimiterClientNO.limitIds"
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.number = 1
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.index = 0
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.name = "limitBuffIds"
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.full_name = ".RougeLimiterClientNO.limitBuffIds"
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.number = 2
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.index = 1
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.name = "RougeLimiterClientNO"
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.full_name = ".RougeLimiterClientNO"
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITIDSFIELD,
+	RougeOutsideDef_pb.ROUGELIMITERCLIENTNOLIMITBUFFIDSFIELD
+}
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG.extensions = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.name = "season"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.full_name = ".RougeOutsideInfo.season"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.number = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.index = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.name = "geniusPoint"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.full_name = ".RougeOutsideInfo.geniusPoint"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.number = 2
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.index = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.name = "geniusIds"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.full_name = ".RougeOutsideInfo.geniusIds"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.number = 3
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.index = 2
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.name = "point"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.full_name = ".RougeOutsideInfo.point"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.number = 4
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.index = 3
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.name = "haveGetPoint"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.full_name = ".RougeOutsideInfo.haveGetPoint"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.number = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.index = 4
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.name = "bonus"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.full_name = ".RougeOutsideInfo.bonus"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.number = 6
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.index = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.default_value = nil
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.message_type = RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.type = 11
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.name = "review"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.full_name = ".RougeOutsideInfo.review"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.number = 7
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.index = 6
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.label = 3
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.message_type = RougeOutsideDef_pb.ROUGEDEF_PB.ROUGEREVIEWINFO_MSG
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.type = 11
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.name = "gameRecordInfo"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.full_name = ".RougeOutsideInfo.gameRecordInfo"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.number = 8
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.index = 7
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.default_value = nil
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.message_type = RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.type = 11
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.name = "isGeniusNewStage"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.full_name = ".RougeOutsideInfo.isGeniusNewStage"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.number = 9
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.index = 8
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.type = 8
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD.cpp_type = 7
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.name = "limiterInfo"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.full_name = ".RougeOutsideInfo.limiterInfo"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.number = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.index = 9
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.default_value = nil
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.message_type = RougeOutsideDef_pb.ROUGELIMITERINFO_MSG
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.type = 11
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.name = "curExtraPoint"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.full_name = ".RougeOutsideInfo.curExtraPoint"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.number = 11
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.index = 10
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.name = "RougeOutsideInfo"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.full_name = ".RougeOutsideInfo"
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOSEASONFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSPOINTFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOGENIUSIDSFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOPOINTFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOHAVEGETPOINTFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOBONUSFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOREVIEWFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOGAMERECORDINFOFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOISGENIUSNEWSTAGEFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOLIMITERINFOFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEINFOCUREXTRAPOINTFIELD
+}
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG.extensions = {}
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.name = "id"
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.full_name = ".RougeLimitBuffNO.id"
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.number = 1
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.index = 0
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.label = 1
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.type = 5
+RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.name = "cd"
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.full_name = ".RougeLimitBuffNO.cd"
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.number = 2
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.index = 1
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.label = 1
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.type = 5
+RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.name = "RougeLimitBuffNO"
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.full_name = ".RougeLimitBuffNO"
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGELIMITBUFFNOIDFIELD,
+	RougeOutsideDef_pb.ROUGELIMITBUFFNOCDFIELD
+}
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG.extensions = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.name = "stage"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.full_name = ".RougeOutsideBonusStageNO.stage"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.number = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.index = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.label = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.name = "bonusIds"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.full_name = ".RougeOutsideBonusStageNO.bonusIds"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.number = 2
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.index = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.name = "RougeOutsideBonusStageNO"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.full_name = ".RougeOutsideBonusStageNO"
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOSTAGEFIELD,
+	RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENOBONUSIDSFIELD
+}
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG.extensions = {}
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.name = "type"
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.full_name = ".UnlockSkillNO.type"
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.number = 1
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.index = 0
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.label = 1
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.has_default_value = false
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.default_value = ""
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.type = 9
+RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD.cpp_type = 9
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.name = "ids"
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.full_name = ".UnlockSkillNO.ids"
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.number = 2
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.index = 1
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.label = 3
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.default_value = {}
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.type = 5
+RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.name = "UnlockSkillNO"
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.full_name = ".UnlockSkillNO"
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.nested_types = {}
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.enum_types = {}
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.fields = {
+	RougeOutsideDef_pb.UNLOCKSKILLNOTYPEFIELD,
+	RougeOutsideDef_pb.UNLOCKSKILLNOIDSFIELD
+}
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.is_extendable = false
+RougeOutsideDef_pb.UNLOCKSKILLNO_MSG.extensions = {}
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.name = "type"
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.full_name = ".NewReddotNO.type"
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.number = 1
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.index = 0
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.label = 1
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.has_default_value = false
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.default_value = 0
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.type = 5
+RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD.cpp_type = 1
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.name = "ids"
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.full_name = ".NewReddotNO.ids"
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.number = 2
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.index = 1
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.label = 3
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.default_value = {}
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.type = 5
+RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.name = "NewReddotNO"
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.full_name = ".NewReddotNO"
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.nested_types = {}
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.enum_types = {}
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.fields = {
+	RougeOutsideDef_pb.NEWREDDOTNOTYPEFIELD,
+	RougeOutsideDef_pb.NEWREDDOTNOIDSFIELD
+}
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.is_extendable = false
+RougeOutsideDef_pb.NEWREDDOTNO_MSG.extensions = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.name = "maxDifficulty"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.full_name = ".RougeGameRecordInfo.maxDifficulty"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.number = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.index = 0
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.label = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.name = "passLayerId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.full_name = ".RougeGameRecordInfo.passLayerId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.number = 2
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.index = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.name = "passEventId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.full_name = ".RougeGameRecordInfo.passEventId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.number = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.index = 2
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.name = "passEndId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.full_name = ".RougeGameRecordInfo.passEndId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.number = 4
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.index = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.name = "passEntrustId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.full_name = ".RougeGameRecordInfo.passEntrustId"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.number = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.index = 4
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.name = "lastGameTime"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.full_name = ".RougeGameRecordInfo.lastGameTime"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.number = 6
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.index = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.label = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.type = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD.cpp_type = 2
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.name = "passCollections"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.full_name = ".RougeGameRecordInfo.passCollections"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.number = 7
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.index = 6
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.name = "unlockStoryIds"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.full_name = ".RougeGameRecordInfo.unlockStoryIds"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.number = 8
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.index = 7
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.name = "unlockIllustrationIds"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.full_name = ".RougeGameRecordInfo.unlockIllustrationIds"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.number = 9
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.index = 8
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.name = "dlcVersionIds"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.full_name = ".RougeGameRecordInfo.dlcVersionIds"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.number = 10
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.index = 9
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.name = "unlockSkills"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.full_name = ".RougeGameRecordInfo.unlockSkills"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.number = 11
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.index = 10
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.label = 3
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.message_type = RougeOutsideDef_pb.UNLOCKSKILLNO_MSG
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.type = 11
+RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.name = "RougeGameRecordInfo"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.full_name = ".RougeGameRecordInfo"
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOMAXDIFFICULTYFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSLAYERIDFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSEVENTIDFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENDIDFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSENTRUSTIDFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOLASTGAMETIMEFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOPASSCOLLECTIONSFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSTORYIDSFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKILLUSTRATIONIDSFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFODLCVERSIONIDSFIELD,
+	RougeOutsideDef_pb.ROUGEGAMERECORDINFOUNLOCKSKILLSFIELD
+}
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG.extensions = {}
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.name = "clientNO"
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.full_name = ".RougeLimiterInfo.clientNO"
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.number = 1
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.index = 0
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.label = 1
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.default_value = nil
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.message_type = RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.type = 11
+RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.name = "unlockLimitGroupIds"
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.full_name = ".RougeLimiterInfo.unlockLimitGroupIds"
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.number = 2
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.index = 1
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.label = 3
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.type = 5
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.name = "unlockLimitBuffs"
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.full_name = ".RougeLimiterInfo.unlockLimitBuffs"
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.number = 3
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.index = 2
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.label = 3
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.default_value = {}
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.message_type = RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.type = 11
+RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD.cpp_type = 10
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.name = "emblem"
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.full_name = ".RougeLimiterInfo.emblem"
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.number = 4
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.index = 3
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.label = 1
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.has_default_value = false
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.default_value = 0
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.type = 5
+RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD.cpp_type = 1
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.name = "RougeLimiterInfo"
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.full_name = ".RougeLimiterInfo"
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.nested_types = {}
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.enum_types = {}
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.fields = {
+	RougeOutsideDef_pb.ROUGELIMITERINFOCLIENTNOFIELD,
+	RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITGROUPIDSFIELD,
+	RougeOutsideDef_pb.ROUGELIMITERINFOUNLOCKLIMITBUFFSFIELD,
+	RougeOutsideDef_pb.ROUGELIMITERINFOEMBLEMFIELD
+}
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.is_extendable = false
+RougeOutsideDef_pb.ROUGELIMITERINFO_MSG.extensions = {}
+RougeOutsideDef_pb.NewReddotNO = protobuf.Message(RougeOutsideDef_pb.NEWREDDOTNO_MSG)
+RougeOutsideDef_pb.RougeGameRecordInfo = protobuf.Message(RougeOutsideDef_pb.ROUGEGAMERECORDINFO_MSG)
+RougeOutsideDef_pb.RougeLimitBuffNO = protobuf.Message(RougeOutsideDef_pb.ROUGELIMITBUFFNO_MSG)
+RougeOutsideDef_pb.RougeLimiterClientNO = protobuf.Message(RougeOutsideDef_pb.ROUGELIMITERCLIENTNO_MSG)
+RougeOutsideDef_pb.RougeLimiterInfo = protobuf.Message(RougeOutsideDef_pb.ROUGELIMITERINFO_MSG)
+RougeOutsideDef_pb.RougeOutsideBonusNO = protobuf.Message(RougeOutsideDef_pb.ROUGEOUTSIDEBONUSNO_MSG)
+RougeOutsideDef_pb.RougeOutsideBonusStageNO = protobuf.Message(RougeOutsideDef_pb.ROUGEOUTSIDEBONUSSTAGENO_MSG)
+RougeOutsideDef_pb.RougeOutsideInfo = protobuf.Message(RougeOutsideDef_pb.ROUGEOUTSIDEINFO_MSG)
+RougeOutsideDef_pb.UnlockSkillNO = protobuf.Message(RougeOutsideDef_pb.UNLOCKSKILLNO_MSG)
+
+return RougeOutsideDef_pb

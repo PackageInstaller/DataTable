@@ -1,0 +1,33 @@
+﻿-- chunkname: @modules/logic/gm/view/GM_CharacterBackpackViewContainer.lua
+
+module("modules.logic.gm.view.GM_CharacterBackpackViewContainer", package.seeall)
+
+local GM_CharacterBackpackViewContainer = class("GM_CharacterBackpackViewContainer", BaseViewContainer)
+
+function GM_CharacterBackpackViewContainer:buildViews()
+	return {
+		GM_CharacterBackpackView.New()
+	}
+end
+
+function GM_CharacterBackpackViewContainer:onContainerClickModalMask()
+	ViewMgr.instance:closeView(self.viewName)
+end
+
+function GM_CharacterBackpackViewContainer.addEvents(viewObj)
+	GMController.instance:registerCallback(GMEvent.CharacterBackpackView_ShowAllTabIdUpdate, viewObj._gm_showAllTabIdUpdate, viewObj)
+	GMController.instance:registerCallback(GMEvent.CharacterBackpackView_EnableCheckFaceOnSelect, viewObj._gm_enableCheckFaceOnSelect, viewObj)
+	GMController.instance:registerCallback(GMEvent.CharacterBackpackView_EnableCheckMouthOnSelect, viewObj._gm_enableCheckMouthOnSelect, viewObj)
+	GMController.instance:registerCallback(GMEvent.CharacterBackpackView_EnableCheckContentOnSelect, viewObj._gm_enableCheckContentOnSelect, viewObj)
+	GMController.instance:registerCallback(GMEvent.CharacterBackpackView_EnableCheckMotionOnSelect, viewObj._gm_enableCheckMotionOnSelect, viewObj)
+end
+
+function GM_CharacterBackpackViewContainer.removeEvents(viewObj)
+	GMController.instance:unregisterCallback(GMEvent.CharacterBackpackView_ShowAllTabIdUpdate, viewObj._gm_showAllTabIdUpdate, viewObj)
+	GMController.instance:unregisterCallback(GMEvent.CharacterBackpackView_EnableCheckFaceOnSelect, viewObj._gm_enableCheckFaceOnSelect, viewObj)
+	GMController.instance:unregisterCallback(GMEvent.CharacterBackpackView_EnableCheckMouthOnSelect, viewObj._gm_enableCheckMouthOnSelect, viewObj)
+	GMController.instance:unregisterCallback(GMEvent.CharacterBackpackView_EnableCheckContentOnSelect, viewObj._gm_enableCheckContentOnSelect, viewObj)
+	GMController.instance:unregisterCallback(GMEvent.CharacterBackpackView_EnableCheckMotionOnSelect, viewObj._gm_enableCheckMotionOnSelect, viewObj)
+end
+
+return GM_CharacterBackpackViewContainer

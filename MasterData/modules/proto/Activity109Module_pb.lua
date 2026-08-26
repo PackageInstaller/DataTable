@@ -1,0 +1,702 @@
+﻿-- chunkname: @modules/proto/Activity109Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity109Module_pb", package.seeall)
+
+local Activity109Module_pb = {}
+
+Activity109Module_pb.ACT109USEITEMREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STEPPUSH_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MAP_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109MAPIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.GETACT109INFOREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109EVENT_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109EVENTPARAMFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.GETACT109INFOREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109ABORTREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109EPISODE_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109EPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109EPISODESTARFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109ABORTREPLY_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109OPERATION_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109OPERATIONIDFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109STEP_MSG = protobuf.Descriptor()
+Activity109Module_pb.ACT109STEPPARAMFIELD = protobuf.FieldDescriptor()
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.full_name = ".Act109UseItemReply.activityId"
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.name = "x"
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.full_name = ".Act109UseItemReply.x"
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.number = 2
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.index = 1
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.label = 1
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.has_default_value = false
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.default_value = 0
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.type = 5
+Activity109Module_pb.ACT109USEITEMREPLYXFIELD.cpp_type = 1
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.name = "y"
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.full_name = ".Act109UseItemReply.y"
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.number = 3
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.index = 2
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.label = 1
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.has_default_value = false
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.default_value = 0
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.type = 5
+Activity109Module_pb.ACT109USEITEMREPLYYFIELD.cpp_type = 1
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.name = "Act109UseItemReply"
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.full_name = ".Act109UseItemReply"
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.nested_types = {}
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.enum_types = {}
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.fields = {
+	Activity109Module_pb.ACT109USEITEMREPLYACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109USEITEMREPLYXFIELD,
+	Activity109Module_pb.ACT109USEITEMREPLYYFIELD
+}
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.is_extendable = false
+Activity109Module_pb.ACT109USEITEMREPLY_MSG.extensions = {}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.full_name = ".Act109MarkNewEpisodeRedDotReply.activityId"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.name = "Act109MarkNewEpisodeRedDotReply"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.full_name = ".Act109MarkNewEpisodeRedDotReply"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.nested_types = {}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.enum_types = {}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.fields = {
+	Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLYACTIVITYIDFIELD
+}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.is_extendable = false
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG.extensions = {}
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.full_name = ".Act109EventEndReply.activityId"
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.name = "Act109EventEndReply"
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.full_name = ".Act109EventEndReply"
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.nested_types = {}
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.enum_types = {}
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.fields = {
+	Activity109Module_pb.ACT109EVENTENDREPLYACTIVITYIDFIELD
+}
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.is_extendable = false
+Activity109Module_pb.ACT109EVENTENDREPLY_MSG.extensions = {}
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.full_name = ".Act109StartEpisodeReply.activityId"
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.name = "map"
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.full_name = ".Act109StartEpisodeReply.map"
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.number = 2
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.index = 1
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.label = 1
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.has_default_value = false
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.default_value = nil
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.message_type = Activity109Module_pb.ACT109MAP_MSG
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.type = 11
+Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD.cpp_type = 10
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.name = "Act109StartEpisodeReply"
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.full_name = ".Act109StartEpisodeReply"
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.nested_types = {}
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.enum_types = {}
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.fields = {
+	Activity109Module_pb.ACT109STARTEPISODEREPLYACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109STARTEPISODEREPLYMAPFIELD
+}
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.is_extendable = false
+Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG.extensions = {}
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.full_name = ".Act109BeginRoundRequest.activityId"
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.name = "operations"
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.full_name = ".Act109BeginRoundRequest.operations"
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.number = 2
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.index = 1
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.label = 3
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.has_default_value = false
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.default_value = {}
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.message_type = Activity109Module_pb.ACT109OPERATION_MSG
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.type = 11
+Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD.cpp_type = 10
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.name = "Act109BeginRoundRequest"
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.full_name = ".Act109BeginRoundRequest"
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.nested_types = {}
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.enum_types = {}
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.fields = {
+	Activity109Module_pb.ACT109BEGINROUNDREQUESTACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109BEGINROUNDREQUESTOPERATIONSFIELD
+}
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.is_extendable = false
+Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG.extensions = {}
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.full_name = ".Act109StartEpisodeRequest.activityId"
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.name = "id"
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.full_name = ".Act109StartEpisodeRequest.id"
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.number = 2
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.index = 1
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.label = 1
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.default_value = 0
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.type = 5
+Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.name = "Act109StartEpisodeRequest"
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.full_name = ".Act109StartEpisodeRequest"
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.nested_types = {}
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.enum_types = {}
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.fields = {
+	Activity109Module_pb.ACT109STARTEPISODEREQUESTACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109STARTEPISODEREQUESTIDFIELD
+}
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.is_extendable = false
+Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG.extensions = {}
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.full_name = ".Act109StepPush.activityId"
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.name = "steps"
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.full_name = ".Act109StepPush.steps"
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.number = 2
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.index = 1
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.label = 3
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.has_default_value = false
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.default_value = {}
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.message_type = Activity109Module_pb.ACT109STEP_MSG
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.type = 11
+Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD.cpp_type = 10
+Activity109Module_pb.ACT109STEPPUSH_MSG.name = "Act109StepPush"
+Activity109Module_pb.ACT109STEPPUSH_MSG.full_name = ".Act109StepPush"
+Activity109Module_pb.ACT109STEPPUSH_MSG.nested_types = {}
+Activity109Module_pb.ACT109STEPPUSH_MSG.enum_types = {}
+Activity109Module_pb.ACT109STEPPUSH_MSG.fields = {
+	Activity109Module_pb.ACT109STEPPUSHACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109STEPPUSHSTEPSFIELD
+}
+Activity109Module_pb.ACT109STEPPUSH_MSG.is_extendable = false
+Activity109Module_pb.ACT109STEPPUSH_MSG.extensions = {}
+Activity109Module_pb.ACT109MAPIDFIELD.name = "id"
+Activity109Module_pb.ACT109MAPIDFIELD.full_name = ".Act109Map.id"
+Activity109Module_pb.ACT109MAPIDFIELD.number = 1
+Activity109Module_pb.ACT109MAPIDFIELD.index = 0
+Activity109Module_pb.ACT109MAPIDFIELD.label = 1
+Activity109Module_pb.ACT109MAPIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109MAPIDFIELD.default_value = 0
+Activity109Module_pb.ACT109MAPIDFIELD.type = 5
+Activity109Module_pb.ACT109MAPIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.name = "interactObjects"
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.full_name = ".Act109Map.interactObjects"
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.number = 2
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.index = 1
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.label = 3
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.has_default_value = false
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.default_value = {}
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.message_type = Activity109Module_pb.ACT109INTERACTOBJECT_MSG
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.type = 11
+Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD.cpp_type = 10
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.name = "currentEvent"
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.full_name = ".Act109Map.currentEvent"
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.number = 3
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.index = 2
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.label = 1
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.has_default_value = false
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.default_value = nil
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.message_type = Activity109Module_pb.ACT109EVENT_MSG
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.type = 11
+Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD.cpp_type = 10
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.name = "currentRound"
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.full_name = ".Act109Map.currentRound"
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.number = 4
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.index = 3
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.label = 1
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.has_default_value = false
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.default_value = 0
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.type = 5
+Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.name = "finishInteracts"
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.full_name = ".Act109Map.finishInteracts"
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.number = 5
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.index = 4
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.label = 3
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.has_default_value = false
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.default_value = {}
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.type = 5
+Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD.cpp_type = 1
+Activity109Module_pb.ACT109MAP_MSG.name = "Act109Map"
+Activity109Module_pb.ACT109MAP_MSG.full_name = ".Act109Map"
+Activity109Module_pb.ACT109MAP_MSG.nested_types = {}
+Activity109Module_pb.ACT109MAP_MSG.enum_types = {}
+Activity109Module_pb.ACT109MAP_MSG.fields = {
+	Activity109Module_pb.ACT109MAPIDFIELD,
+	Activity109Module_pb.ACT109MAPINTERACTOBJECTSFIELD,
+	Activity109Module_pb.ACT109MAPCURRENTEVENTFIELD,
+	Activity109Module_pb.ACT109MAPCURRENTROUNDFIELD,
+	Activity109Module_pb.ACT109MAPFINISHINTERACTSFIELD
+}
+Activity109Module_pb.ACT109MAP_MSG.is_extendable = false
+Activity109Module_pb.ACT109MAP_MSG.extensions = {}
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.full_name = ".Act109BeginRoundReply.activityId"
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.name = "operations"
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.full_name = ".Act109BeginRoundReply.operations"
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.number = 2
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.index = 1
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.label = 3
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.has_default_value = false
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.default_value = {}
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.message_type = Activity109Module_pb.ACT109OPERATION_MSG
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.type = 11
+Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD.cpp_type = 10
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.name = "Act109BeginRoundReply"
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.full_name = ".Act109BeginRoundReply"
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.nested_types = {}
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.enum_types = {}
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.fields = {
+	Activity109Module_pb.ACT109BEGINROUNDREPLYACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109BEGINROUNDREPLYOPERATIONSFIELD
+}
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.is_extendable = false
+Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG.extensions = {}
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct109InfoRequest.activityId"
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.name = "GetAct109InfoRequest"
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.full_name = ".GetAct109InfoRequest"
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.nested_types = {}
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.enum_types = {}
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.fields = {
+	Activity109Module_pb.GETACT109INFOREQUESTACTIVITYIDFIELD
+}
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.is_extendable = false
+Activity109Module_pb.GETACT109INFOREQUEST_MSG.extensions = {}
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.full_name = ".Act109EventEndRequest.activityId"
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.name = "Act109EventEndRequest"
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.full_name = ".Act109EventEndRequest"
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.nested_types = {}
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.enum_types = {}
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.fields = {
+	Activity109Module_pb.ACT109EVENTENDREQUESTACTIVITYIDFIELD
+}
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.is_extendable = false
+Activity109Module_pb.ACT109EVENTENDREQUEST_MSG.extensions = {}
+Activity109Module_pb.ACT109EVENTPARAMFIELD.name = "param"
+Activity109Module_pb.ACT109EVENTPARAMFIELD.full_name = ".Act109Event.param"
+Activity109Module_pb.ACT109EVENTPARAMFIELD.number = 1
+Activity109Module_pb.ACT109EVENTPARAMFIELD.index = 0
+Activity109Module_pb.ACT109EVENTPARAMFIELD.label = 1
+Activity109Module_pb.ACT109EVENTPARAMFIELD.has_default_value = false
+Activity109Module_pb.ACT109EVENTPARAMFIELD.default_value = ""
+Activity109Module_pb.ACT109EVENTPARAMFIELD.type = 9
+Activity109Module_pb.ACT109EVENTPARAMFIELD.cpp_type = 9
+Activity109Module_pb.ACT109EVENT_MSG.name = "Act109Event"
+Activity109Module_pb.ACT109EVENT_MSG.full_name = ".Act109Event"
+Activity109Module_pb.ACT109EVENT_MSG.nested_types = {}
+Activity109Module_pb.ACT109EVENT_MSG.enum_types = {}
+Activity109Module_pb.ACT109EVENT_MSG.fields = {
+	Activity109Module_pb.ACT109EVENTPARAMFIELD
+}
+Activity109Module_pb.ACT109EVENT_MSG.is_extendable = false
+Activity109Module_pb.ACT109EVENT_MSG.extensions = {}
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.full_name = ".Act109UseItemRequest.activityId"
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.name = "x"
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.full_name = ".Act109UseItemRequest.x"
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.number = 2
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.index = 1
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.label = 1
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.has_default_value = false
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.default_value = 0
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.type = 5
+Activity109Module_pb.ACT109USEITEMREQUESTXFIELD.cpp_type = 1
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.name = "y"
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.full_name = ".Act109UseItemRequest.y"
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.number = 3
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.index = 2
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.label = 1
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.has_default_value = false
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.default_value = 0
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.type = 5
+Activity109Module_pb.ACT109USEITEMREQUESTYFIELD.cpp_type = 1
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.name = "Act109UseItemRequest"
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.full_name = ".Act109UseItemRequest"
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.nested_types = {}
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.enum_types = {}
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.fields = {
+	Activity109Module_pb.ACT109USEITEMREQUESTACTIVITYIDFIELD,
+	Activity109Module_pb.ACT109USEITEMREQUESTXFIELD,
+	Activity109Module_pb.ACT109USEITEMREQUESTYFIELD
+}
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.is_extendable = false
+Activity109Module_pb.ACT109USEITEMREQUEST_MSG.extensions = {}
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.full_name = ".GetAct109InfoReply.activityId"
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.name = "map"
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.full_name = ".GetAct109InfoReply.map"
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.number = 2
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.index = 1
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.label = 1
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.has_default_value = false
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.default_value = nil
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.message_type = Activity109Module_pb.ACT109MAP_MSG
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.type = 11
+Activity109Module_pb.GETACT109INFOREPLYMAPFIELD.cpp_type = 10
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.name = "episodes"
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.full_name = ".GetAct109InfoReply.episodes"
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.number = 3
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.index = 2
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.label = 3
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.has_default_value = false
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.default_value = {}
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.message_type = Activity109Module_pb.ACT109EPISODE_MSG
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.type = 11
+Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD.cpp_type = 10
+Activity109Module_pb.GETACT109INFOREPLY_MSG.name = "GetAct109InfoReply"
+Activity109Module_pb.GETACT109INFOREPLY_MSG.full_name = ".GetAct109InfoReply"
+Activity109Module_pb.GETACT109INFOREPLY_MSG.nested_types = {}
+Activity109Module_pb.GETACT109INFOREPLY_MSG.enum_types = {}
+Activity109Module_pb.GETACT109INFOREPLY_MSG.fields = {
+	Activity109Module_pb.GETACT109INFOREPLYACTIVITYIDFIELD,
+	Activity109Module_pb.GETACT109INFOREPLYMAPFIELD,
+	Activity109Module_pb.GETACT109INFOREPLYEPISODESFIELD
+}
+Activity109Module_pb.GETACT109INFOREPLY_MSG.is_extendable = false
+Activity109Module_pb.GETACT109INFOREPLY_MSG.extensions = {}
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.full_name = ".Act109AbortRequest.activityId"
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.name = "Act109AbortRequest"
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.full_name = ".Act109AbortRequest"
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.nested_types = {}
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.enum_types = {}
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.fields = {
+	Activity109Module_pb.ACT109ABORTREQUESTACTIVITYIDFIELD
+}
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.is_extendable = false
+Activity109Module_pb.ACT109ABORTREQUEST_MSG.extensions = {}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.full_name = ".Act109MarkNewEpisodeRedDotRequest.activityId"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.name = "Act109MarkNewEpisodeRedDotRequest"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.full_name = ".Act109MarkNewEpisodeRedDotRequest"
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.nested_types = {}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.enum_types = {}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.fields = {
+	Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUESTACTIVITYIDFIELD
+}
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.is_extendable = false
+Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG.extensions = {}
+Activity109Module_pb.ACT109EPISODEIDFIELD.name = "id"
+Activity109Module_pb.ACT109EPISODEIDFIELD.full_name = ".Act109Episode.id"
+Activity109Module_pb.ACT109EPISODEIDFIELD.number = 1
+Activity109Module_pb.ACT109EPISODEIDFIELD.index = 0
+Activity109Module_pb.ACT109EPISODEIDFIELD.label = 1
+Activity109Module_pb.ACT109EPISODEIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109EPISODEIDFIELD.default_value = 0
+Activity109Module_pb.ACT109EPISODEIDFIELD.type = 5
+Activity109Module_pb.ACT109EPISODEIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109EPISODESTARFIELD.name = "star"
+Activity109Module_pb.ACT109EPISODESTARFIELD.full_name = ".Act109Episode.star"
+Activity109Module_pb.ACT109EPISODESTARFIELD.number = 2
+Activity109Module_pb.ACT109EPISODESTARFIELD.index = 1
+Activity109Module_pb.ACT109EPISODESTARFIELD.label = 1
+Activity109Module_pb.ACT109EPISODESTARFIELD.has_default_value = false
+Activity109Module_pb.ACT109EPISODESTARFIELD.default_value = 0
+Activity109Module_pb.ACT109EPISODESTARFIELD.type = 5
+Activity109Module_pb.ACT109EPISODESTARFIELD.cpp_type = 1
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.name = "totalCount"
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.full_name = ".Act109Episode.totalCount"
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.number = 3
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.index = 2
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.label = 1
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.has_default_value = false
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.default_value = 0
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.type = 5
+Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD.cpp_type = 1
+Activity109Module_pb.ACT109EPISODE_MSG.name = "Act109Episode"
+Activity109Module_pb.ACT109EPISODE_MSG.full_name = ".Act109Episode"
+Activity109Module_pb.ACT109EPISODE_MSG.nested_types = {}
+Activity109Module_pb.ACT109EPISODE_MSG.enum_types = {}
+Activity109Module_pb.ACT109EPISODE_MSG.fields = {
+	Activity109Module_pb.ACT109EPISODEIDFIELD,
+	Activity109Module_pb.ACT109EPISODESTARFIELD,
+	Activity109Module_pb.ACT109EPISODETOTALCOUNTFIELD
+}
+Activity109Module_pb.ACT109EPISODE_MSG.is_extendable = false
+Activity109Module_pb.ACT109EPISODE_MSG.extensions = {}
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.name = "activityId"
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.full_name = ".Act109AbortReply.activityId"
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.number = 1
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.index = 0
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.label = 1
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.default_value = 0
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.type = 5
+Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109ABORTREPLY_MSG.name = "Act109AbortReply"
+Activity109Module_pb.ACT109ABORTREPLY_MSG.full_name = ".Act109AbortReply"
+Activity109Module_pb.ACT109ABORTREPLY_MSG.nested_types = {}
+Activity109Module_pb.ACT109ABORTREPLY_MSG.enum_types = {}
+Activity109Module_pb.ACT109ABORTREPLY_MSG.fields = {
+	Activity109Module_pb.ACT109ABORTREPLYACTIVITYIDFIELD
+}
+Activity109Module_pb.ACT109ABORTREPLY_MSG.is_extendable = false
+Activity109Module_pb.ACT109ABORTREPLY_MSG.extensions = {}
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.name = "id"
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.full_name = ".Act109InteractObject.id"
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.number = 1
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.index = 0
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.label = 1
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.default_value = 0
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.type = 5
+Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.name = "x"
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.full_name = ".Act109InteractObject.x"
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.number = 2
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.index = 1
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.label = 1
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.has_default_value = false
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.default_value = 0
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.type = 5
+Activity109Module_pb.ACT109INTERACTOBJECTXFIELD.cpp_type = 1
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.name = "y"
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.full_name = ".Act109InteractObject.y"
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.number = 3
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.index = 2
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.label = 1
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.has_default_value = false
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.default_value = 0
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.type = 5
+Activity109Module_pb.ACT109INTERACTOBJECTYFIELD.cpp_type = 1
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.name = "data"
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.full_name = ".Act109InteractObject.data"
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.number = 4
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.index = 3
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.label = 1
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.has_default_value = false
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.default_value = ""
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.type = 9
+Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD.cpp_type = 9
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.name = "direction"
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.full_name = ".Act109InteractObject.direction"
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.number = 5
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.index = 4
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.label = 1
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.has_default_value = false
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.default_value = 0
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.type = 5
+Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD.cpp_type = 1
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.name = "Act109InteractObject"
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.full_name = ".Act109InteractObject"
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.nested_types = {}
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.enum_types = {}
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.fields = {
+	Activity109Module_pb.ACT109INTERACTOBJECTIDFIELD,
+	Activity109Module_pb.ACT109INTERACTOBJECTXFIELD,
+	Activity109Module_pb.ACT109INTERACTOBJECTYFIELD,
+	Activity109Module_pb.ACT109INTERACTOBJECTDATAFIELD,
+	Activity109Module_pb.ACT109INTERACTOBJECTDIRECTIONFIELD
+}
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.is_extendable = false
+Activity109Module_pb.ACT109INTERACTOBJECT_MSG.extensions = {}
+Activity109Module_pb.ACT109OPERATIONIDFIELD.name = "id"
+Activity109Module_pb.ACT109OPERATIONIDFIELD.full_name = ".Act109Operation.id"
+Activity109Module_pb.ACT109OPERATIONIDFIELD.number = 1
+Activity109Module_pb.ACT109OPERATIONIDFIELD.index = 0
+Activity109Module_pb.ACT109OPERATIONIDFIELD.label = 1
+Activity109Module_pb.ACT109OPERATIONIDFIELD.has_default_value = false
+Activity109Module_pb.ACT109OPERATIONIDFIELD.default_value = 0
+Activity109Module_pb.ACT109OPERATIONIDFIELD.type = 5
+Activity109Module_pb.ACT109OPERATIONIDFIELD.cpp_type = 1
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.name = "moveDirection"
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.full_name = ".Act109Operation.moveDirection"
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.number = 2
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.index = 1
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.label = 1
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.has_default_value = false
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.default_value = 0
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.type = 5
+Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD.cpp_type = 1
+Activity109Module_pb.ACT109OPERATION_MSG.name = "Act109Operation"
+Activity109Module_pb.ACT109OPERATION_MSG.full_name = ".Act109Operation"
+Activity109Module_pb.ACT109OPERATION_MSG.nested_types = {}
+Activity109Module_pb.ACT109OPERATION_MSG.enum_types = {}
+Activity109Module_pb.ACT109OPERATION_MSG.fields = {
+	Activity109Module_pb.ACT109OPERATIONIDFIELD,
+	Activity109Module_pb.ACT109OPERATIONMOVEDIRECTIONFIELD
+}
+Activity109Module_pb.ACT109OPERATION_MSG.is_extendable = false
+Activity109Module_pb.ACT109OPERATION_MSG.extensions = {}
+Activity109Module_pb.ACT109STEPPARAMFIELD.name = "param"
+Activity109Module_pb.ACT109STEPPARAMFIELD.full_name = ".Act109Step.param"
+Activity109Module_pb.ACT109STEPPARAMFIELD.number = 1
+Activity109Module_pb.ACT109STEPPARAMFIELD.index = 0
+Activity109Module_pb.ACT109STEPPARAMFIELD.label = 1
+Activity109Module_pb.ACT109STEPPARAMFIELD.has_default_value = false
+Activity109Module_pb.ACT109STEPPARAMFIELD.default_value = ""
+Activity109Module_pb.ACT109STEPPARAMFIELD.type = 9
+Activity109Module_pb.ACT109STEPPARAMFIELD.cpp_type = 9
+Activity109Module_pb.ACT109STEP_MSG.name = "Act109Step"
+Activity109Module_pb.ACT109STEP_MSG.full_name = ".Act109Step"
+Activity109Module_pb.ACT109STEP_MSG.nested_types = {}
+Activity109Module_pb.ACT109STEP_MSG.enum_types = {}
+Activity109Module_pb.ACT109STEP_MSG.fields = {
+	Activity109Module_pb.ACT109STEPPARAMFIELD
+}
+Activity109Module_pb.ACT109STEP_MSG.is_extendable = false
+Activity109Module_pb.ACT109STEP_MSG.extensions = {}
+Activity109Module_pb.Act109AbortReply = protobuf.Message(Activity109Module_pb.ACT109ABORTREPLY_MSG)
+Activity109Module_pb.Act109AbortRequest = protobuf.Message(Activity109Module_pb.ACT109ABORTREQUEST_MSG)
+Activity109Module_pb.Act109BeginRoundReply = protobuf.Message(Activity109Module_pb.ACT109BEGINROUNDREPLY_MSG)
+Activity109Module_pb.Act109BeginRoundRequest = protobuf.Message(Activity109Module_pb.ACT109BEGINROUNDREQUEST_MSG)
+Activity109Module_pb.Act109Episode = protobuf.Message(Activity109Module_pb.ACT109EPISODE_MSG)
+Activity109Module_pb.Act109Event = protobuf.Message(Activity109Module_pb.ACT109EVENT_MSG)
+Activity109Module_pb.Act109EventEndReply = protobuf.Message(Activity109Module_pb.ACT109EVENTENDREPLY_MSG)
+Activity109Module_pb.Act109EventEndRequest = protobuf.Message(Activity109Module_pb.ACT109EVENTENDREQUEST_MSG)
+Activity109Module_pb.Act109InteractObject = protobuf.Message(Activity109Module_pb.ACT109INTERACTOBJECT_MSG)
+Activity109Module_pb.Act109Map = protobuf.Message(Activity109Module_pb.ACT109MAP_MSG)
+Activity109Module_pb.Act109MarkNewEpisodeRedDotReply = protobuf.Message(Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREPLY_MSG)
+Activity109Module_pb.Act109MarkNewEpisodeRedDotRequest = protobuf.Message(Activity109Module_pb.ACT109MARKNEWEPISODEREDDOTREQUEST_MSG)
+Activity109Module_pb.Act109Operation = protobuf.Message(Activity109Module_pb.ACT109OPERATION_MSG)
+Activity109Module_pb.Act109StartEpisodeReply = protobuf.Message(Activity109Module_pb.ACT109STARTEPISODEREPLY_MSG)
+Activity109Module_pb.Act109StartEpisodeRequest = protobuf.Message(Activity109Module_pb.ACT109STARTEPISODEREQUEST_MSG)
+Activity109Module_pb.Act109Step = protobuf.Message(Activity109Module_pb.ACT109STEP_MSG)
+Activity109Module_pb.Act109StepPush = protobuf.Message(Activity109Module_pb.ACT109STEPPUSH_MSG)
+Activity109Module_pb.Act109UseItemReply = protobuf.Message(Activity109Module_pb.ACT109USEITEMREPLY_MSG)
+Activity109Module_pb.Act109UseItemRequest = protobuf.Message(Activity109Module_pb.ACT109USEITEMREQUEST_MSG)
+Activity109Module_pb.GetAct109InfoReply = protobuf.Message(Activity109Module_pb.GETACT109INFOREPLY_MSG)
+Activity109Module_pb.GetAct109InfoRequest = protobuf.Message(Activity109Module_pb.GETACT109INFOREQUEST_MSG)
+
+return Activity109Module_pb

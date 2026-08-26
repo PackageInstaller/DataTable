@@ -1,0 +1,53 @@
+﻿-- chunkname: @modules/proto/BossFightModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.BossFightModule_pb", package.seeall)
+
+local BossFightModule_pb = {}
+
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG = protobuf.Descriptor()
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD = protobuf.FieldDescriptor()
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG = protobuf.Descriptor()
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD = protobuf.FieldDescriptor()
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.name = "chapterId"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.full_name = ".BossFightResetChapterRequest.chapterId"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.number = 1
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.index = 0
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.label = 1
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.has_default_value = false
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.default_value = 0
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.type = 5
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD.cpp_type = 1
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.name = "BossFightResetChapterRequest"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.full_name = ".BossFightResetChapterRequest"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.nested_types = {}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.enum_types = {}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.fields = {
+	BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUESTCHAPTERIDFIELD
+}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.is_extendable = false
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG.extensions = {}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.name = "chapterId"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.full_name = ".BossFightResetChapterReply.chapterId"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.number = 1
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.index = 0
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.label = 1
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.has_default_value = false
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.default_value = 0
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.type = 5
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD.cpp_type = 1
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.name = "BossFightResetChapterReply"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.full_name = ".BossFightResetChapterReply"
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.nested_types = {}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.enum_types = {}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.fields = {
+	BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLYCHAPTERIDFIELD
+}
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.is_extendable = false
+BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG.extensions = {}
+BossFightModule_pb.BossFightResetChapterReply = protobuf.Message(BossFightModule_pb.BOSSFIGHTRESETCHAPTERREPLY_MSG)
+BossFightModule_pb.BossFightResetChapterRequest = protobuf.Message(BossFightModule_pb.BOSSFIGHTRESETCHAPTERREQUEST_MSG)
+
+return BossFightModule_pb

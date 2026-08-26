@@ -1,0 +1,513 @@
+﻿-- chunkname: @modules/proto/Rouge2OutsideModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Rouge2OutsideModule_pb", package.seeall)
+
+local Rouge2OutsideModule_pb = {}
+
+Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB = require("modules.proto.Rouge2OutsideDef_pb")
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG = protobuf.Descriptor()
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD = protobuf.FieldDescriptor()
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.name = "geniusId"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.full_name = ".Rouge2ActiveGeniusRequest.geniusId"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.name = "Rouge2ActiveGeniusRequest"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.full_name = ".Rouge2ActiveGeniusRequest"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUESTGENIUSIDFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.name = "formula"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.full_name = ".Rouge2AlchemyRequest.formula"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.name = "subMaterial"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.full_name = ".Rouge2AlchemyRequest.subMaterial"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.number = 2
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.index = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.name = "Rouge2AlchemyRequest"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.full_name = ".Rouge2AlchemyRequest"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTFORMULAFIELD,
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUESTSUBMATERIALFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.name = "alchemyInfo"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.full_name = ".Rouge2AlchemyReply.alchemyInfo"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2ALCHEMYINFO_MSG
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.type = 11
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.name = "spEventNum"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.full_name = ".Rouge2AlchemyReply.spEventNum"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.number = 2
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.index = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.name = "returnMaterial"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.full_name = ".Rouge2AlchemyReply.returnMaterial"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.number = 3
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.index = 2
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.name = "subExtraEffect"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.full_name = ".Rouge2AlchemyReply.subExtraEffect"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.number = 4
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.index = 3
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.name = "mainUpdateEffect"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.full_name = ".Rouge2AlchemyReply.mainUpdateEffect"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.number = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.index = 4
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.name = "Rouge2AlchemyReply"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.full_name = ".Rouge2AlchemyReply"
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYALCHEMYINFOFIELD,
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSPEVENTNUMFIELD,
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYRETURNMATERIALFIELD,
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYSUBEXTRAEFFECTFIELD,
+	Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLYMAINUPDATEEFFECTFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.name = "alchemyInfo"
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.full_name = ".Rouge2CancelAlchemyReply.alchemyInfo"
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2ALCHEMYINFO_MSG
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.type = 11
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.name = "Rouge2CancelAlchemyReply"
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.full_name = ".Rouge2CancelAlchemyReply"
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLYALCHEMYINFOFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.name = "GetRouge2OutsideInfoRequest"
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.full_name = ".GetRouge2OutsideInfoRequest"
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.fields = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.name = "index"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.full_name = ".Rouge2ChoiceSaveRequest.index"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.name = "Rouge2ChoiceSaveRequest"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.full_name = ".Rouge2ChoiceSaveRequest"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUESTINDEXFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.name = "bossId"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.full_name = ".Rouge2BossRewardRequest.bossId"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.name = "Rouge2BossRewardRequest"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.full_name = ".Rouge2BossRewardRequest"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUESTBOSSIDFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.name = "geniusId"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.full_name = ".Rouge2ActiveGeniusReply.geniusId"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.name = "geniusIds"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.full_name = ".Rouge2ActiveGeniusReply.geniusIds"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.number = 2
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.index = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.name = "Rouge2ActiveGeniusReply"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.full_name = ".Rouge2ActiveGeniusReply"
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDFIELD,
+	Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLYGENIUSIDSFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.name = "index"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.full_name = ".Rouge2SaveContextRequest.index"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.name = "Rouge2SaveContextRequest"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.full_name = ".Rouge2SaveContextRequest"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUESTINDEXFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.name = "Rouge2CancelAlchemyRequest"
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.full_name = ".Rouge2CancelAlchemyRequest"
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.fields = {}
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.name = "geniusPoint"
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.full_name = ".Rouge2UpdateGeniusPointPush.geniusPoint"
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.name = "Rouge2UpdateGeniusPointPush"
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.full_name = ".Rouge2UpdateGeniusPointPush"
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.name = "bossBattleInfo"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.full_name = ".Rouge2BossRewardReply.bossBattleInfo"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2BOSSBATTLEINFO_MSG
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.type = 11
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.name = "Rouge2BossRewardReply"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.full_name = ".Rouge2BossRewardReply"
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLYBOSSBATTLEINFOFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.name = "Rouge2GetUnlockCollectionsRequest"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.full_name = ".Rouge2GetUnlockCollectionsRequest"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.fields = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.name = "id"
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.full_name = ".Rouge2RewardRequest.id"
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.name = "num"
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.full_name = ".Rouge2RewardRequest.num"
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.number = 2
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.index = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.name = "Rouge2RewardRequest"
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.full_name = ".Rouge2RewardRequest"
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTIDFIELD,
+	Rouge2OutsideModule_pb.ROUGE2REWARDREQUESTNUMFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.name = "goodsInfo"
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.full_name = ".Rouge2RewardReply.goodsInfo"
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2REWARDINFO_MSG
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.type = 11
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.name = "num"
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.full_name = ".Rouge2RewardReply.num"
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.number = 2
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.index = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.name = "Rouge2RewardReply"
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.full_name = ".Rouge2RewardReply"
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2REWARDREPLYGOODSINFOFIELD,
+	Rouge2OutsideModule_pb.ROUGE2REWARDREPLYNUMFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.name = "rewardPoint"
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.full_name = ".Rouge2UpdateRewardPointPush.rewardPoint"
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.default_value = 0
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.name = "Rouge2UpdateRewardPointPush"
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.full_name = ".Rouge2UpdateRewardPointPush"
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSHREWARDPOINTFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.name = "bossBattleInfo"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.full_name = ".Rouge2SaveContextReply.bossBattleInfo"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2BOSSBATTLEINFO_MSG
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.type = 11
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.name = "Rouge2SaveContextReply"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.full_name = ".Rouge2SaveContextReply"
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLYBOSSBATTLEINFOFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.name = "bossBattleInfo"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.full_name = ".Rouge2ChoiceSaveReply.bossBattleInfo"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.label = 1
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2BOSSBATTLEINFO_MSG
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.type = 11
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.name = "Rouge2ChoiceSaveReply"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.full_name = ".Rouge2ChoiceSaveReply"
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLYBOSSBATTLEINFOFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.name = "unlockRelicsIds"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.full_name = ".Rouge2GetUnlockCollectionsReply.unlockRelicsIds"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.number = 1
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.index = 0
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.name = "unlockBuffIds"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.full_name = ".Rouge2GetUnlockCollectionsReply.unlockBuffIds"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.number = 2
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.index = 1
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.name = "unlockActiveSkillIds"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.full_name = ".Rouge2GetUnlockCollectionsReply.unlockActiveSkillIds"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.number = 3
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.index = 2
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.label = 3
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.has_default_value = false
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.default_value = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.type = 5
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD.cpp_type = 1
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.name = "Rouge2GetUnlockCollectionsReply"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.full_name = ".Rouge2GetUnlockCollectionsReply"
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKRELICSIDSFIELD,
+	Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKBUFFIDSFIELD,
+	Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLYUNLOCKACTIVESKILLIDSFIELD
+}
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.name = "outsideInfo"
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.full_name = ".GetRouge2OutsideInfoReply.outsideInfo"
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.number = 1
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.index = 0
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.label = 1
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.has_default_value = false
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.default_value = nil
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.message_type = Rouge2OutsideModule_pb.ROUGE2OUTSIDEDEF_PB.ROUGE2OUTSIDEINFO_MSG
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.type = 11
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD.cpp_type = 10
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.name = "GetRouge2OutsideInfoReply"
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.full_name = ".GetRouge2OutsideInfoReply"
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.nested_types = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.enum_types = {}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.fields = {
+	Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLYOUTSIDEINFOFIELD
+}
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.is_extendable = false
+Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG.extensions = {}
+Rouge2OutsideModule_pb.GetRouge2OutsideInfoReply = protobuf.Message(Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREPLY_MSG)
+Rouge2OutsideModule_pb.GetRouge2OutsideInfoRequest = protobuf.Message(Rouge2OutsideModule_pb.GETROUGE2OUTSIDEINFOREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2ActiveGeniusReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2ActiveGeniusRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2ACTIVEGENIUSREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2AlchemyReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2ALCHEMYREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2AlchemyRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2ALCHEMYREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2BossRewardReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2BossRewardRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2BOSSREWARDREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2CancelAlchemyReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2CancelAlchemyRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2CANCELALCHEMYREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2ChoiceSaveReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2ChoiceSaveRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2CHOICESAVEREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2GetUnlockCollectionsReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2GetUnlockCollectionsRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2GETUNLOCKCOLLECTIONSREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2RewardReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2REWARDREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2RewardRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2REWARDREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2SaveContextReply = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREPLY_MSG)
+Rouge2OutsideModule_pb.Rouge2SaveContextRequest = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2SAVECONTEXTREQUEST_MSG)
+Rouge2OutsideModule_pb.Rouge2UpdateGeniusPointPush = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2UPDATEGENIUSPOINTPUSH_MSG)
+Rouge2OutsideModule_pb.Rouge2UpdateRewardPointPush = protobuf.Message(Rouge2OutsideModule_pb.ROUGE2UPDATEREWARDPOINTPUSH_MSG)
+
+return Rouge2OutsideModule_pb

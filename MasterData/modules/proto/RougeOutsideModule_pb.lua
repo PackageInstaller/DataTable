@@ -1,0 +1,902 @@
+﻿-- chunkname: @modules/proto/RougeOutsideModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.RougeOutsideModule_pb", package.seeall)
+
+local RougeOutsideModule_pb = {}
+
+RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB = require("modules.proto.RougeOutsideDef_pb")
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG = protobuf.Descriptor()
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD = protobuf.FieldDescriptor()
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.full_name = ".RougeGetNewReddotInfoReply.season"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.name = "newReddots"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.full_name = ".RougeGetNewReddotInfoReply.newReddots"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.number = 2
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.index = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.label = 3
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.default_value = {}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.message_type = RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB.NEWREDDOTNO_MSG
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.type = 11
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD.cpp_type = 10
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.name = "RougeGetNewReddotInfoReply"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.full_name = ".RougeGetNewReddotInfoReply"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLYNEWREDDOTSFIELD
+}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.full_name = ".RougeLimiterSettingSaveReply.season"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.name = "clientNO"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.full_name = ".RougeLimiterSettingSaveReply.clientNO"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.number = 2
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.index = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.default_value = nil
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.message_type = RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB.ROUGELIMITERCLIENTNO_MSG
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.type = 11
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD.cpp_type = 10
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.name = "RougeLimiterSettingSaveReply"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.full_name = ".RougeLimiterSettingSaveReply"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLYCLIENTNOFIELD
+}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.full_name = ".RougeUnlockStoryReply.season"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.name = "storyId"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.full_name = ".RougeUnlockStoryReply.storyId"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.name = "RougeUnlockStoryReply"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.full_name = ".RougeUnlockStoryReply"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLYSTORYIDFIELD
+}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.full_name = ".RougeLimiterUnlockBuffReply.season"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.name = "limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.full_name = ".RougeLimiterUnlockBuffReply.limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.name = "RougeLimiterUnlockBuffReply"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.full_name = ".RougeLimiterUnlockBuffReply"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLYLIMITBUFFIDFIELD
+}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.full_name = ".RougeLimiterUnlockBuffRequest.season"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.name = "limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.full_name = ".RougeLimiterUnlockBuffRequest.limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.name = "RougeLimiterUnlockBuffRequest"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.full_name = ".RougeLimiterUnlockBuffRequest"
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUESTLIMITBUFFIDFIELD
+}
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.full_name = ".RougeDLCSettingSaveRequest.season"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.name = "dlcVersionIds"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.full_name = ".RougeDLCSettingSaveRequest.dlcVersionIds"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.number = 2
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.index = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.label = 3
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.default_value = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.type = 5
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.name = "RougeDLCSettingSaveRequest"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.full_name = ".RougeDLCSettingSaveRequest"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUESTDLCVERSIONIDSFIELD
+}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.full_name = ".RougeMarkGeniusNewStageReply.season"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.name = "RougeMarkGeniusNewStageReply"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.full_name = ".RougeMarkGeniusNewStageReply"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLYSEASONFIELD
+}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.full_name = ".RougeMarkGeniusNewStageRequest.season"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.name = "RougeMarkGeniusNewStageRequest"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.full_name = ".RougeMarkGeniusNewStageRequest"
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUESTSEASONFIELD
+}
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.full_name = ".RougeReceivePointBonusReply.season"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.name = "bonusId"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.full_name = ".RougeReceivePointBonusReply.bonusId"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.name = "bonusStage"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.full_name = ".RougeReceivePointBonusReply.bonusStage"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.number = 3
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.index = 2
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.label = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.default_value = nil
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.message_type = RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB.ROUGEOUTSIDEBONUSSTAGENO_MSG
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.type = 11
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD.cpp_type = 10
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.name = "RougeReceivePointBonusReply"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.full_name = ".RougeReceivePointBonusReply"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSIDFIELD,
+	RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLYBONUSSTAGEFIELD
+}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.full_name = ".RougeMarkNewReddotReply.season"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.name = "type"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.full_name = ".RougeMarkNewReddotReply.type"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.number = 2
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.index = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.name = "id"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.full_name = ".RougeMarkNewReddotReply.id"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.number = 3
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.index = 2
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.name = "RougeMarkNewReddotReply"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.full_name = ".RougeMarkNewReddotReply"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYTYPEFIELD,
+	RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLYIDFIELD
+}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.full_name = ".RougeMarkBonusNewStageRequest.season"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.name = "RougeMarkBonusNewStageRequest"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.full_name = ".RougeMarkBonusNewStageRequest"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUESTSEASONFIELD
+}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.full_name = ".RougeActiveGeniusRequest.season"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.name = "geniusId"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.full_name = ".RougeActiveGeniusRequest.geniusId"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.name = "RougeActiveGeniusRequest"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.full_name = ".RougeActiveGeniusRequest"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUESTGENIUSIDFIELD
+}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.full_name = ".RougeReddotUpdatePush.season"
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.name = "newReddots"
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.full_name = ".RougeReddotUpdatePush.newReddots"
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.number = 2
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.index = 1
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.label = 3
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.default_value = {}
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.message_type = RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB.NEWREDDOTNO_MSG
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.type = 11
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD.cpp_type = 10
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.name = "RougeReddotUpdatePush"
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.full_name = ".RougeReddotUpdatePush"
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSHNEWREDDOTSFIELD
+}
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.full_name = ".RougeActiveGeniusReply.season"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.name = "geniusId"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.full_name = ".RougeActiveGeniusReply.geniusId"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.name = "geniusIds"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.full_name = ".RougeActiveGeniusReply.geniusIds"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.number = 3
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.index = 2
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.label = 3
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.default_value = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.type = 5
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.name = "RougeActiveGeniusReply"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.full_name = ".RougeActiveGeniusReply"
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDFIELD,
+	RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLYGENIUSIDSFIELD
+}
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.full_name = ".RougeDLCSettingSaveReply.season"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.name = "dlcVersionIds"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.full_name = ".RougeDLCSettingSaveReply.dlcVersionIds"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.number = 2
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.index = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.label = 3
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.default_value = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.type = 5
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.name = "RougeDLCSettingSaveReply"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.full_name = ".RougeDLCSettingSaveReply"
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLYDLCVERSIONIDSFIELD
+}
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.full_name = ".RougeLimiterSpeedUpBuffCdReply.season"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.name = "limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.full_name = ".RougeLimiterSpeedUpBuffCdReply.limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.name = "RougeLimiterSpeedUpBuffCdReply"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.full_name = ".RougeLimiterSpeedUpBuffCdReply"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLYLIMITBUFFIDFIELD
+}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.full_name = ".RougeReceivePointBonusRequest.season"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.name = "bonusId"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.full_name = ".RougeReceivePointBonusRequest.bonusId"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.name = "RougeReceivePointBonusRequest"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.full_name = ".RougeReceivePointBonusRequest"
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUESTBONUSIDFIELD
+}
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.full_name = ".RougeGetUnlockCollectionsRequest.season"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.name = "RougeGetUnlockCollectionsRequest"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.full_name = ".RougeGetUnlockCollectionsRequest"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUESTSEASONFIELD
+}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.full_name = ".RougeLimiterSpeedUpBuffCdRequest.season"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.name = "limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.full_name = ".RougeLimiterSpeedUpBuffCdRequest.limitBuffId"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.name = "RougeLimiterSpeedUpBuffCdRequest"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.full_name = ".RougeLimiterSpeedUpBuffCdRequest"
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUESTLIMITBUFFIDFIELD
+}
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.full_name = ".RougeMarkNewReddotRequest.season"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.name = "type"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.full_name = ".RougeMarkNewReddotRequest.type"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.number = 2
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.index = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.name = "id"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.full_name = ".RougeMarkNewReddotRequest.id"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.number = 3
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.index = 2
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.name = "RougeMarkNewReddotRequest"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.full_name = ".RougeMarkNewReddotRequest"
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTTYPEFIELD,
+	RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUESTIDFIELD
+}
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.full_name = ".RougeUpdateGeniusPointPush.season"
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.name = "geniusPoint"
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.full_name = ".RougeUpdateGeniusPointPush.geniusPoint"
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.number = 2
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.index = 1
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.name = "RougeUpdateGeniusPointPush"
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.full_name = ".RougeUpdateGeniusPointPush"
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSHGENIUSPOINTFIELD
+}
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.full_name = ".RougeGetUnlockCollectionsReply.season"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.name = "unlockCollectionIds"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.full_name = ".RougeGetUnlockCollectionsReply.unlockCollectionIds"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.number = 2
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.index = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.label = 3
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.default_value = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.type = 5
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.name = "RougeGetUnlockCollectionsReply"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.full_name = ".RougeGetUnlockCollectionsReply"
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLYUNLOCKCOLLECTIONIDSFIELD
+}
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.full_name = ".RougeUnlockStoryRequest.season"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.name = "storyId"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.full_name = ".RougeUnlockStoryRequest.storyId"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.number = 2
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.index = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.name = "RougeUnlockStoryRequest"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.full_name = ".RougeUnlockStoryRequest"
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUESTSTORYIDFIELD
+}
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.full_name = ".GetRougeOutsideInfoRequest.season"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.name = "GetRougeOutsideInfoRequest"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.full_name = ".GetRougeOutsideInfoRequest"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUESTSEASONFIELD
+}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.full_name = ".RougeMarkBonusNewStageReply.season"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.name = "RougeMarkBonusNewStageReply"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.full_name = ".RougeMarkBonusNewStageReply"
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLYSEASONFIELD
+}
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.full_name = ".RougeGetNewReddotInfoRequest.season"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.name = "RougeGetNewReddotInfoRequest"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.full_name = ".RougeGetNewReddotInfoRequest"
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUESTSEASONFIELD
+}
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.full_name = ".RougeLimiterSettingSaveRequest.season"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.name = "clientNO"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.full_name = ".RougeLimiterSettingSaveRequest.clientNO"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.number = 2
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.index = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.label = 1
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.default_value = nil
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.message_type = RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB.ROUGELIMITERCLIENTNO_MSG
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.type = 11
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD.cpp_type = 10
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.name = "RougeLimiterSettingSaveRequest"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.full_name = ".RougeLimiterSettingSaveRequest"
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.fields = {
+	RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTSEASONFIELD,
+	RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUESTCLIENTNOFIELD
+}
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG.extensions = {}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.name = "rougeInfo"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.full_name = ".GetRougeOutsideInfoReply.rougeInfo"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.number = 1
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.index = 0
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.label = 1
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.has_default_value = false
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.default_value = nil
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.message_type = RougeOutsideModule_pb.ROUGEOUTSIDEDEF_PB.ROUGEOUTSIDEINFO_MSG
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.type = 11
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD.cpp_type = 10
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.name = "GetRougeOutsideInfoReply"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.full_name = ".GetRougeOutsideInfoReply"
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.nested_types = {}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.enum_types = {}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.fields = {
+	RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLYROUGEINFOFIELD
+}
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.is_extendable = false
+RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG.extensions = {}
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.name = "season"
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.full_name = ".RougeUpdatePointPush.season"
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.number = 1
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.index = 0
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.name = "point"
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.full_name = ".RougeUpdatePointPush.point"
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.number = 2
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.index = 1
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.label = 1
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.has_default_value = false
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.default_value = 0
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.type = 5
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD.cpp_type = 1
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.name = "RougeUpdatePointPush"
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.full_name = ".RougeUpdatePointPush"
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.nested_types = {}
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.enum_types = {}
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.fields = {
+	RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHSEASONFIELD,
+	RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSHPOINTFIELD
+}
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.is_extendable = false
+RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG.extensions = {}
+RougeOutsideModule_pb.GetRougeOutsideInfoReply = protobuf.Message(RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREPLY_MSG)
+RougeOutsideModule_pb.GetRougeOutsideInfoRequest = protobuf.Message(RougeOutsideModule_pb.GETROUGEOUTSIDEINFOREQUEST_MSG)
+RougeOutsideModule_pb.RougeActiveGeniusReply = protobuf.Message(RougeOutsideModule_pb.ROUGEACTIVEGENIUSREPLY_MSG)
+RougeOutsideModule_pb.RougeActiveGeniusRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEACTIVEGENIUSREQUEST_MSG)
+RougeOutsideModule_pb.RougeDLCSettingSaveReply = protobuf.Message(RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREPLY_MSG)
+RougeOutsideModule_pb.RougeDLCSettingSaveRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEDLCSETTINGSAVEREQUEST_MSG)
+RougeOutsideModule_pb.RougeGetNewReddotInfoReply = protobuf.Message(RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREPLY_MSG)
+RougeOutsideModule_pb.RougeGetNewReddotInfoRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEGETNEWREDDOTINFOREQUEST_MSG)
+RougeOutsideModule_pb.RougeGetUnlockCollectionsReply = protobuf.Message(RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREPLY_MSG)
+RougeOutsideModule_pb.RougeGetUnlockCollectionsRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEGETUNLOCKCOLLECTIONSREQUEST_MSG)
+RougeOutsideModule_pb.RougeLimiterSettingSaveReply = protobuf.Message(RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREPLY_MSG)
+RougeOutsideModule_pb.RougeLimiterSettingSaveRequest = protobuf.Message(RougeOutsideModule_pb.ROUGELIMITERSETTINGSAVEREQUEST_MSG)
+RougeOutsideModule_pb.RougeLimiterSpeedUpBuffCdReply = protobuf.Message(RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREPLY_MSG)
+RougeOutsideModule_pb.RougeLimiterSpeedUpBuffCdRequest = protobuf.Message(RougeOutsideModule_pb.ROUGELIMITERSPEEDUPBUFFCDREQUEST_MSG)
+RougeOutsideModule_pb.RougeLimiterUnlockBuffReply = protobuf.Message(RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREPLY_MSG)
+RougeOutsideModule_pb.RougeLimiterUnlockBuffRequest = protobuf.Message(RougeOutsideModule_pb.ROUGELIMITERUNLOCKBUFFREQUEST_MSG)
+RougeOutsideModule_pb.RougeMarkBonusNewStageReply = protobuf.Message(RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREPLY_MSG)
+RougeOutsideModule_pb.RougeMarkBonusNewStageRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEMARKBONUSNEWSTAGEREQUEST_MSG)
+RougeOutsideModule_pb.RougeMarkGeniusNewStageReply = protobuf.Message(RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREPLY_MSG)
+RougeOutsideModule_pb.RougeMarkGeniusNewStageRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEMARKGENIUSNEWSTAGEREQUEST_MSG)
+RougeOutsideModule_pb.RougeMarkNewReddotReply = protobuf.Message(RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREPLY_MSG)
+RougeOutsideModule_pb.RougeMarkNewReddotRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEMARKNEWREDDOTREQUEST_MSG)
+RougeOutsideModule_pb.RougeReceivePointBonusReply = protobuf.Message(RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREPLY_MSG)
+RougeOutsideModule_pb.RougeReceivePointBonusRequest = protobuf.Message(RougeOutsideModule_pb.ROUGERECEIVEPOINTBONUSREQUEST_MSG)
+RougeOutsideModule_pb.RougeReddotUpdatePush = protobuf.Message(RougeOutsideModule_pb.ROUGEREDDOTUPDATEPUSH_MSG)
+RougeOutsideModule_pb.RougeUnlockStoryReply = protobuf.Message(RougeOutsideModule_pb.ROUGEUNLOCKSTORYREPLY_MSG)
+RougeOutsideModule_pb.RougeUnlockStoryRequest = protobuf.Message(RougeOutsideModule_pb.ROUGEUNLOCKSTORYREQUEST_MSG)
+RougeOutsideModule_pb.RougeUpdateGeniusPointPush = protobuf.Message(RougeOutsideModule_pb.ROUGEUPDATEGENIUSPOINTPUSH_MSG)
+RougeOutsideModule_pb.RougeUpdatePointPush = protobuf.Message(RougeOutsideModule_pb.ROUGEUPDATEPOINTPUSH_MSG)
+
+return RougeOutsideModule_pb

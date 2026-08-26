@@ -1,0 +1,71 @@
+﻿-- chunkname: @modules/logic/rouge/map/define/RougeMapEvent.lua
+
+module("modules.logic.rouge.map.define.RougeMapEvent", package.seeall)
+
+local RougeMapEvent = _M
+local _uid = 1
+
+local function E(name)
+	assert(RougeMapEvent[name] == nil, "[RougeMapEvent] error redefined RougeMapEvent." .. name)
+
+	RougeMapEvent[name] = _uid
+	_uid = _uid + 1
+end
+
+E("onLoadMapDone")
+E("onInitMapInfoDone")
+E("onCreateMapDone")
+E("onCreateMapDoneFlowDone")
+E("onUpdateMapInfo")
+E("onBeforeChangeMapInfo")
+E("onChangeMapInfo")
+E("onBeforeNormalToMiddle")
+E("onMapPosChange")
+E("onCameraSizeChange")
+E("focusChangeCameraSize")
+E("onSelectNode")
+E("onNodeArriveStatusChange")
+E("onBeforeSendMoveRpc")
+E("onNormalActorBeforeMove")
+E("onMiddleActorBeforeMove")
+E("onActorPosChange")
+E("onActorMovingDone")
+E("onBeforeActorMoveToEnd")
+E("onEndActorMoveToEnd")
+E("onPathSelectMapFocus")
+E("onPathSelectMapFocusDone")
+E("onManualExitMap")
+E("onAcceptEntrust")
+E("onEntrustChange")
+E("onSelectLayerChange")
+E("onShowContinueFight")
+E("onPopViewDone")
+E("onNodeEventChange")
+E("onNodeEventStatusChange")
+E("onFocusNormalLayerActor")
+E("onChoiceItemStatusChange")
+E("onClickChoiceDetail")
+E("onChoiceEventChange")
+E("onChoiceViewStatusChange")
+E("onRefreshChoiceStore")
+E("onClickPieceStoreDetail")
+E("onExitPieceChoiceEvent")
+E("triggerInteract")
+E("onClearInteract")
+E("onBuyGoods")
+E("onReceiveChoiceEvent")
+E("onSelectLossCollectionChange")
+E("onReceivePieceChoiceEvent")
+E("onRefreshPieceChoiceEvent")
+E("onSelectPieceChoice")
+E("onSelectDropChange")
+E("onTriggerShortVoice")
+E("onEndTriggerShortVoice")
+E("onTeamLifeChange")
+E("onShowTip")
+E("onHideTip")
+E("onFinishViewDone")
+E("OnGuideEnterNormalRougeMap")
+E("OnGuideEnterMiddleRougeMap")
+
+return RougeMapEvent

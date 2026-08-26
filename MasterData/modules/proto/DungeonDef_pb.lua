@@ -1,0 +1,206 @@
+﻿-- chunkname: @modules/proto/DungeonDef_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.DungeonDef_pb", package.seeall)
+
+local DungeonDef_pb = {}
+
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG = protobuf.Descriptor()
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG = protobuf.Descriptor()
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEON_MSG = protobuf.Descriptor()
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONSTARFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD = protobuf.FieldDescriptor()
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.name = "chapterType"
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.full_name = ".UserChapterTypeNum.chapterType"
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.number = 1
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.index = 0
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.label = 1
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.has_default_value = false
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.default_value = 0
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.type = 5
+DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD.cpp_type = 1
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.name = "todayPassNum"
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.full_name = ".UserChapterTypeNum.todayPassNum"
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.number = 2
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.index = 1
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.label = 1
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.has_default_value = false
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.default_value = 0
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.type = 5
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD.cpp_type = 1
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.name = "todayTotalNum"
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.full_name = ".UserChapterTypeNum.todayTotalNum"
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.number = 3
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.index = 2
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.label = 1
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.has_default_value = false
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.default_value = 0
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.type = 5
+DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD.cpp_type = 1
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.name = "UserChapterTypeNum"
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.full_name = ".UserChapterTypeNum"
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.nested_types = {}
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.enum_types = {}
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.fields = {
+	DungeonDef_pb.USERCHAPTERTYPENUMCHAPTERTYPEFIELD,
+	DungeonDef_pb.USERCHAPTERTYPENUMTODAYPASSNUMFIELD,
+	DungeonDef_pb.USERCHAPTERTYPENUMTODAYTOTALNUMFIELD
+}
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.is_extendable = false
+DungeonDef_pb.USERCHAPTERTYPENUM_MSG.extensions = {}
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.name = "chapterId"
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.full_name = ".UserDungeonSpStatus.chapterId"
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.number = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.index = 0
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.label = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.type = 5
+DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.name = "episodeId"
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.full_name = ".UserDungeonSpStatus.episodeId"
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.number = 2
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.index = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.label = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.type = 5
+DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.name = "status"
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.full_name = ".UserDungeonSpStatus.status"
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.number = 3
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.index = 2
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.label = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.type = 5
+DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.name = "refreshTime"
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.full_name = ".UserDungeonSpStatus.refreshTime"
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.number = 4
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.index = 3
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.label = 1
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.type = 4
+DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD.cpp_type = 4
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.name = "UserDungeonSpStatus"
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.full_name = ".UserDungeonSpStatus"
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.nested_types = {}
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.enum_types = {}
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.fields = {
+	DungeonDef_pb.USERDUNGEONSPSTATUSCHAPTERIDFIELD,
+	DungeonDef_pb.USERDUNGEONSPSTATUSEPISODEIDFIELD,
+	DungeonDef_pb.USERDUNGEONSPSTATUSSTATUSFIELD,
+	DungeonDef_pb.USERDUNGEONSPSTATUSREFRESHTIMEFIELD
+}
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.is_extendable = false
+DungeonDef_pb.USERDUNGEONSPSTATUS_MSG.extensions = {}
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.name = "chapterId"
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.full_name = ".UserDungeon.chapterId"
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.number = 1
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.index = 0
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.label = 1
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.type = 5
+DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.name = "episodeId"
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.full_name = ".UserDungeon.episodeId"
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.number = 2
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.index = 1
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.label = 1
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.type = 5
+DungeonDef_pb.USERDUNGEONEPISODEIDFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONSTARFIELD.name = "star"
+DungeonDef_pb.USERDUNGEONSTARFIELD.full_name = ".UserDungeon.star"
+DungeonDef_pb.USERDUNGEONSTARFIELD.number = 3
+DungeonDef_pb.USERDUNGEONSTARFIELD.index = 2
+DungeonDef_pb.USERDUNGEONSTARFIELD.label = 1
+DungeonDef_pb.USERDUNGEONSTARFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONSTARFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONSTARFIELD.type = 5
+DungeonDef_pb.USERDUNGEONSTARFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.name = "challengeCount"
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.full_name = ".UserDungeon.challengeCount"
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.number = 4
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.index = 3
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.label = 1
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.type = 5
+DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.name = "hasRecord"
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.full_name = ".UserDungeon.hasRecord"
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.number = 5
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.index = 4
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.label = 1
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.default_value = false
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.type = 8
+DungeonDef_pb.USERDUNGEONHASRECORDFIELD.cpp_type = 7
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.name = "leftReturnAllNum"
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.full_name = ".UserDungeon.leftReturnAllNum"
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.number = 6
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.index = 5
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.label = 1
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.type = 5
+DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.name = "todayPassNum"
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.full_name = ".UserDungeon.todayPassNum"
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.number = 7
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.index = 6
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.label = 1
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.type = 5
+DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.name = "todayTotalNum"
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.full_name = ".UserDungeon.todayTotalNum"
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.number = 8
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.index = 7
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.label = 1
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.has_default_value = false
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.default_value = 0
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.type = 5
+DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD.cpp_type = 1
+DungeonDef_pb.USERDUNGEON_MSG.name = "UserDungeon"
+DungeonDef_pb.USERDUNGEON_MSG.full_name = ".UserDungeon"
+DungeonDef_pb.USERDUNGEON_MSG.nested_types = {}
+DungeonDef_pb.USERDUNGEON_MSG.enum_types = {}
+DungeonDef_pb.USERDUNGEON_MSG.fields = {
+	DungeonDef_pb.USERDUNGEONCHAPTERIDFIELD,
+	DungeonDef_pb.USERDUNGEONEPISODEIDFIELD,
+	DungeonDef_pb.USERDUNGEONSTARFIELD,
+	DungeonDef_pb.USERDUNGEONCHALLENGECOUNTFIELD,
+	DungeonDef_pb.USERDUNGEONHASRECORDFIELD,
+	DungeonDef_pb.USERDUNGEONLEFTRETURNALLNUMFIELD,
+	DungeonDef_pb.USERDUNGEONTODAYPASSNUMFIELD,
+	DungeonDef_pb.USERDUNGEONTODAYTOTALNUMFIELD
+}
+DungeonDef_pb.USERDUNGEON_MSG.is_extendable = false
+DungeonDef_pb.USERDUNGEON_MSG.extensions = {}
+DungeonDef_pb.UserChapterTypeNum = protobuf.Message(DungeonDef_pb.USERCHAPTERTYPENUM_MSG)
+DungeonDef_pb.UserDungeon = protobuf.Message(DungeonDef_pb.USERDUNGEON_MSG)
+DungeonDef_pb.UserDungeonSpStatus = protobuf.Message(DungeonDef_pb.USERDUNGEONSPSTATUS_MSG)
+
+return DungeonDef_pb

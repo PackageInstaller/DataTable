@@ -1,0 +1,423 @@
+﻿-- chunkname: @modules/proto/ArcadeOutSideModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.ArcadeOutSideModule_pb", package.seeall)
+
+local ArcadeOutSideModule_pb = {}
+
+ArcadeOutSideModule_pb.ARCADEDEF_PB = require("modules.proto.ArcadeDef_pb")
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG = protobuf.Descriptor()
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD = protobuf.FieldDescriptor()
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.name = "type"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.full_name = ".ArcadeClearNewBookRequest.type"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.name = "ids"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.full_name = ".ArcadeClearNewBookRequest.ids"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.label = 3
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.default_value = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.name = "ArcadeClearNewBookRequest"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.full_name = ".ArcadeClearNewBookRequest"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTTYPEFIELD,
+	ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUESTIDSFIELD
+}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.name = "info"
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.full_name = ".ArcadeGetOutSideInfoReply.info"
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.default_value = nil
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.message_type = ArcadeOutSideModule_pb.ARCADEDEF_PB.ARCADEOUTSIDEINFO_MSG
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.type = 11
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD.cpp_type = 10
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.name = "ArcadeGetOutSideInfoReply"
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.full_name = ".ArcadeGetOutSideInfoReply"
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLYINFOFIELD
+}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.name = "x"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.full_name = ".ArcadePlayerMoveReply.x"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.name = "y"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.full_name = ".ArcadePlayerMoveReply.y"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.name = "ArcadePlayerMoveReply"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.full_name = ".ArcadePlayerMoveReply"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYXFIELD,
+	ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLYYFIELD
+}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.name = "interactionUid"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.full_name = ".ArcadeInteractionRequest.interactionUid"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.type = 3
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD.cpp_type = 2
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.name = "option"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.full_name = ".ArcadeInteractionRequest.option"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.name = "ArcadeInteractionRequest"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.full_name = ".ArcadeInteractionRequest"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTINTERACTIONUIDFIELD,
+	ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUESTOPTIONFIELD
+}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.name = "interactionUid"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.full_name = ".ArcadeInteractionReply.interactionUid"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.type = 3
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD.cpp_type = 2
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.name = "option"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.full_name = ".ArcadeInteractionReply.option"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.name = "ArcadeInteractionReply"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.full_name = ".ArcadeInteractionReply"
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYINTERACTIONUIDFIELD,
+	ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLYOPTIONFIELD
+}
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.name = "x"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.full_name = ".ArcadePlayerMoveRequest.x"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.name = "y"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.full_name = ".ArcadePlayerMoveRequest.y"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.name = "ArcadePlayerMoveRequest"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.full_name = ".ArcadePlayerMoveRequest"
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTXFIELD,
+	ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUESTYFIELD
+}
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.name = "rewardId"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.full_name = ".ArcadeGainRewardReply.rewardId"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.name = "ArcadeGainRewardReply"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.full_name = ".ArcadeGainRewardReply"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLYREWARDIDFIELD
+}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.name = "characterId"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.full_name = ".ArcadeSwitchCharacterReply.characterId"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.name = "ArcadeSwitchCharacterReply"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.full_name = ".ArcadeSwitchCharacterReply"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLYCHARACTERIDFIELD
+}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.name = "attr"
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.full_name = ".ArcadeAttrChangePush.attr"
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.label = 3
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.default_value = {}
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.message_type = ArcadeOutSideModule_pb.ARCADEDEF_PB.ARCADEATTRVALUE_MSG
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.type = 11
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD.cpp_type = 10
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.name = "ArcadeAttrChangePush"
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.full_name = ".ArcadeAttrChangePush"
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSHATTRFIELD
+}
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.name = "ArcadeCloseRewardPanelReply"
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.full_name = ".ArcadeCloseRewardPanelReply"
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.fields = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.name = "ArcadeCloseRewardPanelRequest"
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.full_name = ".ArcadeCloseRewardPanelRequest"
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.fields = {}
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.name = "type"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.full_name = ".ArcadeClearNewBookReply.type"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.name = "ids"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.full_name = ".ArcadeClearNewBookReply.ids"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.label = 3
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.default_value = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.name = "ArcadeClearNewBookReply"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.full_name = ".ArcadeClearNewBookReply"
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYTYPEFIELD,
+	ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLYIDSFIELD
+}
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.name = "ArcadeGetOutSideInfoRequest"
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.full_name = ".ArcadeGetOutSideInfoRequest"
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.fields = {}
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.name = "characterId"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.full_name = ".ArcadeSwitchCharacterRequest.characterId"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.name = "ArcadeSwitchCharacterRequest"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.full_name = ".ArcadeSwitchCharacterRequest"
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUESTCHARACTERIDFIELD
+}
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.name = "talentId"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.full_name = ".ArcadeTalentUpgradeRequest.talentId"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.name = "level"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.full_name = ".ArcadeTalentUpgradeRequest.level"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.name = "ArcadeTalentUpgradeRequest"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.full_name = ".ArcadeTalentUpgradeRequest"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTTALENTIDFIELD,
+	ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUESTLEVELFIELD
+}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.name = "talentId"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.full_name = ".ArcadeTalentUpgradeReply.talentId"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.name = "level"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.full_name = ".ArcadeTalentUpgradeReply.level"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.number = 2
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.index = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.name = "ArcadeTalentUpgradeReply"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.full_name = ".ArcadeTalentUpgradeReply"
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYTALENTIDFIELD,
+	ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLYLEVELFIELD
+}
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG.extensions = {}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.name = "rewardId"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.full_name = ".ArcadeGainRewardRequest.rewardId"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.number = 1
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.index = 0
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.label = 1
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.has_default_value = false
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.default_value = 0
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.type = 5
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD.cpp_type = 1
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.name = "ArcadeGainRewardRequest"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.full_name = ".ArcadeGainRewardRequest"
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.nested_types = {}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.enum_types = {}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.fields = {
+	ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUESTREWARDIDFIELD
+}
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.is_extendable = false
+ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG.extensions = {}
+ArcadeOutSideModule_pb.ArcadeAttrChangePush = protobuf.Message(ArcadeOutSideModule_pb.ARCADEATTRCHANGEPUSH_MSG)
+ArcadeOutSideModule_pb.ArcadeClearNewBookReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeClearNewBookRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADECLEARNEWBOOKREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadeCloseRewardPanelReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeCloseRewardPanelRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADECLOSEREWARDPANELREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadeGainRewardReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADEGAINREWARDREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeGainRewardRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADEGAINREWARDREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadeGetOutSideInfoReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeGetOutSideInfoRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADEGETOUTSIDEINFOREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadeInteractionReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADEINTERACTIONREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeInteractionRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADEINTERACTIONREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadePlayerMoveReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadePlayerMoveRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADEPLAYERMOVEREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadeSwitchCharacterReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeSwitchCharacterRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADESWITCHCHARACTERREQUEST_MSG)
+ArcadeOutSideModule_pb.ArcadeTalentUpgradeReply = protobuf.Message(ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREPLY_MSG)
+ArcadeOutSideModule_pb.ArcadeTalentUpgradeRequest = protobuf.Message(ArcadeOutSideModule_pb.ARCADETALENTUPGRADEREQUEST_MSG)
+
+return ArcadeOutSideModule_pb

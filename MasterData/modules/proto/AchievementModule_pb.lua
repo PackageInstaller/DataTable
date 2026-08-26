@@ -1,0 +1,235 @@
+﻿-- chunkname: @modules/proto/AchievementModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.AchievementModule_pb", package.seeall)
+
+local AchievementModule_pb = {}
+
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG = protobuf.Descriptor()
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG = protobuf.Descriptor()
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG = protobuf.Descriptor()
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG = protobuf.Descriptor()
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG = protobuf.Descriptor()
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG = protobuf.Descriptor()
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG = protobuf.Descriptor()
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG = protobuf.Descriptor()
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD = protobuf.FieldDescriptor()
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.name = "id"
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.full_name = ".AchievementTaskInfo.id"
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.number = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.index = 0
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.label = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.has_default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.default_value = 0
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.type = 5
+AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD.cpp_type = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.name = "progress"
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.full_name = ".AchievementTaskInfo.progress"
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.number = 2
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.index = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.label = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.has_default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.default_value = 0
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.type = 5
+AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD.cpp_type = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.name = "hasFinish"
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.full_name = ".AchievementTaskInfo.hasFinish"
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.number = 3
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.index = 2
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.label = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.has_default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.type = 8
+AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD.cpp_type = 7
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.name = "new"
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.full_name = ".AchievementTaskInfo.new"
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.number = 4
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.index = 3
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.label = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.has_default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.type = 8
+AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD.cpp_type = 7
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.name = "finishTime"
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.full_name = ".AchievementTaskInfo.finishTime"
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.number = 5
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.index = 4
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.label = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.has_default_value = false
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.default_value = 0
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.type = 5
+AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD.cpp_type = 1
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.name = "AchievementTaskInfo"
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.full_name = ".AchievementTaskInfo"
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.nested_types = {}
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.enum_types = {}
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.fields = {
+	AchievementModule_pb.ACHIEVEMENTTASKINFOIDFIELD,
+	AchievementModule_pb.ACHIEVEMENTTASKINFOPROGRESSFIELD,
+	AchievementModule_pb.ACHIEVEMENTTASKINFOHASFINISHFIELD,
+	AchievementModule_pb.ACHIEVEMENTTASKINFONEWFIELD,
+	AchievementModule_pb.ACHIEVEMENTTASKINFOFINISHTIMEFIELD
+}
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.is_extendable = false
+AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG.extensions = {}
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.name = "ids"
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.full_name = ".ShowAchievementReply.ids"
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.number = 1
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.index = 0
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.label = 3
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.has_default_value = false
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.default_value = {}
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.type = 5
+AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD.cpp_type = 1
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.name = "groupId"
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.full_name = ".ShowAchievementReply.groupId"
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.number = 2
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.index = 1
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.label = 1
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.has_default_value = false
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.default_value = 0
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.type = 5
+AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD.cpp_type = 1
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.name = "ShowAchievementReply"
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.full_name = ".ShowAchievementReply"
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.nested_types = {}
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.enum_types = {}
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.fields = {
+	AchievementModule_pb.SHOWACHIEVEMENTREPLYIDSFIELD,
+	AchievementModule_pb.SHOWACHIEVEMENTREPLYGROUPIDFIELD
+}
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.is_extendable = false
+AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG.extensions = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.name = "GetAchievementInfoRequest"
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.full_name = ".GetAchievementInfoRequest"
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.nested_types = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.enum_types = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.fields = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.is_extendable = false
+AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG.extensions = {}
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.name = "ids"
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.full_name = ".ReadNewAchievementRequest.ids"
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.number = 1
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.index = 0
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.label = 3
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.has_default_value = false
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.default_value = {}
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.type = 5
+AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD.cpp_type = 1
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.name = "ReadNewAchievementRequest"
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.full_name = ".ReadNewAchievementRequest"
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.nested_types = {}
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.enum_types = {}
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.fields = {
+	AchievementModule_pb.READNEWACHIEVEMENTREQUESTIDSFIELD
+}
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.is_extendable = false
+AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG.extensions = {}
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.name = "ids"
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.full_name = ".ReadNewAchievementReply.ids"
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.number = 1
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.index = 0
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.label = 3
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.has_default_value = false
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.default_value = {}
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.type = 5
+AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD.cpp_type = 1
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.name = "ReadNewAchievementReply"
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.full_name = ".ReadNewAchievementReply"
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.nested_types = {}
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.enum_types = {}
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.fields = {
+	AchievementModule_pb.READNEWACHIEVEMENTREPLYIDSFIELD
+}
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.is_extendable = false
+AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG.extensions = {}
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.name = "ids"
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.full_name = ".ShowAchievementRequest.ids"
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.number = 1
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.index = 0
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.label = 3
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.has_default_value = false
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.default_value = {}
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.type = 5
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD.cpp_type = 1
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.name = "groupId"
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.full_name = ".ShowAchievementRequest.groupId"
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.number = 2
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.index = 1
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.label = 1
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.has_default_value = false
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.default_value = 0
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.type = 5
+AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD.cpp_type = 1
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.name = "ShowAchievementRequest"
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.full_name = ".ShowAchievementRequest"
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.nested_types = {}
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.enum_types = {}
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.fields = {
+	AchievementModule_pb.SHOWACHIEVEMENTREQUESTIDSFIELD,
+	AchievementModule_pb.SHOWACHIEVEMENTREQUESTGROUPIDFIELD
+}
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.is_extendable = false
+AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG.extensions = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.name = "infos"
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.full_name = ".GetAchievementInfoReply.infos"
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.number = 1
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.index = 0
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.label = 3
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.has_default_value = false
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.default_value = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.message_type = AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.type = 11
+AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD.cpp_type = 10
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.name = "GetAchievementInfoReply"
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.full_name = ".GetAchievementInfoReply"
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.nested_types = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.enum_types = {}
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.fields = {
+	AchievementModule_pb.GETACHIEVEMENTINFOREPLYINFOSFIELD
+}
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.is_extendable = false
+AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG.extensions = {}
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.name = "infos"
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.full_name = ".UpdateAchievementPush.infos"
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.number = 1
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.index = 0
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.label = 3
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.has_default_value = false
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.default_value = {}
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.message_type = AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.type = 11
+AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD.cpp_type = 10
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.name = "UpdateAchievementPush"
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.full_name = ".UpdateAchievementPush"
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.nested_types = {}
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.enum_types = {}
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.fields = {
+	AchievementModule_pb.UPDATEACHIEVEMENTPUSHINFOSFIELD
+}
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.is_extendable = false
+AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG.extensions = {}
+AchievementModule_pb.AchievementTaskInfo = protobuf.Message(AchievementModule_pb.ACHIEVEMENTTASKINFO_MSG)
+AchievementModule_pb.GetAchievementInfoReply = protobuf.Message(AchievementModule_pb.GETACHIEVEMENTINFOREPLY_MSG)
+AchievementModule_pb.GetAchievementInfoRequest = protobuf.Message(AchievementModule_pb.GETACHIEVEMENTINFOREQUEST_MSG)
+AchievementModule_pb.ReadNewAchievementReply = protobuf.Message(AchievementModule_pb.READNEWACHIEVEMENTREPLY_MSG)
+AchievementModule_pb.ReadNewAchievementRequest = protobuf.Message(AchievementModule_pb.READNEWACHIEVEMENTREQUEST_MSG)
+AchievementModule_pb.ShowAchievementReply = protobuf.Message(AchievementModule_pb.SHOWACHIEVEMENTREPLY_MSG)
+AchievementModule_pb.ShowAchievementRequest = protobuf.Message(AchievementModule_pb.SHOWACHIEVEMENTREQUEST_MSG)
+AchievementModule_pb.UpdateAchievementPush = protobuf.Message(AchievementModule_pb.UPDATEACHIEVEMENTPUSH_MSG)
+
+return AchievementModule_pb

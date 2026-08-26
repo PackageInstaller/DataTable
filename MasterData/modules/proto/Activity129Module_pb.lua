@@ -1,0 +1,295 @@
+﻿-- chunkname: @modules/proto/Activity129Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity129Module_pb", package.seeall)
+
+local Activity129Module_pb = {}
+
+Activity129Module_pb.MATERIALMODULE_PB = require("modules.proto.MaterialModule_pb")
+Activity129Module_pb.GET129INFOSREQUEST_MSG = protobuf.Descriptor()
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.GET129INFOSREPLY_MSG = protobuf.Descriptor()
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG = protobuf.Descriptor()
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG = protobuf.Descriptor()
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129POOLREWARD_MSG = protobuf.Descriptor()
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG = protobuf.Descriptor()
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG = protobuf.Descriptor()
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD = protobuf.FieldDescriptor()
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.full_name = ".Get129InfosRequest.activityId"
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.number = 1
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.index = 0
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.label = 1
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.type = 5
+Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity129Module_pb.GET129INFOSREQUEST_MSG.name = "Get129InfosRequest"
+Activity129Module_pb.GET129INFOSREQUEST_MSG.full_name = ".Get129InfosRequest"
+Activity129Module_pb.GET129INFOSREQUEST_MSG.nested_types = {}
+Activity129Module_pb.GET129INFOSREQUEST_MSG.enum_types = {}
+Activity129Module_pb.GET129INFOSREQUEST_MSG.fields = {
+	Activity129Module_pb.GET129INFOSREQUESTACTIVITYIDFIELD
+}
+Activity129Module_pb.GET129INFOSREQUEST_MSG.is_extendable = false
+Activity129Module_pb.GET129INFOSREQUEST_MSG.extensions = {}
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.full_name = ".Get129InfosReply.activityId"
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.number = 1
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.index = 0
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.label = 1
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.default_value = 0
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.type = 5
+Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.name = "lotteryDetail"
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.full_name = ".Get129InfosReply.lotteryDetail"
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.number = 2
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.index = 1
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.label = 3
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.has_default_value = false
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.default_value = {}
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.message_type = Activity129Module_pb.ACT129LOTTERYDETAIL_MSG
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.type = 11
+Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD.cpp_type = 10
+Activity129Module_pb.GET129INFOSREPLY_MSG.name = "Get129InfosReply"
+Activity129Module_pb.GET129INFOSREPLY_MSG.full_name = ".Get129InfosReply"
+Activity129Module_pb.GET129INFOSREPLY_MSG.nested_types = {}
+Activity129Module_pb.GET129INFOSREPLY_MSG.enum_types = {}
+Activity129Module_pb.GET129INFOSREPLY_MSG.fields = {
+	Activity129Module_pb.GET129INFOSREPLYACTIVITYIDFIELD,
+	Activity129Module_pb.GET129INFOSREPLYLOTTERYDETAILFIELD
+}
+Activity129Module_pb.GET129INFOSREPLY_MSG.is_extendable = false
+Activity129Module_pb.GET129INFOSREPLY_MSG.extensions = {}
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.name = "activityId"
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.full_name = ".Act129LotteryReply.activityId"
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.number = 1
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.index = 0
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.name = "poolId"
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.full_name = ".Act129LotteryReply.poolId"
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.number = 2
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.index = 1
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.name = "rewards"
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.full_name = ".Act129LotteryReply.rewards"
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.number = 3
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.index = 2
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.label = 3
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.default_value = {}
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.message_type = Activity129Module_pb.ACT129POOLREWARD_MSG
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.type = 11
+Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD.cpp_type = 10
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.name = "num"
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.full_name = ".Act129LotteryReply.num"
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.number = 4
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.index = 3
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.name = "Act129LotteryReply"
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.full_name = ".Act129LotteryReply"
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.nested_types = {}
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.enum_types = {}
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.fields = {
+	Activity129Module_pb.ACT129LOTTERYREPLYACTIVITYIDFIELD,
+	Activity129Module_pb.ACT129LOTTERYREPLYPOOLIDFIELD,
+	Activity129Module_pb.ACT129LOTTERYREPLYREWARDSFIELD,
+	Activity129Module_pb.ACT129LOTTERYREPLYNUMFIELD
+}
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.is_extendable = false
+Activity129Module_pb.ACT129LOTTERYREPLY_MSG.extensions = {}
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.name = "poolId"
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.full_name = ".Act129LotteryDetail.poolId"
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.number = 1
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.index = 0
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.name = "rewards"
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.full_name = ".Act129LotteryDetail.rewards"
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.number = 2
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.index = 1
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.label = 3
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.default_value = {}
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.message_type = Activity129Module_pb.ACT129POOLREWARD_MSG
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.type = 11
+Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD.cpp_type = 10
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.name = "count"
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.full_name = ".Act129LotteryDetail.count"
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.number = 3
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.index = 2
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.name = "Act129LotteryDetail"
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.full_name = ".Act129LotteryDetail"
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.nested_types = {}
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.enum_types = {}
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.fields = {
+	Activity129Module_pb.ACT129LOTTERYDETAILPOOLIDFIELD,
+	Activity129Module_pb.ACT129LOTTERYDETAILREWARDSFIELD,
+	Activity129Module_pb.ACT129LOTTERYDETAILCOUNTFIELD
+}
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.is_extendable = false
+Activity129Module_pb.ACT129LOTTERYDETAIL_MSG.extensions = {}
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.name = "rewardType"
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.full_name = ".Act129PoolReward.rewardType"
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.number = 1
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.index = 0
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.label = 1
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.has_default_value = false
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.default_value = 0
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.type = 5
+Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD.cpp_type = 1
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.name = "rewardId"
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.full_name = ".Act129PoolReward.rewardId"
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.number = 2
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.index = 1
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.label = 1
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.default_value = 0
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.type = 5
+Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.name = "num"
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.full_name = ".Act129PoolReward.num"
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.number = 3
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.index = 2
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.label = 1
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.has_default_value = false
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.default_value = 0
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.type = 5
+Activity129Module_pb.ACT129POOLREWARDNUMFIELD.cpp_type = 1
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.name = "rare"
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.full_name = ".Act129PoolReward.rare"
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.number = 4
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.index = 3
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.label = 1
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.has_default_value = false
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.default_value = 0
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.type = 5
+Activity129Module_pb.ACT129POOLREWARDRAREFIELD.cpp_type = 1
+Activity129Module_pb.ACT129POOLREWARD_MSG.name = "Act129PoolReward"
+Activity129Module_pb.ACT129POOLREWARD_MSG.full_name = ".Act129PoolReward"
+Activity129Module_pb.ACT129POOLREWARD_MSG.nested_types = {}
+Activity129Module_pb.ACT129POOLREWARD_MSG.enum_types = {}
+Activity129Module_pb.ACT129POOLREWARD_MSG.fields = {
+	Activity129Module_pb.ACT129POOLREWARDREWARDTYPEFIELD,
+	Activity129Module_pb.ACT129POOLREWARDREWARDIDFIELD,
+	Activity129Module_pb.ACT129POOLREWARDNUMFIELD,
+	Activity129Module_pb.ACT129POOLREWARDRAREFIELD
+}
+Activity129Module_pb.ACT129POOLREWARD_MSG.is_extendable = false
+Activity129Module_pb.ACT129POOLREWARD_MSG.extensions = {}
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.name = "activityId"
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.full_name = ".Act129InfoUpdatePush.activityId"
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.number = 1
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.index = 0
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.label = 1
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.default_value = 0
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.type = 5
+Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.name = "lotteryDetail"
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.full_name = ".Act129InfoUpdatePush.lotteryDetail"
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.number = 2
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.index = 1
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.label = 3
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.has_default_value = false
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.default_value = {}
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.message_type = Activity129Module_pb.ACT129LOTTERYDETAIL_MSG
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.type = 11
+Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD.cpp_type = 10
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.name = "Act129InfoUpdatePush"
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.full_name = ".Act129InfoUpdatePush"
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.nested_types = {}
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.enum_types = {}
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.fields = {
+	Activity129Module_pb.ACT129INFOUPDATEPUSHACTIVITYIDFIELD,
+	Activity129Module_pb.ACT129INFOUPDATEPUSHLOTTERYDETAILFIELD
+}
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.is_extendable = false
+Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG.extensions = {}
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.full_name = ".Act129LotteryRequest.activityId"
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.number = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.index = 0
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.name = "poolId"
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.full_name = ".Act129LotteryRequest.poolId"
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.number = 2
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.index = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.name = "num"
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.full_name = ".Act129LotteryRequest.num"
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.number = 3
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.index = 2
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.label = 1
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.has_default_value = false
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.default_value = 0
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.type = 5
+Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD.cpp_type = 1
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.name = "Act129LotteryRequest"
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.full_name = ".Act129LotteryRequest"
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.nested_types = {}
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.enum_types = {}
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.fields = {
+	Activity129Module_pb.ACT129LOTTERYREQUESTACTIVITYIDFIELD,
+	Activity129Module_pb.ACT129LOTTERYREQUESTPOOLIDFIELD,
+	Activity129Module_pb.ACT129LOTTERYREQUESTNUMFIELD
+}
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.is_extendable = false
+Activity129Module_pb.ACT129LOTTERYREQUEST_MSG.extensions = {}
+Activity129Module_pb.Act129InfoUpdatePush = protobuf.Message(Activity129Module_pb.ACT129INFOUPDATEPUSH_MSG)
+Activity129Module_pb.Act129LotteryDetail = protobuf.Message(Activity129Module_pb.ACT129LOTTERYDETAIL_MSG)
+Activity129Module_pb.Act129LotteryReply = protobuf.Message(Activity129Module_pb.ACT129LOTTERYREPLY_MSG)
+Activity129Module_pb.Act129LotteryRequest = protobuf.Message(Activity129Module_pb.ACT129LOTTERYREQUEST_MSG)
+Activity129Module_pb.Act129PoolReward = protobuf.Message(Activity129Module_pb.ACT129POOLREWARD_MSG)
+Activity129Module_pb.Get129InfosReply = protobuf.Message(Activity129Module_pb.GET129INFOSREPLY_MSG)
+Activity129Module_pb.Get129InfosRequest = protobuf.Message(Activity129Module_pb.GET129INFOSREQUEST_MSG)
+
+return Activity129Module_pb

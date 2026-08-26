@@ -1,0 +1,161 @@
+﻿-- chunkname: @modules/proto/ArcadeInSideModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.ArcadeInSideModule_pb", package.seeall)
+
+local ArcadeInSideModule_pb = {}
+
+ArcadeInSideModule_pb.ARCADEDEF_PB = require("modules.proto.ArcadeDef_pb")
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG = protobuf.Descriptor()
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG = protobuf.Descriptor()
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG = protobuf.Descriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG = protobuf.Descriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD = protobuf.FieldDescriptor()
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG = protobuf.Descriptor()
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG = protobuf.Descriptor()
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.name = "info"
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.full_name = ".ArcadeSaveGameRequest.info"
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.number = 1
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.index = 0
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.label = 1
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.default_value = nil
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.message_type = ArcadeInSideModule_pb.ARCADEDEF_PB.ARCADEINSIDEINFO_MSG
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.type = 11
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD.cpp_type = 10
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.name = "ArcadeSaveGameRequest"
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.full_name = ".ArcadeSaveGameRequest"
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.nested_types = {}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.enum_types = {}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.fields = {
+	ArcadeInSideModule_pb.ARCADESAVEGAMEREQUESTINFOFIELD
+}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.is_extendable = false
+ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG.extensions = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.name = "info"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.full_name = ".ArcadeGetInSideInfoReply.info"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.number = 1
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.index = 0
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.label = 1
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.default_value = nil
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.message_type = ArcadeInSideModule_pb.ARCADEDEF_PB.ARCADEINSIDEINFO_MSG
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.type = 11
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD.cpp_type = 10
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.name = "hasSaveGame"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.full_name = ".ArcadeGetInSideInfoReply.hasSaveGame"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.number = 2
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.index = 1
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.label = 1
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.default_value = false
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.type = 8
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD.cpp_type = 7
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.name = "ArcadeGetInSideInfoReply"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.full_name = ".ArcadeGetInSideInfoReply"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.nested_types = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.enum_types = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.fields = {
+	ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYINFOFIELD,
+	ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLYHASSAVEGAMEFIELD
+}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.is_extendable = false
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG.extensions = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.name = "type"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.full_name = ".ArcadeSettleGameRequest.type"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.number = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.index = 0
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.label = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.default_value = 0
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.type = 5
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD.cpp_type = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.name = "info"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.full_name = ".ArcadeSettleGameRequest.info"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.number = 2
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.index = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.label = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.default_value = nil
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.message_type = ArcadeInSideModule_pb.ARCADEDEF_PB.ARCADEINSIDEINFO_MSG
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.type = 11
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD.cpp_type = 10
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.name = "ArcadeSettleGameRequest"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.full_name = ".ArcadeSettleGameRequest"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.nested_types = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.enum_types = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.fields = {
+	ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTTYPEFIELD,
+	ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUESTINFOFIELD
+}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.is_extendable = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG.extensions = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.name = "bookAddScore"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.full_name = ".ArcadeSettleGameReply.bookAddScore"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.number = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.index = 0
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.label = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.default_value = 0
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.type = 5
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD.cpp_type = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.name = "unlockRoleIds"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.full_name = ".ArcadeSettleGameReply.unlockRoleIds"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.number = 2
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.index = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.label = 3
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.default_value = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.type = 5
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD.cpp_type = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.name = "hotfix"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.full_name = ".ArcadeSettleGameReply.hotfix"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.number = 3
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.index = 2
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.label = 1
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.has_default_value = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.default_value = ""
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.type = 9
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD.cpp_type = 9
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.name = "ArcadeSettleGameReply"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.full_name = ".ArcadeSettleGameReply"
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.nested_types = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.enum_types = {}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.fields = {
+	ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYBOOKADDSCOREFIELD,
+	ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYUNLOCKROLEIDSFIELD,
+	ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLYHOTFIXFIELD
+}
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.is_extendable = false
+ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG.extensions = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.name = "ArcadeGetInSideInfoRequest"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.full_name = ".ArcadeGetInSideInfoRequest"
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.nested_types = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.enum_types = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.fields = {}
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.is_extendable = false
+ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG.extensions = {}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.name = "ArcadeSaveGameReply"
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.full_name = ".ArcadeSaveGameReply"
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.nested_types = {}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.enum_types = {}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.fields = {}
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.is_extendable = false
+ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG.extensions = {}
+ArcadeInSideModule_pb.ArcadeGetInSideInfoReply = protobuf.Message(ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREPLY_MSG)
+ArcadeInSideModule_pb.ArcadeGetInSideInfoRequest = protobuf.Message(ArcadeInSideModule_pb.ARCADEGETINSIDEINFOREQUEST_MSG)
+ArcadeInSideModule_pb.ArcadeSaveGameReply = protobuf.Message(ArcadeInSideModule_pb.ARCADESAVEGAMEREPLY_MSG)
+ArcadeInSideModule_pb.ArcadeSaveGameRequest = protobuf.Message(ArcadeInSideModule_pb.ARCADESAVEGAMEREQUEST_MSG)
+ArcadeInSideModule_pb.ArcadeSettleGameReply = protobuf.Message(ArcadeInSideModule_pb.ARCADESETTLEGAMEREPLY_MSG)
+ArcadeInSideModule_pb.ArcadeSettleGameRequest = protobuf.Message(ArcadeInSideModule_pb.ARCADESETTLEGAMEREQUEST_MSG)
+
+return ArcadeInSideModule_pb

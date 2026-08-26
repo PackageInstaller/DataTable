@@ -1,0 +1,15 @@
+﻿-- chunkname: @modules/logic/versionactivity1_2/versionactivity1_2dungeon/view/VersionActivity1_2DungeonMapChapterLayout.lua
+
+module("modules.logic.versionactivity1_2.versionactivity1_2dungeon.view.VersionActivity1_2DungeonMapChapterLayout", package.seeall)
+
+local VersionActivity1_2DungeonMapChapterLayout = class("VersionActivity1_2DungeonMapChapterLayout", VersionActivity1_2DungeonMapChapterBaseLayout)
+
+function VersionActivity1_2DungeonMapChapterLayout:getEpisodeItemClass()
+	return VersionActivity1_2MapEpisodeItem.New()
+end
+
+function VersionActivity1_2DungeonMapChapterLayout:getDungeonMapLevelView()
+	return ViewName.VersionActivity1_2DungeonMapLevelView
+end
+
+return VersionActivity1_2DungeonMapChapterLayout

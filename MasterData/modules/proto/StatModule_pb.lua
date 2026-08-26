@@ -1,0 +1,150 @@
+﻿-- chunkname: @modules/proto/StatModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.StatModule_pb", package.seeall)
+
+local StatModule_pb = {}
+
+StatModule_pb.PLAYERDEF_PB = require("modules.proto.PlayerDef_pb")
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG = protobuf.Descriptor()
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG = protobuf.Descriptor()
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD = protobuf.FieldDescriptor()
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG = protobuf.Descriptor()
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD = protobuf.FieldDescriptor()
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG = protobuf.Descriptor()
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD = protobuf.FieldDescriptor()
+StatModule_pb.STATINFOPUSH_MSG = protobuf.Descriptor()
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD = protobuf.FieldDescriptor()
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD = protobuf.FieldDescriptor()
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD = protobuf.FieldDescriptor()
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD = protobuf.FieldDescriptor()
+StatModule_pb.STATINFOPUSHUSERTAGFIELD = protobuf.FieldDescriptor()
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.name = "ClientStatBaseInfoReply"
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.full_name = ".ClientStatBaseInfoReply"
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.nested_types = {}
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.enum_types = {}
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.fields = {}
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.is_extendable = false
+StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG.extensions = {}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.name = "accountBindBonus"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.full_name = ".UpdateClientStatBaseInfoReply.accountBindBonus"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.number = 1
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.index = 0
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.label = 1
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.has_default_value = false
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.default_value = 0
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.type = 5
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD.cpp_type = 1
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.name = "UpdateClientStatBaseInfoReply"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.full_name = ".UpdateClientStatBaseInfoReply"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.nested_types = {}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.enum_types = {}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.fields = {
+	StatModule_pb.UPDATECLIENTSTATBASEINFOREPLYACCOUNTBINDBONUSFIELD
+}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.is_extendable = false
+StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG.extensions = {}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.name = "info"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.full_name = ".UpdateClientStatBaseInfoRequest.info"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.number = 1
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.index = 0
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.label = 1
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.has_default_value = false
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.default_value = ""
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.type = 9
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD.cpp_type = 9
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.name = "UpdateClientStatBaseInfoRequest"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.full_name = ".UpdateClientStatBaseInfoRequest"
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.nested_types = {}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.enum_types = {}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.fields = {
+	StatModule_pb.UPDATECLIENTSTATBASEINFOREQUESTINFOFIELD
+}
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.is_extendable = false
+StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG.extensions = {}
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.name = "info"
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.full_name = ".ClientStatBaseInfoRequest.info"
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.number = 1
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.index = 0
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.label = 1
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.has_default_value = false
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.default_value = ""
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.type = 9
+StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD.cpp_type = 9
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.name = "ClientStatBaseInfoRequest"
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.full_name = ".ClientStatBaseInfoRequest"
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.nested_types = {}
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.enum_types = {}
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.fields = {
+	StatModule_pb.CLIENTSTATBASEINFOREQUESTINFOFIELD
+}
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.is_extendable = false
+StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG.extensions = {}
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.name = "fristCharge"
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.full_name = ".StatInfoPush.fristCharge"
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.number = 1
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.index = 0
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.label = 1
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.has_default_value = false
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.default_value = false
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.type = 8
+StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD.cpp_type = 7
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.name = "totalChargeAmount"
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.full_name = ".StatInfoPush.totalChargeAmount"
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.number = 2
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.index = 1
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.label = 1
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.has_default_value = false
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.default_value = 0
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.type = 3
+StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD.cpp_type = 2
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.name = "isFirstLogin"
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.full_name = ".StatInfoPush.isFirstLogin"
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.number = 3
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.index = 2
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.label = 1
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.has_default_value = false
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.default_value = false
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.type = 8
+StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD.cpp_type = 7
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.name = "playerInfo"
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.full_name = ".StatInfoPush.playerInfo"
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.number = 4
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.index = 3
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.label = 1
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.has_default_value = false
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.default_value = nil
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.message_type = StatModule_pb.PLAYERDEF_PB.PLAYERINFO_MSG
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.type = 11
+StatModule_pb.STATINFOPUSHPLAYERINFOFIELD.cpp_type = 10
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.name = "userTag"
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.full_name = ".StatInfoPush.userTag"
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.number = 5
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.index = 4
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.label = 1
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.has_default_value = false
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.default_value = ""
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.type = 9
+StatModule_pb.STATINFOPUSHUSERTAGFIELD.cpp_type = 9
+StatModule_pb.STATINFOPUSH_MSG.name = "StatInfoPush"
+StatModule_pb.STATINFOPUSH_MSG.full_name = ".StatInfoPush"
+StatModule_pb.STATINFOPUSH_MSG.nested_types = {}
+StatModule_pb.STATINFOPUSH_MSG.enum_types = {}
+StatModule_pb.STATINFOPUSH_MSG.fields = {
+	StatModule_pb.STATINFOPUSHFRISTCHARGEFIELD,
+	StatModule_pb.STATINFOPUSHTOTALCHARGEAMOUNTFIELD,
+	StatModule_pb.STATINFOPUSHISFIRSTLOGINFIELD,
+	StatModule_pb.STATINFOPUSHPLAYERINFOFIELD,
+	StatModule_pb.STATINFOPUSHUSERTAGFIELD
+}
+StatModule_pb.STATINFOPUSH_MSG.is_extendable = false
+StatModule_pb.STATINFOPUSH_MSG.extensions = {}
+StatModule_pb.ClientStatBaseInfoReply = protobuf.Message(StatModule_pb.CLIENTSTATBASEINFOREPLY_MSG)
+StatModule_pb.ClientStatBaseInfoRequest = protobuf.Message(StatModule_pb.CLIENTSTATBASEINFOREQUEST_MSG)
+StatModule_pb.StatInfoPush = protobuf.Message(StatModule_pb.STATINFOPUSH_MSG)
+StatModule_pb.UpdateClientStatBaseInfoReply = protobuf.Message(StatModule_pb.UPDATECLIENTSTATBASEINFOREPLY_MSG)
+StatModule_pb.UpdateClientStatBaseInfoRequest = protobuf.Message(StatModule_pb.UPDATECLIENTSTATBASEINFOREQUEST_MSG)
+
+return StatModule_pb

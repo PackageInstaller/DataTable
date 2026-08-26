@@ -1,0 +1,60 @@
+﻿-- chunkname: @modules/logic/seasonver/act123/view1_9/Season123_1_9EquipHeroSpineView.lua
+
+module("modules.logic.seasonver.act123.view1_9.Season123_1_9EquipHeroSpineView", package.seeall)
+
+local Season123_1_9EquipHeroSpineView = class("Season123_1_9EquipHeroSpineView", BaseView)
+
+function Season123_1_9EquipHeroSpineView:onInitView()
+	self._gospine = gohelper.findChild(self.viewGO, "#go_normal/left/#go_herocontainer/dynamiccontainer/#go_spine")
+
+	if self._editableInitView then
+		self:_editableInitView()
+	end
+end
+
+function Season123_1_9EquipHeroSpineView:addEvents()
+	return
+end
+
+function Season123_1_9EquipHeroSpineView:removeEvents()
+	return
+end
+
+function Season123_1_9EquipHeroSpineView:_editableInitView()
+	self._uiSpine = GuiSpine.Create(self._gospine, true)
+
+	self:createSpine()
+end
+
+function Season123_1_9EquipHeroSpineView:onDestroyView()
+	if self._uiSpine then
+		self._uiSpine:onDestroy()
+
+		self._uiSpine = nil
+	end
+end
+
+function Season123_1_9EquipHeroSpineView:onOpen()
+	return
+end
+
+function Season123_1_9EquipHeroSpineView:onClose()
+	return
+end
+
+function Season123_1_9EquipHeroSpineView:createSpine()
+	local resPath = ResUrl.getRolesCgStory(Activity104Enum.MainRoleSkinPath)
+
+	self._uiSpine:setResPath(resPath, self.onSpineLoaded, self)
+end
+
+function Season123_1_9EquipHeroSpineView:onSpineLoaded()
+	self._spineLoaded = true
+
+	if self._uiSpine then
+		self._uiSpine:changeLookDir(SpineLookDir.Left)
+		self._uiSpine:SetAnimation(BaseSpine.FaceTrackIndex, "idle", true, 0)
+	end
+end
+
+return Season123_1_9EquipHeroSpineView

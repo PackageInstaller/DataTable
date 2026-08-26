@@ -1,0 +1,28 @@
+﻿-- chunkname: @modules/logic/partygame/define/PartyGameCSDefine.lua
+
+module("modules.logic.partygame.define.PartyGameCSDefine", package.seeall)
+
+local PartyGameCSDefine = _M
+
+PartyGameCSDefine.CoinGrabbingInterfaceCs = PartyGame.Runtime.Games.CoinGrabbing.CoinGrabbingInterface
+PartyGameCSDefine.WayFindingGameInterfaceCs = PartyGame.Runtime.Games.WayFinding.WayFindingGameInterface
+PartyGameCSDefine.DodgeBulletsGameInterfaceCs = PartyGame.Runtime.Games.DodgeBullets.DodgeBulletsGameInterface
+PartyGameCSDefine.PedalingPlaidGameInterfaceCs = PartyGame.Runtime.Games.PedalingPlaid.PedalingPlaidGameInterface
+PartyGameCSDefine.SnatchTerritoryGameInterfaceCs = PartyGame.Runtime.Games.SnatchTerritory.SnatchTerritoryGameInterface
+PartyGameCSDefine.SnatchPlaidGameInterfaceCs = PartyGame.Runtime.Games.SnatchPlaid.SnatchPlaidGameInterface
+PartyGameCSDefine.WoodenManGameInterfaceCs = PartyGame.Runtime.Games.WoodenMan.WoodenManGameInterface
+PartyGameCSDefine.SecurityGameInterfaceCs = PartyGame.Runtime.Games.Security.SecurityGameInterface
+PartyGameCSDefine.DecisionGameInterfaceCs = PartyGame.Runtime.Games.Decision.DecisionGameInterface
+PartyGameCSDefine.FindLoveGameInterface = PartyGame.Runtime.Games.FindLove.FindLoveGameInterface
+PartyGameCSDefine.WhichMoreGameInterface = PartyGame.Runtime.Games.WhichMore.WhichMoreGameInterface
+PartyGameCSDefine.JengaGameInterfaceCs = PartyGame.Runtime.Games.Jenga.JengaGameInterface
+PartyGameCSDefine.SplicingRoadGameInterfaceCs = PartyGame.Runtime.Games.SplicingRoad.SplicingRoadGameInterface
+PartyGameCSDefine.CollatingSortGameInterface = PartyGame.Runtime.Games.CollatingSort.CollatingSortGameInterface
+PartyGameCSDefine.PacManInterface = PartyGame.Runtime.Games.PacMan.PacManInterface
+PartyGameCSDefine.FindDoorGameInterfaceCs = PartyGame.Runtime.Games.FindDoor.FindDoorGameInterface
+PartyGameCSDefine.SnatchAreaInterfaceCs = PartyGame.Runtime.Games.SnatchArea.SnatchAreaGameInterface
+PartyGameCSDefine.CardDropInterfaceCs = PartyGame.Runtime.Games.CardDrop.CardDropGameInterface
+PartyGameCSDefine.PuzzleGameInterface = PartyGame.Runtime.Games.Puzzle.PuzzleGameInterface
+PartyGameCSDefine.GuessWhoGameInterface = PartyGame.Runtime.Games.GuessWho.GuessWhoGameInterface
+
+return PartyGameCSDefine

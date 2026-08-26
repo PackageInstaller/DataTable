@@ -1,0 +1,228 @@
+﻿-- chunkname: @modules/proto/Activity106Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity106Module_pb", package.seeall)
+
+local Activity106Module_pb = {}
+
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG = protobuf.Descriptor()
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG = protobuf.Descriptor()
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.ACT106ORDERINFO_MSG = protobuf.Descriptor()
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG = protobuf.Descriptor()
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106INFOSREPLY_MSG = protobuf.Descriptor()
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106INFOSREQUEST_MSG = protobuf.Descriptor()
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.full_name = ".Get106OrderBonusRequest.activityId"
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.number = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.index = 0
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.label = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.type = 5
+Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.name = "orderId"
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.full_name = ".Get106OrderBonusRequest.orderId"
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.number = 2
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.index = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.label = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.has_default_value = false
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.default_value = 0
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.type = 5
+Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD.cpp_type = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.name = "useSecond"
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.full_name = ".Get106OrderBonusRequest.useSecond"
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.number = 3
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.index = 2
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.label = 1
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.has_default_value = false
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.default_value = 0
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.type = 5
+Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD.cpp_type = 1
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.name = "Get106OrderBonusRequest"
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.full_name = ".Get106OrderBonusRequest"
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.nested_types = {}
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.enum_types = {}
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.fields = {
+	Activity106Module_pb.GET106ORDERBONUSREQUESTACTIVITYIDFIELD,
+	Activity106Module_pb.GET106ORDERBONUSREQUESTORDERIDFIELD,
+	Activity106Module_pb.GET106ORDERBONUSREQUESTUSESECONDFIELD
+}
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.is_extendable = false
+Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG.extensions = {}
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.name = "activityId"
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.full_name = ".Update106OrderPush.activityId"
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.number = 1
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.index = 0
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.label = 1
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.has_default_value = false
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.default_value = 0
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.type = 5
+Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.name = "orderInfo"
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.full_name = ".Update106OrderPush.orderInfo"
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.number = 2
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.index = 1
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.label = 1
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.has_default_value = false
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.default_value = nil
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.message_type = Activity106Module_pb.ACT106ORDERINFO_MSG
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.type = 11
+Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD.cpp_type = 10
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.name = "Update106OrderPush"
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.full_name = ".Update106OrderPush"
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.nested_types = {}
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.enum_types = {}
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.fields = {
+	Activity106Module_pb.UPDATE106ORDERPUSHACTIVITYIDFIELD,
+	Activity106Module_pb.UPDATE106ORDERPUSHORDERINFOFIELD
+}
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.is_extendable = false
+Activity106Module_pb.UPDATE106ORDERPUSH_MSG.extensions = {}
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.name = "orderId"
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.full_name = ".Act106OrderInfo.orderId"
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.number = 1
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.index = 0
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.label = 1
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.has_default_value = false
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.default_value = 0
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.type = 5
+Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD.cpp_type = 1
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.name = "process"
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.full_name = ".Act106OrderInfo.process"
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.number = 2
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.index = 1
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.label = 1
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.has_default_value = false
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.default_value = 0
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.type = 5
+Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD.cpp_type = 1
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.name = "hasGetBonus"
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.full_name = ".Act106OrderInfo.hasGetBonus"
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.number = 3
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.index = 2
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.label = 1
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.has_default_value = false
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.default_value = false
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.type = 8
+Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD.cpp_type = 7
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.name = "accept"
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.full_name = ".Act106OrderInfo.accept"
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.number = 4
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.index = 3
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.label = 1
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.has_default_value = false
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.default_value = false
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.type = 8
+Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD.cpp_type = 7
+Activity106Module_pb.ACT106ORDERINFO_MSG.name = "Act106OrderInfo"
+Activity106Module_pb.ACT106ORDERINFO_MSG.full_name = ".Act106OrderInfo"
+Activity106Module_pb.ACT106ORDERINFO_MSG.nested_types = {}
+Activity106Module_pb.ACT106ORDERINFO_MSG.enum_types = {}
+Activity106Module_pb.ACT106ORDERINFO_MSG.fields = {
+	Activity106Module_pb.ACT106ORDERINFOORDERIDFIELD,
+	Activity106Module_pb.ACT106ORDERINFOPROCESSFIELD,
+	Activity106Module_pb.ACT106ORDERINFOHASGETBONUSFIELD,
+	Activity106Module_pb.ACT106ORDERINFOACCEPTFIELD
+}
+Activity106Module_pb.ACT106ORDERINFO_MSG.is_extendable = false
+Activity106Module_pb.ACT106ORDERINFO_MSG.extensions = {}
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.full_name = ".Get106OrderBonusReply.activityId"
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.number = 1
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.index = 0
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.label = 1
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.default_value = 0
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.type = 5
+Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.name = "orderInfo"
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.full_name = ".Get106OrderBonusReply.orderInfo"
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.number = 2
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.index = 1
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.label = 1
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.has_default_value = false
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.default_value = nil
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.message_type = Activity106Module_pb.ACT106ORDERINFO_MSG
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.type = 11
+Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD.cpp_type = 10
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.name = "Get106OrderBonusReply"
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.full_name = ".Get106OrderBonusReply"
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.nested_types = {}
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.enum_types = {}
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.fields = {
+	Activity106Module_pb.GET106ORDERBONUSREPLYACTIVITYIDFIELD,
+	Activity106Module_pb.GET106ORDERBONUSREPLYORDERINFOFIELD
+}
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.is_extendable = false
+Activity106Module_pb.GET106ORDERBONUSREPLY_MSG.extensions = {}
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.name = "activityId"
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.full_name = ".Get106InfosReply.activityId"
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.number = 1
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.index = 0
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.label = 1
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.has_default_value = false
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.default_value = 0
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.type = 5
+Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.name = "orderInfos"
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.full_name = ".Get106InfosReply.orderInfos"
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.number = 2
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.index = 1
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.label = 3
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.has_default_value = false
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.default_value = {}
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.message_type = Activity106Module_pb.ACT106ORDERINFO_MSG
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.type = 11
+Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD.cpp_type = 10
+Activity106Module_pb.GET106INFOSREPLY_MSG.name = "Get106InfosReply"
+Activity106Module_pb.GET106INFOSREPLY_MSG.full_name = ".Get106InfosReply"
+Activity106Module_pb.GET106INFOSREPLY_MSG.nested_types = {}
+Activity106Module_pb.GET106INFOSREPLY_MSG.enum_types = {}
+Activity106Module_pb.GET106INFOSREPLY_MSG.fields = {
+	Activity106Module_pb.GET106INFOSREPLYACTIVITYIDFIELD,
+	Activity106Module_pb.GET106INFOSREPLYORDERINFOSFIELD
+}
+Activity106Module_pb.GET106INFOSREPLY_MSG.is_extendable = false
+Activity106Module_pb.GET106INFOSREPLY_MSG.extensions = {}
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.full_name = ".Get106InfosRequest.activityId"
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.number = 1
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.index = 0
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.label = 1
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.default_value = 0
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.type = 5
+Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity106Module_pb.GET106INFOSREQUEST_MSG.name = "Get106InfosRequest"
+Activity106Module_pb.GET106INFOSREQUEST_MSG.full_name = ".Get106InfosRequest"
+Activity106Module_pb.GET106INFOSREQUEST_MSG.nested_types = {}
+Activity106Module_pb.GET106INFOSREQUEST_MSG.enum_types = {}
+Activity106Module_pb.GET106INFOSREQUEST_MSG.fields = {
+	Activity106Module_pb.GET106INFOSREQUESTACTIVITYIDFIELD
+}
+Activity106Module_pb.GET106INFOSREQUEST_MSG.is_extendable = false
+Activity106Module_pb.GET106INFOSREQUEST_MSG.extensions = {}
+Activity106Module_pb.Act106OrderInfo = protobuf.Message(Activity106Module_pb.ACT106ORDERINFO_MSG)
+Activity106Module_pb.Get106InfosReply = protobuf.Message(Activity106Module_pb.GET106INFOSREPLY_MSG)
+Activity106Module_pb.Get106InfosRequest = protobuf.Message(Activity106Module_pb.GET106INFOSREQUEST_MSG)
+Activity106Module_pb.Get106OrderBonusReply = protobuf.Message(Activity106Module_pb.GET106ORDERBONUSREPLY_MSG)
+Activity106Module_pb.Get106OrderBonusRequest = protobuf.Message(Activity106Module_pb.GET106ORDERBONUSREQUEST_MSG)
+Activity106Module_pb.Update106OrderPush = protobuf.Message(Activity106Module_pb.UPDATE106ORDERPUSH_MSG)
+
+return Activity106Module_pb

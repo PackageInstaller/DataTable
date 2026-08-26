@@ -1,0 +1,194 @@
+﻿-- chunkname: @modules/proto/Activity185Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity185Module_pb", package.seeall)
+
+local Activity185Module_pb = {}
+
+Activity185Module_pb.ACT185EPISODENO_MSG = protobuf.Descriptor()
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG = protobuf.Descriptor()
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.GETACT185INFOREQUEST_MSG = protobuf.Descriptor()
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.GETACT185INFOREPLY_MSG = protobuf.Descriptor()
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG = protobuf.Descriptor()
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185EPISODEPUSH_MSG = protobuf.Descriptor()
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD = protobuf.FieldDescriptor()
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.name = "episodeId"
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.full_name = ".Act185EpisodeNO.episodeId"
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.number = 1
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.index = 0
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.label = 1
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.has_default_value = false
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.default_value = 0
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.type = 5
+Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD.cpp_type = 1
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.name = "isFinished"
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.full_name = ".Act185EpisodeNO.isFinished"
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.number = 2
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.index = 1
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.label = 1
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.has_default_value = false
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.default_value = false
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.type = 8
+Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD.cpp_type = 7
+Activity185Module_pb.ACT185EPISODENO_MSG.name = "Act185EpisodeNO"
+Activity185Module_pb.ACT185EPISODENO_MSG.full_name = ".Act185EpisodeNO"
+Activity185Module_pb.ACT185EPISODENO_MSG.nested_types = {}
+Activity185Module_pb.ACT185EPISODENO_MSG.enum_types = {}
+Activity185Module_pb.ACT185EPISODENO_MSG.fields = {
+	Activity185Module_pb.ACT185EPISODENOEPISODEIDFIELD,
+	Activity185Module_pb.ACT185EPISODENOISFINISHEDFIELD
+}
+Activity185Module_pb.ACT185EPISODENO_MSG.is_extendable = false
+Activity185Module_pb.ACT185EPISODENO_MSG.extensions = {}
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.full_name = ".Act185FinishEpisodeRequest.activityId"
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.number = 1
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.index = 0
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.label = 1
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.type = 5
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.full_name = ".Act185FinishEpisodeRequest.episodeId"
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.number = 2
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.index = 1
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.label = 1
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.has_default_value = false
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.default_value = 0
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.type = 5
+Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.name = "Act185FinishEpisodeRequest"
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.full_name = ".Act185FinishEpisodeRequest"
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.nested_types = {}
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.enum_types = {}
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.fields = {
+	Activity185Module_pb.ACT185FINISHEPISODEREQUESTACTIVITYIDFIELD,
+	Activity185Module_pb.ACT185FINISHEPISODEREQUESTEPISODEIDFIELD
+}
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.is_extendable = false
+Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG.extensions = {}
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct185InfoRequest.activityId"
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.name = "GetAct185InfoRequest"
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.full_name = ".GetAct185InfoRequest"
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.nested_types = {}
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.enum_types = {}
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.fields = {
+	Activity185Module_pb.GETACT185INFOREQUESTACTIVITYIDFIELD
+}
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.is_extendable = false
+Activity185Module_pb.GETACT185INFOREQUEST_MSG.extensions = {}
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.full_name = ".GetAct185InfoReply.activityId"
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.number = 1
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.index = 0
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.label = 1
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.type = 5
+Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.name = "episodes"
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.full_name = ".GetAct185InfoReply.episodes"
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.number = 2
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.index = 1
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.label = 3
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.has_default_value = false
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.default_value = {}
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.message_type = Activity185Module_pb.ACT185EPISODENO_MSG
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.type = 11
+Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD.cpp_type = 10
+Activity185Module_pb.GETACT185INFOREPLY_MSG.name = "GetAct185InfoReply"
+Activity185Module_pb.GETACT185INFOREPLY_MSG.full_name = ".GetAct185InfoReply"
+Activity185Module_pb.GETACT185INFOREPLY_MSG.nested_types = {}
+Activity185Module_pb.GETACT185INFOREPLY_MSG.enum_types = {}
+Activity185Module_pb.GETACT185INFOREPLY_MSG.fields = {
+	Activity185Module_pb.GETACT185INFOREPLYACTIVITYIDFIELD,
+	Activity185Module_pb.GETACT185INFOREPLYEPISODESFIELD
+}
+Activity185Module_pb.GETACT185INFOREPLY_MSG.is_extendable = false
+Activity185Module_pb.GETACT185INFOREPLY_MSG.extensions = {}
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.name = "activityId"
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.full_name = ".Act185FinishEpisodeReply.activityId"
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.number = 1
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.index = 0
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.label = 1
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.has_default_value = false
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.default_value = 0
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.type = 5
+Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.name = "episodeId"
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.full_name = ".Act185FinishEpisodeReply.episodeId"
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.number = 2
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.index = 1
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.label = 1
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.has_default_value = false
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.default_value = 0
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.type = 5
+Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD.cpp_type = 1
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.name = "Act185FinishEpisodeReply"
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.full_name = ".Act185FinishEpisodeReply"
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.nested_types = {}
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.enum_types = {}
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.fields = {
+	Activity185Module_pb.ACT185FINISHEPISODEREPLYACTIVITYIDFIELD,
+	Activity185Module_pb.ACT185FINISHEPISODEREPLYEPISODEIDFIELD
+}
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.is_extendable = false
+Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG.extensions = {}
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.name = "activityId"
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.full_name = ".Act185EpisodePush.activityId"
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.number = 1
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.index = 0
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.label = 1
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.has_default_value = false
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.default_value = 0
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.type = 5
+Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.name = "episodes"
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.full_name = ".Act185EpisodePush.episodes"
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.number = 2
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.index = 1
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.label = 3
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.has_default_value = false
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.default_value = {}
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.message_type = Activity185Module_pb.ACT185EPISODENO_MSG
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.type = 11
+Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD.cpp_type = 10
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.name = "Act185EpisodePush"
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.full_name = ".Act185EpisodePush"
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.nested_types = {}
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.enum_types = {}
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.fields = {
+	Activity185Module_pb.ACT185EPISODEPUSHACTIVITYIDFIELD,
+	Activity185Module_pb.ACT185EPISODEPUSHEPISODESFIELD
+}
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.is_extendable = false
+Activity185Module_pb.ACT185EPISODEPUSH_MSG.extensions = {}
+Activity185Module_pb.Act185EpisodeNO = protobuf.Message(Activity185Module_pb.ACT185EPISODENO_MSG)
+Activity185Module_pb.Act185EpisodePush = protobuf.Message(Activity185Module_pb.ACT185EPISODEPUSH_MSG)
+Activity185Module_pb.Act185FinishEpisodeReply = protobuf.Message(Activity185Module_pb.ACT185FINISHEPISODEREPLY_MSG)
+Activity185Module_pb.Act185FinishEpisodeRequest = protobuf.Message(Activity185Module_pb.ACT185FINISHEPISODEREQUEST_MSG)
+Activity185Module_pb.GetAct185InfoReply = protobuf.Message(Activity185Module_pb.GETACT185INFOREPLY_MSG)
+Activity185Module_pb.GetAct185InfoRequest = protobuf.Message(Activity185Module_pb.GETACT185INFOREQUEST_MSG)
+
+return Activity185Module_pb

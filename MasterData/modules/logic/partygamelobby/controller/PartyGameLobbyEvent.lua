@@ -1,0 +1,40 @@
+﻿-- chunkname: @modules/logic/partygamelobby/controller/PartyGameLobbyEvent.lua
+
+module("modules.logic.partygamelobby.controller.PartyGameLobbyEvent", package.seeall)
+
+local PartyGameLobbyEvent = _M
+local _get = GameUtil.getUniqueTb()
+
+PartyGameLobbyEvent.onReceivePartyServerListReply = _get()
+PartyGameLobbyEvent.onReceiveCheckPartyRoomInfoReply = _get()
+PartyGameLobbyEvent.OpenTimeStatusChange = _get()
+PartyGameLobbyEvent.MatchStatusPush = _get()
+PartyGameLobbyEvent.MatchStatusChange = _get()
+PartyGameLobbyEvent.MatchInfoPush = _get()
+PartyGameLobbyEvent.StartPartyMatchReply = _get()
+PartyGameLobbyEvent.PartyNeedLogoutPush = _get()
+PartyGameLobbyEvent.CustomGetPartyRoomInfo = _get()
+PartyGameLobbyEvent.MoveJoystick = _get()
+PartyGameLobbyEvent.MainPlayerMove = _get()
+PartyGameLobbyEvent.SendEmoji = _get()
+PartyGameLobbyEvent.ClickBuilding = _get()
+PartyGameLobbyEvent.RoomStateChange = _get()
+PartyGameLobbyEvent.CreatePartyRoom = _get()
+PartyGameLobbyEvent.JoinPartyRoom = _get()
+PartyGameLobbyEvent.ChangePartyRoomStatus = _get()
+PartyGameLobbyEvent.ExitPartyRoom = _get()
+PartyGameLobbyEvent.ChangeRoomOwner = _get()
+PartyGameLobbyEvent.KickOutPlayer = _get()
+PartyGameLobbyEvent.KickedOutPush = _get()
+PartyGameLobbyEvent.PartyRoomInfoPush = _get()
+PartyGameLobbyEvent.GetInviteList = _get()
+PartyGameLobbyEvent.InviteFriend = _get()
+PartyGameLobbyEvent.PartyInvitePush = _get()
+PartyGameLobbyEvent.PartyInviteRefusePush = _get()
+PartyGameLobbyEvent.GetInteractionPush = _get()
+PartyGameLobbyEvent.GetPosPush = _get()
+PartyGameLobbyEvent.ChangePlayerWearClothIds = _get()
+PartyGameLobbyEvent.TrialSelectFinish = _get()
+PartyGameLobbyEvent.TrialSelect = _get()
+
+return PartyGameLobbyEvent

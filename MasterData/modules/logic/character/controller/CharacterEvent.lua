@@ -1,0 +1,85 @@
+﻿-- chunkname: @modules/logic/character/controller/CharacterEvent.lua
+
+module("modules.logic.character.controller.CharacterEvent", package.seeall)
+
+local CharacterEvent = {}
+
+CharacterEvent.SelectBtnTypeItem = 1
+CharacterEvent.SelectPropEquipItem = 2
+CharacterEvent.OnGuideSwitchDrawing = 3
+CharacterEvent.OnGuideInsight = 4
+CharacterEvent.OnPutTalentCubeReply = 5
+CharacterEvent.ClickFirstResonanceCellItem = 6
+CharacterEvent.CharacterTalentViewAnimFinished = 7
+CharacterEvent.ShowGuideDragEffect = 8
+CharacterEvent.TakeoffAllTalentCube = 9
+CharacterEvent.OnGuideAttenuation = 10
+CharacterEvent.ChangeMainHero = 11
+CharacterEvent.RandomMainHero = 12
+CharacterEvent.MainHeroGmPlayVoice = 13
+CharacterEvent.HeroInfoListReply = 1001
+CharacterEvent.HeroUpdatePush = 1002
+CharacterEvent.successHeroRankUp = 1003
+CharacterEvent.successDressUpSkin = 1005
+CharacterEvent.GainSkin = 1006
+CharacterEvent.PlayVoice = 1008
+CharacterEvent.StopVoice = 1009
+CharacterEvent.FinishVoice = 1010
+CharacterEvent.ChangeVoiceLang = 1011
+CharacterEvent.successHeroLevelUp = 1012
+CharacterEvent.successHeroTalentUp = 1013
+CharacterEvent.successHeroExSkillUp = 1014
+CharacterEvent.BackpackChangeCategory = 1015
+CharacterEvent.BackpackChangeSubCategory = 1016
+CharacterEvent.HeroDataAddUnlockItem = 1017
+CharacterEvent.HeroDataAddVoice = 1018
+CharacterEvent.SelectPage = 1019
+CharacterEvent.FilterBackpack = 1020
+CharacterEvent.HeroDataAddUnlockItemFail = 1021
+CharacterEvent.successSetDefaultEquip = 1022
+CharacterEvent.SwitchHero = 2001
+CharacterEvent.SwitchHeroSkin = 2002
+CharacterEvent.levelUpViewClick = 3001
+CharacterEvent.levelUplocalItem = 3002
+CharacterEvent.levelUpAttribute = 3003
+CharacterEvent.levelUpClickLevel = 3004
+CharacterEvent.levelUpChangePreviewLevel = 3005
+CharacterEvent.levelScrollChange = 3006
+CharacterEvent.characterLevelItemPlayEff = 3007
+CharacterEvent.characterFirstToShow = 4001
+CharacterEvent.showCharacterRankUpView = 6001
+CharacterEvent.showCharacterNewSkin = 7001
+CharacterEvent.RefreshTalentLevelUpView = 8001
+CharacterEvent.RefreshCubeList = 9001
+CharacterEvent.playTalentViewBackAni = 9002
+CharacterEvent.playTalentLevelUpViewInAni = 9003
+CharacterEvent.TakeoffAllTalentCubeReply = 9004
+CharacterEvent.CopyTalentData = 9005
+CharacterEvent.RenameTalentTemplateReply = 9006
+CharacterEvent.UseTalentTemplateReply = 9007
+CharacterEvent.MainThumbnailSignature = 10001
+CharacterEvent.RefreshDefaultEquip = 10002
+CharacterEvent.OnSwitchSpine = 10003
+CharacterEvent.OnSkinSwitchSpine = 10004
+CharacterEvent.OnSwitchSkin = 10005
+CharacterEvent.OnSwitchSkinVertical = 10006
+CharacterEvent.OnMarkFavorSuccess = 11001
+CharacterEvent.onUnlockTalentStyleReply = 20001
+CharacterEvent.onUseTalentStyleReply = 20002
+CharacterEvent.onSelectTalentStyle = 20003
+CharacterEvent.onTalentStyleRead = 20004
+CharacterEvent.onReturnTalentView = 20005
+CharacterEvent.onHeroTalentStyleStatReply = 20006
+CharacterEvent.onVideoBtnDisplay = 30001
+CharacterEvent.onClientVideoPlayFinish = 30002
+CharacterEvent.onChoiceHero3124TalentTreeReply = 40001
+CharacterEvent.onResetHero3124TalentTreeReply = 40002
+CharacterEvent.onCancelHero3124TalentTreeReply = 40003
+CharacterEvent.onClickTalentTreeNode = 40011
+CharacterEvent.onCloseSkillTalentTipView = 40012
+CharacterEvent.onChoiceHero3123WeaponReply = 40101
+CharacterEvent.onClickWeapon = 40111
+CharacterEvent.onRefreshCharacterSkill = 40112
+CharacterEvent.HeroUpdatePushData = 40201
+
+return CharacterEvent

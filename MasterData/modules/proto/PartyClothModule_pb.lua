@@ -1,0 +1,772 @@
+﻿-- chunkname: @modules/proto/PartyClothModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.PartyClothModule_pb", package.seeall)
+
+local PartyClothModule_pb = {}
+
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG = protobuf.Descriptor()
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG = protobuf.Descriptor()
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHINFO_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG = protobuf.Descriptor()
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG = protobuf.Descriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD = protobuf.FieldDescriptor()
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.name = "wearClothIds"
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.full_name = ".WearPartyClothsRequest.wearClothIds"
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.number = 1
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.index = 0
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.label = 3
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.has_default_value = false
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.default_value = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.type = 13
+PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD.cpp_type = 3
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.name = "WearPartyClothsRequest"
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.full_name = ".WearPartyClothsRequest"
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.nested_types = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.enum_types = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.fields = {
+	PartyClothModule_pb.WEARPARTYCLOTHSREQUESTWEARCLOTHIDSFIELD
+}
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.is_extendable = false
+PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG.extensions = {}
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.name = "rare"
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.full_name = ".SummonPrizeInfo.rare"
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.number = 1
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.index = 0
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.label = 1
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.type = 5
+PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.name = "groupId"
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.full_name = ".SummonPrizeInfo.groupId"
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.number = 2
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.index = 1
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.label = 1
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.type = 5
+PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.name = "index"
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.full_name = ".SummonPrizeInfo.index"
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.number = 3
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.index = 2
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.label = 1
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.type = 5
+PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.name = "count"
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.full_name = ".SummonPrizeInfo.count"
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.number = 4
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.index = 3
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.label = 1
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.type = 5
+PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.name = "SummonPrizeInfo"
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.full_name = ".SummonPrizeInfo"
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.nested_types = {}
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.enum_types = {}
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.fields = {
+	PartyClothModule_pb.SUMMONPRIZEINFORAREFIELD,
+	PartyClothModule_pb.SUMMONPRIZEINFOGROUPIDFIELD,
+	PartyClothModule_pb.SUMMONPRIZEINFOINDEXFIELD,
+	PartyClothModule_pb.SUMMONPRIZEINFOCOUNTFIELD
+}
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.is_extendable = false
+PartyClothModule_pb.SUMMONPRIZEINFO_MSG.extensions = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.name = "poolId"
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.full_name = ".SummonPartyClothRequest.poolId"
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.number = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.index = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.label = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.type = 5
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.name = "count"
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.full_name = ".SummonPartyClothRequest.count"
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.number = 2
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.index = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.label = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.type = 5
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.name = "SummonPartyClothRequest"
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.full_name = ".SummonPartyClothRequest"
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.nested_types = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.enum_types = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.fields = {
+	PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTPOOLIDFIELD,
+	PartyClothModule_pb.SUMMONPARTYCLOTHREQUESTCOUNTFIELD
+}
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.is_extendable = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.full_name = ".PartyClothHotfix2Push.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.full_name = ".PartyClothHotfix2Push.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.full_name = ".PartyClothHotfix2Push.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.name = "PartyClothHotfix2Push"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.full_name = ".PartyClothHotfix2Push"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSHLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.full_name = ".PartyClothHotfix1Push.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.full_name = ".PartyClothHotfix1Push.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.full_name = ".PartyClothHotfix1Push.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.name = "PartyClothHotfix1Push"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.full_name = ".PartyClothHotfix1Push"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSHLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.full_name = ".PartyClothHotfix1Reply.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.full_name = ".PartyClothHotfix1Reply.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.full_name = ".PartyClothHotfix1Reply.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.name = "PartyClothHotfix1Reply"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.full_name = ".PartyClothHotfix1Reply"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLYLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG.extensions = {}
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.name = "GetPartyWearInfoRequest"
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.full_name = ".GetPartyWearInfoRequest"
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.nested_types = {}
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.enum_types = {}
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.fields = {}
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.is_extendable = false
+PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG.extensions = {}
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.name = "poolId"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.full_name = ".SummonClothPoolInfo.poolId"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.number = 1
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.index = 0
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.label = 1
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.default_value = 0
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.type = 5
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.name = "hasSummonPrizeInfos"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.full_name = ".SummonClothPoolInfo.hasSummonPrizeInfos"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.number = 2
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.index = 1
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.label = 3
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.default_value = {}
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.message_type = PartyClothModule_pb.SUMMONPRIZEINFO_MSG
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.type = 11
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD.cpp_type = 10
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.name = "leftPrizeNum"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.full_name = ".SummonClothPoolInfo.leftPrizeNum"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.number = 3
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.index = 2
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.label = 1
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.default_value = 0
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.type = 5
+PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.name = "SummonClothPoolInfo"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.full_name = ".SummonClothPoolInfo"
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.nested_types = {}
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.enum_types = {}
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.fields = {
+	PartyClothModule_pb.SUMMONCLOTHPOOLINFOPOOLIDFIELD,
+	PartyClothModule_pb.SUMMONCLOTHPOOLINFOHASSUMMONPRIZEINFOSFIELD,
+	PartyClothModule_pb.SUMMONCLOTHPOOLINFOLEFTPRIZENUMFIELD
+}
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.is_extendable = false
+PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.full_name = ".PartyClothHotfix1Request.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.full_name = ".PartyClothHotfix1Request.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.full_name = ".PartyClothHotfix1Request.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.name = "PartyClothHotfix1Request"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.full_name = ".PartyClothHotfix1Request"
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUESTLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.full_name = ".PartyClothHotfix3Reply.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.full_name = ".PartyClothHotfix3Reply.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.full_name = ".PartyClothHotfix3Reply.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.name = "PartyClothHotfix3Reply"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.full_name = ".PartyClothHotfix3Reply"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLYLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG.extensions = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.name = "GetPartyClothSummonPoolInfoRequest"
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.full_name = ".GetPartyClothSummonPoolInfoRequest"
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.nested_types = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.enum_types = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.fields = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.is_extendable = false
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.name = "clothId"
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.full_name = ".PartyClothInfo.clothId"
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.label = 1
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.default_value = 0
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.type = 13
+PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD.cpp_type = 3
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.name = "firstGetTime"
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.full_name = ".PartyClothInfo.firstGetTime"
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.label = 1
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.default_value = 0
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.name = "quantity"
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.full_name = ".PartyClothInfo.quantity"
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.label = 1
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.default_value = 0
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.name = "PartyClothInfo"
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.full_name = ".PartyClothInfo"
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHINFOCLOTHIDFIELD,
+	PartyClothModule_pb.PARTYCLOTHINFOFIRSTGETTIMEFIELD,
+	PartyClothModule_pb.PARTYCLOTHINFOQUANTITYFIELD
+}
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHINFO_MSG.extensions = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.name = "wearClothIds"
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.full_name = ".WearPartyClothsReply.wearClothIds"
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.number = 1
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.index = 0
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.label = 3
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.has_default_value = false
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.default_value = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.type = 13
+PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD.cpp_type = 3
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.name = "WearPartyClothsReply"
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.full_name = ".WearPartyClothsReply"
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.nested_types = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.enum_types = {}
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.fields = {
+	PartyClothModule_pb.WEARPARTYCLOTHSREPLYWEARCLOTHIDSFIELD
+}
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.is_extendable = false
+PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.full_name = ".PartyClothHotfix3Push.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.full_name = ".PartyClothHotfix3Push.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.full_name = ".PartyClothHotfix3Push.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.name = "PartyClothHotfix3Push"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.full_name = ".PartyClothHotfix3Push"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSHLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.full_name = ".PartyClothHotfix2Request.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.full_name = ".PartyClothHotfix2Request.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.full_name = ".PartyClothHotfix2Request.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.name = "PartyClothHotfix2Request"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.full_name = ".PartyClothHotfix2Request"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUESTLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.full_name = ".PartyClothHotfix3Request.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.full_name = ".PartyClothHotfix3Request.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.full_name = ".PartyClothHotfix3Request.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.name = "PartyClothHotfix3Request"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.full_name = ".PartyClothHotfix3Request"
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUESTLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG.extensions = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.name = "GetPartyClothInfoRequest"
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.full_name = ".GetPartyClothInfoRequest"
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.nested_types = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.enum_types = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.fields = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.is_extendable = false
+PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG.extensions = {}
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.name = "wearClothIds"
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.full_name = ".GetPartyWearInfoReply.wearClothIds"
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.number = 1
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.index = 0
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.label = 3
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.has_default_value = false
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.default_value = {}
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.type = 13
+PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD.cpp_type = 3
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.name = "GetPartyWearInfoReply"
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.full_name = ".GetPartyWearInfoReply"
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.nested_types = {}
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.enum_types = {}
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.fields = {
+	PartyClothModule_pb.GETPARTYWEARINFOREPLYWEARCLOTHIDSFIELD
+}
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.is_extendable = false
+PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG.extensions = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.name = "clothInfos"
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.full_name = ".GetPartyClothInfoReply.clothInfos"
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.number = 1
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.index = 0
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.label = 3
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.has_default_value = false
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.default_value = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.message_type = PartyClothModule_pb.PARTYCLOTHINFO_MSG
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.type = 11
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD.cpp_type = 10
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.name = "GetPartyClothInfoReply"
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.full_name = ".GetPartyClothInfoReply"
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.nested_types = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.enum_types = {}
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.fields = {
+	PartyClothModule_pb.GETPARTYCLOTHINFOREPLYCLOTHINFOSFIELD
+}
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.is_extendable = false
+PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG.extensions = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.name = "data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.full_name = ".PartyClothHotfix2Reply.data"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.number = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.index = 0
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD.cpp_type = 9
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.name = "intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.full_name = ".PartyClothHotfix2Reply.intData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.number = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.index = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.type = 5
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD.cpp_type = 1
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.name = "longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.full_name = ".PartyClothHotfix2Reply.longData"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.number = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.index = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.label = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.has_default_value = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.default_value = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.type = 3
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD.cpp_type = 2
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.name = "PartyClothHotfix2Reply"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.full_name = ".PartyClothHotfix2Reply"
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.nested_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.enum_types = {}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.fields = {
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYINTDATAFIELD,
+	PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLYLONGDATAFIELD
+}
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.is_extendable = false
+PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG.extensions = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.name = "poolInfos"
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.full_name = ".GetPartyClothSummonPoolInfoReply.poolInfos"
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.number = 1
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.index = 0
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.label = 3
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.has_default_value = false
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.default_value = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.message_type = PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.type = 11
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD.cpp_type = 10
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.name = "GetPartyClothSummonPoolInfoReply"
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.full_name = ".GetPartyClothSummonPoolInfoReply"
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.nested_types = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.enum_types = {}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.fields = {
+	PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLYPOOLINFOSFIELD
+}
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.is_extendable = false
+PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG.extensions = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.name = "poolId"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.full_name = ".SummonPartyClothReply.poolId"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.number = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.index = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.label = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.type = 5
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.name = "count"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.full_name = ".SummonPartyClothReply.count"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.number = 2
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.index = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.label = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.type = 5
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.name = "summonResult"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.full_name = ".SummonPartyClothReply.summonResult"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.number = 3
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.index = 2
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.label = 3
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.default_value = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.message_type = PartyClothModule_pb.SUMMONPRIZEINFO_MSG
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.type = 11
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD.cpp_type = 10
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.name = "hasSummonPrizeInfos"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.full_name = ".SummonPartyClothReply.hasSummonPrizeInfos"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.number = 4
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.index = 3
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.label = 3
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.default_value = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.message_type = PartyClothModule_pb.SUMMONPRIZEINFO_MSG
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.type = 11
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD.cpp_type = 10
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.name = "leftPrizeNum"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.full_name = ".SummonPartyClothReply.leftPrizeNum"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.number = 5
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.index = 4
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.label = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.has_default_value = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.default_value = 0
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.type = 5
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD.cpp_type = 1
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.name = "SummonPartyClothReply"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.full_name = ".SummonPartyClothReply"
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.nested_types = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.enum_types = {}
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.fields = {
+	PartyClothModule_pb.SUMMONPARTYCLOTHREPLYPOOLIDFIELD,
+	PartyClothModule_pb.SUMMONPARTYCLOTHREPLYCOUNTFIELD,
+	PartyClothModule_pb.SUMMONPARTYCLOTHREPLYSUMMONRESULTFIELD,
+	PartyClothModule_pb.SUMMONPARTYCLOTHREPLYHASSUMMONPRIZEINFOSFIELD,
+	PartyClothModule_pb.SUMMONPARTYCLOTHREPLYLEFTPRIZENUMFIELD
+}
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.is_extendable = false
+PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG.extensions = {}
+PartyClothModule_pb.GetPartyClothInfoReply = protobuf.Message(PartyClothModule_pb.GETPARTYCLOTHINFOREPLY_MSG)
+PartyClothModule_pb.GetPartyClothInfoRequest = protobuf.Message(PartyClothModule_pb.GETPARTYCLOTHINFOREQUEST_MSG)
+PartyClothModule_pb.GetPartyClothSummonPoolInfoReply = protobuf.Message(PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREPLY_MSG)
+PartyClothModule_pb.GetPartyClothSummonPoolInfoRequest = protobuf.Message(PartyClothModule_pb.GETPARTYCLOTHSUMMONPOOLINFOREQUEST_MSG)
+PartyClothModule_pb.GetPartyWearInfoReply = protobuf.Message(PartyClothModule_pb.GETPARTYWEARINFOREPLY_MSG)
+PartyClothModule_pb.GetPartyWearInfoRequest = protobuf.Message(PartyClothModule_pb.GETPARTYWEARINFOREQUEST_MSG)
+PartyClothModule_pb.PartyClothHotfix1Push = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX1PUSH_MSG)
+PartyClothModule_pb.PartyClothHotfix1Reply = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX1REPLY_MSG)
+PartyClothModule_pb.PartyClothHotfix1Request = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX1REQUEST_MSG)
+PartyClothModule_pb.PartyClothHotfix2Push = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX2PUSH_MSG)
+PartyClothModule_pb.PartyClothHotfix2Reply = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX2REPLY_MSG)
+PartyClothModule_pb.PartyClothHotfix2Request = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX2REQUEST_MSG)
+PartyClothModule_pb.PartyClothHotfix3Push = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX3PUSH_MSG)
+PartyClothModule_pb.PartyClothHotfix3Reply = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX3REPLY_MSG)
+PartyClothModule_pb.PartyClothHotfix3Request = protobuf.Message(PartyClothModule_pb.PARTYCLOTHHOTFIX3REQUEST_MSG)
+PartyClothModule_pb.PartyClothInfo = protobuf.Message(PartyClothModule_pb.PARTYCLOTHINFO_MSG)
+PartyClothModule_pb.SummonClothPoolInfo = protobuf.Message(PartyClothModule_pb.SUMMONCLOTHPOOLINFO_MSG)
+PartyClothModule_pb.SummonPartyClothReply = protobuf.Message(PartyClothModule_pb.SUMMONPARTYCLOTHREPLY_MSG)
+PartyClothModule_pb.SummonPartyClothRequest = protobuf.Message(PartyClothModule_pb.SUMMONPARTYCLOTHREQUEST_MSG)
+PartyClothModule_pb.SummonPrizeInfo = protobuf.Message(PartyClothModule_pb.SUMMONPRIZEINFO_MSG)
+PartyClothModule_pb.WearPartyClothsReply = protobuf.Message(PartyClothModule_pb.WEARPARTYCLOTHSREPLY_MSG)
+PartyClothModule_pb.WearPartyClothsRequest = protobuf.Message(PartyClothModule_pb.WEARPARTYCLOTHSREQUEST_MSG)
+
+return PartyClothModule_pb

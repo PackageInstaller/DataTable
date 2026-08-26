@@ -1,0 +1,13 @@
+﻿-- chunkname: @modules/logic/gm/view/GM_VersionActivity2_1DungeonMapView.lua
+
+module("modules.logic.gm.view.GM_VersionActivity2_1DungeonMapView", package.seeall)
+
+local GM_VersionActivity2_1DungeonMapView = class("GM_VersionActivity2_1DungeonMapView", GM_VersionActivity_DungeonMapView)
+
+function GM_VersionActivity2_1DungeonMapView.register()
+	GM_VersionActivity_DungeonMapView.VersionActivityX_XDungeonMapView_register(VersionActivity2_1DungeonMapView)
+	GM_VersionActivity_DungeonMapView.VersionActivityX_XMapEpisodeItem_register(VersionActivity2_1DungeonMapEpisodeItem)
+	GM_VersionActivity_DungeonMapView.VersionActivityX_XDungeonMapLevelView_register(VersionActivity2_1DungeonMapLevelView, 2, 1)
+end
+
+return GM_VersionActivity2_1DungeonMapView

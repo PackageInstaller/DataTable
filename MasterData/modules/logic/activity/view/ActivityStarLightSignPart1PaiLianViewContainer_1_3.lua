@@ -1,0 +1,11 @@
+﻿-- chunkname: @modules/logic/activity/view/ActivityStarLightSignPart1PaiLianViewContainer_1_3.lua
+
+module("modules.logic.activity.view.ActivityStarLightSignPart1PaiLianViewContainer_1_3", package.seeall)
+
+local ActivityStarLightSignPart1PaiLianViewContainer_1_3 = class("ActivityStarLightSignPart1PaiLianViewContainer_1_3", ActivityStarLightSignPaiLianViewBaseContainer_1_3)
+
+function ActivityStarLightSignPart1PaiLianViewContainer_1_3:onGetMainViewClassType()
+	return ActivityStarLightSignPart1PaiLianView_1_3
+end
+
+return ActivityStarLightSignPart1PaiLianViewContainer_1_3

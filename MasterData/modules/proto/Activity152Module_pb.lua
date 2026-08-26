@@ -1,0 +1,163 @@
+﻿-- chunkname: @modules/proto/Activity152Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity152Module_pb", package.seeall)
+
+local Activity152Module_pb = {}
+
+Activity152Module_pb.MATERIALMODULE_PB = require("modules.proto.MaterialModule_pb")
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG = protobuf.Descriptor()
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG = protobuf.Descriptor()
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.PRESENTINFO_MSG = protobuf.Descriptor()
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.PRESENTINFOBONUSESFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.GET152INFOREPLY_MSG = protobuf.Descriptor()
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.GET152INFOREQUEST_MSG = protobuf.Descriptor()
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.name = "activityId"
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.full_name = ".Act152AcceptPresentReply.activityId"
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.number = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.index = 0
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.label = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.has_default_value = false
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.default_value = 0
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.type = 5
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.name = "present"
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.full_name = ".Act152AcceptPresentReply.present"
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.number = 2
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.index = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.label = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.has_default_value = false
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.default_value = nil
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.message_type = Activity152Module_pb.PRESENTINFO_MSG
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.type = 11
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD.cpp_type = 10
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.name = "Act152AcceptPresentReply"
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.full_name = ".Act152AcceptPresentReply"
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.nested_types = {}
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.enum_types = {}
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.fields = {
+	Activity152Module_pb.ACT152ACCEPTPRESENTREPLYACTIVITYIDFIELD,
+	Activity152Module_pb.ACT152ACCEPTPRESENTREPLYPRESENTFIELD
+}
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.is_extendable = false
+Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG.extensions = {}
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.full_name = ".Act152AcceptPresentRequest.activityId"
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.number = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.index = 0
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.label = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.default_value = 0
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.type = 5
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.name = "presentId"
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.full_name = ".Act152AcceptPresentRequest.presentId"
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.number = 2
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.index = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.label = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.has_default_value = false
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.default_value = 0
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.type = 5
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD.cpp_type = 1
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.name = "Act152AcceptPresentRequest"
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.full_name = ".Act152AcceptPresentRequest"
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.nested_types = {}
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.enum_types = {}
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.fields = {
+	Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTACTIVITYIDFIELD,
+	Activity152Module_pb.ACT152ACCEPTPRESENTREQUESTPRESENTIDFIELD
+}
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.is_extendable = false
+Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG.extensions = {}
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.name = "presentId"
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.full_name = ".PresentInfo.presentId"
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.number = 1
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.index = 0
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.label = 1
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.has_default_value = false
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.default_value = 0
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.type = 5
+Activity152Module_pb.PRESENTINFOPRESENTIDFIELD.cpp_type = 1
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.name = "bonuses"
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.full_name = ".PresentInfo.bonuses"
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.number = 2
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.index = 1
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.label = 3
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.has_default_value = false
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.default_value = {}
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.message_type = Activity152Module_pb.MATERIALMODULE_PB.MATERIALDATA_MSG
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.type = 11
+Activity152Module_pb.PRESENTINFOBONUSESFIELD.cpp_type = 10
+Activity152Module_pb.PRESENTINFO_MSG.name = "PresentInfo"
+Activity152Module_pb.PRESENTINFO_MSG.full_name = ".PresentInfo"
+Activity152Module_pb.PRESENTINFO_MSG.nested_types = {}
+Activity152Module_pb.PRESENTINFO_MSG.enum_types = {}
+Activity152Module_pb.PRESENTINFO_MSG.fields = {
+	Activity152Module_pb.PRESENTINFOPRESENTIDFIELD,
+	Activity152Module_pb.PRESENTINFOBONUSESFIELD
+}
+Activity152Module_pb.PRESENTINFO_MSG.is_extendable = false
+Activity152Module_pb.PRESENTINFO_MSG.extensions = {}
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.full_name = ".Get152InfoReply.activityId"
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.number = 1
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.index = 0
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.label = 1
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.type = 5
+Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.name = "presentIds"
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.full_name = ".Get152InfoReply.presentIds"
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.number = 2
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.index = 1
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.label = 3
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.has_default_value = false
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.default_value = {}
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.type = 5
+Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD.cpp_type = 1
+Activity152Module_pb.GET152INFOREPLY_MSG.name = "Get152InfoReply"
+Activity152Module_pb.GET152INFOREPLY_MSG.full_name = ".Get152InfoReply"
+Activity152Module_pb.GET152INFOREPLY_MSG.nested_types = {}
+Activity152Module_pb.GET152INFOREPLY_MSG.enum_types = {}
+Activity152Module_pb.GET152INFOREPLY_MSG.fields = {
+	Activity152Module_pb.GET152INFOREPLYACTIVITYIDFIELD,
+	Activity152Module_pb.GET152INFOREPLYPRESENTIDSFIELD
+}
+Activity152Module_pb.GET152INFOREPLY_MSG.is_extendable = false
+Activity152Module_pb.GET152INFOREPLY_MSG.extensions = {}
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.full_name = ".Get152InfoRequest.activityId"
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity152Module_pb.GET152INFOREQUEST_MSG.name = "Get152InfoRequest"
+Activity152Module_pb.GET152INFOREQUEST_MSG.full_name = ".Get152InfoRequest"
+Activity152Module_pb.GET152INFOREQUEST_MSG.nested_types = {}
+Activity152Module_pb.GET152INFOREQUEST_MSG.enum_types = {}
+Activity152Module_pb.GET152INFOREQUEST_MSG.fields = {
+	Activity152Module_pb.GET152INFOREQUESTACTIVITYIDFIELD
+}
+Activity152Module_pb.GET152INFOREQUEST_MSG.is_extendable = false
+Activity152Module_pb.GET152INFOREQUEST_MSG.extensions = {}
+Activity152Module_pb.Act152AcceptPresentReply = protobuf.Message(Activity152Module_pb.ACT152ACCEPTPRESENTREPLY_MSG)
+Activity152Module_pb.Act152AcceptPresentRequest = protobuf.Message(Activity152Module_pb.ACT152ACCEPTPRESENTREQUEST_MSG)
+Activity152Module_pb.Get152InfoReply = protobuf.Message(Activity152Module_pb.GET152INFOREPLY_MSG)
+Activity152Module_pb.Get152InfoRequest = protobuf.Message(Activity152Module_pb.GET152INFOREQUEST_MSG)
+Activity152Module_pb.PresentInfo = protobuf.Message(Activity152Module_pb.PRESENTINFO_MSG)
+
+return Activity152Module_pb

@@ -1,0 +1,86 @@
+﻿-- chunkname: @modules/logic/dungeon/controller/DungeonEvent.lua
+
+module("modules.logic.dungeon.controller.DungeonEvent", package.seeall)
+
+local DungeonEvent = _M
+
+DungeonEvent.OnSelectEpisode = 1
+DungeonEvent.OnChangeChapter = 2
+DungeonEvent.OnChangeMonster = 3
+DungeonEvent.OnEnterFbFight = 4
+DungeonEvent.OnSelectTicket = 5
+DungeonEvent.OnUpdateDungeonInfo = 6
+DungeonEvent.OnEndDungeonPush = 7
+DungeonEvent.OnShowResourceView = 8
+DungeonEvent.OnChangeChapterList = 9
+DungeonEvent.OnFocusEpisode = 10
+DungeonEvent.OnClickFocusEpisode = 11
+DungeonEvent.OnUnlockNewChapter = 12
+DungeonEvent.OnGuideUnlockNewChapter = 13
+DungeonEvent.OnUnlockNewChapterAnimFinish = 14
+DungeonEvent.OnClickDungeonCategory = 15
+DungeonEvent.OnSetResScrollPos = 16
+DungeonEvent.OnHideCircleMv = 17
+DungeonEvent.OnGuidePlayUnlockAnim = 18
+DungeonEvent.BeginShowRewardView = 19
+DungeonEvent.EndShowRewardView = 20
+DungeonEvent.OnEndDungeonReply = 21
+DungeonEvent.OnShowStoryView = 22
+DungeonEvent.OnFocusNormalChapter = 23
+DungeonEvent.OnGuideFocusNormalChapter = 24
+DungeonEvent.OnCheckChapterUnlock = 25
+DungeonEvent.OnFocusLastEarlyAccessChapter = 26
+DungeonEvent.OnChapterMapUpdate = 100
+DungeonEvent.OnRemoveElement = 101
+DungeonEvent.OnAddElements = 102
+DungeonEvent.OnChangeMap = 103
+DungeonEvent.OnGetPointReward = 104
+DungeonEvent.OnCheckVision = 105
+DungeonEvent.OnClickElement = 106
+DungeonEvent.OnSetEpisodeListVisible = 107
+DungeonEvent.OnChangeFocusEpisodeItem = 108
+DungeonEvent.OnUpdateMapElementState = 109
+DungeonEvent.OnAddRewardPoint = 110
+DungeonEvent.OnJumpChangeFocusEpisodeItem = 111
+DungeonEvent.OnClickGuidepost = 112
+DungeonEvent.closeMapInteractiveItem = 113
+DungeonEvent.OnUpdateRewardPoint = 114
+DungeonEvent.OnGetPointRewardMaterials = 115
+DungeonEvent.OnChapterMapTweenDown = 116
+DungeonEvent.OnBeginDragMap = 117
+DungeonEvent.OnCreateMapRootGoDone = 118
+DungeonEvent.OnMapPosChanged = 119
+DungeonEvent.OnJumpEpisodeItemAndElement = 120
+DungeonEvent.OnOpenNormalMapView = 201
+DungeonEvent.GuideShowElementAnim = 202
+DungeonEvent.GuideStartShowElementAnim = 203
+DungeonEvent.GuideShowElementAnimFinish = 204
+DungeonEvent.GuideGetPointReward = 205
+DungeonEvent.GuideStopShowElementAnim = 206
+DungeonEvent.OnShowMap = 207
+DungeonEvent.GuideShowSingleElementAnim = 208
+DungeonEvent.GuideClickElement = 209
+DungeonEvent.onGuideCloseFragmentInfoView = 210
+DungeonEvent.OnOpenUnPassLevelGuide = 211
+DungeonEvent.OnShowDramaRewardGuide = 212
+DungeonEvent.OnEnterDungeonMapView = 213
+DungeonEvent.CheckEnterDungeonMapView = 214
+DungeonEvent.OnEnterDungeonChatperView = 215
+DungeonEvent.CheckEnterEpisodeDungeonMapView = 216
+DungeonEvent.OnEnterEpisodeDungeonMapView = 217
+DungeonEvent.OnPuzzleFinish = 300
+DungeonEvent.OnPuzzleCircuitClick = 301
+DungeonEvent.SwitchHardMode = 401
+DungeonEvent.SelectMainStorySection = 501
+DungeonEvent.UnfoldMainStorySection = 502
+DungeonEvent.FakeUnfoldMainStorySection = 503
+DungeonEvent.BossStoryReset = 601
+DungeonEvent.BossStoryMoveMap = 602
+DungeonEvent.BossStoryMoveMapAnim = 603
+DungeonEvent.BossStoryPreMoveMapPos = 604
+DungeonEvent.OnCoverDungeonRecordReply = 1001
+DungeonEvent.OnDramaRewardStatusChange = 1101
+DungeonEvent.OnStartDungeonExtraParams = 1102
+DungeonEvent.OnRefreshAssistReply = 1103
+
+return DungeonEvent

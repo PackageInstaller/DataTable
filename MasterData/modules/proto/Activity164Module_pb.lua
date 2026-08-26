@@ -1,0 +1,848 @@
+﻿-- chunkname: @modules/proto/Activity164Module_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.Activity164Module_pb", package.seeall)
+
+local Activity164Module_pb = {}
+
+Activity164Module_pb.ACT164STEPPUSH_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.GETACT164INFOREQUEST_MSG = protobuf.Descriptor()
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164EPISODEINFO_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STEP_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164STEPPARAMFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACT_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164INTERACTIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTXFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTYFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTSHOWFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENE_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENEINTERACTFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENEWINFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164SCENEDEADFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INFO_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.GETACT164INFOREPLY_MSG = protobuf.Descriptor()
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164OPERATION_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164OPERATIONIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ABORTREQUEST_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ABORTREPLY_MSG = protobuf.Descriptor()
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD = protobuf.FieldDescriptor()
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.full_name = ".Act164StepPush.activityId"
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.full_name = ".Act164StepPush.episodeId"
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.name = "steps"
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.full_name = ".Act164StepPush.steps"
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.number = 3
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.index = 2
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.label = 3
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.has_default_value = false
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.default_value = {}
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.message_type = Activity164Module_pb.ACT164STEP_MSG
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.type = 11
+Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD.cpp_type = 10
+Activity164Module_pb.ACT164STEPPUSH_MSG.name = "Act164StepPush"
+Activity164Module_pb.ACT164STEPPUSH_MSG.full_name = ".Act164StepPush"
+Activity164Module_pb.ACT164STEPPUSH_MSG.nested_types = {}
+Activity164Module_pb.ACT164STEPPUSH_MSG.enum_types = {}
+Activity164Module_pb.ACT164STEPPUSH_MSG.fields = {
+	Activity164Module_pb.ACT164STEPPUSHACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164STEPPUSHEPISODEIDFIELD,
+	Activity164Module_pb.ACT164STEPPUSHSTEPSFIELD
+}
+Activity164Module_pb.ACT164STEPPUSH_MSG.is_extendable = false
+Activity164Module_pb.ACT164STEPPUSH_MSG.extensions = {}
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.full_name = ".GetAct164InfoRequest.activityId"
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.number = 1
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.index = 0
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.label = 1
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.type = 5
+Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.name = "GetAct164InfoRequest"
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.full_name = ".GetAct164InfoRequest"
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.nested_types = {}
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.enum_types = {}
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.fields = {
+	Activity164Module_pb.GETACT164INFOREQUESTACTIVITYIDFIELD
+}
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.is_extendable = false
+Activity164Module_pb.GETACT164INFOREQUEST_MSG.extensions = {}
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.full_name = ".Act164RollbackRequest.activityId"
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.full_name = ".Act164RollbackRequest.episodeId"
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.name = "type"
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.full_name = ".Act164RollbackRequest.type"
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.number = 3
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.index = 2
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.label = 1
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.has_default_value = false
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.default_value = 0
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.type = 5
+Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.name = "Act164RollbackRequest"
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.full_name = ".Act164RollbackRequest"
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.nested_types = {}
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.enum_types = {}
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.fields = {
+	Activity164Module_pb.ACT164ROLLBACKREQUESTACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164ROLLBACKREQUESTEPISODEIDFIELD,
+	Activity164Module_pb.ACT164ROLLBACKREQUESTTYPEFIELD
+}
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.is_extendable = false
+Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG.extensions = {}
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.full_name = ".Act164ReStartEpisodeRequest.activityId"
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.full_name = ".Act164ReStartEpisodeRequest.episodeId"
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.name = "Act164ReStartEpisodeRequest"
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.full_name = ".Act164ReStartEpisodeRequest"
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.nested_types = {}
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.enum_types = {}
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.fields = {
+	Activity164Module_pb.ACT164RESTARTEPISODEREQUESTACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164RESTARTEPISODEREQUESTEPISODEIDFIELD
+}
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.is_extendable = false
+Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG.extensions = {}
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.full_name = ".Act164BeginRoundReply.activityId"
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.full_name = ".Act164BeginRoundReply.episodeId"
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.name = "operations"
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.full_name = ".Act164BeginRoundReply.operations"
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.number = 3
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.index = 2
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.label = 3
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.has_default_value = false
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.default_value = {}
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.message_type = Activity164Module_pb.ACT164OPERATION_MSG
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.type = 11
+Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD.cpp_type = 10
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.name = "Act164BeginRoundReply"
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.full_name = ".Act164BeginRoundReply"
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.nested_types = {}
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.enum_types = {}
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.fields = {
+	Activity164Module_pb.ACT164BEGINROUNDREPLYACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164BEGINROUNDREPLYEPISODEIDFIELD,
+	Activity164Module_pb.ACT164BEGINROUNDREPLYOPERATIONSFIELD
+}
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.is_extendable = false
+Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG.extensions = {}
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.full_name = ".Act164EpisodeInfo.episodeId"
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.number = 1
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.index = 0
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.name = "passChessGame"
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.full_name = ".Act164EpisodeInfo.passChessGame"
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.number = 2
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.index = 1
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.label = 1
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.has_default_value = false
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.default_value = false
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.type = 8
+Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD.cpp_type = 7
+Activity164Module_pb.ACT164EPISODEINFO_MSG.name = "Act164EpisodeInfo"
+Activity164Module_pb.ACT164EPISODEINFO_MSG.full_name = ".Act164EpisodeInfo"
+Activity164Module_pb.ACT164EPISODEINFO_MSG.nested_types = {}
+Activity164Module_pb.ACT164EPISODEINFO_MSG.enum_types = {}
+Activity164Module_pb.ACT164EPISODEINFO_MSG.fields = {
+	Activity164Module_pb.ACT164EPISODEINFOEPISODEIDFIELD,
+	Activity164Module_pb.ACT164EPISODEINFOPASSCHESSGAMEFIELD
+}
+Activity164Module_pb.ACT164EPISODEINFO_MSG.is_extendable = false
+Activity164Module_pb.ACT164EPISODEINFO_MSG.extensions = {}
+Activity164Module_pb.ACT164STEPPARAMFIELD.name = "param"
+Activity164Module_pb.ACT164STEPPARAMFIELD.full_name = ".Act164Step.param"
+Activity164Module_pb.ACT164STEPPARAMFIELD.number = 1
+Activity164Module_pb.ACT164STEPPARAMFIELD.index = 0
+Activity164Module_pb.ACT164STEPPARAMFIELD.label = 1
+Activity164Module_pb.ACT164STEPPARAMFIELD.has_default_value = false
+Activity164Module_pb.ACT164STEPPARAMFIELD.default_value = ""
+Activity164Module_pb.ACT164STEPPARAMFIELD.type = 9
+Activity164Module_pb.ACT164STEPPARAMFIELD.cpp_type = 9
+Activity164Module_pb.ACT164STEP_MSG.name = "Act164Step"
+Activity164Module_pb.ACT164STEP_MSG.full_name = ".Act164Step"
+Activity164Module_pb.ACT164STEP_MSG.nested_types = {}
+Activity164Module_pb.ACT164STEP_MSG.enum_types = {}
+Activity164Module_pb.ACT164STEP_MSG.fields = {
+	Activity164Module_pb.ACT164STEPPARAMFIELD
+}
+Activity164Module_pb.ACT164STEP_MSG.is_extendable = false
+Activity164Module_pb.ACT164STEP_MSG.extensions = {}
+Activity164Module_pb.ACT164INTERACTIDFIELD.name = "id"
+Activity164Module_pb.ACT164INTERACTIDFIELD.full_name = ".Act164Interact.id"
+Activity164Module_pb.ACT164INTERACTIDFIELD.number = 1
+Activity164Module_pb.ACT164INTERACTIDFIELD.index = 0
+Activity164Module_pb.ACT164INTERACTIDFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTIDFIELD.default_value = 0
+Activity164Module_pb.ACT164INTERACTIDFIELD.type = 5
+Activity164Module_pb.ACT164INTERACTIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.name = "groupId"
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.full_name = ".Act164Interact.groupId"
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.number = 2
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.index = 1
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.default_value = 0
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.type = 5
+Activity164Module_pb.ACT164INTERACTGROUPIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.name = "mapIndex"
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.full_name = ".Act164Interact.mapIndex"
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.number = 3
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.index = 2
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.default_value = 0
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.type = 5
+Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INTERACTXFIELD.name = "x"
+Activity164Module_pb.ACT164INTERACTXFIELD.full_name = ".Act164Interact.x"
+Activity164Module_pb.ACT164INTERACTXFIELD.number = 4
+Activity164Module_pb.ACT164INTERACTXFIELD.index = 3
+Activity164Module_pb.ACT164INTERACTXFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTXFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTXFIELD.default_value = 0
+Activity164Module_pb.ACT164INTERACTXFIELD.type = 5
+Activity164Module_pb.ACT164INTERACTXFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INTERACTYFIELD.name = "y"
+Activity164Module_pb.ACT164INTERACTYFIELD.full_name = ".Act164Interact.y"
+Activity164Module_pb.ACT164INTERACTYFIELD.number = 5
+Activity164Module_pb.ACT164INTERACTYFIELD.index = 4
+Activity164Module_pb.ACT164INTERACTYFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTYFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTYFIELD.default_value = 0
+Activity164Module_pb.ACT164INTERACTYFIELD.type = 5
+Activity164Module_pb.ACT164INTERACTYFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.name = "direction"
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.full_name = ".Act164Interact.direction"
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.number = 6
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.index = 5
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.default_value = 0
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.type = 5
+Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.name = "show"
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.full_name = ".Act164Interact.show"
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.number = 7
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.index = 6
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.default_value = false
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.type = 8
+Activity164Module_pb.ACT164INTERACTSHOWFIELD.cpp_type = 7
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.name = "attrData"
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.full_name = ".Act164Interact.attrData"
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.number = 8
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.index = 7
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.label = 1
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.has_default_value = false
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.default_value = ""
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.type = 9
+Activity164Module_pb.ACT164INTERACTATTRDATAFIELD.cpp_type = 9
+Activity164Module_pb.ACT164INTERACT_MSG.name = "Act164Interact"
+Activity164Module_pb.ACT164INTERACT_MSG.full_name = ".Act164Interact"
+Activity164Module_pb.ACT164INTERACT_MSG.nested_types = {}
+Activity164Module_pb.ACT164INTERACT_MSG.enum_types = {}
+Activity164Module_pb.ACT164INTERACT_MSG.fields = {
+	Activity164Module_pb.ACT164INTERACTIDFIELD,
+	Activity164Module_pb.ACT164INTERACTGROUPIDFIELD,
+	Activity164Module_pb.ACT164INTERACTMAPINDEXFIELD,
+	Activity164Module_pb.ACT164INTERACTXFIELD,
+	Activity164Module_pb.ACT164INTERACTYFIELD,
+	Activity164Module_pb.ACT164INTERACTDIRECTIONFIELD,
+	Activity164Module_pb.ACT164INTERACTSHOWFIELD,
+	Activity164Module_pb.ACT164INTERACTATTRDATAFIELD
+}
+Activity164Module_pb.ACT164INTERACT_MSG.is_extendable = false
+Activity164Module_pb.ACT164INTERACT_MSG.extensions = {}
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.full_name = ".Act164Scene.episodeId"
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.number = 1
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.index = 0
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164SCENEEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.name = "currMapIndex"
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.full_name = ".Act164Scene.currMapIndex"
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.number = 2
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.index = 1
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.label = 1
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.default_value = 0
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.type = 5
+Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD.cpp_type = 1
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.name = "interact"
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.full_name = ".Act164Scene.interact"
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.number = 3
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.index = 2
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.label = 3
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.default_value = {}
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.message_type = Activity164Module_pb.ACT164INTERACT_MSG
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.type = 11
+Activity164Module_pb.ACT164SCENEINTERACTFIELD.cpp_type = 10
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.name = "currentRound"
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.full_name = ".Act164Scene.currentRound"
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.number = 4
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.index = 3
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.label = 1
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.default_value = 0
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.type = 5
+Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.name = "completedCount"
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.full_name = ".Act164Scene.completedCount"
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.number = 5
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.index = 4
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.label = 1
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.default_value = 0
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.type = 5
+Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD.cpp_type = 1
+Activity164Module_pb.ACT164SCENEWINFIELD.name = "win"
+Activity164Module_pb.ACT164SCENEWINFIELD.full_name = ".Act164Scene.win"
+Activity164Module_pb.ACT164SCENEWINFIELD.number = 6
+Activity164Module_pb.ACT164SCENEWINFIELD.index = 5
+Activity164Module_pb.ACT164SCENEWINFIELD.label = 1
+Activity164Module_pb.ACT164SCENEWINFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENEWINFIELD.default_value = false
+Activity164Module_pb.ACT164SCENEWINFIELD.type = 8
+Activity164Module_pb.ACT164SCENEWINFIELD.cpp_type = 7
+Activity164Module_pb.ACT164SCENEDEADFIELD.name = "dead"
+Activity164Module_pb.ACT164SCENEDEADFIELD.full_name = ".Act164Scene.dead"
+Activity164Module_pb.ACT164SCENEDEADFIELD.number = 7
+Activity164Module_pb.ACT164SCENEDEADFIELD.index = 6
+Activity164Module_pb.ACT164SCENEDEADFIELD.label = 1
+Activity164Module_pb.ACT164SCENEDEADFIELD.has_default_value = false
+Activity164Module_pb.ACT164SCENEDEADFIELD.default_value = false
+Activity164Module_pb.ACT164SCENEDEADFIELD.type = 8
+Activity164Module_pb.ACT164SCENEDEADFIELD.cpp_type = 7
+Activity164Module_pb.ACT164SCENE_MSG.name = "Act164Scene"
+Activity164Module_pb.ACT164SCENE_MSG.full_name = ".Act164Scene"
+Activity164Module_pb.ACT164SCENE_MSG.nested_types = {}
+Activity164Module_pb.ACT164SCENE_MSG.enum_types = {}
+Activity164Module_pb.ACT164SCENE_MSG.fields = {
+	Activity164Module_pb.ACT164SCENEEPISODEIDFIELD,
+	Activity164Module_pb.ACT164SCENECURRMAPINDEXFIELD,
+	Activity164Module_pb.ACT164SCENEINTERACTFIELD,
+	Activity164Module_pb.ACT164SCENECURRENTROUNDFIELD,
+	Activity164Module_pb.ACT164SCENECOMPLETEDCOUNTFIELD,
+	Activity164Module_pb.ACT164SCENEWINFIELD,
+	Activity164Module_pb.ACT164SCENEDEADFIELD
+}
+Activity164Module_pb.ACT164SCENE_MSG.is_extendable = false
+Activity164Module_pb.ACT164SCENE_MSG.extensions = {}
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.full_name = ".Act164Info.activityId"
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164INFOACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.name = "episodeInfo"
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.full_name = ".Act164Info.episodeInfo"
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.number = 2
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.index = 1
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.label = 3
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.has_default_value = false
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.default_value = {}
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.message_type = Activity164Module_pb.ACT164EPISODEINFO_MSG
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.type = 11
+Activity164Module_pb.ACT164INFOEPISODEINFOFIELD.cpp_type = 10
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.name = "currChessGameEpisodeId"
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.full_name = ".Act164Info.currChessGameEpisodeId"
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.number = 3
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.index = 2
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164INFO_MSG.name = "Act164Info"
+Activity164Module_pb.ACT164INFO_MSG.full_name = ".Act164Info"
+Activity164Module_pb.ACT164INFO_MSG.nested_types = {}
+Activity164Module_pb.ACT164INFO_MSG.enum_types = {}
+Activity164Module_pb.ACT164INFO_MSG.fields = {
+	Activity164Module_pb.ACT164INFOACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164INFOEPISODEINFOFIELD,
+	Activity164Module_pb.ACT164INFOCURRCHESSGAMEEPISODEIDFIELD
+}
+Activity164Module_pb.ACT164INFO_MSG.is_extendable = false
+Activity164Module_pb.ACT164INFO_MSG.extensions = {}
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.full_name = ".Act164ReStartEpisodeReply.activityId"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.full_name = ".Act164ReStartEpisodeReply.episodeId"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.name = "scene"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.full_name = ".Act164ReStartEpisodeReply.scene"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.number = 3
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.index = 2
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.label = 1
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.has_default_value = false
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.default_value = nil
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.message_type = Activity164Module_pb.ACT164SCENE_MSG
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.type = 11
+Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD.cpp_type = 10
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.name = "Act164ReStartEpisodeReply"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.full_name = ".Act164ReStartEpisodeReply"
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.nested_types = {}
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.enum_types = {}
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.fields = {
+	Activity164Module_pb.ACT164RESTARTEPISODEREPLYACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164RESTARTEPISODEREPLYEPISODEIDFIELD,
+	Activity164Module_pb.ACT164RESTARTEPISODEREPLYSCENEFIELD
+}
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.is_extendable = false
+Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG.extensions = {}
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.full_name = ".Act164StartEpisodeReply.activityId"
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.full_name = ".Act164StartEpisodeReply.episodeId"
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.name = "scene"
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.full_name = ".Act164StartEpisodeReply.scene"
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.number = 3
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.index = 2
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.label = 1
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.has_default_value = false
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.default_value = nil
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.message_type = Activity164Module_pb.ACT164SCENE_MSG
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.type = 11
+Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD.cpp_type = 10
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.name = "Act164StartEpisodeReply"
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.full_name = ".Act164StartEpisodeReply"
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.nested_types = {}
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.enum_types = {}
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.fields = {
+	Activity164Module_pb.ACT164STARTEPISODEREPLYACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164STARTEPISODEREPLYEPISODEIDFIELD,
+	Activity164Module_pb.ACT164STARTEPISODEREPLYSCENEFIELD
+}
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.is_extendable = false
+Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG.extensions = {}
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.full_name = ".Act164StartEpisodeRequest.activityId"
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.full_name = ".Act164StartEpisodeRequest.episodeId"
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.name = "Act164StartEpisodeRequest"
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.full_name = ".Act164StartEpisodeRequest"
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.nested_types = {}
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.enum_types = {}
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.fields = {
+	Activity164Module_pb.ACT164STARTEPISODEREQUESTACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164STARTEPISODEREQUESTEPISODEIDFIELD
+}
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.is_extendable = false
+Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG.extensions = {}
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.full_name = ".Act164BeginRoundRequest.activityId"
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.full_name = ".Act164BeginRoundRequest.episodeId"
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.name = "operations"
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.full_name = ".Act164BeginRoundRequest.operations"
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.number = 3
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.index = 2
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.label = 3
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.has_default_value = false
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.default_value = {}
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.message_type = Activity164Module_pb.ACT164OPERATION_MSG
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.type = 11
+Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD.cpp_type = 10
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.name = "Act164BeginRoundRequest"
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.full_name = ".Act164BeginRoundRequest"
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.nested_types = {}
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.enum_types = {}
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.fields = {
+	Activity164Module_pb.ACT164BEGINROUNDREQUESTACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164BEGINROUNDREQUESTEPISODEIDFIELD,
+	Activity164Module_pb.ACT164BEGINROUNDREQUESTOPERATIONSFIELD
+}
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.is_extendable = false
+Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG.extensions = {}
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.full_name = ".GetAct164InfoReply.activityId"
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.number = 1
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.index = 0
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.label = 1
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.type = 5
+Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.name = "episodes"
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.full_name = ".GetAct164InfoReply.episodes"
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.number = 2
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.index = 1
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.label = 3
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.has_default_value = false
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.default_value = {}
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.message_type = Activity164Module_pb.ACT164EPISODEINFO_MSG
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.type = 11
+Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD.cpp_type = 10
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.name = "currChessGameEpisodeId"
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.full_name = ".GetAct164InfoReply.currChessGameEpisodeId"
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.number = 3
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.index = 2
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.label = 1
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.type = 5
+Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.GETACT164INFOREPLY_MSG.name = "GetAct164InfoReply"
+Activity164Module_pb.GETACT164INFOREPLY_MSG.full_name = ".GetAct164InfoReply"
+Activity164Module_pb.GETACT164INFOREPLY_MSG.nested_types = {}
+Activity164Module_pb.GETACT164INFOREPLY_MSG.enum_types = {}
+Activity164Module_pb.GETACT164INFOREPLY_MSG.fields = {
+	Activity164Module_pb.GETACT164INFOREPLYACTIVITYIDFIELD,
+	Activity164Module_pb.GETACT164INFOREPLYEPISODESFIELD,
+	Activity164Module_pb.GETACT164INFOREPLYCURRCHESSGAMEEPISODEIDFIELD
+}
+Activity164Module_pb.GETACT164INFOREPLY_MSG.is_extendable = false
+Activity164Module_pb.GETACT164INFOREPLY_MSG.extensions = {}
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.name = "type"
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.full_name = ".Act164Operation.type"
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.number = 1
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.index = 0
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.label = 1
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.has_default_value = false
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.default_value = 0
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.type = 5
+Activity164Module_pb.ACT164OPERATIONTYPEFIELD.cpp_type = 1
+Activity164Module_pb.ACT164OPERATIONIDFIELD.name = "id"
+Activity164Module_pb.ACT164OPERATIONIDFIELD.full_name = ".Act164Operation.id"
+Activity164Module_pb.ACT164OPERATIONIDFIELD.number = 2
+Activity164Module_pb.ACT164OPERATIONIDFIELD.index = 1
+Activity164Module_pb.ACT164OPERATIONIDFIELD.label = 1
+Activity164Module_pb.ACT164OPERATIONIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164OPERATIONIDFIELD.default_value = 0
+Activity164Module_pb.ACT164OPERATIONIDFIELD.type = 5
+Activity164Module_pb.ACT164OPERATIONIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.name = "direction"
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.full_name = ".Act164Operation.direction"
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.number = 3
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.index = 2
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.label = 1
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.has_default_value = false
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.default_value = 0
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.type = 5
+Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD.cpp_type = 1
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.name = "param"
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.full_name = ".Act164Operation.param"
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.number = 4
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.index = 3
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.label = 1
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.has_default_value = false
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.default_value = ""
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.type = 9
+Activity164Module_pb.ACT164OPERATIONPARAMFIELD.cpp_type = 9
+Activity164Module_pb.ACT164OPERATION_MSG.name = "Act164Operation"
+Activity164Module_pb.ACT164OPERATION_MSG.full_name = ".Act164Operation"
+Activity164Module_pb.ACT164OPERATION_MSG.nested_types = {}
+Activity164Module_pb.ACT164OPERATION_MSG.enum_types = {}
+Activity164Module_pb.ACT164OPERATION_MSG.fields = {
+	Activity164Module_pb.ACT164OPERATIONTYPEFIELD,
+	Activity164Module_pb.ACT164OPERATIONIDFIELD,
+	Activity164Module_pb.ACT164OPERATIONDIRECTIONFIELD,
+	Activity164Module_pb.ACT164OPERATIONPARAMFIELD
+}
+Activity164Module_pb.ACT164OPERATION_MSG.is_extendable = false
+Activity164Module_pb.ACT164OPERATION_MSG.extensions = {}
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.full_name = ".Act164RollbackReply.activityId"
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.full_name = ".Act164RollbackReply.episodeId"
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.name = "scene"
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.full_name = ".Act164RollbackReply.scene"
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.number = 3
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.index = 2
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.label = 1
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.has_default_value = false
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.default_value = nil
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.message_type = Activity164Module_pb.ACT164SCENE_MSG
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.type = 11
+Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD.cpp_type = 10
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.name = "Act164RollbackReply"
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.full_name = ".Act164RollbackReply"
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.nested_types = {}
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.enum_types = {}
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.fields = {
+	Activity164Module_pb.ACT164ROLLBACKREPLYACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164ROLLBACKREPLYEPISODEIDFIELD,
+	Activity164Module_pb.ACT164ROLLBACKREPLYSCENEFIELD
+}
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.is_extendable = false
+Activity164Module_pb.ACT164ROLLBACKREPLY_MSG.extensions = {}
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.full_name = ".Act164AbortRequest.activityId"
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.full_name = ".Act164AbortRequest.episodeId"
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.name = "Act164AbortRequest"
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.full_name = ".Act164AbortRequest"
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.nested_types = {}
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.enum_types = {}
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.fields = {
+	Activity164Module_pb.ACT164ABORTREQUESTACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164ABORTREQUESTEPISODEIDFIELD
+}
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.is_extendable = false
+Activity164Module_pb.ACT164ABORTREQUEST_MSG.extensions = {}
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.name = "activityId"
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.full_name = ".Act164AbortReply.activityId"
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.number = 1
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.index = 0
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.label = 1
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.type = 5
+Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.name = "episodeId"
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.full_name = ".Act164AbortReply.episodeId"
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.number = 2
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.index = 1
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.label = 1
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.has_default_value = false
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.default_value = 0
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.type = 5
+Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD.cpp_type = 1
+Activity164Module_pb.ACT164ABORTREPLY_MSG.name = "Act164AbortReply"
+Activity164Module_pb.ACT164ABORTREPLY_MSG.full_name = ".Act164AbortReply"
+Activity164Module_pb.ACT164ABORTREPLY_MSG.nested_types = {}
+Activity164Module_pb.ACT164ABORTREPLY_MSG.enum_types = {}
+Activity164Module_pb.ACT164ABORTREPLY_MSG.fields = {
+	Activity164Module_pb.ACT164ABORTREPLYACTIVITYIDFIELD,
+	Activity164Module_pb.ACT164ABORTREPLYEPISODEIDFIELD
+}
+Activity164Module_pb.ACT164ABORTREPLY_MSG.is_extendable = false
+Activity164Module_pb.ACT164ABORTREPLY_MSG.extensions = {}
+Activity164Module_pb.Act164AbortReply = protobuf.Message(Activity164Module_pb.ACT164ABORTREPLY_MSG)
+Activity164Module_pb.Act164AbortRequest = protobuf.Message(Activity164Module_pb.ACT164ABORTREQUEST_MSG)
+Activity164Module_pb.Act164BeginRoundReply = protobuf.Message(Activity164Module_pb.ACT164BEGINROUNDREPLY_MSG)
+Activity164Module_pb.Act164BeginRoundRequest = protobuf.Message(Activity164Module_pb.ACT164BEGINROUNDREQUEST_MSG)
+Activity164Module_pb.Act164EpisodeInfo = protobuf.Message(Activity164Module_pb.ACT164EPISODEINFO_MSG)
+Activity164Module_pb.Act164Info = protobuf.Message(Activity164Module_pb.ACT164INFO_MSG)
+Activity164Module_pb.Act164Interact = protobuf.Message(Activity164Module_pb.ACT164INTERACT_MSG)
+Activity164Module_pb.Act164Operation = protobuf.Message(Activity164Module_pb.ACT164OPERATION_MSG)
+Activity164Module_pb.Act164ReStartEpisodeReply = protobuf.Message(Activity164Module_pb.ACT164RESTARTEPISODEREPLY_MSG)
+Activity164Module_pb.Act164ReStartEpisodeRequest = protobuf.Message(Activity164Module_pb.ACT164RESTARTEPISODEREQUEST_MSG)
+Activity164Module_pb.Act164RollbackReply = protobuf.Message(Activity164Module_pb.ACT164ROLLBACKREPLY_MSG)
+Activity164Module_pb.Act164RollbackRequest = protobuf.Message(Activity164Module_pb.ACT164ROLLBACKREQUEST_MSG)
+Activity164Module_pb.Act164Scene = protobuf.Message(Activity164Module_pb.ACT164SCENE_MSG)
+Activity164Module_pb.Act164StartEpisodeReply = protobuf.Message(Activity164Module_pb.ACT164STARTEPISODEREPLY_MSG)
+Activity164Module_pb.Act164StartEpisodeRequest = protobuf.Message(Activity164Module_pb.ACT164STARTEPISODEREQUEST_MSG)
+Activity164Module_pb.Act164Step = protobuf.Message(Activity164Module_pb.ACT164STEP_MSG)
+Activity164Module_pb.Act164StepPush = protobuf.Message(Activity164Module_pb.ACT164STEPPUSH_MSG)
+Activity164Module_pb.GetAct164InfoReply = protobuf.Message(Activity164Module_pb.GETACT164INFOREPLY_MSG)
+Activity164Module_pb.GetAct164InfoRequest = protobuf.Message(Activity164Module_pb.GETACT164INFOREQUEST_MSG)
+
+return Activity164Module_pb

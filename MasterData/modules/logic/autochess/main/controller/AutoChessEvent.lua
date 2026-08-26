@@ -1,0 +1,48 @@
+﻿-- chunkname: @modules/logic/autochess/main/controller/AutoChessEvent.lua
+
+module("modules.logic.autochess.main.controller.AutoChessEvent", package.seeall)
+
+local AutoChessEvent = _M
+local _get = GameUtil.getUniqueTb()
+
+AutoChessEvent.OneClickClaimReward = _get()
+AutoChessEvent.EnterFightReply = _get()
+AutoChessEvent.UpdateMallData = _get()
+AutoChessEvent.BuildReply = _get()
+AutoChessEvent.BuyChessReply = _get()
+AutoChessEvent.SettlePush = _get()
+AutoChessEvent.UpdateMasterSkill = _get()
+AutoChessEvent.ForcePickReply = _get()
+AutoChessEvent.UpdateMallRegion = _get()
+AutoChessEvent.StartFight = _get()
+AutoChessEvent.EndFight = _get
+AutoChessEvent.NextRound = _get()
+AutoChessEvent.StopFight = _get()
+AutoChessEvent.SkipFight = _get()
+AutoChessEvent.DragChessEntity = _get()
+AutoChessEvent.DragChessEntityEnd = _get()
+AutoChessEvent.DrageMallItem = _get()
+AutoChessEvent.DrageMallItemEnd = _get()
+AutoChessEvent.CheckEnemyTeam = _get()
+AutoChessEvent.MallCoinChange = _get()
+AutoChessEvent.PlayStepList = _get()
+AutoChessEvent.ForcePickViewBoard = _get()
+AutoChessEvent.UpdateLeaderBuff = _get()
+AutoChessEvent.StartBuyStepFinih = _get()
+AutoChessEvent.SelectFriendSnapshot = _get()
+AutoChessEvent.UsingLeaderSkill = _get()
+AutoChessEvent.ImmediatelyFlowFinish = _get()
+AutoChessEvent.BossDrop = _get()
+AutoChessEvent.updateCultivateReddot = _get()
+AutoChessEvent.ZBuyChess = _get()
+AutoChessEvent.ZDrayChessToPos = _get()
+AutoChessEvent.ZDragFreeChess = _get()
+AutoChessEvent.ZSaleChess = _get()
+AutoChessEvent.ZDragChessExchangeEXP = _get()
+AutoChessEvent.ZUseSkill = _get()
+AutoChessEvent.ZClickPreviewEnemy = _get()
+AutoChessEvent.ZClickBackSelf = _get()
+AutoChessEvent.ZTrigger28302 = _get()
+AutoChessEvent.ZTrigger32012 = _get()
+
+return AutoChessEvent

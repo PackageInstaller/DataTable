@@ -1,0 +1,761 @@
+﻿-- chunkname: @modules/proto/AssassinOutSideModule_pb.lua
+
+local require = require
+local protobuf = require("protobuf.protobuf")
+
+module("modules.proto.AssassinOutSideModule_pb", package.seeall)
+
+local AssassinOutSideModule_pb = {}
+
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINHERO_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINITEM_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.HEROITEM_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG = protobuf.Descriptor()
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD = protobuf.FieldDescriptor()
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.name = "assassinOutSideInfo"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.full_name = ".GetAssassinOutSideInfoReply.assassinOutSideInfo"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.number = 1
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.index = 0
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.label = 1
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.has_default_value = false
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.default_value = nil
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.message_type = AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.type = 11
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD.cpp_type = 10
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.name = "GetAssassinOutSideInfoReply"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.full_name = ".GetAssassinOutSideInfoReply"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.nested_types = {}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.enum_types = {}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.fields = {
+	AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLYASSASSINOUTSIDEINFOFIELD
+}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.is_extendable = false
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG.extensions = {}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.name = "buildingId"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.full_name = ".BuildingLevelUpRequest.buildingId"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.number = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.index = 0
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.label = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.default_value = 0
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.type = 5
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.name = "BuildingLevelUpRequest"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.full_name = ".BuildingLevelUpRequest"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.nested_types = {}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.enum_types = {}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.fields = {
+	AssassinOutSideModule_pb.BUILDINGLEVELUPREQUESTBUILDINGIDFIELD
+}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.is_extendable = false
+AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.name = "unlockBuildIds"
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.full_name = ".AssassinBuildInfo.unlockBuildIds"
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.name = "buildings"
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.full_name = ".AssassinBuildInfo.buildings"
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.message_type = AssassinOutSideModule_pb.ASSASSINBUILD_MSG
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.name = "AssassinBuildInfo"
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.full_name = ".AssassinBuildInfo"
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINBUILDINFOUNLOCKBUILDIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINBUILDINFOBUILDINGSFIELD
+}
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.name = "id"
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.full_name = ".AssassinBuild.id"
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.name = "type"
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.full_name = ".AssassinBuild.type"
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.name = "level"
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.full_name = ".AssassinBuild.level"
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.number = 3
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.index = 2
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.name = "AssassinBuild"
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.full_name = ".AssassinBuild"
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINBUILDIDFIELD,
+	AssassinOutSideModule_pb.ASSASSINBUILDTYPEFIELD,
+	AssassinOutSideModule_pb.ASSASSINBUILDLEVELFIELD
+}
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINBUILD_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.name = "heroId"
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.full_name = ".AssassinHero.heroId"
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.name = "careerId"
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.full_name = ".AssassinHero.careerId"
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.name = "itemList"
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.full_name = ".AssassinHero.itemList"
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.number = 3
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.index = 2
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.message_type = AssassinOutSideModule_pb.HEROITEM_MSG
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.name = "AssassinHero"
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.full_name = ".AssassinHero"
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINHEROHEROIDFIELD,
+	AssassinOutSideModule_pb.ASSASSINHEROCAREERIDFIELD,
+	AssassinOutSideModule_pb.ASSASSINHEROITEMLISTFIELD
+}
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINHERO_MSG.extensions = {}
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.name = "questId"
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.full_name = ".InteractiveRequest.questId"
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.number = 1
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.index = 0
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.label = 1
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.default_value = 0
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.type = 5
+AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.name = "InteractiveRequest"
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.full_name = ".InteractiveRequest"
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.nested_types = {}
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.enum_types = {}
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.fields = {
+	AssassinOutSideModule_pb.INTERACTIVEREQUESTQUESTIDFIELD
+}
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.is_extendable = false
+AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG.extensions = {}
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.name = "heroId"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.full_name = ".EquipHeroItemRequest.heroId"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.number = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.index = 0
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.label = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.default_value = 0
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.type = 5
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.name = "index"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.full_name = ".EquipHeroItemRequest.index"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.number = 2
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.index = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.label = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.has_default_value = false
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.default_value = 0
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.type = 5
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD.cpp_type = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.name = "itemType"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.full_name = ".EquipHeroItemRequest.itemType"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.number = 3
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.index = 2
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.label = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.has_default_value = false
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.default_value = 0
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.type = 5
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD.cpp_type = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.name = "EquipHeroItemRequest"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.full_name = ".EquipHeroItemRequest"
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.nested_types = {}
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.enum_types = {}
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.fields = {
+	AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTHEROIDFIELD,
+	AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTINDEXFIELD,
+	AssassinOutSideModule_pb.EQUIPHEROITEMREQUESTITEMTYPEFIELD
+}
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.is_extendable = false
+AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.name = "itemId"
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.full_name = ".AssassinItem.itemId"
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.name = "count"
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.full_name = ".AssassinItem.count"
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.number = 4
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.name = "AssassinItem"
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.full_name = ".AssassinItem"
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINITEMITEMIDFIELD,
+	AssassinOutSideModule_pb.ASSASSINITEMCOUNTFIELD
+}
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINITEM_MSG.extensions = {}
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.name = "questId"
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.full_name = ".InteractiveReply.questId"
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.number = 1
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.index = 0
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.label = 1
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.default_value = 0
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.type = 5
+AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.name = "coin"
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.full_name = ".InteractiveReply.coin"
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.number = 2
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.index = 1
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.label = 1
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.has_default_value = false
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.default_value = 0
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.type = 5
+AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD.cpp_type = 1
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.name = "InteractiveReply"
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.full_name = ".InteractiveReply"
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.nested_types = {}
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.enum_types = {}
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.fields = {
+	AssassinOutSideModule_pb.INTERACTIVEREPLYQUESTIDFIELD,
+	AssassinOutSideModule_pb.INTERACTIVEREPLYCOINFIELD
+}
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.is_extendable = false
+AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG.extensions = {}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.name = "heroId"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.full_name = ".HeroTransferCareerRequest.heroId"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.number = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.index = 0
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.label = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.default_value = 0
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.type = 5
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.name = "careerId"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.full_name = ".HeroTransferCareerRequest.careerId"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.number = 2
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.index = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.label = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.default_value = 0
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.type = 5
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.name = "HeroTransferCareerRequest"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.full_name = ".HeroTransferCareerRequest"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.nested_types = {}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.enum_types = {}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.fields = {
+	AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTHEROIDFIELD,
+	AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUESTCAREERIDFIELD
+}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.is_extendable = false
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.name = "unlockCareerIds"
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.full_name = ".AssassinHeroInfo.unlockCareerIds"
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.name = "heros"
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.full_name = ".AssassinHeroInfo.heros"
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.message_type = AssassinOutSideModule_pb.ASSASSINHERO_MSG
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.name = "AssassinHeroInfo"
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.full_name = ".AssassinHeroInfo"
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINHEROINFOUNLOCKCAREERIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINHEROINFOHEROSFIELD
+}
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG.extensions = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.name = "activityId"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.full_name = ".GetAssassinLibraryInfoRequest.activityId"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.number = 1
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.index = 0
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.label = 1
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.default_value = 0
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.type = 5
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.name = "GetAssassinLibraryInfoRequest"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.full_name = ".GetAssassinLibraryInfoRequest"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.nested_types = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.enum_types = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.fields = {
+	AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUESTACTIVITYIDFIELD
+}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.is_extendable = false
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.name = "finishQuestIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.full_name = ".AssassinOutSideQuestInfo.finishQuestIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.name = "currentQuestIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.full_name = ".AssassinOutSideQuestInfo.currentQuestIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.name = "assassinQuestId"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.full_name = ".AssassinOutSideQuestInfo.assassinQuestId"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.number = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.index = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.name = "AssassinOutSideQuestInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.full_name = ".AssassinOutSideQuestInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOFINISHQUESTIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOCURRENTQUESTIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFOASSASSINQUESTIDFIELD
+}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG.extensions = {}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.name = "hero"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.full_name = ".HeroTransferCareerReply.hero"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.number = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.index = 0
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.label = 1
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.has_default_value = false
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.default_value = nil
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.message_type = AssassinOutSideModule_pb.ASSASSINHERO_MSG
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.type = 11
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD.cpp_type = 10
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.name = "HeroTransferCareerReply"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.full_name = ".HeroTransferCareerReply"
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.nested_types = {}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.enum_types = {}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.fields = {
+	AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLYHEROFIELD
+}
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.is_extendable = false
+AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG.extensions = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.name = "unlockLibraryIds"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.full_name = ".GetAssassinLibraryInfoReply.unlockLibraryIds"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.number = 1
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.index = 0
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.label = 3
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.type = 5
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.name = "GetAssassinLibraryInfoReply"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.full_name = ".GetAssassinLibraryInfoReply"
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.nested_types = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.enum_types = {}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.fields = {
+	AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLYUNLOCKLIBRARYIDSFIELD
+}
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.is_extendable = false
+AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG.extensions = {}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.name = "coin"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.full_name = ".BuildingLevelUpReply.coin"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.number = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.index = 0
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.label = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.has_default_value = false
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.default_value = 0
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.type = 5
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD.cpp_type = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.name = "building"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.full_name = ".BuildingLevelUpReply.building"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.number = 2
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.index = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.label = 1
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.has_default_value = false
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.default_value = nil
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.message_type = AssassinOutSideModule_pb.ASSASSINBUILD_MSG
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.type = 11
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD.cpp_type = 10
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.name = "BuildingLevelUpReply"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.full_name = ".BuildingLevelUpReply"
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.nested_types = {}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.enum_types = {}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.fields = {
+	AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYCOINFIELD,
+	AssassinOutSideModule_pb.BUILDINGLEVELUPREPLYBUILDINGFIELD
+}
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.is_extendable = false
+AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG.extensions = {}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.name = "activityId"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.full_name = ".GetAssassinOutSideInfoRequest.activityId"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.number = 1
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.index = 0
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.label = 1
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.default_value = 0
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.type = 5
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.name = "GetAssassinOutSideInfoRequest"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.full_name = ".GetAssassinOutSideInfoRequest"
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.nested_types = {}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.enum_types = {}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.fields = {
+	AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUESTACTIVITYIDFIELD
+}
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.is_extendable = false
+AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG.extensions = {}
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.name = "index"
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.full_name = ".HeroItem.index"
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.number = 1
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.index = 0
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.label = 1
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.has_default_value = false
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.default_value = 0
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.type = 5
+AssassinOutSideModule_pb.HEROITEMINDEXFIELD.cpp_type = 1
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.name = "itemType"
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.full_name = ".HeroItem.itemType"
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.number = 2
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.index = 1
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.label = 1
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.has_default_value = false
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.default_value = 0
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.type = 5
+AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD.cpp_type = 1
+AssassinOutSideModule_pb.HEROITEM_MSG.name = "HeroItem"
+AssassinOutSideModule_pb.HEROITEM_MSG.full_name = ".HeroItem"
+AssassinOutSideModule_pb.HEROITEM_MSG.nested_types = {}
+AssassinOutSideModule_pb.HEROITEM_MSG.enum_types = {}
+AssassinOutSideModule_pb.HEROITEM_MSG.fields = {
+	AssassinOutSideModule_pb.HEROITEMINDEXFIELD,
+	AssassinOutSideModule_pb.HEROITEMITEMTYPEFIELD
+}
+AssassinOutSideModule_pb.HEROITEM_MSG.is_extendable = false
+AssassinOutSideModule_pb.HEROITEM_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.name = "unlockMapIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.full_name = ".AssassinOutSideUnlockPush.unlockMapIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.name = "unlockBuildIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.full_name = ".AssassinOutSideUnlockPush.unlockBuildIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.name = "items"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.full_name = ".AssassinOutSideUnlockPush.items"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.number = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.index = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.message_type = AssassinOutSideModule_pb.ASSASSINITEM_MSG
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.name = "heros"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.full_name = ".AssassinOutSideUnlockPush.heros"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.number = 4
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.index = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.message_type = AssassinOutSideModule_pb.ASSASSINHERO_MSG
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.name = "questIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.full_name = ".AssassinOutSideUnlockPush.questIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.number = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.index = 4
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.name = "AssassinOutSideUnlockPush"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.full_name = ".AssassinOutSideUnlockPush"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKMAPIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHUNLOCKBUILDIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHITEMSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHHEROSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSHQUESTIDSFIELD
+}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.name = "unlockLibraryIds"
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.full_name = ".AssassinUnlockLibraryPush.unlockLibraryIds"
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.name = "AssassinUnlockLibraryPush"
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.full_name = ".AssassinUnlockLibraryPush"
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSHUNLOCKLIBRARYIDSFIELD
+}
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG.extensions = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.name = "activityId"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.full_name = ".AssassinOutSideInfo.activityId"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.number = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.index = 0
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.label = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.name = "unlockMapIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.full_name = ".AssassinOutSideInfo.unlockMapIds"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.number = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.index = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.name = "items"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.full_name = ".AssassinOutSideInfo.items"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.number = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.index = 2
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.label = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.default_value = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.message_type = AssassinOutSideModule_pb.ASSASSINITEM_MSG
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.name = "buildingInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.full_name = ".AssassinOutSideInfo.buildingInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.number = 4
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.index = 3
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.default_value = nil
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.message_type = AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.name = "questInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.full_name = ".AssassinOutSideInfo.questInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.number = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.index = 4
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.default_value = nil
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.message_type = AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.name = "heroInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.full_name = ".AssassinOutSideInfo.heroInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.number = 6
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.index = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.default_value = nil
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.message_type = AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.type = 11
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD.cpp_type = 10
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.name = "coin"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.full_name = ".AssassinOutSideInfo.coin"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.number = 7
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.index = 6
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.label = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.has_default_value = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.default_value = 0
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.type = 5
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD.cpp_type = 1
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.name = "AssassinOutSideInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.full_name = ".AssassinOutSideInfo"
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.nested_types = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.enum_types = {}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.fields = {
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOACTIVITYIDFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOUNLOCKMAPIDSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOITEMSFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOBUILDINGINFOFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOQUESTINFOFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOHEROINFOFIELD,
+	AssassinOutSideModule_pb.ASSASSINOUTSIDEINFOCOINFIELD
+}
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.is_extendable = false
+AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG.extensions = {}
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.name = "hero"
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.full_name = ".EquipHeroItemReply.hero"
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.number = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.index = 0
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.label = 1
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.has_default_value = false
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.default_value = nil
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.message_type = AssassinOutSideModule_pb.ASSASSINHERO_MSG
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.type = 11
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD.cpp_type = 10
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.name = "EquipHeroItemReply"
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.full_name = ".EquipHeroItemReply"
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.nested_types = {}
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.enum_types = {}
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.fields = {
+	AssassinOutSideModule_pb.EQUIPHEROITEMREPLYHEROFIELD
+}
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.is_extendable = false
+AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG.extensions = {}
+AssassinOutSideModule_pb.AssassinBuild = protobuf.Message(AssassinOutSideModule_pb.ASSASSINBUILD_MSG)
+AssassinOutSideModule_pb.AssassinBuildInfo = protobuf.Message(AssassinOutSideModule_pb.ASSASSINBUILDINFO_MSG)
+AssassinOutSideModule_pb.AssassinHero = protobuf.Message(AssassinOutSideModule_pb.ASSASSINHERO_MSG)
+AssassinOutSideModule_pb.AssassinHeroInfo = protobuf.Message(AssassinOutSideModule_pb.ASSASSINHEROINFO_MSG)
+AssassinOutSideModule_pb.AssassinItem = protobuf.Message(AssassinOutSideModule_pb.ASSASSINITEM_MSG)
+AssassinOutSideModule_pb.AssassinOutSideInfo = protobuf.Message(AssassinOutSideModule_pb.ASSASSINOUTSIDEINFO_MSG)
+AssassinOutSideModule_pb.AssassinOutSideQuestInfo = protobuf.Message(AssassinOutSideModule_pb.ASSASSINOUTSIDEQUESTINFO_MSG)
+AssassinOutSideModule_pb.AssassinOutSideUnlockPush = protobuf.Message(AssassinOutSideModule_pb.ASSASSINOUTSIDEUNLOCKPUSH_MSG)
+AssassinOutSideModule_pb.AssassinUnlockLibraryPush = protobuf.Message(AssassinOutSideModule_pb.ASSASSINUNLOCKLIBRARYPUSH_MSG)
+AssassinOutSideModule_pb.BuildingLevelUpReply = protobuf.Message(AssassinOutSideModule_pb.BUILDINGLEVELUPREPLY_MSG)
+AssassinOutSideModule_pb.BuildingLevelUpRequest = protobuf.Message(AssassinOutSideModule_pb.BUILDINGLEVELUPREQUEST_MSG)
+AssassinOutSideModule_pb.EquipHeroItemReply = protobuf.Message(AssassinOutSideModule_pb.EQUIPHEROITEMREPLY_MSG)
+AssassinOutSideModule_pb.EquipHeroItemRequest = protobuf.Message(AssassinOutSideModule_pb.EQUIPHEROITEMREQUEST_MSG)
+AssassinOutSideModule_pb.GetAssassinLibraryInfoReply = protobuf.Message(AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREPLY_MSG)
+AssassinOutSideModule_pb.GetAssassinLibraryInfoRequest = protobuf.Message(AssassinOutSideModule_pb.GETASSASSINLIBRARYINFOREQUEST_MSG)
+AssassinOutSideModule_pb.GetAssassinOutSideInfoReply = protobuf.Message(AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREPLY_MSG)
+AssassinOutSideModule_pb.GetAssassinOutSideInfoRequest = protobuf.Message(AssassinOutSideModule_pb.GETASSASSINOUTSIDEINFOREQUEST_MSG)
+AssassinOutSideModule_pb.HeroItem = protobuf.Message(AssassinOutSideModule_pb.HEROITEM_MSG)
+AssassinOutSideModule_pb.HeroTransferCareerReply = protobuf.Message(AssassinOutSideModule_pb.HEROTRANSFERCAREERREPLY_MSG)
+AssassinOutSideModule_pb.HeroTransferCareerRequest = protobuf.Message(AssassinOutSideModule_pb.HEROTRANSFERCAREERREQUEST_MSG)
+AssassinOutSideModule_pb.InteractiveReply = protobuf.Message(AssassinOutSideModule_pb.INTERACTIVEREPLY_MSG)
+AssassinOutSideModule_pb.InteractiveRequest = protobuf.Message(AssassinOutSideModule_pb.INTERACTIVEREQUEST_MSG)
+
+return AssassinOutSideModule_pb

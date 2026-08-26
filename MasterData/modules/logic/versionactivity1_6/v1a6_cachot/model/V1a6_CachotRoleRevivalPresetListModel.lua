@@ -1,0 +1,46 @@
+﻿-- chunkname: @modules/logic/versionactivity1_6/v1a6_cachot/model/V1a6_CachotRoleRevivalPresetListModel.lua
+
+module("modules.logic.versionactivity1_6.v1a6_cachot.model.V1a6_CachotRoleRevivalPresetListModel", package.seeall)
+
+local V1a6_CachotRoleRevivalPresetListModel = class("V1a6_CachotRoleRevivalPresetListModel", ListScrollModel)
+
+function V1a6_CachotRoleRevivalPresetListModel:onInit()
+	return
+end
+
+function V1a6_CachotRoleRevivalPresetListModel:reInit()
+	self:onInit()
+end
+
+function V1a6_CachotRoleRevivalPresetListModel:getEquip(mo)
+	return self._equipMap[mo]
+end
+
+function V1a6_CachotRoleRevivalPresetListModel:initList()
+	V1a6_CachotTeamModel.instance:clearSeatInfos()
+
+	local rogueInfo = V1a6_CachotModel.instance:getRogueInfo()
+	local teamInfo = rogueInfo.teamInfo
+	local heroList = teamInfo:getGroupHeros()
+	local equipList = teamInfo:getGroupEquips()
+
+	self._equipMap = {}
+
+	local list = {}
+
+	for i = 1, V1a6_CachotEnum.HeroCountInGroup do
+		local mo = heroList[i]
+
+		table.insert(list, mo)
+
+		self._equipMap[mo] = equipList[i]
+
+		V1a6_CachotTeamModel.instance:setSeatInfo(i, V1a6_CachotTeamModel.instance:getSeatLevel(i), mo)
+	end
+
+	self:setList(list)
+end
+
+V1a6_CachotRoleRevivalPresetListModel.instance = V1a6_CachotRoleRevivalPresetListModel.New()
+
+return V1a6_CachotRoleRevivalPresetListModel
