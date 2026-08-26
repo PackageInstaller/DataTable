@@ -67,11 +67,15 @@ ROOT = Path(__file__).resolve().parent
 ASSETS_DIR = ROOT / "Assets"
 HOTDLL_DIR = ROOT / "HotDlls"
 MASTER_DIR = ROOT / "MasterData"
+PAINTING_DIR = ROOT / "Painting"
 STATE_PATH = ROOT / "version.json"
 CONFIG_DLL_NAME = "YJZSRuntime.dll"
 DESCRIPTOR_CACHE = HOTDLL_DIR / "Config.FileDescriptorProto"
 JSONDATA_NEEDLE = "/foldersplitbundle/config/jsondata/"
 LANGUAGE_NEEDLE = "/foldersplitbundle/config/language/"
+SHD_NEEDLE = "/foldersplitbundle/shd/"
+GAME_TITLE = "悠久之树"
+PAINTING_NAME_TABLES = ("Character", "Skin", "ChaDes", "SkinDes", "ProSkin")
 _tls = threading.local()
 
 # protobuf FieldDescriptorProto.type / label
@@ -818,6 +822,428 @@ def export_masterdata(targets: list[tuple[AssetItem, str]]) -> int:
     return fail
 
 
+def shd_folder_id(paths: list[str]) -> str | None:
+    """FolderSplitBundle/SHD/{id}/shd.prefab → 立绘目录 id。"""
+    for path in paths:
+        low = path.replace("\\", "/").lower()
+        if SHD_NEEDLE not in low or "/localization/" in low:
+            continue
+        parts = low.split("/")
+        try:
+            idx = parts.index("shd")
+        except ValueError:
+            continue
+        if idx + 1 >= len(parts):
+            continue
+        fid = parts[idx + 1]
+        if fid and fid != "shd.prefab":
+            return fid
+    return None
+
+
+def iter_shd_items(
+    items: list[AssetItem],
+    hash_to_paths: dict[str, list[str]],
+) -> list[tuple[AssetItem, str]]:
+    out: list[tuple[AssetItem, str]] = []
+    seen: set[str] = set()
+    for item in items:
+        if item.group.startswith("Extra/"):
+            continue
+        key = item.name.lower()
+        if key in seen:
+            continue
+        fid = shd_folder_id(hash_to_paths.get(key) or [])
+        if fid is None:
+            continue
+        seen.add(key)
+        out.append((item, fid))
+    return out
+
+
+def _localized_content(entries: Any, prefer: str = "ChineseSimplified") -> str:
+    if not entries:
+        return ""
+    if isinstance(entries, str):
+        return entries.strip()
+    picked = ""
+    if not isinstance(entries, list):
+        return ""
+    for entry in entries:
+        if not isinstance(entry, dict):
+            continue
+        content = str(entry.get("Content") or "").strip()
+        if not content:
+            continue
+        if entry.get("Type") == prefer:
+            return content
+        if not picked:
+            picked = content
+    return picked
+
+
+def _safe_fs_name(text: str) -> str:
+    table = str.maketrans(
+        {
+            "/": "／",
+            "\\": "＼",
+            ":": "：",
+            "*": "＊",
+            "?": "？",
+            '"': "'",
+            "<": "＜",
+            ">": "＞",
+            "|": "｜",
+            "\n": "",
+            "\r": "",
+            "\t": " ",
+        }
+    )
+    text = text.translate(table).strip()
+    return text or "未知"
+
+
+def _load_named_tables(
+    targets: list[tuple[AssetItem, str]],
+    names: Iterable[str],
+) -> dict[str, Any]:
+    import UnityPy  # noqa: PLC0415
+
+    warnings.filterwarnings("ignore", message="No valid Unity version found")
+    schema = load_config_schema()
+    want = set(names)
+    out: dict[str, Any] = {}
+    for item, _sub in targets:
+        bundle = local_path_for(item)
+        if not bundle.is_file():
+            continue
+        env = UnityPy.load(str(bundle))
+        for obj in env.objects:
+            if getattr(obj.type, "name", None) != "TextAsset":
+                continue
+            name, script = _textasset_script(obj)
+            if name not in want:
+                continue
+            msg = schema.find_table(name)
+            if msg is None:
+                continue
+            out[name] = _pb_rows(_pb_decode_message(script, msg, schema))
+            if len(out) == len(want):
+                return out
+    return out
+
+
+def build_painting_names(tables: dict[str, Any]) -> dict[str, tuple[str, str]]:
+    """SHD 目录 id → (角色名, 皮肤/变体名)。"""
+    chades = {
+        int(row["Id"]): _localized_content(row.get("Name"))
+        for row in (tables.get("ChaDes") or [])
+        if row.get("Id")
+    }
+    skindes = {
+        int(row["Id"]): _localized_content(row.get("Name"))
+        for row in (tables.get("SkinDes") or [])
+        if row.get("Id")
+    }
+    skins = {int(row["Id"]): row for row in (tables.get("Skin") or []) if row.get("Id")}
+    skin_to_char: dict[int, int] = {}
+    for row in tables.get("Character") or []:
+        lst = [int(x) for x in (row.get("CharacterSkinList") or [])]
+        if not lst:
+            continue
+        cid = lst[0]
+        for sid in lst:
+            skin_to_char[sid] = cid
+    live2d_to_skin: dict[int, dict[str, Any]] = {}
+    for skin in skins.values():
+        lid = skin.get("CharacterLive2D")
+        if lid:
+            live2d_to_skin.setdefault(int(lid), skin)
+
+    names: dict[str, tuple[str, str]] = {}
+
+    def put(fid: int, cha: str, skin: str) -> None:
+        names[str(fid)] = (cha, skin)
+
+    for sid, skin in skins.items():
+        cid = skin.get("Character") or skin_to_char.get(sid)
+        if not cid:
+            sc = skin.get("SkinCorrelation")
+            if sc in chades:
+                cid = sc
+        cha = chades.get(int(cid), "") if cid else ""
+        skn = skindes.get(sid, "")
+        if not cha:
+            continue
+        if not skn:
+            skn = "默认" if cid and int(cid) == sid else str(sid)
+        put(sid, cha, skn)
+        lid = skin.get("CharacterLive2D")
+        if lid and int(lid) != sid:
+            put(int(lid), cha, skn)
+
+    for sid, cid in skin_to_char.items():
+        if str(sid) in names:
+            continue
+        cha = chades.get(cid, "")
+        if not cha:
+            continue
+        put(sid, cha, skindes.get(sid, "") or "默认")
+
+    for cid, cha in chades.items():
+        if str(cid) not in names:
+            put(cid, cha, skindes.get(cid, "") or "默认")
+
+    for row in tables.get("ProSkin") or []:
+        title = str(row.get("Name") or "").strip() or "主角"
+        for key, suffix in (("MaleSkin", "男"), ("FemaleSkin", "女")):
+            pid = row.get(key)
+            if not pid or str(pid) in names:
+                continue
+            put(int(pid), f"{title}{suffix}", title)
+    return names
+
+
+def resolve_painting_name(fid: str, names: dict[str, tuple[str, str]]) -> tuple[str, str]:
+    if fid in names:
+        return names[fid]
+    try:
+        alt = str(int(fid))
+    except ValueError:
+        return fid, fid
+    if alt in names:
+        return names[alt]
+    return fid, fid
+
+
+def painting_filename(cha: str, skin: str, used: set[str]) -> str:
+    base = f"{GAME_TITLE}_{_safe_fs_name(cha)}_{_safe_fs_name(skin)}.png"
+    if base not in used:
+        used.add(base)
+        return base
+    n = 2
+    while True:
+        name = f"{GAME_TITLE}_{_safe_fs_name(cha)}_{_safe_fs_name(skin)}_{n}.png"
+        if name not in used:
+            used.add(name)
+            return name
+        n += 1
+
+
+def _parse_spine_atlas(text: str) -> list[dict[str, str]]:
+    """解析 Spine/libgdx atlas：缩进键属于 region，未缩进 size: 属于 page。"""
+    regions: list[dict[str, str]] = []
+    lines = text.splitlines()
+    i = 0
+
+    def indented(raw: str) -> bool:
+        return raw.startswith(" ") or raw.startswith("\t")
+
+    while i < len(lines):
+        raw = lines[i]
+        line = raw.rstrip()
+        i += 1
+        if not line.strip() or indented(raw):
+            continue
+        nxt = None
+        j = i
+        while j < len(lines) and not lines[j].strip():
+            j += 1
+        if j < len(lines):
+            nxt = lines[j]
+        if nxt is None:
+            continue
+        if not indented(nxt) and nxt.strip().startswith("size:"):
+            while i < len(lines) and lines[i].strip() and not indented(lines[i]) and ":" in lines[i]:
+                i += 1
+            continue
+        region = {"name": line.strip()}
+        while i < len(lines) and indented(lines[i]) and ":" in lines[i]:
+            key, val = lines[i].strip().split(":", 1)
+            region[key.strip()] = val.strip()
+            i += 1
+        regions.append(region)
+    return regions
+
+
+def _parse_int_pair(text: str) -> tuple[int, int]:
+    left, right = text.split(",", 1)
+    return int(float(left.strip())), int(float(right.strip()))
+
+
+def _atlas_name_key(name: str) -> str:
+    return name.lower().rsplit(".", 1)[0]
+
+
+def _pick_atlas_region(
+    regions: list[dict[str, str]],
+    fid: str,
+    tex_name: str,
+) -> dict[str, str] | None:
+    keys = {_atlas_name_key(fid)}
+    try:
+        keys.add(str(int(fid)))
+    except ValueError:
+        pass
+    if tex_name:
+        keys.add(_atlas_name_key(tex_name))
+    matched = [reg for reg in regions if _atlas_name_key(reg.get("name") or "") in keys]
+    if len(matched) == 1:
+        return matched[0]
+    if len(matched) > 1:
+        return max(
+            matched,
+            key=lambda r: (lambda wh: wh[0] * wh[1])(_parse_int_pair(r.get("size") or "0,0")),
+        )
+    if len(regions) == 1:
+        return regions[0]
+    return None
+
+
+def _crop_atlas_region(image: Any, region: dict[str, str]) -> Any:
+    x, y = _parse_int_pair(region.get("xy") or "0,0")
+    width, height = _parse_int_pair(region.get("size") or f"{image.width},{image.height}")
+    rotate = (region.get("rotate") or "false").strip().lower()
+    packed_w, packed_h = (height, width) if rotate in ("true", "90") else (width, height)
+    packed_w = max(1, min(packed_w, image.width - x))
+    packed_h = max(1, min(packed_h, image.height - y))
+    cropped = image.crop((x, y, x + packed_w, y + packed_h))
+    if rotate in ("true", "90"):
+        cropped = cropped.rotate(90, expand=True)
+    elif rotate == "180":
+        cropped = cropped.rotate(180, expand=True)
+    elif rotate == "270":
+        cropped = cropped.rotate(270, expand=True)
+    return cropped
+
+
+def _export_shd_texture(bundle: Path, dest: Path, fid: str = "") -> str:
+    """导出立绘。优先同名 Sprite，其次 Spine atlas 单区域裁切；分件图集跳过。
+
+    返回 ok / skip / fail。
+    """
+    import UnityPy  # noqa: PLC0415
+
+    env = UnityPy.load(str(bundle))
+    textures: list[tuple[str, Any]] = []
+    sprites: list[Any] = []
+    atlas_text = ""
+    for obj in env.objects:
+        kind = getattr(obj.type, "name", None)
+        if kind == "Texture2D":
+            data = obj.read()
+            image = data.image
+            if image is not None:
+                textures.append((str(data.m_Name or ""), image))
+        elif kind == "Sprite":
+            sprites.append(obj.read())
+        elif kind == "TextAsset":
+            name, script = _textasset_script(obj)
+            try:
+                text = script.decode("utf-8")
+            except Exception:  # noqa: BLE001
+                continue
+            if "xy:" in text and "size:" in text:
+                atlas_text = text
+
+    if not textures:
+        return "skip"
+
+    tex_name, image = max(textures, key=lambda item: item[1].width * item[1].height)
+    want = {_atlas_name_key(tex_name), _atlas_name_key(fid)} if fid else {_atlas_name_key(tex_name)}
+
+    for sprite in sprites:
+        sname = _atlas_name_key(str(getattr(sprite, "m_Name", "") or ""))
+        if sname in want or (not fid and sname):
+            cropped = sprite.image
+            if cropped is not None:
+                dest.parent.mkdir(parents=True, exist_ok=True)
+                cropped.save(dest, "PNG")
+                return "ok"
+
+    if atlas_text:
+        regions = _parse_spine_atlas(atlas_text)
+        region = _pick_atlas_region(regions, fid, tex_name)
+        if region is None:
+            return "skip"
+        image = _crop_atlas_region(image, region)
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    image.save(dest, "PNG")
+    return "ok"
+
+
+def export_paintings(
+    shd_targets: list[tuple[AssetItem, str]],
+    table_targets: list[tuple[AssetItem, str]],
+) -> int:
+    """导出 SHD 立绘 PNG 到 Painting/悠久之树_角色名_皮肤名.png。返回失败数。"""
+    warnings.filterwarnings("ignore", message="No valid Unity version found")
+    tables = _load_named_tables(table_targets, PAINTING_NAME_TABLES)
+    names = build_painting_names(tables)
+    PAINTING_DIR.mkdir(parents=True, exist_ok=True)
+    for name, rows in tables.items():
+        (PAINTING_DIR / f"{name}.json").write_text(
+            json.dumps(rows, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+    named = sum(1 for _item, fid in shd_targets if resolve_painting_name(fid, names)[0] != fid)
+    console.print(
+        f"[cyan]立绘名称[/] Skin/ChaDes 命中 {named}/{len(shd_targets)}  "
+        f"表 {', '.join(k for k in PAINTING_NAME_TABLES if k in tables)}"
+    )
+    for old in PAINTING_DIR.glob("*.png"):
+        old.unlink()
+    used: set[str] = set()
+    fail = 0
+    written = 0
+    skipped = 0
+    with Progress(
+        SpinnerColumn(),
+        TextColumn("[progress.description]{task.description}"),
+        BarColumn(),
+        MofNCompleteColumn(),
+        TimeRemainingColumn(),
+        console=console,
+    ) as progress:
+        task = progress.add_task("导出立绘", total=max(len(shd_targets), 1))
+        for item, fid in shd_targets:
+            cha, skin = resolve_painting_name(fid, names)
+            filename = painting_filename(cha, skin, used)
+            dest = PAINTING_DIR / filename
+            progress.update(task, description=f"导出 {cha or fid}")
+            bundle = local_path_for(item)
+            if not bundle.is_file():
+                console.print(f"[yellow]缺立绘 AB[/] {fid} {item.name}")
+                fail += 1
+                used.discard(filename)
+                progress.advance(task)
+                continue
+            try:
+                status = _export_shd_texture(bundle, dest, fid=fid)
+                if status == "ok":
+                    written += 1
+                elif status == "skip":
+                    skipped += 1
+                    used.discard(filename)
+                    dest.unlink(missing_ok=True)
+                else:
+                    fail += 1
+                    used.discard(filename)
+                    dest.unlink(missing_ok=True)
+            except Exception as exc:  # noqa: BLE001
+                console.print(f"[red]立绘失败[/] {fid}: {exc}")
+                fail += 1
+                used.discard(filename)
+                dest.unlink(missing_ok=True)
+            progress.advance(task)
+    console.print(
+        f"[cyan]Painting[/] 写出 {written} 张 → {PAINTING_DIR}  "
+        f"跳过分件 Spine {skipped}  失败 {fail}"
+    )
+    return fail
+
+
 def cmd_status(channel: str) -> int:
     versions = fetch_json(VERSIONS_URLS)
     info = channel_info(versions, channel)
@@ -870,10 +1296,11 @@ def cmd_download(
     extras: list[str],
     dll: bool,
     masterdata: bool,
+    painting: bool,
     limit: int | None,
 ) -> int:
-    if dll and masterdata:
-        console.print("[red]--dll 与 --masterdata 不能同时使用[/]")
+    if sum(bool(x) for x in (dll, masterdata, painting)) > 1:
+        console.print("[red]--dll / --masterdata / --painting 不能同时使用[/]")
         return 1
     versions = fetch_json(VERSIONS_URLS)
     info = channel_info(versions, channel)
@@ -913,16 +1340,19 @@ def cmd_download(
     extra_set = {x.lower() for x in extras}
     want_all_extra = "all" in extra_set
     table_targets: list[tuple[AssetItem, str]] = []
+    shd_targets: list[tuple[AssetItem, str]] = []
     if not dll:
         if not hash_to_paths:
-            msg = "没有 reflection_manifest，无法定位数据表 AB"
-            if masterdata:
+            msg = "没有 reflection_manifest，无法定位数据表 / 立绘 AB"
+            if masterdata or painting:
                 console.print(f"[red]{msg}[/]")
                 return 1
             console.print(f"[yellow]{msg}，跳过 MasterData[/]")
         else:
             table_targets = iter_table_items(items, hash_to_paths, extra_set, want_all_extra)
-            if masterdata and not table_targets:
+            if painting:
+                table_targets = [(item, sub) for item, sub in table_targets if not sub]
+            if (masterdata or painting) and not table_targets:
                 console.print("[red]reflection 里没有 JsonData / Language 数据表[/]")
                 return 1
 
@@ -952,6 +1382,34 @@ def cmd_download(
         n_loc = len(table_targets) - n_base
         console.print(
             f"数据表 AB {len(table_targets)} 个（基线 {n_base} / 语言包 {n_loc}）→ {MASTER_DIR}"
+        )
+    elif painting:
+        shd_targets = iter_shd_items(items, hash_to_paths)
+        if not shd_targets:
+            console.print("[red]reflection 里没有 FolderSplitBundle/SHD 立绘[/]")
+            return 1
+        if limit is not None:
+            shd_targets = shd_targets[:limit]
+            console.print(f"[yellow]--limit {limit} 立绘[/]")
+            limit = None
+        seen: set[str] = set()
+        for item, _sub in table_targets:
+            if item.name.lower() not in seen:
+                selected.append(item)
+                seen.add(item.name.lower())
+        for item, _fid in shd_targets:
+            if item.name.lower() not in seen:
+                selected.append(item)
+                seen.add(item.name.lower())
+        dll_item = config_dll_item(items)
+        if need_config_dll():
+            if dll_item is None:
+                console.print(f"[red]远端清单缺少 {CONFIG_DLL_NAME}，无法还原立绘名称[/]")
+                return 1
+            if dll_item.name.lower() not in seen:
+                selected.append(dll_item)
+        console.print(
+            f"立绘 SHD {len(shd_targets)} 个 + 名称表 {len(table_targets)} 个 → {PAINTING_DIR}"
         )
     else:
         for item in items:
@@ -1018,6 +1476,7 @@ def cmd_download(
             "files": len(selected),
             "dll": dll,
             "masterdata": masterdata,
+            "painting": painting,
         }
     )
     console.print()
@@ -1029,7 +1488,10 @@ def cmd_download(
         err_log = ROOT / "download_errors.log"
         err_log.write_text("\n".join(errors) + "\n", encoding="utf-8")
         console.print(f"[yellow]错误写入 {err_log} ({len(errors)})[/]")
-    if not dll and table_targets:
+    if painting:
+        if export_paintings(shd_targets, table_targets):
+            rc = 1
+    elif not dll and table_targets:
         if export_masterdata(table_targets):
             rc = 1
     return rc
@@ -1068,6 +1530,11 @@ def main() -> int:
         action="store_true",
         help="只下载 JsonData/Language 数据表 AB，解析导出到 MasterData/",
     )
+    p_dl.add_argument(
+        "--painting",
+        action="store_true",
+        help="只下载 SHD 立绘和名称表，导出到 Painting/悠久之树_角色名_皮肤名.png",
+    )
     p_dl.add_argument("--limit", type=int, default=None)
 
     args = parser.parse_args()
@@ -1084,6 +1551,7 @@ def main() -> int:
             extras=args.extra,
             dll=args.dll,
             masterdata=args.masterdata,
+            painting=args.painting,
             limit=args.limit,
         )
     parser.error("unknown command")
