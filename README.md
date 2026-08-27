@@ -45,7 +45,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/MonmusuTDx` | MonmusuTDx | 草正太 |
 | `game/Morimens` | Morimens | 忘却前夜 |
 | `game/MuvLuvGirlsGardenX` | MuvLuvGirlsGardenX | 抹布 |
-| `game/NeoArtifacts` | NeoArtifacts |
+| `game/NeoArtifacts` | NeoArtifacts | 来古（物华）弥新 |
 | `game/OZRewrite` | OZRewrite | OZRewrite |
 | `game/Orisries` | Orisries | 万源圣魔录 |
 | `game/OrphansOrder` | OrphansOrder | 孤儿的工作 |
