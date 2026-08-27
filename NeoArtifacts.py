@@ -1,27 +1,3 @@
-#!/usr/bin/env python3
-"""物华弥新 资源 / 数据表 下载更新。
-
-sXXXX 来自 get_launch_data_v2 的 SmallPackVersion（不是 ResVersion）。
-包体 assets/config 的 resVersion 是 rXXXX（packet_config.targetVersion）。
-
-Launch 体是 AES-128-ECB PKCS7，密钥 CryptoTool.serverAesKey（isServer=true）。
-表 / 语言是 aesKey（isServer=false）再 GZip。密钥来自 cctor 的 InitializeArray FieldRVA。
-
-packet 不是 zip。DecompressPacket 按 dicAB 的 start/size 切片。
-旧 64 字节头已对当前包验证不可用。
-
-xorHeader 是 29 字节 UnityFS 头。ABStream.Read 里 IsXOR 为真才 XO。
-LongYuanSDK.XO 对缓冲区 [50,122] 共 73 字节异或（与 header 后的 blocks info 对齐）。
-密钥取密文第 2 字节（解完后该字节为 0）。不要用文件名 UTF8[1]。
-cinfo<73 时这 73 字节会伸进第一个 data block，不能只 xor blocks info 长度。
-LZ4/LZ4HC（flags&0x3f 为 2 或 3）。本包 flags 均为 0x43（info 紧接文件头）。
-
-语言包 / 表 / IFix：密文只落盘作缓存，AES+GZip+解析全在内存里一次写成最终 JSON。
-不写 .decoded、不分表 .bin、不另存 resolved。
-
-立绘：Assets/data.dat 是 BuildABJson（AES-ECB，无 GZip）。AB.Name 去路径去扩展名后 MD5 即磁盘文件名。
-container 在 PathList 里，形如 assets/_bundleresources/character/{id}/drawing/{skin}.png。
-"""
 from __future__ import annotations
 
 import argparse
@@ -70,7 +46,6 @@ UNITY_VERSION = "2018.4.36f1"
 PACKET_FILE = "packet_config"
 FIX_CONFIG = "fix_config"
 
-# ClientManager.PacketFile / GetVersionURL 格式串
 TMPL_VERSIONS = "{cdn}/AssetVersions/{plat}/{lang}/{resver}/"
 TMPL_VERSIONS_FILE = "{cdn}/AssetVersions/{plat}/{lang}/{resver}/{name}"
 TMPL_FIXS = "{cdn}/AssetFixs/{plat}/{client}/{fixver}/"
@@ -78,7 +53,6 @@ TMPL_FIX_CONFIG = "{cdn}/AssetFixs/{plat}/{client}/{fixver}/fix_config"
 TMPL_LANG = "{origin}/langdata_v3/{ver}/{lang}"
 TMPL_CFC = "{origin}/cfc_v2/{md5}"
 
-# VersionURL = {origin}/resource；cfc / lang 在 origin 根路径（HAR 实测，无 /resource）
 PATCH_ORIGINS = (
     "https://l4-prod-patch-lgmx.bilibiligame.net",
     "https://l1-prod-patch-lgmx.bilibiligame.net",
@@ -119,7 +93,6 @@ BLOCKS_INFO_AT_THE_END = 0x80
 COMPRESSION_TYPE_MASK = 0x3F
 COMPRESSION_LZ4 = 2
 COMPRESSION_LZ4HC = 3
-# 误用文件名 UTF8[1] 异或整文件 [50,122] 时用来还原
 XOR_MIN_LEN = 0x33
 XOR_OBJ_START = 0x52
 XOR_IDX_LAST_GT = 0x79
@@ -127,7 +100,6 @@ RETRY_COUNT = 4
 CHUNK_SIZE = 1 << 20
 PROBE_AHEAD = 40
 
-# IFix.Core.Code，数值是本包混淆后的顺序，不能用上游 InjectFix 的 0=Nop
 IFIX_CODE = (
     "Ldind_U4", "Stelem_I1", "Newobj", "Conv_I8", "Ldc_I8", "Newanon", "Ldelem_Any",
     "Bge_Un", "Shl", "Endfinally", "Div", "Or", "Ldloca", "Mul_Ovf", "Conv_Ovf_I8_Un",
