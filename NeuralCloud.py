@@ -585,7 +585,45 @@ def cmd_assets(jobs: int, force: bool, unzip: bool) -> int:
             n = unzip_one(zpath, ASSETS_DIR, exclude=priority)
             console.print(f"  其余 {item.res_name}: {n} 个文件")
             progress.advance(task)
+    extract_apk_streaming_assets(force=False)
     return 0
+
+
+def extract_apk_streaming_assets(force: bool = False) -> tuple[int, int]:
+    """APK StreamingAssets 是 3.0.0.0 底包。热更 zip 不重复打进去的文件（Cubism 材质、大量 shared_*.ab）要从这里补。已存在的热更文件不覆盖。"""
+    apk = find_apk()
+    written = skipped = 0
+    ASSETS_DIR.mkdir(parents=True, exist_ok=True)
+    with zipfile.ZipFile(apk) as zf:
+        members = [
+            info
+            for info in zf.infolist()
+            if info.filename.replace("\\", "/").startswith("assets/bundles/") and not info.is_dir()
+        ]
+        with Progress(
+            SpinnerColumn(),
+            TextColumn("[progress.description]{task.description}"),
+            BarColumn(),
+            MofNCompleteColumn(),
+            TimeElapsedColumn(),
+            console=console,
+        ) as progress:
+            task = progress.add_task("APK bundles → Assets/", total=len(members))
+            for info in members:
+                rel = safe_zip_name(info.filename.replace("\\", "/")[len("assets/") :])
+                progress.advance(task)
+                if rel is None:
+                    continue
+                out = ASSETS_DIR / rel
+                if out.is_file() and not force:
+                    skipped += 1
+                    continue
+                out.parent.mkdir(parents=True, exist_ok=True)
+                with zf.open(info, "r") as src, out.open("wb") as dst:
+                    shutil.copyfileobj(src, dst, CHUNK_SIZE)
+                written += 1
+    console.print(f"[bold]APK 底包[/] 写出 {written}  已有热更跳过 {skipped}")
+    return written, skipped
 
 
 # ---------------------------------------------------------------------------
@@ -1496,7 +1534,7 @@ def main() -> int:
         "cmd",
         nargs="?",
         default="all",
-        choices=("all", "assets", "hybridclr", "masterdata", "painting", "status"),
+        choices=("all", "assets", "apk", "hybridclr", "masterdata", "painting", "status"),
     )
     parser.add_argument("--jobs", type=int, default=DEFAULT_JOBS)
     parser.add_argument("--force", action="store_true")
@@ -1505,6 +1543,9 @@ def main() -> int:
     args = parser.parse_args()
     if args.cmd == "status":
         return cmd_status()
+    if args.cmd == "apk":
+        extract_apk_streaming_assets(force=args.force)
+        return 0
     if args.cmd == "assets":
         return cmd_assets(jobs=args.jobs, force=args.force, unzip=not args.no_unzip)
     if args.cmd == "hybridclr":
