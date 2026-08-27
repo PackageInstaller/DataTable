@@ -1,0 +1,1770 @@
+[
+  {
+    "ID": "Bok1001",
+    "type": 1,
+    "chapterID": "Reg101",
+    "before": "",
+    "page": "branch_bok1001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok1001",
+    "namelanText": "《器者通识考试》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok1001",
+    "subtitleLanText": "来古篇章"
+  },
+  {
+    "ID": "Bok1002",
+    "type": 2,
+    "chapterID": "Reg101",
+    "before": "Bok1001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30311",
+        "30312",
+        "30313",
+        "30315",
+        "30314"
+      ],
+      [
+        "2302",
+        "16",
+        "2460"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok1002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok1002",
+    "subtitleLanText": "来古篇章"
+  },
+  {
+    "ID": "Bok1003",
+    "type": 1,
+    "chapterID": "Reg101",
+    "before": "Bok1002",
+    "page": "branch_bok1002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok1003",
+    "namelanText": "《火车之上》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok1003",
+    "subtitleLanText": "来古篇章"
+  },
+  {
+    "ID": "Bok1004",
+    "type": 2,
+    "chapterID": "Reg101",
+    "before": "Bok1003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30211",
+        "30212",
+        "30213",
+        "30215",
+        "30214"
+      ],
+      [
+        "2302",
+        "16",
+        "2460"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok1004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok1004",
+    "subtitleLanText": "来古篇章"
+  },
+  {
+    "ID": "Bok2001",
+    "type": 1,
+    "chapterID": "Reg102",
+    "before": "Bok1004",
+    "page": "branch_bok2001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok2001",
+    "namelanText": "《聆听》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok2001",
+    "subtitleLanText": "汴都篇章"
+  },
+  {
+    "ID": "Bok2002",
+    "type": 2,
+    "chapterID": "Reg102",
+    "before": "Bok2001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30411",
+        "30412",
+        "30413",
+        "30415",
+        "30414"
+      ],
+      [
+        "2303",
+        "16",
+        "2461"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok2002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok2002",
+    "subtitleLanText": "汴都篇章"
+  },
+  {
+    "ID": "Bok2003",
+    "type": 1,
+    "chapterID": "Reg102",
+    "before": "Bok2002",
+    "page": "branch_bok2002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok2003",
+    "namelanText": "《一瓷一世》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M200015",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok2003",
+    "subtitleLanText": "汴都篇章"
+  },
+  {
+    "ID": "Bok2004",
+    "type": 2,
+    "chapterID": "Reg102",
+    "before": "Bok2003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30111",
+        "30112",
+        "30113",
+        "30115",
+        "30114"
+      ],
+      [
+        "2303",
+        "16",
+        "2461"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok2004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok2004",
+    "subtitleLanText": "汴都篇章"
+  },
+  {
+    "ID": "Bok3001",
+    "type": 1,
+    "chapterID": "Reg103",
+    "before": "Bok2004",
+    "page": "branch_bok3001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok3001",
+    "namelanText": "《心音》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok3001",
+    "subtitleLanText": "申海篇章"
+  },
+  {
+    "ID": "Bok3002",
+    "type": 2,
+    "chapterID": "Reg103",
+    "before": "Bok3001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30121",
+        "30122",
+        "30123",
+        "30124",
+        "30125"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok3002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok3002",
+    "subtitleLanText": "申海篇章"
+  },
+  {
+    "ID": "Bok3003",
+    "type": 1,
+    "chapterID": "Reg103",
+    "before": "Bok3002",
+    "page": "branch_bok3002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok3003",
+    "namelanText": "《算数这件小事》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M300015",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok3003",
+    "subtitleLanText": "申海篇章"
+  },
+  {
+    "ID": "Bok3004",
+    "type": 2,
+    "chapterID": "Reg103",
+    "before": "Bok3003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30221",
+        "30222",
+        "30223",
+        "30224",
+        "30225"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok3004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok3004",
+    "subtitleLanText": "申海篇章"
+  },
+  {
+    "ID": "Bok4001",
+    "type": 1,
+    "chapterID": "Reg104",
+    "before": "Bok3004",
+    "page": "branch_bok4001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok4001",
+    "namelanText": "《深海邮局》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok4001",
+    "subtitleLanText": "粤州篇章"
+  },
+  {
+    "ID": "Bok4002",
+    "type": 2,
+    "chapterID": "Reg104",
+    "before": "Bok4001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30521",
+        "30522",
+        "30523",
+        "30524",
+        "30525"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok4002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok4002",
+    "subtitleLanText": "粤州篇章"
+  },
+  {
+    "ID": "Bok4003",
+    "type": 1,
+    "chapterID": "Reg104",
+    "before": "Bok4002",
+    "page": "branch_bok4002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok4003",
+    "namelanText": "《侠客行》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M400015",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok4003",
+    "subtitleLanText": "粤州篇章"
+  },
+  {
+    "ID": "Bok4004",
+    "type": 2,
+    "chapterID": "Reg104",
+    "before": "Bok4003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30621",
+        "30622",
+        "30623",
+        "30624",
+        "30625"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok4004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok4004",
+    "subtitleLanText": "粤州篇章"
+  },
+  {
+    "ID": "Bok5001",
+    "type": 1,
+    "chapterID": "Reg105",
+    "before": "Bok4004",
+    "page": "branch_bok5001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok5001",
+    "namelanText": "《鹤途》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok5001",
+    "subtitleLanText": "常安篇章"
+  },
+  {
+    "ID": "Bok5002",
+    "type": 2,
+    "chapterID": "Reg105",
+    "before": "Bok5001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "39003",
+        "39004",
+        "39005",
+        "39006",
+        "39007"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok5002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok5002",
+    "subtitleLanText": "常安篇章"
+  },
+  {
+    "ID": "Bok5003",
+    "type": 1,
+    "chapterID": "Reg105",
+    "before": "Bok5002",
+    "page": "branch_bok5002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok5003",
+    "namelanText": "《古今车展》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M500015",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok5003",
+    "subtitleLanText": "常安篇章"
+  },
+  {
+    "ID": "Bok5004",
+    "type": 2,
+    "chapterID": "Reg105",
+    "before": "Bok5003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30621",
+        "30622",
+        "30623",
+        "30624",
+        "30625"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok5004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok5004",
+    "subtitleLanText": "常安篇章"
+  },
+  {
+    "ID": "Bok6001",
+    "type": 1,
+    "chapterID": "Reg106",
+    "before": "Bok5004",
+    "page": "branch_bok6001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok6001",
+    "namelanText": "《你涂我猜》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok6001",
+    "subtitleLanText": "塞北篇章"
+  },
+  {
+    "ID": "Bok6002",
+    "type": 2,
+    "chapterID": "Reg106",
+    "before": "Bok6001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "39003",
+        "39004",
+        "39005",
+        "39006",
+        "39007"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok6002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok6002",
+    "subtitleLanText": "塞北篇章"
+  },
+  {
+    "ID": "Bok6003",
+    "type": 1,
+    "chapterID": "Reg106",
+    "before": "Bok6002",
+    "page": "branch_bok6002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok6003",
+    "namelanText": "《入夜规则》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M600022",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok6003",
+    "subtitleLanText": "塞北篇章"
+  },
+  {
+    "ID": "Bok6004",
+    "type": 2,
+    "chapterID": "Reg106",
+    "before": "Bok6003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30621",
+        "30622",
+        "30623",
+        "30624",
+        "30625"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok6004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok6004",
+    "subtitleLanText": "塞北篇章"
+  },
+  {
+    "ID": "Bok7001",
+    "type": 1,
+    "chapterID": "Reg107",
+    "before": "Bok6004",
+    "page": "branch_bok7001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok7001",
+    "namelanText": "《搓麻》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok7001",
+    "subtitleLanText": "榑桑篇章"
+  },
+  {
+    "ID": "Bok7002",
+    "type": 2,
+    "chapterID": "Reg107",
+    "before": "Bok7001",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "39003",
+        "39004",
+        "39005",
+        "39006",
+        "39007"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok7002",
+    "namelanText": "区域历练·一",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok7002",
+    "subtitleLanText": "榑桑篇章"
+  },
+  {
+    "ID": "Bok7003",
+    "type": 1,
+    "chapterID": "Reg107",
+    "before": "Bok7002",
+    "page": "branch_bok7002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_Bok7003",
+    "namelanText": "《笑神》",
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M700008",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok7003",
+    "subtitleLanText": "榑桑篇章"
+  },
+  {
+    "ID": "Bok7004",
+    "type": 2,
+    "chapterID": "Reg107",
+    "before": "Bok7003",
+    "page": "branch_Bok_bat",
+    "dropShow": [
+      [
+        "30621",
+        "30622",
+        "30623",
+        "30624",
+        "30625"
+      ],
+      [
+        "2304",
+        "16",
+        "2462"
+      ]
+    ],
+    "namelan": "branchLan_branchStory_nameLan_Bok7004",
+    "namelanText": "区域历练·二",
+    "UnlockConditions": [
+      {
+        "UnlockType": 0,
+        "ElementID": "",
+        "Param": 0
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 150
+      }
+    ],
+    "condition": 1,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_Bok7004",
+    "subtitleLanText": "榑桑篇章"
+  },
+  {
+    "ID": "characterStory1017",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "702",
+    "page": "D0154",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1017",
+    "namelanText": "铜坐龙",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1762999200",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1017"
+  },
+  {
+    "ID": "characterStory1016",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "702",
+    "page": "A0001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1016",
+    "namelanText": "山水人物镜",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1762999200",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1016"
+  },
+  {
+    "ID": "characterStory1015",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "W0164",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1015",
+    "namelanText": "百花图卷",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1748484000",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1015"
+  },
+  {
+    "ID": "characterStory1014",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "W0056",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1014",
+    "namelanText": "贾湖骨笛",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1748484000",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1014"
+  },
+  {
+    "ID": "characterStory1013",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "W0099",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1013",
+    "namelanText": "五弦琵琶",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1726711200",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1013"
+  },
+  {
+    "ID": "characterStory1001",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "S0088",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1001",
+    "namelanText": "乳鸭图",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1726711200",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1001"
+  },
+  {
+    "ID": "characterStory1012",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "A0100",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1012",
+    "namelanText": "愿望杯",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1724896800",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1012"
+  },
+  {
+    "ID": "characterStory1011",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "A0070",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1011",
+    "namelanText": "外销壁纸",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1724896800",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1011"
+  },
+  {
+    "ID": "characterStory1009",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "V0141",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1009",
+    "namelanText": "雪景寒林图",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1721268000",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1009"
+  },
+  {
+    "ID": "characterStory1008",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "D0140",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1008",
+    "namelanText": "溪山行旅图",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1721268000",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1008"
+  },
+  {
+    "ID": "characterStory1010",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "V0078",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1010",
+    "namelanText": "四龙四凤座",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1718849700",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1010"
+  },
+  {
+    "ID": "characterStory1002",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "D0060",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1002",
+    "namelanText": "夫差矛",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1718849700",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1002"
+  },
+  {
+    "ID": "characterStory1007",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "W0081",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1007",
+    "namelanText": "银香囊",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1717639200",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1007"
+  },
+  {
+    "ID": "characterStory1006",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "V0075",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1006",
+    "namelanText": "上阳台帖",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1717639200",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1006"
+  },
+  {
+    "ID": "characterStory1004",
+    "type": 4,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "W0134",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1004",
+    "namelanText": "千里江山图",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1715997600",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1004"
+  },
+  {
+    "ID": "characterStory1005",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "D0089",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1005",
+    "namelanText": "毛公鼎",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1715997600",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1005"
+  },
+  {
+    "ID": "characterStory1003",
+    "type": 0,
+    "chapterID": "Reg1001",
+    "before": "",
+    "page": "V0023",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_characterStory1003",
+    "namelanText": "蛙锣",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1715997600",
+        "Param": 1
+      }
+    ],
+    "reward": null,
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_characterStory1003"
+  },
+  {
+    "ID": "sideStory2010",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2010",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2010",
+    "namelanText": "执行日志",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1779933600",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2010"
+  },
+  {
+    "ID": "sideStory2009",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2009",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2009",
+    "namelanText": "晴云秋月",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1759802400",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "63021",
+        "count": 10
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2009"
+  },
+  {
+    "ID": "sideStory2008",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2008",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2008",
+    "namelanText": "朱鸟展翅",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1739325600",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2008"
+  },
+  {
+    "ID": "sideStory2007",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2007",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2007",
+    "namelanText": "龙的故事",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1735783200",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2007"
+  },
+  {
+    "ID": "sideStory2006",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2006",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2006",
+    "namelanText": "商业秘闻",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1732154400",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2006"
+  },
+  {
+    "ID": "sideStory2005",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2005",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2005",
+    "namelanText": "漫去访友",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1729130400",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2005"
+  },
+  {
+    "ID": "sideStory2004",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2004",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2004",
+    "namelanText": "岁行可追",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1726711200",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2004"
+  },
+  {
+    "ID": "sideStory2003",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2003",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2003",
+    "namelanText": "美之交响",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1724896800",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2003"
+  },
+  {
+    "ID": "sideStory2002",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2002",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2002",
+    "namelanText": "帆影心传",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1723082400",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "2104",
+        "count": 5
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2002"
+  },
+  {
+    "ID": "sideStory2001",
+    "type": 0,
+    "chapterID": "Reg2001",
+    "before": "",
+    "page": "sideStory2001",
+    "dropShow": [],
+    "namelan": "branchLan_branchStory_nameLan_sideStory2001",
+    "namelanText": "尘世异象",
+    "UnlockConditions": [
+      {
+        "UnlockType": 4,
+        "ElementID": "1718849700",
+        "Param": 1
+      }
+    ],
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "condition": 0,
+    "subtitleLan": "branchLan_branchStory_subtitleLan_sideStory2001"
+  }
+]

@@ -1,0 +1,2983 @@
+{
+  "10001": {
+    "Id": "10001",
+    "ChapterID": "101",
+    "EventName": "找到坊主",
+    "EventContent": "找到坊主",
+    "TriggerItem": null,
+    "CompleteItem": [
+      {
+        "id": "1001",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10002",
+      "10003",
+      "10004"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "2000001",
+    "GoalDesc": "与斯戴法努斯对话，了解清洗需求",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10001",
+    "EventNameLanText": "找到坊主",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10001",
+    "EventContentLanText": "找到坊主",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10001",
+    "GoalDescLanText": "与斯戴法努斯对话，了解清洗需求"
+  },
+  "10002": {
+    "Id": "10002",
+    "ChapterID": "101",
+    "EventName": "寻找水桶",
+    "EventContent": "寻找木桶",
+    "TriggerItem": [
+      {
+        "id": "1001",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1002",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10010"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "1000002",
+    "GoalDesc": "在漂洗工坊里找到寻找水桶",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10002",
+    "EventNameLanText": "寻找水桶",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10002",
+    "EventContentLanText": "寻找木桶",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10002",
+    "GoalDescLanText": "在漂洗工坊里找到寻找水桶"
+  },
+  "10003": {
+    "Id": "10003",
+    "ChapterID": "101",
+    "EventName": "寻找硫磺块",
+    "EventContent": "寻找硫磺",
+    "TriggerItem": [
+      {
+        "id": "1001",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1003",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10010"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "1000003",
+    "GoalDesc": "在漂洗工坊里找到硫磺块",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10003",
+    "EventNameLanText": "寻找硫磺块",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10003",
+    "EventContentLanText": "寻找硫磺",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10003",
+    "GoalDescLanText": "在漂洗工坊里找到硫磺块"
+  },
+  "10004": {
+    "Id": "10004",
+    "ChapterID": "101",
+    "EventName": "寻找熏炉",
+    "EventContent": "寻找炉子",
+    "TriggerItem": [
+      {
+        "id": "1001",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1004",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10010"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "1000004",
+    "GoalDesc": "在漂洗工坊里找到熏炉",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10004",
+    "EventNameLanText": "寻找熏炉",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10004",
+    "EventContentLanText": "寻找炉子",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10004",
+    "GoalDescLanText": "在漂洗工坊里找到熏炉"
+  },
+  "10005": {
+    "Id": "10005",
+    "ChapterID": "101",
+    "EventName": "给水桶装满水",
+    "EventContent": "获得水桶",
+    "TriggerItem": [
+      {
+        "id": "1002",
+        "count": 1
+      },
+      {
+        "id": "1012",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1005",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10007"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "使用水桶去水台装水",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10005",
+    "EventNameLanText": "给水桶装满水",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10005",
+    "EventContentLanText": "获得水桶",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10005",
+    "GoalDescLanText": "使用水桶去水台装水"
+  },
+  "10006": {
+    "Id": "10006",
+    "ChapterID": "101",
+    "EventName": "制作硫磺熏炉",
+    "EventContent": "获得熏香",
+    "TriggerItem": [
+      {
+        "id": "1003",
+        "count": 1
+      },
+      {
+        "id": "1004",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1006",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10008"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "将硫磺块放入熏炉中",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10006",
+    "EventNameLanText": "制作硫磺熏炉",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10006",
+    "EventContentLanText": "获得熏香",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10006",
+    "GoalDescLanText": "将硫磺块放入熏炉中"
+  },
+  "10007": {
+    "Id": "10007",
+    "ChapterID": "101",
+    "EventName": "清洗脏污的白袍",
+    "EventContent": "清洗绶带",
+    "TriggerItem": [
+      {
+        "id": "1005",
+        "count": 1
+      },
+      {
+        "id": "1001",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1007",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10008"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "用装满水的水桶清洗脏污的白袍",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10007",
+    "EventNameLanText": "清洗脏污的白袍",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10007",
+    "EventContentLanText": "清洗绶带",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10007",
+    "GoalDescLanText": "用装满水的水桶清洗脏污的白袍"
+  },
+  "10008": {
+    "Id": "10008",
+    "ChapterID": "101",
+    "EventName": "漂白白袍",
+    "EventContent": "熏蒸绶带",
+    "TriggerItem": [
+      {
+        "id": "1006",
+        "count": 1
+      },
+      {
+        "id": "1007",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1008",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10009"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "用硫磺熏炉漂白洗净的白袍",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10008",
+    "EventNameLanText": "漂白白袍",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10008",
+    "EventContentLanText": "熏蒸绶带",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10008",
+    "GoalDescLanText": "用硫磺熏炉漂白洗净的白袍"
+  },
+  "10009": {
+    "Id": "10009",
+    "ChapterID": "101",
+    "EventName": "交给斯戴法努斯",
+    "EventContent": "交还坊主",
+    "TriggerItem": [
+      {
+        "id": "1008",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1009",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10200"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "2000001",
+    "GoalDesc": "将漂白后的白袍交给斯戴法努斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10009",
+    "EventNameLanText": "交给斯戴法努斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10009",
+    "EventContentLanText": "交还坊主",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10009",
+    "GoalDescLanText": "将漂白后的白袍交给斯戴法努斯"
+  },
+  "10010": {
+    "Id": "10010",
+    "ChapterID": "101",
+    "EventName": "找到斯戴法努斯",
+    "EventContent": "",
+    "TriggerItem": [
+      {
+        "id": "1002",
+        "count": 1
+      },
+      {
+        "id": "1003",
+        "count": 1
+      },
+      {
+        "id": "1004",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1010",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10005",
+      "10006"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "与斯戴法努斯对话",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10010",
+    "EventNameLanText": "找到斯戴法努斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10010",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10010",
+    "GoalDescLanText": "与斯戴法努斯对话"
+  },
+  "10100": {
+    "Id": "10100",
+    "ChapterID": "102",
+    "EventName": "找到守墓人",
+    "EventContent": "找到守墓人",
+    "TriggerItem": [
+      {
+        "id": "1505",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1100",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10101",
+      "10103",
+      "10104"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "2000003",
+    "GoalDesc": "前往诺切拉门墓地，找到守墓人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10100",
+    "EventNameLanText": "找到守墓人",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10100",
+    "EventContentLanText": "找到守墓人",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10100",
+    "GoalDescLanText": "前往诺切拉门墓地，找到守墓人"
+  },
+  "10101": {
+    "Id": "10101",
+    "ChapterID": "102",
+    "EventName": "收集开张器",
+    "EventContent": "收集开张器",
+    "TriggerItem": [
+      {
+        "id": "1100",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1101",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10107"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000009",
+    "GoalDesc": "在墓地附近搜集散落的开张器",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10101",
+    "EventNameLanText": "收集开张器",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10101",
+    "EventContentLanText": "收集开张器",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10101",
+    "GoalDescLanText": "在墓地附近搜集散落的开张器"
+  },
+  "10103": {
+    "Id": "10103",
+    "ChapterID": "102",
+    "EventName": "收集绷带",
+    "EventContent": "收集绷带",
+    "TriggerItem": [
+      {
+        "id": "1100",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1103",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10107"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000011",
+    "GoalDesc": "在墓地附近搜集散落的绷带",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10103",
+    "EventNameLanText": "收集绷带",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10103",
+    "EventContentLanText": "收集绷带",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10103",
+    "GoalDescLanText": "在墓地附近搜集散落的绷带"
+  },
+  "10104": {
+    "Id": "10104",
+    "ChapterID": "102",
+    "EventName": "收集手术刀",
+    "EventContent": "收集手术刀",
+    "TriggerItem": [
+      {
+        "id": "1100",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1104",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10107"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000012",
+    "GoalDesc": "在墓地附近搜集散落的手术刀",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10104",
+    "EventNameLanText": "收集手术刀",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10104",
+    "EventContentLanText": "收集手术刀",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10104",
+    "GoalDescLanText": "在墓地附近搜集散落的手术刀"
+  },
+  "10107": {
+    "Id": "10107",
+    "ChapterID": "102",
+    "EventName": "报告守墓人",
+    "EventContent": "",
+    "TriggerItem": [
+      {
+        "id": "1101",
+        "count": 1
+      },
+      {
+        "id": "1103",
+        "count": 1
+      },
+      {
+        "id": "1104",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1111",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10108",
+      "10109",
+      "10110"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "2000003",
+    "GoalDesc": "回去找守墓人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10107",
+    "EventNameLanText": "报告守墓人",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10107",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10107",
+    "GoalDescLanText": "回去找守墓人"
+  },
+  "10108": {
+    "Id": "10108",
+    "ChapterID": "102",
+    "EventName": "放置开张器",
+    "EventContent": "解卡墓碑1的谜题",
+    "TriggerItem": [
+      {
+        "id": "1101",
+        "count": 1
+      },
+      {
+        "id": "1111",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1107",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10111"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000006",
+    "GoalDesc": "将开张器放在助产士阿提卡的墓碑前",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10108",
+    "EventNameLanText": "放置开张器",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10108",
+    "EventContentLanText": "解卡墓碑1的谜题",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10108",
+    "GoalDescLanText": "将开张器放在助产士阿提卡的墓碑前"
+  },
+  "10109": {
+    "Id": "10109",
+    "ChapterID": "102",
+    "EventName": "放置绷带",
+    "EventContent": "解卡墓碑2的谜题",
+    "TriggerItem": [
+      {
+        "id": "1103",
+        "count": 1
+      },
+      {
+        "id": "1111",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1108",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10111"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000007",
+    "GoalDesc": "将绷带放在外科医生的墓碑前",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10109",
+    "EventNameLanText": "放置绷带",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10109",
+    "EventContentLanText": "解卡墓碑2的谜题",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10109",
+    "GoalDescLanText": "将绷带放在外科医生的墓碑前"
+  },
+  "10110": {
+    "Id": "10110",
+    "ChapterID": "102",
+    "EventName": "放置手术刀",
+    "EventContent": "解卡墓碑3的谜题",
+    "TriggerItem": [
+      {
+        "id": "1104",
+        "count": 1
+      },
+      {
+        "id": "1111",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1109",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10111"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000008",
+    "GoalDesc": "将手术刀放在斯帕拉塔的墓碑前",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10110",
+    "EventNameLanText": "放置手术刀",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10110",
+    "EventContentLanText": "解卡墓碑3的谜题",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10110",
+    "GoalDescLanText": "将手术刀放在斯帕拉塔的墓碑前"
+  },
+  "10111": {
+    "Id": "10111",
+    "ChapterID": "102",
+    "EventName": "报告守墓人",
+    "EventContent": "回去报告守墓人",
+    "TriggerItem": [
+      {
+        "id": "1109",
+        "count": 1
+      },
+      {
+        "id": "1107",
+        "count": 1
+      },
+      {
+        "id": "1109",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1110",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10600"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "2000003",
+    "GoalDesc": "回去找守墓人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10111",
+    "EventNameLanText": "报告守墓人",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10111",
+    "EventContentLanText": "回去报告守墓人",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10111",
+    "GoalDescLanText": "回去找守墓人"
+  },
+  "10200": {
+    "Id": "10200",
+    "ChapterID": "103",
+    "EventName": "找到普拉奇杜斯",
+    "EventContent": "找到店主",
+    "TriggerItem": [
+      {
+        "id": "1009",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1200",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10201",
+      "10202",
+      "10203",
+      "10204",
+      "10205"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "2000004",
+    "GoalDesc": "前往热食店，找到店老板普拉奇杜斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10200",
+    "EventNameLanText": "找到普拉奇杜斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10200",
+    "EventContentLanText": "找到店主",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10200",
+    "GoalDescLanText": "前往热食店，找到店老板普拉奇杜斯"
+  },
+  "10201": {
+    "Id": "10201",
+    "ChapterID": "103",
+    "EventName": "寻找锅",
+    "EventContent": "寻找锅",
+    "TriggerItem": [
+      {
+        "id": "1200",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1201",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10205"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000016",
+    "GoalDesc": "在热食店里找到锅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10201",
+    "EventNameLanText": "寻找锅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10201",
+    "EventContentLanText": "寻找锅",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10201",
+    "GoalDescLanText": "在热食店里找到锅"
+  },
+  "10202": {
+    "Id": "10202",
+    "ChapterID": "103",
+    "EventName": "寻找豆子",
+    "EventContent": "寻找豆子",
+    "TriggerItem": [
+      {
+        "id": "1200",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1202",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10205"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000017",
+    "GoalDesc": "在热食店里找到豆子",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10202",
+    "EventNameLanText": "寻找豆子",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10202",
+    "EventContentLanText": "寻找豆子",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10202",
+    "GoalDescLanText": "在热食店里找到豆子"
+  },
+  "10203": {
+    "Id": "10203",
+    "ChapterID": "103",
+    "EventName": "寻找水",
+    "EventContent": "寻找水",
+    "TriggerItem": [
+      {
+        "id": "1200",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1203",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10205"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000018",
+    "GoalDesc": "在热食店里找到水",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10203",
+    "EventNameLanText": "寻找水",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10203",
+    "EventContentLanText": "寻找水",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10203",
+    "GoalDescLanText": "在热食店里找到水"
+  },
+  "10204": {
+    "Id": "10204",
+    "ChapterID": "103",
+    "EventName": "寻找打火石",
+    "EventContent": "寻找打火石",
+    "TriggerItem": [
+      {
+        "id": "1200",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1204",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10205"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000019",
+    "GoalDesc": "在热食店里找到打火石",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10204",
+    "EventNameLanText": "寻找打火石",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10204",
+    "EventContentLanText": "寻找打火石",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10204",
+    "GoalDescLanText": "在热食店里找到打火石"
+  },
+  "10205": {
+    "Id": "10205",
+    "ChapterID": "103",
+    "EventName": "找到普拉奇杜斯",
+    "EventContent": "",
+    "TriggerItem": [
+      {
+        "id": "1201",
+        "count": 1
+      },
+      {
+        "id": "1202",
+        "count": 1
+      },
+      {
+        "id": "1203",
+        "count": 1
+      },
+      {
+        "id": "1204",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1214",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10206",
+      "10207"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000020",
+    "GoalDesc": "找到普拉奇杜斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10205",
+    "EventNameLanText": "找到普拉奇杜斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10205",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10205",
+    "GoalDescLanText": "找到普拉奇杜斯"
+  },
+  "10206": {
+    "Id": "10206",
+    "ChapterID": "103",
+    "EventName": "获得装了水的锅",
+    "EventContent": "做出汤锅",
+    "TriggerItem": [
+      {
+        "id": "1203",
+        "count": 1
+      },
+      {
+        "id": "1201",
+        "count": 1
+      },
+      {
+        "id": "1214",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1206",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10208"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "把水加到锅里",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10206",
+    "EventNameLanText": "获得装了水的锅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10206",
+    "EventContentLanText": "做出汤锅",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10206",
+    "GoalDescLanText": "把水加到锅里"
+  },
+  "10207": {
+    "Id": "10207",
+    "ChapterID": "103",
+    "EventName": "点燃灶台",
+    "EventContent": "点燃灶台",
+    "TriggerItem": [
+      {
+        "id": "1204",
+        "count": 1
+      },
+      {
+        "id": "1214",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1211",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10209"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000040",
+    "GoalDesc": "用打火石点燃灶台",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10207",
+    "EventNameLanText": "点燃灶台",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10207",
+    "EventContentLanText": "点燃灶台",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10207",
+    "GoalDescLanText": "用打火石点燃灶台"
+  },
+  "10208": {
+    "Id": "10208",
+    "ChapterID": "103",
+    "EventName": "制作豆汤锅",
+    "EventContent": "下豆子",
+    "TriggerItem": [
+      {
+        "id": "1206",
+        "count": 1
+      },
+      {
+        "id": "1202",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1207",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10209"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "将豆子加入装了水的锅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10208",
+    "EventNameLanText": "制作豆汤锅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10208",
+    "EventContentLanText": "下豆子",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10208",
+    "GoalDescLanText": "将豆子加入装了水的锅"
+  },
+  "10209": {
+    "Id": "10209",
+    "ChapterID": "103",
+    "EventName": "煮好豆汤",
+    "EventContent": "煮豆子",
+    "TriggerItem": [
+      {
+        "id": "1207",
+        "count": 1
+      },
+      {
+        "id": "1211",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1208",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10210"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "将豆汤锅放在灶台上加热，煮好豆汤",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10209",
+    "EventNameLanText": "煮好豆汤",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10209",
+    "EventContentLanText": "煮豆子",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10209",
+    "GoalDescLanText": "将豆汤锅放在灶台上加热，煮好豆汤"
+  },
+  "10210": {
+    "Id": "10210",
+    "ChapterID": "103",
+    "EventName": "找到普拉奇杜斯",
+    "EventContent": "交给店主",
+    "TriggerItem": [
+      {
+        "id": "1208",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1209",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10700"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "2000004",
+    "GoalDesc": "将煮好的豆汤交给普拉奇杜斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10210",
+    "EventNameLanText": "找到普拉奇杜斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10210",
+    "EventContentLanText": "交给店主",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10210",
+    "GoalDescLanText": "将煮好的豆汤交给普拉奇杜斯"
+  },
+  "10300": {
+    "Id": "10300",
+    "ChapterID": "104",
+    "EventName": "找到尼奥",
+    "EventContent": "找到面包店老板",
+    "TriggerItem": [
+      {
+        "id": "1709",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1300",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10301",
+      "10302"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "2000005",
+    "GoalDesc": "前往面包房，找到老板尼奥",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10300",
+    "EventNameLanText": "找到尼奥",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10300",
+    "EventContentLanText": "找到面包店老板",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10300",
+    "GoalDescLanText": "前往面包房，找到老板尼奥"
+  },
+  "10301": {
+    "Id": "10301",
+    "ChapterID": "104",
+    "EventName": "找到小麦",
+    "EventContent": "找到小麦",
+    "TriggerItem": [
+      {
+        "id": "1300",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1303",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10303"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000022",
+    "GoalDesc": "在面包房里找到小麦",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10301",
+    "EventNameLanText": "找到小麦",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10301",
+    "EventContentLanText": "找到小麦",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10301",
+    "GoalDescLanText": "在面包房里找到小麦"
+  },
+  "10302": {
+    "Id": "10302",
+    "ChapterID": "104",
+    "EventName": "找到推杆",
+    "EventContent": "找到推杆",
+    "TriggerItem": [
+      {
+        "id": "1300",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1302",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10303"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000023",
+    "GoalDesc": "在面包房里找到石磨的推杆",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10302",
+    "EventNameLanText": "找到推杆",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10302",
+    "EventContentLanText": "找到推杆",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10302",
+    "GoalDescLanText": "在面包房里找到石磨的推杆"
+  },
+  "10303": {
+    "Id": "10303",
+    "ChapterID": "104",
+    "EventName": "找到尼奥",
+    "EventContent": "找到面包店老板",
+    "TriggerItem": [
+      {
+        "id": "1302",
+        "count": 1
+      },
+      {
+        "id": "1303",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1309",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10304",
+      "10306"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "2000005",
+    "GoalDesc": "前往面包房，找到老板尼奥",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10303",
+    "EventNameLanText": "找到尼奥",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10303",
+    "EventContentLanText": "找到面包店老板",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10303",
+    "GoalDescLanText": "前往面包房，找到老板尼奥"
+  },
+  "10304": {
+    "Id": "10304",
+    "ChapterID": "104",
+    "EventName": "修好石磨",
+    "EventContent": "修复石磨",
+    "TriggerItem": [
+      {
+        "id": "1309",
+        "count": 1
+      },
+      {
+        "id": "1302",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1306",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10305"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000024",
+    "GoalDesc": "将推杆装在石磨上",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10304",
+    "EventNameLanText": "修好石磨",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10304",
+    "EventContentLanText": "修复石磨",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10304",
+    "GoalDescLanText": "将推杆装在石磨上"
+  },
+  "10305": {
+    "Id": "10305",
+    "ChapterID": "104",
+    "EventName": "倒入小麦",
+    "EventContent": "把小麦倒进石磨",
+    "TriggerItem": [
+      {
+        "id": "1303",
+        "count": 1
+      },
+      {
+        "id": "1306",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1307",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10309"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000024",
+    "GoalDesc": "将小麦倒入石磨",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10305",
+    "EventNameLanText": "倒入小麦",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10305",
+    "EventContentLanText": "把小麦倒进石磨",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10305",
+    "GoalDescLanText": "将小麦倒入石磨"
+  },
+  "10306": {
+    "Id": "10306",
+    "ChapterID": "104",
+    "EventName": "找到水",
+    "EventContent": "找水",
+    "TriggerItem": [
+      {
+        "id": "1309",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1301",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10307"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000021",
+    "GoalDesc": "在面包房里找到水",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10306",
+    "EventNameLanText": "找到水",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10306",
+    "EventContentLanText": "找水",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10306",
+    "GoalDescLanText": "在面包房里找到水"
+  },
+  "10307": {
+    "Id": "10307",
+    "ChapterID": "104",
+    "EventName": "喂驴喝水",
+    "EventContent": "喂驴",
+    "TriggerItem": [
+      {
+        "id": "1301",
+        "count": 1
+      },
+      {
+        "id": "1307",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1304",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10309"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000025",
+    "GoalDesc": "让驴喝水，驴就能拉磨，磨出面粉",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10307",
+    "EventNameLanText": "喂驴喝水",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10307",
+    "EventContentLanText": "喂驴",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10307",
+    "GoalDescLanText": "让驴喝水，驴就能拉磨，磨出面粉"
+  },
+  "10309": {
+    "Id": "10309",
+    "ChapterID": "104",
+    "EventName": "找到尼奥",
+    "EventContent": "交给老板",
+    "TriggerItem": [
+      {
+        "id": "1304",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1308",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10800"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "2000005",
+    "GoalDesc": "找到老板尼奥",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10309",
+    "EventNameLanText": "找到尼奥",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10309",
+    "EventContentLanText": "交给老板",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10309",
+    "GoalDescLanText": "找到老板尼奥"
+  },
+  "10400": {
+    "Id": "10400",
+    "ChapterID": "105",
+    "EventName": "找到尤马西雅",
+    "EventContent": "找到祭祀",
+    "TriggerItem": [
+      {
+        "id": "1609",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1400",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10401"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "2000006",
+    "GoalDesc": "前往和谐女神柱廊，找到尤马西雅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10400",
+    "EventNameLanText": "找到尤马西雅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10400",
+    "EventContentLanText": "找到祭祀",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10400",
+    "GoalDescLanText": "前往和谐女神柱廊，找到尤马西雅"
+  },
+  "10401": {
+    "Id": "10401",
+    "ChapterID": "105",
+    "EventName": "取出硫磺熏炉",
+    "EventContent": "打开手推车",
+    "TriggerItem": [
+      {
+        "id": "1400",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1402",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10402"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000041",
+    "GoalDesc": "从工匠手推车中取出硫磺熏炉",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10401",
+    "EventNameLanText": "取出硫磺熏炉",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10401",
+    "EventContentLanText": "打开手推车",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10401",
+    "GoalDescLanText": "从工匠手推车中取出硫磺熏炉"
+  },
+  "10402": {
+    "Id": "10402",
+    "ChapterID": "105",
+    "EventName": "放置硫磺熏炉",
+    "EventContent": "布置主祭坛",
+    "TriggerItem": [
+      {
+        "id": "1402",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1404",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10403"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000043",
+    "GoalDesc": "将硫磺熏炉放在大理石台上",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10402",
+    "EventNameLanText": "放置硫磺熏炉",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10402",
+    "EventContentLanText": "布置主祭坛",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10402",
+    "GoalDescLanText": "将硫磺熏炉放在大理石台上"
+  },
+  "10403": {
+    "Id": "10403",
+    "ChapterID": "105",
+    "EventName": "回去找到尤马西雅",
+    "EventContent": "",
+    "TriggerItem": [
+      {
+        "id": "1404",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1407",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10404"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "2000006",
+    "GoalDesc": "回去找尤马西雅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10403",
+    "EventNameLanText": "回去找到尤马西雅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10403",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10403",
+    "GoalDescLanText": "回去找尤马西雅"
+  },
+  "10404": {
+    "Id": "10404",
+    "ChapterID": "105",
+    "EventName": "取出羊毛布料",
+    "EventContent": "打开储物箱",
+    "TriggerItem": [
+      {
+        "id": "1407",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1403",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10405"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000042",
+    "GoalDesc": "打开储藏箱取出羊毛布料",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10404",
+    "EventNameLanText": "取出羊毛布料",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10404",
+    "EventContentLanText": "打开储物箱",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10404",
+    "GoalDescLanText": "打开储藏箱取出羊毛布料"
+  },
+  "10405": {
+    "Id": "10405",
+    "ChapterID": "105",
+    "EventName": "铺上布料",
+    "EventContent": "净化主祭坛",
+    "TriggerItem": [
+      {
+        "id": "1403",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1405",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10406"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000043",
+    "GoalDesc": "将羊毛布料铺在大理石台上",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10405",
+    "EventNameLanText": "铺上布料",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10405",
+    "EventContentLanText": "净化主祭坛",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10405",
+    "GoalDescLanText": "将羊毛布料铺在大理石台上"
+  },
+  "10406": {
+    "Id": "10406",
+    "ChapterID": "105",
+    "EventName": "交差",
+    "EventContent": "找到祭祀",
+    "TriggerItem": [
+      {
+        "id": "1405",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1406",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10900"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "2000006",
+    "GoalDesc": "回去找尤马西雅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10406",
+    "EventNameLanText": "交差",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10406",
+    "EventContentLanText": "找到祭祀",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10406",
+    "GoalDescLanText": "回去找尤马西雅"
+  },
+  "10500": {
+    "Id": "10500",
+    "ChapterID": "106",
+    "EventName": "找到斯戴法努斯",
+    "EventContent": "找到坊主",
+    "TriggerItem": [
+      {
+        "id": "1810",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1500",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10501"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "2000007",
+    "GoalDesc": "回到漂洗工坊，找到斯戴法努斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10500",
+    "EventNameLanText": "找到斯戴法努斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10500",
+    "EventContentLanText": "找到坊主",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10500",
+    "GoalDescLanText": "回到漂洗工坊，找到斯戴法努斯"
+  },
+  "10501": {
+    "Id": "10501",
+    "ChapterID": "106",
+    "EventName": "寻找去油碱石",
+    "EventContent": "找到去油碱石",
+    "TriggerItem": [
+      {
+        "id": "1500",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1502",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10502"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "1000026",
+    "GoalDesc": "在水槽旁找到去油碱石",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10501",
+    "EventNameLanText": "寻找去油碱石",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10501",
+    "EventContentLanText": "找到去油碱石",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10501",
+    "GoalDescLanText": "在水槽旁找到去油碱石"
+  },
+  "10502": {
+    "Id": "10502",
+    "ChapterID": "106",
+    "EventName": "化开碱石",
+    "EventContent": "加入水槽",
+    "TriggerItem": [
+      {
+        "id": "1502",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1506",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10503"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "1000005",
+    "GoalDesc": "将去油碱石放入水槽化开",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10502",
+    "EventNameLanText": "化开碱石",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10502",
+    "EventContentLanText": "加入水槽",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10502",
+    "GoalDescLanText": "将去油碱石放入水槽化开"
+  },
+  "10503": {
+    "Id": "10503",
+    "ChapterID": "106",
+    "EventName": "找到斯戴法努斯",
+    "EventContent": "",
+    "TriggerItem": [
+      {
+        "id": "1506",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1507",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10504"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "2000007",
+    "GoalDesc": "与斯戴法努斯对话",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10503",
+    "EventNameLanText": "找到斯戴法努斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10503",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10503",
+    "GoalDescLanText": "与斯戴法努斯对话"
+  },
+  "10504": {
+    "Id": "10504",
+    "ChapterID": "106",
+    "EventName": "清洗羊毛布",
+    "EventContent": "清洗羊毛布",
+    "TriggerItem": [
+      {
+        "id": "1507",
+        "count": 1
+      },
+      {
+        "id": "1501",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1503",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10505"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "1000005",
+    "GoalDesc": "将油污的羊毛布放入水中清洗",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10504",
+    "EventNameLanText": "清洗羊毛布",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10504",
+    "EventContentLanText": "清洗羊毛布",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10504",
+    "GoalDescLanText": "将油污的羊毛布放入水中清洗"
+  },
+  "10505": {
+    "Id": "10505",
+    "ChapterID": "106",
+    "EventName": "压平布料",
+    "EventContent": "找伙计拉伸",
+    "TriggerItem": [
+      {
+        "id": "1503",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1504",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10506"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "2000002",
+    "GoalDesc": "将洗净的羊毛布交给伙计压平整",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10505",
+    "EventNameLanText": "压平布料",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10505",
+    "EventContentLanText": "找伙计拉伸",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10505",
+    "GoalDescLanText": "将洗净的羊毛布交给伙计压平整"
+  },
+  "10506": {
+    "Id": "10506",
+    "ChapterID": "106",
+    "EventName": "交差",
+    "EventContent": "找到坊主交差",
+    "TriggerItem": [
+      {
+        "id": "1504",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1505",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10100"
+    ],
+    "GuideSence": "11",
+    "GuideTarget": "2000007",
+    "GoalDesc": "将平整的羊毛布交给斯戴法努斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10506",
+    "EventNameLanText": "交差",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10506",
+    "EventContentLanText": "找到坊主交差",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10506",
+    "GoalDescLanText": "将平整的羊毛布交给斯戴法努斯"
+  },
+  "10600": {
+    "Id": "10600",
+    "ChapterID": "107",
+    "EventName": "找到守墓人",
+    "EventContent": "找到守墓人",
+    "TriggerItem": [
+      {
+        "id": "1110",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1600",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10601",
+      "10602",
+      "10603",
+      "10604"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "2000008",
+    "GoalDesc": "再次找到守墓人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10600",
+    "EventNameLanText": "找到守墓人",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10600",
+    "EventContentLanText": "找到守墓人",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10600",
+    "GoalDescLanText": "再次找到守墓人"
+  },
+  "10601": {
+    "Id": "10601",
+    "ChapterID": "107",
+    "EventName": "寻找半成品花环",
+    "EventContent": "找到花环底座",
+    "TriggerItem": [
+      {
+        "id": "1600",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1601",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10605"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000027",
+    "GoalDesc": "在墓地附近找到半成品花环",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10601",
+    "EventNameLanText": "寻找半成品花环",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10601",
+    "EventContentLanText": "找到花环底座",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10601",
+    "GoalDescLanText": "在墓地附近找到半成品花环"
+  },
+  "10602": {
+    "Id": "10602",
+    "ChapterID": "107",
+    "EventName": "寻找柏树枝",
+    "EventContent": "找到柏树枝",
+    "TriggerItem": [
+      {
+        "id": "1600",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1602",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10605"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000028",
+    "GoalDesc": "在墓地附近找到柏树枝",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10602",
+    "EventNameLanText": "寻找柏树枝",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10602",
+    "EventContentLanText": "找到柏树枝",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10602",
+    "GoalDescLanText": "在墓地附近找到柏树枝"
+  },
+  "10603": {
+    "Id": "10603",
+    "ChapterID": "107",
+    "EventName": "寻找鲜花",
+    "EventContent": "找到鲜花",
+    "TriggerItem": [
+      {
+        "id": "1600",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1603",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10605"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000029",
+    "GoalDesc": "在墓地附近找到鲜花",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10603",
+    "EventNameLanText": "寻找鲜花",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10603",
+    "EventContentLanText": "找到鲜花",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10603",
+    "GoalDescLanText": "在墓地附近找到鲜花"
+  },
+  "10604": {
+    "Id": "10604",
+    "ChapterID": "107",
+    "EventName": "寻找丝带",
+    "EventContent": "找到丝带",
+    "TriggerItem": [
+      {
+        "id": "1600",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1604",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10605"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000030",
+    "GoalDesc": "在墓地附近找到丝带",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10604",
+    "EventNameLanText": "寻找丝带",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10604",
+    "EventContentLanText": "找到丝带",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10604",
+    "GoalDescLanText": "在墓地附近找到丝带"
+  },
+  "10605": {
+    "Id": "10605",
+    "ChapterID": "107",
+    "EventName": "报告守墓人",
+    "EventContent": "",
+    "TriggerItem": [
+      {
+        "id": "1601",
+        "count": 1
+      },
+      {
+        "id": "1602",
+        "count": 1
+      },
+      {
+        "id": "1603",
+        "count": 1
+      },
+      {
+        "id": "1604",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1610",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10606"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "2000008",
+    "GoalDesc": "报告守墓人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10605",
+    "EventNameLanText": "报告守墓人",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10605",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10605",
+    "GoalDescLanText": "报告守墓人"
+  },
+  "10606": {
+    "Id": "10606",
+    "ChapterID": "107",
+    "EventName": "为花环加入柏树枝",
+    "EventContent": "制作半成品花环",
+    "TriggerItem": [
+      {
+        "id": "1601",
+        "count": 1
+      },
+      {
+        "id": "1602",
+        "count": 1
+      },
+      {
+        "id": "1610",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1605",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10607"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "为半成品花环加入柏树枝",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10606",
+    "EventNameLanText": "为花环加入柏树枝",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10606",
+    "EventContentLanText": "制作半成品花环",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10606",
+    "GoalDescLanText": "为半成品花环加入柏树枝"
+  },
+  "10607": {
+    "Id": "10607",
+    "ChapterID": "107",
+    "EventName": "为花环加入鲜花",
+    "EventContent": "制作花环",
+    "TriggerItem": [
+      {
+        "id": "1605",
+        "count": 1
+      },
+      {
+        "id": "1603",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1606",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10608"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "为半成品花环加入鲜花",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10607",
+    "EventNameLanText": "为花环加入鲜花",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10607",
+    "EventContentLanText": "制作花环",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10607",
+    "GoalDescLanText": "为半成品花环加入鲜花"
+  },
+  "10608": {
+    "Id": "10608",
+    "ChapterID": "107",
+    "EventName": "为花环系上丝带",
+    "EventContent": "制作急死花环",
+    "TriggerItem": [
+      {
+        "id": "1606",
+        "count": 1
+      },
+      {
+        "id": "1604",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1607",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10609"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "为花环系上丝带",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10608",
+    "EventNameLanText": "为花环系上丝带",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10608",
+    "EventContentLanText": "制作急死花环",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10608",
+    "GoalDescLanText": "为花环系上丝带"
+  },
+  "10609": {
+    "Id": "10609",
+    "ChapterID": "107",
+    "EventName": "献上花环",
+    "EventContent": "放到祭坛上",
+    "TriggerItem": [
+      {
+        "id": "1607",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1608",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10610"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "1000031",
+    "GoalDesc": "将花环放在大理石台上",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10609",
+    "EventNameLanText": "献上花环",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10609",
+    "EventContentLanText": "放到祭坛上",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10609",
+    "GoalDescLanText": "将花环放在大理石台上"
+  },
+  "10610": {
+    "Id": "10610",
+    "ChapterID": "107",
+    "EventName": "交差",
+    "EventContent": "回去找守墓人交差",
+    "TriggerItem": [
+      {
+        "id": "1608",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1609",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10400"
+    ],
+    "GuideSence": "12",
+    "GuideTarget": "2000008",
+    "GoalDesc": "回去找守墓人交差",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10610",
+    "EventNameLanText": "交差",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10610",
+    "EventContentLanText": "回去找守墓人交差",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10610",
+    "GoalDescLanText": "回去找守墓人交差"
+  },
+  "10700": {
+    "Id": "10700",
+    "ChapterID": "108",
+    "EventName": "找到普拉奇杜斯",
+    "EventContent": "找到热食店老板",
+    "TriggerItem": [
+      {
+        "id": "1209",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1700",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10701",
+      "10702"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "2000009",
+    "GoalDesc": "再次找到热食店老板普拉奇杜斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10700",
+    "EventNameLanText": "找到普拉奇杜斯",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10700",
+    "EventContentLanText": "找到热食店老板",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10700",
+    "GoalDescLanText": "再次找到热食店老板普拉奇杜斯"
+  },
+  "10701": {
+    "Id": "10701",
+    "ChapterID": "108",
+    "EventName": "寻找干草",
+    "EventContent": "找到燃料",
+    "TriggerItem": [
+      {
+        "id": "1700",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1701",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10703"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000032",
+    "GoalDesc": "在热食店角落找到干草",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10701",
+    "EventNameLanText": "寻找干草",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10701",
+    "EventContentLanText": "找到燃料",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10701",
+    "GoalDescLanText": "在热食店角落找到干草"
+  },
+  "10702": {
+    "Id": "10702",
+    "ChapterID": "108",
+    "EventName": "寻找打火石",
+    "EventContent": "找到打火石",
+    "TriggerItem": [
+      {
+        "id": "1700",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1702",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10703"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000033",
+    "GoalDesc": "在热食店里找到打火石",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10702",
+    "EventNameLanText": "寻找打火石",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10702",
+    "EventContentLanText": "找到打火石",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10702",
+    "GoalDescLanText": "在热食店里找到打火石"
+  },
+  "10703": {
+    "Id": "10703",
+    "ChapterID": "108",
+    "EventName": "点燃干草",
+    "EventContent": "制作引火材料",
+    "TriggerItem": [
+      {
+        "id": "1701",
+        "count": 1
+      },
+      {
+        "id": "1702",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1703",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10704"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "用打火石点燃干草，制作引火物",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10703",
+    "EventNameLanText": "点燃干草",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10703",
+    "EventContentLanText": "制作引火材料",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10703",
+    "GoalDescLanText": "用打火石点燃干草，制作引火物"
+  },
+  "10704": {
+    "Id": "10704",
+    "ChapterID": "108",
+    "EventName": "重新生火",
+    "EventContent": "点燃灶台",
+    "TriggerItem": [
+      {
+        "id": "1703",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1707",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10705"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000048",
+    "GoalDesc": "用燃烧的干草重新点燃灶台",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10704",
+    "EventNameLanText": "重新生火",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10704",
+    "EventContentLanText": "点燃灶台",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10704",
+    "GoalDescLanText": "用燃烧的干草重新点燃灶台"
+  },
+  "10705": {
+    "Id": "10705",
+    "ChapterID": "108",
+    "EventName": "回去找老板",
+    "EventContent": "回去找老板",
+    "TriggerItem": [
+      {
+        "id": "1707",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1708",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10706"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "2000009",
+    "GoalDesc": "回灶台旁找普拉奇杜斯",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10705",
+    "EventNameLanText": "回去找老板",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10705",
+    "EventContentLanText": "回去找老板",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10705",
+    "GoalDescLanText": "回灶台旁找普拉奇杜斯"
+  },
+  "10706": {
+    "Id": "10706",
+    "ChapterID": "108",
+    "EventName": "上酒",
+    "EventContent": "上酒",
+    "TriggerItem": [
+      {
+        "id": "1708",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1704",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10707"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000034",
+    "GoalDesc": "先将酒端给客人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10706",
+    "EventNameLanText": "上酒",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10706",
+    "EventContentLanText": "上酒",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10706",
+    "GoalDescLanText": "先将酒端给客人"
+  },
+  "10707": {
+    "Id": "10707",
+    "ChapterID": "108",
+    "EventName": "上炖肉",
+    "EventContent": "上肉",
+    "TriggerItem": [
+      {
+        "id": "1708",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1705",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10708"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000035",
+    "GoalDesc": "再将炖肉端给客人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10707",
+    "EventNameLanText": "上炖肉",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10707",
+    "EventContentLanText": "上肉",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10707",
+    "GoalDescLanText": "再将炖肉端给客人"
+  },
+  "10708": {
+    "Id": "10708",
+    "ChapterID": "108",
+    "EventName": "上橄榄",
+    "EventContent": "上橄榄",
+    "TriggerItem": [
+      {
+        "id": "1708",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1706",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10709"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "1000036",
+    "GoalDesc": "最后将橄榄端给客人",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10708",
+    "EventNameLanText": "上橄榄",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10708",
+    "EventContentLanText": "上橄榄",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10708",
+    "GoalDescLanText": "最后将橄榄端给客人"
+  },
+  "10709": {
+    "Id": "10709",
+    "ChapterID": "108",
+    "EventName": "交差",
+    "EventContent": "交付任务",
+    "TriggerItem": [
+      {
+        "id": "1706",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1709",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10300"
+    ],
+    "GuideSence": "13",
+    "GuideTarget": "2000009",
+    "GoalDesc": "回去找普拉奇杜斯交差",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10709",
+    "EventNameLanText": "交差",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10709",
+    "EventContentLanText": "交付任务",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10709",
+    "GoalDescLanText": "回去找普拉奇杜斯交差"
+  },
+  "10800": {
+    "Id": "10800",
+    "ChapterID": "109",
+    "EventName": "找到尼奥",
+    "EventContent": "找到店主",
+    "TriggerItem": [
+      {
+        "id": "1308",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1800",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10801",
+      "10802",
+      "10803"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "2000010",
+    "GoalDesc": "再次找到面包房老板尼奥",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10800",
+    "EventNameLanText": "找到尼奥",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10800",
+    "EventContentLanText": "找到店主",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10800",
+    "GoalDescLanText": "再次找到面包房老板尼奥"
+  },
+  "10801": {
+    "Id": "10801",
+    "ChapterID": "109",
+    "EventName": "找到葡萄汁",
+    "EventContent": "找到葡萄汁",
+    "TriggerItem": [
+      {
+        "id": "1800",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1803",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10804"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000037",
+    "GoalDesc": "在面包房里找到葡萄汁",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10801",
+    "EventNameLanText": "找到葡萄汁",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10801",
+    "EventContentLanText": "找到葡萄汁",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10801",
+    "GoalDescLanText": "在面包房里找到葡萄汁"
+  },
+  "10802": {
+    "Id": "10802",
+    "ChapterID": "109",
+    "EventName": "找到牛奶",
+    "EventContent": "找到牛奶",
+    "TriggerItem": [
+      {
+        "id": "1800",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1804",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10804"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000038",
+    "GoalDesc": "在面包房里找到牛奶",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10802",
+    "EventNameLanText": "找到牛奶",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10802",
+    "EventContentLanText": "找到牛奶",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10802",
+    "GoalDescLanText": "在面包房里找到牛奶"
+  },
+  "10803": {
+    "Id": "10803",
+    "ChapterID": "109",
+    "EventName": "找到蜂蜜",
+    "EventContent": "找到蜂蜜",
+    "TriggerItem": [
+      {
+        "id": "1800",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1805",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10804"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "1000039",
+    "GoalDesc": "在面包房里找到蜂蜜",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10803",
+    "EventNameLanText": "找到蜂蜜",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10803",
+    "EventContentLanText": "找到蜂蜜",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10803",
+    "GoalDescLanText": "在面包房里找到蜂蜜"
+  },
+  "10804": {
+    "Id": "10804",
+    "ChapterID": "109",
+    "EventName": "找到尼奥",
+    "EventContent": "找到面包",
+    "TriggerItem": [
+      {
+        "id": "1803",
+        "count": 1
+      },
+      {
+        "id": "1804",
+        "count": 1
+      },
+      {
+        "id": "1805",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1813",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10805"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "2000010",
+    "GoalDesc": "回去找老板尼奥",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10804",
+    "EventNameLanText": "找到尼奥",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10804",
+    "EventContentLanText": "找到面包",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10804",
+    "GoalDescLanText": "回去找老板尼奥"
+  },
+  "10805": {
+    "Id": "10805",
+    "ChapterID": "109",
+    "EventName": "制作浸葡萄汁的面包",
+    "EventContent": "制作带有葡萄汁的面包",
+    "TriggerItem": [
+      {
+        "id": "1802",
+        "count": 1
+      },
+      {
+        "id": "1803",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1806",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10806"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "将葡萄汁淋在面包上",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10805",
+    "EventNameLanText": "制作浸葡萄汁的面包",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10805",
+    "EventContentLanText": "制作带有葡萄汁的面包",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10805",
+    "GoalDescLanText": "将葡萄汁淋在面包上"
+  },
+  "10806": {
+    "Id": "10806",
+    "ChapterID": "109",
+    "EventName": "制作半成品甜点",
+    "EventContent": "制作待制作甜点",
+    "TriggerItem": [
+      {
+        "id": "1806",
+        "count": 1
+      },
+      {
+        "id": "1804",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1807",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10807"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "为浸了葡萄汁的面包加入牛奶",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10806",
+    "EventNameLanText": "制作半成品甜点",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10806",
+    "EventContentLanText": "制作待制作甜点",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10806",
+    "GoalDescLanText": "为浸了葡萄汁的面包加入牛奶"
+  },
+  "10807": {
+    "Id": "10807",
+    "ChapterID": "109",
+    "EventName": "烘烤甜点",
+    "EventContent": "制作甜点",
+    "TriggerItem": [
+      {
+        "id": "1807",
+        "count": 1
+      },
+      {
+        "id": "1811",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1808",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10808"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "将半成品甜点放入烤炉烘烤",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10807",
+    "EventNameLanText": "烘烤甜点",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10807",
+    "EventContentLanText": "制作甜点",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10807",
+    "GoalDescLanText": "将半成品甜点放入烤炉烘烤"
+  },
+  "10808": {
+    "Id": "10808",
+    "ChapterID": "109",
+    "EventName": "制作蜂蜜甜点",
+    "EventContent": "制作完整的甜点",
+    "TriggerItem": [
+      {
+        "id": "1808",
+        "count": 1
+      },
+      {
+        "id": "1805",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1809",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10809"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "在背包中为烤甜点涂上蜂蜜",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10808",
+    "EventNameLanText": "制作蜂蜜甜点",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10808",
+    "EventContentLanText": "制作完整的甜点",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10808",
+    "GoalDescLanText": "在背包中为烤甜点涂上蜂蜜"
+  },
+  "10809": {
+    "Id": "10809",
+    "ChapterID": "109",
+    "EventName": "交出蜂蜜甜点",
+    "EventContent": "交付给老板",
+    "TriggerItem": [
+      {
+        "id": "1809",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1810",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10500"
+    ],
+    "GuideSence": "14",
+    "GuideTarget": "2000010",
+    "GoalDesc": "将蜂蜜甜点交给尼奥",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10809",
+    "EventNameLanText": "交出蜂蜜甜点",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10809",
+    "EventContentLanText": "交付给老板",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10809",
+    "GoalDescLanText": "将蜂蜜甜点交给尼奥"
+  },
+  "10900": {
+    "Id": "10900",
+    "ChapterID": "110",
+    "EventName": "找到尤马西雅",
+    "EventContent": "找到女祭司",
+    "TriggerItem": [
+      {
+        "id": "1406",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1900",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10901",
+      "10902",
+      "10903"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "2000011",
+    "GoalDesc": "再次找到尤马西雅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10900",
+    "EventNameLanText": "找到尤马西雅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10900",
+    "EventContentLanText": "找到女祭司",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10900",
+    "GoalDescLanText": "再次找到尤马西雅"
+  },
+  "10901": {
+    "Id": "10901",
+    "ChapterID": "110",
+    "EventName": "寻找丰饶之角碎片",
+    "EventContent": "搜索瓦砾堆",
+    "TriggerItem": [
+      {
+        "id": "1900",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1901",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10904"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000044",
+    "GoalDesc": "从瓦砾堆中找出丰饶之角碎片",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10901",
+    "EventNameLanText": "寻找丰饶之角碎片",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10901",
+    "EventContentLanText": "搜索瓦砾堆",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10901",
+    "GoalDescLanText": "从瓦砾堆中找出丰饶之角碎片"
+  },
+  "10902": {
+    "Id": "10902",
+    "ChapterID": "110",
+    "EventName": "寻找葡萄藤枝",
+    "EventContent": "搜索葡萄酒罐",
+    "TriggerItem": [
+      {
+        "id": "1900",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1902",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10904"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000045",
+    "GoalDesc": "在葡萄酒罐旁找到葡萄藤枝",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10902",
+    "EventNameLanText": "寻找葡萄藤枝",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10902",
+    "EventContentLanText": "搜索葡萄酒罐",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10902",
+    "GoalDescLanText": "在葡萄酒罐旁找到葡萄藤枝"
+  },
+  "10903": {
+    "Id": "10903",
+    "ChapterID": "110",
+    "EventName": "寻找柳枝",
+    "EventContent": "拾取柳树苗",
+    "TriggerItem": [
+      {
+        "id": "1900",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1903",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10904"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000046",
+    "GoalDesc": "从柳树苗那里采柳枝",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10903",
+    "EventNameLanText": "寻找柳枝",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10903",
+    "EventContentLanText": "拾取柳树苗",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10903",
+    "GoalDescLanText": "从柳树苗那里采柳枝"
+  },
+  "10904": {
+    "Id": "10904",
+    "ChapterID": "110",
+    "EventName": "回去找尤马西雅",
+    "EventContent": "回去找女祭司",
+    "TriggerItem": [
+      {
+        "id": "1901",
+        "count": 1
+      },
+      {
+        "id": "1902",
+        "count": 1
+      },
+      {
+        "id": "1903",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1907",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10905"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "2000011",
+    "GoalDesc": "带着找到的材料回去找尤马西雅",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10904",
+    "EventNameLanText": "回去找尤马西雅",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10904",
+    "EventContentLanText": "回去找女祭司",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10904",
+    "GoalDescLanText": "带着找到的材料回去找尤马西雅"
+  },
+  "10905": {
+    "Id": "10905",
+    "ChapterID": "110",
+    "EventName": "编制花环",
+    "EventContent": "编制花环",
+    "TriggerItem": [
+      {
+        "id": "1907",
+        "count": 1
+      },
+      {
+        "id": "1902",
+        "count": 1
+      },
+      {
+        "id": "1903",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1904",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10906"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "用葡萄藤枝和柳枝编制花环",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10905",
+    "EventNameLanText": "编制花环",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10905",
+    "EventContentLanText": "编制花环",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10905",
+    "GoalDescLanText": "用葡萄藤枝和柳枝编制花环"
+  },
+  "10906": {
+    "Id": "10906",
+    "ChapterID": "110",
+    "EventName": "点缀花环",
+    "EventContent": "组合花环",
+    "TriggerItem": [
+      {
+        "id": "1904",
+        "count": 1
+      },
+      {
+        "id": "1901",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1905",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10907"
+    ],
+    "GuideSence": "",
+    "GuideTarget": "",
+    "GoalDesc": "用丰饶之角碎片点缀花环",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10906",
+    "EventNameLanText": "点缀花环",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10906",
+    "EventContentLanText": "组合花环",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10906",
+    "GoalDescLanText": "用丰饶之角碎片点缀花环"
+  },
+  "10907": {
+    "Id": "10907",
+    "ChapterID": "110",
+    "EventName": "献上花环",
+    "EventContent": "把花环放到祭坛上",
+    "TriggerItem": [
+      {
+        "id": "1905",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1908",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "10908"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "1000047",
+    "GoalDesc": "将花环放到中央大理石台上",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10907",
+    "EventNameLanText": "献上花环",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10907",
+    "EventContentLanText": "把花环放到祭坛上",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10907",
+    "GoalDescLanText": "将花环放到中央大理石台上"
+  },
+  "10908": {
+    "Id": "10908",
+    "ChapterID": "110",
+    "EventName": "交差",
+    "EventContent": "找女祭司交差",
+    "TriggerItem": [
+      {
+        "id": "1908",
+        "count": 1
+      }
+    ],
+    "CompleteItem": [
+      {
+        "id": "1906",
+        "count": 1
+      }
+    ],
+    "NextEvent": [
+      "0"
+    ],
+    "GuideSence": "15",
+    "GuideTarget": "2000011",
+    "GoalDesc": "回去找尤马西雅交差",
+    "EventNameLan": "activeLan_adventureEvent_eventNameLan_10908",
+    "EventNameLanText": "交差",
+    "EventContentLan": "activeLan_adventureEvent_eventContentLan_10908",
+    "EventContentLanText": "找女祭司交差",
+    "GoalDescLan": "activeLan_adventureEvent_goalDescLan_10908",
+    "GoalDescLanText": "回去找尤马西雅交差"
+  }
+}

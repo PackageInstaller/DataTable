@@ -1,0 +1,721 @@
+{
+  "AlertAttackBulletExtraLimit_FIX": {
+    "ID": "AlertAttackBulletExtraLimit_FIX",
+    "Sort": 1,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AlertAttackBulletMaxLimit_FIX": {
+    "ID": "AlertAttackBulletMaxLimit_FIX",
+    "Sort": 2,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AlertAttackDmgIncrease_FIX": {
+    "ID": "AlertAttackDmgIncrease_FIX",
+    "Sort": 99,
+    "MaxValue": 40,
+    "MaxTalentId": "T1366",
+    "TalentGroup": [
+      "T1345",
+      "T1346"
+    ]
+  },
+  "AlertAttackExtraBullet_FIX": {
+    "ID": "AlertAttackExtraBullet_FIX",
+    "Sort": 4,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AlertAttackRangeIncrease_FIX": {
+    "ID": "AlertAttackRangeIncrease_FIX",
+    "Sort": 5,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AllDefIncrease_FIX": {
+    "ID": "AllDefIncrease_FIX",
+    "Sort": 6,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AllDefIncrease_PERCENT": {
+    "ID": "AllDefIncrease_PERCENT",
+    "Sort": 7,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AllDefPenetrationRate_FIX": {
+    "ID": "AllDefPenetrationRate_FIX",
+    "Sort": 8,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AllDmgIncrease_FIX": {
+    "ID": "AllDmgIncrease_FIX",
+    "Sort": 9,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AllDmgReduce": {
+    "ID": "AllDmgReduce",
+    "Sort": 10,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AllDmgReductionIncrease_FIX": {
+    "ID": "AllDmgReductionIncrease_FIX",
+    "Sort": 11,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Atk": {
+    "ID": "Atk",
+    "Sort": 12,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Atk_FIX": {
+    "ID": "Atk_FIX",
+    "Sort": 13,
+    "MaxValue": 2500,
+    "MaxTalentId": "T1352",
+    "TalentGroup": [
+      "T1328",
+      "T1329",
+      "T1330",
+      "T1331",
+      "T1332",
+      "T1333",
+      "T1334",
+      "T1335",
+      "T1336"
+    ]
+  },
+  "Atk_GROW": {
+    "ID": "Atk_GROW",
+    "Sort": 14,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Atk_PERCENT": {
+    "ID": "Atk_PERCENT",
+    "Sort": 15,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "AttriRestraintIncrease": {
+    "ID": "AttriRestraintIncrease",
+    "Sort": 16,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeChaseAttackedDmgIncrease_FIX": {
+    "ID": "BeChaseAttackedDmgIncrease_FIX",
+    "Sort": 17,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeChaseAttackedDmgReduce_FIX": {
+    "ID": "BeChaseAttackedDmgReduce_FIX",
+    "Sort": 18,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeCommonAttackedDmgIncrease_FIX": {
+    "ID": "BeCommonAttackedDmgIncrease_FIX",
+    "Sort": 19,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeCommonAttackedDmgReduce_FIX": {
+    "ID": "BeCommonAttackedDmgReduce_FIX",
+    "Sort": 20,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeDoubleHitedDmgIncrease_FIX": {
+    "ID": "BeDoubleHitedDmgIncrease_FIX",
+    "Sort": 21,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeDoubleHitedDmgReduce_FIX": {
+    "ID": "BeDoubleHitedDmgReduce_FIX",
+    "Sort": 22,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeFightBackedDmgIncrease_FIX": {
+    "ID": "BeFightBackedDmgIncrease_FIX",
+    "Sort": 23,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeFightBackedDmgReduce_FIX": {
+    "ID": "BeFightBackedDmgReduce_FIX",
+    "Sort": 24,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeSkilledDmgIncrease_FIX": {
+    "ID": "BeSkilledDmgIncrease_FIX",
+    "Sort": 25,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeSkilledDmgReduce_FIX": {
+    "ID": "BeSkilledDmgReduce_FIX",
+    "Sort": 26,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeSpeicalAttackDmgIncrease_FIX": {
+    "ID": "BeSpeicalAttackDmgIncrease_FIX",
+    "Sort": 27,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BeSpeicalDmgReduce_FIX": {
+    "ID": "BeSpeicalDmgReduce_FIX",
+    "Sort": 28,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Block": {
+    "ID": "Block",
+    "Sort": 29,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BlockDef_FIX": {
+    "ID": "BlockDef_FIX",
+    "Sort": 31,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BlockPenetrate_FIX": {
+    "ID": "BlockPenetrate_FIX",
+    "Sort": 32,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "BlockPenetrate_GROW": {
+    "ID": "BlockPenetrate_GROW",
+    "Sort": 33,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Block_FIX": {
+    "ID": "Block_FIX",
+    "Sort": 98,
+    "MaxValue": 40,
+    "MaxTalentId": "T1362",
+    "TalentGroup": [
+      "T1337",
+      "T1338"
+    ]
+  },
+  "ChaseAttackDmgIncrease": {
+    "ID": "ChaseAttackDmgIncrease",
+    "Sort": 34,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "ChaseAttackDmgIncrease_FIX": {
+    "ID": "ChaseAttackDmgIncrease_FIX",
+    "Sort": 35,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CommonAttackDmgIncrease": {
+    "ID": "CommonAttackDmgIncrease",
+    "Sort": 36,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CommonAttackDmgIncrease_FIX": {
+    "ID": "CommonAttackDmgIncrease_FIX",
+    "Sort": 37,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CounterProDDmgIncrease_FIX": {
+    "ID": "CounterProDDmgIncrease_FIX",
+    "Sort": 38,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CounterProWDmgIncrease_FIX": {
+    "ID": "CounterProWDmgIncrease_FIX",
+    "Sort": 39,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CritDmgRes_GROW": {
+    "ID": "CritDmgRes_GROW",
+    "Sort": 43,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CritDmg_FIX": {
+    "ID": "CritDmg_FIX",
+    "Sort": 41,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CritDmg_GROW": {
+    "ID": "CritDmg_GROW",
+    "Sort": 42,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CritRes": {
+    "ID": "CritRes",
+    "Sort": 45,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "CritRes_GROW": {
+    "ID": "CritRes_GROW",
+    "Sort": 46,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Critcal_GROW": {
+    "ID": "Critcal_GROW",
+    "Sort": 40,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Critical_FIX": {
+    "ID": "Critical_FIX",
+    "Sort": 44,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Cross": {
+    "ID": "Cross",
+    "Sort": 47,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "DefPenetrationRate_FIX": {
+    "ID": "DefPenetrationRate_FIX",
+    "Sort": 48,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "DoubleHitDmgIncrease_FIX": {
+    "ID": "DoubleHitDmgIncrease_FIX",
+    "Sort": 49,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "EnergyLimit": {
+    "ID": "EnergyLimit",
+    "Sort": 50,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "EnergyLimit_GROW": {
+    "ID": "EnergyLimit_GROW",
+    "Sort": 51,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "EnergyRecoveryCycle_FIX": {
+    "ID": "EnergyRecoveryCycle_FIX",
+    "Sort": 52,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "FightBackDmgIncrease_FIX": {
+    "ID": "FightBackDmgIncrease_FIX",
+    "Sort": 53,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "HealIncrease_FIX": {
+    "ID": "HealIncrease_FIX",
+    "Sort": 55,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "HealedIncrease_FIX": {
+    "ID": "HealedIncrease_FIX",
+    "Sort": 54,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "HitRate": {
+    "ID": "HitRate",
+    "Sort": 56,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "HitRate_GROW": {
+    "ID": "HitRate_GROW",
+    "Sort": 57,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Hp": {
+    "ID": "Hp",
+    "Sort": 58,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Hp_FIX": {
+    "ID": "Hp_FIX",
+    "Sort": 59,
+    "MaxValue": 5000,
+    "MaxTalentId": "T1353",
+    "TalentGroup": [
+      "T1322",
+      "T1323",
+      "T1324",
+      "T1325",
+      "T1326",
+      "T1327"
+    ]
+  },
+  "Hp_GROW": {
+    "ID": "Hp_GROW",
+    "Sort": 60,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Hp_PERCENT": {
+    "ID": "Hp_PERCENT",
+    "Sort": 61,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "HurtHealRate_FIX": {
+    "ID": "HurtHealRate_FIX",
+    "Sort": 62,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "InaitialActionPoint": {
+    "ID": "InaitialActionPoint",
+    "Sort": 63,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "InaitialEnergy": {
+    "ID": "InaitialEnergy",
+    "Sort": 64,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "InaitialEnergy_FIX": {
+    "ID": "InaitialEnergy_FIX",
+    "Sort": 65,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Jump": {
+    "ID": "Jump",
+    "Sort": 66,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MagDmgReductionIncrease": {
+    "ID": "MagDmgReductionIncrease",
+    "Sort": 67,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MagDmgReductionIncrease_FIX": {
+    "ID": "MagDmgReductionIncrease_FIX",
+    "Sort": 68,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MagicDef": {
+    "ID": "MagicDef",
+    "Sort": 69,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MagicDef_FIX": {
+    "ID": "MagicDef_FIX",
+    "Sort": 70,
+    "MaxValue": 350,
+    "MaxTalentId": "T1355",
+    "TalentGroup": [
+      "T1359",
+      "T1360",
+      "T1361"
+    ]
+  },
+  "MagicDef_GROW": {
+    "ID": "MagicDef_GROW",
+    "Sort": 71,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MagicDef_PERCENT": {
+    "ID": "MagicDef_PERCENT",
+    "Sort": 72,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MagicDmgIncrease_FIX": {
+    "ID": "MagicDmgIncrease_FIX",
+    "Sort": 73,
+    "MaxValue": 40,
+    "MaxTalentId": "T1364",
+    "TalentGroup": [
+      "T1341",
+      "T1342"
+    ]
+  },
+  "MissRate_FIX": {
+    "ID": "MissRate_FIX",
+    "Sort": 74,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "MissRate_GROW": {
+    "ID": "MissRate_GROW",
+    "Sort": 75,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Mov": {
+    "ID": "Mov",
+    "Sort": 76,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Mov_FIX": {
+    "ID": "Mov_FIX",
+    "Sort": 77,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PenetrationRate_FIX": {
+    "ID": "PenetrationRate_FIX",
+    "Sort": 78,
+    "MaxValue": 40,
+    "MaxTalentId": "T1363",
+    "TalentGroup": [
+      "T1339",
+      "T1340"
+    ]
+  },
+  "PhyDmgReductionIncrease": {
+    "ID": "PhyDmgReductionIncrease",
+    "Sort": 79,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PhyDmgReductionIncrease_FIX": {
+    "ID": "PhyDmgReductionIncrease_FIX",
+    "Sort": 80,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PhysicDef": {
+    "ID": "PhysicDef",
+    "Sort": 82,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PhysicDef_FIX": {
+    "ID": "PhysicDef_FIX",
+    "Sort": 83,
+    "MaxValue": 350,
+    "MaxTalentId": "T1354",
+    "TalentGroup": [
+      "T1356",
+      "T1357",
+      "T1358"
+    ]
+  },
+  "PhysicDef_GROW": {
+    "ID": "PhysicDef_GROW",
+    "Sort": 84,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PhysicDef_PERCENT": {
+    "ID": "PhysicDef_PERCENT",
+    "Sort": 85,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PhysicalDmgIncrease_FIX": {
+    "ID": "PhysicalDmgIncrease_FIX",
+    "Sort": 81,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "ProtectBearRate": {
+    "ID": "ProtectBearRate",
+    "Sort": 86,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "PurEnergy_FIX": {
+    "ID": "PurEnergy_FIX",
+    "Sort": 87,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "SheildIncrease": {
+    "ID": "SheildIncrease",
+    "Sort": 88,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "SheildIncrease_FIX": {
+    "ID": "SheildIncrease_FIX",
+    "Sort": 89,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "SkillDmgIncrease": {
+    "ID": "SkillDmgIncrease",
+    "Sort": 90,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "SkillDmgIncrease_FIX": {
+    "ID": "SkillDmgIncrease_FIX",
+    "Sort": 91,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "SnipeDmgIncrease_FIX": {
+    "ID": "SnipeDmgIncrease_FIX",
+    "Sort": 92,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "SnipeResetRate_FIX": {
+    "ID": "SnipeResetRate_FIX",
+    "Sort": 93,
+    "MaxValue": 40,
+    "MaxTalentId": "T1365",
+    "TalentGroup": [
+      "T1343",
+      "T1344"
+    ]
+  },
+  "Speed": {
+    "ID": "Speed",
+    "Sort": 94,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Speed_FIX": {
+    "ID": "Speed_FIX",
+    "Sort": 95,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Speed_GROW": {
+    "ID": "Speed_GROW",
+    "Sort": 96,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  },
+  "Speed_PERCENT": {
+    "ID": "Speed_PERCENT",
+    "Sort": 97,
+    "MaxValue": 0,
+    "MaxTalentId": "",
+    "TalentGroup": []
+  }
+}

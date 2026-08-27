@@ -1,0 +1,989 @@
+{
+  "FSMY100501": {
+    "Id": "FSMY100501",
+    "Name": "01",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1001",
+    "Size": 1,
+    "Type": 1,
+    "Conditions": [
+      350,
+      500,
+      600
+    ],
+    "UnlockParam": [],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 300,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 30
+  },
+  "FSMY100502": {
+    "Id": "FSMY100502",
+    "Name": "02",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1002",
+    "Size": 1,
+    "Type": 1,
+    "Conditions": [
+      350,
+      500,
+      610
+    ],
+    "UnlockParam": [
+      "FSMY100501",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 300,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 30
+  },
+  "FSMY100503": {
+    "Id": "FSMY100503",
+    "Name": "03",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1003",
+    "Size": 2,
+    "Type": 1,
+    "Conditions": [
+      350,
+      500,
+      610
+    ],
+    "UnlockParam": [
+      "FSMY100502",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 28
+  },
+  "FSMY100504": {
+    "Id": "FSMY100504",
+    "Name": "04",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1004",
+    "Size": 2,
+    "Type": 1,
+    "Conditions": [
+      350,
+      500,
+      610
+    ],
+    "UnlockParam": [
+      "FSMY100503",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 28
+  },
+  "FSMY100505": {
+    "Id": "FSMY100505",
+    "Name": "05",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1005",
+    "Size": 3,
+    "Type": 1,
+    "Conditions": [
+      350,
+      500,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100504",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 260,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 26
+  },
+  "FSMY100506": {
+    "Id": "FSMY100506",
+    "Name": "06",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1006",
+    "Size": 3,
+    "Type": 1,
+    "Conditions": [
+      350,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100505",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 260,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 26
+  },
+  "FSMY100507": {
+    "Id": "FSMY100507",
+    "Name": "07",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1007",
+    "Size": 1,
+    "Type": 1,
+    "Conditions": [
+      350,
+      450,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100506",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 260,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 26
+  },
+  "FSMY100508": {
+    "Id": "FSMY100508",
+    "Name": "08",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1008",
+    "Size": 1,
+    "Type": 1,
+    "Conditions": [
+      350,
+      500,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100507",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 250,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 25
+  },
+  "FSMY100509": {
+    "Id": "FSMY100509",
+    "Name": "09",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1009",
+    "Size": 2,
+    "Type": 1,
+    "Conditions": [
+      300,
+      450,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100508",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 250,
+    "SkipTime": 30,
+    "SkipScore": 400,
+    "Cost": 25
+  },
+  "FSMY100510": {
+    "Id": "FSMY100510",
+    "Name": "10",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1010",
+    "Size": 2,
+    "Type": 1,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100509",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 240,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 24
+  },
+  "FSMY100511": {
+    "Id": "FSMY100511",
+    "Name": "11",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1011",
+    "Size": 3,
+    "Type": 1,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100510",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 230,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 23
+  },
+  "FSMY100512": {
+    "Id": "FSMY100512",
+    "Name": "12",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY1012",
+    "Size": 3,
+    "Type": 1,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100511",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 230,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 23
+  },
+  "FSMY100601": {
+    "Id": "FSMY100601",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2001",
+    "Size": 1,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100602": {
+    "Id": "FSMY100602",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2002",
+    "Size": 2,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100603": {
+    "Id": "FSMY100603",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2003",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100604": {
+    "Id": "FSMY100604",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2004",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100605": {
+    "Id": "FSMY100605",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2005",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100606": {
+    "Id": "FSMY100606",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2006",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100607": {
+    "Id": "FSMY100607",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2007",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100608": {
+    "Id": "FSMY100608",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2008",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 300,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 30
+  },
+  "FSMY100609": {
+    "Id": "FSMY100609",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2009",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100610": {
+    "Id": "FSMY100610",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2010",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100611": {
+    "Id": "FSMY100611",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2011",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100612": {
+    "Id": "FSMY100612",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2012",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100613": {
+    "Id": "FSMY100613",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2013",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100614": {
+    "Id": "FSMY100614",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2014",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 300,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 30
+  },
+  "FSMY100615": {
+    "Id": "FSMY100615",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2015",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 300,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 30
+  },
+  "FSMY100616": {
+    "Id": "FSMY100616",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2016",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100617": {
+    "Id": "FSMY100617",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2017",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100618": {
+    "Id": "FSMY100618",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2018",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100619": {
+    "Id": "FSMY100619",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2019",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100620": {
+    "Id": "FSMY100620",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2020",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  },
+  "FSMY100621": {
+    "Id": "FSMY100621",
+    "Name": "桃 花",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_FSMY2021",
+    "Size": 3,
+    "Type": 2,
+    "Conditions": [
+      300,
+      400,
+      600
+    ],
+    "UnlockParam": [
+      "FSMY100512",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "3212",
+        "count": 1
+      },
+      {
+        "id": "5268",
+        "count": 900
+      }
+    ],
+    "InitialScore": 280,
+    "SkipTime": 30,
+    "SkipScore": 300,
+    "Cost": 28
+  }
+}

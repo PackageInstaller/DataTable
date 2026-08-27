@@ -1,0 +1,448 @@
+[
+  {
+    "id": "10101",
+    "album": "TH101",
+    "eventID": "THmus101",
+    "typeGroup": 1,
+    "type": "Easy",
+    "unlock": [],
+    "name": "《景观公园》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10101",
+    "nameLanText": "《景观公园》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 40
+      },
+      {
+        "id": "71101",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10102",
+    "album": "TH101",
+    "eventID": "THmus102",
+    "typeGroup": 1,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "10101",
+      "3"
+    ],
+    "name": "《景观公园》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10102",
+    "nameLanText": "《景观公园》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 60
+      },
+      {
+        "id": "3",
+        "count": 20000
+      }
+    ]
+  },
+  {
+    "id": "10103",
+    "album": "TH101",
+    "eventID": "THmus103",
+    "typeGroup": 1,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "10102",
+      "2"
+    ],
+    "name": "《景观公园》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10103",
+    "nameLanText": "《景观公园》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 80
+      },
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ]
+  },
+  {
+    "id": "10201",
+    "album": "TH101",
+    "eventID": "THmus201",
+    "typeGroup": 2,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "10101",
+      "1000"
+    ],
+    "name": "《长桥》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10201",
+    "nameLanText": "《长桥》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 40
+      },
+      {
+        "id": "71102",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10202",
+    "album": "TH101",
+    "eventID": "THmus202",
+    "typeGroup": 2,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "10201",
+      "3"
+    ],
+    "name": "《长桥》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10202",
+    "nameLanText": "《长桥》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 60
+      },
+      {
+        "id": "3",
+        "count": 20000
+      }
+    ]
+  },
+  {
+    "id": "10203",
+    "album": "TH101",
+    "eventID": "THmus203",
+    "typeGroup": 2,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "10202",
+      "2"
+    ],
+    "name": "《长桥》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10203",
+    "nameLanText": "《长桥》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 80
+      },
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ]
+  },
+  {
+    "id": "10301",
+    "album": "TH101",
+    "eventID": "THmus301",
+    "typeGroup": 3,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "10201",
+      "1000"
+    ],
+    "name": "《歌剧院》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10301",
+    "nameLanText": "《歌剧院》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 40
+      },
+      {
+        "id": "71103",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10302",
+    "album": "TH101",
+    "eventID": "THmus302",
+    "typeGroup": 3,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "10301",
+      "3"
+    ],
+    "name": "《歌剧院》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10302",
+    "nameLanText": "《歌剧院》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 60
+      },
+      {
+        "id": "112101",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10303",
+    "album": "TH101",
+    "eventID": "THmus303",
+    "typeGroup": 3,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "10302",
+      "2"
+    ],
+    "name": "《歌剧院》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10303",
+    "nameLanText": "《歌剧院》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 80
+      },
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ]
+  },
+  {
+    "id": "10401",
+    "album": "TH101",
+    "eventID": "THmus401",
+    "typeGroup": 4,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "10301",
+      "1000"
+    ],
+    "name": "《广州塔》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10401",
+    "nameLanText": "《广州塔》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 40
+      },
+      {
+        "id": "71104",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10402",
+    "album": "TH101",
+    "eventID": "THmus402",
+    "typeGroup": 4,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "10401",
+      "3"
+    ],
+    "name": "《广州塔》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10402",
+    "nameLanText": "《广州塔》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 60
+      },
+      {
+        "id": "112201",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10403",
+    "album": "TH101",
+    "eventID": "THmus403",
+    "typeGroup": 4,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "10402",
+      "2"
+    ],
+    "name": "《广州塔》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10403",
+    "nameLanText": "《广州塔》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 80
+      },
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ]
+  },
+  {
+    "id": "10501",
+    "album": "TH101",
+    "eventID": "THmus501",
+    "typeGroup": 5,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "10401",
+      "1000"
+    ],
+    "name": "《航站楼》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10501",
+    "nameLanText": "《航站楼》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 40
+      },
+      {
+        "id": "71105",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10502",
+    "album": "TH101",
+    "eventID": "THmus502",
+    "typeGroup": 5,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "10501",
+      "3"
+    ],
+    "name": "《航站楼》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10502",
+    "nameLanText": "《航站楼》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 60
+      },
+      {
+        "id": "112205",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10503",
+    "album": "TH101",
+    "eventID": "THmus503",
+    "typeGroup": 5,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "10502",
+      "2"
+    ],
+    "name": "《航站楼》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10503",
+    "nameLanText": "《航站楼》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 80
+      },
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ]
+  },
+  {
+    "id": "10601",
+    "album": "TH101",
+    "eventID": "THmus601",
+    "typeGroup": 6,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "10501",
+      "1000"
+    ],
+    "name": "《北京路》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10601",
+    "nameLanText": "《北京路》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 40
+      },
+      {
+        "id": "71106",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10602",
+    "album": "TH101",
+    "eventID": "THmus602",
+    "typeGroup": 6,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "10601",
+      "3"
+    ],
+    "name": "《北京路》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10602",
+    "nameLanText": "《北京路》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 60
+      },
+      {
+        "id": "112301",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "10603",
+    "album": "TH101",
+    "eventID": "THmus603",
+    "typeGroup": 6,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "10602",
+      "2"
+    ],
+    "name": "《北京路》",
+    "nameLan": "highteaLan_TH_MusicSong_nameLan_10603",
+    "nameLanText": "《北京路》",
+    "reward": [
+      {
+        "id": "24",
+        "count": 80
+      },
+      {
+        "id": "3",
+        "count": 30000
+      }
+    ]
+  }
+]

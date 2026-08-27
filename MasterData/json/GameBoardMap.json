@@ -1,0 +1,3523 @@
+{
+  "1001": {
+    "Level": "1001",
+    "LevelType": 1,
+    "PreLevel": "",
+    "MoveTimes": 1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-1_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "3001",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1001",
+    "LevelNameLanText": "第1关"
+  },
+  "1002": {
+    "Level": "1002",
+    "LevelType": 1,
+    "PreLevel": "1001",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "3102",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1002",
+    "LevelNameLanText": "第2关"
+  },
+  "1003": {
+    "Level": "1003",
+    "LevelType": 1,
+    "PreLevel": "1002",
+    "MoveTimes": 4,
+    "BoardBegin": [
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+0",
+      "+0_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "42401",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1003",
+    "LevelNameLanText": "第3关"
+  },
+  "1004": {
+    "Level": "1004",
+    "LevelType": 1,
+    "PreLevel": "1003",
+    "MoveTimes": 8,
+    "BoardBegin": [
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+2_+0",
+      "+1_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "3002",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1004",
+    "LevelNameLanText": "第4关"
+  },
+  "1005": {
+    "Level": "1005",
+    "LevelType": 1,
+    "PreLevel": "1004",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "-2_+1",
+      "-1_+1",
+      "+1_+1"
+    ],
+    "VicReward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "RewardShow": 1,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1005",
+    "LevelNameLanText": "第5关"
+  },
+  "1006": {
+    "Level": "1006",
+    "LevelType": 1,
+    "PreLevel": "1005",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "+0_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "42205",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1006",
+    "LevelNameLanText": "第6关"
+  },
+  "1007": {
+    "Level": "1007",
+    "LevelType": 1,
+    "PreLevel": "1006",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "2102",
+        "count": 5
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1007",
+    "LevelNameLanText": "第7关"
+  },
+  "1008": {
+    "Level": "1008",
+    "LevelType": 1,
+    "PreLevel": "1007",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+1_+1",
+      "+1_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "2302",
+        "count": 5
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1008",
+    "LevelNameLanText": "第8关"
+  },
+  "1009": {
+    "Level": "1009",
+    "LevelType": 1,
+    "PreLevel": "1008",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+1_+0",
+      "-1_-1",
+      "+1_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "43101",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1009",
+    "LevelNameLanText": "第9关"
+  },
+  "1010": {
+    "Level": "1010",
+    "LevelType": 1,
+    "PreLevel": "1009",
+    "MoveTimes": 8,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-1_+0",
+      "+1_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "RewardShow": 1,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1010",
+    "LevelNameLanText": "第10关"
+  },
+  "1011": {
+    "Level": "1011",
+    "LevelType": 1,
+    "PreLevel": "1010",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+0",
+      "-1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "3212",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1011",
+    "LevelNameLanText": "第11关"
+  },
+  "1012": {
+    "Level": "1012",
+    "LevelType": 1,
+    "PreLevel": "1011",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "-2_+0",
+        "2"
+      ],
+      [
+        "-1_-1",
+        "2"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+0_+0",
+      "+2_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "42203",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1012",
+    "LevelNameLanText": "第12关"
+  },
+  "1013": {
+    "Level": "1013",
+    "LevelType": 1,
+    "PreLevel": "1012",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "+0_+1",
+        "2"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+0",
+      "-1_-1",
+      "+0_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "82009",
+        "count": 2
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1013",
+    "LevelNameLanText": "第13关"
+  },
+  "1014": {
+    "Level": "1014",
+    "LevelType": 1,
+    "PreLevel": "1013",
+    "MoveTimes": 8,
+    "BoardBegin": [
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+0",
+      "+0_-1",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "42204",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1014",
+    "LevelNameLanText": "第14关"
+  },
+  "1015": {
+    "Level": "1015",
+    "LevelType": 1,
+    "PreLevel": "1014",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+1",
+      "-1_-1",
+      "+0_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "3003",
+        "count": 1
+      }
+    ],
+    "RewardShow": 1,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1015",
+    "LevelNameLanText": "第15关"
+  },
+  "1016": {
+    "Level": "1016",
+    "LevelType": 1,
+    "PreLevel": "1015",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "-1_+0",
+        "2"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+0_+0",
+      "-1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "43101",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1016",
+    "LevelNameLanText": "第16关"
+  },
+  "1017": {
+    "Level": "1017",
+    "LevelType": 1,
+    "PreLevel": "1016",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "2"
+      ],
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+0",
+      "-1_+0",
+      "+1_+0",
+      "+1_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "3102",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1017",
+    "LevelNameLanText": "第17关"
+  },
+  "1018": {
+    "Level": "1018",
+    "LevelType": 1,
+    "PreLevel": "1017",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+0_+1",
+      "+1_+1",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "2501",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1018",
+    "LevelNameLanText": "第18关"
+  },
+  "1019": {
+    "Level": "1019",
+    "LevelType": 1,
+    "PreLevel": "1018",
+    "MoveTimes": 4,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "2"
+      ],
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+0",
+      "+1_+0",
+      "+2_-1",
+      "+1_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "3002",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1019",
+    "LevelNameLanText": "第19关"
+  },
+  "1020": {
+    "Level": "1020",
+    "LevelType": 1,
+    "PreLevel": "1019",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+0_+0",
+      "+2_+0",
+      "+2_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "3210",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1020",
+    "LevelNameLanText": "第20关"
+  },
+  "1021": {
+    "Level": "1021",
+    "LevelType": 1,
+    "PreLevel": "1020",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "2"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+0",
+      "+0_+0",
+      "+0_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "81005",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1021",
+    "LevelNameLanText": "第21关"
+  },
+  "1022": {
+    "Level": "1022",
+    "LevelType": 1,
+    "PreLevel": "1021",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "3218",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1022",
+    "LevelNameLanText": "第22关"
+  },
+  "1023": {
+    "Level": "1023",
+    "LevelType": 1,
+    "PreLevel": "1022",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "2"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-1_+2",
+      "+1_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "42206",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1023",
+    "LevelNameLanText": "第23关"
+  },
+  "1024": {
+    "Level": "1024",
+    "LevelType": 1,
+    "PreLevel": "1023",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "+0_+1",
+      "+2_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "42207",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1024",
+    "LevelNameLanText": "第24关"
+  },
+  "1025": {
+    "Level": "1025",
+    "LevelType": 1,
+    "PreLevel": "1024",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "-2_+1",
+      "-2_+0",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "2501",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1025",
+    "LevelNameLanText": "第25关"
+  },
+  "1026": {
+    "Level": "1026",
+    "LevelType": 1,
+    "PreLevel": "1025",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "2"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-2_+1",
+      "+1_+0",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "42401",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1026",
+    "LevelNameLanText": "第26关"
+  },
+  "1027": {
+    "Level": "1027",
+    "LevelType": 1,
+    "PreLevel": "1026",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+1",
+      "-1_-1",
+      "+1_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "16",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1027",
+    "LevelNameLanText": "第27关"
+  },
+  "1028": {
+    "Level": "1028",
+    "LevelType": 1,
+    "PreLevel": "1027",
+    "MoveTimes": 2,
+    "BoardBegin": [
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+1",
+      "+1_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "42201",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1028",
+    "LevelNameLanText": "第28关"
+  },
+  "1029": {
+    "Level": "1029",
+    "LevelType": 1,
+    "PreLevel": "1028",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "-2_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+0_+2",
+      "-1_+0",
+      "+2_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "42402",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1029",
+    "LevelNameLanText": "第29关"
+  },
+  "1030": {
+    "Level": "1030",
+    "LevelType": 1,
+    "PreLevel": "1029",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+0_+1",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+1_+1",
+      "+0_+0",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "42403",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1030",
+    "LevelNameLanText": "第30关"
+  },
+  "1031": {
+    "Level": "1031",
+    "LevelType": 1,
+    "PreLevel": "1030",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+1_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "41101",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1031",
+    "LevelNameLanText": "第31关"
+  },
+  "1032": {
+    "Level": "1032",
+    "LevelType": 1,
+    "PreLevel": "1031",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "2"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-1_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1032",
+    "LevelNameLanText": "第32关"
+  },
+  "1033": {
+    "Level": "1033",
+    "LevelType": 1,
+    "PreLevel": "1032",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-1_+1",
+      "+1_+1",
+      "-1_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1033",
+    "LevelNameLanText": "第33关"
+  },
+  "1034": {
+    "Level": "1034",
+    "LevelType": 1,
+    "PreLevel": "1033",
+    "MoveTimes": 3,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "-1_+1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1034",
+    "LevelNameLanText": "第34关"
+  },
+  "1035": {
+    "Level": "1035",
+    "LevelType": 1,
+    "PreLevel": "1034",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "-2_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+0",
+      "+2_-1",
+      "+0_-2",
+      "+2_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1035",
+    "LevelNameLanText": "第35关"
+  },
+  "1036": {
+    "Level": "1036",
+    "LevelType": 1,
+    "PreLevel": "1035",
+    "MoveTimes": 4,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "2"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+2_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1036",
+    "LevelNameLanText": "第36关"
+  },
+  "1037": {
+    "Level": "1037",
+    "LevelType": 1,
+    "PreLevel": "1036",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-2_+0",
+        "2"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+0_+1",
+      "+2_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1037",
+    "LevelNameLanText": "第37关"
+  },
+  "1038": {
+    "Level": "1038",
+    "LevelType": 1,
+    "PreLevel": "1037",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+2_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1038",
+    "LevelNameLanText": "第38关"
+  },
+  "1039": {
+    "Level": "1039",
+    "LevelType": 1,
+    "PreLevel": "1038",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_-1",
+      "+2_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1039",
+    "LevelNameLanText": "第39关"
+  },
+  "1040": {
+    "Level": "1040",
+    "LevelType": 1,
+    "PreLevel": "1039",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "-1_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "114602",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1040",
+    "LevelNameLanText": "第40关"
+  },
+  "1041": {
+    "Level": "1041",
+    "LevelType": 1,
+    "PreLevel": "1040",
+    "MoveTimes": 4,
+    "BoardBegin": [
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+1",
+      "-1_-1",
+      "+1_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1041",
+    "LevelNameLanText": "第41关"
+  },
+  "1042": {
+    "Level": "1042",
+    "LevelType": 1,
+    "PreLevel": "1041",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+1",
+      "+1_+0",
+      "+1_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1042",
+    "LevelNameLanText": "第42关"
+  },
+  "1043": {
+    "Level": "1043",
+    "LevelType": 1,
+    "PreLevel": "1042",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "+0_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1043",
+    "LevelNameLanText": "第43关"
+  },
+  "1044": {
+    "Level": "1044",
+    "LevelType": 1,
+    "PreLevel": "1043",
+    "MoveTimes": 5,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "+0_-1",
+      "+0_-2"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1044",
+    "LevelNameLanText": "第44关"
+  },
+  "1045": {
+    "Level": "1045",
+    "LevelType": 1,
+    "PreLevel": "1044",
+    "MoveTimes": 7,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "-2_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1045",
+    "LevelNameLanText": "第45关"
+  },
+  "1046": {
+    "Level": "1046",
+    "LevelType": 1,
+    "PreLevel": "1045",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+1",
+      "+0_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1046",
+    "LevelNameLanText": "第46关"
+  },
+  "1047": {
+    "Level": "1047",
+    "LevelType": 1,
+    "PreLevel": "1046",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "2"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-1_+1",
+      "+0_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1047",
+    "LevelNameLanText": "第47关"
+  },
+  "1048": {
+    "Level": "1048",
+    "LevelType": 1,
+    "PreLevel": "1047",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+0",
+      "+2_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1048",
+    "LevelNameLanText": "第48关"
+  },
+  "1049": {
+    "Level": "1049",
+    "LevelType": 1,
+    "PreLevel": "1048",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "2"
+      ],
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-1_-1",
+      "+0_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1049",
+    "LevelNameLanText": "第49关"
+  },
+  "1050": {
+    "Level": "1050",
+    "LevelType": 1,
+    "PreLevel": "1049",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "-2_+2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "-1_+1",
+      "+1_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "114507",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1050",
+    "LevelNameLanText": "第50关"
+  },
+  "1051": {
+    "Level": "1051",
+    "LevelType": 1,
+    "PreLevel": "1050",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "-1_-1",
+        "2"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-1_+1",
+      "-1_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1051",
+    "LevelNameLanText": "第51关"
+  },
+  "1052": {
+    "Level": "1052",
+    "LevelType": 1,
+    "PreLevel": "1051",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "-2_+0",
+      "+0_+0",
+      "+0_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1052",
+    "LevelNameLanText": "第52关"
+  },
+  "1053": {
+    "Level": "1053",
+    "LevelType": 1,
+    "PreLevel": "1052",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+1",
+      "-1_+0",
+      "-1_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1053",
+    "LevelNameLanText": "第53关"
+  },
+  "1054": {
+    "Level": "1054",
+    "LevelType": 1,
+    "PreLevel": "1053",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "2"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+0_+2",
+      "-1_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1054",
+    "LevelNameLanText": "第54关"
+  },
+  "1055": {
+    "Level": "1055",
+    "LevelType": 1,
+    "PreLevel": "1054",
+    "MoveTimes": 8,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-2_+0",
+      "+1_+0",
+      "+0_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1055",
+    "LevelNameLanText": "第55关"
+  },
+  "1056": {
+    "Level": "1056",
+    "LevelType": 1,
+    "PreLevel": "1055",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "2"
+      ],
+      [
+        "-1_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "2"
+      ],
+      [
+        "-2_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+0_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1056",
+    "LevelNameLanText": "第56关"
+  },
+  "1057": {
+    "Level": "1057",
+    "LevelType": 1,
+    "PreLevel": "1056",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "2"
+      ],
+      [
+        "+2_-2",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "+1_+0",
+      "+1_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1057",
+    "LevelNameLanText": "第57关"
+  },
+  "1058": {
+    "Level": "1058",
+    "LevelType": 1,
+    "PreLevel": "1057",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ],
+      [
+        "+0_-2",
+        "2"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+1",
+      "-2_+0",
+      "+0_+0",
+      "+2_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1058",
+    "LevelNameLanText": "第58关"
+  },
+  "1059": {
+    "Level": "1059",
+    "LevelType": 1,
+    "PreLevel": "1058",
+    "MoveTimes": 8,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+2",
+        "2"
+      ],
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+1_+1",
+      "-1_-1",
+      "+2_-1"
+    ],
+    "VicReward": [
+      {
+        "id": "24",
+        "count": 20
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1059",
+    "LevelNameLanText": "第59关"
+  },
+  "1060": {
+    "Level": "1060",
+    "LevelType": 1,
+    "PreLevel": "1059",
+    "MoveTimes": 6,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "+0_+1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-1_+2",
+      "+1_-2",
+      "+0_-2",
+      "+0_+1",
+      "+1_-1",
+      "+1_+0",
+      "+2_+0"
+    ],
+    "VicReward": [
+      {
+        "id": "114403",
+        "count": 1
+      }
+    ],
+    "RewardShow": 0,
+    "LevelNameLan": "highteaLan_gameBoard_levelName_1060",
+    "LevelNameLanText": "第60关"
+  },
+  "1501": {
+    "Level": "1501",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_-1",
+      "+2_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1502": {
+    "Level": "1502",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+0",
+      "+1_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1503": {
+    "Level": "1503",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+0_+0"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1504": {
+    "Level": "1504",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+1_-1",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1505": {
+    "Level": "1505",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+0",
+      "+1_+0"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1506": {
+    "Level": "1506",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-1_-1",
+      "+0_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1507": {
+    "Level": "1507",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+2_+0",
+      "+2_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1508": {
+    "Level": "1508",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+0",
+      "-1_-1",
+      "+1_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1509": {
+    "Level": "1509",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+0",
+      "+1_-1",
+      "+1_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1510": {
+    "Level": "1510",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+0_+0",
+      "+0_-2",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1511": {
+    "Level": "1511",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+1_+0",
+      "+0_-1",
+      "+1_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1512": {
+    "Level": "1512",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+2_+0",
+      "+0_-1",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1513": {
+    "Level": "1513",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+1_+1",
+      "-1_+0",
+      "+2_+0"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1514": {
+    "Level": "1514",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "-1_+0",
+      "-1_-1",
+      "+0_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1515": {
+    "Level": "1515",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "+1_+1",
+      "+2_+0",
+      "+1_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1516": {
+    "Level": "1516",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1517": {
+    "Level": "1517",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "2"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+1_+0",
+      "-1_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1518": {
+    "Level": "1518",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+2_+0",
+      "+0_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1519": {
+    "Level": "1519",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ],
+      [
+        "+2_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "+1_+0",
+      "+1_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1520": {
+    "Level": "1520",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+1",
+      "-1_-1",
+      "+0_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1521": {
+    "Level": "1521",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+0",
+      "+1_+0",
+      "+1_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1522": {
+    "Level": "1522",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "2"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+1_+0",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1523": {
+    "Level": "1523",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "2"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "-2_+1",
+      "+0_-2",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1524": {
+    "Level": "1524",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+0_-1",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+2",
+      "+1_+1",
+      "-1_-1",
+      "+0_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1525": {
+    "Level": "1525",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+0",
+      "-1_-1",
+      "+1_-1",
+      "+0_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1526": {
+    "Level": "1526",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "1"
+      ],
+      [
+        "-1_+0",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "2"
+      ],
+      [
+        "+0_-1",
+        "1"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "+0_-1",
+      "+1_-1",
+      "+2_-1"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1527": {
+    "Level": "1527",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-2_+1",
+        "1"
+      ],
+      [
+        "+0_+0",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "+0_+1",
+      "-2_+0",
+      "-1_-1",
+      "+2_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1528": {
+    "Level": "1528",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "+0_+1",
+        "2"
+      ],
+      [
+        "+1_+1",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "1"
+      ],
+      [
+        "+0_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+1",
+      "-1_+0",
+      "+0_-1",
+      "+0_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1529": {
+    "Level": "1529",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-2_+2",
+        "1"
+      ],
+      [
+        "+0_+2",
+        "2"
+      ],
+      [
+        "-1_+1",
+        "2"
+      ],
+      [
+        "-1_+0",
+        "1"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "-1_-1",
+        "2"
+      ],
+      [
+        "+1_-1",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-2_+2",
+      "-2_+0",
+      "-1_+0",
+      "+0_+0"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  },
+  "1530": {
+    "Level": "1530",
+    "LevelType": 2,
+    "PreLevel": "",
+    "MoveTimes": -1,
+    "BoardBegin": [
+      [
+        "-1_+2",
+        "1"
+      ],
+      [
+        "-1_+1",
+        "2"
+      ],
+      [
+        "+1_+0",
+        "1"
+      ],
+      [
+        "+2_+0",
+        "2"
+      ],
+      [
+        "+2_-1",
+        "1"
+      ],
+      [
+        "+1_-2",
+        "1"
+      ]
+    ],
+    "BoardVic": [
+      "-1_+2",
+      "+0_+2",
+      "+0_-1",
+      "+0_-2"
+    ],
+    "VicReward": null,
+    "RewardShow": 0,
+    "LevelNameLan": ""
+  }
+}

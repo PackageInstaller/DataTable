@@ -1,0 +1,168 @@
+{
+  "TimeAllocation": 42,
+  "ScoreLimit_1": [
+    [
+      "B",
+      "0",
+      "59"
+    ],
+    [
+      "A",
+      "59",
+      "79"
+    ],
+    [
+      "S",
+      "79",
+      "100"
+    ]
+  ],
+  "ScoreLimit_2": [
+    [
+      "B",
+      "0",
+      "59"
+    ],
+    [
+      "A",
+      "59",
+      "79"
+    ],
+    [
+      "S",
+      "79",
+      "100"
+    ]
+  ],
+  "ScoreLimit_3": [
+    [
+      "B",
+      "0",
+      "59"
+    ],
+    [
+      "A",
+      "59",
+      "79"
+    ],
+    [
+      "S",
+      "79",
+      "100"
+    ]
+  ],
+  "ScoreGoal": [
+    60,
+    60,
+    60
+  ],
+  "ScoreDiscount": [
+    [
+      "0.1",
+      "0.3"
+    ],
+    [
+      "0.3",
+      "0.5"
+    ],
+    [
+      "0.5",
+      "0.7"
+    ],
+    [
+      "0.7",
+      "1"
+    ]
+  ],
+  "StaminaValue": [
+    [
+      0,
+      20
+    ],
+    [
+      20,
+      40
+    ],
+    [
+      40,
+      70
+    ],
+    [
+      70,
+      101
+    ]
+  ],
+  "StaminaRecoverTime": 1,
+  "StaminaRecoverValue": 2,
+  "TaskLimit": 5,
+  "StaminaLimit": 100,
+  "ScoreLimitItem1": [
+    {
+      "Rating": "B",
+      "Min": 0,
+      "Max": 59
+    },
+    {
+      "Rating": "A",
+      "Min": 59,
+      "Max": 79
+    },
+    {
+      "Rating": "S",
+      "Min": 79,
+      "Max": 100
+    }
+  ],
+  "ScoreLimitItem2": [
+    {
+      "Rating": "B",
+      "Min": 0,
+      "Max": 59
+    },
+    {
+      "Rating": "A",
+      "Min": 59,
+      "Max": 79
+    },
+    {
+      "Rating": "S",
+      "Min": 79,
+      "Max": 100
+    }
+  ],
+  "ScoreLimitItem3": [
+    {
+      "Rating": "B",
+      "Min": 0,
+      "Max": 59
+    },
+    {
+      "Rating": "A",
+      "Min": 59,
+      "Max": 79
+    },
+    {
+      "Rating": "S",
+      "Min": 79,
+      "Max": 100
+    }
+  ],
+  "ScoreDiscountItem": [
+    {
+      "Min": 0.1,
+      "Max": 0.3
+    },
+    {
+      "Min": 0.3,
+      "Max": 0.5
+    },
+    {
+      "Min": 0.5,
+      "Max": 0.7
+    },
+    {
+      "Min": 0.7,
+      "Max": 1
+    }
+  ]
+}

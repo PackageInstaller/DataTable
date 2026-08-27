@@ -1,0 +1,5894 @@
+{
+  "BT1001": {
+    "GroupId": "BT1001",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1001",
+    "GroupnameLanText": "子之试炼",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "45",
+        "104",
+        "6"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1001",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.至少6名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "2",
+        "100"
+      ],
+      [
+        "12",
+        "Buff_BT_Group3",
+        "-1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1002": {
+    "GroupId": "BT1002",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1002",
+    "GroupnameLanText": "丑之试炼",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "job",
+        "1",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1002",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.至少上阵2名宿卫器者",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "2",
+        "100"
+      ],
+      [
+        "13",
+        "Buff_BT_Group4",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1001",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1003": {
+    "GroupId": "BT1003",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1003",
+    "GroupnameLanText": "寅之试炼",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "55",
+        "104",
+        "6"
+      ],
+      [
+        "quality",
+        "3",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1003",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.至少6名器者等级达到55级;\n3.至少上阵1名稀有度为优异的器者",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "80"
+      ],
+      [
+        "2",
+        "60"
+      ],
+      [
+        "3",
+        "100"
+      ],
+      [
+        "14",
+        "Buff_BT_Group5",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1002",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1004": {
+    "GroupId": "BT1004",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1004",
+    "GroupnameLanText": "卯之试炼",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "job",
+        "3",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1004",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.至少上阵1名远击器者",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "80"
+      ],
+      [
+        "2",
+        "60"
+      ],
+      [
+        "3",
+        "100"
+      ],
+      [
+        "15",
+        "Buff_BT_Group6",
+        "-1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1003",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1005": {
+    "GroupId": "BT1005",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1005",
+    "GroupnameLanText": "辰之试炼",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "60",
+        "104",
+        "6"
+      ],
+      [
+        "job",
+        "5",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1005",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.至少6名器者等级达到60级;\n3.至少上阵1名战略器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "2",
+        "30"
+      ],
+      [
+        "3",
+        "80"
+      ],
+      [
+        "16",
+        "Buff_BT_Group7",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1004",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1006": {
+    "GroupId": "BT1006",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1006",
+    "GroupnameLanText": "巳之试炼",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "job",
+        "2",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1006",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.至少上阵2名轻锐器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "2",
+        "30"
+      ],
+      [
+        "3",
+        "80"
+      ],
+      [
+        "17",
+        "Buff_BT_Group8",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1005",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1007": {
+    "GroupId": "BT1007",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1007",
+    "GroupnameLanText": "午之试炼",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "65",
+        "104",
+        "6"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1007",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少6名器者等级达到65级;",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "3",
+        "65"
+      ],
+      [
+        "18",
+        "Buff_BT_Group9",
+        "-1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1006",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1008": {
+    "GroupId": "BT1008",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1008",
+    "GroupnameLanText": "未之试炼",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "job",
+        "2",
+        "104",
+        "1"
+      ],
+      [
+        "job",
+        "3",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1008",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少上阵1名轻锐器者;\n3.至少上阵1名远击器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "3",
+        "65"
+      ],
+      [
+        "19",
+        "Buff_BT_Group10",
+        "-1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1007",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1009": {
+    "GroupId": "BT1009",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1009",
+    "GroupnameLanText": "申之试炼",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "70",
+        "104",
+        "6"
+      ],
+      [
+        "job",
+        "1",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1009",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少6名器者等级达到70级;\n3.至少上阵1名宿卫器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "3",
+        "50"
+      ],
+      [
+        "20",
+        "Buff_BT_Group11",
+        "-1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1008",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1010": {
+    "GroupId": "BT1010",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1010",
+    "GroupnameLanText": "酉之试炼",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "job",
+        "2",
+        "104",
+        "2"
+      ],
+      [
+        "job",
+        "1",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1010",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少上阵2名轻锐器者;\n3.至少上阵1名宿卫器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "3",
+        "50"
+      ],
+      [
+        "21",
+        "Buff_BT_Group12",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1009",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1011": {
+    "GroupId": "BT1011",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1011",
+    "GroupnameLanText": "戌之试炼",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "75",
+        "104",
+        "6"
+      ],
+      [
+        "job",
+        "5",
+        "104",
+        "1"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1011",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少6名器者等级达到75级;\n3.至少上阵1名战略器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "3",
+        "50"
+      ],
+      [
+        "8",
+        "Buff_BT_Group13",
+        "2",
+        "0"
+      ],
+      [
+        "9",
+        "Buff_BT_Group13",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1010",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT1012": {
+    "GroupId": "BT1012",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT1012",
+    "GroupnameLanText": "亥之试炼",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "job",
+        "3",
+        "104",
+        "2"
+      ],
+      [
+        "job",
+        "4",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT1012",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少上阵2名远击器者;\n3.至少上阵2名构术器者",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "50"
+      ],
+      [
+        "3",
+        "50"
+      ],
+      [
+        "6",
+        "Buff_BT_Group14",
+        "4",
+        "0"
+      ],
+      [
+        "7",
+        "Buff_BT_Group14",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 500
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 1,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1011",
+    "Opentime": 0,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2001": {
+    "GroupId": "BT2001",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2001",
+    "GroupnameLanText": "引",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2001",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级;",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "30"
+      ],
+      [
+        "10",
+        "Buff_BT_Group1",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 280
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 2,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT1012",
+    "Opentime": 1714010400,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2002": {
+    "GroupId": "BT2002",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2002",
+    "GroupnameLanText": "吟",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2002",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级;",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "80"
+      ],
+      [
+        "11",
+        "Buff_BT_Group2",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 280
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 2,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT2001",
+    "Opentime": 1714010400,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2003": {
+    "GroupId": "BT2003",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2003",
+    "GroupnameLanText": "吟",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2003",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级;",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "80"
+      ],
+      [
+        "11",
+        "Buff_BT_Group2",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 280
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 3,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT2002",
+    "Opentime": 1715220000,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2004": {
+    "GroupId": "BT2004",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2004",
+    "GroupnameLanText": "引",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2004",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级;",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "30"
+      ],
+      [
+        "10",
+        "Buff_BT_Group1",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 280
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 3,
+    "RotationId": 0,
+    "Second": 0,
+    "PrevCond": "BT2003",
+    "Opentime": 1715220000,
+    "RotationUI": "",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2005": {
+    "GroupId": "BT2005",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2005",
+    "GroupnameLanText": "李",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2005",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "30"
+      ],
+      [
+        "22",
+        "Buff_BT_Group19",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 1,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "tao",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2006": {
+    "GroupId": "BT2006",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2006",
+    "GroupnameLanText": "桃",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2006",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "40"
+      ],
+      [
+        "23",
+        "Buff_BT_Group20",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 1,
+    "Second": 1814400,
+    "PrevCond": "BT2005",
+    "Opentime": 0,
+    "RotationUI": "tao",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2007": {
+    "GroupId": "BT2007",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2007",
+    "GroupnameLanText": "荷",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2007",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "30"
+      ],
+      [
+        "24",
+        "Buff_BT_Group21",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 2,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "he",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2008": {
+    "GroupId": "BT2008",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2008",
+    "GroupnameLanText": "莲",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2008",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "40"
+      ],
+      [
+        "25",
+        "Buff_BT_Group23",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 2,
+    "Second": 1814400,
+    "PrevCond": "BT2007",
+    "Opentime": 0,
+    "RotationUI": "he",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2009": {
+    "GroupId": "BT2009",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2009",
+    "GroupnameLanText": "桂",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2009",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "30"
+      ],
+      [
+        "26",
+        "Buff_BT_Group24",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 3,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "qiu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2010": {
+    "GroupId": "BT2010",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2010",
+    "GroupnameLanText": "兰",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2010",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "40"
+      ],
+      [
+        "27",
+        "Buff_BT_Group24",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 3,
+    "Second": 1814400,
+    "PrevCond": "BT2009",
+    "Opentime": 0,
+    "RotationUI": "qiu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2011": {
+    "GroupId": "BT2011",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2011",
+    "GroupnameLanText": "梅",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2011",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "30"
+      ],
+      [
+        "28",
+        "Buff_BT_Group27",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 4,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "mei",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2012": {
+    "GroupId": "BT2012",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2012",
+    "GroupnameLanText": "松",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2012",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "1",
+        "100"
+      ],
+      [
+        "3",
+        "40"
+      ],
+      [
+        "29",
+        "Buff_BT_Group27",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 4,
+    "Second": 1814400,
+    "PrevCond": "BT2011",
+    "Opentime": 0,
+    "RotationUI": "mei",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2013": {
+    "GroupId": "BT2013",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2013",
+    "GroupnameLanText": "苍龙",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2013",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "30",
+        "Buff_BT_Group30",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 5,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "long",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2014": {
+    "GroupId": "BT2014",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2014",
+    "GroupnameLanText": "白虎",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2014",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "31",
+        "Buff_BT_Group31",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 5,
+    "Second": 1814400,
+    "PrevCond": "BT2013",
+    "Opentime": 0,
+    "RotationUI": "long",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2015": {
+    "GroupId": "BT2015",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2015",
+    "GroupnameLanText": "朱雀",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2015",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "32",
+        "Buff_BT_Group32",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 6,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "que",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2016": {
+    "GroupId": "BT2016",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2016",
+    "GroupnameLanText": "玄武",
+    "Condition": [
+      [
+        "number",
+        "8"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "103",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2016",
+    "ConditionShowLanText": "1.上阵总人数达到8人;\n2.上阵器者等级至少达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "33",
+        "Buff_BT_Group33",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 6,
+    "Second": 1814400,
+    "PrevCond": "BT2015",
+    "Opentime": 0,
+    "RotationUI": "que",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2017": {
+    "GroupId": "BT2017",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2017",
+    "GroupnameLanText": "斛",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2017",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "34",
+        "Buff_BT_Group34",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 7,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "hu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2018": {
+    "GroupId": "BT2018",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2018",
+    "GroupnameLanText": "斗",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2018",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "35",
+        "Buff_BT_Group35",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 7,
+    "Second": 1814400,
+    "PrevCond": "BT2017",
+    "Opentime": 0,
+    "RotationUI": "hu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2019": {
+    "GroupId": "BT2019",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2019",
+    "GroupnameLanText": "列肆",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2019",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "36",
+        "Buff_BT_Group36",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 8,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "lie",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2020": {
+    "GroupId": "BT2020",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2020",
+    "GroupnameLanText": "车肆",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2020",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "37",
+        "Buff_BT_Group37",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 8,
+    "Second": 1814400,
+    "PrevCond": "BT2019",
+    "Opentime": 0,
+    "RotationUI": "lie",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2021": {
+    "GroupId": "BT2021",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2021",
+    "GroupnameLanText": "兔",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2021",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "38",
+        "Buff_BT_Group39",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 9,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "lu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2022": {
+    "GroupId": "BT2022",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2022",
+    "GroupnameLanText": "马",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2022",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "39",
+        "Buff_BT_Group38",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 9,
+    "Second": 1814400,
+    "PrevCond": "BT2021",
+    "Opentime": 0,
+    "RotationUI": "lu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2023": {
+    "GroupId": "BT2023",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2023",
+    "GroupnameLanText": "鼠",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2023",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "40",
+        "Buff_BT_Group40",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 10,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "shu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2024": {
+    "GroupId": "BT2024",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2024",
+    "GroupnameLanText": "牛",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2024",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "41",
+        "Buff_BT_Group41",
+        "1"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 10,
+    "Second": 1814400,
+    "PrevCond": "BT2023",
+    "Opentime": 0,
+    "RotationUI": "shu",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2025": {
+    "GroupId": "BT2025",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2025",
+    "GroupnameLanText": "虎",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2025",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "42",
+        "Buff_BT_Group42_A",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 11,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "lu3",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2026": {
+    "GroupId": "BT2026",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2026",
+    "GroupnameLanText": "羊",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2026",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "43",
+        "Buff_BT_Group43_A",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 11,
+    "Second": 1814400,
+    "PrevCond": "BT2025",
+    "Opentime": 0,
+    "RotationUI": "lu3",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2027": {
+    "GroupId": "BT2027",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2027",
+    "GroupnameLanText": "龙",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2027",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "44",
+        "Buff_BT_Group44__Lan",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 12,
+    "Second": 2419200,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "lu4",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2028": {
+    "GroupId": "BT2028",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2028",
+    "GroupnameLanText": "蛇",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2028",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "45",
+        "Buff_BT_Group45__Lan",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 12,
+    "Second": 2419200,
+    "PrevCond": "BT2027",
+    "Opentime": 0,
+    "RotationUI": "lu4",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2029": {
+    "GroupId": "BT2029",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2029",
+    "GroupnameLanText": "猴",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2029",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "46",
+        "Buff_BT_Group46_Lan",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 13,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "lu5",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2030": {
+    "GroupId": "BT2030",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2030",
+    "GroupnameLanText": "鸡",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2030",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "47",
+        "Buff_BT_Group47_Lan",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 13,
+    "Second": 1814400,
+    "PrevCond": "BT2029",
+    "Opentime": 0,
+    "RotationUI": "lu5",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2031": {
+    "GroupId": "BT2031",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2031",
+    "GroupnameLanText": "狗",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2031",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "49",
+        "Buff_BT_Group49_Lan",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 14,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "lu6",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2032": {
+    "GroupId": "BT2032",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2032",
+    "GroupnameLanText": "猪",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2032",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "50",
+        "Buff_BT_Group50_Lan",
+        "0"
+      ]
+    ],
+    "Drop": [
+      {
+        "id": "1",
+        "count": 420
+      }
+    ],
+    "StageReward": null,
+    "RotationType": 4,
+    "RotationId": 14,
+    "Second": 1814400,
+    "PrevCond": "BT2031",
+    "Opentime": 0,
+    "RotationUI": "lu6",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2033": {
+    "GroupId": "BT2033",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2033",
+    "GroupnameLanText": "祝融",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2033",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "51",
+        "Buff_BT_Group51_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 130
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 80
+      },
+      {
+        "id": "1",
+        "count": 60
+      },
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 15,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi1",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2034": {
+    "GroupId": "BT2034",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2034",
+    "GroupnameLanText": "夸父",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "80",
+        "104",
+        "8"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2034",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少8名器者等级达到80级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "52",
+        "Buff_BT_Group52_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 130
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 80
+      },
+      {
+        "id": "1",
+        "count": 60
+      },
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 15,
+    "Second": 1814400,
+    "PrevCond": "BT2033",
+    "Opentime": 0,
+    "RotationUI": "yi1",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2035": {
+    "GroupId": "BT2035",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2035",
+    "GroupnameLanText": "鼓",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2035",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "53",
+        "Buff_BT_Group53_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 130
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 80
+      },
+      {
+        "id": "1",
+        "count": 60
+      },
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 16,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi2",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2036": {
+    "GroupId": "BT2036",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2036",
+    "GroupnameLanText": "英招",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2036",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "54",
+        "Buff_BT_Group54_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 130
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 80
+      },
+      {
+        "id": "1",
+        "count": 60
+      },
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 16,
+    "Second": 1814400,
+    "PrevCond": "BT2035",
+    "Opentime": 0,
+    "RotationUI": "yi2",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2037": {
+    "GroupId": "BT2037",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2037",
+    "GroupnameLanText": "帝江",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2037",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "55",
+        "Buff_BT_Group55_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 150
+      },
+      {
+        "id": "1",
+        "count": 120
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 10000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 17,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi3",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2038": {
+    "GroupId": "BT2038",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2038",
+    "GroupnameLanText": "刑天",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2038",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "56",
+        "Buff_BT_Group56_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 150
+      },
+      {
+        "id": "1",
+        "count": 120
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 10000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 17,
+    "Second": 1814400,
+    "PrevCond": "BT2037",
+    "Opentime": 0,
+    "RotationUI": "yi3",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2039": {
+    "GroupId": "BT2039",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2039",
+    "GroupnameLanText": "神䰡",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2039",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "57",
+        "Buff_BT_Group56_A",
+        "1"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 150
+      },
+      {
+        "id": "1",
+        "count": 120
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 18,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi4",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2040": {
+    "GroupId": "BT2040",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2040",
+    "GroupnameLanText": "计蒙",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2040",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "58",
+        "Buff_BT_Group58_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 150
+      },
+      {
+        "id": "1",
+        "count": 120
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 18,
+    "Second": 1814400,
+    "PrevCond": "BT2039",
+    "Opentime": 0,
+    "RotationUI": "yi4",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2041": {
+    "GroupId": "BT2041",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2041",
+    "GroupnameLanText": "烛阴",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2041",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "59",
+        "Buff_BT_Group59_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 150
+      },
+      {
+        "id": "1",
+        "count": 120
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 19,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi5",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2042": {
+    "GroupId": "BT2042",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2042",
+    "GroupnameLanText": "相柳",
+    "Condition": [
+      [
+        "number",
+        "10"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2042",
+    "ConditionShowLanText": "1.上阵总人数达到10人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "60",
+        "Buff_BT_Group60_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 150
+      },
+      {
+        "id": "1",
+        "count": 120
+      },
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 19,
+    "Second": 1814400,
+    "PrevCond": "BT2041",
+    "Opentime": 0,
+    "RotationUI": "yi5",
+    "TiredBuff": [],
+    "ActiveBuff": []
+  },
+  "BT2043": {
+    "GroupId": "BT2043",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2043",
+    "GroupnameLanText": "泰逢",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2043",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "61",
+        "Buff_BT_Group61_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 160
+      },
+      {
+        "id": "1",
+        "count": 130
+      },
+      {
+        "id": "1",
+        "count": 110
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 20,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi6",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": []
+  },
+  "BT2044": {
+    "GroupId": "BT2044",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2044",
+    "GroupnameLanText": "鼍围",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2044",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "62",
+        "Buff_BT_Group62_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 160
+      },
+      {
+        "id": "1",
+        "count": 130
+      },
+      {
+        "id": "1",
+        "count": 110
+      },
+      {
+        "id": "1",
+        "count": 50
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 20,
+    "Second": 1814400,
+    "PrevCond": "BT2043",
+    "Opentime": 0,
+    "RotationUI": "yi6",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": []
+  },
+  "BT2045": {
+    "GroupId": "BT2045",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2045",
+    "GroupnameLanText": "强良",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2045",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "63",
+        "Buff_BT_Group63_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 21,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi7",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2046": {
+    "GroupId": "BT2046",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2046",
+    "GroupnameLanText": "雨师妾",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2046",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "64",
+        "Buff_BT_Group64_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 21,
+    "Second": 1814400,
+    "PrevCond": "BT2045",
+    "Opentime": 0,
+    "RotationUI": "yi7",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2047": {
+    "GroupId": "BT2047",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2047",
+    "GroupnameLanText": "雷神",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2047",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "65",
+        "Buff_BT_Group65_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 22,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi8",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2048": {
+    "GroupId": "BT2048",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2048",
+    "GroupnameLanText": "九凤",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2048",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "66",
+        "Buff_BT_Group66_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 22,
+    "Second": 1814400,
+    "PrevCond": "BT2047",
+    "Opentime": 0,
+    "RotationUI": "yi8",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2049": {
+    "GroupId": "BT2049",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2049",
+    "GroupnameLanText": "鹿蜀",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2049",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "67",
+        "Buff_BT_Group67_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 23,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi9",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2050": {
+    "GroupId": "BT2050",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2050",
+    "GroupnameLanText": "类",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2050",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "68",
+        "Buff_BT_Group68_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 23,
+    "Second": 1814400,
+    "PrevCond": "BT2049",
+    "Opentime": 0,
+    "RotationUI": "yi9",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2051": {
+    "GroupId": "BT2051",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2051",
+    "GroupnameLanText": "猼訑",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2051",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "69",
+        "Buff_BT_Group69_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 24,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi10",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2052": {
+    "GroupId": "BT2052",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2052",
+    "GroupnameLanText": "玃如",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2052",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "70",
+        "Buff_BT_Group70_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 24,
+    "Second": 1814400,
+    "PrevCond": "BT2051",
+    "Opentime": 0,
+    "RotationUI": "yi10",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2053": {
+    "GroupId": "BT2053",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2053",
+    "GroupnameLanText": "九尾狐",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2053",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "71",
+        "Buff_BT_Group71_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 25,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi11",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2054": {
+    "GroupId": "BT2054",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2054",
+    "GroupnameLanText": "蛊雕",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2054",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "72",
+        "Buff_BT_Group72_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 25,
+    "Second": 1814400,
+    "PrevCond": "BT2053",
+    "Opentime": 0,
+    "RotationUI": "yi11",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2055": {
+    "GroupId": "BT2055",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2055",
+    "GroupnameLanText": "长右",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2055",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "73",
+        "Buff_BT_Group73_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 26,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi12",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2056": {
+    "GroupId": "BT2056",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2056",
+    "GroupnameLanText": "彘",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2056",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "74",
+        "Buff_BT_Group74_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 26,
+    "Second": 1814400,
+    "PrevCond": "BT2055",
+    "Opentime": 0,
+    "RotationUI": "yi12",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2057": {
+    "GroupId": "BT2057",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2057",
+    "GroupnameLanText": "陆吾",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2057",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "75",
+        "Buff_BT_Group75_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 27,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi13",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2058": {
+    "GroupId": "BT2058",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2058",
+    "GroupnameLanText": "天吴",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2058",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "76",
+        "Buff_BT_Group76_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 27,
+    "Second": 1814400,
+    "PrevCond": "BT2057",
+    "Opentime": 0,
+    "RotationUI": "yi13",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2059": {
+    "GroupId": "BT2059",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2059",
+    "GroupnameLanText": "奢比",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2059",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "77",
+        "Buff_BT_Group77_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 28,
+    "Second": 2419200,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi14",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2060": {
+    "GroupId": "BT2060",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2060",
+    "GroupnameLanText": "狰",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2060",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "78",
+        "Buff_BT_Group78_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 28,
+    "Second": 2419200,
+    "PrevCond": "BT2059",
+    "Opentime": 0,
+    "RotationUI": "yi14",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2061": {
+    "GroupId": "BT2061",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2061",
+    "GroupnameLanText": "葱聋",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2061",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "79",
+        "Buff_BT_Group79_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 29,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi15",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2062": {
+    "GroupId": "BT2062",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2062",
+    "GroupnameLanText": "羬羊",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2062",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "80",
+        "Buff_BT_Group80_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 29,
+    "Second": 1814400,
+    "PrevCond": "BT2061",
+    "Opentime": 0,
+    "RotationUI": "yi15",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2063": {
+    "GroupId": "BT2063",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2063",
+    "GroupnameLanText": "天马",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2063",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "81",
+        "Buff_BT_Group81_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 30,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi16",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2064": {
+    "GroupId": "BT2064",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2064",
+    "GroupnameLanText": "从从",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2064",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "82",
+        "Buff_BT_Group82_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 30,
+    "Second": 1814400,
+    "PrevCond": "BT2063",
+    "Opentime": 0,
+    "RotationUI": "yi16",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2065": {
+    "GroupId": "BT2065",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2065",
+    "GroupnameLanText": "诸怀",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2065",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "83",
+        "Buff_BT_Group83_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 31,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi17",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2066": {
+    "GroupId": "BT2066",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2066",
+    "GroupnameLanText": "狍鸮",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2066",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "84",
+        "Buff_BT_Group84_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 31,
+    "Second": 1814400,
+    "PrevCond": "BT2065",
+    "Opentime": 0,
+    "RotationUI": "yi17",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2067": {
+    "GroupId": "BT2067",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2067",
+    "GroupnameLanText": "诸犍",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2067",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "85",
+        "Buff_BT_Group85_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 32,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi18",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2068": {
+    "GroupId": "BT2068",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2068",
+    "GroupnameLanText": "孛马",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2068",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "86",
+        "Buff_BT_Group86_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 32,
+    "Second": 1814400,
+    "PrevCond": "BT2067",
+    "Opentime": 0,
+    "RotationUI": "yi18",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2069": {
+    "GroupId": "BT2069",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2069",
+    "GroupnameLanText": "鵌",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2069",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "87",
+        "Buff_BT_Group87_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 33,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi19",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2070": {
+    "GroupId": "BT2070",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2070",
+    "GroupnameLanText": "鼵",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2070",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "88",
+        "Buff_BT_Group88_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 33,
+    "Second": 1814400,
+    "PrevCond": "BT2069",
+    "Opentime": 0,
+    "RotationUI": "yi19",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2071": {
+    "GroupId": "BT2071",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2071",
+    "GroupnameLanText": "天狗",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2071",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "89",
+        "Buff_BT_Group89_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 34,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi20",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2072": {
+    "GroupId": "BT2072",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2072",
+    "GroupnameLanText": "讙",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2072",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "90",
+        "Buff_BT_Group90_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 34,
+    "Second": 1814400,
+    "PrevCond": "BT2071",
+    "Opentime": 0,
+    "RotationUI": "yi20",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2073": {
+    "GroupId": "BT2073",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2073",
+    "GroupnameLanText": "獓骃",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2073",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "91",
+        "Buff_BT_Group91_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 35,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi21",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2074": {
+    "GroupId": "BT2074",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2074",
+    "GroupnameLanText": "并封",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2074",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "92",
+        "Buff_BT_Group92_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 35,
+    "Second": 1814400,
+    "PrevCond": "BT2073",
+    "Opentime": 0,
+    "RotationUI": "yi21",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2075": {
+    "GroupId": "BT2075",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2075",
+    "GroupnameLanText": "毕方",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2075",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "93",
+        "Buff_BT_Group93_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 36,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi22",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2076": {
+    "GroupId": "BT2076",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2076",
+    "GroupnameLanText": "鸱",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2076",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "94",
+        "Buff_BT_Group94_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 36,
+    "Second": 1814400,
+    "PrevCond": "BT2075",
+    "Opentime": 0,
+    "RotationUI": "yi22",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2077": {
+    "GroupId": "BT2077",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2077",
+    "GroupnameLanText": "瞿如",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2077",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "95",
+        "Buff_BT_Group95_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 37,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "yi23",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2078": {
+    "GroupId": "BT2078",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2078",
+    "GroupnameLanText": "跂踵",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2078",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "96",
+        "Buff_BT_Group96_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 37,
+    "Second": 1814400,
+    "PrevCond": "BT2077",
+    "Opentime": 0,
+    "RotationUI": "yi23",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2079": {
+    "GroupId": "BT2079",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2079",
+    "GroupnameLanText": "墨竹",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2079",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "97",
+        "Buff_BT_Group97_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 38,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "mo1",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2080": {
+    "GroupId": "BT2080",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2080",
+    "GroupnameLanText": "栀莲",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2080",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "98",
+        "Buff_BT_Group98_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 38,
+    "Second": 1814400,
+    "PrevCond": "BT2079",
+    "Opentime": 0,
+    "RotationUI": "mo1",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2081": {
+    "GroupId": "BT2081",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2081",
+    "GroupnameLanText": "玉堂",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2081",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "99",
+        "Buff_BT_Group99_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 39,
+    "Second": 1814400,
+    "PrevCond": "BT2004",
+    "Opentime": 0,
+    "RotationUI": "mo2",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  },
+  "BT2082": {
+    "GroupId": "BT2082",
+    "GroupnameLan": "activeLan_BattleTower_groupnameLan_BT2082",
+    "GroupnameLanText": "片石",
+    "Condition": [
+      [
+        "number",
+        "12"
+      ],
+      [
+        "level",
+        "104",
+        "50",
+        "104",
+        "2"
+      ]
+    ],
+    "ConditionShowLan": "activeLan_BattleTower_conditionShowLan_BT2082",
+    "ConditionShowLanText": "1.上阵总人数达到12人;\n2.至少2名器者等级达到50级",
+    "RuleShow": [
+      [
+        "1",
+        "2",
+        "100"
+      ],
+      [
+        "3",
+        "60"
+      ],
+      [
+        "100",
+        "Buff_BT_Group100_Lan",
+        "0"
+      ]
+    ],
+    "Drop": null,
+    "StageReward": [
+      {
+        "id": "1",
+        "count": 200
+      },
+      {
+        "id": "1",
+        "count": 190
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "1",
+        "count": 180
+      },
+      {
+        "id": "3",
+        "count": 100000
+      }
+    ],
+    "RotationType": 4,
+    "RotationId": 39,
+    "Second": 1814400,
+    "PrevCond": "BT2081",
+    "Opentime": 0,
+    "RotationUI": "mo2",
+    "TiredBuff": [
+      "Buff_BT_Weary",
+      "Buff_BT_Weary_2"
+    ],
+    "ActiveBuff": [
+      "Buff_BT_Lively",
+      "Buff_BT_Lively_2"
+    ]
+  }
+}

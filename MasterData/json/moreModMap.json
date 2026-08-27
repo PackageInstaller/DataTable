@@ -1,0 +1,604 @@
+{
+  "DZ1001": {
+    "Id": "DZ1001",
+    "Seq": 1,
+    "Group": "chun",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM100101",
+      "MM100102",
+      "MM100103",
+      "MM100104",
+      "MM100201",
+      "MM100202",
+      "MM100203",
+      "MM100204"
+    ],
+    "RequireID": "",
+    "RareBox": 1,
+    "Reward": "70001",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      2,
+      1,
+      1,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "chun_YH_gd",
+        "chun_HD_gd"
+      ],
+      [
+        "chun_YH_ty",
+        "chun_HD_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ1001",
+    "NameTextLanText": "竞赛·象戏",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ1001",
+    "NameSuffixLanText": "参赛队伍·壹"
+  },
+  "DZ1002": {
+    "Id": "DZ1002",
+    "Seq": 2,
+    "Group": "chun",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM100101",
+      "MM100102",
+      "MM100103",
+      "MM100104",
+      "MM100201",
+      "MM100202",
+      "MM100203",
+      "MM100204"
+    ],
+    "RequireID": "DZ1001",
+    "RareBox": 1,
+    "Reward": "70002",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      2,
+      1,
+      1,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "chun_YH_gd",
+        "chun_HD_gd"
+      ],
+      [
+        "chun_YH_ty",
+        "chun_HD_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ1002",
+    "NameTextLanText": "竞赛·象戏",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ1002",
+    "NameSuffixLanText": "参赛队伍·贰"
+  },
+  "DZ1003": {
+    "Id": "DZ1003",
+    "Seq": 3,
+    "Group": "chun",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM100101",
+      "MM100102",
+      "MM100103",
+      "MM100104",
+      "MM100201",
+      "MM100202",
+      "MM100203",
+      "MM100204"
+    ],
+    "RequireID": "DZ1002",
+    "RareBox": 1,
+    "Reward": "70003",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "chun_YH_gd",
+        "chun_HD_gd"
+      ],
+      [
+        "chun_YH_ty",
+        "chun_HD_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ1003",
+    "NameTextLanText": "竞赛·象戏",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ1003",
+    "NameSuffixLanText": "参赛队伍·叁"
+  },
+  "DZ1004": {
+    "Id": "DZ1004",
+    "Seq": 4,
+    "Group": "chun",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM100101",
+      "MM100102",
+      "MM100103",
+      "MM100104",
+      "MM100201",
+      "MM100202",
+      "MM100203",
+      "MM100204"
+    ],
+    "RequireID": "DZ1003",
+    "RareBox": 2,
+    "Reward": "70004",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      3,
+      2,
+      2,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "chun_YH_gd",
+        "chun_HD_gd"
+      ],
+      [
+        "chun_YH_ty",
+        "chun_HD_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ1004",
+    "NameTextLanText": "竞赛·象戏",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ1004",
+    "NameSuffixLanText": "参赛队伍·肆"
+  },
+  "DZ2001": {
+    "Id": "DZ2001",
+    "Seq": 1,
+    "Group": "xia",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM200101",
+      "MM200102",
+      "MM200103",
+      "MM200104",
+      "MM200201",
+      "MM200202",
+      "MM200203",
+      "MM200204"
+    ],
+    "RequireID": "",
+    "RareBox": 1,
+    "Reward": "70001",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      2,
+      1,
+      1,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "xia_FS_gd",
+        "xia_GJ_gd"
+      ],
+      [
+        "xia_FS_ty",
+        "xia_GJ_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ2001",
+    "NameTextLanText": "竞赛·蹴鞠",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ2001",
+    "NameSuffixLanText": "参赛队伍·壹"
+  },
+  "DZ2002": {
+    "Id": "DZ2002",
+    "Seq": 2,
+    "Group": "xia",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM200101",
+      "MM200102",
+      "MM200103",
+      "MM200104",
+      "MM200201",
+      "MM200202",
+      "MM200203",
+      "MM200204"
+    ],
+    "RequireID": "DZ2001",
+    "RareBox": 1,
+    "Reward": "70002",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      2,
+      1,
+      1,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "xia_FS_gd",
+        "xia_GJ_gd"
+      ],
+      [
+        "xia_FS_ty",
+        "xia_GJ_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ2002",
+    "NameTextLanText": "竞赛·蹴鞠",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ2002",
+    "NameSuffixLanText": "参赛队伍·贰"
+  },
+  "DZ2003": {
+    "Id": "DZ2003",
+    "Seq": 3,
+    "Group": "xia",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM200101",
+      "MM200102",
+      "MM200103",
+      "MM200104",
+      "MM200201",
+      "MM200202",
+      "MM200203",
+      "MM200204"
+    ],
+    "RequireID": "DZ2002",
+    "RareBox": 1,
+    "Reward": "70003",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      3,
+      2,
+      1,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "xia_FS_gd",
+        "xia_GJ_gd"
+      ],
+      [
+        "xia_FS_ty",
+        "xia_GJ_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ2003",
+    "NameTextLanText": "竞赛·蹴鞠",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ2003",
+    "NameSuffixLanText": "参赛队伍·叁"
+  },
+  "DZ2004": {
+    "Id": "DZ2004",
+    "Seq": 4,
+    "Group": "xia",
+    "DevelopSwitch": 1,
+    "AIstrength": 4,
+    "Type": 3,
+    "DungeonIDs": [
+      "MM200101",
+      "MM200102",
+      "MM200103",
+      "MM200104",
+      "MM200201",
+      "MM200202",
+      "MM200203",
+      "MM200204"
+    ],
+    "RequireID": "DZ2003",
+    "RareBox": 2,
+    "Reward": "70004",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      3,
+      2,
+      2,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "special"
+      ],
+      [
+        "xia_FS_gd",
+        "xia_GJ_gd"
+      ],
+      [
+        "xia_FS_ty",
+        "xia_GJ_ty"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "all_up"
+      ]
+    ],
+    "LawNormal": [
+      [
+        "all_down"
+      ]
+    ],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ2004",
+    "NameTextLanText": "竞赛·蹴鞠",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ2004",
+    "NameSuffixLanText": "参赛队伍·肆"
+  },
+  "DZ9001": {
+    "Id": "DZ9001",
+    "Seq": 1,
+    "Group": "JX",
+    "DevelopSwitch": 1,
+    "AIstrength": 1,
+    "Type": 1,
+    "DungeonIDs": [
+      "MM900101"
+    ],
+    "RequireID": "",
+    "RareBox": 1,
+    "Reward": "70001",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      1,
+      1,
+      0,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "JX_1_a"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "JX_1_b"
+      ]
+    ],
+    "LawNormal": [],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ9001",
+    "NameTextLanText": "预选赛1",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ9001",
+    "NameSuffixLanText": "预选队伍·壹"
+  },
+  "DZ9002": {
+    "Id": "DZ9002",
+    "Seq": 2,
+    "Group": "JX",
+    "DevelopSwitch": 1,
+    "AIstrength": 1,
+    "Type": 1,
+    "DungeonIDs": [
+      "MM900102"
+    ],
+    "RequireID": "DZ9001",
+    "RareBox": 1,
+    "Reward": "70002",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      1,
+      2,
+      0,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "JX_2_a"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "JX_2_b"
+      ],
+      [
+        "JX_all"
+      ]
+    ],
+    "LawNormal": [],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ9002",
+    "NameTextLanText": "预选赛2",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ9002",
+    "NameSuffixLanText": "预选队伍·贰"
+  },
+  "DZ9003": {
+    "Id": "DZ9003",
+    "Seq": 3,
+    "Group": "JX",
+    "DevelopSwitch": 1,
+    "AIstrength": 1,
+    "Type": 1,
+    "DungeonIDs": [
+      "MM900103"
+    ],
+    "RequireID": "DZ9002",
+    "RareBox": 1,
+    "Reward": "70003",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      1,
+      2,
+      0,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "JX_3_a"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "JX_all"
+      ]
+    ],
+    "LawNormal": [],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ9003",
+    "NameTextLanText": "预选赛3",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ9003",
+    "NameSuffixLanText": "预选队伍·叁"
+  },
+  "DZ9004": {
+    "Id": "DZ9004",
+    "Seq": 4,
+    "Group": "JX",
+    "DevelopSwitch": 1,
+    "AIstrength": 1,
+    "Type": 1,
+    "DungeonIDs": [
+      "MM900104"
+    ],
+    "RequireID": "DZ9003",
+    "RareBox": 1,
+    "Reward": "70004",
+    "MaxLaw": 6,
+    "GroupLawOpen": [
+      1,
+      3,
+      0,
+      0
+    ],
+    "FixedLaw": [
+      [
+        "JX_4_a"
+      ]
+    ],
+    "LawEasy": [
+      [
+        "JX_all"
+      ],
+      [
+        "JX_4_b"
+      ]
+    ],
+    "LawNormal": [],
+    "LawHard": [],
+    "NameTextLan": "activeLan_MoreMod_nameTextLan_DZ9004",
+    "NameTextLanText": "预选赛4",
+    "NameSuffixLan": "activeLan_MoreMod_nameSuffixLan_DZ9004",
+    "NameSuffixLanText": "预选队伍·肆"
+  }
+}

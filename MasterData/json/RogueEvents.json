@@ -1,0 +1,7181 @@
+{
+  "100": {
+    "Id": "100",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "空事件",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 101,
+    "Name": "空事件",
+    "NameLan": "activeLan_RogueEvent_namelan_100",
+    "NameLanText": "空事件",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "101": {
+    "Id": "101",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10000001,
+    "Name": "空事件(随机奖励)",
+    "NameLan": "activeLan_RogueEvent_namelan_101",
+    "NameLanText": "空事件(随机奖励)",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2000": {
+    "Id": "2000",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10020502,
+    "Name": "开局buff",
+    "NameLan": "activeLan_RogueEvent_namelan_2000",
+    "NameLanText": "开局buff",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2001": {
+    "Id": "2001",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 1001,
+    "Name": "结算（通用）",
+    "NameLan": "activeLan_RogueEvent_namelan_2001",
+    "NameLanText": "结算（通用）",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2002": {
+    "Id": "2002",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第2面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_2002",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2002",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2002",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "1105"
+      ],
+      [
+        "2",
+        "10021205"
+      ],
+      [
+        "2",
+        "10021210"
+      ],
+      [
+        "2",
+        "10021401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2003": {
+    "Id": "2003",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第3面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_2003",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2003",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2003",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10021402"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2004": {
+    "Id": "2004",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第4面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_2004",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2004",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2004",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10021403"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2005": {
+    "Id": "2005",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第5面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_2005",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2005",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2005",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10021404"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2006": {
+    "Id": "2006",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第6面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_2006",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2006",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2006",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10021405"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2007": {
+    "Id": "2007",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第7面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_2007",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2007",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2007",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10021406"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2008": {
+    "Id": "2008",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2008",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_2008",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "水星群聊_金星群聊_刷新消息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2008",
+    "OptionNameLanText": "水星群聊_金星群聊_刷新消息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020306"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020307"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "1",
+        "2009"
+      ]
+    ]
+  },
+  "2009": {
+    "Id": "2009",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 1,
+    "Related": "2008",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2009",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_2009",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "火星群聊_木星群聊",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2009",
+    "OptionNameLanText": "火星群聊_木星群聊",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020308"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020309"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2010": {
+    "Id": "2010",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2010",
+    "NameLanText": "呼叫支援",
+    "Desc": "你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "DescLan": "activeLan_RogueEvent_desclan_2010",
+    "DescLanText": "你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "OptionName": "点开_忽视",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2010",
+    "OptionNameLanText": "点开_忽视",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020301"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2011": {
+    "Id": "2011",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_2011",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_2011",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应_不回应，继续自己的探索",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2011",
+    "OptionNameLanText": "使用探照灯回应_不回应，继续自己的探索",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020301"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2012": {
+    "Id": "2012",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2012",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_2012",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "最新一条消息_土星群聊_刷新消息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2012",
+    "OptionNameLanText": "最新一条消息_土星群聊_刷新消息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020302"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020310"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "1",
+        "2013"
+      ]
+    ]
+  },
+  "2013": {
+    "Id": "2013",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 1,
+    "Related": "2012",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2013",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_2013",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "火星群聊_金星群聊",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2013",
+    "OptionNameLanText": "火星群聊_金星群聊",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020308"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020307"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2014": {
+    "Id": "2014",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2014",
+    "NameLanText": "呼叫支援",
+    "Desc": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "DescLan": "activeLan_RogueEvent_desclan_2014",
+    "DescLanText": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "OptionName": "点开_忽视",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2014",
+    "OptionNameLanText": "点开_忽视",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020315"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2015": {
+    "Id": "2015",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_2015",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_2015",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应_不回应，继续自己的探索",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2015",
+    "OptionNameLanText": "使用探照灯回应_不回应，继续自己的探索",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020315"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2016": {
+    "Id": "2016",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2016",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_2016",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "最新一条消息_土星群聊_刷新消息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2016",
+    "OptionNameLanText": "最新一条消息_土星群聊_刷新消息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020315"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020322"
+      ],
+      [
+        "2",
+        "10020314"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "1",
+        "2017"
+      ]
+    ]
+  },
+  "2017": {
+    "Id": "2017",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 1,
+    "Related": "2016",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2017",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_2017",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "火星群聊_金星群聊",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2017",
+    "OptionNameLanText": "火星群聊_金星群聊",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020314"
+      ],
+      [
+        "2",
+        "10020320"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020314"
+      ],
+      [
+        "2",
+        "10020319"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2018": {
+    "Id": "2018",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_2018",
+    "NameLanText": "呼叫支援",
+    "Desc": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "DescLan": "activeLan_RogueEvent_desclan_2018",
+    "DescLanText": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "OptionName": "点开_忽视",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2018",
+    "OptionNameLanText": "点开_忽视",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020315"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2019": {
+    "Id": "2019",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_2019",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_2019",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应_不回应，继续自己的探索",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2019",
+    "OptionNameLanText": "使用探照灯回应_不回应，继续自己的探索",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020315"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020502"
+      ],
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2020": {
+    "Id": "2020",
+    "Icon": "ui_xhyt_event_9",
+    "IconName": "BOSS",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "伏击",
+    "NameLan": "activeLan_RogueEvent_namelan_2020",
+    "NameLanText": "伏击",
+    "Desc": "你一直感到有什么东西不远不近地跟在自己身后，似乎在观察，直到现在，它才终于现身。",
+    "DescLan": "activeLan_RogueEvent_desclan_2020",
+    "DescLanText": "你一直感到有什么东西不远不近地跟在自己身后，似乎在观察，直到现在，它才终于现身。",
+    "OptionName": "与它战斗_隐蔽气息，躲开|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2020",
+    "OptionNameLanText": "与它战斗_隐蔽气息，躲开|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020115"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2021": {
+    "Id": "2021",
+    "Icon": "ui_xhyt_event_9",
+    "IconName": "BOSS",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "磁暴",
+    "NameLan": "activeLan_RogueEvent_namelan_2021",
+    "NameLanText": "磁暴",
+    "Desc": "基金会配备的导航仪突然失灵了，有什么在改变这里的地磁场。",
+    "DescLan": "activeLan_RogueEvent_desclan_2021",
+    "DescLanText": "基金会配备的导航仪突然失灵了，有什么在改变这里的地磁场。",
+    "OptionName": "必须立刻阻止它！_远离这里|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2021",
+    "OptionNameLanText": "必须立刻阻止它！_远离这里|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020115"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2022": {
+    "Id": "2022",
+    "Icon": "ui_xhyt_event_9",
+    "IconName": "BOSS",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "阴影之中",
+    "NameLan": "activeLan_RogueEvent_namelan_2022",
+    "NameLanText": "阴影之中",
+    "Desc": "在你进入观星台的范围时，就感到四周潜藏着无数杀机，或许他们就是这座观星台的守护者，你环视了一圈，究竟谁是猎人，谁是猎物呢？",
+    "DescLan": "activeLan_RogueEvent_desclan_2022",
+    "DescLanText": "在你进入观星台的范围时，就感到四周潜藏着无数杀机，或许他们就是这座观星台的守护者，你环视了一圈，究竟谁是猎人，谁是猎物呢？",
+    "OptionName": "先下手为强_井水不犯河水，离开观星台|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2022",
+    "OptionNameLanText": "先下手为强_井水不犯河水，离开观星台|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020115"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2023": {
+    "Id": "2023",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（标准）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_2023",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2023",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2023",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2024": {
+    "Id": "2024",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（中）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_2024",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2024",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2024",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020402"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2025": {
+    "Id": "2025",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（高）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_2025",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_2025",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2025",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020403"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2026": {
+    "Id": "2026",
+    "Icon": "ui_xhyt_event_7",
+    "IconName": "精英，2层，难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星蚀",
+    "NameLan": "activeLan_RogueEvent_namelan_2026",
+    "NameLanText": "星蚀",
+    "Desc": "恒星坍缩后可能会形成黑洞，刚才被打败的下型体在消散后，竟然组合成了更强大的曲解。",
+    "DescLan": "activeLan_RogueEvent_desclan_2026",
+    "DescLanText": "恒星坍缩后可能会形成黑洞，刚才被打败的下型体在消散后，竟然组合成了更强大的曲解。",
+    "OptionName": "迎战_逃离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2026",
+    "OptionNameLanText": "迎战_逃离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020110"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2027": {
+    "Id": "2027",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "精英，3层，难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2027",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2027",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2027",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020113"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2028": {
+    "Id": "2028",
+    "Icon": "ui_xhyt_event_7",
+    "IconName": "精英，4层，难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "群星咏叹",
+    "NameLan": "activeLan_RogueEvent_namelan_2028",
+    "NameLanText": "群星咏叹",
+    "Desc": "海底也会有星空吗？但你分明看见了满天群星。那些星星上一秒还在海水组成的天幕上眨着眼，下一秒就朝你奔涌而来。",
+    "DescLan": "activeLan_RogueEvent_desclan_2028",
+    "DescLanText": "海底也会有星空吗？但你分明看见了满天群星。那些星星上一秒还在海水组成的天幕上眨着眼，下一秒就朝你奔涌而来。",
+    "OptionName": "迎击_努力摆脱幻觉|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2028",
+    "OptionNameLanText": "迎击_努力摆脱幻觉|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020112"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2029": {
+    "Id": "2029",
+    "Icon": "ui_xhyt_event_7",
+    "IconName": "精英，3层，难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "荧惑守心",
+    "NameLan": "activeLan_RogueEvent_namelan_2029",
+    "NameLanText": "荧惑守心",
+    "Desc": "荧惑入心，一场大战不可避免。",
+    "DescLan": "activeLan_RogueEvent_desclan_2029",
+    "DescLanText": "荧惑入心，一场大战不可避免。",
+    "OptionName": "迎战_逃离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2029",
+    "OptionNameLanText": "迎战_逃离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020113"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2030": {
+    "Id": "2030",
+    "Icon": "ui_xhyt_event_8",
+    "IconName": "精英，4层，难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "回响",
+    "NameLan": "activeLan_RogueEvent_namelan_2030",
+    "NameLanText": "回响",
+    "Desc": "在这片常人无法企及之处，你原本只能听见自己创造出的声音，身侧传来异样的响动，意味着有什么在急速靠近。",
+    "DescLan": "activeLan_RogueEvent_desclan_2030",
+    "DescLanText": "在这片常人无法企及之处，你原本只能听见自己创造出的声音，身侧传来异样的响动，意味着有什么在急速靠近。",
+    "OptionName": "迎难而上，战斗！_避开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2030",
+    "OptionNameLanText": "迎难而上，战斗！_避开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020114"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2031": {
+    "Id": "2031",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，1难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2031",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2031",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2031",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2032": {
+    "Id": "2032",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，1难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2032",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2032",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2032",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020102"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020104"
+      ]
+    ]
+  },
+  "2033": {
+    "Id": "2033",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，1难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2033",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2033",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2033",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020102"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020101"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2034": {
+    "Id": "2034",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，1难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2034",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2034",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2034",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020102"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2035": {
+    "Id": "2035",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，1难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2035",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2035",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2035",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020501"
+      ],
+      [
+        "2",
+        "10020102"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020102"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020104"
+      ]
+    ]
+  },
+  "2036": {
+    "Id": "2036",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，1难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2036",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2036",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2036",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020102"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2037": {
+    "Id": "2037",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2037",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2037",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2037",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2038": {
+    "Id": "2038",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2038",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2038",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2038",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020501"
+      ],
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020105"
+      ]
+    ]
+  },
+  "2039": {
+    "Id": "2039",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2039",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2039",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2039",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2040": {
+    "Id": "2040",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2040",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2040",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2040",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2041": {
+    "Id": "2041",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2041",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2041",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2041",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020113"
+      ]
+    ]
+  },
+  "2042": {
+    "Id": "2042",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2042",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2042",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2042",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020103"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2043": {
+    "Id": "2043",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2043",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2043",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2043",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020105"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2044": {
+    "Id": "2044",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2044",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2044",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2044",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020501"
+      ],
+      [
+        "2",
+        "10020105"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020104"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020113"
+      ]
+    ]
+  },
+  "2045": {
+    "Id": "2045",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2045",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2045",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2045",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020105"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020104"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2046": {
+    "Id": "2046",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2046",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2046",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2046",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020106"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2047": {
+    "Id": "2047",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2047",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2047",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2047",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020106"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020105"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020114"
+      ]
+    ]
+  },
+  "2048": {
+    "Id": "2048",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2048",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2048",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2048",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020106"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020105"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2049": {
+    "Id": "2049",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2049",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2049",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2049",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020107"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2050": {
+    "Id": "2050",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2050",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2050",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2050",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020107"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020106"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020114"
+      ]
+    ]
+  },
+  "2051": {
+    "Id": "2051",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2051",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2051",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动|进入战斗",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2051",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动|进入战斗",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020107"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020106"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2052": {
+    "Id": "2052",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2052",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2052",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2052",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020109"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2053": {
+    "Id": "2053",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2053",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2053",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2053",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020109"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020109"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020114"
+      ]
+    ]
+  },
+  "2054": {
+    "Id": "2054",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2054",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2054",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动|进入战斗",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2054",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动|进入战斗",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020109"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020108"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2055": {
+    "Id": "2055",
+    "Icon": "ui_xhyt_event_14",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "问卜于龟",
+    "NameLan": "activeLan_RogueEvent_namelan_2055",
+    "NameLanText": "问卜于龟",
+    "Desc": "面前晃晃悠悠游来一只海龟，你发现自己居然能听懂它说话：“远道而来的人类，想不想体验一下海底的龟甲占卜呢？”",
+    "DescLan": "activeLan_RogueEvent_desclan_2055",
+    "DescLanText": "面前晃晃悠悠游来一只海龟，你发现自己居然能听懂它说话：“远道而来的人类，想不想体验一下海底的龟甲占卜呢？”",
+    "OptionName": "既然如此，就试试吧|花费50贝币_太离奇了，不能相信",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2055",
+    "OptionNameLanText": "既然如此，就试试吧|花费50贝币_太离奇了，不能相信",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020802"
+      ],
+      [
+        "2",
+        "10025001"
+      ],
+      [
+        "2",
+        "10025001"
+      ],
+      [
+        "2",
+        "10025001"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2056": {
+    "Id": "2056",
+    "Icon": "ui_xhyt_event_15",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "璇玑魔方",
+    "NameLan": "activeLan_RogueEvent_namelan_2056",
+    "NameLanText": "璇玑魔方",
+    "Desc": "游出一段距离后，你发现了一只魔方，它正散发出星星般柔和的光。",
+    "DescLan": "activeLan_RogueEvent_desclan_2056",
+    "DescLanText": "游出一段距离后，你发现了一只魔方，它正散发出星星般柔和的光。",
+    "OptionName": "尝试复原魔方_收好魔方，等待基金会解析",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2056",
+    "OptionNameLanText": "尝试复原魔方_收好魔方，等待基金会解析",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025002"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2057": {
+    "Id": "2057",
+    "Icon": "ui_xhyt_event_3",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星辰移位",
+    "NameLan": "activeLan_RogueEvent_namelan_2057",
+    "NameLanText": "星辰移位",
+    "Desc": "在观星台的帮助下，你发现星空正以缓慢的速度变化，曲解对这里的影响越来越大了。",
+    "DescLan": "activeLan_RogueEvent_desclan_2057",
+    "DescLanText": "在观星台的帮助下，你发现星空正以缓慢的速度变化，曲解对这里的影响越来越大了。",
+    "OptionName": "找出曲解|进入战斗_远离此处",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2057",
+    "OptionNameLanText": "找出曲解|进入战斗_远离此处",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025003"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2058": {
+    "Id": "2058",
+    "Icon": "ui_xhyt_event_4",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "金币银币",
+    "NameLan": "activeLan_RogueEvent_namelan_2058",
+    "NameLanText": "金币银币",
+    "Desc": "你的面前缓缓浮现出一个虚影，他拦住了你的去路，你刚摆出警戒的架势，就听他问：“亲爱的收藏家，你掉的是这串冬谷金币，还是这串冬谷银币呢？”",
+    "DescLan": "activeLan_RogueEvent_desclan_2058",
+    "DescLanText": "你的面前缓缓浮现出一个虚影，他拦住了你的去路，你刚摆出警戒的架势，就听他问：“亲爱的收藏家，你掉的是这串冬谷金币，还是这串冬谷银币呢？”",
+    "OptionName": "都不是，我只想继续前进！_冬谷金币_冬谷银币",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2058",
+    "OptionNameLanText": "都不是，我只想继续前进！_冬谷金币_冬谷银币",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020113"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10025005"
+      ],
+      [
+        "2",
+        "10025006"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10025004"
+      ]
+    ]
+  },
+  "2059": {
+    "Id": "2059",
+    "Icon": "ui_xhyt_event_10",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "熔断",
+    "NameLan": "activeLan_RogueEvent_namelan_2059",
+    "NameLanText": "熔断",
+    "Desc": "探照灯突然不亮了，你摇晃了两下，仍然没有反应。",
+    "DescLan": "activeLan_RogueEvent_desclan_2059",
+    "DescLanText": "探照灯突然不亮了，你摇晃了两下，仍然没有反应。",
+    "OptionName": "原地等待_尝试维修探照灯|可能发现什么东西_不管了，继续前进",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2059",
+    "OptionNameLanText": "原地等待_尝试维修探照灯|可能发现什么东西_不管了，继续前进",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025007"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020403"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020601"
+      ]
+    ]
+  },
+  "2060": {
+    "Id": "2060",
+    "Icon": "ui_xhyt_event_10",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星海迷踪",
+    "NameLan": "activeLan_RogueEvent_namelan_2060",
+    "NameLanText": "星海迷踪",
+    "Desc": "你被海底的星空吸引，不知不觉迷失了方向。",
+    "DescLan": "activeLan_RogueEvent_desclan_2060",
+    "DescLanText": "你被海底的星空吸引，不知不觉迷失了方向。",
+    "OptionName": "根据导航仪调整行动|补充氧气_沉醉地跟着星河一直往前|花费氧气",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2060",
+    "OptionNameLanText": "根据导航仪调整行动|补充氧气_沉醉地跟着星河一直往前|花费氧气",
+    "LaterEvent1": [
+      [
+        "2",
+        "10021302"
+      ],
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020902"
+      ],
+      [
+        "2",
+        "10020505"
+      ],
+      [
+        "2",
+        "10020501"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2061": {
+    "Id": "2061",
+    "Icon": "ui_xhyt_event_10",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星海迷踪",
+    "NameLan": "activeLan_RogueEvent_namelan_2061",
+    "NameLanText": "星海迷踪",
+    "Desc": "你被海底的星空吸引，不知不觉迷失了方向。",
+    "DescLan": "activeLan_RogueEvent_desclan_2061",
+    "DescLanText": "你被海底的星空吸引，不知不觉迷失了方向。",
+    "OptionName": "根据导航仪调整行动_沉醉地跟着星河一直往前|花费氧气",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2061",
+    "OptionNameLanText": "根据导航仪调整行动_沉醉地跟着星河一直往前|花费氧气",
+    "LaterEvent1": [
+      [
+        "1",
+        "2062"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020902"
+      ],
+      [
+        "2",
+        "10020507"
+      ],
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2062": {
+    "Id": "2062",
+    "Icon": "ui_xhyt_event_6",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "2061",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海底星盘",
+    "NameLan": "activeLan_RogueEvent_namelan_2062",
+    "NameLanText": "海底星盘",
+    "Desc": "有东西漂浮至面前，你伸手抓住了它。在仔细观察后，你发现这是一块小小的星盘，上面刻着三垣二十八宿，你认出其中最熟悉的一垣。",
+    "DescLan": "activeLan_RogueEvent_desclan_2062",
+    "DescLanText": "有东西漂浮至面前，你伸手抓住了它。在仔细观察后，你发现这是一块小小的星盘，上面刻着三垣二十八宿，你认出其中最熟悉的一垣。",
+    "OptionName": "紫微垣|获得三段导航电波_太微垣|获得两段导航电波_天市垣|获得一段导航电波",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2062",
+    "OptionNameLanText": "紫微垣|获得三段导航电波_太微垣|获得两段导航电波_天市垣|获得一段导航电波",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020505"
+      ],
+      [
+        "2",
+        "10020505"
+      ],
+      [
+        "2",
+        "10020501"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020503"
+      ],
+      [
+        "2",
+        "10020501"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020508"
+      ]
+    ]
+  },
+  "2063": {
+    "Id": "2063",
+    "Icon": "ui_xhyt_event_17",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "适者生存",
+    "NameLan": "activeLan_RogueEvent_namelan_2063",
+    "NameLanText": "适者生存",
+    "Desc": "有许多奇形怪状的鱼围在一起，在它们之中，你发现了一条身上满是伤痕的小鱼，双方之间气氛不太友好。",
+    "DescLan": "activeLan_RogueEvent_desclan_2063",
+    "DescLanText": "有许多奇形怪状的鱼围在一起，在它们之中，你发现了一条身上满是伤痕的小鱼，双方之间气氛不太友好。",
+    "OptionName": "为鱼发声_或许在自然界，这算物竞天择，适者生存？|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2063",
+    "OptionNameLanText": "为鱼发声_或许在自然界，这算物竞天择，适者生存？|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025008"
+      ],
+      [
+        "1",
+        "2064"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2064": {
+    "Id": "2064",
+    "Icon": "ui_xhyt_event_11",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "2063",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "适者生存",
+    "NameLan": "activeLan_RogueEvent_namelan_2064",
+    "NameLanText": "适者生存",
+    "Desc": "你帮助了这条小鱼，为了感谢你，它带你来到了它的巢穴，并挥动鱼鳍示意你拾取面前的珊瑚，这算是……鱼的报恩？",
+    "DescLan": "activeLan_RogueEvent_desclan_2064",
+    "DescLanText": "你帮助了这条小鱼，为了感谢你，它带你来到了它的巢穴，并挥动鱼鳍示意你拾取面前的珊瑚，这算是……鱼的报恩？",
+    "OptionName": "捡起珊瑚_摇头表示算了",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2064",
+    "OptionNameLanText": "捡起珊瑚_摇头表示算了",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020506"
+      ],
+      [
+        "2",
+        "10020313"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "1",
+        "2065"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2065": {
+    "Id": "2065",
+    "Icon": "ui_xhyt_event_11",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "2064",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "适者生存",
+    "NameLan": "activeLan_RogueEvent_namelan_2065",
+    "NameLanText": "适者生存",
+    "Desc": "刚才被你击退的鱼群重新涌了上来，你发现这次它们的队伍更庞大了。",
+    "DescLan": "activeLan_RogueEvent_desclan_2065",
+    "DescLanText": "刚才被你击退的鱼群重新涌了上来，你发现这次它们的队伍更庞大了。",
+    "OptionName": "教训它们_对方鱼太多了，跑吧！|丢掉部分贝币",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2065",
+    "OptionNameLanText": "教训它们_对方鱼太多了，跑吧！|丢掉部分贝币",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025009"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020801"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2066": {
+    "Id": "2066",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "暗渡星河",
+    "NameLan": "activeLan_RogueEvent_namelan_2066",
+    "NameLanText": "暗渡星河",
+    "Desc": "闪烁的星星逐渐包围了观星台，你感到周身出现了轻微的波动，一瞬间被吸入了某个异空间。",
+    "DescLan": "activeLan_RogueEvent_desclan_2066",
+    "DescLanText": "闪烁的星星逐渐包围了观星台，你感到周身出现了轻微的波动，一瞬间被吸入了某个异空间。",
+    "OptionName": "按兵不动，先观察四周_循着星光的指引往前走",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2066",
+    "OptionNameLanText": "按兵不动，先观察四周_循着星光的指引往前走",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020503"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "1",
+        "2067"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2067": {
+    "Id": "2067",
+    "Icon": "ui_xhyt_event_12",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "2066",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "暗渡星河",
+    "NameLan": "activeLan_RogueEvent_namelan_2067",
+    "NameLanText": "暗渡星河",
+    "Desc": "前方只有一条通道，你走了几步，转角处突然爆发出强烈的光芒，是曲解。",
+    "DescLan": "activeLan_RogueEvent_desclan_2067",
+    "DescLanText": "前方只有一条通道，你走了几步，转角处突然爆发出强烈的光芒，是曲解。",
+    "OptionName": "快速通过面前的区域_后退，避过闪光",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2067",
+    "OptionNameLanText": "快速通过面前的区域_后退，避过闪光",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025010"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "1",
+        "2068"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2068": {
+    "Id": "2068",
+    "Icon": "ui_xhyt_event_12",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "2067",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "暗渡星河",
+    "NameLan": "activeLan_RogueEvent_namelan_2068",
+    "NameLanText": "暗渡星河",
+    "Desc": "你一边躲避曲解，一边摸索着前进，一段时间过后，面前出现了一扇门，看起来就是出口了。",
+    "DescLan": "activeLan_RogueEvent_desclan_2068",
+    "DescLanText": "你一边躲避曲解，一边摸索着前进，一段时间过后，面前出现了一扇门，看起来就是出口了。",
+    "OptionName": "推开门离开_解决完空间内的曲解再说",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2068",
+    "OptionNameLanText": "推开门离开_解决完空间内的曲解再说",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020403"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10025011"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2069": {
+    "Id": "2069",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10020601,
+    "Name": "纯奖励（前期）",
+    "NameLan": "activeLan_RogueEvent_namelan_2069",
+    "NameLanText": "纯奖励（前期）",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2070": {
+    "Id": "2070",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10020602,
+    "Name": "纯奖励（后期）",
+    "NameLan": "activeLan_RogueEvent_namelan_2070",
+    "NameLanText": "纯奖励（后期）",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2071": {
+    "Id": "2071",
+    "Icon": "ui_xhyt_event_6",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海底星盘",
+    "NameLan": "activeLan_RogueEvent_namelan_2071",
+    "NameLanText": "海底星盘",
+    "Desc": "有东西漂浮至面前，你伸手抓住了它。在仔细观察后，你发现这是一块小小的星盘，上面刻着三垣二十八宿，你认出其中最熟悉的一垣。",
+    "DescLan": "activeLan_RogueEvent_desclan_2071",
+    "DescLanText": "有东西漂浮至面前，你伸手抓住了它。在仔细观察后，你发现这是一块小小的星盘，上面刻着三垣二十八宿，你认出其中最熟悉的一垣。",
+    "OptionName": "紫微垣|获得两段电波频段_太微垣|获得一段可能更高品质的电波频段",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2071",
+    "OptionNameLanText": "紫微垣|获得两段电波频段_太微垣|获得一段可能更高品质的电波频段",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020501"
+      ],
+      [
+        "2",
+        "10020501"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020502"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2072": {
+    "Id": "2072",
+    "Icon": "ui_xhyt_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星海牵引",
+    "NameLan": "activeLan_RogueEvent_namelan_2072",
+    "NameLanText": "星海牵引",
+    "Desc": "遵循星辰的指引、聆听海潮的声音，你更加清楚地知道这一切不是目前的你可以解决的，心中的念头变得越来越清晰，你只想——",
+    "DescLan": "activeLan_RogueEvent_desclan_2072",
+    "DescLanText": "遵循星辰的指引、聆听海潮的声音，你更加清楚地知道这一切不是目前的你可以解决的，心中的念头变得越来越清晰，你只想——",
+    "OptionName": "立刻上浮到海面",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2072",
+    "OptionNameLanText": "立刻上浮到海面",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020302"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2073": {
+    "Id": "2073",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10020505,
+    "Name": "直接发buff",
+    "NameLan": "activeLan_RogueEvent_namelan_2073",
+    "NameLanText": "直接发buff",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2074": {
+    "Id": "2074",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10020313,
+    "Name": "直接发器者",
+    "NameLan": "activeLan_RogueEvent_namelan_2074",
+    "NameLanText": "直接发器者",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "2075": {
+    "Id": "2075",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_2075",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_2075",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2075",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020108"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "2076": {
+    "Id": "2076",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_2076",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_2076",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2076",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020108"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10020107"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10020109"
+      ]
+    ]
+  },
+  "2077": {
+    "Id": "2077",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_2077",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_2077",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_2077",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020108"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10020107"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3011": {
+    "Id": "3011",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030201,
+    "Name": "天文剧情1",
+    "NameLan": "activeLan_RogueEvent_namelan_3011",
+    "NameLanText": "天文剧情1",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3012": {
+    "Id": "3012",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030202,
+    "Name": "天文剧情2",
+    "NameLan": "activeLan_RogueEvent_namelan_3012",
+    "NameLanText": "天文剧情2",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3013": {
+    "Id": "3013",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030203,
+    "Name": "天文剧情3",
+    "NameLan": "activeLan_RogueEvent_namelan_3013",
+    "NameLanText": "天文剧情3",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3014": {
+    "Id": "3014",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030204,
+    "Name": "天文剧情4",
+    "NameLan": "activeLan_RogueEvent_namelan_3014",
+    "NameLanText": "天文剧情4",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3015": {
+    "Id": "3015",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030205,
+    "Name": "天文剧情5",
+    "NameLan": "activeLan_RogueEvent_namelan_3015",
+    "NameLanText": "天文剧情5",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3016": {
+    "Id": "3016",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030206,
+    "Name": "天文剧情6",
+    "NameLan": "activeLan_RogueEvent_namelan_3016",
+    "NameLanText": "天文剧情6",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3017": {
+    "Id": "3017",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030207,
+    "Name": "天文剧情7",
+    "NameLan": "activeLan_RogueEvent_namelan_3017",
+    "NameLanText": "天文剧情7",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3018": {
+    "Id": "3018",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030208,
+    "Name": "天文剧情8",
+    "NameLan": "activeLan_RogueEvent_namelan_3018",
+    "NameLanText": "天文剧情8",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3019": {
+    "Id": "3019",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030209,
+    "Name": "天文剧情9",
+    "NameLan": "activeLan_RogueEvent_namelan_3019",
+    "NameLanText": "天文剧情9",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3020": {
+    "Id": "3020",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030210,
+    "Name": "天文剧情10",
+    "NameLan": "activeLan_RogueEvent_namelan_3020",
+    "NameLanText": "天文剧情10",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3021": {
+    "Id": "3021",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030211,
+    "Name": "天文剧情11",
+    "NameLan": "activeLan_RogueEvent_namelan_3021",
+    "NameLanText": "天文剧情11",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3022": {
+    "Id": "3022",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030212,
+    "Name": "天文剧情12",
+    "NameLan": "activeLan_RogueEvent_namelan_3022",
+    "NameLanText": "天文剧情12",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3030": {
+    "Id": "3030",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "LV1",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张·启程",
+    "NameLan": "activeLan_RogueEvent_namelan_3030",
+    "NameLanText": "辰宿列张·启程",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3030",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空|离开舆图",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3030",
+    "OptionNameLanText": "尝试辨认星空|离开舆图",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031101"
+      ],
+      [
+        "2",
+        "10031201"
+      ],
+      [
+        "2",
+        "10031204"
+      ],
+      [
+        "2",
+        "1001"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3031": {
+    "Id": "3031",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "LV2",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_3031",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3031",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空|前往舆图-贰_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3031",
+    "OptionNameLanText": "尝试辨认星空|前往舆图-贰_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031104"
+      ],
+      [
+        "2",
+        "10031207"
+      ],
+      [
+        "2",
+        "10031209"
+      ],
+      [
+        "2",
+        "10031401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3032": {
+    "Id": "3032",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "LV2",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_3032",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3032",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空|前往舆图-叁_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3032",
+    "OptionNameLanText": "尝试辨认星空|前往舆图-叁_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031104"
+      ],
+      [
+        "2",
+        "10031207"
+      ],
+      [
+        "2",
+        "10031209"
+      ],
+      [
+        "2",
+        "10031402"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3033": {
+    "Id": "3033",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "LV2",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张·启程",
+    "NameLan": "activeLan_RogueEvent_namelan_3033",
+    "NameLanText": "辰宿列张·启程",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3033",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空|进入剧情_收回视线",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3033",
+    "OptionNameLanText": "尝试辨认星空|进入剧情_收回视线",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031202"
+      ],
+      [
+        "2",
+        "10031102"
+      ],
+      [
+        "2",
+        "10031205"
+      ],
+      [
+        "2",
+        "10030206"
+      ],
+      [
+        "2",
+        "1001"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3034": {
+    "Id": "3034",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "LV3",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_3034",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3034",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空|前往舆图-贰_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3034",
+    "OptionNameLanText": "尝试辨认星空|前往舆图-贰_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031105"
+      ],
+      [
+        "2",
+        "10031208"
+      ],
+      [
+        "2",
+        "10031210"
+      ],
+      [
+        "2",
+        "10031411"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3035": {
+    "Id": "3035",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_3035",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3035",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空|前往舆图-叁_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3035",
+    "OptionNameLanText": "尝试辨认星空|前往舆图-叁_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031106"
+      ],
+      [
+        "2",
+        "10031211"
+      ],
+      [
+        "2",
+        "10031212"
+      ],
+      [
+        "2",
+        "10031412"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3036": {
+    "Id": "3036",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_3036",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_3036",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3036",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10031103"
+      ],
+      [
+        "2",
+        "10031203"
+      ],
+      [
+        "2",
+        "10031206"
+      ],
+      [
+        "2",
+        "10030212"
+      ],
+      [
+        "2",
+        "1001"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "3037": {
+    "Id": "3037",
+    "Icon": "ui_xhyt_event_6",
+    "IconName": "新手教程",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海底星盘",
+    "NameLan": "activeLan_RogueEvent_namelan_3037",
+    "NameLanText": "海底星盘",
+    "Desc": "有东西漂浮至面前，你伸手抓住了它。\n\n基金会提示：\n探索过程中，敌人异常强大；\n您需要收集多个【导航电波】，增强队伍实力。",
+    "DescLan": "activeLan_RogueEvent_desclan_3037",
+    "DescLanText": "有东西漂浮至面前，你伸手抓住了它。\n\n基金会提示：\n探索过程中，敌人异常强大；\n您需要收集多个【导航电波】，增强队伍实力。",
+    "OptionName": "天市垣|获得一段导航电波",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3037",
+    "OptionNameLanText": "天市垣|获得一段导航电波",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020502"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3038": {
+    "Id": "3038",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "新手教程",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_3038",
+    "NameLanText": "呼叫支援",
+    "Desc": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。\n基金会提示：\n呼叫非重复器者，会直接加入队伍，协助您后续探索。\n呼叫重复器者，会增强器者自身实力，请合理进行选择。",
+    "DescLan": "activeLan_RogueEvent_desclan_3038",
+    "DescLanText": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。\n基金会提示：\n呼叫非重复器者，会直接加入队伍，协助您后续探索。\n呼叫重复器者，会增强器者自身实力，请合理进行选择。",
+    "OptionName": "点开|呼叫一名器者加入",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3038",
+    "OptionNameLanText": "点开|呼叫一名器者加入",
+    "LaterEvent1": [
+      [
+        "2",
+        "10030301"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3039": {
+    "Id": "3039",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "新手教程",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_3039",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。\n\n基金会提示：\n战斗失败，会消耗25氧气；\n若战斗中途离开，除战斗失败外会额外消耗15氧气。",
+    "DescLan": "activeLan_RogueEvent_desclan_3039",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。\n\n基金会提示：\n战斗失败，会消耗25氧气；\n若战斗中途离开，除战斗失败外会额外消耗15氧气。",
+    "OptionName": "保持清醒|进入一场战斗",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3039",
+    "OptionNameLanText": "保持清醒|进入一场战斗",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020101"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3040": {
+    "Id": "3040",
+    "Icon": "",
+    "IconName": "获得奖励",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10030601,
+    "Name": "纯奖励（剧情专用）",
+    "NameLan": "activeLan_RogueEvent_namelan_3040",
+    "NameLanText": "纯奖励（剧情专用）",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "3041": {
+    "Id": "3041",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_3041",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……\n基金会提示：\n观星小铺商店不稳定，离开后无法再返回。",
+    "DescLan": "activeLan_RogueEvent_desclan_3041",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……\n基金会提示：\n观星小铺商店不稳定，离开后无法再返回。",
+    "OptionName": "试着买点什么|进入商店",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_3041",
+    "OptionNameLanText": "试着买点什么|进入商店",
+    "LaterEvent1": [
+      [
+        "2",
+        "10030401"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "4002": {
+    "Id": "4002",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第2层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_4002",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4002",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4002",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "1105"
+      ],
+      [
+        "2",
+        "10021205"
+      ],
+      [
+        "2",
+        "10021210"
+      ],
+      [
+        "2",
+        "10041401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "4003": {
+    "Id": "4003",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第3层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_4003",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4003",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4003",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10041402"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "4004": {
+    "Id": "4004",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第4层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_4004",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4004",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4004",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10041403"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "4005": {
+    "Id": "4005",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "第5层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_4005",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4005",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4005",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10041404"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "4006": {
+    "Id": "4006",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "1004商店-标准",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_4006",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4006",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4006",
+    "OptionNameLanText": "试着买点什么",
+    "LaterEvent1": [
+      [
+        "2",
+        "10040401"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "4007": {
+    "Id": "4007",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "1004商店-稀有",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_4007",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4007",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4007",
+    "OptionNameLanText": "试着买点什么",
+    "LaterEvent1": [
+      [
+        "2",
+        "10040402"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "4008": {
+    "Id": "4008",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "1004商店-珍贵",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_4008",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_4008",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_4008",
+    "OptionNameLanText": "试着买点什么",
+    "LaterEvent1": [
+      [
+        "2",
+        "10040403"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "5001": {
+    "Id": "5001",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "测试用 - 传送到隔壁debug层",
+    "NameLan": "activeLan_RogueEvent_namelan_5001",
+    "NameLanText": "测试用 - 传送到隔壁debug层",
+    "Desc": "不要重复到同一层，会报BUG",
+    "DescLan": "activeLan_RogueEvent_desclan_5001",
+    "DescLanText": "不要重复到同一层，会报BUG",
+    "OptionName": "第1层_第2层_第3层",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_5001",
+    "OptionNameLanText": "第1层_第2层_第3层",
+    "LaterEvent1": [
+      [
+        "2",
+        "10051401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10051402"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10051403"
+      ]
+    ]
+  },
+  "5002": {
+    "Id": "5002",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "测试用 - 传送到隔壁debug层",
+    "NameLan": "activeLan_RogueEvent_namelan_5002",
+    "NameLanText": "测试用 - 传送到隔壁debug层",
+    "Desc": "不要重复到同一层，会报BUG",
+    "DescLan": "activeLan_RogueEvent_desclan_5002",
+    "DescLanText": "不要重复到同一层，会报BUG",
+    "OptionName": "第4层_第5层_第2层",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_5002",
+    "OptionNameLanText": "第4层_第5层_第2层",
+    "LaterEvent1": [
+      [
+        "2",
+        "10051404"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10051405"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10051402"
+      ]
+    ]
+  },
+  "5003": {
+    "Id": "5003",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "测试用 - 器者刷新",
+    "NameLan": "activeLan_RogueEvent_namelan_5003",
+    "NameLanText": "测试用 - 器者刷新",
+    "Desc": "适者生存事件专用池子：刷新天球仪、浑天仪、睡莲、星月夜、宋金",
+    "DescLan": "activeLan_RogueEvent_desclan_5003",
+    "DescLanText": "适者生存事件专用池子：刷新天球仪、浑天仪、睡莲、星月夜、宋金",
+    "OptionName": "拿1次器者_拿2次器者_拿3次器者",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_5003",
+    "OptionNameLanText": "拿1次器者_拿2次器者_拿3次器者",
+    "LaterEvent1": [
+      [
+        "2",
+        "10025008"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10025008"
+      ],
+      [
+        "2",
+        "10025008"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10025008"
+      ],
+      [
+        "2",
+        "10025008"
+      ],
+      [
+        "2",
+        "10025008"
+      ]
+    ]
+  },
+  "5004": {
+    "Id": "5004",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "DEBUG，固定随机",
+    "NameLan": "activeLan_RogueEvent_namelan_5004",
+    "NameLanText": "DEBUG，固定随机",
+    "Desc": "BUFF池只有\nBuff_Rogue_Group1_105_01\nBuff_Rogue_Group1_106_01\nBuff_Rogue_Group1_107_01",
+    "DescLan": "activeLan_RogueEvent_desclan_5004",
+    "DescLanText": "BUFF池只有\nBuff_Rogue_Group1_105_01\nBuff_Rogue_Group1_106_01\nBuff_Rogue_Group1_107_01",
+    "OptionName": "随机2次_随机3次_随机4次",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_5004",
+    "OptionNameLanText": "随机2次_随机3次_随机4次",
+    "LaterEvent1": [
+      [
+        "2",
+        "10050501"
+      ],
+      [
+        "2",
+        "10050501"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10050501"
+      ],
+      [
+        "2",
+        "10050501"
+      ],
+      [
+        "2",
+        "10050501"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10050501"
+      ],
+      [
+        "2",
+        "10050501"
+      ],
+      [
+        "2",
+        "10050501"
+      ],
+      [
+        "2",
+        "10050501"
+      ]
+    ]
+  },
+  "6002": {
+    "Id": "6002",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到2面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_6002",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_6002",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6002",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10061101"
+      ],
+      [
+        "2",
+        "10061201"
+      ],
+      [
+        "2",
+        "10061401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "6003": {
+    "Id": "6003",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "剧情1结算",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_6003",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_6003",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6003",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10061102"
+      ],
+      [
+        "2",
+        "10061202"
+      ],
+      [
+        "2",
+        "1001"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "6011": {
+    "Id": "6011",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10060101,
+    "Name": "地理剧情1",
+    "NameLan": "activeLan_RogueEvent_namelan_6011",
+    "NameLanText": "地理剧情1",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6012": {
+    "Id": "6012",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10060102,
+    "Name": "地理剧情2",
+    "NameLan": "activeLan_RogueEvent_namelan_6012",
+    "NameLanText": "地理剧情2",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6013": {
+    "Id": "6013",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10060103,
+    "Name": "地理剧情3",
+    "NameLan": "activeLan_RogueEvent_namelan_6013",
+    "NameLanText": "地理剧情3",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6014": {
+    "Id": "6014",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10060104,
+    "Name": "地理剧情4",
+    "NameLan": "activeLan_RogueEvent_namelan_6014",
+    "NameLanText": "地理剧情4",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6015": {
+    "Id": "6015",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10060105,
+    "Name": "地理剧情5",
+    "NameLan": "activeLan_RogueEvent_namelan_6015",
+    "NameLanText": "地理剧情5",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6016": {
+    "Id": "6016",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10060106,
+    "Name": "地理剧情6",
+    "NameLan": "activeLan_RogueEvent_namelan_6016",
+    "NameLanText": "地理剧情6",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6021": {
+    "Id": "6021",
+    "Icon": "ui_wsch_event_8",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "航海日记",
+    "NameLan": "activeLan_RogueEvent_namelan_6021",
+    "NameLanText": "航海日记",
+    "Desc": "你偶然找到一本不知是谁留下的航海日记，上面记载着几段不同的导航电波。\n\n基金会提示：\n探索过程中，敌人异常强大；\n您需要收集多个【导航电波】，增强队伍实力。",
+    "DescLan": "activeLan_RogueEvent_desclan_6021",
+    "DescLanText": "你偶然找到一本不知是谁留下的航海日记，上面记载着几段不同的导航电波。\n\n基金会提示：\n探索过程中，敌人异常强大；\n您需要收集多个【导航电波】，增强队伍实力。",
+    "OptionName": "选择电波组一|获得3段珍贵导航电波",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6021",
+    "OptionNameLanText": "选择电波组一|获得3段珍贵导航电波",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070504"
+      ],
+      [
+        "2",
+        "10070502"
+      ],
+      [
+        "2",
+        "10070502"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6022": {
+    "Id": "6022",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "新手教程",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_6022",
+    "NameLanText": "呼叫支援",
+    "Desc": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。\n基金会提示：\n呼叫非重复器者，会直接加入队伍，协助您后续探索。\n呼叫重复器者，会增强器者自身实力，请合理进行选择。",
+    "DescLan": "activeLan_RogueEvent_desclan_6022",
+    "DescLanText": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。\n基金会提示：\n呼叫非重复器者，会直接加入队伍，协助您后续探索。\n呼叫重复器者，会增强器者自身实力，请合理进行选择。",
+    "OptionName": "点开|呼叫2名器者加入",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6022",
+    "OptionNameLanText": "点开|呼叫2名器者加入",
+    "LaterEvent1": [
+      [
+        "2",
+        "10060301"
+      ],
+      [
+        "2",
+        "10060301"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6023": {
+    "Id": "6023",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_6023",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……\n基金会提示：\n观星小铺商店不稳定，离开后无法再返回。",
+    "DescLan": "activeLan_RogueEvent_desclan_6023",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……\n基金会提示：\n观星小铺商店不稳定，离开后无法再返回。",
+    "OptionName": "试着买点什么|进入商店",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6023",
+    "OptionNameLanText": "试着买点什么|进入商店",
+    "LaterEvent1": [
+      [
+        "2",
+        "10060401"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6024": {
+    "Id": "6024",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "新手教程",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_6024",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。\n\n基金会提示：\n战斗失败，会消耗25氧气；\n若战斗中途离开，除战斗失败外会额外消耗15氧气。",
+    "DescLan": "activeLan_RogueEvent_desclan_6024",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。\n\n基金会提示：\n战斗失败，会消耗25氧气；\n若战斗中途离开，除战斗失败外会额外消耗15氧气。",
+    "OptionName": "保持清醒|进入一场战斗",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6024",
+    "OptionNameLanText": "保持清醒|进入一场战斗",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070103"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6025": {
+    "Id": "6025",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_6025",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_6025",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6025",
+    "OptionNameLanText": "使用探照灯回应",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070323"
+      ],
+      [
+        "2",
+        "10060301"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6026": {
+    "Id": "6026",
+    "Icon": "ui_wsch_event_2",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "粉色宝箱",
+    "NameLan": "activeLan_RogueEvent_namelan_6026",
+    "NameLanText": "粉色宝箱",
+    "Desc": "你慢悠悠地从水中游过……等一下！好粉嫩的宝箱，上面还有粉红珊瑚，你觉得箱子爱好者一定会喜欢的！要打开看看吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_6026",
+    "DescLanText": "你慢悠悠地从水中游过……等一下！好粉嫩的宝箱，上面还有粉红珊瑚，你觉得箱子爱好者一定会喜欢的！要打开看看吗？",
+    "OptionName": "打开|消耗10点氧气",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6026",
+    "OptionNameLanText": "打开|消耗10点氧气",
+    "LaterEvent1": [
+      [
+        "2",
+        "10072001"
+      ],
+      [
+        "2",
+        "10072001"
+      ],
+      [
+        "2",
+        "10070901"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "6027": {
+    "Id": "6027",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "夜潜",
+    "NameLan": "activeLan_RogueEvent_namelan_6027",
+    "NameLanText": "夜潜",
+    "Desc": "你选择在夜里再次潜入海中进行探索，探照灯只能照亮面前的一小片水域，别的都隐藏在无边的黑暗中。",
+    "DescLan": "activeLan_RogueEvent_desclan_6027",
+    "DescLanText": "你选择在夜里再次潜入海中进行探索，探照灯只能照亮面前的一小片水域，别的都隐藏在无边的黑暗中。",
+    "OptionName": "继续往前|进入战斗_停下休整",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_6027",
+    "OptionNameLanText": "继续往前|进入战斗_停下休整",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7002": {
+    "Id": "7002",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到2面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7002",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7002",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7002",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071101"
+      ],
+      [
+        "2",
+        "10071201"
+      ],
+      [
+        "2",
+        "10071211"
+      ],
+      [
+        "2",
+        "10071401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7003": {
+    "Id": "7003",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到3面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7003",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7003",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7003",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071102"
+      ],
+      [
+        "2",
+        "10071202"
+      ],
+      [
+        "2",
+        "10071212"
+      ],
+      [
+        "2",
+        "10071402"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7004": {
+    "Id": "7004",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到4面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7004",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7004",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "进入陌生的海域_尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7004",
+    "OptionNameLanText": "进入陌生的海域_尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071107"
+      ],
+      [
+        "2",
+        "10071207"
+      ],
+      [
+        "2",
+        "10071217"
+      ],
+      [
+        "2",
+        "10071406"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071103"
+      ],
+      [
+        "2",
+        "10071203"
+      ],
+      [
+        "2",
+        "10071213"
+      ],
+      [
+        "2",
+        "10071403"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "3"
+      ]
+    ]
+  },
+  "7005": {
+    "Id": "7005",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到5面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7005",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7005",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "进入陌生的海域_尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7005",
+    "OptionNameLanText": "进入陌生的海域_尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071108"
+      ],
+      [
+        "2",
+        "10071208"
+      ],
+      [
+        "2",
+        "10071218"
+      ],
+      [
+        "2",
+        "10071407"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071104"
+      ],
+      [
+        "2",
+        "10071204"
+      ],
+      [
+        "2",
+        "10071214"
+      ],
+      [
+        "2",
+        "10071404"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "3"
+      ]
+    ]
+  },
+  "7006": {
+    "Id": "7006",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到6面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7006",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7006",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "进入陌生的海域_尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7006",
+    "OptionNameLanText": "进入陌生的海域_尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071109"
+      ],
+      [
+        "2",
+        "10071209"
+      ],
+      [
+        "2",
+        "10071219"
+      ],
+      [
+        "2",
+        "10071408"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071405"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "3"
+      ]
+    ]
+  },
+  "7007": {
+    "Id": "7007",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "3.5传送到4面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7007",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7007",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7007",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071103"
+      ],
+      [
+        "2",
+        "10071203"
+      ],
+      [
+        "2",
+        "10071213"
+      ],
+      [
+        "2",
+        "10071403"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7008": {
+    "Id": "7008",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "4.5传送到5面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7008",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7008",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7008",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071104"
+      ],
+      [
+        "2",
+        "10071204"
+      ],
+      [
+        "2",
+        "10071214"
+      ],
+      [
+        "2",
+        "10071404"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7009": {
+    "Id": "7009",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "5.5传送到6面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_7009",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7009",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7009",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071405"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7011": {
+    "Id": "7011",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7011",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_7011",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "水星群聊_金星群聊_刷新消息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7011",
+    "OptionNameLanText": "水星群聊_金星群聊_刷新消息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070306"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070307"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "1",
+        "7012"
+      ]
+    ]
+  },
+  "7012": {
+    "Id": "7012",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 1,
+    "Related": "7011",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7012",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_7012",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "火星群聊_木星群聊_土星群聊",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7012",
+    "OptionNameLanText": "火星群聊_木星群聊_土星群聊",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070308"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070309"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070310"
+      ]
+    ]
+  },
+  "7013": {
+    "Id": "7013",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7013",
+    "NameLanText": "呼叫支援",
+    "Desc": "你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "DescLan": "activeLan_RogueEvent_desclan_7013",
+    "DescLanText": "你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "OptionName": "点开_忽视",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7013",
+    "OptionNameLanText": "点开_忽视",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070301"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7014": {
+    "Id": "7014",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "前期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_7014",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_7014",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应_不回应，继续自己的探索",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7014",
+    "OptionNameLanText": "使用探照灯回应_不回应，继续自己的探索",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070301"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7015": {
+    "Id": "7015",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7015",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_7015",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "顶置消息_水星群聊_疯狂刷新消息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7015",
+    "OptionNameLanText": "顶置消息_水星群聊_疯狂刷新消息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070302"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070306"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "1",
+        "7016"
+      ]
+    ]
+  },
+  "7016": {
+    "Id": "7016",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 1,
+    "Related": "7015",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7016",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_7016",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "火星群聊_金星群聊_鱼的群聊",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7016",
+    "OptionNameLanText": "火星群聊_金星群聊_鱼的群聊",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070308"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070307"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070323"
+      ]
+    ]
+  },
+  "7017": {
+    "Id": "7017",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7017",
+    "NameLanText": "呼叫支援",
+    "Desc": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "DescLan": "activeLan_RogueEvent_desclan_7017",
+    "DescLanText": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "OptionName": "点开_忽视",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7017",
+    "OptionNameLanText": "点开_忽视",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070313"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7018": {
+    "Id": "7018",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "中期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_7018",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_7018",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应_不回应，继续自己的探索",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7018",
+    "OptionNameLanText": "使用探照灯回应_不回应，继续自己的探索",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070313"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7019": {
+    "Id": "7019",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7019",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_7019",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "最新一条消息_土星群聊_刷新消息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7019",
+    "OptionNameLanText": "最新一条消息_土星群聊_刷新消息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070314"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070321"
+      ],
+      [
+        "2",
+        "10070313"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "1",
+        "7020"
+      ]
+    ]
+  },
+  "7020": {
+    "Id": "7020",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 1,
+    "Related": "7019",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7020",
+    "NameLanText": "呼叫支援",
+    "Desc": "你解锁终端，发现发来消息的器者是——",
+    "DescLan": "activeLan_RogueEvent_desclan_7020",
+    "DescLanText": "你解锁终端，发现发来消息的器者是——",
+    "OptionName": "火星群聊_金星群聊",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7020",
+    "OptionNameLanText": "火星群聊_金星群聊",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070313"
+      ],
+      [
+        "2",
+        "10070319"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070318"
+      ],
+      [
+        "2",
+        "10070313"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7021": {
+    "Id": "7021",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "呼叫支援",
+    "NameLan": "activeLan_RogueEvent_namelan_7021",
+    "NameLanText": "呼叫支援",
+    "Desc": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "DescLan": "activeLan_RogueEvent_desclan_7021",
+    "DescLanText": "经过刚才的事件，你意识到自己需要帮手，正巧这时，终端亮了起来，是基金会的消息。",
+    "OptionName": "点开_忽视",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7021",
+    "OptionNameLanText": "点开_忽视",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070314"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7022": {
+    "Id": "7022",
+    "Icon": "ui_xhyt_event_2",
+    "IconName": "后期",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "灯光",
+    "NameLan": "activeLan_RogueEvent_namelan_7022",
+    "NameLanText": "灯光",
+    "Desc": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "DescLan": "activeLan_RogueEvent_desclan_7022",
+    "DescLanText": "远处的灯光以特定的频率闪烁着，那是与你手中的探照灯相同的光亮，你知道一定是基金会的成员来了。",
+    "OptionName": "使用探照灯回应_不回应，继续自己的探索",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7022",
+    "OptionNameLanText": "使用探照灯回应_不回应，继续自己的探索",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070314"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7031": {
+    "Id": "7031",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（标准）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7031",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7031",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7031",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7032": {
+    "Id": "7032",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（稀有）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7032",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7032",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7032",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070402"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7033": {
+    "Id": "7033",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（珍贵）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7033",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7033",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7033",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070403"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071301"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7034": {
+    "Id": "7034",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（器者）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7034",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7034",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7034",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070404"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7035": {
+    "Id": "7035",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（BUFF）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7035",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7035",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7035",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070405"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7036": {
+    "Id": "7036",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（盲盒）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7036",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7036",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7036",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070406"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7037": {
+    "Id": "7037",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（标准带盲盒）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7037",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7037",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7037",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070407"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7038": {
+    "Id": "7038",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（稀有带盲盒）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7038",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7038",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7038",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070408"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7039": {
+    "Id": "7039",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（珍贵带盲盒）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7039",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7039",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7039",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070409"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7040": {
+    "Id": "7040",
+    "Icon": "ui_xhyt_event_16",
+    "IconName": "商店（BUFF带盲盒）",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "观星小铺",
+    "NameLan": "activeLan_RogueEvent_namelan_7040",
+    "NameLanText": "观星小铺",
+    "Desc": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7040",
+    "DescLanText": "你向前游去，观星台四周有不少生物来回游荡，它们没有攻击性，还经营着一些眼熟的货物……咦，怎么还有柠檬水，宋金项饰的朋友们也会喝柠檬水吗？",
+    "OptionName": "试着买点什么_摇头离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7040",
+    "OptionNameLanText": "试着买点什么_摇头离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070410"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7041": {
+    "Id": "7041",
+    "Icon": "ui_xhyt_event_7",
+    "IconName": "精英关，3层，难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星蚀",
+    "NameLan": "activeLan_RogueEvent_namelan_7041",
+    "NameLanText": "星蚀",
+    "Desc": "恒星坍缩后可能会形成黑洞，刚才被打败的下型体在消散后，竟然组合成了更强大的曲解。",
+    "DescLan": "activeLan_RogueEvent_desclan_7041",
+    "DescLanText": "恒星坍缩后可能会形成黑洞，刚才被打败的下型体在消散后，竟然组合成了更强大的曲解。",
+    "OptionName": "迎战_逃离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7041",
+    "OptionNameLanText": "迎战_逃离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070108"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7042": {
+    "Id": "7042",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "精英关，3层，难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7042",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7042",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7042",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070110"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7043": {
+    "Id": "7043",
+    "Icon": "ui_xhyt_event_7",
+    "IconName": "精英关，4层，难度中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "群星咏叹",
+    "NameLan": "activeLan_RogueEvent_namelan_7043",
+    "NameLanText": "群星咏叹",
+    "Desc": "海底也会有星空吗？但你分明看见了满天群星。那些星星上一秒还在海水组成的天幕上眨着眼，下一秒就朝你奔涌而来。",
+    "DescLan": "activeLan_RogueEvent_desclan_7043",
+    "DescLanText": "海底也会有星空吗？但你分明看见了满天群星。那些星星上一秒还在海水组成的天幕上眨着眼，下一秒就朝你奔涌而来。",
+    "OptionName": "迎击_努力摆脱幻觉|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7043",
+    "OptionNameLanText": "迎击_努力摆脱幻觉|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070109"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7044": {
+    "Id": "7044",
+    "Icon": "ui_xhyt_event_7",
+    "IconName": "精英关，4层，难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "荧惑守心",
+    "NameLan": "activeLan_RogueEvent_namelan_7044",
+    "NameLanText": "荧惑守心",
+    "Desc": "荧惑入心，一场大战不可避免。",
+    "DescLan": "activeLan_RogueEvent_desclan_7044",
+    "DescLanText": "荧惑入心，一场大战不可避免。",
+    "OptionName": "迎战_逃离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7044",
+    "OptionNameLanText": "迎战_逃离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070111"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7045": {
+    "Id": "7045",
+    "Icon": "ui_xhyt_event_8",
+    "IconName": "精英关，5层，难度低",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "回响",
+    "NameLan": "activeLan_RogueEvent_namelan_7045",
+    "NameLanText": "回响",
+    "Desc": "在这片常人无法企及之处，你原本只能听见自己创造出的声音，身侧传来异样的响动，意味着有什么在急速靠近。",
+    "DescLan": "activeLan_RogueEvent_desclan_7045",
+    "DescLanText": "在这片常人无法企及之处，你原本只能听见自己创造出的声音，身侧传来异样的响动，意味着有什么在急速靠近。",
+    "OptionName": "迎难而上，战斗！_避开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7045",
+    "OptionNameLanText": "迎难而上，战斗！_避开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070112"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7046": {
+    "Id": "7046",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7046",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7046",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7046",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7047": {
+    "Id": "7047",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7047",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7047",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑|发现弱点_向右跑|获得道具_不跑了回头打|直面强敌",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7047",
+    "OptionNameLanText": "向左跑|发现弱点_向右跑|获得道具_不跑了回头打|直面强敌",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070507"
+      ],
+      [
+        "2",
+        "10070102"
+      ]
+    ]
+  },
+  "7048": {
+    "Id": "7048",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，2层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7048",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7048",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7048",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7049": {
+    "Id": "7049",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7049",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7049",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7049",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070102"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7050": {
+    "Id": "7050",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7050",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7050",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑|发现弱点_向右跑|获得道具_不跑了回头打|直面强敌",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7050",
+    "OptionNameLanText": "向左跑|发现弱点_向右跑|获得道具_不跑了回头打|直面强敌",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10070102"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070103"
+      ]
+    ]
+  },
+  "7051": {
+    "Id": "7051",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7051",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7051",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7051",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070101"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070102"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7052": {
+    "Id": "7052",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7052",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7052",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7052",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070103"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7053": {
+    "Id": "7053",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7053",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7053",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打|直面强敌",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7053",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打|直面强敌",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070102"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10070103"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070110"
+      ]
+    ]
+  },
+  "7054": {
+    "Id": "7054",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，3层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7054",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7054",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7054",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070103"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070104"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7055": {
+    "Id": "7055",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7055",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7055",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7055",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7056": {
+    "Id": "7056",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7056",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7056",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7056",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10070105"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070111"
+      ]
+    ]
+  },
+  "7057": {
+    "Id": "7057",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7057",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7057",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7057",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070104"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070105"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7058": {
+    "Id": "7058",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7058",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7058",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7058",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070105"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7059": {
+    "Id": "7059",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7059",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7059",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7059",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070105"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10070106"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070111"
+      ]
+    ]
+  },
+  "7060": {
+    "Id": "7060",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，4层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7060",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7060",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7060",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070105"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070106"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7061": {
+    "Id": "7061",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7061",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7061",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7061",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070106"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7062": {
+    "Id": "7062",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7062",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7062",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7062",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070106"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10070107"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070112"
+      ]
+    ]
+  },
+  "7063": {
+    "Id": "7063",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5层",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7063",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7063",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7063",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070106"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070107"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7064": {
+    "Id": "7064",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "星轨",
+    "NameLan": "activeLan_RogueEvent_namelan_7064",
+    "NameLanText": "星轨",
+    "Desc": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "DescLan": "activeLan_RogueEvent_desclan_7064",
+    "DescLanText": "头顶的群星缓缓移动，星轨令人目眩神迷。",
+    "OptionName": "保持清醒|进入战斗_低下头，不再看|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7064",
+    "OptionNameLanText": "保持清醒|进入战斗_低下头，不再看|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070107"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7065": {
+    "Id": "7065",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "天狗食月",
+    "NameLan": "activeLan_RogueEvent_namelan_7065",
+    "NameLanText": "天狗食月",
+    "Desc": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "DescLan": "activeLan_RogueEvent_desclan_7065",
+    "DescLanText": "光线越来越暗，你逐渐看不清眼前的一切。直到所有的光芒消失时，你终于意识到自己落入了陷阱。",
+    "OptionName": "向左跑_向右跑_不跑了回头打",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7065",
+    "OptionNameLanText": "向左跑_向右跑_不跑了回头打",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070107"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10070111"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070112"
+      ]
+    ]
+  },
+  "7066": {
+    "Id": "7066",
+    "Icon": "ui_xhyt_event_13",
+    "IconName": "战斗，5层中",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "不可名状之物",
+    "NameLan": "activeLan_RogueEvent_namelan_7066",
+    "NameLanText": "不可名状之物",
+    "Desc": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "DescLan": "activeLan_RogueEvent_desclan_7066",
+    "DescLanText": "眼前的生物似乎不是地球上常见的物种，在你发现它的时候，它也牢牢锁定了你。",
+    "OptionName": "立刻开战_先观察，伺机而动",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7066",
+    "OptionNameLanText": "立刻开战_先观察，伺机而动",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070107"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10021303"
+      ],
+      [
+        "2",
+        "10070112"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7067": {
+    "Id": "7067",
+    "Icon": "ui_wsch_event_6",
+    "IconName": "BOSS1",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海底幽灵",
+    "NameLan": "activeLan_RogueEvent_namelan_7067",
+    "NameLanText": "海底幽灵",
+    "Desc": "你一直感到有什么东西不远不近地跟在自己身后，似乎在观察，直到现在，它才终于现身，你看见前方出现了一个模糊高大的黑影。",
+    "DescLan": "activeLan_RogueEvent_desclan_7067",
+    "DescLanText": "你一直感到有什么东西不远不近地跟在自己身后，似乎在观察，直到现在，它才终于现身，你看见前方出现了一个模糊高大的黑影。",
+    "OptionName": "先下手为强_隐蔽气息",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7067",
+    "OptionNameLanText": "先下手为强_隐蔽气息",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070113"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7068": {
+    "Id": "7068",
+    "Icon": "ui_wsch_event_1",
+    "IconName": "BOSS1",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "完美伪装",
+    "NameLan": "activeLan_RogueEvent_namelan_7068",
+    "NameLanText": "完美伪装",
+    "Desc": "经过某片平静的海域时，身旁一直静立不动的沉船突然张开了血盆大口，不好，掉以轻心了！",
+    "DescLan": "activeLan_RogueEvent_desclan_7068",
+    "DescLanText": "经过某片平静的海域时，身旁一直静立不动的沉船突然张开了血盆大口，不好，掉以轻心了！",
+    "OptionName": "迎战_努力逃离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7068",
+    "OptionNameLanText": "迎战_努力逃离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070114"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7069": {
+    "Id": "7069",
+    "Icon": "ui_wsch_event_7",
+    "IconName": "BOSS1",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "塞壬的音乐",
+    "NameLan": "activeLan_RogueEvent_namelan_7069",
+    "NameLanText": "塞壬的音乐",
+    "Desc": "在这片常人无法企及之处，你原本只能听见自己创造出的声音，但此刻，你竟然听到了美妙的音乐。",
+    "DescLan": "activeLan_RogueEvent_desclan_7069",
+    "DescLanText": "在这片常人无法企及之处，你原本只能听见自己创造出的声音，但此刻，你竟然听到了美妙的音乐。",
+    "OptionName": "迎难而上，战斗！_努力逃开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7069",
+    "OptionNameLanText": "迎难而上，战斗！_努力逃开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070115"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7070": {
+    "Id": "7070",
+    "Icon": "ui_wsch_event_8",
+    "IconName": "BOSS",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "磁暴",
+    "NameLan": "activeLan_RogueEvent_namelan_7070",
+    "NameLanText": "磁暴",
+    "Desc": "基金会配备的导航仪突然失灵了，有什么在改变这里的地磁场。",
+    "DescLan": "activeLan_RogueEvent_desclan_7070",
+    "DescLanText": "基金会配备的导航仪突然失灵了，有什么在改变这里的地磁场。",
+    "OptionName": "必须立刻阻止它！_远离这里|暂离",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7070",
+    "OptionNameLanText": "必须立刻阻止它！_远离这里|暂离",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070116"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7071": {
+    "Id": "7071",
+    "Icon": "ui_wsch_event_2",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "粉色宝箱",
+    "NameLan": "activeLan_RogueEvent_namelan_7071",
+    "NameLanText": "粉色宝箱",
+    "Desc": "你慢悠悠地从水中游过……等一下！好粉嫩的宝箱，上面还有粉红珊瑚，你觉得箱子爱好者一定会喜欢的！要打开看看吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7071",
+    "DescLanText": "你慢悠悠地从水中游过……等一下！好粉嫩的宝箱，上面还有粉红珊瑚，你觉得箱子爱好者一定会喜欢的！要打开看看吗？",
+    "OptionName": "打开|消耗10点氧气_不打开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7071",
+    "OptionNameLanText": "打开|消耗10点氧气_不打开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10072001"
+      ],
+      [
+        "2",
+        "10072001"
+      ],
+      [
+        "2",
+        "10070901"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7072": {
+    "Id": "7072",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海洋涡流",
+    "NameLan": "activeLan_RogueEvent_namelan_7072",
+    "NameLanText": "海洋涡流",
+    "Desc": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "DescLan": "activeLan_RogueEvent_desclan_7072",
+    "DescLanText": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "OptionName": "往左走|消耗10点氧气，获得压舱石_往右走|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7072",
+    "OptionNameLanText": "往左走|消耗10点氧气，获得压舱石_往右走|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10072002"
+      ],
+      [
+        "2",
+        "10070901"
+      ],
+      [
+        "2",
+        "10071222"
+      ],
+      [
+        "2",
+        "10071223"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7073": {
+    "Id": "7073",
+    "Icon": "ui_wsch_event_3",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "赤潮",
+    "NameLan": "activeLan_RogueEvent_namelan_7073",
+    "NameLanText": "赤潮",
+    "Desc": "你途径一片红色的海域，富营养化带来的后果非同寻常。",
+    "DescLan": "activeLan_RogueEvent_desclan_7073",
+    "DescLanText": "你途径一片红色的海域，富营养化带来的后果非同寻常。",
+    "OptionName": "继续前行|消耗20点氧气_停下观察",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7073",
+    "OptionNameLanText": "继续前行|消耗20点氧气_停下观察",
+    "LaterEvent1": [
+      [
+        "2",
+        "10072003"
+      ],
+      [
+        "2",
+        "10070902"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070506"
+      ],
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7074": {
+    "Id": "7074",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "夜潜",
+    "NameLan": "activeLan_RogueEvent_namelan_7074",
+    "NameLanText": "夜潜",
+    "Desc": "你选择在夜里再次潜入海中进行探索，探照灯只能照亮面前的一小片水域，别的都隐藏在无边的黑暗中。",
+    "DescLan": "activeLan_RogueEvent_desclan_7074",
+    "DescLanText": "你选择在夜里再次潜入海中进行探索，探照灯只能照亮面前的一小片水域，别的都隐藏在无边的黑暗中。",
+    "OptionName": "继续往前|消耗20点氧气_停下休整",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7074",
+    "OptionNameLanText": "继续往前|消耗20点氧气_停下休整",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070409"
+      ],
+      [
+        "2",
+        "10070902"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7075": {
+    "Id": "7075",
+    "Icon": "ui_wsch_event_4",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "发光水母",
+    "NameLan": "activeLan_RogueEvent_namelan_7075",
+    "NameLanText": "发光水母",
+    "Desc": "游出一段距离后，你发现了一群发着光的水母，面前的场景显得静谧、优美而诡异，让你不由得心生警惕。",
+    "DescLan": "activeLan_RogueEvent_desclan_7075",
+    "DescLanText": "游出一段距离后，你发现了一群发着光的水母，面前的场景显得静谧、优美而诡异，让你不由得心生警惕。",
+    "OptionName": "仔细观察|消耗10点氧气_尝试触碰_绕开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7075",
+    "OptionNameLanText": "仔细观察|消耗10点氧气_尝试触碰_绕开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070502"
+      ],
+      [
+        "2",
+        "10070901"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "1",
+        "7088"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "3"
+      ]
+    ]
+  },
+  "7076": {
+    "Id": "7076",
+    "Icon": "ui_wsch_event_6",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "鲸落",
+    "NameLan": "activeLan_RogueEvent_namelan_7076",
+    "NameLanText": "鲸落",
+    "Desc": "你的面前出现了一个完整的鲸落生物群，无数深海生物穿梭其中，其中有许多你都不认识。",
+    "DescLan": "activeLan_RogueEvent_desclan_7076",
+    "DescLanText": "你的面前出现了一个完整的鲸落生物群，无数深海生物穿梭其中，其中有许多你都不认识。",
+    "OptionName": "保持距离观察|消耗40-50贝币_靠近|消耗30氧气",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7076",
+    "OptionNameLanText": "保持距离观察|消耗40-50贝币_靠近|消耗30氧气",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020801"
+      ],
+      [
+        "2",
+        "10070505"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070323"
+      ],
+      [
+        "2",
+        "10072004"
+      ],
+      [
+        "2",
+        "10070903"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7077": {
+    "Id": "7077",
+    "Icon": "ui_wsch_event_7",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "怪奇音箱",
+    "NameLan": "activeLan_RogueEvent_namelan_7077",
+    "NameLanText": "怪奇音箱",
+    "Desc": "面前突兀地出现了一只音箱，你本想直接离开，直到隐隐听见：“公司事务处理了吗？战斗训练做了吗？文件归类了吗？未完成委托的日程安排了吗？”泰极仙翁啊，这是什么超自然力量吗，还是说你正在做噩梦？师傅别念了……",
+    "DescLan": "activeLan_RogueEvent_desclan_7077",
+    "DescLanText": "面前突兀地出现了一只音箱，你本想直接离开，直到隐隐听见：“公司事务处理了吗？战斗训练做了吗？文件归类了吗？未完成委托的日程安排了吗？”泰极仙翁啊，这是什么超自然力量吗，还是说你正在做噩梦？师傅别念了……",
+    "OptionName": "关掉音箱_加速逃离|消耗10氧气",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7077",
+    "OptionNameLanText": "关掉音箱_加速逃离|消耗10氧气",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070118"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020602"
+      ],
+      [
+        "2",
+        "10070901"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7078": {
+    "Id": "7078",
+    "Icon": "ui_wsch_event_6",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "沉船",
+    "NameLan": "activeLan_RogueEvent_namelan_7078",
+    "NameLanText": "沉船",
+    "Desc": "视野范围内出现了一艘巨大的沉船，看起来已经有些年头了，你感到一丝奇异的证量波动，说不准里面会有有用的信息。",
+    "DescLan": "activeLan_RogueEvent_desclan_7078",
+    "DescLanText": "视野范围内出现了一艘巨大的沉船，看起来已经有些年头了，你感到一丝奇异的证量波动，说不准里面会有有用的信息。",
+    "OptionName": "进入沉船_先上报给基金会|额外获得星枢密钥",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7078",
+    "OptionNameLanText": "进入沉船_先上报给基金会|额外获得星枢密钥",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071220"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7079": {
+    "Id": "7079",
+    "Icon": "ui_wsch_event_8",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "废弃罗盘",
+    "NameLan": "activeLan_RogueEvent_namelan_7079",
+    "NameLanText": "废弃罗盘",
+    "Desc": "在看见那个废弃的罗盘时，基金会配备的导航仪突然失灵了，有什么在改变这里的地磁场。",
+    "DescLan": "activeLan_RogueEvent_desclan_7079",
+    "DescLanText": "在看见那个废弃的罗盘时，基金会配备的导航仪突然失灵了，有什么在改变这里的地磁场。",
+    "OptionName": "尝试攻击罗盘|消耗20氧气_远离这里",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7079",
+    "OptionNameLanText": "尝试攻击罗盘|消耗20氧气_远离这里",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070405"
+      ],
+      [
+        "2",
+        "10070902"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7080": {
+    "Id": "7080",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "声呐盲区",
+    "NameLan": "activeLan_RogueEvent_namelan_7080",
+    "NameLanText": "声呐盲区",
+    "Desc": "在声呐设备无法探测的区域，一切都蒙上了神秘的面纱，你不知道前方的未知究竟隐藏着机遇还是危险。",
+    "DescLan": "activeLan_RogueEvent_desclan_7080",
+    "DescLanText": "在声呐设备无法探测的区域，一切都蒙上了神秘的面纱，你不知道前方的未知究竟隐藏着机遇还是危险。",
+    "OptionName": "小心谨慎|消耗30贝币_加速通过|消耗20氧气",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7080",
+    "OptionNameLanText": "小心谨慎|消耗30贝币_加速通过|消耗20氧气",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070801"
+      ],
+      [
+        "2",
+        "10070507"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070120"
+      ],
+      [
+        "2",
+        "10070902"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7081": {
+    "Id": "7081",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "寒流",
+    "NameLan": "activeLan_RogueEvent_namelan_7081",
+    "NameLanText": "寒流",
+    "Desc": "在经过某处时，身边的海水突然变冷，你打了个寒战。",
+    "DescLan": "activeLan_RogueEvent_desclan_7081",
+    "DescLanText": "在经过某处时，身边的海水突然变冷，你打了个寒战。",
+    "OptionName": "来一套海底热身运动吧！|花费30氧气_太冷了，赶紧上浮",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7081",
+    "OptionNameLanText": "来一套海底热身运动吧！|花费30氧气_太冷了，赶紧上浮",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070504"
+      ],
+      [
+        "2",
+        "10070509"
+      ],
+      [
+        "2",
+        "10070903"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020803"
+      ],
+      [
+        "2",
+        "10070404"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7082": {
+    "Id": "7082",
+    "Icon": "ui_wsch_event_9",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "渗漏",
+    "NameLan": "activeLan_RogueEvent_namelan_7082",
+    "NameLanText": "渗漏",
+    "Desc": "不好，潜水衣好像有点漏水了！",
+    "DescLan": "activeLan_RogueEvent_desclan_7082",
+    "DescLanText": "不好，潜水衣好像有点漏水了！",
+    "OptionName": "上船调整_坚持探索完这片海域|额外获得压舱石",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7082",
+    "OptionNameLanText": "上船调整_坚持探索完这片海域|额外获得压舱石",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071302"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071210"
+      ],
+      [
+        "2",
+        "10071221"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7083": {
+    "Id": "7083",
+    "Icon": "ui_wsch_event_10",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "使坏的墨鱼",
+    "NameLan": "activeLan_RogueEvent_namelan_7083",
+    "NameLanText": "使坏的墨鱼",
+    "Desc": "一条墨鱼从面前游过，趁你不注意，它喷了你一脸墨汁，面前的海水突然一片漆黑。",
+    "DescLan": "activeLan_RogueEvent_desclan_7083",
+    "DescLanText": "一条墨鱼从面前游过，趁你不注意，它喷了你一脸墨汁，面前的海水突然一片漆黑。",
+    "OptionName": "提高警惕，等待墨汁散去|消耗20氧气_报官抓它！",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7083",
+    "OptionNameLanText": "提高警惕，等待墨汁散去|消耗20氧气_报官抓它！",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020503"
+      ],
+      [
+        "2",
+        "10070902"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070121"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7084": {
+    "Id": "7084",
+    "Icon": "ui_wsch_event_11",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海底轻食主理鱼",
+    "NameLan": "activeLan_RogueEvent_namelan_7084",
+    "NameLanText": "海底轻食主理鱼",
+    "Desc": "是眼花了吗？你好像看见一只小丑鱼在珊瑚和贝壳搭建的柜台前忙碌。你甚至能听见它说话：“不行，这份海藻沙拉摆盘不够艺术………啊，客人，愿意试试这份主理鱼特供版沙拉吗？”",
+    "DescLan": "activeLan_RogueEvent_desclan_7084",
+    "DescLanText": "是眼花了吗？你好像看见一只小丑鱼在珊瑚和贝壳搭建的柜台前忙碌。你甚至能听见它说话：“不行，这份海藻沙拉摆盘不够艺术………啊，客人，愿意试试这份主理鱼特供版沙拉吗？”",
+    "OptionName": "多少得尝尝咸淡|恢复氧气_还是算了",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7084",
+    "OptionNameLanText": "多少得尝尝咸淡|恢复氧气_还是算了",
+    "LaterEvent1": [
+      [
+        "2",
+        "10071301"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7085": {
+    "Id": "7085",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "盐卤池",
+    "NameLan": "activeLan_RogueEvent_namelan_7085",
+    "NameLanText": "盐卤池",
+    "Desc": "经过一片盐卤池时，你看见一只小虾正在里面挣扎。",
+    "DescLan": "activeLan_RogueEvent_desclan_7085",
+    "DescLanText": "经过一片盐卤池时，你看见一只小虾正在里面挣扎。",
+    "OptionName": "当然是要帮助它|消耗20氧气_还是不要干涉自然进程了吧……",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7085",
+    "OptionNameLanText": "当然是要帮助它|消耗20氧气_还是不要干涉自然进程了吧……",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070501"
+      ],
+      [
+        "2",
+        "10070505"
+      ],
+      [
+        "2",
+        "10070902"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070507"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7086": {
+    "Id": "7086",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海洋涡流",
+    "NameLan": "activeLan_RogueEvent_namelan_7086",
+    "NameLanText": "海洋涡流",
+    "Desc": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "DescLan": "activeLan_RogueEvent_desclan_7086",
+    "DescLanText": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "OptionName": "往左走|消耗10点氧气_往右走|离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7086",
+    "OptionNameLanText": "往左走|消耗10点氧气_往右走|离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070901"
+      ],
+      [
+        "1",
+        "7087"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ],
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7087": {
+    "Id": "7087",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "7086",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海洋涡流",
+    "NameLan": "activeLan_RogueEvent_namelan_7087",
+    "NameLanText": "海洋涡流",
+    "Desc": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "DescLan": "activeLan_RogueEvent_desclan_7087",
+    "DescLanText": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "OptionName": "再次往左走|发现宝藏，额外获得压舱石_往右走|发现亮光",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7087",
+    "OptionNameLanText": "再次往左走|发现宝藏，额外获得压舱石_往右走|发现亮光",
+    "LaterEvent1": [
+      [
+        "2",
+        "10072002"
+      ],
+      [
+        "2",
+        "10071223"
+      ],
+      [
+        "2",
+        "10071222"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070406"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7088": {
+    "Id": "7088",
+    "Icon": "ui_wsch_event_4",
+    "IconName": "",
+    "Trigger": 1,
+    "Related": "7075",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "发光水母",
+    "NameLan": "activeLan_RogueEvent_namelan_7088",
+    "NameLanText": "发光水母",
+    "Desc": "游出一段距离后，你发现了一群发着光的水母，面前的场景显得静谧、优美而诡异，让你不由得心生警惕。",
+    "DescLan": "activeLan_RogueEvent_desclan_7088",
+    "DescLanText": "游出一段距离后，你发现了一群发着光的水母，面前的场景显得静谧、优美而诡异，让你不由得心生警惕。",
+    "OptionName": "水母被惊动了|进入战斗",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7088",
+    "OptionNameLanText": "水母被惊动了|进入战斗",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070117"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7089": {
+    "Id": "7089",
+    "Icon": "ui_wsch_event_5",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "海洋涡流",
+    "NameLan": "activeLan_RogueEvent_namelan_7089",
+    "NameLanText": "海洋涡流",
+    "Desc": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "DescLan": "activeLan_RogueEvent_desclan_7089",
+    "DescLanText": "你被突如其来的涡流带到了完全陌生的地方，好不容易才抓住了一块礁石，你停下来环顾四周。",
+    "OptionName": "往左走|倾听海声，消耗10点氧气_往右走|恢复氧气，额外获得压舱石",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7089",
+    "OptionNameLanText": "往左走|倾听海声，消耗10点氧气_往右走|恢复氧气，额外获得压舱石",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070901"
+      ],
+      [
+        "2",
+        "10070323"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10071302"
+      ],
+      [
+        "2",
+        "10020601"
+      ],
+      [
+        "2",
+        "10071222"
+      ],
+      [
+        "2",
+        "10071223"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "7090": {
+    "Id": "7090",
+    "Icon": "",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10070603,
+    "Name": "时来运转",
+    "NameLan": "activeLan_RogueEvent_namelan_7090",
+    "NameLanText": "时来运转",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7091": {
+    "Id": "7091",
+    "Icon": "ui_wsch_event_8",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "浮槎问星",
+    "NameLan": "activeLan_RogueEvent_namelan_7091",
+    "NameLanText": "浮槎问星",
+    "Desc": "你进入了一片陌生的海域，天上的星星倒映在海中，你一时分不清自己是身处海洋还是银河。",
+    "DescLan": "activeLan_RogueEvent_desclan_7091",
+    "DescLanText": "你进入了一片陌生的海域，天上的星星倒映在海中，你一时分不清自己是身处海洋还是银河。",
+    "OptionName": "调转方向，回到岸边|招募器者",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7091",
+    "OptionNameLanText": "调转方向，回到岸边|招募器者",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070303"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7092": {
+    "Id": "7092",
+    "Icon": "ui_wsch_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "航海日记",
+    "NameLan": "activeLan_RogueEvent_namelan_7092",
+    "NameLanText": "航海日记",
+    "Desc": "你偶然找到一本不知是谁留下的航海日记，上面记载着几段不同的导航电波。",
+    "DescLan": "activeLan_RogueEvent_desclan_7092",
+    "DescLanText": "你偶然找到一本不知是谁留下的航海日记，上面记载着几段不同的导航电波。",
+    "OptionName": "选择电波组一|获得1段珍贵导航电波_选择电波组二|获得2段稀有导航电波_选择电波组三|获得3段普通导航电波",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7092",
+    "OptionNameLanText": "选择电波组一|获得1段珍贵导航电波_选择电波组二|获得2段稀有导航电波_选择电波组三|获得3段普通导航电波",
+    "LaterEvent1": [
+      [
+        "2",
+        "10070504"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "2",
+        "10070502"
+      ],
+      [
+        "2",
+        "10070502"
+      ]
+    ],
+    "LaterEvent3": [
+      [
+        "2",
+        "10070501"
+      ],
+      [
+        "2",
+        "10070501"
+      ],
+      [
+        "2",
+        "10070501"
+      ]
+    ]
+  },
+  "7093": {
+    "Id": "7093",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10070505,
+    "Name": "直接发buff-地理",
+    "NameLan": "activeLan_RogueEvent_namelan_7093",
+    "NameLanText": "直接发buff-地理",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7094": {
+    "Id": "7094",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10070312,
+    "Name": "直接发器者-地理",
+    "NameLan": "activeLan_RogueEvent_namelan_7094",
+    "NameLanText": "直接发器者-地理",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7095": {
+    "Id": "7095",
+    "Icon": "ui_wsch_event_2",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "粉色宝箱",
+    "NameLan": "activeLan_RogueEvent_namelan_7095",
+    "NameLanText": "粉色宝箱",
+    "Desc": "你慢悠悠地从水中游过……等一下！好粉嫩的宝箱，上面还有粉红珊瑚，你觉得箱子爱好者一定会喜欢的！要打开看看吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_7095",
+    "DescLanText": "你慢悠悠地从水中游过……等一下！好粉嫩的宝箱，上面还有粉红珊瑚，你觉得箱子爱好者一定会喜欢的！要打开看看吗？",
+    "OptionName": "打开！",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7095",
+    "OptionNameLanText": "打开！",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020601"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7096": {
+    "Id": "7096",
+    "Icon": "ui_wsch_event_8",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "浮槎问星",
+    "NameLan": "activeLan_RogueEvent_namelan_7096",
+    "NameLanText": "浮槎问星",
+    "Desc": "你进入了一片陌生的海域，天上的星星倒映在海中，你一时分不清自己是身处海洋还是银河。",
+    "DescLan": "activeLan_RogueEvent_desclan_7096",
+    "DescLanText": "你进入了一片陌生的海域，天上的星星倒映在海中，你一时分不清自己是身处海洋还是银河。",
+    "OptionName": "进入大卖场",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_7096",
+    "OptionNameLanText": "进入大卖场",
+    "LaterEvent1": [
+      [
+        "2",
+        "10020602"
+      ]
+    ],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "7097": {
+    "Id": "7097",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 0,
+    "EventPool": 10071302,
+    "Name": "直接发体力-地理",
+    "NameLan": "activeLan_RogueEvent_namelan_7097",
+    "NameLanText": "直接发体力-地理",
+    "Desc": "",
+    "DescLan": "",
+    "OptionName": "",
+    "OptionNameLan": "",
+    "LaterEvent1": [],
+    "LaterEvent2": [],
+    "LaterEvent3": []
+  },
+  "8002": {
+    "Id": "8002",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到2面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_8002",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_8002",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_8002",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10061103"
+      ],
+      [
+        "2",
+        "10061203"
+      ],
+      [
+        "2",
+        "10061211"
+      ],
+      [
+        "2",
+        "10081401"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  },
+  "8003": {
+    "Id": "8003",
+    "Icon": "ui_xhyt_event_1",
+    "IconName": "传送到2面",
+    "Trigger": 0,
+    "Related": "",
+    "IsPop": 1,
+    "EventPool": 0,
+    "Name": "辰宿列张",
+    "NameLan": "activeLan_RogueEvent_namelan_8003",
+    "NameLanText": "辰宿列张",
+    "Desc": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "DescLan": "activeLan_RogueEvent_desclan_8003",
+    "DescLanText": "海底的星群规律地排布着，你发现只要按照特定的顺序，就能够连接出和陆地上同样的星图。那么，这也就意味着可以回到陆地上吗？",
+    "OptionName": "尝试辨认星空_收回视线|暂时离开",
+    "OptionNameLan": "activeLan_RogueEvent_optionnamelan_8003",
+    "OptionNameLanText": "尝试辨认星空_收回视线|暂时离开",
+    "LaterEvent1": [
+      [
+        "2",
+        "10061105"
+      ],
+      [
+        "2",
+        "10061205"
+      ],
+      [
+        "2",
+        "10061213"
+      ],
+      [
+        "2",
+        "1001"
+      ]
+    ],
+    "LaterEvent2": [
+      [
+        "3"
+      ]
+    ],
+    "LaterEvent3": []
+  }
+}

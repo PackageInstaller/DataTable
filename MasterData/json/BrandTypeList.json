@@ -1,0 +1,374 @@
+[
+  {
+    "ID": 4000,
+    "Type": 1,
+    "Name": "同花顺",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4000",
+    "NamelanText": "同花顺",
+    "Des": "5张点数连续且花色相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4000",
+    "DeslanText": "5张点数连续且花色相同的牌",
+    "ModelIDs": [
+      5002,
+      5003,
+      5004,
+      5005,
+      5006
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "BaseRate": 8,
+    "BaseScore": 100,
+    "GrowRate": 4,
+    "GrowScore": 40,
+    "MaxLevel": 40,
+    "SortID": 92
+  },
+  {
+    "ID": 4001,
+    "Type": 2,
+    "Name": "四条",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4001",
+    "NamelanText": "四条",
+    "Des": "4张点数相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4001",
+    "DeslanText": "4张点数相同的牌",
+    "ModelIDs": [
+      5002,
+      5102,
+      5202,
+      5302,
+      5107
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "BaseRate": 7,
+    "BaseScore": 60,
+    "GrowRate": 3,
+    "GrowScore": 30,
+    "MaxLevel": 40,
+    "SortID": 93
+  },
+  {
+    "ID": 4002,
+    "Type": 3,
+    "Name": "葫芦",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4002",
+    "NamelanText": "葫芦",
+    "Des": "三条加对子",
+    "Deslan": "highteaLan_BrandType_Deslan_4002",
+    "DeslanText": "三条加对子",
+    "ModelIDs": [
+      5002,
+      5102,
+      5202,
+      5107,
+      5007
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      2,
+      2
+    ],
+    "BaseRate": 4,
+    "BaseScore": 40,
+    "GrowRate": 2,
+    "GrowScore": 25,
+    "MaxLevel": 40,
+    "SortID": 94
+  },
+  {
+    "ID": 4003,
+    "Type": 4,
+    "Name": "同花",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4003",
+    "NamelanText": "同花",
+    "Des": "5张花色相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4003",
+    "DeslanText": "5张花色相同的牌",
+    "ModelIDs": [
+      5002,
+      5003,
+      5005,
+      5008,
+      5013
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "BaseRate": 4,
+    "BaseScore": 35,
+    "GrowRate": 2,
+    "GrowScore": 15,
+    "MaxLevel": 40,
+    "SortID": 95
+  },
+  {
+    "ID": 4004,
+    "Type": 5,
+    "Name": "顺子",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4004",
+    "NamelanText": "顺子",
+    "Des": "5张点数连续的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4004",
+    "DeslanText": "5张点数连续的牌",
+    "ModelIDs": [
+      5102,
+      5003,
+      5204,
+      5305,
+      5206
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "BaseRate": 4,
+    "BaseScore": 30,
+    "GrowRate": 3,
+    "GrowScore": 30,
+    "MaxLevel": 40,
+    "SortID": 96
+  },
+  {
+    "ID": 4005,
+    "Type": 6,
+    "Name": "三条",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4005",
+    "NamelanText": "三条",
+    "Des": "3张点数相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4005",
+    "DeslanText": "3张点数相同的牌",
+    "ModelIDs": [
+      5002,
+      5102,
+      5202,
+      5308,
+      5007
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      0,
+      0
+    ],
+    "BaseRate": 3,
+    "BaseScore": 30,
+    "GrowRate": 2,
+    "GrowScore": 20,
+    "MaxLevel": 40,
+    "SortID": 97
+  },
+  {
+    "ID": 4006,
+    "Type": 7,
+    "Name": "两对",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4006",
+    "NamelanText": "两对",
+    "Des": "2对不同点数的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4006",
+    "DeslanText": "2对不同点数的牌",
+    "ModelIDs": [
+      5002,
+      5102,
+      5212,
+      5312,
+      5007
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      0
+    ],
+    "BaseRate": 2,
+    "BaseScore": 20,
+    "GrowRate": 1,
+    "GrowScore": 20,
+    "MaxLevel": 40,
+    "SortID": 98
+  },
+  {
+    "ID": 4007,
+    "Type": 8,
+    "Name": "对子",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4007",
+    "NamelanText": "对子",
+    "Des": "2张点数相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4007",
+    "DeslanText": "2张点数相同的牌",
+    "ModelIDs": [
+      5002,
+      5102,
+      5209,
+      5313,
+      5007
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "BaseRate": 2,
+    "BaseScore": 10,
+    "GrowRate": 1,
+    "GrowScore": 15,
+    "MaxLevel": 40,
+    "SortID": 99
+  },
+  {
+    "ID": 4008,
+    "Type": 9,
+    "Name": "高牌",
+    "IsNormal": 1,
+    "Namelan": "highteaLan_BrandType_Namelan_4008",
+    "NamelanText": "高牌",
+    "Des": "只有点数最高的牌才会计分",
+    "Deslan": "highteaLan_BrandType_Deslan_4008",
+    "DeslanText": "只有点数最高的牌才会计分",
+    "ModelIDs": [
+      5002,
+      5103,
+      5205,
+      5308,
+      5014
+    ],
+    "ModeHLs": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    "BaseRate": 1,
+    "BaseScore": 5,
+    "GrowRate": 1,
+    "GrowScore": 10,
+    "MaxLevel": 40,
+    "SortID": 100
+  },
+  {
+    "ID": 4009,
+    "Type": 10,
+    "Name": "五条",
+    "IsNormal": 0,
+    "Namelan": "highteaLan_BrandType_Namelan_4009",
+    "NamelanText": "五条",
+    "Des": "5张点数相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4009",
+    "DeslanText": "5张点数相同的牌",
+    "ModelIDs": [
+      5002,
+      5102,
+      5202,
+      5302,
+      5102
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "BaseRate": 15,
+    "BaseScore": 100,
+    "GrowRate": 3,
+    "GrowScore": 35,
+    "MaxLevel": 40,
+    "SortID": 91
+  },
+  {
+    "ID": 4010,
+    "Type": 11,
+    "Name": "同花五条",
+    "IsNormal": 0,
+    "Namelan": "highteaLan_BrandType_Namelan_4010",
+    "NamelanText": "同花五条",
+    "Des": "5张点数和花色相同的牌",
+    "Deslan": "highteaLan_BrandType_Deslan_4010",
+    "DeslanText": "5张点数和花色相同的牌",
+    "ModelIDs": [
+      5002,
+      5002,
+      5002,
+      5002,
+      5002
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "BaseRate": 15,
+    "BaseScore": 100,
+    "GrowRate": 3,
+    "GrowScore": 50,
+    "MaxLevel": 40,
+    "SortID": 90
+  },
+  {
+    "ID": 4011,
+    "Type": 12,
+    "Name": "同花葫芦",
+    "IsNormal": 0,
+    "Namelan": "highteaLan_BrandType_Namelan_4011",
+    "NamelanText": "同花葫芦",
+    "Des": "三条加对子且花色相同",
+    "Deslan": "highteaLan_BrandType_Deslan_4011",
+    "DeslanText": "三条加对子且花色相同",
+    "ModelIDs": [
+      5002,
+      5002,
+      5002,
+      5007,
+      5007
+    ],
+    "ModeHLs": [
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "BaseRate": 15,
+    "BaseScore": 100,
+    "GrowRate": 4,
+    "GrowScore": 40,
+    "MaxLevel": 40,
+    "SortID": 89
+  }
+]

@@ -1,0 +1,177 @@
+{
+  "SimulateLowPercent": 6000,
+  "SimulateMediumPercent": 7000,
+  "SimulateHighPercent": 8000,
+  "SimulateItemGain": 5000,
+  "SimulateRevenueItem": "5252",
+  "SimulateDailyRandomLimit": 3,
+  "SimulateDailyRandomReward": [
+    [
+      "5252",
+      "300",
+      "100"
+    ],
+    [
+      "5252",
+      "500",
+      "500"
+    ],
+    [
+      "5252",
+      "800",
+      "150"
+    ]
+  ],
+  "SimulateDailyRandomRewardTime": [
+    "8",
+    "12",
+    "16",
+    "22",
+    "24"
+  ],
+  "SimulateHireLimit": 3,
+  "SimulateOccasionRate": 3000,
+  "SimulateOccasionEventValue": [
+    5000,
+    5000
+  ],
+  "SimulateOccasionEvent2": 3,
+  "SimulateOccasionEventReward": [
+    [
+      "5253",
+      "300",
+      "100"
+    ],
+    [
+      "5253",
+      "300",
+      "500"
+    ],
+    [
+      "5253",
+      "800",
+      "150"
+    ]
+  ],
+  "SimulateOccasionEvent1Cost": 3000,
+  "SimulateOccasionOutcome": [
+    3,
+    1500
+  ],
+  "SimulateSpecialOrderPeriod": [
+    "08:00:00",
+    "12:00:00"
+  ],
+  "SimulateSpecialOrderDailyLimit": 3,
+  "SimulateCatchMaterialTrash": 1,
+  "SimulateCatchSpeed": 100,
+  "SimulateCatchAccelerate": 12000,
+  "SimulateCatchAccelerateCombo": 5,
+  "SimulateMakeLimit": 20,
+  "SimulateSaleLimit": 20,
+  "SimulatePrayFirstReward": [
+    {
+      "id": "1",
+      "count": 50
+    }
+  ],
+  "SimulatePrayLikeReward": [
+    {
+      "id": "1",
+      "count": 5
+    }
+  ],
+  "SimulatePrayLikeLimit": 3,
+  "SimulatePrayShowLimit": 15,
+  "SimulatePrayChooseLimit": 5,
+  "SimulatePrayChangeInterval": 4,
+  "SimulatePrayPic": [
+    "qf_d01",
+    "qf_d02",
+    "qf_d03",
+    "qf_d04",
+    "qf_d05",
+    "qf_d06"
+  ],
+  "SimulateRewardGainCd": 300,
+  "SimulatePrayLikeDailyLimit": 10,
+  "SimulateOrderRefresh": 10,
+  "SimulateCounterLimit": 5,
+  "SimulateCatchNumber": 7,
+  "SimulateCatchComboTrigger": 10,
+  "SimulateCatchComboSpeed": 2000,
+  "SimulateCatchComboFrequency": 2000,
+  "SimulateCatchComboLast": 3,
+  "SimulateCatchTrashDelete": 1,
+  "SimulateCatchDouble": 2000,
+  "SimulateDailyOperateLimit": 3,
+  "SimulateRewardGapMin": 5,
+  "SimulateCatchComboAddTime": 3,
+  "SimulateOrderItem": "5252",
+  "SimulateArchitectRole": [
+    [
+      "1001",
+      "A0162003"
+    ],
+    [
+      "1002",
+      "A0160003"
+    ]
+  ],
+  "SimulateRandomRole": [
+    [
+      "W0143003",
+      "20"
+    ],
+    [
+      "V0141003",
+      "30"
+    ],
+    [
+      "W0134004",
+      "50"
+    ]
+  ],
+  "SimulateRandomPos": [
+    [
+      "-59",
+      "23"
+    ],
+    [
+      "-23",
+      "54"
+    ],
+    [
+      "-13",
+      "24"
+    ]
+  ],
+  "SimulateSpecialOrderRole": [
+    "S0132004",
+    "V0008001",
+    "W0038003",
+    "V0052003"
+  ],
+  "SimulateSpecialOrderPos": [
+    [
+      "100",
+      "23"
+    ],
+    [
+      "120",
+      "54"
+    ],
+    [
+      "130",
+      "24"
+    ]
+  ],
+  "SimulateRoleLimit": 3,
+  "SimulateRoleAttributeLimit": [
+    "100",
+    "100",
+    "100"
+  ],
+  "SimulateRevenueTotal": 13300,
+  "SimulateRevenueShow": 7
+}

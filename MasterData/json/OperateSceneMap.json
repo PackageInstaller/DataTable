@@ -1,0 +1,1850 @@
+{
+  "1001": {
+    "Id": "1001",
+    "Type": 1,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [],
+    "InitialLevel": 1,
+    "LevelCap": 3,
+    "Upgrade": 1,
+    "DefaultConstruction": 1,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "3",
+        "80",
+        "20",
+        "40"
+      ],
+      [
+        "13",
+        "400",
+        "26",
+        "200"
+      ]
+    ],
+    "Task": [
+      "3010145",
+      "3010146"
+    ],
+    "EmploymentQuantity": [],
+    "UnlookOutput": [],
+    "Description": "负责松风街坊的建造规划，想要兴建或升级某座建筑，都需要前往会馆办理。",
+    "Name": "万壑会馆",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1001",
+    "NameLanText": "万壑会馆",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1001",
+    "DescriptionLanText": "负责松风街坊的建造规划，想要兴建或升级某座建筑，都需要前往会馆办理。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "3",
+          "count": 80
+        },
+        {
+          "id": "20",
+          "count": 40
+        }
+      ],
+      [
+        {
+          "id": "13",
+          "count": 400
+        },
+        {
+          "id": "26",
+          "count": 200
+        }
+      ]
+    ],
+    "BuildingScenceExp": [],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ]
+    ],
+    "BuildingScenceExpItem": [],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ]
+    ],
+    "ParentType": 1,
+    "Location": 2
+  },
+  "1002": {
+    "Id": "1002",
+    "Type": 2,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [],
+    "InitialLevel": 1,
+    "LevelCap": 3,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "4",
+        "80",
+        "16",
+        "40"
+      ],
+      [
+        "10",
+        "400",
+        "19",
+        "200"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [],
+    "UnlookOutput": [],
+    "Description": "基金会设在松风街坊的银行，委派器者后结算收益及材料的地方。",
+    "Name": "冬谷银行",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1002",
+    "NameLanText": "冬谷银行",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1002",
+    "DescriptionLanText": "基金会设在松风街坊的银行，委派器者后结算收益及材料的地方。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "4",
+          "count": 80
+        },
+        {
+          "id": "16",
+          "count": 40
+        }
+      ],
+      [
+        {
+          "id": "10",
+          "count": 400
+        },
+        {
+          "id": "19",
+          "count": 200
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ]
+    ],
+    "ParentType": 1,
+    "Location": 3
+  },
+  "1003": {
+    "Id": "1003",
+    "Type": 3,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [],
+    "InitialLevel": 1,
+    "LevelCap": 1,
+    "Upgrade": 0,
+    "DefaultConstruction": 1,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [],
+    "UpgradeCost2": [],
+    "Task": [],
+    "EmploymentQuantity": [],
+    "UnlookOutput": [],
+    "Description": "松风街坊的交易中心，收藏家可前往此处出售获得的材料。",
+    "Name": "百货商城",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1003",
+    "NameLanText": "百货商城",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1003",
+    "DescriptionLanText": "松风街坊的交易中心，收藏家可前往此处出售获得的材料。",
+    "UpgradeCostItem1": [],
+    "UpgradeCostItem2": [],
+    "BuildingScenceExp": [],
+    "UpScenceExp": [],
+    "BuildingScenceExpItem": [],
+    "UpScenceExpItem": [],
+    "ParentType": 1,
+    "Location": 4
+  },
+  "1004": {
+    "Id": "1004",
+    "Type": 4,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [],
+    "InitialLevel": 1,
+    "LevelCap": 1,
+    "Upgrade": 0,
+    "DefaultConstruction": 1,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [],
+    "UpgradeCost2": [],
+    "Task": [],
+    "EmploymentQuantity": [],
+    "UnlookOutput": [],
+    "Description": "松风街坊的统筹中心，接下来要做些什么？可以来街委浏览相应任务列表。",
+    "Name": "松风街委",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1004",
+    "NameLanText": "松风街委",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1004",
+    "DescriptionLanText": "松风街坊的统筹中心，接下来要做些什么？可以来街委浏览相应任务列表。",
+    "UpgradeCostItem1": [],
+    "UpgradeCostItem2": [],
+    "BuildingScenceExp": [],
+    "UpScenceExp": [],
+    "BuildingScenceExpItem": [],
+    "UpScenceExpItem": [],
+    "ParentType": 1,
+    "Location": 1
+  },
+  "1005": {
+    "Id": "1005",
+    "Type": 5,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [],
+    "InitialLevel": 1,
+    "LevelCap": 1,
+    "Upgrade": 0,
+    "DefaultConstruction": 1,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [],
+    "UpgradeCost2": [],
+    "Task": [],
+    "EmploymentQuantity": [],
+    "UnlookOutput": [],
+    "Description": "亲爱的收藏家，请问有什么可以帮您？逐步解锁指南手册，即可获得相应加成。",
+    "Name": "问讯处",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1005",
+    "NameLanText": "问讯处",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1005",
+    "DescriptionLanText": "亲爱的收藏家，请问有什么可以帮您？逐步解锁指南手册，即可获得相应加成。",
+    "UpgradeCostItem1": [],
+    "UpgradeCostItem2": [],
+    "BuildingScenceExp": [],
+    "UpScenceExp": [],
+    "BuildingScenceExpItem": [],
+    "UpScenceExpItem": [],
+    "ParentType": 1,
+    "Location": 5
+  },
+  "1006": {
+    "Id": "1006",
+    "Type": 6,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3001",
+      "3009"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "7",
+        "20"
+      ],
+      [
+        "7",
+        "150"
+      ],
+      [
+        "7",
+        "300"
+      ],
+      [
+        "7",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Description": "手痒了想搓一局？逢年过节三缺一？麻将馆会满足你。",
+    "Name": "麻将馆",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1006",
+    "NameLanText": "麻将馆",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1006",
+    "DescriptionLanText": "手痒了想搓一局？逢年过节三缺一？麻将馆会满足你。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "7",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "7",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "7",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "7",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 4
+  },
+  "1007": {
+    "Id": "1007",
+    "Type": 6,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3002",
+      "3010",
+      "3017",
+      "3018"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "3",
+        "20"
+      ],
+      [
+        "3",
+        "150"
+      ],
+      [
+        "3",
+        "300"
+      ],
+      [
+        "3",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Description": "松风街坊有一个神奇的地方，您可以在这里画画、唱歌、跳舞……时常有人来此团建交流。",
+    "Name": "文化交流处",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1007",
+    "NameLanText": "文化交流处",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1007",
+    "DescriptionLanText": "松风街坊有一个神奇的地方，您可以在这里画画、唱歌、跳舞……时常有人来此团建交流。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "3",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "3",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "3",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "3",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 5
+  },
+  "1008": {
+    "Id": "1008",
+    "Type": 6,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3003",
+      "3011"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "13",
+        "20"
+      ],
+      [
+        "13",
+        "150"
+      ],
+      [
+        "13",
+        "300"
+      ],
+      [
+        "13",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Description": "本馆主治腰酸背痛、头晕心悸、失眠多梦……出门在外，要更爱惜自己啊！",
+    "Name": "中医馆",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1008",
+    "NameLanText": "中医馆",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1008",
+    "DescriptionLanText": "本馆主治腰酸背痛、头晕心悸、失眠多梦……出门在外，要更爱惜自己啊！",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "13",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "13",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "13",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "13",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 6
+  },
+  "1009": {
+    "Id": "1009",
+    "Type": 6,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3004",
+      "3012"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "4",
+        "20"
+      ],
+      [
+        "4",
+        "150"
+      ],
+      [
+        "4",
+        "300"
+      ],
+      [
+        "4",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Description": "五谷丰登，四海安宁。",
+    "Name": "酒楼",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1009",
+    "NameLanText": "酒楼",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1009",
+    "DescriptionLanText": "五谷丰登，四海安宁。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "4",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "4",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "4",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "4",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 7
+  },
+  "1010": {
+    "Id": "1010",
+    "Type": 6,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3005",
+      "3013"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "10",
+        "20"
+      ],
+      [
+        "10",
+        "150"
+      ],
+      [
+        "10",
+        "300"
+      ],
+      [
+        "10",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ],
+    "Description": "喜欢门神吗？避邪祛灾上好佳品，走过路过不要错过。",
+    "Name": "门神工艺坊",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1010",
+    "NameLanText": "门神工艺坊",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1010",
+    "DescriptionLanText": "喜欢门神吗？避邪祛灾上好佳品，走过路过不要错过。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "10",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "10",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "10",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "10",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 8
+  },
+  "1011": {
+    "Id": "1011",
+    "Type": 7,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3006",
+      "3014"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 1,
+    "UnlockConditions": [],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "20",
+        "20"
+      ],
+      [
+        "20",
+        "150"
+      ],
+      [
+        "23",
+        "300"
+      ],
+      [
+        "23",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "Description": "咖啡、沙冰、奶茶、雪糕，有没有需要的？没有吗？那我待会儿再来问一遍。",
+    "Name": "冰室",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1011",
+    "NameLanText": "冰室",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1011",
+    "DescriptionLanText": "咖啡、沙冰、奶茶、雪糕，有没有需要的？没有吗？那我待会儿再来问一遍。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "20",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "20",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "23",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "23",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 3
+  },
+  "1012": {
+    "Id": "1012",
+    "Type": 7,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3007",
+      "3015"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 2,
+    "UnlockConditions": [
+      "1001",
+      "2"
+    ],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "500"
+      ],
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "1500"
+      ],
+      [
+        "5257",
+        "1500"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "24",
+        "20"
+      ],
+      [
+        "24",
+        "150"
+      ],
+      [
+        "27",
+        "300"
+      ],
+      [
+        "27",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "Description": "卤牛肉、卤鸡爪、卤鸭掌……这就是小时候的味道。",
+    "Name": "卤味店",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1012",
+    "NameLanText": "卤味店",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1012",
+    "DescriptionLanText": "卤牛肉、卤鸡爪、卤鸭掌……这就是小时候的味道。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 500
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 1500
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 1500
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "24",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "24",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "27",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "27",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 2
+  },
+  "1013": {
+    "Id": "1013",
+    "Type": 7,
+    "BuildingEntry": [],
+    "OperateEmployeeEntryID": [
+      "3008",
+      "3016"
+    ],
+    "InitialLevel": 1,
+    "LevelCap": 5,
+    "Upgrade": 1,
+    "DefaultConstruction": 2,
+    "UnlockType": 2,
+    "UnlockConditions": [
+      "1001",
+      "3"
+    ],
+    "Consume": null,
+    "UpgradeCost1": [
+      [
+        "5257",
+        "500"
+      ],
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "1500"
+      ],
+      [
+        "5257",
+        "1500"
+      ]
+    ],
+    "UpgradeCost2": [
+      [
+        "16",
+        "20"
+      ],
+      [
+        "16",
+        "150"
+      ],
+      [
+        "17",
+        "300"
+      ],
+      [
+        "17",
+        "1080"
+      ]
+    ],
+    "Task": [],
+    "EmploymentQuantity": [
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "UnlookOutput": [
+      1,
+      1,
+      0,
+      0,
+      1
+    ],
+    "Description": "出门在外买不到喜欢的茶叶？别担心，来茶叶行就对了。",
+    "Name": "茶叶行",
+    "FloorArea": [
+      "5",
+      "5"
+    ],
+    "Mirror": "1",
+    "NameLan": "activeLan_operateBuilding_nameLan_1013",
+    "NameLanText": "茶叶行",
+    "DescriptionLan": "activeLan_operateBuilding_descriptionlan_1013",
+    "DescriptionLanText": "出门在外买不到喜欢的茶叶？别担心，来茶叶行就对了。",
+    "UpgradeCostItem1": [
+      [
+        {
+          "id": "5257",
+          "count": 500
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 1500
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 1500
+        }
+      ]
+    ],
+    "UpgradeCostItem2": [
+      [
+        {
+          "id": "16",
+          "count": 20
+        }
+      ],
+      [
+        {
+          "id": "16",
+          "count": 150
+        }
+      ],
+      [
+        {
+          "id": "17",
+          "count": 300
+        }
+      ],
+      [
+        {
+          "id": "17",
+          "count": 1080
+        }
+      ]
+    ],
+    "BuildingScenceExp": [
+      "31",
+      "100"
+    ],
+    "UpScenceExp": [
+      [
+        "31",
+        "1000"
+      ],
+      [
+        "31",
+        "2000"
+      ],
+      [
+        "31",
+        "3000"
+      ],
+      [
+        "31",
+        "4000"
+      ]
+    ],
+    "BuildingScenceExpItem": [
+      {
+        "id": "31",
+        "count": 100
+      }
+    ],
+    "UpScenceExpItem": [
+      [
+        {
+          "id": "31",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 3000
+        }
+      ],
+      [
+        {
+          "id": "31",
+          "count": 4000
+        }
+      ]
+    ],
+    "ParentType": 2,
+    "Location": 1
+  }
+}

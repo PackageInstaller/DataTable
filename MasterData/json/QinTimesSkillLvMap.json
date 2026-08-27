@@ -1,0 +1,936 @@
+{
+  "1": {
+    "1": {
+      "Id": "A01_1",
+      "Group": "1",
+      "Level": 1,
+      "BeforeLock": [],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 10,
+      "Buff": [
+        "A01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_A01_1",
+      "NameLanText": "兴修水利",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_A01_1",
+      "FilesLanText": "造渠引水，灌溉田地。沃田既成，方为秦之福祉。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_A01_1",
+      "TextLanText": "资源恢复速度增加至102%"
+    },
+    "2": {
+      "Id": "A01_2",
+      "Group": "1",
+      "Level": 2,
+      "BeforeLock": [
+        "A01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 60,
+      "Buff": [
+        "A01_2"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_A01_2",
+      "NameLanText": "兴修水利",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_A01_2",
+      "FilesLanText": "造渠引水，灌溉田地。沃田既成，方为秦之福祉。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_A01_2",
+      "TextLanText": "资源恢复速度增加至105%"
+    },
+    "3": {
+      "Id": "A01_3",
+      "Group": "1",
+      "Level": 3,
+      "BeforeLock": [
+        "I01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_T01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 700
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 600,
+      "Buff": [
+        "A01_3"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_A01_3",
+      "NameLanText": "兴修水利",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_A01_3",
+      "FilesLanText": "造渠引水，灌溉田地。沃田既成，方为秦之福祉。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_A01_3",
+      "TextLanText": "资源恢复速度增加至110%"
+    },
+    "4": {
+      "Id": "A01_4",
+      "Group": "1",
+      "Level": 4,
+      "BeforeLock": [
+        "A01_3"
+      ],
+      "OtherLock": [
+        "1",
+        "yan_F06"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1000
+        },
+        {
+          "id": "6011",
+          "count": 400
+        }
+      ],
+      "CostPower": 0,
+      "Time": 1200,
+      "Buff": [
+        "A01_4"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_A01_4",
+      "NameLanText": "兴修水利",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_A01_4",
+      "FilesLanText": "造渠引水，灌溉田地。沃田既成，方为秦之福祉。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_A01_4",
+      "TextLanText": "资源恢复速度增加至120%"
+    }
+  },
+  "10": {
+    "1": {
+      "Id": "F01_1",
+      "Group": "10",
+      "Level": 1,
+      "BeforeLock": [
+        "C01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "yan_F03"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1000
+        },
+        {
+          "id": "6011",
+          "count": 400
+        }
+      ],
+      "CostPower": 0,
+      "Time": 120,
+      "Buff": "",
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_F01_1",
+      "NameLanText": "兵法·攻战计",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_F01_1",
+      "FilesLanText": "适时诱敌，以破敌阵，均势所用也。\n\n解锁后可使用兵法【攻战计】\n略微提高士兵造成的伤害。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_F01_1"
+    }
+  },
+  "11": {
+    "1": {
+      "Id": "K01_1",
+      "Group": "11",
+      "Level": 1,
+      "BeforeLock": [
+        "F01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1000
+        },
+        {
+          "id": "6011",
+          "count": 400
+        }
+      ],
+      "CostPower": 1000,
+      "Time": 120,
+      "Buff": [
+        "K01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_K01_1",
+      "NameLanText": "广纳贤士",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_K01_1",
+      "FilesLanText": "望天下有能者，皆为秦所用，以良策解军中之忧。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_K01_1",
+      "TextLanText": "大幅减少失火出现的概率。"
+    }
+  },
+  "12": {
+    "1": {
+      "Id": "L01_1",
+      "Group": "12",
+      "Level": 1,
+      "BeforeLock": [
+        "I01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 85,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1500
+        },
+        {
+          "id": "6011",
+          "count": 350
+        }
+      ],
+      "CostPower": 2000,
+      "Time": 600,
+      "Buff": "",
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_L01_1",
+      "NameLanText": "书同文",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_L01_1",
+      "FilesLanText": "令官员进行文字整理，将小篆规定为统一的标准文字。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_L01_1"
+    }
+  },
+  "13": {
+    "1": {
+      "Id": "M01_1",
+      "Group": "13",
+      "Level": 1,
+      "BeforeLock": [
+        "F01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 85,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1500
+        },
+        {
+          "id": "6011",
+          "count": 350
+        }
+      ],
+      "CostPower": 2000,
+      "Time": 600,
+      "Buff": "",
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_M01_1",
+      "NameLanText": "车同轨",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_M01_1",
+      "FilesLanText": "在多处修建驰道，实施法令统一各地车轮之间的距离。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_M01_1"
+    }
+  },
+  "2": {
+    "1": {
+      "Id": "B01_1",
+      "Group": "2",
+      "Level": 1,
+      "BeforeLock": [
+        "A01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 60,
+      "Buff": [
+        "B01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_B01_1",
+      "NameLanText": "废井田",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_B01_1",
+      "FilesLanText": "自西周以来，土地皆为天子所有，以“井”字划分。如今时过境迁，井田已不合适，故废井田，实行土地私有。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_B01_1",
+      "TextLanText": "仓库上限增加至105%"
+    },
+    "2": {
+      "Id": "B01_2",
+      "Group": "2",
+      "Level": 2,
+      "BeforeLock": [
+        "B01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "han_F02"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 600,
+      "Buff": [
+        "B01_2"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_B01_2",
+      "NameLanText": "废井田",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_B01_2",
+      "FilesLanText": "自西周以来，土地皆为天子所有，以“井”字划分。如今时过境迁，井田已不合适，故废井田，实行土地私有。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_B01_2",
+      "TextLanText": "仓库上限增加至110%"
+    },
+    "3": {
+      "Id": "B01_3",
+      "Group": "2",
+      "Level": 3,
+      "BeforeLock": [
+        "A01_3"
+      ],
+      "OtherLock": [
+        "1",
+        "qi_F01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1500
+        },
+        {
+          "id": "6011",
+          "count": 400
+        }
+      ],
+      "CostPower": 0,
+      "Time": 1200,
+      "Buff": [
+        "B01_3"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_B01_3",
+      "NameLanText": "废井田",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_B01_3",
+      "FilesLanText": "自西周以来，土地皆为天子所有，以“井”字划分。如今时过境迁，井田已不合适，故废井田，实行土地私有。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_B01_3",
+      "TextLanText": "仓库上限增加至120%"
+    }
+  },
+  "3": {
+    "1": {
+      "Id": "C01_1",
+      "Group": "3",
+      "Level": 1,
+      "BeforeLock": [
+        "B01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 60,
+      "Buff": [
+        "C01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_C01_1",
+      "NameLanText": "内外并举",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_C01_1",
+      "FilesLanText": "对内稳定朝堂，对外扩大疆土，实行并举之措，为秦之后的发展打下基础。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_C01_1",
+      "TextLanText": "科技研究速度加快20%"
+    },
+    "2": {
+      "Id": "C01_2",
+      "Group": "3",
+      "Level": 2,
+      "BeforeLock": [
+        "C01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "han_F04"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 600,
+      "Buff": [
+        "C01_2"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_C01_2",
+      "NameLanText": "内外并举",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_C01_2",
+      "FilesLanText": "对内稳定朝堂，对外扩大疆土，实行并举之措，为秦之后的发展打下基础。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_C01_2",
+      "TextLanText": "科技研究速度加快40%"
+    },
+    "3": {
+      "Id": "C01_3",
+      "Group": "3",
+      "Level": 3,
+      "BeforeLock": [
+        "G01_2"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 450
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 1200,
+      "Buff": [
+        "C01_3"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_C01_3",
+      "NameLanText": "内外并举",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_C01_3",
+      "FilesLanText": "对内稳定朝堂，对外扩大疆土，实行并举之措，为秦之后的发展打下基础。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_C01_3",
+      "TextLanText": "科技研究速度加快60%"
+    },
+    "4": {
+      "Id": "C01_4",
+      "Group": "3",
+      "Level": 4,
+      "BeforeLock": [
+        "I01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F16"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 700
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 1500,
+      "Buff": [
+        "C01_4"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_C01_4",
+      "NameLanText": "内外并举",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_C01_4",
+      "FilesLanText": "对内稳定朝堂，对外扩大疆土，实行并举之措，为秦之后的发展打下基础。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_C01_4",
+      "TextLanText": "科技研究速度加快80%"
+    }
+  },
+  "4": {
+    "1": {
+      "Id": "D01_1",
+      "Group": "4",
+      "Level": 1,
+      "BeforeLock": [
+        "C01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "han_C01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 120,
+      "Buff": "",
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_D01_1",
+      "NameLanText": "兵法·敌战计",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_D01_1",
+      "FilesLanText": "知己知彼，以计乱敌，优势所用也。\n\n解锁后可使用兵法【攻战计】\n战斗中，降低造成的伤害，但是受到伤害更低，战后能够召回更多的溃兵。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_D01_1"
+    }
+  },
+  "5": {
+    "1": {
+      "Id": "G01_1",
+      "Group": "5",
+      "Level": 1,
+      "BeforeLock": [
+        "A01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 60,
+      "Buff": [
+        "G01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_G01_1",
+      "NameLanText": "改革户籍",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_G01_1",
+      "FilesLanText": "把全国人口五户编为一“伍”。农忙时互相帮助，农闲时参加军事训练。取消了此前“国”与“野”的界限，将散落各地的自耕农的地位提高到了与国都平民相同的地位。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_G01_1",
+      "TextLanText": "兵力上限提高至105%"
+    },
+    "2": {
+      "Id": "G01_2",
+      "Group": "5",
+      "Level": 2,
+      "BeforeLock": [
+        "G01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "zhao_F01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 300
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 600,
+      "Buff": [
+        "G01_2"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_G01_2",
+      "NameLanText": "改革户籍",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_G01_2",
+      "FilesLanText": "把全国人口五户编为一“伍”。农忙时互相帮助，农闲时参加军事训练。取消了此前“国”与“野”的界限，将散落各地的自耕农的地位提高到了与国都平民相同的地位。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_G01_2",
+      "TextLanText": "兵力上限提高至110%"
+    },
+    "3": {
+      "Id": "G01_3",
+      "Group": "5",
+      "Level": 3,
+      "BeforeLock": [
+        "G01_2"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_T03"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 450
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 1200,
+      "Buff": [
+        "G01_3"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_G01_3",
+      "NameLanText": "改革户籍",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_G01_3",
+      "FilesLanText": "把全国人口五户编为一“伍”。农忙时互相帮助，农闲时参加军事训练。取消了此前“国”与“野”的界限，将散落各地的自耕农的地位提高到了与国都平民相同的地位。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_G01_3",
+      "TextLanText": "兵力上限提高至115%"
+    },
+    "4": {
+      "Id": "G01_4",
+      "Group": "5",
+      "Level": 4,
+      "BeforeLock": [
+        "G01_3"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F14"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 700
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 1500,
+      "Buff": [
+        "G01_4"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_G01_4",
+      "NameLanText": "改革户籍",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_G01_4",
+      "FilesLanText": "把全国人口五户编为一“伍”。农忙时互相帮助，农闲时参加军事训练。取消了此前“国”与“野”的界限，将散落各地的自耕农的地位提高到了与国都平民相同的地位。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_G01_4",
+      "TextLanText": "兵力上限提高至120%"
+    }
+  },
+  "6": {
+    "1": {
+      "Id": "H01_1",
+      "Group": "6",
+      "Level": 1,
+      "BeforeLock": [
+        "G01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "wei_F01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 200
+        },
+        {
+          "id": "6011",
+          "count": 100
+        }
+      ],
+      "CostPower": 0,
+      "Time": 60,
+      "Buff": [
+        "H01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_H01_1",
+      "NameLanText": "出奇制胜",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_H01_1",
+      "FilesLanText": "天下之大，并非只有一条路通向他国都城。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_H01_1",
+      "TextLanText": "每12小时回复1次跨城市作战，最多储存1次。"
+    },
+    "2": {
+      "Id": "H01_2",
+      "Group": "6",
+      "Level": 2,
+      "BeforeLock": [
+        "H01_1"
+      ],
+      "OtherLock": [],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 300
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 100,
+      "Time": 600,
+      "Buff": [
+        "H01_2"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_H01_2",
+      "NameLanText": "出奇制胜",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_H01_2",
+      "FilesLanText": "天下之大，并非只有一条路通向他国都城。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_H01_2",
+      "TextLanText": "每8小时回复1次跨城市作战，最多储存2次。"
+    },
+    "3": {
+      "Id": "H01_3",
+      "Group": "6",
+      "Level": 3,
+      "BeforeLock": [
+        "H01_2"
+      ],
+      "OtherLock": [
+        "1",
+        "zhao_T01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 300
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 200,
+      "Time": 1200,
+      "Buff": [
+        "H01_3"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_H01_3",
+      "NameLanText": "出奇制胜",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_H01_3",
+      "FilesLanText": "天下之大，并非只有一条路通向他国都城。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_H01_3",
+      "TextLanText": "每6小时回复1次跨城市作战，最多储存3次。"
+    }
+  },
+  "7": {
+    "1": {
+      "Id": "I01_1",
+      "Group": "7",
+      "Level": 1,
+      "BeforeLock": [
+        "H01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F03"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 450
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 60,
+      "Buff": [
+        "I01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_I01_1",
+      "NameLanText": "凝聚军心",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_I01_1",
+      "FilesLanText": "军心不稳，难以取胜。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_I01_1",
+      "TextLanText": "战斗后，召回3%的溃兵。"
+    },
+    "2": {
+      "Id": "I01_2",
+      "Group": "7",
+      "Level": 2,
+      "BeforeLock": [
+        "G01_3"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F09"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 700
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 200,
+      "Time": 600,
+      "Buff": [
+        "I01_2"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_I01_2",
+      "NameLanText": "凝聚军心",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_I01_2",
+      "FilesLanText": "军心不稳，难以取胜。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_I01_2",
+      "TextLanText": "战斗后，召回7%的溃兵。"
+    },
+    "3": {
+      "Id": "I01_3",
+      "Group": "7",
+      "Level": 3,
+      "BeforeLock": [
+        "I01_2"
+      ],
+      "OtherLock": [
+        "1",
+        "qi_F01"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 1500
+        },
+        {
+          "id": "6011",
+          "count": 400
+        }
+      ],
+      "CostPower": 300,
+      "Time": 1200,
+      "Buff": [
+        "I01_3"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_I01_3",
+      "NameLanText": "凝聚军心",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_I01_3",
+      "FilesLanText": "军心不稳，难以取胜。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_I01_3",
+      "TextLanText": "战斗后，召回15%的溃兵。"
+    }
+  },
+  "8": {
+    "1": {
+      "Id": "E01_1",
+      "Group": "8",
+      "Level": 1,
+      "BeforeLock": [
+        "H01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F07"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 450
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 0,
+      "Time": 120,
+      "Buff": "",
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_E01_1",
+      "NameLanText": "兵法·胜战计",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_E01_1",
+      "FilesLanText": "乘胜追击，扩敌劣势，优势所用也。\n\n解锁后可使用兵法【胜战计】\n全力以赴，攻击伤害更强,不再召回溃兵。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_E01_1"
+    }
+  },
+  "9": {
+    "1": {
+      "Id": "J01_1",
+      "Group": "9",
+      "Level": 1,
+      "BeforeLock": [
+        "I01_1"
+      ],
+      "OtherLock": [
+        "1",
+        "chu_F12"
+      ],
+      "UnifyValue": 5,
+      "CostItem": [
+        {
+          "id": "6010",
+          "count": 700
+        },
+        {
+          "id": "6011",
+          "count": 200
+        }
+      ],
+      "CostPower": 1000,
+      "Time": 120,
+      "Buff": [
+        "J01_1"
+      ],
+      "NameLan": "QinTimesLan_QinTimesSkill_nameLan_J01_1",
+      "NameLanText": "防范未然",
+      "FilesLan": "QinTimesLan_QinTimesSkill_filesLan_J01_1",
+      "FilesLanText": "夜占天象，窥探前路；举行祭祀，以作准备。",
+      "TextLan": "QinTimesLan_QinTimesSkill_textLan_J01_1",
+      "TextLanText": "大幅减少天灾事件出现概率。"
+    }
+  }
+}

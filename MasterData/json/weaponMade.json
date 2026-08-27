@@ -1,0 +1,2714 @@
+{
+  "OrdersType": {
+    "1001": {
+      "ID": "1001",
+      "Name": "普通订单",
+      "SpendItems": "3101",
+      "CardOpen": false,
+      "Order": 0,
+      "RWeight": 60,
+      "SRWeight": 30,
+      "SSRWeight": 10,
+      "Rank": "5022"
+    },
+    "1002": {
+      "ID": "1002",
+      "Name": "高级订单",
+      "SpendItems": "3102",
+      "CardOpen": true,
+      "Order": 1,
+      "RWeight": 0,
+      "SRWeight": 100,
+      "SSRWeight": 0,
+      "Rank": "5023"
+    },
+    "1003": {
+      "ID": "1003",
+      "Name": "特约订单",
+      "SpendItems": "3103",
+      "CardOpen": true,
+      "Order": 2,
+      "RWeight": 0,
+      "SRWeight": 0,
+      "SSRWeight": 100,
+      "Rank": "5024"
+    },
+    "1004": {
+      "ID": "1004",
+      "Name": "定制订单",
+      "SpendItems": "3104",
+      "CardOpen": true,
+      "Order": 3,
+      "RWeight": 0,
+      "SRWeight": 0,
+      "SSRWeight": 0,
+      "Rank": "5025"
+    }
+  },
+  "Craftsman": {
+    "1001001": {
+      "ID": "1001001",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001001",
+      "MasterNameLanText": "刑天重工",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001001",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001001",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "进阶;构术",
+      "Specialty1": 3,
+      "Specialty2": 4,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001001",
+      "MasterDes1LanText": "力可敌天，永不认败。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001001",
+      "MasterDes2LanText": "明面上以金属制造为掩盖，实际上出产量大质优的基础性武器，顾名思义，所出产的武器有着传说中的锋利与扎实。隶属冬谷基金会技术部，所出产的武器主要用以出口。",
+      "MasterIcon": "Crafts_1001001",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001001",
+      "MasterTagLanText": "进阶;构术"
+    },
+    "1001002": {
+      "ID": "1001002",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001002",
+      "MasterNameLanText": "刑天重工",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001002",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001002",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "进阶;轻锐",
+      "Specialty1": 3,
+      "Specialty2": 4,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001002",
+      "MasterDes1LanText": "力可敌天，永不认败。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001002",
+      "MasterDes2LanText": "明面上以金属制造为掩盖，实际上出产量大质优的基础性武器，顾名思义，所出产的武器有着传说中的锋利与扎实。隶属冬谷基金会技术部，所出产的武器主要用以出口。",
+      "MasterIcon": "Crafts_1001001",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001002",
+      "MasterTagLanText": "进阶;轻锐"
+    },
+    "1001003": {
+      "ID": "1001003",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001003",
+      "MasterNameLanText": "刑天重工",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001003",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001003",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "进阶;宿卫",
+      "Specialty1": 3,
+      "Specialty2": 4,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001003",
+      "MasterDes1LanText": "力可敌天，永不认败。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001003",
+      "MasterDes2LanText": "明面上以金属制造为掩盖，实际上出产量大质优的基础性武器，顾名思义，所出产的武器有着传说中的锋利与扎实。隶属冬谷基金会技术部，所出产的武器主要用以出口。",
+      "MasterIcon": "Crafts_1001001",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001003",
+      "MasterTagLanText": "进阶;宿卫"
+    },
+    "1001004": {
+      "ID": "1001004",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001004",
+      "MasterNameLanText": "刑天重工",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001004",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001004",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "进阶;远击",
+      "Specialty1": 3,
+      "Specialty2": 4,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001004",
+      "MasterDes1LanText": "力可敌天，永不认败。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001004",
+      "MasterDes2LanText": "明面上以金属制造为掩盖，实际上出产量大质优的基础性武器，顾名思义，所出产的武器有着传说中的锋利与扎实。隶属冬谷基金会技术部，所出产的武器主要用以出口。",
+      "MasterIcon": "Crafts_1001001",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001004",
+      "MasterTagLanText": "进阶;远击"
+    },
+    "1001005": {
+      "ID": "1001005",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001005",
+      "MasterNameLanText": "刑天重工",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001005",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001005",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "进阶;战略",
+      "Specialty1": 3,
+      "Specialty2": 4,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001005",
+      "MasterDes1LanText": "力可敌天，永不认败。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001005",
+      "MasterDes2LanText": "明面上以金属制造为掩盖，实际上出产量大质优的基础性武器，顾名思义，所出产的武器有着传说中的锋利与扎实。隶属冬谷基金会技术部，所出产的武器主要用以出口。",
+      "MasterIcon": "Crafts_1001001",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001005",
+      "MasterTagLanText": "进阶;战略"
+    },
+    "1001006": {
+      "ID": "1001006",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001006",
+      "MasterNameLanText": "刑天重工",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001006",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001006",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "进阶",
+      "Specialty1": 3,
+      "Specialty2": 4,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001006",
+      "MasterDes1LanText": "力可敌天，永不认败。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001006",
+      "MasterDes2LanText": "明面上以金属制造为掩盖，实际上出产量大质优的基础性武器，顾名思义，所出产的武器有着传说中的锋利与扎实。隶属冬谷基金会技术部，所出产的武器主要用以出口。",
+      "MasterIcon": "Crafts_1001001",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001006",
+      "MasterTagLanText": "进阶"
+    },
+    "1001007": {
+      "ID": "1001007",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001007",
+      "MasterNameLanText": "巫南研究所",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001007",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001007",
+      "MasterCompanyLanText": "西南地区",
+      "MasterTag": "进阶;构术",
+      "Specialty1": 3,
+      "Specialty2": 5,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001007",
+      "MasterDes1LanText": "万重山中有神明。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001007",
+      "MasterDes2LanText": "位于云贵边境，转身入山中，诸多不可说。神秘奇诡，自成一派，所制造的武器很得一部分器者的喜爱。是亚洲地区相关研究的前沿阵地，由基金会登记管辖，但并不属于基金会。",
+      "MasterIcon": "Crafts_1001031",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001007",
+      "MasterTagLanText": "进阶;构术"
+    },
+    "1001008": {
+      "ID": "1001008",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001008",
+      "MasterNameLanText": "巫南研究所",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001008",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001008",
+      "MasterCompanyLanText": "西南地区",
+      "MasterTag": "进阶;轻锐",
+      "Specialty1": 3,
+      "Specialty2": 5,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001008",
+      "MasterDes1LanText": "万重山中有神明。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001008",
+      "MasterDes2LanText": "位于云贵边境，转身入山中，诸多不可说。神秘奇诡，自成一派，所制造的武器很得一部分器者的喜爱。是亚洲地区相关研究的前沿阵地，由基金会登记管辖，但并不属于基金会。",
+      "MasterIcon": "Crafts_1001031",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001008",
+      "MasterTagLanText": "进阶;轻锐"
+    },
+    "1001009": {
+      "ID": "1001009",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001009",
+      "MasterNameLanText": "巫南研究所",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001009",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001009",
+      "MasterCompanyLanText": "西南地区",
+      "MasterTag": "进阶;宿卫",
+      "Specialty1": 3,
+      "Specialty2": 5,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001009",
+      "MasterDes1LanText": "万重山中有神明。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001009",
+      "MasterDes2LanText": "位于云贵边境，转身入山中，诸多不可说。神秘奇诡，自成一派，所制造的武器很得一部分器者的喜爱。是亚洲地区相关研究的前沿阵地，由基金会登记管辖，但并不属于基金会。",
+      "MasterIcon": "Crafts_1001031",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001009",
+      "MasterTagLanText": "进阶;宿卫"
+    },
+    "1001010": {
+      "ID": "1001010",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001010",
+      "MasterNameLanText": "巫南研究所",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001010",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001010",
+      "MasterCompanyLanText": "西南地区",
+      "MasterTag": "进阶;远击",
+      "Specialty1": 3,
+      "Specialty2": 5,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001010",
+      "MasterDes1LanText": "万重山中有神明。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001010",
+      "MasterDes2LanText": "位于云贵边境，转身入山中，诸多不可说。神秘奇诡，自成一派，所制造的武器很得一部分器者的喜爱。是亚洲地区相关研究的前沿阵地，由基金会登记管辖，但并不属于基金会。",
+      "MasterIcon": "Crafts_1001031",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001010",
+      "MasterTagLanText": "进阶;远击"
+    },
+    "1001011": {
+      "ID": "1001011",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001011",
+      "MasterNameLanText": "巫南研究所",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001011",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001011",
+      "MasterCompanyLanText": "西南地区",
+      "MasterTag": "进阶;战略",
+      "Specialty1": 3,
+      "Specialty2": 5,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001011",
+      "MasterDes1LanText": "万重山中有神明。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001011",
+      "MasterDes2LanText": "位于云贵边境，转身入山中，诸多不可说。神秘奇诡，自成一派，所制造的武器很得一部分器者的喜爱。是亚洲地区相关研究的前沿阵地，由基金会登记管辖，但并不属于基金会。",
+      "MasterIcon": "Crafts_1001031",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001011",
+      "MasterTagLanText": "进阶;战略"
+    },
+    "1001012": {
+      "ID": "1001012",
+      "OrdersType": "1002",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001012",
+      "MasterNameLanText": "巫南研究所",
+      "Weight": 100,
+      "MasterClass": 2,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 2000
+        },
+        {
+          "id": "3102",
+          "count": 1
+        }
+      ],
+      "SpendTime": 180,
+      "Drop": "1001012",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001012",
+      "MasterCompanyLanText": "西南地区",
+      "MasterTag": "进阶",
+      "Specialty1": 3,
+      "Specialty2": 5,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001012",
+      "MasterDes1LanText": "万重山中有神明。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001012",
+      "MasterDes2LanText": "位于云贵边境，转身入山中，诸多不可说。神秘奇诡，自成一派，所制造的武器很得一部分器者的喜爱。是亚洲地区相关研究的前沿阵地，由基金会登记管辖，但并不属于基金会。",
+      "MasterIcon": "Crafts_1001031",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001012",
+      "MasterTagLanText": "进阶"
+    },
+    "1001013": {
+      "ID": "1001013",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001013",
+      "MasterNameLanText": "鸠浅器作",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001013",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001013",
+      "MasterCompanyLanText": "华中地区",
+      "MasterTag": "独特;构术",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001013",
+      "MasterDes1LanText": "彗星袭月，白虹贯日。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001013",
+      "MasterDes2LanText": "位于望山，武器风格承载着初代顾问越王勾践剑的意志，尤其擅长剑类造型的武器，简洁利落，锋锐不可当。",
+      "MasterIcon": "Crafts_1002002",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001013",
+      "MasterTagLanText": "独特;构术"
+    },
+    "1001014": {
+      "ID": "1001014",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001014",
+      "MasterNameLanText": "鸠浅器作",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001014",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001014",
+      "MasterCompanyLanText": "华中地区",
+      "MasterTag": "独特;轻锐",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001014",
+      "MasterDes1LanText": "彗星袭月，白虹贯日。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001014",
+      "MasterDes2LanText": "位于望山，武器风格承载着初代顾问越王勾践剑的意志，尤其擅长剑类造型的武器，简洁利落，锋锐不可当。",
+      "MasterIcon": "Crafts_1002002",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001014",
+      "MasterTagLanText": "独特;轻锐"
+    },
+    "1001015": {
+      "ID": "1001015",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001015",
+      "MasterNameLanText": "鸠浅器作",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001015",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001015",
+      "MasterCompanyLanText": "华中地区",
+      "MasterTag": "独特;宿卫",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001015",
+      "MasterDes1LanText": "彗星袭月，白虹贯日。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001015",
+      "MasterDes2LanText": "位于望山，武器风格承载着初代顾问越王勾践剑的意志，尤其擅长剑类造型的武器，简洁利落，锋锐不可当。",
+      "MasterIcon": "Crafts_1002002",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001015",
+      "MasterTagLanText": "独特;宿卫"
+    },
+    "1001016": {
+      "ID": "1001016",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001016",
+      "MasterNameLanText": "鸠浅器作",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001016",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001016",
+      "MasterCompanyLanText": "华中地区",
+      "MasterTag": "独特;远击",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001016",
+      "MasterDes1LanText": "彗星袭月，白虹贯日。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001016",
+      "MasterDes2LanText": "位于望山，武器风格承载着初代顾问越王勾践剑的意志，尤其擅长剑类造型的武器，简洁利落，锋锐不可当。",
+      "MasterIcon": "Crafts_1002002",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001016",
+      "MasterTagLanText": "独特;远击"
+    },
+    "1001017": {
+      "ID": "1001017",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001017",
+      "MasterNameLanText": "鸠浅器作",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001017",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001017",
+      "MasterCompanyLanText": "华中地区",
+      "MasterTag": "独特;战略",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001017",
+      "MasterDes1LanText": "彗星袭月，白虹贯日。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001017",
+      "MasterDes2LanText": "位于望山，武器风格承载着初代顾问越王勾践剑的意志，尤其擅长剑类造型的武器，简洁利落，锋锐不可当。",
+      "MasterIcon": "Crafts_1002002",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001017",
+      "MasterTagLanText": "独特;战略"
+    },
+    "1001018": {
+      "ID": "1001018",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001018",
+      "MasterNameLanText": "鸠浅器作",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001018",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001018",
+      "MasterCompanyLanText": "华中地区",
+      "MasterTag": "独特",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001018",
+      "MasterDes1LanText": "彗星袭月，白虹贯日。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001018",
+      "MasterDes2LanText": "位于望山，武器风格承载着初代顾问越王勾践剑的意志，尤其擅长剑类造型的武器，简洁利落，锋锐不可当。",
+      "MasterIcon": "Crafts_1002002",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001018",
+      "MasterTagLanText": "独特"
+    },
+    "1001019": {
+      "ID": "1001019",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001019",
+      "MasterNameLanText": "超金科室",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001019",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001019",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "独特;构术",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001019",
+      "MasterDes1LanText": "特约订单，量身打造。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001019",
+      "MasterDes2LanText": "冬谷基金会技术部下属机密科室，与各国各界顶尖工作室合作，专注生产最优良的武器。由于具有极高的杀伤力，兼操纵难度极高，每把武器均由技术部登记在册，并配备全方位使用注意手册。",
+      "MasterIcon": "Crafts_1003003",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001019",
+      "MasterTagLanText": "独特;构术"
+    },
+    "1001020": {
+      "ID": "1001020",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001020",
+      "MasterNameLanText": "超金科室",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001020",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001020",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "独特;轻锐",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001020",
+      "MasterDes1LanText": "特约订单，量身打造。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001020",
+      "MasterDes2LanText": "冬谷基金会技术部下属机密科室，与各国各界顶尖工作室合作，专注生产最优良的武器。由于具有极高的杀伤力，兼操纵难度极高，每把武器均由技术部登记在册，并配备全方位使用注意手册。",
+      "MasterIcon": "Crafts_1003003",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001020",
+      "MasterTagLanText": "独特;轻锐"
+    },
+    "1001021": {
+      "ID": "1001021",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001021",
+      "MasterNameLanText": "超金科室",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001021",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001021",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "独特;宿卫",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001021",
+      "MasterDes1LanText": "特约订单，量身打造。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001021",
+      "MasterDes2LanText": "冬谷基金会技术部下属机密科室，与各国各界顶尖工作室合作，专注生产最优良的武器。由于具有极高的杀伤力，兼操纵难度极高，每把武器均由技术部登记在册，并配备全方位使用注意手册。",
+      "MasterIcon": "Crafts_1003003",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001021",
+      "MasterTagLanText": "独特;宿卫"
+    },
+    "1001022": {
+      "ID": "1001022",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001022",
+      "MasterNameLanText": "超金科室",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001022",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001022",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "独特;远击",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001022",
+      "MasterDes1LanText": "特约订单，量身打造。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001022",
+      "MasterDes2LanText": "冬谷基金会技术部下属机密科室，与各国各界顶尖工作室合作，专注生产最优良的武器。由于具有极高的杀伤力，兼操纵难度极高，每把武器均由技术部登记在册，并配备全方位使用注意手册。",
+      "MasterIcon": "Crafts_1003003",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001022",
+      "MasterTagLanText": "独特;远击"
+    },
+    "1001023": {
+      "ID": "1001023",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001023",
+      "MasterNameLanText": "超金科室",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001023",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001023",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "独特;战略",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001023",
+      "MasterDes1LanText": "特约订单，量身打造。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001023",
+      "MasterDes2LanText": "冬谷基金会技术部下属机密科室，与各国各界顶尖工作室合作，专注生产最优良的武器。由于具有极高的杀伤力，兼操纵难度极高，每把武器均由技术部登记在册，并配备全方位使用注意手册。",
+      "MasterIcon": "Crafts_1003003",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001023",
+      "MasterTagLanText": "独特;战略"
+    },
+    "1001024": {
+      "ID": "1001024",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001024",
+      "MasterNameLanText": "超金科室",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001024",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001024",
+      "MasterCompanyLanText": "冬谷基金会",
+      "MasterTag": "独特",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001024",
+      "MasterDes1LanText": "特约订单，量身打造。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001024",
+      "MasterDes2LanText": "冬谷基金会技术部下属机密科室，与各国各界顶尖工作室合作，专注生产最优良的武器。由于具有极高的杀伤力，兼操纵难度极高，每把武器均由技术部登记在册，并配备全方位使用注意手册。",
+      "MasterIcon": "Crafts_1003003",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001024",
+      "MasterTagLanText": "独特"
+    },
+    "1001025": {
+      "ID": "1001025",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001025",
+      "MasterNameLanText": "琢磨",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001025",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001025",
+      "MasterCompanyLanText": "华东地区",
+      "MasterTag": "传奇;构术",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001025",
+      "MasterDes1LanText": "琢星磨月，唯天工可为。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001025",
+      "MasterDes2LanText": "琢磨成员推崇优雅辉煌的中式风格，珠翠绫罗，玉佩带钩，尽显千年之国的端庄风雅。金玉在外，武器却不减锋锐，机构兼顾武器的外观与实用性，意图告知敌人：美丽之物，亦不可轻视。",
+      "MasterIcon": "Crafts_1003009",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001025",
+      "MasterTagLanText": "传奇;构术"
+    },
+    "1001026": {
+      "ID": "1001026",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001026",
+      "MasterNameLanText": "琢磨",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001026",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001026",
+      "MasterCompanyLanText": "华东地区",
+      "MasterTag": "传奇;轻锐",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001026",
+      "MasterDes1LanText": "琢星磨月，唯天工可为。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001026",
+      "MasterDes2LanText": "琢磨成员推崇优雅辉煌的中式风格，珠翠绫罗，玉佩带钩，尽显千年之国的端庄风雅。金玉在外，武器却不减锋锐，机构兼顾武器的外观与实用性，意图告知敌人：美丽之物，亦不可轻视。",
+      "MasterIcon": "Crafts_1003009",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001026",
+      "MasterTagLanText": "传奇;轻锐"
+    },
+    "1001027": {
+      "ID": "1001027",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001027",
+      "MasterNameLanText": "琢磨",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001027",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001027",
+      "MasterCompanyLanText": "华东地区",
+      "MasterTag": "传奇;宿卫",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001027",
+      "MasterDes1LanText": "琢星磨月，唯天工可为。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001027",
+      "MasterDes2LanText": "琢磨成员推崇优雅辉煌的中式风格，珠翠绫罗，玉佩带钩，尽显千年之国的端庄风雅。金玉在外，武器却不减锋锐，机构兼顾武器的外观与实用性，意图告知敌人：美丽之物，亦不可轻视。",
+      "MasterIcon": "Crafts_1003009",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001027",
+      "MasterTagLanText": "传奇;宿卫"
+    },
+    "1001028": {
+      "ID": "1001028",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001028",
+      "MasterNameLanText": "琢磨",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001028",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001028",
+      "MasterCompanyLanText": "华东地区",
+      "MasterTag": "传奇;远击",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001028",
+      "MasterDes1LanText": "琢星磨月，唯天工可为。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001028",
+      "MasterDes2LanText": "琢磨成员推崇优雅辉煌的中式风格，珠翠绫罗，玉佩带钩，尽显千年之国的端庄风雅。金玉在外，武器却不减锋锐，机构兼顾武器的外观与实用性，意图告知敌人：美丽之物，亦不可轻视。",
+      "MasterIcon": "Crafts_1003009",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001028",
+      "MasterTagLanText": "传奇;远击"
+    },
+    "1001029": {
+      "ID": "1001029",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001029",
+      "MasterNameLanText": "琢磨",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001029",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001029",
+      "MasterCompanyLanText": "华东地区",
+      "MasterTag": "传奇;战略",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001029",
+      "MasterDes1LanText": "琢星磨月，唯天工可为。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001029",
+      "MasterDes2LanText": "琢磨成员推崇优雅辉煌的中式风格，珠翠绫罗，玉佩带钩，尽显千年之国的端庄风雅。金玉在外，武器却不减锋锐，机构兼顾武器的外观与实用性，意图告知敌人：美丽之物，亦不可轻视。",
+      "MasterIcon": "Crafts_1003009",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001029",
+      "MasterTagLanText": "传奇;战略"
+    },
+    "1001030": {
+      "ID": "1001030",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001030",
+      "MasterNameLanText": "琢磨",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001030",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001030",
+      "MasterCompanyLanText": "华东地区",
+      "MasterTag": "传奇",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001030",
+      "MasterDes1LanText": "琢星磨月，唯天工可为。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001030",
+      "MasterDes2LanText": "琢磨成员推崇优雅辉煌的中式风格，珠翠绫罗，玉佩带钩，尽显千年之国的端庄风雅。金玉在外，武器却不减锋锐，机构兼顾武器的外观与实用性，意图告知敌人：美丽之物，亦不可轻视。",
+      "MasterIcon": "Crafts_1003009",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001030",
+      "MasterTagLanText": "传奇"
+    },
+    "1001031": {
+      "ID": "1001031",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001031",
+      "MasterNameLanText": "安息香",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001031",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001031",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;构术",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001031",
+      "MasterDes1LanText": "此处，就是你可安心长眠之处。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001031",
+      "MasterDes2LanText": "位于常年潮湿的海边，机构外观甚至像一座舒适的图书馆，似乎随时欢迎过路人听着海浪小憩过去，但何时醒来则是未知数。侧重于制造影响环境的范围精神类武器，与冬谷基金会有过合作。",
+      "MasterIcon": "Crafts_1004001",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001031",
+      "MasterTagLanText": "传奇;构术"
+    },
+    "1001032": {
+      "ID": "1001032",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001032",
+      "MasterNameLanText": "安息香",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001032",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001032",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;轻锐",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001032",
+      "MasterDes1LanText": "此处，就是你可安心长眠之处。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001032",
+      "MasterDes2LanText": "位于常年潮湿的海边，机构外观甚至像一座舒适的图书馆，似乎随时欢迎过路人听着海浪小憩过去，但何时醒来则是未知数。侧重于制造影响环境的范围精神类武器，与冬谷基金会有过合作。",
+      "MasterIcon": "Crafts_1004001",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001032",
+      "MasterTagLanText": "传奇;轻锐"
+    },
+    "1001033": {
+      "ID": "1001033",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001033",
+      "MasterNameLanText": "安息香",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001033",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001033",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;宿卫",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001033",
+      "MasterDes1LanText": "此处，就是你可安心长眠之处。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001033",
+      "MasterDes2LanText": "位于常年潮湿的海边，机构外观甚至像一座舒适的图书馆，似乎随时欢迎过路人听着海浪小憩过去，但何时醒来则是未知数。侧重于制造影响环境的范围精神类武器，与冬谷基金会有过合作。",
+      "MasterIcon": "Crafts_1004001",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001033",
+      "MasterTagLanText": "传奇;宿卫"
+    },
+    "1001034": {
+      "ID": "1001034",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001034",
+      "MasterNameLanText": "安息香",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001034",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001034",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;远击",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001034",
+      "MasterDes1LanText": "此处，就是你可安心长眠之处。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001034",
+      "MasterDes2LanText": "位于常年潮湿的海边，机构外观甚至像一座舒适的图书馆，似乎随时欢迎过路人听着海浪小憩过去，但何时醒来则是未知数。侧重于制造影响环境的范围精神类武器，与冬谷基金会有过合作。",
+      "MasterIcon": "Crafts_1004001",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001034",
+      "MasterTagLanText": "传奇;远击"
+    },
+    "1001035": {
+      "ID": "1001035",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001035",
+      "MasterNameLanText": "安息香",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001035",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001035",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;战略",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001035",
+      "MasterDes1LanText": "此处，就是你可安心长眠之处。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001035",
+      "MasterDes2LanText": "位于常年潮湿的海边，机构外观甚至像一座舒适的图书馆，似乎随时欢迎过路人听着海浪小憩过去，但何时醒来则是未知数。侧重于制造影响环境的范围精神类武器，与冬谷基金会有过合作。",
+      "MasterIcon": "Crafts_1004001",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001035",
+      "MasterTagLanText": "传奇;战略"
+    },
+    "1001036": {
+      "ID": "1001036",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001036",
+      "MasterNameLanText": "安息香",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001036",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001036",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001036",
+      "MasterDes1LanText": "此处，就是你可安心长眠之处。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001036",
+      "MasterDes2LanText": "位于常年潮湿的海边，机构外观甚至像一座舒适的图书馆，似乎随时欢迎过路人听着海浪小憩过去，但何时醒来则是未知数。侧重于制造影响环境的范围精神类武器，与冬谷基金会有过合作。",
+      "MasterIcon": "Crafts_1004001",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001036",
+      "MasterTagLanText": "传奇"
+    },
+    "1001037": {
+      "ID": "1001037",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001037",
+      "MasterNameLanText": "海角山庄",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001037",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001037",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;构术",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001037",
+      "MasterDes1LanText": "在天涯海角，聆听世界的声音。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001037",
+      "MasterDes2LanText": "民间的武器研发机构，镇守地球上著名的神秘角落。他们倾听潮汐，掌握日月星辰运行的方向，不惜付出一切也要追求更高、更神秘之处。与冬谷基金会不定期达成批量合作。",
+      "MasterIcon": "Crafts_1005001",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001037",
+      "MasterTagLanText": "传奇;构术"
+    },
+    "1001038": {
+      "ID": "1001038",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001038",
+      "MasterNameLanText": "海角山庄",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001038",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001038",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;轻锐",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001038",
+      "MasterDes1LanText": "在天涯海角，聆听世界的声音。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001038",
+      "MasterDes2LanText": "民间的武器研发机构，镇守地球上著名的神秘角落。他们倾听潮汐，掌握日月星辰运行的方向，不惜付出一切也要追求更高、更神秘之处。与冬谷基金会不定期达成批量合作。",
+      "MasterIcon": "Crafts_1005001",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001038",
+      "MasterTagLanText": "传奇;轻锐"
+    },
+    "1001039": {
+      "ID": "1001039",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001039",
+      "MasterNameLanText": "海角山庄",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001039",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001039",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;宿卫",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001039",
+      "MasterDes1LanText": "在天涯海角，聆听世界的声音。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001039",
+      "MasterDes2LanText": "民间的武器研发机构，镇守地球上著名的神秘角落。他们倾听潮汐，掌握日月星辰运行的方向，不惜付出一切也要追求更高、更神秘之处。与冬谷基金会不定期达成批量合作。",
+      "MasterIcon": "Crafts_1005001",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001039",
+      "MasterTagLanText": "传奇;宿卫"
+    },
+    "1001040": {
+      "ID": "1001040",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001040",
+      "MasterNameLanText": "海角山庄",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001040",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001040",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;远击",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001040",
+      "MasterDes1LanText": "在天涯海角，聆听世界的声音。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001040",
+      "MasterDes2LanText": "民间的武器研发机构，镇守地球上著名的神秘角落。他们倾听潮汐，掌握日月星辰运行的方向，不惜付出一切也要追求更高、更神秘之处。与冬谷基金会不定期达成批量合作。",
+      "MasterIcon": "Crafts_1005001",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001040",
+      "MasterTagLanText": "传奇;远击"
+    },
+    "1001041": {
+      "ID": "1001041",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001041",
+      "MasterNameLanText": "海角山庄",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001041",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001041",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇;战略",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001041",
+      "MasterDes1LanText": "在天涯海角，聆听世界的声音。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001041",
+      "MasterDes2LanText": "民间的武器研发机构，镇守地球上著名的神秘角落。他们倾听潮汐，掌握日月星辰运行的方向，不惜付出一切也要追求更高、更神秘之处。与冬谷基金会不定期达成批量合作。",
+      "MasterIcon": "Crafts_1005001",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001041",
+      "MasterTagLanText": "传奇;战略"
+    },
+    "1001042": {
+      "ID": "1001042",
+      "OrdersType": "1003",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001042",
+      "MasterNameLanText": "海角山庄",
+      "Weight": 100,
+      "MasterClass": 4,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3103",
+          "count": 1
+        }
+      ],
+      "SpendTime": 480,
+      "Drop": "1001042",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001042",
+      "MasterCompanyLanText": "华南地区",
+      "MasterTag": "传奇",
+      "Specialty1": 4,
+      "Specialty2": 3,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001042",
+      "MasterDes1LanText": "在天涯海角，聆听世界的声音。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001042",
+      "MasterDes2LanText": "民间的武器研发机构，镇守地球上著名的神秘角落。他们倾听潮汐，掌握日月星辰运行的方向，不惜付出一切也要追求更高、更神秘之处。与冬谷基金会不定期达成批量合作。",
+      "MasterIcon": "Crafts_1005001",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001042",
+      "MasterTagLanText": "传奇"
+    },
+    "1001043": {
+      "ID": "1001043",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001043",
+      "MasterNameLanText": "无根之木",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001043",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001043",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;构术",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001043",
+      "MasterDes1LanText": "无源之水，无本之木。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001043",
+      "MasterDes2LanText": "历史上的创始人认为器者便是仙人，曾以器者为目标修行过一段时间，但现代已经投向科学，与器者和平共处。追求更为超脱、无拘无束的精神境界，于自然万物中寻求设计灵感。",
+      "MasterIcon": "Crafts_1006002",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001043",
+      "MasterTagLanText": "独特;构术"
+    },
+    "1001044": {
+      "ID": "1001044",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001044",
+      "MasterNameLanText": "无根之木",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001044",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001044",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;轻锐",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001044",
+      "MasterDes1LanText": "无源之水，无本之木。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001044",
+      "MasterDes2LanText": "历史上的创始人认为器者便是仙人，曾以器者为目标修行过一段时间，但现代已经投向科学，与器者和平共处。追求更为超脱、无拘无束的精神境界，于自然万物中寻求设计灵感。",
+      "MasterIcon": "Crafts_1006002",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001044",
+      "MasterTagLanText": "独特;轻锐"
+    },
+    "1001045": {
+      "ID": "1001045",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001045",
+      "MasterNameLanText": "无根之木",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001045",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001045",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;宿卫",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001045",
+      "MasterDes1LanText": "无源之水，无本之木。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001045",
+      "MasterDes2LanText": "历史上的创始人认为器者便是仙人，曾以器者为目标修行过一段时间，但现代已经投向科学，与器者和平共处。追求更为超脱、无拘无束的精神境界，于自然万物中寻求设计灵感。",
+      "MasterIcon": "Crafts_1006002",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001045",
+      "MasterTagLanText": "独特;宿卫"
+    },
+    "1001046": {
+      "ID": "1001046",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001046",
+      "MasterNameLanText": "无根之木",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001046",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001046",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;远击",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001046",
+      "MasterDes1LanText": "无源之水，无本之木。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001046",
+      "MasterDes2LanText": "历史上的创始人认为器者便是仙人，曾以器者为目标修行过一段时间，但现代已经投向科学，与器者和平共处。追求更为超脱、无拘无束的精神境界，于自然万物中寻求设计灵感。",
+      "MasterIcon": "Crafts_1006002",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001046",
+      "MasterTagLanText": "独特;远击"
+    },
+    "1001047": {
+      "ID": "1001047",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001047",
+      "MasterNameLanText": "无根之木",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001047",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001047",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;战略",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001047",
+      "MasterDes1LanText": "无源之水，无本之木。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001047",
+      "MasterDes2LanText": "历史上的创始人认为器者便是仙人，曾以器者为目标修行过一段时间，但现代已经投向科学，与器者和平共处。追求更为超脱、无拘无束的精神境界，于自然万物中寻求设计灵感。",
+      "MasterIcon": "Crafts_1006002",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001047",
+      "MasterTagLanText": "独特;战略"
+    },
+    "1001048": {
+      "ID": "1001048",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001048",
+      "MasterNameLanText": "无根之木",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001048",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001048",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001048",
+      "MasterDes1LanText": "无源之水，无本之木。",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001048",
+      "MasterDes2LanText": "历史上的创始人认为器者便是仙人，曾以器者为目标修行过一段时间，但现代已经投向科学，与器者和平共处。追求更为超脱、无拘无束的精神境界，于自然万物中寻求设计灵感。",
+      "MasterIcon": "Crafts_1006002",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001048",
+      "MasterTagLanText": "独特"
+    },
+    "1001049": {
+      "ID": "1001049",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001049",
+      "MasterNameLanText": "罄乐行",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001049",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001049",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;构术",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001049",
+      "MasterDes1LanText": "宗庙江湖，钟罄悠悠",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001049",
+      "MasterDes2LanText": "以古乐器之名行战斗科技研究之实，店主技术高超，但常常醉心于古乐器修复，心意所致时才会制造武器。因产能极低，目前只开放与冬谷基金会的合作订单。",
+      "MasterIcon": "Crafts_1007001",
+      "MasterType": 4,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001049",
+      "MasterTagLanText": "独特;构术"
+    },
+    "1001050": {
+      "ID": "1001050",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001050",
+      "MasterNameLanText": "罄乐行",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001050",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001050",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;轻锐",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001050",
+      "MasterDes1LanText": "宗庙江湖，钟罄悠悠",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001050",
+      "MasterDes2LanText": "以古乐器之名行战斗科技研究之实，店主技术高超，但常常醉心于古乐器修复，心意所致时才会制造武器。因产能极低，目前只开放与冬谷基金会的合作订单。",
+      "MasterIcon": "Crafts_1007001",
+      "MasterType": 2,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001050",
+      "MasterTagLanText": "独特;轻锐"
+    },
+    "1001051": {
+      "ID": "1001051",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001051",
+      "MasterNameLanText": "罄乐行",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001051",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001051",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;宿卫",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001051",
+      "MasterDes1LanText": "宗庙江湖，钟罄悠悠",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001051",
+      "MasterDes2LanText": "以古乐器之名行战斗科技研究之实，店主技术高超，但常常醉心于古乐器修复，心意所致时才会制造武器。因产能极低，目前只开放与冬谷基金会的合作订单。",
+      "MasterIcon": "Crafts_1007001",
+      "MasterType": 1,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001051",
+      "MasterTagLanText": "独特;宿卫"
+    },
+    "1001052": {
+      "ID": "1001052",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001052",
+      "MasterNameLanText": "罄乐行",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001052",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001052",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;远击",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001052",
+      "MasterDes1LanText": "宗庙江湖，钟罄悠悠",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001052",
+      "MasterDes2LanText": "以古乐器之名行战斗科技研究之实，店主技术高超，但常常醉心于古乐器修复，心意所致时才会制造武器。因产能极低，目前只开放与冬谷基金会的合作订单。",
+      "MasterIcon": "Crafts_1007001",
+      "MasterType": 3,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001052",
+      "MasterTagLanText": "独特;远击"
+    },
+    "1001053": {
+      "ID": "1001053",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001053",
+      "MasterNameLanText": "罄乐行",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001053",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001053",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特;战略",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001053",
+      "MasterDes1LanText": "宗庙江湖，钟罄悠悠",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001053",
+      "MasterDes2LanText": "以古乐器之名行战斗科技研究之实，店主技术高超，但常常醉心于古乐器修复，心意所致时才会制造武器。因产能极低，目前只开放与冬谷基金会的合作订单。",
+      "MasterIcon": "Crafts_1007001",
+      "MasterType": 5,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001053",
+      "MasterTagLanText": "独特;战略"
+    },
+    "1001054": {
+      "ID": "1001054",
+      "OrdersType": "1004",
+      "MasterNameLan": "weaponcraftLan_craftsman_masterNameLan_1001054",
+      "MasterNameLanText": "罄乐行",
+      "Weight": 100,
+      "MasterClass": 5,
+      "SpendItems": [
+        {
+          "id": "3",
+          "count": 8000
+        },
+        {
+          "id": "3104",
+          "count": 1
+        }
+      ],
+      "SpendTime": 720,
+      "Drop": "1001054",
+      "MasterCompanyLan": "weaponcraftLan_craftsman_masterCompanyLan_1001054",
+      "MasterCompanyLanText": "华北地区",
+      "MasterTag": "独特",
+      "Specialty1": 5,
+      "Specialty2": 2,
+      "MasterDes1Lan": "weaponcraftLan_craftsman_masterDes1Lan_1001054",
+      "MasterDes1LanText": "宗庙江湖，钟罄悠悠",
+      "MasterDes2Lan": "weaponcraftLan_craftsman_masterDes2Lan_1001054",
+      "MasterDes2LanText": "以古乐器之名行战斗科技研究之实，店主技术高超，但常常醉心于古乐器修复，心意所致时才会制造武器。因产能极低，目前只开放与冬谷基金会的合作订单。",
+      "MasterIcon": "Crafts_1007001",
+      "MasterType": 0,
+      "MasterTagLan": "weaponcraftLan_craftsman_masterTagLan_1001054",
+      "MasterTagLanText": "独特"
+    }
+  },
+  "Weapons": [
+    {
+      "GroupID": "1001019",
+      "WeaponID": "31144"
+    },
+    {
+      "GroupID": "1001019",
+      "WeaponID": "30944"
+    },
+    {
+      "GroupID": "1001019",
+      "WeaponID": "30744"
+    },
+    {
+      "GroupID": "1001020",
+      "WeaponID": "31142"
+    },
+    {
+      "GroupID": "1001020",
+      "WeaponID": "30942"
+    },
+    {
+      "GroupID": "1001020",
+      "WeaponID": "30742"
+    },
+    {
+      "GroupID": "1001021",
+      "WeaponID": "31141"
+    },
+    {
+      "GroupID": "1001021",
+      "WeaponID": "30941"
+    },
+    {
+      "GroupID": "1001021",
+      "WeaponID": "30741"
+    },
+    {
+      "GroupID": "1001022",
+      "WeaponID": "31143"
+    },
+    {
+      "GroupID": "1001022",
+      "WeaponID": "30943"
+    },
+    {
+      "GroupID": "1001022",
+      "WeaponID": "30743"
+    },
+    {
+      "GroupID": "1001023",
+      "WeaponID": "31145"
+    },
+    {
+      "GroupID": "1001023",
+      "WeaponID": "30945"
+    },
+    {
+      "GroupID": "1001023",
+      "WeaponID": "30745"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "31144"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30944"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30744"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "31142"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30942"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30742"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "31141"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30941"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30741"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "31143"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30943"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30743"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "31145"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30945"
+    },
+    {
+      "GroupID": "1001024",
+      "WeaponID": "30745"
+    },
+    {
+      "GroupID": "1001013",
+      "WeaponID": "30844"
+    },
+    {
+      "GroupID": "1001013",
+      "WeaponID": "31045"
+    },
+    {
+      "GroupID": "1001013",
+      "WeaponID": "39006"
+    },
+    {
+      "GroupID": "1001014",
+      "WeaponID": "30842"
+    },
+    {
+      "GroupID": "1001014",
+      "WeaponID": "31042"
+    },
+    {
+      "GroupID": "1001014",
+      "WeaponID": "39001"
+    },
+    {
+      "GroupID": "1001015",
+      "WeaponID": "30841"
+    },
+    {
+      "GroupID": "1001015",
+      "WeaponID": "31041"
+    },
+    {
+      "GroupID": "1001015",
+      "WeaponID": "39004"
+    },
+    {
+      "GroupID": "1001016",
+      "WeaponID": "30843"
+    },
+    {
+      "GroupID": "1001016",
+      "WeaponID": "31043"
+    },
+    {
+      "GroupID": "1001016",
+      "WeaponID": "39002"
+    },
+    {
+      "GroupID": "1001017",
+      "WeaponID": "30845"
+    },
+    {
+      "GroupID": "1001017",
+      "WeaponID": "31044"
+    },
+    {
+      "GroupID": "1001017",
+      "WeaponID": "39007"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "30844"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "31045"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "30842"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "31042"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "30841"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "31041"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "30843"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "31043"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "30845"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "31044"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "39001"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "39002"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "39004"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "39006"
+    },
+    {
+      "GroupID": "1001018",
+      "WeaponID": "39007"
+    },
+    {
+      "GroupID": "1001043",
+      "WeaponID": "31244"
+    },
+    {
+      "GroupID": "1001043",
+      "WeaponID": "31344"
+    },
+    {
+      "GroupID": "1001043",
+      "WeaponID": "31444"
+    },
+    {
+      "GroupID": "1001044",
+      "WeaponID": "31242"
+    },
+    {
+      "GroupID": "1001044",
+      "WeaponID": "31342"
+    },
+    {
+      "GroupID": "1001044",
+      "WeaponID": "31442"
+    },
+    {
+      "GroupID": "1001045",
+      "WeaponID": "31241"
+    },
+    {
+      "GroupID": "1001045",
+      "WeaponID": "31341"
+    },
+    {
+      "GroupID": "1001045",
+      "WeaponID": "31441"
+    },
+    {
+      "GroupID": "1001046",
+      "WeaponID": "31243"
+    },
+    {
+      "GroupID": "1001046",
+      "WeaponID": "31343"
+    },
+    {
+      "GroupID": "1001046",
+      "WeaponID": "31443"
+    },
+    {
+      "GroupID": "1001047",
+      "WeaponID": "31245"
+    },
+    {
+      "GroupID": "1001047",
+      "WeaponID": "31345"
+    },
+    {
+      "GroupID": "1001047",
+      "WeaponID": "31445"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31244"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31344"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31444"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31242"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31342"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31442"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31241"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31341"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31441"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31243"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31343"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31443"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31245"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31345"
+    },
+    {
+      "GroupID": "1001048",
+      "WeaponID": "31445"
+    },
+    {
+      "GroupID": "1001031",
+      "WeaponID": "30124"
+    },
+    {
+      "GroupID": "1001031",
+      "WeaponID": "30224"
+    },
+    {
+      "GroupID": "1001032",
+      "WeaponID": "30122"
+    },
+    {
+      "GroupID": "1001032",
+      "WeaponID": "30222"
+    },
+    {
+      "GroupID": "1001033",
+      "WeaponID": "30121"
+    },
+    {
+      "GroupID": "1001033",
+      "WeaponID": "30221"
+    },
+    {
+      "GroupID": "1001034",
+      "WeaponID": "30123"
+    },
+    {
+      "GroupID": "1001034",
+      "WeaponID": "30223"
+    },
+    {
+      "GroupID": "1001035",
+      "WeaponID": "30125"
+    },
+    {
+      "GroupID": "1001035",
+      "WeaponID": "30225"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30124"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30224"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30122"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30222"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30121"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30221"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30123"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30223"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30125"
+    },
+    {
+      "GroupID": "1001036",
+      "WeaponID": "30225"
+    },
+    {
+      "GroupID": "1001037",
+      "WeaponID": "30424"
+    },
+    {
+      "GroupID": "1001037",
+      "WeaponID": "30624"
+    },
+    {
+      "GroupID": "1001038",
+      "WeaponID": "30422"
+    },
+    {
+      "GroupID": "1001038",
+      "WeaponID": "30622"
+    },
+    {
+      "GroupID": "1001039",
+      "WeaponID": "30421"
+    },
+    {
+      "GroupID": "1001039",
+      "WeaponID": "30621"
+    },
+    {
+      "GroupID": "1001040",
+      "WeaponID": "30423"
+    },
+    {
+      "GroupID": "1001040",
+      "WeaponID": "30623"
+    },
+    {
+      "GroupID": "1001041",
+      "WeaponID": "30425"
+    },
+    {
+      "GroupID": "1001041",
+      "WeaponID": "30625"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30424"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30624"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30422"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30622"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30421"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30621"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30423"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30623"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30425"
+    },
+    {
+      "GroupID": "1001042",
+      "WeaponID": "30625"
+    },
+    {
+      "GroupID": "1001025",
+      "WeaponID": "30324"
+    },
+    {
+      "GroupID": "1001025",
+      "WeaponID": "30524"
+    },
+    {
+      "GroupID": "1001026",
+      "WeaponID": "30322"
+    },
+    {
+      "GroupID": "1001026",
+      "WeaponID": "30522"
+    },
+    {
+      "GroupID": "1001027",
+      "WeaponID": "30321"
+    },
+    {
+      "GroupID": "1001027",
+      "WeaponID": "30521"
+    },
+    {
+      "GroupID": "1001028",
+      "WeaponID": "30323"
+    },
+    {
+      "GroupID": "1001028",
+      "WeaponID": "30523"
+    },
+    {
+      "GroupID": "1001029",
+      "WeaponID": "30325"
+    },
+    {
+      "GroupID": "1001029",
+      "WeaponID": "30525"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30324"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30524"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30322"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30522"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30321"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30521"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30323"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30523"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30325"
+    },
+    {
+      "GroupID": "1001030",
+      "WeaponID": "30525"
+    },
+    {
+      "GroupID": "1001001",
+      "WeaponID": "30214"
+    },
+    {
+      "GroupID": "1001001",
+      "WeaponID": "30114"
+    },
+    {
+      "GroupID": "1001002",
+      "WeaponID": "30212"
+    },
+    {
+      "GroupID": "1001002",
+      "WeaponID": "30112"
+    },
+    {
+      "GroupID": "1001003",
+      "WeaponID": "30211"
+    },
+    {
+      "GroupID": "1001003",
+      "WeaponID": "30111"
+    },
+    {
+      "GroupID": "1001004",
+      "WeaponID": "30213"
+    },
+    {
+      "GroupID": "1001004",
+      "WeaponID": "30113"
+    },
+    {
+      "GroupID": "1001005",
+      "WeaponID": "30215"
+    },
+    {
+      "GroupID": "1001005",
+      "WeaponID": "30115"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30214"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30114"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30212"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30112"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30211"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30111"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30213"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30113"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30215"
+    },
+    {
+      "GroupID": "1001006",
+      "WeaponID": "30115"
+    },
+    {
+      "GroupID": "1001007",
+      "WeaponID": "30414"
+    },
+    {
+      "GroupID": "1001007",
+      "WeaponID": "30314"
+    },
+    {
+      "GroupID": "1001008",
+      "WeaponID": "30412"
+    },
+    {
+      "GroupID": "1001008",
+      "WeaponID": "30312"
+    },
+    {
+      "GroupID": "1001009",
+      "WeaponID": "30411"
+    },
+    {
+      "GroupID": "1001009",
+      "WeaponID": "30311"
+    },
+    {
+      "GroupID": "1001010",
+      "WeaponID": "30413"
+    },
+    {
+      "GroupID": "1001010",
+      "WeaponID": "30313"
+    },
+    {
+      "GroupID": "1001011",
+      "WeaponID": "30415"
+    },
+    {
+      "GroupID": "1001011",
+      "WeaponID": "30315"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30414"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30314"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30412"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30312"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30411"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30311"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30413"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30313"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30415"
+    },
+    {
+      "GroupID": "1001012",
+      "WeaponID": "30315"
+    },
+    {
+      "GroupID": "1001049",
+      "WeaponID": "31544"
+    },
+    {
+      "GroupID": "1001050",
+      "WeaponID": "31542"
+    },
+    {
+      "GroupID": "1001051",
+      "WeaponID": "31541"
+    },
+    {
+      "GroupID": "1001052",
+      "WeaponID": "31543"
+    },
+    {
+      "GroupID": "1001053",
+      "WeaponID": "31545"
+    },
+    {
+      "GroupID": "1001049",
+      "WeaponID": "31144"
+    },
+    {
+      "GroupID": "1001050",
+      "WeaponID": "31142"
+    },
+    {
+      "GroupID": "1001051",
+      "WeaponID": "31141"
+    },
+    {
+      "GroupID": "1001052",
+      "WeaponID": "31143"
+    },
+    {
+      "GroupID": "1001053",
+      "WeaponID": "31145"
+    },
+    {
+      "GroupID": "1001049",
+      "WeaponID": "39006"
+    },
+    {
+      "GroupID": "1001050",
+      "WeaponID": "39001"
+    },
+    {
+      "GroupID": "1001051",
+      "WeaponID": "39004"
+    },
+    {
+      "GroupID": "1001052",
+      "WeaponID": "39002"
+    },
+    {
+      "GroupID": "1001053",
+      "WeaponID": "39007"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31544"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31542"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31541"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31543"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31545"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31144"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31142"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31141"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31143"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "31145"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "39006"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "39001"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "39004"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "39002"
+    },
+    {
+      "GroupID": "1001054",
+      "WeaponID": "39007"
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "AttackGridDistance": 1,
+  "InitialMigration": [
+    -225,
+    52
+  ],
+  "MapScaling": 1.43,
+  "MapSize": [
+    80,
+    77
+  ],
+  "OurLatticeSelect": 0.8,
+  "OurLatticeCancel": 0.4,
+  "EnemyLatticeSelect": 0.8,
+  "EnemyLatticeCancel": 0.4,
+  "UpgradeQueue": 2,
+  "HideCityGrade": [
+    "fort"
+  ],
+  "StretchSize": [
+    0.4,
+    1.1
+  ],
+  "StretchChange": 0.5,
+  "VictoryDurability": -11,
+  "LostDurability": 3,
+  "CityDistanceTime": 10,
+  "InitialForce": "qin",
+  "OccupySwitchCapital": "city01",
+  "OccupySwitchTown": "city02",
+  "OccupySwitchFort": "city03",
+  "RefreshItemID": "6002",
+  "RefreshItemNum": 1,
+  "ProgressIntegralID": "6001",
+  "PowerInitialMax": 500,
+  "PowerInitial": 500,
+  "ResourcesInitial": [
+    {
+      "id": "6011",
+      "count": 0
+    },
+    {
+      "id": "6010",
+      "count": 40000
+    }
+  ],
+  "HarmAddOur": 10,
+  "HarmReduceOur": 0,
+  "HarmAddOther": 0,
+  "HarmReduceOther": 0,
+  "HarmParameterSwitch": [
+    [
+      0,
+      75
+    ],
+    [
+      1000,
+      63
+    ],
+    [
+      2000,
+      57
+    ],
+    [
+      4000,
+      49
+    ],
+    [
+      5000,
+      46
+    ]
+  ],
+  "PowerCost": [
+    {
+      "id": "6010",
+      "count": 10
+    }
+  ],
+  "PowerFightCost": [
+    [
+      "6010",
+      "0.2"
+    ]
+  ],
+  "PowerFightRangeCost": 1.3,
+  "PowerFightCoefficient": 1.1,
+  "PostWarRecovery": 5,
+  "PostWarAddRecovery": 20,
+  "PostWarRecoveryFoe": 0,
+  "PostWarAddRecoveryFoe": 20,
+  "BuffEvent": [
+    [
+      "buff_1",
+      "7200",
+      "1"
+    ],
+    [
+      "buff_2",
+      "14400",
+      "2"
+    ]
+  ],
+  "FightStrategy": [
+    "3001",
+    "3002",
+    "3003",
+    "3004"
+  ],
+  "FightStrategyState": 1,
+  "InitialResourcesMax": [
+    [
+      "6011",
+      "10000"
+    ],
+    [
+      "6010",
+      "40000"
+    ]
+  ],
+  "StartingSkills": [],
+  "CityArmorClass": [
+    [
+      1,
+      20
+    ],
+    [
+      2,
+      30
+    ],
+    [
+      3,
+      50
+    ]
+  ]
+}

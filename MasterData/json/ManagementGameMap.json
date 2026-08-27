@@ -1,0 +1,394 @@
+{
+  "10001": {
+    "id": "10001",
+    "mapid": 1001,
+    "unlocktype": 0,
+    "unlockpara": "",
+    "passcondition": [
+      [
+        "1001",
+        "6"
+      ],
+      [
+        "1002",
+        "6"
+      ]
+    ],
+    "limittimes": 100,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 100
+      }
+    ]
+  },
+  "10002": {
+    "id": "10002",
+    "mapid": 1002,
+    "unlocktype": 1,
+    "unlockpara": "10001",
+    "passcondition": [
+      [
+        "1004",
+        "9"
+      ],
+      [
+        "1005",
+        "9"
+      ],
+      [
+        "1006",
+        "9"
+      ]
+    ],
+    "limittimes": 100,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 200
+      }
+    ]
+  },
+  "10003": {
+    "id": "10003",
+    "mapid": 1003,
+    "unlocktype": 1,
+    "unlockpara": "10002",
+    "passcondition": [
+      [
+        "1007",
+        "9"
+      ],
+      [
+        "1008",
+        "9"
+      ],
+      [
+        "1009",
+        "12"
+      ]
+    ],
+    "limittimes": 100,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 300
+      }
+    ]
+  },
+  "10004": {
+    "id": "10004",
+    "mapid": 1004,
+    "unlocktype": 1,
+    "unlockpara": "10003",
+    "passcondition": [
+      [
+        "1010",
+        "9"
+      ],
+      [
+        "1011",
+        "12"
+      ],
+      [
+        "1012",
+        "12"
+      ]
+    ],
+    "limittimes": 100,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 400
+      }
+    ]
+  },
+  "10005": {
+    "id": "10005",
+    "mapid": 1005,
+    "unlocktype": 2,
+    "unlockpara": "1",
+    "passcondition": [
+      [
+        "1001",
+        "12"
+      ],
+      [
+        "1003",
+        "12"
+      ],
+      [
+        "1005",
+        "12"
+      ]
+    ],
+    "limittimes": 100,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 400
+      }
+    ]
+  },
+  "10006": {
+    "id": "10006",
+    "mapid": 1006,
+    "unlocktype": 2,
+    "unlockpara": "1",
+    "passcondition": [
+      [
+        "1002",
+        "12"
+      ],
+      [
+        "1004",
+        "12"
+      ],
+      [
+        "1006",
+        "15"
+      ]
+    ],
+    "limittimes": 100,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 400
+      }
+    ]
+  },
+  "10007": {
+    "id": "10007",
+    "mapid": 1007,
+    "unlocktype": 2,
+    "unlockpara": "2",
+    "passcondition": [
+      [
+        "1006",
+        "12"
+      ],
+      [
+        "1010",
+        "15"
+      ],
+      [
+        "1012",
+        "15"
+      ]
+    ],
+    "limittimes": 120,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 400
+      }
+    ]
+  },
+  "10008": {
+    "id": "10008",
+    "mapid": 1008,
+    "unlocktype": 2,
+    "unlockpara": "2",
+    "passcondition": [
+      [
+        "1007",
+        "15"
+      ],
+      [
+        "1009",
+        "15"
+      ],
+      [
+        "1011",
+        "15"
+      ]
+    ],
+    "limittimes": 120,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 500
+      }
+    ]
+  },
+  "10009": {
+    "id": "10009",
+    "mapid": 1009,
+    "unlocktype": 2,
+    "unlockpara": "3",
+    "passcondition": [
+      [
+        "1004",
+        "15"
+      ],
+      [
+        "1009",
+        "18"
+      ],
+      [
+        "1012",
+        "15"
+      ]
+    ],
+    "limittimes": 120,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 500
+      }
+    ]
+  },
+  "10010": {
+    "id": "10010",
+    "mapid": 1010,
+    "unlocktype": 2,
+    "unlockpara": "3",
+    "passcondition": [
+      [
+        "1005",
+        "15"
+      ],
+      [
+        "1011",
+        "15"
+      ],
+      [
+        "1012",
+        "18"
+      ]
+    ],
+    "limittimes": 120,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 600
+      }
+    ]
+  },
+  "10011": {
+    "id": "10011",
+    "mapid": 1011,
+    "unlocktype": 2,
+    "unlockpara": "4",
+    "passcondition": [
+      [
+        "1006",
+        "15"
+      ],
+      [
+        "1008",
+        "18"
+      ],
+      [
+        "1010",
+        "18"
+      ]
+    ],
+    "limittimes": 120,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 600
+      }
+    ]
+  },
+  "10012": {
+    "id": "10012",
+    "mapid": 1012,
+    "unlocktype": 2,
+    "unlockpara": "4",
+    "passcondition": [
+      [
+        "1002",
+        "18"
+      ],
+      [
+        "1009",
+        "18"
+      ],
+      [
+        "1012",
+        "18"
+      ]
+    ],
+    "limittimes": 120,
+    "reward": [
+      {
+        "id": "1",
+        "count": 50
+      }
+    ],
+    "limit": [
+      {
+        "id": "5114",
+        "count": 600
+      }
+    ]
+  }
+}

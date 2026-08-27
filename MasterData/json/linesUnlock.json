@@ -1,0 +1,448 @@
+[
+  {
+    "linesType": "dropLine",
+    "num": 1,
+    "desc": "招募台词",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_dropLine",
+    "typeNamelanText": "招集",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "regardsLine",
+    "num": 2,
+    "desc": "看板娘问候",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_regardsLine",
+    "typeNamelanText": "问候",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "appointmentLine",
+    "num": 3,
+    "desc": "任命看板娘",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_appointmentLine",
+    "typeNamelanText": "任命",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "touchLine_1",
+    "num": 4,
+    "desc": "看板娘触摸1",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_touchLine_1",
+    "typeNamelanText": "交谈1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "touchLine_2",
+    "num": 5,
+    "desc": "看板娘触摸2",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_touchLine_2",
+    "typeNamelanText": "交谈2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "touchLine_3",
+    "num": 6,
+    "desc": "看板娘触摸3",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_touchLine_3",
+    "typeNamelanText": "交谈3",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "touchLine_4",
+    "num": 7,
+    "desc": "看板娘触摸(好感)1",
+    "unLock": [
+      "2",
+      "3"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_touchLine_4",
+    "typeNamelanText": "投契之谈",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_touchLine_4",
+    "unLockTextlanText": "感应达到投契解锁"
+  },
+  {
+    "linesType": "touchLine_5",
+    "num": 8,
+    "desc": "看板娘触摸(好感)2",
+    "unLock": [
+      "2",
+      "5"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_touchLine_5",
+    "typeNamelanText": "鹿鸣之谈",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_touchLine_5",
+    "unLockTextlanText": "感应达到鹿鸣解锁"
+  },
+  {
+    "linesType": "touchLine_6",
+    "num": 9,
+    "desc": "看板娘触摸(好感)3",
+    "unLock": [
+      "2",
+      "9"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_touchLine_6",
+    "typeNamelanText": "莫逆之谈",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_touchLine_6",
+    "unLockTextlanText": "感应达到莫逆解锁"
+  },
+  {
+    "linesType": "timeLine_1",
+    "num": 10,
+    "desc": "时段台词1",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_timeLine_1",
+    "typeNamelanText": "时段交谈1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "timeLine_2",
+    "num": 11,
+    "desc": "时段台词2",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_timeLine_2",
+    "typeNamelanText": "时段交谈2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "unuseLine",
+    "num": 12,
+    "desc": "主界面无事可做",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_unuseLine",
+    "typeNamelanText": "独处",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "levelUpLine",
+    "num": 13,
+    "desc": "角色升级台词（吃狗粮）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_levelUpLine",
+    "typeNamelanText": "升级",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "joinpLine",
+    "num": 14,
+    "desc": "加入编队",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_joinpLine",
+    "typeNamelanText": "加入编队",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "strengthenLine_1",
+    "num": 15,
+    "desc": "角色觉醒台词（升6星）",
+    "unLock": [
+      "3",
+      "6"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_strengthenLine_1",
+    "typeNamelanText": "致知提升",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_strengthenLine_1",
+    "unLockTextlanText": "知行合一解锁"
+  },
+  {
+    "linesType": "strengthenLine_2",
+    "num": 16,
+    "desc": "角色升彩",
+    "unLock": [
+      "5"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_strengthenLine_2",
+    "typeNamelanText": "焕彰",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_strengthenLine_2",
+    "unLockTextlanText": "焕彰·感闻解锁"
+  },
+  {
+    "linesType": "strengthenLine_3",
+    "num": 17,
+    "desc": "角色二破",
+    "unLock": [
+      "4"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_strengthenLine_3",
+    "typeNamelanText": "精研",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_strengthenLine_3",
+    "unLockTextlanText": "精研解锁"
+  },
+  {
+    "linesType": "equipLine_1",
+    "num": 18,
+    "desc": "装备穿戴台词1",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_equipLine_1",
+    "typeNamelanText": "装备穿戴1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "equipLine_2",
+    "num": 19,
+    "desc": "装备穿戴台词2",
+    "unLock": [
+      "2",
+      "3"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_equipLine_2",
+    "typeNamelanText": "装备穿戴2",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_equipLine_2",
+    "unLockTextlanText": "感应达到投契解锁"
+  },
+  {
+    "linesType": "displayLine_1",
+    "num": 20,
+    "desc": "战斗登场台词1",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_displayLine_1",
+    "typeNamelanText": "战斗登场1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "displayLine_2",
+    "num": 21,
+    "desc": "战斗登场台词2",
+    "unLock": [
+      "2",
+      "7"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_displayLine_2",
+    "typeNamelanText": "战斗登场2",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_displayLine_2",
+    "unLockTextlanText": "感应达到推心解锁"
+  },
+  {
+    "linesType": "switchToLine",
+    "num": 22,
+    "desc": "切换至该角色（局内）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_switchToLine",
+    "typeNamelanText": "聚焦",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "switchToLine_2",
+    "num": 23,
+    "desc": "切换至该角色（局内）2",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_switchToLine_2",
+    "typeNamelanText": "聚焦2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "switchToLine_3",
+    "num": 24,
+    "desc": "切换至该角色（局内）3",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_switchToLine_3",
+    "typeNamelanText": "聚焦3",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "skillLine",
+    "num": 25,
+    "desc": "技能释放台词",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_skillLine",
+    "typeNamelanText": "释放技能",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "skillLine_2",
+    "num": 26,
+    "desc": "技能释放台词2",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_skillLine_2",
+    "typeNamelanText": "释放技能2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "beDyingLine",
+    "num": 27,
+    "desc": "生命告急",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_beDyingLine",
+    "typeNamelanText": "濒危",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "skillReadyLine",
+    "num": 28,
+    "desc": "大招准备就绪",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_skillReadyLine",
+    "typeNamelanText": "绝技就绪",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "skillReadyLine_2",
+    "num": 29,
+    "desc": "大招准备就绪2",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_skillReadyLine_2",
+    "typeNamelanText": "绝技就绪2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "victoryLine_1",
+    "num": 30,
+    "desc": "战斗胜利1(普通)",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_victoryLine_1",
+    "typeNamelanText": "破局成功1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "victoryLine_2",
+    "num": 31,
+    "desc": "战斗胜利2(挑战)",
+    "unLock": [
+      "2",
+      "7"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_victoryLine_2",
+    "typeNamelanText": "破局成功2",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_victoryLine_2",
+    "unLockTextlanText": "感应达到推心解锁"
+  },
+  {
+    "linesType": "loseLine_1",
+    "num": 32,
+    "desc": "战斗失败1",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_loseLine_1",
+    "typeNamelanText": "破局失败1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "loseLine_2",
+    "num": 33,
+    "desc": "战斗失败2",
+    "unLock": [
+      "2",
+      "7"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_loseLine_2",
+    "typeNamelanText": "破局失败2",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_loseLine_2",
+    "unLockTextlanText": "感应达到推心解锁"
+  },
+  {
+    "linesType": "enterInstallationLine",
+    "num": 34,
+    "desc": "进驻设施",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_enterInstallationLine",
+    "typeNamelanText": "入驻",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "installationLine_1",
+    "num": 35,
+    "desc": "设施台词1（静置）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_installationLine_1",
+    "typeNamelanText": "设施会话1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "installationLine_2",
+    "num": 36,
+    "desc": "设施台词2（触摸）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_installationLine_2",
+    "typeNamelanText": "设施会话2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "expeditionsucceedLine",
+    "num": 37,
+    "desc": "远征大成功",
+    "unLock": [
+      "1",
+      "501"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_expeditionsucceedLine",
+    "typeNamelanText": "远征成功",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_expeditionsucceedLine",
+    "unLockTextlanText": "功能模块开发中"
+  },
+  {
+    "linesType": "expeditionstartLine",
+    "num": 38,
+    "desc": "远征出发",
+    "unLock": [
+      "1",
+      "501"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_expeditionstartLine",
+    "typeNamelanText": "远征出发",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_expeditionstartLine",
+    "unLockTextlanText": "功能模块开发中"
+  },
+  {
+    "linesType": "expeditionbackLine",
+    "num": 39,
+    "desc": "远征回来",
+    "unLock": [
+      "1",
+      "501"
+    ],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_expeditionbackLine",
+    "typeNamelanText": "远征归来",
+    "unLockTextlan": "characterlan_linesUnlock_unLockTextlan_expeditionbackLine",
+    "unLockTextlanText": "功能模块开发中"
+  },
+  {
+    "linesType": "giftVictoryLine",
+    "num": 40,
+    "desc": "送礼1（喜欢）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_giftVictoryLine",
+    "typeNamelanText": "感应1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "giftLoseLine",
+    "num": 41,
+    "desc": "送礼2（不喜欢）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_giftLoseLine",
+    "typeNamelanText": "感应2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "teaVictoryLine",
+    "num": 42,
+    "desc": "喝茶1（成功）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_teaVictoryLine",
+    "typeNamelanText": "品茗1",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "teaLoseLine",
+    "num": 43,
+    "desc": "喝茶2（不成功）",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_teaLoseLine",
+    "typeNamelanText": "品茗2",
+    "unLockTextlan": ""
+  },
+  {
+    "linesType": "happyBirthdayLine",
+    "num": 44,
+    "desc": "生日庆贺",
+    "unLock": [],
+    "typeNamelan": "characterlan_linesUnlock_typeNamelan_happyBirthdayLine",
+    "typeNamelanText": "生日庆贺",
+    "unLockTextlan": ""
+  }
+]

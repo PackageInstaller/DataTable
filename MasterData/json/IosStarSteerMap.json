@@ -1,0 +1,400 @@
+{
+  "10001": {
+    "Id": "10001",
+    "Desc": "玩家通关冬谷竞赛",
+    "Condition": [
+      "63",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 20,
+    "Switch": 1,
+    "Repeat": 1
+  },
+  "10002": {
+    "Id": "10002",
+    "Desc": "玩家通关试炼常驻第12关",
+    "Condition": [
+      "1",
+      "BT101204",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 20,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10003": {
+    "Id": "10003",
+    "Desc": "通关集训常驻3-6",
+    "Condition": [
+      "1",
+      "JX100036",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 20,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10004": {
+    "Id": "10004",
+    "Desc": "玩家通关主线关卡1-15后",
+    "Condition": [
+      "1",
+      "M1000015",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10005": {
+    "Id": "10005",
+    "Desc": "玩家通关主线关卡2-15后",
+    "Condition": [
+      "1",
+      "M2000015",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10006": {
+    "Id": "10006",
+    "Desc": "玩家通关主线关卡3-15后",
+    "Condition": [
+      "1",
+      "M3000015",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10007": {
+    "Id": "10007",
+    "Desc": "玩家通关主线关卡4-15后",
+    "Condition": [
+      "1",
+      "M4000015",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10008": {
+    "Id": "10008",
+    "Desc": "玩家通关主线关卡5-15后",
+    "Condition": [
+      "1",
+      "M5000015",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10009": {
+    "Id": "10009",
+    "Desc": "玩家等级达到10级",
+    "Condition": [
+      "71",
+      "0",
+      "10"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10010": {
+    "Id": "10010",
+    "Desc": "玩家等级达到20级",
+    "Condition": [
+      "71",
+      "0",
+      "20"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10011": {
+    "Id": "10011",
+    "Desc": "玩家等级达到30级",
+    "Condition": [
+      "71",
+      "0",
+      "30"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10012": {
+    "Id": "10012",
+    "Desc": "玩家等级达到40级",
+    "Condition": [
+      "71",
+      "0",
+      "40"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10013": {
+    "Id": "10013",
+    "Desc": "玩家等级达到50级",
+    "Condition": [
+      "71",
+      "0",
+      "50"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10014": {
+    "Id": "10014",
+    "Desc": "玩家等级达到60级",
+    "Condition": [
+      "71",
+      "0",
+      "60"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10015": {
+    "Id": "10015",
+    "Desc": "玩家等级达到70级",
+    "Condition": [
+      "71",
+      "0",
+      "70"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10016": {
+    "Id": "10016",
+    "Desc": "玩家等级达到80级",
+    "Condition": [
+      "71",
+      "0",
+      "80"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10017": {
+    "Id": "10017",
+    "Desc": "玩家等级达到90级",
+    "Condition": [
+      "71",
+      "0",
+      "90"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10018": {
+    "Id": "10018",
+    "Desc": "玩家等级达到100级",
+    "Condition": [
+      "71",
+      "0",
+      "100"
+    ],
+    "Interval": 14,
+    "Probability": 100,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10019": {
+    "Id": "10019",
+    "Desc": "玩家拥有皮肤数量5",
+    "Condition": [
+      "28",
+      "5"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10020": {
+    "Id": "10020",
+    "Desc": "玩家拥有皮肤数量10",
+    "Condition": [
+      "28",
+      "10"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10021": {
+    "Id": "10021",
+    "Desc": "玩家拥有皮肤数量15",
+    "Condition": [
+      "28",
+      "15"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10022": {
+    "Id": "10022",
+    "Desc": "玩家拥有皮肤数量20",
+    "Condition": [
+      "28",
+      "20"
+    ],
+    "Interval": 14,
+    "Probability": 25,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10023": {
+    "Id": "10023",
+    "Desc": "玩家在新手卡池内首次获得红卡",
+    "Condition": [
+      "88",
+      "4",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 100,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10024": {
+    "Id": "10024",
+    "Desc": "玩家征集获得红卡后",
+    "Condition": [
+      "89",
+      "4",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 20,
+    "Switch": 1,
+    "Repeat": 1
+  },
+  "10025": {
+    "Id": "10025",
+    "Desc": "玩家在清风济月活动中获得红卡",
+    "Condition": [
+      "90",
+      "4",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 100,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10026": {
+    "Id": "10026",
+    "Desc": "拥有满级器者1",
+    "Condition": [
+      "27",
+      "100",
+      "1"
+    ],
+    "Interval": 14,
+    "Probability": 100,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10027": {
+    "Id": "10027",
+    "Desc": "拥有满级器者5",
+    "Condition": [
+      "27",
+      "100",
+      "5"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10028": {
+    "Id": "10028",
+    "Desc": "拥有满级器者10",
+    "Condition": [
+      "27",
+      "100",
+      "10"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10029": {
+    "Id": "10029",
+    "Desc": "拥有满级器者15",
+    "Condition": [
+      "27",
+      "100",
+      "15"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10030": {
+    "Id": "10030",
+    "Desc": "拥有满级器者20",
+    "Condition": [
+      "27",
+      "100",
+      "20"
+    ],
+    "Interval": 14,
+    "Probability": 50,
+    "Switch": 1,
+    "Repeat": 0
+  },
+  "10031": {
+    "Id": "10031",
+    "Desc": "拥有满级器者50",
+    "Condition": [
+      "27",
+      "100",
+      "50"
+    ],
+    "Interval": 14,
+    "Probability": 100,
+    "Switch": 1,
+    "Repeat": 0
+  }
+}

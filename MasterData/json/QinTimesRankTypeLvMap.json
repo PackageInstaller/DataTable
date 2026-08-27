@@ -1,0 +1,718 @@
+{
+  "capitalA": {
+    "1": {
+      "Id": "Rank1006",
+      "Type": "capitalA",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 10
+        },
+        {
+          "id": "6013",
+          "count": 3
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": [
+        {
+          "id": "6010",
+          "count": 150
+        },
+        {
+          "id": "6013",
+          "count": 300
+        }
+      ],
+      "UpTime": 30
+    },
+    "2": {
+      "Id": "Rank1007",
+      "Type": "capitalA",
+      "Rank": 2,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 15
+        },
+        {
+          "id": "6013",
+          "count": 3
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": [
+        {
+          "id": "6010",
+          "count": 400
+        },
+        {
+          "id": "6013",
+          "count": 1000
+        }
+      ],
+      "UpTime": 30
+    },
+    "3": {
+      "Id": "Rank1008",
+      "Type": "capitalA",
+      "Rank": 3,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 20
+        },
+        {
+          "id": "6013",
+          "count": 3
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "capitalB": {
+    "1": {
+      "Id": "Rank1009",
+      "Type": "capitalB",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 15
+        },
+        {
+          "id": "6013",
+          "count": 5
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": [
+        {
+          "id": "6010",
+          "count": 150
+        },
+        {
+          "id": "6013",
+          "count": 300
+        }
+      ],
+      "UpTime": 30
+    },
+    "2": {
+      "Id": "Rank1010",
+      "Type": "capitalB",
+      "Rank": 2,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 18
+        },
+        {
+          "id": "6013",
+          "count": 5
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": [
+        {
+          "id": "6010",
+          "count": 400
+        },
+        {
+          "id": "6013",
+          "count": 1000
+        }
+      ],
+      "UpTime": 30
+    },
+    "3": {
+      "Id": "Rank1011",
+      "Type": "capitalB",
+      "Rank": 3,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 20
+        },
+        {
+          "id": "6013",
+          "count": 5
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "fortA": {
+    "1": {
+      "Id": "Rank1001",
+      "Type": "fortA",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 3
+        },
+        {
+          "id": "6013",
+          "count": 1
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_1": {
+    "1": {
+      "Id": "Rank2001",
+      "Type": "res_1",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 1
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_10": {
+    "1": {
+      "Id": "Rank2009",
+      "Type": "res_10",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 10
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_11": {
+    "1": {
+      "Id": "Rank2010",
+      "Type": "res_11",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 11
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_2": {
+    "1": {
+      "Id": "Rank2002",
+      "Type": "res_2",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 2
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_20": {
+    "1": {
+      "Id": "Rank2011",
+      "Type": "res_20",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 20
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_21": {
+    "1": {
+      "Id": "Rank2012",
+      "Type": "res_21",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 21
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_3": {
+    "1": {
+      "Id": "Rank2003",
+      "Type": "res_3",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 3
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_30": {
+    "1": {
+      "Id": "Rank2013",
+      "Type": "res_30",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 30
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_31": {
+    "1": {
+      "Id": "Rank2014",
+      "Type": "res_31",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 31
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_32": {
+    "1": {
+      "Id": "Rank2015",
+      "Type": "res_32",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 32
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_33": {
+    "1": {
+      "Id": "Rank2016",
+      "Type": "res_33",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 33
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_34": {
+    "1": {
+      "Id": "Rank2017",
+      "Type": "res_34",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 34
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_35": {
+    "1": {
+      "Id": "Rank2018",
+      "Type": "res_35",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 35
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_36": {
+    "1": {
+      "Id": "Rank2019",
+      "Type": "res_36",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 36
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_37": {
+    "1": {
+      "Id": "Rank2020",
+      "Type": "res_37",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 37
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_38": {
+    "1": {
+      "Id": "Rank2021",
+      "Type": "res_38",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 38
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_4": {
+    "1": {
+      "Id": "Rank2004",
+      "Type": "res_4",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 4
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_5": {
+    "1": {
+      "Id": "Rank2005",
+      "Type": "res_5",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 5
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_50": {
+    "1": {
+      "Id": "Rank2022",
+      "Type": "res_50",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 50
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_58": {
+    "1": {
+      "Id": "Rank2023",
+      "Type": "res_58",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 58
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_6": {
+    "1": {
+      "Id": "Rank2006",
+      "Type": "res_6",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 6
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_7": {
+    "1": {
+      "Id": "Rank2007",
+      "Type": "res_7",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 7
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_8": {
+    "1": {
+      "Id": "Rank2008",
+      "Type": "res_8",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 8
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "res_80": {
+    "1": {
+      "Id": "Rank2024",
+      "Type": "res_80",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 80
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "townA": {
+    "1": {
+      "Id": "Rank1002",
+      "Type": "townA",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 5
+        },
+        {
+          "id": "6013",
+          "count": 2
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": [
+        {
+          "id": "6010",
+          "count": 50
+        },
+        {
+          "id": "6013",
+          "count": 100
+        }
+      ],
+      "UpTime": 30
+    },
+    "2": {
+      "Id": "Rank1003",
+      "Type": "townA",
+      "Rank": 2,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 7
+        },
+        {
+          "id": "6013",
+          "count": 4
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  },
+  "townB": {
+    "1": {
+      "Id": "Rank1004",
+      "Type": "townB",
+      "Rank": 1,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 6
+        },
+        {
+          "id": "6013",
+          "count": 3
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": [
+        {
+          "id": "6010",
+          "count": 50
+        },
+        {
+          "id": "6013",
+          "count": 100
+        }
+      ],
+      "UpTime": 30
+    },
+    "2": {
+      "Id": "Rank1005",
+      "Type": "townB",
+      "Rank": 2,
+      "Output": [
+        {
+          "id": "6010",
+          "count": 9
+        },
+        {
+          "id": "6013",
+          "count": 4
+        }
+      ],
+      "OutputTime": 60,
+      "Receive": null,
+      "ReceiveTime": 0,
+      "Expend": null,
+      "UpTime": 0
+    }
+  }
+}

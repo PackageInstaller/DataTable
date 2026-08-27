@@ -1,0 +1,821 @@
+{
+  "1": {
+    "Id": "1",
+    "Name": "行家Ⅰ",
+    "Type": 1,
+    "Parameter": 200,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_13",
+    "Description": "共5级。完成派遣事件 + 2%器者熟练度（最高 10%）",
+    "Prerequisites": [],
+    "NameLan": "activeLan_HMWYTechTree_namelan_1",
+    "NameLanText": "行家Ⅰ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_1",
+    "DescriptionLanText": "共5级。完成派遣事件 + 2%器者熟练度（最高 10%）",
+    "UnlockDesc": "",
+    "Index": 1,
+    "Pos": [
+      -410,
+      -205
+    ]
+  },
+  "10": {
+    "Id": "10",
+    "Name": "磨练Ⅰ",
+    "Type": 3,
+    "Parameter": 200,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_10",
+    "Description": "共5级。全体器者 6 项派遣属性各 + 2%（最高 10%）",
+    "Prerequisites": [],
+    "NameLan": "activeLan_HMWYTechTree_namelan_10",
+    "NameLanText": "磨练Ⅰ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_10",
+    "DescriptionLanText": "共5级。全体器者 6 项派遣属性各 + 2%（最高 10%） ",
+    "UnlockDesc": "",
+    "Index": 1,
+    "Pos": [
+      535,
+      -205
+    ]
+  },
+  "11": {
+    "Id": "11",
+    "Name": "磨练Ⅱ",
+    "Type": 3,
+    "Parameter": 400,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_10",
+    "Description": "共5级。全体器者 6 项派遣属性各 + 4%（最高 10%）",
+    "Prerequisites": [
+      10
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_11",
+    "NameLanText": "磨练Ⅱ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_11",
+    "DescriptionLanText": "共5级。全体器者 6 项派遣属性各 + 4%（最高 10%） ",
+    "UnlockDesc": "",
+    "Index": 2,
+    "Pos": [
+      535,
+      -205
+    ]
+  },
+  "12": {
+    "Id": "12",
+    "Name": "磨练Ⅲ",
+    "Type": 3,
+    "Parameter": 600,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_10",
+    "Description": "共5级。全体器者 6 项派遣属性各 + 6%（最高 10%）",
+    "Prerequisites": [
+      11
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_12",
+    "NameLanText": "磨练Ⅲ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_12",
+    "DescriptionLanText": "共5级。全体器者 6 项派遣属性各 + 6%（最高 10%） ",
+    "UnlockDesc": "",
+    "Index": 3,
+    "Pos": [
+      535,
+      -205
+    ]
+  },
+  "13": {
+    "Id": "13",
+    "Name": "磨练Ⅳ",
+    "Type": 3,
+    "Parameter": 800,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_10",
+    "Description": "共5级。全体器者 6 项派遣属性各 + 8%（最高 10%）",
+    "Prerequisites": [
+      12
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_13",
+    "NameLanText": "磨练Ⅳ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_13",
+    "DescriptionLanText": "共5级。全体器者 6 项派遣属性各 + 8%（最高 10%） ",
+    "UnlockDesc": "",
+    "Index": 4,
+    "Pos": [
+      535,
+      -205
+    ]
+  },
+  "14": {
+    "Id": "14",
+    "Name": "磨练Ⅴ",
+    "Type": 3,
+    "Parameter": 1000,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_10",
+    "Description": "共5级。全体器者 6 项派遣属性各 + 10%（最高 10%）",
+    "Prerequisites": [
+      13
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_14",
+    "NameLanText": "磨练Ⅴ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_14",
+    "DescriptionLanText": "共5级。全体器者 6 项派遣属性各 + 10%（最高 10%） ",
+    "UnlockDesc": "",
+    "Index": 5,
+    "Pos": [
+      535,
+      -205
+    ]
+  },
+  "15": {
+    "Id": "15",
+    "Name": "稳固Ⅰ",
+    "Type": 2,
+    "Parameter": 1000,
+    "Weight": 1000,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_11",
+    "Description": "共3级。派遣结算时，预计10%的概率，事件完成度+10%（最高 30%）",
+    "Prerequisites": [
+      14
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_15",
+    "NameLanText": "稳固Ⅰ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_15",
+    "DescriptionLanText": "共3级。派遣结算时，预计10%的概率，事件完成度+10%（最高 30%）",
+    "UnlockDesc": "需解锁[磨练Ⅴ]",
+    "Index": 1,
+    "Pos": [
+      395,
+      -205
+    ]
+  },
+  "16": {
+    "Id": "16",
+    "Name": "稳固Ⅱ",
+    "Type": 2,
+    "Parameter": 2000,
+    "Weight": 2000,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_11",
+    "Description": "共3级。派遣结算时，预计20%的概率，事件完成度+20%（最高 30%）",
+    "Prerequisites": [
+      15
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_16",
+    "NameLanText": "稳固Ⅱ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_16",
+    "DescriptionLanText": "共3级。派遣结算时，预计20%的概率，事件完成度+20%（最高 30%）",
+    "UnlockDesc": "",
+    "Index": 2,
+    "Pos": [
+      395,
+      -205
+    ]
+  },
+  "17": {
+    "Id": "17",
+    "Name": "稳固Ⅲ",
+    "Type": 2,
+    "Parameter": 3000,
+    "Weight": 3000,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_11",
+    "Description": "共3级。派遣结算时，预计30%的概率，事件完成度+30%（最高 30%）",
+    "Prerequisites": [
+      16
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_17",
+    "NameLanText": "稳固Ⅲ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_17",
+    "DescriptionLanText": "共3级。派遣结算时，预计30%的概率，事件完成度+30%（最高 30%）",
+    "UnlockDesc": "",
+    "Index": 3,
+    "Pos": [
+      395,
+      -205
+    ]
+  },
+  "18": {
+    "Id": "18",
+    "Name": "并行Ⅰ",
+    "Type": 5,
+    "Parameter": 1,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_02",
+    "Description": "共2级。派遣事件并行上限 + 1（最高 + 2）",
+    "Prerequisites": [
+      17
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_18",
+    "NameLanText": "并行Ⅰ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_18",
+    "DescriptionLanText": "共2级。派遣事件并行上限 + 1（最高 + 2）",
+    "UnlockDesc": "需解锁[稳固Ⅲ]",
+    "Index": 1,
+    "Pos": [
+      470,
+      3
+    ]
+  },
+  "19": {
+    "Id": "19",
+    "Name": "并行Ⅱ",
+    "Type": 5,
+    "Parameter": 1,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_02",
+    "Description": "共2级。派遣事件并行上限 + 2（最高 + 2）",
+    "Prerequisites": [
+      18
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_19",
+    "NameLanText": "并行Ⅱ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_19",
+    "DescriptionLanText": "共2级。派遣事件并行上限 + 2（最高 + 2）",
+    "UnlockDesc": "",
+    "Index": 2,
+    "Pos": [
+      470,
+      3
+    ]
+  },
+  "2": {
+    "Id": "2",
+    "Name": "行家Ⅱ",
+    "Type": 1,
+    "Parameter": 400,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_13",
+    "Description": "共5级。完成派遣事件 + 4%器者熟练度（最高 10%）",
+    "Prerequisites": [
+      1
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_2",
+    "NameLanText": "行家Ⅱ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_2",
+    "DescriptionLanText": "共5级。完成派遣事件 + 4%器者熟练度（最高 10%）",
+    "UnlockDesc": "",
+    "Index": 2,
+    "Pos": [
+      -410,
+      -205
+    ]
+  },
+  "20": {
+    "Id": "20",
+    "Name": "鸿运Ⅰ",
+    "Type": 7,
+    "Parameter": 15000,
+    "Weight": 300,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_09",
+    "Description": "共2级。派遣结算 + 3%概率触发卓越（覆盖原结果），最高 6%",
+    "Prerequisites": [
+      19,
+      23
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_20",
+    "NameLanText": "鸿运Ⅰ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_20",
+    "DescriptionLanText": "共2级。派遣结算 + 3%概率触发卓越（覆盖原结果），最高 6%",
+    "UnlockDesc": "需解锁[并行Ⅱ]或[砥砺·固守]",
+    "Index": 1,
+    "Pos": [
+      464,
+      212
+    ]
+  },
+  "21": {
+    "Id": "21",
+    "Name": "鸿运Ⅱ",
+    "Type": 7,
+    "Parameter": 15000,
+    "Weight": 600,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_09",
+    "Description": "共2级。派遣结算 + 6%概率触发卓越（覆盖原结果），最高 6%",
+    "Prerequisites": [
+      20
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_21",
+    "NameLanText": "鸿运Ⅱ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_21",
+    "DescriptionLanText": "共2级。派遣结算 + 6%概率触发卓越（覆盖原结果），最高 6%",
+    "UnlockDesc": "",
+    "Index": 2,
+    "Pos": [
+      464,
+      212
+    ]
+  },
+  "22": {
+    "Id": "22",
+    "Name": "砥砺·繁茂",
+    "Type": 8,
+    "Parameter": 0,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_2",
+    "Icon": "ui_hd_hmwy_kjs_05",
+    "Description": "我方全体最大生命值提高<color=#158bdb>30%</color>。",
+    "Prerequisites": [
+      9,
+      24,
+      27
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_22",
+    "NameLanText": "砥砺·繁茂",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_22",
+    "DescriptionLanText": "我方全体最大生命值提高<color=#158bdb>30%</color>。",
+    "UnlockDesc": "需解锁[功倍]或[砥砺·神行]或[砥砺·侵染]",
+    "Index": 1,
+    "Pos": [
+      -220,
+      3
+    ]
+  },
+  "23": {
+    "Id": "23",
+    "Name": "砥砺·固守",
+    "Type": 9,
+    "Parameter": 0,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_3",
+    "Icon": "ui_hd_hmwy_kjs_06",
+    "Description": "我方全体构素防御力和物理防御力提高<color=#158bdb>30%</color>。",
+    "Prerequisites": [
+      26,
+      28,
+      21
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_23",
+    "NameLanText": "砥砺·固守",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_23",
+    "DescriptionLanText": "我方全体构素防御力和物理防御力提高<color=#158bdb>30%</color>。",
+    "UnlockDesc": "需解锁[鸿运Ⅱ]或[砥砺·爆裂]或[砥砺·精兵]",
+    "Index": 1,
+    "Pos": [
+      260,
+      3
+    ]
+  },
+  "24": {
+    "Id": "24",
+    "Name": "砥砺·神行",
+    "Type": 10,
+    "Parameter": 2,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_4",
+    "Icon": "ui_hd_hmwy_kjs_01",
+    "Description": "我方全体移动力增加<color=#158bdb>2</color>。",
+    "Prerequisites": [
+      22,
+      25
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_24",
+    "NameLanText": "砥砺·神行",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_24",
+    "DescriptionLanText": "我方全体移动力增加<color=#158bdb>2</color>。",
+    "UnlockDesc": "需解锁[砥砺·繁茂]或[砥砺·强攻]",
+    "Index": 1,
+    "Pos": [
+      -132,
+      212
+    ]
+  },
+  "25": {
+    "Id": "25",
+    "Name": "砥砺·强攻",
+    "Type": 11,
+    "Parameter": 0,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_1",
+    "Icon": "ui_hd_hmwy_kjs_07",
+    "Description": "我方全体攻击力提高<color=#158bdb>30%</color>。",
+    "Prerequisites": [
+      24,
+      26
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_25",
+    "NameLanText": "砥砺·强攻",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_25",
+    "DescriptionLanText": "我方全体攻击力提高<color=#158bdb>30%</color>。",
+    "UnlockDesc": "需解锁[砥砺·神行]或[砥砺·爆裂]",
+    "Index": 1,
+    "Pos": [
+      28,
+      212
+    ]
+  },
+  "26": {
+    "Id": "26",
+    "Name": "砥砺·爆裂",
+    "Type": 12,
+    "Parameter": 0,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_5",
+    "Icon": "ui_hd_hmwy_kjs_12",
+    "Description": "我方全体暴击率增加<color=#158bdb>30%</color>，暴击伤害提高<color=#158bdb>30%</color>。",
+    "Prerequisites": [
+      23,
+      25
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_26",
+    "NameLanText": "砥砺·爆裂",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_26",
+    "DescriptionLanText": "我方全体暴击率增加<color=#158bdb>30%</color>，暴击伤害提高<color=#158bdb>30%</color>。",
+    "UnlockDesc": "需解锁[砥砺·固守]或[砥砺·强攻]",
+    "Index": 1,
+    "Pos": [
+      188,
+      212
+    ]
+  },
+  "27": {
+    "Id": "27",
+    "Name": "砥砺·侵染",
+    "Type": 13,
+    "Parameter": 0,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_6",
+    "Icon": "ui_hd_hmwy_kjs_04",
+    "Description": "我方全体常击命中后，使受击敌方获得<color=#158bdb>2</color>层<color=#ff6724>脆弱</color>状态；且每回合首次常击命中后，使受击敌方额外获得<color=#158bdb>1</color>层<color=#ff6724>寒天</color>状态。",
+    "Prerequisites": [
+      28,
+      22
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_27",
+    "NameLanText": "砥砺·侵染",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_27",
+    "DescriptionLanText": "我方全体常击命中后，使受击敌方获得<color=#158bdb>2</color>层<color=#ff6724>脆弱</color>状态；且每回合首次常击命中后，使受击敌方额外获得<color=#158bdb>1</color>层<color=#ff6724>寒天</color>状态。",
+    "UnlockDesc": "需解锁[砥砺·精兵]或[砥砺·繁茂]",
+    "Index": 1,
+    "Pos": [
+      -72,
+      -205
+    ]
+  },
+  "28": {
+    "Id": "28",
+    "Name": "砥砺·精兵",
+    "Type": 14,
+    "Parameter": 0,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "Buff_TRJ_Group1_7",
+    "Icon": "ui_hd_hmwy_kjs_03",
+    "Description": "我方全体造成的任意伤害提高<color=#158bdb>10%</color>，治疗量提高<color=#158bdb>10%</color>。",
+    "Prerequisites": [
+      23,
+      27
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_28",
+    "NameLanText": "砥砺·精兵",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_28",
+    "DescriptionLanText": "我方全体造成的任意伤害提高<color=#158bdb>10%</color>，治疗量提高<color=#158bdb>10%</color>。",
+    "UnlockDesc": "需解锁[砥砺·固守]或[砥砺·侵染]",
+    "Index": 1,
+    "Pos": [
+      111,
+      -205
+    ]
+  },
+  "3": {
+    "Id": "3",
+    "Name": "行家Ⅲ",
+    "Type": 1,
+    "Parameter": 600,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_13",
+    "Description": "共5级。完成派遣事件 + 6%器者熟练度（最高 10%）",
+    "Prerequisites": [
+      2
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_3",
+    "NameLanText": "行家Ⅲ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_3",
+    "DescriptionLanText": "共5级。完成派遣事件 + 6%器者熟练度（最高 10%）",
+    "UnlockDesc": "",
+    "Index": 3,
+    "Pos": [
+      -410,
+      -205
+    ]
+  },
+  "4": {
+    "Id": "4",
+    "Name": "行家Ⅳ",
+    "Type": 1,
+    "Parameter": 800,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_13",
+    "Description": "共5级。完成派遣事件 + 8%器者熟练度（最高 10%）",
+    "Prerequisites": [
+      3
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_4",
+    "NameLanText": "行家Ⅳ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_4",
+    "DescriptionLanText": "共5级。完成派遣事件 + 8%器者熟练度（最高 10%）",
+    "UnlockDesc": "",
+    "Index": 4,
+    "Pos": [
+      -410,
+      -205
+    ]
+  },
+  "5": {
+    "Id": "5",
+    "Name": "行家Ⅴ",
+    "Type": 1,
+    "Parameter": 1000,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_13",
+    "Description": "共5级。完成派遣事件 + 10%器者熟练度（最高 10%）",
+    "Prerequisites": [
+      4
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_5",
+    "NameLanText": "行家Ⅴ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_5",
+    "DescriptionLanText": "共5级。完成派遣事件 + 10%器者熟练度（最高 10%）",
+    "UnlockDesc": "",
+    "Index": 5,
+    "Pos": [
+      -410,
+      -205
+    ]
+  },
+  "6": {
+    "Id": "6",
+    "Name": "增收Ⅰ",
+    "Type": 4,
+    "Parameter": 500,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_14",
+    "Description": "共3级。派遣结算道具奖励数量 + 5%（最高 15%）",
+    "Prerequisites": [
+      5
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_6",
+    "NameLanText": "增收Ⅰ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_6",
+    "DescriptionLanText": "共3级。派遣结算道具奖励数量 + 5%（最高 15%）",
+    "UnlockDesc": "需解锁[行家Ⅴ]",
+    "Index": 1,
+    "Pos": [
+      -484,
+      3
+    ]
+  },
+  "7": {
+    "Id": "7",
+    "Name": "增收Ⅱ",
+    "Type": 4,
+    "Parameter": 1000,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_14",
+    "Description": "共3级。派遣结算道具奖励数量 + 10%（最高 15%）",
+    "Prerequisites": [
+      6
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_7",
+    "NameLanText": "增收Ⅱ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_7",
+    "DescriptionLanText": "共3级。派遣结算道具奖励数量 + 10%（最高 15%）",
+    "UnlockDesc": "",
+    "Index": 2,
+    "Pos": [
+      -484,
+      3
+    ]
+  },
+  "8": {
+    "Id": "8",
+    "Name": "增收Ⅲ",
+    "Type": 4,
+    "Parameter": 1500,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_14",
+    "Description": "共3级。派遣结算道具奖励数量 + 15%（最高 15%）",
+    "Prerequisites": [
+      7
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_8",
+    "NameLanText": "增收Ⅲ",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_8",
+    "DescriptionLanText": "共3级。派遣结算道具奖励数量 + 15%（最高 15%）",
+    "UnlockDesc": "",
+    "Index": 3,
+    "Pos": [
+      -484,
+      3
+    ]
+  },
+  "9": {
+    "Id": "9",
+    "Name": "功倍",
+    "Type": 6,
+    "Parameter": 3000,
+    "Weight": 0,
+    "UnConsump": [
+      {
+        "id": "5263",
+        "count": 1
+      }
+    ],
+    "BuffID": "",
+    "Icon": "ui_hd_hmwy_kjs_08",
+    "Description": "共1级。当派遣事件结果评为卓越时，结算道具奖励数量 + 30%",
+    "Prerequisites": [
+      8,
+      22
+    ],
+    "NameLan": "activeLan_HMWYTechTree_namelan_9",
+    "NameLanText": "功倍",
+    "DescriptionLan": "activeLan_HMWYTechTree_descriptionlan_9",
+    "DescriptionLanText": "共1级。当派遣事件结果评为卓越时，结算道具奖励数量 + 30%",
+    "UnlockDesc": "需解锁[增收Ⅲ]或[砥砺·繁茂]",
+    "Index": 1,
+    "Pos": [
+      -388,
+      212
+    ]
+  }
+}

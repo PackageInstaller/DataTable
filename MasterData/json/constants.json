@@ -1,0 +1,2078 @@
+{
+  "maxPlayerLevel": 100,
+  "initCharacterLevelLimit": 15,
+  "maxCharacterLevel": 120,
+  "MaxFriendshipLevel": 10,
+  "staminaLevelRecover": 30,
+  "maxStamina": 999,
+  "initialStamina": 100,
+  "staminaRecoverInterval": 6,
+  "staminaRecover": 1,
+  "staminaWarning": 259200,
+  "attributeRestraintGreen": 1,
+  "attributeRestraintRed": 2,
+  "attributeRestraintBlue": 3,
+  "attributeRestraintWhite": 4,
+  "attributeRestraintBlack": 5,
+  "maxStar": 6,
+  "levelUpExpToCoinR": 50,
+  "levelUpExpToCoinSR": 50,
+  "levelUpExpToCoinSSR": 50,
+  "rareLevelUpCoin": {
+    "2": 50,
+    "3": 50,
+    "4": 50
+  },
+  "REquipLevelUpCoin": 200,
+  "SREquipLevelUpCoin": 200,
+  "SSREquipLevelUpCoin": 200,
+  "UREquipLevelUpCoin": 200,
+  "EquipLevelupCoin": {
+    "2": 200,
+    "3": 200,
+    "4": 200,
+    "5": 200
+  },
+  "TeamWeaponExpToCoin": 42,
+  "initQueLen": 2,
+  "maxQueLen": 4,
+  "UnlockQueLenNum": [
+    0,
+    0,
+    10,
+    20
+  ],
+  "accelerateCost": [
+    {
+      "itemId": "3002",
+      "count": 1
+    }
+  ],
+  "CardPoolWaterLevel": 51,
+  "SSRCardProbability": 500,
+  "CardPoolTypeChange": 50,
+  "CardPoolChangeNum": 1,
+  "CardPoolChooseMaxNum": 4,
+  "CardPoolChooseJobMaxNumJob": 25,
+  "CardPoolSkipLv": 3,
+  "CardPoolTypeList": [
+    "time",
+    "oldtime",
+    "limited"
+  ],
+  "CardPoolMinimumGuarantee": [
+    [
+      "time",
+      "4"
+    ],
+    [
+      "limited",
+      "4"
+    ]
+  ],
+  "CardPoolMinimumGuaranteeMap": {
+    "limited": 4,
+    "time": 4
+  },
+  "staminaShow": [
+    "102",
+    "103",
+    "104",
+    "105",
+    "106",
+    "107",
+    "108",
+    "109",
+    "110"
+  ],
+  "initRole": [
+    "V0064"
+  ],
+  "drawRewardSSR": [
+    {
+      "id": "13",
+      "count": 1
+    },
+    {
+      "id": "13",
+      "count": 15
+    },
+    {
+      "id": "13",
+      "count": 10
+    }
+  ],
+  "drawRewardSR": [
+    {
+      "id": "12",
+      "count": 5
+    },
+    {
+      "id": "12",
+      "count": 15
+    },
+    {
+      "id": "12",
+      "count": 10
+    }
+  ],
+  "drawRewardR": [
+    {
+      "id": "11",
+      "count": 10
+    },
+    {
+      "id": "11",
+      "count": 15
+    },
+    {
+      "id": "11",
+      "count": 10
+    }
+  ],
+  "drawWeeklyLimit": 0,
+  "CrystalItemExchange": [
+    {
+      "id": "11",
+      "count": 10
+    },
+    {
+      "id": "12",
+      "count": 10
+    },
+    {
+      "id": "13",
+      "count": 10
+    }
+  ],
+  "CardPoolTenRerandom": true,
+  "CardPoolSeqRerandom": true,
+  "CardPoolSeqRerandomRange": 1,
+  "CardPoolFreeFreeze": 3,
+  "costGemRecoverStamina": [
+    50,
+    50,
+    50,
+    50,
+    50
+  ],
+  "staminaGemRecover": 80,
+  "exploreWeight": [
+    4000,
+    3000,
+    2000,
+    1000
+  ],
+  "exploreAmount": [
+    [
+      "2",
+      "0"
+    ],
+    [
+      "3",
+      "500"
+    ],
+    [
+      "4",
+      "0"
+    ]
+  ],
+  "exploreKindSole": [
+    10,
+    10
+  ],
+  "exploreRedDot": 1,
+  "attriGreenRestraint": [
+    1,
+    5
+  ],
+  "attriRedRestraint": [
+    2,
+    5
+  ],
+  "attriBlueRestraint": [
+    3,
+    5
+  ],
+  "attriWhiteRestraint": [
+    4,
+    5
+  ],
+  "attriBlackRestraint": [
+    5,
+    5
+  ],
+  "gameOpenProgress": "M30020",
+  "maxPlayerMails": 100,
+  "maxCollectrMails": 100,
+  "heartbeatInterval": 180,
+  "InitVol": 10000,
+  "MaxVol": 10000,
+  "VolPrice": {
+    "id": "1",
+    "count": 10
+  },
+  "VolExtend": 100,
+  "PriceRatio": 1,
+  "SplitMaxCount": 100,
+  "maxSquadCount": 7,
+  "InitWeaponOrdersVol": 3,
+  "WeaponOrdersAccCost": {
+    "id": "2501",
+    "count": 1
+  },
+  "ContactDurationMinute": 120,
+  "ContactMaxCount": 12,
+  "EquipInitMaxLevel": 15,
+  "WarShieldBroken": 3,
+  "CharacterRareSymbol": [
+    [
+      "1",
+      "0"
+    ],
+    [
+      "2",
+      "0"
+    ],
+    [
+      "3",
+      "0"
+    ],
+    [
+      "4",
+      "0"
+    ]
+  ],
+  "DrawSSRCardUp": [
+    350,
+    450,
+    550,
+    650,
+    750,
+    850,
+    950,
+    1050,
+    1150,
+    1445,
+    1740,
+    2035,
+    2330,
+    2625,
+    2920,
+    3215,
+    3510,
+    3805,
+    4100,
+    10000
+  ],
+  "DrawSSRCardStartTime": 10,
+  "DrawCardTransform": [
+    {
+      "id": "3003",
+      "count": 150
+    }
+  ],
+  "TransformDiamondMap": {
+    "3003": 150
+  },
+  "EquipExpCompose": 70,
+  "ForceHideGuide": false,
+  "GuideTime": 20,
+  "GuideCloseTime": 10,
+  "REquipInitialAttr": [
+    [
+      0,
+      5000
+    ],
+    [
+      1,
+      2000
+    ],
+    [
+      2,
+      2000
+    ],
+    [
+      3,
+      1000
+    ]
+  ],
+  "SREquipInitialAttr": [
+    [
+      0,
+      2000
+    ],
+    [
+      1,
+      2000
+    ],
+    [
+      2,
+      3000
+    ],
+    [
+      3,
+      3000
+    ]
+  ],
+  "SSREquipInitialAttr": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      2000
+    ],
+    [
+      2,
+      3000
+    ],
+    [
+      3,
+      5000
+    ]
+  ],
+  "UREquipInitialAttr": [
+    [
+      0,
+      0
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      2,
+      3000
+    ],
+    [
+      3,
+      7000
+    ]
+  ],
+  "GearAddProperPraba": [
+    20,
+    20
+  ],
+  "MaxSelectedCG": 20,
+  "TimerotationCG": 5,
+  "ArtifactsHidden": 0,
+  "shareImagePrefix": "https://laigu-dl.cipaishe.com/image/Background/",
+  "UnlockOnlineReward": {
+    "UnlockType": 0,
+    "ElementID": "",
+    "Param": 0
+  },
+  "whiteListTips": "测试还未开始，敬请期待",
+  "CloseShare": false,
+  "MinLevelTips": 11,
+  "DefaultAvatar": "106401",
+  "DefaultAvatarFrame": "20001",
+  "levelUpExpToItemR": 70,
+  "levelUpExpToItemSR": 70,
+  "levelUpExpToItemSSR": 70,
+  "levelUpExpToItemUR": 70,
+  "RareExpToItem": {
+    "2": 70,
+    "3": 70,
+    "4": 70,
+    "5": 70
+  },
+  "REquipGradeUp": [
+    [
+      0,
+      16,
+      1
+    ],
+    [
+      1,
+      16,
+      20
+    ],
+    [
+      2,
+      16,
+      40
+    ],
+    [
+      3,
+      16,
+      80
+    ]
+  ],
+  "SREquipGradeUp": [
+    [
+      0,
+      16,
+      5
+    ],
+    [
+      1,
+      16,
+      30
+    ],
+    [
+      2,
+      16,
+      60
+    ],
+    [
+      3,
+      16,
+      100
+    ]
+  ],
+  "SSREquipGradeUp": [
+    [
+      0,
+      16,
+      10
+    ],
+    [
+      1,
+      16,
+      40
+    ],
+    [
+      2,
+      16,
+      80
+    ],
+    [
+      3,
+      16,
+      120
+    ]
+  ],
+  "UREquipGradeUp": [
+    [
+      0,
+      16,
+      20
+    ],
+    [
+      1,
+      16,
+      50
+    ],
+    [
+      2,
+      16,
+      100
+    ],
+    [
+      3,
+      16,
+      150
+    ]
+  ],
+  "RareEquipGradeUp": {
+    "2": {
+      "0": {
+        "id": "16",
+        "count": 1
+      },
+      "1": {
+        "id": "16",
+        "count": 20
+      },
+      "2": {
+        "id": "16",
+        "count": 40
+      },
+      "3": {
+        "id": "16",
+        "count": 80
+      }
+    },
+    "3": {
+      "0": {
+        "id": "16",
+        "count": 5
+      },
+      "1": {
+        "id": "16",
+        "count": 30
+      },
+      "2": {
+        "id": "16",
+        "count": 60
+      },
+      "3": {
+        "id": "16",
+        "count": 100
+      }
+    },
+    "4": {
+      "0": {
+        "id": "16",
+        "count": 10
+      },
+      "1": {
+        "id": "16",
+        "count": 40
+      },
+      "2": {
+        "id": "16",
+        "count": 80
+      },
+      "3": {
+        "id": "16",
+        "count": 120
+      }
+    },
+    "5": {
+      "0": {
+        "id": "16",
+        "count": 20
+      },
+      "1": {
+        "id": "16",
+        "count": 50
+      },
+      "2": {
+        "id": "16",
+        "count": 100
+      },
+      "3": {
+        "id": "16",
+        "count": 150
+      }
+    }
+  },
+  "REquipStarUp": [
+    [
+      2,
+      2403,
+      3
+    ],
+    [
+      3,
+      2403,
+      5
+    ],
+    [
+      4,
+      2403,
+      7
+    ],
+    [
+      5,
+      2403,
+      10
+    ],
+    [
+      6,
+      2403,
+      12
+    ]
+  ],
+  "SREquipStarUp": [
+    [
+      2,
+      2402,
+      2
+    ],
+    [
+      3,
+      2402,
+      4
+    ],
+    [
+      4,
+      2402,
+      6
+    ],
+    [
+      5,
+      2402,
+      8
+    ],
+    [
+      6,
+      2402,
+      10
+    ]
+  ],
+  "SSREquipStarUp": [
+    [
+      2,
+      2401,
+      1
+    ],
+    [
+      3,
+      2401,
+      2
+    ],
+    [
+      4,
+      2401,
+      3
+    ],
+    [
+      5,
+      2401,
+      4
+    ],
+    [
+      6,
+      2401,
+      5
+    ]
+  ],
+  "UREquipStarUp": [
+    [
+      2,
+      2404,
+      1
+    ],
+    [
+      3,
+      2404,
+      2
+    ],
+    [
+      4,
+      2404,
+      3
+    ],
+    [
+      5,
+      2404,
+      4
+    ],
+    [
+      6,
+      2404,
+      5
+    ]
+  ],
+  "RareEquipStarUp": {
+    "2": {
+      "2": {
+        "id": "2403",
+        "count": 3
+      },
+      "3": {
+        "id": "2403",
+        "count": 5
+      },
+      "4": {
+        "id": "2403",
+        "count": 7
+      },
+      "5": {
+        "id": "2403",
+        "count": 10
+      },
+      "6": {
+        "id": "2403",
+        "count": 12
+      }
+    },
+    "3": {
+      "2": {
+        "id": "2402",
+        "count": 2
+      },
+      "3": {
+        "id": "2402",
+        "count": 4
+      },
+      "4": {
+        "id": "2402",
+        "count": 6
+      },
+      "5": {
+        "id": "2402",
+        "count": 8
+      },
+      "6": {
+        "id": "2402",
+        "count": 10
+      }
+    },
+    "4": {
+      "2": {
+        "id": "2401",
+        "count": 1
+      },
+      "3": {
+        "id": "2401",
+        "count": 2
+      },
+      "4": {
+        "id": "2401",
+        "count": 3
+      },
+      "5": {
+        "id": "2401",
+        "count": 4
+      },
+      "6": {
+        "id": "2401",
+        "count": 5
+      }
+    },
+    "5": {
+      "2": {
+        "id": "2404",
+        "count": 1
+      },
+      "3": {
+        "id": "2404",
+        "count": 2
+      },
+      "4": {
+        "id": "2404",
+        "count": 3
+      },
+      "5": {
+        "id": "2404",
+        "count": 4
+      },
+      "6": {
+        "id": "2404",
+        "count": 5
+      }
+    }
+  },
+  "GiftFriendshipR": 40,
+  "GiftFriendshipSR": 80,
+  "GiftFriendshipSSR": 130,
+  "GiftFriendship": {
+    "2": 40,
+    "3": 80,
+    "4": 130
+  },
+  "GiftFriendshipUpR": 10,
+  "GiftFriendshipUpSR": 20,
+  "GiftFriendshipUpSSR": 45,
+  "GiftFriendshipUp": {
+    "2": 10,
+    "3": 20,
+    "4": 45
+  },
+  "BattleFriendshipUp": 1,
+  "HighteaFriendshipUp": [
+    180,
+    235
+  ],
+  "HighteaTopicFriendshipUp": 20,
+  "HighteaAccCost": {
+    "id": "81000",
+    "count": 1
+  },
+  "HighteaTimes": 5,
+  "HighteaTimesDaily": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "HighteaRound1": [
+    [
+      "1",
+      "2"
+    ],
+    [
+      "2",
+      "1"
+    ]
+  ],
+  "HighteaRound2": [
+    [
+      "1",
+      "2"
+    ],
+    [
+      "2",
+      "1"
+    ]
+  ],
+  "HighteaRound3": [
+    [
+      "0",
+      "2"
+    ]
+  ],
+  "FourInLineDepth": [
+    2,
+    10
+  ],
+  "FourInLineUnlock": 1,
+  "GameBoardUnlock": 3,
+  "NumberMergeUnlock": 2,
+  "NumberMergeReward1": [
+    5000,
+    3003,
+    1
+  ],
+  "NumberMergeReward2": [
+    10000,
+    3003,
+    1
+  ],
+  "NumberMergeReward3": [
+    15000,
+    3003,
+    1
+  ],
+  "NumberMergeRewardList": [
+    {
+      "RewardKey": "stage-1",
+      "Score": 5000,
+      "Reward": [
+        {
+          "id": "3003",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "RewardKey": "stage-2",
+      "Score": 10000,
+      "Reward": [
+        {
+          "id": "3003",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "RewardKey": "stage-3",
+      "Score": 15000,
+      "Reward": [
+        {
+          "id": "3003",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "NumberMergeRank": 20,
+  "GamePoint": [
+    [
+      "1",
+      "1000"
+    ],
+    [
+      "2",
+      "nil"
+    ],
+    [
+      "3",
+      "nil"
+    ],
+    [
+      "4",
+      "4000"
+    ]
+  ],
+  "FourInLineFirstVic": {
+    "id": "5904",
+    "count": 1
+  },
+  "FourInLineFirstVicNormal": {
+    "id": "3003",
+    "count": 3
+  },
+  "TeaItemLimit1": {
+    "id": "24",
+    "count": 300
+  },
+  "AutoLevel": 1,
+  "SpeedUp": "M100002",
+  "RankUPChange": 3000,
+  "RankUPChangeDeduct": 1000,
+  "EntrustBattleUnlock": [
+    [
+      1,
+      5
+    ],
+    [
+      10,
+      6
+    ],
+    [
+      20,
+      7
+    ],
+    [
+      30,
+      8
+    ]
+  ],
+  "EntrustBattleMax": 10,
+  "EntrustBattleBuff": "Buff_EntrustBattle",
+  "EntrustBattleWait": 5,
+  "LoseSkipUnlock": "M100004",
+  "ActiveDropNum": 5,
+  "ActiveDropNew": [
+    [
+      "5255",
+      "150",
+      "2026/03/05 10:00:00",
+      "2026/03/26 09:59:59"
+    ]
+  ],
+  "RollInterval": 300,
+  "DrawCardRecordTime": 30,
+  "ReSignUpItem": [
+    {
+      "id": "1",
+      "count": 10
+    },
+    {
+      "id": "1",
+      "count": 10
+    },
+    {
+      "id": "1",
+      "count": 10
+    }
+  ],
+  "TrafficPermitExp": [
+    50,
+    1000
+  ],
+  "TrafficPermitLevels": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70
+  ],
+  "PassesExpExchange": [
+    1,
+    50,
+    1000
+  ],
+  "PrestigeWorkPeriod": 77,
+  "MaxPrestigeByWorkPerWeek": 2240,
+  "BattleHpDamp": [
+    0,
+    8001,
+    10501,
+    12001,
+    15001,
+    19001,
+    24001,
+    30001
+  ],
+  "BattleScale": [
+    8,
+    7,
+    6,
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "ScaleValueHp": 8000,
+  "NameLength": 25,
+  "AddressLength": 50,
+  "CollectLength": 100,
+  "FocusGift": [
+    {
+      "id": "1",
+      "count": 100
+    },
+    {
+      "id": "3",
+      "count": 5000
+    },
+    {
+      "id": "102",
+      "count": 1
+    },
+    {
+      "id": "3001",
+      "count": 1
+    },
+    {
+      "id": "2101",
+      "count": 10
+    }
+  ],
+  "InvitationGift": [
+    {
+      "id": "1",
+      "count": 1000
+    },
+    {
+      "id": "2",
+      "count": 2000
+    },
+    {
+      "id": "3",
+      "count": 3000
+    }
+  ],
+  "BackPackTab": [
+    "1004",
+    "1001",
+    "1002",
+    "1003",
+    "1005"
+  ],
+  "SurpriseEggsCount": 3,
+  "TeachingReward": [
+    {
+      "id": "2",
+      "count": 1
+    }
+  ],
+  "TravelCurrencyExchangeChar": [
+    "5032",
+    "2500",
+    "9045003"
+  ],
+  "NovelSpine": true,
+  "FoundationOfficePV": "Video/M001_001.mp4",
+  "FoundationScreenAdaptation": 1.6,
+  "Charge": true,
+  "UnlockTeach": [
+    "M100004",
+    "J100001",
+    "M200012"
+  ],
+  "UnlockEnterStory": [
+    "4502",
+    "1"
+  ],
+  "UnlockFoundation": "M200005",
+  "DefaultShop": [
+    "random",
+    "push"
+  ],
+  "DefaultActivityKey": "celebration",
+  "UnlockFundationRewards": [
+    "10101",
+    "5000"
+  ],
+  "ChickShowTimeSecond": 1800,
+  "IndentationNum": [
+    10000,
+    100000000
+  ],
+  "TimeCardConversion": "23",
+  "ConversionRatio": [
+    1,
+    10
+  ],
+  "BattleProgressStepLimit": 300,
+  "Signature": "D4:01:51:45:A3:2E:18:46:11:E1:B4:43:EB:9B:E3:1A:76:86:0E:50;C7:F8:6A:DE:16:59:12:E4:8C:31:40:F0:68:29:BC:E1:AB:05:91:B5;AE:7B:F9:76:51:6A:D3:EF:95:30:8E:49:9B:7A:7D:E8:74:56:F4:DC;6A:4A:4C:BD:58:94:E9:33:88:AD:54:5C:FF:AE:BF:E8:34:58:95:D2",
+  "FirstPayShelfId": [
+    "1",
+    "3001101"
+  ],
+  "changanTipList": [
+    "10100",
+    "10101",
+    "10102",
+    "10103",
+    "10104",
+    "10105",
+    "10106",
+    "10107",
+    "10108",
+    "10109"
+  ],
+  "FoundationAntiAliasing": [
+    0,
+    2,
+    4
+  ],
+  "SailingAntiAliasing": [
+    0,
+    2,
+    4
+  ],
+  "ImageFrame": [
+    30,
+    30,
+    30
+  ],
+  "ImageFrameBattle": [
+    30,
+    30,
+    60
+  ],
+  "GMLevelQuery": [
+    [
+      "1",
+      "主线关卡"
+    ],
+    [
+      "2",
+      "困难关卡"
+    ],
+    [
+      "3",
+      "常驻关卡"
+    ],
+    [
+      "4",
+      "支线剧情关卡"
+    ],
+    [
+      "5",
+      "支线武器关卡"
+    ],
+    [
+      "6",
+      "教学关卡"
+    ],
+    [
+      "7",
+      "资源关卡"
+    ],
+    [
+      "8",
+      "区域调查关卡"
+    ],
+    [
+      "9",
+      "花朝节活动关卡"
+    ],
+    [
+      "10",
+      "模拟场关卡"
+    ],
+    [
+      "11",
+      "长安活动关卡"
+    ],
+    [
+      "12",
+      "入职活动关卡"
+    ],
+    [
+      "13",
+      "器者录关卡"
+    ],
+    [
+      "14",
+      "大秦活动关卡"
+    ],
+    [
+      "15",
+      "航海活动关卡"
+    ],
+    [
+      "16",
+      "旅游活动关卡"
+    ],
+    [
+      "17",
+      "年兽活动关卡"
+    ],
+    [
+      "18",
+      "试玩关卡"
+    ],
+    [
+      "19",
+      "冬谷竞赛关卡"
+    ]
+  ],
+  "DownLoadType": "AndroidService#10",
+  "SailingRewardDailyTimes": 0,
+  "NianBeastRewardTime": 60,
+  "JobStyleSkillPoint": 10,
+  "JobStyleSkillPointNew": [
+    10,
+    20,
+    30,
+    40,
+    50,
+    60,
+    70,
+    80,
+    90,
+    100,
+    120
+  ],
+  "scaling": 2,
+  "scalingMax": 3,
+  "scalingMin": 3,
+  "homeWebURL": "onesdk:https://game.bilibili.com/whmx/gonglue/",
+  "homeWebOpen": 1,
+  "homeWebURLType": "portrait",
+  "areaWebURLType": "portrait",
+  "BattleTowerOpen": 1717639200,
+  "BiliInterfere": false,
+  "BiliInterfereGacha": [
+    [
+      6800,
+      1200,
+      2000
+    ],
+    [
+      4800,
+      1200,
+      4000
+    ],
+    [
+      2800,
+      1200,
+      6000
+    ]
+  ],
+  "BiliInterfereGachaLimit": 30,
+  "ShenzaoUnlock": 20,
+  "WebPayDiscountStart": 1714528800,
+  "WebPayDiscountEnd": 1715961540,
+  "WebPayDiscount": 98,
+  "BLineupWebType": "portrait",
+  "BLineupWeb": "onesdk:https://game.bilibili.com/tool/whmx/team/",
+  "CdKeyOpen": 1,
+  "MuseumcheckValue": [
+    [
+      "5-18",
+      "0"
+    ],
+    [
+      "5-19",
+      "11000"
+    ],
+    [
+      "5-20",
+      "3000"
+    ],
+    [
+      "5-21",
+      "4000"
+    ],
+    [
+      "5-22",
+      "3000"
+    ],
+    [
+      "5-23",
+      "2000"
+    ],
+    [
+      "5-24",
+      "2000"
+    ],
+    [
+      "5-25",
+      "3000"
+    ],
+    [
+      "5-26",
+      "4000"
+    ],
+    [
+      "5-27",
+      "1000"
+    ],
+    [
+      "5-28",
+      "1000"
+    ],
+    [
+      "5-29",
+      "1500"
+    ],
+    [
+      "5-30",
+      "1500"
+    ],
+    [
+      "5-31",
+      "2000"
+    ],
+    [
+      "6-1",
+      "3000"
+    ],
+    [
+      "6-2",
+      "2000"
+    ],
+    [
+      "6-3",
+      "1000"
+    ],
+    [
+      "6-4",
+      "1000"
+    ],
+    [
+      "6-5",
+      "1000"
+    ],
+    [
+      "6-6",
+      "500"
+    ],
+    [
+      "6-7",
+      "1500"
+    ],
+    [
+      "6-8",
+      "3000"
+    ],
+    [
+      "6-9",
+      "20"
+    ],
+    [
+      "6-10",
+      "20"
+    ]
+  ],
+  "MuseumcheckUrl": "url_onesdkportrait:https://game.bilibili.com/whmx/hzwy/",
+  "backPlayerInterval": 40320,
+  "backPlayerUnlock1": "M100015",
+  "backPlayerUnlock2": 10,
+  "backPlayerTime": 20160,
+  "BackPlayerItems": [
+    "50104"
+  ],
+  "BackPlayerNarrative": "S001001",
+  "changeName": 15,
+  "TrainingSeriesOpen": 1722477600,
+  "aecdoteColor": [
+    [
+      98,
+      118,
+      177
+    ],
+    [
+      74,
+      112,
+      81
+    ],
+    [
+      170,
+      95,
+      85
+    ],
+    [
+      120,
+      38,
+      31
+    ],
+    [
+      67,
+      105,
+      117
+    ],
+    [
+      250,
+      211,
+      143
+    ],
+    [
+      1,
+      37,
+      91
+    ],
+    [
+      191,
+      83,
+      54
+    ],
+    [
+      57,
+      65,
+      105
+    ],
+    [
+      141,
+      44,
+      66
+    ]
+  ],
+  "upColorOpen": 1,
+  "SailingInterests": [
+    [
+      0,
+      10000
+    ],
+    [
+      50000,
+      15000
+    ],
+    [
+      100000,
+      20000
+    ],
+    [
+      200000,
+      25000
+    ],
+    [
+      300000,
+      30000
+    ]
+  ],
+  "SailingBag": 999,
+  "SailingCameraScale": [
+    -4.76,
+    0.1
+  ],
+  "SailingCameraOrigin": [
+    0.1
+  ],
+  "SailingCharacterNumber": 6,
+  "SailingRefreshStartTime": 10,
+  "SailingRefresh": 120,
+  "SailingRemakeStartTime": 10,
+  "SailingRemakeTime": 240,
+  "PuzzleUnlock": 3,
+  "StarSteerIntervalDay": 14,
+  "BZHalfYear1": "https://game.bilibili.com/whmx/ckts/?sourceFrom=10002",
+  "BZHalfYear2": "https://game.bilibili.com/whmx/ckts/?sourceFrom=10003",
+  "WJHYLevel": [
+    [
+      0,
+      3
+    ],
+    [
+      3,
+      8
+    ],
+    [
+      8,
+      12
+    ],
+    [
+      12,
+      16
+    ],
+    [
+      16,
+      20
+    ],
+    [
+      20,
+      25
+    ],
+    [
+      25,
+      29
+    ]
+  ],
+  "TH_MusicUnlock": 2,
+  "AnalectsTips": 3,
+  "QinExchangeChar": [
+    "6001",
+    "2500",
+    "A0121"
+  ],
+  "CountryExchangeChar": [
+    "5070",
+    "2500",
+    "D0128"
+  ],
+  "DefaultHandCardCount": 8,
+  "PlaycardTimesScore": 5,
+  "DiscardTimesScore": 5,
+  "NewPlayerLimitSSRTime": 7200,
+  "NewPlayerLimitSSRHero1": [
+    "100001001",
+    "100001002",
+    "100001003",
+    "100001004",
+    "100001005",
+    "100001006",
+    "100001007"
+  ],
+  "NewPlayerLimitSSRHero2": [
+    "100002001",
+    "100002002",
+    "100002003",
+    "100002004",
+    "100002005",
+    "100002006",
+    "100002007"
+  ],
+  "NewPlayerLimitSSRHero3": [
+    "100003001",
+    "100003002",
+    "100003003",
+    "100003004",
+    "100003005",
+    "100003006",
+    "100003007"
+  ],
+  "NewPlayerLimitSSRHeroList": [
+    "S0083",
+    "A0096",
+    "V0078"
+  ],
+  "NewPlayerLimitOpenSwitch": 0,
+  "NewPlayerLimitStartConditions": [
+    [
+      "2024/04/01 10:00:00"
+    ],
+    [
+      "M100003"
+    ],
+    [
+      "3003",
+      "1"
+    ]
+  ],
+  "NewPlayerLimitAfterConditions": [
+    [
+      "259200000"
+    ],
+    [
+      "M100003"
+    ],
+    [
+      "3003",
+      "1"
+    ]
+  ],
+  "NewPlayerLimitConditionType": 1,
+  "NewPlayerLimitSSR6Skin": [
+    "S0083051",
+    "A0096003",
+    "V0078010"
+  ],
+  "LevelUpCharacterGoodsHideTime": 900,
+  "ThreeZZCharacterGoodsBuyHideTime": 300,
+  "ThreeZZCharacterGoodsHideTime": 1800,
+  "SixZZCharacterGoodsHideTime": 300,
+  "CharacterGoodsHideTime": 480,
+  "BestiarySupplyTime": 1731549600,
+  "BossHurtMax": 10179537,
+  "BossTurnMax": 6,
+  "BossStarMax": 12,
+  "BossLevelMax": 600,
+  "BossRarityLimit": 4,
+  "BossFightLimit": [
+    2,
+    2
+  ],
+  "NewPlayerJumpWeaponOpenSwitch": 0,
+  "NewPlayerJumpWeaponCondition": [
+    [
+      "2024/12/24 10:00:00"
+    ],
+    [
+      "M100012"
+    ]
+  ],
+  "NewPlayerJumpWeaponLockIdCondition": [
+    [
+      "2024/12/24 10:00:00"
+    ],
+    [
+      "M200002"
+    ]
+  ],
+  "NewPlayerJumpWeaponTime": 7200,
+  "NewPlayerJumpWeapon1": 480,
+  "NewPlayerJumpWeapon2": 480,
+  "NewPlayerJumpWeaponLock1": 300,
+  "NewPlayerJumpWeaponLock2": 480,
+  "NewPlayerJumpWeaponReroll": 300,
+  "NewPlayerJumpWeapon1Id": [
+    "100004001",
+    "100004002",
+    "100004003",
+    "100004004"
+  ],
+  "NewPlayerJumpWeapon2Id": [
+    "100005001",
+    "100005002",
+    "100005003",
+    "100005004"
+  ],
+  "NewPlayerJumpWeapon3Id": [
+    "100006001",
+    "100006002",
+    "100006003",
+    "100006004"
+  ],
+  "NewPlayerJumpWeaponLockId": [
+    "100007001",
+    "100007002",
+    "100007003"
+  ],
+  "NewPlayerJumpWeaponRerollId": [
+    "100008001"
+  ],
+  "NewPlayerJumpWeaponLockHideTime": 0,
+  "NewPlayerJumpWeaponRerollHideTime": 0,
+  "NewPlayerJumpWeaponId": [
+    "30842",
+    "31145",
+    "39002"
+  ],
+  "ClientExtendData": [
+    [
+      "test",
+      "aaa"
+    ]
+  ],
+  "ClientExtendDataMap": {
+    "test": "aaa"
+  },
+  "GuoBaoBulletHellList": [
+    "18301",
+    "18302",
+    "18303",
+    "18304",
+    "18305",
+    "18306"
+  ],
+  "GuoBaoBulletHellCount": 200,
+  "NianBeastRefresh": 10,
+  "WeiSuoShopSpine": [
+    "D0127",
+    "D0127001"
+  ],
+  "DHShopSpine": [
+    "V0112",
+    "V0112002"
+  ],
+  "YuReH5activity": "url_onesdkportrait:https://game.bilibili.com/whmx/1st0419/h5/?sourceFrom=1002",
+  "YearGiftLimit1": 10000,
+  "YearGiftLimit2": [
+    "2025/01/19 00:00:00",
+    "2025/04/18 23:59:59"
+  ],
+  "ItemUseMax": 999,
+  "AnnualReport": "url_onesdkportrait:https://game.bilibili.com/whmx/gznb2026/?source=hdlb",
+  "RoomDecorationReward": [
+    [
+      "1",
+      "90"
+    ],
+    [
+      "3",
+      "5000"
+    ],
+    [
+      "3225",
+      "1"
+    ]
+  ],
+  "RoomDecorationRadomPlayer": 30,
+  "RoomDecorationLikeLimit": 2,
+  "RoomDecorationRobotLike": [
+    [
+      "12:00",
+      "14:00"
+    ],
+    [
+      "18:00",
+      "20:00"
+    ]
+  ],
+  "RoomDecorationRecordLimit": 50,
+  "RoomDecorationRefreshTime": 5,
+  "RoomDecorationRewardLimit": 2,
+  "RoomDecorationRadomEvent": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "RoomDecorationRadomReward": [
+    [
+      "5098",
+      "500",
+      "200"
+    ],
+    [
+      "3001",
+      "1",
+      "50"
+    ],
+    [
+      "3",
+      "6000",
+      "200"
+    ]
+  ],
+  "RoomDecorationRefreshplayerTime": 5,
+  "DH2ShopSpine": [
+    "A0163",
+    "A0163001"
+  ],
+  "SeedRadomPlayer": 30,
+  "SeedRobotLike": [
+    [
+      "12:00",
+      "14:00"
+    ],
+    [
+      "18:00",
+      "20:00"
+    ]
+  ],
+  "SeedRecordLimit": 50,
+  "SeedRefreshTime": 5,
+  "SeedRewardLimit": 2,
+  "SeedRadomEvent": [
+    1,
+    2,
+    3
+  ],
+  "SeedRadomReward": [
+    [
+      "2105",
+      "6",
+      "200"
+    ],
+    [
+      "3001",
+      "2",
+      "50"
+    ],
+    [
+      "3",
+      "20000",
+      "200"
+    ]
+  ],
+  "SeedRefreshplayerTime": 5,
+  "SeedMoney": "5249",
+  "SeedRandomHero": null,
+  "SeedProductRatio": 5000,
+  "SeedProductRatioTime": 2,
+  "SeedExchangeLimit": 0,
+  "LightGameRadomDotAmount": [
+    2,
+    3
+  ],
+  "LightGameRadomDot": [
+    [
+      "ZGCX1",
+      "30"
+    ],
+    [
+      "ZGCX2",
+      "20"
+    ],
+    [
+      "ZGCX3",
+      "10"
+    ],
+    [
+      "ZGCX4",
+      "20"
+    ],
+    [
+      "ZGCX5",
+      "20"
+    ]
+  ],
+  "TMShopSpine": [
+    "V0053",
+    "V0053001"
+  ],
+  "MiniBattleUnlockLimit": 2,
+  "MainShopSpine": [
+    "S0087",
+    "S0087001"
+  ],
+  "MainOpenTime": 1753927200,
+  "RYShopSpine": null,
+  "ExchangeEquipTasks": [
+    50,
+    100,
+    150,
+    200,
+    250,
+    300,
+    350,
+    400
+  ],
+  "ExchangeEquipTaskReward": [
+    {
+      "id": "3107",
+      "count": 20
+    }
+  ],
+  "StoryModelUnlock": [
+    "M300015"
+  ],
+  "NewbieGiftTime": 1752112800,
+  "NewbieGiftLevel": "M100004",
+  "NewbieGiftPop": [
+    "M100004",
+    "1"
+  ],
+  "NewbieGiftNotPop": [
+    "M200015",
+    "30"
+  ],
+  "NewbieGiftContinueTime": 172800,
+  "NewbieGiftUnlock": [
+    [
+      "100009001",
+      "0"
+    ],
+    [
+      "100009002",
+      "0"
+    ],
+    [
+      "100009003",
+      "100009002"
+    ],
+    [
+      "100009004",
+      "100009002"
+    ],
+    [
+      "100009005",
+      "100009004"
+    ],
+    [
+      "100009006",
+      "100009004"
+    ]
+  ],
+  "NewbieGiftCharacter": [
+    "A0069",
+    "S0048",
+    "W0038",
+    "V0049"
+  ],
+  "TiredLimit": 3,
+  "ContractLimit": 6,
+  "EliminateBaseCredit": 5,
+  "EliminateComboAdd": 1000,
+  "EliminateSpecialAdd1": 3,
+  "EliminateSpecialAdd2": 5,
+  "EliminateSpecialAdd3": 4,
+  "EliminateLimitCredit": 9000000,
+  "EliminateWeight": [
+    [
+      "2001",
+      "5000"
+    ],
+    [
+      "2004",
+      "5000"
+    ]
+  ],
+  "NFCJump": [
+    "1009",
+    "1200",
+    "2000"
+  ],
+  "HighSkinLineWeight": [
+    40,
+    100
+  ],
+  "MiniBattleNewLimit": 3,
+  "DualBattleUpLimit": 3,
+  "DualBattleDownLimit": 3,
+  "DualBattleCoin": "5250",
+  "DualLevelInfo": [
+    "26652",
+    "26653",
+    "26654",
+    "26655"
+  ],
+  "VitalityStorageLimit": 1000,
+  "RechargeRebateItem": [
+    {
+      "id": "64",
+      "count": 1
+    }
+  ],
+  "RechargeRebateItemNew": 1,
+  "BossDummy3BossLimit": 4,
+  "BossDummy3BossPara": 0.001,
+  "CharacterLimit": 10,
+  "CharacterIntervel": 300,
+  "MusicNum": 10,
+  "ReturnLink": "url_onesdkportrait:https://game.bilibili.com/whmx/20250930/?sourceFrom=1002",
+  "RandomGiftLimit": 35,
+  "Contract3Limit": 8,
+  "WoodTrainingRecordLimit": 5,
+  "RandomGiftDailyLimit": 3,
+  "RandomGiftDaily": [
+    [
+      "82009",
+      "1",
+      "2000"
+    ],
+    [
+      "82010",
+      "1",
+      "2000"
+    ],
+    [
+      "82011",
+      "1",
+      "2000"
+    ],
+    [
+      "3220",
+      "1",
+      "2000"
+    ],
+    [
+      "16",
+      "20",
+      "2000"
+    ]
+  ],
+  "DailyAccumulateTimeLimit": 86400,
+  "DailyAccumulateBasicSpeed": [
+    {
+      "id": "5113",
+      "count": 1
+    }
+  ],
+  "DailyAccumulateBasicSpeedInterval": 5,
+  "ConstantStrikeLimit": 3,
+  "ManagementSpecialItemLimit": 3,
+  "ManagementSpecialItemCD": 10,
+  "ManagementBasicRep": [
+    {
+      "id": "5114",
+      "count": 10
+    }
+  ],
+  "ManagementLimitRep": [
+    {
+      "id": "5114",
+      "count": 5000
+    }
+  ],
+  "ManagementComboCD": [
+    "10",
+    "8",
+    "5",
+    "3",
+    "1"
+  ],
+  "ManagementValueSplit": [
+    "30",
+    "30",
+    "10",
+    "10",
+    "20"
+  ],
+  "CompanyVoiceTime": 20,
+  "ZxlAutoHide": 15,
+  "AccessMethodType": null,
+  "AccessMethodTyp1": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "AccessMethodTyp2": [
+    1,
+    2,
+    4
+  ],
+  "RefreshWeapon": [
+    {
+      "id": "2501",
+      "count": 1
+    }
+  ],
+  "CumulativeRechargeStatTimeStart": 1744992000,
+  "CumulativeRechargeStatTimeEnd": 1776527999,
+  "CumulativeRechargeDisplayTimeStart": 1775008800,
+  "CumulativeRechargeDisplayTimeEnd": 1778119199,
+  "RetDoubTotal": 50,
+  "YearGiftLimit3": 10000,
+  "YearGiftLimit4": [
+    "2025/04/19 00:00:00",
+    "2026/04/18 23:59:59"
+  ],
+  "YearGiftLimit5": 20000,
+  "YearGiftLimit6": [
+    "2024/04/19 00:00:00",
+    "2026/04/18 23:59:59"
+  ],
+  "YearGiftLimit7": [
+    "2026/01/19 00:00:00",
+    "2026/04/18 23:59:59"
+  ],
+  "GuildNameLength": 24,
+  "GuildJobCannotChangePermission": [
+    [
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "GuildCreationCost": [
+    {
+      "id": "1",
+      "count": 100
+    }
+  ],
+  "GuildJobChangePermission": [
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "GuildAnnounceChangePermission": [
+    1
+  ],
+  "GuildApplyHandlePermission": [
+    1
+  ],
+  "GuildKickOutPermission": [
+    1
+  ],
+  "GuildLevelUpPermission": [
+    1
+  ],
+  "ExitGuildCooling": 1440,
+  "Presidentsautomatictransfer": 43200,
+  "GuildAutomaticallyDissolved": 86400,
+  "GuildMemberLimit": 50,
+  "ApplicationGuildLimit": 30,
+  "RefuseApplication": 43200,
+  "KVOpenTime": 1778119200,
+  "GuildFilterInterval": 0,
+  "LevelWeeklyLimit": [
+    150
+  ],
+  "DungeonLimit": [
+    "D600001"
+  ],
+  "DungeonWeeklyLimitMap": {
+    "D600001": 150
+  },
+  "BrilliantUnlockLevel": 100,
+  "RewardChangeDisplayTimeStart": 1779933600,
+  "RewardChangeDisplayTimeEnd": 1783648799,
+  "ActivityFSMYDailyRefresh": 1,
+  "DefaultTitle": "40001",
+  "FirstAdventureChapter": "101",
+  "AdventureRoleMoveSpeed": 210,
+  "AdventureTipsWaitSecond": 15,
+  "AdventureSkipWaitSecond": 60
+}

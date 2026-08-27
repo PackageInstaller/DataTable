@@ -1,0 +1,416 @@
+{
+  "1": {
+    "TechId": "1",
+    "Id": "30003",
+    "Unlock": "",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 1,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group01_1"
+    ],
+    "Icon": "Buff_WJHY_Group1_I1",
+    "Name": "秋训·天罚Ⅰ",
+    "Desc": "我方单位自身<color=#158bdb>周围1格</color>内每存在<color=#158bdb>1</color>个敌方单位，则自身回击造成的伤害提高<color=#158bdb>10%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_1",
+    "NameLanText": "秋训·天罚Ⅰ",
+    "DescLan": "activeLan_CampTech_desclan_1",
+    "DescLanText": "我方单位自身<color=#158bdb>周围1格</color>内每存在<color=#158bdb>1</color>个敌方单位，则自身回击造成的伤害提高<color=#158bdb>10%</color>。"
+  },
+  "10": {
+    "TechId": "10",
+    "Id": "30003",
+    "Unlock": "",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 4,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group04_1"
+    ],
+    "Icon": "Buff_WJHY_Group1_D1",
+    "Name": "秋训·颂持Ⅰ",
+    "Desc": "我方单位满能量时，受到的伤害降低<color=#158bdb>30%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_10",
+    "NameLanText": "秋训·颂持Ⅰ",
+    "DescLan": "activeLan_CampTech_desclan_10",
+    "DescLanText": "我方单位满能量时，受到的伤害降低<color=#158bdb>30%</color>。"
+  },
+  "11": {
+    "TechId": "11",
+    "Id": "30003",
+    "Unlock": "10",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 4,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group04_2"
+    ],
+    "Icon": "Buff_WJHY_Group1_D2",
+    "Name": "秋训·颂持Ⅱ",
+    "Desc": "我方单位满能量时，受到的伤害降低<color=#158bdb>50%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_11",
+    "NameLanText": "秋训·颂持Ⅱ",
+    "DescLan": "activeLan_CampTech_desclan_11",
+    "DescLanText": "我方单位满能量时，受到的伤害降低<color=#158bdb>50%</color>。"
+  },
+  "12": {
+    "TechId": "12",
+    "Id": "30003",
+    "Unlock": "11",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 4,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group04_3"
+    ],
+    "Icon": "Buff_WJHY_Group1_D3",
+    "Name": "秋训·颂持Ⅲ",
+    "Desc": "我方单位满能量时，受到的伤害降低<color=#158bdb>70%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_12",
+    "NameLanText": "秋训·颂持Ⅲ",
+    "DescLan": "activeLan_CampTech_desclan_12",
+    "DescLanText": "我方单位满能量时，受到的伤害降低<color=#158bdb>70%</color>。"
+  },
+  "13": {
+    "TechId": "13",
+    "Id": "30003",
+    "Unlock": "",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 5,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group05_1"
+    ],
+    "Icon": "Buff_WJHY_Group1_F1",
+    "Name": "秋训·点化Ⅰ",
+    "Desc": "我方召唤物在进行攻击前，使<color=#158bdb>周围1格</color>内的敌方全体获得<color=#158bdb>1</color>层<color=#ff6724>脆弱</color>状态。",
+    "NameLan": "activeLan_CampTech_namelan_13",
+    "NameLanText": "秋训·点化Ⅰ",
+    "DescLan": "activeLan_CampTech_desclan_13",
+    "DescLanText": "我方召唤物在进行攻击前，使<color=#158bdb>周围1格</color>内的敌方全体获得<color=#158bdb>1</color>层<color=#ff6724>脆弱</color>状态。"
+  },
+  "14": {
+    "TechId": "14",
+    "Id": "30003",
+    "Unlock": "13",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 5,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group05_2"
+    ],
+    "Icon": "Buff_WJHY_Group1_F2",
+    "Name": "秋训·点化Ⅱ",
+    "Desc": "我方召唤物在进行攻击前，使<color=#158bdb>周围1格</color>内的敌方全体获得<color=#158bdb>2</color>层<color=#ff6724>脆弱</color>状态。",
+    "NameLan": "activeLan_CampTech_namelan_14",
+    "NameLanText": "秋训·点化Ⅱ",
+    "DescLan": "activeLan_CampTech_desclan_14",
+    "DescLanText": "我方召唤物在进行攻击前，使<color=#158bdb>周围1格</color>内的敌方全体获得<color=#158bdb>2</color>层<color=#ff6724>脆弱</color>状态。"
+  },
+  "15": {
+    "TechId": "15",
+    "Id": "30003",
+    "Unlock": "14",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 5,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group05_3"
+    ],
+    "Icon": "Buff_WJHY_Group1_F3",
+    "Name": "秋训·点化Ⅲ",
+    "Desc": "我方召唤物在进行攻击前，使<color=#158bdb>周围2格</color>内的敌方全体获得<color=#158bdb>2</color>层<color=#ff6724>脆弱</color>状态。",
+    "NameLan": "activeLan_CampTech_namelan_15",
+    "NameLanText": "秋训·点化Ⅲ",
+    "DescLan": "activeLan_CampTech_desclan_15",
+    "DescLanText": "我方召唤物在进行攻击前，使<color=#158bdb>周围2格</color>内的敌方全体获得<color=#158bdb>2</color>层<color=#ff6724>脆弱</color>状态。"
+  },
+  "16": {
+    "TechId": "16",
+    "Id": "30003",
+    "Unlock": "",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 6,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group06_1"
+    ],
+    "Icon": "Buff_WJHY_Group1_E1",
+    "Name": "秋训·福缘深厚Ⅰ",
+    "Desc": "战斗中每存在<color=#158bdb>1</color>个我方单位，则我方单位造成的伤害提高<color=#158bdb>3%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_16",
+    "NameLanText": "秋训·福缘深厚Ⅰ",
+    "DescLan": "activeLan_CampTech_desclan_16",
+    "DescLanText": "战斗中每存在<color=#158bdb>1</color>个我方单位，则我方单位造成的伤害提高<color=#158bdb>3%</color>。"
+  },
+  "17": {
+    "TechId": "17",
+    "Id": "30003",
+    "Unlock": "16",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 6,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group06_2"
+    ],
+    "Icon": "Buff_WJHY_Group1_E2",
+    "Name": "秋训·福缘深厚Ⅱ",
+    "Desc": "战斗中每存在<color=#158bdb>1</color>个我方单位，则我方单位造成的伤害提高<color=#158bdb>5%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_17",
+    "NameLanText": "秋训·福缘深厚Ⅱ",
+    "DescLan": "activeLan_CampTech_desclan_17",
+    "DescLanText": "战斗中每存在<color=#158bdb>1</color>个我方单位，则我方单位造成的伤害提高<color=#158bdb>5%</color>。"
+  },
+  "18": {
+    "TechId": "18",
+    "Id": "30003",
+    "Unlock": "17",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 6,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group06_3"
+    ],
+    "Icon": "Buff_WJHY_Group1_E3",
+    "Name": "秋训·福缘深厚Ⅲ",
+    "Desc": "战斗中每存在<color=#158bdb>1</color>个我方单位，则我方单位造成的伤害提高<color=#158bdb>6%</color>且我方召唤物造成的伤害额外提高<color=#158bdb>2%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_18",
+    "NameLanText": "秋训·福缘深厚Ⅲ",
+    "DescLan": "activeLan_CampTech_desclan_18",
+    "DescLanText": "战斗中每存在<color=#158bdb>1</color>个我方单位，则我方单位造成的伤害提高<color=#158bdb>6%</color>且我方召唤物造成的伤害额外提高<color=#158bdb>2%</color>。"
+  },
+  "2": {
+    "TechId": "2",
+    "Id": "30003",
+    "Unlock": "1",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 1,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group01_2"
+    ],
+    "Icon": "Buff_WJHY_Group1_I2",
+    "Name": "秋训·天罚Ⅱ",
+    "Desc": "我方单位自身<color=#158bdb>周围2格</color>内每存在<color=#158bdb>1</color>个敌方单位，则自身回击造成的伤害提高<color=#158bdb>10%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_2",
+    "NameLanText": "秋训·天罚Ⅱ",
+    "DescLan": "activeLan_CampTech_desclan_2",
+    "DescLanText": "我方单位自身<color=#158bdb>周围2格</color>内每存在<color=#158bdb>1</color>个敌方单位，则自身回击造成的伤害提高<color=#158bdb>10%</color>。"
+  },
+  "3": {
+    "TechId": "3",
+    "Id": "30003",
+    "Unlock": "2",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 1,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group01_3"
+    ],
+    "Icon": "Buff_WJHY_Group1_I3",
+    "Name": "秋训·天罚Ⅲ",
+    "Desc": "我方单位自身<color=#158bdb>周围2格</color>内每存在<color=#158bdb>1</color>个敌方单位，则自身回击造成的伤害提高<color=#158bdb>20%</color>。",
+    "NameLan": "activeLan_CampTech_namelan_3",
+    "NameLanText": "秋训·天罚Ⅲ",
+    "DescLan": "activeLan_CampTech_desclan_3",
+    "DescLanText": "我方单位自身<color=#158bdb>周围2格</color>内每存在<color=#158bdb>1</color>个敌方单位，则自身回击造成的伤害提高<color=#158bdb>20%</color>。"
+  },
+  "4": {
+    "TechId": "4",
+    "Id": "30003",
+    "Unlock": "",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 2,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group02_1"
+    ],
+    "Icon": "Buff_WJHY_Group1_B1",
+    "Name": "秋训·戒律Ⅰ",
+    "Desc": "我方单位进行回击后，下<color=#158bdb>1</color>次直接攻击使受击敌方获得<color=#ff6724>肃静</color>状态；此效果不可叠加。",
+    "NameLan": "activeLan_CampTech_namelan_4",
+    "NameLanText": "秋训·戒律Ⅰ",
+    "DescLan": "activeLan_CampTech_desclan_4",
+    "DescLanText": "我方单位进行回击后，下<color=#158bdb>1</color>次直接攻击使受击敌方获得<color=#ff6724>肃静</color>状态；此效果不可叠加。"
+  },
+  "5": {
+    "TechId": "5",
+    "Id": "30003",
+    "Unlock": "4",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 2,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group02_2"
+    ],
+    "Icon": "Buff_WJHY_Group1_B2",
+    "Name": "秋训·戒律Ⅱ",
+    "Desc": "我方单位进行回击后，下<color=#158bdb>1</color>次造成回击伤害时使受击敌方获得<color=#ff6724>肃静</color>状态；此效果不可叠加。",
+    "NameLan": "activeLan_CampTech_namelan_5",
+    "NameLanText": "秋训·戒律Ⅱ",
+    "DescLan": "activeLan_CampTech_desclan_5",
+    "DescLanText": "我方单位进行回击后，下<color=#158bdb>1</color>次造成回击伤害时使受击敌方获得<color=#ff6724>肃静</color>状态；此效果不可叠加。"
+  },
+  "6": {
+    "TechId": "6",
+    "Id": "30003",
+    "Unlock": "5",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 2,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group02_3"
+    ],
+    "Icon": "Buff_WJHY_Group1_B3",
+    "Name": "秋训·戒律Ⅲ",
+    "Desc": "我方单位进行回击后，下<color=#158bdb>1</color>次造成伤害时，使受击敌方获得<color=#ff6724>肃静</color>状态；此效果不可叠加。",
+    "NameLan": "activeLan_CampTech_namelan_6",
+    "NameLanText": "秋训·戒律Ⅲ",
+    "DescLan": "activeLan_CampTech_desclan_6",
+    "DescLanText": "我方单位进行回击后，下<color=#158bdb>1</color>次造成伤害时，使受击敌方获得<color=#ff6724>肃静</color>状态；此效果不可叠加。"
+  },
+  "7": {
+    "TechId": "7",
+    "Id": "30003",
+    "Unlock": "",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 3,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group03_1"
+    ],
+    "Icon": "Buff_WJHY_Group1_A1",
+    "Name": "秋训·苦行Ⅰ",
+    "Desc": "我方任意单位每行动<color=#158bdb>1</color>次，则自身造成的伤害提高<color=#158bdb>3%</color>，此效果最多可叠加<color=#158bdb>10</color>层。",
+    "NameLan": "activeLan_CampTech_namelan_7",
+    "NameLanText": "秋训·苦行Ⅰ",
+    "DescLan": "activeLan_CampTech_desclan_7",
+    "DescLanText": "我方任意单位每行动<color=#158bdb>1</color>次，则自身造成的伤害提高<color=#158bdb>3%</color>，此效果最多可叠加<color=#158bdb>10</color>层。"
+  },
+  "8": {
+    "TechId": "8",
+    "Id": "30003",
+    "Unlock": "7",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 3,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group03_2"
+    ],
+    "Icon": "Buff_WJHY_Group1_A2",
+    "Name": "秋训·苦行Ⅱ",
+    "Desc": "我方任意单位每行动<color=#158bdb>1</color>次，则自身造成的伤害提高<color=#158bdb>5%</color>，此效果最多可叠加<color=#158bdb>10</color>层。",
+    "NameLan": "activeLan_CampTech_namelan_8",
+    "NameLanText": "秋训·苦行Ⅱ",
+    "DescLan": "activeLan_CampTech_desclan_8",
+    "DescLanText": "我方任意单位每行动<color=#158bdb>1</color>次，则自身造成的伤害提高<color=#158bdb>5%</color>，此效果最多可叠加<color=#158bdb>10</color>层。"
+  },
+  "9": {
+    "TechId": "9",
+    "Id": "30003",
+    "Unlock": "8",
+    "Consume": [
+      {
+        "id": "5251",
+        "count": 1
+      }
+    ],
+    "TechType": 3,
+    "Type": 1,
+    "Para": [
+      "Buff_LJ_Group03_3"
+    ],
+    "Icon": "Buff_WJHY_Group1_A3",
+    "Name": "秋训·苦行Ⅲ",
+    "Desc": "我方任意单位每行动<color=#158bdb>1</color>次，则自身造成的伤害提高<color=#158bdb>7%</color>，此效果最多可叠加<color=#158bdb>10</color>层。",
+    "NameLan": "activeLan_CampTech_namelan_9",
+    "NameLanText": "秋训·苦行Ⅲ",
+    "DescLan": "activeLan_CampTech_desclan_9",
+    "DescLanText": "我方任意单位每行动<color=#158bdb>1</color>次，则自身造成的伤害提高<color=#158bdb>7%</color>，此效果最多可叠加<color=#158bdb>10</color>层。"
+  }
+}

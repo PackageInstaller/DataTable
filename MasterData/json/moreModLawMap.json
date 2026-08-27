@@ -1,0 +1,1598 @@
+{
+  "101": {
+    "Id": "101",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "精密防护",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_ShielderImmunity",
+    "LawScore": 0,
+    "LawICON": "ALL_A_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_101",
+    "LawNameLanText": "精密防护",
+    "TextLan": "activeLan_MoreModLaw_textLan_101",
+    "TextLanText": "存在护盾时，免疫<color=#ff6724>眩晕</color>、<color=#ff6724>肃静</color>和位移相关效果。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "102": {
+    "Id": "102",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "宿卫之力",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_ActionEndIntervene",
+    "LawScore": 0,
+    "LawICON": "ALL_A_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_102",
+    "LawNameLanText": "宿卫之力",
+    "TextLan": "activeLan_MoreModLaw_textLan_102",
+    "TextLanText": "回合结束时，任意宿卫当前生命值大于<color=#158bdb>50%</color>，可援护自身周围<color=#158bdb>2</color>格内的友方单位，效果持续<color=#158bdb>1</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "103": {
+    "Id": "103",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "不堪重负",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_Debuff",
+    "LawScore": 0,
+    "LawICON": "ALL_A_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_103",
+    "LawNameLanText": "不堪重负",
+    "TextLan": "activeLan_MoreModLaw_textLan_103",
+    "TextLanText": "若存在不低于<color=#158bdb>5</color>个负面效果，每回合结束时自身受到最大生命值<color=#158bdb>10%</color>的真实伤害。此效果不可叠加。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "104": {
+    "Id": "104",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "战意凛然",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_SkillHurtHeal",
+    "LawScore": 0,
+    "LawICON": "ALL_A_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_104",
+    "LawNameLanText": "战意凛然",
+    "TextLan": "activeLan_MoreModLaw_textLan_104",
+    "TextLanText": "受到的治疗量降低<color=#158bdb>60%</color>。\n使用绝技后，生命汲取增加<color=#158bdb>25%</color>，效果持续<color=#158bdb>1</color>回合，最多可叠加<color=#158bdb>2</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "105": {
+    "Id": "105",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "能量充沛",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_EnergyDef",
+    "LawScore": 0,
+    "LawICON": "ALL_A_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_105",
+    "LawNameLanText": "能量充沛",
+    "TextLan": "activeLan_MoreModLaw_textLan_105",
+    "TextLanText": "能量不低于<color=#158bdb>3</color>点时，自身物理和构素防御力提高<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "106": {
+    "Id": "106",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "强韧身躯",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_LockHp",
+    "LawScore": 0,
+    "LawICON": "ALL_A_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_106",
+    "LawNameLanText": "强韧身躯",
+    "TextLan": "activeLan_MoreModLaw_textLan_106",
+    "TextLanText": "当前生命值大于<color=#158bdb>70%</color>时，每次受到的伤害不高于最大生命值的<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "107": {
+    "Id": "107",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "先锋锐气",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_MoveDamage",
+    "LawScore": 0,
+    "LawICON": "ALL_A_07",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_107",
+    "LawNameLanText": "先锋锐气",
+    "TextLan": "activeLan_MoreModLaw_textLan_107",
+    "TextLanText": "攻击前每移动<color=#158bdb>1</color>格，则该次攻击攻击力和暴击伤害提高<color=#158bdb>5%</color>，最多可增加<color=#158bdb>25%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "108": {
+    "Id": "108",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "安全备战",
+    "LawSkill": "Buff_DGChampion_S2_FreeA_SeparateAtk",
+    "LawScore": 0,
+    "LawICON": "ALL_A_08",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_108",
+    "LawNameLanText": "安全备战",
+    "TextLan": "activeLan_MoreModLaw_textLan_108",
+    "TextLanText": "自身周围<color=#158bdb>1</color>格没有敌方单位时，攻击力提高<color=#158bdb>20%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "109": {
+    "Id": "109",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "战术调整·一",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_JobAtkUpDown",
+    "LawScore": 0,
+    "LawICON": "ALL_A_09",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_109",
+    "LawNameLanText": "战术调整·一",
+    "TextLan": "activeLan_MoreModLaw_textLan_109",
+    "TextLanText": "构术职业攻击力提高<color=#158bdb>30%</color>，远击职业攻击力减少<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "110": {
+    "Id": "110",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_up",
+    "Weight": 10,
+    "LawName": "战术调整·二",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_JobDefUpDown",
+    "LawScore": 0,
+    "LawICON": "ALL_A_10",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_110",
+    "LawNameLanText": "战术调整·二",
+    "TextLan": "activeLan_MoreModLaw_textLan_110",
+    "TextLanText": "宿卫职业防御力提高<color=#158bdb>30%</color>，轻锐职业防御力减少<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "201": {
+    "Id": "201",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "荆棘护甲",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_ShielderCounter",
+    "LawScore": 0,
+    "LawICON": "ALL_B_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_201",
+    "LawNameLanText": "荆棘护甲",
+    "TextLan": "activeLan_MoreModLaw_textLan_201",
+    "TextLanText": "存在护盾时，受到的治疗量降低<color=#158bdb>20%</color>。\n若受到物理伤害，则将该物理伤害的<color=#158bdb>20%</color>反弹给该次攻击的敌方单位。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "202": {
+    "Id": "202",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "舍己之盾",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_InterveneDefDown",
+    "LawScore": 0,
+    "LawICON": "ALL_B_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_202",
+    "LawNameLanText": "舍己之盾",
+    "TextLan": "activeLan_MoreModLaw_textLan_202",
+    "TextLanText": "触发援护后，自身与被援护的友方单位物理和构素防御力降低<color=#158bdb>50%</color>，效果持续<color=#158bdb>1</color>回合，不可叠加。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "203": {
+    "Id": "203",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "敌我不分",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_JobSkillDamage",
+    "LawScore": 0,
+    "LawICON": "ALL_B_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_203",
+    "LawNameLanText": "敌我不分",
+    "TextLan": "activeLan_MoreModLaw_textLan_203",
+    "TextLanText": "使用职业技能时，对自身周围<color=#158bdb>1</color>格的友方单位造成当前生命值<color=#158bdb>10%</color>的真实伤害。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "204": {
+    "Id": "204",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "势单力薄",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_CountDefDown",
+    "LawScore": 0,
+    "LawICON": "ALL_B_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_204",
+    "LawNameLanText": "势单力薄",
+    "TextLan": "activeLan_MoreModLaw_textLan_204",
+    "TextLanText": "场上全体单位少于<color=#158bdb>8</color>时，全体单位受到的治疗量降低<color=#158bdb>20%</color>，物理和构素防御力降低<color=#158bdb>20%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "205": {
+    "Id": "205",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "能量过剩",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_EnergyMov",
+    "LawScore": 0,
+    "LawICON": "ALL_B_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_205",
+    "LawNameLanText": "能量过剩",
+    "TextLan": "activeLan_MoreModLaw_textLan_205",
+    "TextLanText": "能量不低于<color=#158bdb>3</color>点时，移动力减少<color=#158bdb>1</color>；\n能量不低于<color=#158bdb>5</color>点时，移动力减少<color=#158bdb>2</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "206": {
+    "Id": "206",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "重伤难愈",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_HpHealRate",
+    "LawScore": 0,
+    "LawICON": "ALL_B_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_206",
+    "LawNameLanText": "重伤难愈",
+    "TextLan": "activeLan_MoreModLaw_textLan_206",
+    "TextLanText": "生命值低于<color=#158bdb>50%</color>时，受到的治疗量降低<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "207": {
+    "Id": "207",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "困守险地",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_MoveCritical",
+    "LawScore": 0,
+    "LawICON": "ALL_B_07",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_207",
+    "LawNameLanText": "困守险地",
+    "TextLan": "activeLan_MoreModLaw_textLan_207",
+    "TextLanText": "若当前回合未移动，则下<color=#158bdb>1</color>次受到攻击时必受到暴击。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "208": {
+    "Id": "208",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "孤立无援",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_SeparateAtkDown",
+    "LawScore": 0,
+    "LawICON": "ALL_B_08",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_208",
+    "LawNameLanText": "孤立无援",
+    "TextLan": "activeLan_MoreModLaw_textLan_208",
+    "TextLanText": "周围<color=#158bdb>1</color>格不存在友方单位时，自身攻击力降低<color=#158bdb>20%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "209": {
+    "Id": "209",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "战术·坚甲",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_NoCritical",
+    "LawScore": 0,
+    "LawICON": "ALL_B_09",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_209",
+    "LawNameLanText": "战术·坚甲",
+    "TextLan": "activeLan_MoreModLaw_textLan_209",
+    "TextLanText": "战斗中，全部单位无法造成暴击，最大生命值提高<color=#158bdb>100%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "210": {
+    "Id": "210",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "all_down",
+    "Weight": 10,
+    "LawName": "战术·狂飙",
+    "LawSkill": "Buff_DGChampion_S2_FreeB_Deathimprovespeed",
+    "LawScore": 0,
+    "LawICON": "ALL_B_10",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_210",
+    "LawNameLanText": "战术·狂飙",
+    "TextLan": "activeLan_MoreModLaw_textLan_210",
+    "TextLanText": "每有1个友方单位被击败，我方全体单位速度增加<color=#158bdb>8</color>。此效果最多叠加<color=#158bdb>5</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_01": {
+    "Id": "ALL_JX_01",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_1_a",
+    "Weight": 10,
+    "LawName": "万箭齐发",
+    "LawSkill": "Buff_DGChampion_ST_Group1_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp2",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_01",
+    "LawNameLanText": "万箭齐发",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_01",
+    "TextLanText": "攻击造成范围伤害提高<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_02": {
+    "Id": "ALL_JX_02",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_1_b",
+    "Weight": 10,
+    "LawName": "永动机",
+    "LawSkill": "Buff_WJHY_Group1_D1_01",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_02",
+    "LawNameLanText": "永动机",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_02",
+    "TextLanText": "击败敌方单位时，自身回复最大生命值的<color=#158bdb>70%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_03": {
+    "Id": "ALL_JX_03",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_2_a",
+    "Weight": 10,
+    "LawName": "贴身战",
+    "LawSkill": "Buff_DGChampion_ST_Group3_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp2",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_03",
+    "LawNameLanText": "贴身战",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_03",
+    "TextLanText": "攻击单体目标时，若受击目标距离自身<color=#158bdb>1</color>格，则该次攻击获得<color=#158bdb>50%</color>生命偷取率。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_04": {
+    "Id": "ALL_JX_04",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_2_b",
+    "Weight": 10,
+    "LawName": "鹰眼",
+    "LawSkill": "Buff_DGChampion_ST_Group4_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_04",
+    "LawNameLanText": "鹰眼",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_04",
+    "TextLanText": "攻击时，若受击目标距离自身大于等于<color=#158bdb>2</color>格，则该次攻击获得<color=#158bdb>50%</color>暴击率。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_05": {
+    "Id": "ALL_JX_05",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_all",
+    "Weight": 10,
+    "LawName": "急速",
+    "LawSkill": "Buff_DGChampion_ST_Group5_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_05",
+    "LawNameLanText": "急速",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_05",
+    "TextLanText": "造成伤害降低<color=#158bdb>20%</color>。\n移动力增加<color=#158bdb>2</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_06": {
+    "Id": "ALL_JX_06",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_3_a",
+    "Weight": 10,
+    "LawName": "奋战到底",
+    "LawSkill": "Buff_DGChampion_ST_Group6_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp2",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_06",
+    "LawNameLanText": "奋战到底",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_06",
+    "TextLanText": "受到构素伤害时，自身构素防御力提高<color=#158bdb>5%</color>，最多可叠加<color=#158bdb>4</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_07": {
+    "Id": "ALL_JX_07",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_all",
+    "Weight": 10,
+    "LawName": "岿然",
+    "LawSkill": "Buff_DGChampion_ST_Group7_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_07",
+    "LawNameLanText": "岿然",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_07",
+    "TextLanText": "物理防御力降低<color=#158bdb>20%</color>。\n最大生命值提高<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_08": {
+    "Id": "ALL_JX_08",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_4_a",
+    "Weight": 10,
+    "LawName": "入定者",
+    "LawSkill": "Buff_DGChampion_ST_Group8_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp2",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_08",
+    "LawNameLanText": "入定者",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_08",
+    "TextLanText": "进入瞄准状态时，物理防御力提高<color=#158bdb>70%</color>，持续<color=#158bdb>1</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_09": {
+    "Id": "ALL_JX_09",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_4_b",
+    "Weight": 10,
+    "LawName": "飞升治疗",
+    "LawSkill": "Buff_DGChampion_ST_Group9_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_09",
+    "LawNameLanText": "飞升治疗",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_09",
+    "TextLanText": "受到治疗时，攻击力提高<color=#158bdb>5%</color>，最多可叠加<color=#158bdb>10</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "ALL_JX_10": {
+    "Id": "ALL_JX_10",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "JX_4_b",
+    "Weight": 10,
+    "LawName": "暴力后勤",
+    "LawSkill": "Buff_DGChampion_ST_Group10_1",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_ALL_JX_10",
+    "LawNameLanText": "暴力后勤",
+    "TextLan": "activeLan_MoreModLaw_textLan_ALL_JX_10",
+    "TextLanText": "受到的治疗量提高<color=#158bdb>20%</color>，获得的护盾量提高<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1101": {
+    "Id": "A_1101",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "后顾无忧",
+    "LawSkill": "Buff_DGChampion_S1_AtkGroup_inspire",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1101",
+    "LawNameLanText": "后顾无忧",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1101",
+    "TextLanText": "任意单位被友方单位援护后，下<color=#158bdb>1</color>次攻击伤害提高<color=#158bdb>100%</color>。\n此效果不能叠加。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1102": {
+    "Id": "A_1102",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "全盛状态",
+    "LawSkill": "Buff_DGChampion_S1_AtkGroup_accumulate",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1102",
+    "LawNameLanText": "全盛状态",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1102",
+    "TextLanText": "每轮次结束时，该轮次没有受到伤害的所有单位暴击率增加<color=#158bdb>80%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1103": {
+    "Id": "A_1103",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "团队协作",
+    "LawSkill": "Buff_DGChampion_S1_DefGroup_bedamup",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1103",
+    "LawNameLanText": "团队协作",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1103",
+    "TextLanText": "触发援护时，援护者承担的伤害提高<color=#158bdb>20%</color>；援护者和被援护的友方单位的受治疗效果提高<color=#158bdb>40%</color>，效果持续<color=#158bdb>2</color>回合，最多可叠加<color=#158bdb>5</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1104": {
+    "Id": "A_1104",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "以身为盾",
+    "LawSkill": "Buff_DGChampion_S1_DefGroup_defener",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1104",
+    "LawNameLanText": "以身为盾",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1104",
+    "TextLanText": "宿卫受到除援护外的所有伤害降低<color=#158bdb>50%</color>，援护时受到的伤害提高<color=#158bdb>20%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1105": {
+    "Id": "A_1105",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "蓄势待发",
+    "LawSkill": "Buff_DGChampion_S2_Intervene_SelfCD",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1105",
+    "LawNameLanText": "蓄势待发",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1105",
+    "TextLanText": "回合结束时，若宿卫没有受击，则其职业技能冷却时间减少<color=#158bdb>1</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1106": {
+    "Id": "A_1106",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "羁绊之盾",
+    "LawSkill": "Buff_DGChampion_S2_Intervene_HurtHealRate",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1106",
+    "LawNameLanText": "羁绊之盾",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1106",
+    "TextLanText": "触发援护后，自身与被援护的友方单位生命汲取增加<color=#158bdb>15%</color>，效果持续<color=#158bdb>2</color>回合，最多可叠加<color=#158bdb>2</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1107": {
+    "Id": "A_1107",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "盾域扩散",
+    "LawSkill": "Buff_DGChampion_S2_Intervene_DistanceDef",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_07",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1107",
+    "LawNameLanText": "盾域扩散",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1107",
+    "TextLanText": "宿卫援护范围增加<color=#158bdb>1</color>格。\n触发援护时，自身与被援护友方单位距离每有<color=#158bdb>1</color>格，则自身受到的伤害减少<color=#158bdb>10%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1108": {
+    "Id": "A_1108",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_gd",
+    "Weight": 10,
+    "LawName": "盾挡反冲",
+    "LawSkill": "Buff_DGChampion_S2_Intervene_Push",
+    "LawScore": 0,
+    "LawICON": "chun_YH_gd_08",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1108",
+    "LawNameLanText": "盾挡反冲",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1108",
+    "TextLanText": "触发援护后，该宿卫下<color=#158bdb>1</color>次常击可击退敌方单位<color=#158bdb>2</color>格。\n此效果不可叠加。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1201": {
+    "Id": "A_1201",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "攻防一体",
+    "LawSkill": "Buff_DGChampion_S1_Shielder_CriticalShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1201",
+    "LawNameLanText": "攻防一体",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1201",
+    "TextLanText": "攻击造成暴击时，自身获得该次攻击伤害值<color=#158bdb>80%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1202": {
+    "Id": "A_1202",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "攻即为守",
+    "LawSkill": "Buff_DGChampion_S1_Shielder_AOEShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1202",
+    "LawNameLanText": "攻即为守",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1202",
+    "TextLanText": "攻击造成范围伤害时，自身获得攻击力<color=#158bdb>120%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1203": {
+    "Id": "A_1203",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "必胜信念",
+    "LawSkill": "Buff_DGChampion_S1_Shielder_SelfHitShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1203",
+    "LawNameLanText": "必胜信念",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1203",
+    "TextLanText": "对自身造成伤害时，回复攻击力<color=#158bdb>15%</color>的生命值，并获得最大生命值<color=#158bdb>10%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1204": {
+    "Id": "A_1204",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "友情万岁",
+    "LawSkill": "Buff_DGChampion_S1_Shielder_BeHealedShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1204",
+    "LawNameLanText": "友情万岁",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1204",
+    "TextLanText": "若在非自身行动回合获得生命回复，则自身行动开始时获得最大生命值<color=#158bdb>10%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1205": {
+    "Id": "A_1205",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "连击增益",
+    "LawSkill": "Buff_DGChampion_S2_Shielder_ComboShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1205",
+    "LawNameLanText": "连击增益",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1205",
+    "TextLanText": "任意单位攻击造成连击时，该单位获得该次攻击伤害值<color=#158bdb>25%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1206": {
+    "Id": "A_1206",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "深入敌营",
+    "LawSkill": "Buff_DGChampion_S2_Shielder_ActionEndShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1206",
+    "LawNameLanText": "深入敌营",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1206",
+    "TextLanText": "行动结束时，若自身<color=#158bdb>周围1格</color>存在的敌方单位大于<color=#158bdb>1</color>，则自身获得最大生命值<color=#158bdb>20%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1207": {
+    "Id": "A_1207",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "远程防护",
+    "LawSkill": "Buff_DGChampion_S2_Shielder_DistanceShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_07",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1207",
+    "LawNameLanText": "远程防护",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1207",
+    "TextLanText": "攻击的敌方单位与自身距离不少于<color=#158bdb>3</color>格时，自身获得该次攻击伤害值<color=#158bdb>30%</color>的护盾。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_1208": {
+    "Id": "A_1208",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_gd",
+    "Weight": 10,
+    "LawName": "禁锢锁链",
+    "LawSkill": "Buff_DGChampion_S2_Shielder_ShielderInhibit",
+    "LawScore": 0,
+    "LawICON": "chun_HD_gd_08",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_1208",
+    "LawNameLanText": "禁锢锁链",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_1208",
+    "TextLanText": "获得或刷新护盾后，下<color=#158bdb>1</color>次攻击会使敌方单位获得1回合<color=#ff6724>禁足</color>，此状态不可叠加。\n<color=#ff6724>禁足</color>：无法移动。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2101": {
+    "Id": "A_2101",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_ty",
+    "Weight": 10,
+    "LawName": "绝地反击",
+    "LawSkill": "Buff_DGChampion_S1_Free_DeathDef",
+    "LawScore": 0,
+    "LawICON": "chun_YH_ty_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2101",
+    "LawNameLanText": "绝地反击",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2101",
+    "TextLanText": "若宿卫因援护承担致命伤害时，该回合内不会死亡且自身攻击力提高<color=#158bdb>30%</color>。在此期间击败敌方单位，自身回复最大生命值的<color=#158bdb>30%</color>。\n此效果每个单位最多触发<color=#158bdb>1</color>次。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2102": {
+    "Id": "A_2102",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_ty",
+    "Weight": 10,
+    "LawName": "敏捷身姿",
+    "LawSkill": "Buff_DGChampion_S1_Free_InterveneCD",
+    "LawScore": 0,
+    "LawICON": "chun_YH_ty_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2102",
+    "LawNameLanText": "敏捷身姿",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2102",
+    "TextLanText": "触发援护后，自身与被援护的友方单位所有技能冷却时间减少<color=#158bdb>1</color>回合，并获得<color=#158bdb>1</color>点能量。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2103": {
+    "Id": "A_2103",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_ty",
+    "Weight": 10,
+    "LawName": "弱点侦破",
+    "LawSkill": "Buff_DGChampion_S1_Free_InterveneVulnerable",
+    "LawScore": 0,
+    "LawICON": "chun_YH_ty_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2103",
+    "LawNameLanText": "弱点侦破",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2103",
+    "TextLanText": "触发援护时，使进行该次攻击的敌方单位获得<color=#ff6724>易损</color>状态。\n<color=#ff6724>易损</color>：受到的伤害提高<color=#158bdb>50%</color>，此效果不可叠加，受到任意伤害后解除。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2104": {
+    "Id": "A_2104",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_ty",
+    "Weight": 10,
+    "LawName": "哀兵必胜",
+    "LawSkill": "Buff_DGChampion_S1_Free_DefenderDeath",
+    "LawScore": 0,
+    "LawICON": "chun_YH_ty_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2104",
+    "LawNameLanText": "哀兵必胜",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2104",
+    "TextLanText": "任意宿卫被击败时，该阵营单位的最大生命值提升，提升量为该宿卫最大生命值的<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2105": {
+    "Id": "A_2105",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_ty",
+    "Weight": 10,
+    "LawName": "以牙还牙",
+    "LawSkill": "Buff_DGChampion_S1_Free_InterveneRebound",
+    "LawScore": 0,
+    "LawICON": "chun_YH_ty_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2105",
+    "LawNameLanText": "以牙还牙",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2105",
+    "TextLanText": "触发援护时，宿卫承受伤害的<color=#158bdb>50%</color>将反弹给该次攻击的敌方单位。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2106": {
+    "Id": "A_2106",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_YH_ty",
+    "Weight": 10,
+    "LawName": "分则易守",
+    "LawSkill": "Buff_DGChampion_S1_Free_AOEDown",
+    "LawScore": 0,
+    "LawICON": "chun_YH_ty_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2106",
+    "LawNameLanText": "分则易守",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2106",
+    "TextLanText": "全体单位受到的范围伤害降低<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2202": {
+    "Id": "A_2202",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_ty",
+    "Weight": 10,
+    "LawName": "碎盾回收",
+    "LawSkill": "Buff_DGChampion_S1_Free_ShielderBreak",
+    "LawScore": 0,
+    "LawICON": "chun_HD_ty_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2202",
+    "LawNameLanText": "碎盾回收",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2202",
+    "TextLanText": "进入战斗后，每失去<color=#158bdb>1</color>次护盾，则该单位的全伤害减免增加<color=#158bdb>3%</color>，最多可叠加<color=#158bdb>7</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2203": {
+    "Id": "A_2203",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_ty",
+    "Weight": 10,
+    "LawName": "虽死犹生",
+    "LawSkill": "Buff_DGChampion_S1_Free_ShielderDeath",
+    "LawScore": 0,
+    "LawICON": "chun_HD_ty_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2203",
+    "LawNameLanText": "虽死犹生",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2203",
+    "TextLanText": "若任意单位存在护盾时被击败，则友方全体提高该单位当前护盾值的最大生命值。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2204": {
+    "Id": "A_2204",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_ty",
+    "Weight": 10,
+    "LawName": "沸腾之盾",
+    "LawSkill": "Buff_DGChampion_S1_Free_ShielderKeep",
+    "LawScore": 0,
+    "LawICON": "chun_HD_ty_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2204",
+    "LawNameLanText": "沸腾之盾",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2204",
+    "TextLanText": "任意单位在回合结束时存在护盾，则暴击率增加<color=#158bdb>15%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#158bdb>3</color>个回合后，暴击伤害增加<color=#158bdb>20%</color>。\n若失去护盾，则前述效果解除。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2205": {
+    "Id": "A_2205",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_ty",
+    "Weight": 10,
+    "LawName": "防御转化",
+    "LawSkill": "Buff_DGChampion_S1_Free_GetShielder",
+    "LawScore": 0,
+    "LawICON": "chun_HD_ty_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2205",
+    "LawNameLanText": "防御转化",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2205",
+    "TextLanText": "自身每获得或刷新护盾后，攻击力提高<color=#158bdb>2%</color>，效果持续<color=#158bdb>3</color>回合。\n最多可叠加<color=#158bdb>15</color>层。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "A_2206": {
+    "Id": "A_2206",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "chun_HD_ty",
+    "Weight": 11,
+    "LawName": "坚不可摧",
+    "LawSkill": "Buff_DGChampion_S2_Shielder_CriRes",
+    "LawScore": 0,
+    "LawICON": "chun_HD_ty_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_A_2206",
+    "LawNameLanText": "坚不可摧",
+    "TextLan": "activeLan_MoreModLaw_textLan_A_2206",
+    "TextLanText": "若任意单位存在护盾，则该单位受到的暴击伤害降低<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1101": {
+    "Id": "B_1101",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "伤溃侵蚀",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_AddDebuffAtkDefUp",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1101",
+    "LawNameLanText": "伤溃侵蚀",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1101",
+    "TextLanText": "每次攻击<color=#ff6724>使敌人获得</color>属性减益时，该单位攻击力和物理防御提高<color=#158bdb>50%</color>。\n最多叠加<color=#158bdb>3</color>次，持续<color=#158bdb>3</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1102": {
+    "Id": "B_1102",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "抽离转移",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_ReduceDebuffBleed",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1102",
+    "LawNameLanText": "抽离转移",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1102",
+    "TextLanText": "每次被攻击<color=#ff6724>受到</color>属性减益时，使敌方随机<color=#158bdb>2</color>个单位获得<color=#158bdb>1</color>层<color=#ff6724>流失</color>状态。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1103": {
+    "Id": "B_1103",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "远行祝福",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_HealAddMove",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1103",
+    "LawNameLanText": "远行祝福",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1103",
+    "TextLanText": "受到<color=#ff6724>治疗</color>后，移动力增加<color=#158bdb>1</color>，持续<color=#158bdb>1</color>回合。（不可叠加）",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1104": {
+    "Id": "B_1104",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "能量护阵",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_FullEnergyDef",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1104",
+    "LawNameLanText": "能量护阵",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1104",
+    "TextLanText": "能量达到最大时，受到伤害减少<color=#158bdb>70%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1105": {
+    "Id": "B_1105",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "速通模块",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_ReleaseSkillFreshCd",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1105",
+    "LawNameLanText": "速通模块",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1105",
+    "TextLanText": "每回合开始时额外获得<color=#158bdb>1</color>点能量，使用绝技后立刻<color=#ff6724>刷新绝技冷却时间。</color>",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1106": {
+    "Id": "B_1106",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "能量防护",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_CostEnergyDef",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1106",
+    "LawNameLanText": "能量防护",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1106",
+    "TextLanText": "每消耗<color=#158bdb>1</color>点能量，构素防御和物理防御提高<color=#158bdb>25%</color>。此效果最多叠加<color=#158bdb>5</color>层，持续<color=#158bdb>2</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1107": {
+    "Id": "B_1107",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "构术心得",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_MoveEnergyDef",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_07",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1107",
+    "LawNameLanText": "构术心得",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1107",
+    "TextLanText": "移动力增加1，能量自动回复时额外回复1能量，构术职业受到的伤害减少<color=#158bdb>30%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1108": {
+    "Id": "B_1108",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_gd",
+    "Weight": 10,
+    "LawName": "辅助汲能",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_ReleaseSkillEnergy",
+    "LawScore": 0,
+    "LawICON": "xia_FS_gd_08",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1108",
+    "LawNameLanText": "辅助汲能",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1108",
+    "TextLanText": "绝技攻击使受击敌方单位能量减少<color=#158bdb>1</color>点，自身额外获得<color=#158bdb>1</color>点能量。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1201": {
+    "Id": "B_1201",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "存续之佑",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group1",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1201",
+    "LawNameLanText": "存续之佑",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1201",
+    "TextLanText": "连击后，自身的<color=#ff6724>生命偷取率</color>提高<color=#158bdb>50%</color>，持续<color=#158bdb>2</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1202": {
+    "Id": "B_1202",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "不动如山",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group2",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1202",
+    "LawNameLanText": "不动如山",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1202",
+    "TextLanText": "若回合内没有位移，则在该回合结束时，使自身受到的伤害减少<color=#158bdb>70%</color>，持续<color=#158bdb>1</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1203": {
+    "Id": "B_1203",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "厚土之铠",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group3",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1203",
+    "LawNameLanText": "厚土之铠",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1203",
+    "TextLanText": "回击后，构素防御和物理防御提高<color=#158bdb>30%</color>。此效果最多叠加<color=#158bdb>3</color>层，持续<color=#158bdb>3</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1204": {
+    "Id": "B_1204",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "当战启时",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group4",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1204",
+    "LawNameLanText": "当战启时",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1204",
+    "TextLanText": "进入战斗时，全部单位获得<color=#158bdb>3次</color>伤害<color=#ff6724>免疫</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1205": {
+    "Id": "B_1205",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "禁用警告",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group5",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1205",
+    "LawNameLanText": "禁用警告",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1205",
+    "TextLanText": "若回合内使用了职业技能，则在该回合结束时，使自身周围<color=#158bdb>2</color>格敌方全体攻击力降低<color=#158bdb>20%</color>。\n此效果最多叠加<color=#158bdb>3</color>层，持续<color=#158bdb>3</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1206": {
+    "Id": "B_1206",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "后辈指导",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group6",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_06",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1206",
+    "LawNameLanText": "后辈指导",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1206",
+    "TextLanText": "受到敌方攻击时，若该单位当前生命值低于自身当前生命值，则受到的该次伤害降低<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1207": {
+    "Id": "B_1207",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "不屈铁骨",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group7",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_07",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1207",
+    "LawNameLanText": "不屈铁骨",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1207",
+    "TextLanText": "每次受到伤害或消耗生命值时，使自身攻击力提高<color=#158bdb>5%</color>。\n此效果最多叠加<color=#158bdb>10</color>层，持续<color=#158bdb>2</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_1208": {
+    "Id": "B_1208",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_gd",
+    "Weight": 10,
+    "LawName": "独脚难行",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group8",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_gd_08",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_1208",
+    "LawNameLanText": "独脚难行",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_1208",
+    "TextLanText": "攻击敌方时，若自身周围<color=#158bdb>1</color>格不存在友方单位，则使自身移动力减少<color=#158bdb>2</color>，此效果持续<color=#158bdb>1</color>回合，不可叠加。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2101": {
+    "Id": "B_2101",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_ty",
+    "Weight": 10,
+    "LawName": "杏林圣手",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_FullEnergyHeal",
+    "LawScore": 0,
+    "LawICON": "xia_FS_ty_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2101",
+    "LawNameLanText": "杏林圣手",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2101",
+    "TextLanText": "能量达到最大时，治疗量提高<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2102": {
+    "Id": "B_2102",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_ty",
+    "Weight": 10,
+    "LawName": "备用能量",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_LowerHpGetlEnergy",
+    "LawScore": 0,
+    "LawICON": "xia_FS_ty_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2102",
+    "LawNameLanText": "备用能量",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2102",
+    "TextLanText": "战斗中，任意单位当前生命值首次低于最大生命值的<color=#158bdb>30%</color>时，立即获得<color=#158bdb>3</color>点能量。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2103": {
+    "Id": "B_2103",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_ty",
+    "Weight": 10,
+    "LawName": "弱柳扶风",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_ZeroEnergyAtkDown",
+    "LawScore": 0,
+    "LawICON": "xia_FS_ty_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2103",
+    "LawNameLanText": "弱柳扶风",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2103",
+    "TextLanText": "能量为0时，攻击力降低<color=#158bdb>50%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2104": {
+    "Id": "B_2104",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_ty",
+    "Weight": 10,
+    "LawName": "幕间休息",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_RoundEndHealHp",
+    "LawScore": 0,
+    "LawICON": "xia_FS_ty_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2104",
+    "LawNameLanText": "幕间休息",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2104",
+    "TextLanText": "每轮次结束时，场上全体单位回复最大生命值<color=#158bdb>30%</color>的生命值。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2105": {
+    "Id": "B_2105",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_FS_ty",
+    "Weight": 10,
+    "LawName": "同命噬心",
+    "LawSkill": "Buff_DGChampion_S2_Wizard_KillGetHurt",
+    "LawScore": 0,
+    "LawICON": "xia_FS_ty_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2105",
+    "LawNameLanText": "同命噬心",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2105",
+    "TextLanText": "每次击败敌方单位时，该器者受到自身生命值上限<color=#158bdb>15%</color>的物理伤害。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2201": {
+    "Id": "B_2201",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_ty",
+    "Weight": 10,
+    "LawName": "反伤陷阱",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group9",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_ty_01",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2201",
+    "LawNameLanText": "反伤陷阱",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2201",
+    "TextLanText": "选定并攻击敌方单位后，自身受到该选定单位最大生命值<color=#158bdb>10%</color>的构素伤害。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2202": {
+    "Id": "B_2202",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_ty",
+    "Weight": 10,
+    "LawName": "限时强化",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group10",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_ty_02",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2202",
+    "LawNameLanText": "限时强化",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2202",
+    "TextLanText": "进入战斗时，全部单位物理防御提高<color=#158bdb>30%</color>。\n前<color=#158bdb>3</color>回合内，每回合结束时，全部单位物理防御减少<color=#158bdb>10%</color>，攻击力提高<color=#158bdb>10%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2203": {
+    "Id": "B_2203",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_ty",
+    "Weight": 10,
+    "LawName": "虚寒入骨",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group11",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_ty_03",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2203",
+    "LawNameLanText": "虚寒入骨",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2203",
+    "TextLanText": "当前生命值低于最大生命值的<color=#158bdb>60%/40%/20%</color>时，自身造成的伤害减少<color=#158bdb>20%/40%/60%</color>。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2204": {
+    "Id": "B_2204",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_ty",
+    "Weight": 10,
+    "LawName": "远袭警惕",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group12",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_ty_04",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2204",
+    "LawNameLanText": "远袭警惕",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2204",
+    "TextLanText": "援护友方单位后，自身受到远击职业造成的伤害减少<color=#158bdb>50%</color>。此效果无法叠加，持续<color=#158bdb>2</color>回合。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "B_2205": {
+    "Id": "B_2205",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "xia_GJ_ty",
+    "Weight": 10,
+    "LawName": "神愈体质",
+    "LawSkill": "Buff_DGChampion_S2_Sniper_Group13",
+    "LawScore": 0,
+    "LawICON": "xia_GJ_ty_05",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_B_2205",
+    "LawNameLanText": "神愈体质",
+    "TextLan": "activeLan_MoreModLaw_textLan_B_2205",
+    "TextLanText": "任意单位每受到<color=#158bdb>3</color>次任意伤害后，恢复最大生命值<color=#158bdb>60%</color>的生命值。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  },
+  "SP101": {
+    "Id": "SP101",
+    "LimitType": 0,
+    "Parameter": "",
+    "LawType": "special",
+    "Weight": 10,
+    "LawName": "竞赛规则",
+    "LawSkill": "Buff_DGChampion_PVPOnlyDmgReduce",
+    "LawScore": 0,
+    "LawICON": "ui_dzr_jnkp1",
+    "LawNameLan": "activeLan_MoreModLaw_lawNameLan_SP101",
+    "LawNameLanText": "竞赛规则",
+    "TextLan": "activeLan_MoreModLaw_textLan_SP101",
+    "TextLanText": "所有单位造成的<color=#ff6724>伤害大幅降低</color>，同时<color=#ff6724>降低治疗</color>效果。",
+    "ShootControl": [
+      -1,
+      0
+    ]
+  }
+}

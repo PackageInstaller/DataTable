@@ -1,0 +1,691 @@
+{
+  "WJHY_1001_1": {
+    "Id": "WJHY_1001_1",
+    "BuffId": "Buff_WJHY_Group1_A1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 1,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "奔逐Ⅰ",
+    "BuffDes": "敌方全体移动力增加<color=#405f74>1</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_A1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1001_1",
+    "BuffNameLanText": "奔逐Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1001_1",
+    "BuffDesLanText": "敌方全体移动力增加<color=#405f74>1</color>。",
+    "Row": 1,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1001_2": {
+    "Id": "WJHY_1001_2",
+    "BuffId": "Buff_WJHY_Group1_A2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1001_1"
+    ],
+    "BuffGroup": 1,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "奔逐Ⅱ",
+    "BuffDes": "敌方全体移动力增加<color=#405f74>2</color>；\n敌方单位单次行动内每移动<color=#405f74>2</color>格，使其造成的伤害提高<color=#405f74>20%</color>，持续至该回合结束。",
+    "BuffIcon": "Buff_WJHY_Group1_A2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1001_2",
+    "BuffNameLanText": "奔逐Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1001_2",
+    "BuffDesLanText": "敌方全体移动力增加<color=#405f74>2</color>；\n敌方单位单次行动内每移动<color=#405f74>2</color>格，使其造成的伤害提高<color=#405f74>20%</color>，持续至该回合结束。",
+    "Row": 1,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1001_3": {
+    "Id": "WJHY_1001_3",
+    "BuffId": "Buff_WJHY_Group1_A3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1001_2"
+    ],
+    "BuffGroup": 1,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "奔逐Ⅲ",
+    "BuffDes": "敌方全体移动力增加<color=#405f74>3</color>；\n敌方单位单次行动内每移动<color=#405f74>1</color>格，使其造成的伤害提高<color=#405f74>20%</color>，持续至该回合结束。",
+    "BuffIcon": "Buff_WJHY_Group1_A3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1001_3",
+    "BuffNameLanText": "奔逐Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1001_3",
+    "BuffDesLanText": "敌方全体移动力增加<color=#405f74>3</color>；\n敌方单位单次行动内每移动<color=#405f74>1</color>格，使其造成的伤害提高<color=#405f74>20%</color>，持续至该回合结束。",
+    "Row": 1,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1002_1": {
+    "Id": "WJHY_1002_1",
+    "BuffId": "Buff_WJHY_Group1_B1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 2,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "封煞Ⅰ",
+    "BuffDes": "敌方全体不获得能量，常击伤害提高<color=#405f74>25%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_B1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1002_1",
+    "BuffNameLanText": "封煞Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1002_1",
+    "BuffDesLanText": "敌方全体不获得能量，常击伤害提高<color=#405f74>25%</color>。",
+    "Row": 2,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1002_2": {
+    "Id": "WJHY_1002_2",
+    "BuffId": "Buff_WJHY_Group1_B2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1002_1"
+    ],
+    "BuffGroup": 2,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "封煞Ⅱ",
+    "BuffDes": "敌方全体不获得能量，常击伤害提高<color=#405f74>50%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_B2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1002_2",
+    "BuffNameLanText": "封煞Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1002_2",
+    "BuffDesLanText": "敌方全体不获得能量，常击伤害提高<color=#405f74>50%</color>。",
+    "Row": 2,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1002_3": {
+    "Id": "WJHY_1002_3",
+    "BuffId": "Buff_WJHY_Group1_B3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1002_2"
+    ],
+    "BuffGroup": 2,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "封煞Ⅲ",
+    "BuffDes": "敌方全体不获得能量，常击伤害提高<color=#405f74>50%</color>；\n敌方全体常击的防御穿透增加<color=#405f74>30%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_B3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1002_3",
+    "BuffNameLanText": "封煞Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1002_3",
+    "BuffDesLanText": "敌方全体不获得能量，常击伤害提高<color=#405f74>50%</color>；\n敌方全体常击的防御穿透增加<color=#405f74>30%</color>。",
+    "Row": 2,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1003_2": {
+    "Id": "WJHY_1003_2",
+    "BuffId": "Buff_WJHY_Group1_C2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1002_1"
+    ],
+    "BuffGroup": 2,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "节能Ⅱ",
+    "BuffDes": "敌方全体使用绝技所需能量减少<color=#405f74>1</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_C2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1003_2",
+    "BuffNameLanText": "节能Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1003_2",
+    "BuffDesLanText": "敌方全体使用绝技所需能量减少<color=#405f74>1</color>。",
+    "Row": 3,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1003_3": {
+    "Id": "WJHY_1003_3",
+    "BuffId": "Buff_WJHY_Group1_C3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1003_2"
+    ],
+    "BuffGroup": 2,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "节能Ⅲ",
+    "BuffDes": "敌方全体使用绝技所需能量减少<color=#405f74>1</color>；\n战斗中，敌方单位每次使用绝技后，自身攻击力提高<color=#405f74>20%</color>，持续全场战斗。",
+    "BuffIcon": "Buff_WJHY_Group1_C3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1003_3",
+    "BuffNameLanText": "节能Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1003_3",
+    "BuffDesLanText": "敌方全体使用绝技所需能量减少<color=#405f74>1</color>；\n战斗中，敌方单位每次使用绝技后，自身攻击力提高<color=#405f74>20%</color>，持续全场战斗。",
+    "Row": 3,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1004_1": {
+    "Id": "WJHY_1004_1",
+    "BuffId": "Buff_WJHY_Group1_D1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 3,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "旺盛Ⅰ",
+    "BuffDes": "敌方宿卫生命值提高<color=#405f74>20%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_D1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1004_1",
+    "BuffNameLanText": "旺盛Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1004_1",
+    "BuffDesLanText": "敌方宿卫生命值提高<color=#405f74>20%</color>。",
+    "Row": 4,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1004_2": {
+    "Id": "WJHY_1004_2",
+    "BuffId": "Buff_WJHY_Group1_D2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1004_1"
+    ],
+    "BuffGroup": 3,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "旺盛Ⅱ",
+    "BuffDes": "敌方宿卫生命值提高<color=#405f74>30%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_D2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1004_2",
+    "BuffNameLanText": "旺盛Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1004_2",
+    "BuffDesLanText": "敌方宿卫生命值提高<color=#405f74>30%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>。",
+    "Row": 4,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1004_3": {
+    "Id": "WJHY_1004_3",
+    "BuffId": "Buff_WJHY_Group1_D3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1004_2"
+    ],
+    "BuffGroup": 3,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "旺盛Ⅲ",
+    "BuffDes": "敌方宿卫生命值提高<color=#405f74>30%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>；敌方宿卫攻击时，对受击单位造成自身最大生命值<color=#405f74>5%</color>的额外物理伤害。",
+    "BuffIcon": "Buff_WJHY_Group1_D3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1004_3",
+    "BuffNameLanText": "旺盛Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1004_3",
+    "BuffDesLanText": "敌方宿卫生命值提高<color=#405f74>30%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>；敌方宿卫攻击时，对受击单位造成自身最大生命值<color=#405f74>5%</color>的额外物理伤害。",
+    "Row": 4,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1005_1": {
+    "Id": "WJHY_1005_1",
+    "BuffId": "Buff_WJHY_Group1_E1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 4,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "锐势Ⅰ",
+    "BuffDes": "敌方轻锐攻击力提高<color=#405f74>15%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1005_1",
+    "BuffNameLanText": "锐势Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1005_1",
+    "BuffDesLanText": "敌方轻锐攻击力提高<color=#405f74>15%</color>。",
+    "Row": 5,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1005_2": {
+    "Id": "WJHY_1005_2",
+    "BuffId": "Buff_WJHY_Group1_E2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1005_1"
+    ],
+    "BuffGroup": 4,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "锐势Ⅱ",
+    "BuffDes": "敌方轻锐攻击力提高<color=#405f74>20%</color>，生命偷取率增加<color=#405f74>15%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1005_2",
+    "BuffNameLanText": "锐势Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1005_2",
+    "BuffDesLanText": "敌方轻锐攻击力提高<color=#405f74>20%</color>，生命偷取率增加<color=#405f74>15%</color>。",
+    "Row": 5,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1005_3": {
+    "Id": "WJHY_1005_3",
+    "BuffId": "Buff_WJHY_Group1_E3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1005_2"
+    ],
+    "BuffGroup": 4,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "锐势Ⅲ",
+    "BuffDes": "敌方轻锐攻击力提高<color=#405f74>20%</color>，生命偷取率增加<color=#405f74>15%</color>，暴击率增加<color=#405f74>20%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_E3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1005_3",
+    "BuffNameLanText": "锐势Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1005_3",
+    "BuffDesLanText": "敌方轻锐攻击力提高<color=#405f74>20%</color>，生命偷取率增加<color=#405f74>15%</color>，暴击率增加<color=#405f74>20%</color>。",
+    "Row": 5,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1006_1": {
+    "Id": "WJHY_1006_1",
+    "BuffId": "Buff_WJHY_Group1_F1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 5,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "缚己Ⅰ",
+    "BuffDes": "每<color=#405f74>2</color>轮次开始时，我方全体单位获得<color=#405f74>1</color>层<color=#ff6724>融伤</color>状态。",
+    "BuffIcon": "Buff_WJHY_Group1_F1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1006_1",
+    "BuffNameLanText": "缚己Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1006_1",
+    "BuffDesLanText": "每<color=#405f74>2</color>轮次开始时，我方全体单位获得<color=#405f74>1</color>层<color=#ff6724>融伤</color>状态。",
+    "Row": 6,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1006_2": {
+    "Id": "WJHY_1006_2",
+    "BuffId": "Buff_WJHY_Group1_F2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1006_1"
+    ],
+    "BuffGroup": 5,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "缚己Ⅱ",
+    "BuffDes": "每<color=#405f74>2</color>轮次开始时，我方全体单位获得<color=#405f74>2</color>层<color=#ff6725>融伤</color>状态。",
+    "BuffIcon": "Buff_WJHY_Group1_F2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1006_2",
+    "BuffNameLanText": "缚己Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1006_2",
+    "BuffDesLanText": "每<color=#405f74>2</color>轮次开始时，我方全体单位获得<color=#405f74>2</color>层<color=#ff6725>融伤</color>状态。",
+    "Row": 6,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1006_3": {
+    "Id": "WJHY_1006_3",
+    "BuffId": "Buff_WJHY_Group1_F3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1006_2"
+    ],
+    "BuffGroup": 5,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "缚己Ⅲ",
+    "BuffDes": "每<color=#405f74>1</color>轮次开始时，我方全体单位获得<color=#405f74>2</color>层<color=#ff6726>融伤</color>状态。",
+    "BuffIcon": "Buff_WJHY_Group1_F3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1006_3",
+    "BuffNameLanText": "缚己Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1006_3",
+    "BuffDesLanText": "每<color=#405f74>1</color>轮次开始时，我方全体单位获得<color=#405f74>2</color>层<color=#ff6726>融伤</color>状态。",
+    "Row": 6,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1007_2": {
+    "Id": "WJHY_1007_2",
+    "BuffId": "Buff_WJHY_Group1_G2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 6,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "急骤Ⅱ",
+    "BuffDes": "敌方全体速度增加<color=#405f74>20</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_G2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1007_2",
+    "BuffNameLanText": "急骤Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1007_2",
+    "BuffDesLanText": "敌方全体速度增加<color=#405f74>20</color>。",
+    "Row": 7,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1007_3": {
+    "Id": "WJHY_1007_3",
+    "BuffId": "Buff_WJHY_Group1_G3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1007_2"
+    ],
+    "BuffGroup": 6,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "急骤Ⅲ",
+    "BuffDes": "敌方全体速度增加<color=#405f74>20</color>；\n敌方全体每<color=#405f74>2</color>回合，可免疫<color=#405f74>1</color>次任意伤害。",
+    "BuffIcon": "Buff_WJHY_Group1_G3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1007_3",
+    "BuffNameLanText": "急骤Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1007_3",
+    "BuffDesLanText": "敌方全体速度增加<color=#405f74>20</color>；\n敌方全体每<color=#405f74>2</color>回合，可免疫<color=#405f74>1</color>次任意伤害。",
+    "Row": 7,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1008_1": {
+    "Id": "WJHY_1008_1",
+    "BuffId": "Buff_WJHY_Group1_H1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 7,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "增量Ⅰ",
+    "BuffDes": "第<color=#405f74>4</color>轮次结束时，场上额外出现<color=#405f74>3</color>个<color=#db2424>下型体-精英</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_H1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1008_1",
+    "BuffNameLanText": "增量Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1008_1",
+    "BuffDesLanText": "第<color=#405f74>4</color>轮次结束时，场上额外出现<color=#405f74>3</color>个<color=#db2424>下型体-精英</color>。",
+    "Row": 8,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1008_2": {
+    "Id": "WJHY_1008_2",
+    "BuffId": "Buff_WJHY_Group1_H2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1008_1"
+    ],
+    "BuffGroup": 7,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "增量Ⅱ",
+    "BuffDes": "第<color=#405f74>4、7</color>轮次结束时，场上额外出现<color=#405f74>3</color>个<color=#db2425>下型体-精英</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_H2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1008_2",
+    "BuffNameLanText": "增量Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1008_2",
+    "BuffDesLanText": "第<color=#405f74>4、7</color>轮次结束时，场上额外出现<color=#405f74>3</color>个<color=#db2425>下型体-精英</color>。",
+    "Row": 8,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1009_1": {
+    "Id": "WJHY_1009_1",
+    "BuffId": "Buff_WJHY_Group1_I1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 8,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "熠盛Ⅰ",
+    "BuffDes": "下型体-精英的生命值提高<color=#405f74>10%</color>，攻击力提高<color=#405f74>10%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_I1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1009_1",
+    "BuffNameLanText": "熠盛Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1009_1",
+    "BuffDesLanText": "下型体-精英的生命值提高<color=#405f74>10%</color>，攻击力提高<color=#405f74>10%</color>。",
+    "Row": 9,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1009_2": {
+    "Id": "WJHY_1009_2",
+    "BuffId": "Buff_WJHY_Group1_I2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1009_1"
+    ],
+    "BuffGroup": 8,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "熠盛Ⅱ",
+    "BuffDes": "下型体-精英的生命值提高<color=#405f74>20%</color>，攻击力提高<color=#405f74>15%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_I2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1009_2",
+    "BuffNameLanText": "熠盛Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1009_2",
+    "BuffDesLanText": "下型体-精英的生命值提高<color=#405f74>20%</color>，攻击力提高<color=#405f74>15%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>。",
+    "Row": 9,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1009_3": {
+    "Id": "WJHY_1009_3",
+    "BuffId": "Buff_WJHY_Group1_I3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1009_2"
+    ],
+    "BuffGroup": 8,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "熠盛Ⅲ",
+    "BuffDes": "下型体-精英的生命值提高<color=#405f74>30%</color>，攻击力提高<color=#405f74>20%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>，且免疫全部控制效果。",
+    "BuffIcon": "Buff_WJHY_Group1_I3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1009_3",
+    "BuffNameLanText": "熠盛Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1009_3",
+    "BuffDesLanText": "下型体-精英的生命值提高<color=#405f74>30%</color>，攻击力提高<color=#405f74>20%</color>，受到以自身生命值计算的伤害降低<color=#405f74>70%</color>，且免疫全部控制效果。",
+    "Row": 9,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1010_1": {
+    "Id": "WJHY_1010_1",
+    "BuffId": "Buff_WJHY_Group1_J1",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 9,
+    "BuffLevel": 1,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "禳禊Ⅰ",
+    "BuffDes": "敌方生命值低于<color=#405f74>50%</color>时，立即清除自身全部负面状态。",
+    "BuffIcon": "Buff_WJHY_Group1_J1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1010_1",
+    "BuffNameLanText": "禳禊Ⅰ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1010_1",
+    "BuffDesLanText": "敌方生命值低于<color=#405f74>50%</color>时，立即清除自身全部负面状态。",
+    "Row": 10,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1010_2": {
+    "Id": "WJHY_1010_2",
+    "BuffId": "Buff_WJHY_Group1_J2",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1010_1"
+    ],
+    "BuffGroup": 9,
+    "BuffLevel": 2,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "禳禊Ⅱ",
+    "BuffDes": "敌方生命值低于<color=#405f74>50%</color>时，立即清除自身全部负面状态，并获得额外行动<color=#405f74>1</color>次。",
+    "BuffIcon": "Buff_WJHY_Group1_J2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1010_2",
+    "BuffNameLanText": "禳禊Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1010_2",
+    "BuffDesLanText": "敌方生命值低于<color=#405f74>50%</color>时，立即清除自身全部负面状态，并获得额外行动<color=#405f74>1</color>次。",
+    "Row": 10,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1010_3": {
+    "Id": "WJHY_1010_3",
+    "BuffId": "Buff_WJHY_Group1_J3",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1010_2"
+    ],
+    "BuffGroup": 9,
+    "BuffLevel": 3,
+    "Target": [
+      0,
+      0
+    ],
+    "UidTarget": [],
+    "BuffName": "禳禊Ⅲ",
+    "BuffDes": "敌方全体首次受到致命伤害时不会被击败，该状态持续<color=#405f74>1</color>回合；敌方生命值低于<color=#405f74>50%</color>时，立即清除自身全部负面状态，并获得额外行动<color=#405f74>1</color>次。",
+    "BuffIcon": "Buff_WJHY_Group1_J3",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1010_3",
+    "BuffNameLanText": "禳禊Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1010_3",
+    "BuffDesLanText": "敌方全体首次受到致命伤害时不会被击败，该状态持续<color=#405f74>1</color>回合；敌方生命值低于<color=#405f74>50%</color>时，立即清除自身全部负面状态，并获得额外行动<color=#405f74>1</color>次。",
+    "Row": 10,
+    "BattleTurnEnd": ""
+  },
+  "WJHY_1011_2": {
+    "Id": "WJHY_1011_2",
+    "BuffId": "",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [],
+    "BuffGroup": 10,
+    "BuffLevel": 2,
+    "Target": [],
+    "UidTarget": [],
+    "BuffName": "流星Ⅱ",
+    "BuffDes": "战斗的最大轮次减少<color=#405f74>4</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_K1",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1011_2",
+    "BuffNameLanText": "流星Ⅱ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1011_2",
+    "BuffDesLanText": "战斗的最大轮次减少<color=#405f74>4</color>。",
+    "Row": 11,
+    "BattleTurnEnd": "16"
+  },
+  "WJHY_1011_3": {
+    "Id": "WJHY_1011_3",
+    "BuffId": "",
+    "ActivityGroup": "crisiscontract",
+    "UnlockType": [
+      "1",
+      "WJHY_1011_2"
+    ],
+    "BuffGroup": 10,
+    "BuffLevel": 3,
+    "Target": [],
+    "UidTarget": [],
+    "BuffName": "流星Ⅲ",
+    "BuffDes": "战斗的最大轮次减少<color=#405f74>8</color>。",
+    "BuffIcon": "Buff_WJHY_Group1_K2",
+    "BuffNameLan": "internLan_collectBUFF_buffNameLan_WJHY_1011_3",
+    "BuffNameLanText": "流星Ⅲ",
+    "BuffDesLan": "internLan_collectBUFF_buffDesLan_WJHY_1011_3",
+    "BuffDesLanText": "战斗的最大轮次减少<color=#405f74>8</color>。",
+    "Row": 11,
+    "BattleTurnEnd": "12"
+  }
+}

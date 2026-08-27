@@ -1,0 +1,1118 @@
+{
+  "451101": {
+    "id": "451101",
+    "tab": "back01",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451101",
+    "NameLanText": "登陆游戏",
+    "rewards": [
+      {
+        "itemId": "102",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1001",
+    "skipTip": "",
+    "group": 1,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  },
+  "451102": {
+    "id": "451102",
+    "tab": "back01",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451102",
+    "NameLanText": "消耗100点活力值",
+    "rewards": [
+      {
+        "itemId": "3",
+        "count": 5000
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 1,
+    "condition1": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 100,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "451103": {
+    "id": "451103",
+    "tab": "back01",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451103",
+    "NameLanText": "更换1次装备",
+    "rewards": [
+      {
+        "itemId": "2103",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1002",
+    "skipTip": "",
+    "group": 1,
+    "condition1": [
+      {
+        "ConditionType": 54,
+        "ElementID": "equipChange",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "equipChange"
+        ]
+      }
+    ]
+  },
+  "451104": {
+    "id": "451104",
+    "tab": "back01",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451104",
+    "NameLanText": "完成10次战斗",
+    "rewards": [
+      {
+        "itemId": "2465",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 1,
+    "condition1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 10,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451105": {
+    "id": "451105",
+    "tab": "back01",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451105",
+    "NameLanText": "完成1次【基础训练】关卡",
+    "rewards": [
+      {
+        "itemId": "3226",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1070",
+    "skipTip": "",
+    "group": 1,
+    "condition1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "daily",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "daily"
+        ]
+      }
+    ]
+  },
+  "451201": {
+    "id": "451201",
+    "tab": "back02",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451201",
+    "NameLanText": "登陆游戏",
+    "rewards": [
+      {
+        "itemId": "102",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1001",
+    "skipTip": "",
+    "group": 2,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  },
+  "451202": {
+    "id": "451202",
+    "tab": "back02",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451202",
+    "NameLanText": "消耗200点活力值",
+    "rewards": [
+      {
+        "itemId": "3",
+        "count": 5000
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 2,
+    "condition1": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 200,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "451203": {
+    "id": "451203",
+    "tab": "back02",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451203",
+    "NameLanText": "【冬谷竞赛】取胜1次",
+    "rewards": [
+      {
+        "itemId": "2103",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1080",
+    "skipTip": "",
+    "group": 2,
+    "condition1": [
+      {
+        "ConditionType": 69,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451204": {
+    "id": "451204",
+    "tab": "back02",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451204",
+    "NameLanText": "在易物所交换1次物资",
+    "rewards": [
+      {
+        "itemId": "2465",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "3061",
+    "skipTip": "",
+    "group": 2,
+    "condition1": [
+      {
+        "ConditionType": 15,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451205": {
+    "id": "451205",
+    "tab": "back02",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451205",
+    "NameLanText": "完成1次【外传】战斗",
+    "rewards": [
+      {
+        "itemId": "3226",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1040",
+    "skipTip": "",
+    "group": 2,
+    "condition1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "branchEvent",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "branchEvent"
+        ]
+      }
+    ]
+  },
+  "451301": {
+    "id": "451301",
+    "tab": "back03",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451301",
+    "NameLanText": "登陆游戏",
+    "rewards": [
+      {
+        "itemId": "102",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1001",
+    "skipTip": "",
+    "group": 3,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  },
+  "451302": {
+    "id": "451302",
+    "tab": "back03",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451302",
+    "NameLanText": "消耗300点活力值",
+    "rewards": [
+      {
+        "itemId": "3",
+        "count": 5000
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 3,
+    "condition1": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 300,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "451303": {
+    "id": "451303",
+    "tab": "back03",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451303",
+    "NameLanText": "击败20名任意敌人",
+    "rewards": [
+      {
+        "itemId": "2103",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 3,
+    "condition1": [
+      {
+        "ConditionType": 4,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451304": {
+    "id": "451304",
+    "tab": "back03",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451304",
+    "NameLanText": "完成20次战斗",
+    "rewards": [
+      {
+        "itemId": "2465",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 3,
+    "condition1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451305": {
+    "id": "451305",
+    "tab": "back03",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451305",
+    "NameLanText": "完成1次【研学】",
+    "rewards": [
+      {
+        "itemId": "3226",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1400",
+    "skipTip": "",
+    "group": 3,
+    "condition1": [
+      {
+        "ConditionType": 81,
+        "ElementID": "1",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "1"
+        ]
+      }
+    ]
+  },
+  "451401": {
+    "id": "451401",
+    "tab": "back04",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451401",
+    "NameLanText": "登陆游戏",
+    "rewards": [
+      {
+        "itemId": "102",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1001",
+    "skipTip": "",
+    "group": 4,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  },
+  "451402": {
+    "id": "451402",
+    "tab": "back04",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451402",
+    "NameLanText": "消耗400点活力值",
+    "rewards": [
+      {
+        "itemId": "3",
+        "count": 5000
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 4,
+    "condition1": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 400,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "451403": {
+    "id": "451403",
+    "tab": "back04",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451403",
+    "NameLanText": "从【补给申请仪】或【社教模拟仪】制造1件物资",
+    "rewards": [
+      {
+        "itemId": "2103",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1322",
+    "skipTip": "",
+    "group": 4,
+    "condition1": [
+      {
+        "ConditionType": 68,
+        "ElementID": "2",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "2"
+        ]
+      }
+    ]
+  },
+  "451404": {
+    "id": "451404",
+    "tab": "back04",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451404",
+    "NameLanText": "完成40次战斗",
+    "rewards": [
+      {
+        "itemId": "2465",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 4,
+    "condition1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 40,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451405": {
+    "id": "451405",
+    "tab": "back04",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451405",
+    "NameLanText": "通关【四子棋玩法】普通难度并胜利1次",
+    "rewards": [
+      {
+        "itemId": "3226",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1350",
+    "skipTip": "",
+    "group": 4,
+    "condition1": [
+      {
+        "ConditionType": 74,
+        "ElementID": "1",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "1"
+        ]
+      }
+    ]
+  },
+  "451501": {
+    "id": "451501",
+    "tab": "back05",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451501",
+    "NameLanText": "登陆游戏",
+    "rewards": [
+      {
+        "itemId": "102",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1001",
+    "skipTip": "",
+    "group": 5,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  },
+  "451502": {
+    "id": "451502",
+    "tab": "back05",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451502",
+    "NameLanText": "消耗500点活力值",
+    "rewards": [
+      {
+        "itemId": "3",
+        "count": 5000
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 5,
+    "condition1": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 500,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "451503": {
+    "id": "451503",
+    "tab": "back05",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451503",
+    "NameLanText": "完成1次装备订购",
+    "rewards": [
+      {
+        "itemId": "2103",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1031",
+    "skipTip": "",
+    "group": 5,
+    "condition1": [
+      {
+        "ConditionType": 57,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451504": {
+    "id": "451504",
+    "tab": "back05",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451504",
+    "NameLanText": "完成60次战斗",
+    "rewards": [
+      {
+        "itemId": "2465",
+        "count": 5
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "2000",
+    "skipTip": "",
+    "group": 5,
+    "condition1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "451505": {
+    "id": "451505",
+    "tab": "back05",
+    "type": "451",
+    "NameLan": "missionslan_backPlayer_namelan_451505",
+    "NameLanText": "【招集】器者10次",
+    "rewards": [
+      {
+        "itemId": "3226",
+        "count": 1
+      },
+      {
+        "itemId": "50104",
+        "count": 5
+      }
+    ],
+    "pageSkip": "1009",
+    "skipTip": "",
+    "group": 5,
+    "condition1": [
+      {
+        "ConditionType": 47,
+        "ElementID": "draw",
+        "ElementID2": "",
+        "Count": 10,
+        "ElementIds": [
+          "draw"
+        ]
+      }
+    ]
+  },
+  "452001": {
+    "id": "452001",
+    "tab": "backPhase",
+    "type": "452",
+    "NameLan": "missionslan_backPlayer_namelan_452001",
+    "NameLanText": "20进度",
+    "rewards": [
+      {
+        "itemId": "1",
+        "count": 100
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "50104",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": [
+          "50104"
+        ]
+      }
+    ]
+  },
+  "452002": {
+    "id": "452002",
+    "tab": "backPhase",
+    "type": "452",
+    "NameLan": "missionslan_backPlayer_namelan_452002",
+    "NameLanText": "40进度",
+    "rewards": [
+      {
+        "itemId": "103",
+        "count": 1
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "50104",
+        "ElementID2": "",
+        "Count": 40,
+        "ElementIds": [
+          "50104"
+        ]
+      }
+    ]
+  },
+  "452003": {
+    "id": "452003",
+    "tab": "backPhase",
+    "type": "452",
+    "NameLan": "missionslan_backPlayer_namelan_452003",
+    "NameLanText": "60进度",
+    "rewards": [
+      {
+        "itemId": "1",
+        "count": 200
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "50104",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": [
+          "50104"
+        ]
+      }
+    ]
+  },
+  "452004": {
+    "id": "452004",
+    "tab": "backPhase",
+    "type": "452",
+    "NameLan": "missionslan_backPlayer_namelan_452004",
+    "NameLanText": "80进度",
+    "rewards": [
+      {
+        "itemId": "2466",
+        "count": 10
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "50104",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": [
+          "50104"
+        ]
+      }
+    ]
+  },
+  "452005": {
+    "id": "452005",
+    "tab": "backPhase",
+    "type": "452",
+    "NameLan": "missionslan_backPlayer_namelan_452005",
+    "NameLanText": "100进度",
+    "rewards": [
+      {
+        "itemId": "3104",
+        "count": 1
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 42,
+        "ElementID": "50104",
+        "ElementID2": "",
+        "Count": 100,
+        "ElementIds": [
+          "50104"
+        ]
+      }
+    ]
+  },
+  "453001": {
+    "id": "453001",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453001",
+    "NameLanText": "登录1天",
+    "rewards": [
+      {
+        "itemId": "3003",
+        "count": 1
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  },
+  "453002": {
+    "id": "453002",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453002",
+    "NameLanText": "登录2天",
+    "rewards": [
+      {
+        "itemId": "103",
+        "count": 2
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 2,
+        "ElementIds": []
+      }
+    ]
+  },
+  "453003": {
+    "id": "453003",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453003",
+    "NameLanText": "登录3天",
+    "rewards": [
+      {
+        "itemId": "1",
+        "count": 100
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 3,
+        "ElementIds": []
+      }
+    ]
+  },
+  "453004": {
+    "id": "453004",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453004",
+    "NameLanText": "登录4天",
+    "rewards": [
+      {
+        "itemId": "103",
+        "count": 2
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 4,
+        "ElementIds": []
+      }
+    ]
+  },
+  "453005": {
+    "id": "453005",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453005",
+    "NameLanText": "登录5天",
+    "rewards": [
+      {
+        "itemId": "3003",
+        "count": 1
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 5,
+        "ElementIds": []
+      }
+    ]
+  },
+  "453006": {
+    "id": "453006",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453006",
+    "NameLanText": "登录6天",
+    "rewards": [
+      {
+        "itemId": "103",
+        "count": 2
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 6,
+        "ElementIds": []
+      }
+    ]
+  },
+  "453007": {
+    "id": "453007",
+    "tab": "backPlayer",
+    "type": "453",
+    "NameLan": "missionslan_backPlayer_namelan_453007",
+    "NameLanText": "登录7天",
+    "rewards": [
+      {
+        "itemId": "3104",
+        "count": 1
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 7,
+        "ElementIds": []
+      }
+    ]
+  },
+  "454001": {
+    "id": "454001",
+    "tab": "backLetter",
+    "type": "454",
+    "NameLan": "missionslan_backPlayer_namelan_454001",
+    "NameLanText": "回归信",
+    "rewards": [
+      {
+        "itemId": "1",
+        "count": 300
+      },
+      {
+        "itemId": "103",
+        "count": 2
+      },
+      {
+        "itemId": "2105",
+        "count": 5
+      },
+      {
+        "itemId": "2305",
+        "count": 5
+      },
+      {
+        "itemId": "3",
+        "count": 30000
+      }
+    ],
+    "pageSkip": "",
+    "skipTip": "",
+    "group": 0,
+    "condition1": [
+      {
+        "ConditionType": 55,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": []
+      }
+    ]
+  }
+}

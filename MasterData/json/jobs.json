@@ -1,0 +1,257 @@
+{
+  "1": {
+    "id": "1",
+    "NameLan": "characterlan_job_namelan_1",
+    "NameLanText": "宿卫",
+    "descriptionlan": "characterlan_job_descriptionlan_1",
+    "descriptionlanText": "援护队友、吸引火力、生存力强的<color=#32d9ce>防卫者</color>。\n能够构筑<color=#ff8346>减速</color>力场或<color=#ff8346>援护</color>队友。",
+    "Attr": [
+      [
+        "Jump,int,1"
+      ],
+      [
+        "Cross,int,0"
+      ],
+      [
+        "Horizon,int,0"
+      ],
+      [
+        "InaitialEnergy,int,1"
+      ],
+      [
+        "PurEnergy,int,0"
+      ],
+      [
+        "KillEnergy,int,1"
+      ],
+      [
+        "CouEnergy,int,0"
+      ],
+      [
+        "DoubleHitEnergy,int,0"
+      ],
+      [
+        "HurtEnergy,int,0"
+      ],
+      [
+        "Block,int,0"
+      ],
+      [
+        "BlockDef,int,30"
+      ],
+      [
+        "InaitialActionPoint,int,0"
+      ],
+      [
+        "CharacterMoveSpeed,int,50"
+      ],
+      [
+        "AlertAttackBulletLimit,Int,0"
+      ]
+    ]
+  },
+  "2": {
+    "id": "2",
+    "NameLan": "characterlan_job_namelan_2",
+    "NameLanText": "轻锐",
+    "descriptionlan": "characterlan_job_descriptionlan_2",
+    "descriptionlanText": "突入敌阵、斩杀敌军的近战<color=#32d9ce>突击手</color>。\n能够<color=#ff8346>翻越障碍</color>和使用<color=#ff8346>再移动</color>。",
+    "Attr": [
+      [
+        "Jump,int,2"
+      ],
+      [
+        "Cross,int,1"
+      ],
+      [
+        "Horizon,int,0"
+      ],
+      [
+        "InaitialEnergy,int,1"
+      ],
+      [
+        "PurEnergy,int,0"
+      ],
+      [
+        "KillEnergy,int,1"
+      ],
+      [
+        "CouEnergy,int,0"
+      ],
+      [
+        "DoubleHitEnergy,int,0"
+      ],
+      [
+        "HurtEnergy,int,0"
+      ],
+      [
+        "Block,int,0"
+      ],
+      [
+        "BlockDef,int,0"
+      ],
+      [
+        "InaitialActionPoint,int,0"
+      ],
+      [
+        "CharacterMoveSpeed,int,100"
+      ],
+      [
+        "AlertAttackBulletLimit,Int,0"
+      ]
+    ]
+  },
+  "3": {
+    "id": "3",
+    "NameLan": "characterlan_job_namelan_3",
+    "NameLanText": "远击",
+    "descriptionlan": "characterlan_job_descriptionlan_3",
+    "descriptionlanText": "能够切换两种射击模式的<color=#32d9ce>狙击手</color>。\n<color=#ff8346>【集中】</color>状态下，<color=#ff8346>射程</color>大幅度提升。",
+    "Attr": [
+      [
+        "Jump,int,1"
+      ],
+      [
+        "Cross,int,0"
+      ],
+      [
+        "Horizon,int,0"
+      ],
+      [
+        "InaitialEnergy,int,1"
+      ],
+      [
+        "PurEnergy,int,0"
+      ],
+      [
+        "KillEnergy,int,1"
+      ],
+      [
+        "CouEnergy,int,0"
+      ],
+      [
+        "DoubleHitEnergy,int,0"
+      ],
+      [
+        "HurtEnergy,int,0"
+      ],
+      [
+        "Block,int,0"
+      ],
+      [
+        "BlockDef,int,0"
+      ],
+      [
+        "InaitialActionPoint,int,0"
+      ],
+      [
+        "CharacterMoveSpeed,int,75"
+      ],
+      [
+        "AlertAttackBulletLimit,Int,0"
+      ]
+    ]
+  },
+  "4": {
+    "id": "4",
+    "NameLan": "characterlan_job_namelan_4",
+    "NameLanText": "构术",
+    "descriptionlan": "characterlan_job_descriptionlan_4",
+    "descriptionlanText": "提供治疗、增减益、辅助能力的<color=#32d9ce>施法者</color>。\n可通过<color=#ff8346>消耗能量</color>来施展特殊效果。",
+    "Attr": [
+      [
+        "Jump,int,1"
+      ],
+      [
+        "Cross,int,0"
+      ],
+      [
+        "Horizon,int,0"
+      ],
+      [
+        "InaitialEnergy,int,1"
+      ],
+      [
+        "PurEnergy,int,0"
+      ],
+      [
+        "KillEnergy,int,1"
+      ],
+      [
+        "CouEnergy,int,0"
+      ],
+      [
+        "DoubleHitEnergy,int,0"
+      ],
+      [
+        "HurtEnergy,int,0"
+      ],
+      [
+        "Block,int,0"
+      ],
+      [
+        "BlockDef,int,0"
+      ],
+      [
+        "InaitialActionPoint,int,0"
+      ],
+      [
+        "CharacterMoveSpeed,int,75"
+      ],
+      [
+        "AlertAttackBulletLimit,Int,0"
+      ]
+    ]
+  },
+  "5": {
+    "id": "5",
+    "NameLan": "characterlan_job_namelan_5",
+    "NameLanText": "战略",
+    "descriptionlan": "characterlan_job_descriptionlan_5",
+    "descriptionlanText": "远程打击，构筑警戒圈的<color=#32d9ce>炮手</color>。\n<color=#ff8346>【警戒】</color>状态下，能够<color=#ff8346>自动攻击</color>射程内敌人。",
+    "Attr": [
+      [
+        "Jump,int,1"
+      ],
+      [
+        "Cross,int,0"
+      ],
+      [
+        "Horizon,int,0"
+      ],
+      [
+        "InaitialEnergy,int,1"
+      ],
+      [
+        "PurEnergy,int,0"
+      ],
+      [
+        "KillEnergy,int,1"
+      ],
+      [
+        "CouEnergy,int,0"
+      ],
+      [
+        "DoubleHitEnergy,int,0"
+      ],
+      [
+        "HurtEnergy,int,0"
+      ],
+      [
+        "Block,int,0"
+      ],
+      [
+        "BlockDef,int,0"
+      ],
+      [
+        "InaitialActionPoint,int,0"
+      ],
+      [
+        "CharacterMoveSpeed,int,75"
+      ],
+      [
+        "AlertAttackBulletLimit,Int,9"
+      ]
+    ]
+  }
+}

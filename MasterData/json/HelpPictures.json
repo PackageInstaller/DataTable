@@ -1,0 +1,535 @@
+[
+  {
+    "id": "1001",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1001",
+    "nameLanText": "关卡测试1",
+    "textLan": "",
+    "picture": ""
+  },
+  {
+    "id": "2001",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2001",
+    "nameLanText": "怪物测试1",
+    "textLan": "",
+    "picture": ""
+  },
+  {
+    "id": "9999",
+    "type": 3,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_9999",
+    "nameLanText": "律法",
+    "textLan": "",
+    "picture": ""
+  },
+  {
+    "id": "9998",
+    "type": 4,
+    "nameLan": "",
+    "textLan": "",
+    "picture": ""
+  },
+  {
+    "id": "8001",
+    "type": 5,
+    "nameLan": "",
+    "textLan": "",
+    "picture": ""
+  },
+  {
+    "id": "1002",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1002",
+    "nameLanText": "升降机",
+    "textLan": "DungeonLan_HelpPicture_textLan_1002",
+    "textLanText": "升降机交互物件可使得器者在平台间切换位置，使用开关后，将升降机升起或者降下。\n升降机上的全部器者会获得一次再行动机会，每位器者每轮次只能通过升降机获得一次再行动。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_01"
+  },
+  {
+    "id": "1003",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1003",
+    "nameLanText": "火焰地块",
+    "textLan": "DungeonLan_HelpPicture_textLan_1003",
+    "textLanText": "停留在火焰地块上的单位会受到高额伤害，强制将敌人移动至该地块时，也会额外触发一次。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_02"
+  },
+  {
+    "id": "1004",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1004",
+    "nameLanText": "增益地块",
+    "textLan": "DungeonLan_HelpPicture_textLan_1004",
+    "textLanText": "停留在增益地块上的单位会获得一些强力的增益效果，合理使用增益地块完成胜利条件吧！",
+    "picture": "3,BattleHelpPics/ui_zd_bz_04"
+  },
+  {
+    "id": "1005",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1005",
+    "nameLanText": "风场（一）",
+    "textLan": "DungeonLan_HelpPicture_textLan_1005",
+    "textLanText": "微风预警：当场上出现微风时，其方向预告了下一轮次的狂风方向。\n强风来袭：狂风会席卷场上的一切可移动单位并将其沿着狂风移动的方向推动六格。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_05"
+  },
+  {
+    "id": "1006",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1006",
+    "nameLanText": "风场（二）",
+    "textLan": "DungeonLan_HelpPicture_textLan_1006",
+    "textLanText": "陷落：单位被狂风推动掉落至沟壑时，将会受到高额伤害。\n阻挡：单位在击退过程中被高度较高的地块阻挡时，将会在障碍物处停滞。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_06"
+  },
+  {
+    "id": "1007",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1007",
+    "nameLanText": "击败目标单位",
+    "textLan": "DungeonLan_HelpPicture_textLan_1007",
+    "textLanText": "带有“击败”标志的单位即为本局战斗的关键单位，优先击败所有带标志的关键单位可有效降低关卡难度，或根据关卡条件立即获胜。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_07"
+  },
+  {
+    "id": "1008",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1008",
+    "nameLanText": "特殊效果·移动",
+    "textLan": "DungeonLan_HelpPicture_textLan_1008",
+    "textLanText": "战斗开始后，己方器者在回合内进行移动时，可清除未移动造成的负面效果，并获得伤害叠加增益；\n未进行移动时，清除伤害叠加增益，并施加伤害降低效果。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_08"
+  },
+  {
+    "id": "1009",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1009",
+    "nameLanText": "特殊效果·回能",
+    "textLan": "DungeonLan_HelpPicture_textLan_1009",
+    "textLanText": "战斗开始后，己方器者技能同时命中三个及以上单位时，将额外恢复2点能量。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_10"
+  },
+  {
+    "id": "1010",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1010",
+    "nameLanText": "特殊效果·生命",
+    "textLan": "DungeonLan_HelpPicture_textLan_1010",
+    "textLanText": "战斗开始后，己方器者生命值高于50%时，攻击力提升；生命值低于50%时，移动力降低。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_09"
+  },
+  {
+    "id": "1011",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1011",
+    "nameLanText": "草丛",
+    "textLan": "DungeonLan_HelpPicture_textLan_1011",
+    "textLanText": "进入草丛地块的单位获得“匿踪”状态：不会被敌方攻击选中，离开草丛地块或主动攻击敌方单位后，此状态失效1回合。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_03"
+  },
+  {
+    "id": "1012",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1012",
+    "nameLanText": "草丛·烟春",
+    "textLan": "DungeonLan_HelpPicture_textLan_1012",
+    "textLanText": "进入草丛地块的单位获得“匿踪”状态：不会被敌方攻击选中，离开草丛地块或主动攻击敌方单位后，此状态消失。\n春日的草丛藏着恼人的小虫。回合开始时，有50%概率使处于草丛地块的单位获得“融伤”状态。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_27"
+  },
+  {
+    "id": "1013",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1013",
+    "nameLanText": "草丛·素秋",
+    "textLan": "DungeonLan_HelpPicture_textLan_1013",
+    "textLanText": "进入草丛地块的单位获得“匿踪”状态：不会被敌方攻击选中，离开草丛地块或主动攻击敌方单位后，此状态消失。\n秋日的草丛枯叶堆积。回合开始时，有40%概率使处于草丛地块的单位获得“燃烧”状态。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_28"
+  },
+  {
+    "id": "1014",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1014",
+    "nameLanText": "冰面·清冬",
+    "textLan": "DungeonLan_HelpPicture_textLan_1014",
+    "textLanText": "天寒地冻，凝冰难行。处于冰面地块的单位，在受到敌方攻击时，会顺着攻击的方向被击退并滑行一段距离。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_21"
+  },
+  {
+    "id": "1015",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1015",
+    "nameLanText": "地土-耀石（一）",
+    "textLan": "DungeonLan_HelpPicture_textLan_1015",
+    "textLanText": "地土的特殊技能会在场地内随机地块降下曜石，曜石所在地块无法通行。\n曜石为可破坏类物件，受到任意攻击后消失，该地块恢复正常。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_17"
+  },
+  {
+    "id": "1016",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1016",
+    "nameLanText": "地土-耀石（二）",
+    "textLan": "DungeonLan_HelpPicture_textLan_1016",
+    "textLanText": "地土降下曜石的下一轮次行动时，若场地内存在未破坏的曜石，则曜石爆炸，对十字方向上所有我方单位造成大量伤害，请注意提前击碎曜石或移动规避伤害。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_18"
+  },
+  {
+    "id": "1017",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1017",
+    "nameLanText": "地土-陷地",
+    "textLan": "DungeonLan_HelpPicture_textLan_1017",
+    "textLanText": "1.地土在释放绝技时会用力踩踏地面，导致部分地块出现破损。\n2.破损地块再次承受地土踩踏后将直接塌陷。\n3.地块塌陷时，于该地块上的器者将会坠入深渊脱离战斗。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_16"
+  },
+  {
+    "id": "1018",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1018",
+    "nameLanText": "天月（一）",
+    "textLan": "DungeonLan_HelpPicture_textLan_1018",
+    "textLanText": "天月拥有两种状态，不同状态拥有不同的抗性，需多加注意。\n银月状态：受到的物理伤害降低50%，受到的构素伤害提高\n50%。\n红月状态：受到的构素伤害降低50%，受到的物理伤害提高\n50%。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_19"
+  },
+  {
+    "id": "1019",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1019",
+    "nameLanText": "天月（二）",
+    "textLan": "DungeonLan_HelpPicture_textLan_1019",
+    "textLanText": "天月进入二阶段以后，会召唤“衔刀灵犬·盈”和“衔刀灵犬·亏”。\n击杀两种衔刀灵犬时，需要注意天月所处的状态——\n若在天月处于银月状态时击杀“衔刀灵犬·盈”会使天月下一次技能无需蓄力，直接释放；\n若在天月处于红月状态时击杀“衔刀灵犬·亏”会使天月下一次技能无需蓄力，直接释放。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_20"
+  },
+  {
+    "id": "1020",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1020",
+    "nameLanText": "火婴·三昧真火",
+    "textLan": "DungeonLan_HelpPicture_textLan_1020",
+    "textLanText": "受到火婴攻击会获得“三昧真火”状态，该状态下单位会持续受到构素伤害，并在引爆时受到大量构素伤害。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_29"
+  },
+  {
+    "id": "1021",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1021",
+    "nameLanText": "骨刻·精确制导",
+    "textLan": "DungeonLan_HelpPicture_textLan_1021",
+    "textLanText": "骨刻会召唤骨化阵列，其所使用的精确制导会标记多名我方单位所处地块，并对其发射导弹，被标记的单位需要尽快离开影响区域，否则将会会受到大量伤害。导弹会落下的地块上生成骨弹残骸。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_30"
+  },
+  {
+    "id": "1022",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1022",
+    "nameLanText": "骨刻·狂风卷地",
+    "textLan": "DungeonLan_HelpPicture_textLan_1022",
+    "textLanText": "骨化阵列会在其所在的平台上向面对的方向使用狂风卷地，烈风会席卷全部我方单位滑向深渊。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_31"
+  },
+  {
+    "id": "1023",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1023",
+    "nameLanText": "长安·诡梦",
+    "textLan": "DungeonLan_HelpPicture_textLan_1023",
+    "textLanText": "1.在【诡梦之境】中,存在着不断增加的诡魔，尽管可以在“现世”观测它们的行动,但只有进入“幻境”中才能接触它们。\n2.此处是“幻境”入口，进入后“现世”的敌方将停止行动。\n3.当诡魇到达特定区域时，会对器者方全员造成高额伤害，请务必小心。\n4.进入【诡梦之境】后，己方单位只能行动3次，再次进入需等待2轮次。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_23"
+  },
+  {
+    "id": "1024",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1024",
+    "nameLanText": "长安·幻梦",
+    "textLan": "DungeonLan_HelpPicture_textLan_1024",
+    "textLanText": "1.受【幻梦之境】的影响，“现世”的敌方会获得“幻梦之力”，达到3层与5层时会触发特殊效果，请务必谨慎应对。\n2.此处是“幻境”入口,进入后，“现世”的敌方单位将停止行动。\n3.击败“幻境”中所有敌方单位即可返回“现世”，并暂时清除上述所有影响。再次进入需等待1轮次。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_24"
+  },
+  {
+    "id": "1025",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1025",
+    "nameLanText": "长安·复梦",
+    "textLan": "DungeonLan_HelpPicture_textLan_1025",
+    "textLanText": "1.受【复梦之境】的影响，己方单位的脚步将会越发沉重，移动力每轮次减少1，最多叠加4层。\n2.此处为“幻境”入口，需己方一位器者进入，进入后“现世”的全员将停止行动。器者击败“幻境”中敌方后，入口关闭，暂时清除上述效果，并免疫1轮次。\n3.【复梦之境】中存在多个不同的“幻境”入口，请收藏家合理安排战斗。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_22"
+  },
+  {
+    "id": "1026",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1026",
+    "nameLanText": "带电水流",
+    "textLan": "DungeonLan_HelpPicture_textLan_1026",
+    "textLanText": "停留在带电水流地块上的任意单位会受到伤害。\n强制将敌方单位移动至该地块时，也会额外触发一次伤害。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_25"
+  },
+  {
+    "id": "1027",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1027",
+    "nameLanText": "月相",
+    "textLan": "DungeonLan_HelpPicture_textLan_1027",
+    "textLanText": "战斗中每2轮次按照蚀月、新月和满月的次序变更月相。\n1.蚀月状态下，我方器者暴击率增加20%；\n2.新月状态下，我方器者回合结束时回复1点能量；\n3.满月状态下，我方器者物理防御力和构术防御力降低300。\n请合理使用月相效果达成关卡目标吧。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_32"
+  },
+  {
+    "id": "1028",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1028",
+    "nameLanText": "晦明灯",
+    "textLan": "DungeonLan_HelpPicture_textLan_1028",
+    "textLanText": "我方攻击会击碎晦明灯，激发的力量会使得月相暂停变更，保持当前月相2轮次。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_33"
+  },
+  {
+    "id": "1029",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1029",
+    "nameLanText": "浮桥",
+    "textLan": "DungeonLan_HelpPicture_textLan_1029",
+    "textLanText": "当月相为满月状态时，场地中部分沟壑地块会升起浮桥，场上全体单位均可通过。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_34"
+  },
+  {
+    "id": "1030",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1030",
+    "nameLanText": "场景效果",
+    "textLan": "DungeonLan_HelpPicture_textLan_1030",
+    "textLanText": "场上全体单位获得秦音·兵强马壮，我方单位获得秦音·损甲。\n秦音·兵强马壮：每回合开始时，回复自身最大生命值<color=#158bdb>10%</color>的生命值。\n秦音·损甲：进入战斗后，受到的伤害提高<color=#158bdb>20%</color>。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_46"
+  },
+  {
+    "id": "1031",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_1031",
+    "nameLanText": "场景效果",
+    "textLan": "DungeonLan_HelpPicture_textLan_1031",
+    "textLanText": "场上全体单位获得秦音·疲敝不堪，敌方单位获得秦音·狡兵。\n秦音·疲敝不堪：每回合结束时，损失自身最大生命值<color=#158bdb>10%</color>的生命值。\n秦音·狡兵：进入战斗后，生命偷取率增加<color=#158bdb>50%</color>。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_45"
+  },
+  {
+    "id": "2002",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2002",
+    "nameLanText": "爆裂鼓蛙",
+    "textLan": "DungeonLan_HelpPicture_textLan_2002",
+    "textLanText": "爆裂鼓蛙的被动技能将使其在受到攻击时额外恢复能量；\n能量充满时，将会释放伤害极高，范围较大的自爆技能，请注意躲避。建议收藏家快速将其击败或者远离爆炸范围。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_11"
+  },
+  {
+    "id": "2003",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2003",
+    "nameLanText": "隐匿树妖",
+    "textLan": "DungeonLan_HelpPicture_textLan_2003",
+    "textLanText": "在拥有礼弹时，该怪物会进入不可选中的状态。礼弹耗尽后，解除该状态。\n该怪物在不可选中状态下受到范围伤害时，解除该状态并清除所有礼弹。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_12"
+  },
+  {
+    "id": "2004",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2004",
+    "nameLanText": "盾卫",
+    "textLan": "DungeonLan_HelpPicture_textLan_2004",
+    "textLanText": "该下型体受到物理常击时，若触发自身的格挡，则会对攻击器者造成基于自身防御力的伤害。\n当其发动自身绝技时，格挡概率将提升至100%，请注意应对策略。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_13"
+  },
+  {
+    "id": "2005",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2005",
+    "nameLanText": "术士",
+    "textLan": "DungeonLan_HelpPicture_textLan_2005",
+    "textLanText": "该下型体的绝技会让同伴全体额外获得1点能量，请注意优先处理。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_14"
+  },
+  {
+    "id": "2006",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2006",
+    "nameLanText": "炽刹君",
+    "textLan": "DungeonLan_HelpPicture_textLan_2006",
+    "textLanText": "该下型体会将远处的敌人位移至自己身边，并在自身周围立下束缚立场限制移动。同时，他还可以根据周围敌人的数量来强化自身。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_15"
+  },
+  {
+    "id": "2007",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2007",
+    "nameLanText": "上上签飞行器",
+    "textLan": "DungeonLan_HelpPicture_textLan_2007",
+    "textLanText": "该下型体会尝试呼叫援军，当其未受到致命伤害时，会在下一个自身的回合开始时呼叫一名援军。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_26"
+  },
+  {
+    "id": "2008",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2008",
+    "nameLanText": "妨宿",
+    "textLan": "DungeonLan_HelpPicture_textLan_2008",
+    "textLanText": "该下型体的绝技会使得周身一定范围的敌人添加1层寒天状态，且回合结束时停留在范围内的敌人也会添加1层寒天状态。\n化茧状态下的该下型体免疫控制效果，同时自身无法行动。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_39"
+  },
+  {
+    "id": "2009",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2009",
+    "nameLanText": "卯宿",
+    "textLan": "DungeonLan_HelpPicture_textLan_2009",
+    "textLanText": "该下型体的绝技会切换当前场地的月相状态为满月，请小心应对。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_40"
+  },
+  {
+    "id": "2010",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2010",
+    "nameLanText": "阱宿",
+    "textLan": "DungeonLan_HelpPicture_textLan_2010",
+    "textLanText": "该下型体的职业技能会产生虚月领域，处于领域中的同伴将会获得满月状态下的强化。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_38"
+  },
+  {
+    "id": "2011",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2011",
+    "nameLanText": "诡月（一）",
+    "textLan": "DungeonLan_HelpPicture_textLan_2011",
+    "textLanText": "试炼·阵 \n试炼目标：6轮次内，器者到达指定的阵眼地块。完成试炼的器者将获得祝福·阵状态。\n特别说明：\n器者停留在橙色地块时，自身损失最大生命值40%的生命值，获得再移动机会1次；\n器者停留在绿色地块时，该区域器者全体回复最大生命值30%的生命值。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_35"
+  },
+  {
+    "id": "2012",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2012",
+    "nameLanText": "诡月（二）",
+    "textLan": "DungeonLan_HelpPicture_textLan_2012",
+    "textLanText": "试炼·守\n试炼目标：6轮次内，器者击破正确的石块。\n完成试炼的器者将获得祝福·守状态。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_36"
+  },
+  {
+    "id": "2013",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2013",
+    "nameLanText": "诡月（三）",
+    "textLan": "DungeonLan_HelpPicture_textLan_2013",
+    "textLanText": "试炼·战\n试炼目标：6轮次内，器者击破区域内3轮敌人。\n完成试炼的器者将获得祝福·战状态。\n特别说明：\n每1轮次结束时，处于该区域的器者全体获得1层危月状态，该效果每轮次额外提高1层；\n每击败1个敌方单位，处于该区域的器者全体减少1层危月状态。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_37"
+  },
+  {
+    "id": "2014",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2014",
+    "nameLanText": "汲雷异兽·玄",
+    "textLan": "DungeonLan_HelpPicture_textLan_2014",
+    "textLanText": "1.本次挑战中，异兽不会被击败，根据对异兽造成的总伤害影响得分。\n2.该异兽受到<color=#158bdb>1</color>格内单位伤害大幅提高，受到<color=#158bdb>1</color>格外伤害大幅降低，请合理搭配阵容。\n3.异兽的攻击会随回合数逐渐提高，从第<color=#158bdb>7</color>轮次开始，每回合结束时会给友方单位添加<color=#158bdb>2</color>层<color=#ff6724>邪眼</color>，造成高额伤害。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_41"
+  },
+  {
+    "id": "2015",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2015",
+    "nameLanText": "汲雷异兽·素",
+    "textLan": "DungeonLan_HelpPicture_textLan_2015",
+    "textLanText": "1.本次挑战中，异兽不会被击败，根据对异兽造成的总伤害影响得分。\n2.该异兽受到敌方攻击时，会持续叠加<color=#ff6724>噬骨</color>状态，使自身受到的伤害持续提高。\n3.异兽的攻击会随回合数逐渐提高，每次释放绝技都会提升下次绝技的伤害。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_42"
+  },
+  {
+    "id": "2016",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2016",
+    "nameLanText": "汲雷异兽·丹",
+    "textLan": "DungeonLan_HelpPicture_textLan_2016",
+    "textLanText": "1.本次挑战中，异兽不会被击败，根据对异兽造成的总伤害影响得分。\n2.该异兽受到常击和技能的伤害降低，受到回击/连击/警戒攻击的伤害大幅度提高。\n3.异兽的攻击会随回合数逐渐提高，每次释放绝技都会给友方单位添加<color=#158bdb>1</color>层<color=#ff6724>战栗</color>效果，使其在回合结束时根据层数受到伤害。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_43"
+  },
+  {
+    "id": "207",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_207",
+    "nameLanText": "撞钟蠹兽",
+    "textLan": "DungeonLan_HelpPicture_textLan_207",
+    "textLanText": "该下型体在下一个单位行动开始时进入<color=#ff6724>钟盾</color>状态，此状态下会免疫所有伤害及控制效果。\n请尝试使用能在该下型体行动期间造成伤害的方式击败它。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_44"
+  },
+  {
+    "id": "2018",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2018",
+    "nameLanText": "升降机",
+    "textLan": "DungeonLan_HelpPicture_textLan_2018",
+    "textLanText": "升降机交互物件可使得器者在平台间切换位置，使用开关后，将升降机升起或者降下。\n升降机上的全部器者会获得一次再行动机会，每位器者每轮次只能通过升降机获得一次再行动。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_47"
+  },
+  {
+    "id": "2019",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2019",
+    "nameLanText": "证量模拟",
+    "textLan": "DungeonLan_HelpPicture_textLan_2019",
+    "textLanText": "证量模拟\n局内顶部显示证量值，红色为负量区域，绿色为正量区域。\n正量与负量\n当证量指标停留在正量区域（即绿色区域）时，我方单位获得优势；\n当证量指标停留在负量区域（即红色区域）时，敌方单位获得优势；",
+    "picture": "3,BattleHelpPics/ui_zd_bz_48"
+  },
+  {
+    "id": "2020",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2020",
+    "nameLanText": "证量模拟",
+    "textLan": "DungeonLan_HelpPicture_textLan_2020",
+    "textLanText": "证量指标\n当我方单位击败敌方单位、使用绝技或与进行场内特殊交互时，证量值增加，证量指标将会向右移动；\n当敌方单位击败我方单位、使用绝技或与进行场内特殊交互时，证量值减少，证量指标将会向左移动；\n切换至奇数轮次时，证量值增加，证量指标将会向右移动；\n切换至偶数轮次时，证量值减少，证量指标将会向左移动。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_49"
+  },
+  {
+    "id": "2021",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2021",
+    "nameLanText": "证量模拟",
+    "textLan": "DungeonLan_HelpPicture_textLan_2021",
+    "textLanText": "当前加成效果\n点击正量或负量区域，可查看当前的证量值及对应的加成效果。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_50"
+  },
+  {
+    "id": "2022",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2022",
+    "nameLanText": "执行检验",
+    "textLan": "DungeonLan_HelpPicture_textLan_2022",
+    "textLanText": "1.战斗开始前，收藏家可通过点击敌方所在地块，选择是否激活该敌方单位。\n2.敌方单位默认全部激活，每次战斗至少保留1个敌方单位才能开始战斗。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_51"
+  },
+  {
+    "id": "2023",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2023",
+    "nameLanText": "执行检验",
+    "textLan": "DungeonLan_HelpPicture_textLan_2023",
+    "textLanText": "1.每局执行检验满20轮次后自动结束并结算，收藏家也可自行选择退出并结算本次执行检验。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_52"
+  },
+  {
+    "id": "2024",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2024",
+    "nameLanText": "晦明",
+    "textLan": "DungeonLan_HelpPicture_textLan_2024",
+    "textLanText": "晦明状态会在<color=#ff6724>日食</color>和<color=#ff6724>生光</color>之间转化；\n<color=#ff6724>日食</color>状态时，器者通过释放绝技等方式，可以获得<color=#158bdb>时间进度</color>，<color=#158bdb>时间进度</color>到达一定值后，更换为<color=#ff6724>生光</color>状态。\n<color=#ff6724>生光</color>状态时，当<color=#158bdb>时间进度</color>到达<color=#158bdb>0</color>时，更换为<color=#ff6724>日食</color>状态。\n<color=#ff6724>生光</color>状态期间，器者会获得强力增益效果。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_53"
+  },
+  {
+    "id": "2025",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2025",
+    "nameLanText": "四季轮替",
+    "textLan": "DungeonLan_HelpPicture_textLan_2025",
+    "textLanText": "1.战斗中存在特殊的场地效果，场地效果对场上全体单位生效。\n2.场地效果默认按照：青阳-朱明-白藏-玄英的顺序切换，每个场地效果持续1个轮次。\n3.收藏家可点击下方四个特殊指令，查看对应的效果详情。",
+    "picture": "3,BattleHelpPics/ui_zd_bz_55"
+  },
+  {
+    "id": "2026",
+    "type": 1,
+    "nameLan": "DungeonLan_HelpPicture_nameLan_2026",
+    "nameLanText": "四季轮替",
+    "textLan": "DungeonLan_HelpPicture_textLan_2026",
+    "textLanText": "该区域为本场战斗中，收藏家可以使用的特殊指令。每轮次最多使用1个特殊指令；每场战斗中，每个指令最多可用1次。\n拨针：使用后，立刻进入下一个场地效果\n停摆：使用后，使当前场地效果延长一回合\n溯时：使用后，立刻进入上一个场地效果\n调表：使用后，立刻切换至收藏家指定的一个场地效果",
+    "picture": "3,BattleHelpPics/ui_zd_bz_54"
+  }
+]

@@ -1,0 +1,1957 @@
+{
+  "CD_1024": {
+    "ID": "CD_1024",
+    "Score": 1024,
+    "Priority": 9,
+    "Picture": "ui_jj_2048_cd_10",
+    "MoveTimes": "Normal.1024",
+    "BoardBegin": "Normal.1024",
+    "BoardEnd": "Normal.1024",
+    "BasePicture": "ui_jj_2048_cd_bj1024",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_2048"
+      ],
+      [
+        "AddScore",
+        "1024"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_2048"
+      ],
+      [
+        "AddScore",
+        "1024"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_128": {
+    "ID": "CD_128",
+    "Score": 128,
+    "Priority": 6,
+    "Picture": "ui_jj_2048_cd_7",
+    "MoveTimes": "Normal.128",
+    "BoardBegin": "Normal.128",
+    "BoardEnd": "Normal.128",
+    "BasePicture": "ui_jj_2048_cd_bj128",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_256"
+      ],
+      [
+        "AddScore",
+        "128"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_256"
+      ],
+      [
+        "AddScore",
+        "128"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_16": {
+    "ID": "CD_16",
+    "Score": 16,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_cd_4",
+    "MoveTimes": "Normal.16",
+    "BoardBegin": "Normal.16",
+    "BoardEnd": "Normal.16",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_32"
+      ],
+      [
+        "AddScore",
+        "16"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_32"
+      ],
+      [
+        "AddScore",
+        "16"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_16384": {
+    "ID": "CD_16384",
+    "Score": 16384,
+    "Priority": 13,
+    "Picture": "ui_jj_2048_cd_14",
+    "MoveTimes": "Normal.16384",
+    "BoardBegin": "Normal.16384",
+    "BoardEnd": "Normal.16384",
+    "BasePicture": "ui_jj_2048_cd_bj16384",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_32768"
+      ],
+      [
+        "AddScore",
+        "16384"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_32768"
+      ],
+      [
+        "AddScore",
+        "16384"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_2": {
+    "ID": "CD_2",
+    "Score": 2,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_cd_1",
+    "MoveTimes": "Normal.2",
+    "BoardBegin": "Normal.2",
+    "BoardEnd": "Normal.2",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_4"
+      ],
+      [
+        "AddScore",
+        "2"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_4"
+      ],
+      [
+        "AddScore",
+        "2"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_2048": {
+    "ID": "CD_2048",
+    "Score": 2048,
+    "Priority": 10,
+    "Picture": "ui_jj_2048_cd_11",
+    "MoveTimes": "Normal.2048",
+    "BoardBegin": "Normal.2048",
+    "BoardEnd": "Normal.2048",
+    "BasePicture": "ui_jj_2048_cd_bj2048",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_4096"
+      ],
+      [
+        "AddScore",
+        "2048"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_4096"
+      ],
+      [
+        "AddScore",
+        "2048"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_256": {
+    "ID": "CD_256",
+    "Score": 256,
+    "Priority": 7,
+    "Picture": "ui_jj_2048_cd_8",
+    "MoveTimes": "Normal.256",
+    "BoardBegin": "Normal.256",
+    "BoardEnd": "Normal.256",
+    "BasePicture": "ui_jj_2048_cd_bj256",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_512"
+      ],
+      [
+        "AddScore",
+        "256"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_512"
+      ],
+      [
+        "AddScore",
+        "256"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_32": {
+    "ID": "CD_32",
+    "Score": 32,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_cd_5",
+    "MoveTimes": "Normal.32",
+    "BoardBegin": "Normal.32",
+    "BoardEnd": "Normal.32",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_64"
+      ],
+      [
+        "AddScore",
+        "32"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_64"
+      ],
+      [
+        "AddScore",
+        "32"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_32768": {
+    "ID": "CD_32768",
+    "Score": 32768,
+    "Priority": 14,
+    "Picture": "ui_jj_2048_cd_15",
+    "MoveTimes": "Normal.32768",
+    "BoardBegin": "Normal.32768",
+    "BoardEnd": "Normal.32768",
+    "BasePicture": "ui_jj_2048_cd_bj32768",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_65536"
+      ],
+      [
+        "AddScore",
+        "32768"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_65536"
+      ],
+      [
+        "AddScore",
+        "32768"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_4": {
+    "ID": "CD_4",
+    "Score": 4,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_cd_2",
+    "MoveTimes": "Normal.4",
+    "BoardBegin": "Normal.4",
+    "BoardEnd": "Normal.4",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_8"
+      ],
+      [
+        "AddScore",
+        "4"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_8"
+      ],
+      [
+        "AddScore",
+        "4"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_4096": {
+    "ID": "CD_4096",
+    "Score": 4096,
+    "Priority": 11,
+    "Picture": "ui_jj_2048_cd_12",
+    "MoveTimes": "Normal.4096",
+    "BoardBegin": "Normal.4096",
+    "BoardEnd": "Normal.4096",
+    "BasePicture": "ui_jj_2048_cd_bj4096",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_8192"
+      ],
+      [
+        "AddScore",
+        "4096"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_8192"
+      ],
+      [
+        "AddScore",
+        "4096"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_512": {
+    "ID": "CD_512",
+    "Score": 512,
+    "Priority": 8,
+    "Picture": "ui_jj_2048_cd_9",
+    "MoveTimes": "Normal.512",
+    "BoardBegin": "Normal.512",
+    "BoardEnd": "Normal.512",
+    "BasePicture": "ui_jj_2048_cd_bj512",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_1024"
+      ],
+      [
+        "AddScore",
+        "512"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_1024"
+      ],
+      [
+        "AddScore",
+        "512"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_64": {
+    "ID": "CD_64",
+    "Score": 64,
+    "Priority": 5,
+    "Picture": "ui_jj_2048_cd_6",
+    "MoveTimes": "Normal.64",
+    "BoardBegin": "Normal.64",
+    "BoardEnd": "Normal.64",
+    "BasePicture": "ui_jj_2048_cd_bj64",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_128"
+      ],
+      [
+        "AddScore",
+        "64"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_128"
+      ],
+      [
+        "AddScore",
+        "64"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_65536": {
+    "ID": "CD_65536",
+    "Score": 65536,
+    "Priority": 15,
+    "Picture": "ui_jj_2048_cd_16",
+    "MoveTimes": "Normal.65536",
+    "BoardBegin": "",
+    "BoardEnd": "",
+    "BasePicture": "ui_jj_2048_cd_bj65536",
+    "CreateFunc": [],
+    "HitSelf": [],
+    "HitObject": [],
+    "CrashSelf": [],
+    "CrashObject": []
+  },
+  "CD_8": {
+    "ID": "CD_8",
+    "Score": 8,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_cd_3",
+    "MoveTimes": "Normal.8",
+    "BoardBegin": "Normal.8",
+    "BoardEnd": "Normal.8",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_16"
+      ],
+      [
+        "AddScore",
+        "8"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_16"
+      ],
+      [
+        "AddScore",
+        "8"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "CD_8192": {
+    "ID": "CD_8192",
+    "Score": 8192,
+    "Priority": 12,
+    "Picture": "ui_jj_2048_cd_13",
+    "MoveTimes": "Normal.8192",
+    "BoardBegin": "Normal.8192",
+    "BoardEnd": "Normal.8192",
+    "BasePicture": "ui_jj_2048_cd_bj8192",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_16384"
+      ],
+      [
+        "AddScore",
+        "8192"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "CD_16384"
+      ],
+      [
+        "AddScore",
+        "8192"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type2Merge"
+      ]
+    ]
+  },
+  "HH_1024": {
+    "ID": "HH_1024",
+    "Score": 1024,
+    "Priority": 9,
+    "Picture": "ui_jj_2048_hh_10",
+    "MoveTimes": "Normal.1024",
+    "BoardBegin": "Normal.1024",
+    "BoardEnd": "Normal.1024",
+    "BasePicture": "ui_jj_2048_hh_bj1024",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_2048"
+      ],
+      [
+        "AddScore",
+        "1024"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_2048"
+      ],
+      [
+        "AddScore",
+        "1024"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_128": {
+    "ID": "HH_128",
+    "Score": 128,
+    "Priority": 6,
+    "Picture": "ui_jj_2048_hh_7",
+    "MoveTimes": "Normal.128",
+    "BoardBegin": "Normal.128",
+    "BoardEnd": "Normal.128",
+    "BasePicture": "ui_jj_2048_hh_bj128",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_256"
+      ],
+      [
+        "AddScore",
+        "128"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_256"
+      ],
+      [
+        "AddScore",
+        "128"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_16": {
+    "ID": "HH_16",
+    "Score": 16,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_hh_4",
+    "MoveTimes": "Normal.16",
+    "BoardBegin": "Normal.16",
+    "BoardEnd": "Normal.16",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_32"
+      ],
+      [
+        "AddScore",
+        "16"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_32"
+      ],
+      [
+        "AddScore",
+        "16"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_2": {
+    "ID": "HH_2",
+    "Score": 2,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_hh_1",
+    "MoveTimes": "Normal.2",
+    "BoardBegin": "Normal.2",
+    "BoardEnd": "Normal.2",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_4"
+      ],
+      [
+        "AddScore",
+        "2"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_4"
+      ],
+      [
+        "AddScore",
+        "2"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_2048": {
+    "ID": "HH_2048",
+    "Score": 2048,
+    "Priority": 10,
+    "Picture": "ui_jj_2048_hh_11",
+    "MoveTimes": "Normal.2048",
+    "BoardBegin": "Normal.2048",
+    "BoardEnd": "Normal.2048",
+    "BasePicture": "ui_jj_2048_hh_bj2048",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_4096"
+      ],
+      [
+        "AddScore",
+        "2048"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_4096"
+      ],
+      [
+        "AddScore",
+        "2048"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_256": {
+    "ID": "HH_256",
+    "Score": 256,
+    "Priority": 7,
+    "Picture": "ui_jj_2048_hh_8",
+    "MoveTimes": "Normal.256",
+    "BoardBegin": "Normal.256",
+    "BoardEnd": "Normal.256",
+    "BasePicture": "ui_jj_2048_hh_bj256",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_512"
+      ],
+      [
+        "AddScore",
+        "256"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_512"
+      ],
+      [
+        "AddScore",
+        "256"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_32": {
+    "ID": "HH_32",
+    "Score": 32,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_hh_5",
+    "MoveTimes": "Normal.32",
+    "BoardBegin": "Normal.32",
+    "BoardEnd": "Normal.32",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_64"
+      ],
+      [
+        "AddScore",
+        "32"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_64"
+      ],
+      [
+        "AddScore",
+        "32"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_4": {
+    "ID": "HH_4",
+    "Score": 4,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_hh_2",
+    "MoveTimes": "Normal.4",
+    "BoardBegin": "Normal.4",
+    "BoardEnd": "Normal.4",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_8"
+      ],
+      [
+        "AddScore",
+        "4"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_8"
+      ],
+      [
+        "AddScore",
+        "4"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_4096": {
+    "ID": "HH_4096",
+    "Score": 4096,
+    "Priority": 11,
+    "Picture": "ui_jj_2048_hh_12",
+    "MoveTimes": "Normal.4096",
+    "BoardBegin": "",
+    "BoardEnd": "",
+    "BasePicture": "ui_jj_2048_hh_bj4096",
+    "CreateFunc": [],
+    "HitSelf": [],
+    "HitObject": [],
+    "CrashSelf": [],
+    "CrashObject": []
+  },
+  "HH_512": {
+    "ID": "HH_512",
+    "Score": 512,
+    "Priority": 8,
+    "Picture": "ui_jj_2048_hh_9",
+    "MoveTimes": "Normal.512",
+    "BoardBegin": "Normal.512",
+    "BoardEnd": "Normal.512",
+    "BasePicture": "ui_jj_2048_hh_bj512",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_1024"
+      ],
+      [
+        "AddScore",
+        "512"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_1024"
+      ],
+      [
+        "AddScore",
+        "512"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_64": {
+    "ID": "HH_64",
+    "Score": 64,
+    "Priority": 5,
+    "Picture": "ui_jj_2048_hh_6",
+    "MoveTimes": "Normal.64",
+    "BoardBegin": "Normal.64",
+    "BoardEnd": "Normal.64",
+    "BasePicture": "ui_jj_2048_hh_bj64",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_128"
+      ],
+      [
+        "AddScore",
+        "64"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_128"
+      ],
+      [
+        "AddScore",
+        "64"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_8": {
+    "ID": "HH_8",
+    "Score": 8,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_hh_3",
+    "MoveTimes": "Normal.8",
+    "BoardBegin": "Normal.8",
+    "BoardEnd": "Normal.8",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_16"
+      ],
+      [
+        "AddScore",
+        "8"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "HH_16"
+      ],
+      [
+        "AddScore",
+        "8"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type3Merge"
+      ]
+    ]
+  },
+  "HH_BS": {
+    "ID": "HH_BS",
+    "Score": 0,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_hh_bs",
+    "MoveTimes": "Normal.0",
+    "BoardBegin": "Normal.*",
+    "BoardEnd": "Normal.*",
+    "BasePicture": "",
+    "CreateFunc": [
+      [
+        "PlayImmediateGamePlayCue",
+        "IcebergEffect"
+      ]
+    ],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "ForceMove",
+        "beforeTarget"
+      ],
+      [
+        "PlayBeforeQueueGamePlayCue",
+        "IcebergBreak"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_BSMerge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "DonotPlayNormalGamePlayCue",
+        "merge"
+      ],
+      [
+        "PlayBeforeQueueGamePlayCue",
+        "IcebergBreak"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "ForceMove",
+        "beforeTarget"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_BSMerge"
+      ]
+    ]
+  },
+  "YZ_1024": {
+    "ID": "YZ_1024",
+    "Score": 1024,
+    "Priority": 9,
+    "Picture": "ui_jj_2048_1024",
+    "MoveTimes": "Normal.1024",
+    "BoardBegin": "Normal.1024",
+    "BoardEnd": "Normal.1024",
+    "BasePicture": "ui_jj_2048_bj1024",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_2048"
+      ],
+      [
+        "AddScore",
+        "1024"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_2048"
+      ],
+      [
+        "AddScore",
+        "1024"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_128": {
+    "ID": "YZ_128",
+    "Score": 128,
+    "Priority": 6,
+    "Picture": "ui_jj_2048_128",
+    "MoveTimes": "Normal.128",
+    "BoardBegin": "Normal.128",
+    "BoardEnd": "Normal.128",
+    "BasePicture": "ui_jj_2048_bj128",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_256"
+      ],
+      [
+        "AddScore",
+        "128"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_256"
+      ],
+      [
+        "AddScore",
+        "128"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_16": {
+    "ID": "YZ_16",
+    "Score": 16,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_16",
+    "MoveTimes": "Normal.16",
+    "BoardBegin": "Normal.16",
+    "BoardEnd": "Normal.16",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_32"
+      ],
+      [
+        "AddScore",
+        "16"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_32"
+      ],
+      [
+        "AddScore",
+        "16"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_2": {
+    "ID": "YZ_2",
+    "Score": 2,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_2",
+    "MoveTimes": "Normal.2",
+    "BoardBegin": "Normal.2",
+    "BoardEnd": "Normal.2",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_4"
+      ],
+      [
+        "AddScore",
+        "2"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_4"
+      ],
+      [
+        "AddScore",
+        "2"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_2048": {
+    "ID": "YZ_2048",
+    "Score": 2048,
+    "Priority": 10,
+    "Picture": "ui_jj_2048_2048",
+    "MoveTimes": "Normal.2048",
+    "BoardBegin": "",
+    "BoardEnd": "",
+    "BasePicture": "ui_jj_2048_bj2048",
+    "CreateFunc": [],
+    "HitSelf": [],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "",
+        "1"
+      ]
+    ],
+    "CrashSelf": [],
+    "CrashObject": []
+  },
+  "YZ_256": {
+    "ID": "YZ_256",
+    "Score": 256,
+    "Priority": 7,
+    "Picture": "ui_jj_2048_256",
+    "MoveTimes": "Normal.256",
+    "BoardBegin": "Normal.256",
+    "BoardEnd": "Normal.256",
+    "BasePicture": "ui_jj_2048_bj256",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_512"
+      ],
+      [
+        "AddScore",
+        "256"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_512"
+      ],
+      [
+        "AddScore",
+        "256"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_32": {
+    "ID": "YZ_32",
+    "Score": 32,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_32",
+    "MoveTimes": "Normal.32",
+    "BoardBegin": "Normal.32",
+    "BoardEnd": "Normal.32",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_64"
+      ],
+      [
+        "AddScore",
+        "32"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_64"
+      ],
+      [
+        "AddScore",
+        "32"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_4": {
+    "ID": "YZ_4",
+    "Score": 4,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_4",
+    "MoveTimes": "Normal.4",
+    "BoardBegin": "Normal.4",
+    "BoardEnd": "Normal.4",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_8"
+      ],
+      [
+        "AddScore",
+        "4"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_8"
+      ],
+      [
+        "AddScore",
+        "4"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_512": {
+    "ID": "YZ_512",
+    "Score": 512,
+    "Priority": 8,
+    "Picture": "ui_jj_2048_512",
+    "MoveTimes": "Normal.512",
+    "BoardBegin": "Normal.512",
+    "BoardEnd": "Normal.512",
+    "BasePicture": "ui_jj_2048_bj512",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_1024"
+      ],
+      [
+        "AddScore",
+        "512"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_1024"
+      ],
+      [
+        "AddScore",
+        "512"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_64": {
+    "ID": "YZ_64",
+    "Score": 64,
+    "Priority": 5,
+    "Picture": "ui_jj_2048_64",
+    "MoveTimes": "Normal.64",
+    "BoardBegin": "Normal.64",
+    "BoardEnd": "Normal.64",
+    "BasePicture": "ui_jj_2048_bj64",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_128"
+      ],
+      [
+        "AddScore",
+        "64"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_128"
+      ],
+      [
+        "AddScore",
+        "64"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  },
+  "YZ_8": {
+    "ID": "YZ_8",
+    "Score": 8,
+    "Priority": 0,
+    "Picture": "ui_jj_2048_8",
+    "MoveTimes": "Normal.8",
+    "BoardBegin": "Normal.8",
+    "BoardEnd": "Normal.8",
+    "BasePicture": "",
+    "CreateFunc": [],
+    "HitSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ],
+    "HitObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_16"
+      ],
+      [
+        "AddScore",
+        "8"
+      ]
+    ],
+    "CrashSelf": [
+      [
+        "ImmediateTransformOtherBlock",
+        "YZ_16"
+      ],
+      [
+        "AddScore",
+        "8"
+      ]
+    ],
+    "CrashObject": [
+      [
+        "ImmediateTransformOtherBlock",
+        "nil"
+      ],
+      [
+        "PlayImmediateSoundCue",
+        "2048_Type1Merge"
+      ]
+    ]
+  }
+}

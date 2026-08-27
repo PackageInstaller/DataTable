@@ -1,0 +1,1191 @@
+{
+  "SIM_1": {
+    "ID": "SIM_1",
+    "TaskInfo": "提升1次器者经验",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_1",
+    "TaskInfoLanText": "提升1次器者经验",
+    "GiveTaskInfo": "player，能够【提升1次器者经验】，让我看看博行派遣公司是怎么培养器者的吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_1",
+    "GiveTaskInfoLanText": "player，能够【提升1次器者经验】，让我看看博行派遣公司是怎么培养器者的吗？",
+    "ConditionArgs": [
+      "26",
+      "1",
+      "1"
+    ],
+    "PageSkip": "1002",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82010",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 26,
+        "ElementID": "1",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "1"
+        ]
+      }
+    ]
+  },
+  "SIM_10": {
+    "ID": "SIM_10",
+    "TaskInfo": "在易物所交换1次物资",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_10",
+    "TaskInfoLanText": "在易物所交换1次物资",
+    "GiveTaskInfo": "player，可以【在易物所交换1次物资】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_10",
+    "GiveTaskInfoLanText": "player，可以【在易物所交换1次物资】，让我学习一下吗？",
+    "ConditionArgs": [
+      "15",
+      "0",
+      "1"
+    ],
+    "PageSkip": "3061",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "1",
+        "40"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 40,
+        "ElementIds": null,
+        "Min": 40,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 15,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_11": {
+    "ID": "SIM_11",
+    "TaskInfo": "与器者同享1次消息提升感应",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_11",
+    "TaskInfoLanText": "与器者同享1次消息提升感应",
+    "GiveTaskInfo": "同享消息可以增进彼此的感情……player，可以为我示范一下【与器者同享1次消息】吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_11",
+    "GiveTaskInfoLanText": "同享消息可以增进彼此的感情……player，可以为我示范一下【与器者同享1次消息】吗？",
+    "ConditionArgs": [
+      "26",
+      "7",
+      "1"
+    ],
+    "PageSkip": "1002",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82012",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "2",
+        "40"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 40,
+        "ElementIds": null,
+        "Min": 40,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 26,
+        "ElementID": "7",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "7"
+        ]
+      }
+    ]
+  },
+  "SIM_12": {
+    "ID": "SIM_12",
+    "TaskInfo": "完成1次【资源】关卡",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_12",
+    "TaskInfoLanText": "完成1次【资源】关卡",
+    "GiveTaskInfo": "资源在各个领域都是非常重要的！可以【完成1次资源关卡】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_12",
+    "GiveTaskInfoLanText": "资源在各个领域都是非常重要的！可以【完成1次资源关卡】，让我学习一下吗？",
+    "ConditionArgs": [
+      "2",
+      "resident",
+      "1"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82009",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "3",
+        "40"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 40,
+        "ElementIds": null,
+        "Min": 40,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 2,
+        "ElementID": "resident",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "resident"
+        ]
+      }
+    ]
+  },
+  "SIM_13": {
+    "ID": "SIM_13",
+    "TaskInfo": "消费10000冬谷币",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_13",
+    "TaskInfoLanText": "消费10000冬谷币",
+    "GiveTaskInfo": "听说收藏家们会使用冬谷币来培养器者，player，可以【消费10000冬谷币】让我学习一下如何使用资金吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_13",
+    "GiveTaskInfoLanText": "听说收藏家们会使用冬谷币来培养器者，player，可以【消费10000冬谷币】让我学习一下如何使用资金吗？",
+    "ConditionArgs": [
+      "43",
+      "3",
+      "10000"
+    ],
+    "PageSkip": "1002",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82010",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "1",
+        "50"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 50,
+        "ElementIds": null,
+        "Min": 50,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 43,
+        "ElementID": "3",
+        "ElementID2": "",
+        "Count": 10000,
+        "ElementIds": [
+          "3"
+        ]
+      }
+    ]
+  },
+  "SIM_14": {
+    "ID": "SIM_14",
+    "TaskInfo": "完成5次战斗",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_14",
+    "TaskInfoLanText": "完成5次战斗",
+    "GiveTaskInfo": "战斗也是学习的一环。player，可以【完成5次战斗】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_14",
+    "GiveTaskInfoLanText": "战斗也是学习的一环。player，可以【完成5次战斗】，让我学习一下吗？",
+    "ConditionArgs": [
+      "2",
+      "0",
+      "5"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "2",
+        "50"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 50,
+        "ElementIds": null,
+        "Min": 50,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 2,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 5,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_15": {
+    "ID": "SIM_15",
+    "TaskInfo": "击败20名任意敌人",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_15",
+    "TaskInfoLanText": "击败20名任意敌人",
+    "GiveTaskInfo": "基金会有很多种模拟敌人，外面也有“曲解”……player，可以【击败20名任意敌人】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_15",
+    "GiveTaskInfoLanText": "基金会有很多种模拟敌人，外面也有“曲解”……player，可以【击败20名任意敌人】，让我学习一下吗？",
+    "ConditionArgs": [
+      "4",
+      "0",
+      "20"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82012",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "3",
+        "50"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 50,
+        "ElementIds": null,
+        "Min": 50,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 4,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_16": {
+    "ID": "SIM_16",
+    "TaskInfo": "消耗50点活力值",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_16",
+    "TaskInfoLanText": "消耗50点活力值",
+    "GiveTaskInfo": "player，你会怎么分配自己的活力呢？可以【消耗50点活力值】，让我借鉴一下你的安排吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_16",
+    "GiveTaskInfoLanText": "player，你会怎么分配自己的活力呢？可以【消耗50点活力值】，让我借鉴一下你的安排吗？",
+    "ConditionArgs": [
+      "43",
+      "101",
+      "50"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82009",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "1",
+        "60"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 50,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "SIM_17": {
+    "ID": "SIM_17",
+    "TaskInfo": "消耗150点活力值",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_17",
+    "TaskInfoLanText": "消耗150点活力值",
+    "GiveTaskInfo": "player，你会怎么分配自己的活力呢？可以【消耗150点活力值】，让我借鉴一下你的安排吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_17",
+    "GiveTaskInfoLanText": "player，你会怎么分配自己的活力呢？可以【消耗150点活力值】，让我借鉴一下你的安排吗？",
+    "ConditionArgs": [
+      "43",
+      "101",
+      "150"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82010",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "2",
+        "60"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 43,
+        "ElementID": "101",
+        "ElementID2": "",
+        "Count": 150,
+        "ElementIds": [
+          "101"
+        ]
+      }
+    ]
+  },
+  "SIM_18": {
+    "ID": "SIM_18",
+    "TaskInfo": "完成5次战斗",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_18",
+    "TaskInfoLanText": "完成5次战斗",
+    "GiveTaskInfo": "战斗也是学习的一环。player，可以【完成5次战斗】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_18",
+    "GiveTaskInfoLanText": "战斗也是学习的一环。player，可以【完成5次战斗】，让我学习一下吗？",
+    "ConditionArgs": [
+      "2",
+      "0",
+      "5"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "3",
+        "60"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 2,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 5,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_19": {
+    "ID": "SIM_19",
+    "TaskInfo": "击败20名任意敌人",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_19",
+    "TaskInfoLanText": "击败20名任意敌人",
+    "GiveTaskInfo": "基金会有很多种模拟敌人，外面也有“曲解”……player，可以【击败20名任意敌人】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_19",
+    "GiveTaskInfoLanText": "基金会有很多种模拟敌人，外面也有“曲解”……player，可以【击败20名任意敌人】，让我学习一下吗？",
+    "ConditionArgs": [
+      "4",
+      "0",
+      "20"
+    ],
+    "PageSkip": "2000",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82012",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "1",
+        "80"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": null,
+        "Min": 80,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 4,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_2": {
+    "ID": "SIM_2",
+    "TaskInfo": "完成1次外传战斗",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_2",
+    "TaskInfoLanText": "完成1次外传战斗",
+    "GiveTaskInfo": "听说外传里记载着器者们的故事，player，可以【完成1次外传战斗】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_2",
+    "GiveTaskInfoLanText": "听说外传里记载着器者们的故事，player，可以【完成1次外传战斗】，让我学习一下吗？",
+    "ConditionArgs": [
+      "2",
+      "branchEvent",
+      "1"
+    ],
+    "PageSkip": "1040",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 2,
+        "ElementID": "branchEvent",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "branchEvent"
+        ]
+      }
+    ]
+  },
+  "SIM_20": {
+    "ID": "SIM_20",
+    "TaskInfo": "完成4次装备订购",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_20",
+    "TaskInfoLanText": "完成4次装备订购",
+    "GiveTaskInfo": "我还想看看更多装备！player，可以【完成4次装备订购】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_20",
+    "GiveTaskInfoLanText": "我还想看看更多装备！player，可以【完成4次装备订购】，让我学习一下吗？",
+    "ConditionArgs": [
+      "57",
+      "0",
+      "4"
+    ],
+    "PageSkip": "1031",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82009",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "2",
+        "80"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": null,
+        "Min": 80,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 57,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 4,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_21": {
+    "ID": "SIM_21",
+    "TaskInfo": "在易物所交换20次物资",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_21",
+    "TaskInfoLanText": "在易物所交换20次物资",
+    "GiveTaskInfo": "听说【易物所】有很多有用的物资，player，能拜托你去【交换20次物资】吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_21",
+    "GiveTaskInfoLanText": "听说【易物所】有很多有用的物资，player，能拜托你去【交换20次物资】吗？",
+    "ConditionArgs": [
+      "15",
+      "0",
+      "20"
+    ],
+    "PageSkip": "3061",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82010",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "3",
+        "80"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": null,
+        "Min": 80,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 15,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 20,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_22": {
+    "ID": "SIM_22",
+    "TaskInfo": "通关【四子棋玩法】普通难度并胜利1次",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_22",
+    "TaskInfoLanText": "通关【四子棋玩法】普通难度并胜利1次",
+    "GiveTaskInfo": "player，可以教教我【玩一把四子棋】吗？【普通难度】的就可以！我想看看你怎么获胜的，感觉能学到很多东西……",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_22",
+    "GiveTaskInfoLanText": "player，可以教教我【玩一把四子棋】吗？【普通难度】的就可以！我想看看你怎么获胜的，感觉能学到很多东西……",
+    "ConditionArgs": [
+      "74",
+      "1",
+      "1"
+    ],
+    "PageSkip": "1350",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 74,
+        "ElementID": "1",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "1"
+        ]
+      }
+    ]
+  },
+  "SIM_23": {
+    "ID": "SIM_23",
+    "TaskInfo": "完成1次【研学】",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_23",
+    "TaskInfoLanText": "完成1次【研学】",
+    "GiveTaskInfo": "player，听说在【研学活动】里可以学到很多知识，但我还不能出门……能拜托你【完成一次研学】吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_23",
+    "GiveTaskInfoLanText": "player，听说在【研学活动】里可以学到很多知识，但我还不能出门……能拜托你【完成一次研学】吗？",
+    "ConditionArgs": [
+      "81",
+      "1"
+    ],
+    "PageSkip": "1400",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82012",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 81,
+        "ElementID": "1",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "1"
+        ]
+      }
+    ]
+  },
+  "SIM_24": {
+    "ID": "SIM_24",
+    "TaskInfo": "消费30000冬谷币",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_24",
+    "TaskInfoLanText": "消费30000冬谷币",
+    "GiveTaskInfo": "player，你们平时会用冬谷币换取哪些物资呢？可以【消费30000冬谷币】让我学习一下对金钱和物资的利用吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_24",
+    "GiveTaskInfoLanText": "player，你们平时会用冬谷币换取哪些物资呢？可以【消费30000冬谷币】让我学习一下对金钱和物资的利用吗？",
+    "ConditionArgs": [
+      "43",
+      "3",
+      "30000"
+    ],
+    "PageSkip": "1002",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82009",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 43,
+        "ElementID": "3",
+        "ElementID2": "",
+        "Count": 30000,
+        "ElementIds": [
+          "3"
+        ]
+      }
+    ]
+  },
+  "SIM_25": {
+    "ID": "SIM_25",
+    "TaskInfo": "完成1次【基础训练】关卡",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_25",
+    "TaskInfoLanText": "完成1次【基础训练】关卡",
+    "GiveTaskInfo": "player，可以完成1次【基础训练】关卡，让我瞻仰一下你的英姿吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_25",
+    "GiveTaskInfoLanText": "player，可以完成1次【基础训练】关卡，让我瞻仰一下你的英姿吗？",
+    "ConditionArgs": [
+      "2",
+      "daily",
+      "1"
+    ],
+    "PageSkip": "1070",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 2,
+        "ElementID": "daily",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "daily"
+        ]
+      }
+    ]
+  },
+  "SIM_3": {
+    "ID": "SIM_3",
+    "TaskInfo": "邀请器者饮茶1次",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_3",
+    "TaskInfoLanText": "邀请器者饮茶1次",
+    "GiveTaskInfo": "喝茶有助于交流感情、保持关系！player，我们去【邀请一位器者品茗】吧？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_3",
+    "GiveTaskInfoLanText": "喝茶有助于交流感情、保持关系！player，我们去【邀请一位器者品茗】吧？",
+    "ConditionArgs": [
+      "50",
+      "1",
+      "1"
+    ],
+    "PageSkip": "1300",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82012",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 50,
+        "ElementID": "1",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "1"
+        ]
+      }
+    ]
+  },
+  "SIM_4": {
+    "ID": "SIM_4",
+    "TaskInfo": "穿戴1次装备",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_4",
+    "TaskInfoLanText": "穿戴1次装备",
+    "GiveTaskInfo": "装备要怎么正确穿戴呢，说明书……啊，player！能教教我怎么给器者穿戴装备吗？【穿戴1次装备】就好！",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_4",
+    "GiveTaskInfoLanText": "装备要怎么正确穿戴呢，说明书……啊，player！能教教我怎么给器者穿戴装备吗？【穿戴1次装备】就好！",
+    "ConditionArgs": [
+      "54",
+      "equipChange",
+      "1"
+    ],
+    "PageSkip": "1002",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82009",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 54,
+        "ElementID": "equipChange",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "equipChange"
+        ]
+      }
+    ]
+  },
+  "SIM_5": {
+    "ID": "SIM_5",
+    "TaskInfo": "分解1次装备",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_5",
+    "TaskInfoLanText": "分解1次装备",
+    "GiveTaskInfo": "不需要的装备分解了也很有用，但是要怎么分解呢？player能为我演示【分解1次装备】吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_5",
+    "GiveTaskInfoLanText": "不需要的装备分解了也很有用，但是要怎么分解呢？player能为我演示【分解1次装备】吗？",
+    "ConditionArgs": [
+      "36",
+      "all",
+      "1"
+    ],
+    "PageSkip": "1019",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82010",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 36,
+        "ElementID": "all",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "all"
+        ]
+      }
+    ]
+  },
+  "SIM_6": {
+    "ID": "SIM_6",
+    "TaskInfo": "完成1次装备订购",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_6",
+    "TaskInfoLanText": "完成1次装备订购",
+    "GiveTaskInfo": "技术部跟装备制造息息相关，player，可以【完成1次装备订购】，让我学习一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_6",
+    "GiveTaskInfoLanText": "技术部跟装备制造息息相关，player，可以【完成1次装备订购】，让我学习一下吗？",
+    "ConditionArgs": [
+      "57",
+      "0",
+      "1"
+    ],
+    "PageSkip": "1031",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82011",
+        "count": 1
+      }
+    ],
+    "Unlock": [],
+    "Unlock1": [],
+    "Condition": [
+      {
+        "ConditionType": 57,
+        "ElementID": "0",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "0"
+        ]
+      }
+    ]
+  },
+  "SIM_7": {
+    "ID": "SIM_7",
+    "TaskInfo": "从【博行易物机】获得1件物资",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_7",
+    "TaskInfoLanText": "从【博行易物机】获得1件物资",
+    "GiveTaskInfo": "听说博行派遣有自己的易物机，里面会有什么东西呢？可以【从博行易物机获得1件物资】，让我看看吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_7",
+    "GiveTaskInfoLanText": "听说博行派遣有自己的易物机，里面会有什么东西呢？可以【从博行易物机获得1件物资】，让我看看吗？",
+    "ConditionArgs": [
+      "68",
+      "4",
+      "1"
+    ],
+    "PageSkip": "1310",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82012",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "1",
+        "30"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 30,
+        "ElementIds": null,
+        "Min": 30,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 68,
+        "ElementID": "4",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "4"
+        ]
+      }
+    ]
+  },
+  "SIM_8": {
+    "ID": "SIM_8",
+    "TaskInfo": "从【补给申请仪】或【社教模拟仪】制造1件物资",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_8",
+    "TaskInfoLanText": "从【补给申请仪】或【社教模拟仪】制造1件物资",
+    "GiveTaskInfo": "博行派遣有自己的仪器吗？好厉害，可以【从补给申请仪或社教模拟仪制造1件物资】，让我参观一下吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_8",
+    "GiveTaskInfoLanText": "博行派遣有自己的仪器吗？好厉害，可以【从补给申请仪或社教模拟仪制造1件物资】，让我参观一下吗？",
+    "ConditionArgs": [
+      "68",
+      "2",
+      "1"
+    ],
+    "PageSkip": "1322",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82009",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "2",
+        "30"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 30,
+        "ElementIds": null,
+        "Min": 30,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 68,
+        "ElementID": "2",
+        "ElementID2": "",
+        "Count": 1,
+        "ElementIds": [
+          "2"
+        ]
+      }
+    ]
+  },
+  "SIM_9": {
+    "ID": "SIM_9",
+    "TaskInfo": "从【展览柜】领取1500冬谷币",
+    "TaskInfoLan": "SIM_SIMtask_taskInfoLan_SIM_9",
+    "TaskInfoLanText": "从【展览柜】领取1500冬谷币",
+    "GiveTaskInfo": "player，可以【从展览柜领取1500冬谷币】，让我看看博行派遣的展览方式吗？",
+    "GiveTaskInfoLan": "SIMLan_SIMtask_giveTaskInfoLan_SIM_9",
+    "GiveTaskInfoLanText": "player，可以【从展览柜领取1500冬谷币】，让我看看博行派遣的展览方式吗？",
+    "ConditionArgs": [
+      "72",
+      "3",
+      "1500"
+    ],
+    "PageSkip": "1305",
+    "Reward": [
+      {
+        "id": "3225",
+        "count": 1
+      },
+      {
+        "id": "82010",
+        "count": 1
+      }
+    ],
+    "Unlock": [
+      [
+        "3",
+        "30"
+      ]
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 30,
+        "ElementIds": null,
+        "Min": 30,
+        "Max": 0,
+        "Len": 2
+      }
+    ],
+    "Condition": [
+      {
+        "ConditionType": 72,
+        "ElementID": "3",
+        "ElementID2": "",
+        "Count": 1500,
+        "ElementIds": [
+          "3"
+        ]
+      }
+    ]
+  }
+}

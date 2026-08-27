@@ -1,0 +1,973 @@
+{
+  "3001": {
+    "Id": "3001",
+    "Source": 4,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "3001"
+    ],
+    "NameLan": "QinTimesLan_QinTimesBuff_nameLan_3001",
+    "NameLanText": "均衡作战",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_3001",
+    "BuffTextLanText": "均衡而谨慎的作战，没有明显短板"
+  },
+  "3002": {
+    "Id": "3002",
+    "Source": 4,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "3002_01",
+      "3002_02",
+      "3002_03"
+    ],
+    "NameLan": "QinTimesLan_QinTimesBuff_nameLan_3002",
+    "NameLanText": "攻战计",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_3002",
+    "BuffTextLanText": "略微降低士兵造成和受到的伤害，能够恢复更多溃兵"
+  },
+  "3003": {
+    "Id": "3003",
+    "Source": 4,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "3003_01",
+      "3003_02"
+    ],
+    "NameLan": "QinTimesLan_QinTimesBuff_nameLan_3003",
+    "NameLanText": "胜战计",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_3003",
+    "BuffTextLanText": "全力以赴，攻击伤害更强,不再召回溃兵。"
+  },
+  "3004": {
+    "Id": "3004",
+    "Source": 4,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [],
+    "NameLan": "QinTimesLan_QinTimesBuff_nameLan_3004",
+    "NameLanText": "攻战计",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_3004",
+    "BuffTextLanText": "略微提高士兵造成的伤害。"
+  },
+  "A01_1": {
+    "Id": "A01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "A01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_A01_1",
+    "BuffTextLanText": "资源恢复速度102%"
+  },
+  "A01_2": {
+    "Id": "A01_2",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "A01_2"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_A01_2",
+    "BuffTextLanText": "资源恢复速度105%"
+  },
+  "A01_3": {
+    "Id": "A01_3",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "A01_3"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_A01_3",
+    "BuffTextLanText": "资源恢复速度110%"
+  },
+  "A01_4": {
+    "Id": "A01_4",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "A01_4"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_A01_4",
+    "BuffTextLanText": "资源恢复速度120%"
+  },
+  "B01_1": {
+    "Id": "B01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "B01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_B01_1",
+    "BuffTextLanText": "仓库上限增加至105%"
+  },
+  "B01_2": {
+    "Id": "B01_2",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "B01_2"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_B01_2",
+    "BuffTextLanText": "仓库上限增加至110%"
+  },
+  "B01_3": {
+    "Id": "B01_3",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "B01_3"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_B01_3",
+    "BuffTextLanText": "仓库上限增加至120%"
+  },
+  "C01_1": {
+    "Id": "C01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "C01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_C01_1",
+    "BuffTextLanText": "科技研究速度加快20%"
+  },
+  "C01_2": {
+    "Id": "C01_2",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "C01_2"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_C01_2",
+    "BuffTextLanText": "科技研究速度加快40%"
+  },
+  "C01_3": {
+    "Id": "C01_3",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "C01_3"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_C01_3",
+    "BuffTextLanText": "科技研究速度加快60%"
+  },
+  "C01_4": {
+    "Id": "C01_4",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "C01_4"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_C01_4",
+    "BuffTextLanText": "科技研究速度加快80%"
+  },
+  "EV_1011": {
+    "Id": "EV_1011",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1011A",
+      "EV_1011B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1011",
+    "BuffTextLanText": "消灭了韩，兵力上限+175，资源上限+10000"
+  },
+  "EV_1012": {
+    "Id": "EV_1012",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1012A",
+      "EV_1012B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1012",
+    "BuffTextLanText": "消灭了，兵力上限+175，资源上限+10000"
+  },
+  "EV_1013": {
+    "Id": "EV_1013",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1013A",
+      "EV_1013B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1013",
+    "BuffTextLanText": "消灭了，兵力上限+450，资源上限+30000"
+  },
+  "EV_1014": {
+    "Id": "EV_1014",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1014A",
+      "EV_1014B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1014",
+    "BuffTextLanText": "攻破彭蠡，楚国国力大幅下降。兵力上限+700，资源上限+50000"
+  },
+  "EV_1015": {
+    "Id": "EV_1015",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1015A",
+      "EV_1015B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1015",
+    "BuffTextLanText": "消灭了楚，兵力上限+1000，资源上限+70000"
+  },
+  "EV_1016": {
+    "Id": "EV_1016",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1016A",
+      "EV_1016B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1016",
+    "BuffTextLanText": "消灭了燕，兵力上限+1500，资源上限+110000"
+  },
+  "EV_1017": {
+    "Id": "EV_1017",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1017A",
+      "EV_1017B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1017",
+    "BuffTextLanText": "消灭了齐，兵力上限+2000，资源上限+120000"
+  },
+  "EV_1201": {
+    "Id": "EV_1201",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1201"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1201",
+    "BuffTextLanText": "这是一段典故·窃符救赵的简介故事。\n(获得粮草，攻击上升1小时)"
+  },
+  "EV_1202": {
+    "Id": "EV_1202",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1202",
+    "BuffTextLanText": "这是一段典故·图穷匕见的简介故事。\n（获得金钱，兵力减少500）"
+  },
+  "EV_1203": {
+    "Id": "EV_1203",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_1203_A",
+      "EV_1203_B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_1203",
+    "BuffTextLanText": "这是一段典故·远交近攻的简介故事。\n（攻击力上升，兵力恢复下降，持续1小时）"
+  },
+  "EV_2010": {
+    "Id": "EV_2010",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2010"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2010",
+    "BuffTextLanText": "1小时内，资源产出提高5%"
+  },
+  "EV_2011": {
+    "Id": "EV_2011",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2011_A",
+      "EV_2011_B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2011",
+    "BuffTextLanText": "1小时内，资源产出提高10%，征兵消耗增加5%"
+  },
+  "EV_2012": {
+    "Id": "EV_2012",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2012_A",
+      "EV_2012_B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2012",
+    "BuffTextLanText": "1小时内，资源产出提高15%，出征消耗增加10%"
+  },
+  "EV_2013": {
+    "Id": "EV_2013",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2013_A",
+      "EV_2013_B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2013",
+    "BuffTextLanText": "1小时内，资源产出提高10%，战斗伤害减少10%"
+  },
+  "EV_2014": {
+    "Id": "EV_2014",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2014_A",
+      "EV_2014_B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2014",
+    "BuffTextLanText": "1小时内，资源产出降低15%，征兵消耗减少10%"
+  },
+  "EV_2015": {
+    "Id": "EV_2015",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2015_A",
+      "EV_2015_B"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2015",
+    "BuffTextLanText": "1小时内，资源产出降低10%，征兵消耗减少5%"
+  },
+  "EV_2016": {
+    "Id": "EV_2016",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [
+      "time",
+      "3600"
+    ],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "EV_2016"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2016",
+    "BuffTextLanText": "1小时内，资源产出降低5%"
+  },
+  "EV_2020": {
+    "Id": "EV_2020",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2020",
+    "BuffTextLanText": "获得1000份物资"
+  },
+  "EV_2021": {
+    "Id": "EV_2021",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2021",
+    "BuffTextLanText": "获得100兵力"
+  },
+  "EV_2022": {
+    "Id": "EV_2022",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2022",
+    "BuffTextLanText": "获得2000份物资"
+  },
+  "EV_2023": {
+    "Id": "EV_2023",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2023",
+    "BuffTextLanText": "获得200份物资"
+  },
+  "EV_2024": {
+    "Id": "EV_2024",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2024",
+    "BuffTextLanText": "获得2000份物资，200兵力"
+  },
+  "EV_2025": {
+    "Id": "EV_2025",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2025",
+    "BuffTextLanText": "损失1000物资"
+  },
+  "EV_2026": {
+    "Id": "EV_2026",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2026",
+    "BuffTextLanText": "损失100兵力"
+  },
+  "EV_2027": {
+    "Id": "EV_2027",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2027",
+    "BuffTextLanText": "损失2000份物资"
+  },
+  "EV_2028": {
+    "Id": "EV_2028",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2028",
+    "BuffTextLanText": "损失200份物资"
+  },
+  "EV_2029": {
+    "Id": "EV_2029",
+    "Source": 2,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_EV_2029",
+    "BuffTextLanText": "损失2000份物资，200兵力"
+  },
+  "G01_1": {
+    "Id": "G01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "G01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_G01_1",
+    "BuffTextLanText": "兵力上限提高至105%"
+  },
+  "G01_2": {
+    "Id": "G01_2",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "G01_2"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_G01_2",
+    "BuffTextLanText": "兵力上限提高至110%"
+  },
+  "G01_3": {
+    "Id": "G01_3",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "G01_3"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_G01_3",
+    "BuffTextLanText": "兵力上限提高至115%"
+  },
+  "G01_4": {
+    "Id": "G01_4",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "G01_4"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_G01_4",
+    "BuffTextLanText": "兵力上限提高至120%"
+  },
+  "H01_1": {
+    "Id": "H01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "H01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_H01_1",
+    "BuffTextLanText": "每12小时回复1次跨城市作战，最多储存1次。（待开发新功能）"
+  },
+  "H01_2": {
+    "Id": "H01_2",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "H01_2"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_H01_2",
+    "BuffTextLanText": "每8小时回复1次跨城市作战，最多储存2次。（待开发新功能）"
+  },
+  "H01_3": {
+    "Id": "H01_3",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "H01_3"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_H01_3",
+    "BuffTextLanText": "每6小时回复1次跨城市作战，最多储存3次。（待开发新功能）"
+  },
+  "I01_1": {
+    "Id": "I01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "I01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_I01_1",
+    "BuffTextLanText": "战斗后，召回3%的溃兵。"
+  },
+  "I01_2": {
+    "Id": "I01_2",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "I01_2"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_I01_2",
+    "BuffTextLanText": "战斗后，召回7%的溃兵。"
+  },
+  "I01_3": {
+    "Id": "I01_3",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "I01_3"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_I01_3",
+    "BuffTextLanText": "战斗后，召回15%的溃兵。"
+  },
+  "J01_1": {
+    "Id": "J01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "J01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_J01_1",
+    "BuffTextLanText": "减少70%的负面天灾事件。"
+  },
+  "K01_1": {
+    "Id": "K01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [
+      "K01_1"
+    ],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_K01_1",
+    "BuffTextLanText": "不会再出现匈奴入侵事件。"
+  },
+  "L01_1": {
+    "Id": "L01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_L01_1",
+    "BuffTextLanText": "大量统一度"
+  },
+  "M01_1": {
+    "Id": "M01_1",
+    "Source": 1,
+    "Icon": "",
+    "Mutual": [],
+    "Layers": 0,
+    "Lifetime": [],
+    "Condition": "",
+    "ConditionParameter": "",
+    "Target": "player",
+    "EffectID": [],
+    "NameLan": "",
+    "BuffTextLan": "QinTimesLan_QinTimesBuff_buffTextLan_M01_1",
+    "BuffTextLanText": "大量统一度"
+  }
+}

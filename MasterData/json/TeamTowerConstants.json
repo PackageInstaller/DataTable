@@ -1,0 +1,56 @@
+{
+  "LoopFloorStartNumber": 1000,
+  "TowerLoopFloorMax": 999,
+  "CharacterNormalTired": 2,
+  "JumpFloor": 5,
+  "JumpFloorMax": 4,
+  "BuffPoolNumber": 3,
+  "BuffPoolSelect": 1,
+  "BattleSelectBuff": 1,
+  "BattleSelectBuffTitled": 5,
+  "TowerRankLimitMin": 0,
+  "TowerRankScore": 1,
+  "RankDecayDayMax": 7,
+  "BossTowerPara": 0.001,
+  "BossTowerParaLimit1": 1000000,
+  "BossTowerParaLimit2": 10000000,
+  "BossTowerCharacterTired": 1,
+  "BossTowerScore": [
+    [
+      9999999,
+      150000
+    ],
+    [
+      149999,
+      115000
+    ],
+    [
+      114999,
+      100000
+    ],
+    [
+      99999,
+      50000
+    ],
+    [
+      49999,
+      30000
+    ],
+    [
+      29999,
+      10000
+    ],
+    [
+      9999,
+      0
+    ]
+  ],
+  "BossTowerActor": [
+    "W0099",
+    "W0118",
+    "V0146",
+    "W0029",
+    "S0155",
+    "W0081"
+  ]
+}

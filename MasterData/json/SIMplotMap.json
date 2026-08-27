@@ -1,0 +1,797 @@
+{
+  "1": {
+    "ID": "1",
+    "NarrativeID": [
+      "1",
+      "E009001"
+    ],
+    "PlotName": "启程",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_1",
+    "PlotNameLanText": "启程",
+    "PlotType": 1,
+    "Unlock": [],
+    "Summary": [],
+    "Unlock1": []
+  },
+  "10": {
+    "ID": "10",
+    "NarrativeID": [
+      "1",
+      "E009010"
+    ],
+    "PlotName": "问答",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_10",
+    "PlotNameLanText": "问答",
+    "PlotType": 2,
+    "Unlock": [],
+    "Summary": [],
+    "Unlock1": []
+  },
+  "11": {
+    "ID": "11",
+    "NarrativeID": [
+      "1",
+      "E009011"
+    ],
+    "PlotName": "休息",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_11",
+    "PlotNameLanText": "休息",
+    "PlotType": 2,
+    "Unlock": [],
+    "Summary": [],
+    "Unlock1": []
+  },
+  "12": {
+    "ID": "12",
+    "NarrativeID": [
+      "1",
+      "E009012"
+    ],
+    "PlotName": "意义",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_12",
+    "PlotNameLanText": "意义",
+    "PlotType": 2,
+    "Unlock": [],
+    "Summary": [],
+    "Unlock1": []
+  },
+  "13": {
+    "ID": "13",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq01",
+      "16013"
+    ],
+    "PlotName": "外出不批准",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_13",
+    "PlotNameLanText": "外出不批准",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "60"
+      ],
+      [
+        "2",
+        "0",
+        "60"
+      ],
+      [
+        "3",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "17"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "14": {
+    "ID": "14",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq02",
+      "16014"
+    ],
+    "PlotName": "知识的学徒",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_14",
+    "PlotNameLanText": "知识的学徒",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "60"
+      ],
+      [
+        "2",
+        "60"
+      ],
+      [
+        "3",
+        "0",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "18"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      }
+    ]
+  },
+  "15": {
+    "ID": "15",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq03",
+      "16015"
+    ],
+    "PlotName": "考核失败",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_15",
+    "PlotNameLanText": "考核失败",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "0",
+        "60"
+      ],
+      [
+        "2",
+        "0",
+        "60"
+      ],
+      [
+        "3",
+        "0",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "19"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      }
+    ]
+  },
+  "16": {
+    "ID": "16",
+    "NarrativeID": [
+      "1",
+      "E009013"
+    ],
+    "PlotName": "正式入职",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_16",
+    "PlotNameLanText": "正式入职",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "60"
+      ],
+      [
+        "2",
+        "60"
+      ],
+      [
+        "3",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "20"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "17": {
+    "ID": "17",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq03",
+      "16019"
+    ],
+    "PlotName": "文史重修",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_17",
+    "PlotNameLanText": "文史重修",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "0",
+        "60"
+      ],
+      [
+        "2",
+        "60"
+      ],
+      [
+        "3",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "21"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "18": {
+    "ID": "18",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq01",
+      "16020"
+    ],
+    "PlotName": "偏科达人",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_18",
+    "PlotNameLanText": "偏科达人",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "0",
+        "60"
+      ],
+      [
+        "2",
+        "0",
+        "60"
+      ],
+      [
+        "3",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "22"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "19": {
+    "ID": "19",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq02",
+      "16021"
+    ],
+    "PlotName": "谨慎出门",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_19",
+    "PlotNameLanText": "谨慎出门",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "0",
+        "60"
+      ],
+      [
+        "2",
+        "60"
+      ],
+      [
+        "3",
+        "0",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "23"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      }
+    ]
+  },
+  "2": {
+    "ID": "2",
+    "NarrativeID": [
+      "1",
+      "E009002"
+    ],
+    "PlotName": "萌芽",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_2",
+    "PlotNameLanText": "萌芽",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "1",
+        "60"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "20": {
+    "ID": "20",
+    "NarrativeID": [
+      "2",
+      "ui_hd_ny_jj_jq01",
+      "16022"
+    ],
+    "PlotName": "来处已明",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_20",
+    "PlotNameLanText": "来处已明",
+    "PlotType": 3,
+    "Unlock": [
+      [
+        "1",
+        "60"
+      ],
+      [
+        "2",
+        "0",
+        "60"
+      ],
+      [
+        "3",
+        "0",
+        "60"
+      ]
+    ],
+    "Summary": [
+      "24"
+    ],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      },
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      },
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 0,
+        "Max": 60,
+        "Len": 3
+      }
+    ]
+  },
+  "3": {
+    "ID": "3",
+    "NarrativeID": [
+      "1",
+      "E009003"
+    ],
+    "PlotName": "传承",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_3",
+    "PlotNameLanText": "传承",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "1",
+        "80"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 1,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": null,
+        "Min": 80,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "4": {
+    "ID": "4",
+    "NarrativeID": [
+      "1",
+      "E009004"
+    ],
+    "PlotName": "咫尺",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_4",
+    "PlotNameLanText": "咫尺",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "2",
+        "60"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "5": {
+    "ID": "5",
+    "NarrativeID": [
+      "1",
+      "E009005"
+    ],
+    "PlotName": "远方",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_5",
+    "PlotNameLanText": "远方",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "2",
+        "80"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 2,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": null,
+        "Min": 80,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "6": {
+    "ID": "6",
+    "NarrativeID": [
+      "1",
+      "E009006"
+    ],
+    "PlotName": "吉光",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_6",
+    "PlotNameLanText": "吉光",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "3",
+        "60"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 60,
+        "ElementIds": null,
+        "Min": 60,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "7": {
+    "ID": "7",
+    "NarrativeID": [
+      "1",
+      "E009007"
+    ],
+    "PlotName": "片羽",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_7",
+    "PlotNameLanText": "片羽",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "3",
+        "80"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 3,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 80,
+        "ElementIds": null,
+        "Min": 80,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "8": {
+    "ID": "8",
+    "NarrativeID": [
+      "1",
+      "E009008"
+    ],
+    "PlotName": "万籁",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_8",
+    "PlotNameLanText": "万籁",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "5",
+        "21"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 5,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 21,
+        "ElementIds": null,
+        "Min": 21,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  },
+  "9": {
+    "ID": "9",
+    "NarrativeID": [
+      "1",
+      "E009009"
+    ],
+    "PlotName": "钟声",
+    "PlotNameLan": "SIMLan_SIMplot_plotNameLan_9",
+    "PlotNameLanText": "钟声",
+    "PlotType": 2,
+    "Unlock": [
+      [
+        "5",
+        "7"
+      ]
+    ],
+    "Summary": [],
+    "Unlock1": [
+      {
+        "ConditionType": 5,
+        "ElementID": "",
+        "ElementID2": "",
+        "Count": 7,
+        "ElementIds": null,
+        "Min": 7,
+        "Max": 0,
+        "Len": 2
+      }
+    ]
+  }
+}

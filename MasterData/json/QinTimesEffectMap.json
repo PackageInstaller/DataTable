@@ -1,0 +1,572 @@
+{
+  "3001": {
+    "Id": "3001",
+    "Object": "soldier",
+    "Effect": "DamControl",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 10
+  },
+  "3002_1": {
+    "Id": "3002_1",
+    "Object": "soldier",
+    "Effect": "DamControl",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": -20
+  },
+  "3002_2": {
+    "Id": "3002_2",
+    "Object": "enemySoldier",
+    "Effect": "DamControl",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": -10
+  },
+  "3002_3": {
+    "Id": "3002_3",
+    "Object": "soldier",
+    "Effect": "PostWarAddRecovery",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 10
+  },
+  "3003_1": {
+    "Id": "3003_1",
+    "Object": "soldier",
+    "Effect": "DamControl",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 30
+  },
+  "3003_2": {
+    "Id": "3003_2",
+    "Object": "soldier",
+    "Effect": "0",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "cover",
+    "Value": 0
+  },
+  "3004": {
+    "Id": "3004",
+    "Object": "",
+    "Effect": "",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "",
+    "Value": 0
+  },
+  "A01_01": {
+    "Id": "A01_01",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 2
+  },
+  "A01_02": {
+    "Id": "A01_02",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 3
+  },
+  "A01_03": {
+    "Id": "A01_03",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "A01_04": {
+    "Id": "A01_04",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 10
+  },
+  "B01_01": {
+    "Id": "B01_01",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "B01_02": {
+    "Id": "B01_02",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "B01_03": {
+    "Id": "B01_03",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "multiple",
+    "Value": 10
+  },
+  "C01_01": {
+    "Id": "C01_01",
+    "Object": "other",
+    "Effect": "fightStrategy",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 2
+  },
+  "C01_02": {
+    "Id": "C01_02",
+    "Object": "other",
+    "Effect": "fightStrategy",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 3
+  },
+  "C01_03": {
+    "Id": "C01_03",
+    "Object": "other",
+    "Effect": "fightStrategy",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 4
+  },
+  "C01_1": {
+    "Id": "C01_1",
+    "Object": "other",
+    "Effect": "UpCityTime",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 20
+  },
+  "C01_2": {
+    "Id": "C01_2",
+    "Object": "other",
+    "Effect": "UpCityTime",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 20
+  },
+  "C01_3": {
+    "Id": "C01_3",
+    "Object": "other",
+    "Effect": "UpCityTime",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 20
+  },
+  "C01_4": {
+    "Id": "C01_4",
+    "Object": "other",
+    "Effect": "UpCityTime",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 20
+  },
+  "EV_1011A": {
+    "Id": "EV_1011A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 175
+  },
+  "EV_1011B": {
+    "Id": "EV_1011B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 10000
+  },
+  "EV_1012A": {
+    "Id": "EV_1012A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 175
+  },
+  "EV_1012B": {
+    "Id": "EV_1012B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 10000
+  },
+  "EV_1013A": {
+    "Id": "EV_1013A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 450
+  },
+  "EV_1013B": {
+    "Id": "EV_1013B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 30000
+  },
+  "EV_1014A": {
+    "Id": "EV_1014A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 700
+  },
+  "EV_1014B": {
+    "Id": "EV_1014B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 50000
+  },
+  "EV_1015A": {
+    "Id": "EV_1015A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 1000
+  },
+  "EV_1015B": {
+    "Id": "EV_1015B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 70000
+  },
+  "EV_1016A": {
+    "Id": "EV_1016A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 1500
+  },
+  "EV_1016B": {
+    "Id": "EV_1016B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 110000
+  },
+  "EV_1017A": {
+    "Id": "EV_1017A",
+    "Object": "soldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 2000
+  },
+  "EV_1017B": {
+    "Id": "EV_1017B",
+    "Object": "resources",
+    "Effect": "max",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "num",
+    "Value": 110000
+  },
+  "EV_2010": {
+    "Id": "EV_2010",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "EV_2011_A": {
+    "Id": "EV_2011_A",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "multiple",
+    "Value": 10
+  },
+  "EV_2011_B": {
+    "Id": "EV_2011_B",
+    "Object": "resources",
+    "Effect": "soldierCost",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "EV_2012_A": {
+    "Id": "EV_2012_A",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "multiple",
+    "Value": 15
+  },
+  "EV_2012_B": {
+    "Id": "EV_2012_B",
+    "Object": "resources",
+    "Effect": "battleCost",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 10
+  },
+  "EV_2013_A": {
+    "Id": "EV_2013_A",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 10
+  },
+  "EV_2013_B": {
+    "Id": "EV_2013_B",
+    "Object": "soldier",
+    "Effect": "DamControl",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": -10
+  },
+  "EV_2014_A": {
+    "Id": "EV_2014_A",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "item",
+    "Condition": [
+      6013
+    ],
+    "ValueType": "multiple",
+    "Value": -15
+  },
+  "EV_2014_B": {
+    "Id": "EV_2014_B",
+    "Object": "resources",
+    "Effect": "soldierCost",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": -10
+  },
+  "EV_2015_A": {
+    "Id": "EV_2015_A",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "item",
+    "Condition": [
+      6010
+    ],
+    "ValueType": "multiple",
+    "Value": -10
+  },
+  "EV_2015_B": {
+    "Id": "EV_2015_B",
+    "Object": "resources",
+    "Effect": "battleCost",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": -5
+  },
+  "EV_2016": {
+    "Id": "EV_2016",
+    "Object": "resources",
+    "Effect": "prod",
+    "Unit": "all",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": -5
+  },
+  "G01_1": {
+    "Id": "G01_1",
+    "Object": "enemySoldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "G01_2": {
+    "Id": "G01_2",
+    "Object": "enemySoldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "G01_3": {
+    "Id": "G01_3",
+    "Object": "enemySoldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "G01_4": {
+    "Id": "G01_4",
+    "Object": "enemySoldier",
+    "Effect": "max",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "multiple",
+    "Value": 5
+  },
+  "H01_1": {
+    "Id": "H01_1",
+    "Object": "other",
+    "Effect": "attackDistance",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 1
+  },
+  "H01_2": {
+    "Id": "H01_2",
+    "Object": "other",
+    "Effect": "attackDistance",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 1
+  },
+  "H01_3": {
+    "Id": "H01_3",
+    "Object": "other",
+    "Effect": "attackDistance",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 1
+  },
+  "I01_1": {
+    "Id": "I01_1",
+    "Object": "soldier",
+    "Effect": "PostWarAddRecovery",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 3
+  },
+  "I01_2": {
+    "Id": "I01_2",
+    "Object": "soldier",
+    "Effect": "PostWarAddRecovery",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 4
+  },
+  "I01_3": {
+    "Id": "I01_3",
+    "Object": "soldier",
+    "Effect": "PostWarAddRecovery",
+    "Unit": "",
+    "Condition": "",
+    "ValueType": "num",
+    "Value": 8
+  },
+  "J01_1": {
+    "Id": "J01_1",
+    "Object": "event",
+    "Effect": "weight",
+    "Unit": "eventID",
+    "Condition": [
+      2014,
+      2015,
+      2016
+    ],
+    "ValueType": "num",
+    "Value": -70
+  },
+  "K01_1": {
+    "Id": "K01_1",
+    "Object": "event",
+    "Effect": "weight",
+    "Unit": "eventID",
+    "Condition": [
+      2025,
+      2026,
+      2027,
+      5,
+      2028,
+      2029
+    ],
+    "ValueType": "num",
+    "Value": -100
+  }
+}

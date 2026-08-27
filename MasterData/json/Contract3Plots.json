@@ -1,0 +1,1917 @@
+[
+  {
+    "Id": "1001",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：1",
+    "NameLan": "activeLan_Contract3Plot_namelan_1001",
+    "NameLanText": "异变区域：1",
+    "InitialCredit": 15,
+    "Delay": 0,
+    "SeriesId": 101,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300101",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CV014"
+    ],
+    "Offset": [
+      "-7",
+      "6",
+      "0.33"
+    ],
+    "Recommend": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "D0166",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0078",
+        "Hp_PERCENT",
+        "50"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "D0166",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "D0166",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "D0166",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0078",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "V0078",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "V0078",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_1",
+      "Buff_WJHY_Group3_Shuxing_2",
+      "Buff_WJHY_Group3_Shuxing_3",
+      "Buff_WJHY_Group3_Shuxing_4",
+      "Buff_WJHY_Group3_Shuxing_6",
+      "Buff_WJHY_Group3_Shuxing_8"
+    ],
+    "Desc": "此关卡将有1个祸斗·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·疫齿</color>：祸斗·重构体常击后，使受击敌方单位<color=#158bdb>周围3格</color>的敌方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1001",
+    "DescLanText": "此关卡将有1个祸斗·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·疫齿</color>：祸斗·重构体常击后，使受击敌方单位<color=#158bdb>周围3格</color>的敌方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "祸斗·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1001",
+    "BossNameLanText": "祸斗·重构体"
+  },
+  {
+    "Id": "1002",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：2",
+    "NameLan": "activeLan_Contract3Plot_namelan_1002",
+    "NameLanText": "异变区域：2",
+    "InitialCredit": 15,
+    "Delay": 0,
+    "SeriesId": 101,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300102",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CW202"
+    ],
+    "Offset": [
+      "0",
+      "23",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "D0166",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0078",
+        "Hp_PERCENT",
+        "50"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "D0166",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "D0166",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "D0166",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0078",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "V0078",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "V0078",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_1",
+      "Buff_WJHY_Group3_Shuxing_2",
+      "Buff_WJHY_Group3_Shuxing_3",
+      "Buff_WJHY_Group3_Shuxing_4",
+      "Buff_WJHY_Group3_Shuxing_6",
+      "Buff_WJHY_Group3_Shuxing_8"
+    ],
+    "Desc": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1002",
+    "DescLanText": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "谣夜羽蛾·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1002",
+    "BossNameLanText": "谣夜羽蛾·重构体"
+  },
+  {
+    "Id": "1003",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：3",
+    "NameLan": "activeLan_Contract3Plot_namelan_1003",
+    "NameLanText": "异变区域：3",
+    "InitialCredit": 15,
+    "Delay": 0,
+    "SeriesId": 102,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300103",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CD041"
+    ],
+    "Offset": [
+      "32",
+      "14",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_9",
+      "Buff_WJHY_Group3_Shuxing_10",
+      "Buff_WJHY_Group3_Shuxing_11",
+      "Buff_WJHY_Group3_Shuxing_3",
+      "Buff_WJHY_Group3_Shuxing_4",
+      "Buff_WJHY_Group3_Shuxing_5"
+    ],
+    "Desc": "此关卡将有1个妨宿·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·全蚀</color>：妨宿·重构体回合结束时，若敌方单位存在<color=#ff6724>寒天</color>或<color=#ff6724>霜冻</color>状态，则使其获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1003",
+    "DescLanText": "此关卡将有1个妨宿·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·全蚀</color>：妨宿·重构体回合结束时，若敌方单位存在<color=#ff6724>寒天</color>或<color=#ff6724>霜冻</color>状态，则使其获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "妨宿·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1003",
+    "BossNameLanText": "妨宿·重构体"
+  },
+  {
+    "Id": "1004",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：4",
+    "NameLan": "activeLan_Contract3Plot_namelan_1004",
+    "NameLanText": "异变区域：4",
+    "InitialCredit": 15,
+    "Delay": 0,
+    "SeriesId": 102,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300104",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CW202"
+    ],
+    "Offset": [
+      "0",
+      "23",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_1",
+      "Buff_WJHY_Group3_Shuxing_2"
+    ],
+    "Desc": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1004",
+    "DescLanText": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "谣夜羽蛾·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1004",
+    "BossNameLanText": "谣夜羽蛾·重构体"
+  },
+  {
+    "Id": "1005",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：5",
+    "NameLan": "activeLan_Contract3Plot_namelan_1005",
+    "NameLanText": "异变区域：5",
+    "InitialCredit": 15,
+    "Delay": 1,
+    "SeriesId": 103,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300105",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CD041"
+    ],
+    "Offset": [
+      "32",
+      "14",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_9",
+      "Buff_WJHY_Group3_Shuxing_10",
+      "Buff_WJHY_Group3_Shuxing_11",
+      "Buff_WJHY_Group3_Shuxing_3",
+      "Buff_WJHY_Group3_Shuxing_4",
+      "Buff_WJHY_Group3_Shuxing_5"
+    ],
+    "Desc": "此关卡将有1个妨宿·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·全蚀</color>：妨宿·重构体回合结束时，若敌方单位存在<color=#ff6724>寒天</color>或<color=#ff6724>霜冻</color>状态，则使其获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1005",
+    "DescLanText": "此关卡将有1个妨宿·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·全蚀</color>：妨宿·重构体回合结束时，若敌方单位存在<color=#ff6724>寒天</color>或<color=#ff6724>霜冻</color>状态，则使其获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "妨宿·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1005",
+    "BossNameLanText": "妨宿·重构体"
+  },
+  {
+    "Id": "1006",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：6",
+    "NameLan": "activeLan_Contract3Plot_namelan_1006",
+    "NameLanText": "异变区域：6",
+    "InitialCredit": 15,
+    "Delay": 1,
+    "SeriesId": 103,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300106",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "ED052"
+    ],
+    "Offset": [
+      "0",
+      "0",
+      "0.32"
+    ],
+    "Recommend": [
+      [
+        "D0166",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "D0154",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0078",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "D0166",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "D0166",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "D0166",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "D0154",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "D0154",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "D0154",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0078",
+        "Atk_PERCENT",
+        "10"
+      ],
+      [
+        "V0078",
+        "Hp_PERCENT",
+        "50"
+      ],
+      [
+        "V0078",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_6",
+      "Buff_WJHY_Group3_Shuxing_7",
+      "Buff_WJHY_Group3_Shuxing_8"
+    ],
+    "Desc": "此关卡将有1个撞钟蠹兽·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·钟鸣</color>：撞钟蠹兽·重构体使用职业技能时，使自身<color=#158bdb>周围5格</color>的敌方全体获得<color=#158bdb>2</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·钟磬</color>：撞钟蠹兽·重构体使用职业技能时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·沁声</color>状态：每层此状态使自身回击造成的伤害<color=#158bdb>45%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1006",
+    "DescLanText": "此关卡将有1个撞钟蠹兽·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·钟鸣</color>：撞钟蠹兽·重构体使用职业技能时，使自身<color=#158bdb>周围5格</color>的敌方全体获得<color=#158bdb>2</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·钟磬</color>：撞钟蠹兽·重构体使用职业技能时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·沁声</color>状态：每层此状态使自身回击造成的伤害<color=#158bdb>45%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "撞钟蠹兽·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1006",
+    "BossNameLanText": "撞钟蠹兽·重构体"
+  },
+  {
+    "Id": "1007",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：7",
+    "NameLan": "activeLan_Contract3Plot_namelan_1007",
+    "NameLanText": "异变区域：7",
+    "InitialCredit": 15,
+    "Delay": 2,
+    "SeriesId": 104,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300107",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "ES119"
+    ],
+    "Offset": [
+      "-4",
+      "21",
+      "0.35"
+    ],
+    "Recommend": [
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_3",
+      "Buff_WJHY_Group3_Shuxing_4",
+      "Buff_WJHY_Group3_Shuxing_5",
+      "Buff_WJHY_Group3_Shuxing_9",
+      "Buff_WJHY_Group3_Shuxing_10",
+      "Buff_WJHY_Group3_Shuxing_11"
+    ],
+    "Desc": "此关卡将有1个蜃海幽蛸·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·腕力</color>：蜃海幽蛸·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1007",
+    "DescLanText": "此关卡将有1个蜃海幽蛸·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·腕力</color>：蜃海幽蛸·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "蜃海幽蛸·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1007",
+    "BossNameLanText": "蜃海幽蛸·重构体"
+  },
+  {
+    "Id": "1008",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：8",
+    "NameLan": "activeLan_Contract3Plot_namelan_1008",
+    "NameLanText": "异变区域：8",
+    "InitialCredit": 15,
+    "Delay": 2,
+    "SeriesId": 104,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300108",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CW202"
+    ],
+    "Offset": [
+      "0",
+      "23",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_1",
+      "Buff_WJHY_Group3_Shuxing_2"
+    ],
+    "Desc": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1008",
+    "DescLanText": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "谣夜羽蛾·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1008",
+    "BossNameLanText": "谣夜羽蛾·重构体"
+  },
+  {
+    "Id": "1009",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：9",
+    "NameLan": "activeLan_Contract3Plot_namelan_1009",
+    "NameLanText": "异变区域：9",
+    "InitialCredit": 15,
+    "Delay": 3,
+    "SeriesId": 105,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300109",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CW202"
+    ],
+    "Offset": [
+      "0",
+      "23",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "A0170",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0170",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0147",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_1",
+      "Buff_WJHY_Group3_Shuxing_2"
+    ],
+    "Desc": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1009",
+    "DescLanText": "此关卡将有1个谣夜羽蛾·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·鳞火</color>：谣夜羽蛾·重构体使用绝技时，使我方全体获得<color=#158bdb>1</color>层<color=#ff6724>九幽·通感</color>状态：每层此状态使自身技能伤害提高<color=#158bdb>40%</color>，最多可叠加<color=#158bdb>3</color>层。\n<color=#ff6724>九幽·飞扑</color>：谣夜羽蛾·重构体使用绝技时，使受击敌方单位获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层使自身受到的伤害提高<color=#158bdb>30%</color>，最多可叠加<color=#158bdb>3</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "谣夜羽蛾·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1009",
+    "BossNameLanText": "谣夜羽蛾·重构体"
+  },
+  {
+    "Id": "1010",
+    "ActivityGroup": 4006,
+    "Name": "异变区域：10",
+    "NameLan": "activeLan_Contract3Plot_namelan_1010",
+    "NameLanText": "异变区域：10",
+    "InitialCredit": 15,
+    "Delay": 3,
+    "SeriesId": 105,
+    "IsCooperate": 0,
+    "CooperateLimit": 1,
+    "DungeonId": "WJ300110",
+    "SelfOptionLimit": 0,
+    "SelfOption": null,
+    "EnemyOption": [
+      "1001",
+      "1002",
+      "1003",
+      "1004",
+      "1005",
+      "1006",
+      "1007",
+      "1008",
+      "1009",
+      "1010",
+      "1011",
+      "1012"
+    ],
+    "Credit": [
+      15,
+      40,
+      80
+    ],
+    "CreditReward1": [
+      {
+        "id": "1",
+        "count": 20
+      },
+      {
+        "id": "3",
+        "count": 20000
+      },
+      {
+        "id": "2102",
+        "count": 10
+      }
+    ],
+    "CreditReward2": [
+      {
+        "id": "1",
+        "count": 10
+      },
+      {
+        "id": "3",
+        "count": 10000
+      },
+      {
+        "id": "2103",
+        "count": 5
+      }
+    ],
+    "CreditReward3": [
+      {
+        "id": "3205",
+        "count": 1
+      },
+      {
+        "id": "3",
+        "count": 5000
+      },
+      {
+        "id": "2104",
+        "count": 5
+      }
+    ],
+    "BossPreview": [
+      "CD041"
+    ],
+    "Offset": [
+      "32",
+      "14",
+      "0.34"
+    ],
+    "Recommend": [
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ]
+    ],
+    "Condition2desc": null,
+    "Condition3desc": [
+      [
+        "V0141",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0141",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "S0088",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "W0164",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0169",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "A0090",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Atk_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "Hp_PERCENT",
+        "20"
+      ],
+      [
+        "V0146",
+        "AllDefIncrease_PERCENT",
+        "20"
+      ]
+    ],
+    "RecommendBuff": [
+      "Buff_WJHY_Group3_Shuxing_9",
+      "Buff_WJHY_Group3_Shuxing_10",
+      "Buff_WJHY_Group3_Shuxing_11",
+      "Buff_WJHY_Group3_Shuxing_3",
+      "Buff_WJHY_Group3_Shuxing_4",
+      "Buff_WJHY_Group3_Shuxing_5"
+    ],
+    "Desc": "此关卡将有1个妨宿·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·全蚀</color>：妨宿·重构体回合结束时，若敌方单位存在<color=#ff6724>寒天</color>或<color=#ff6724>霜冻</color>状态，则使其获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "DescLan": "activeLan_Contract3Plot_desclan_1010",
+    "DescLanText": "此关卡将有1个妨宿·重构体加入我方队伍。\n重构体可使用其原型的技能，可投入对曲解的作战中，听从收藏家的指挥进行攻击。\n<color=#ff6724>九幽·全蚀</color>：妨宿·重构体回合结束时，若敌方单位存在<color=#ff6724>寒天</color>或<color=#ff6724>霜冻</color>状态，则使其获得<color=#158bdb>1</color>层<color=#ff6724>九幽·撕裂</color>状态：每层此状态使自身受到的伤害提高<color=#158bdb>20%</color>，最多可叠加<color=#158bdb>6</color>层。\n\n重构体力量特殊，其行动只能由收藏家亲自指挥。\n在进行自动战斗时，重构体不会行动。",
+    "BossName": "妨宿·重构体",
+    "BossNameLan": "activeLan_Contract3Plot_BossNameDesclan_1010",
+    "BossNameLanText": "妨宿·重构体"
+  }
+]

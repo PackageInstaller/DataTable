@@ -1,0 +1,1270 @@
+{
+  "AlertAttackBulletExtraLimit_FIX": {
+    "id": "AlertAttackBulletExtraLimit_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AlertAttackBulletExtraLimit_FIX",
+    "NameLanText": "礼弹持有上限",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_AlertAttackBulletExtraLimit_FIX",
+    "TextLanText": "增加可获得的警戒次数的上限。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AlertAttackBulletMaxLimit_FIX": {
+    "id": "AlertAttackBulletMaxLimit_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AlertAttackBulletMaxLimit_FIX",
+    "NameLanText": "最大礼弹上限",
+    "index": 24,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_AlertAttackBulletMaxLimit_FIX",
+    "TextLanText": "警戒时可以获得的最大礼弹上限",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AlertAttackDmgIncrease_FIX": {
+    "id": "AlertAttackDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AlertAttackDmgIncrease_FIX",
+    "NameLanText": "警戒伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AlertAttackDmgIncrease_FIX",
+    "TextLanText": "警戒攻击造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AlertAttackExtraBullet_FIX": {
+    "id": "AlertAttackExtraBullet_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AlertAttackExtraBullet_FIX",
+    "NameLanText": "额外装填礼弹",
+    "index": 25,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_AlertAttackExtraBullet_FIX",
+    "TextLanText": "增加每次警戒可以获得的警戒攻击/治疗次数。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AlertAttackRangeIncrease_FIX": {
+    "id": "AlertAttackRangeIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AlertAttackRangeIncrease_FIX",
+    "NameLanText": "额外警戒距离",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_AlertAttackRangeIncrease_FIX",
+    "TextLanText": "警戒距离额外增加",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AllDefIncrease_FIX": {
+    "id": "AllDefIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AllDefIncrease_FIX",
+    "NameLanText": "全防御增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AllDefIncrease_FIX",
+    "TextLanText": "基础物理/构素防御获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AllDefIncrease_PERCENT": {
+    "id": "AllDefIncrease_PERCENT",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AllDefIncrease_PERCENT",
+    "NameLanText": "全防御增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AllDefIncrease_PERCENT",
+    "TextLanText": "器者物理防御和构素防御提升",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AllDefPenetrationRate_FIX": {
+    "id": "AllDefPenetrationRate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AllDefPenetrationRate_FIX",
+    "NameLanText": "防御穿透",
+    "index": 22,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AllDefPenetrationRate_FIX",
+    "TextLanText": "造成伤害时，无视一定比例的物理/构素防御力所转化的伤害减免。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AllDmgIncrease_FIX": {
+    "id": "AllDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AllDmgIncrease_FIX",
+    "NameLanText": "伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AllDmgIncrease_FIX",
+    "TextLanText": "造成的物理/构术伤害提升一定比例",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AllDmgReduce": {
+    "id": "AllDmgReduce",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AllDmgReduce",
+    "NameLanText": "伤害降低",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AllDmgReduce",
+    "TextLanText": "受到的物理/构素伤害会被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AllDmgReductionIncrease_FIX": {
+    "id": "AllDmgReductionIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AllDmgReductionIncrease_FIX",
+    "NameLanText": "伤害减免",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AllDmgReductionIncrease_FIX",
+    "TextLanText": "受到的物理/构素伤害会被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Atk": {
+    "id": "Atk",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Atk",
+    "NameLanText": "攻击力",
+    "index": 2,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Atk",
+    "TextLanText": "决定器者造成伤害量的主要属性。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "Atk_FIX": {
+    "id": "Atk_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Atk_FIX",
+    "NameLanText": "攻击力",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Atk_FIX",
+    "TextLanText": "增加基础攻击力。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Atk_GROW": {
+    "id": "Atk_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Atk_GROW",
+    "NameLanText": "成长攻击",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Atk_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Atk_PERCENT": {
+    "id": "Atk_PERCENT",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Atk_PERCENT",
+    "NameLanText": "攻击力",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_Atk_PERCENT",
+    "TextLanText": "增加基础攻击力。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "AttriRestraintIncrease": {
+    "id": "AttriRestraintIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_AttriRestraintIncrease",
+    "NameLanText": "克制伤害",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_AttriRestraintIncrease",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeChaseAttackedDmgIncrease_FIX": {
+    "id": "BeChaseAttackedDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeChaseAttackedDmgIncrease_FIX",
+    "NameLanText": "受到追击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeChaseAttackedDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeChaseAttackedDmgReduce_FIX": {
+    "id": "BeChaseAttackedDmgReduce_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeChaseAttackedDmgReduce_FIX",
+    "NameLanText": "受到追击伤害减少",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeChaseAttackedDmgReduce_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeCommonAttackedDmgIncrease_FIX": {
+    "id": "BeCommonAttackedDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeCommonAttackedDmgIncrease_FIX",
+    "NameLanText": "受到常击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeCommonAttackedDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeCommonAttackedDmgReduce_FIX": {
+    "id": "BeCommonAttackedDmgReduce_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeCommonAttackedDmgReduce_FIX",
+    "NameLanText": "受到常击伤害减少",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeCommonAttackedDmgReduce_FIX",
+    "TextLanText": "受到普攻伤害会被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeDoubleHitedDmgIncrease_FIX": {
+    "id": "BeDoubleHitedDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeDoubleHitedDmgIncrease_FIX",
+    "NameLanText": "受到连击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeDoubleHitedDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeDoubleHitedDmgReduce_FIX": {
+    "id": "BeDoubleHitedDmgReduce_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeDoubleHitedDmgReduce_FIX",
+    "NameLanText": "受到连击伤害减少",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeDoubleHitedDmgReduce_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeFightBackedDmgIncrease_FIX": {
+    "id": "BeFightBackedDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeFightBackedDmgIncrease_FIX",
+    "NameLanText": "受到回击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeFightBackedDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeFightBackedDmgReduce_FIX": {
+    "id": "BeFightBackedDmgReduce_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeFightBackedDmgReduce_FIX",
+    "NameLanText": "受到回击伤害减少",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeFightBackedDmgReduce_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeSkilledDmgIncrease_FIX": {
+    "id": "BeSkilledDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeSkilledDmgIncrease_FIX",
+    "NameLanText": "受到绝技伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeSkilledDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeSkilledDmgReduce_FIX": {
+    "id": "BeSkilledDmgReduce_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeSkilledDmgReduce_FIX",
+    "NameLanText": "受到绝技伤害减少",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeSkilledDmgReduce_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeSpeicalAttackDmgIncrease_FIX": {
+    "id": "BeSpeicalAttackDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeSpeicalAttackDmgIncrease_FIX",
+    "NameLanText": "受到特殊伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeSpeicalAttackDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BeSpeicalDmgReduce_FIX": {
+    "id": "BeSpeicalDmgReduce_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BeSpeicalDmgReduce_FIX",
+    "NameLanText": "受到特殊伤害减少",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BeSpeicalDmgReduce_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Block": {
+    "id": "Block",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Block",
+    "NameLanText": "格挡率",
+    "index": 11,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_Block",
+    "TextLanText": "战斗中触发【物理伤害格挡】的概率。",
+    "ScopeControl": [
+      "0",
+      "999"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "999"
+    ]
+  },
+  "BlockDef_FIX": {
+    "id": "BlockDef_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BlockDef_FIX",
+    "NameLanText": "格挡强度",
+    "index": 12,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BlockDef_FIX",
+    "TextLanText": "触发格挡时，减少所受到伤害的百分比。",
+    "ScopeControl": [
+      "0",
+      "999"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "999"
+    ]
+  },
+  "BlockPenetrate_FIX": {
+    "id": "BlockPenetrate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BlockPenetrate_FIX",
+    "NameLanText": "无视格挡率",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_BlockPenetrate_FIX",
+    "TextLanText": "造成物理伤害时，有一定的概率无视格挡。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "BlockPenetrate_GROW": {
+    "id": "BlockPenetrate_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_BlockPenetrate_GROW",
+    "NameLanText": "成长格挡穿透率",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_BlockPenetrate_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Block_FIX": {
+    "id": "Block_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Block_FIX",
+    "NameLanText": "格挡率",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_Block_FIX",
+    "TextLanText": "战斗中触发【物理伤害格挡】的概率。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "ChaseAttackDmgIncrease": {
+    "id": "ChaseAttackDmgIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_ChaseAttackDmgIncrease",
+    "NameLanText": "追击伤害",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_ChaseAttackDmgIncrease",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "ChaseAttackDmgIncrease_FIX": {
+    "id": "ChaseAttackDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_ChaseAttackDmgIncrease_FIX",
+    "NameLanText": "追击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_ChaseAttackDmgIncrease_FIX",
+    "TextLanText": "追击造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CommonAttackDmgIncrease": {
+    "id": "CommonAttackDmgIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CommonAttackDmgIncrease",
+    "NameLanText": "常击伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_CommonAttackDmgIncrease",
+    "TextLanText": "常击时造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CommonAttackDmgIncrease_FIX": {
+    "id": "CommonAttackDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CommonAttackDmgIncrease_FIX",
+    "NameLanText": "常击伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_CommonAttackDmgIncrease_FIX",
+    "TextLanText": "常击造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CounterProDDmgIncrease_FIX": {
+    "id": "CounterProDDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CounterProDDmgIncrease_FIX",
+    "NameLanText": "对宿卫职业伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_CounterProDDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CounterProWDmgIncrease_FIX": {
+    "id": "CounterProWDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CounterProWDmgIncrease_FIX",
+    "NameLanText": "对构术职业伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_CounterProWDmgIncrease_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CritDmgRes_GROW": {
+    "id": "CritDmgRes_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CritDmgRes_GROW",
+    "NameLanText": "成长暴击伤害抵抗",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_CritDmgRes_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CritDmg_FIX": {
+    "id": "CritDmg_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CritDmg_FIX",
+    "NameLanText": "暴击伤害",
+    "index": 8,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_CritDmg_FIX",
+    "TextLanText": "影响器者在触发暴击时产生的伤害值。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "CritDmg_GROW": {
+    "id": "CritDmg_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CritDmg_GROW",
+    "NameLanText": "成长暴击伤害",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_CritDmg_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "CritRes": {
+    "id": "CritRes",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CritRes",
+    "NameLanText": "暴击抵抗",
+    "index": 9,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_CritRes",
+    "TextLanText": "减少器者受到【暴击伤害】的概率。",
+    "ScopeControl": [
+      "-999",
+      "999"
+    ],
+    "PanelScopeControl": [
+      "-999",
+      "999"
+    ]
+  },
+  "CritRes_GROW": {
+    "id": "CritRes_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_CritRes_GROW",
+    "NameLanText": "成长暴击抵抗率",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_CritRes_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Critcal_GROW": {
+    "id": "Critcal_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Critcal_GROW",
+    "NameLanText": "成长暴击率",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Critcal_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Critical_FIX": {
+    "id": "Critical_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Critical_FIX",
+    "NameLanText": "暴击率",
+    "index": 7,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_Critical_FIX",
+    "TextLanText": "战斗中触发【暴击攻击/治疗/护盾】的概率。",
+    "ScopeControl": [
+      "0",
+      "999"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "999"
+    ]
+  },
+  "Cross": {
+    "id": "Cross",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Cross",
+    "NameLanText": "水平跳跃",
+    "index": 13,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Cross",
+    "TextLanText": "器者在战斗中能跨越过的最远沟壑/地陷距离（水平面）。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "DefPenetrationRate_FIX": {
+    "id": "DefPenetrationRate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_DefPenetrationRate_FIX",
+    "NameLanText": "贯穿强度",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_DefPenetrationRate_FIX",
+    "TextLanText": "造成伤害时，无视一定的防御。",
+    "ScopeControl": [
+      "0",
+      "100"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "100"
+    ]
+  },
+  "DotDamageIncrease_FIX": {
+    "id": "DotDamageIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_DotDamageIncrease_FIX",
+    "NameLanText": "持续伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_DotDamageIncrease_FIX",
+    "TextLanText": "造成的持续伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "DoubleHitDmgIncrease_FIX": {
+    "id": "DoubleHitDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_DoubleHitDmgIncrease_FIX",
+    "NameLanText": "连击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_DoubleHitDmgIncrease_FIX",
+    "TextLanText": "连击造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "EnergyLimit": {
+    "id": "EnergyLimit",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_EnergyLimit",
+    "NameLanText": "能量上限",
+    "index": 16,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_EnergyLimit",
+    "TextLanText": "器者在战斗中，所能容纳的最多能量点数。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "EnergyLimit_GROW": {
+    "id": "EnergyLimit_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_EnergyLimit_GROW",
+    "NameLanText": "成长能量上限",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_EnergyLimit_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "EnergyRecoveryCycle_FIX": {
+    "id": "EnergyRecoveryCycle_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_EnergyRecoveryCycle_FIX",
+    "NameLanText": "能量自动获取",
+    "index": 21,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_EnergyRecoveryCycle_FIX",
+    "TextLanText": "回合结束时自动累积，累积满1点后获得一点能量。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "FightBackDmgIncrease_FIX": {
+    "id": "FightBackDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_FightBackDmgIncrease_FIX",
+    "NameLanText": "回击伤害增加",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_FightBackDmgIncrease_FIX",
+    "TextLanText": "回击时造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "HealIncrease_FIX": {
+    "id": "HealIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_HealIncrease_FIX",
+    "NameLanText": "治疗量提升",
+    "index": 17,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_HealIncrease_FIX",
+    "TextLanText": "影响器者在治疗其他队友时所能恢复的生命值。",
+    "ScopeControl": [],
+    "PanelScopeControl": [
+      "-100",
+      "null"
+    ]
+  },
+  "HealedIncrease_FIX": {
+    "id": "HealedIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_HealedIncrease_FIX",
+    "NameLanText": "受治疗提升",
+    "index": 18,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_HealedIncrease_FIX",
+    "TextLanText": "影响器者在受到治疗时，所恢复的生命值。",
+    "ScopeControl": [],
+    "PanelScopeControl": [
+      "-100",
+      "null"
+    ]
+  },
+  "HitRate": {
+    "id": "HitRate",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_HitRate",
+    "NameLanText": "命中率",
+    "index": 26,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_HitRate",
+    "TextLanText": "在器者攻击时，成功命中目标的概率。\n会受目标【闪避】属性的影响。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "HitRate_GROW": {
+    "id": "HitRate_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_HitRate_GROW",
+    "NameLanText": "成长命中率",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_HitRate_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Hp": {
+    "id": "Hp",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Hp",
+    "NameLanText": "生命上限",
+    "index": 1,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Hp",
+    "TextLanText": "器者在被击倒前，能够承受的最大伤害量。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "Hp_FIX": {
+    "id": "Hp_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Hp_FIX",
+    "NameLanText": "生命值",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Hp_FIX",
+    "TextLanText": "增加基础生命值。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Hp_GROW": {
+    "id": "Hp_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Hp_GROW",
+    "NameLanText": "成长生命",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Hp_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Hp_PERCENT": {
+    "id": "Hp_PERCENT",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Hp_PERCENT",
+    "NameLanText": "生命值",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_Hp_PERCENT",
+    "TextLanText": "增加基础生命值。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "HurtHealRate_FIX": {
+    "id": "HurtHealRate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_HurtHealRate_FIX",
+    "NameLanText": "生命偷取率",
+    "index": 19,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_HurtHealRate_FIX",
+    "TextLanText": "影响角色在造成伤害时，将伤害值转换成自己生命值的比例。",
+    "ScopeControl": [
+      "0",
+      "100"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "100"
+    ]
+  },
+  "InaitialActionPoint": {
+    "id": "InaitialActionPoint",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_InaitialActionPoint",
+    "NameLanText": "初始行动值",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_InaitialActionPoint",
+    "TextLanText": "器者进入关卡时，额外拥有的初始【行动】值。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "InaitialEnergy": {
+    "id": "InaitialEnergy",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_InaitialEnergy",
+    "NameLanText": "初始能量",
+    "index": 15,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_InaitialEnergy",
+    "TextLanText": "器者进入关卡时，额外拥有的初始【能量】值。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "InaitialEnergy_FIX": {
+    "id": "InaitialEnergy_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_InaitialEnergy_FIX",
+    "NameLanText": "初始能量",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_InaitialEnergy_FIX",
+    "TextLanText": "器者进入关卡时，额外拥有的初始【能量】值。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "Jump": {
+    "id": "Jump",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Jump",
+    "NameLanText": "垂直跳跃",
+    "index": 14,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Jump",
+    "TextLanText": "器者在战斗中能翻越的最高可站立地面（高度差）。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "MagDmgReductionIncrease": {
+    "id": "MagDmgReductionIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagDmgReductionIncrease",
+    "NameLanText": "构素伤害减免",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_MagDmgReductionIncrease",
+    "TextLanText": "受到的构素伤害会被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "MagDmgReductionIncrease_FIX": {
+    "id": "MagDmgReductionIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagDmgReductionIncrease_FIX",
+    "NameLanText": "构素伤害减免",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_MagDmgReductionIncrease_FIX",
+    "TextLanText": "受到的构素伤害将被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "MagicDef": {
+    "id": "MagicDef",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagicDef",
+    "NameLanText": "构素防御",
+    "index": 4,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_MagicDef",
+    "TextLanText": "减轻器者受到【构素】类型攻击的属性",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "MagicDef_FIX": {
+    "id": "MagicDef_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagicDef_FIX",
+    "NameLanText": "构素防御",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_MagicDef_FIX",
+    "TextLanText": "增加基础构素防御。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "MagicDef_GROW": {
+    "id": "MagicDef_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagicDef_GROW",
+    "NameLanText": "成长构素防御",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_MagicDef_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "MagicDef_PERCENT": {
+    "id": "MagicDef_PERCENT",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagicDef_PERCENT",
+    "NameLanText": "构素防御",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_MagicDef_PERCENT",
+    "TextLanText": "增加基础构素防御。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "MagicDmgIncrease_FIX": {
+    "id": "MagicDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MagicDmgIncrease_FIX",
+    "NameLanText": "构素伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_MagicDmgIncrease_FIX",
+    "TextLanText": "造成的构素伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "MissRate_FIX": {
+    "id": "MissRate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MissRate_FIX",
+    "NameLanText": "闪避率",
+    "index": 10,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_MissRate_FIX",
+    "TextLanText": "器者在受到敌人攻击时，躲避掉伤害的概率。\n绝技无法被闪避。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "100"
+    ]
+  },
+  "MissRate_GROW": {
+    "id": "MissRate_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_MissRate_GROW",
+    "NameLanText": "成长闪避率",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_MissRate_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Mov": {
+    "id": "Mov",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Mov",
+    "NameLanText": "移动力",
+    "index": 6,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Mov",
+    "TextLanText": "决定器者在战斗中，每回合能够移动的距离。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "Mov_FIX": {
+    "id": "Mov_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Mov_FIX",
+    "NameLanText": "移动力",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Mov_FIX",
+    "TextLanText": "器者移动力增加",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PenetrationRate_FIX": {
+    "id": "PenetrationRate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PenetrationRate_FIX",
+    "NameLanText": "贯穿概率",
+    "index": 23,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_PenetrationRate_FIX",
+    "TextLanText": "造成伤害时概率触发，无视护盾，格挡，援护。\n且触发时，无视70%的物理/构素防御。",
+    "ScopeControl": [],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "PhyDmgReductionIncrease": {
+    "id": "PhyDmgReductionIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhyDmgReductionIncrease",
+    "NameLanText": "物理伤害减免",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_PhyDmgReductionIncrease",
+    "TextLanText": "受到的物理伤害将被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PhyDmgReductionIncrease_FIX": {
+    "id": "PhyDmgReductionIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhyDmgReductionIncrease_FIX",
+    "NameLanText": "物理伤害减免",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_PhyDmgReductionIncrease_FIX",
+    "TextLanText": "受到的物理伤害将被降低。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PhysicDef": {
+    "id": "PhysicDef",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhysicDef",
+    "NameLanText": "物理防御",
+    "index": 3,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_PhysicDef",
+    "TextLanText": "减轻器者受到【物理】类型攻击的属性",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "PhysicDef_FIX": {
+    "id": "PhysicDef_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhysicDef_FIX",
+    "NameLanText": "物理防御",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_PhysicDef_FIX",
+    "TextLanText": "增加基础物理防御。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PhysicDef_GROW": {
+    "id": "PhysicDef_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhysicDef_GROW",
+    "NameLanText": "成长物理防御",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_PhysicDef_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PhysicDef_PERCENT": {
+    "id": "PhysicDef_PERCENT",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhysicDef_PERCENT",
+    "NameLanText": "物理防御",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_PhysicDef_PERCENT",
+    "TextLanText": "增加基础物理防御。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PhysicalDmgIncrease_FIX": {
+    "id": "PhysicalDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PhysicalDmgIncrease_FIX",
+    "NameLanText": "物理伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_PhysicalDmgIncrease_FIX",
+    "TextLanText": "造成物理伤害时，伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "ProtectBearRate": {
+    "id": "ProtectBearRate",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_ProtectBearRate",
+    "NameLanText": "援护承伤率",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_ProtectBearRate",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "PurEnergy_FIX": {
+    "id": "PurEnergy_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_PurEnergy_FIX",
+    "NameLanText": "追击回复能量值",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_PurEnergy_FIX",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "SheildIncrease": {
+    "id": "SheildIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_SheildIncrease",
+    "NameLanText": "护盾增益",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_SheildIncrease",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "SheildIncrease_FIX": {
+    "id": "SheildIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_SheildIncrease_FIX",
+    "NameLanText": "护盾增益",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_SheildIncrease_FIX",
+    "TextLanText": "受到的护盾量提升",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "SkillDmgIncrease": {
+    "id": "SkillDmgIncrease",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_SkillDmgIncrease",
+    "NameLanText": "绝技伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_SkillDmgIncrease",
+    "TextLanText": "释放绝技造成的伤害将被提高。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "SkillDmgIncrease_FIX": {
+    "id": "SkillDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_SkillDmgIncrease_FIX",
+    "NameLanText": "绝技伤害提升",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_SkillDmgIncrease_FIX",
+    "TextLanText": "释放绝技造成的伤害将被提高。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "SnipeDmgIncrease_FIX": {
+    "id": "SnipeDmgIncrease_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_SnipeDmgIncrease_FIX",
+    "NameLanText": "瞄准伤害",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_SnipeDmgIncrease_FIX",
+    "TextLanText": "瞄准状态下，常击造成的伤害获得提升。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "SnipeResetRate_FIX": {
+    "id": "SnipeResetRate_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_SnipeResetRate_FIX",
+    "NameLanText": "瞄准冷却率",
+    "index": 20,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_SnipeResetRate_FIX",
+    "TextLanText": "回合开始时，有一定概率减少2回合瞄准技能冷却时间",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Speed": {
+    "id": "Speed",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Speed",
+    "NameLanText": "速度",
+    "index": 5,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Speed",
+    "TextLanText": "决定器者每一轮的先后手顺序，速度值越高，行动顺序越靠前。",
+    "ScopeControl": [
+      "0",
+      "null"
+    ],
+    "PanelScopeControl": [
+      "0",
+      "null"
+    ]
+  },
+  "Speed_FIX": {
+    "id": "Speed_FIX",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Speed_FIX",
+    "NameLanText": "速度",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Speed_FIX",
+    "TextLanText": "提升基础速度。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Speed_GROW": {
+    "id": "Speed_GROW",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Speed_GROW",
+    "NameLanText": "成长速度",
+    "index": 0,
+    "attrDisplayType": "",
+    "TextLan": "characterlan_attrDes_textLan_Speed_GROW",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  },
+  "Speed_PERCENT": {
+    "id": "Speed_PERCENT",
+    "icon": "",
+    "NameLan": "characterlan_AttrDes_namelan_Speed_PERCENT",
+    "NameLanText": "速度",
+    "index": 0,
+    "attrDisplayType": "%",
+    "TextLan": "characterlan_attrDes_textLan_Speed_PERCENT",
+    "TextLanText": "提升基础速度。",
+    "ScopeControl": [],
+    "PanelScopeControl": []
+  }
+}

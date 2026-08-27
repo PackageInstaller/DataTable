@@ -1,0 +1,527 @@
+{
+  "RSDX1001": {
+    "Id": "RSDX1001",
+    "Name": "泼水成彩·01",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1001",
+    "Conditions": [
+      1002
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#87E4FF>蓝色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1001",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#87E4FF>蓝色</color>即可获得胜利。",
+    "UnlockParam": [],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 2,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1002": {
+    "Id": "RSDX1002",
+    "Name": "泼水成彩·02",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1002",
+    "Conditions": [
+      1001
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1002",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "1"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 3,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1003": {
+    "Id": "RSDX1003",
+    "Name": "泼水成彩·03",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1003",
+    "Conditions": [
+      1003
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1003",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "2"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 3,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1004": {
+    "Id": "RSDX1004",
+    "Name": "泼水成彩·04",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1004",
+    "Conditions": [
+      1004
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1004",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "3"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 5,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1005": {
+    "Id": "RSDX1005",
+    "Name": "泼水成彩·05",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1005",
+    "Conditions": [
+      1004
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1005",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "4"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 5,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1006": {
+    "Id": "RSDX1006",
+    "Name": "泼水成彩·06",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1006",
+    "Conditions": [
+      1004
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1006",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "5"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 7,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1007": {
+    "Id": "RSDX1007",
+    "Name": "泼水成彩·07",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1007",
+    "Conditions": [
+      1004
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1007",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FFDC87>黄色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "6"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 7,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1008": {
+    "Id": "RSDX1008",
+    "Name": "泼水成彩·08",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1008",
+    "Conditions": [
+      1002
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#87E4FF>蓝色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1008",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#87E4FF>蓝色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "7"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 7,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1009": {
+    "Id": "RSDX1009",
+    "Name": "泼水成彩·09",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1009",
+    "Conditions": [
+      1003
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1009",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "8"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 8,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1010": {
+    "Id": "RSDX1010",
+    "Name": "泼水成彩·10",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1010",
+    "Conditions": [
+      1001
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1010",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "9"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 8,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1011": {
+    "Id": "RSDX1011",
+    "Name": "泼水成彩·11",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1011",
+    "Conditions": [
+      1001
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1011",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "10"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 8,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1012": {
+    "Id": "RSDX1012",
+    "Name": "泼水成彩·12",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1012",
+    "Conditions": [
+      1003
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1012",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "11"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 8,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1013": {
+    "Id": "RSDX1013",
+    "Name": "泼水成彩·13",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1013",
+    "Conditions": [
+      1003
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1013",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "12"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 8,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1014": {
+    "Id": "RSDX1014",
+    "Name": "泼水成彩·14",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1014",
+    "Conditions": [
+      1002
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#87E4FF>蓝色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1014",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#87E4FF>蓝色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "13"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 9,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1015": {
+    "Id": "RSDX1015",
+    "Name": "泼水成彩·15",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1015",
+    "Conditions": [
+      1003
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1015",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#A18FFB>紫色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "14"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 9,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  },
+  "RSDX1016": {
+    "Id": "RSDX1016",
+    "Name": "泼水成彩·16",
+    "DnameLan": "activeLan_colorGameLevel_dnamelan_RSDX1016",
+    "Conditions": [
+      1001
+    ],
+    "ConditionsDesc": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "ConditionsDescLan": "activeLan_colorGameLevel_conditionsDesclan_RSDX1016",
+    "ConditionsDescLanText": "收藏家可以翻动色块，当水面全部变为<color=#FF87A7>粉色</color>即可获得胜利。",
+    "UnlockParam": [
+      "RSDX1001",
+      "15"
+    ],
+    "Reward": [
+      {
+        "id": "1",
+        "count": 40
+      },
+      {
+        "id": "5267",
+        "count": 1000
+      }
+    ],
+    "Cost": 9,
+    "Color": [
+      1001,
+      1002,
+      1003,
+      1004
+    ],
+    "SkipTime": 60
+  }
+}

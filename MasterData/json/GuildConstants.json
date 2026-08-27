@@ -1,0 +1,73 @@
+{
+  "GuildNameLength": 24,
+  "GuildJobCannotChangePermission": [
+    [
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "GuildCreationCost": [
+    {
+      "id": "1",
+      "count": 100
+    }
+  ],
+  "GuildJobChangePermission": [
+    [
+      1,
+      2,
+      3,
+      4
+    ]
+  ],
+  "GuildAnnounceChangePermission": [
+    1
+  ],
+  "GuildApplyHandlePermission": [
+    1
+  ],
+  "GuildKickOutPermission": [
+    1
+  ],
+  "GuildLevelUpPermission": [
+    1
+  ],
+  "ExitGuildCooling": 1440,
+  "Presidentsautomatictransfer": 43200,
+  "GuildAutomaticallyDissolved": 86400,
+  "GuildMemberLimit": 20,
+  "ApplicationGuildLimit": 30,
+  "RefuseApplication": 86400,
+  "GuildFilterInterval": 30,
+  "GuildRenameCost": [
+    {
+      "id": "1",
+      "count": 100
+    }
+  ],
+  "GuildRenameCooldown": 43200,
+  "GuildFundingCap": 20000000,
+  "OneclickApplyLimit": 20,
+  "RecommendListRefreshTime": 30,
+  "GuildNameChangePermission": [
+    1
+  ],
+  "GuildMutePermission": null,
+  "GuildMuteLevels": null,
+  "GuildSpamMsgCount": 10,
+  "GuildSpamTimeWindow": 3,
+  "GuildSpamMuteMinutes": 30,
+  "GuildChatMsgTotalLimit": 200,
+  "GuildChatSendMsgLenLimit": 50,
+  "GuildChatSendMsgInterval": 2,
+  "GuildChatReceiveInterval": 12
+}

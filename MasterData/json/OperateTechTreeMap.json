@@ -1,0 +1,639 @@
+{
+  "1": {
+    "Id": "1",
+    "Name": "加速生产",
+    "Type": 1,
+    "Description": "解锁基础材料建筑生产加速功能",
+    "OperateSceneID": "",
+    "Parameter": [],
+    "MaxLevel": 1,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [],
+    "UpgradeConsumptionItem": [],
+    "NameLan": "activeLan_operateTechTree_namelan_1",
+    "NameLanText": "加速生产",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_1",
+    "DescriptionLanText": "解锁基础材料建筑生产加速功能",
+    "PrerequisitesTech": [],
+    "Icon": "ui_hd_trj_kjs_01"
+  },
+  "10": {
+    "Id": "10",
+    "Name": "茶叶行",
+    "Type": 4,
+    "Description": "茶叶行生产产量提升%d%%",
+    "OperateSceneID": "1013",
+    "Parameter": [
+      1000,
+      2000,
+      3000,
+      4000
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_10",
+    "NameLanText": "茶叶行",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_10",
+    "DescriptionLanText": "茶叶行生产产量提升%d%%",
+    "PrerequisitesTech": [
+      "7",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_10"
+  },
+  "11": {
+    "Id": "11",
+    "Name": "利用松木",
+    "Type": 5,
+    "Description": "升级建筑需要消耗的松木数量削减%d%%",
+    "OperateSceneID": "",
+    "Parameter": [
+      500
+    ],
+    "MaxLevel": 1,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 2000
+      }
+    ],
+    "UpgradeConsumption": [],
+    "UpgradeConsumptionItem": [],
+    "NameLan": "activeLan_operateTechTree_namelan_11",
+    "NameLanText": "利用松木",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_11",
+    "DescriptionLanText": "升级建筑需要消耗的松木数量削减%d%%",
+    "PrerequisitesTech": [
+      "8",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_11"
+  },
+  "12": {
+    "Id": "12",
+    "Name": "利息提升",
+    "Type": 7,
+    "Description": "挂机产出活动代币增加%d%%",
+    "OperateSceneID": "1002",
+    "Parameter": [
+      500
+    ],
+    "MaxLevel": 1,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 3000
+      }
+    ],
+    "UpgradeConsumption": [],
+    "UpgradeConsumptionItem": [],
+    "NameLan": "activeLan_operateTechTree_namelan_12",
+    "NameLanText": "利息提升",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_12",
+    "DescriptionLanText": "挂机产出活动代币增加%d%%",
+    "PrerequisitesTech": [
+      "11",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_12"
+  },
+  "13": {
+    "Id": "13",
+    "Name": "利息再提升",
+    "Type": 7,
+    "Description": "挂机产出活动代币增加%d%%",
+    "OperateSceneID": "1002",
+    "Parameter": [
+      500
+    ],
+    "MaxLevel": 1,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 6000
+      }
+    ],
+    "UpgradeConsumption": [],
+    "UpgradeConsumptionItem": [],
+    "NameLan": "activeLan_operateTechTree_namelan_13",
+    "NameLanText": "利息再提升",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_13",
+    "DescriptionLanText": "挂机产出活动代币增加%d%%",
+    "PrerequisitesTech": [
+      "11",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_13"
+  },
+  "2": {
+    "Id": "2",
+    "Name": "麻将馆",
+    "Type": 2,
+    "Description": "麻将馆生产速度提升%d%%",
+    "OperateSceneID": "1006",
+    "Parameter": [
+      200,
+      400,
+      600,
+      800
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_2",
+    "NameLanText": "麻将馆",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_2",
+    "DescriptionLanText": "麻将馆生产速度提升%d%%",
+    "PrerequisitesTech": [
+      "1",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_02"
+  },
+  "3": {
+    "Id": "3",
+    "Name": "文化交流处",
+    "Type": 2,
+    "Description": "文化交流处生产速度提升%d%%",
+    "OperateSceneID": "1007",
+    "Parameter": [
+      200,
+      400,
+      600,
+      800
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_3",
+    "NameLanText": "文化交流处",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_3",
+    "DescriptionLanText": "文化交流处生产速度提升%d%%",
+    "PrerequisitesTech": [
+      "1",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_03"
+  },
+  "4": {
+    "Id": "4",
+    "Name": "中医馆",
+    "Type": 2,
+    "Description": "中医馆生产速度提升%d%%",
+    "OperateSceneID": "1008",
+    "Parameter": [
+      200,
+      400,
+      600,
+      800
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_4",
+    "NameLanText": "中医馆",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_4",
+    "DescriptionLanText": "中医馆生产速度提升%d%%",
+    "PrerequisitesTech": [
+      "1",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_04"
+  },
+  "5": {
+    "Id": "5",
+    "Name": "酒楼",
+    "Type": 2,
+    "Description": "酒楼生产速度提升%d%%",
+    "OperateSceneID": "1009",
+    "Parameter": [
+      200,
+      400,
+      600,
+      800
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_5",
+    "NameLanText": "酒楼",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_5",
+    "DescriptionLanText": "酒楼生产速度提升%d%%",
+    "PrerequisitesTech": [
+      "1",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_05"
+  },
+  "6": {
+    "Id": "6",
+    "Name": "门神工艺坊",
+    "Type": 2,
+    "Description": "门神工艺坊生产速度提升%d%%",
+    "OperateSceneID": "1010",
+    "Parameter": [
+      200,
+      400,
+      600,
+      800
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_6",
+    "NameLanText": "门神工艺坊",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_6",
+    "DescriptionLanText": "门神工艺坊生产速度提升%d%%",
+    "PrerequisitesTech": [
+      "1",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_06"
+  },
+  "7": {
+    "Id": "7",
+    "Name": "加速合成",
+    "Type": 3,
+    "Description": "解锁合成材料建筑生产加速功能",
+    "OperateSceneID": "",
+    "Parameter": [],
+    "MaxLevel": 1,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [],
+    "UpgradeConsumptionItem": [],
+    "NameLan": "activeLan_operateTechTree_namelan_7",
+    "NameLanText": "加速合成",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_7",
+    "DescriptionLanText": "解锁合成材料建筑生产加速功能",
+    "PrerequisitesTech": [
+      "5",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_07"
+  },
+  "8": {
+    "Id": "8",
+    "Name": "冰室",
+    "Type": 4,
+    "Description": "冰室生产产量提升%d%%",
+    "OperateSceneID": "1011",
+    "Parameter": [
+      1000,
+      2000,
+      3000,
+      4000
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_8",
+    "NameLanText": "冰室",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_8",
+    "DescriptionLanText": "冰室生产产量提升%d%%",
+    "PrerequisitesTech": [
+      "7",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_08"
+  },
+  "9": {
+    "Id": "9",
+    "Name": "卤味店",
+    "Type": 4,
+    "Description": "卤味店生产产量提升%d%%",
+    "OperateSceneID": "1012",
+    "Parameter": [
+      1000,
+      2000,
+      3000,
+      4000
+    ],
+    "MaxLevel": 4,
+    "UnlockConsumption": [
+      {
+        "id": "5257",
+        "count": 100
+      }
+    ],
+    "UpgradeConsumption": [
+      [
+        "5257",
+        "1000"
+      ],
+      [
+        "5257",
+        "2000"
+      ],
+      [
+        "5257",
+        "3000"
+      ]
+    ],
+    "UpgradeConsumptionItem": [
+      [
+        {
+          "id": "5257",
+          "count": 1000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 2000
+        }
+      ],
+      [
+        {
+          "id": "5257",
+          "count": 3000
+        }
+      ]
+    ],
+    "NameLan": "activeLan_operateTechTree_namelan_9",
+    "NameLanText": "卤味店",
+    "DescriptionLan": "activeLan_operateTechTree_descriptionlan_9",
+    "DescriptionLanText": "卤味店生产产量提升%d%%",
+    "PrerequisitesTech": [
+      "7",
+      "1"
+    ],
+    "Icon": "ui_hd_trj_kjs_09"
+  }
+}

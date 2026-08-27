@@ -1,0 +1,128 @@
+{
+  "10001": {
+    "Id": "10001",
+    "DungeonId": [
+      "YX10000101",
+      "YX10000102"
+    ],
+    "Unlock": "",
+    "Reward": [],
+    "Icon": "ui_ns_gk_ns1",
+    "Index": 1
+  },
+  "10002": {
+    "Id": "10002",
+    "DungeonId": [
+      "YX10000201",
+      "YX10000202"
+    ],
+    "Unlock": "10001",
+    "Reward": [],
+    "Icon": "ui_ns_gk_ns1",
+    "Index": 2
+  },
+  "10003": {
+    "Id": "10003",
+    "DungeonId": [
+      "YX10000301",
+      "YX10000302"
+    ],
+    "Unlock": "10002",
+    "Reward": [
+      {
+        "id": "1",
+        "count": 300
+      },
+      {
+        "id": "24",
+        "count": 150
+      }
+    ],
+    "Icon": "ui_ns_gk_ns2",
+    "Index": 3
+  },
+  "10004": {
+    "Id": "10004",
+    "DungeonId": [
+      "YX10000401",
+      "YX10000402"
+    ],
+    "Unlock": "10003",
+    "Reward": [],
+    "Icon": "ui_ns_gk_ns1",
+    "Index": 4
+  },
+  "10005": {
+    "Id": "10005",
+    "DungeonId": [
+      "YX10000501",
+      "YX10000502"
+    ],
+    "Unlock": "10004",
+    "Reward": [],
+    "Icon": "ui_ns_gk_ns1",
+    "Index": 5
+  },
+  "10006": {
+    "Id": "10006",
+    "DungeonId": [
+      "YX10000601",
+      "YX10000602"
+    ],
+    "Unlock": "10005",
+    "Reward": [
+      {
+        "id": "1",
+        "count": 300
+      },
+      {
+        "id": "24",
+        "count": 150
+      }
+    ],
+    "Icon": "ui_ns_gk_ns2",
+    "Index": 6
+  },
+  "10007": {
+    "Id": "10007",
+    "DungeonId": [
+      "YX10000701",
+      "YX10000702"
+    ],
+    "Unlock": "10006",
+    "Reward": [],
+    "Icon": "ui_ns_gk_ns1",
+    "Index": 7
+  },
+  "10008": {
+    "Id": "10008",
+    "DungeonId": [
+      "YX10000801",
+      "YX10000802"
+    ],
+    "Unlock": "10007",
+    "Reward": [],
+    "Icon": "ui_ns_gk_ns1",
+    "Index": 8
+  },
+  "10009": {
+    "Id": "10009",
+    "DungeonId": [
+      "YX10000901",
+      "YX10000902"
+    ],
+    "Unlock": "10008",
+    "Reward": [
+      {
+        "id": "1",
+        "count": 100
+      },
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Icon": "ui_ns_gk_ns2",
+    "Index": 9
+  }
+}

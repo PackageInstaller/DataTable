@@ -1,0 +1,1201 @@
+{
+  "dice1001": {
+    "EventID": "dice1001",
+    "ModelID": "HH_terrain01_07",
+    "EventModelID": "HH_terrain01_09",
+    "EventParam": [
+      "diceAdd",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "dice1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dice1001",
+    "EventNameLanText": "骰子数量增加",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dice1001",
+    "EventDesLanText": "骰子数量增加1个"
+  },
+  "dice1002": {
+    "EventID": "dice1002",
+    "ModelID": "HH_terrain01_07",
+    "EventModelID": "HH_terrain01_10",
+    "EventParam": [
+      "diceMinus",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "dice2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dice1002",
+    "EventNameLanText": "骰子数量减少",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dice1002",
+    "EventDesLanText": "骰子数量减少1个"
+  },
+  "dice1101": {
+    "EventID": "dice1101",
+    "ModelID": "HH_terrain01_03",
+    "EventModelID": "",
+    "EventParam": [
+      "diceAdd",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "1",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "dice1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dice1101",
+    "EventNameLanText": "骰子数量增加",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dice1101",
+    "EventDesLanText": "骰子数量增加1个"
+  },
+  "dice1102": {
+    "EventID": "dice1102",
+    "ModelID": "HH_terrain01_03",
+    "EventModelID": "",
+    "EventParam": [
+      "diceMinus",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "1",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "dice2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dice1102",
+    "EventNameLanText": "骰子数量减少",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dice1102",
+    "EventDesLanText": "骰子数量减少1个"
+  },
+  "dice2101": {
+    "EventID": "dice2101",
+    "ModelID": "HH_terrain01_03",
+    "EventModelID": "",
+    "EventParam": [
+      "diceAdd",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "1",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "dice1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dice2101",
+    "EventNameLanText": "骰子数量增加",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dice2101",
+    "EventDesLanText": "骰子数量增加2个"
+  },
+  "dice2102": {
+    "EventID": "dice2102",
+    "ModelID": "HH_terrain01_03",
+    "EventModelID": "",
+    "EventParam": [
+      "diceMinus",
+      "2"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "1",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "dice2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dice2102",
+    "EventNameLanText": "骰子数量减少",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dice2102",
+    "EventDesLanText": "骰子数量减少2个"
+  },
+  "dungeon1001": {
+    "EventID": "dungeon1001",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100101"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon1001",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon1001",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon1002": {
+    "EventID": "dungeon1002",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100102"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon1002",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon1002",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon1003": {
+    "EventID": "dungeon1003",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100103"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon1003",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon1003",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon2001": {
+    "EventID": "dungeon2001",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100201"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon2001",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon2001",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon2002": {
+    "EventID": "dungeon2002",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100202"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon2002",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon2002",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon2003": {
+    "EventID": "dungeon2003",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100203"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon2003",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon2003",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon3001": {
+    "EventID": "dungeon3001",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100301"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon3001",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon3001",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon3002": {
+    "EventID": "dungeon3002",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100302"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon3002",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon3002",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon3003": {
+    "EventID": "dungeon3003",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100303"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon3003",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon3003",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon4001": {
+    "EventID": "dungeon4001",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100401"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon4001",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon4001",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon4002": {
+    "EventID": "dungeon4002",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100402"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon4002",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon4002",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon4003": {
+    "EventID": "dungeon4003",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100403"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon4003",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon4003",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon5001": {
+    "EventID": "dungeon5001",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100501"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon5001",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon5001",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon5002": {
+    "EventID": "dungeon5002",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100502"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon5002",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon5002",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon5003": {
+    "EventID": "dungeon5003",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100503"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon5003",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon5003",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon6001": {
+    "EventID": "dungeon6001",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100601"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon6001",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon6001",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon6002": {
+    "EventID": "dungeon6002",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100602"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon6002",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon6002",
+    "EventDesLanText": "海中恶徒"
+  },
+  "dungeon6003": {
+    "EventID": "dungeon6003",
+    "ModelID": "HH_terrain05_03",
+    "EventModelID": "",
+    "EventParam": [
+      "dungeon",
+      "HH100603"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "dungeon",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_dungeon6003",
+    "EventNameLanText": "海中恶徒",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_dungeon6003",
+    "EventDesLanText": "海中恶徒"
+  },
+  "empty1001": {
+    "EventID": "empty1001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "empty"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "end1001": {
+    "EventID": "end1001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "HH_terrain03_02",
+    "EventParam": [
+      "end"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "end2001": {
+    "EventID": "end2001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "HH_terrain03_03",
+    "EventParam": [
+      "end"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "end3001": {
+    "EventID": "end3001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "HH_terrain03_01",
+    "EventParam": [
+      "end"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "end4001": {
+    "EventID": "end4001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "HH_terrain04_04",
+    "EventParam": [
+      "end"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "end5001": {
+    "EventID": "end5001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "HH_terrain04_05",
+    "EventParam": [
+      "end"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "end6001": {
+    "EventID": "end6001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "HH_terrain03_04",
+    "EventParam": [
+      "end"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "enemy1001": {
+    "EventID": "enemy1001",
+    "ModelID": "HH_terrain05_05",
+    "EventModelID": "",
+    "EventParam": [
+      "corsair",
+      "HH100701",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "enemy2001": {
+    "EventID": "enemy2001",
+    "ModelID": "HH_terrain05_05",
+    "EventModelID": "",
+    "EventParam": [
+      "corsair",
+      "HH100702",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "enemy3001": {
+    "EventID": "enemy3001",
+    "ModelID": "HH_terrain05_05",
+    "EventModelID": "",
+    "EventParam": [
+      "corsair",
+      "HH100703",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "enemy4001": {
+    "EventID": "enemy4001",
+    "ModelID": "HH_terrain05_05",
+    "EventModelID": "",
+    "EventParam": [
+      "corsair",
+      "HH100801",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "enemy5001": {
+    "EventID": "enemy5001",
+    "ModelID": "HH_terrain05_05",
+    "EventModelID": "",
+    "EventParam": [
+      "corsair",
+      "HH100802",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "enemy6001": {
+    "EventID": "enemy6001",
+    "ModelID": "HH_terrain05_05",
+    "EventModelID": "",
+    "EventParam": [
+      "corsair",
+      "HH100803",
+      "1"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 1,
+    "DiceIn": 1,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "goods1001": {
+    "EventID": "goods1001",
+    "ModelID": "HH_terrain05_01",
+    "EventModelID": "",
+    "EventParam": [
+      "goodsAdd",
+      "10"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "good1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_goods1001",
+    "EventNameLanText": "获得货物",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_goods1001",
+    "EventDesLanText": "获得随机货物10个"
+  },
+  "goods1002": {
+    "EventID": "goods1002",
+    "ModelID": "HH_terrain05_02",
+    "EventModelID": "",
+    "EventParam": [
+      "goodsMinus",
+      "10"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "good2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_goods1002",
+    "EventNameLanText": "失去货物",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_goods1002",
+    "EventDesLanText": "失去随机货物的10%"
+  },
+  "health1001": {
+    "EventID": "health1001",
+    "ModelID": "HH_terrain01_03",
+    "EventModelID": "",
+    "EventParam": [
+      "healthDown",
+      "25%"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "1",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "health2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_health1001",
+    "EventNameLanText": "船员生命值减少",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_health1001",
+    "EventDesLanText": "船员生命值减少25%"
+  },
+  "health1002": {
+    "EventID": "health1002",
+    "ModelID": "HH_terrain01_03",
+    "EventModelID": "",
+    "EventParam": [
+      "healthUp",
+      "25%"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "1",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "health1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_health1002",
+    "EventNameLanText": "船员生命值回复",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_health1002",
+    "EventDesLanText": "船员生命值回复25%"
+  },
+  "move1001": {
+    "EventID": "move1001",
+    "ModelID": "HH_terrain01_01",
+    "EventModelID": "",
+    "EventParam": [
+      "positionGo",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "move1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_move1001",
+    "EventNameLanText": "前进",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_move1001",
+    "EventDesLanText": "前进2格"
+  },
+  "move1002": {
+    "EventID": "move1002",
+    "ModelID": "HH_terrain01_02",
+    "EventModelID": "",
+    "EventParam": [
+      "positionBack",
+      "2"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "move2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_move1002",
+    "EventNameLanText": "后退",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_move1002",
+    "EventDesLanText": "后退2格"
+  },
+  "reward1001": {
+    "EventID": "reward1001",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "2104",
+      "10",
+      "5160",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward1001",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward1001",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward1002": {
+    "EventID": "reward1002",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "2401",
+      "5",
+      "5160",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward1002",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward1002",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward2001": {
+    "EventID": "reward2001",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "2304",
+      "10",
+      "5160",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward2001",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward2001",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward2002": {
+    "EventID": "reward2002",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "3213",
+      "5",
+      "5160",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward2002",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward2002",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward3001": {
+    "EventID": "reward3001",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "3103",
+      "1",
+      "5160",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward3001",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward3001",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward3002": {
+    "EventID": "reward3002",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "3103",
+      "1",
+      "5160",
+      "1"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward3002",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward3002",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward4001": {
+    "EventID": "reward4001",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "2105",
+      "5",
+      "5160",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward4001",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward4001",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward4002": {
+    "EventID": "reward4002",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "2404",
+      "2",
+      "5160",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward4002",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward4002",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward5001": {
+    "EventID": "reward5001",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "2305",
+      "5",
+      "5160",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward5001",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward5001",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward5002": {
+    "EventID": "reward5002",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "3214",
+      "5",
+      "5160",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward5002",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward5002",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward6001": {
+    "EventID": "reward6001",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "3103",
+      "1",
+      "5160",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward6001",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward6001",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "reward6002": {
+    "EventID": "reward6002",
+    "ModelID": "HH_terrain01_05",
+    "EventModelID": "HH_terrain04_03",
+    "EventParam": [
+      "item",
+      "3103",
+      "1",
+      "5160",
+      "2"
+    ],
+    "Effect": 1,
+    "FinishLimit": "1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "reward",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_reward6002",
+    "EventNameLanText": "宝箱奖励",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_reward6002",
+    "EventDesLanText": "宝箱奖励"
+  },
+  "road4001": {
+    "EventID": "road4001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "goTo",
+      "21",
+      "37"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "road4002": {
+    "EventID": "road4002",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "returnTo",
+      "23"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "road5001": {
+    "EventID": "road5001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "goTo",
+      "4",
+      "21"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "road5002": {
+    "EventID": "road5002",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "returnTo",
+      "18"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "road6001": {
+    "EventID": "road6001",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "goTo",
+      "25",
+      "27"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "road6002": {
+    "EventID": "road6002",
+    "ModelID": "HH_terrain01_04",
+    "EventModelID": "",
+    "EventParam": [
+      "returnTo",
+      "26"
+    ],
+    "Effect": 0,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "",
+    "EventNameLan": "",
+    "EventDesLan": ""
+  },
+  "wealth1001": {
+    "EventID": "wealth1001",
+    "ModelID": "HH_terrain05_04",
+    "EventModelID": "",
+    "EventParam": [
+      "itemAdd",
+      "5130",
+      "10000"
+    ],
+    "Effect": 1,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "wealth1",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_wealth1001",
+    "EventNameLanText": "获得金币",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_wealth1001",
+    "EventDesLanText": "获得海旅金币10000"
+  },
+  "wealth1002": {
+    "EventID": "wealth1002",
+    "ModelID": "HH_terrain05_06",
+    "EventModelID": "",
+    "EventParam": [
+      "itemMinus",
+      "5130",
+      "10000"
+    ],
+    "Effect": 2,
+    "FinishLimit": "-1",
+    "EventGroup": "",
+    "DiceOut": 0,
+    "DiceIn": 0,
+    "EventPic": "wealth2",
+    "EventNameLan": "sailingLan_salingEvent_eventNameLan_wealth1002",
+    "EventNameLanText": "失去金币",
+    "EventDesLan": "sailingLan_salingEvent_eventDesLan_wealth1002",
+    "EventDesLanText": "失去海旅金币10000"
+  }
+}

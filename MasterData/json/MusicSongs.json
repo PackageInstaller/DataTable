@@ -1,0 +1,808 @@
+[
+  {
+    "id": "1001",
+    "album": "CD101",
+    "eventID": "mus101",
+    "typeGroup": 1,
+    "type": "Easy",
+    "unlock": [],
+    "name": "《停靠的站台》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1001",
+    "nameLanText": "《停靠的站台》"
+  },
+  {
+    "id": "1002",
+    "album": "CD101",
+    "eventID": "mus102",
+    "typeGroup": 1,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "1001",
+      "3"
+    ],
+    "name": "《停靠的站台》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1002",
+    "nameLanText": "《停靠的站台》"
+  },
+  {
+    "id": "1003",
+    "album": "CD101",
+    "eventID": "mus103",
+    "typeGroup": 1,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "1002",
+      "2"
+    ],
+    "name": "《停靠的站台》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1003",
+    "nameLanText": "《停靠的站台》"
+  },
+  {
+    "id": "1004",
+    "album": "CD101",
+    "eventID": "mus104",
+    "typeGroup": 2,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "1001",
+      "3000"
+    ],
+    "name": "《天桥街区》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1004",
+    "nameLanText": "《天桥街区》"
+  },
+  {
+    "id": "1005",
+    "album": "CD101",
+    "eventID": "mus105",
+    "typeGroup": 2,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "1004",
+      "3"
+    ],
+    "name": "《天桥街区》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1005",
+    "nameLanText": "《天桥街区》"
+  },
+  {
+    "id": "1006",
+    "album": "CD101",
+    "eventID": "mus106",
+    "typeGroup": 2,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "1005",
+      "2"
+    ],
+    "name": "《天桥街区》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1006",
+    "nameLanText": "《天桥街区》"
+  },
+  {
+    "id": "1010",
+    "album": "CD101",
+    "eventID": "mus110",
+    "typeGroup": 3,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "1004",
+      "9000"
+    ],
+    "name": "《断崖吊桥》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1010",
+    "nameLanText": "《断崖吊桥》"
+  },
+  {
+    "id": "1011",
+    "album": "CD101",
+    "eventID": "mus111",
+    "typeGroup": 3,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "1010",
+      "3"
+    ],
+    "name": "《断崖吊桥》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1011",
+    "nameLanText": "《断崖吊桥》"
+  },
+  {
+    "id": "1012",
+    "album": "CD101",
+    "eventID": "mus112",
+    "typeGroup": 3,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "1011",
+      "2"
+    ],
+    "name": "《断崖吊桥》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1012",
+    "nameLanText": "《断崖吊桥》"
+  },
+  {
+    "id": "1013",
+    "album": "CD101",
+    "eventID": "mus113",
+    "typeGroup": 4,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "1010",
+      "8000"
+    ],
+    "name": "《清音迭奏》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1013",
+    "nameLanText": "《清音迭奏》"
+  },
+  {
+    "id": "1014",
+    "album": "CD101",
+    "eventID": "mus114",
+    "typeGroup": 4,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "1013",
+      "3"
+    ],
+    "name": "《清音迭奏》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1014",
+    "nameLanText": "《清音迭奏》"
+  },
+  {
+    "id": "1015",
+    "album": "CD101",
+    "eventID": "mus115",
+    "typeGroup": 4,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "1014",
+      "2"
+    ],
+    "name": "《清音迭奏》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1015",
+    "nameLanText": "《清音迭奏》"
+  },
+  {
+    "id": "1016",
+    "album": "CD101",
+    "eventID": "mus116",
+    "typeGroup": 5,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "1013",
+      "7000"
+    ],
+    "name": "《曲解将至-前奏曲》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1016",
+    "nameLanText": "《曲解将至-前奏曲》"
+  },
+  {
+    "id": "1017",
+    "album": "CD101",
+    "eventID": "mus117",
+    "typeGroup": 5,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "1016",
+      "3"
+    ],
+    "name": "《曲解将至-前奏曲》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1017",
+    "nameLanText": "《曲解将至-前奏曲》"
+  },
+  {
+    "id": "1018",
+    "album": "CD101",
+    "eventID": "mus118",
+    "typeGroup": 5,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "1017",
+      "2"
+    ],
+    "name": "《曲解将至-前奏曲》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1018",
+    "nameLanText": "《曲解将至-前奏曲》"
+  },
+  {
+    "id": "1022",
+    "album": "CD101",
+    "eventID": "mus122",
+    "typeGroup": 6,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "1016",
+      "5000"
+    ],
+    "name": "《藏经阁》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1022",
+    "nameLanText": "《藏经阁》"
+  },
+  {
+    "id": "1023",
+    "album": "CD101",
+    "eventID": "mus123",
+    "typeGroup": 6,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "1022",
+      "3"
+    ],
+    "name": "《藏经阁》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1023",
+    "nameLanText": "《藏经阁》"
+  },
+  {
+    "id": "1024",
+    "album": "CD101",
+    "eventID": "mus124",
+    "typeGroup": 6,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "1023",
+      "2"
+    ],
+    "name": "《藏经阁》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_1024",
+    "nameLanText": "《藏经阁》"
+  },
+  {
+    "id": "2001",
+    "album": "CD102",
+    "eventID": "mus201",
+    "typeGroup": 7,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "1022",
+      "10000"
+    ],
+    "name": "《小小收藏家》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2001",
+    "nameLanText": "《小小收藏家》"
+  },
+  {
+    "id": "2002",
+    "album": "CD102",
+    "eventID": "mus202",
+    "typeGroup": 7,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "2001",
+      "3"
+    ],
+    "name": "《小小收藏家》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2002",
+    "nameLanText": "《小小收藏家》"
+  },
+  {
+    "id": "2003",
+    "album": "CD102",
+    "eventID": "mus203",
+    "typeGroup": 7,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "2002",
+      "2"
+    ],
+    "name": "《小小收藏家》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2003",
+    "nameLanText": "《小小收藏家》"
+  },
+  {
+    "id": "2007",
+    "album": "CD102",
+    "eventID": "mus207",
+    "typeGroup": 8,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "2001",
+      "5000"
+    ],
+    "name": "《火婴》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2007",
+    "nameLanText": "《火婴》"
+  },
+  {
+    "id": "2008",
+    "album": "CD102",
+    "eventID": "mus208",
+    "typeGroup": 8,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "2007",
+      "3"
+    ],
+    "name": "《火婴》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2008",
+    "nameLanText": "《火婴》"
+  },
+  {
+    "id": "2009",
+    "album": "CD102",
+    "eventID": "mus209",
+    "typeGroup": 8,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "2008",
+      "2"
+    ],
+    "name": "《火婴》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2009",
+    "nameLanText": "《火婴》"
+  },
+  {
+    "id": "2010",
+    "album": "CD102",
+    "eventID": "mus210",
+    "typeGroup": 9,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "2007",
+      "12000"
+    ],
+    "name": "《千山流云》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2010",
+    "nameLanText": "《千山流云》"
+  },
+  {
+    "id": "2011",
+    "album": "CD102",
+    "eventID": "mus211",
+    "typeGroup": 9,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "2010",
+      "3"
+    ],
+    "name": "《千山流云》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2011",
+    "nameLanText": "《千山流云》"
+  },
+  {
+    "id": "2012",
+    "album": "CD102",
+    "eventID": "mus212",
+    "typeGroup": 9,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "2011",
+      "2"
+    ],
+    "name": "《千山流云》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2012",
+    "nameLanText": "《千山流云》"
+  },
+  {
+    "id": "2016",
+    "album": "CD102",
+    "eventID": "mus216",
+    "typeGroup": 10,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "2010",
+      "8000"
+    ],
+    "name": "《春寄长信》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2016",
+    "nameLanText": "《春寄长信》"
+  },
+  {
+    "id": "2017",
+    "album": "CD102",
+    "eventID": "mus217",
+    "typeGroup": 10,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "2016",
+      "3"
+    ],
+    "name": "《春寄长信》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2017",
+    "nameLanText": "《春寄长信》"
+  },
+  {
+    "id": "2018",
+    "album": "CD102",
+    "eventID": "mus218",
+    "typeGroup": 10,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "2017",
+      "2"
+    ],
+    "name": "《春寄长信》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2018",
+    "nameLanText": "《春寄长信》"
+  },
+  {
+    "id": "2019",
+    "album": "CD102",
+    "eventID": "mus219",
+    "typeGroup": 11,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "2016",
+      "16000"
+    ],
+    "name": "《码头》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2019",
+    "nameLanText": "《码头》"
+  },
+  {
+    "id": "2020",
+    "album": "CD102",
+    "eventID": "mus220",
+    "typeGroup": 11,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "2019",
+      "3"
+    ],
+    "name": "《码头》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2020",
+    "nameLanText": "《码头》"
+  },
+  {
+    "id": "2021",
+    "album": "CD102",
+    "eventID": "mus221",
+    "typeGroup": 11,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "2020",
+      "2"
+    ],
+    "name": "《码头》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2021",
+    "nameLanText": "《码头》"
+  },
+  {
+    "id": "2022",
+    "album": "CD102",
+    "eventID": "mus222",
+    "typeGroup": 12,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "2019",
+      "11000"
+    ],
+    "name": "《冰释》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2022",
+    "nameLanText": "《冰释》"
+  },
+  {
+    "id": "2023",
+    "album": "CD102",
+    "eventID": "mus223",
+    "typeGroup": 12,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "2022",
+      "3"
+    ],
+    "name": "《冰释》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2023",
+    "nameLanText": "《冰释》"
+  },
+  {
+    "id": "2024",
+    "album": "CD102",
+    "eventID": "mus224",
+    "typeGroup": 12,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "2023",
+      "2"
+    ],
+    "name": "《冰释》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_2024",
+    "nameLanText": "《冰释》"
+  },
+  {
+    "id": "3001",
+    "album": "CD103",
+    "eventID": "mus301",
+    "typeGroup": 13,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "2022",
+      "7000"
+    ],
+    "name": "《西安》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3001",
+    "nameLanText": "《西安》"
+  },
+  {
+    "id": "3002",
+    "album": "CD103",
+    "eventID": "mus302",
+    "typeGroup": 13,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "3001",
+      "3"
+    ],
+    "name": "《西安》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3002",
+    "nameLanText": "《西安》"
+  },
+  {
+    "id": "3003",
+    "album": "CD103",
+    "eventID": "mus303",
+    "typeGroup": 13,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "3002",
+      "2"
+    ],
+    "name": "《西安》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3003",
+    "nameLanText": "《西安》"
+  },
+  {
+    "id": "3007",
+    "album": "CD103",
+    "eventID": "mus307",
+    "typeGroup": 14,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "3001",
+      "13000"
+    ],
+    "name": "《海兴大桥》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3007",
+    "nameLanText": "《海兴大桥》"
+  },
+  {
+    "id": "3008",
+    "album": "CD103",
+    "eventID": "mus308",
+    "typeGroup": 14,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "3007",
+      "3"
+    ],
+    "name": "《海兴大桥》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3008",
+    "nameLanText": "《海兴大桥》"
+  },
+  {
+    "id": "3009",
+    "album": "CD103",
+    "eventID": "mus309",
+    "typeGroup": 14,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "3008",
+      "2"
+    ],
+    "name": "《海兴大桥》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3009",
+    "nameLanText": "《海兴大桥》"
+  },
+  {
+    "id": "3010",
+    "album": "CD103",
+    "eventID": "mus310",
+    "typeGroup": 15,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "3007",
+      "9000"
+    ],
+    "name": "《永夏晴海》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3010",
+    "nameLanText": "《永夏晴海》"
+  },
+  {
+    "id": "3011",
+    "album": "CD103",
+    "eventID": "mus311",
+    "typeGroup": 15,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "3010",
+      "3"
+    ],
+    "name": "《永夏晴海》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3011",
+    "nameLanText": "《永夏晴海》"
+  },
+  {
+    "id": "3012",
+    "album": "CD103",
+    "eventID": "mus312",
+    "typeGroup": 15,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "3011",
+      "2"
+    ],
+    "name": "《永夏晴海》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3012",
+    "nameLanText": "《永夏晴海》"
+  },
+  {
+    "id": "3016",
+    "album": "CD103",
+    "eventID": "mus316",
+    "typeGroup": 16,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "3010",
+      "11000"
+    ],
+    "name": "《万山连星》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3016",
+    "nameLanText": "《万山连星》"
+  },
+  {
+    "id": "3017",
+    "album": "CD103",
+    "eventID": "mus317",
+    "typeGroup": 16,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "3016",
+      "3"
+    ],
+    "name": "《万山连星》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3017",
+    "nameLanText": "《万山连星》"
+  },
+  {
+    "id": "3018",
+    "album": "CD103",
+    "eventID": "mus318",
+    "typeGroup": 16,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "3017",
+      "2"
+    ],
+    "name": "《万山连星》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3018",
+    "nameLanText": "《万山连星》"
+  },
+  {
+    "id": "3019",
+    "album": "CD103",
+    "eventID": "mus319",
+    "typeGroup": 17,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "3016",
+      "15000"
+    ],
+    "name": "《破局》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3019",
+    "nameLanText": "《破局》"
+  },
+  {
+    "id": "3020",
+    "album": "CD103",
+    "eventID": "mus320",
+    "typeGroup": 17,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "3019",
+      "3"
+    ],
+    "name": "《破局》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3020",
+    "nameLanText": "《破局》"
+  },
+  {
+    "id": "3021",
+    "album": "CD103",
+    "eventID": "mus321",
+    "typeGroup": 17,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "3020",
+      "2"
+    ],
+    "name": "《破局》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3021",
+    "nameLanText": "《破局》"
+  },
+  {
+    "id": "3022",
+    "album": "CD103",
+    "eventID": "mus322",
+    "typeGroup": 18,
+    "type": "Easy",
+    "unlock": [
+      "1",
+      "3019",
+      "8000"
+    ],
+    "name": "《市井》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3022",
+    "nameLanText": "《市井》"
+  },
+  {
+    "id": "3023",
+    "album": "CD103",
+    "eventID": "mus323",
+    "typeGroup": 18,
+    "type": "Hard",
+    "unlock": [
+      "2",
+      "3022",
+      "3"
+    ],
+    "name": "《市井》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3023",
+    "nameLanText": "《市井》"
+  },
+  {
+    "id": "3024",
+    "album": "CD103",
+    "eventID": "mus324",
+    "typeGroup": 18,
+    "type": "Master",
+    "unlock": [
+      "2",
+      "3023",
+      "2"
+    ],
+    "name": "《市井》",
+    "nameLan": "MusYDWLan_MusicSong_nameLan_3024",
+    "nameLanText": "《市井》"
+  }
+]

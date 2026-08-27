@@ -1,0 +1,838 @@
+{
+  "AA001001": {
+    "id": "AA001001",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001001",
+    "NameLanText": "生命值",
+    "rareAttrs": {
+      "2": {
+        "initValue": 51,
+        "growValue": 100
+      },
+      "3": {
+        "initValue": 86,
+        "growValue": 140
+      },
+      "4": {
+        "initValue": 126,
+        "growValue": 220
+      },
+      "5": {
+        "initValue": 189,
+        "growValue": 320
+      }
+    },
+    "attrDisplayType": "",
+    "addAttr": "Hp_FIX",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1300,
+    "SRweight": 1300,
+    "SSRweight": 1300,
+    "URweight": 1300
+  },
+  "AA001002": {
+    "id": "AA001002",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001002",
+    "NameLanText": "生命值",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "Hp_PERCENT",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1000,
+    "SRweight": 1000,
+    "SSRweight": 1000,
+    "URweight": 1000
+  },
+  "AA001003": {
+    "id": "AA001003",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001003",
+    "NameLanText": "攻击力",
+    "rareAttrs": {
+      "2": {
+        "initValue": 21,
+        "growValue": 40
+      },
+      "3": {
+        "initValue": 35,
+        "growValue": 60
+      },
+      "4": {
+        "initValue": 75,
+        "growValue": 80
+      },
+      "5": {
+        "initValue": 112,
+        "growValue": 120
+      }
+    },
+    "attrDisplayType": "",
+    "addAttr": "Atk_FIX",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1300,
+    "SRweight": 1300,
+    "SSRweight": 1300,
+    "URweight": 1300
+  },
+  "AA001004": {
+    "id": "AA001004",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001004",
+    "NameLanText": "攻击力",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "Atk_PERCENT",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1000,
+    "SRweight": 1000,
+    "SSRweight": 1000,
+    "URweight": 1000
+  },
+  "AA001006": {
+    "id": "AA001006",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001006",
+    "NameLanText": "物理防御",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "PhysicDef_PERCENT",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1000,
+    "SRweight": 1000,
+    "SSRweight": 1000,
+    "URweight": 1000
+  },
+  "AA001008": {
+    "id": "AA001008",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001008",
+    "NameLanText": "构素防御",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "MagicDef_PERCENT",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1000,
+    "SRweight": 1000,
+    "SSRweight": 1000,
+    "URweight": 1000
+  },
+  "AA001012": {
+    "id": "AA001012",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001012",
+    "NameLanText": "护盾增益",
+    "rareAttrs": {
+      "2": {
+        "initValue": 1,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 3,
+        "growValue": 1
+      },
+      "4": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 2
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "SheildIncrease",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 1200,
+    "SRweight": 1200,
+    "SSRweight": 1200,
+    "URweight": 1200
+  },
+  "AA001013": {
+    "id": "AA001013",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001013",
+    "NameLanText": "警戒伤害提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 5,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "AlertAttackDmgIncrease",
+    "job": [
+      5
+    ],
+    "Rweight": 1200,
+    "SRweight": 1200,
+    "SSRweight": 1200,
+    "URweight": 1200
+  },
+  "AA001021": {
+    "id": "AA001021",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001021",
+    "NameLanText": "格挡率",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 3
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 4
+      },
+      "4": {
+        "initValue": 9,
+        "growValue": 5
+      },
+      "5": {
+        "initValue": 10,
+        "growValue": 6
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "Block",
+    "job": [
+      1
+    ],
+    "Rweight": 1000,
+    "SRweight": 1000,
+    "SSRweight": 1000,
+    "URweight": 1000
+  },
+  "AA001025": {
+    "id": "AA001025",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001025",
+    "NameLanText": "暴击率",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 3
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 4
+      },
+      "4": {
+        "initValue": 9,
+        "growValue": 5
+      },
+      "5": {
+        "initValue": 10,
+        "growValue": 6
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "Critical",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 720,
+    "SSRweight": 720,
+    "URweight": 720
+  },
+  "AA001026": {
+    "id": "AA001026",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001026",
+    "NameLanText": "暴击伤害",
+    "rareAttrs": {
+      "2": {
+        "initValue": 3,
+        "growValue": 2
+      },
+      "3": {
+        "initValue": 5,
+        "growValue": 3
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 5
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 7
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "CritDmg",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 720,
+    "SSRweight": 720,
+    "URweight": 720
+  },
+  "AA001027": {
+    "id": "AA001027",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001027",
+    "NameLanText": "回击伤害增加",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 5,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 3
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 4
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "FightBackDmgIncrease",
+    "job": [
+      1,
+      2,
+      3
+    ],
+    "Rweight": 0,
+    "SRweight": 960,
+    "SSRweight": 960,
+    "URweight": 960
+  },
+  "AA001028": {
+    "id": "AA001028",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001028",
+    "NameLanText": "连击伤害增加",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 5,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 3
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 4
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "DoubleHitDmgIncrease",
+    "job": [
+      2,
+      3
+    ],
+    "Rweight": 0,
+    "SRweight": 960,
+    "SSRweight": 960,
+    "URweight": 960
+  },
+  "AA001029": {
+    "id": "AA001029",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001029",
+    "NameLanText": "常击伤害提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 5,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 10,
+        "growValue": 3
+      },
+      "5": {
+        "initValue": 15,
+        "growValue": 4
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "CommonAttackDmgIncrease",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 800,
+    "SSRweight": 800,
+    "URweight": 800
+  },
+  "AA001030": {
+    "id": "AA001030",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001030",
+    "NameLanText": "治疗量提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 3,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 3,
+        "growValue": 1
+      },
+      "4": {
+        "initValue": 4,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "HealIncrease",
+    "job": [
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 960,
+    "SSRweight": 960,
+    "URweight": 960
+  },
+  "AA001031": {
+    "id": "AA001031",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001031",
+    "NameLanText": "受治疗提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 3,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 3,
+        "growValue": 1
+      },
+      "4": {
+        "initValue": 4,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "HealedIncrease",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 960,
+    "SSRweight": 960,
+    "URweight": 960
+  },
+  "AA001033": {
+    "id": "AA001033",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001041",
+    "NameLanText": "伤害提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 2,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 3,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 4,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "AllDmgIncrease",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 0,
+    "SSRweight": 500,
+    "URweight": 500
+  },
+  "AA001034": {
+    "id": "AA001034",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001043",
+    "NameLanText": "物理伤害提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 2,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 3,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 4,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "PhysicalDmgIncrease",
+    "job": [
+      1,
+      2,
+      3
+    ],
+    "Rweight": 0,
+    "SRweight": 0,
+    "SSRweight": 500,
+    "URweight": 500
+  },
+  "AA001035": {
+    "id": "AA001035",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001044",
+    "NameLanText": "构素伤害提升",
+    "rareAttrs": {
+      "2": {
+        "initValue": 2,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 3,
+        "growValue": 2
+      },
+      "4": {
+        "initValue": 4,
+        "growValue": 2
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 3
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "MagicDmgIncrease",
+    "job": [
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 0,
+    "SSRweight": 500,
+    "URweight": 500
+  },
+  "AA001036": {
+    "id": "AA001036",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001034",
+    "NameLanText": "物理伤害减免",
+    "rareAttrs": {
+      "2": {
+        "initValue": 0,
+        "growValue": 0
+      },
+      "3": {
+        "initValue": 0,
+        "growValue": 0
+      },
+      "4": {
+        "initValue": 1,
+        "growValue": 1
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 1
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "PhyDmgReductionIncrease",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 0,
+    "SSRweight": 500,
+    "URweight": 500
+  },
+  "AA001037": {
+    "id": "AA001037",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001035",
+    "NameLanText": "构素伤害减免",
+    "rareAttrs": {
+      "2": {
+        "initValue": 0,
+        "growValue": 0
+      },
+      "3": {
+        "initValue": 0,
+        "growValue": 0
+      },
+      "4": {
+        "initValue": 1,
+        "growValue": 1
+      },
+      "5": {
+        "initValue": 5,
+        "growValue": 1
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "MagDmgReductionIncrease",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 0,
+    "SSRweight": 500,
+    "URweight": 500
+  },
+  "AA001038": {
+    "id": "AA001038",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001047",
+    "NameLanText": "生命偷取率",
+    "rareAttrs": {
+      "2": {
+        "initValue": 1,
+        "growValue": 1
+      },
+      "3": {
+        "initValue": 1,
+        "growValue": 1
+      },
+      "4": {
+        "initValue": 1,
+        "growValue": 1
+      },
+      "5": {
+        "initValue": 1,
+        "growValue": 1
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "HurtHealRate",
+    "job": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "Rweight": 0,
+    "SRweight": 0,
+    "SSRweight": 0,
+    "URweight": 500
+  },
+  "AA001039": {
+    "id": "AA001039",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001051",
+    "NameLanText": "贯穿概率",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 3
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 4
+      },
+      "4": {
+        "initValue": 9,
+        "growValue": 5
+      },
+      "5": {
+        "initValue": 10,
+        "growValue": 6
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "PenetrationRate_FIX",
+    "job": [
+      2
+    ],
+    "Rweight": 0,
+    "SRweight": 500,
+    "SSRweight": 500,
+    "URweight": 500
+  },
+  "AA001040": {
+    "id": "AA001040",
+    "NameLan": "equiplan_additionalAttr_namelan_AA001052",
+    "NameLanText": "瞄准冷却率",
+    "rareAttrs": {
+      "2": {
+        "initValue": 5,
+        "growValue": 3
+      },
+      "3": {
+        "initValue": 7,
+        "growValue": 4
+      },
+      "4": {
+        "initValue": 9,
+        "growValue": 5
+      },
+      "5": {
+        "initValue": 10,
+        "growValue": 6
+      }
+    },
+    "attrDisplayType": "%",
+    "addAttr": "SnipeResetRate_FIX",
+    "job": [
+      3
+    ],
+    "Rweight": 0,
+    "SRweight": 500,
+    "SSRweight": 500,
+    "URweight": 500
+  }
+}

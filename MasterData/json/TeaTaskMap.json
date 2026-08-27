@@ -1,0 +1,129 @@
+{
+  "301": {
+    "Id": "301",
+    "Tab": "weekly",
+    "Name": "迷踪盘完成1次",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      3,
+      1
+    ],
+    "PageSkip": "TurnTableMainPageViewModel",
+    "Namelan": "highteaLan_teaTask_namelan_301",
+    "NamelanText": "迷踪盘完成1次"
+  },
+  "401": {
+    "Id": "401",
+    "Tab": "weekly",
+    "Name": "完成和合时达成第7阶零件",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      4,
+      128,
+      1
+    ],
+    "PageSkip": "MiniGame2048ViewModel",
+    "Namelan": "highteaLan_teaTask_namelan_401",
+    "NamelanText": "完成和合时达成第7阶零件"
+  },
+  "501": {
+    "Id": "501",
+    "Tab": "weekly",
+    "Name": "四子棋任意模式胜利1场",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      5,
+      1
+    ],
+    "PageSkip": "ConnectFourViewModel",
+    "Namelan": "highteaLan_teaTask_namelan_501",
+    "NamelanText": "四子棋任意模式胜利1场"
+  },
+  "601": {
+    "Id": "601",
+    "Tab": "weekly",
+    "Name": "完成品茗1次",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      6,
+      1
+    ],
+    "PageSkip": "TeaTastSipViewModel",
+    "Namelan": "highteaLan_teaTask_namelan_601",
+    "NamelanText": "完成品茗1次"
+  },
+  "701": {
+    "Id": "701",
+    "Tab": "weekly",
+    "Name": "织影任意难度完成1次",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      7,
+      1
+    ],
+    "PageSkip": "SawPuzzleSelectViewModel",
+    "Namelan": "highteaLan_teaTask_namelan_701",
+    "NamelanText": "织影任意难度完成1次"
+  },
+  "801": {
+    "Id": "801",
+    "Tab": "weekly",
+    "Name": "完成任意音游玩法1次",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      8,
+      1
+    ],
+    "PageSkip": "RhythmGameMusicShortViewModel",
+    "Namelan": "highteaLan_teaTask_namelan_801",
+    "NamelanText": "完成任意音游玩法1次"
+  },
+  "901": {
+    "Id": "901",
+    "Tab": "weekly",
+    "Name": "游玩一次果汁牌",
+    "Reward": [
+      {
+        "id": "24",
+        "count": 100
+      }
+    ],
+    "Condition1": [
+      9,
+      1
+    ],
+    "PageSkip": "BalatroLaunchPanel2",
+    "Namelan": "highteaLan_teaTask_namelan_901",
+    "NamelanText": "游玩一次果汁牌"
+  }
+}

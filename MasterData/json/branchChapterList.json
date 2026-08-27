@@ -1,0 +1,128 @@
+[
+  {
+    "ID": "Reg101",
+    "before": "",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg101",
+    "nameLanText": "来古篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M100001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg102",
+    "before": "Reg101",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg102",
+    "nameLanText": "汴都篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M200001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg103",
+    "before": "Reg102",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg103",
+    "nameLanText": "申海篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M300001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg104",
+    "before": "Reg103",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg104",
+    "nameLanText": "粤州篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M400001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg105",
+    "before": "Reg104",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg105",
+    "nameLanText": "常安篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M500001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg106",
+    "before": "Reg105",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg106",
+    "nameLanText": "塞北篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M600001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg107",
+    "before": "Reg106",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg107",
+    "nameLanText": "榑桑篇",
+    "uiType": 0,
+    "UnlockConditions": [
+      {
+        "UnlockType": 2,
+        "ElementID": "M700001",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg1001",
+    "before": "",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg1001",
+    "nameLanText": "昔我专栏",
+    "uiType": 1,
+    "UnlockConditions": [
+      {
+        "UnlockType": 1,
+        "ElementID": "1",
+        "Param": 1
+      }
+    ]
+  },
+  {
+    "ID": "Reg2001",
+    "before": "",
+    "nameLan": "branchLan_branchChapter_nameLan_Reg2001",
+    "nameLanText": "轶闻录",
+    "uiType": 2,
+    "UnlockConditions": [
+      {
+        "UnlockType": 1,
+        "ElementID": "1",
+        "Param": 1
+      }
+    ]
+  }
+]

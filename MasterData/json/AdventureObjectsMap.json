@@ -1,0 +1,2625 @@
+{
+  "1000001": {
+    "Id": "1000001",
+    "SenceId": "11",
+    "Coordinate": [
+      "-804",
+      "-299"
+    ],
+    "Type": 1,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_cj_3c"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10001",
+    "Param": [],
+    "RecipeId": [
+      "10001001"
+    ],
+    "ClickTips": "漂洗匠们工作的地方。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000001",
+    "ClickTipsLanText": "漂洗匠们工作的地方。",
+    "Name": "工坊水台",
+    "NameLan": "activity_adventureObjects_nameLan_1000001",
+    "NameLanText": "工坊水台",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000002": {
+    "Id": "1000002",
+    "SenceId": "11",
+    "Coordinate": [
+      "225",
+      "-208"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_2"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10001",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "普通的盆子，可以装水",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000002",
+    "ClickTipsLanText": "普通的盆子，可以装水",
+    "Name": "水桶",
+    "NameLan": "activity_adventureObjects_nameLan_1000002",
+    "NameLanText": "水桶",
+    "PickUpTool": [
+      {
+        "id": "1002",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000003": {
+    "Id": "1000003",
+    "SenceId": "11",
+    "Coordinate": [
+      "900",
+      "-120"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_3"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10001",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来熏蒸漂白，需要与熏炉组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000003",
+    "ClickTipsLanText": "可以用来熏蒸漂白，需要与熏炉组合",
+    "Name": "硫磺块",
+    "NameLan": "activity_adventureObjects_nameLan_1000003",
+    "NameLanText": "硫磺块",
+    "PickUpTool": [
+      {
+        "id": "1003",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000004": {
+    "Id": "1000004",
+    "SenceId": "11",
+    "Coordinate": [
+      "-596",
+      "-142"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_4"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10001",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来熏蒸漂白，需要与硫磺块组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000004",
+    "ClickTipsLanText": "可以用来熏蒸漂白，需要与硫磺块组合",
+    "Name": "熏炉",
+    "NameLan": "activity_adventureObjects_nameLan_1000004",
+    "NameLanText": "熏炉",
+    "PickUpTool": [
+      {
+        "id": "1004",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000005": {
+    "Id": "1000005",
+    "SenceId": "11",
+    "Coordinate": [
+      "617",
+      "-299"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_cj_3b",
+      "ui_hd_jzqw_xs_cj_3d"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10500",
+    "Param": [],
+    "RecipeId": [
+      "10006001",
+      "10006002"
+    ],
+    "ClickTips": "装满洁净的水。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000005",
+    "ClickTipsLanText": "装满洁净的水。",
+    "Name": "水槽",
+    "NameLan": "activity_adventureObjects_nameLan_1000005",
+    "NameLanText": "水槽",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1502",
+      "1503"
+    ],
+    "NeedItems": [
+      [
+        "1502"
+      ],
+      [
+        "1501",
+        "1507"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000006": {
+    "Id": "1000006",
+    "SenceId": "12",
+    "Coordinate": [
+      "-924",
+      "-244"
+    ],
+    "Type": 1,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_6",
+      "ui_hd_jzqw_xs_obj_6a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [
+      "10002003"
+    ],
+    "ClickTips": "述说着无名过往的墓碑。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000006",
+    "ClickTipsLanText": "述说着无名过往的墓碑。",
+    "Name": "无名墓碑",
+    "NameLan": "activity_adventureObjects_nameLan_1000006",
+    "NameLanText": "无名墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [
+      [
+        "1104"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000007": {
+    "Id": "1000007",
+    "SenceId": "12",
+    "Coordinate": [
+      "-468",
+      "-248"
+    ],
+    "Type": 1,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_7",
+      "ui_hd_jzqw_xs_obj_7a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [
+      "10002001"
+    ],
+    "ClickTips": "铭刻着女性助产士与女性助手为孕妇分娩的场景。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000007",
+    "ClickTipsLanText": "铭刻着女性助产士与女性助手为孕妇分娩的场景。",
+    "Name": "助产士的墓碑",
+    "NameLan": "activity_adventureObjects_nameLan_1000007",
+    "NameLanText": "助产士的墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [
+      [
+        "1101"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000008": {
+    "Id": "1000008",
+    "SenceId": "12",
+    "Coordinate": [
+      "431",
+      "-248"
+    ],
+    "Type": 1,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_8",
+      "ui_hd_jzqw_xs_obj_8a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [
+      "10002002"
+    ],
+    "ClickTips": "铭刻着一位男性医生为病人治疗的场景。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000008",
+    "ClickTipsLanText": "铭刻着一位男性医生为病人治疗的场景。",
+    "Name": "医生的墓碑",
+    "NameLan": "activity_adventureObjects_nameLan_1000008",
+    "NameLanText": "医生的墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [
+      [
+        "1103"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000009": {
+    "Id": "1000009",
+    "SenceId": "12",
+    "Coordinate": [
+      "99",
+      "-190"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_9"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "用于妇科检查的医疗器具，属于助产士阿提卡",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000009",
+    "ClickTipsLanText": "用于妇科检查的医疗器具，属于助产士阿提卡",
+    "Name": "开张器",
+    "NameLan": "activity_adventureObjects_nameLan_1000009",
+    "NameLanText": "开张器",
+    "PickUpTool": [
+      {
+        "id": "1101",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000010": {
+    "Id": "1000010",
+    "SenceId": "12",
+    "Coordinate": [
+      "-736",
+      "-134"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_10"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "吸水性好，可以用来清洁",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000010",
+    "ClickTipsLanText": "吸水性好，可以用来清洁",
+    "Name": "海绵",
+    "NameLan": "activity_adventureObjects_nameLan_1000010",
+    "NameLanText": "海绵",
+    "PickUpTool": [
+      {
+        "id": "1102",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000011": {
+    "Id": "1000011",
+    "SenceId": "12",
+    "Coordinate": [
+      "-112",
+      "-101"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_11"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "用于包扎伤口的医疗用品，属于外科医生",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000011",
+    "ClickTipsLanText": "用于包扎伤口的医疗用品，属于外科医生",
+    "Name": "绷带",
+    "NameLan": "activity_adventureObjects_nameLan_1000011",
+    "NameLanText": "绷带",
+    "PickUpTool": [
+      {
+        "id": "1103",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000012": {
+    "Id": "1000012",
+    "SenceId": "12",
+    "Coordinate": [
+      "-252",
+      "-248"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_12"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "锋利的外科手术刀，属于医生斯帕拉塔",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000012",
+    "ClickTipsLanText": "锋利的外科手术刀，属于医生斯帕拉塔",
+    "Name": "手术刀",
+    "NameLan": "activity_adventureObjects_nameLan_1000012",
+    "NameLanText": "手术刀",
+    "PickUpTool": [
+      {
+        "id": "1104",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000013": {
+    "Id": "1000013",
+    "SenceId": "12",
+    "Coordinate": [
+      "556",
+      "-248"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_13"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "用于截肢手术的骨锯",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000013",
+    "ClickTipsLanText": "用于截肢手术的骨锯",
+    "Name": "骨锯",
+    "NameLan": "activity_adventureObjects_nameLan_1000013",
+    "NameLanText": "骨锯",
+    "PickUpTool": [
+      {
+        "id": "1105",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000014": {
+    "Id": "1000014",
+    "SenceId": "12",
+    "Coordinate": [
+      "862",
+      "-256"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_14"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "用于牵拉组织的外科钩",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000014",
+    "ClickTipsLanText": "用于牵拉组织的外科钩",
+    "Name": "外科钩",
+    "NameLan": "activity_adventureObjects_nameLan_1000014",
+    "NameLanText": "外科钩",
+    "PickUpTool": [
+      {
+        "id": "1106",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000015": {
+    "Id": "1000015",
+    "SenceId": "13",
+    "Coordinate": [
+      "-804",
+      "-299"
+    ],
+    "Type": 1,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_15"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10200",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "这只是一个柴堆",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000015",
+    "ClickTipsLanText": "这只是一个柴堆",
+    "Name": "柴堆",
+    "NameLan": "activity_adventureObjects_nameLan_1000015",
+    "NameLanText": "柴堆",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000016": {
+    "Id": "1000016",
+    "SenceId": "13",
+    "Coordinate": [
+      "-222",
+      "-151"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_16"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10200",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来煮汤，需要加入水和豆子",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000016",
+    "ClickTipsLanText": "可以用来煮汤，需要加入水和豆子",
+    "Name": "锅",
+    "NameLan": "activity_adventureObjects_nameLan_1000016",
+    "NameLanText": "锅",
+    "PickUpTool": [
+      {
+        "id": "1201",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000017": {
+    "Id": "1000017",
+    "SenceId": "13",
+    "Coordinate": [
+      "167",
+      "-266"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_17"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10200",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来煮豆汤，需要与锅和水组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000017",
+    "ClickTipsLanText": "可以用来煮豆汤，需要与锅和水组合",
+    "Name": "豆子",
+    "NameLan": "activity_adventureObjects_nameLan_1000017",
+    "NameLanText": "豆子",
+    "PickUpTool": [
+      {
+        "id": "1202",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000018": {
+    "Id": "1000018",
+    "SenceId": "13",
+    "Coordinate": [
+      "-511",
+      "-166"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_18"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10200",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来煮汤，需要与锅和豆子组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000018",
+    "ClickTipsLanText": "可以用来煮汤，需要与锅和豆子组合",
+    "Name": "水",
+    "NameLan": "activity_adventureObjects_nameLan_1000018",
+    "NameLanText": "水",
+    "PickUpTool": [
+      {
+        "id": "1203",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000019": {
+    "Id": "1000019",
+    "SenceId": "13",
+    "Coordinate": [
+      "-511",
+      "-214"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_19"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10200",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来点火，需要与灶台组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000019",
+    "ClickTipsLanText": "可以用来点火，需要与灶台组合",
+    "Name": "火石",
+    "NameLan": "activity_adventureObjects_nameLan_1000019",
+    "NameLanText": "火石",
+    "PickUpTool": [
+      {
+        "id": "1204",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000020": {
+    "Id": "1000020",
+    "SenceId": "13",
+    "Coordinate": [
+      "-145",
+      "-153"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_20"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10200",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "用来盛汤",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000020",
+    "ClickTipsLanText": "用来盛汤",
+    "Name": "空碗",
+    "NameLan": "activity_adventureObjects_nameLan_1000020",
+    "NameLanText": "空碗",
+    "PickUpTool": [
+      {
+        "id": "1205",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000021": {
+    "Id": "1000021",
+    "SenceId": "14",
+    "Coordinate": [
+      "950",
+      "-262"
+    ],
+    "Type": 2,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_cj_4"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10300",
+    "Param": [],
+    "RecipeId": [
+      "10004005"
+    ],
+    "ClickTips": "总是流出清澈洁净的水，适合饮用，也适合制作食品。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000021",
+    "ClickTipsLanText": "总是流出清澈洁净的水，适合饮用，也适合制作食品。",
+    "Name": "水池",
+    "NameLan": "activity_adventureObjects_nameLan_1000021",
+    "NameLanText": "水池",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1309"
+    ],
+    "NeedItems": [
+      [
+        "1309"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000022": {
+    "Id": "1000022",
+    "SenceId": "14",
+    "Coordinate": [
+      "294",
+      "-261"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_22b"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10300",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "人和动物都能从这里获得点什么的。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000022",
+    "ClickTipsLanText": "人和动物都能从这里获得点什么的。",
+    "Name": "小麦袋",
+    "NameLan": "activity_adventureObjects_nameLan_1000022",
+    "NameLanText": "小麦袋",
+    "PickUpTool": [
+      {
+        "id": "1303",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000023": {
+    "Id": "1000023",
+    "SenceId": "14",
+    "Coordinate": [
+      "302",
+      "-260"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_23"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10300",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "石磨的一部分",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000023",
+    "ClickTipsLanText": "石磨的一部分",
+    "Name": "推杆",
+    "NameLan": "activity_adventureObjects_nameLan_1000023",
+    "NameLanText": "推杆",
+    "PickUpTool": [
+      {
+        "id": "1302",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 2
+  },
+  "1000024": {
+    "Id": "1000024",
+    "SenceId": "14",
+    "Coordinate": [
+      "-256.5",
+      "-252.5"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_cj_4b",
+      "ui_hd_jzqw_xs_cj_4c"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10300",
+    "Param": [],
+    "RecipeId": [
+      "10004003",
+      "10004004",
+      "10004006"
+    ],
+    "ClickTips": "忠诚的生产工具。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000024",
+    "ClickTipsLanText": "忠诚的生产工具。",
+    "Name": "石磨",
+    "NameLan": "activity_adventureObjects_nameLan_1000024",
+    "NameLanText": "石磨",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1302",
+      "1303"
+    ],
+    "NeedItems": [
+      [
+        "1302"
+      ],
+      [
+        "1306",
+        "1303"
+      ],
+      [
+        "1307"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000025": {
+    "Id": "1000025",
+    "SenceId": "14",
+    "Coordinate": [
+      "-343",
+      "-251"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_25a",
+      "ui_hd_jzqw_xs_obj_25b"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10300",
+    "Param": [],
+    "RecipeId": [
+      "10004002"
+    ],
+    "ClickTips": "勤劳的动物伙伴。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000025",
+    "ClickTipsLanText": "勤劳的动物伙伴。",
+    "Name": "驴",
+    "NameLan": "activity_adventureObjects_nameLan_1000025",
+    "NameLanText": "驴",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1301"
+    ],
+    "NeedItems": [
+      [
+        "1301",
+        "1307"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000026": {
+    "Id": "1000026",
+    "SenceId": "11",
+    "Coordinate": [
+      "225",
+      "-208"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_26"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10500",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "放入水槽化开，用来去除布料油污",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000026",
+    "ClickTipsLanText": "放入水槽化开，用来去除布料油污",
+    "Name": "去油碱石",
+    "NameLan": "activity_adventureObjects_nameLan_1000026",
+    "NameLanText": "去油碱石",
+    "PickUpTool": [
+      {
+        "id": "1502",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000027": {
+    "Id": "1000027",
+    "SenceId": "12",
+    "Coordinate": [
+      "116",
+      "-194"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_27"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10600",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "一个编织了一半的花环，需要与柏树枝组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000027",
+    "ClickTipsLanText": "一个编织了一半的花环，需要与柏树枝组合",
+    "Name": "半成品花环",
+    "NameLan": "activity_adventureObjects_nameLan_1000027",
+    "NameLanText": "半成品花环",
+    "PickUpTool": [
+      {
+        "id": "1601",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000028": {
+    "Id": "1000028",
+    "SenceId": "12",
+    "Coordinate": [
+      "-736",
+      "-264"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_28"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10600",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用于编织花环",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000028",
+    "ClickTipsLanText": "可以用于编织花环",
+    "Name": "柏树枝",
+    "NameLan": "activity_adventureObjects_nameLan_1000028",
+    "NameLanText": "柏树枝",
+    "PickUpTool": [
+      {
+        "id": "1602",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000029": {
+    "Id": "1000029",
+    "SenceId": "12",
+    "Coordinate": [
+      "385",
+      "-244"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_29"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10600",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用于编织花环",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000029",
+    "ClickTipsLanText": "可以用于编织花环",
+    "Name": "鲜花",
+    "NameLan": "activity_adventureObjects_nameLan_1000029",
+    "NameLanText": "鲜花",
+    "PickUpTool": [
+      {
+        "id": "1603",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000030": {
+    "Id": "1000030",
+    "SenceId": "12",
+    "Coordinate": [
+      "236",
+      "-194"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_30"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10600",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用丝带给花环做装饰",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000030",
+    "ClickTipsLanText": "可以用丝带给花环做装饰",
+    "Name": "丝带",
+    "NameLan": "activity_adventureObjects_nameLan_1000030",
+    "NameLanText": "丝带",
+    "PickUpTool": [
+      {
+        "id": "1604",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000031": {
+    "Id": "1000031",
+    "SenceId": "12",
+    "Coordinate": [
+      "-53",
+      "-249"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_31a",
+      "ui_hd_jzqw_xs_obj_31b"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10600",
+    "Param": [],
+    "RecipeId": [
+      "10007004"
+    ],
+    "ClickTips": "也许塔纳托斯会在这里停留。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000031",
+    "ClickTipsLanText": "也许塔纳托斯会在这里停留。",
+    "Name": "大理石台",
+    "NameLan": "activity_adventureObjects_nameLan_1000031",
+    "NameLanText": "大理石台",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1607"
+    ],
+    "NeedItems": [
+      [
+        "1607"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000032": {
+    "Id": "1000032",
+    "SenceId": "13",
+    "Coordinate": [
+      "266",
+      "-264"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_15"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10700",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来引火，需要与打火石组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000032",
+    "ClickTipsLanText": "可以用来引火，需要与打火石组合",
+    "Name": "干草",
+    "NameLan": "activity_adventureObjects_nameLan_1000032",
+    "NameLanText": "干草",
+    "PickUpTool": [
+      {
+        "id": "1701",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000033": {
+    "Id": "1000033",
+    "SenceId": "13",
+    "Coordinate": [
+      "-511",
+      "-266"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_33"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10700",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "可以用来点火，需要与干草组合",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000033",
+    "ClickTipsLanText": "可以用来点火，需要与干草组合",
+    "Name": "打火石",
+    "NameLan": "activity_adventureObjects_nameLan_1000033",
+    "NameLanText": "打火石",
+    "PickUpTool": [
+      {
+        "id": "1702",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 4
+  },
+  "1000034": {
+    "Id": "1000034",
+    "SenceId": "13",
+    "Coordinate": [
+      "-368",
+      "-154"
+    ],
+    "Type": 2,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_34"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10705",
+    "Param": [],
+    "RecipeId": [
+      "10008003"
+    ],
+    "ClickTips": "醇厚的美酒",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000034",
+    "ClickTipsLanText": "醇厚的美酒",
+    "Name": "酒水陶罐",
+    "NameLan": "activity_adventureObjects_nameLan_1000034",
+    "NameLanText": "酒水陶罐",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1708"
+    ],
+    "NeedItems": [
+      [
+        "1708"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000035": {
+    "Id": "1000035",
+    "SenceId": "13",
+    "Coordinate": [
+      "-222",
+      "-151"
+    ],
+    "Type": 2,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_35"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10706",
+    "Param": [],
+    "RecipeId": [
+      "10008004"
+    ],
+    "ClickTips": "飘香的炖肉，热食店的招牌",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000035",
+    "ClickTipsLanText": "飘香的炖肉，热食店的招牌",
+    "Name": "炖肉锅",
+    "NameLan": "activity_adventureObjects_nameLan_1000035",
+    "NameLanText": "炖肉锅",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1708"
+    ],
+    "NeedItems": [
+      [
+        "1708"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000036": {
+    "Id": "1000036",
+    "SenceId": "13",
+    "Coordinate": [
+      "-145",
+      "-153"
+    ],
+    "Type": 2,
+    "InteractType": 3,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_36"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10707",
+    "Param": [],
+    "RecipeId": [
+      "10008005"
+    ],
+    "ClickTips": "经过加工后的橄榄，风味独特",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000036",
+    "ClickTipsLanText": "经过加工后的橄榄，风味独特",
+    "Name": "橄榄碗",
+    "NameLan": "activity_adventureObjects_nameLan_1000036",
+    "NameLanText": "橄榄碗",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1708"
+    ],
+    "NeedItems": [
+      [
+        "1708"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000037": {
+    "Id": "1000037",
+    "SenceId": "14",
+    "Coordinate": [
+      "-536",
+      "-152"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_37"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10800",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "新鲜美味的葡萄汁",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000037",
+    "ClickTipsLanText": "新鲜美味的葡萄汁",
+    "Name": "葡萄汁",
+    "NameLan": "activity_adventureObjects_nameLan_1000037",
+    "NameLanText": "葡萄汁",
+    "PickUpTool": [
+      {
+        "id": "1803",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "6"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000038": {
+    "Id": "1000038",
+    "SenceId": "14",
+    "Coordinate": [
+      "-130",
+      "-256"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_38"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10800",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "刚挤的牛奶",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000038",
+    "ClickTipsLanText": "刚挤的牛奶",
+    "Name": "牛奶",
+    "NameLan": "activity_adventureObjects_nameLan_1000038",
+    "NameLanText": "牛奶",
+    "PickUpTool": [
+      {
+        "id": "1804",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "7"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000039": {
+    "Id": "1000039",
+    "SenceId": "14",
+    "Coordinate": [
+      "727",
+      "-220"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_39"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10800",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "有着馥郁香气的蜂蜜，可以为食物带来独特的甜味",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000039",
+    "ClickTipsLanText": "有着馥郁香气的蜂蜜，可以为食物带来独特的甜味",
+    "Name": "蜂蜜",
+    "NameLan": "activity_adventureObjects_nameLan_1000039",
+    "NameLanText": "蜂蜜",
+    "PickUpTool": [
+      {
+        "id": "1805",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "8"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000040": {
+    "Id": "1000040",
+    "SenceId": "13",
+    "Coordinate": [
+      "-245",
+      "-253"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_40b",
+      "ui_hd_jzqw_xs_obj_40c"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10800",
+    "Param": [],
+    "RecipeId": [
+      "10003001",
+      "10003004"
+    ],
+    "ClickTips": "炖煮温暖与满足的温床。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000040",
+    "ClickTipsLanText": "炖煮温暖与满足的温床。",
+    "Name": "灶台",
+    "NameLan": "activity_adventureObjects_nameLan_1000040",
+    "NameLanText": "灶台",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1204",
+      "1207"
+    ],
+    "NeedItems": [
+      [
+        "1204"
+      ],
+      [
+        "1207"
+      ]
+    ],
+    "Order": 1
+  },
+  "1000041": {
+    "Id": "1000041",
+    "SenceId": "15",
+    "Coordinate": [
+      "712",
+      "-300"
+    ],
+    "Type": 2,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_41"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10400",
+    "Param": [],
+    "RecipeId": [
+      "10005001"
+    ],
+    "ClickTips": "质朴结实的手推车。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000041",
+    "ClickTipsLanText": "质朴结实的手推车。",
+    "Name": "工匠手推车",
+    "NameLan": "activity_adventureObjects_nameLan_1000041",
+    "NameLanText": "工匠手推车",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1400"
+    ],
+    "NeedItems": [
+      [
+        "1400"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000042": {
+    "Id": "1000042",
+    "SenceId": "15",
+    "Coordinate": [
+      "801",
+      "-206"
+    ],
+    "Type": 2,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_42"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10400",
+    "Param": [],
+    "RecipeId": [
+      "10005002"
+    ],
+    "ClickTips": "储藏着过往的岁月里偶然打开的时间。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000042",
+    "ClickTipsLanText": "储藏着过往的岁月里偶然打开的时间。",
+    "Name": "储藏箱",
+    "NameLan": "activity_adventureObjects_nameLan_1000042",
+    "NameLanText": "储藏箱",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1407"
+    ],
+    "NeedItems": [
+      [
+        "1407"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000043": {
+    "Id": "1000043",
+    "SenceId": "15",
+    "Coordinate": [
+      "0",
+      "-254"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_43a",
+      "ui_hd_jzqw_xs_obj_43b",
+      "ui_hd_jzqw_xs_obj_43c"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10400",
+    "Param": [],
+    "RecipeId": [
+      "10005003",
+      "10005004"
+    ],
+    "ClickTips": "平整光洁，仿佛缺少什么。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000043",
+    "ClickTipsLanText": "平整光洁，仿佛缺少什么。",
+    "Name": "待布置的大理石台",
+    "NameLan": "activity_adventureObjects_nameLan_1000043",
+    "NameLanText": "待布置的大理石台",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1402",
+      "1403"
+    ],
+    "NeedItems": [
+      [
+        "1402"
+      ],
+      [
+        "1403"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000044": {
+    "Id": "1000044",
+    "SenceId": "15",
+    "Coordinate": [
+      "-593",
+      "-276"
+    ],
+    "Type": 2,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_44"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10900",
+    "Param": [],
+    "RecipeId": [
+      "10010001"
+    ],
+    "ClickTips": "看起来不像有宝藏……",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000044",
+    "ClickTipsLanText": "看起来不像有宝藏……",
+    "Name": "瓦砾堆",
+    "NameLan": "activity_adventureObjects_nameLan_1000044",
+    "NameLanText": "瓦砾堆",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1900"
+    ],
+    "NeedItems": [
+      [
+        "1900"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000045": {
+    "Id": "1000045",
+    "SenceId": "15",
+    "Coordinate": [
+      "429",
+      "-262"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_45"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10900",
+    "Param": [],
+    "RecipeId": [
+      "10010002"
+    ],
+    "ClickTips": "葡萄酒，似乎有朋友会喜欢这样的礼物。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000045",
+    "ClickTipsLanText": "葡萄酒，似乎有朋友会喜欢这样的礼物。",
+    "Name": "葡萄酒罐",
+    "NameLan": "activity_adventureObjects_nameLan_1000045",
+    "NameLanText": "葡萄酒罐",
+    "PickUpTool": [
+      {
+        "id": "1902",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1900"
+    ],
+    "NeedItems": [
+      [
+        "1900"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000046": {
+    "Id": "1000046",
+    "SenceId": "15",
+    "Coordinate": [
+      "932",
+      "-284"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_46"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10900",
+    "Param": [],
+    "RecipeId": [
+      "10010003"
+    ],
+    "ClickTips": "翠绿的枝条，明年还会生发吗？",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000046",
+    "ClickTipsLanText": "翠绿的枝条，明年还会生发吗？",
+    "Name": "柳枝",
+    "NameLan": "activity_adventureObjects_nameLan_1000046",
+    "NameLanText": "柳枝",
+    "PickUpTool": [
+      {
+        "id": "1903",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1900"
+    ],
+    "NeedItems": [
+      [
+        "1900"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000047": {
+    "Id": "1000047",
+    "SenceId": "15",
+    "Coordinate": [
+      "0",
+      "-254"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_43c",
+      "ui_hd_jzqw_xs_obj_43d"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10900",
+    "Param": [],
+    "RecipeId": [
+      "10010006"
+    ],
+    "ClickTips": "尤马西雅等待的女神，会回来此处吗？",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000047",
+    "ClickTipsLanText": "尤马西雅等待的女神，会回来此处吗？",
+    "Name": "中央大理石台",
+    "NameLan": "activity_adventureObjects_nameLan_1000047",
+    "NameLanText": "中央大理石台",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1905"
+    ],
+    "NeedItems": [
+      [
+        "1905"
+      ]
+    ],
+    "Order": 3
+  },
+  "1000048": {
+    "Id": "1000048",
+    "SenceId": "13",
+    "Coordinate": [
+      "-245",
+      "-253"
+    ],
+    "Type": 1,
+    "InteractType": 4,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_40b",
+      "ui_hd_jzqw_xs_obj_40c"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10900",
+    "Param": [],
+    "RecipeId": [
+      "10008002"
+    ],
+    "ClickTips": "炖煮温暖与满足的温床。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000048",
+    "ClickTipsLanText": "炖煮温暖与满足的温床。",
+    "Name": "灶台",
+    "NameLan": "activity_adventureObjects_nameLan_1000048",
+    "NameLanText": "灶台",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [
+      "1703"
+    ],
+    "NeedItems": [
+      [
+        "1703"
+      ]
+    ],
+    "Order": 1
+  },
+  "1000049": {
+    "Id": "1000049",
+    "SenceId": "13",
+    "Coordinate": [
+      "-804",
+      "-315"
+    ],
+    "Type": 1,
+    "InteractType": 2,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_49"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10900",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "烤好的面包，可以直接吃，也可以继续制作别的美食",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000049",
+    "ClickTipsLanText": "烤好的面包，可以直接吃，也可以继续制作别的美食",
+    "Name": "面包",
+    "NameLan": "activity_adventureObjects_nameLan_1000049",
+    "NameLanText": "面包",
+    "PickUpTool": [
+      {
+        "id": "1802",
+        "count": 1
+      }
+    ],
+    "DialogOffset": [
+      "4",
+      "9"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000050": {
+    "Id": "1000050",
+    "SenceId": "12",
+    "Coordinate": [
+      "-924",
+      "-244"
+    ],
+    "Type": 1,
+    "InteractType": 0,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_6a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "述说着无名过往的墓碑。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000006",
+    "ClickTipsLanText": "述说着无名过往的墓碑。",
+    "Name": "无名墓碑",
+    "NameLan": "activity_adventureObjects_nameLan_1000006",
+    "NameLanText": "无名墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000051": {
+    "Id": "1000051",
+    "SenceId": "12",
+    "Coordinate": [
+      "-468",
+      "-248"
+    ],
+    "Type": 1,
+    "InteractType": 0,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_7a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "铭刻着女性助产士与女性助手为孕妇分娩的场景。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000007",
+    "ClickTipsLanText": "铭刻着女性助产士与女性助手为孕妇分娩的场景。",
+    "Name": "助产士的墓碑",
+    "NameLan": "activity_adventureObjects_nameLan_1000007",
+    "NameLanText": "助产士的墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000052": {
+    "Id": "1000052",
+    "SenceId": "12",
+    "Coordinate": [
+      "431",
+      "-248"
+    ],
+    "Type": 1,
+    "InteractType": 0,
+    "Asset": [
+      "ui_hd_jzqw_xs_obj_8a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "10100",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "铭刻着一位男性医生为病人治疗的场景。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000008",
+    "ClickTipsLanText": "铭刻着一位男性医生为病人治疗的场景。",
+    "Name": "医生的墓碑",
+    "NameLan": "activity_adventureObjects_nameLan_1000008",
+    "NameLanText": "医生的墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 3
+  },
+  "1000053": {
+    "Id": "1000053",
+    "SenceId": "15",
+    "Coordinate": [
+      "-8",
+      "-276"
+    ],
+    "Type": 1,
+    "InteractType": 0,
+    "Asset": [
+      "ui_hd_jzqw_xs_cj_1b"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [],
+    "RecipeId": [],
+    "ClickTips": "铭刻着一位男性医生为病人治疗的场景。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_1000008",
+    "ClickTipsLanText": "铭刻着一位男性医生为病人治疗的场景。",
+    "Name": "柱子",
+    "NameLan": "activity_adventureObjects_nameLan_1000008",
+    "NameLanText": "医生的墓碑",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [],
+    "NeedItems": [],
+    "Order": 2
+  },
+  "2000001": {
+    "Id": "2000001",
+    "SenceId": "11",
+    "Coordinate": [
+      "574",
+      "-199"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_3a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000011",
+      "20000012",
+      "20000013",
+      "20000014",
+      "20000015"
+    ],
+    "RecipeId": [],
+    "ClickTips": "漂洗店老板。洁白托加的守护者。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000001",
+    "ClickTipsLanText": "漂洗店老板。洁白托加的守护者。",
+    "Name": "斯戴法努斯",
+    "NameLan": "activity_adventureObjects_nameLan_2000001",
+    "NameLanText": "斯戴法努斯",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1008",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1002",
+        "1003",
+        "1004"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1008"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000002": {
+    "Id": "2000002",
+    "SenceId": "11",
+    "Coordinate": [
+      "-564",
+      "-308"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_3b"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000021",
+      "20000022",
+      "20000023"
+    ],
+    "RecipeId": [
+      "10006003"
+    ],
+    "ClickTips": "漂洗店工人。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000002",
+    "ClickTipsLanText": "漂洗店工人。",
+    "Name": "伙计",
+    "NameLan": "activity_adventureObjects_nameLan_2000002",
+    "NameLanText": "伙计",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "1503",
+      "1508",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "1503"
+      ],
+      [
+        "1508"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000003": {
+    "Id": "2000003",
+    "SenceId": "12",
+    "Coordinate": [
+      "-838",
+      "-274"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_5"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000031",
+      "20000032",
+      "20000033",
+      "20000034",
+      "20000035"
+    ],
+    "RecipeId": [],
+    "ClickTips": "也许因为见过太多而不发一言。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000003",
+    "ClickTipsLanText": "也许因为见过太多而不发一言。",
+    "Name": "守墓人",
+    "NameLan": "activity_adventureObjects_nameLan_2000003",
+    "NameLanText": "守墓人",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1109",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1101",
+        "1103",
+        "1104"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1109"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000004": {
+    "Id": "2000004",
+    "SenceId": "13",
+    "Coordinate": [
+      "-294.7",
+      "-151.1"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_4a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000041",
+      "20000042",
+      "20000043",
+      "20000044",
+      "20000045"
+    ],
+    "RecipeId": [],
+    "ClickTips": "热食店老板。他的炖肉远近闻名。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000004",
+    "ClickTipsLanText": "热食店老板。他的炖肉远近闻名。",
+    "Name": "普拉奇杜斯",
+    "NameLan": "activity_adventureObjects_nameLan_2000004",
+    "NameLanText": "普拉奇杜斯",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1208",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1201",
+        "1202",
+        "1203",
+        "1204"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1208"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000005": {
+    "Id": "2000005",
+    "SenceId": "14",
+    "Coordinate": [
+      "-451",
+      "-254"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_2"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000051",
+      "20000052",
+      "20000053",
+      "20000054",
+      "20000055"
+    ],
+    "RecipeId": [],
+    "ClickTips": "面包房老板。他与妻子将这间店铺打理得井井有条。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000005",
+    "ClickTipsLanText": "面包房老板。他与妻子将这间店铺打理得井井有条。",
+    "Name": "尼奥",
+    "NameLan": "activity_adventureObjects_nameLan_2000005",
+    "NameLanText": "尼奥",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1308",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1302",
+        "1303"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1304"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 1
+  },
+  "2000006": {
+    "Id": "2000006",
+    "SenceId": "15",
+    "Coordinate": [
+      "-775",
+      "-294"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_1"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000061",
+      "20000062",
+      "20000063",
+      "20000064",
+      "20000065"
+    ],
+    "RecipeId": [],
+    "ClickTips": "她会看向你，让你疑心自己是否忘记了某些事……是什么？",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000006",
+    "ClickTipsLanText": "她会看向你，让你疑心自己是否忘记了某些事……是什么？",
+    "Name": "尤马西雅",
+    "NameLan": "activity_adventureObjects_nameLan_2000006",
+    "NameLanText": "尤马西雅",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "6"
+    ],
+    "NeedItem": [
+      "0",
+      "1405",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1404"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1405"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000007": {
+    "Id": "2000007",
+    "SenceId": "11",
+    "Coordinate": [
+      "574",
+      "-199"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_3a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000071",
+      "20000072",
+      "20000073",
+      "20000074",
+      "20000075"
+    ],
+    "RecipeId": [],
+    "ClickTips": "漂洗店老板。洁白托加的守护者。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000007",
+    "ClickTipsLanText": "漂洗店老板。洁白托加的守护者。",
+    "Name": "斯戴法努斯",
+    "NameLan": "activity_adventureObjects_nameLan_2000007",
+    "NameLanText": "斯戴法努斯",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1504",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1506"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1504"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000008": {
+    "Id": "2000008",
+    "SenceId": "12",
+    "Coordinate": [
+      "-838",
+      "-274"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_5"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000081",
+      "20000082",
+      "20000083",
+      "20000084",
+      "20000085"
+    ],
+    "RecipeId": [],
+    "ClickTips": "也许因为见过太多而不发一言。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000008",
+    "ClickTipsLanText": "也许因为见过太多而不发一言。",
+    "Name": "守墓人",
+    "NameLan": "activity_adventureObjects_nameLan_2000008",
+    "NameLanText": "守墓人",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1608",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1601",
+        "1602",
+        "1603",
+        "1604"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1608"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000009": {
+    "Id": "2000009",
+    "SenceId": "13",
+    "Coordinate": [
+      "-294.7",
+      "-151.1"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_4a"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000091",
+      "20000092",
+      "20000093",
+      "20000094",
+      "20000095"
+    ],
+    "RecipeId": [],
+    "ClickTips": "热食店老板。他的炖肉远近闻名。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000009",
+    "ClickTipsLanText": "热食店老板。他的炖肉远近闻名。",
+    "Name": "普拉奇杜斯",
+    "NameLan": "activity_adventureObjects_nameLan_2000009",
+    "NameLanText": "普拉奇杜斯",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1707",
+      "0",
+      "1706",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1707"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1706"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  },
+  "2000010": {
+    "Id": "2000010",
+    "SenceId": "14",
+    "Coordinate": [
+      "-451",
+      "-254"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_2"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000101",
+      "20000102",
+      "20000103",
+      "20000104",
+      "20000105"
+    ],
+    "RecipeId": [],
+    "ClickTips": "面包房老板。他与妻子将这间店铺打理得井井有条。",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000010",
+    "ClickTipsLanText": "面包房老板。他与妻子将这间店铺打理得井井有条。",
+    "Name": "尼奥",
+    "NameLan": "activity_adventureObjects_nameLan_2000010",
+    "NameLanText": "尼奥",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "5"
+    ],
+    "NeedItem": [
+      "0",
+      "1809",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1804",
+        "1805",
+        "1803"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1809"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 1
+  },
+  "2000011": {
+    "Id": "2000011",
+    "SenceId": "15",
+    "Coordinate": [
+      "-775",
+      "-294"
+    ],
+    "Type": 2,
+    "InteractType": 6,
+    "Asset": [
+      "ui_hd_jzqw_xs_npc_1"
+    ],
+    "DefaultState": 0,
+    "UnlockEvent": "",
+    "Param": [
+      "20000111",
+      "20000112",
+      "20000113",
+      "20000114",
+      "20000115"
+    ],
+    "RecipeId": [],
+    "ClickTips": "她会看向你，让你疑心自己是否忘记了某些事……是什么？",
+    "ClickTipsLan": "activeLan_adventureInteractiveObjects_clickTipsLan_2000011",
+    "ClickTipsLanText": "她会看向你，让你疑心自己是否忘记了某些事……是什么？",
+    "Name": "尤马西雅",
+    "NameLan": "activity_adventureObjects_nameLan_2000011",
+    "NameLanText": "尤马西雅",
+    "PickUpTool": null,
+    "DialogOffset": [
+      "4",
+      "6"
+    ],
+    "NeedItem": [
+      "0",
+      "1907",
+      "0",
+      "1908",
+      "0"
+    ],
+    "NeedItems": [
+      [
+        "0"
+      ],
+      [
+        "1901",
+        "1902",
+        "1903"
+      ],
+      [
+        "0"
+      ],
+      [
+        "1908"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "Order": 3
+  }
+}
