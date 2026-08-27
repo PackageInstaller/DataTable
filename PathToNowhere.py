@@ -23,9 +23,10 @@ from rich.progress import (
     TextColumn,
     TimeRemainingColumn,
 )
-import PathToNowhereDecrypt
-import PathToNowhereConvert
-import PathToNowhereExtract
+import PTNDecrypt
+import PTNConvert
+import PTNExtract
+from PTNSecretDecrypt import decrypt_bytes, is_plaintext
 
 PLATFORM = "android"
 RETRY_COUNT = 5
@@ -33,10 +34,41 @@ CHUNK_SIZE = 1024 * 1024
 HERE = os.path.dirname(os.path.abspath(__file__))
 UNLUAC_JAR = os.path.join(HERE, "unluac", "unluac-ptn.jar")
 
-HARDCODED_CDN = [
+HARDCODED_CDN_GL = [
     "https://xoneoversea-hotupdatecdn.shziyi.com",
     "https://xoneoversea-hotupdatecdn-backup.shziyi.com",
 ]
+HARDCODED_CDN_CN = [
+    "https://xonecn-hotupdatecdn.shziyi.com",
+    "https://xonecn-hotupdatecdn-backup.shziyi.com",
+]
+
+APK_CONFIG_FILES = (
+    "assets/app_config.json",
+    "assets/app_version.json",
+    "assets/res_version.json",
+    "assets/res_chunk_manifest.json",
+    "assets/res_lite_chunk_manifest.json",
+    "assets/res_base.json",
+    "assets/res_lite_base.json",
+    "assets/res_base_classify_chunk.json",
+    "assets/res_base_classify.json",
+    "assets/res_classify.json",
+    "assets/res_audio_classify.json",
+    "assets/res_audio_package.json",
+    "assets/res_hero_name.json",
+    "assets/res_build_info.json",
+    "assets/res_time_stamp.json",
+    "assets/res_media.json",
+    "assets/app_clear_assets_version.json",
+    "assets/res_classify_download_setting.json",
+)
+
+DOWNLOAD_CFG_BY_CATEGORY = {
+    "chunk": ("res_chunk_manifest.json",),
+    "base": ("res_base.json",),
+    "classify": ("res_base_classify_chunk.json",),
+}
 
 console = Console()
 _ptn = None
@@ -58,7 +90,23 @@ def load_json(path: str) -> Any:
         return json.load(f)
 
 
+def fallback_cdns(app_config: Dict[str, Any]) -> List[str]:
+    stream = str(app_config.get("Stream") or "").lower()
+    cms = str(app_config.get("CmsGameSetting") or "").lower()
+    if "cn" in stream or cms.endswith("_cn"):
+        return list(HARDCODED_CDN_CN)
+    if "gl" in stream or cms.endswith("_gl"):
+        return list(HARDCODED_CDN_GL)
+    cid = str(app_config.get("ClientId") or "")
+    if cid == "1030":
+        return list(HARDCODED_CDN_CN)
+    if cid == "1061":
+        return list(HARDCODED_CDN_GL)
+    return list(HARDCODED_CDN_GL)
+
+
 def fetch_cdn_candidates(app_config: Dict[str, Any]) -> List[str]:
+    fallback = fallback_cdns(app_config)
     url = app_config.get("SdkApiUrl", "").rstrip("/") + "/v1/kvgameconfigone"
     client_key = app_config.get("ClientKey", "")
     client_id = app_config.get("ClientId", "")
@@ -76,14 +124,88 @@ def fetch_cdn_candidates(app_config: Dict[str, Any]) -> List[str]:
         body = r.json()
         if body.get("ret") != 0:
             console.print(f"[yellow][!] CMS ret={body.get('ret')}, 使用内置 CDN[/yellow]")
-            return list(HARDCODED_CDN)
+            return fallback
         settings = json.loads(body["value"]["value"])
         candidates = settings.get("CdnAddressCandidates") or []
         if candidates:
             return [str(c) for c in candidates]
     except Exception as e:
         console.print(f"[yellow][!] CMS 获取失败: {e}, 使用内置 CDN[/yellow]")
-    return list(HARDCODED_CDN)
+    return fallback
+
+
+def required_cfg_files(category: str) -> Tuple[str, ...]:
+    names = ["app_config.json", "app_version.json"]
+    if category == "all":
+        for extra in DOWNLOAD_CFG_BY_CATEGORY.values():
+            names.extend(extra)
+    else:
+        names.extend(DOWNLOAD_CFG_BY_CATEGORY.get(category, ()))
+    return tuple(dict.fromkeys(names))
+
+
+def cfg_ready(cfg_dir: str, category: str) -> bool:
+    return all(os.path.isfile(os.path.join(cfg_dir, name)) for name in required_cfg_files(category))
+
+
+def extract_apk_configs(apk: str, out_dir: str) -> int:
+    os.makedirs(out_dir, exist_ok=True)
+    n = 0
+    with zipfile.ZipFile(apk) as z:
+        names = set(z.namelist())
+        for rel in APK_CONFIG_FILES:
+            if rel not in names:
+                continue
+            raw = z.read(rel)
+            if is_plaintext(raw):
+                data = raw
+            else:
+                data = decrypt_bytes(raw)
+            dest = os.path.join(out_dir, os.path.basename(rel))
+            with open(dest, "wb") as f:
+                f.write(data)
+            n += 1
+    return n
+
+
+def load_app_version(cfg_dir: str, game_dir: str) -> Dict[str, Any]:
+    for path in (
+        os.path.join(cfg_dir, "app_version.json"),
+        os.path.join(game_dir, "assets", "app_version.json"),
+    ):
+        if os.path.isfile(path):
+            return load_json(path)
+    raise FileNotFoundError("找不到 app_version.json（APK 配置或 <game-dir>/assets）")
+
+
+def resolve_cfg_dir(
+    apk: Optional[str],
+    config_dir: Optional[str],
+    game_dir: str,
+    outdir: str,
+    category: str,
+) -> str:
+    if config_dir:
+        if not cfg_ready(config_dir, category):
+            missing = [n for n in required_cfg_files(category) if not os.path.isfile(os.path.join(config_dir, n))]
+            raise FileNotFoundError(f"配置目录缺文件: {config_dir} -> {missing}")
+        return config_dir
+
+    default_dir = os.path.join(game_dir, "decrypted_cfg")
+    if apk:
+        cfg_dir = os.path.join(outdir, "apk_cfg")
+        n = extract_apk_configs(apk, cfg_dir)
+        console.print(f"[green]APK 配置: 抽出 {n} 个 -> {cfg_dir}[/green]")
+        if not cfg_ready(cfg_dir, category):
+            missing = [n for n in required_cfg_files(category) if not os.path.isfile(os.path.join(cfg_dir, n))]
+            raise FileNotFoundError(f"APK 中缺少下载所需配置: {missing}")
+        return cfg_dir
+
+    if cfg_ready(default_dir, category):
+        return default_dir
+    raise FileNotFoundError(
+        "没有可用配置：请提供 --apk，或准备 decrypted_cfg/，或用 --config-dir 指定"
+    )
 
 
 def build_root_path(app_config: Dict[str, Any], app_version: Dict[str, Any]) -> str:
@@ -262,7 +384,7 @@ class AssetDownloader:
 def find_apk(explicit: Optional[str]) -> Optional[str]:
     if explicit:
         return explicit
-    apks = sorted(Path(HERE).glob("*.apk"))
+    apks = sorted(Path(HERE).glob("*.apk"), key=lambda p: p.stat().st_mtime, reverse=True)
     return str(apks[0]) if apks else None
 
 
@@ -320,7 +442,7 @@ def decrypt_downloaded_chunks(
         chunk_path = os.path.join(chunk_dir, cp["Filename"])
         buf = open(chunk_path, "rb").read()
         try:
-            entries = PathToNowhereDecrypt.walk_entries(buf)
+            entries = PTNDecrypt.walk_entries(buf)
         except Exception as e:
             console.print(f"[red]chunk 解析失败 {cp['Filename']}: {e}[/red]")
             continue
@@ -329,7 +451,7 @@ def decrypt_downloaded_chunks(
             if e["Offset"] != pos:
                 console.print(f"[yellow]offset 不匹配 {cp['Filename']} {e['Offset']} != {pos}[/yellow]")
                 continue
-            pay_key = PathToNowhereDecrypt.ASSET_KEY[j] ^ PathToNowhereDecrypt.ASSET_KEY[(j + 1) % 32]
+            pay_key = PTNDecrypt.ASSET_KEY[j] ^ PTNDecrypt.ASSET_KEY[(j + 1) % 32]
             payload = bytes(b ^ pay_key for b in buf[pos + 50 : pos + 50 + e["Length"]])
             dest = os.path.join(decrypted_root, e["Path"].lstrip("/"))
             os.makedirs(os.path.dirname(dest), exist_ok=True)
@@ -365,7 +487,7 @@ def find_slice_entries(data: bytes):
                     data[cand + 100 : cand + 104] == b"664\x00":
                 magic = data[cand + 0x200 : cand + 0x204]
                 if magic[:4] in (b"BKHD", b"RIFF", b"Unity", b"\x1bLua") or \
-                        any(PathToNowhereDecrypt.try_entry_header(data, cand + 0x200, PathToNowhereDecrypt.ASSET_KEY[j]) for j in range(32)):
+                        any(PTNDecrypt.try_entry_header(data, cand + 0x200, PTNDecrypt.ASSET_KEY[j]) for j in range(32)):
                     nxt = cand
                     break
             cand += 0x200
@@ -385,7 +507,7 @@ def extract_slice_file(data: bytes, src_name: str, out_root: str) -> int:
         j0 = None
         entry_size = 0
         for j in range(32):
-            s = PathToNowhereDecrypt.try_entry_header(blob, 0, PathToNowhereDecrypt.ASSET_KEY[j])
+            s = PTNDecrypt.try_entry_header(blob, 0, PTNDecrypt.ASSET_KEY[j])
             if s is not None:
                 j0, entry_size = j, s
                 break
@@ -407,7 +529,7 @@ def extract_slice_file(data: bytes, src_name: str, out_root: str) -> int:
             with open(dest, "wb") as f:
                 f.write(blob[:size])
         else:
-            pk = PathToNowhereDecrypt.ASSET_KEY[j0] ^ PathToNowhereDecrypt.ASSET_KEY[(j0 + 1) % 32]
+            pk = PTNDecrypt.ASSET_KEY[j0] ^ PTNDecrypt.ASSET_KEY[(j0 + 1) % 32]
             payload = bytes(b ^ pk for b in blob[50 : entry_size])
             with open(dest, "wb") as f:
                 f.write(payload)
@@ -457,7 +579,7 @@ def convert_batch(lua_scripts_dir: str, luac_dir: str, keep_opcodes: bool) -> Tu
     ok = fail = 0
     for p in sorted(Path(lua_scripts_dir).glob("*.luac")):
         try:
-            PathToNowhereConvert.convert(
+            PTNConvert.convert(
                 str(p), os.path.join(luac_dir, p.name + ".lua54"), keep_opcodes=keep_opcodes
             )
             ok += 1
@@ -473,7 +595,7 @@ def write_source_map(lua_scripts_dir: str, dest_dir: str) -> None:
     src_map: Dict[str, str] = {}
     for p in sorted(Path(lua_scripts_dir).glob("*.luac")):
         try:
-            _, main, _ = PathToNowhereConvert.decode_chunk(p.read_bytes())
+            _, main, _ = PTNConvert.decode_chunk(p.read_bytes())
             src = (main.source or b"").rstrip(b"\x00").decode("utf-8", "replace")
             src_map[p.name] = src
         except Exception:
@@ -577,7 +699,7 @@ def convert_lua_to_luac(
             seen.add(key)
             data = p.read_bytes()
             pt = bytes(b ^ 0x65 for b in data)
-            lua_files = PathToNowhereExtract.parse_pkg(pt)
+            lua_files = PTNExtract.parse_pkg(pt)
             if lua_files is None:
                 continue
             n_pkg += 1
@@ -603,12 +725,16 @@ def convert_lua_to_luac(
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--game-dir", default="/home/rikka/Games/无期迷途", help="游戏工作目录 (含 decrypted_cfg/ 与解密脚本)")
-    ap.add_argument("--config-dir", default=None, help="解密配置目录, 默认 <game-dir>/decrypted_cfg")
+    ap.add_argument(
+        "--config-dir",
+        default=None,
+        help="解密配置目录；省略且存在 APK 时从 APK 抽取到 <outdir>/apk_cfg",
+    )
     ap.add_argument("--outdir", default="downloads", help="下载 / 提取输出目录")
     ap.add_argument("--category", choices=["all", "chunk", "base", "classify"], default="all")
     ap.add_argument("--cdn-base", default=None, help="覆盖 CDN 地址")
     ap.add_argument("--threads", type=int, default=8)
-    ap.add_argument("--limit", type=int, default=0, help="只下载前 N 个文件 (测试用)")
+    ap.add_argument("--limit", type=int, default=0, help="只下载前 N 个文件；立绘模式下只导出前 N 张")
     ap.add_argument("--dry-run", action="store_true", help="只打印清单")
     ap.add_argument("--no-verify", action="store_true", help="跳过 MD5 校验")
     ap.add_argument("--skip-download", action="store_true", help="不拉 CDN，只做解密/提取/反编译")
@@ -617,20 +743,81 @@ def main() -> None:
     ap.add_argument("--unluac-jar", default=UNLUAC_JAR, help="unluac jar 路径")
     ap.add_argument("--no-decrypt", action="store_true", help="下载后不解密 chunk")
     ap.add_argument("--no-slice", action="store_true", help="下载后不提取 slice")
-    ap.add_argument("--apk", default=None, help="APK 路径；省略时使用本目录下第一个 .apk")
+    ap.add_argument(
+        "--apk",
+        default=None,
+        help="APK 路径；省略时使用本目录下最新 .apk，并从中抽取/解密配置（无需 decrypted_cfg）",
+    )
     ap.add_argument("--apk-only", action="store_true", help="只从 APK 抽 Lua，不用 game-dir / 已下载 chunk")
+    ap.add_argument(
+        "--painting",
+        action="store_true",
+        help="立绘模式：只下载含立绘的 chunk，导出 PNG 到 Painting/",
+    )
+    ap.add_argument(
+        "--painting-dir",
+        default=None,
+        help="立绘输出目录，默认 <脚本目录>/Painting",
+    )
+    ap.add_argument("--force", action="store_true", help="覆盖已存在的立绘 PNG")
     args = ap.parse_args()
 
     apk = find_apk(args.apk)
-    if (args.to_luac or args.to_lua) and apk:
+    if apk:
         console.print(f"[cyan]APK: {apk}[/cyan]")
 
-    if not args.skip_download:
-        cfg_dir = args.config_dir or os.path.join(args.game_dir, "decrypted_cfg")
+    if args.painting:
+        from PTNPainting import run_painting
+
+        if not apk:
+            console.print("[red]立绘模式需要 --apk（或本目录下有 .apk）[/red]")
+            sys.exit(1)
+        try:
+            cfg_dir = resolve_cfg_dir(apk, args.config_dir, args.game_dir, args.outdir, "chunk")
+        except FileNotFoundError as e:
+            console.print(f"[red]{e}[/red]")
+            sys.exit(1)
         app_config = load_json(os.path.join(cfg_dir, "app_config.json"))
-        app_version = load_json(os.path.join(args.game_dir, "assets", "app_version.json"))
+        app_version = load_app_version(cfg_dir, args.game_dir)
         cdn = args.cdn_base or fetch_cdn_candidates(app_config)[0]
-        console.print(f"[cyan]CDN: {cdn}[/cyan]")
+        root = build_root_path(app_config, app_version)
+        painting_dir = args.painting_dir or os.path.join(HERE, "Painting")
+        console.print(f"[cyan]立绘模式[/cyan] CDN: {cdn}/{root}  输出: {painting_dir}")
+
+        def _dl(items, outdir):
+            dl = AssetDownloader(threads=args.threads, verify=not args.no_verify)
+            return dl.download_all(items, outdir)
+
+        rc = run_painting(
+            apk=apk,
+            cfg_dir=cfg_dir,
+            outdir=args.outdir,
+            painting_dir=painting_dir,
+            cdn=cdn,
+            root=root,
+            download_all=_dl,
+            dry_run=args.dry_run,
+            skip_download=args.skip_download,
+            force=args.force,
+            limit=args.limit,
+        )
+        sys.exit(rc)
+
+    if not args.skip_download:
+        try:
+            cfg_dir = resolve_cfg_dir(apk, args.config_dir, args.game_dir, args.outdir, args.category)
+        except FileNotFoundError as e:
+            console.print(f"[red]{e}[/red]")
+            sys.exit(1)
+        app_config = load_json(os.path.join(cfg_dir, "app_config.json"))
+        app_version = load_app_version(cfg_dir, args.game_dir)
+        cdn = args.cdn_base or fetch_cdn_candidates(app_config)[0]
+        root = build_root_path(app_config, app_version)
+        console.print(
+            f"[cyan]CDN: {cdn}/{root}  "
+            f"({app_config.get('Stream')}/{app_version.get('Major')}.{app_version.get('Minor')} "
+            f"client={app_config.get('ClientId')})[/cyan]"
+        )
         items = build_ptn_items(cfg_dir, app_config, app_version, cdn, args.category)
 
         if args.limit > 0:
