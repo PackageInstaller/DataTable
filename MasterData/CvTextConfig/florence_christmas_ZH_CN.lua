@@ -1,0 +1,21 @@
+return {
+  CHRISTMAS_MORNING = "Bonjour！教授，准备好和我一起去泳池了吗？身体在清凉的池水中漂浮，刚刚好缓解剧~烈~运~动带给身体的燥热哟。",
+  CHRISTMAS_AFTERNOON = "嘿嘿嘿......我里面穿的可是泳装，弄湿也没有关系哦？你看，就~像~这~样~",
+  CHRISTMAS_EVENING = "哎呀！被教授的水枪击中了，水顺着脖颈一直向下滑……嗯……滑到哪里了呢？嘿嘿，教授有时候也有坏心思哦♥ ",
+  CHRISTMAS_MIDNIGHT = "表现良好的孩子要收到礼物了呢~今晚我就是教授的圣诞老人，说吧~教授想要什么奖励？欸？教授不要乱戳……礼物可不藏在那种地方……哇啊！♥ ",
+  CHRISTMAS_DIALOGUE1 = "教授，这套泳装怎么样？肌肤被圣诞红映衬显得特别白皙呢。嗯……感冒？嘿嘿，不会冷的哦，不信你摸摸看？",
+  CHRISTMAS_DIALOGUE2 = "教授，圣诞礼物你想要什么样的药剂？别担心，我会用水枪“biu”地一下给你注射哦！",
+  CHRISTMAS_DIALOGUE4 = "哎呀，教授醒了？不要动哦，难得在教授身上装饰了圣诞彩球，脖子上的铃铛也很诱人~",
+  CHRISTMAS_DIALOGUE5 = "别急呀~教授，现在还没有到拆礼物的时间哦！",
+  CHRISTMAS_INTERACT1 = "甜蜜一击~biu~",
+  CHRISTMAS_INTERACT2 = "呀啊~好凉~",
+  CHRISTMAS_INTERACT3 = "反击开始！这可是添加了特~殊~药~剂~的水气球。",
+  CHRISTMAS_GAIN = "Joyeux Noël！没想到吧，教授的圣诞礼物是我哦~唔……全身湿漉漉的了~",
+  CHRISTMAS_FORMATION = "泳池派对？那怎么少得了我呢~",
+  CHRISTMAS_BATTLE = "您的圣诞惊喜已准备就位~",
+  CHRISTMAS_SKILL = "乖孩子，我来给你打针了哦~",
+  CHRISTMAS_MVP1 = "作为圣诞礼物是不是很棒？",
+  CHRISTMAS_MVP2 = "圣诞夜还很长，不要让芙洛伦寂寞哦♥ ",
+  CHRISTMAS_DUTY = "是你在找我吗，mon chaton~",
+  CHRISTMAS_RETREAT = "啊啊~被射中了……"
+}

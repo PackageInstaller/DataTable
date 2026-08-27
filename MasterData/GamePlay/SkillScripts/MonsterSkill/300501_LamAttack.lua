@@ -1,0 +1,30 @@
+local bs_1 = require("GamePlay.SkillScripts.CommonAttackSkill.1_CommonAttack_1")
+local bs_300501 = class("bs_300501", bs_1)
+local base = bs_1
+bs_300501.config = {
+  action1 = 1021,
+  action2 = 1044,
+  GS_Id = 8000,
+  effectId_trail = 1017902,
+  audioId1 = 111,
+  time1 = 0,
+  audioId2 = 112,
+  time2 = 0,
+  Imp = true
+}
+bs_300501.config = setmetatable(bs_300501.config, {
+  __index = base.config
+})
+
+function bs_300501:ctor()
+end
+
+function bs_300501:InitSkill(isMidwaySkill)
+  base.InitSkill(self, isMidwaySkill)
+end
+
+function bs_300501:OnCasterDie()
+  base.OnCasterDie(self)
+end
+
+return bs_300501
