@@ -1,0 +1,1927 @@
+{
+  "version": 1,
+  "hash": "AB5920AC6100685BCD0D547F09D26EE2818A316EC0ADDAB9F0798D6E839086AD",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131695925768,
+    "etc": "factory=MapNeedleFactory"
+  },
+  "count": 58,
+  "records": [
+    {
+      "id": 52000001,
+      "idCN": "大墓地A01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "neddle1",
+      "defaultVisible": true,
+      "neddlePos": "-7450.68,11.8,1074.427,357.0286,0.2500002,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000061,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000990
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000003,
+      "idCN": "大墓地A02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "neddle2",
+      "defaultVisible": true,
+      "neddlePos": "-7448.134,6.799999,1066.325,0.2786026,346.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000073,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000990
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000004,
+      "idCN": "01-修格里城-7号自由港/诡谲寒潮01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "guijue1",
+      "defaultVisible": true,
+      "neddlePos": "-6145.794,52.3,-62.1897,354.0286,246.25,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000071,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101012
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700108
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000472
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -614.6,
+      "icon_y": -6.22,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000005,
+      "idCN": "02-修格里城-铁盟哨站/断桥01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "duanqiao",
+      "defaultVisible": true,
+      "neddlePos": "--2580.112,18.9,-126.3833,345.5,168.25,-1.102329E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000064,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101005
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [
+        {
+          "id": 20100175
+        }
+      ],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000007,
+      "idCN": "大墓地",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": false,
+      "neddlePos": "5372.214,69.4,-7259.147,5.75,257,-2.145228E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": -1,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000990
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000008,
+      "idCN": "06-淘金乐园-曼德矿场/工厂守护者",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "gongchang",
+      "defaultVisible": true,
+      "neddlePos": "4308.895,54.62781,-5922.504,2.500001,293.5,-1.068234E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000083,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101003
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [
+        {
+          "id": 20100172
+        }
+      ],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [
+        {
+          "id": 10000409
+        }
+      ],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000011,
+      "idCN": "07-修格里城-澄明数据中心/进退维谷01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "jintui1",
+      "defaultVisible": true,
+      "neddlePos": "-3513.936,34.5,1690.808,5.528605,118,2.144409E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000068,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101009
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700286
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000670
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -351.3936,
+      "icon_y": 169.0808,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000013,
+      "idCN": "01-修格里城-7号自由港/拉面店引入01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "lamian",
+      "defaultVisible": true,
+      "neddlePos": "-7907.528,28.6,1015.702,26.52861,90.25,9.542447E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000091,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [
+        {
+          "id": 20700005
+        }
+      ],
+      "LevelConditions": [
+        {
+          "id": 20100146
+        }
+      ],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [
+        {
+          "id": 11400005,
+          "num": 5
+        }
+      ],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000014,
+      "idCN": "IN大墓地1",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "mudi1",
+      "defaultVisible": false,
+      "neddlePos": "-7514.771,6.799999,1134.954,4.028603,358.25,-6.686629E-09",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000025,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000015,
+      "idCN": "IN大墓地2",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "mudi2",
+      "defaultVisible": false,
+      "neddlePos": "-7421.652,6.799999,1062.12,5.028604,323.75,-1.07134E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000026,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000016,
+      "idCN": "IN灯塔1",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "dengta1",
+      "defaultVisible": true,
+      "neddlePos": "-10670.83,36.8,921.9175,359.5286,184.75,-1.667583E-09",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000023,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000017,
+      "idCN": "航天2",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "hangtian2",
+      "defaultVisible": true,
+      "neddlePos": "-9447.471,6.800003,-5227.247,1.750008,190,1.334644E-08",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000033,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000018,
+      "idCN": "航天3",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "hangtian3",
+      "defaultVisible": true,
+      "neddlePos": "-9508.226,6.799999,-4438.993,0.5000088,188,6.67036E-09",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000036,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000019,
+      "idCN": "隧道左侧",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "suidaozuo",
+      "defaultVisible": true,
+      "neddlePos": "-1963.721,18.83668,-570.7612,6.750026,199.25,-1.074666E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000015,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000020,
+      "idCN": "灯塔",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "dengta1",
+      "defaultVisible": true,
+      "neddlePos": "-10056.1,68.8,867.985,352.7786,322.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000017,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000021,
+      "idCN": "遗址",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "dengta1",
+      "defaultVisible": true,
+      "neddlePos": "-10004.71,56.8,911.3696,350.7786,353.25,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000018,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000022,
+      "idCN": "IN高架桥2",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "gaojiaqiao2",
+      "defaultVisible": true,
+      "neddlePos": "5758.156,79.4,-7426.059,354.75,174.5,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Tinche",
+      "triggerOrder": 51000054,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000023,
+      "idCN": "白烟",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": true,
+      "neddlePos": "-5208.174,13.75112,-240.6877,357.0286,247,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000063,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000024,
+      "idCN": "大墓地B",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": true,
+      "neddlePos": "-7424.852,6.799999,1035.988,359.7786,3.500001,4.168847E-10",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000072,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000025,
+      "idCN": "大墓地-篝火",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "",
+      "defaultVisible": true,
+      "neddlePos": "-7457.255,10.7,1064.687,3.528603,299.75,1.069244E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000067,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000026,
+      "idCN": "大墓地2b",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": true,
+      "neddlePos": "-7425.653,6.799999,1047.538,354.7786,36.5,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000075,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000027,
+      "idCN": "大墓地2-贝尔法斯特",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": true,
+      "neddlePos": "-7452.491,6.799999,1071.689,357.2786,301.4999,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000078,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000028,
+      "idCN": "航天",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "2",
+      "defaultVisible": true,
+      "neddlePos": "-5519.708,6.999271,73.38718,356.2786,293.25,-1.069472E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000033,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000029,
+      "idCN": "探索",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "tansuo",
+      "defaultVisible": true,
+      "neddlePos": "-6063.118,7.861198,-865.2379,352.7786,228.75,2.1515E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000059,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000030,
+      "idCN": "02-修格里城-铁盟哨站/断桥02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "duanqiao2",
+      "defaultVisible": false,
+      "neddlePos": "2442.988,30.5,-270.9846,351.25,133.25,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000052,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101005
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000031,
+      "idCN": "温泉2",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": true,
+      "neddlePos": "-5673.86,30.67176,-379.5347,5.028606,205.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000039,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000032,
+      "idCN": "温泉3",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "1",
+      "defaultVisible": true,
+      "neddlePos": "-6080.234,31.8116,-1051.273,23.27861,300,9.294353E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000040,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000033,
+      "idCN": "远望-灯塔",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "dengta2",
+      "defaultVisible": true,
+      "neddlePos": "-5336.981,21.76663,983.2822,357.7786,5,6.675122E-09",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000042,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000034,
+      "idCN": "断桥2",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "111",
+      "defaultVisible": false,
+      "neddlePos": "2540.391,17.5,-154.6439,350.75,151.25,2.162555E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 51000052,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": true,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000037,
+      "idCN": "07-修格里城-澄明数据中心/废楼",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "feilou",
+      "defaultVisible": true,
+      "neddlePos": "-3103.104,37.6393,428.5755,5.278603,20.25,-1.071762E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000092,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101008
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000039,
+      "idCN": "09-七号自由港-发电站/障碍重重01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "zhangai1",
+      "defaultVisible": true,
+      "neddlePos": "-9852.828,34.5,-3904.935,352.75,148,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000091,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100494
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700170
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000471
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -985.2828,
+      "icon_y": -390.4935,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000040,
+      "idCN": "02-修格里城-铁盟哨站/源源不绝01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "yuanyuan1",
+      "defaultVisible": true,
+      "neddlePos": "2586.208,43.1,-98.42171,7.750002,152.25,2.15411E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000074,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101015
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700162
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000473
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 258.6208,
+      "icon_y": -9.8421,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000038,
+      "idCN": "05-荒原站-铁盟哨站/荒原贫民窟",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "huangyuanpin1",
+      "defaultVisible": true,
+      "neddlePos": "4779.969,25.13287,30.32624,357.9908,79.25001,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000096,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100506
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700143
+        }
+      ],
+      "LevelConditions": [
+        {
+          "id": 20100172
+        }
+      ],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000002,
+      "idCN": "01-修格里城-7号自由港/诡谲寒潮02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "guijue2",
+      "defaultVisible": true,
+      "neddlePos": "-6145.794,52.3,-62.1897,354.0286,246.25,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000072,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101013
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700155
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000663
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -614.6,
+      "icon_y": -6.22,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000006,
+      "idCN": "01-修格里城-7号自由港/诡谲寒潮03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "guijue3",
+      "defaultVisible": true,
+      "neddlePos": "-6145.794,52.3,-62.1897,354.0286,246.25,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000073,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101014
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700160
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000664
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -614.6,
+      "icon_y": -6.22,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000012,
+      "idCN": "02-修格里城-铁盟哨站/源源不绝02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "yuanyuan2",
+      "defaultVisible": true,
+      "neddlePos": "2586.208,43.1,-98.42171,7.750002,152.25,2.15411E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000075,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101016
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700164
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001178
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 258.6208,
+      "icon_y": -9.8421,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000035,
+      "idCN": "02-修格里城-铁盟哨站/源源不绝03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "yuanyuan3",
+      "defaultVisible": true,
+      "neddlePos": "2586.208,43.1,-98.42171,7.750002,152.25,2.15411E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000076,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101017
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700166
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001179
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 258.6208,
+      "icon_y": -9.8421,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000036,
+      "idCN": "09-七号自由港-发电站/障碍重重02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "zhangai2",
+      "defaultVisible": true,
+      "neddlePos": "-9852.828,34.5,-3904.935,352.75,148,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000098,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100495
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700171
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001180
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -985.2828,
+      "icon_y": -390.4935,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000042,
+      "idCN": "09-七号自由港-发电站/障碍重重03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "zhangai3",
+      "defaultVisible": true,
+      "neddlePos": "-9852.828,34.5,-3904.935,352.75,148,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000100,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100496
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700172
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001181
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -985.2828,
+      "icon_y": -390.4935,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000043,
+      "idCN": "07-修格里城-澄明数据中心/进退维谷02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "jintui2",
+      "defaultVisible": true,
+      "neddlePos": "-3513.936,34.5,1690.808,5.528605,118,2.144409E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000069,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101010
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700287
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001182
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -351.3936,
+      "icon_y": 169.0808,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000044,
+      "idCN": "07-修格里城-澄明数据中心/进退维谷03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "jintui3",
+      "defaultVisible": true,
+      "neddlePos": "-3513.936,34.5,1690.808,5.528605,118,2.144409E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000070,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101011
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700288
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001183
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -351.3936,
+      "icon_y": 169.0808,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000041,
+      "idCN": "01-修格里城-7号自由港/UI/拉面店兑换商店",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "lamian",
+      "defaultVisible": true,
+      "neddlePos": "-7907.528,28.6,1015.702,26.52861,90.25,9.542447E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Diaocha",
+      "triggerOrder": 60000091,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [
+        {
+          "id": 20100146
+        }
+      ],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000009,
+      "idCN": "99活动/红茶战争/01俢格里-数据中心",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "hongcha",
+      "defaultVisible": true,
+      "neddlePos": "-3494,38,1797,348.2786,307,-4.359782E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": -1,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -349.4,
+      "icon_y": 179.7,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000010,
+      "idCN": "01-修格里城-7号自由港/拉面店有店面版",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "lamian",
+      "defaultVisible": true,
+      "neddlePos": "-7907.528,28.6,1015.702,26.52861,90.25,9.542447E-07",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Tinche",
+      "triggerOrder": 60000091,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100146
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": 0.0,
+      "icon_y": 0.0,
+      "iconPath": ""
+    },
+    {
+      "id": 52000045,
+      "idCN": "07-修格里城-澄明数据中心/澄明数据中心周边",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "shuju",
+      "defaultVisible": true,
+      "neddlePos": "-3761.171,21.8,1750,0.0286045,85.50001,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": -1,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -376.1171,
+      "icon_y": 175.0,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000046,
+      "idCN": "09-七号自由港-发电站/裂首震鸣01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "lieshou1",
+      "defaultVisible": true,
+      "neddlePos": "-14563.84,6.799999,-7759.518,7.5,352.5,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000110,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100749
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000107
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -1459.661,
+      "icon_y": -791.2006,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000047,
+      "idCN": "09-七号自由港-发电站/裂首震鸣02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "lieshou2",
+      "defaultVisible": true,
+      "neddlePos": "-14563.84,6.799999,-7759.518,7.5,352.5,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000111,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100754
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000108
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -1459.661,
+      "icon_y": -791.2006,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000048,
+      "idCN": "09-七号自由港-发电站/裂首震鸣03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "lieshou3",
+      "defaultVisible": true,
+      "neddlePos": "-14563.84,6.799999,-7759.518,7.5,352.5,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000112,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100755
+        }
+      ],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000111
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -1459.661,
+      "icon_y": -791.2006,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000049,
+      "idCN": "13-发电站-武器研究所/第五章副本",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "",
+      "defaultVisible": false,
+      "neddlePos": "",
+      "neddleUrl": "",
+      "triggerOrder": -1,
+      "triggerArgs": "",
+      "LevelBefore": [],
+      "ParagraphBefore": [],
+      "LevelConditions": [],
+      "QuestConditions": [],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": false,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": false,
+      "icon_x": -786.0,
+      "icon_y": -390.0,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000050,
+      "idCN": "18-海角城-发电站/冥霆终仪01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "MingTing",
+      "defaultVisible": true,
+      "neddlePos": "-12046.48,86.8,-16337.64,9.000017,173.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000113,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20100941
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700466
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001401
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -1204.6,
+      "icon_y": -1633.7,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000051,
+      "idCN": "18-海角城-发电站/冥霆终仪02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "MingTing2",
+      "defaultVisible": true,
+      "neddlePos": "-12046.48,86.8,-16337.64,9.000017,173.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000114,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101118
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700467
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001402
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -1204.6,
+      "icon_y": -1633.7,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000052,
+      "idCN": "18-海角城-发电站/冥霆终仪03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "MingTing3",
+      "defaultVisible": true,
+      "neddlePos": "-12046.48,86.8,-16337.64,9.000017,173.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000114,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101119
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700468
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81001403
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": -1204.6,
+      "icon_y": -1633.7,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000053,
+      "idCN": "24-栖羽站-岚心城/血影遍染01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "XueYing1",
+      "defaultVisible": true,
+      "neddlePos": "25696.83,421.8,6712.09,17.25,133.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000116,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101396
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700567
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81002060
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 2569.6,
+      "icon_y": 671.2,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000054,
+      "idCN": "24-栖羽站-岚心城/血影遍染02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "XueYing2",
+      "defaultVisible": true,
+      "neddlePos": "25696.83,421.8,6712.09,17.25,133.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000117,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101397
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700568
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81002098
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 2569.6,
+      "icon_y": 671.2,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000055,
+      "idCN": "24-栖羽站-岚心城/血影遍染03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "XueYing3",
+      "defaultVisible": true,
+      "neddlePos": "25696.83,421.8,6712.09,17.25,133.75,0",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000118,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20101398
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700569
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81002099
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 2569.6,
+      "icon_y": 671.2,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000056,
+      "idCN": "30-贡露城-维蒂林场/消毒措施01",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "MK_XDCS_01",
+      "defaultVisible": true,
+      "neddlePos": "1070,210,-12500,21,358.5,-2.85786E-08",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000119,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20102720
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700682
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81000474
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 121.0,
+      "icon_y": -1222.0,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000057,
+      "idCN": "30-贡露城-维蒂林场/消毒措施02",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "MK_XDCS_02",
+      "defaultVisible": true,
+      "neddlePos": "1070,210,-12500,21,358.5,-2.85786E-08",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000120,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20102719
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700683
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81002483
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 121.0,
+      "icon_y": -1222.0,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    },
+    {
+      "id": 52000058,
+      "idCN": "30-贡露城-维蒂林场/消毒措施03",
+      "mod": "大世界剧情插针",
+      "isInformalData": false,
+      "neddleName": "MK_XDCS_03",
+      "defaultVisible": true,
+      "neddlePos": "1070,210,-12500,21,358.5,-2.85786E-08",
+      "neddleUrl": "Environment/Env_UI/Env_Icon/Env_UI_Icon_Huashuda",
+      "triggerOrder": 51000121,
+      "triggerArgs": "",
+      "LevelBefore": [
+        {
+          "id": 20102721
+        }
+      ],
+      "ParagraphBefore": [
+        {
+          "id": 20700684
+        }
+      ],
+      "LevelConditions": [],
+      "QuestConditions": [
+        {
+          "id": 81002482
+        }
+      ],
+      "ItemConditions": [],
+      "EquipmentConditions": [],
+      "UnitConditions": [],
+      "lvCondition": 1,
+      "justOnce": true,
+      "childNeedle": false,
+      "needleAward": [],
+      "isShowUI": true,
+      "icon_x": 121.0,
+      "icon_y": -1222.0,
+      "iconPath": "UI/MainUI/Map_icon_quest"
+    }
+  ]
+}

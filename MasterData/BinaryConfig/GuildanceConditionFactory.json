@@ -1,0 +1,695 @@
+{
+  "version": 1,
+  "hash": "85F4F60D91BBAE8763E089B5A9C81C7447818147C7C7757523192B4D49B9DEA2",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131646928489,
+    "etc": "factory=GuildanceConditionFactory"
+  },
+  "count": 75,
+  "records": [
+    {
+      "id": 20400001,
+      "idCN": "通用/延迟120帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 120,
+      "cantPause": true
+    },
+    {
+      "id": 20400004,
+      "idCN": "通用/30帧后点击",
+      "mod": "点击任意区域",
+      "isInformalData": false,
+      "frame": 30
+    },
+    {
+      "id": 20400009,
+      "idCN": "通用/血量低于60%",
+      "mod": "低血量",
+      "hpPercent": 0.6
+    },
+    {
+      "id": 20400016,
+      "idCN": "通用/血量低于50%",
+      "mod": "低血量",
+      "hpPercent": 0.5
+    },
+    {
+      "id": 20400019,
+      "idCN": "通用/血量低于20%",
+      "mod": "低血量",
+      "hpPercent": 0.2
+    },
+    {
+      "id": 20400035,
+      "idCN": "通用/血量低于80%",
+      "mod": "低血量",
+      "hpPercent": 0.8
+    },
+    {
+      "id": 20400038,
+      "idCN": "通用/血量低于30%",
+      "mod": "低血量",
+      "hpPercent": 0.3
+    },
+    {
+      "id": 20400046,
+      "idCN": "通用/延迟30帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 30,
+      "cantPause": true
+    },
+    {
+      "id": 20400047,
+      "idCN": "通用/指定区域用牌全屏",
+      "mod": "指定区域使用卡牌",
+      "position_x": -3.0,
+      "position_y": 176.0,
+      "half_height": 387.0,
+      "half_width": 982.0,
+      "groundAreaPosition_x": 0.0,
+      "scale_x": 0.0
+    },
+    {
+      "id": 20400050,
+      "idCN": "通用/延迟210帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 210,
+      "cantPause": true
+    },
+    {
+      "id": 20400053,
+      "idCN": "通用/指定区域用牌莉薇娅",
+      "mod": "指定区域使用卡牌",
+      "position_x": 383.5,
+      "position_y": 176.0,
+      "half_height": 380.0,
+      "half_width": 590.0,
+      "groundAreaPosition_x": 0.0,
+      "scale_x": 0.0
+    },
+    {
+      "id": 20400055,
+      "idCN": "通用/延迟180帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 180,
+      "cantPause": true
+    },
+    {
+      "id": 20400060,
+      "idCN": "通用/延迟240帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 240,
+      "cantPause": true
+    },
+    {
+      "id": 20400061,
+      "idCN": "通用/延迟130帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 130,
+      "cantPause": true
+    },
+    {
+      "id": 20400062,
+      "idCN": "通用/延迟90帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 90,
+      "cantPause": true
+    },
+    {
+      "id": 20400063,
+      "idCN": "通用/延迟320帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 320,
+      "cantPause": true
+    },
+    {
+      "id": 20400064,
+      "idCN": "通用/血量低于40%",
+      "mod": "低血量",
+      "hpPercent": 0.4
+    },
+    {
+      "id": 20400002,
+      "idCN": "通用/延迟50帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 55,
+      "cantPause": true
+    },
+    {
+      "id": 20400034,
+      "idCN": "通用/延迟720帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 720,
+      "cantPause": true
+    },
+    {
+      "id": 20400048,
+      "idCN": "通用/点击弃牌按钮",
+      "mod": "点击弃牌按钮"
+    },
+    {
+      "id": 20400072,
+      "idCN": "通用/60帧后点击",
+      "mod": "点击任意区域",
+      "isInformalData": false,
+      "frame": 60
+    },
+    {
+      "id": 20400085,
+      "idCN": "通用/延迟1080帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 1080,
+      "cantPause": true
+    },
+    {
+      "id": 20400086,
+      "idCN": "通用/队长技充能完毕",
+      "mod": "队长技充能完毕",
+      "isInformalData": false
+    },
+    {
+      "id": 20400091,
+      "idCN": "通用/延迟360帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 360,
+      "cantPause": true
+    },
+    {
+      "id": 20400097,
+      "idCN": "通用/延迟660帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 660,
+      "cantPause": true
+    },
+    {
+      "id": 20400098,
+      "idCN": "通用/延迟1帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 1,
+      "cantPause": true
+    },
+    {
+      "id": 20400096,
+      "idCN": "通用/0帧后点击",
+      "mod": "点击任意区域",
+      "isInformalData": false,
+      "frame": 10
+    },
+    {
+      "id": 20400099,
+      "idCN": "通用/延迟100帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 100,
+      "cantPause": true
+    },
+    {
+      "id": 20400100,
+      "idCN": "001教学/04叶珏/使用A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600274
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400101,
+      "idCN": "001教学/04叶珏/使用B",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600273
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400102,
+      "idCN": "001教学/04叶珏/使用S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600272
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400103,
+      "idCN": "通用/延迟20帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 30,
+      "cantPause": true
+    },
+    {
+      "id": 20400104,
+      "idCN": "通用/延迟5帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 5,
+      "cantPause": true
+    },
+    {
+      "id": 20400105,
+      "idCN": "001教学/05菲妮娅/使用A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600233
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400106,
+      "idCN": "001教学/05菲妮娅/使用S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600237
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400107,
+      "idCN": "001教学/05菲妮娅/使用B",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600236
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400108,
+      "idCN": "001教学/00骨龙/使用莉薇娅A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600056
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400109,
+      "idCN": "001教学/00骨龙/使用莉薇娅S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600058
+        },
+        {
+          "cardID": 10600065
+        },
+        {
+          "cardID": 10600063
+        },
+        {
+          "cardID": 10600038
+        },
+        {
+          "cardID": 10600247
+        }
+      ]
+    },
+    {
+      "id": 20400110,
+      "idCN": "001教学/00骨龙/队长技解锁",
+      "mod": "队长技充能完毕",
+      "isInformalData": false
+    },
+    {
+      "id": 20400111,
+      "idCN": "001教学/00骨龙/使用菲妮娅S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600237
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400112,
+      "idCN": "001教学/00骨龙/使用冯里奈S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600191
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400113,
+      "idCN": "001教学/00骨龙/使用雷比斯A-2",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600111
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400114,
+      "idCN": "001教学/00骨龙/使用莉薇娅B",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600060
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400115,
+      "idCN": "通用/延迟300帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 300,
+      "cantPause": true
+    },
+    {
+      "id": 20400116,
+      "idCN": "通用/延迟280帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 280,
+      "cantPause": true
+    },
+    {
+      "id": 20400117,
+      "idCN": "通用/延迟270帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 270,
+      "cantPause": true
+    },
+    {
+      "id": 20400118,
+      "idCN": "通用/延迟255帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 255,
+      "cantPause": true
+    },
+    {
+      "id": 20400119,
+      "idCN": "通用/延迟260帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 260,
+      "cantPause": true
+    },
+    {
+      "id": 20400120,
+      "idCN": "通用/延迟195帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 195,
+      "cantPause": true
+    },
+    {
+      "id": 20400081,
+      "idCN": "001教学/00骨龙/使用叶珏S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600272
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400082,
+      "idCN": "001教学/00骨龙/使用菲妮娅A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600233
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400083,
+      "idCN": "001教学/00骨龙/使用雷比斯A-0",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600105
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400121,
+      "idCN": "通用/点击选择卡",
+      "mod": "点击任意区域",
+      "isInformalData": false,
+      "frame": 10
+    },
+    {
+      "id": 20400122,
+      "idCN": "通用/延迟35帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 35,
+      "cantPause": true
+    },
+    {
+      "id": 20400125,
+      "idCN": "通用/点击弃牌确认按钮",
+      "mod": "确认弃牌",
+      "isInformalData": false
+    },
+    {
+      "id": 20400126,
+      "idCN": "001教学/00骨龙/选择卡牌2",
+      "mod": "选择指定卡牌",
+      "isInformalData": false,
+      "cardID": 10600111
+    },
+    {
+      "id": 20400127,
+      "idCN": "通用/延迟80帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 80,
+      "cantPause": true
+    },
+    {
+      "id": 20400128,
+      "idCN": "通用/延迟10帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 10,
+      "cantPause": true
+    },
+    {
+      "id": 20400129,
+      "idCN": "通用/延迟3帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 3,
+      "cantPause": true
+    },
+    {
+      "id": 20400130,
+      "idCN": "通用/延迟7帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 5,
+      "cantPause": true
+    },
+    {
+      "id": 20400131,
+      "idCN": "通用/延迟2帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 2,
+      "cantPause": true
+    },
+    {
+      "id": 20400005,
+      "idCN": "001教学/莉薇娅三人组/使用弗兰A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600184
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400007,
+      "idCN": "001教学/莉薇娅三人组/使用艾略特B",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600161
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400010,
+      "idCN": "001教学/莉薇娅三人组/使用弗兰B",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600182
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400011,
+      "idCN": "001教学/莉薇娅三人组/使用艾略特A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600160
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400012,
+      "idCN": "001教学/莉薇娅三人组/使用莉薇娅B-3",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600037
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400013,
+      "idCN": "001教学/莉薇娅三人组/使用莉薇娅A",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600056
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400017,
+      "idCN": "001教学/莉薇娅三人组/使用莉薇娅S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600038
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400018,
+      "idCN": "001教学/莉薇娅三人组/使用艾略特S",
+      "mod": "使用卡牌",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "cardID": 10600162
+        }
+      ],
+      "isNot": false
+    },
+    {
+      "id": 20400003,
+      "idCN": "通用/延迟480帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 480,
+      "cantPause": true
+    },
+    {
+      "id": 20400006,
+      "idCN": "通用/延迟420帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 420,
+      "cantPause": true
+    },
+    {
+      "id": 20400008,
+      "idCN": "通用/延迟840帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 840,
+      "cantPause": true
+    },
+    {
+      "id": 20400014,
+      "idCN": "通用/延迟5分钟",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 17820,
+      "cantPause": false
+    },
+    {
+      "id": 20400015,
+      "idCN": "通用/延迟540帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 540,
+      "cantPause": true
+    },
+    {
+      "id": 20400020,
+      "idCN": "通用/延迟780帧",
+      "mod": "运行时间",
+      "isInformalData": false,
+      "frame": 780,
+      "cantPause": true
+    }
+  ]
+}

@@ -1,0 +1,2036 @@
+{
+  "version": 1,
+  "hash": "DEA2778A18571ADAD559AFD88F2B3E2DDAE7FC21D786642190BFDFE13B8E4D67",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131435288922,
+    "etc": "factory=LeaderCardConditionFactory"
+  },
+  "count": 133,
+  "records": [
+    {
+      "id": 10800006,
+      "idCN": "用指定卡/7次",
+      "mod": "使用卡牌次数",
+      "isInformalData": false,
+      "progressMax": 7,
+      "cardId": -1,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800007,
+      "idCN": "累计耗费/24",
+      "mod": "累计消耗费用",
+      "progressMax": 24
+    },
+    {
+      "id": 10800008,
+      "idCN": "用Tag卡/2次Tara_A",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 2,
+      "tagList": [
+        {
+          "tagId": 12600121
+        }
+      ],
+      "tagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800010,
+      "idCN": "复合/弗兰",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600312
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 10
+    },
+    {
+      "id": 10800012,
+      "idCN": "用指定卡/2次狮鬃A",
+      "mod": "使用卡牌次数",
+      "progressMax": 2,
+      "cardId": 10600087,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800013,
+      "idCN": "复合/静流-cd30用B减20",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600064
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 20
+    },
+    {
+      "id": 10800014,
+      "idCN": "用指定卡/2次雷火B",
+      "mod": "使用卡牌次数",
+      "progressMax": 2,
+      "cardId": 10600097,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800015,
+      "idCN": "基础产品",
+      "mod": "使用卡牌次数",
+      "progressMax": 4,
+      "cardId": -1,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800016,
+      "idCN": "击杀次数/1",
+      "mod": "技能击杀次数",
+      "buffOwnerId": 10000094,
+      "OnlyEnemy": true,
+      "progressMax": 1
+    },
+    {
+      "id": 10800017,
+      "idCN": "用Tag卡/3次夏洛蒂A",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 3,
+      "tagList": [
+        {
+          "tagId": 12600069
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": false,
+      "progAddNum": 1
+    },
+    {
+      "id": 10800021,
+      "idCN": "复合/卡莲-cd30治疗女性减5",
+      "mod": "治疗符合条件的单位",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 30,
+      "targetType": "Ally",
+      "tagList": [
+        {
+          "tagId": 12600067
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800022,
+      "idCN": "复合/多萝西",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600057
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800023,
+      "idCN": "用指定卡/1次魇A-1",
+      "mod": "使用卡牌次数",
+      "progressMax": 1,
+      "cardId": 10600131,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800025,
+      "idCN": "用Tag卡/2次紫",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 2,
+      "tagList": [
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800027,
+      "idCN": "卡牌数/墓地大于5",
+      "mod": "卡牌数量满足条件",
+      "isInformalData": false,
+      "progressMax": 1,
+      "isIncludeDeck": false,
+      "isIncludeHand": false,
+      "isIncludeGrave": true,
+      "tagList": [],
+      "tagType": "And",
+      "judgeType": "Greater",
+      "cardNum": 5
+    },
+    {
+      "id": 10800028,
+      "idCN": "用指定卡/4次0费",
+      "mod": "使用卡牌次数",
+      "progressMax": 4,
+      "cardId": -1,
+      "condition": "Equal",
+      "cost_SN": 0,
+      "isContinuous": false
+    },
+    {
+      "id": 10800029,
+      "idCN": "用指定卡/2次宵月A-2",
+      "mod": "使用卡牌次数",
+      "progressMax": 2,
+      "cardId": 10600027,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800019,
+      "idCN": "用Tag卡/5次绿",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 5,
+      "tagList": [
+        {
+          "tagId": 12600028
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800031,
+      "idCN": "用指定卡/2次多萝西A-1",
+      "mod": "使用卡牌次数",
+      "progressMax": 2,
+      "cardId": 10600017,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800032,
+      "idCN": "牌库抽卡/7",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 7,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "And"
+    },
+    {
+      "id": 10800033,
+      "idCN": "卡牌数/墓地黑卡大于3",
+      "mod": "卡牌数量满足条件",
+      "progressMax": 1,
+      "isIncludeDeck": false,
+      "isIncludeHand": false,
+      "isIncludeGrave": true,
+      "tagList": [
+        {
+          "tagId": 12600037
+        }
+      ],
+      "tagType": "And",
+      "judgeType": "Greater",
+      "cardNum": 3
+    },
+    {
+      "id": 10800018,
+      "idCN": "累计弃卡/4黑",
+      "mod": "弃除指定Tag卡牌",
+      "progressMax": 4,
+      "tagList": [
+        {
+          "tagId": 12600037
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800003,
+      "idCN": "用指定卡/2次0费",
+      "mod": "使用卡牌次数",
+      "progressMax": 2,
+      "cardId": -1,
+      "condition": "Equal",
+      "cost_SN": 0,
+      "isContinuous": false
+    },
+    {
+      "id": 10800004,
+      "idCN": "可用费用/12",
+      "mod": "当前可用费用",
+      "progressMax": 12
+    },
+    {
+      "id": 10800036,
+      "idCN": "用指定卡/2次跳鼠B-1",
+      "mod": "使用卡牌次数",
+      "progressMax": 2,
+      "cardId": 10600259,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800037,
+      "idCN": "用Tag卡/5次红",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 5,
+      "tagList": [
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800038,
+      "idCN": "用Tag卡/2次队长技",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 2,
+      "tagList": [
+        {
+          "tagId": 12600007
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800041,
+      "idCN": "卡牌数/墓地小于3",
+      "mod": "卡牌数量满足条件",
+      "progressMax": 1,
+      "isIncludeDeck": false,
+      "isIncludeHand": false,
+      "isIncludeGrave": true,
+      "tagList": [],
+      "tagType": "And",
+      "judgeType": "Less",
+      "cardNum": 3
+    },
+    {
+      "id": 10800042,
+      "idCN": "刷牌/1",
+      "mod": "手动弃牌次数",
+      "progressMax": 1
+    },
+    {
+      "id": 10800043,
+      "idCN": "用Tag卡/1次红",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 1,
+      "tagList": [
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800045,
+      "idCN": "cd/30",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 30
+    },
+    {
+      "id": 10800030,
+      "idCN": "用Tag卡/1次黄",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 1,
+      "tagList": [
+        {
+          "tagId": 12600146
+        }
+      ],
+      "tagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800048,
+      "idCN": "用Tag卡/1次蓝",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 1,
+      "tagList": [
+        {
+          "tagId": 12600009
+        }
+      ],
+      "tagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800051,
+      "idCN": "可用费用/8",
+      "mod": "当前可用费用",
+      "isInformalData": false,
+      "progressMax": 8
+    },
+    {
+      "id": 10800002,
+      "idCN": "用Tag卡/6次红",
+      "mod": "使用指定Tag卡牌",
+      "progressMax": 6,
+      "tagList": [
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800005,
+      "idCN": "累计耗费/20",
+      "mod": "累计消耗费用",
+      "progressMax": 20
+    },
+    {
+      "id": 10800011,
+      "idCN": "用指定卡/1次魇A-0",
+      "mod": "使用卡牌次数",
+      "progressMax": 1,
+      "cardId": 10600090,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800035,
+      "idCN": "复合/伊洛娜-cd30抽红减4",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 4,
+      "progressMax": 32,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800001,
+      "idCN": "牌库抽卡/9",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 9,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "And"
+    },
+    {
+      "id": 10800009,
+      "idCN": "用Tag卡/3次闻笙A-0",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 3,
+      "tagList": [
+        {
+          "tagId": 12600222
+        }
+      ],
+      "tagType": "Or",
+      "isContinue": false
+    },
+    {
+      "id": 10800026,
+      "idCN": "施加层数/点燃10",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 10,
+      "buffFO": 10404548,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": false,
+      "progAddNum": 1
+    },
+    {
+      "id": 10800034,
+      "idCN": "可用费用/6",
+      "mod": "当前可用费用",
+      "isInformalData": false,
+      "progressMax": 6
+    },
+    {
+      "id": 10800039,
+      "idCN": "复合/隼-cd30斩裂撕裂灼心减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600088
+        },
+        {
+          "tagId": 12600087
+        },
+        {
+          "tagId": 12600186
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800040,
+      "idCN": "cd/奈弥-cd25",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 25
+    },
+    {
+      "id": 10800046,
+      "idCN": "用Tag卡/5次引雷",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 5,
+      "tagList": [
+        {
+          "tagId": 12600210
+        }
+      ],
+      "tagType": "Or",
+      "isContinue": false
+    },
+    {
+      "id": 10800049,
+      "idCN": "卡牌数/手牌大于4",
+      "mod": "卡牌数量满足条件",
+      "isInformalData": false,
+      "progressMax": 1,
+      "isIncludeDeck": false,
+      "isIncludeHand": true,
+      "isIncludeGrave": false,
+      "tagList": [],
+      "tagType": "And",
+      "judgeType": "Greater",
+      "cardNum": 4
+    },
+    {
+      "id": 10800052,
+      "idCN": "牌库抽卡/6无人机",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 6,
+      "isOnlyDeck": true,
+      "tagList": [
+        {
+          "tagId": 12600472
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800053,
+      "idCN": "施加层数/达斯廷-生成9天火",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 9,
+      "buffFO": 10410322,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "buffFoList": []
+    },
+    {
+      "id": 10800054,
+      "idCN": "用Tag卡/6次引雷_非卡洛琳S",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 6,
+      "tagList": [
+        {
+          "tagId": 12600210
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [
+        {
+          "tagId": 12600302
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800055,
+      "idCN": "角色阵亡/我方角色1",
+      "mod": "符合筛选条件的单位死亡",
+      "isInformalData": false,
+      "progressMax": 1,
+      "targetType": "Ally",
+      "tagList": [],
+      "tagType": "And"
+    },
+    {
+      "id": 10800057,
+      "idCN": "可用费用/4",
+      "mod": "当前可用费用",
+      "isInformalData": false,
+      "progressMax": 4
+    },
+    {
+      "id": 10800058,
+      "idCN": "用Tag卡/2次神盾波克士牌",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 2,
+      "tagList": [
+        {
+          "tagId": 12600214
+        },
+        {
+          "tagId": 12600282
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": false,
+      "progAddNum": 1
+    },
+    {
+      "id": 10800059,
+      "idCN": "用Tag卡/索玛-cd30红卡黄卡紫卡绿卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600073
+        },
+        {
+          "tagId": 12600146
+        },
+        {
+          "tagId": 12600028
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800060,
+      "idCN": "复合/妮蔻拉",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 45,
+      "isOnlyDeck": false,
+      "tagList": [],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800056,
+      "idCN": "销卡/6黑",
+      "mod": "销毁指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 6,
+      "tagList": [
+        {
+          "tagId": 12600037
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800061,
+      "idCN": "用Tag卡/5次黄",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 5,
+      "tagList": [
+        {
+          "tagId": 12600146
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800062,
+      "idCN": "用Tag卡/4次黄",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 4,
+      "tagList": [
+        {
+          "tagId": 12600146
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800063,
+      "idCN": "累计生成/6张黑卡",
+      "mod": "生成符合条件的卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 6,
+      "tagList": [
+        {
+          "tagId": 12600037
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800064,
+      "idCN": "用Tag卡/5次紫",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 5,
+      "tagList": [
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false
+    },
+    {
+      "id": 10800066,
+      "idCN": "累计耗费/21",
+      "mod": "累计消耗费用",
+      "isInformalData": false,
+      "progressMax": 21
+    },
+    {
+      "id": 10800067,
+      "idCN": "复合/遥-cd24用红减2",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 24,
+      "tagList": [
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 2
+    },
+    {
+      "id": 10800068,
+      "idCN": "牌库抽卡/6蓝",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 6,
+      "isOnlyDeck": true,
+      "tagList": [
+        {
+          "tagId": 12600009
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800024,
+      "idCN": "复合/塞西尔-cd30灼心减5",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 30,
+      "buffFoList": [],
+      "buffFO": 10400461,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800069,
+      "idCN": "可用费用/10",
+      "mod": "当前可用费用",
+      "isInformalData": false,
+      "progressMax": 10
+    },
+    {
+      "id": 10800074,
+      "idCN": "用指定卡/6次",
+      "mod": "使用卡牌次数",
+      "isInformalData": false,
+      "progressMax": 6,
+      "cardId": -1,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800075,
+      "idCN": "牌库抽卡/7红",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 7,
+      "isOnlyDeck": true,
+      "tagList": [
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800076,
+      "idCN": "复合/魇-cd30隐身减8",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 30,
+      "buffFoList": [],
+      "buffFO": 10416171,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 8
+    },
+    {
+      "id": 10800077,
+      "idCN": "复合/卡塔斯-cd20点燃减2",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 20,
+      "buffFO": 10404548,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 2
+    },
+    {
+      "id": 10800079,
+      "idCN": "复合/卡塔斯-cd25点燃减2",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 25,
+      "buffFO": 10404548,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 2
+    },
+    {
+      "id": 10800080,
+      "idCN": "复合/卡塔斯-cd30点燃减2",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 30,
+      "buffFO": 10404548,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 2
+    },
+    {
+      "id": 10800081,
+      "idCN": "复合/柯娜-cd20护盾减3",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 20,
+      "buffFO": 10409553,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 3
+    },
+    {
+      "id": 10800082,
+      "idCN": "复合/柯娜-cd25护盾减3",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 25,
+      "buffFO": 10409553,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 3
+    },
+    {
+      "id": 10800083,
+      "idCN": "复合/柯娜-cd30护盾减3红卡减6",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 30,
+      "buffFO": 10409564,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 3
+    },
+    {
+      "id": 10800047,
+      "idCN": "复合/苏恩-cd30暗艺减5",
+      "mod": "生成符合条件的卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600074
+        }
+      ],
+      "tagType": "And"
+    },
+    {
+      "id": 10800050,
+      "idCN": "复合/卡莲-cd30用绿减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600028
+        }
+      ],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800070,
+      "idCN": "牌库抽卡/10",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 10,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "And"
+    },
+    {
+      "id": 10800020,
+      "idCN": "卡牌数/手牌负能大于1",
+      "mod": "卡牌数量满足条件",
+      "isInformalData": false,
+      "progressMax": 1,
+      "isIncludeDeck": false,
+      "isIncludeHand": true,
+      "isIncludeGrave": false,
+      "tagList": [
+        {
+          "tagId": 12600164
+        }
+      ],
+      "tagType": "And",
+      "judgeType": "Greater",
+      "cardNum": 0
+    },
+    {
+      "id": 10800071,
+      "idCN": "可用费用/9",
+      "mod": "当前可用费用",
+      "isInformalData": false,
+      "progressMax": 9
+    },
+    {
+      "id": 10800072,
+      "idCN": "复合/亚莉奈",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600269
+        },
+        {
+          "tagId": 12600244
+        },
+        {
+          "tagId": 12600090
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12600499
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800073,
+      "idCN": "牌库抽卡/8爆炸物",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 8,
+      "isOnlyDeck": true,
+      "tagList": [
+        {
+          "tagId": 12600057
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800078,
+      "idCN": "用Tag卡/6次引雷或冻结",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 6,
+      "tagList": [
+        {
+          "tagId": 12600210
+        },
+        {
+          "tagId": 12600019
+        },
+        {
+          "tagId": 12600206
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601097
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": false,
+      "progAddNum": 1
+    },
+    {
+      "id": 10800044,
+      "idCN": "复合/约书亚-cd25用暗艺减10",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 25,
+      "tagList": [
+        {
+          "tagId": 12600074
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 10
+    },
+    {
+      "id": 10800084,
+      "idCN": "累计耗费/13",
+      "mod": "累计消耗费用",
+      "isInformalData": false,
+      "progressMax": 13
+    },
+    {
+      "id": 10800085,
+      "idCN": "复合/薇尔岚-cd30冻结减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600019
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800065,
+      "idCN": "复合/夏尔-cd30造成减益减3",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 30,
+      "buffFoList": [],
+      "buffFO": 10410942,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 3
+    },
+    {
+      "id": 10800086,
+      "idCN": "复合/安菲娅",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 4,
+      "progressMax": 40,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600073
+        },
+        {
+          "tagId": 12601307
+        },
+        {
+          "tagId": 12601308
+        },
+        {
+          "tagId": 12601309
+        },
+        {
+          "tagId": 12601310
+        },
+        {
+          "tagId": 12601311
+        },
+        {
+          "tagId": 12601312
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800087,
+      "idCN": "复合/丽桑德拉-cd30红紫绿减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600073
+        },
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600028
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601342
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800088,
+      "idCN": "牌库抽卡/8",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 8,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800089,
+      "idCN": "用指定卡/8次",
+      "mod": "使用卡牌次数",
+      "isInformalData": false,
+      "progressMax": 8,
+      "cardId": -1,
+      "condition": "Greater",
+      "cost_SN": -10000,
+      "isContinuous": false
+    },
+    {
+      "id": 10800090,
+      "idCN": "用Tag卡/2次夏洛蒂A",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 2,
+      "tagList": [
+        {
+          "tagId": 12600069
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": false,
+      "progAddNum": 1
+    },
+    {
+      "id": 10800091,
+      "idCN": "复合/帕拉笛-cd30",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600009
+        },
+        {
+          "tagId": 12600146
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601431
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800092,
+      "idCN": "复合/生驹-cd30用红绿紫减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600028
+        },
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601450
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800093,
+      "idCN": "复合/佩罗塔-cd30获得雷卡减5",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 30,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600210
+        },
+        {
+          "tagId": 12600271
+        },
+        {
+          "tagId": 12600273
+        },
+        {
+          "tagId": 12600274
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800094,
+      "idCN": "复合/无名-cd30获得红绿紫减5",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 30,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600028
+        },
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800095,
+      "idCN": "复合/金子小姐-cd25用雷减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 25,
+      "tagList": [
+        {
+          "tagId": 12600210
+        },
+        {
+          "tagId": 12600271
+        },
+        {
+          "tagId": 12600273
+        },
+        {
+          "tagId": 12600274
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800096,
+      "idCN": "复合/乌刹娜-cd50获得红黄紫减5",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 50,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600073
+        },
+        {
+          "tagId": 12600146
+        },
+        {
+          "tagId": 12600145
+        }
+      ],
+      "tagType": "or"
+    },
+    {
+      "id": 10800098,
+      "idCN": "牌库抽卡/11",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 10,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "And"
+    },
+    {
+      "id": 10800097,
+      "idCN": "复合/罗洁尔-cd35生成-5",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 35
+    },
+    {
+      "id": 10800099,
+      "idCN": "复合/阿知波-cd25用自身减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 25,
+      "tagList": [
+        {
+          "tagId": 12600479
+        },
+        {
+          "tagId": 12600480
+        },
+        {
+          "tagId": 12600481
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800101,
+      "idCN": "复合/莱卡吉亚",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 3,
+      "progressMax": 30,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600057
+        },
+        {
+          "tagId": 12600011
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800100,
+      "idCN": "复合/涟-cd30用卡减5",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 30
+    },
+    {
+      "id": 10800102,
+      "idCN": "复合/马吉拉·星仪-cd35获得卡减5",
+      "mod": "生成符合条件的卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12600170
+        },
+        {
+          "tagId": 12601499
+        },
+        {
+          "tagId": 12601497
+        },
+        {
+          "tagId": 12601498
+        },
+        {
+          "tagId": 12601491
+        },
+        {
+          "tagId": 12600200
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800103,
+      "idCN": "复合/小麦-cd30",
+      "mod": "玩家修改Buff层数",
+      "isInformalData": false,
+      "progressMax": 30,
+      "buffFoList": [],
+      "buffFO": 10416809,
+      "isPositive": true,
+      "isNegative": false,
+      "isTimeProg": true,
+      "progAddNum": 10
+    },
+    {
+      "id": 10800104,
+      "idCN": "复合/真咲-cd35获得使魔和自身卡减5",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 35,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600001
+        },
+        {
+          "tagId": 12601680
+        },
+        {
+          "tagId": 12600074
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800105,
+      "idCN": "复合/瑞瓦-cd30",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 30
+    },
+    {
+      "id": 10800107,
+      "idCN": "牌库抽卡/12",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": false,
+      "progAddNum": 1,
+      "progressMax": 12,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "And"
+    },
+    {
+      "id": 10800106,
+      "idCN": "复合/克洛伊",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 3,
+      "progressMax": 30,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800108,
+      "idCN": "复合/伊卡菈",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 36
+    },
+    {
+      "id": 10800109,
+      "idCN": "复合/伊利亚德-cd35",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12600009
+        },
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601837
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800110,
+      "idCN": "复合/斯洛卡伊-cd49",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 49,
+      "tagList": [
+        {
+          "tagId": 12600009
+        },
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601866
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 7
+    },
+    {
+      "id": 10800111,
+      "idCN": "复合/海伦娜-cd30",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 30
+    },
+    {
+      "id": 10800112,
+      "idCN": "复合/切茜娅",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 1,
+      "progressMax": 30,
+      "isOnlyDeck": false,
+      "tagList": [
+        {
+          "tagId": 12600037
+        }
+      ],
+      "tagType": "or"
+    },
+    {
+      "id": 10800113,
+      "idCN": "复合/朵拉弥丝-cd30",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 3
+    },
+    {
+      "id": 10800114,
+      "idCN": "累计耗费/15",
+      "mod": "累计消耗费用",
+      "isInformalData": false,
+      "progressMax": 13
+    },
+    {
+      "id": 10800115,
+      "idCN": "复合/嘉尔-cd30抽卡减1",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 1,
+      "progressMax": 30,
+      "isOnlyDeck": false,
+      "tagList": [],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800116,
+      "idCN": "复合/陈书闲-cd30用卡减2",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 2
+    },
+    {
+      "id": 10800117,
+      "idCN": "复合/沃斯托克-cd35用卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800118,
+      "idCN": "复合/蒂丝塔尔",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [],
+      "tagType": "And",
+      "reverseTagList": [],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800119,
+      "idCN": "复合/拉妲-cd40机械爆炸物减6",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 38,
+      "tagList": [
+        {
+          "tagId": 12600011
+        },
+        {
+          "tagId": 12600057
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12601975
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 6
+    },
+    {
+      "id": 10800120,
+      "idCN": "复合/卡塔斯·业火-cd35用卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 36,
+      "tagList": [],
+      "tagType": "And",
+      "reverseTagList": [
+        {
+          "tagId": 12601998
+        },
+        {
+          "tagId": 12601997
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 4
+    },
+    {
+      "id": 10800121,
+      "idCN": "复合/夏洛蒂-cd35用红黄橙减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600146
+        },
+        {
+          "tagId": 12600111
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12602009
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800122,
+      "idCN": "复合/夏娜",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12602020
+        },
+        {
+          "tagId": 12602022
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800123,
+      "idCN": "复合/露比-cd30用卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12600011
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12602034
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800124,
+      "idCN": "复合/迪妮莎-cd39",
+      "mod": "累计入手卡牌数量",
+      "isInformalData": false,
+      "isTimeProg": true,
+      "progAddNum": 5,
+      "progressMax": 40,
+      "isOnlyDeck": true,
+      "tagList": [],
+      "tagType": "Or"
+    },
+    {
+      "id": 10800125,
+      "idCN": "复合/蓝鹊儿-cd35用卡-5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12602060
+        },
+        {
+          "tagId": 12602058
+        },
+        {
+          "tagId": 12602062
+        },
+        {
+          "tagId": 12602059
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800126,
+      "idCN": "复合/美琪",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 32,
+      "tagList": [
+        {
+          "tagId": 12602096
+        },
+        {
+          "tagId": 12602097
+        },
+        {
+          "tagId": 12602098
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 4
+    },
+    {
+      "id": 10800127,
+      "idCN": "复合/多萝西·瑰晨",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 40,
+      "tagList": [
+        {
+          "tagId": 12600057
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12602083
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800128,
+      "idCN": "复合/伊洛娜·暮光-cd35爆炸物机械减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12600057
+        },
+        {
+          "tagId": 12600011
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12602110
+        }
+      ],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800129,
+      "idCN": "复合/联动1号-cd30魔女用卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12602135
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800130,
+      "idCN": "复合/爱弥儿",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12600145
+        },
+        {
+          "tagId": 12600146
+        },
+        {
+          "tagId": 12600073
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [
+        {
+          "tagId": 12602147
+        }
+      ],
+      "reverseTagType": "And",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800131,
+      "idCN": "复合/联动2号-cd30魔女用卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 30,
+      "tagList": [
+        {
+          "tagId": 12602135
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800132,
+      "idCN": "复合/联动3号-cd35魔女用卡减5",
+      "mod": "使用指定Tag卡牌",
+      "isInformalData": false,
+      "progressMax": 35,
+      "tagList": [
+        {
+          "tagId": 12602135
+        }
+      ],
+      "tagType": "Or",
+      "reverseTagList": [],
+      "reverseTagType": "Or",
+      "isContinue": false,
+      "isTimeProg": true,
+      "progAddNum": 5
+    },
+    {
+      "id": 10800133,
+      "idCN": "复合/西蒙姐弟-cd30",
+      "mod": "等待秒数",
+      "isInformalData": false,
+      "progressMax": 30
+    }
+  ]
+}

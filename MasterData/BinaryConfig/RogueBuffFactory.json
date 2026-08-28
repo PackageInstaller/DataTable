@@ -1,0 +1,2826 @@
+{
+  "version": 1,
+  "hash": "26BAB7225CAAACA4056193DC29953D60049D44BBFB729606EDBD55D67182DE25",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131821599600,
+    "etc": "factory=RogueBuffFactory"
+  },
+  "count": 143,
+  "records": [
+    {
+      "id": 89500001,
+      "idCN": "RogueBuffFactory测试品",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "",
+      "quality": "Blue",
+      "iconPath": "",
+      "des": "",
+      "intensifyDes": "",
+      "effect": -1,
+      "intensifyEffect": -1,
+      "correspondingTeam": -1
+    },
+    {
+      "id": 89500002,
+      "idCN": "05推力/盈缺/天赋4-石火",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·石火",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ShiHuo",
+      "des": "【星石】触发【重伤】/【炽地】",
+      "intensifyDes": "",
+      "effect": 12303178,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700001,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500003,
+      "idCN": "05推力/盈缺/天赋2-星流",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·星流",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_XingLiu",
+      "des": "使用【弃牌】指令时，每丢弃1张卡牌，释放1枚【星石】\\n【星石】对生命值最高的敌方造成1段负能伤害并移除我方全体1000点生命值",
+      "intensifyDes": "",
+      "effect": 12303295,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700001,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500004,
+      "idCN": "05推力/盈缺/天赋5-轰天",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·轰天",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_HongTian",
+      "des": "每丢弃1张卡牌，【星石】造成的伤害提高1%，上限200%",
+      "intensifyDes": "",
+      "effect": 12303181,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700001,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500005,
+      "idCN": "05推力/盈缺/天赋1-交辉",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·交辉",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_JiaoHui",
+      "des": "任意我方生命值低于90%/70%/50%/30%/10%时，释放1枚【星石】，各限5次\\n【星石】对生命值最高的敌方造成1段负能伤害并移除我方全体1000点生命值",
+      "intensifyDes": "",
+      "effect": 12303302,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700001,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500017,
+      "idCN": "05推力/盈缺/天赋3-星露",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·星露",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_XingLu",
+      "des": "每抽到1张卡牌，【弃牌】指令冷却缩短3秒",
+      "intensifyDes": "",
+      "effect": 12303182,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700001,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500006,
+      "idCN": "05推力/盈缺/蓝-上弦",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·上弦",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ShangXian",
+      "des": "每抽到3张卡牌，释放1枚【火焰陨星】，对随机敌方造成1段火焰伤害，同时触发【点燃】",
+      "intensifyDes": "每抽到2张卡牌，释放1枚【火焰陨星】，对随机敌方造成1段火焰伤害，同时触发【点燃】",
+      "effect": 12303303,
+      "intensifyEffect": 12303183,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500010,
+      "idCN": "05推力/盈缺/蓝-下弦",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·下弦",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_XiaXian",
+      "des": "每丢弃3张卡牌，释放1枚【闪电陨星】，对随机敌方造成1段电磁伤害，同时触发【落雷】",
+      "intensifyDes": "每丢弃2张卡牌，释放1枚【闪电陨星】，对随机敌方造成1段电磁伤害，同时触发【落雷】",
+      "effect": 12303300,
+      "intensifyEffect": 12303184,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500012,
+      "idCN": "05推力/盈缺/蓝-满月",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·满月",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ManYue",
+      "des": "每【销毁】3张卡牌，释放1枚【秘法陨星】，对随机敌方造成1段混响伤害，同时回复我方全体2000点生命值",
+      "intensifyDes": "每【销毁】2张卡牌，释放1枚【秘法陨星】，对随机敌方造成1段混响伤害，同时回复我方全体2000点生命值",
+      "effect": 12303301,
+      "intensifyEffect": 12303189,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500013,
+      "idCN": "05推力/盈缺/蓝-新月",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·新月",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_XinYue",
+      "des": "每生成3张卡牌，释放1枚【秘法陨星】，对随机敌方造成1段混响伤害，同时使我方全体生命值上限+2%",
+      "intensifyDes": "每生成2张卡牌，释放1枚【秘法陨星】，对随机敌方造成1段混响伤害，同时使我方全体生命值上限+2%",
+      "effect": 12303298,
+      "intensifyEffect": 12303190,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500014,
+      "idCN": "05推力/盈缺/蓝-月华",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·月华",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_YueHua",
+      "des": "任意我方生命值低于20%时，我方全体【无敌】5秒，同时立刻激活【队长技】指令，限1次",
+      "intensifyDes": "任意我方生命值低于20%时，我方全体【无敌】10秒，同时立刻激活【队长技】和【弃牌】指令，限1次",
+      "effect": 12303299,
+      "intensifyEffect": 12303191,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500015,
+      "idCN": "05推力/盈缺/蓝-偏食",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·偏食",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_PianShi",
+      "des": "牌库每有1张卡牌，我方全体受到的最终伤害降低0.5%，上限50%",
+      "intensifyDes": "牌库每有1张卡牌，我方全体受到的最终伤害降低1%，上限50%",
+      "effect": 12303320,
+      "intensifyEffect": 12303192,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500016,
+      "idCN": "05推力/盈缺/紫-斗转",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·斗转",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_DouZhuan",
+      "des": "打出红卡/紫卡时，对随机敌方造成1段100%卡牌持有者已损失生命值的负能伤害",
+      "intensifyDes": "打出红卡/紫卡时，对随机敌方造成1段200%卡牌持有者已损失生命值的负能伤害",
+      "effect": 12303321,
+      "intensifyEffect": 12303179,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500018,
+      "idCN": "05推力/盈缺/紫-潮汐",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·潮汐",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ChaoXi",
+      "des": "我方全体生命值上限+10000，任意我方生命值高于/低于50%时，每秒移除/回复其500点生命值",
+      "intensifyDes": "我方全体生命值上限+16000，任意我方生命值高于/低于50%时，每秒移除/回复其800点生命值",
+      "effect": 12303316,
+      "intensifyEffect": 12303180,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500019,
+      "idCN": "05推力/盈缺/紫-参横",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·参横",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_CanHeng",
+      "des": "每次战斗开局时，移除我方全体50%当前生命值，抽2张牌，同时使我方全体攻击力和防御力+15%",
+      "intensifyDes": "每次战斗开局时，移除我方全体50%当前生命值，抽3张牌，同时使我方全体攻击力和防御力+25%",
+      "effect": 12303317,
+      "intensifyEffect": 12303185,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500022,
+      "idCN": "05推力/盈缺/金-烛照",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·烛照",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ZhuZhao",
+      "des": "每丢弃7张卡牌，生成1张【奇异火花】加入手牌并直接打出",
+      "intensifyDes": "每丢弃5张卡牌，生成1张【奇异火花】加入手牌并直接打出",
+      "effect": 12303314,
+      "intensifyEffect": 12303204,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500023,
+      "idCN": "05推力/盈缺/金-重光",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·重光",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ChongGuang",
+      "des": "使用【弃牌】指令时，生成1张【新星】加入手牌并直接打出",
+      "intensifyDes": "使用【弃牌】指令时，生成1张【超新星】加入手牌并直接打出",
+      "effect": 12303315,
+      "intensifyEffect": 12303172,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500008,
+      "idCN": "05推力/盈缺/金-亏蚀",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·亏蚀",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_KuiShi",
+      "des": "我方使用3费及以上自身技能牌时移除自身2%生命值并释放1枚【秘法陨星】，对随机敌方造成1段混响伤害，同时触发【蚀灭】",
+      "intensifyDes": "我方使用2费及以上自身技能牌时移除自身2%生命值并释放1枚【秘法陨星】，对随机敌方造成1段混响伤害，同时触发【蚀灭】",
+      "effect": 12303187,
+      "intensifyEffect": 12303188,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500011,
+      "idCN": "05推力/盈缺/金-月影",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·月影",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_YueYing",
+      "des": "每丢弃1张卡牌，随机1名我方攻击力+0.3%，上限30%",
+      "intensifyDes": "每丢弃1张卡牌，随机1名我方攻击力+0.5%，上限50%",
+      "effect": 12303177,
+      "intensifyEffect": 12303368,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500025,
+      "idCN": "局外技能/战斗/01-1攻击力提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "探求的欲望Ⅰ",
+      "des": "我方全体攻击力+30",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Gong",
+      "skillEffect": 89900090,
+      "preSkillList": [
+        {
+          "id": 89500035
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500026,
+      "idCN": "局外技能/机制/01解锁额外buff2",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "矢志不渝Ⅰ",
+      "des": "获得2个同下潜策略的推力时，激活该策略共振天赋1",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Shi_1",
+      "skillEffect": 89900025,
+      "preSkillList": [],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500027,
+      "idCN": "局外技能/战斗/00-1回费cd",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "流转·费用",
+      "des": "每秒获得0.1点费用",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_FeiYong",
+      "skillEffect": 89900078,
+      "preSkillList": [
+        {
+          "id": 89500162
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500028,
+      "idCN": "局外技能/战斗/02-1防御力提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "保护的愿望Ⅰ",
+      "des": "我方全体防御力+30",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Fang",
+      "skillEffect": 89900077,
+      "preSkillList": [
+        {
+          "id": 89500035
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500029,
+      "idCN": "局外技能/机制/02解锁额外buff3",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "矢志不渝Ⅱ",
+      "des": "获得3个同下潜策略的推力时，激活该策略共振天赋2",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Shi_2",
+      "skillEffect": 89900025,
+      "preSkillList": [],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500030,
+      "idCN": "局外技能/战斗/05火焰伤害提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "凝萃·火焰",
+      "des": "我方全体造成的火焰伤害提高20%",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Huo",
+      "skillEffect": 89900080,
+      "preSkillList": [
+        {
+          "id": 89500161
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500034,
+      "idCN": "局外技能/机制/03解锁额外buff4",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "矢志不渝Ⅲ",
+      "des": "获得4个同下潜策略的推力时，激活该策略共振天赋3",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Shi_3",
+      "skillEffect": 89900025,
+      "preSkillList": [],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500035,
+      "idCN": "局外技能/机制/04解锁额外buff6",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "矢志不渝Ⅳ",
+      "des": "获得6个同下潜策略的推力时，激活该策略共振天赋4",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Shi_4",
+      "skillEffect": 89900025,
+      "preSkillList": [
+        {
+          "id": 89500034
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500024,
+      "idCN": "压力技能/偏执",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "偏执",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/pianzhi",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/pianzhi",
+      "des": "敌方全体生命值+20%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900108
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500036,
+      "idCN": "局外技能/机制/05解锁复活",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "存亡",
+      "des": "位于【位面间隙】时，开启【队员复苏】功能",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Cun",
+      "skillEffect": 89900024,
+      "preSkillList": [
+        {
+          "id": 89500146
+        },
+        {
+          "id": 89500148
+        },
+        {
+          "id": 89500151
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500052,
+      "idCN": "05推力/回生/紫-决死",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·决死",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_JueSi",
+      "des": "任意我方生命值低于20%时，对敌方全体造成100%我方全体最大生命值之和的负能伤害，同时触发【蚀灭】，各限1次",
+      "intensifyDes": "任意我方生命值低于20%时，对敌方全体造成200%我方全体最大生命值之和的负能伤害，同时触发【蚀灭】，各限1次",
+      "effect": 12303344,
+      "intensifyEffect": 12303220,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500038,
+      "idCN": "05推力/回生/天赋2-正本",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·正本",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_ZhengBen",
+      "des": "使用【庇佑】后，本场战斗【庇佑】的治疗量+20%",
+      "intensifyDes": "",
+      "effect": 12303193,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700002,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500040,
+      "idCN": "05推力/回生/天赋4-仁术",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·仁术",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_RenShu",
+      "des": "【庇佑】随机触发【狂暴】/【躁动】",
+      "intensifyDes": "",
+      "effect": 12303194,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700002,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500042,
+      "idCN": "05推力/回生/紫-盎然",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·盎然",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_AngRan",
+      "des": "每秒回复我方全体1%生命值\\n我方处于【异常】状态时，每秒额外回复1%生命值",
+      "intensifyDes": "每秒回复我方全体1.5%生命值\\n我方处于【异常】状态时，每秒额外回复1.5%生命值",
+      "effect": 12303216,
+      "intensifyEffect": 12303335,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500045,
+      "idCN": "05推力/回生/蓝-焕发",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·焕发",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_HuanFa",
+      "des": "打出红卡时，基于该卡费用对随机敌方触发等量【点燃】",
+      "intensifyDes": "打出或丢弃红卡时，基于该卡费用对随机敌方触发等量【点燃】",
+      "effect": 12303173,
+      "intensifyEffect": 12303328,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500037,
+      "idCN": "05推力/回生/蓝-固本",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·固本",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_GuBen",
+      "des": "打出蓝卡时，基于该卡费用对随机敌方触发等量【冻结】",
+      "intensifyDes": "打出或丢弃蓝卡时，基于该卡费用对随机敌方触发等量【冻结】",
+      "effect": 12303210,
+      "intensifyEffect": 12303323,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500047,
+      "idCN": "05推力/回生/天赋3-清源",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·清源",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_QingYuan",
+      "des": "使用带有【生命值回复】效果的卡牌时，使我方全体【净化】，同时对敌方全体造成20%我方全体最大生命值之和的负能伤害",
+      "intensifyDes": "",
+      "effect": 12303324,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700002,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500039,
+      "idCN": "05推力/回生/蓝-培元",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·培元",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_PeiYuan",
+      "des": "打出黄卡时，基于该卡费用对随机敌方触发等量【落雷】",
+      "intensifyDes": "打出或丢弃黄卡时，基于该卡费用对随机敌方触发等量【落雷】",
+      "effect": 12303207,
+      "intensifyEffect": 12303326,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500049,
+      "idCN": "05推力/回生/紫-激扬",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·激扬",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_JiYang",
+      "des": "打出紫卡时，基于该卡费用对随机敌方触发等量【蚀灭】",
+      "intensifyDes": "打出或丢弃紫卡时，基于该卡费用对随机敌方触发等量【蚀灭】",
+      "effect": 12303211,
+      "intensifyEffect": 12303342,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500050,
+      "idCN": "05推力/回生/紫-激活",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·激活",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_JiHuo",
+      "des": "使用带有【生命值回复】效果的卡牌时，我方全体攻击力和防御力+5，上限150",
+      "intensifyDes": "使用带有【生命值回复】效果的卡牌时，我方全体攻击力和防御力+10，上限250",
+      "effect": 12303208,
+      "intensifyEffect": 12303327,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500051,
+      "idCN": "05推力/回生/金-澎湃",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·澎湃",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_PengPai",
+      "des": "每拥有1个【推力】，我方全体生命值上限+10%",
+      "intensifyDes": "每拥有1个【推力】，我方全体生命值上限+15%",
+      "effect": 12303217,
+      "intensifyEffect": 12303336,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500043,
+      "idCN": "05推力/回生/金-弥坚",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·弥坚",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_MiJian",
+      "des": "任意我方每有10000点生命值，造成的最终伤害提高2%",
+      "intensifyDes": "任意我方每有10000点生命值，造成的最终伤害提高3%",
+      "effect": 12303370,
+      "intensifyEffect": 12303226,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500046,
+      "idCN": "05推力/回生/天赋1-仁心",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·仁心",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_RenXin",
+      "des": "绿卡的所需费用-1",
+      "intensifyDes": "",
+      "effect": 12303319,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700002,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500056,
+      "idCN": "05推力/回生/蓝-催化",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·催化",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_CuiHua",
+      "des": "我方全体受到的治疗效果提高20%",
+      "intensifyDes": "我方全体受到的治疗效果提高30%",
+      "effect": 12303205,
+      "intensifyEffect": 12303291,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500048,
+      "idCN": "05推力/回生/天赋5-妙手",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·妙手",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_MiaoShou",
+      "des": "【庇佑】的生成间隔缩短2秒",
+      "intensifyDes": "",
+      "effect": 12303325,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700002,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500058,
+      "idCN": "05推力/回生/金-浑厚",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·浑厚",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_HunHou",
+      "des": "我方使用技能牌造成伤害时，额外造成30%自身最大生命值的负能伤害",
+      "intensifyDes": "我方使用技能牌造成伤害时，额外造成50%自身最大生命值的负能伤害",
+      "effect": 12303195,
+      "intensifyEffect": 12303196,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500044,
+      "idCN": "05推力/回生/紫-弥新",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·弥新",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_MiXin",
+      "des": "每生成1张卡牌，回复我方全体1000点生命值，且能超出生命值上限",
+      "intensifyDes": "每生成1张卡牌，回复我方全体1500点生命值，且能超出生命值上限",
+      "effect": 12303201,
+      "intensifyEffect": 12303202,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500053,
+      "idCN": "05推力/回生/紫-韬晦",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·韬晦",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_TaoHui",
+      "des": "每丢弃1张卡牌，回复我方全体500点生命值，且能超出生命值上限",
+      "intensifyDes": "每丢弃1张卡牌，回复我方全体1000点生命值，且能超出生命值上限",
+      "effect": 12303174,
+      "intensifyEffect": 12303341,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500054,
+      "idCN": "05推力/回生/蓝-温室",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·温室",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_WenShi",
+      "des": "我方持有【护盾】或处于【格挡】/【隐形】/【无敌】状态时，每秒回复1%生命值",
+      "intensifyDes": "我方持有【护盾】或处于【格挡】/【隐形】/【无敌】状态时，每秒回复2%生命值",
+      "effect": 12303206,
+      "intensifyEffect": 12303290,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500055,
+      "idCN": "05推力/回生/金-反蚀",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·反蚀",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_FanShi",
+      "des": "使用【队长技】时，对敌方全体造成30%我方全体最大生命值之和的负能伤害，同时触发【蚀灭】",
+      "intensifyDes": "使用【队长技】时，对敌方全体造成50%我方全体最大生命值之和的负能伤害 ，同时触发【蚀灭】",
+      "effect": 12303176,
+      "intensifyEffect": 12303292,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500057,
+      "idCN": "05推力/回生/蓝-养心",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·养心",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_YangXin",
+      "des": "使用带有【生命值回复】效果的卡牌时，我方全体生命值上限+2000",
+      "intensifyDes": "使用带有【生命值回复】效果的卡牌时，我方全体生命值上限+3000",
+      "effect": 12303209,
+      "intensifyEffect": 12303322,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500059,
+      "idCN": "05推力/捍卫/紫-破釜",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·破釜",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_PoFu",
+      "des": "每生成1个【护盾】，有30%概率释放1枚【霜冻陨星】，对随机敌方造成1段冰冻伤害，同时触发【冻结】",
+      "intensifyDes": "每生成1个【护盾】，有50%概率释放1枚【霜冻陨星】，对随机敌方造成1段冰冻伤害，同时触发【冻结】",
+      "effect": 12303349,
+      "intensifyEffect": 12303239,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500060,
+      "idCN": "05推力/捍卫/天赋3-高垒",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·高垒",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_GaoLei",
+      "des": "【磐石之垣】为我方全体抵御25%伤害",
+      "intensifyDes": "",
+      "effect": 12303224,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700003,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500061,
+      "idCN": "05推力/捍卫/蓝-职守",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·职守",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_ZhiShou",
+      "des": "每次战斗开局时，我方全体获得【护盾】，护盾耐久为目标已损失生命值的20%，持续10秒",
+      "intensifyDes": "每次战斗开局时，我方全体获得【护盾】，护盾耐久为目标已损失生命值的30%，持续10秒",
+      "effect": 12303345,
+      "intensifyEffect": 12303237,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500062,
+      "idCN": "05推力/捍卫/金-星爆",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·星爆",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_XingBao",
+      "des": "我方【护盾】消失或引爆时，有30%概率生成1张【新星】加入手牌并直接打出",
+      "intensifyDes": "我方【护盾】消失或引爆时，有50%概率生成1张【新星】加入手牌并直接打出",
+      "effect": 12303229,
+      "intensifyEffect": 12303480,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500063,
+      "idCN": "05推力/捍卫/蓝-坚实",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·坚实",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_JianShi",
+      "des": "我方全体【护盾】的耐久提高20%",
+      "intensifyDes": "我方全体【护盾】的耐久提高30%",
+      "effect": 12303340,
+      "intensifyEffect": 12303222,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500064,
+      "idCN": "05推力/捍卫/天赋1-永固",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·永固",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_YongGu",
+      "des": "我方【护盾】解除时间限制",
+      "intensifyDes": "",
+      "effect": 12303221,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700003,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500065,
+      "idCN": "05推力/回生/金-蓬勃",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·蓬勃",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_PengBo",
+      "des": "打出绿卡时，基于该卡费用对随机敌方触发等量【炽地】\\n丢弃绿卡时，基于该卡费用对随机敌方触发等量【轰雷】",
+      "intensifyDes": "打出绿卡时，基于该卡费用对随机敌方触发等量【炽地】\\n丢弃绿卡时，基于该卡费用对随机敌方触发等量【轰雷】\\n获得绿卡时，基于该卡费用对随机敌方触发等量【冻伤】",
+      "effect": 12303175,
+      "intensifyEffect": 12303293,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500066,
+      "idCN": "05推力/捍卫/紫-沉舟",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·沉舟",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_ChenZhou",
+      "des": "每次战斗开局时，移除我方全体10%当前生命值并转化为双倍量耐久的【护盾】，持续20秒",
+      "intensifyDes": "每次战斗开局时，移除我方全体15%当前生命值并转化为双倍量耐久的【护盾】，持续30秒",
+      "effect": 12303350,
+      "intensifyEffect": 12303240,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500067,
+      "idCN": "05推力/回生/金-激化",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "回生·激化",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HuiSheng_JiHua",
+      "des": "使用【队长技】时，回复我方全体5000点生命值，且能超出生命值上限",
+      "intensifyDes": "使用【队长技】时，回复我方全体10000点生命值，且能超出生命值上限",
+      "effect": 12303343,
+      "intensifyEffect": 12303227,
+      "correspondingTeam": 89700002,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500068,
+      "idCN": "05推力/捍卫/紫-巍峙",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·巍峙",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_WeiZhi",
+      "des": "我方持有【护盾】时，造成的最终伤害提高15%",
+      "intensifyDes": "我方持有【护盾】时，造成的最终伤害提高25%",
+      "effect": 12303359,
+      "intensifyEffect": 12303243,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500069,
+      "idCN": "05推力/捍卫/蓝-补济",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·补济",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_BuJi",
+      "des": "任意我方获得【护盾】时，回复3%生命值，同时获得0.15点费用",
+      "intensifyDes": "任意我方获得【护盾】时，回复5%生命值，同时获得0.25点费用",
+      "effect": 12303338,
+      "intensifyEffect": 12303230,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500070,
+      "idCN": "05推力/捍卫/紫-压阵",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·压阵",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_YaZhen",
+      "des": "使用【弃牌】指令时，使我方前排获得【护盾】，护盾耐久为目标生命值上限的20%，持续10秒",
+      "intensifyDes": "使用【弃牌】指令时，使我方全体获得【护盾】，护盾耐久为目标生命值上限的20%，持续10秒",
+      "effect": 12303346,
+      "intensifyEffect": 12303242,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500071,
+      "idCN": "05推力/捍卫/紫-岿固",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·岿固",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_KuiGu",
+      "des": "我方持有【护盾】时，受到的最终伤害降低15%",
+      "intensifyDes": "我方持有【护盾】时，受到的最终伤害降低25%",
+      "effect": 12303360,
+      "intensifyEffect": 12303238,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500073,
+      "idCN": "05推力/捍卫/天赋5-决绝",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·决绝",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_JueJue",
+      "des": "我方处于【无敌】状态时，每秒对随机敌方造成1段100%当前【负压】的负能伤害",
+      "intensifyDes": "",
+      "effect": 12303225,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700003,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500074,
+      "idCN": "05推力/捍卫/天赋4-不朽",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·不朽",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_BuXiu",
+      "des": "任意我方生命值低于20%时，消耗20000点【负压】使随机1名我方【无敌】，持续2秒，【负压】不足时无效，触发间隔6秒",
+      "intensifyDes": "",
+      "effect": 12303337,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700003,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500075,
+      "idCN": "05推力/捍卫/天赋2-护心",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·护心",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_HuXin",
+      "des": "任意我方濒死时，消耗50%【负压】获得等量耐久的【负能护盾】，触发间隔12秒\\n【负能护盾】消失时，对敌方全体造成500%当前【负压】的负能伤害",
+      "intensifyDes": "",
+      "effect": 12303334,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700003,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500076,
+      "idCN": "05推力/捍卫/金-磅礴",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·磅礴",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_PangBo",
+      "des": "每拥有1个【推力】，我方全体防御力+15",
+      "intensifyDes": "每拥有1个【推力】，我方全体防御力+25",
+      "effect": 12303219,
+      "intensifyEffect": 12303228,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500077,
+      "idCN": "05推力/捍卫/紫-守御",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·守御",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_ShouYu",
+      "des": "使用【队长技】时，使生命值最低的1名我方获得【护盾】，护盾耐久为目标生命值上限的10%，持续10秒",
+      "intensifyDes": "使用【队长技】时，使生命值最低的1名我方获得【护盾】，护盾耐久为目标生命值上限的20%，持续10秒",
+      "effect": 12303351,
+      "intensifyEffect": 12303218,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500078,
+      "idCN": "05推力/捍卫/蓝-执锐",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·执锐",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_ZhiRui",
+      "des": "打出蓝卡时，我方全体攻击力+0.5%",
+      "intensifyDes": "打出蓝卡时，我方全体攻击力+1%",
+      "effect": 12303348,
+      "intensifyEffect": 12303236,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500079,
+      "idCN": "05推力/捍卫/蓝-据守",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·据守",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_JuShou",
+      "des": "任意我方生命值低于50%时，获得【护盾】，护盾耐久为目标生命值上限的20%，持续10秒，各限1次",
+      "intensifyDes": "任意我方生命值低于50%时，获得【护盾】，护盾耐久为目标生命值上限的30%，持续10秒，各限1次",
+      "effect": 12303339,
+      "intensifyEffect": 12303231,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500080,
+      "idCN": "05推力/捍卫/蓝-披坚",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·披坚",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_PiJian",
+      "des": "打出红卡时，我方全体防御力+0.5%",
+      "intensifyDes": "打出红卡时，我方全体防御力+1%",
+      "effect": 12303347,
+      "intensifyEffect": 12303223,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500150,
+      "idCN": "局外技能/战斗/03-1生命值提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "延续的渴望Ⅰ",
+      "des": "我方全体生命值+3000",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Sheng",
+      "skillEffect": 89900094,
+      "preSkillList": [
+        {
+          "id": 89500035
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500149,
+      "idCN": "局外技能/战斗/02-3防御力提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "保护的愿望Ⅲ",
+      "des": "我方全体防御力+80",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Fang",
+      "skillEffect": 89900093,
+      "preSkillList": [
+        {
+          "id": 89500082
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500148,
+      "idCN": "局外技能/战斗/02-2防御力提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "保护的愿望Ⅱ",
+      "des": "我方全体防御力+50",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Fang",
+      "skillEffect": 89900092,
+      "preSkillList": [
+        {
+          "id": 89500081
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500147,
+      "idCN": "局外技能/战斗/01-3攻击力提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "探求的欲望Ⅲ",
+      "des": "我方全体攻击力+80",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Gong",
+      "skillEffect": 89900091,
+      "preSkillList": [
+        {
+          "id": 89500082
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500146,
+      "idCN": "局外技能/战斗/01-2攻击力提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "探求的欲望Ⅱ",
+      "des": "我方全体攻击力+50",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Gong",
+      "skillEffect": 89900076,
+      "preSkillList": [
+        {
+          "id": 89500081
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500145,
+      "idCN": "局外技能/机制/08行动回合上限1",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "任重道远Ⅰ",
+      "des": "【识海下潜】的行动回合上限+1",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Reng",
+      "skillEffect": 89900099,
+      "preSkillList": [
+        {
+          "id": 89500146
+        },
+        {
+          "id": 89500148
+        },
+        {
+          "id": 89500151
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500144,
+      "idCN": "局外技能/机制/11解锁刷新",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "无遗",
+      "des": "选择【推力】时，可以使用50点【尘埃】刷新1次",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Wu",
+      "skillEffect": 89900026,
+      "preSkillList": [
+        {
+          "id": 89500159
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500162,
+      "idCN": "局外技能/机制/12代币获取增加",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "吉运",
+      "des": "额外获得10%【尘埃】",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_JiYun",
+      "skillEffect": 89900035,
+      "preSkillList": [
+        {
+          "id": 89500021
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500161,
+      "idCN": "局外技能/机制/10行动回合上限2",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "任重道远Ⅱ",
+      "des": "【识海下潜】的行动回合上限+1",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Reng",
+      "skillEffect": 89900099,
+      "preSkillList": [
+        {
+          "id": 89500160
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500160,
+      "idCN": "局外技能/机制/09初始代币",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "余裕",
+      "des": "【识海下潜】开始时，获得50点【尘埃】",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Yu",
+      "skillEffect": 89900020,
+      "preSkillList": [
+        {
+          "id": 89500027
+        },
+        {
+          "id": 89500163
+        },
+        {
+          "id": 89500169
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500159,
+      "idCN": "局外技能/机制/07初始道具",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "严阵以待",
+      "des": "【识海下潜】开始时，获得【直觉·渡越】",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_YanZheng",
+      "skillEffect": 89900023,
+      "preSkillList": [
+        {
+          "id": 89500155
+        },
+        {
+          "id": 89500156
+        },
+        {
+          "id": 89500157
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500157,
+      "idCN": "局外技能/战斗/09负能伤害提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "凝萃·负能",
+      "des": "我方全体造成的负能伤害提高20%",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_FuNeng",
+      "skillEffect": 89900084,
+      "preSkillList": [
+        {
+          "id": 89500154
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500155,
+      "idCN": "局外技能/战斗/07物理伤害提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "凝萃·物理",
+      "des": "我方全体造成的物理伤害提高20%",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_WuLi",
+      "skillEffect": 89900082,
+      "preSkillList": [
+        {
+          "id": 89500153
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500154,
+      "idCN": "局外技能/战斗/06冰冻伤害提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "凝萃·冰冻",
+      "des": "我方全体造成的冰冻伤害提高20%",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Bing",
+      "skillEffect": 89900081,
+      "preSkillList": [
+        {
+          "id": 89500161
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500153,
+      "idCN": "局外技能/战斗/04电磁伤害提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "凝萃·电磁",
+      "des": "我方全体造成的电磁伤害提高20%",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Dian",
+      "skillEffect": 89900079,
+      "preSkillList": [
+        {
+          "id": 89500161
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500152,
+      "idCN": "局外技能/战斗/03-3生命值提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "延续的渴望Ⅲ",
+      "des": "我方全体生命值+8000",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Sheng",
+      "skillEffect": 89900095,
+      "preSkillList": [
+        {
+          "id": 89500082
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500151,
+      "idCN": "局外技能/战斗/03-2生命值提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "延续的渴望Ⅱ",
+      "des": "我方全体生命值+5000",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Sheng",
+      "skillEffect": 89900027,
+      "preSkillList": [
+        {
+          "id": 89500081
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500156,
+      "idCN": "局外技能/战斗/08混响伤害提高",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "凝萃·混响",
+      "des": "我方全体造成的混响伤害提高20%",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Hun",
+      "skillEffect": 89900083,
+      "preSkillList": [
+        {
+          "id": 89500030
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500158,
+      "idCN": "局外技能/机制/06解锁额外buff8",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "矢志不渝Ⅴ",
+      "des": "获得8个同下潜策略的推力时，激活该策略共振天赋5",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Shi_5",
+      "skillEffect": 89900025,
+      "preSkillList": [
+        {
+          "id": 89500025
+        },
+        {
+          "id": 89500028
+        },
+        {
+          "id": 89500150
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500163,
+      "idCN": "局外技能/战斗/00-2抽卡cd",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "流转·抽卡",
+      "des": "手牌补充冷却时间缩短0.5秒",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_ChouKa",
+      "skillEffect": 89900085,
+      "preSkillList": [
+        {
+          "id": 89500162
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500009,
+      "idCN": "05推力/盈缺/紫-星沉",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·星沉",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_XingChen",
+      "des": "任意1名我方生命值低于50%时，回复其50%生命值，同时抽3张牌，且能超出手牌上限，基于抽到卡牌费用之和释放等量【秘法陨星】，每枚【秘法陨星】对随机敌方造成1段混响伤害，限1次",
+      "intensifyDes": "任意我方生命值低于50%时，回复其100%生命值，且能超出生命值上限，同时抽5张牌，且能超出手牌上限，基于抽到卡牌费用之和释放等量【秘法陨星】，每枚【秘法陨星】对随机敌方造成1段混响伤害，限1次",
+      "effect": 12303312,
+      "intensifyEffect": 12303186,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500020,
+      "idCN": "05推力/盈缺/紫-月晕",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·月晕",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_YueYun",
+      "des": "每丢弃1张卡牌，随机1名我方防御力+0.3%，上限30%",
+      "intensifyDes": "每丢弃1张卡牌，随机1名我方防御力+0.5%，上限50%",
+      "effect": 12303313,
+      "intensifyEffect": 12303197,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500041,
+      "idCN": "05推力/盈缺/紫-环食",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·环食",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_HuanShi",
+      "des": "弃牌区每有1张卡牌，我方全体造成的最终伤害提高0.5%，上限50%",
+      "intensifyDes": "弃牌区每有1张卡牌，我方全体造成的最终伤害提高1%，上限50%",
+      "effect": 12303310,
+      "intensifyEffect": 12303198,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500072,
+      "idCN": "05推力/盈缺/金-助澜",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·助澜",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_ZhuLan",
+      "des": "每拥有1个【推力】，我方全体攻击力+15",
+      "intensifyDes": "每拥有1个【推力】，我方全体攻击力+25",
+      "effect": 12303311,
+      "intensifyEffect": 12303203,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500164,
+      "idCN": "05推力/盈缺/金-全食",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "盈缺·全食",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YingQue_QuanShi",
+      "des": "我方生命值比率越低，造成/受到的最终伤害越高/越低，最高40%",
+      "intensifyDes": "我方生命值比率越低，造成/受到的最终伤害越高/越低，最高60%",
+      "effect": 12303199,
+      "intensifyEffect": 12303318,
+      "correspondingTeam": 89700001,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500007,
+      "idCN": "05推力/捍卫/金-峥嵘",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·峥嵘",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_ZhengRong",
+      "des": "我方【护盾】每次受到攻击时，对伤害来源进行反弹，反弹伤害为【护盾】耐久的30%",
+      "intensifyDes": "我方【护盾】每次受到攻击时，对伤害来源进行反弹，反弹伤害为【护盾】耐久的50%",
+      "effect": 12303522,
+      "intensifyEffect": 12303523,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500165,
+      "idCN": "05推力/捍卫/金-涓流",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·涓流",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_JuanLiu",
+      "des": "我方每持有1个【护盾】，每秒获得0.03点费用",
+      "intensifyDes": "我方每持有1个【护盾】，每秒获得0.05点费用",
+      "effect": 12303524,
+      "intensifyEffect": 12303525,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500166,
+      "idCN": "05推力/捍卫/金-披荆",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·披荆",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_PiJing",
+      "des": "任意我方获得【护盾】时，防御力+0.5%",
+      "intensifyDes": "任意我方获得【护盾】时，防御力+1%",
+      "effect": 12303526,
+      "intensifyEffect": 12303527,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500167,
+      "idCN": "05推力/捍卫/金-斩棘",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "捍卫·斩棘",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_ZhanJi",
+      "des": "任意我方获得【护盾】时，攻击力+0.5%",
+      "intensifyDes": "任意我方获得【护盾】时，攻击力+1%",
+      "effect": 12303528,
+      "intensifyEffect": 12303529,
+      "correspondingTeam": 89700003,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500169,
+      "idCN": "局外技能/战斗/00-3弃牌cd",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "流转·弃牌",
+      "des": "【弃牌】指令冷却时间缩短2秒",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_QiPai",
+      "skillEffect": 89900086,
+      "preSkillList": [
+        {
+          "id": 89500162
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500170,
+      "idCN": "压力技能/忿火",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "忿火",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/chahuo",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/chahuo",
+      "des": "敌方全体造成的最终伤害提高20%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900179
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500171,
+      "idCN": "压力技能/铁骨",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "铁骨",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/tiegu",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/tiegu",
+      "des": "敌方全体受到的最终伤害降低20%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900180
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500172,
+      "idCN": "压力技能/威压",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "威压",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/weiya",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/weiya",
+      "des": "与【位面奇点】战斗时，我方开局【队长技】无法使用，持续20秒",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900183
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500173,
+      "idCN": "压力技能/焦灼",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "焦灼",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/jiaozhuo",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/jiaozhuo",
+      "des": "敌方全体【普通攻击】攻击速度+50%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900181
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500174,
+      "idCN": "压力技能/束缚",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "束缚",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/shufu",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/shufu",
+      "des": "禁用【弃牌】指令，同时手牌补充冷却时间增加1秒",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900186
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500175,
+      "idCN": "压力技能/荡涤",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "荡涤",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/dangdi",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/dangdi",
+      "des": "每6秒触发1次，使敌方全体【净化】",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900187
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500176,
+      "idCN": "压力技能/不息",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "不息",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/buxi",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/buxi",
+      "des": "每6秒触发1次，使敌方全体回复2%生命值",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900188
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500177,
+      "idCN": "压力技能/无余",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "无余",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/wuyu",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/wuyu",
+      "des": "开局失去5点费用",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900189
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500178,
+      "idCN": "压力技能/蛮悍",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "蛮悍",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/manhan",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/manhan",
+      "des": "开局敌方全体【霸体】，持续20秒",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900182
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500179,
+      "idCN": "压力技能/散逸",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "散逸",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/sanyi",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/sanyi",
+      "des": "每次使用【队长技】后，减少2点费用",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900190
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500180,
+      "idCN": "压力技能/泄流",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "泄流",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/xieliu",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/xieliu",
+      "des": "每秒失去0.2点费用",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900191
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500181,
+      "idCN": "压力技能/绝命",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "绝命",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/jueming",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/jueming",
+      "des": "禁用【队员复苏】功能，同时我方全体生命值上限-20%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900184
+        },
+        {
+          "id": 89900185
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500031,
+      "idCN": "压力技能/不菲",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "不菲",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/bufei",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/bufei",
+      "des": "【无休之所】所有商品价格提高20%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900192
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500032,
+      "idCN": "压力技能/匮竭",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "匮竭",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/kuijie",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/kuijie",
+      "des": "【直觉】的持有上限降低至2枚",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900195
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500033,
+      "idCN": "压力技能/耗散",
+      "mod": "压力技能",
+      "isInformalData": false,
+      "name": "耗散",
+      "iconPath": "UI/CubeRogue/DescentIcon/180/haosan",
+      "tipsPath": "UI/CubeRogue/DescentIcon/500/haosan",
+      "des": "强化推力时，所需【尘埃】数量提高20%",
+      "rogueId": 89400002,
+      "buffList": [
+        {
+          "id": 89900193
+        }
+      ],
+      "startTime": "",
+      "endTime": "",
+      "descent": 10
+    },
+    {
+      "id": 89500122,
+      "idCN": "05推力/源流/天赋1-迸涌",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·迸涌",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_BengYong",
+      "des": "每累计使用卡牌消耗3点费用，释放1枚【溶蚀弹】，对随机敌方造成1段负能伤害，同时触发【蚀灭】",
+      "intensifyDes": "",
+      "effect": 12303618,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700006,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500123,
+      "idCN": "05推力/源流/天赋2-沸天",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·沸天",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_FeiTian",
+      "des": "每获得5张卡牌，释放【原初之火】，对敌方全体造成1段火焰伤害，同时触发【炽地】",
+      "intensifyDes": "",
+      "effect": 12303621,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700006,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500124,
+      "idCN": "05推力/源流/天赋3-震天",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·震天",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_ZhenTian",
+      "des": "弃牌区每增加5张卡牌，释放【辟天之雷】，对敌方全体造成1段电磁伤害，同时触发【轰雷】",
+      "intensifyDes": "",
+      "effect": 12303620,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700006,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500125,
+      "idCN": "05推力/源流/天赋4-凝天",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·凝天",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_NingTian",
+      "des": "牌库每减少5张卡牌，释放【亘古之冰】，对敌方全体造成1段冰冻伤害，同时触发【冻伤】",
+      "intensifyDes": "",
+      "effect": 12303619,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700006,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500126,
+      "idCN": "05推力/源流/天赋5-倾泻",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·倾泻",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_QingXie",
+      "des": "每次牌库抽光触发洗牌时，抽3张牌，且能超出手牌上限，基于抽到卡牌费用之和释放等量【熔蚀弹】，每枚对随机敌方造成1段负能伤害，同时触发【熔心】/【蚀灭】",
+      "intensifyDes": "",
+      "effect": 12303622,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700006,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    },
+    {
+      "id": 89500127,
+      "idCN": "05推力/源流/蓝-涌现",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·涌现",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_YongXian",
+      "des": "费用上限+1，开局获得1点费用",
+      "intensifyDes": "费用上限+2，开局获得2点费用",
+      "effect": 12303623,
+      "intensifyEffect": 12303599,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500128,
+      "idCN": "05推力/源流/蓝-奔流",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·奔流",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_BenLiu",
+      "des": "手牌补充冷却时间缩短15%",
+      "intensifyDes": "手牌补充冷却时间缩短25%",
+      "effect": 12303624,
+      "intensifyEffect": 12303600,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500129,
+      "idCN": "05推力/源流/蓝-洄游",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·洄游",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_HuiYou",
+      "des": "打出黄卡时，获得0.3点费用",
+      "intensifyDes": "打出黄卡时，获得0.5费用",
+      "effect": 12303625,
+      "intensifyEffect": 12303601,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500130,
+      "idCN": "05推力/源流/蓝-湍流",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·湍流",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_TuanLiu",
+      "des": "所有红卡所需费用+1，红卡造成的伤害提高50%，得意技能牌除外",
+      "intensifyDes": "所有红卡所需费用+1，红卡造成的伤害提高80%，得意技能牌除外",
+      "effect": 12303630,
+      "intensifyEffect": 12303606,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500131,
+      "idCN": "05推力/源流/蓝-涡旋",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·涡旋",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_WoXuan",
+      "des": "衍生卡所需费用+1，使用/丢弃时获得0.5点费用",
+      "intensifyDes": "衍生卡所需费用+1，使用/丢弃时获得1点费用",
+      "effect": 12303627,
+      "intensifyEffect": 12303603,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500132,
+      "idCN": "05推力/源流/蓝-漫溢",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·漫溢",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_ManYi",
+      "des": "每次牌库抽光触发洗牌时，获得1点费用",
+      "intensifyDes": "每次牌库抽光触发洗牌时，获得2点费用",
+      "effect": 12303628,
+      "intensifyEffect": 12303604,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500133,
+      "idCN": "05推力/源流/紫-潆洄",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·潆洄",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_YingHui",
+      "des": "每丢弃1张卡牌，获得0.1点费用",
+      "intensifyDes": "每丢弃1张卡牌，获得0.2点费用",
+      "effect": 12303626,
+      "intensifyEffect": 12303602,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500134,
+      "idCN": "05推力/源流/紫-洪流",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·洪流",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_HongLiu",
+      "des": "打出红卡时，每拥有1点费用，造成的伤害提高3%",
+      "intensifyDes": "打出红卡时，每拥有1点费用，造成的伤害提高5%",
+      "effect": 12303636,
+      "intensifyEffect": 12303612,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500135,
+      "idCN": "05推力/源流/紫-迭起",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·迭起",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_DieQi",
+      "des": "每累计使用卡牌消耗9点费用，抽1张牌",
+      "intensifyDes": "每累计使用卡牌消耗6点费用，抽1张牌",
+      "effect": 12303631,
+      "intensifyEffect": 12303607,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500136,
+      "idCN": "05推力/源流/紫-渠成",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·渠成",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_QuCheng",
+      "des": "手牌达到7张时，立即刷新【弃牌】指令",
+      "intensifyDes": "手牌达到5张时，立即刷新【弃牌】指令",
+      "effect": 12303632,
+      "intensifyEffect": 12303608,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500137,
+      "idCN": "05推力/源流/紫-决堤",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·决堤",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_JueDi",
+      "des": "每累计使用卡牌消耗9点费用，我方全体攻击力+1%",
+      "intensifyDes": "每累计使用卡牌消耗6点费用，我方全体攻击力+1%",
+      "effect": 12303633,
+      "intensifyEffect": 12303609,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500138,
+      "idCN": "05推力/源流/紫-洋溢",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·洋溢",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_YangYi",
+      "des": "每使用1张卡牌，获得0.1点费用",
+      "intensifyDes": "每使用1张卡牌，获得0.2点费用",
+      "effect": 12303634,
+      "intensifyEffect": 12303610,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 75
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500139,
+      "idCN": "05推力/源流/金-汹涌",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·汹涌",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_XiongYong",
+      "des": "每拥有1个【推力】，每秒获得0.02点费用",
+      "intensifyDes": "每拥有1个【推力】，每秒获得0.03点费用",
+      "effect": 12303635,
+      "intensifyEffect": 12303611,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500140,
+      "idCN": "05推力/源流/金-激涌",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·激涌",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_JiYong",
+      "des": "我方造成【打断】/【击晕】/【击退】/【击飞】/【弹射】/【破盾】/【斩裂】/【撕裂】/【灼心】/【崩坏】/【重伤】时，获得0.05点费用",
+      "intensifyDes": "我方造成【打断】/【击晕】/【击退】/【击飞】/【弹射】/【破盾】/【斩裂】/【撕裂】/【灼心】/【崩坏】/【重伤】时，获得0.1点费用",
+      "effect": 12303629,
+      "intensifyEffect": 12303605,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500141,
+      "idCN": "05推力/源流/金-溯源",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·溯源",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_SuYuan",
+      "des": "手牌上限+1，开局抽1张牌",
+      "intensifyDes": "手牌上限+2，开局抽2张牌",
+      "effect": 12303637,
+      "intensifyEffect": 12303613,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500142,
+      "idCN": "05推力/源流/金-怒涛",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·怒涛",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_NuTao",
+      "des": "开局消耗所有费用，每消耗1点费用，使我方全体造成的最终伤害提高2%",
+      "intensifyDes": "开局消耗所有费用，每消耗1点费用，使我方全体造成的最终伤害提高3%",
+      "effect": 12303638,
+      "intensifyEffect": 12303614,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500143,
+      "idCN": "05推力/源流/金-狂潮",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·狂潮",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_KuangChao",
+      "des": "每拥有1点费用，我方全体造成的最终伤害提高2%",
+      "intensifyDes": "每拥有1点费用，我方全体造成的最终伤害提高3%",
+      "effect": 12303639,
+      "intensifyEffect": 12303615,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500182,
+      "idCN": "05推力/源流/金-横溢",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "源流·横溢",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/YuanLiu_HengYi",
+      "des": "使用【队长技】时，获得0.5点费用",
+      "intensifyDes": "使用【队长技】时，获得1点费用",
+      "effect": 12303640,
+      "intensifyEffect": 12303616,
+      "correspondingTeam": 89700006,
+      "intensifyList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "rogueId": 89400002,
+      "isSpecial": false
+    },
+    {
+      "id": 89500021,
+      "idCN": "局外技能/机制/13直觉存放容量增加",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "严阵以待Ⅰ",
+      "des": "【直觉】的存放容量+1",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_JiYun",
+      "skillEffect": 89900066,
+      "preSkillList": [
+        {
+          "id": 89500147
+        },
+        {
+          "id": 89500149
+        },
+        {
+          "id": 89500152
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500081,
+      "idCN": "局外技能/机制/14解锁觉醒",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "洞彻",
+      "des": "位于【位面间隙】时，开启【队员觉醒】功能",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_Cun",
+      "skillEffect": 89900114,
+      "preSkillList": [
+        {
+          "id": 89500158
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500082,
+      "idCN": "局外技能/机制/15招募人员增加",
+      "mod": "局外技能",
+      "isInformalData": false,
+      "name": "洞彻",
+      "des": "【识海下潜】开始时，可招募队员数量+1",
+      "iconPath": "UI/CubeRogue/Skill/Icon/Icon_YanZheng",
+      "skillEffect": 89900115,
+      "preSkillList": [
+        {
+          "id": 89500036
+        }
+      ],
+      "rogueId": 89400002
+    },
+    {
+      "id": 89500083,
+      "idCN": "测试",
+      "mod": "局内Buff",
+      "isInformalData": false,
+      "name": "测试秒杀",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/TacticsIcon/SkillIcon/HanWei_PangBo",
+      "des": "",
+      "intensifyDes": "",
+      "effect": 12303587,
+      "intensifyEffect": -1,
+      "correspondingTeam": 89700003,
+      "intensifyList": [],
+      "rogueId": 89400002,
+      "isSpecial": true
+    }
+  ]
+}

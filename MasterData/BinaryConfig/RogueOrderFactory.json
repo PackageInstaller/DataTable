@@ -1,0 +1,3258 @@
+{
+  "version": 1,
+  "hash": "85B5A771B1DC8C23616FF6F1AE4B0FEBDB13B3DA2C4B7AC704A17B4476FAC068",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131823124503,
+    "etc": "factory=RogueOrderFactory"
+  },
+  "count": 283,
+  "records": [
+    {
+      "id": 89900001,
+      "idCN": "战斗/倒悬高塔/强行突破",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101960
+    },
+    {
+      "id": 89900002,
+      "idCN": "获得/代币/50-100",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 100,
+          "numMin": 50
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900003,
+      "idCN": "行动/回合/减2",
+      "mod": "行动点数",
+      "isInformalData": false,
+      "orderType": "Action",
+      "param": -2.0,
+      "insufficientTips": 80610785
+    },
+    {
+      "id": 89900004,
+      "idCN": "行动/移动/加2",
+      "mod": "移动次数",
+      "isInformalData": false,
+      "orderType": "StepNum",
+      "param": 2.0
+    },
+    {
+      "id": 89900005,
+      "idCN": "改变事件类型数量/商店",
+      "mod": "改变事件类型数量",
+      "isInformalData": false,
+      "orderType": "LevelUpAdd",
+      "typeId": [],
+      "param": 15.0
+    },
+    {
+      "id": 89900006,
+      "idCN": "替换事件类型/Boss",
+      "mod": "改变地块事件类型",
+      "isInformalData": false,
+      "changeList": [
+        {
+          "id": 86100099,
+          "x": 1,
+          "y": 2,
+          "z": 1
+        },
+        {
+          "id": 86100099,
+          "x": 2,
+          "y": 2,
+          "z": 1
+        }
+      ]
+    },
+    {
+      "id": 89900007,
+      "idCN": "强化/强化3蓝色buff",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "Blue",
+      "param": 3.0,
+      "probability": 1.0,
+      "insufficientTips": 80610774
+    },
+    {
+      "id": 89900008,
+      "idCN": "强化/强化1金色buff",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "Golden",
+      "param": 1.0,
+      "probability": 1.0,
+      "insufficientTips": 80610774
+    },
+    {
+      "id": 89900009,
+      "idCN": "获得/代币/150",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 150,
+          "numMin": 150
+        }
+      ]
+    },
+    {
+      "id": 89900010,
+      "idCN": "获得/buff/随机1All",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100126,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900011,
+      "idCN": "获得/代币/400",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 400,
+          "numMin": 400
+        }
+      ]
+    },
+    {
+      "id": 89900012,
+      "idCN": "行动/回合/减1",
+      "mod": "行动点数",
+      "isInformalData": false,
+      "orderType": "Action",
+      "param": -1.0,
+      "insufficientTips": 80610785
+    },
+    {
+      "id": 89900013,
+      "idCN": "获得/buff/随机1紫金",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100282,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900014,
+      "idCN": "获得/标准装备/随机1All",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100131,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900015,
+      "idCN": "获得/标准装备/随机1黑",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100287,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900016,
+      "idCN": "获得/代币/200",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 200,
+          "numMin": 200
+        }
+      ]
+    },
+    {
+      "id": 89900017,
+      "idCN": "失去/标准装备/随机1All",
+      "mod": "失去装备",
+      "isInformalData": false,
+      "orderType": "LoseEquip",
+      "loseType": "Random",
+      "qualityType": "All",
+      "refreshNum": 1,
+      "param": 1.0,
+      "insufficientTips": 80610375
+    },
+    {
+      "id": 89900018,
+      "idCN": "获得/代币/50",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 50,
+          "numMin": 50
+        }
+      ]
+    },
+    {
+      "id": 89900019,
+      "idCN": "行动/回合/加1",
+      "mod": "行动点数",
+      "isInformalData": false,
+      "orderType": "Action",
+      "param": 1.0
+    },
+    {
+      "id": 89900028,
+      "idCN": "失去/Buff/随机1All",
+      "mod": "失去Buff",
+      "isInformalData": false,
+      "orderType": "LoseBuff",
+      "loseType": "Random",
+      "qualityType": "All",
+      "refreshNum": 1,
+      "param": 1.0,
+      "insufficientTips": 80610374
+    },
+    {
+      "id": 89900029,
+      "idCN": "失去/标准装备/选1All",
+      "mod": "失去装备",
+      "isInformalData": false,
+      "orderType": "LoseEquip",
+      "loseType": "Select",
+      "qualityType": "All",
+      "refreshNum": 3,
+      "param": 1.0,
+      "insufficientTips": 80610375
+    },
+    {
+      "id": 89900030,
+      "idCN": "失去/Buff/选1All",
+      "mod": "失去Buff",
+      "isInformalData": false,
+      "orderType": "LoseBuff",
+      "loseType": "Select",
+      "qualityType": "All",
+      "refreshNum": 3,
+      "param": 1.0,
+      "insufficientTips": 80610374
+    },
+    {
+      "id": 89900031,
+      "idCN": "获得/获得技能",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12302291,
+      "param": 3.0
+    },
+    {
+      "id": 89900032,
+      "idCN": "血量/增加0.2",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 0.2
+    },
+    {
+      "id": 89900033,
+      "idCN": "血量/减少0.1",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": -0.1
+    },
+    {
+      "id": 89900034,
+      "idCN": "强化/强化2紫色buff",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "Purple",
+      "param": 2.0,
+      "probability": 1.0,
+      "insufficientTips": 80610774
+    },
+    {
+      "id": 89900025,
+      "idCN": "局外技能/机制/02解锁额外buff",
+      "mod": "解锁额外buff",
+      "isInformalData": false,
+      "orderType": "ActivateExtraBuff"
+    },
+    {
+      "id": 89900023,
+      "idCN": "局外技能/机制/01初始获得",
+      "mod": "初始获得",
+      "isInformalData": false,
+      "orderType": "initialGet",
+      "initialGetList": [
+        {
+          "id": 11400683,
+          "num": 1
+        }
+      ]
+    },
+    {
+      "id": 89900024,
+      "idCN": "局外技能/机制/04解锁复活",
+      "mod": "解锁复活",
+      "isInformalData": false,
+      "orderType": "ActivateRevive"
+    },
+    {
+      "id": 89900026,
+      "idCN": "局外技能/机制/05解锁刷新",
+      "mod": "解锁刷新",
+      "isInformalData": false,
+      "orderType": "ActivateRefresh",
+      "param": 1.0,
+      "requiredList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ]
+    },
+    {
+      "id": 89900027,
+      "idCN": "局外技能/战斗/03-2生命值提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303258,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900040,
+      "idCN": "获得/buff/随机1蓝",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100283,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900041,
+      "idCN": "获得/buff/随机1紫",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100284,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900042,
+      "idCN": "获得/buff/随机1金",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100285,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900043,
+      "idCN": "获得/标准装备/随机1蓝",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100155,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900044,
+      "idCN": "获得/标准装备/随机1紫",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100167,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900021,
+      "idCN": "强化/强化1随机品质buff",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 1.0,
+      "probability": 1.0,
+      "insufficientTips": 80610774
+    },
+    {
+      "id": 89900022,
+      "idCN": "获得/buff/随机1蓝紫",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100281,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900038,
+      "idCN": "获得/buff/3选1All",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100125,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900039,
+      "idCN": "获得/标准装备/3选1All",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100132,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900074,
+      "idCN": "血量/减少0.5",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": -0.5
+    },
+    {
+      "id": 89900073,
+      "idCN": "血量/减少0.2",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": -0.2
+    },
+    {
+      "id": 89900072,
+      "idCN": "血量/增加0.5",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 0.5
+    },
+    {
+      "id": 89900071,
+      "idCN": "血量/增加0.1",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 0.1
+    },
+    {
+      "id": 89900070,
+      "idCN": "行动/转动/加1",
+      "mod": "转动次数",
+      "isInformalData": false,
+      "orderType": "SpinNum",
+      "param": 1.0
+    },
+    {
+      "id": 89900069,
+      "idCN": "行动/移动/加1",
+      "mod": "移动次数",
+      "isInformalData": false,
+      "orderType": "StepNum",
+      "param": 1.0
+    },
+    {
+      "id": 89900068,
+      "idCN": "失去/代币/120",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 120
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900067,
+      "idCN": "失去/代币/400",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 400
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900065,
+      "idCN": "失去/代币/200",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 200
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900064,
+      "idCN": "失去/代币/150",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 150
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900063,
+      "idCN": "失去/代币/100",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 100
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900062,
+      "idCN": "失去/代币/60",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 60
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900061,
+      "idCN": "失去/代币/50",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 50
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900060,
+      "idCN": "获得/标准装备/随机1蓝紫",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100286,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900059,
+      "idCN": "获得/标准装备/随机2蓝紫",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100168,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900058,
+      "idCN": "获得/代币/20",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 20,
+          "numMin": 20
+        }
+      ]
+    },
+    {
+      "id": 89900047,
+      "idCN": "战斗/防御系统故障/原地迎战",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101955
+    },
+    {
+      "id": 89900048,
+      "idCN": "获得/代币/100",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 100,
+          "numMin": 100
+        }
+      ]
+    },
+    {
+      "id": 89900049,
+      "idCN": "失去/Buff/随机1蓝",
+      "mod": "失去Buff",
+      "isInformalData": false,
+      "orderType": "LoseBuff",
+      "loseType": "Random",
+      "qualityType": "Blue",
+      "refreshNum": 1,
+      "param": 1.0,
+      "insufficientTips": 80610374
+    },
+    {
+      "id": 89900050,
+      "idCN": "失去/Buff/随机1紫",
+      "mod": "失去Buff",
+      "isInformalData": false,
+      "orderType": "LoseBuff",
+      "loseType": "Random",
+      "qualityType": "Purple",
+      "refreshNum": 1,
+      "param": 1.0,
+      "insufficientTips": 80610374
+    },
+    {
+      "id": 89900051,
+      "idCN": "血量/减少0.15",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": -0.15
+    },
+    {
+      "id": 89900052,
+      "idCN": "血量/减少0.3",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": -0.3
+    },
+    {
+      "id": 89900054,
+      "idCN": "强化/强化2随机品质buff",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 2.0,
+      "probability": 1.0,
+      "insufficientTips": 80610774
+    },
+    {
+      "id": 89900055,
+      "idCN": "强化/强化3随机品质buff",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 3.0,
+      "probability": 1.0,
+      "insufficientTips": 80610774
+    },
+    {
+      "id": 89900056,
+      "idCN": "获得/buff/随机2All",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100162,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900057,
+      "idCN": "获得/buff/随机2蓝紫",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100163,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900076,
+      "idCN": "局外技能/战斗/01-2攻击力提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303252,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900077,
+      "idCN": "局外技能/战斗/02-1防御力提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303254,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900078,
+      "idCN": "局外技能/战斗/00-1回费cd",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303260,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900079,
+      "idCN": "局外技能/战斗/04电磁伤害提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303263,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900080,
+      "idCN": "局外技能/战斗/05火焰伤害提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303264,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900081,
+      "idCN": "局外技能/战斗/06冰冻伤害提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303265,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900082,
+      "idCN": "局外技能/战斗/07物理伤害提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303266,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900083,
+      "idCN": "局外技能/战斗/08混响伤害提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303267,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900084,
+      "idCN": "局外技能/战斗/09负能伤害提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303268,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900085,
+      "idCN": "局外技能/战斗/00-2抽卡cd",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303261,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900086,
+      "idCN": "局外技能/战斗/00-3弃牌cd",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303262,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900090,
+      "idCN": "局外技能/战斗/01-1攻击力提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303251,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900091,
+      "idCN": "局外技能/战斗/01-3攻击力提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303253,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900092,
+      "idCN": "局外技能/战斗/02-2防御力提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303255,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900093,
+      "idCN": "局外技能/战斗/02-3防御力提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303256,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900094,
+      "idCN": "局外技能/战斗/03-1生命值提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303257,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900095,
+      "idCN": "局外技能/战斗/03-3生命值提高5%",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303259,
+      "battleBuffType": "所有关卡生效",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900107,
+      "idCN": "获得/buff/随机2紫金",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100161,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900106,
+      "idCN": "失去/代币/140",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": true,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 140
+        }
+      ],
+      "param": 1.0,
+      "insufficientTips": 80610373
+    },
+    {
+      "id": 89900105,
+      "idCN": "获得/标准装备/随机1金",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100153,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900104,
+      "idCN": "获得/代币/600",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 600,
+          "numMin": 600
+        }
+      ]
+    },
+    {
+      "id": 89900101,
+      "idCN": "获得/代币/50-150",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 150,
+          "numMin": 50
+        }
+      ]
+    },
+    {
+      "id": 89900100,
+      "idCN": "获得/代币/60",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 60,
+          "numMin": 60
+        }
+      ]
+    },
+    {
+      "id": 89900102,
+      "idCN": "获得/代币/80",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 80,
+          "numMin": 80
+        }
+      ]
+    },
+    {
+      "id": 89900103,
+      "idCN": "获得/代币/225",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 225,
+          "numMin": 225
+        }
+      ]
+    },
+    {
+      "id": 89900098,
+      "idCN": "获得/标准装备/随机1橙",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100148,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ]
+    },
+    {
+      "id": 89900097,
+      "idCN": "获得/代币/30",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 30,
+          "numMin": 30
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900096,
+      "idCN": "血量/增加0.15",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 0.15
+    },
+    {
+      "id": 89900155,
+      "idCN": "战斗/狭路相逢/手下败将",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101959
+    },
+    {
+      "id": 89900157,
+      "idCN": "战斗/黑8/金台球",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101957
+    },
+    {
+      "id": 89900158,
+      "idCN": "战斗/黑8/银台球",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101956
+    },
+    {
+      "id": 89900159,
+      "idCN": "战斗/塔中魔方/左转",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101953
+    },
+    {
+      "id": 89900156,
+      "idCN": "战斗/黑8/黑台球",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101958
+    },
+    {
+      "id": 89900160,
+      "idCN": "战斗/猩红的沙漏/走进观察",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101961
+    },
+    {
+      "id": 89900161,
+      "idCN": "战斗/战斗模拟系统/让我试试",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101954
+    },
+    {
+      "id": 89900099,
+      "idCN": "局外技能/机制/03初始行动回合上限",
+      "mod": "行动回合上限",
+      "isInformalData": false,
+      "orderType": "InitialAction",
+      "param": 1.0
+    },
+    {
+      "id": 89900046,
+      "idCN": "获得/标准装备/指定（二结局）",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100318,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900035,
+      "idCN": "局外技能/机制/07代币获取增加",
+      "mod": "代币获取增加",
+      "isInformalData": false,
+      "orderType": "CoinRate",
+      "param": 0.1
+    },
+    {
+      "id": 89900020,
+      "idCN": "局外技能/机制/06初始代币",
+      "mod": "初始代币",
+      "isInformalData": false,
+      "orderType": "InitialCoin",
+      "param": 50.0
+    },
+    {
+      "id": 89900108,
+      "idCN": "压力/偏执",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303065,
+      "param": 0.0,
+      "descent": 89500024
+    },
+    {
+      "id": 89900179,
+      "idCN": "压力/忿火",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303212,
+      "param": 0.0,
+      "descent": 89500170
+    },
+    {
+      "id": 89900180,
+      "idCN": "压力/铁骨",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303066,
+      "param": 0.0,
+      "descent": 89500171
+    },
+    {
+      "id": 89900181,
+      "idCN": "压力/焦灼",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303067,
+      "param": 0.0,
+      "descent": 89500173
+    },
+    {
+      "id": 89900182,
+      "idCN": "压力/蛮悍",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303215,
+      "param": 0.0,
+      "descent": 89500178
+    },
+    {
+      "id": 89900183,
+      "idCN": "压力/威压",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "BossBattle",
+      "skillId": 12303233,
+      "param": 0.0,
+      "descent": 89500172
+    },
+    {
+      "id": 89900184,
+      "idCN": "压力/绝命-复活",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "BanRevive",
+      "skillId": -1,
+      "param": 0.0,
+      "descent": 89500181
+    },
+    {
+      "id": 89900185,
+      "idCN": "压力/绝命-生命上限",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303244,
+      "param": 0.0,
+      "descent": 89500181
+    },
+    {
+      "id": 89900186,
+      "idCN": "压力/束缚",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303245,
+      "param": 0.0,
+      "descent": 89500174
+    },
+    {
+      "id": 89900187,
+      "idCN": "压力/荡涤",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303068,
+      "param": 0.0,
+      "descent": 89500175
+    },
+    {
+      "id": 89900188,
+      "idCN": "压力/不息",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303080,
+      "param": 0.0,
+      "descent": 89500176
+    },
+    {
+      "id": 89900189,
+      "idCN": "压力/无余",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303081,
+      "param": 0.0,
+      "descent": 89500177
+    },
+    {
+      "id": 89900190,
+      "idCN": "压力/散逸",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303082,
+      "param": 0.0,
+      "descent": 89500179
+    },
+    {
+      "id": 89900191,
+      "idCN": "压力/泄流",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303079,
+      "param": 0.0,
+      "descent": 89500180
+    },
+    {
+      "id": 89900192,
+      "idCN": "压力/不菲",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Price",
+      "skillId": -1,
+      "param": 0.2,
+      "descent": 89500031
+    },
+    {
+      "id": 89900193,
+      "idCN": "压力/耗散",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "IntensifyPrice",
+      "skillId": -1,
+      "param": 0.2,
+      "descent": 89500033
+    },
+    {
+      "id": 89900195,
+      "idCN": "压力/匮竭",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "IntuitionMaxNum",
+      "skillId": -1,
+      "param": 2.0,
+      "descent": 89500032
+    },
+    {
+      "id": 89900196,
+      "idCN": "直觉/血量/当前增加0.15",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 0.15
+    },
+    {
+      "id": 89900087,
+      "idCN": "事件/骨血终将汇流/相信自己的直觉",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800077
+    },
+    {
+      "id": 89900088,
+      "idCN": "事件/扭蛋机/扭扭试试",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800078
+    },
+    {
+      "id": 89900089,
+      "idCN": "事件/彼如风暴/给你推力",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800082
+    },
+    {
+      "id": 89900197,
+      "idCN": "事件/彼如风暴/给你尘埃",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800080
+    },
+    {
+      "id": 89900198,
+      "idCN": "事件/二号躯体/你是雅莱",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800083
+    },
+    {
+      "id": 89900199,
+      "idCN": "事件/原型机/为啥要帮你啊？！",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800086
+    },
+    {
+      "id": 89900200,
+      "idCN": "事件/虔诚祈祷/点头",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800087
+    },
+    {
+      "id": 89900201,
+      "idCN": "事件/坚守者/上前帮助",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800092
+    },
+    {
+      "id": 89900202,
+      "idCN": "事件/虔诚祈祷/继续祈祷",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800089
+    },
+    {
+      "id": 89900203,
+      "idCN": "事件/坚守者/和他并肩作战",
+      "mod": "触发事件",
+      "isInformalData": false,
+      "orderType": "Event",
+      "eventId": 89800090
+    },
+    {
+      "id": 89900204,
+      "idCN": "骰子/属性/潜渊症",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "InitialAction",
+      "skillId": -1,
+      "param": -2.0,
+      "descent": -1
+    },
+    {
+      "id": 89900205,
+      "idCN": "骰子/属性/药石无功",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303532,
+      "param": 0.0
+    },
+    {
+      "id": 89900206,
+      "idCN": "骰子/属性/奇货可居",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "IntensifyPrice",
+      "skillId": -1,
+      "param": 0.5
+    },
+    {
+      "id": 89900207,
+      "idCN": "骰子/属性/漫天要价",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Price",
+      "skillId": -1,
+      "param": 0.5
+    },
+    {
+      "id": 89900208,
+      "idCN": "骰子/属性/垄断",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Revive",
+      "skillId": -1,
+      "param": 0.5
+    },
+    {
+      "id": 89900209,
+      "idCN": "骰子/属性/深渊胎动",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303533,
+      "param": 0.0
+    },
+    {
+      "id": 89900210,
+      "idCN": "骰子/属性/负累",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303534,
+      "param": 0.0
+    },
+    {
+      "id": 89900211,
+      "idCN": "骰子/属性/脱力",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303535,
+      "param": 0.0
+    },
+    {
+      "id": 89900212,
+      "idCN": "骰子/属性/衰竭",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303536,
+      "param": 0.0
+    },
+    {
+      "id": 89900213,
+      "idCN": "骰子/属性/杠杆",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303553,
+      "param": 0.0
+    },
+    {
+      "id": 89900214,
+      "idCN": "骰子/属性/激发",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303537,
+      "param": 0.0
+    },
+    {
+      "id": 89900215,
+      "idCN": "骰子/属性/勃发",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303538,
+      "param": 0.0
+    },
+    {
+      "id": 89900216,
+      "idCN": "骰子/属性/双重保险",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303551,
+      "param": 0.0
+    },
+    {
+      "id": 89900217,
+      "idCN": "骰子/属性/固若金汤",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303552,
+      "param": 0.0
+    },
+    {
+      "id": 89900218,
+      "idCN": "骰子/属性/振奋",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303554,
+      "param": 0.0
+    },
+    {
+      "id": 89900219,
+      "idCN": "骰子/属性/迸流",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303555,
+      "param": 0.0
+    },
+    {
+      "id": 89900220,
+      "idCN": "骰子/属性/内聚",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303556,
+      "param": 0.0
+    },
+    {
+      "id": 89900221,
+      "idCN": "骰子/属性/活化",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303557,
+      "param": 0.0
+    },
+    {
+      "id": 89900222,
+      "idCN": "骰子/属性/扬弃",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Battle",
+      "skillId": 12303558,
+      "param": 0.0
+    },
+    {
+      "id": 89900223,
+      "idCN": "骰子/属性/解构",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "GetSpecialBoss",
+      "skillId": -1,
+      "param": 1.0
+    },
+    {
+      "id": 89900224,
+      "idCN": "骰子/属性/价格压制",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "Price",
+      "skillId": -1,
+      "param": -0.1
+    },
+    {
+      "id": 89900225,
+      "idCN": "骰子/属性/盘剥",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "GetCoinPercentBoss",
+      "skillId": -1,
+      "param": 0.5
+    },
+    {
+      "id": 89900226,
+      "idCN": "骰子/属性/居利思义1",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "GetCoinPercentBattle",
+      "skillId": -1,
+      "param": 0.4
+    },
+    {
+      "id": 89900227,
+      "idCN": "骰子/属性/居利思义2",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "GetCoinPercentElse",
+      "skillId": -1,
+      "param": -0.2
+    },
+    {
+      "id": 89900228,
+      "idCN": "骰子/属性/低波红利",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "StartGetMultiple",
+      "skillId": -1,
+      "param": 2.0
+    },
+    {
+      "id": 89900229,
+      "idCN": "骰子/属性/节流",
+      "mod": "属性",
+      "isInformalData": false,
+      "orderType": "IntensifyPrice",
+      "skillId": -1,
+      "param": -0.1
+    },
+    {
+      "id": 89900230,
+      "idCN": "骰子/条件/潜渊症",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900231,
+      "idCN": "骰子/条件/苛捐杂税",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "EveryGet",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 100.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900232,
+      "idCN": "骰子/条件/概率云",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900233,
+      "idCN": "骰子/条件/忐忑",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900234,
+      "idCN": "骰子/条件/积弱",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900235,
+      "idCN": "骰子/条件/渗漏",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900236,
+      "idCN": "骰子/条件/运思",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 3.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900237,
+      "idCN": "骰子/条件/玲珑",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 3.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900238,
+      "idCN": "骰子/条件/玄机",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "GetNegative",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900239,
+      "idCN": "骰子/条件/妙义",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "Quality",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "Golden",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900240,
+      "idCN": "骰子/条件/慧心",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900241,
+      "idCN": "骰子/条件/奇巧",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900242,
+      "idCN": "骰子/条件/转念",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900243,
+      "idCN": "骰子/条件/灵机",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900244,
+      "idCN": "骰子/条件/勇进",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601542
+        },
+        {
+          "id": 12601541
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900245,
+      "idCN": "骰子/条件/狂热",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601540
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 2.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900246,
+      "idCN": "骰子/条件/绝对领域",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "Centre",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900247,
+      "idCN": "骰子/条件/醍醐灌顶",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900248,
+      "idCN": "骰子/条件/生生不息",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900249,
+      "idCN": "骰子/条件/厚积薄发",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "Plane",
+      "PlaneId": 89400004,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 3.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900250,
+      "idCN": "骰子/条件/移易",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900251,
+      "idCN": "骰子/条件/涌溢",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "Quality",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "Orange",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900252,
+      "idCN": "骰子/条件/萌动",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601615
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900253,
+      "idCN": "骰子/条件/绝地反击",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "Hornblock",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900254,
+      "idCN": "骰子/条件/扑朔",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601616
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 2.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900255,
+      "idCN": "骰子/条件/深壁",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601614
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 2.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900256,
+      "idCN": "骰子/条件/蓄锐",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900257,
+      "idCN": "骰子/条件/步步为营",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900258,
+      "idCN": "骰子/条件/养精",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900259,
+      "idCN": "骰子/条件/深沟",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601614
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900260,
+      "idCN": "骰子/条件/模棱两可",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "Edge",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900261,
+      "idCN": "骰子/条件/复利",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": 12303534,
+      "qualityType": "All",
+      "param": 0.05,
+      "param2": 0.0
+    },
+    {
+      "id": 89900262,
+      "idCN": "骰子/条件/套利",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "EveryLose",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900263,
+      "idCN": "骰子/条件/猩红沙漏",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900264,
+      "idCN": "骰子/条件/套现",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "EveryLose",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900265,
+      "idCN": "骰子/条件/熔断",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "EveryLose",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900266,
+      "idCN": "骰子/条件/寸累",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "CurrentNum",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900267,
+      "idCN": "骰子/条件/拆借定投",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "IfCoinEnough",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900268,
+      "idCN": "骰子/条件/克己",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "CurrentNum",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900269,
+      "idCN": "骰子/条件/贴现",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900270,
+      "idCN": "骰子/条件/开源",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601617
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900271,
+      "idCN": "骰子/条件/捡漏",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "SameColor",
+      "PlaneId": -1,
+      "typeId": [
+        {
+          "id": 12601616
+        }
+      ],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900272,
+      "idCN": "骰子/条件/掠夺",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "0",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900273,
+      "idCN": "骰子/效果/潜渊症",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303565,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900274,
+      "idCN": "骰子/效果/苛捐杂税",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "DiscardParam",
+      "isEnough": false,
+      "discardList": [],
+      "param": -20.0,
+      "insufficientTips": -1
+    },
+    {
+      "id": 89900275,
+      "idCN": "骰子/效果/概率云",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303566,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.05,
+      "param2": 0.1
+    },
+    {
+      "id": 89900276,
+      "idCN": "骰子/效果/忐忑",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303567,
+      "battleBuffType": "所有关卡生效",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900277,
+      "idCN": "骰子/效果/积弱",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303568,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900278,
+      "idCN": "骰子/效果/渗漏",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": false,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 10
+        }
+      ],
+      "param": 0.0,
+      "insufficientTips": -1
+    },
+    {
+      "id": 89900279,
+      "idCN": "骰子/效果/运思",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100153,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900280,
+      "idCN": "骰子/效果/玲珑",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100285,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900281,
+      "idCN": "骰子/效果/玄机",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100153,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900282,
+      "idCN": "骰子/效果/妙义",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 1.0,
+      "probability": 1.0
+    },
+    {
+      "id": 89900283,
+      "idCN": "骰子/效果/慧心",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100126,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900284,
+      "idCN": "骰子/效果/奇巧",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100126,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 0.5
+    },
+    {
+      "id": 89900285,
+      "idCN": "骰子/效果/转念",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100131,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 0.25
+    },
+    {
+      "id": 89900286,
+      "idCN": "骰子/效果/灵机",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 1.0,
+      "probability": 0.25
+    },
+    {
+      "id": 89900287,
+      "idCN": "骰子/效果/勇进",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303569,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900288,
+      "idCN": "骰子/效果/狂热",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303570,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.02,
+      "param2": 0.0
+    },
+    {
+      "id": 89900289,
+      "idCN": "骰子/效果/绝对领域",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303571,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.2,
+      "param2": 0.0
+    },
+    {
+      "id": 89900290,
+      "idCN": "骰子/效果/醍醐灌顶",
+      "mod": "等级变化",
+      "isInformalData": false,
+      "orderType": "LevelUp",
+      "param": 3.0
+    },
+    {
+      "id": 89900291,
+      "idCN": "骰子/效果/生生不息",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 0.05
+    },
+    {
+      "id": 89900292,
+      "idCN": "骰子/效果/厚积薄发",
+      "mod": "等级变化",
+      "isInformalData": false,
+      "orderType": "LevelUp",
+      "param": 10.0
+    },
+    {
+      "id": 89900293,
+      "idCN": "骰子/效果/移易",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100131,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900294,
+      "idCN": "骰子/效果/涌溢",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 1.0,
+      "probability": 1.0
+    },
+    {
+      "id": 89900295,
+      "idCN": "骰子/效果/萌动",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303572,
+      "battleBuffType": "Boss关卡生效",
+      "param": 2000.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900296,
+      "idCN": "骰子/效果/绝地反击",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303573,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.2,
+      "param2": 0.0
+    },
+    {
+      "id": 89900297,
+      "idCN": "骰子/效果/扑朔",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "Blue",
+      "param": 1.0,
+      "probability": 0.5
+    },
+    {
+      "id": 89900298,
+      "idCN": "骰子/效果/深壁",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303574,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.01,
+      "param2": 0.0
+    },
+    {
+      "id": 89900299,
+      "idCN": "骰子/效果/蓄锐",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303575,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900300,
+      "idCN": "骰子/效果/步步为营",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303576,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900301,
+      "idCN": "骰子/效果/养精",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": 0.05
+    },
+    {
+      "id": 89900302,
+      "idCN": "骰子/效果/深沟",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303579,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900303,
+      "idCN": "骰子/效果/模棱两可",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303580,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.2,
+      "param2": 0.0
+    },
+    {
+      "id": 89900304,
+      "idCN": "骰子/效果/套利",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303581,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.005,
+      "param2": 0.0
+    },
+    {
+      "id": 89900305,
+      "idCN": "骰子/效果/猩红沙漏",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 20,
+          "numMin": 20
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900306,
+      "idCN": "骰子/效果/套现",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 100,
+          "numMin": 100
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900307,
+      "idCN": "骰子/效果/熔断",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303582,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.005,
+      "param2": 0.0
+    },
+    {
+      "id": 89900308,
+      "idCN": "骰子/效果/寸累",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303583,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.005,
+      "param2": 0.0
+    },
+    {
+      "id": 89900309,
+      "idCN": "骰子/效果/拆借定投",
+      "mod": "丢弃",
+      "isInformalData": false,
+      "orderType": "Discard",
+      "isEnough": false,
+      "discardList": [
+        {
+          "id": 11400607,
+          "num": 30
+        }
+      ],
+      "param": 0.0,
+      "insufficientTips": -1
+    },
+    {
+      "id": 89900310,
+      "idCN": "骰子/效果/财势",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303584,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.0005,
+      "param2": 0.0
+    },
+    {
+      "id": 89900311,
+      "idCN": "骰子/效果/开源",
+      "mod": "获得代币百分比",
+      "isInformalData": false,
+      "orderType": "GetCoinCurrent",
+      "param": 0.05
+    },
+    {
+      "id": 89900312,
+      "idCN": "骰子/效果/捡漏",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 5,
+          "numMin": 5
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900036,
+      "idCN": "骰子/效果/复利",
+      "mod": "获得代币百分比",
+      "isInformalData": false,
+      "orderType": "GetCoinCurrent",
+      "param": 0.05
+    },
+    {
+      "id": 89900037,
+      "idCN": "骰子/效果/贴现",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 30,
+          "numMin": 10
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900045,
+      "idCN": "骰子/效果/掠夺",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 11400607,
+          "numMax": 5,
+          "numMin": 5
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900313,
+      "idCN": "直觉/怪物行动/移动次数减一",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "DecMonsterStepNum",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0,
+      "isReuse": false
+    },
+    {
+      "id": 89900314,
+      "idCN": "直觉/怪物行动/转动次数减一",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "DecMonsterSpinNum",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0,
+      "isReuse": false
+    },
+    {
+      "id": 89900109,
+      "idCN": "骰子/条件/拆借定投2",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "IfCoinEnough",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 30.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900110,
+      "idCN": "骰子/效果/拆借定投2",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303724,
+      "battleBuffType": "Boss关卡生效",
+      "param": 10.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900112,
+      "idCN": "骰子/效果/拆借定投3",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900315,
+      "idCN": "直觉/行动/移动距离加1",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "StepDistanceItem",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0
+    },
+    {
+      "id": 89900316,
+      "idCN": "直觉/传送/随机灵感格",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "TpSpecial",
+      "skillId": -1,
+      "battleBuffType": "所有关卡生效",
+      "recoverType": "Present",
+      "param": 0.0
+    },
+    {
+      "id": 89900317,
+      "idCN": "直觉/属性/受到的伤害降低",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303585,
+      "battleBuffType": "所有关卡生效",
+      "recoverType": "Present",
+      "param": 1.0
+    },
+    {
+      "id": 89900318,
+      "idCN": "直觉/属性/造成的伤害提高",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303586,
+      "battleBuffType": "所有关卡生效",
+      "recoverType": "Present",
+      "param": 1.0
+    },
+    {
+      "id": 89900319,
+      "idCN": "直觉/资源/下次代币翻倍",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "GetCoinPercentItem",
+      "skillId": -1,
+      "battleBuffType": "所有关卡生效",
+      "recoverType": "Present",
+      "param": 1.0
+    },
+    {
+      "id": 89900320,
+      "idCN": "直觉/推力/额外选择次数",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "GetBuffNum",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0
+    },
+    {
+      "id": 89900321,
+      "idCN": "直觉/行动/转动加1",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "SpinNumItem",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0,
+      "isReuse": true
+    },
+    {
+      "id": 89900322,
+      "idCN": "直觉/行动/回合加1",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "ActionItem",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0,
+      "isReuse": true
+    },
+    {
+      "id": 89900328,
+      "idCN": "战斗/扭蛋机/什么？！",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101997
+    },
+    {
+      "id": 89900329,
+      "idCN": "战斗/骨血终将汇流/将结晶物质收入囊中",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101998
+    },
+    {
+      "id": 89900330,
+      "idCN": "战斗/“二号躯体”/挽留她",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20102000
+    },
+    {
+      "id": 89900331,
+      "idCN": "战斗/“二号躯体”/攻击她",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101999
+    },
+    {
+      "id": 89900332,
+      "idCN": "战斗/售后纠纷/少废话还钱",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101975
+    },
+    {
+      "id": 89900333,
+      "idCN": "战斗/打击奸商/今天就要教你做鱼",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101976
+    },
+    {
+      "id": 89900334,
+      "idCN": "战斗/坚守者/和他并肩作战",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101978
+    },
+    {
+      "id": 89900335,
+      "idCN": "战斗/坚守者/战斗到底",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101979
+    },
+    {
+      "id": 89900336,
+      "idCN": "战斗/原型机/测一下",
+      "mod": "触发战斗",
+      "isInformalData": false,
+      "orderType": "Level",
+      "levelId": 20101977
+    },
+    {
+      "id": 89900111,
+      "idCN": "获得/标准装备/随机1黑+紫金",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100287,
+          "numMax": 1,
+          "numMin": 1
+        },
+        {
+          "id": 86100282,
+          "numMax": 1,
+          "numMin": 1
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900075,
+      "idCN": "直觉/传送/传送至奇点",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "TpBoss",
+      "skillId": -1,
+      "battleBuffType": "所有关卡生效",
+      "recoverType": "Present",
+      "param": 0.0,
+      "isReuse": false
+    },
+    {
+      "id": 89900113,
+      "idCN": "血量/增加0.25",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 0.25
+    },
+    {
+      "id": 89900066,
+      "idCN": "局外技能/机制/08解锁直觉格子",
+      "mod": "直觉格子数量",
+      "isInformalData": false,
+      "orderType": "instinctAddNum",
+      "param": 1.0
+    },
+    {
+      "id": 89900053,
+      "idCN": "直觉/行动/移动次数加1",
+      "mod": "直觉",
+      "isInformalData": false,
+      "orderType": "StepNumItem",
+      "skillId": -1,
+      "battleBuffType": "Boss关卡生效",
+      "recoverType": "Present",
+      "param": 1.0,
+      "isReuse": true
+    },
+    {
+      "id": 89900114,
+      "idCN": "局外技能/机制/09解锁觉醒",
+      "mod": "解锁觉醒",
+      "isInformalData": false,
+      "orderType": "ActivateAwake"
+    },
+    {
+      "id": 89900115,
+      "idCN": "局外技能/机制/10招募人数",
+      "mod": "初始招募人数",
+      "isInformalData": false,
+      "orderType": "CharNum",
+      "param": 1.0
+    },
+    {
+      "id": 89900116,
+      "idCN": "血量/减少0.25",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Present",
+      "param": -0.25
+    },
+    {
+      "id": 89900117,
+      "idCN": "血量/增加1",
+      "mod": "血量恢复",
+      "isInformalData": false,
+      "orderType": "Recover",
+      "recoverType": "Upper",
+      "param": 1.0
+    },
+    {
+      "id": 89900118,
+      "idCN": "失去/Buff/选1蓝",
+      "mod": "失去Buff",
+      "isInformalData": false,
+      "orderType": "LoseBuff",
+      "loseType": "Select",
+      "qualityType": "Blue",
+      "refreshNum": 3,
+      "param": 1.0,
+      "insufficientTips": 80610374
+    },
+    {
+      "id": 89900119,
+      "idCN": "失去/Buff/选1紫",
+      "mod": "失去Buff",
+      "isInformalData": false,
+      "orderType": "LoseBuff",
+      "loseType": "Select",
+      "qualityType": "Purple",
+      "refreshNum": 3,
+      "param": 1.0,
+      "insufficientTips": 80610374
+    },
+    {
+      "id": 89900120,
+      "idCN": "获得/标准装备/随机1黑+钱",
+      "mod": "获得奖励",
+      "isInformalData": false,
+      "orderType": "Reward",
+      "rewardList": [
+        {
+          "id": 86100287,
+          "numMax": 1,
+          "numMin": 1
+        },
+        {
+          "id": 11400607,
+          "numMax": 200,
+          "numMin": 200
+        }
+      ],
+      "probability": 1.0
+    },
+    {
+      "id": 89900124,
+      "idCN": "骰子/条件/盈余",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "IfCoinEnough",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 150.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900123,
+      "idCN": "骰子/效果/财险",
+      "mod": "强化",
+      "isInformalData": false,
+      "orderType": "Intensify",
+      "qualityType": "All",
+      "param": 1.0,
+      "probability": 1.0,
+      "insufficientTips": -1
+    },
+    {
+      "id": 89900122,
+      "idCN": "骰子/效果/盈余",
+      "mod": "获得技能",
+      "isInformalData": false,
+      "orderType": "Skill",
+      "skillId": 12303710,
+      "battleBuffType": "所有关卡生效",
+      "param": 0.0,
+      "param2": 0.0
+    },
+    {
+      "id": 89900121,
+      "idCN": "骰子/条件/财险",
+      "mod": "条件",
+      "isInformalData": false,
+      "orderType": "EveryLose",
+      "PlaneId": -1,
+      "typeId": [],
+      "skillId": -1,
+      "qualityType": "All",
+      "param": 1.0,
+      "param2": 0.0
+    }
+  ]
+}

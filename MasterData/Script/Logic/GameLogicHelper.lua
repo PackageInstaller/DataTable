@@ -1,0 +1,18 @@
+local GameLogicHelper = {}
+BaseHelper = require("Logic/Base/BaseHelper")
+HotfixHelper = require("Logic/Hotfix/HotfixHelper")
+HotfixHelper.CleanIOSHotfixTemp()
+LoginHelper = require("Logic/Login/LoginHelper")
+LogoutHelper = require("Logic/Logout/LogoutHelper")
+DrawCardHelper = require("Logic/DrawCard/DrawCardHelper")
+PayHelper = require("Logic/Pay/PayHelper")
+PaySetting = require("Logic/Pay/PaySetting")
+ProtocolHelper = require("Logic/Protocol/ProtocolHelper")
+GachaHelper = require("Logic/Gacha/GachaHelper")
+GuideHelper = require("Logic/Guide/GuideHelper")
+FuncUnlockHelper = require("Logic/FuncUnlock/FuncUnlockHelper")
+EscHelper = require("Logic/ESC/EscHelper")
+GraphicsHelper = require("Logic/Graphics/GraphicsHelper")
+LinkPasswordSetHelper = require("Logic/LinkPasswordSet/LinkPasswordSetHelper")
+SignInHelper = require("Logic/SignIn/SignInHelper")
+return GameLogicHelper

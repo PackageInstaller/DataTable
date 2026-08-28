@@ -1,0 +1,626 @@
+{
+  "version": 1,
+  "hash": "0FBFCDDAAA26F4E49485E5E05BC6D5B3CDC6D1322A503CF7FBBA24F83481F007",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131689886731,
+    "etc": "factory=KabaneriEventFactory"
+  },
+  "count": 26,
+  "records": [
+    {
+      "id": 72800001,
+      "idCN": "拦路怪/路障怪-巨大深眠卡巴内",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 1200,
+          "atkCD": 10.0,
+          "distance": 50,
+          "exitTime": 10.0,
+          "hp": 1200,
+          "num": 1,
+          "score": 12000,
+          "subMonsterNum": 1,
+          "unit": 72600006
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 1.5,
+      "warnDesc": "警告！前方阻碍",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800003,
+      "idCN": "尸潮事件/尸潮13",
+      "mod": "激增单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "unit": 72600002,
+      "num": 13,
+      "duration": 21.0,
+      "createUnitRangeY": 13.0,
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "警告！负潮来袭",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800004,
+      "idCN": "岔路/岔路测试加速",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 2,
+      "buffList": [
+        {
+          "buff": 72600008,
+          "weight": 1
+        },
+        {
+          "buff": 72600008,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 72800005,
+      "idCN": "岔路/岔路测试无敌",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 3,
+      "buffList": [
+        {
+          "buff": 72600018,
+          "weight": 1
+        },
+        {
+          "buff": 72600018,
+          "weight": 1
+        },
+        {
+          "buff": 72600018,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 72800006,
+      "idCN": "跟踪怪/自爆怪",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 500,
+          "atkCD": 10.0,
+          "distance": 10,
+          "exitTime": 1000.0,
+          "hp": 100000,
+          "num": 1,
+          "score": 100,
+          "subMonsterNum": 12,
+          "unit": 72600005
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "桦树生物追击！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800007,
+      "idCN": "跟踪怪/大章鱼（关卡1）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 660,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 21.0,
+          "hp": 8250,
+          "num": 1,
+          "score": 33000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800008,
+      "idCN": "岔路/岔路测试装甲",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 2,
+      "buffList": [
+        {
+          "buff": 72600010,
+          "weight": 1
+        },
+        {
+          "buff": 72600010,
+          "weight": 1
+        }
+      ],
+      "isWarn": false,
+      "warnTime": 3.0,
+      "warnDesc": "",
+      "condition": ""
+    },
+    {
+      "id": 72800009,
+      "idCN": "岔路/岔路测试恢复耐久",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 2,
+      "buffList": [
+        {
+          "buff": 72600009,
+          "weight": 1
+        },
+        {
+          "buff": 72600009,
+          "weight": 1
+        }
+      ]
+    },
+    {
+      "id": 72800010,
+      "idCN": "岔路/岔路测试补充弹药",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 2,
+      "buffList": [
+        {
+          "buff": 72600017,
+          "weight": 1
+        },
+        {
+          "buff": 72600017,
+          "weight": 1
+        }
+      ],
+      "isWarn": false,
+      "warnTime": 3.0,
+      "warnDesc": "",
+      "condition": ""
+    },
+    {
+      "id": 72800011,
+      "idCN": "跟踪怪/大章鱼（测试逃跑）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 100,
+          "atkCD": 1000.0,
+          "distance": 10,
+          "exitTime": 20.0,
+          "hp": 100000,
+          "num": 1,
+          "score": 1000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800002,
+      "idCN": "拦路怪/路障怪-鸣爆虫母",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 1650,
+          "atkCD": 10.0,
+          "distance": 50,
+          "exitTime": 10.0,
+          "hp": 1650,
+          "num": 1,
+          "score": 16500,
+          "subMonsterNum": 1,
+          "unit": 72600020
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 1.5,
+      "warnDesc": "警告！前方阻碍",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800012,
+      "idCN": "拦路怪/路障怪-巨大深眠卡巴内2",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 1400,
+          "atkCD": 10.0,
+          "distance": 50,
+          "exitTime": 10.0,
+          "hp": 1400,
+          "num": 1,
+          "score": 14000,
+          "subMonsterNum": 1,
+          "unit": 72600022
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 1.5,
+      "warnDesc": "警告！前方阻碍",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800013,
+      "idCN": "岔路/岔路二",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 2,
+      "buffList": [
+        {
+          "buff": 72600017,
+          "weight": 1
+        },
+        {
+          "buff": 72600027,
+          "weight": 1
+        },
+        {
+          "buff": 72600008,
+          "weight": 1
+        },
+        {
+          "buff": 72600024,
+          "weight": 1
+        },
+        {
+          "buff": 72600011,
+          "weight": 1
+        },
+        {
+          "buff": 72600025,
+          "weight": 1
+        },
+        {
+          "buff": 72600009,
+          "weight": 1
+        },
+        {
+          "buff": 72600026,
+          "weight": 1
+        },
+        {
+          "buff": 72600010,
+          "weight": 1
+        },
+        {
+          "buff": 72600018,
+          "weight": 1
+        },
+        {
+          "buff": 72600016,
+          "weight": 1
+        }
+      ],
+      "isWarn": false,
+      "warnTime": 1.5,
+      "warnDesc": "前方二岔路口",
+      "condition": "请选择方向"
+    },
+    {
+      "id": 72800014,
+      "idCN": "岔路/岔路三",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 3,
+      "buffList": [
+        {
+          "buff": 72600017,
+          "weight": 1
+        },
+        {
+          "buff": 72600027,
+          "weight": 1
+        },
+        {
+          "buff": 72600008,
+          "weight": 1
+        },
+        {
+          "buff": 72600024,
+          "weight": 1
+        },
+        {
+          "buff": 72600011,
+          "weight": 1
+        },
+        {
+          "buff": 72600025,
+          "weight": 1
+        },
+        {
+          "buff": 72600009,
+          "weight": 1
+        },
+        {
+          "buff": 72600026,
+          "weight": 1
+        },
+        {
+          "buff": 72600010,
+          "weight": 1
+        },
+        {
+          "buff": 72600018,
+          "weight": 1
+        },
+        {
+          "buff": 72600016,
+          "weight": 1
+        }
+      ],
+      "isWarn": false,
+      "warnTime": 1.5,
+      "warnDesc": "前方三岔路口",
+      "condition": "请选择方向"
+    },
+    {
+      "id": 72800015,
+      "idCN": "跟踪怪/大章鱼（关卡2）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 720,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 22.0,
+          "hp": 9000,
+          "num": 1,
+          "score": 36000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800016,
+      "idCN": "跟踪怪/大章鱼（关卡3）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 780,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 23.0,
+          "hp": 9750,
+          "num": 1,
+          "score": 39000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800017,
+      "idCN": "跟踪怪/大章鱼（关卡4）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 840,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 24.0,
+          "hp": 10500,
+          "num": 1,
+          "score": 42000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800018,
+      "idCN": "跟踪怪/大章鱼（关卡5）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 900,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 25.0,
+          "hp": 11250,
+          "num": 1,
+          "score": 45000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800019,
+      "idCN": "跟踪怪/大章鱼（关卡6）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 960,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 25.0,
+          "hp": 12000,
+          "num": 1,
+          "score": 48000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800020,
+      "idCN": "跟踪怪/大章鱼（关卡7）",
+      "mod": "生成单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "createList": [
+        {
+          "atk": 1160,
+          "atkCD": 8.0,
+          "distance": 10,
+          "exitTime": 25.0,
+          "hp": 14500,
+          "num": 1,
+          "score": 58000,
+          "subMonsterNum": 1,
+          "unit": 72600013
+        }
+      ],
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "灵髓来袭！",
+      "condition": "建议打开炮台"
+    },
+    {
+      "id": 72800026,
+      "idCN": "尸潮事件/尸潮12",
+      "mod": "激增单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "unit": 72600002,
+      "num": 12,
+      "duration": 21.0,
+      "createUnitRangeY": 13.0,
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "警告！负潮来袭",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800027,
+      "idCN": "尸潮事件/尸潮11",
+      "mod": "激增单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "unit": 72600002,
+      "num": 11,
+      "duration": 21.0,
+      "createUnitRangeY": 13.0,
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "警告！负潮来袭",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800028,
+      "idCN": "尸潮事件/尸潮10",
+      "mod": "激增单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "unit": 72600002,
+      "num": 10,
+      "duration": 21.0,
+      "createUnitRangeY": 13.0,
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "警告！负潮来袭",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800029,
+      "idCN": "尸潮事件/尸潮9",
+      "mod": "激增单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "unit": 72600002,
+      "num": 9,
+      "duration": 21.0,
+      "createUnitRangeY": 13.0,
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "警告！负潮来袭",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800030,
+      "idCN": "尸潮事件/尸潮8",
+      "mod": "激增单位",
+      "isInformalData": false,
+      "camp": "Enemy",
+      "unit": 72600002,
+      "num": 8,
+      "duration": 21.0,
+      "createUnitRangeY": 13.0,
+      "isWarn": true,
+      "warnTime": 2.0,
+      "warnDesc": "警告！负潮来袭",
+      "condition": "建议使用急行弹丸"
+    },
+    {
+      "id": 72800022,
+      "idCN": "仅视频用/单岔路",
+      "mod": "岔路",
+      "isInformalData": false,
+      "camp": "None",
+      "junctionNum": 1,
+      "buffList": [
+        {
+          "buff": 72600012,
+          "weight": 1
+        }
+      ],
+      "isWarn": false,
+      "warnTime": 1.5,
+      "warnDesc": "前方二岔路口",
+      "condition": "请选择方向"
+    }
+  ]
+}

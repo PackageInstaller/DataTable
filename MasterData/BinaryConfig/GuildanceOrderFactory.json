@@ -1,0 +1,6476 @@
+{
+  "version": 1,
+  "hash": "AA2A24204363AD9AD5252BD926D23835A831850296571E4AE5BF014320A219FF",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131647008214,
+    "etc": "factory=GuildanceOrderFactory"
+  },
+  "count": 720,
+  "records": [
+    {
+      "id": 20500002,
+      "idCN": "通用/通用-暂停",
+      "mod": "暂停游戏"
+    },
+    {
+      "id": 20500003,
+      "idCN": "通用/通用-取消暂停",
+      "mod": "取消暂停",
+      "isInformalData": false
+    },
+    {
+      "id": 20500004,
+      "idCN": "通用/通用-全屏变暗",
+      "mod": "全屏变暗",
+      "position_x": 0.0,
+      "position_y": 0.0
+    },
+    {
+      "id": 20500005,
+      "idCN": "00序章/变暗-能量条",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 35.0,
+      "width_half": 690.0,
+      "customSortingOrder": 10,
+      "isCircle": false,
+      "nodeName": "CardArea/EnergyBar/AboveBarEffect",
+      "panelName": ""
+    },
+    {
+      "id": 20500006,
+      "idCN": "通用/通用-全屏正常",
+      "mod": "全屏正常"
+    },
+    {
+      "id": 20500009,
+      "idCN": "00序章/变暗-角色指示",
+      "mod": "全屏变暗",
+      "isInformalData": false,
+      "position_x": -380.0,
+      "position_y": 71.0,
+      "height_half": 240.0,
+      "width_half": 437.0,
+      "customSortingOrder": 10,
+      "isCircle": false
+    },
+    {
+      "id": 20500023,
+      "idCN": "通用/通用-隐藏文本1",
+      "mod": "隐藏提示框",
+      "tipsIndex": 0
+    },
+    {
+      "id": 20500024,
+      "idCN": "通用/通用-隐藏文本2",
+      "mod": "隐藏提示框",
+      "tipsIndex": 1
+    },
+    {
+      "id": 20500025,
+      "idCN": "通用/通用-隐藏文本3",
+      "mod": "隐藏提示框",
+      "tipsIndex": 2
+    },
+    {
+      "id": 20500031,
+      "idCN": "通用/通用-隐藏手势",
+      "mod": "隐藏手势"
+    },
+    {
+      "id": 20500035,
+      "idCN": "通用/通用-隐藏文本4",
+      "mod": "隐藏提示框",
+      "tipsIndex": 3
+    },
+    {
+      "id": 20500036,
+      "idCN": "通用/通用-隐藏全部文本",
+      "mod": "命令列表",
+      "orderList": [
+        {
+          "orderID": 20500023
+        },
+        {
+          "orderID": 20500024
+        },
+        {
+          "orderID": 20500025
+        },
+        {
+          "orderID": 20500035
+        }
+      ]
+    },
+    {
+      "id": 20500055,
+      "idCN": "通用/变暗-右手第一张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 10.0,
+      "height_half": 150.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 1
+    },
+    {
+      "id": 20500059,
+      "idCN": "通用/通用-结束游戏",
+      "mod": "结束游戏"
+    },
+    {
+      "id": 20500099,
+      "idCN": "01第一章/1-01/剧情/1-1战前剧情",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700216
+    },
+    {
+      "id": 20500102,
+      "idCN": "01第一章/1-01/剧情/1-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700218
+    },
+    {
+      "id": 20500112,
+      "idCN": "01第一章/1-03/剧情/1-3-2剧情",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700223
+    },
+    {
+      "id": 20500114,
+      "idCN": "01第一章/1-04/剧情/1-4-2剧情",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700230
+    },
+    {
+      "id": 20500127,
+      "idCN": "01第一章/1-10/1-10-2剧情",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700233
+    },
+    {
+      "id": 20500136,
+      "idCN": "00序章/变暗-牌库",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 180.0,
+      "width_half": 130.0,
+      "customSortingOrder": 10,
+      "isCircle": false,
+      "nodeName": "CardArea/Deck",
+      "panelName": ""
+    },
+    {
+      "id": 20500165,
+      "idCN": "通用/变暗-左手第一张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 145.0,
+      "width_half": 145.0,
+      "customSortingOrder": 10,
+      "cardIndex": -1
+    },
+    {
+      "id": 20500186,
+      "idCN": "通用/禁用-全部",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 0,
+      "isUseLeader": false,
+      "targetId": -1
+    },
+    {
+      "id": 20500187,
+      "idCN": "通用/禁用-可用左手第一张",
+      "mod": "禁卡牌",
+      "cardIndex": -1
+    },
+    {
+      "id": 20500188,
+      "idCN": "通用/禁用-可用右手第一张",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600233
+    },
+    {
+      "id": 20500189,
+      "idCN": "通用/解禁卡牌",
+      "mod": "解禁卡牌"
+    },
+    {
+      "id": 20500191,
+      "idCN": "通用/添加12费",
+      "mod": "加费用",
+      "cost_SN": 120000
+    },
+    {
+      "id": 20500195,
+      "idCN": "通用/重置CD",
+      "mod": "重置技能CD"
+    },
+    {
+      "id": 20500253,
+      "idCN": "通用/添加3费",
+      "mod": "加费用",
+      "cost_SN": 30000
+    },
+    {
+      "id": 20500254,
+      "idCN": "通用/添加7费",
+      "mod": "加费用",
+      "cost_SN": 70000
+    },
+    {
+      "id": 20500256,
+      "idCN": "通用/添加5费",
+      "mod": "加费用",
+      "cost_SN": 50000
+    },
+    {
+      "id": 20500015,
+      "idCN": "01第一章/1-01/剧情/1-1战斗结束",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700219
+    },
+    {
+      "id": 20500049,
+      "idCN": "00序章/变暗-弃牌按钮",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 164.5,
+      "width_half": 164.5,
+      "customSortingOrder": 10,
+      "isCircle": true,
+      "nodeName": "CardArea/BtnRefresh",
+      "panelName": ""
+    },
+    {
+      "id": 20500053,
+      "idCN": "00序章/变暗-队长技",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 164.5,
+      "width_half": 164.5,
+      "customSortingOrder": 10,
+      "isCircle": true,
+      "nodeName": "CardArea/Hand/LeaderCard",
+      "panelName": ""
+    },
+    {
+      "id": 20500101,
+      "idCN": "通用/最终BOSS战BGM",
+      "mod": "播放音效",
+      "soundId": 30000068
+    },
+    {
+      "id": 20500111,
+      "idCN": "02第二章/2-06/剧情/2-6战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700245
+    },
+    {
+      "id": 20500128,
+      "idCN": "02第二章/2-07/剧情/2-7战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700255
+    },
+    {
+      "id": 20500244,
+      "idCN": "02第二章/2-10/剧情/2-10战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700257
+    },
+    {
+      "id": 20500312,
+      "idCN": "03第三章/3-03/剧情/3-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700114
+    },
+    {
+      "id": 20500313,
+      "idCN": "03第三章/3-04/剧情/3-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700115
+    },
+    {
+      "id": 20500315,
+      "idCN": "03第三章/3-05/剧情/3-5战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700117
+    },
+    {
+      "id": 20500318,
+      "idCN": "03第三章/3-07/剧情/3-7战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700118
+    },
+    {
+      "id": 20500319,
+      "idCN": "03第三章/3-08/剧情/3-8战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700120
+    },
+    {
+      "id": 20500346,
+      "idCN": "通用/混音器淡出",
+      "mod": "设置混音器",
+      "isInformalData": false,
+      "list": [],
+      "isWaitEnd": false,
+      "delayFrame": 0.0
+    },
+    {
+      "id": 20500347,
+      "idCN": "通用/混音器淡入",
+      "mod": "设置混音器",
+      "isInformalData": false,
+      "list": [],
+      "isWaitEnd": false,
+      "delayFrame": 0.0
+    },
+    {
+      "id": 20500018,
+      "idCN": "通用/BOSS战BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000851
+    },
+    {
+      "id": 20500387,
+      "idCN": "通用/关闭文本1",
+      "mod": "隐藏提示框",
+      "tipsIndex": 1
+    },
+    {
+      "id": 20500389,
+      "idCN": "通用/关闭文本0",
+      "mod": "隐藏提示框",
+      "tipsIndex": 0
+    },
+    {
+      "id": 20500442,
+      "idCN": "通用/变暗-右手第二张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 2
+    },
+    {
+      "id": 20500443,
+      "idCN": "通用/BOSS战BGM人声",
+      "mod": "播放音效",
+      "soundId": 30000852
+    },
+    {
+      "id": 20500469,
+      "idCN": "通用/清除所有脚本",
+      "mod": "移除自身外all引导",
+      "isInformalData": false
+    },
+    {
+      "id": 20500472,
+      "idCN": "通用/禁止生成卡牌",
+      "mod": "控制系统发牌",
+      "isInformalData": false,
+      "isBan": true
+    },
+    {
+      "id": 20500473,
+      "idCN": "通用/解除禁止生成卡牌",
+      "mod": "控制系统发牌",
+      "isInformalData": false,
+      "isBan": false
+    },
+    {
+      "id": 20500474,
+      "idCN": "通用/移除引导卡牌",
+      "mod": "移除引导卡牌",
+      "isInformalData": false
+    },
+    {
+      "id": 20500475,
+      "idCN": "通用/变暗-右手第三张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 3
+    },
+    {
+      "id": 20500476,
+      "idCN": "通用/变暗-右手第四张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 4
+    },
+    {
+      "id": 20500477,
+      "idCN": "通用/变暗-右手第五张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 5
+    },
+    {
+      "id": 20500479,
+      "idCN": "通用/禁用-可用右手第二张",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 2,
+      "isUseLeader": false,
+      "targetId": 10600060
+    },
+    {
+      "id": 20500490,
+      "idCN": "通用/隐藏暂停按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": false,
+      "isActiveDeckBtn": false,
+      "isActiveDiscardBtn": false,
+      "isActiveWeatherBtn": false,
+      "isActiveEnvironmentBtn": false
+    },
+    {
+      "id": 20500385,
+      "idCN": "通用/激活全部按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": true,
+      "isActiveDeckBtn": true,
+      "isActiveDiscardBtn": true,
+      "isActiveWeatherBtn": true,
+      "isActiveEnvironmentBtn": true
+    },
+    {
+      "id": 20500509,
+      "idCN": "通用/通用-手势右1",
+      "mod": "显示手势",
+      "isInformalData": false,
+      "fingerIndex": 1
+    },
+    {
+      "id": 20500512,
+      "idCN": "通用/禁用-可用右手第四张",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 4,
+      "isUseLeader": false
+    },
+    {
+      "id": 20500513,
+      "idCN": "通用/解禁弃牌按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": false,
+      "isActiveDeckBtn": false,
+      "isActiveDiscardBtn": true
+    },
+    {
+      "id": 20500515,
+      "idCN": "通用/关闭拖拽",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": false,
+      "cardIndex": 1,
+      "endX": 0.0,
+      "endY": 0.0
+    },
+    {
+      "id": 20500398,
+      "idCN": "通用/点击-弃牌按钮",
+      "mod": "点击提示",
+      "isInformalData": false,
+      "isActive": true,
+      "isLoop": true,
+      "posX": 673.4,
+      "posY": -345.9,
+      "panelName": "",
+      "nodeName": "CardArea/BtnRefresh"
+    },
+    {
+      "id": 20500527,
+      "idCN": "通用/关闭点击提示",
+      "mod": "点击提示",
+      "isInformalData": false,
+      "isActive": false,
+      "isLoop": false,
+      "posX": 690.0,
+      "posY": -373.0
+    },
+    {
+      "id": 20500386,
+      "idCN": "通用/弘野BGMR10",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000863
+    },
+    {
+      "id": 20500528,
+      "idCN": "通用/激活弃牌按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": false,
+      "isActiveDeckBtn": false,
+      "isActiveDiscardBtn": true
+    },
+    {
+      "id": 20500529,
+      "idCN": "01第一章/1-00/剧情/1-01进入关卡",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700217
+    },
+    {
+      "id": 20500531,
+      "idCN": "通用/禁用-可用右手第三张",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 3,
+      "isUseLeader": false
+    },
+    {
+      "id": 20500532,
+      "idCN": "01第一章/1-01/隐藏章鱼",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model",
+      "name": "L_boss01",
+      "isActive": false
+    },
+    {
+      "id": 20500533,
+      "idCN": "通用/添加2费",
+      "mod": "加费用",
+      "isInformalData": false,
+      "cost_SN": 20000
+    },
+    {
+      "id": 20500534,
+      "idCN": "通用/弃牌按钮充能",
+      "mod": "弃牌按钮充能",
+      "isInformalData": false
+    },
+    {
+      "id": 20500535,
+      "idCN": "06教学/04叶珏/00黄金右手",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600273
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600058
+        },
+        {
+          "card": 10600162
+        },
+        {
+          "card": 10600060
+        }
+      ]
+    },
+    {
+      "id": 20500536,
+      "idCN": "06教学/04叶珏/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300298
+    },
+    {
+      "id": 20500537,
+      "idCN": "06教学/04叶珏/创建引导4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300299
+    },
+    {
+      "id": 20500538,
+      "idCN": "06教学/04叶珏/创建引导5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300300
+    },
+    {
+      "id": 20500539,
+      "idCN": "06教学/04叶珏/创建引导6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300301
+    },
+    {
+      "id": 20500540,
+      "idCN": "06教学/04叶珏/创建引导9",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300302
+    },
+    {
+      "id": 20500541,
+      "idCN": "06教学/04叶珏/创建引导10",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300303
+    },
+    {
+      "id": 20500542,
+      "idCN": "06教学/04叶珏/创建引导11",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300304
+    },
+    {
+      "id": 20500543,
+      "idCN": "06教学/04叶珏/创建引导14",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300305
+    },
+    {
+      "id": 20500544,
+      "idCN": "06教学/04叶珏/创建引导16",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300306
+    },
+    {
+      "id": 20500548,
+      "idCN": "06教学/04叶珏/文本介绍叶珏",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "叶珏来自阿妮塔全球能源公司，\\n擅长使用电气武器对抗<color=#b45e01>【桦树生物】</color>，是足以独当一面的“园丁”。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001583
+    },
+    {
+      "id": 20500549,
+      "idCN": "06教学/04叶珏/文本介绍叶珏A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "叶珏的【滚雷】，可以释放穿越敌阵的球形闪电，对路径内的敌方造成伤害并【引雷】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001592
+    },
+    {
+      "id": 20500550,
+      "idCN": "06教学/04叶珏/文本介绍叶珏B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "叶珏的【闪冕】，可以使1名我方乘员获得磁暴线圈。在【击晕】范围内敌方的同时，持续造成范围伤害并【引雷】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001595
+    },
+    {
+      "id": 20500551,
+      "idCN": "06教学/04叶珏/文本介绍叶珏S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这些桦树生物似乎畏惧雷电！【电光石火】可以在战场中形成【引雷】环境，并在12秒内，持续对敌方造成伤害并【引雷】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001604
+    },
+    {
+      "id": 20500552,
+      "idCN": "06教学/04叶珏/拖拽指示叶珏S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 0,
+      "endX": 340.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500553,
+      "idCN": "06教学/04叶珏/拖拽指示叶珏A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 340.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500554,
+      "idCN": "06教学/04叶珏/拖拽指示叶珏B",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": -110.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500555,
+      "idCN": "通用/队长技充能",
+      "mod": "队长技充能",
+      "isInformalData": false
+    },
+    {
+      "id": 20500560,
+      "idCN": "02第二章/2-13/剧情/2-13战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700261
+    },
+    {
+      "id": 20500556,
+      "idCN": "06教学/04叶珏/拖拽指示叶珏A2",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 2,
+      "endX": 340.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500562,
+      "idCN": "06教学/04叶珏/文本介绍环境",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【电光石火】环境下，<color=#b45e01>全场【引雷】效果额外触发1次</color>。请接着打出更多带有【引雷】效果的卡牌。此时的【引雷】卡牌牌面将带有<color=#b45e01>闪电标记</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001571
+    },
+    {
+      "id": 20500563,
+      "idCN": "06教学/04叶珏/文本介绍叶珏A2",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "趁现在！再次使用【滚雷】击溃这些【触须桦树生物】。【滚雷】的存续时间很长，往往可以追击下一波敌方。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001602
+    },
+    {
+      "id": 20500564,
+      "idCN": "01第一章/1-10/1-10-2剧情-视频",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700056
+    },
+    {
+      "id": 20500565,
+      "idCN": "01第一章/1-01/隐藏炮台",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model/train",
+      "name": "paotai02",
+      "isActive": false
+    },
+    {
+      "id": 20500499,
+      "idCN": "通用/仅隐藏暂停按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": false,
+      "isActiveDeckBtn": true,
+      "isActiveDiscardBtn": true,
+      "isActiveWeatherBtn": true,
+      "isActiveEnvironmentBtn": true
+    },
+    {
+      "id": 20500530,
+      "idCN": "06教学/04叶珏/创建引导1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300297
+    },
+    {
+      "id": 20500570,
+      "idCN": "01第一章/1-01/显示炮台",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model/train",
+      "name": "paotai02",
+      "isActive": true,
+      "setAnimationName": "Paotai"
+    },
+    {
+      "id": 20500571,
+      "idCN": "01第一章/1-01/显示章鱼暂停",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model",
+      "name": "L_boss01",
+      "isActive": true,
+      "setAnimationName": "Empty"
+    },
+    {
+      "id": 20500572,
+      "idCN": "通用/升构塔08BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000861
+    },
+    {
+      "id": 20500573,
+      "idCN": "01第一章/1-01/显示章鱼",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model",
+      "name": "L_boss01",
+      "isActive": true,
+      "setAnimationName": "jet"
+    },
+    {
+      "id": 20500574,
+      "idCN": "01第一章/1-01/显示炮台暂停",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model/train",
+      "name": "paotai02",
+      "isActive": true,
+      "setAnimationName": "Empty"
+    },
+    {
+      "id": 20500575,
+      "idCN": "01第一章/1-01/显示章鱼2",
+      "mod": "设置场景对象",
+      "isInformalData": false,
+      "parentName": "Environment/Model",
+      "name": "L_boss01",
+      "isActive": true,
+      "setAnimationName": "onetime"
+    },
+    {
+      "id": 20500577,
+      "idCN": "外部引导/战斗buff/回费加速1",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [],
+      "buff": 10406809
+    },
+    {
+      "id": 20500511,
+      "idCN": "06教学/05菲妮娅/文本介绍暴雨天气",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【电光石火】环境下，全场【引雷】将额外触发1次。同时，【暴雨】天气下，【引雷】的触发概率将大幅提升。打出【致胜闪耀】轰掣战场吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001608
+    },
+    {
+      "id": 20500545,
+      "idCN": "06教学/05菲妮娅/文本介绍叶珏S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "在这之前，先使用叶珏的【电光石火】形成【引雷】环境，以触发更多的【引雷】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001653
+    },
+    {
+      "id": 20500546,
+      "idCN": "06教学/05菲妮娅/创建引导19",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300327
+    },
+    {
+      "id": 20500547,
+      "idCN": "06教学/05菲妮娅/00黄金右手",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600182
+        }
+      ]
+    },
+    {
+      "id": 20500580,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "菲妮娅的【奔雷】，可以在目标区域引发强大的雷电并【引雷】。请使用【奔雷】击溃敌方后排。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001627
+    },
+    {
+      "id": 20500581,
+      "idCN": "06教学/05菲妮娅/创建引导20",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300328
+    },
+    {
+      "id": 20500582,
+      "idCN": "06教学/05菲妮娅/创建引导18",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300324
+    },
+    {
+      "id": 20500583,
+      "idCN": "06教学/05菲妮娅/拖拽指示菲妮娅S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 0,
+      "endX": 300.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500584,
+      "idCN": "06教学/05菲妮娅/创建引导1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300329
+    },
+    {
+      "id": 20500585,
+      "idCN": "06教学/05菲妮娅/创建引导21",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300330
+    },
+    {
+      "id": 20500586,
+      "idCN": "06教学/05菲妮娅/创建引导10",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300335
+    },
+    {
+      "id": 20500587,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅S1",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【致胜闪耀】，是将【所有手牌】化为雷霆的强大法术。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001640
+    },
+    {
+      "id": 20500588,
+      "idCN": "06教学/05菲妮娅/拖拽指示叶珏S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 340.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500589,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "菲妮娅是学会的一员，擅长使用雷电重创敌人。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001609
+    },
+    {
+      "id": 20500590,
+      "idCN": "06教学/05菲妮娅/创建引导11",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300323
+    },
+    {
+      "id": 20500591,
+      "idCN": "06教学/05菲妮娅/创建引导14",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300339
+    },
+    {
+      "id": 20500592,
+      "idCN": "06教学/05菲妮娅/创建引导4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300338
+    },
+    {
+      "id": 20500593,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅B2",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "费用不足时，使用【锦囊】，可以获得2点费用。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001631
+    },
+    {
+      "id": 20500594,
+      "idCN": "06教学/05菲妮娅/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300331
+    },
+    {
+      "id": 20500595,
+      "idCN": "06教学/05菲妮娅/拖拽指示菲妮娅B",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 0.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500596,
+      "idCN": "06教学/05菲妮娅/拖拽指示菲妮娅A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 460.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500597,
+      "idCN": "外部引导/战斗buff/菲妮娅MAX",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10407042
+    },
+    {
+      "id": 20500598,
+      "idCN": "外部引导/战斗buff/弗兰MAX",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10407042
+    },
+    {
+      "id": 20500604,
+      "idCN": "通用/卡牌展示右1",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 0,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500606,
+      "idCN": "通用/卡牌展示右5",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 4,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500607,
+      "idCN": "通用/卡牌展示右4",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 3,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500609,
+      "idCN": "通用/卡牌展示右6",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 5,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500611,
+      "idCN": "通用/禁用-可用右手第六张",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 6,
+      "isUseLeader": false
+    },
+    {
+      "id": 20500602,
+      "idCN": "通用/变暗-右手第六张亮",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 10.0,
+      "height_half": 150.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 6
+    },
+    {
+      "id": 20500649,
+      "idCN": "通用/卡牌展示右2",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 1,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500656,
+      "idCN": "通用/禁用-可用队长技",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 0,
+      "isUseLeader": true
+    },
+    {
+      "id": 20500657,
+      "idCN": "通用/R01泽野高级战斗人声BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000852
+    },
+    {
+      "id": 20500658,
+      "idCN": "通用/R01泽野高级战斗BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000851
+    },
+    {
+      "id": 20500659,
+      "idCN": "通用/TC拾荒者战斗",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30001270
+    },
+    {
+      "id": 20500660,
+      "idCN": "通用/R05深眠者战斗BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000858
+    },
+    {
+      "id": 20500661,
+      "idCN": "通用/R02泽野剧情战斗人声BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000854
+    },
+    {
+      "id": 20500666,
+      "idCN": "通用/禁用-可用右手第五张",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 5,
+      "isUseLeader": false
+    },
+    {
+      "id": 20500667,
+      "idCN": "通用/关闭文本2",
+      "mod": "隐藏提示框",
+      "isInformalData": false,
+      "tipsIndex": 2,
+      "isHideAll": false
+    },
+    {
+      "id": 20500668,
+      "idCN": "通用/HS06军阀战斗BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30001305
+    },
+    {
+      "id": 20500669,
+      "idCN": "03第三章/3-01/剧情/3-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700067
+    },
+    {
+      "id": 20500670,
+      "idCN": "通用/TC沙盗团战斗BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000526
+    },
+    {
+      "id": 20500671,
+      "idCN": "通用/TC桦树战斗海怪BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30001314
+    },
+    {
+      "id": 20500674,
+      "idCN": "03第三章/3-12/剧情/3-12战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700121
+    },
+    {
+      "id": 20500675,
+      "idCN": "通用/TC歌曲人声-黄彼得BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30001390
+    },
+    {
+      "id": 20500676,
+      "idCN": "03第三章/3-13/剧情/3-13战中",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700122
+    },
+    {
+      "id": 20500677,
+      "idCN": "03第三章/3-13/剧情/3-13战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700123
+    },
+    {
+      "id": 20500679,
+      "idCN": "03第三章/3-14/剧情/3-14战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": -1
+    },
+    {
+      "id": 20500687,
+      "idCN": "06教学/00骨龙/创建引导14",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300344
+    },
+    {
+      "id": 20500689,
+      "idCN": "06教学/00骨龙/创建引导11",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300376
+    },
+    {
+      "id": 20500690,
+      "idCN": "06教学/00骨龙/创建引导18",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300372
+    },
+    {
+      "id": 20500691,
+      "idCN": "06教学/00骨龙/文本介绍费用条",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这里是【费用】槽，技能牌需要消耗费用才可打出。费用会自动增长，<color=#b45e01>存储上限为12点</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001532
+    },
+    {
+      "id": 20500692,
+      "idCN": "06教学/00骨龙/创建引导15",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300345
+    },
+    {
+      "id": 20500693,
+      "idCN": "06教学/00骨龙/BOSS技能1",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102317
+    },
+    {
+      "id": 20500694,
+      "idCN": "06教学/00骨龙/文本介绍牌库",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这里是【牌库】，点击可以查看牌库中剩余的技能牌和进入弃牌区的技能牌。当牌库为空时，弃牌区中所有的技能牌洗回到牌库。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001548
+    },
+    {
+      "id": 20500695,
+      "idCN": "06教学/00骨龙/创建引导13",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300343
+    },
+    {
+      "id": 20500696,
+      "idCN": "06教学/00骨龙/创建引导19",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300386
+    },
+    {
+      "id": 20500697,
+      "idCN": "06教学/00骨龙/BOSS技能3",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102319
+    },
+    {
+      "id": 20500698,
+      "idCN": "06教学/00骨龙/创建引导16",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300381
+    },
+    {
+      "id": 20500699,
+      "idCN": "06教学/00骨龙/创建引导20",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300397
+    },
+    {
+      "id": 20500700,
+      "idCN": "06教学/00骨龙/创建引导36",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300390
+    },
+    {
+      "id": 20500701,
+      "idCN": "06教学/00骨龙/BOSS开大",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102428
+    },
+    {
+      "id": 20500704,
+      "idCN": "06教学/00骨龙/文本介绍莉薇娅B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "我的技能牌【灵鸟夜曲】可以在斩击骨龙的同时使<color=#b45e01>下1张红卡伤害增幅30%</color>！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001546
+    },
+    {
+      "id": 20500706,
+      "idCN": "06教学/00骨龙/拖拽卡牌冯里奈S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": -200.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500707,
+      "idCN": "06教学/00骨龙/创建引导4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300410
+    },
+    {
+      "id": 20500708,
+      "idCN": "06教学/00骨龙/BOSS技能2",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102318
+    },
+    {
+      "id": 20500709,
+      "idCN": "06教学/00骨龙/文本介绍手牌区",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这些是我方队员的【技能牌】。\\n打出技能牌需要消耗对应的费用点数。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001561
+    },
+    {
+      "id": 20500712,
+      "idCN": "06教学/00骨龙/BOSS开技能3",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102319
+    },
+    {
+      "id": 20500714,
+      "idCN": "06教学/00骨龙/文本介绍弃牌按钮",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这里是【弃牌】指令，冷却结束时使用【弃牌】可以丢弃当前所有手牌，同时从牌库中抽1张牌。【弃牌】指令<color=#b45e01>冷却时间20秒</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001560
+    },
+    {
+      "id": 20500715,
+      "idCN": "06教学/00骨龙/文本介绍莉薇娅S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "在【红卡增幅】下，我的得意技【终幕的圆舞曲】<color=#b45e01>将造成更高的伤害</color>！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001547
+    },
+    {
+      "id": 20500716,
+      "idCN": "06教学/00骨龙/文本介绍莉薇娅A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "我的技能牌【冲击剑】可以在造成伤害的同时\\n<color=#b45e01>抽取1张技能牌【灵鸟夜曲】加入手牌</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001544
+    },
+    {
+      "id": 20500717,
+      "idCN": "06教学/00骨龙/创建引导17",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300396
+    },
+    {
+      "id": 20500718,
+      "idCN": "06教学/00骨龙/文本介绍雷比斯A-2",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "趁现在，使用雷比斯的【御敌之雷】重创骨龙吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001537
+    },
+    {
+      "id": 20500719,
+      "idCN": "06教学/00骨龙/文本介绍我方角色",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "我方队员会从位于战场左端的位置应敌，列车长请从旁指挥，为大家下达正确的指令。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001565
+    },
+    {
+      "id": 20500720,
+      "idCN": "06教学/00骨龙/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300385
+    },
+    {
+      "id": 20500721,
+      "idCN": "06教学/00骨龙/创建引导6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300411
+    },
+    {
+      "id": 20500723,
+      "idCN": "06教学/00骨龙/创建引导1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300395
+    },
+    {
+      "id": 20500725,
+      "idCN": "06教学/00骨龙/创建引导5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300382
+    },
+    {
+      "id": 20500726,
+      "idCN": "06教学/00骨龙/文本介绍战场",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "列车长，这里的形态污染指数越来越高了。\\n我们要尽快解决面前的巨型桦树生物。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001572
+    },
+    {
+      "id": 20500728,
+      "idCN": "06教学/00骨龙/拖拽卡牌雷比斯A-2",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 7,
+      "endX": 230.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500729,
+      "idCN": "06教学/00骨龙/创建引导37",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300293
+    },
+    {
+      "id": 20500730,
+      "idCN": "06教学/00骨龙/BOSS被动2",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102322
+    },
+    {
+      "id": 20500731,
+      "idCN": "06教学/00骨龙/拖拽卡牌菲妮娅S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 0,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500732,
+      "idCN": "06教学/00骨龙/创建引导35",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300371
+    },
+    {
+      "id": 20500733,
+      "idCN": "06教学/00骨龙/拖拽卡牌莉薇娅S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500734,
+      "idCN": "06教学/00骨龙/拖拽卡牌莉薇娅B",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 3,
+      "endX": 230.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500735,
+      "idCN": "06教学/00骨龙/创建引导12",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300349
+    },
+    {
+      "id": 20500736,
+      "idCN": "06教学/00骨龙/文本介绍冯里奈S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "骨龙正在汇集巨大的能量，使用冯里奈的【制敌扳机】可以在<color=#b45e01>抽3张牌</color>的同时使我方全体获得【不可陷之盾】抵挡即将来临的千钧之势！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001533
+    },
+    {
+      "id": 20500737,
+      "idCN": "06教学/00骨龙/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300409
+    },
+    {
+      "id": 20500739,
+      "idCN": "06教学/00骨龙/创建引导38",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300307
+    },
+    {
+      "id": 20500740,
+      "idCN": "06教学/00骨龙/拖拽卡牌莉薇娅A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 230.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500741,
+      "idCN": "06教学/00骨龙/文本介绍菲妮娅S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "菲妮娅的队长技【致胜闪耀】是可以通过<color=#b45e01>舍弃所有手牌</color>召唤雷霆的强大【引雷】法术。\\n趁现在！将骨龙轰掣殆尽，克敌制胜吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001521
+    },
+    {
+      "id": 20500742,
+      "idCN": "06教学/00骨龙/00黄金右手",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600058
+        },
+        {
+          "card": 10600191
+        },
+        {
+          "card": 10600105
+        },
+        {
+          "card": 10600112
+        },
+        {
+          "card": 10600272
+        },
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600105
+        },
+        {
+          "card": 10600172
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600111
+        }
+      ]
+    },
+    {
+      "id": 20500743,
+      "idCN": "通用/卡牌展示右3",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 2,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500744,
+      "idCN": "00序章/变暗-手牌骨龙",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 155.0,
+      "width_half": 280.0,
+      "customSortingOrder": 10,
+      "isCircle": false,
+      "nodeName": "CardArea/Hand",
+      "panelName": ""
+    },
+    {
+      "id": 20500745,
+      "idCN": "06教学/00骨龙/00钻石右手",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600385
+        }
+      ],
+      "buff": 10407289
+    },
+    {
+      "id": 20500746,
+      "idCN": "06教学/00骨龙/00驱散负面",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600385
+        }
+      ],
+      "buff": 10407017
+    },
+    {
+      "id": 20500747,
+      "idCN": "06教学/00骨龙/变暗-弃牌确认",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 55.0,
+      "width_half": 473.0,
+      "customSortingOrder": 1000,
+      "isCircle": false,
+      "nodeName": "Btn_Confirm",
+      "panelName": "GroupDiscardTip"
+    },
+    {
+      "id": 20500749,
+      "idCN": "06教学/00骨龙/00骨龙致死",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [],
+      "buff": 10407290
+    },
+    {
+      "id": 20500750,
+      "idCN": "06教学/00骨龙/变暗-亮莉薇娅B",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 3
+    },
+    {
+      "id": 20500751,
+      "idCN": "06教学/00骨龙/变暗-亮莉薇娅S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 1
+    },
+    {
+      "id": 20500752,
+      "idCN": "06教学/00骨龙/变暗-亮冯里奈S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 1
+    },
+    {
+      "id": 20500753,
+      "idCN": "06教学/00骨龙/变暗-亮菲妮娅S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 0
+    },
+    {
+      "id": 20500754,
+      "idCN": "06教学/00骨龙/禁用-可用莉薇娅B",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 3,
+      "isUseLeader": false,
+      "targetId": 10600060
+    },
+    {
+      "id": 20500755,
+      "idCN": "06教学/00骨龙/禁用-可用莉薇娅S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600058
+    },
+    {
+      "id": 20500756,
+      "idCN": "06教学/00骨龙/禁用-可用冯里奈S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600191
+    },
+    {
+      "id": 20500757,
+      "idCN": "06教学/00骨龙/禁用-可用菲妮娅S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 0,
+      "isUseLeader": true,
+      "targetId": -1
+    },
+    {
+      "id": 20500682,
+      "idCN": "01第一章/1-00/剧情/1-00关卡结束",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700107
+    },
+    {
+      "id": 20500766,
+      "idCN": "06教学/04叶珏/禁用-使用叶珏A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600274
+    },
+    {
+      "id": 20500767,
+      "idCN": "06教学/04叶珏/禁用-使用叶珏B",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600273
+    },
+    {
+      "id": 20500768,
+      "idCN": "06教学/04叶珏/禁用-使用叶珏A2",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 2,
+      "isUseLeader": false,
+      "targetId": 10600274
+    },
+    {
+      "id": 20500769,
+      "idCN": "06教学/05菲妮娅/禁用-使用菲妮娅A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600233
+    },
+    {
+      "id": 20500770,
+      "idCN": "06教学/05菲妮娅/禁用-使用菲妮娅B",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600236
+    },
+    {
+      "id": 20500771,
+      "idCN": "06教学/05菲妮娅/禁用-使用叶珏S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600272
+    },
+    {
+      "id": 20500773,
+      "idCN": "06教学/莉薇娅三人组/剧情-战斗教学2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700110
+    },
+    {
+      "id": 20500775,
+      "idCN": "06教学/04叶珏/剧情-战斗教学3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700111
+    },
+    {
+      "id": 20500603,
+      "idCN": "06教学/00骨龙/创建引导33",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300357
+    },
+    {
+      "id": 20500576,
+      "idCN": "06教学/00骨龙/创建引导32",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300356
+    },
+    {
+      "id": 20500605,
+      "idCN": "06教学/00骨龙/创建引导34",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300380
+    },
+    {
+      "id": 20500613,
+      "idCN": "06教学/00骨龙/拖拽卡牌叶珏S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 3,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500610,
+      "idCN": "06教学/00骨龙/变暗-亮叶珏S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 3
+    },
+    {
+      "id": 20500612,
+      "idCN": "06教学/00骨龙/禁用-可用叶珏S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 3,
+      "isUseLeader": false,
+      "targetId": 10600272
+    },
+    {
+      "id": 20500614,
+      "idCN": "06教学/00骨龙/文本介绍叶珏S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "叶珏的【电光石火】可以制造电磁【引雷】环境，<color=#b45e01>增强全场的【引雷】效果</color>。\\n使用【电光石火】开辟有利于我方的战场！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001567
+    },
+    {
+      "id": 20500615,
+      "idCN": "06教学/00骨龙/变暗-亮雷比斯A-2",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 7
+    },
+    {
+      "id": 20500616,
+      "idCN": "06教学/00骨龙/禁用-可用雷比斯A-2",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 7,
+      "isUseLeader": false,
+      "targetId": 10600111
+    },
+    {
+      "id": 20500500,
+      "idCN": "通用/TC鼹鼠帮战斗BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30001050
+    },
+    {
+      "id": 20500486,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅S2",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "使用【致胜闪耀】，对随机3名敌方触发【轰雷】，同时丢弃所有手牌，<color=#b45e01>每丢弃1张手牌</color>对随机敌方额外触发1次【轰雷】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001641
+    },
+    {
+      "id": 20500617,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "我们的手牌不多了，菲妮娅的【锦囊】具有特殊效果，被【丢弃】时可以抽2张牌。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001630
+    },
+    {
+      "id": 20500618,
+      "idCN": "06教学/05菲妮娅/创建引导5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300309
+    },
+    {
+      "id": 20500619,
+      "idCN": "06教学/05菲妮娅/创建引导7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300310
+    },
+    {
+      "id": 20500620,
+      "idCN": "06教学/05菲妮娅/创建引导8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300340
+    },
+    {
+      "id": 20500621,
+      "idCN": "06教学/05菲妮娅/创建引导9",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300341
+    },
+    {
+      "id": 20500622,
+      "idCN": "通用/隐藏全部关卡",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": false,
+      "isActiveDeckBtn": false,
+      "isActiveDiscardBtn": false,
+      "isActiveWeatherBtn": true
+    },
+    {
+      "id": 20500623,
+      "idCN": "通用/隐藏全部按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": false,
+      "isActiveDeckBtn": false,
+      "isActiveDiscardBtn": false,
+      "isActiveWeatherBtn": false,
+      "isActiveEnvironmentBtn": false
+    },
+    {
+      "id": 20500333,
+      "idCN": "06教学/04叶珏/文本介绍暴雨",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "同时，在【暴雨】天气下，【引雷】的触发概率将大幅提升。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001578
+    },
+    {
+      "id": 20500624,
+      "idCN": "06教学/04叶珏/创建引导12",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300311
+    },
+    {
+      "id": 20500625,
+      "idCN": "外部引导/战斗buff/回费加速4",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [],
+      "buff": 10407349
+    },
+    {
+      "id": 20500626,
+      "idCN": "06教学/05菲妮娅/创建引导16",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300342
+    },
+    {
+      "id": 20500627,
+      "idCN": "外部引导/战斗buff/回费加速3",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [],
+      "buff": 10407348
+    },
+    {
+      "id": 20500628,
+      "idCN": "外部引导/战斗buff/回费加速2",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [],
+      "buff": 10407347
+    },
+    {
+      "id": 20500629,
+      "idCN": "06教学/00骨龙/文本介绍菲妮娅A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "<color=#b45e01>【引雷】</color>的力量对凛川骨龙<color=#b45e01>效果拔群</color>，请使用【奔雷】重创骨龙。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001664
+    },
+    {
+      "id": 20500630,
+      "idCN": "06教学/00骨龙/创建引导8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300412
+    },
+    {
+      "id": 20500631,
+      "idCN": "06教学/00骨龙/创建引导9",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300392
+    },
+    {
+      "id": 20500632,
+      "idCN": "06教学/00骨龙/创建引导10",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300413
+    },
+    {
+      "id": 20500633,
+      "idCN": "06教学/00骨龙/变暗-亮莉薇娅A",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 1
+    },
+    {
+      "id": 20500634,
+      "idCN": "06教学/00骨龙/禁用-可用莉薇娅A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600056
+    },
+    {
+      "id": 20500635,
+      "idCN": "06教学/00骨龙/创建引导7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300373
+    },
+    {
+      "id": 20500636,
+      "idCN": "06教学/00骨龙/变暗-亮菲妮娅A",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 4
+    },
+    {
+      "id": 20500637,
+      "idCN": "06教学/00骨龙/禁用-可用菲妮娅A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 4,
+      "isUseLeader": false,
+      "targetId": 10600233
+    },
+    {
+      "id": 20500638,
+      "idCN": "06教学/00骨龙/拖拽卡牌菲妮娅A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 4,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500639,
+      "idCN": "06教学/00骨龙/创建引导29",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300353
+    },
+    {
+      "id": 20500640,
+      "idCN": "06教学/00骨龙/创建引导30",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300354
+    },
+    {
+      "id": 20500641,
+      "idCN": "06教学/00骨龙/创建引导31",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300355
+    },
+    {
+      "id": 20500645,
+      "idCN": "06教学/00骨龙/变暗-亮雷比斯A-0",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 1
+    },
+    {
+      "id": 20500646,
+      "idCN": "06教学/00骨龙/禁用-可用雷比斯A-0",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600105
+    },
+    {
+      "id": 20500647,
+      "idCN": "06教学/00骨龙/拖拽卡牌雷比斯A-0",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 230.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500648,
+      "idCN": "06教学/00骨龙/文本介绍雷比斯A-0",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "使用【训械】从【御敌之雷】，【摩地之风】和【制衡之钥】中，选择1张加入手牌",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001535
+    },
+    {
+      "id": 20500650,
+      "idCN": "06教学/00骨龙/创建引导21",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300391
+    },
+    {
+      "id": 20500651,
+      "idCN": "06教学/00骨龙/创建引导22",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300388
+    },
+    {
+      "id": 20500652,
+      "idCN": "06教学/00骨龙/创建引导23",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300383
+    },
+    {
+      "id": 20500653,
+      "idCN": "06教学/00骨龙/创建引导24",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300389
+    },
+    {
+      "id": 20500654,
+      "idCN": "06教学/00骨龙/变暗-亮摩地之风",
+      "mod": "全屏变暗",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": -58.0,
+      "height_half": 445.0,
+      "width_half": 190.0,
+      "customSortingOrder": 1500,
+      "isCircle": false
+    },
+    {
+      "id": 20500655,
+      "idCN": "06教学/00骨龙/点击-摩地之风",
+      "mod": "点击提示",
+      "isInformalData": false,
+      "isActive": true,
+      "isLoop": true,
+      "posX": 0.0,
+      "posY": -420.0
+    },
+    {
+      "id": 20500662,
+      "idCN": "06教学/00骨龙/创建引导25",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300378
+    },
+    {
+      "id": 20500663,
+      "idCN": "通用/卡牌展示右7",
+      "mod": "展示卡牌",
+      "isInformalData": false,
+      "handIndex": 6,
+      "posX": -410.0,
+      "posY": 360.0,
+      "scaleX": 1.1,
+      "scaleY": 1.1,
+      "offsetX": 410.0,
+      "offsetY": 110.0
+    },
+    {
+      "id": 20500664,
+      "idCN": "06教学/00骨龙/创建引导26",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300350
+    },
+    {
+      "id": 20500665,
+      "idCN": "06教学/00骨龙/创建引导27",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300351
+    },
+    {
+      "id": 20500681,
+      "idCN": "06教学/00骨龙/创建引导28",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300352
+    },
+    {
+      "id": 20500444,
+      "idCN": "通用/R02泽野剧情战斗BGM",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000853
+    },
+    {
+      "id": 20500683,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅B点击弃牌",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "使用【弃牌】指令，丢弃【锦囊】触发特殊抽牌效果。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001625
+    },
+    {
+      "id": 20500684,
+      "idCN": "06教学/05菲妮娅/创建引导6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300359
+    },
+    {
+      "id": 20500685,
+      "idCN": "06教学/05菲妮娅/00黄金右手2",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600272
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600184
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600184
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600273
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600162
+        },
+        {
+          "card": 10600058
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600184
+        }
+      ]
+    },
+    {
+      "id": 20500686,
+      "idCN": "06教学/00骨龙/00战斗胜利",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [],
+      "buff": 10407290
+    },
+    {
+      "id": 20500748,
+      "idCN": "外部引导/战斗buff/骨龙尾替换动作",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12600328
+        }
+      ],
+      "buff": 10407383
+    },
+    {
+      "id": 20500772,
+      "idCN": "外部引导/战斗buff/骨龙头替换动作",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12600422
+        }
+      ],
+      "buff": 10407384
+    },
+    {
+      "id": 20500445,
+      "idCN": "EP1测试/测试特效",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600423
+        }
+      ],
+      "buff": 10401064
+    },
+    {
+      "id": 20500449,
+      "idCN": "03第三章/3-14/剧情/3-14战后视频",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": -1
+    },
+    {
+      "id": 20500450,
+      "idCN": "通用/禁用全部按钮",
+      "mod": "禁用点击",
+      "isInformalData": false
+    },
+    {
+      "id": 20500451,
+      "idCN": "通用/解禁全部按钮",
+      "mod": "解禁点击",
+      "isInformalData": false
+    },
+    {
+      "id": 20500452,
+      "idCN": "06教学/00骨龙/00门徒激光/蓄力-中间",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10401064
+    },
+    {
+      "id": 20500453,
+      "idCN": "06教学/00骨龙/00门徒激光/蓄力-左上",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10401149
+    },
+    {
+      "id": 20500454,
+      "idCN": "06教学/00骨龙/00门徒激光/蓄力-左下",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10401151
+    },
+    {
+      "id": 20500455,
+      "idCN": "06教学/00骨龙/00门徒激光/蓄力-右上",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10401401
+    },
+    {
+      "id": 20500456,
+      "idCN": "06教学/00骨龙/00门徒激光/蓄力-右下",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402209
+    },
+    {
+      "id": 20500457,
+      "idCN": "06教学/00骨龙/00门徒激光/闪光-右上",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402210
+    },
+    {
+      "id": 20500458,
+      "idCN": "06教学/00骨龙/00门徒激光/闪光-右下",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402211
+    },
+    {
+      "id": 20500459,
+      "idCN": "06教学/00骨龙/00门徒激光/闪光-中间",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402212
+    },
+    {
+      "id": 20500460,
+      "idCN": "06教学/00骨龙/00门徒激光/闪光-左上",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402213
+    },
+    {
+      "id": 20500461,
+      "idCN": "06教学/00骨龙/00门徒激光/闪光-左下",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402214
+    },
+    {
+      "id": 20500462,
+      "idCN": "新/特效2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300377
+    },
+    {
+      "id": 20500463,
+      "idCN": "06教学/00骨龙/00门徒激光/激光",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402216
+    },
+    {
+      "id": 20500464,
+      "idCN": "新/特效3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300384
+    },
+    {
+      "id": 20500465,
+      "idCN": "06教学/00骨龙/禁选-可选雷比斯A-2",
+      "mod": "选指定卡",
+      "isInformalData": false,
+      "targetId": 10600111
+    },
+    {
+      "id": 20500131,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300377
+    },
+    {
+      "id": 20500466,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300384
+    },
+    {
+      "id": 20500467,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300398
+    },
+    {
+      "id": 20500468,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300263
+    },
+    {
+      "id": 20500481,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300264
+    },
+    {
+      "id": 20500485,
+      "idCN": "06教学/00骨龙/00门徒激光/黑屏",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402230
+    },
+    {
+      "id": 20500517,
+      "idCN": "06教学/00骨龙/00门徒激光/白屏",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600423
+        }
+      ],
+      "buff": 10402231
+    },
+    {
+      "id": 20500518,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300265
+    },
+    {
+      "id": 20500519,
+      "idCN": "06教学/00骨龙/00门徒激光/地面效果1",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402243
+    },
+    {
+      "id": 20500601,
+      "idCN": "06教学/00骨龙/00门徒激光/地面效果2",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402249
+    },
+    {
+      "id": 20500642,
+      "idCN": "06教学/00骨龙/00门徒激光/地面效果3",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402250
+    },
+    {
+      "id": 20500643,
+      "idCN": "06教学/00骨龙/00门徒激光/地面效果4",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402251
+    },
+    {
+      "id": 20500644,
+      "idCN": "06教学/00骨龙/00门徒激光/地面效果5",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402252
+    },
+    {
+      "id": 20500702,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300266
+    },
+    {
+      "id": 20500703,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效9",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300267
+    },
+    {
+      "id": 20500705,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效10",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300268
+    },
+    {
+      "id": 20500722,
+      "idCN": "06教学/00骨龙/禁止卡牌入手",
+      "mod": "控制系统发牌",
+      "isInformalData": false,
+      "isBan": true
+    },
+    {
+      "id": 20500724,
+      "idCN": "01第一章/1-01/召唤乌贼",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12600655
+        }
+      ],
+      "buff": 10401165
+    },
+    {
+      "id": 20500447,
+      "idCN": "06教学/00骨龙/变暗-亮队长技",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 164.5,
+      "width_half": 164.5,
+      "customSortingOrder": 10,
+      "isCircle": true,
+      "nodeName": "CardArea/Hand/LeaderCard",
+      "panelName": ""
+    },
+    {
+      "id": 20500448,
+      "idCN": "06教学/00骨龙/00门徒激光/创建特效1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300361
+    },
+    {
+      "id": 20500777,
+      "idCN": "06教学/00骨龙/创建引导39",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300308
+    },
+    {
+      "id": 20500778,
+      "idCN": "06教学/00骨龙/00门徒激光/全体静止",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [],
+      "buff": 10401264
+    },
+    {
+      "id": 20500779,
+      "idCN": "06教学/00骨龙/00门徒激光/全体伤害",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [],
+      "buff": 10401541
+    },
+    {
+      "id": 20500780,
+      "idCN": "03第三章/3-14/剧情/3-14战后2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": -1
+    },
+    {
+      "id": 20500783,
+      "idCN": "通用/关闭弃牌弹窗",
+      "mod": "强制跳过弃牌弹窗",
+      "isInformalData": false
+    },
+    {
+      "id": 20500784,
+      "idCN": "通用/R04泽野剧情战斗出击",
+      "mod": "播放音效",
+      "isInformalData": false,
+      "soundId": 30000857
+    },
+    {
+      "id": 20500785,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅S0队长技条件",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "菲妮娅的得意技能【致胜闪耀】\\n作为队长技的激活条件为：<color=#b45e01>【抽到9张牌】</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001634
+    },
+    {
+      "id": 20500786,
+      "idCN": "06教学/04叶珏/文本介绍叶珏S2队长技条件",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "叶珏的得意技【电光石火】\\n作为队长技的激活条件为：<color=#b45e01>【使用20点费用】</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001597
+    },
+    {
+      "id": 20500788,
+      "idCN": "06教学/05菲妮娅/文本介绍菲妮娅S3",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "<color=#b45e01>丢弃的手牌越多，【轰雷】的伤害越高</color>，同时【轰雷】的每次命中都会额外触发【引雷】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001639
+    },
+    {
+      "id": 20500799,
+      "idCN": "06教学/04叶珏/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300337
+    },
+    {
+      "id": 20500800,
+      "idCN": "06教学/04叶珏/创建引导7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300346
+    },
+    {
+      "id": 20500801,
+      "idCN": "06教学/04叶珏/创建引导8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300347
+    },
+    {
+      "id": 20500802,
+      "idCN": "06教学/04叶珏/创建引导13",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300348
+    },
+    {
+      "id": 20500803,
+      "idCN": "06教学/04叶珏/创建引导15",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300403
+    },
+    {
+      "id": 20500804,
+      "idCN": "06教学/05菲妮娅/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300404
+    },
+    {
+      "id": 20500805,
+      "idCN": "06教学/05菲妮娅/创建引导12",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300405
+    },
+    {
+      "id": 20500806,
+      "idCN": "06教学/05菲妮娅/创建引导13",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300406
+    },
+    {
+      "id": 20500807,
+      "idCN": "06教学/05菲妮娅/创建引导15",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300407
+    },
+    {
+      "id": 20500808,
+      "idCN": "06教学/05菲妮娅/创建引导17",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300408
+    },
+    {
+      "id": 20500809,
+      "idCN": "06教学/00骨龙/创建引导40",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300387
+    },
+    {
+      "id": 20500810,
+      "idCN": "06教学/00骨龙/创建引导41",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300379
+    },
+    {
+      "id": 20500811,
+      "idCN": "06教学/00骨龙/创建引导42",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300394
+    },
+    {
+      "id": 20500812,
+      "idCN": "06教学/00骨龙/创建引导43",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300393
+    },
+    {
+      "id": 20500813,
+      "idCN": "06教学/00骨龙/创建引导44",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300270
+    },
+    {
+      "id": 20500814,
+      "idCN": "06教学/05菲妮娅/创建引导6-1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300414
+    },
+    {
+      "id": 20500815,
+      "idCN": "06教学/05菲妮娅/创建引导8-1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300416
+    },
+    {
+      "id": 20500816,
+      "idCN": "通用/禁止生成卡牌取消",
+      "mod": "控制系统发牌",
+      "isInformalData": false,
+      "isBan": false
+    },
+    {
+      "id": 20500001,
+      "idCN": "01第一章/1-00/剧情/1-00进入战斗",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700280
+    },
+    {
+      "id": 20500007,
+      "idCN": "测试/男女主立绘测试",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700047
+    },
+    {
+      "id": 20500066,
+      "idCN": "04试车场/挨揍宝1000/1",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700004
+    },
+    {
+      "id": 20500069,
+      "idCN": "04试车场/挨揍宝1000/2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700008
+    },
+    {
+      "id": 20500075,
+      "idCN": "04试车场/挨揍宝1000/3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700010
+    },
+    {
+      "id": 20500068,
+      "idCN": "04试车场/挨揍宝1000/4",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700012
+    },
+    {
+      "id": 20500077,
+      "idCN": "04试车场/挨揍宝1000/5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700014
+    },
+    {
+      "id": 20500079,
+      "idCN": "04试车场/挨揍宝1000/6",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700016
+    },
+    {
+      "id": 20500078,
+      "idCN": "04试车场/遥/1",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700147
+    },
+    {
+      "id": 20500087,
+      "idCN": "04试车场/遥/2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700148
+    },
+    {
+      "id": 20500081,
+      "idCN": "04试车场/遥/3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700149
+    },
+    {
+      "id": 20500092,
+      "idCN": "04试车场/遥/4",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700150
+    },
+    {
+      "id": 20500093,
+      "idCN": "04试车场/遥/5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700151
+    },
+    {
+      "id": 20500086,
+      "idCN": "04试车场/遥/6",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700152
+    },
+    {
+      "id": 20500145,
+      "idCN": "02第二章/2-13/剧情/2-13战后-视频",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700153
+    },
+    {
+      "id": 20500088,
+      "idCN": "02第二章/2-01/剧情/2-01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700154
+    },
+    {
+      "id": 20500089,
+      "idCN": "02第二章/2-13/剧情/2-13尾声",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700262
+    },
+    {
+      "id": 20500094,
+      "idCN": "06教学/00鲸鱼/文本介绍触须",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【刺须体桦树生物】会召唤小型桦树生物不停骚扰我方后排。请使用带有【引雷】效果的技能牌，克敌制胜。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001574
+    },
+    {
+      "id": 20500097,
+      "idCN": "06教学/00鲸鱼/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300060
+    },
+    {
+      "id": 20500098,
+      "idCN": "06教学/2-1摄能体/文本介绍摄能体",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "附近的桦树生物似乎活动更加频繁了，在现实稳定装置覆盖范围内居然也出现了桦树生物。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001877
+    },
+    {
+      "id": 20500100,
+      "idCN": "06教学/2-1摄能体/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300062
+    },
+    {
+      "id": 20500103,
+      "idCN": "06教学/2-1摄能体/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300063
+    },
+    {
+      "id": 20500105,
+      "idCN": "06教学/2-1摄能体/文本介绍摄能体2",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【摄能体桦树生物】以能量为食，<color=#b45e01>我们的【费用】会被吸取</color>，优先解决它。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001878
+    },
+    {
+      "id": 20500107,
+      "idCN": "06教学/2-11深眠者第二波/文本介绍深眠者",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【深眠者·迷惘】会释放【诅咒】，被诅咒的队员将<color=#b45e01>无法受到治疗效果</color>。请小心应对。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001663
+    },
+    {
+      "id": 20500108,
+      "idCN": "06教学/2-11深眠者第二波/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300065
+    },
+    {
+      "id": 20500109,
+      "idCN": "06教学/05菲妮娅/文本介绍怪物",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【动力甲链锯】会释放护盾保护自己，我的【灵鸟夜曲·红】具有【破盾】的特殊效果，择时使用吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false
+    },
+    {
+      "id": 20500110,
+      "idCN": "06教学/04叶珏2/文本介绍多倍体",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【多倍体桦树生物】会制造黑卡【形态污染】污染牌库。抽到【形态污染】时，需要将其丢弃才能使其【销毁】，否则将会引起连锁爆炸。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001600
+    },
+    {
+      "id": 20500106,
+      "idCN": "06教学/05菲妮娅2/文本介绍破盾",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【动力甲·链锯】会释放护盾保护自己，我的【灵鸟夜曲·红】<color=#b45e01>拥有【破盾】的特殊效果</color>，择时使用吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001657
+    },
+    {
+      "id": 20500116,
+      "idCN": "06教学/05菲妮娅2/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300068
+    },
+    {
+      "id": 20500120,
+      "idCN": "06教学/04叶珏2/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300070
+    },
+    {
+      "id": 20500122,
+      "idCN": "06教学/2-07钵爪体/文本介绍钵爪体",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【钵爪体桦树生物】具有<color=#b45e01>致命的蓄力攻击</color>，并会制造黑卡【形态污染】污染牌库。抽到【形态污染】时，需要将其丢弃才能使其【销毁】，否则将会引起连锁爆炸。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001658
+    },
+    {
+      "id": 20500124,
+      "idCN": "06教学/2-07钵爪体/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300073
+    },
+    {
+      "id": 20500076,
+      "idCN": "06教学/00鲸鱼/00黄金右手",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600273
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600058
+        },
+        {
+          "card": 10600184
+        },
+        {
+          "card": 10600162
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600273
+        },
+        {
+          "card": 10600184
+        }
+      ]
+    },
+    {
+      "id": 20500130,
+      "idCN": "06教学/05菲妮娅/00黄金右手3",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600272
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600184
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600162
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600184
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600273
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600274
+        }
+      ]
+    },
+    {
+      "id": 20500132,
+      "idCN": "06教学/2-11深眠者第二波/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300076
+    },
+    {
+      "id": 20500133,
+      "idCN": "06教学/2-11深眠者第一波/文本初步介绍深眠者",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【深眠者】会释放【禁锢】与【枷锁】，阻碍我方的进攻，是非常难缠的对手。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001874
+    },
+    {
+      "id": 20500134,
+      "idCN": "06教学/2-11深眠者第一波/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300078
+    },
+    {
+      "id": 20500135,
+      "idCN": "06教学/2-11深眠者第一波/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300079
+    },
+    {
+      "id": 20500138,
+      "idCN": "06教学/05菲妮娅/00黄金右手4",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600182
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600274
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600182
+        },
+        {
+          "card": 10600274
+        }
+      ]
+    },
+    {
+      "id": 20500139,
+      "idCN": "06教学/05菲妮娅/00黄金右手5",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600056
+        }
+      ]
+    },
+    {
+      "id": 20500142,
+      "idCN": "06教学/莉薇娅三人组/00黄金右手",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600184
+        },
+        {
+          "card": 10600161
+        },
+        {
+          "card": 10600182
+        },
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600160
+        },
+        {
+          "card": 10600162
+        },
+        {
+          "card": 10600185
+        },
+        {
+          "card": 10600060
+        },
+        {
+          "card": 10600184
+        }
+      ]
+    },
+    {
+      "id": 20500153,
+      "idCN": "06教学/莉薇娅三人组/创建引导1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300080
+    },
+    {
+      "id": 20500137,
+      "idCN": "06教学/莉薇娅三人组/文本介绍弗兰A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "弗兰的【盾牌撞击】，可以对面前范围内敌方造成伤害，同时【打断】目标当前动作。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001893
+    },
+    {
+      "id": 20500150,
+      "idCN": "06教学/莉薇娅三人组/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300085
+    },
+    {
+      "id": 20500161,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用弗兰A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600184
+    },
+    {
+      "id": 20500151,
+      "idCN": "06教学/莉薇娅三人组/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300086
+    },
+    {
+      "id": 20500164,
+      "idCN": "06教学/莉薇娅三人组/文本介绍弗兰",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "弗兰，本列车组的武装护卫乘员之一，她总是持盾陷阵，抵御敌方，是我们可靠的坚盾。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001892
+    },
+    {
+      "id": 20500154,
+      "idCN": "06教学/莉薇娅三人组/创建引导4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300087
+    },
+    {
+      "id": 20500155,
+      "idCN": "06教学/莉薇娅三人组/创建引导5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300088
+    },
+    {
+      "id": 20500156,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示弗兰A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 0.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500157,
+      "idCN": "06教学/莉薇娅三人组/文本使用弗兰A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "尝试使用【盾牌撞击】进攻，<color=#b45e01>【打断】敌方的蓄力攻击</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001918
+    },
+    {
+      "id": 20500146,
+      "idCN": "06教学/莉薇娅三人组/创建引导6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300089
+    },
+    {
+      "id": 20500147,
+      "idCN": "06教学/莉薇娅三人组/创建引导7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300090
+    },
+    {
+      "id": 20500175,
+      "idCN": "06教学/莉薇娅三人组/文本介绍艾略特",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "艾略特，敏锐的直觉和优秀的射击能力让她总能在合适的时机为队友提供辅助支援，是我们可靠的伙伴。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001886
+    },
+    {
+      "id": 20500148,
+      "idCN": "06教学/莉薇娅三人组/文本介绍艾略特B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "艾略特的【爆炎弹】，可以在抽1张牌的同时，定点打击并【点燃】范围内的敌方。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001887
+    },
+    {
+      "id": 20500162,
+      "idCN": "06教学/莉薇娅三人组/文本使用艾略特B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "敌方的狙击手正在瞄准弗兰。\\n请使用这张【爆炎弹】，<color=#b45e01>打击敌方后排</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001911
+    },
+    {
+      "id": 20500163,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用艾略特A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600160
+    },
+    {
+      "id": 20500152,
+      "idCN": "06教学/莉薇娅三人组/创建引导8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300091
+    },
+    {
+      "id": 20500140,
+      "idCN": "06教学/莉薇娅三人组/创建引导9",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300092
+    },
+    {
+      "id": 20500167,
+      "idCN": "06教学/莉薇娅三人组/创建引导10",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300093
+    },
+    {
+      "id": 20500168,
+      "idCN": "06教学/莉薇娅三人组/创建引导11",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300094
+    },
+    {
+      "id": 20500169,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用艾略特B",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600161
+    },
+    {
+      "id": 20500158,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示艾略特B",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 550.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500159,
+      "idCN": "06教学/莉薇娅三人组/创建引导12",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300095
+    },
+    {
+      "id": 20500173,
+      "idCN": "06教学/莉薇娅三人组/文本介绍弗兰B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "弗兰的【能量护盾】，可以指定1名我方目标获得【护盾】。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001902
+    },
+    {
+      "id": 20500196,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用弗兰B",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600182
+    },
+    {
+      "id": 20500176,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示弗兰B",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": -400.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500177,
+      "idCN": "06教学/莉薇娅三人组/创建引导14",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300097
+    },
+    {
+      "id": 20500166,
+      "idCN": "06教学/莉薇娅三人组/创建引导15",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300098
+    },
+    {
+      "id": 20500179,
+      "idCN": "06教学/莉薇娅三人组/文本使用弗兰B",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "请使用【能量护盾】，保护莉薇娅。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001919
+    },
+    {
+      "id": 20500180,
+      "idCN": "06教学/莉薇娅三人组/创建引导16",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300099
+    },
+    {
+      "id": 20500170,
+      "idCN": "06教学/莉薇娅三人组/创建引导13",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300096
+    },
+    {
+      "id": 20500171,
+      "idCN": "06教学/莉薇娅三人组/文本介绍治疗",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "弗兰和我受到了伤害，请先使用这张【强愈弹】，治愈弗兰。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001904
+    },
+    {
+      "id": 20500160,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示艾略特A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": -110.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500174,
+      "idCN": "06教学/莉薇娅三人组/文本使用莉薇娅B-3",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "借助我的升构能力【共鸣】，成功转化出具有治疗效果的【灵鸟夜曲·绿】。使用【灵鸟夜曲·绿】为我治疗吧。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001937
+    },
+    {
+      "id": 20500198,
+      "idCN": "06教学/莉薇娅三人组2/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300102
+    },
+    {
+      "id": 20500149,
+      "idCN": "06教学/莉薇娅三人组2/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300104
+    },
+    {
+      "id": 20500200,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用莉薇娅B-3",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600037
+    },
+    {
+      "id": 20500178,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示莉薇娅B-3",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": -400.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500202,
+      "idCN": "06教学/莉薇娅三人组2/创建引导4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300105
+    },
+    {
+      "id": 20500192,
+      "idCN": "06教学/莉薇娅三人组2/创建引导5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300106
+    },
+    {
+      "id": 20500181,
+      "idCN": "06教学/莉薇娅三人组/文本使用莉薇娅A",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "使用我的【冲击剑】，可以在斩击敌方的同时\\n<color=#b45e01>从牌库抽取1张【灵鸟夜曲】加入手牌</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001932
+    },
+    {
+      "id": 20500182,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示莉薇娅A",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 110.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500183,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用莉薇娅A",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600056
+    },
+    {
+      "id": 20500184,
+      "idCN": "06教学/莉薇娅三人组2/创建引导6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300107
+    },
+    {
+      "id": 20500172,
+      "idCN": "06教学/莉薇娅三人组2/创建引导7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300108
+    },
+    {
+      "id": 20500209,
+      "idCN": "通用/丢弃全部手牌",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600099
+        }
+      ],
+      "buff": 10403530
+    },
+    {
+      "id": 20500199,
+      "idCN": "06教学/莉薇娅三人组2/引导buff弗兰开大",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600100
+        }
+      ],
+      "buff": 10403536
+    },
+    {
+      "id": 20500211,
+      "idCN": "06教学/莉薇娅三人组2/引导buff艾略特开大",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600101
+        }
+      ],
+      "buff": 10403537
+    },
+    {
+      "id": 20500201,
+      "idCN": "06教学/莉薇娅三人组2/引导弃牌队长技卡",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600099
+        }
+      ],
+      "buff": 10403533
+    },
+    {
+      "id": 20500190,
+      "idCN": "通用/减少9费",
+      "mod": "加费用",
+      "isInformalData": false,
+      "cost_SN": -90000
+    },
+    {
+      "id": 20500203,
+      "idCN": "06教学/莉薇娅三人组/文本莉薇娅S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "我的队长技已激活，使用【终末的圆舞曲】结束战斗吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001908
+    },
+    {
+      "id": 20500204,
+      "idCN": "06教学/莉薇娅三人组/拖拽莉薇娅S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 0,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500193,
+      "idCN": "06教学/莉薇娅三人组2/创建引导8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300109
+    },
+    {
+      "id": 20500194,
+      "idCN": "06教学/莉薇娅三人组/创建引导18",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300111
+    },
+    {
+      "id": 20500207,
+      "idCN": "06教学/莉薇娅三人组/创建引导17",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300110
+    },
+    {
+      "id": 20500208,
+      "idCN": "06教学/莉薇娅三人组/禁用-使用艾略特S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 1,
+      "isUseLeader": false,
+      "targetId": 10600162
+    },
+    {
+      "id": 20500197,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示弗兰S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 0,
+      "endX": 230.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500222,
+      "idCN": "06教学/莉薇娅三人组/拖拽指示艾略特S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 1,
+      "endX": 250.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500212,
+      "idCN": "06教学/莉薇娅三人组/文本使用艾略特S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "艾略特的得意技【飞电弹】，可以在提供火力支援的同时，<color=#b45e01>从弃牌区回收1张牌</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001917
+    },
+    {
+      "id": 20500320,
+      "idCN": "06教学/2-2爆虫/文本介绍爆虫",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "【爆虫桦树生物】会引爆自身的毒液囊袋袭击侵入者，<color=#b45e01>在爆虫自爆前消灭它们吧</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001884
+    },
+    {
+      "id": 20500321,
+      "idCN": "06教学/2-2爆虫/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300113
+    },
+    {
+      "id": 20500206,
+      "idCN": "外部引导/战斗buff/群体不死",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600246
+        }
+      ],
+      "buff": 10407022
+    },
+    {
+      "id": 20500214,
+      "idCN": "外部引导/核心/黑卡监测",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600246
+        }
+      ],
+      "buff": 10400527
+    },
+    {
+      "id": 20500008,
+      "idCN": "08魔窟关卡/01七号自由港/障碍重重/03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700172
+    },
+    {
+      "id": 20500010,
+      "idCN": "08魔窟关卡/01七号自由港/障碍重重/02战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700171
+    },
+    {
+      "id": 20500011,
+      "idCN": "08魔窟关卡/01七号自由港/障碍重重/01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700170
+    },
+    {
+      "id": 20500012,
+      "idCN": "08魔窟关卡/02修格里城/诡谲寒潮/01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700108
+    },
+    {
+      "id": 20500013,
+      "idCN": "08魔窟关卡/02修格里城/诡谲寒潮/02战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700155
+    },
+    {
+      "id": 20500014,
+      "idCN": "08魔窟关卡/02修格里城/诡谲寒潮/03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700160
+    },
+    {
+      "id": 20500016,
+      "idCN": "08魔窟关卡/03曼德矿场/源源不绝/1-02",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700162
+    },
+    {
+      "id": 20500017,
+      "idCN": "08魔窟关卡/03曼德矿场/源源不绝/2-02",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700164
+    },
+    {
+      "id": 20500019,
+      "idCN": "08魔窟关卡/03曼德矿场/源源不绝/3-02",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700166
+    },
+    {
+      "id": 20500020,
+      "idCN": "图文引导/交易所",
+      "mod": "图片教程",
+      "isInformalData": false,
+      "list": [
+        {
+          "path": "UI/Guidance/Img/exchange01"
+        },
+        {
+          "path": "UI/Guidance/Img/exchange02"
+        }
+      ]
+    },
+    {
+      "id": 20500021,
+      "idCN": "08魔窟关卡/04澄明数据中心/进退维谷/1-02",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700288
+    },
+    {
+      "id": 20500022,
+      "idCN": "08魔窟关卡/04澄明数据中心/进退维谷/2-02",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700037
+    },
+    {
+      "id": 20500026,
+      "idCN": "08魔窟关卡/04澄明数据中心/进退维谷/3-02",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700038
+    },
+    {
+      "id": 20500027,
+      "idCN": "10活动/红茶/剧情/战斗/EV1-5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700177
+    },
+    {
+      "id": 20500028,
+      "idCN": "10活动/红茶/剧情/战斗/EV1-7",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700179
+    },
+    {
+      "id": 20500029,
+      "idCN": "10活动/红茶/剧情/战斗/EV1-14",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700184
+    },
+    {
+      "id": 20500030,
+      "idCN": "00序章/剧情/菲妮娅大招-视频",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700190
+    },
+    {
+      "id": 20500033,
+      "idCN": "03第三章/剧情/掘金机器人战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700325
+    },
+    {
+      "id": 20500034,
+      "idCN": "04第四章/4-02/剧情/4-2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700198
+    },
+    {
+      "id": 20500037,
+      "idCN": "04第四章/4-05/剧情/4-5战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700204
+    },
+    {
+      "id": 20500038,
+      "idCN": "04第四章/4-07/剧情/4-7战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700282
+    },
+    {
+      "id": 20500039,
+      "idCN": "04第四章/4-10/剧情/4-10战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700343
+    },
+    {
+      "id": 20500040,
+      "idCN": "04第四章/4-11/剧情/4-11战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700345
+    },
+    {
+      "id": 20500041,
+      "idCN": "04第四章/4-13/剧情/4-13战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700331
+    },
+    {
+      "id": 20500042,
+      "idCN": "04第四章/4-14/剧情/4-14战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700332
+    },
+    {
+      "id": 20500043,
+      "idCN": "04第四章/4-15/剧情/4-15战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700334
+    },
+    {
+      "id": 20500032,
+      "idCN": "13逸闻任务/多萝西/剧情/战斗/ARC1-3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700356
+    },
+    {
+      "id": 20500044,
+      "idCN": "13逸闻任务/多萝西/战斗/ARC1-3/劫掠王被动-1",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12601075
+        }
+      ],
+      "buff": 10409284
+    },
+    {
+      "id": 20500045,
+      "idCN": "13逸闻任务/多萝西/战斗/ARC1-3/劫掠王被动-2",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12601075
+        }
+      ],
+      "buff": 10410069
+    },
+    {
+      "id": 20500046,
+      "idCN": "13逸闻任务/多萝西/战斗/ARC1-3/劫掠王被动-3",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12601075
+        }
+      ],
+      "buff": 10410070
+    },
+    {
+      "id": 20500047,
+      "idCN": "08魔窟关卡/05发射中心/裂首震鸣/01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700076
+    },
+    {
+      "id": 20500048,
+      "idCN": "08魔窟关卡/05发射中心/裂首震鸣/03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700079
+    },
+    {
+      "id": 20500050,
+      "idCN": "10活动/闹鬼/剧情/战斗/EV2-16",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700380
+    },
+    {
+      "id": 20500051,
+      "idCN": "10活动/闹鬼/剧情/战斗/EV2-17",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700381
+    },
+    {
+      "id": 20500052,
+      "idCN": "10活动/闹鬼/剧情/战斗/EV2-9",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700373
+    },
+    {
+      "id": 20500054,
+      "idCN": "10活动/闹鬼/剧情/战斗/EV2-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700374
+    },
+    {
+      "id": 20500057,
+      "idCN": "10活动/闹鬼/剧情/战斗/EV2-13",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700377
+    },
+    {
+      "id": 20500056,
+      "idCN": "10活动/闹鬼/战斗/深层8强制结束战斗",
+      "mod": "结束游戏",
+      "isInformalData": false
+    },
+    {
+      "id": 20500058,
+      "idCN": "10活动/闹鬼/剧情/战斗/EV2-11",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700375
+    },
+    {
+      "id": 20500060,
+      "idCN": "13逸闻任务/夏尔/剧情/2-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700097
+    },
+    {
+      "id": 20500061,
+      "idCN": "13逸闻任务/夏尔/剧情/4-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700103
+    },
+    {
+      "id": 20500062,
+      "idCN": "04第五章/5-13/剧情/5-13战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700402
+    },
+    {
+      "id": 20500063,
+      "idCN": "04第五章/5-11/剧情/5-11战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700397
+    },
+    {
+      "id": 20500064,
+      "idCN": "04第五章/5-15/剧情/5-15战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700407
+    },
+    {
+      "id": 20500065,
+      "idCN": "04第五章/5-16/剧情/5-16战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700409
+    },
+    {
+      "id": 20500067,
+      "idCN": "04第五章/5-18/剧情/5-18战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700411
+    },
+    {
+      "id": 20500070,
+      "idCN": "04第五章/5-19/剧情/5-19战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700413
+    },
+    {
+      "id": 20500071,
+      "idCN": "04第五章/5-21/剧情/5-21战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700415
+    },
+    {
+      "id": 20500072,
+      "idCN": "10活动/夏活/剧情/战斗/EV3-13",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700442
+    },
+    {
+      "id": 20500073,
+      "idCN": "10活动/夏活/剧情/战斗/EV3-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700447
+    },
+    {
+      "id": 20500074,
+      "idCN": "10活动/夏活/剧情/战斗/EV3-23",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700452
+    },
+    {
+      "id": 20500080,
+      "idCN": "10活动/夏活/剧情/战斗/EV3-31",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700460
+    },
+    {
+      "id": 20500082,
+      "idCN": "10活动/夏活/剧情/战斗/EV3-27",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700456
+    },
+    {
+      "id": 20500083,
+      "idCN": "08魔窟关卡/06海角城/冥霆终仪/01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700466
+    },
+    {
+      "id": 20500084,
+      "idCN": "08魔窟关卡/06海角城/冥霆终仪/02战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700467
+    },
+    {
+      "id": 20500085,
+      "idCN": "08魔窟关卡/06海角城/冥霆终仪/03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700468
+    },
+    {
+      "id": 20500090,
+      "idCN": "06教学/00骨龙缩减版/创建引导19",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300160
+    },
+    {
+      "id": 20500095,
+      "idCN": "06教学/00骨龙缩减版/变暗-亮队长技",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 164.5,
+      "width_half": 164.5,
+      "customSortingOrder": 10,
+      "isCircle": true,
+      "nodeName": "CardArea/Hand/LeaderCard",
+      "panelName": ""
+    },
+    {
+      "id": 20500096,
+      "idCN": "06教学/00骨龙缩减版/创建引导29",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300353
+    },
+    {
+      "id": 20500115,
+      "idCN": "06教学/00骨龙缩减版/创建引导40",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300387
+    },
+    {
+      "id": 20500117,
+      "idCN": "06教学/00骨龙缩减版/文本介绍菲妮娅S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "菲妮娅的队长技【致胜闪耀】是可以通过<color=#b45e01>舍弃所有手牌</color>召唤雷霆的强大【引雷】法术。\\n趁现在！将骨龙轰掣殆尽，克敌制胜吧！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001521
+    },
+    {
+      "id": 20500119,
+      "idCN": "06教学/00骨龙缩减版/创建引导30",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300354
+    },
+    {
+      "id": 20500121,
+      "idCN": "06教学/00骨龙缩减版/创建引导39",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300308
+    },
+    {
+      "id": 20500125,
+      "idCN": "06教学/00骨龙缩减版/创建引导4",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300147
+    },
+    {
+      "id": 20500126,
+      "idCN": "06教学/00骨龙缩减版/创建引导31",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300355
+    },
+    {
+      "id": 20500141,
+      "idCN": "06教学/00骨龙缩减版/拖拽卡牌冯里奈S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 3,
+      "endX": -200.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500144,
+      "idCN": "06教学/00骨龙缩减版/拖拽卡牌叶珏S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 2,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500185,
+      "idCN": "06教学/00骨龙缩减版/创建引导17",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300146
+    },
+    {
+      "id": 20500205,
+      "idCN": "06教学/00骨龙缩减版/BOSS技能2",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102318
+    },
+    {
+      "id": 20500213,
+      "idCN": "06教学/00骨龙缩减版/创建引导8",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300169
+    },
+    {
+      "id": 20500216,
+      "idCN": "06教学/00骨龙缩减版/00黄金右手",
+      "mod": "改变牌库顺序2",
+      "isInformalData": false,
+      "cardList": [
+        {
+          "card": 10600056
+        },
+        {
+          "card": 10600272
+        },
+        {
+          "card": 10600191
+        },
+        {
+          "card": 10600105
+        },
+        {
+          "card": 10600112
+        },
+        {
+          "card": 10600233
+        },
+        {
+          "card": 10600105
+        },
+        {
+          "card": 10600172
+        },
+        {
+          "card": 10600236
+        },
+        {
+          "card": 10600111
+        }
+      ]
+    },
+    {
+      "id": 20500219,
+      "idCN": "06教学/00骨龙缩减版/文本介绍手牌区",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这些是我方队员的【技能牌】。\\n打出技能牌需要消耗对应的费用点数。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001561
+    },
+    {
+      "id": 20500220,
+      "idCN": "06教学/00骨龙缩减版/BOSS开技能3",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102319
+    },
+    {
+      "id": 20500224,
+      "idCN": "06教学/00骨龙缩减版/创建引导9",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300145
+    },
+    {
+      "id": 20500225,
+      "idCN": "06教学/00骨龙缩减版/创建引导14",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300150
+    },
+    {
+      "id": 20500226,
+      "idCN": "06教学/00骨龙缩减版/文本介绍我方角色",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "我方队员会从位于战场左端的位置应敌，列车长请从旁指挥，为大家下达正确的指令。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001565
+    },
+    {
+      "id": 20500227,
+      "idCN": "06教学/00骨龙缩减版/变暗-亮叶珏S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 2
+    },
+    {
+      "id": 20500229,
+      "idCN": "06教学/00骨龙缩减版/创建引导41",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300379
+    },
+    {
+      "id": 20500230,
+      "idCN": "06教学/00骨龙缩减版/文本介绍弃牌按钮",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这里是【弃牌】指令，冷却结束时使用【弃牌】可以丢弃当前所有手牌，同时从牌库中抽1张牌。【弃牌】指令<color=#b45e01>冷却时间20秒</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001560
+    },
+    {
+      "id": 20500233,
+      "idCN": "06教学/00骨龙缩减版/创建引导3",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300157
+    },
+    {
+      "id": 20500234,
+      "idCN": "06教学/00骨龙缩减版/创建引导32",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300356
+    },
+    {
+      "id": 20500236,
+      "idCN": "06教学/00骨龙缩减版/创建引导11",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300168
+    },
+    {
+      "id": 20500237,
+      "idCN": "06教学/00骨龙缩减版/创建引导6",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300159
+    },
+    {
+      "id": 20500238,
+      "idCN": "06教学/00骨龙缩减版/创建引导10",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300183
+    },
+    {
+      "id": 20500240,
+      "idCN": "06教学/00骨龙缩减版/创建引导5",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300144
+    },
+    {
+      "id": 20500241,
+      "idCN": "06教学/00骨龙缩减版/00钻石右手",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600385
+        }
+      ],
+      "buff": 10407289
+    },
+    {
+      "id": 20500242,
+      "idCN": "06教学/00骨龙缩减版/创建引导18",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300151
+    },
+    {
+      "id": 20500245,
+      "idCN": "06教学/00骨龙缩减版/文本介绍莉薇娅S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "在【红卡增幅】下，我的得意技【终幕的圆舞曲】<color=#b45e01>将造成更高的伤害</color>！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001547
+    },
+    {
+      "id": 20500248,
+      "idCN": "06教学/00骨龙缩减版/00驱散负面",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600385
+        }
+      ],
+      "buff": 10407017
+    },
+    {
+      "id": 20500249,
+      "idCN": "06教学/00骨龙缩减版/创建引导1",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300164
+    },
+    {
+      "id": 20500251,
+      "idCN": "06教学/00骨龙缩减版/文本介绍战场",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "列车长，这里的形态污染指数越来越高了。\\n我们要尽快解决面前的巨型桦树生物。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001572
+    },
+    {
+      "id": 20500252,
+      "idCN": "06教学/00骨龙缩减版/文本介绍费用条",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这里是【费用】槽，技能牌需要消耗费用才可打出。费用会自动增长，<color=#b45e01>存储上限为12点</color>。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001532
+    },
+    {
+      "id": 20500255,
+      "idCN": "06教学/00骨龙缩减版/禁用-可用叶珏S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 2,
+      "isUseLeader": false,
+      "targetId": 10600272
+    },
+    {
+      "id": 20500257,
+      "idCN": "06教学/00骨龙缩减版/变暗-弃牌确认",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 55.0,
+      "width_half": 473.0,
+      "customSortingOrder": 1000,
+      "isCircle": false,
+      "nodeName": "Btn_Confirm",
+      "panelName": "GroupDiscardTip"
+    },
+    {
+      "id": 20500259,
+      "idCN": "06教学/00骨龙缩减版/创建引导34",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300380
+    },
+    {
+      "id": 20500260,
+      "idCN": "06教学/00骨龙缩减版/创建引导21",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300134
+    },
+    {
+      "id": 20500264,
+      "idCN": "06教学/00骨龙缩减版/00骨龙致死",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [],
+      "buff": 10407290
+    },
+    {
+      "id": 20500265,
+      "idCN": "06教学/00骨龙缩减版/创建引导37",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300293
+    },
+    {
+      "id": 20500266,
+      "idCN": "06教学/00骨龙缩减版/创建引导42",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300394
+    },
+    {
+      "id": 20500268,
+      "idCN": "06教学/00骨龙缩减版/BOSS技能3",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102319
+    },
+    {
+      "id": 20500270,
+      "idCN": "06教学/00骨龙缩减版/创建引导26",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300350
+    },
+    {
+      "id": 20500271,
+      "idCN": "06教学/00骨龙缩减版/创建引导22",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300153
+    },
+    {
+      "id": 20500272,
+      "idCN": "06教学/00骨龙缩减版/BOSS被动2",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102322
+    },
+    {
+      "id": 20500273,
+      "idCN": "06教学/00骨龙缩减版/创建引导15",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300179
+    },
+    {
+      "id": 20500276,
+      "idCN": "06教学/00骨龙缩减版/创建引导43",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300393
+    },
+    {
+      "id": 20500277,
+      "idCN": "06教学/00骨龙缩减版/文本介绍叶珏S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "叶珏的【电光石火】可以制造电磁【引雷】环境，<color=#b45e01>增强全场的【引雷】效果</color>。\\n使用【电光石火】开辟有利于我方的战场！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001567
+    },
+    {
+      "id": 20500278,
+      "idCN": "06教学/00骨龙缩减版/创建引导23",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300383
+    },
+    {
+      "id": 20500279,
+      "idCN": "06教学/00骨龙缩减版/拖拽卡牌菲妮娅S",
+      "mod": "拖拽提示",
+      "isInformalData": false,
+      "isActiveSelf": true,
+      "cardIndex": 0,
+      "endX": 500.0,
+      "endY": 0.0,
+      "duration": 0.5
+    },
+    {
+      "id": 20500282,
+      "idCN": "06教学/00骨龙缩减版/创建引导27",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300351
+    },
+    {
+      "id": 20500283,
+      "idCN": "06教学/00骨龙缩减版/创建引导16",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300174
+    },
+    {
+      "id": 20500284,
+      "idCN": "06教学/00骨龙缩减版/创建引导28",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300352
+    },
+    {
+      "id": 20500285,
+      "idCN": "06教学/00骨龙缩减版/创建引导7",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300154
+    },
+    {
+      "id": 20500286,
+      "idCN": "06教学/00骨龙缩减版/创建引导35",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300371
+    },
+    {
+      "id": 20500288,
+      "idCN": "06教学/00骨龙缩减版/BOSS技能1",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102317
+    },
+    {
+      "id": 20500289,
+      "idCN": "06教学/00骨龙缩减版/变暗-亮冯里奈S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 3
+    },
+    {
+      "id": 20500290,
+      "idCN": "06教学/00骨龙缩减版/创建引导24",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300389
+    },
+    {
+      "id": 20500294,
+      "idCN": "06教学/00骨龙缩减版/变暗-亮菲妮娅S",
+      "mod": "全屏变暗指定卡牌",
+      "isInformalData": false,
+      "position_x": -10.0,
+      "position_y": 23.0,
+      "height_half": 160.0,
+      "width_half": 120.0,
+      "customSortingOrder": 10,
+      "cardIndex": 0
+    },
+    {
+      "id": 20500298,
+      "idCN": "06教学/00骨龙缩减版/创建引导20",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300166
+    },
+    {
+      "id": 20500302,
+      "idCN": "06教学/00骨龙缩减版/文本介绍牌库",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "这里是【牌库】，点击可以查看牌库中剩余的技能牌和进入弃牌区的技能牌。当牌库为空时，弃牌区中所有的技能牌洗回到牌库。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": 30001548
+    },
+    {
+      "id": 20500303,
+      "idCN": "06教学/00骨龙缩减版/创建引导12",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300173
+    },
+    {
+      "id": 20500307,
+      "idCN": "06教学/00骨龙缩减版/创建引导36",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300390
+    },
+    {
+      "id": 20500309,
+      "idCN": "06教学/00骨龙缩减版/文本介绍冯里奈S",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "骨龙正在汇集巨大的能量，使用冯里奈的【制敌扳机】可以在<color=#b45e01>抽3张牌</color>的同时使我方全体获得【不可陷之盾】抵挡即将来临的千钧之势！",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": false,
+      "soundId": 30001533
+    },
+    {
+      "id": 20500317,
+      "idCN": "06教学/00骨龙缩减版/创建引导33",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300357
+    },
+    {
+      "id": 20500322,
+      "idCN": "06教学/00骨龙缩减版/禁用-可用冯里奈S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 3,
+      "isUseLeader": false,
+      "targetId": 10600191
+    },
+    {
+      "id": 20500325,
+      "idCN": "06教学/00骨龙缩减版/BOSS开大",
+      "mod": "动作指令",
+      "isInformalData": false,
+      "side": "Team2",
+      "unitId": 10000121,
+      "actionId": 10102428
+    },
+    {
+      "id": 20500326,
+      "idCN": "06教学/00骨龙缩减版/创建引导13",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300175
+    },
+    {
+      "id": 20500327,
+      "idCN": "06教学/00骨龙缩减版/创建引导25",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300378
+    },
+    {
+      "id": 20500329,
+      "idCN": "06教学/00骨龙缩减版/00战斗胜利",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [],
+      "buff": 10407290
+    },
+    {
+      "id": 20500330,
+      "idCN": "06教学/00骨龙缩减版/禁止卡牌入手",
+      "mod": "控制系统发牌",
+      "isInformalData": false,
+      "isBan": true
+    },
+    {
+      "id": 20500331,
+      "idCN": "06教学/00骨龙缩减版/创建引导2",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300136
+    },
+    {
+      "id": 20500334,
+      "idCN": "06教学/00骨龙缩减版/禁用-可用菲妮娅S",
+      "mod": "禁卡牌",
+      "isInformalData": false,
+      "cardIndex": 0,
+      "isUseLeader": true,
+      "targetId": -1
+    },
+    {
+      "id": 20500336,
+      "idCN": "06教学/00骨龙缩减版/创建引导44",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300270
+    },
+    {
+      "id": 20500337,
+      "idCN": "06教学/00骨龙缩减版/创建引导38",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300307
+    },
+    {
+      "id": 20500340,
+      "idCN": "13逸闻任务/苔妮/剧情/B1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700471
+    },
+    {
+      "id": 20500341,
+      "idCN": "13逸闻任务/苔妮/剧情/B2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700472
+    },
+    {
+      "id": 20500342,
+      "idCN": "04第六章/6-2/剧情/战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700482
+    },
+    {
+      "id": 20500343,
+      "idCN": "04第六章/6-4/剧情/战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700485
+    },
+    {
+      "id": 20500344,
+      "idCN": "04第六章/6-14/剧情/战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700496
+    },
+    {
+      "id": 20500091,
+      "idCN": "04第六章/6-17/剧情/战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700509
+    },
+    {
+      "id": 20500104,
+      "idCN": "10活动/酒店疑案/剧情/战斗/EV4-5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700516
+    },
+    {
+      "id": 20500113,
+      "idCN": "10活动/酒店疑案/剧情/战斗/EV4-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700522
+    },
+    {
+      "id": 20500118,
+      "idCN": "10活动/酒店疑案/剧情/战斗/EV4-14",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700526
+    },
+    {
+      "id": 20500123,
+      "idCN": "10活动/酒店疑案/剧情/战斗/EV4-16",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700528
+    },
+    {
+      "id": 20500143,
+      "idCN": "10活动/酒店疑案/剧情/战斗/EV4-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700530
+    },
+    {
+      "id": 20500210,
+      "idCN": "13逸闻任务/星花/剧情/ARC3-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700549
+    },
+    {
+      "id": 20500215,
+      "idCN": "10活动/甲铁城/剧情/战斗/CEVB-5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700559
+    },
+    {
+      "id": 20500217,
+      "idCN": "10活动/甲铁城/剧情/战斗/CEVB-6",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700560
+    },
+    {
+      "id": 20500218,
+      "idCN": "10活动/甲铁城/剧情/战斗/CEVB-7",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700561
+    },
+    {
+      "id": 20500221,
+      "idCN": "10活动/甲铁城/剧情/战斗/CEV1-7",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700543
+    },
+    {
+      "id": 20500223,
+      "idCN": "10活动/甲铁城/剧情/战斗/CEV1-3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700541
+    },
+    {
+      "id": 20500228,
+      "idCN": "08魔窟关卡/08岚心城/血影遍染/01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700567
+    },
+    {
+      "id": 20500231,
+      "idCN": "08魔窟关卡/08岚心城/血影遍染/02战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700568
+    },
+    {
+      "id": 20500232,
+      "idCN": "08魔窟关卡/08岚心城/血影遍染/03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700569
+    },
+    {
+      "id": 20500235,
+      "idCN": "04第七章/战斗7-3/剧情/7-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700578
+    },
+    {
+      "id": 20500239,
+      "idCN": "04第七章/战斗7-3/剧情/7-5战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700580
+    },
+    {
+      "id": 20500243,
+      "idCN": "04第七章/战斗7-3/剧情/7-8战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700582
+    },
+    {
+      "id": 20500247,
+      "idCN": "04第七章/战斗7-3/剧情/7-15战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700591
+    },
+    {
+      "id": 20500250,
+      "idCN": "04第七章/战斗7-3/剧情/7-17战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700596
+    },
+    {
+      "id": 20500258,
+      "idCN": "外部引导/战斗buff/死亡特效-金币",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team2",
+      "targetTagList": [
+        {
+          "tagId": 12600246
+        }
+      ],
+      "buff": 10415949
+    },
+    {
+      "id": 20500246,
+      "idCN": "外部引导/战斗buff/伤害递减",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600246
+        }
+      ],
+      "buff": 10416574
+    },
+    {
+      "id": 20500261,
+      "idCN": "外部引导/战斗buff/禁止移动",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600246
+        }
+      ],
+      "buff": 10416608
+    },
+    {
+      "id": 20500262,
+      "idCN": "13逸闻任务/莱卡吉亚/剧情/ARC7-03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700600
+    },
+    {
+      "id": 20500263,
+      "idCN": "13逸闻任务/涟/剧情/ARC8-5战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700606
+    },
+    {
+      "id": 20500267,
+      "idCN": "10活动/魔女活动/剧情/战斗/EV5-7",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700621
+    },
+    {
+      "id": 20500269,
+      "idCN": "10活动/魔女活动/剧情/战斗/EV5-8",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700622
+    },
+    {
+      "id": 20500274,
+      "idCN": "10活动/魔女活动/剧情/战斗/EV5-12",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700626
+    },
+    {
+      "id": 20500275,
+      "idCN": "10活动/魔女活动/剧情/战斗/EV5-16",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700630
+    },
+    {
+      "id": 20500280,
+      "idCN": "14悖论之茧/剧情/战后1",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700608
+    },
+    {
+      "id": 20500281,
+      "idCN": "14悖论之茧/剧情/战后2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700609
+    },
+    {
+      "id": 20500287,
+      "idCN": "14悖论之茧/剧情/战后3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700610
+    },
+    {
+      "id": 20500291,
+      "idCN": "通用/禁用弃牌按钮",
+      "mod": "展示暂停按钮",
+      "isInformalData": false,
+      "isActivePauseBtn": true,
+      "isActiveDeckBtn": true,
+      "isActiveDiscardBtn": false,
+      "isActiveWeatherBtn": true,
+      "isActiveEnvironmentBtn": true,
+      "isActiveSubUIBtn": true
+    },
+    {
+      "id": 20500292,
+      "idCN": "06教学/2-12心魔/角色指示",
+      "mod": "全屏变暗",
+      "isInformalData": false,
+      "position_x": -300.0,
+      "position_y": 50.0,
+      "height_half": 290.0,
+      "width_half": 530.0,
+      "customSortingOrder": 10,
+      "isCircle": false
+    },
+    {
+      "id": 20500295,
+      "idCN": "06教学/2-12心魔/创建引导04",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300200
+    },
+    {
+      "id": 20500296,
+      "idCN": "06教学/2-12心魔/创建引导02",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300198
+    },
+    {
+      "id": 20500297,
+      "idCN": "06教学/2-12心魔/创建引导03",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300196
+    },
+    {
+      "id": 20500299,
+      "idCN": "06教学/2-12心魔/文本-心魔BUFF",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "敌方为我方乘员施加了【心魔标记】！该状态会导致被标记的我方每秒受到混响伤害，同时生成【心魔】手牌。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": -1
+    },
+    {
+      "id": 20500300,
+      "idCN": "06教学/2-12心魔/文本-心魔卡牌",
+      "mod": "显示提示框",
+      "isInformalData": false,
+      "tipsIndex": 0,
+      "text": "但是不用担心，只需要使用【心魔】手牌，就可以解除这种负面状态。不过使用手牌会消耗对应的费用，请列车长合理指挥。",
+      "isDoTween": true,
+      "speed": 0.02,
+      "isWait": true,
+      "soundId": -1
+    },
+    {
+      "id": 20500301,
+      "idCN": "06教学/2-12心魔/创建引导05",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300201
+    },
+    {
+      "id": 20500304,
+      "idCN": "06教学/2-12心魔/创建引导06",
+      "mod": "创建引导",
+      "isInformalData": false,
+      "guildanceID": 20300202
+    },
+    {
+      "id": 20500305,
+      "idCN": "06教学/2-12心魔/手牌指示",
+      "mod": "指定UI高亮",
+      "isInformalData": false,
+      "position_x": 0.0,
+      "position_y": 0.0,
+      "height_half": 160.0,
+      "width_half": 380.0,
+      "customSortingOrder": 10,
+      "isCircle": false,
+      "nodeName": "CardArea/Hand",
+      "panelName": ""
+    },
+    {
+      "id": 20500293,
+      "idCN": "15角色试用/克洛伊/1-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700674
+    },
+    {
+      "id": 20500306,
+      "idCN": "15角色试用/克洛伊/1-2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700675
+    },
+    {
+      "id": 20500308,
+      "idCN": "15角色试用/克洛伊/1-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700676
+    },
+    {
+      "id": 20500310,
+      "idCN": "15角色试用/克洛伊/1-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700677
+    },
+    {
+      "id": 20500311,
+      "idCN": "04第八章/8-19/剧情/8-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700666
+    },
+    {
+      "id": 20500314,
+      "idCN": "04第八章/8-19/剧情/8-9战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700669
+    },
+    {
+      "id": 20500129,
+      "idCN": "06教学/05菲妮娅/生成卡牌",
+      "mod": "添加阵营Buff",
+      "isInformalData": false,
+      "team": "Team1",
+      "targetTagList": [
+        {
+          "tagId": 12600329
+        }
+      ],
+      "buff": 10402033
+    },
+    {
+      "id": 20500316,
+      "idCN": "08魔窟关卡/09贡露城/消毒措施/01战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700682
+    },
+    {
+      "id": 20500323,
+      "idCN": "08魔窟关卡/09贡露城/消毒措施/02战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700683
+    },
+    {
+      "id": 20500324,
+      "idCN": "08魔窟关卡/09贡露城/消毒措施/03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700684
+    },
+    {
+      "id": 20500328,
+      "idCN": "15角色试用/伊利亚德/1-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700689
+    },
+    {
+      "id": 20500332,
+      "idCN": "15角色试用/伊利亚德/1-2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700685
+    },
+    {
+      "id": 20500335,
+      "idCN": "15角色试用/伊利亚德/1-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700686
+    },
+    {
+      "id": 20500338,
+      "idCN": "15角色试用/伊利亚德/1-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700687
+    },
+    {
+      "id": 20500339,
+      "idCN": "15角色试用/伊利亚德/1-5战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700688
+    },
+    {
+      "id": 20500345,
+      "idCN": "10活动/机动战队/剧情/战斗/CEV2-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700709
+    },
+    {
+      "id": 20500348,
+      "idCN": "10活动/机动战队/剧情/战斗/CEV2-26",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700717
+    },
+    {
+      "id": 20500349,
+      "idCN": "10活动/机动战队/剧情/战斗/CEV2-28",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700719
+    },
+    {
+      "id": 20500350,
+      "idCN": "15角色试用/海伦娜/1-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700672
+    },
+    {
+      "id": 20500351,
+      "idCN": "15角色试用/海伦娜/1-2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700722
+    },
+    {
+      "id": 20500352,
+      "idCN": "15角色试用/海伦娜/1-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700723
+    },
+    {
+      "id": 20500353,
+      "idCN": "15角色试用/海伦娜/1-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700724
+    },
+    {
+      "id": 20500354,
+      "idCN": "15角色试用/海伦娜/1-5战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700725
+    },
+    {
+      "id": 20500355,
+      "idCN": "04第八章间章/EVL3-3/剧情/任务4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700727
+    },
+    {
+      "id": 20500356,
+      "idCN": "04第八章间章/EVL3-5/剧情/任务8战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700730
+    },
+    {
+      "id": 20500357,
+      "idCN": "04第九章/9-20/剧情/9-07战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700751
+    },
+    {
+      "id": 20500358,
+      "idCN": "04第九章/9-20/剧情/9-08战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700753
+    },
+    {
+      "id": 20500359,
+      "idCN": "04第九章/9-20/剧情/9-10战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700755
+    },
+    {
+      "id": 20500360,
+      "idCN": "04第九章/9-20/剧情/9-11战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700757
+    },
+    {
+      "id": 20500361,
+      "idCN": "04第九章/9-20/剧情/9-24战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700761
+    },
+    {
+      "id": 20500362,
+      "idCN": "10活动/雾境序列/剧情/战斗/CEV3-1",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700775
+    },
+    {
+      "id": 20500363,
+      "idCN": "10活动/雾境序列/剧情/战斗/CEV3-12",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700780
+    },
+    {
+      "id": 20500364,
+      "idCN": "10活动/雾境序列/剧情/战斗/CEV3-20",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700788
+    },
+    {
+      "id": 20500365,
+      "idCN": "10活动/雾境序列/剧情/战斗/CEV3-23",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700791
+    },
+    {
+      "id": 20500366,
+      "idCN": "15角色试用/嘉尔/1-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700795
+    },
+    {
+      "id": 20500367,
+      "idCN": "15角色试用/嘉尔/1-2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700797
+    },
+    {
+      "id": 20500368,
+      "idCN": "15角色试用/嘉尔/1-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700799
+    },
+    {
+      "id": 20500369,
+      "idCN": "15角色试用/陈书闲/1-1战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700800
+    },
+    {
+      "id": 20500370,
+      "idCN": "15角色试用/陈书闲/1-3战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700802
+    },
+    {
+      "id": 20500371,
+      "idCN": "15角色试用/陈书闲/1-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700803
+    },
+    {
+      "id": 20500372,
+      "idCN": "15角色试用/沃斯托克/6-2战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700805
+    },
+    {
+      "id": 20500373,
+      "idCN": "15角色试用/沃斯托克/6-4战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700807
+    },
+    {
+      "id": 20500374,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700813
+    },
+    {
+      "id": 20500375,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-4",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700815
+    },
+    {
+      "id": 20500376,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700816
+    },
+    {
+      "id": 20500377,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-7",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700818
+    },
+    {
+      "id": 20500378,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-8",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700819
+    },
+    {
+      "id": 20500379,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700821
+    },
+    {
+      "id": 20500380,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-12",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700823
+    },
+    {
+      "id": 20500381,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-13",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700824
+    },
+    {
+      "id": 20500382,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-16",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700827
+    },
+    {
+      "id": 20500383,
+      "idCN": "10活动/新干线大爆炸/剧情/战斗/CE6-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700829
+    },
+    {
+      "id": 20500399,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700836
+    },
+    {
+      "id": 20500390,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-3",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700837
+    },
+    {
+      "id": 20500391,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700839
+    },
+    {
+      "id": 20500392,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-7",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700841
+    },
+    {
+      "id": 20500396,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700844
+    },
+    {
+      "id": 20500397,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-12",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700846
+    },
+    {
+      "id": 20500384,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-13",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700847
+    },
+    {
+      "id": 20500388,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-15",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700849
+    },
+    {
+      "id": 20500393,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700852
+    },
+    {
+      "id": 20500394,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-21",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700855
+    },
+    {
+      "id": 20500395,
+      "idCN": "10活动/曼杜斯骑士谭/剧情/战斗/CE7-23",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700857
+    },
+    {
+      "id": 20500400,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700869
+    },
+    {
+      "id": 20500401,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-4",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700871
+    },
+    {
+      "id": 20500402,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-6",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700873
+    },
+    {
+      "id": 20500403,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-8",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700875
+    },
+    {
+      "id": 20500404,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700877
+    },
+    {
+      "id": 20500405,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-12",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700879
+    },
+    {
+      "id": 20500406,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-16",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700883
+    },
+    {
+      "id": 20500407,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700885
+    },
+    {
+      "id": 20500408,
+      "idCN": "10活动/应许之憩/剧情/战斗/CEV4-20",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700887
+    },
+    {
+      "id": 20500409,
+      "idCN": "10活动/武林源记/剧情/战斗/CE8-5",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700893
+    },
+    {
+      "id": 20500410,
+      "idCN": "10活动/武林源记/剧情/战斗/CE8-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700898
+    },
+    {
+      "id": 20500411,
+      "idCN": "10活动/武林源记/剧情/战斗/CE8-15",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700902
+    },
+    {
+      "id": 20500412,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-2",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700918
+    },
+    {
+      "id": 20500413,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-4",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700920
+    },
+    {
+      "id": 20500414,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-6",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700922
+    },
+    {
+      "id": 20500415,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-8",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700924
+    },
+    {
+      "id": 20500416,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-9",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700916
+    },
+    {
+      "id": 20500417,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-10",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700925
+    },
+    {
+      "id": 20500418,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-12",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700927
+    },
+    {
+      "id": 20500419,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-16",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700930
+    },
+    {
+      "id": 20500420,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-18",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700932
+    },
+    {
+      "id": 20500421,
+      "idCN": "10活动/致孩子们/剧情/战斗/CE9-19",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700933
+    },
+    {
+      "id": 20500817,
+      "idCN": "04第十章/剧情/EP10-03战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700761
+    },
+    {
+      "id": 20500818,
+      "idCN": "04第十章/剧情/EP10-11战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700952
+    },
+    {
+      "id": 20500819,
+      "idCN": "04第十章/剧情/EP10-12战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700953
+    },
+    {
+      "id": 20500820,
+      "idCN": "04第十章/剧情/EP10-21战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700962
+    },
+    {
+      "id": 20500821,
+      "idCN": "04第十章/剧情/EP10-22战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700963
+    },
+    {
+      "id": 20500822,
+      "idCN": "04第十章/剧情/EP10-23战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700964
+    },
+    {
+      "id": 20500823,
+      "idCN": "04第十章/剧情/EP10-26战后",
+      "mod": "段落",
+      "isInformalData": false,
+      "paragraphID": 20700967
+    }
+  ]
+}

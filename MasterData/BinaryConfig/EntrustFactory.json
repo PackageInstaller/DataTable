@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "hash": "D97FFD47D90B8164879EEE7791975E3E41B4FE9FC617D87A2170E29BD2964970",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131817126506,
+    "etc": "factory=EntrustFactory"
+  },
+  "count": 5,
+  "records": [
+    {
+      "id": 87900001,
+      "idCN": "委派1-铁盟币",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "义务巡逻",
+      "describe": "持有治安协力许可的列车长，有维护篝火城周边以及铁路沿线稳定的义务。",
+      "rewardType": "Coin",
+      "rewardList": [
+        {
+          "basicsNum": 500.0,
+          "id": 11400001,
+          "png": "UI/Entrust/Reward/coin"
+        }
+      ],
+      "recommendSideList": [
+        {
+          "id": 12600027
+        },
+        {
+          "id": 12600023
+        }
+      ],
+      "walkWidth": 888.0,
+      "walkHeight": 70.0,
+      "offsetY": 0.0,
+      "scenePath": "UI/Entrust/Bottom/bg_jiankong_2",
+      "bgPath": "UI/Entrust/Bottom/di_xunluo",
+      "notPath": "UI/Entrust/Bottom/icon_xunluo_wei",
+      "onPath": "UI/Entrust/Bottom/icon_xunluo_on",
+      "completePath": "UI/Entrust/Bottom/icon_xunluo_complete"
+    },
+    {
+      "id": 87900002,
+      "idCN": "委派2-铁盟币战斗",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "战斗演习",
+      "describe": "在列车周边进行战斗演习，模拟可能发生的各种情况，生成新的【战斗记忆体】。",
+      "rewardType": "Other",
+      "rewardList": [
+        {
+          "basicsNum": 500.0,
+          "id": 11400001,
+          "png": "UI/Entrust/Reward/coin"
+        },
+        {
+          "basicsNum": 1.0,
+          "id": 11700084,
+          "png": "UI/Entrust/Reward/xinpian_1"
+        }
+      ],
+      "recommendSideList": [
+        {
+          "id": 12600027
+        },
+        {
+          "id": 12600031
+        }
+      ],
+      "walkWidth": 888.0,
+      "walkHeight": 150.0,
+      "offsetY": 0.0,
+      "scenePath": "UI/Entrust/Bottom/bg_jiankong_1",
+      "bgPath": "UI/Entrust/Bottom/di_zhandou",
+      "notPath": "UI/Entrust/Bottom/icon_zhandou_wei",
+      "onPath": "UI/Entrust/Bottom/icon_zhandou_on",
+      "completePath": "UI/Entrust/Bottom/icon_zhandou_complete"
+    },
+    {
+      "id": 87900003,
+      "idCN": "委派3-铁盟币原始",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "思维搜集",
+      "describe": "在周边地区巡逻，搜集散逸的思维。完成巡逻可获得【原始思维】。",
+      "rewardType": "Other",
+      "rewardList": [
+        {
+          "basicsNum": 500.0,
+          "id": 11400001,
+          "png": "UI/Entrust/Reward/coin"
+        },
+        {
+          "basicsNum": 1.0,
+          "id": 11700100,
+          "png": "UI/Entrust/Reward/zongse"
+        }
+      ],
+      "recommendSideList": [
+        {
+          "id": 12600026
+        },
+        {
+          "id": 12600023
+        }
+      ],
+      "walkWidth": 888.0,
+      "walkHeight": 210.0,
+      "offsetY": 20.0,
+      "scenePath": "UI/Entrust/Bottom/bg_jiankong_3",
+      "bgPath": "UI/Entrust/Bottom/di_siwei",
+      "notPath": "UI/Entrust/Bottom/icon_siwei_wei",
+      "onPath": "UI/Entrust/Bottom/icon_siwei_on",
+      "completePath": "UI/Entrust/Bottom/icon_siwei_complete"
+    },
+    {
+      "id": 87900004,
+      "idCN": "委派4-铁盟币数字",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "思维具现",
+      "describe": "在周边地区巡逻，将思维具现化。完成巡逻可获得【数字化思维】。",
+      "rewardType": "Other",
+      "rewardList": [
+        {
+          "basicsNum": 500.0,
+          "id": 11400001,
+          "png": "UI/Entrust/Reward/coin"
+        },
+        {
+          "basicsNum": 2.5,
+          "id": 11700121,
+          "png": "UI/Entrust/Reward/zise"
+        }
+      ],
+      "recommendSideList": [
+        {
+          "id": 12600026
+        }
+      ],
+      "walkWidth": 888.0,
+      "walkHeight": 183.0,
+      "offsetY": 0.0,
+      "scenePath": "UI/Entrust/Bottom/bg_jiankong_4",
+      "bgPath": "UI/Entrust/Bottom/di_juxian",
+      "notPath": "UI/Entrust/Bottom/icon_juxian_wei",
+      "onPath": "UI/Entrust/Bottom/icon_juxian_on",
+      "completePath": "UI/Entrust/Bottom/icon_juxian_complete"
+    },
+    {
+      "id": 87900005,
+      "idCN": "委派5-铁盟币星云",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "强化材料搜集",
+      "describe": "在周边地区巡逻，搜集、提炼可用于装备强化的材料。完成巡逻可获得【星云物质】。",
+      "rewardType": "Other",
+      "rewardList": [
+        {
+          "basicsNum": 500.0,
+          "id": 11400001,
+          "png": "UI/Entrust/Reward/coin"
+        },
+        {
+          "basicsNum": 1.0,
+          "id": 11700162,
+          "png": "UI/Entrust/Reward/reward_1"
+        }
+      ],
+      "recommendSideList": [
+        {
+          "id": 12600031
+        },
+        {
+          "id": 12601172
+        }
+      ],
+      "walkWidth": 888.0,
+      "walkHeight": 160.0,
+      "offsetY": 50.0,
+      "scenePath": "UI/Entrust/Bottom/bg_jiankong_5",
+      "bgPath": "UI/Entrust/Bottom/di_qianghua",
+      "notPath": "UI/Entrust/Bottom/icon_qianghua_wei",
+      "onPath": "UI/Entrust/Bottom/icon_qianghua_on",
+      "completePath": "UI/Entrust/Bottom/icon_qianghua_complete"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "version": 1,
+  "hash": "BA2D70BAA93956E93F95BD1B3BCF2687BACA247A6BF498FCB6587F6C72E33C8E",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131695548803,
+    "etc": "factory=MapEventFactory"
+  },
+  "count": 5,
+  "records": [
+    {
+      "id": 53000001,
+      "idCN": "初始产品",
+      "mod": "UI事件",
+      "isInformalData": false,
+      "resUrl": "",
+      "prefabPath": "",
+      "uiArgs": ""
+    },
+    {
+      "id": 53000002,
+      "idCN": "初始产品53000002",
+      "mod": "UI事件",
+      "isInformalData": false,
+      "uiArgs": "",
+      "resUrl": "UI/InsZone/InsZone"
+    },
+    {
+      "id": 53000005,
+      "idCN": "测试/打开UI-无参数",
+      "mod": "UI事件",
+      "isInformalData": false,
+      "resUrl": "",
+      "prefabPath": "UI/ExchangeStation/ExchangeStation",
+      "uiArgs": "{\"buildingId\":\"84400019\",\"name\":\"兑换商店\",\"bgPath\":\"\",\"npcId\":\"83700043\",\"stationId\":\"83000003\",\"hideBg\":true}"
+    },
+    {
+      "id": 53000006,
+      "idCN": "测试/打开UI-有参数",
+      "mod": "UI事件",
+      "isInformalData": false,
+      "resUrl": "",
+      "prefabPath": "UI/MainUI/ESC",
+      "uiArgs": "{ \"showAdjutantBg\": true }"
+    },
+    {
+      "id": 53000011,
+      "idCN": "测试/镜头移动",
+      "mod": "镜头移动",
+      "isInformalData": false,
+      "cameraPath": "Event_Camera_shoumuren2",
+      "cameraUseTween": true,
+      "durationFrame": 120,
+      "resUrl": "UI/Quest/Quest"
+    }
+  ]
+}

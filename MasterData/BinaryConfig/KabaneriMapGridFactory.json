@@ -1,0 +1,188 @@
+{
+  "version": 1,
+  "hash": "D1B904A334B4C734EFB19E5F4A87823107AACA6F45EEF746BFEA972E3422ADA9",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131696960919,
+    "etc": "factory=KabaneriMapGridFactory"
+  },
+  "count": 18,
+  "records": [
+    {
+      "id": 97100000,
+      "idCN": "KabaneriMapGridFactory测试品",
+      "mod": "默认类型",
+      "isInformalData": false
+    },
+    {
+      "id": 97100001,
+      "idCN": "直线",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "",
+      "leftSpline": "",
+      "prefabPath": "KabaneriPath/KBLineWay"
+    },
+    {
+      "id": 97100002,
+      "idCN": "右转弯",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "KabaneriPath/KBRight1",
+      "leftSpline": "",
+      "prefabPath": "KabaneriPath/KBRightWay1"
+    },
+    {
+      "id": 97100003,
+      "idCN": "左转弯",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "",
+      "leftSpline": "KabaneriPath/KBLeft1",
+      "prefabPath": "KabaneriPath/KBLeftWay1"
+    },
+    {
+      "id": 97100004,
+      "idCN": "直线加右转弯",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "KabaneriPath/KBRight1",
+      "leftSpline": "",
+      "prefabPath": "KabaneriPath/KBSideWay2_1"
+    },
+    {
+      "id": 97100005,
+      "idCN": "直线加左转弯",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "",
+      "leftSpline": "KabaneriPath/KBLeft1",
+      "prefabPath": "KabaneriPath/KBSideWay3_1"
+    },
+    {
+      "id": 97100006,
+      "idCN": "右转弯加左转弯",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "KabaneriPath/KBRight1",
+      "leftSpline": "KabaneriPath/KBLeft1",
+      "prefabPath": "KabaneriPath/KBSideWay1_1"
+    },
+    {
+      "id": 97100007,
+      "idCN": "直线加右转弯加左转弯",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "KabaneriPath/KBRight1",
+      "leftSpline": "KabaneriPath/KBLeft1",
+      "prefabPath": "KabaneriPath/KBThreeWay1"
+    },
+    {
+      "id": 97100008,
+      "idCN": "右转弯2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "KabaneriPath/KBRight2",
+      "leftSpline": "",
+      "prefabPath": "KabaneriPath/KBRightWay2"
+    },
+    {
+      "id": 97100009,
+      "idCN": "左转弯2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "",
+      "leftSpline": "KabaneriPath/KBLeft2",
+      "prefabPath": "KabaneriPath/KBLeftWay2"
+    },
+    {
+      "id": 97100010,
+      "idCN": "直线加右转弯加左转弯2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "KabaneriPath/KBRight2",
+      "leftSpline": "KabaneriPath/KBLeft1",
+      "prefabPath": "KabaneriPath/KBThreeWay2"
+    },
+    {
+      "id": 97100011,
+      "idCN": "直线加右转弯加左转弯3",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "KabaneriPath/KBRight1",
+      "leftSpline": "KabaneriPath/KBLeft2",
+      "prefabPath": "KabaneriPath/KBThreeWay3"
+    },
+    {
+      "id": 97100012,
+      "idCN": "直线加左转弯2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "",
+      "leftSpline": "KabaneriPath/KBLeft2",
+      "prefabPath": "KabaneriPath/KBSideWay3_2"
+    },
+    {
+      "id": 97100013,
+      "idCN": "直线加右转弯2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "KabaneriPath/KBRight2",
+      "leftSpline": "",
+      "prefabPath": "KabaneriPath/KBSideWay2_2"
+    },
+    {
+      "id": 97100014,
+      "idCN": "右转弯加左转弯2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "KabaneriPath/KBRight2",
+      "leftSpline": "KabaneriPath/KBLeft2",
+      "prefabPath": "KabaneriPath/KBSideWay1_2"
+    },
+    {
+      "id": 97100015,
+      "idCN": "右转弯加左转弯3",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "KabaneriPath/KBRight2",
+      "leftSpline": "KabaneriPath/KBLeft1",
+      "prefabPath": "KabaneriPath/KBSideWay1_3"
+    },
+    {
+      "id": 97100016,
+      "idCN": "右转弯加左转弯4",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "",
+      "rightSpline": "KabaneriPath/KBRight1",
+      "leftSpline": "KabaneriPath/KBLeft2",
+      "prefabPath": "KabaneriPath/KBSideWay1_4"
+    },
+    {
+      "id": 97100017,
+      "idCN": "仅视频用/直线",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "middleSpline": "KabaneriPath/KBLine",
+      "rightSpline": "",
+      "leftSpline": "",
+      "prefabPath": "KabaneriPath/KBLineWay"
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "version": 1,
+  "hash": "32F99F438A532D51B835202BB9BF32227317C5A3414B4EAF3F003A6B48DF2917",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131696585075,
+    "etc": "factory=CardAILogicFactory"
+  },
+  "count": 13,
+  "records": [
+    {
+      "id": 96400001,
+      "idCN": "选择目标/距离最远",
+      "mod": "选择目标距离",
+      "isInformalData": false,
+      "condition": "Max"
+    },
+    {
+      "id": 96400002,
+      "idCN": "目标集/敌人",
+      "mod": "获取角色集",
+      "isInformalData": false,
+      "targetType": "Enemy"
+    },
+    {
+      "id": 96400003,
+      "idCN": "目标集/友军",
+      "mod": "获取角色集",
+      "isInformalData": false,
+      "targetType": "Ally"
+    },
+    {
+      "id": 96400004,
+      "idCN": "目标集/所有",
+      "mod": "获取角色集",
+      "isInformalData": false,
+      "targetType": "Every"
+    },
+    {
+      "id": 96400005,
+      "idCN": "选择目标/血量百分比最少",
+      "mod": "选择目标属性",
+      "isInformalData": false,
+      "attributeType": "CurrentHp",
+      "condition": "Min",
+      "numberType": "Percent"
+    },
+    {
+      "id": 96400006,
+      "idCN": "选择目标/随机",
+      "mod": "选择目标随机",
+      "isInformalData": false
+    },
+    {
+      "id": 96400007,
+      "idCN": "选择目标/距离最近",
+      "mod": "选择目标距离",
+      "isInformalData": false,
+      "condition": "Min"
+    },
+    {
+      "id": 96400008,
+      "idCN": "目标集/自身",
+      "mod": "获取角色集",
+      "isInformalData": false,
+      "targetType": "Self"
+    },
+    {
+      "id": 96400009,
+      "idCN": "目标集/队长",
+      "mod": "获取角色集",
+      "isInformalData": false,
+      "targetType": "Leader"
+    },
+    {
+      "id": 96400010,
+      "idCN": "选择目标/攻击力最高",
+      "mod": "选择目标属性",
+      "isInformalData": false,
+      "attributeType": "Atk",
+      "condition": "Max",
+      "numberType": "Number"
+    },
+    {
+      "id": 96400011,
+      "idCN": "选择目标/血量最高",
+      "mod": "选择目标属性",
+      "isInformalData": false,
+      "attributeType": "CurrentHp",
+      "condition": "Max",
+      "numberType": "Number"
+    },
+    {
+      "id": 96400012,
+      "idCN": "目标集/友军-除自身",
+      "mod": "获取角色集",
+      "isInformalData": false,
+      "targetType": "AllyExceptSelf"
+    },
+    {
+      "id": 96400013,
+      "idCN": "选择目标序号/1",
+      "mod": "选择目标序号",
+      "isInformalData": false
+    }
+  ]
+}

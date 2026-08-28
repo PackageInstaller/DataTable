@@ -1,0 +1,2210 @@
+{
+  "version": 1,
+  "hash": "8CA8AB974C195D81948C623FC57E6DCAC1945503AABF2FBDD8551EB010D9F3F8",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131815890638,
+    "etc": "factory=PrisonRoomTypeFactory"
+  },
+  "count": 32,
+  "records": [
+    {
+      "id": 87500001,
+      "idCN": "安保中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "安保中心",
+      "prefabName": "Btn_Security",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400002,
+          "level": 8,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400003,
+          "level": 13,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400004,
+          "level": 18,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400005,
+          "level": 23,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400006,
+          "level": 28,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400007,
+          "level": 33,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400008,
+          "level": 38,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400009,
+          "level": 43,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400010,
+          "level": 48,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400011,
+          "level": 53,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000122,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_left"
+        }
+      ]
+    },
+    {
+      "id": 87500002,
+      "idCN": "放风场地",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "放风场地",
+      "prefabName": "Btn_Exercise",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400012,
+          "level": 5,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400013,
+          "level": 10,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400014,
+          "level": 15,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400015,
+          "level": 20,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400016,
+          "level": 25,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400017,
+          "level": 30,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400018,
+          "level": 35,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400019,
+          "level": 40,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400020,
+          "level": 45,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400021,
+          "level": 50,
+          "npcNum": 0,
+          "prisonerNum": 1
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomB",
+      "detailIfo": "CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500003,
+      "idCN": "餐厅",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "餐厅",
+      "prefabName": "Btn_Canteen",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400022,
+          "level": 4,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400023,
+          "level": 9,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400024,
+          "level": 14,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400025,
+          "level": 19,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400026,
+          "level": 24,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400027,
+          "level": 29,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400028,
+          "level": 34,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400029,
+          "level": 39,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400030,
+          "level": 44,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400031,
+          "level": 49,
+          "npcNum": 0,
+          "prisonerNum": 1
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500004,
+      "idCN": "探视室",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "探视室",
+      "prefabName": "Btn_Visit",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400032,
+          "level": 6,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400033,
+          "level": 11,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400034,
+          "level": 16,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400035,
+          "level": 21,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400036,
+          "level": 26,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400037,
+          "level": 31,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400038,
+          "level": 36,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400039,
+          "level": 41,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400040,
+          "level": 46,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400041,
+          "level": 51,
+          "npcNum": 0,
+          "prisonerNum": 1
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500005,
+      "idCN": "基础功能/成品仓库",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "成品仓库",
+      "prefabName": "Btn_WarehouseCP",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400052,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonWarehouse/PrisonWarehouse",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000104,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_left"
+        }
+      ]
+    },
+    {
+      "id": 87500006,
+      "idCN": "基础功能/原料仓库",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "原料仓库",
+      "prefabName": "Btn_WarehouseYL",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400059,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonWarehouse/PrisonWarehouse",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000103,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_right"
+        }
+      ]
+    },
+    {
+      "id": 87500007,
+      "idCN": "基础功能/黑月订单站",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "黑月订单站",
+      "prefabName": "Btn_HYOrderStation",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400055,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/HYOrderStation/HYOrderStation",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000119,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_right"
+        }
+      ]
+    },
+    {
+      "id": 87500008,
+      "idCN": "基础功能/原料采购",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "原料采购站",
+      "prefabName": "Btn_Purchase",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400058,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/PurchaseOrder/PurchaseOrder",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000247,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_left"
+        }
+      ]
+    },
+    {
+      "id": 87500009,
+      "idCN": "基础功能/囚犯管理中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "囚犯管理中心",
+      "prefabName": "Btn_PrisonerList",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400056,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonerList/PrisonerList",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000123,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_right"
+        }
+      ]
+    },
+    {
+      "id": 87500010,
+      "idCN": "研发中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "研发中心",
+      "prefabName": "Btn_Shop",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400057,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400201,
+          "level": 2,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400200,
+          "level": 3,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400202,
+          "level": 4,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400203,
+          "level": 5,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400204,
+          "level": 6,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400205,
+          "level": 7,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400206,
+          "level": 8,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400207,
+          "level": 9,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400208,
+          "level": 10,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400209,
+          "level": 11,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400210,
+          "level": 12,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400211,
+          "level": 13,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400212,
+          "level": 14,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400213,
+          "level": 15,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400214,
+          "level": 16,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400215,
+          "level": 17,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400216,
+          "level": 18,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400217,
+          "level": 19,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400218,
+          "level": 20,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400219,
+          "level": 21,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400220,
+          "level": 22,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400221,
+          "level": 23,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400222,
+          "level": 24,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400223,
+          "level": 25,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400224,
+          "level": 26,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400225,
+          "level": 27,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400226,
+          "level": 28,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400227,
+          "level": 29,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400228,
+          "level": 30,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400229,
+          "level": 31,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400230,
+          "level": 32,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400231,
+          "level": 33,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400232,
+          "level": 34,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400233,
+          "level": 35,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400234,
+          "level": 36,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400235,
+          "level": 37,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400236,
+          "level": 38,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400237,
+          "level": 39,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400238,
+          "level": 40,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400239,
+          "level": 41,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400240,
+          "level": 42,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400241,
+          "level": 43,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400242,
+          "level": 44,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400243,
+          "level": 45,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400244,
+          "level": 46,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400245,
+          "level": 47,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400246,
+          "level": 48,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400247,
+          "level": 49,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400248,
+          "level": 50,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400249,
+          "level": 51,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400250,
+          "level": 52,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400251,
+          "level": 53,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400252,
+          "level": 54,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400253,
+          "level": 55,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400254,
+          "level": 56,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400255,
+          "level": 57,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400256,
+          "level": 58,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400257,
+          "level": 59,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400258,
+          "level": 60,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonShop/PrisonShop",
+      "sizeType": "RoomA",
+      "detailIfo": "CreateRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000124,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_right"
+        }
+      ]
+    },
+    {
+      "id": 87500011,
+      "idCN": "基础功能/财务中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "财务中心",
+      "prefabName": "Btn_Bond",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400053,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/Contract/PrisonContractManage/PrisonContractManage",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000221,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_left"
+        }
+      ]
+    },
+    {
+      "id": 87500012,
+      "idCN": "电力中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "电力中心",
+      "prefabName": "Btn_Energy",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400054,
+          "level": 1,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400132,
+          "level": 2,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400133,
+          "level": 3,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400134,
+          "level": 4,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400135,
+          "level": 5,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400136,
+          "level": 6,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400146,
+          "level": 7,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400147,
+          "level": 8,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400148,
+          "level": 9,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400149,
+          "level": 10,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400150,
+          "level": 11,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400151,
+          "level": 12,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400152,
+          "level": 13,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400153,
+          "level": 14,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400154,
+          "level": 15,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400155,
+          "level": 16,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400156,
+          "level": 17,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400157,
+          "level": 18,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400158,
+          "level": 19,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400159,
+          "level": 20,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400160,
+          "level": 21,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400161,
+          "level": 22,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400162,
+          "level": 23,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400163,
+          "level": 24,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400164,
+          "level": 25,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400165,
+          "level": 26,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400166,
+          "level": 27,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400167,
+          "level": 28,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400168,
+          "level": 29,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400169,
+          "level": 30,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400170,
+          "level": 31,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400171,
+          "level": 32,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400172,
+          "level": 33,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400173,
+          "level": 34,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400174,
+          "level": 35,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400175,
+          "level": 36,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400176,
+          "level": 37,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400177,
+          "level": 38,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400178,
+          "level": 39,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400179,
+          "level": 40,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400180,
+          "level": 41,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400181,
+          "level": 42,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400182,
+          "level": 43,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400183,
+          "level": 44,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400184,
+          "level": 45,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400185,
+          "level": 46,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400186,
+          "level": 47,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400187,
+          "level": 48,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400188,
+          "level": 49,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400189,
+          "level": 50,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400190,
+          "level": 51,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400191,
+          "level": 52,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400192,
+          "level": 53,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400193,
+          "level": 54,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400194,
+          "level": 55,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400195,
+          "level": 56,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400196,
+          "level": 57,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400197,
+          "level": 58,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400199,
+          "level": 59,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400198,
+          "level": 60,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "PowerRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000102,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_left"
+        }
+      ]
+    },
+    {
+      "id": 87500013,
+      "idCN": "囚犯车间/1号车间",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "1号生产车间",
+      "prefabName": "Btn_Workshop1",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400130,
+          "level": 1
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500014,
+      "idCN": "禁闭室",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "禁闭室",
+      "prefabName": "Btn_Punishment",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400100,
+          "level": 3,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400101,
+          "level": 8,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400102,
+          "level": 13,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400103,
+          "level": 18,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400104,
+          "level": 23,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400105,
+          "level": 28,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400106,
+          "level": 33,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400107,
+          "level": 38,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400108,
+          "level": 43,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400109,
+          "level": 48,
+          "npcNum": 0,
+          "prisonerNum": 1
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonRoom/PunishmentRoom",
+      "sizeType": "RoomA",
+      "detailIfo": "PunishmentRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500015,
+      "idCN": "医务室",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "医务室",
+      "prefabName": "Btn_Medical",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400119,
+          "level": 2,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400118,
+          "level": 7,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400117,
+          "level": 12,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400116,
+          "level": 17,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400115,
+          "level": 22,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400114,
+          "level": 27,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400113,
+          "level": 32,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400112,
+          "level": 37,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400111,
+          "level": 42,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400110,
+          "level": 47,
+          "npcNum": 0,
+          "prisonerNum": 1
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonRoom/MedicalRoom",
+      "sizeType": "RoomA",
+      "detailIfo": "MedicalRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500016,
+      "idCN": "假释室",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "假释室",
+      "prefabName": "Btn_Release",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400042,
+          "level": 7,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400043,
+          "level": 12,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400044,
+          "level": 17,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400045,
+          "level": 22,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400046,
+          "level": 27,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400047,
+          "level": 32,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400048,
+          "level": 37,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400049,
+          "level": 42,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400050,
+          "level": 47,
+          "npcNum": 0,
+          "prisonerNum": 1
+        },
+        {
+          "config": 87400051,
+          "level": 52,
+          "npcNum": 0,
+          "prisonerNum": 1
+        }
+      ],
+      "openPrefab": "UI/Prison/PrisonRoom/ParoleRoom",
+      "sizeType": "RoomA",
+      "detailIfo": "ParoleRoom",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500017,
+      "idCN": "原料车间/植物纤维",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "植物纤维原料车间",
+      "prefabName": "Btn_MaterialWorkshopZW",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400060,
+          "level": 4
+        },
+        {
+          "config": 87400061,
+          "level": 9
+        },
+        {
+          "config": 87400062,
+          "level": 14
+        },
+        {
+          "config": 87400063,
+          "level": 19
+        },
+        {
+          "config": 87400064,
+          "level": 24
+        },
+        {
+          "config": 87400065,
+          "level": 29
+        },
+        {
+          "config": 87400066,
+          "level": 34
+        },
+        {
+          "config": 87400067,
+          "level": 39
+        },
+        {
+          "config": 87400068,
+          "level": 44
+        },
+        {
+          "config": 87400069,
+          "level": 49
+        }
+      ],
+      "openPrefab": "UI/Prison/MaterialProduction/MaterialProductionEdit",
+      "sizeType": "RoomA",
+      "detailIfo": "MaterialWorkShop",
+      "materialPic": "UI/Prison/MaterialProduction/MachineZW",
+      "creatRoomList": [
+        {
+          "config": 87400060,
+          "level": 4
+        },
+        {
+          "config": 87400061,
+          "level": 9
+        },
+        {
+          "config": 87400062,
+          "level": 14
+        },
+        {
+          "config": 87400063,
+          "level": 19
+        },
+        {
+          "config": 87400064,
+          "level": 24
+        },
+        {
+          "config": 87400065,
+          "level": 29
+        },
+        {
+          "config": 87400066,
+          "level": 34
+        },
+        {
+          "config": 87400067,
+          "level": 39
+        },
+        {
+          "config": 87400068,
+          "level": 44
+        },
+        {
+          "config": 87400069,
+          "level": 49
+        }
+      ],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500018,
+      "idCN": "原料车间/动物纤维",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "动物纤维原料车间",
+      "prefabName": "Btn_MaterialWorkshopDW",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400099,
+          "level": 5
+        },
+        {
+          "config": 87400098,
+          "level": 10
+        },
+        {
+          "config": 87400097,
+          "level": 15
+        },
+        {
+          "config": 87400096,
+          "level": 20
+        },
+        {
+          "config": 87400095,
+          "level": 25
+        },
+        {
+          "config": 87400094,
+          "level": 30
+        },
+        {
+          "config": 87400093,
+          "level": 35
+        },
+        {
+          "config": 87400092,
+          "level": 40
+        },
+        {
+          "config": 87400091,
+          "level": 45
+        },
+        {
+          "config": 87400090,
+          "level": 50
+        }
+      ],
+      "openPrefab": "UI/Prison/MaterialProduction/MaterialProductionEdit",
+      "sizeType": "RoomB",
+      "detailIfo": "MaterialWorkShop",
+      "materialPic": "UI/Prison/MaterialProduction/MachineDW",
+      "creatRoomList": [
+        {
+          "config": 87400099,
+          "level": 5
+        },
+        {
+          "config": 87400098,
+          "level": 10
+        },
+        {
+          "config": 87400097,
+          "level": 15
+        },
+        {
+          "config": 87400096,
+          "level": 20
+        },
+        {
+          "config": 87400095,
+          "level": 25
+        },
+        {
+          "config": 87400094,
+          "level": 30
+        },
+        {
+          "config": 87400093,
+          "level": 35
+        },
+        {
+          "config": 87400092,
+          "level": 40
+        },
+        {
+          "config": 87400091,
+          "level": 45
+        },
+        {
+          "config": 87400090,
+          "level": 50
+        }
+      ],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500019,
+      "idCN": "原料车间/缝纫工具",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "缝纫工具原料车间",
+      "prefabName": "Btn_MaterialWorkshopFR",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400089,
+          "level": 2
+        },
+        {
+          "config": 87400088,
+          "level": 7
+        },
+        {
+          "config": 87400087,
+          "level": 12
+        },
+        {
+          "config": 87400086,
+          "level": 17
+        },
+        {
+          "config": 87400085,
+          "level": 22
+        },
+        {
+          "config": 87400084,
+          "level": 27
+        },
+        {
+          "config": 87400083,
+          "level": 32
+        },
+        {
+          "config": 87400082,
+          "level": 37
+        },
+        {
+          "config": 87400081,
+          "level": 42
+        },
+        {
+          "config": 87400080,
+          "level": 47
+        }
+      ],
+      "openPrefab": "UI/Prison/MaterialProduction/MaterialProductionEdit",
+      "sizeType": "RoomA",
+      "detailIfo": "MaterialWorkShop",
+      "materialPic": "UI/Prison/MaterialProduction/MachineFR",
+      "creatRoomList": [
+        {
+          "config": 87400089,
+          "level": 2
+        },
+        {
+          "config": 87400088,
+          "level": 7
+        },
+        {
+          "config": 87400087,
+          "level": 12
+        },
+        {
+          "config": 87400086,
+          "level": 17
+        },
+        {
+          "config": 87400085,
+          "level": 22
+        },
+        {
+          "config": 87400084,
+          "level": 27
+        },
+        {
+          "config": 87400083,
+          "level": 32
+        },
+        {
+          "config": 87400082,
+          "level": 37
+        },
+        {
+          "config": 87400081,
+          "level": 42
+        },
+        {
+          "config": 87400080,
+          "level": 47
+        }
+      ],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500020,
+      "idCN": "原料车间/人造纤维",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "人造纤维原料车间",
+      "prefabName": "Btn_MaterialWorkshopRZ",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400071,
+          "level": 3
+        },
+        {
+          "config": 87400072,
+          "level": 8
+        },
+        {
+          "config": 87400073,
+          "level": 13
+        },
+        {
+          "config": 87400074,
+          "level": 18
+        },
+        {
+          "config": 87400075,
+          "level": 23
+        },
+        {
+          "config": 87400076,
+          "level": 28
+        },
+        {
+          "config": 87400077,
+          "level": 33
+        },
+        {
+          "config": 87400078,
+          "level": 38
+        },
+        {
+          "config": 87400079,
+          "level": 43
+        },
+        {
+          "config": 87400070,
+          "level": 48
+        }
+      ],
+      "openPrefab": "UI/Prison/MaterialProduction/MaterialProductionEdit",
+      "sizeType": "RoomA",
+      "detailIfo": "MaterialWorkShop",
+      "materialPic": "UI/Prison/MaterialProduction/MachineRZ",
+      "creatRoomList": [
+        {
+          "config": 87400071,
+          "level": 3
+        },
+        {
+          "config": 87400072,
+          "level": 8
+        },
+        {
+          "config": 87400073,
+          "level": 13
+        },
+        {
+          "config": 87400074,
+          "level": 18
+        },
+        {
+          "config": 87400075,
+          "level": 23
+        },
+        {
+          "config": 87400076,
+          "level": 28
+        },
+        {
+          "config": 87400077,
+          "level": 33
+        },
+        {
+          "config": 87400078,
+          "level": 38
+        },
+        {
+          "config": 87400079,
+          "level": 43
+        },
+        {
+          "config": 87400070,
+          "level": 48
+        }
+      ],
+      "npcAnimList": []
+    },
+    {
+      "id": 87500021,
+      "idCN": "转运中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "转运中心",
+      "prefabName": "Btn_TransitCenter",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400120,
+          "level": 9,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400121,
+          "level": 14,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400122,
+          "level": 19,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400123,
+          "level": 24,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400124,
+          "level": 29,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400125,
+          "level": 34,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400126,
+          "level": 39,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400127,
+          "level": 44,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400128,
+          "level": 49,
+          "npcNum": 1,
+          "prisonerNum": 0
+        },
+        {
+          "config": 87400129,
+          "level": 54,
+          "npcNum": 1,
+          "prisonerNum": 0
+        }
+      ],
+      "openPrefab": "UI/Prison/TransitCenter/TransitCenter",
+      "sizeType": "RoomA",
+      "detailIfo": "TransitCenter",
+      "materialPic": "",
+      "creatRoomList": [],
+      "npcAnimList": [
+        {
+          "generatePrefab": "Group_1",
+          "npc": 70000121,
+          "spineAnim": "dorm_walk",
+          "uiAnim": "walk_right"
+        }
+      ]
+    },
+    {
+      "id": 87500022,
+      "idCN": "囚犯车间/2号车间",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "2号生产车间",
+      "prefabName": "Btn_Workshop2",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400130,
+          "level": 6
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500023,
+      "idCN": "囚犯车间/3号车间",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "3号生产车间",
+      "prefabName": "Btn_Workshop3",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400130,
+          "level": 11
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500024,
+      "idCN": "囚犯车间/4号车间",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "4号生产车间",
+      "prefabName": "Btn_Workshop4",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400130,
+          "level": 16
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500025,
+      "idCN": "囚犯车间/5号车间",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "5号生产车间",
+      "prefabName": "Btn_Workshop5",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400130,
+          "level": 21
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500026,
+      "idCN": "囚犯车间/6号车间",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "6号生产车间",
+      "prefabName": "Btn_Workshop6",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400130,
+          "level": 26
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500027,
+      "idCN": "牢房/1号牢房",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "1号整顿宿舍",
+      "prefabName": "Btn_Accomodation1",
+      "isInitial": true,
+      "roomList": [
+        {
+          "config": 87400131,
+          "level": 1
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500028,
+      "idCN": "牢房/2号牢房",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "2号整顿宿舍",
+      "prefabName": "Btn_Accomodation2",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400131,
+          "level": 6
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500029,
+      "idCN": "牢房/3号牢房",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "3号整顿宿舍",
+      "prefabName": "Btn_Accomodation3",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400131,
+          "level": 11
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500030,
+      "idCN": "牢房/4号牢房",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "4号整顿宿舍",
+      "prefabName": "Btn_Accomodation4",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400131,
+          "level": 16
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500031,
+      "idCN": "牢房/5号牢房",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "5号整顿宿舍",
+      "prefabName": "Btn_Accomodation5",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400131,
+          "level": 21
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    },
+    {
+      "id": 87500032,
+      "idCN": "牢房/6号牢房",
+      "mod": "默认",
+      "isInformalData": false,
+      "roomName": "6号整顿宿舍",
+      "prefabName": "Btn_Accomodation6",
+      "isInitial": false,
+      "roomList": [
+        {
+          "config": 87400131,
+          "level": 26
+        }
+      ],
+      "openPrefab": "",
+      "sizeType": "RoomA",
+      "detailIfo": "Group_CommonRoom",
+      "materialPic": ""
+    }
+  ]
+}

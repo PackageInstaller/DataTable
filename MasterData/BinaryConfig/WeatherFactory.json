@@ -1,0 +1,1476 @@
+{
+  "version": 1,
+  "hash": "6C440BFCC531C0600B96045DA16C43578870B1BDDF0F8DD9798D781701125E4D",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131647646086,
+    "etc": "factory=WeatherFactory"
+  },
+  "count": 58,
+  "records": [
+    {
+      "id": 50000001,
+      "idCN": "初始产品",
+      "mod": "雪",
+      "resUrl": "",
+      "snowLevel": []
+    },
+    {
+      "id": 50000002,
+      "idCN": "天气/雪/01雪",
+      "mod": "特效天气",
+      "isInformalData": false,
+      "combinePath": "Snow1",
+      "intervalFrame": 15,
+      "buffId": 10400251,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000006,
+      "iconResUrl": "Weather/Icon/Snow",
+      "backgroundResUrl": "Weather/Icon/Back/Snow",
+      "weatherName": "雪",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Snow",
+          "text": "<color=#ffffff>雪：</color><color=#7b68ee>【冻结】</color><color=#adadad>持续时间</color><color=#7b68ee>+1秒</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Snow",
+          "text": "<color=#ffffff>雪：</color><color=#cd8c00>【引雷】</color><color=#adadad>概率</color><color=#cd8c00>-3%</color>"
+        }
+      ],
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11105851,
+      "offsetXSN": 0,
+      "offsetYSN": 0,
+      "offsetZSN": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000003,
+      "idCN": "天气/雨/01雨",
+      "mod": "雨",
+      "isInformalData": false,
+      "resUrl": "Weather\\Rain\\ParticleRain1",
+      "combinePath": "Rain1",
+      "intervalFrame": 15,
+      "buffId": 10404540,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000007,
+      "iconResUrl": "Weather/Icon/Rain",
+      "backgroundResUrl": "Weather/Icon/Back/Rain",
+      "weatherName": "雨",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Rain",
+          "text": "<color=#ffffff>雨：</color><color=#cd8c00>【引雷】</color><color=#adadad>概率</color><color=#cd8c00>+5%</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Rain",
+          "text": "<color=#ffffff>雨：</color><color=#ff7c7c>【点燃】</color><color=#adadad>持续时间</color><color=#ff7c7c>-1秒</color>"
+        }
+      ],
+      "rainLevel": [
+        {
+          "rateOverTimeBack": 20,
+          "rateOverTimeFront": 40,
+          "rateOverTimeSplash": 30,
+          "windForce": -10
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000004,
+      "idCN": "天气/01雾",
+      "mod": "雾",
+      "resUrl": "Weather\\Fog\\Fog",
+      "intervalFrame": 0,
+      "buffId": -1,
+      "homeid": 50000005,
+      "fogLevel": [
+        {
+          "rateOverTime": 5
+        },
+        {
+          "rateOverTime": 23
+        }
+      ]
+    },
+    {
+      "id": 50000005,
+      "idCN": "家园/雾",
+      "mod": "雾",
+      "resUrl": "Weather\\Fog\\HomeFog",
+      "intervalFrame": 0,
+      "buffId": -1,
+      "fogLevel": [
+        {
+          "rateOverTime": 5
+        },
+        {
+          "rateOverTime": 9
+        },
+        {
+          "rateOverTime": 13
+        },
+        {
+          "rateOverTime": 18
+        },
+        {
+          "rateOverTime": 23
+        }
+      ]
+    },
+    {
+      "id": 50000006,
+      "idCN": "家园/雪",
+      "mod": "雪",
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "intervalFrame": 0,
+      "buffId": -1,
+      "homeid": -1,
+      "snowLevel": [
+        {
+          "EmissionPosX": 0.0,
+          "alpha": 0,
+          "fogRate": 0,
+          "fogSpeedMax": 0.0,
+          "fogSpeedMin": 0.0,
+          "invalidParticle": "Side",
+          "mainVelocityMax": 0.2,
+          "mainVelocityMin": 0.0,
+          "noiseStrength": 0.1,
+          "rate": 12,
+          "sideVelocityMax": 0.0,
+          "sideVelocityMin": 0.0
+        },
+        {
+          "EmissionPosX": 0.0,
+          "alpha": 0,
+          "fogRate": 0,
+          "fogSpeedMax": 0.0,
+          "fogSpeedMin": 0.0,
+          "invalidParticle": "Side",
+          "mainVelocityMax": 0.8,
+          "mainVelocityMin": 0.5,
+          "noiseStrength": 0.1,
+          "rate": 12,
+          "sideVelocityMax": 0.0,
+          "sideVelocityMin": 0.0
+        },
+        {
+          "EmissionPosX": 0.0,
+          "alpha": 28,
+          "fogRate": 10,
+          "fogSpeedMax": 4.0,
+          "fogSpeedMin": 3.0,
+          "invalidParticle": "",
+          "mainVelocityMax": 2.0,
+          "mainVelocityMin": 0.5,
+          "noiseStrength": 0.2,
+          "rate": 12,
+          "sideVelocityMax": 3.0,
+          "sideVelocityMin": 1.0
+        },
+        {
+          "EmissionPosX": -5.0,
+          "alpha": 60,
+          "fogRate": 10,
+          "fogSpeedMax": 5.0,
+          "fogSpeedMin": 4.0,
+          "invalidParticle": "Front",
+          "mainVelocityMax": 4.0,
+          "mainVelocityMin": 2.0,
+          "noiseStrength": 0.3,
+          "rate": 12,
+          "sideVelocityMax": 5.0,
+          "sideVelocityMin": 3.0
+        },
+        {
+          "EmissionPosX": -10.0,
+          "alpha": 120,
+          "fogRate": 12,
+          "fogSpeedMax": 7.0,
+          "fogSpeedMin": 4.0,
+          "invalidParticle": "Front",
+          "mainVelocityMax": 5.0,
+          "mainVelocityMin": 3.0,
+          "noiseStrength": 0.5,
+          "rate": 24,
+          "sideVelocityMax": 9.0,
+          "sideVelocityMin": 6.0
+        }
+      ]
+    },
+    {
+      "id": 50000007,
+      "idCN": "家园/雨",
+      "mod": "雨",
+      "resUrl": "Weather\\Rain\\ParticleRain1",
+      "intervalFrame": 30,
+      "buffId": -1,
+      "rainLevel": [
+        {
+          "rateOverTimeBack": 0,
+          "rateOverTimeFront": 30,
+          "rateOverTimeSplash": 20,
+          "windForce": -1000
+        },
+        {
+          "rateOverTimeBack": 20,
+          "rateOverTimeFront": 50,
+          "rateOverTimeSplash": 30,
+          "windForce": -1000
+        },
+        {
+          "rateOverTimeBack": 20,
+          "rateOverTimeFront": 50,
+          "rateOverTimeSplash": 40,
+          "windForce": -1000
+        },
+        {
+          "rateOverTimeBack": 50,
+          "rateOverTimeFront": 90,
+          "rateOverTimeSplash": 50,
+          "windForce": -1000
+        },
+        {
+          "rateOverTimeBack": 100,
+          "rateOverTimeFront": 120,
+          "rateOverTimeSplash": 80,
+          "windForce": -1000
+        }
+      ]
+    },
+    {
+      "id": 50000008,
+      "idCN": "第三章/Conor/雾",
+      "mod": "雾",
+      "resUrl": "Weather\\Fog\\Fog",
+      "intervalFrame": 360,
+      "buffId": 10403058,
+      "fogLevel": [
+        {
+          "rateOverTime": 5
+        },
+        {
+          "rateOverTime": 23
+        }
+      ],
+      "homeid": 50000005
+    },
+    {
+      "id": 50000009,
+      "idCN": "天气/雨/02大雨",
+      "mod": "雨",
+      "isInformalData": false,
+      "resUrl": "Weather\\Rain\\ParticleRain1",
+      "combinePath": "Rain2",
+      "intervalFrame": 15,
+      "buffId": 10404543,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000007,
+      "iconResUrl": "Weather/Icon/Rain2",
+      "backgroundResUrl": "Weather/Icon/Back/Rain",
+      "weatherName": "大雨",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Rain2",
+          "text": "<color=#ffffff>大雨：</color><color=#cd8c00>【引雷】</color><color=#adadad>概率</color><color=#cd8c00>+10%</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Rain2",
+          "text": "<color=#ffffff>大雨：</color><color=#ff7c7c>【点燃】</color><color=#adadad>持续时间</color><color=#ff7c7c>-2秒</color>"
+        }
+      ],
+      "rainLevel": [
+        {
+          "rateOverTimeBack": 80,
+          "rateOverTimeFront": 100,
+          "rateOverTimeSplash": 100,
+          "windForce": -10
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000010,
+      "idCN": "天气/雨/03暴雨",
+      "mod": "雨",
+      "isInformalData": false,
+      "resUrl": "Weather\\Rain\\ParticleRain1",
+      "combinePath": "Rain3",
+      "intervalFrame": 15,
+      "buffId": 10404544,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000007,
+      "iconResUrl": "Weather/Icon/Rain3",
+      "backgroundResUrl": "Weather/Icon/Back/Rain",
+      "weatherName": "暴雨",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Rain3",
+          "text": "<color=#ffffff>暴雨：</color><color=#cd8c00>【引雷】</color><color=#adadad>概率</color><color=#cd8c00>+15%</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Rain3",
+          "text": "<color=#ffffff>暴雨：</color><color=#ff7c7c>【点燃】</color><color=#adadad>持续时间</color><color=#ff7c7c>-3秒</color>"
+        }
+      ],
+      "rainLevel": [
+        {
+          "rateOverTimeBack": 100,
+          "rateOverTimeFront": 150,
+          "rateOverTimeSplash": 100,
+          "windForce": -30
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000012,
+      "idCN": "环境/电光石火",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11102141,
+      "buffId": 10400389,
+      "isSkill": true,
+      "interval": 15,
+      "duration": 720,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/Lightning",
+      "environName": "<color=#FFB800>电光石火 ：</color>",
+      "environDetail": "全场<color=#FFB800>【引雷】</color>额外<color=#FFB800>落雷</color>1次，不论敌我",
+      "WeatherType": "FirstGroup",
+      "tempenvironName": "环境_电光石火",
+      "tempenvironDetail": "全场【引雷】额外落雷1次，不论敌我"
+    },
+    {
+      "id": 50000013,
+      "idCN": "环境/繁星",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": 11101972,
+      "endEffectId": 11101949,
+      "effectId": 11101944,
+      "buffId": 10404595,
+      "isSkill": true,
+      "interval": 15,
+      "duration": 720,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/StarrySky",
+      "tempenvironName": "环境_繁星",
+      "environName": "<color=#FFB800>繁星 ：</color>",
+      "tempenvironDetail": "所有卡牌所需费用-1",
+      "environDetail": "所有卡牌所需费用-1",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 10,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000014,
+      "idCN": "地面/炽地",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11100877,
+      "buffId": 10403206,
+      "isSkill": true,
+      "interval": 59,
+      "duration": 360,
+      "radiusSN": 20000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000015,
+      "idCN": "地面/燎原",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11100879,
+      "buffId": 10403465,
+      "isSkill": true,
+      "interval": 59,
+      "duration": 360,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000017,
+      "idCN": "天气/雪/02大雪",
+      "mod": "特效天气",
+      "isInformalData": false,
+      "combinePath": "Snow2",
+      "intervalFrame": 15,
+      "buffId": 10400793,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000006,
+      "iconResUrl": "Weather/Icon/Snow2",
+      "backgroundResUrl": "Weather/Icon/Back/Snow",
+      "weatherName": "大雪",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Snow2",
+          "text": "<color=#ffffff>大雪：</color><color=#7b68ee>【冻结】</color><color=#adadad>持续时间</color><color=#7b68ee>+2秒</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Snow2",
+          "text": "<color=#ffffff>大雪：</color><color=#cd8c00>【引雷】</color><color=#adadad>概率</color><color=#cd8c00>-6%</color>"
+        }
+      ],
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11105850,
+      "offsetXSN": 0,
+      "offsetYSN": 0,
+      "offsetZSN": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000018,
+      "idCN": "天气/雪/03暴雪",
+      "mod": "特效天气",
+      "isInformalData": false,
+      "combinePath": "Snow3",
+      "intervalFrame": 15,
+      "buffId": 10400794,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000006,
+      "iconResUrl": "Weather/Icon/Snow3",
+      "backgroundResUrl": "Weather/Icon/Back/Snow",
+      "weatherName": "暴雪",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Snow3",
+          "text": "<color=#ffffff>暴雪：</color><color=#7b68ee>【冻结】</color><color=#adadad>持续时间</color><color=#7b68ee>+3秒</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Snow3",
+          "text": "<color=#ffffff>暴雪：</color><color=#cd8c00>【引雷】</color><color=#adadad>概率</color><color=#cd8c00>-9%</color>"
+        }
+      ],
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11104935,
+      "offsetXSN": 0,
+      "offsetYSN": 0,
+      "offsetZSN": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000019,
+      "idCN": "天气/炎热/01炎热",
+      "mod": "后处理",
+      "isInformalData": false,
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "combinePath": "Fine1",
+      "intervalFrame": 15,
+      "buffId": 10400800,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000019,
+      "iconResUrl": "Weather/Icon/Fine",
+      "backgroundResUrl": "Weather/Icon/Back/Fine",
+      "weatherName": "炎热",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Fine",
+          "text": "<color=#ffffff>炎热：</color><color=#ff7c7c>【点燃】</color><color=#adadad>持续时间</color><color=#ff7c7c>+1秒</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Fine",
+          "text": "<color=#ffffff>炎热：</color><color=#7b68ee>【冻结】</color><color=#adadad>持续时间</color><color=#7b68ee>-1秒</color>"
+        }
+      ],
+      "postEffectName": "Distortion",
+      "floatValueList": [
+        {
+          "key": "_DistortVelocity",
+          "value": 0.042
+        },
+        {
+          "key": "_DistortStrength",
+          "value": 0.02
+        },
+        {
+          "key": "_DensityX",
+          "value": 0.2
+        },
+        {
+          "key": "_DensityY",
+          "value": 0.2
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000020,
+      "idCN": "天气/炎热/02酷热",
+      "mod": "后处理",
+      "isInformalData": false,
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "combinePath": "Fine2",
+      "intervalFrame": 15,
+      "buffId": 10400799,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000020,
+      "iconResUrl": "Weather/Icon/Fine2",
+      "backgroundResUrl": "Weather/Icon/Back/Fine",
+      "weatherName": "酷热",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Fine2",
+          "text": "<color=#ffffff>酷热：</color><color=#ff7c7c>【点燃】</color><color=#adadad>持续时间</color><color=#ff7c7c>+2秒</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Fine2",
+          "text": "<color=#ffffff>酷热：</color><color=#7b68ee>【冻结】</color><color=#adadad>持续时间</color><color=#7b68ee>-2秒</color>"
+        }
+      ],
+      "postEffectName": "Distortion",
+      "floatValueList": [
+        {
+          "key": "_DistortVelocity",
+          "value": 0.062
+        },
+        {
+          "key": "_DistortStrength",
+          "value": 0.045
+        },
+        {
+          "key": "_DensityX",
+          "value": 0.2
+        },
+        {
+          "key": "_DensityY",
+          "value": 0.5
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000022,
+      "idCN": "天气/炎热/03炙热",
+      "mod": "后处理",
+      "isInformalData": false,
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "combinePath": "Fine3",
+      "intervalFrame": 15,
+      "buffId": 10400797,
+      "isSkill": true,
+      "isSecond": false,
+      "homeid": 50000022,
+      "iconResUrl": "Weather/Icon/Fine3",
+      "backgroundResUrl": "Weather/Icon/Back/Fine",
+      "weatherName": "炙热",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Fine3",
+          "text": "<color=#ffffff>炙热：</color><color=#ff7c7c>【点燃】</color><color=#adadad>持续时间</color><color=#ff7c7c>+3秒</color>"
+        },
+        {
+          "resUrl": "Weather/Icon/Fine3",
+          "text": "<color=#ffffff>炙热：</color><color=#7b68ee>【冻结】</color><color=#adadad>持续时间</color><color=#7b68ee>-3秒</color>"
+        }
+      ],
+      "postEffectName": "Distortion",
+      "floatValueList": [
+        {
+          "key": "_DistortVelocity",
+          "value": 0.062
+        },
+        {
+          "key": "_DistortStrength",
+          "value": 0.045
+        },
+        {
+          "key": "_DensityX",
+          "value": 0.2
+        },
+        {
+          "key": "_DensityY",
+          "value": 0.5
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000021,
+      "idCN": "环境/富氧大气",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11104207,
+      "buffId": 10405754,
+      "isSkill": true,
+      "interval": 15,
+      "duration": 720,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/OxygenRich",
+      "environName": "<color=#FF6666>富氧大气 ：</color>",
+      "environDetail": "全场触发的<color=#FF6666>【点燃】</color>，<color=#FF6666>【炽地】</color>，<color=#FF6666>【燎原】</color>和<color=#FF6666>【火海】</color>伤害加倍，不论敌我",
+      "WeatherType": "FirstGroup",
+      "tempenvironName": "环境_富氧大气",
+      "tempenvironDetail": "全场触发的【点燃】，【炽地】，【燎原】和【火海】伤害加倍，不论敌我"
+    },
+    {
+      "id": 50000023,
+      "idCN": "环境/BOSS/深眠者沉溺/谜障森林",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11103375,
+      "buffId": 10406262,
+      "isSkill": true,
+      "interval": 15,
+      "duration": 999999,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/BlindForest",
+      "tempenvironName": "环境_迷障森林",
+      "environName": "<color=#FFB800>迷障森林 ：</color>",
+      "tempenvironDetail": "新入手牌有50%概率长满树枝，无法识别",
+      "environDetail": "新入手牌有50%概率长满树枝，无法识别",
+      "isTipTrigger": true,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000026,
+      "idCN": "地面/火海",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11100878,
+      "buffId": 10406369,
+      "isSkill": true,
+      "interval": 59,
+      "duration": 360,
+      "radiusSN": 120000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000024,
+      "idCN": "天气/共振/01共振干涉",
+      "mod": "雪",
+      "isInformalData": false,
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "intervalFrame": 15,
+      "buffId": 10406604,
+      "isSkill": true,
+      "isSecond": true,
+      "homeid": 50000006,
+      "iconResUrl": "Weather/Icon/Gongzhen1",
+      "backgroundResUrl": "Weather/Icon/Back/Gongzhen",
+      "weatherName": "共振干涉1",
+      "weatherDetailList": [
+        {
+          "resUrl": "UI/CardTag/HuiFei",
+          "text": "<color=#7b68ee>回费速度</color><color=#adadad>提高</color><color=#ffb800>0.05费/秒</color>"
+        }
+      ],
+      "snowLevel": [
+        {
+          "EmissionPosX": 0.0,
+          "alpha": 0,
+          "fogRate": 0,
+          "fogSpeedMax": 0.0,
+          "fogSpeedMin": 0.0,
+          "invalidParticle": "Side",
+          "mainVelocityMax": 1.0,
+          "mainVelocityMin": 0.5,
+          "noiseStrength": 0.1,
+          "rate": 12,
+          "sideVelocityMax": 0.0,
+          "sideVelocityMin": 0.0
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000025,
+      "idCN": "天气/共振/02共振干涉",
+      "mod": "雪",
+      "isInformalData": false,
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "intervalFrame": 15,
+      "buffId": 10406608,
+      "isSkill": true,
+      "isSecond": true,
+      "homeid": 50000006,
+      "iconResUrl": "Weather/Icon/Gongzhen2",
+      "backgroundResUrl": "Weather/Icon/Back/Gongzhen",
+      "weatherName": "共振干涉2",
+      "weatherDetailList": [
+        {
+          "resUrl": "UI/CardTag/HuiFei",
+          "text": "<color=#7b68ee>回费速度</color><color=#adadad>提高</color><color=#ffb800>0.1费/秒</color>"
+        }
+      ],
+      "snowLevel": [
+        {
+          "EmissionPosX": 0.0,
+          "alpha": 0,
+          "fogRate": 0,
+          "fogSpeedMax": 0.0,
+          "fogSpeedMin": 0.0,
+          "invalidParticle": "Side",
+          "mainVelocityMax": 1.0,
+          "mainVelocityMin": 0.5,
+          "noiseStrength": 0.1,
+          "rate": 12,
+          "sideVelocityMax": 0.0,
+          "sideVelocityMin": 0.0
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000027,
+      "idCN": "天气/共振/03共振干涉",
+      "mod": "雪",
+      "isInformalData": false,
+      "resUrl": "Weather\\Snow\\SnowOn3DScene",
+      "intervalFrame": 15,
+      "buffId": 10406609,
+      "isSkill": true,
+      "isSecond": true,
+      "homeid": 50000006,
+      "iconResUrl": "Weather/Icon/Gongzhen3",
+      "backgroundResUrl": "Weather/Icon/Back/Gongzhen",
+      "weatherName": "共振干涉3",
+      "weatherDetailList": [
+        {
+          "resUrl": "UI/CardTag/HuiFei",
+          "text": "<color=#7b68ee>回费速度</color><color=#adadad>提高</color><color=#ffb800>0.15费/秒</color>"
+        }
+      ],
+      "snowLevel": [
+        {
+          "EmissionPosX": 0.0,
+          "alpha": 0,
+          "fogRate": 0,
+          "fogSpeedMax": 0.0,
+          "fogSpeedMin": 0.0,
+          "invalidParticle": "Side",
+          "mainVelocityMax": 1.0,
+          "mainVelocityMin": 0.5,
+          "noiseStrength": 0.1,
+          "rate": 12,
+          "sideVelocityMax": 0.0,
+          "sideVelocityMin": 0.0
+        }
+      ],
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000028,
+      "idCN": "天气/共振/01共振压制",
+      "mod": "特效天气",
+      "isInformalData": false,
+      "combinePath": "Resonance1",
+      "intervalFrame": 15,
+      "buffId": 10407799,
+      "isSkill": true,
+      "isSecond": true,
+      "homeid": -1,
+      "iconResUrl": "Weather/Icon/Gongzhen1",
+      "backgroundResUrl": "",
+      "weatherName": "共振压制1",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Gongzhen1",
+          "text": "<color=#ffffff>共振压制：</color><color=#8a2be2>回费速度</color><color=#adadad>减少</color><color=#8a2be2>0.09</color><color=#adadad>/秒</color>"
+        }
+      ],
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11104845,
+      "offsetXSN": 0,
+      "offsetYSN": 0,
+      "offsetZSN": 260000,
+      "WeatherType": "SecondGroup"
+    },
+    {
+      "id": 50000029,
+      "idCN": "天气/共振/02共振压制",
+      "mod": "特效天气",
+      "isInformalData": false,
+      "combinePath": "Resonance2",
+      "intervalFrame": 15,
+      "buffId": 10407798,
+      "isSkill": true,
+      "isSecond": true,
+      "homeid": -1,
+      "iconResUrl": "Weather/Icon/Gongzhen2",
+      "backgroundResUrl": "",
+      "weatherName": "共振压制2",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Gongzhen2",
+          "text": "<color=#ffffff>共振压制：</color><color=#8a2be2>回费速度</color><color=#adadad>减少</color><color=#8a2be2>0.12</color><color=#adadad>/秒</color>"
+        }
+      ],
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11104844,
+      "offsetXSN": 0,
+      "offsetYSN": 0,
+      "offsetZSN": 260000,
+      "WeatherType": "SecondGroup"
+    },
+    {
+      "id": 50000030,
+      "idCN": "天气/共振/03共振压制",
+      "mod": "特效天气",
+      "isInformalData": false,
+      "combinePath": "Resonance3",
+      "intervalFrame": 15,
+      "buffId": 10407705,
+      "isSkill": true,
+      "isSecond": true,
+      "homeid": -1,
+      "iconResUrl": "Weather/Icon/Gongzhen3",
+      "backgroundResUrl": "",
+      "weatherName": "共振压制3",
+      "weatherDetailList": [
+        {
+          "resUrl": "Weather/Icon/Gongzhen3",
+          "text": "<color=#ffffff>共振压制：</color><color=#8a2be2>回费速度</color><color=#adadad>减少</color><color=#8a2be2>0.15</color><color=#adadad>/秒</color>"
+        }
+      ],
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11104843,
+      "offsetXSN": 0,
+      "offsetYSN": 0,
+      "offsetZSN": 260000,
+      "WeatherType": "SecondGroup"
+    },
+    {
+      "id": 50000031,
+      "idCN": "环境/开尔文笑话",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": -1,
+      "buffId": 10407976,
+      "isSkill": false,
+      "interval": 30,
+      "duration": 720,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/KelvinsJoke",
+      "environName": "<color=#7AB2FF>开尔文笑话 ：</color>",
+      "environDetail": "使全场<color=#7AB2FF>【冻结】</color>状态下的目标<color=#FF6666>【崩坏】</color>，不论敌我",
+      "WeatherType": "FirstGroup",
+      "tempenvironName": "环境_开尔文笑话",
+      "tempenvironDetail": "使全场【冻结】状态下的目标【崩坏】，不论敌我"
+    },
+    {
+      "id": 50000033,
+      "idCN": "大世界/雨",
+      "mod": "大世界天气",
+      "isInformalData": false,
+      "resUrl": "Environment\\MapEffect\\Particle\\Prefabs\\Yu",
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000034,
+      "idCN": "大世界/雪",
+      "mod": "大世界天气",
+      "isInformalData": false,
+      "resUrl": "Environment\\MapEffect\\Particle\\Prefabs\\Xue_xiao",
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000035,
+      "idCN": "大世界/大雪",
+      "mod": "大世界天气",
+      "isInformalData": false,
+      "resUrl": "Environment\\MapEffect\\Particle\\Prefabs\\Xue_da",
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000036,
+      "idCN": "大世界/大雨",
+      "mod": "大世界天气",
+      "isInformalData": false,
+      "resUrl": "Environment\\MapEffect\\Particle\\Prefabs\\Yu",
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000016,
+      "idCN": "环境/BOSS/暴君/震宇环流",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": 11105665,
+      "effectId": 11101696,
+      "buffId": 10403956,
+      "isSkill": true,
+      "interval": 600,
+      "duration": 7200,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/SeismicCirculation",
+      "tempenvironName": "环境_闪灭典式",
+      "environName": "<color=#FFB800>闪灭典式：</color>",
+      "tempenvironDetail": "卡牌入手时费用+2；每10s触发1次，对随机目标造成1段电磁伤害",
+      "environDetail": "卡牌入手时费用+2；每10s触发1次，对随机目标造成1段电磁伤害",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000037,
+      "idCN": "环境/BOSS/暴君/刹那明华",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": 11105664,
+      "effectId": 11101711,
+      "buffId": 10401590,
+      "isSkill": false,
+      "interval": 30,
+      "duration": 7200,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/SeismicCirculation",
+      "tempenvironName": "环境_暗曜典式",
+      "environName": "<color=#96CDCD>暗曜典式：</color>",
+      "tempenvironDetail": "卡牌入手时费用-2；全场单位持续获得费用，精力值和治疗",
+      "environDetail": "卡牌入手时费用-2；全场单位持续获得费用，精力值和治疗",
+      "isTipTrigger": true,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000038,
+      "idCN": "02敌方/02桦树/逆纹桦树生物/技能2地面",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11105443,
+      "buffId": 10409634,
+      "isSkill": true,
+      "interval": 60,
+      "duration": 300,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000032,
+      "idCN": "地面/02敌方/雷龙/雷池",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": 11105701,
+      "endEffectId": 11105703,
+      "effectId": 11105702,
+      "buffId": 10410665,
+      "isSkill": true,
+      "interval": 120,
+      "duration": 600,
+      "radiusSN": 30000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000039,
+      "idCN": "地面/02敌方/雷龙/毒沼",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": 11105710,
+      "endEffectId": 11105711,
+      "effectId": 11105709,
+      "buffId": 10410681,
+      "isSkill": true,
+      "interval": 120,
+      "duration": 600,
+      "radiusSN": 30000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000011,
+      "idCN": "地面/02敌方/淘金乐园/金子小姐/增幅3扫雷区域",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": 11105703,
+      "effectId": 11102493,
+      "buffId": 10411248,
+      "isSkill": true,
+      "interval": 15,
+      "duration": 720,
+      "radiusSN": 40000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000040,
+      "idCN": "爬塔/通用/场地/火",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11106349,
+      "buffId": 10412499,
+      "isSkill": true,
+      "interval": 360,
+      "duration": 999999,
+      "radiusSN": 120000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000041,
+      "idCN": "爬塔/通用/场地/负能",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11106250,
+      "buffId": 10412038,
+      "isSkill": true,
+      "interval": 720,
+      "duration": 999999,
+      "radiusSN": 120000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000042,
+      "idCN": "爬塔/通用/场地/冰",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11106611,
+      "buffId": 10413261,
+      "isSkill": true,
+      "interval": 1200,
+      "duration": 999999,
+      "radiusSN": 120000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000043,
+      "idCN": "环境/BOSS/大剑哥/归墟",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11104207,
+      "buffId": 10413411,
+      "isSkill": true,
+      "interval": 15,
+      "duration": 1200,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/OxygenRich",
+      "tempenvironName": "环境_归墟",
+      "environName": "环境_归墟",
+      "tempenvironDetail": "全场触发的【斩裂】伤害翻倍，红卡入手费用-1",
+      "environDetail": "全场触发的<color=#FF6666>【斩裂】</color>伤害翻倍，红卡入手费用-1",
+      "isTipTrigger": true,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000044,
+      "idCN": "环境/潮汐秘境",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": 11106899,
+      "effectId": 11106898,
+      "buffId": 10414373,
+      "isSkill": false,
+      "interval": 29,
+      "duration": 600,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/TideMystic",
+      "tempenvironName": "环境_潮汐秘境",
+      "environName": "<color=#FFB800>潮汐秘境 ：</color>",
+      "tempenvironDetail": "自然回费速度提高100%，持续10秒",
+      "environDetail": "自然回费速度提高100%，持续10秒",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 10,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000045,
+      "idCN": "环境/BOSS/暴君/震宇环流_主线",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": 11105665,
+      "effectId": 11101696,
+      "buffId": 10414720,
+      "isSkill": true,
+      "interval": 600,
+      "duration": 7200,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/SeismicCirculation",
+      "tempenvironName": "环境_闪灭典式",
+      "environName": "<color=#FFB800>闪灭典式：</color>",
+      "tempenvironDetail": "卡牌入手时费用+1；每10s触发1次，对随机目标造成1段电磁伤害",
+      "environDetail": "卡牌入手时费用+1；每10s触发1次，对随机目标造成1段电磁伤害",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000049,
+      "idCN": "02敌方/02桦树/仗剑乌桦树生物/阳炎流",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11107284,
+      "buffId": 10416602,
+      "isSkill": false,
+      "interval": 60,
+      "duration": 99999,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/SeismicCirculation",
+      "tempenvironName": "环境_阳炎流",
+      "environName": "<color=#FF6666>阳炎流 ：</color>",
+      "tempenvironDetail": "火焰伤害提高30%，使用红卡时自身触发1次【点燃】",
+      "environDetail": "火焰伤害提高30%，使用红卡时自身触发1次<color=#FF6666>【点燃】</color>",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000048,
+      "idCN": "02敌方/02桦树/仗剑乌桦树生物/白日耀",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11107300,
+      "buffId": 10416606,
+      "isSkill": false,
+      "interval": 60,
+      "duration": 9999,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/SeismicCirculation",
+      "tempenvironName": "环境_白日耀",
+      "environName": "<color=#FFB800>白日耀：</color>",
+      "tempenvironDetail": "电磁伤害提高30%，使用黄卡时自身触发【麻痹】",
+      "environDetail": "电磁伤害提高30%，使用黄卡时自身触发<color=#FFB800>【麻痹】</color>",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000047,
+      "idCN": "02敌方/02桦树/仗剑乌桦树生物/火域",
+      "mod": "基础环境",
+      "isInformalData": true,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11107294,
+      "buffId": 10416593,
+      "isSkill": true,
+      "interval": 119,
+      "duration": 360,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "recycleDelayFrame": 10,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000046,
+      "idCN": "02敌方/02桦树/仗剑乌桦树生物/雷域",
+      "mod": "基础环境",
+      "isInformalData": true,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11107308,
+      "buffId": 10416580,
+      "isSkill": true,
+      "interval": 179,
+      "duration": 360,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "recycleDelayFrame": 10,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000050,
+      "idCN": "02敌方/14学会/归墟/归墟",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11107402,
+      "buffId": 10413411,
+      "isSkill": false,
+      "interval": 15,
+      "duration": 1200,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/SeismicCirculation",
+      "tempenvironName": "归墟",
+      "environName": "归墟",
+      "tempenvironDetail": "全场触发的【斩裂】伤害提高100%，红卡入手费用-1",
+      "environDetail": "全场触发的<color=#FF6666>【斩裂】</color>伤害提高100%，红卡入手费用-1",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000051,
+      "idCN": "02敌方/02桦树/沼颅桦树生物/毒瘴",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": 11107925,
+      "effectId": 11107924,
+      "buffId": 10422869,
+      "isSkill": true,
+      "interval": 60,
+      "duration": 600,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "recycleDelayFrame": 70,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000052,
+      "idCN": "地面/封冻",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11108153,
+      "buffId": 10423548,
+      "isSkill": true,
+      "interval": 59,
+      "duration": 360,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000053,
+      "idCN": "环境/天王道场/天王道场1",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": -1,
+      "buffId": 10426037,
+      "isSkill": false,
+      "interval": 1800,
+      "duration": 3600000,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/KingsDojo1",
+      "tempenvironName": "环境_天王道场1",
+      "environName": "<color=#7AB2FF>天王道场1</color>",
+      "tempenvironDetail": "每隔30秒触发1次，使敌方全体免疫控制类特殊效果，持续12秒",
+      "environDetail": "每隔30秒触发1次，使敌方全体免疫控制类特殊效果，持续12秒",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000054,
+      "idCN": "环境/天王道场/天王道场2",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": -1,
+      "buffId": 10426043,
+      "isSkill": false,
+      "interval": 1800,
+      "duration": 3600000,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/KingsDojo2",
+      "tempenvironName": "环境_天王道场2",
+      "environName": "<color=#7AB2FF>天王道场2</color>",
+      "tempenvironDetail": "每隔30秒触发1次，使敌方全体免疫控制类特殊效果，持续18秒",
+      "environDetail": "每隔30秒触发1次，使敌方全体免疫控制类特殊效果，持续18秒",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000055,
+      "idCN": "环境/天王道场/天王道场3",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": -1,
+      "buffId": 10426044,
+      "isSkill": false,
+      "interval": 1800,
+      "duration": 3600000,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/KingsDojo3",
+      "tempenvironName": "环境_天王道场3",
+      "environName": "<color=#7AB2FF>天王道场3</color>",
+      "tempenvironDetail": "每隔30秒触发1次，使敌方全体免疫控制类特殊效果，持续24秒",
+      "environDetail": "每隔30秒触发1次，使敌方全体免疫控制类特殊效果，持续24秒",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000056,
+      "idCN": "环境/天王御座/天王御座1",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": -1,
+      "buffId": 10426045,
+      "isSkill": false,
+      "interval": 1800,
+      "duration": 3600000,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/KingsDojo4",
+      "tempenvironName": "环境_天王御座1",
+      "environName": "<color=#7AB2FF>天王御座1</color>",
+      "tempenvironDetail": "使敌方全体永久免疫控制类特殊效果",
+      "environDetail": "使敌方全体永久免疫控制类特殊效果",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000058,
+      "idCN": "环境/天王御座/天王御座2",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": -1,
+      "buffId": 10426276,
+      "isSkill": false,
+      "interval": 1800,
+      "duration": 3600000,
+      "radiusSN": 240000,
+      "environIconPath": "UI/Battle/Environment/Icon/KingsDojo4",
+      "tempenvironName": "环境_天王御座2",
+      "environName": "<color=#7AB2FF>天王御座2</color>",
+      "tempenvironDetail": "使敌方全体永久免疫控制类特殊效果，使控制类/防御类/技能效果降低",
+      "environDetail": "使敌方全体永久免疫控制类特殊效果，使控制类/防御类技能效果降低",
+      "isTipTrigger": true,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    },
+    {
+      "id": 50000057,
+      "idCN": "地面/焚天",
+      "mod": "基础环境",
+      "isInformalData": false,
+      "startEffectId": -1,
+      "endEffectId": -1,
+      "effectId": 11108929,
+      "buffId": 10427312,
+      "isSkill": true,
+      "interval": 59,
+      "duration": 360,
+      "radiusSN": 60000,
+      "environIconPath": "",
+      "tempenvironName": "",
+      "environName": "",
+      "tempenvironDetail": "",
+      "environDetail": "",
+      "isTipTrigger": false,
+      "recycleDelayFrame": 0,
+      "WeatherType": "FirstGroup"
+    }
+  ]
+}

@@ -1,0 +1,2711 @@
+{
+  "version": 1,
+  "hash": "E6854C9AD5063D592C0693FFE6B42F9342208F57626B232B9890E477DA5BE325",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131813947640,
+    "etc": "factory=PrisonerFactory"
+  },
+  "count": 56,
+  "records": [
+    {
+      "id": 86700001,
+      "idCN": "初始产品",
+      "mod": "默认"
+    },
+    {
+      "id": 86700041,
+      "idCN": "杂兵/消防斧暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "消防斧暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt2",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.01,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601138,
+          "weight": 3
+        },
+        {
+          "id": 12601238,
+          "weight": 2
+        },
+        {
+          "id": 12601139,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000187,
+      "prisonParolePayParam": 0.5,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700042,
+      "idCN": "杂兵/防爆盾暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "防爆盾暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt1",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.01,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601087,
+          "weight": 2
+        },
+        {
+          "id": 12601133,
+          "weight": 2
+        },
+        {
+          "id": 12601135,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000185,
+      "prisonParolePayParam": 0.5,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700043,
+      "idCN": "杂兵/棒球暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "棒球暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt1",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.01,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601134,
+          "weight": 2
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        },
+        {
+          "id": 12601239,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000195,
+      "prisonParolePayParam": 0.5,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700044,
+      "idCN": "杂兵/霰弹枪暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "霰弹枪暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt3",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.01,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601133,
+          "weight": 3
+        },
+        {
+          "id": 12601135,
+          "weight": 2
+        },
+        {
+          "id": 12601137,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000207,
+      "prisonParolePayParam": 0.5,
+      "physicalQuality": 0.7,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700045,
+      "idCN": "杂兵/步枪暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "步枪暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt4",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.02,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601140,
+          "weight": 3
+        },
+        {
+          "id": 12601239,
+          "weight": 4
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000210,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700046,
+      "idCN": "杂兵/电枪暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "电枪暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt5",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.02,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601238,
+          "weight": 3
+        },
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000181,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700047,
+      "idCN": "精英/盾棒暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "盾棒暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.04,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601135,
+          "weight": 3
+        },
+        {
+          "id": 12601137,
+          "weight": 3
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000203,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700048,
+      "idCN": "精英/枪盾暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "枪盾暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt3",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.04,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601239,
+          "weight": 3
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000201,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700049,
+      "idCN": "精英/盾枪暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "盾枪暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.04,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000204,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700050,
+      "idCN": "精英/棒斧暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "棒斧暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.05,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601137,
+          "weight": 3
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        },
+        {
+          "id": 12601138,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000177,
+      "prisonParolePayParam": 0.8,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700051,
+      "idCN": "精英/双斧暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "双斧暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt2",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.05,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 3
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000191,
+      "prisonParolePayParam": 0.8,
+      "physicalQuality": 1.2,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700052,
+      "idCN": "精英/双枪暴徒",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "双枪暴徒",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bt4",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601003,
+      "des": "",
+      "extraOutputProbability": 0.05,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000199,
+      "prisonParolePayParam": 0.8,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700053,
+      "idCN": "精英/阿妮塔武装守卫",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "阿妮塔武装守卫",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_anita1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600995,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601375,
+          "weight": 2
+        },
+        {
+          "id": 12601138,
+          "weight": 4
+        },
+        {
+          "id": 12601238,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000183,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700054,
+      "idCN": "精英/阿妮塔武装哨卫",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "阿妮塔武装哨卫",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_anita2",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600995,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601087,
+          "weight": 3
+        },
+        {
+          "id": 12601133,
+          "weight": 2
+        },
+        {
+          "id": 12601135,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000208,
+      "prisonParolePayParam": 1.0,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700055,
+      "idCN": "杂兵/黑月电枪",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "黑月电枪",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_hydian",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600914,
+      "des": "",
+      "extraOutputProbability": 0.04,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601134,
+          "weight": 3
+        },
+        {
+          "id": 12601140,
+          "weight": 4
+        },
+        {
+          "id": 12601239,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000198,
+      "prisonParolePayParam": 0.8,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700056,
+      "idCN": "精英/黑月剑",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "黑月剑",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_hyjian",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600914,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601138,
+          "weight": 4
+        },
+        {
+          "id": 12601238,
+          "weight": 3
+        },
+        {
+          "id": 12601139,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000200,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 1.5,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700057,
+      "idCN": "精英/黑月忍",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "黑月忍",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_hyren",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600914,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601133,
+          "weight": 2
+        },
+        {
+          "id": 12601135,
+          "weight": 4
+        },
+        {
+          "id": 12601137,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000212,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.2,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700058,
+      "idCN": "杂兵/北阵残部·尖兵",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "北阵残部·尖兵",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bbjb",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600913,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601140,
+          "weight": 3
+        },
+        {
+          "id": 12601239,
+          "weight": 4
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000202,
+      "prisonParolePayParam": 0.8,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700059,
+      "idCN": "杂兵/北阵残部·重机枪兵",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "北阵残部·重机枪兵",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bbzjb",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600913,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601238,
+          "weight": 3
+        },
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000176,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 1.2,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700060,
+      "idCN": "杂兵/北阵残部·榴弹枪兵",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "北阵残部·榴弹枪兵",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bbldb",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600913,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601135,
+          "weight": 3
+        },
+        {
+          "id": 12601137,
+          "weight": 3
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000189,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700061,
+      "idCN": "精英/北阵残部·动力甲重炮",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "北阵残部·动力甲重炮",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bbzjb",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600913,
+      "des": "",
+      "extraOutputProbability": 0.05,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601239,
+          "weight": 3
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000211,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 1.2,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700062,
+      "idCN": "精英/北阵残部·动力甲先锋",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "北阵残部·动力甲先锋",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bbzjb",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600913,
+      "des": "",
+      "extraOutputProbability": 0.05,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000214,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.3,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700063,
+      "idCN": "精英/北阵残部·动力甲援护",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "北阵残部·动力甲援护",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_bbzjb",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600913,
+      "des": "",
+      "extraOutputProbability": 0.05,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000216,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700064,
+      "idCN": "杂兵/沙盗斧手",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "沙盗斧手",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_shadao",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600911,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 4
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000179,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700065,
+      "idCN": "杂兵/沙盗骑士",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "沙盗骑士",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_shadao",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600911,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000205,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700066,
+      "idCN": "BOSS/朱迪",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "朱迪",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_Judi",
+      "prisonerRarity": 12601048,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600911,
+      "des": "",
+      "extraOutputProbability": 0.15,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 500
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601140,
+          "weight": 1
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000194,
+      "prisonParolePayParam": 1.5,
+      "physicalQuality": 1.6
+    },
+    {
+      "id": 86700067,
+      "idCN": "精英/鼹鼠帮·动力甲钢拳",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "鼹鼠帮·动力甲钢拳",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_ys1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600909,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601087,
+          "weight": 2
+        },
+        {
+          "id": 12601133,
+          "weight": 2
+        },
+        {
+          "id": 12601135,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000206,
+      "prisonParolePayParam": 1.1,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700068,
+      "idCN": "精英/鼹鼠帮·动力甲轰火",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "鼹鼠帮·动力甲轰火",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_ys1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600909,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601134,
+          "weight": 2
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        },
+        {
+          "id": 12601239,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000209,
+      "prisonParolePayParam": 1.1,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700069,
+      "idCN": "精英/鼹鼠帮·动力甲激电",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "鼹鼠帮·动力甲激电",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_ys1",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600909,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601138,
+          "weight": 3
+        },
+        {
+          "id": 12601238,
+          "weight": 2
+        },
+        {
+          "id": 12601139,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000192,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700070,
+      "idCN": "精英/鼹鼠帮·动力甲链锯",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "鼹鼠帮·动力甲链锯",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_ys2",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600909,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601133,
+          "weight": 3
+        },
+        {
+          "id": 12601135,
+          "weight": 2
+        },
+        {
+          "id": 12601137,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000188,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700071,
+      "idCN": "BOSS/鼹鼠",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "鼹鼠",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_yanshu",
+      "prisonerRarity": 12601048,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600909,
+      "des": "",
+      "extraOutputProbability": 0.12,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 500
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601138,
+          "weight": 1
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000196,
+      "prisonParolePayParam": 1.5,
+      "physicalQuality": 1.3
+    },
+    {
+      "id": 86700072,
+      "idCN": "杂兵/拾荒者·火枪组",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·火枪组",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_huoqiang",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.02,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601238,
+          "weight": 4
+        },
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000178,
+      "prisonParolePayParam": 0.5,
+      "physicalQuality": 0.7,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700073,
+      "idCN": "杂兵/拾荒者·扶危组",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·扶危组",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_fuwei",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.02,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601135,
+          "weight": 4
+        },
+        {
+          "id": 12601137,
+          "weight": 3
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000219,
+      "prisonParolePayParam": 0.5,
+      "physicalQuality": 0.6,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700074,
+      "idCN": "杂兵/拾荒者·后援组",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·后援组",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_houyuan",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.01,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601239,
+          "weight": 3
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000182,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700075,
+      "idCN": "杂兵/拾荒者·火枪先锋",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·火枪先锋",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_xianfeng",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000180,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700076,
+      "idCN": "杂兵/拾荒者·长枪先锋",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·长枪先锋",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_xianfeng",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601137,
+          "weight": 3
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        },
+        {
+          "id": 12601138,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000217,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700077,
+      "idCN": "精英/拾荒者·榴弹组",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·榴弹组",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_huoqiang",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.04,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 3
+        },
+        {
+          "id": 12601140,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000213,
+      "prisonParolePayParam": 1.0,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700078,
+      "idCN": "精英/拾荒者·铁管力士",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·铁管力士",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tieguan",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000175,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.2,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700079,
+      "idCN": "精英/拾荒者·喷火力士",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "拾荒者·喷火力士",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_penhuo",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601375,
+          "weight": 2
+        },
+        {
+          "id": 12601138,
+          "weight": 4
+        },
+        {
+          "id": 12601238,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000184,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.2,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700080,
+      "idCN": "BOSS/荒原王·穿击动力甲",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "荒原王·穿击动力甲",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_hyw",
+      "prisonerRarity": 12601048,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600908,
+      "des": "",
+      "extraOutputProbability": 0.08,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 500
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601239,
+          "weight": 1
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000190,
+      "prisonParolePayParam": 1.8,
+      "physicalQuality": 1.4
+    },
+    {
+      "id": 86700081,
+      "idCN": "精英/劫掠者·执锤",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "劫掠者·执锤",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_zhichui",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600907,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601134,
+          "weight": 2
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        },
+        {
+          "id": 12601239,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000218,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.1,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700082,
+      "idCN": "精英/劫掠者·执电",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "劫掠者·执电",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_zhidian",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600907,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601138,
+          "weight": 4
+        },
+        {
+          "id": 12601238,
+          "weight": 3
+        },
+        {
+          "id": 12601139,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000215,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700083,
+      "idCN": "精英/劫掠者·执火",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "劫掠者·执火",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_zhichui",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600907,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601133,
+          "weight": 4
+        },
+        {
+          "id": 12601135,
+          "weight": 3
+        },
+        {
+          "id": 12601137,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000197,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.0,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700084,
+      "idCN": "精英/劫掠者·执剑",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "劫掠者·执剑",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_zhidian",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600907,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601140,
+          "weight": 3
+        },
+        {
+          "id": 12601239,
+          "weight": 4
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000186,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700085,
+      "idCN": "BOSS/劫掠者·执锯",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "劫掠者·执锯",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_zhiju",
+      "prisonerRarity": 12601048,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600907,
+      "des": "",
+      "extraOutputProbability": 0.1,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 500
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601133,
+          "weight": 1
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000193,
+      "prisonParolePayParam": 1.8,
+      "physicalQuality": 1.4,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700002,
+      "idCN": "精英/毛绒联盟·象",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "毛绒联盟·象",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_xiang",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600916,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601135,
+          "weight": 4
+        },
+        {
+          "id": 12601137,
+          "weight": 4
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000252,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700003,
+      "idCN": "精英/毛绒联盟·浣熊",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "毛绒联盟·浣熊",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_huanxiong",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600916,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601239,
+          "weight": 3
+        },
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000251,
+      "prisonParolePayParam": 1.3,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700004,
+      "idCN": "精英/毛绒联盟·兔",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "毛绒联盟·兔",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tu",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600916,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000250,
+      "prisonParolePayParam": 1.3,
+      "physicalQuality": 0.8,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700005,
+      "idCN": "精英/毛绒联盟·熊",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "毛绒联盟·熊",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_xiong",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600916,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601137,
+          "weight": 5
+        },
+        {
+          "id": 12601375,
+          "weight": 3
+        },
+        {
+          "id": 12601138,
+          "weight": 6
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000249,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 0.9,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700006,
+      "idCN": "BOSS/毛绒联盟·海鹦鹉",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "毛绒联盟·海鹦鹉",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_yingwu",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12600916,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 500
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601138,
+          "weight": 1
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000248,
+      "prisonParolePayParam": 2.0,
+      "physicalQuality": 1.3
+    },
+    {
+      "id": 86700007,
+      "idCN": "BOSS/屠戮者·链锯",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "屠戮者·链锯",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tuluzhe",
+      "prisonerRarity": 12601048,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601428,
+      "des": "",
+      "extraOutputProbability": 0.12,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 500
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601087,
+          "weight": 1
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000315,
+      "prisonParolePayParam": 2.0,
+      "physicalQuality": 1.5,
+      "escapePr": 1.0,
+      "escapeSuccessPr": 1.0
+    },
+    {
+      "id": 86700008,
+      "idCN": "精英/屠戮者·延烧",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "屠戮者·延烧",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tlzys",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601428,
+      "des": "",
+      "extraOutputProbability": 0.06,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601240,
+          "weight": 2
+        },
+        {
+          "id": 12601087,
+          "weight": 4
+        },
+        {
+          "id": 12601133,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601147,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000338,
+      "prisonParolePayParam": 1.2,
+      "physicalQuality": 1.2,
+      "escapePr": 1.4,
+      "escapeSuccessPr": 1.3
+    },
+    {
+      "id": 86700009,
+      "idCN": "精英/屠戮者·重压",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "屠戮者·重压",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tlzys",
+      "prisonerRarity": 12601047,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601428,
+      "des": "",
+      "extraOutputProbability": 0.07,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 400
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        },
+        {
+          "id": 12601140,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601145,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000339,
+      "prisonParolePayParam": 1.4,
+      "physicalQuality": 1.2,
+      "escapePr": 1.3,
+      "escapeSuccessPr": 1.2
+    },
+    {
+      "id": 86700010,
+      "idCN": "杂兵/屠戮者·裂溃",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "屠戮者·裂溃",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tlzlk",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601428,
+      "des": "",
+      "extraOutputProbability": 0.03,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601139,
+          "weight": 3
+        },
+        {
+          "id": 12601241,
+          "weight": 2
+        },
+        {
+          "id": 12601134,
+          "weight": 4
+        }
+      ],
+      "monitor": 12601146,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000336,
+      "prisonParolePayParam": 0.7,
+      "physicalQuality": 1.0,
+      "escapePr": 0.6,
+      "escapeSuccessPr": 0.7
+    },
+    {
+      "id": 86700011,
+      "idCN": "杂兵/屠戮者·怨击",
+      "mod": "默认",
+      "isInformalData": false,
+      "prisonerName": "屠戮者·怨击",
+      "prisonerIconPath": "EnemyPlus/prisoner/prison_tlzlk",
+      "prisonerRarity": 12601046,
+      "prisonerPicturePath": "",
+      "difficultyPr": 1.0,
+      "prisonerSide": 12601428,
+      "des": "",
+      "extraOutputProbability": 0.04,
+      "prisonerCost": [
+        {
+          "id": 11400001,
+          "num": 300
+        }
+      ],
+      "prisonerPersonality": [
+        {
+          "id": 12601137,
+          "weight": 3
+        },
+        {
+          "id": 12601375,
+          "weight": 2
+        },
+        {
+          "id": 12601138,
+          "weight": 3
+        }
+      ],
+      "monitor": 12601144,
+      "PrisonerSpeciality": [
+        {
+          "id": 12601198,
+          "weight": 1
+        },
+        {
+          "id": 12601148,
+          "weight": 1
+        }
+      ],
+      "PrisonerAnimation": 70000337,
+      "prisonParolePayParam": 0.6,
+      "physicalQuality": 1.0,
+      "escapePr": 0.5,
+      "escapeSuccessPr": 0.8
+    }
+  ]
+}

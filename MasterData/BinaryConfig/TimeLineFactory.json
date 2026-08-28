@@ -1,0 +1,1520 @@
+{
+  "version": 1,
+  "hash": "7B51D62788B09D7DA58A4A37FBCC3106AAD1E62539ABBA9DC1E2D3337B31995D",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131772113176,
+    "etc": "factory=TimeLineFactory"
+  },
+  "count": 43,
+  "records": [
+    {
+      "id": 84000001,
+      "idCN": "车站搬砖/默认",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ani/spine_ani",
+      "x": 8.18,
+      "y": -3.92,
+      "z": -5.5,
+      "actorList": [
+        {
+          "actor": "Dorm_Katas",
+          "limitList": 80300226,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_Conor",
+          "limitList": 80301067,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Cc.Spine GameObject (Dorm_Cc).Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [
+        {
+          "id": 10000055
+        },
+        {
+          "id": 10000160
+        },
+        {
+          "id": 10000134
+        }
+      ]
+    },
+    {
+      "id": 84000002,
+      "idCN": "剧情/EP1/01车站",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ep101/spine_ep101",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 1.0,
+      "camY": 3.5,
+      "camZ": -14.0,
+      "rotationX": 0.0,
+      "fOV": 45.0,
+      "processPath": "Environment/RN_Scenes/PP_Loading_7FP",
+      "isChangeLighting": true,
+      "skyColorStr": "17,24,31",
+      "equatorColorStr": "154,154,154",
+      "groundColorStr": "147,118,112",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000003,
+      "idCN": "剧情/EP1/02车长室",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ep102/spine_ep102",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 1.5,
+      "camY": 9.4,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 23.0,
+      "processPath": "Environment/RN_Scenes/Home3Dtest/Home_masterroompro",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000004,
+      "idCN": "剧情/EP1/03遥",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ep103/spine_ep103",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 3.0,
+      "camY": 9.4,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 23.0,
+      "processPath": "Environment/RN_Scenes/Home3Dtest/Home_masterroompro",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000005,
+      "idCN": "列车工厂洗车",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "UI\\UIEffect\\HomeEffect\\TrainfactoryEffect\\spine_xiche\\spine_xiche",
+      "x": 9997.0,
+      "y": 3.0,
+      "z": -20.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)"
+        }
+      ],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000006,
+      "idCN": "车站搬砖/曼德矿场",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ani/spine_ani",
+      "x": 8.18,
+      "y": -3.92,
+      "z": -5.5,
+      "actorList": [
+        {
+          "actor": "Dorm_Katas",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_Conor",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Cc.Spine GameObject (Dorm_Cc).Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [
+        {
+          "id": 10000055
+        },
+        {
+          "id": 10000160
+        },
+        {
+          "id": 10000134
+        }
+      ]
+    },
+    {
+      "id": 84000008,
+      "idCN": "车站搬砖/荒原站",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ani/spine_ani",
+      "x": 8.18,
+      "y": -3.92,
+      "z": -5.5,
+      "actorList": [
+        {
+          "actor": "Dorm_Katas",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_Conor",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Cc.Spine GameObject (Dorm_Cc).Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [
+        {
+          "id": 10000055
+        },
+        {
+          "id": 10000160
+        },
+        {
+          "id": 10000134
+        }
+      ]
+    },
+    {
+      "id": 84000009,
+      "idCN": "剧情/EP3/01做梦",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 5.0,
+      "camY": 9.4,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 25.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 660.0,
+      "btnY": 70.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000010,
+      "idCN": "列车工厂保养",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "UI\\UIEffect\\HomeEffect\\TrainfactoryEffect\\Dorm_Baoyang\\Dorm_Baoyang",
+      "x": 10000.0,
+      "y": 3.0,
+      "z": -20.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)"
+        }
+      ],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000011,
+      "idCN": "列车工厂修理",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "UI\\UIEffect\\HomeEffect\\TrainfactoryEffect\\Dorm_xiuche\\Dorm_xiuche",
+      "x": 9997.0,
+      "y": 3.0,
+      "z": -20.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)"
+        },
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)_01"
+        },
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)_02"
+        },
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)_03"
+        },
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)_04"
+        },
+        {
+          "lcz": "Liechezhang_boy.Spine GameObject (Dorm_Liechezhang_boy)_05"
+        }
+      ],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000007,
+      "idCN": "车站搬砖/淘金乐园",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ani/spine_ani",
+      "x": 8.18,
+      "y": -3.88,
+      "z": -5.5,
+      "actorList": [
+        {
+          "actor": "Dorm_Katas",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_Conor",
+          "limitList": 80300413,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Cc.Spine GameObject (Dorm_Cc).Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [
+        {
+          "id": 10000055
+        },
+        {
+          "id": 10000160
+        },
+        {
+          "id": 10000134
+        }
+      ]
+    },
+    {
+      "id": 84000012,
+      "idCN": "剧情/EP1/04飞鸟1",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_baohu1_1Timeline/spine_baohu1_1Timeline",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Lead.Liechezhang.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -6.0,
+      "camY": 4.2,
+      "camZ": -26.4,
+      "rotationX": 10.0,
+      "fOV": 32.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_C1_01",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "195,215,221",
+      "equatorColorStr": "71,96,135",
+      "groundColorStr": "26,30,48",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000013,
+      "idCN": "剧情/EP1/04飞鸟2",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_baohu1_2Timeline/spine_baohu1_2Timeline",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Lead.Liechezhang.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -6.0,
+      "camY": 4.2,
+      "camZ": -26.4,
+      "rotationX": 10.0,
+      "fOV": 32.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_C1_01",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "195,215,221",
+      "equatorColorStr": "71,96,135",
+      "groundColorStr": "26,30,48",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000014,
+      "idCN": "剧情/EP1/04飞鸟3",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_baohu1_3Timeline/spine_baohu1_3Timeline",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Lead.Liechezhang.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -5.0,
+      "camY": 4.2,
+      "camZ": -26.4,
+      "rotationX": 10.0,
+      "fOV": 32.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_C1_01",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "195,215,221",
+      "equatorColorStr": "71,96,135",
+      "groundColorStr": "26,30,48",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000015,
+      "idCN": "剧情/EP3/02黄彼得1",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine\\Prefab\\spine_huangpite_Timeline1\\spine_huangpite_Timeline1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhan.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -192.5,
+      "camY": 8.7,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 25.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000016,
+      "idCN": "剧情/EP3/02黄彼得2",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine\\Prefab\\spine_huangpite_Timeline2\\spine_huangpite_Timeline2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhan.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -192.5,
+      "camY": 8.7,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 25.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000017,
+      "idCN": "剧情/EP3/02黄彼得3",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine\\Prefab\\spine_huangpite_Timeline3\\spine_huangpite_Timeline3",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhan.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -192.5,
+      "camY": 8.7,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 25.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000018,
+      "idCN": "剧情/EP3/03掘金机器人1",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine\\Prefab\\spine_taojinjiqiren_Timeline_01\\spine_taojinjiqiren_Timeline_01",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Liechezhang_girl.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 1.0,
+      "camY": 3.5,
+      "camZ": -19.0,
+      "rotationX": 0.0,
+      "fOV": 45.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_TJLY",
+      "cubemap": "Environment/RN_Scenes/Map_Loading/Loading_TJLY/BG_TJLY_Cube",
+      "isChangeLighting": true,
+      "skyColorStr": "164,156,124",
+      "equatorColorStr": "142,141,131",
+      "groundColorStr": "147,118,111",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000019,
+      "idCN": "剧情/EP3/03掘金机器人2",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine\\Prefab\\spine_taojinjiqiren_Timeline_02\\spine_taojinjiqiren_Timeline_02",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Liechezhang_girl.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 1.0,
+      "camY": 3.5,
+      "camZ": -19.0,
+      "rotationX": 0.0,
+      "fOV": 45.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_TJLY",
+      "cubemap": "Environment/RN_Scenes/Map_Loading/Loading_TJLY/BG_TJLY_Cube",
+      "isChangeLighting": true,
+      "skyColorStr": "164,156,124",
+      "equatorColorStr": "142,141,131",
+      "groundColorStr": "147,118,111",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000020,
+      "idCN": "剧情/EP3/03掘金机器人3",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine\\Prefab\\spine_taojinjiqiren_Timeline_03\\spine_taojinjiqiren_Timeline_03",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Liechezhang_girl.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 1.0,
+      "camY": 3.5,
+      "camZ": -19.0,
+      "rotationX": 0.0,
+      "fOV": 45.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_TJLY",
+      "cubemap": "Environment/RN_Scenes/Map_Loading/Loading_TJLY/BG_TJLY_Cube",
+      "isChangeLighting": true,
+      "skyColorStr": "164,156,124",
+      "equatorColorStr": "142,141,131",
+      "groundColorStr": "147,118,111",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000021,
+      "idCN": "剧情/EP1/04飞鸟1-2",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_baohu1_1Timeline_2/spine_baohu1_1Timeline_2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Lead.Liechezhang.Spine GameObject (Dorm_Liechezhang_girl)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -6.0,
+      "camY": 4.2,
+      "camZ": -26.4,
+      "rotationX": 10.0,
+      "fOV": 32.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_C1_01",
+      "cubemap": "",
+      "isChangeLighting": true,
+      "skyColorStr": "195,215,221",
+      "equatorColorStr": "71,96,135",
+      "groundColorStr": "26,30,48",
+      "inTrainMap": false,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0
+    },
+    {
+      "id": 84000022,
+      "idCN": "火车出站/默认",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/NPC_perform_station/NPC_perform_station",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [
+        {
+          "actor": "Dorm_bailing_boy01",
+          "limitList": 80300226,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_bailing_boy03",
+          "limitList": 80301067,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl01",
+          "limitList": 80300226,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl03",
+          "limitList": 80301067,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_laotou02",
+          "limitList": 80301067,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000023,
+      "idCN": "剧情/EP3/04金子小姐1",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_yongbao_Timeline01/spine_yongbao_Timeline01",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [],
+      "fixedActorList": [],
+      "camX": 0.0,
+      "camY": 5.09,
+      "camZ": -26.0,
+      "rotationX": 10.0,
+      "fOV": 32.0,
+      "processPath": "Environment/RN_Scenes/PP_S_TJLY_03",
+      "isChangeLighting": true,
+      "skyColorStr": "13,30,59",
+      "equatorColorStr": "19,50,75",
+      "groundColorStr": "27,35,77",
+      "skybox": "Environment/Sky_System/Map_Sky_Moonless_Night_01",
+      "cubemap": "Environment/Sky_System/Map_Sky_Moonless_Night_01",
+      "inTrainMap": false,
+      "isChangeFog": true,
+      "isOpenFog": true,
+      "fogColorStr": "11,63,120",
+      "fogMode": "Exponential",
+      "density": 0.002,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000024,
+      "idCN": "剧情/EP3/04金子小姐2",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_yongbao_Timeline02/spine_yongbao_Timeline02",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [],
+      "fixedActorList": [],
+      "camX": 0.0,
+      "camY": 5.09,
+      "camZ": -26.0,
+      "rotationX": 10.0,
+      "fOV": 32.0,
+      "processPath": "Environment/RN_Scenes/PP_S_TJLY_03",
+      "isChangeLighting": true,
+      "skyColorStr": "13,30,59",
+      "equatorColorStr": "19,50,75",
+      "groundColorStr": "27,35,77",
+      "skybox": "Environment/Sky_System/Map_Sky_Moonless_Night_01",
+      "cubemap": "Environment/Sky_System/Map_Sky_Moonless_Night_01",
+      "inTrainMap": false,
+      "isChangeFog": true,
+      "isOpenFog": true,
+      "fogColorStr": "11,63,120",
+      "fogMode": "Exponential",
+      "density": 0.002,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000025,
+      "idCN": "火车出站/荒原站",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/NPC_perform_station/NPC_perform_station",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [
+        {
+          "actor": "Dorm_bailing_boy01",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_bailing_boy03",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl01",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl03",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_laotou02",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000026,
+      "idCN": "火车出站/曼德矿场",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/NPC_perform_station/NPC_perform_station",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [
+        {
+          "actor": "Dorm_bailing_boy01",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_bailing_boy03",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl01",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl03",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_laotou02",
+          "limitList": 80301068,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000027,
+      "idCN": "火车出站/淘金乐园",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/NPC_perform_station/NPC_perform_station",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [
+        {
+          "actor": "Dorm_bailing_boy01",
+          "limitList": 80300413,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_bailing_boy03",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl01",
+          "limitList": 80300413,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl03",
+          "limitList": 80300217,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_laotou02",
+          "limitList": 80300413,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000028,
+      "idCN": "车站搬砖/战备工厂",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ani/spine_ani",
+      "x": 8.18,
+      "y": -3.92,
+      "z": -5.5,
+      "actorList": [
+        {
+          "actor": "Dorm_Katas",
+          "limitList": 80301714,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_Conor",
+          "limitList": 80301716,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Cc.Spine GameObject (Dorm_Cc).Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [
+        {
+          "id": 10000055
+        },
+        {
+          "id": 10000160
+        },
+        {
+          "id": 10000134
+        }
+      ]
+    },
+    {
+      "id": 84000029,
+      "idCN": "火车出站/战备工厂",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/NPC_perform_station/NPC_perform_station",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [
+        {
+          "actor": "Dorm_bailing_boy01",
+          "limitList": 80301714,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_bailing_boy03",
+          "limitList": 80301716,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl01",
+          "limitList": 80301714,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_xuesheng_girl03",
+          "limitList": 80301716,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_laotou02",
+          "limitList": 80301714,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000030,
+      "idCN": "列车武装/修理机器人919",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "UI/UIEffect/HomeEffect/TrainfactoryEffect/GJ_Xl919_City_Timeline",
+      "x": 6.4,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [],
+      "fixedActorList": []
+    },
+    {
+      "id": 84000031,
+      "idCN": "剧情/EP4/01",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP4_timeline1/EP4_timeline1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 0.93,
+      "camY": 3.06,
+      "camZ": -7.49,
+      "rotationX": 4.469,
+      "fOV": 50.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "isChangeLighting": false,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000033,
+      "idCN": "剧情/EP4/03",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP4_timeline3/EP4_timeline3",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -1.5,
+      "camY": 3.33,
+      "camZ": -10.9,
+      "rotationX": 4.469,
+      "fOV": 50.0,
+      "processPath": "Environment/RN_Scenes/PP_TL_C1_01",
+      "isChangeLighting": true,
+      "skyColorStr": "195,215,221",
+      "equatorColorStr": "71,96,135",
+      "groundColorStr": "26,30,48",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000034,
+      "idCN": "剧情/EP4/04",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP4_timeline4/EP4_timeline4",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -0.93,
+      "camY": 3.06,
+      "camZ": -7.4,
+      "rotationX": 4.5,
+      "fOV": 50.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "isChangeLighting": false,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000035,
+      "idCN": "剧情/EP4/02",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP4_timeline2/EP4_timeline2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 0.0,
+      "camY": 4.0,
+      "camZ": -7.42,
+      "rotationX": 382.938,
+      "fOV": 60.0,
+      "processPath": "Environment/RN_Scenes/Home3Dtest/Home_masterroompro keep",
+      "isChangeLighting": false,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000032,
+      "idCN": "剧情/支线/监狱",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/PITtimeline1/PITtimeline1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 13.37,
+      "camY": 8.84,
+      "camZ": -28.53,
+      "rotationX": 15.0,
+      "fOV": 23.0,
+      "processPath": "Environment/RN_Scenes/Home3Dtest/Home_masterroompro keep",
+      "isChangeLighting": true,
+      "skyColorStr": "0,0,0",
+      "equatorColorStr": "0,0,0",
+      "groundColorStr": "0,0,0",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000036,
+      "idCN": "变性/男",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_denatura_boy/spine_denatura_boy",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [],
+      "fixedActorList": [],
+      "camX": 1.5,
+      "camY": 9.4,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 23.0,
+      "processPath": "Environment/RN_Scenes/Home3Dtest/Home_masterroompro",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000037,
+      "idCN": "变性/女",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_denatura_girl/spine_denatura_girl",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [],
+      "fixedActorList": [],
+      "camX": 1.5,
+      "camY": 9.4,
+      "camZ": -28.0,
+      "rotationX": 15.0,
+      "fOV": 23.0,
+      "processPath": "Environment/RN_Scenes/Home3Dtest/Home_masterroompro",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000038,
+      "idCN": "剧情/EP5/01",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP5_timeline1/EP5_timeline1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 0.93,
+      "camY": 3.06,
+      "camZ": -7.49,
+      "rotationX": 4.469,
+      "fOV": 50.0,
+      "processPath": "Environment\\RN_Scenes\\Home3Dtest\\Home_masterroompro",
+      "isChangeLighting": false,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000039,
+      "idCN": "剧情/EP5/02",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP5_timeline2/EP5_timeline2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 0.93,
+      "camY": 3.06,
+      "camZ": -7.49,
+      "rotationX": 4.469,
+      "fOV": 50.0,
+      "processPath": "Environment/RN_Scenes/PP_Loading_WQYJS",
+      "isChangeLighting": false,
+      "skyColorStr": "229,224,204",
+      "equatorColorStr": "137,122,112",
+      "groundColorStr": "68,112,130",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000040,
+      "idCN": "剧情/EP5/03",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP5_timeline3/EP5_timeline3",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Liechezhang.Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 0.93,
+      "camY": 3.06,
+      "camZ": -7.49,
+      "rotationX": 4.469,
+      "fOV": 50.0,
+      "processPath": "Environment/RN_Scenes/PP_Loading_7FP",
+      "isChangeLighting": false,
+      "skyColorStr": "17,24,31",
+      "equatorColorStr": "154,154,154",
+      "groundColorStr": "147,118,112",
+      "skybox": "",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "0,0,0",
+      "fogMode": "Exponential",
+      "density": 0.0,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000041,
+      "idCN": "车站搬砖/汇流塔",
+      "mod": "基础TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/spine_ani/spine_ani",
+      "x": 8.18,
+      "y": -3.92,
+      "z": -3.7,
+      "actorList": [
+        {
+          "actor": "Dorm_Katas",
+          "limitList": 80300226,
+          "replaceType": "Limit"
+        },
+        {
+          "actor": "Dorm_Conor",
+          "limitList": 80301067,
+          "replaceType": "Limit"
+        }
+      ],
+      "lczPathList": [
+        {
+          "lcz": "Dorm_Cc.Spine GameObject (Dorm_Cc).Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [
+        {
+          "id": 10000055
+        },
+        {
+          "id": 10000160
+        },
+        {
+          "id": 10000134
+        }
+      ]
+    },
+    {
+      "id": 84000042,
+      "idCN": "剧情/EP8/01",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP8_timeline1/EP8_timeline1",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": -5.58,
+      "camY": 3.44,
+      "camZ": 0.35,
+      "rotationX": 9.287001,
+      "fOV": 40.0,
+      "processPath": "",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "Environment/Sky_System/Map_Sky_Sunset_Dusk_05",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "126,247,255",
+      "fogMode": "Exponential",
+      "density": 0.02,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    },
+    {
+      "id": 84000043,
+      "idCN": "剧情/EP8/02",
+      "mod": "剧情TL",
+      "isInformalData": false,
+      "timeLinePath": "TimeLine/Prefab/EP8_timeline2/EP8_timeline2",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0,
+      "actorList": [],
+      "lczPathList": [
+        {
+          "lcz": "Spine GameObject (Dorm_Liechezhang)"
+        }
+      ],
+      "fixedActorList": [],
+      "camX": 3.49,
+      "camY": 3.08,
+      "camZ": 10.54,
+      "rotationX": 8.153001,
+      "fOV": 40.0,
+      "processPath": "",
+      "isChangeLighting": true,
+      "skyColorStr": "135,135,135",
+      "equatorColorStr": "135,135,135",
+      "groundColorStr": "135,135,135",
+      "skybox": "Environment/Sky_System/Map_Sky_Sunset_Dusk_05",
+      "cubemap": "",
+      "inTrainMap": false,
+      "isChangeFog": false,
+      "isOpenFog": false,
+      "fogColorStr": "126,247,255",
+      "fogMode": "Exponential",
+      "density": 0.02,
+      "showBtn": false,
+      "btnX": 0.0,
+      "btnY": 0.0,
+      "levelId": -1
+    }
+  ]
+}

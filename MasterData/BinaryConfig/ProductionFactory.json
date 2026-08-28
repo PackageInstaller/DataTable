@@ -1,0 +1,4921 @@
+{
+  "version": 1,
+  "hash": "1C8BBEE1FEFE3D0DD78F4BE3188C63B6D9E807F0D72C47ABC096C3A92702A0CE",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131793825549,
+    "etc": "factory=ProductionFactory"
+  },
+  "count": 157,
+  "records": [
+    {
+      "id": 84900001,
+      "idCN": "车载炼矿机/劣桦石炼制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "劣桦石炼制法",
+      "unlock": -1,
+      "iconPath": "Item/item/Small/liehuashi",
+      "condition": [
+        {
+          "id": 85400002
+        },
+        {
+          "id": 85400003
+        },
+        {
+          "id": 85400004
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-劣桦石炼制法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900001",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900002,
+      "idCN": "车载炼矿机/重桦石精炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "重桦石精炼法",
+      "unlock": 11400101,
+      "iconPath": "Item/item/Small/zhonghuashi",
+      "condition": [
+        {
+          "id": 85400006
+        },
+        {
+          "id": 85400001
+        },
+        {
+          "id": 85400021
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-重桦石精炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900002",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900003,
+      "idCN": "卡牌/引取之书",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "",
+      "condition": []
+    },
+    {
+      "id": 84900005,
+      "idCN": "阿妮塔萃取装置/桦树原质萃取法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "桦树原质萃取法",
+      "unlock": -1,
+      "iconPath": "Item/item/Small/huashu02",
+      "condition": [
+        {
+          "id": 85400010
+        },
+        {
+          "id": 85400011
+        },
+        {
+          "id": 85400012
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "阿尼塔萃取装置-桦树原质萃取法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/MachiningAnita/Home_MachiningAnita",
+          "Way3": "84900005",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900004,
+      "idCN": "车载加工车床/金箔压制指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "金箔压制指南",
+      "unlock": -1,
+      "iconPath": "Item/Goods/Small/jinbo",
+      "condition": [
+        {
+          "id": 85400015
+        },
+        {
+          "id": 85400016
+        },
+        {
+          "id": 85400017
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-金箔压制指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900004",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900006,
+      "idCN": "制造工作台/诱饵气球制作法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "诱饵气球制作法",
+      "unlock": -1,
+      "iconPath": "Item\\item\\Small\\youerqiqiu",
+      "condition": [
+        {
+          "id": 85400024
+        },
+        {
+          "id": 85400025
+        },
+        {
+          "id": 85400026
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-诱饵气球制作法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900006",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900007,
+      "idCN": "制造工作台/镀金零件制造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "镀金零件制造法",
+      "unlock": 11400015,
+      "iconPath": "Item/item/Small/jixie03",
+      "condition": [
+        {
+          "id": 85400027
+        },
+        {
+          "id": 85400028
+        },
+        {
+          "id": 85400029
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-镀金零件制造法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900007",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900008,
+      "idCN": "车载加工车床/纯金线材制法指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "纯金线材制法指南",
+      "unlock": 11400040,
+      "iconPath": "Item/Goods/Small/chunjinxiancai",
+      "condition": [
+        {
+          "id": 85400018
+        },
+        {
+          "id": 85400019
+        },
+        {
+          "id": 85400020
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-纯金线材制法指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900008",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900010,
+      "idCN": "车载加工车床/超导线圈工艺指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "超导线圈工艺指南",
+      "unlock": 11400042,
+      "iconPath": "Item/item/Small/dianqi02",
+      "condition": [
+        {
+          "id": 85400022
+        },
+        {
+          "id": 85400023
+        },
+        {
+          "id": 85400030
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-超导线圈工艺指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900010",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900009,
+      "idCN": "车载炼矿机/漆黑涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "漆黑涂料提炼法",
+      "unlock": 11400043,
+      "iconPath": "Item/item/Small/tuliao",
+      "condition": [
+        {
+          "id": 85400005
+        },
+        {
+          "id": 85400013
+        },
+        {
+          "id": 85400014
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-漆黑涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900009",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900011,
+      "idCN": "制造工作台/精密零件打磨法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "精密零件打磨法",
+      "unlock": 11400058,
+      "iconPath": "Item/item/Small/jixie02",
+      "condition": [
+        {
+          "id": 85400031
+        },
+        {
+          "id": 85400032
+        },
+        {
+          "id": 85400033
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-精密零件打磨法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900011",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900012,
+      "idCN": "制造工作台/纯金零件打造技法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "纯金零件打造技法",
+      "unlock": 11400059,
+      "iconPath": "Item/item/Small/jixie04",
+      "condition": [
+        {
+          "id": 85400035
+        },
+        {
+          "id": 85400034
+        },
+        {
+          "id": 85400036
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-纯金零件打造技法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900012",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900013,
+      "idCN": "制造工作台/诱饵爆炸气球制作法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "诱饵爆炸气球制作法",
+      "unlock": 11400079,
+      "iconPath": "Item\\item\\Small\\baozhaqiqiu",
+      "condition": [
+        {
+          "id": 85400043
+        },
+        {
+          "id": 85400044
+        },
+        {
+          "id": 85400045
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-诱饵爆炸气球制作法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900013",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900014,
+      "idCN": "车载加工车床/石墨烯剥离指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "石墨烯剥离指南",
+      "unlock": 11400077,
+      "iconPath": "Item/Goods/Small/shimoxi",
+      "condition": [
+        {
+          "id": 85400037
+        },
+        {
+          "id": 85400038
+        },
+        {
+          "id": 85400039
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-石墨烯剥离指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900014",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900015,
+      "idCN": "车载加工车床/石墨烯电池工艺指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "石墨烯电池工艺指南",
+      "unlock": 11400076,
+      "iconPath": "Item/Goods/Small/shimoxidianchi",
+      "condition": [
+        {
+          "id": 85400040
+        },
+        {
+          "id": 85400041
+        },
+        {
+          "id": 85400042
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-石墨烯电池工艺指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900015",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900016,
+      "idCN": "阿妮塔萃取装置/噪音髓液提取法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "噪音髓液提取法",
+      "unlock": 11400080,
+      "iconPath": "Item/item/Small/zaoyin02",
+      "condition": [
+        {
+          "id": 85400049
+        },
+        {
+          "id": 85400050
+        },
+        {
+          "id": 85400051
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "阿尼塔萃取装置-噪音髓液提取法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/MachiningAnita/Home_MachiningAnita",
+          "Way3": "84900016",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900017,
+      "idCN": "阿妮塔萃取装置/噪音激酶提取法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "噪音激酶提取法",
+      "unlock": 11400081,
+      "iconPath": "Item/item/Small/zaoyin03",
+      "condition": [
+        {
+          "id": 85400046
+        },
+        {
+          "id": 85400047
+        },
+        {
+          "id": 85400048
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "阿尼塔萃取装置-噪音激酶提取法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/MachiningAnita/Home_MachiningAnita",
+          "Way3": "84900017",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900018,
+      "idCN": "形而上三一仪/（废弃）提神棒棒糖制造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "提神棒棒糖制造法",
+      "unlock": -1,
+      "iconPath": "Item\\item\\Small\\XianRenBang",
+      "condition": [
+        {
+          "id": 85400053
+        },
+        {
+          "id": 85400056
+        },
+        {
+          "id": 85400057
+        }
+      ]
+    },
+    {
+      "id": 84900019,
+      "idCN": "阿妮塔萃取装置/仙人掌汁提取法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "仙人掌汁提取法",
+      "unlock": 11400038,
+      "iconPath": "Item/item/Small/xianrenzhi",
+      "condition": [
+        {
+          "id": 85400052
+        },
+        {
+          "id": 85400054
+        },
+        {
+          "id": 85400055
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "阿尼塔萃取装置-仙人掌汁提取法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/MachiningAnita/Home_MachiningAnita",
+          "Way3": "84900019",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900020,
+      "idCN": "形而上三一仪/桦石发财树工艺宝典",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "桦石发财树工艺宝典",
+      "unlock": 11400111,
+      "iconPath": "Item/Goods/Small/huashifacaishu",
+      "condition": [
+        {
+          "id": 85400058
+        },
+        {
+          "id": 85400059
+        },
+        {
+          "id": 85400060
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "形而上三一仪-桦石发财树工艺宝典",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Metaphys/Home_Metaphys",
+          "Way3": "84900020",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900021,
+      "idCN": "制造工作台/年货大礼包封装指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "年货大礼包封装指南",
+      "unlock": 11400099,
+      "iconPath": "Item/Goods/Small/Nianhuolibao",
+      "condition": [
+        {
+          "id": 85400067
+        },
+        {
+          "id": 85400068
+        },
+        {
+          "id": 85400069
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-年货大礼包封装指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900021",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900022,
+      "idCN": "制造工作台/海角水产礼盒包装指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "海角水产礼盒包装指南",
+      "unlock": 11400220,
+      "iconPath": "Item/Goods/Small/Shuichanlibao",
+      "condition": [
+        {
+          "id": 85400064
+        },
+        {
+          "id": 85400065
+        },
+        {
+          "id": 85400066
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-海角水产礼盒包装指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900022",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900023,
+      "idCN": "制造工作台/水产甄选礼盒包装指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "水产甄选礼盒包装指南",
+      "unlock": 11400219,
+      "iconPath": "Item/Goods/Small/Shuichanzhenxuanlibao",
+      "condition": [
+        {
+          "id": 85400061
+        },
+        {
+          "id": 85400062
+        },
+        {
+          "id": 85400063
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-水产甄选礼盒包装指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900023",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900024,
+      "idCN": "制造工作台/修格里严选礼包封装指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "修格里严选礼包封装指南",
+      "unlock": 11400221,
+      "iconPath": "Item/Goods/Small/Xiugelilibao",
+      "condition": [
+        {
+          "id": 85400073
+        },
+        {
+          "id": 85400074
+        },
+        {
+          "id": 85400075
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-修格里严选礼包封装指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900024",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900025,
+      "idCN": "制造工作台/西大陆甄选礼盒包装指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "西大陆甄选礼盒包装指南",
+      "unlock": 11400060,
+      "iconPath": "Item/Goods/Small/Xidalulibao",
+      "condition": [
+        {
+          "id": 85400070
+        },
+        {
+          "id": 85400071
+        },
+        {
+          "id": 85400072
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-西大陆甄选礼盒包装指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900025",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900026,
+      "idCN": "形而上三一仪/（废弃）仙人掌能量棒棒糖制造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "仙人掌能量棒棒糖制造法",
+      "unlock": -1,
+      "iconPath": "Item\\item\\Small\\NengLiangBang",
+      "condition": [
+        {
+          "id": 85400076
+        },
+        {
+          "id": 85400077
+        },
+        {
+          "id": 85400078
+        }
+      ]
+    },
+    {
+      "id": 84900027,
+      "idCN": "车载加工车床/黄铜线圈工艺指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "黄铜线圈工艺指南",
+      "unlock": 11400052,
+      "iconPath": "Item/Goods/Small/huangtongxianquan",
+      "condition": [
+        {
+          "id": 85400079
+        },
+        {
+          "id": 85400080
+        },
+        {
+          "id": 85400081
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-黄铜线圈工艺指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900027",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900028,
+      "idCN": "车载炼矿机/精钢冶炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "精钢冶炼法",
+      "unlock": 11400051,
+      "iconPath": "Item/Goods/Small/jinggang",
+      "condition": [
+        {
+          "id": 85400082
+        },
+        {
+          "id": 85400083
+        },
+        {
+          "id": 85400084
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-精钢冶炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900028",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900029,
+      "idCN": "车载炼矿机/铁轨用特种钢材锻造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "铁轨用特种钢材锻造法",
+      "unlock": 11400053,
+      "iconPath": "Item/Goods/Small/teshugangcai",
+      "condition": [
+        {
+          "id": 85400085
+        },
+        {
+          "id": 85400086
+        },
+        {
+          "id": 85400087
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-铁轨用特种钢材锻造法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900029",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900030,
+      "idCN": "车载炼矿机/高导热陶瓷制备法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "高导热陶瓷制备法",
+      "unlock": 11400225,
+      "iconPath": "Item/Goods/Small/gaodaoretaoci",
+      "condition": [
+        {
+          "id": 85400088
+        },
+        {
+          "id": 85400089
+        },
+        {
+          "id": 85400090
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-高导热陶瓷制备法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900030",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900031,
+      "idCN": "车载炼矿机/钛合金精炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "钛合金精炼法",
+      "unlock": 11400224,
+      "iconPath": "Item/Goods/Small/taihejin",
+      "condition": [
+        {
+          "id": 85400091
+        },
+        {
+          "id": 85400092
+        },
+        {
+          "id": 85400093
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-钛合金精炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900031",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900032,
+      "idCN": "车载加工车床/高导电容工艺指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "高导电容工艺指南",
+      "unlock": 11400228,
+      "iconPath": "Item/item/Small/dianqi01",
+      "condition": [
+        {
+          "id": 85400094
+        },
+        {
+          "id": 85400095
+        },
+        {
+          "id": 85400096
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-高导电容工艺指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900032",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900033,
+      "idCN": "车载炼矿机/青绿涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "青绿涂料提炼法",
+      "unlock": 11400226,
+      "iconPath": "Item/item/Small/tuliao_green",
+      "condition": [
+        {
+          "id": 85400097
+        },
+        {
+          "id": 85400098
+        },
+        {
+          "id": 85400099
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-青绿涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900033",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900034,
+      "idCN": "车载炼矿机/暮光紫涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "暮光紫涂料提炼法",
+      "unlock": 11400227,
+      "iconPath": "Item/item/Small/tuliao_purple",
+      "condition": [
+        {
+          "id": 85400100
+        },
+        {
+          "id": 85400101
+        },
+        {
+          "id": 85400102
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-暮光紫涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900034",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900035,
+      "idCN": "车载炼矿机/霞光红涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "霞光红涂料提炼法",
+      "unlock": 11400238,
+      "iconPath": "Item/item/Small/tuliao_red",
+      "condition": [
+        {
+          "id": 85400103
+        },
+        {
+          "id": 85400104
+        },
+        {
+          "id": 85400105
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-霞光红涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900035",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900036,
+      "idCN": "车载加工车床/航天元器件制造详解",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "航天元器件制造详解",
+      "unlock": 11400234,
+      "iconPath": "Item/item/Small/hangtianqiyuanjian",
+      "condition": [
+        {
+          "id": 85400106
+        },
+        {
+          "id": 85400107
+        },
+        {
+          "id": 85400108
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-航天元器件制造详解",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900036",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900037,
+      "idCN": "监狱缝纫机/尼龙晴雨伞缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "尼龙晴雨伞缝制法",
+      "unlock": 11400291,
+      "iconPath": "Item/Goods/Small/nilongqingyusan",
+      "condition": [],
+      "electricityOccupation": 50,
+      "product": 82900251,
+      "perNum": 3,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 82900243,
+          "num": 1
+        },
+        {
+          "id": 82900242,
+          "num": 1
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900039,
+      "idCN": "阿妮塔萃取装置/深眠精华萃取法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "深眠精华萃取法",
+      "unlock": 11400134,
+      "iconPath": "Item/item/Small/shenmian07",
+      "condition": [
+        {
+          "id": 85400112
+        },
+        {
+          "id": 85400113
+        },
+        {
+          "id": 85400114
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "阿尼塔萃取装置-深眠精华萃取法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/MachiningAnita/Home_MachiningAnita",
+          "Way3": "84900039",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900040,
+      "idCN": "监狱缝纫机/5纯棉T恤剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "纯棉T恤剪裁法",
+      "unlock": 11400297,
+      "iconPath": "Item/Goods/Small/Tshirt",
+      "condition": [],
+      "electricityOccupation": 50,
+      "product": 82900165,
+      "perNum": 4,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 82900228,
+          "num": 1
+        },
+        {
+          "id": 82900244,
+          "num": 1
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900042,
+      "idCN": "监狱缝纫机/3牛仔裤缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "牛仔裤缝制法",
+      "unlock": 11400296,
+      "iconPath": "Item/Goods/Small/niuzaiku",
+      "condition": [],
+      "electricityOccupation": 50,
+      "product": 82900248,
+      "perNum": 3,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 82900245,
+          "num": 1
+        },
+        {
+          "id": 82900244,
+          "num": 1
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900043,
+      "idCN": "监狱缝纫机/4纯棉布料织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "纯棉布料织造法",
+      "unlock": 11400293,
+      "iconPath": "Item/Goods/Small/chunmianbuliao",
+      "condition": [],
+      "electricityOccupation": 50,
+      "product": 82900228,
+      "perNum": 2,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 82900204,
+          "num": 1
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900044,
+      "idCN": "监狱缝纫机/1牛仔布织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "牛仔布织造法",
+      "unlock": -1,
+      "iconPath": "Item/Goods/Small/niuzaibu",
+      "condition": [],
+      "electricityOccupation": 50,
+      "product": 82900245,
+      "perNum": 5,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 82900234,
+          "num": 1
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900038,
+      "idCN": "监狱缝纫机/6棉花枕头缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "棉花枕头缝制法",
+      "unlock": 11400298,
+      "iconPath": "Item/Goods/Small/mianhuazhentou",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900253,
+      "perNum": 10,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900228,
+          "num": 3
+        },
+        {
+          "id": 82900204,
+          "num": 3
+        },
+        {
+          "id": 82900244,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900046,
+      "idCN": "监狱缝纫机/14轻奢女装剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "轻奢女装剪裁法",
+      "unlock": 11400299,
+      "iconPath": "Item/Goods/Small/qingshenvzhuang",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900018,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900228,
+          "num": 3
+        },
+        {
+          "id": 82900266,
+          "num": 3
+        },
+        {
+          "id": 82900244,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900047,
+      "idCN": "监狱缝纫机/7冲锋衣缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "冲锋衣缝制法",
+      "unlock": 11400300,
+      "iconPath": "Item/Goods/Small/chongfengyi",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900232,
+      "perNum": 14,
+      "perTime": 300,
+      "costList": [
+        {
+          "id": 82900243,
+          "num": 10
+        },
+        {
+          "id": 82900242,
+          "num": 5
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 15,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900048,
+      "idCN": "监狱缝纫机/手工编织地毯织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "手工编织地毯织造法",
+      "unlock": 11400301,
+      "iconPath": "Item/Goods/Small/shougongbianzhiditan",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900193,
+      "perNum": 8,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900204,
+          "num": 3
+        },
+        {
+          "id": 82900234,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900049,
+      "idCN": "监狱缝纫机/18羽绒服缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羽绒服缝制法",
+      "unlock": 11400302,
+      "iconPath": "Item/Goods/Small/yurongfu",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900194,
+      "perNum": 5,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900243,
+          "num": 3
+        },
+        {
+          "id": 82900272,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900050,
+      "idCN": "监狱缝纫机/2无纺布粘制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "无纺布粘制法",
+      "unlock": 11400303,
+      "iconPath": "Item/Goods/Small/wufangbu",
+      "condition": [],
+      "electricityOccupation": 50,
+      "product": 82900224,
+      "perNum": 2,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 82900247,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900051,
+      "idCN": "监狱缝纫机/抗污染防护服缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "抗污染防护服缝制法",
+      "unlock": 11400304,
+      "iconPath": "Item/Goods/Small/kangwiranfanghufu",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900173,
+      "perNum": 9,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900224,
+          "num": 8
+        },
+        {
+          "id": 82900174,
+          "num": 8
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900052,
+      "idCN": "监狱缝纫机/防弹背心缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "防弹背心缝制法",
+      "unlock": 11400305,
+      "iconPath": "Item/Goods/Small/fangdanbeixin",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900164,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900243,
+          "num": 3
+        },
+        {
+          "id": 82900256,
+          "num": 3
+        },
+        {
+          "id": 82900181,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900053,
+      "idCN": "监狱缝纫机/8灯芯绒织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "灯芯绒织造法",
+      "unlock": 11400306,
+      "iconPath": "Item/Goods/Small/dengxinrong",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900241,
+      "perNum": 3,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900204,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6
+    },
+    {
+      "id": 84900054,
+      "idCN": "监狱缝纫机/11灯芯绒休闲裤剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "灯芯绒休闲裤剪裁法",
+      "unlock": 11400307,
+      "iconPath": "Item/Goods/Small/dengxinrongxiuxianku",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900229,
+      "perNum": 9,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900241,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900055,
+      "idCN": "监狱缝纫机/9羊毛布料织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羊毛布料织造法",
+      "unlock": 11400308,
+      "iconPath": "Item/Goods/Small/yangmaobuliao",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900216,
+      "perNum": 3,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900252,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6
+    },
+    {
+      "id": 84900056,
+      "idCN": "监狱缝纫机/10法兰绒织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "法兰绒织造法",
+      "unlock": 11400309,
+      "iconPath": "Item/Goods/Small/falanrong",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900219,
+      "perNum": 3,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900252,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6
+    },
+    {
+      "id": 84900057,
+      "idCN": "监狱缝纫机/16法兰绒睡衣剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "法兰绒睡衣剪裁法",
+      "unlock": 11400310,
+      "iconPath": "Item/Goods/Small/falanrongshuiyi",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900263,
+      "perNum": 5,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900219,
+          "num": 4
+        },
+        {
+          "id": 82900244,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900058,
+      "idCN": "监狱缝纫机/12法兰绒靠垫缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "法兰绒靠垫缝制法",
+      "unlock": 11400311,
+      "iconPath": "Item/Goods/Small/falanrongkaodian",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900215,
+      "perNum": 9,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900219,
+          "num": 4
+        },
+        {
+          "id": 82900204,
+          "num": 4
+        },
+        {
+          "id": 82900244,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900059,
+      "idCN": "监狱缝纫机/13花呢织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "花呢织造法",
+      "unlock": 11400312,
+      "iconPath": "Item/Goods/Small/huane",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900227,
+      "perNum": 5,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900252,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6
+    },
+    {
+      "id": 84900060,
+      "idCN": "监狱缝纫机/17花呢上衣剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "花呢上衣剪裁法",
+      "unlock": 11400313,
+      "iconPath": "Item/Goods/Small/huaneshangyi",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900225,
+      "perNum": 8,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900227,
+          "num": 6
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900061,
+      "idCN": "监狱缝纫机/19西服面料织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "西服面料织造法",
+      "unlock": 11400315,
+      "iconPath": "Item/Goods/Small/xifubuliao",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900220,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900252,
+          "num": 9
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9
+    },
+    {
+      "id": 84900062,
+      "idCN": "监狱缝纫机/22西服剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "西服剪裁法",
+      "unlock": 11400316,
+      "iconPath": "Item/Goods/Small/xifu",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900264,
+      "perNum": 7,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900220,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900063,
+      "idCN": "监狱缝纫机/26羊绒衫剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羊绒衫剪裁法",
+      "unlock": 11400317,
+      "iconPath": "Item/Goods/Small/yangrongshan",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900255,
+      "perNum": 7,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900261,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900064,
+      "idCN": "监狱缝纫机/15蕾丝花边织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "蕾丝花边织造法",
+      "unlock": 11400318,
+      "iconPath": "Item/Goods/Small/leisihuabian",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900226,
+      "perNum": 6,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900234,
+          "num": 6
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9
+    },
+    {
+      "id": 84900065,
+      "idCN": "监狱缝纫机/20蕾丝连衣裙缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "蕾丝连衣裙缝制法",
+      "unlock": 11400319,
+      "iconPath": "Item/Goods/Small/leisilianyiqun",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900239,
+      "perNum": 5,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900226,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900066,
+      "idCN": "监狱缝纫机/21丝绸布料织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "丝绸布料织造法",
+      "unlock": 11400320,
+      "iconPath": "Item/Goods/Small/sichoubuliao",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900270,
+      "perNum": 6,
+      "perTime": 300,
+      "costList": [
+        {
+          "id": 82900273,
+          "num": 5
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 15
+    },
+    {
+      "id": 84900067,
+      "idCN": "监狱缝纫机/28金丝织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "金丝织造法",
+      "unlock": 11400321,
+      "iconPath": "Item/Goods/Small/jinsi",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900275,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900273,
+          "num": 6
+        },
+        {
+          "id": 82900015,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9
+    },
+    {
+      "id": 84900068,
+      "idCN": "监狱缝纫机/25锦缎织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "锦缎织造法",
+      "unlock": 11400322,
+      "iconPath": "Item/Goods/Small/jinduan",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900201,
+      "perNum": 9,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900273,
+          "num": 12
+        },
+        {
+          "id": 82900244,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12
+    },
+    {
+      "id": 84900069,
+      "idCN": "监狱缝纫机/27天鹅绒织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "天鹅绒织造法",
+      "unlock": 11400323,
+      "iconPath": "Item/Goods/Small/tianerong",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900268,
+      "perNum": 9,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900273,
+          "num": 12
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12
+    },
+    {
+      "id": 84900070,
+      "idCN": "监狱缝纫机/29天鹅绒椅披缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "天鹅绒椅披缝制法",
+      "unlock": 11400324,
+      "iconPath": "Item/Goods/Small/tianerongyipi",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900267,
+      "perNum": 5,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900268,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 2
+        },
+        {
+          "id": 82900244,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900071,
+      "idCN": "监狱缝纫机/30高级女装剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "高级女装剪裁法",
+      "unlock": 11400325,
+      "iconPath": "Item/Goods/Small/gaojinvzhuang",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900214,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900270,
+          "num": 3
+        },
+        {
+          "id": 82900201,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 6
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900072,
+      "idCN": "监狱缝纫机/31织锦缎织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "织锦缎织造法",
+      "unlock": 11400326,
+      "iconPath": "Item/Goods/Small/zhijinduan",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900262,
+      "perNum": 11,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900201,
+          "num": 8
+        },
+        {
+          "id": 82900275,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12
+    },
+    {
+      "id": 84900073,
+      "idCN": "监狱缝纫机/32雪金锦袍剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "雪金锦袍剪裁法",
+      "unlock": 11400329,
+      "iconPath": "Item/Goods/Small/qipao",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900223,
+      "perNum": 11,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900262,
+          "num": 8
+        },
+        {
+          "id": 82900275,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900074,
+      "idCN": "监狱缝纫机/24真丝睡衣剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "真丝睡衣剪裁法",
+      "unlock": 11400330,
+      "iconPath": "Item/Goods/Small/zhensishuiyi",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900269,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900270,
+          "num": 6
+        },
+        {
+          "id": 82900244,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900075,
+      "idCN": "监狱缝纫机/23真丝羽绒枕头缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "真丝羽绒枕头缝制法",
+      "unlock": 11400331,
+      "iconPath": "Item/Goods/Small/zhenzhiyurongzhentou",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900254,
+      "perNum": 4,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900270,
+          "num": 2
+        },
+        {
+          "id": 82900272,
+          "num": 4
+        },
+        {
+          "id": 82900244,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900087,
+      "idCN": "监狱原料车间/动物纤维/1羽绒取制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羽绒取制法",
+      "unlock": 11400353,
+      "iconPath": "Item/Goods/Small/yumao",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900272,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 248
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601352,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900088,
+      "idCN": "监狱原料车间/动物纤维/2羊毛取制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羊毛取制法",
+      "unlock": 11400351,
+      "iconPath": "Item/Goods/Small/yangmao",
+      "condition": [],
+      "electricityOccupation": 200,
+      "product": 82900252,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 495
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601352,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900089,
+      "idCN": "监狱原料车间/动物纤维/5羊绒取制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羊绒取制法",
+      "unlock": 11400353,
+      "iconPath": "Item/Goods/Small/yangrong",
+      "condition": [],
+      "electricityOccupation": 300,
+      "product": 82900261,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 990
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601352,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900090,
+      "idCN": "形而上三一仪/形而上粒子合成法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "形而上粒子合成法",
+      "unlock": -1,
+      "iconPath": "Item\\item\\Small\\xingershanglizi",
+      "condition": [
+        {
+          "id": 85400138
+        },
+        {
+          "id": 85400139
+        },
+        {
+          "id": 85400140
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "形而上三一仪-形而上粒子合成法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Metaphys/Home_Metaphys",
+          "Way3": "84900090",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900041,
+      "idCN": "监狱原料车间/人造纤维/1涤纶制造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "涤纶制造法",
+      "unlock": 11400278,
+      "iconPath": "Item/Goods/Small/dilun",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900247,
+      "perNum": 2,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 101
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601349,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900045,
+      "idCN": "监狱原料车间/人造纤维/2尼龙制造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "尼龙制造法",
+      "unlock": 11400279,
+      "iconPath": "Item/Goods/Small/nilong",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900243,
+      "perNum": 3,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 601
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601349,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6
+    },
+    {
+      "id": 84900091,
+      "idCN": "监狱原料车间/人造纤维/3雪纺织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "雪纺织造法",
+      "unlock": 11400342,
+      "iconPath": "Item/Goods/Small/xuefang",
+      "condition": [],
+      "electricityOccupation": 200,
+      "product": 82900266,
+      "perNum": 5,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 1802
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601349,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12
+    },
+    {
+      "id": 84900092,
+      "idCN": "监狱原料车间/人造纤维/4芳纶纤维制造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "芳纶纤维制造法",
+      "unlock": 11400343,
+      "iconPath": "Item/Goods/Small/fanglunxianwei",
+      "condition": [],
+      "electricityOccupation": 300,
+      "product": 82900256,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 601
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601349,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900093,
+      "idCN": "监狱原料车间/人造纤维/5碳纤维织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "碳纤维织造法",
+      "unlock": 11400344,
+      "iconPath": "Item/Goods/Small/tanxianwei",
+      "condition": [],
+      "electricityOccupation": 300,
+      "product": 82900174,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 701
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601349,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900094,
+      "idCN": "监狱原料车间/植物纤维/2亚麻织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "亚麻织造法",
+      "unlock": 11400347,
+      "iconPath": "Item/Goods/Big/yama",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900234,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 425
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601350,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900095,
+      "idCN": "监狱原料车间/植物纤维/1棉花采制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "棉花采制法",
+      "unlock": 11400346,
+      "iconPath": "Item/Goods/Small/mianhua",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900204,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 375
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601350,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900096,
+      "idCN": "监狱原料车间/缝纫工具/1绣线制造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "绣线制造法",
+      "unlock": 11400348,
+      "iconPath": "Item/Goods/Small/xiuxian",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900244,
+      "perNum": 3,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 401
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601351,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6
+    },
+    {
+      "id": 84900097,
+      "idCN": "监狱原料车间/缝纫工具/2缝纫工具包制造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "缝纫工具包制造法",
+      "unlock": 11400349,
+      "iconPath": "Item/Goods/Small/fengrengongjubao",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900242,
+      "perNum": 3,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 701
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601351,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6,
+      "warehouseType": "material"
+    },
+    {
+      "id": 84900098,
+      "idCN": "监狱原料车间/动物纤维/4蚕丝取制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "蚕丝取制法",
+      "unlock": 11400352,
+      "iconPath": "Item/Goods/Small/cansi",
+      "condition": [],
+      "electricityOccupation": 300,
+      "product": 82900273,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 792
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601352,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900099,
+      "idCN": "形而上三一仪/星云物质合成法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "星云物质合成法",
+      "unlock": 11400216,
+      "iconPath": "Item/item/Small/Exp_SSR_Small",
+      "condition": [
+        {
+          "id": 85400110
+        },
+        {
+          "id": 85400111
+        },
+        {
+          "id": 85400115
+        }
+      ]
+    },
+    {
+      "id": 84900100,
+      "idCN": "车载缝纫机/羽绒取制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羽绒取制法",
+      "unlock": 11400292,
+      "iconPath": "Item/Goods/Big/yumao",
+      "condition": [
+        {
+          "id": 85400116
+        },
+        {
+          "id": 85400119
+        },
+        {
+          "id": 85400120
+        }
+      ]
+    },
+    {
+      "id": 84900101,
+      "idCN": "车载缝纫机/羊毛取制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羊毛取制法",
+      "unlock": 11400294,
+      "iconPath": "Item/Goods/Big/yangmao",
+      "condition": [
+        {
+          "id": 85400117
+        },
+        {
+          "id": 85400121
+        },
+        {
+          "id": 85400122
+        }
+      ]
+    },
+    {
+      "id": 84900102,
+      "idCN": "车载缝纫机/羊绒取制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羊绒取制法",
+      "unlock": 11400295,
+      "iconPath": "Item/Goods/Big/yangrong",
+      "condition": [
+        {
+          "id": 85400123
+        },
+        {
+          "id": 85400124
+        },
+        {
+          "id": 85400125
+        }
+      ]
+    },
+    {
+      "id": 84900103,
+      "idCN": "车载缝纫机/牛仔布织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "牛仔布取制法",
+      "unlock": -1,
+      "iconPath": "Item/Goods/Big/niuzaibu",
+      "condition": [
+        {
+          "id": 85400127
+        },
+        {
+          "id": 85400126
+        },
+        {
+          "id": 85400141
+        }
+      ]
+    },
+    {
+      "id": 84900104,
+      "idCN": "车载缝纫机/牛仔裤缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "牛仔裤缝制法",
+      "unlock": 11400296,
+      "iconPath": "Item/Goods/Big/niuzaiku",
+      "condition": [
+        {
+          "id": 85400143
+        },
+        {
+          "id": 85400144
+        },
+        {
+          "id": 85400145
+        }
+      ]
+    },
+    {
+      "id": 84900105,
+      "idCN": "车载缝纫机/尼龙晴雨伞缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "尼龙晴雨伞缝制法",
+      "unlock": 11400291,
+      "iconPath": "Item/Goods/Big/nilongqingyusan",
+      "condition": [
+        {
+          "id": 85400128
+        },
+        {
+          "id": 85400129
+        },
+        {
+          "id": 85400130
+        }
+      ]
+    },
+    {
+      "id": 84900106,
+      "idCN": "车载缝纫机/纯棉布料织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "纯棉布料取制法",
+      "unlock": 11400293,
+      "iconPath": "Item/Goods/Big/chunmianbuliao",
+      "condition": [
+        {
+          "id": 85400131
+        },
+        {
+          "id": 85400118
+        },
+        {
+          "id": 85400142
+        }
+      ]
+    },
+    {
+      "id": 84900107,
+      "idCN": "车载缝纫机/纯棉T恤剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "纯棉T恤剪裁法",
+      "unlock": 11400297,
+      "iconPath": "Item/Goods/Big/Tshirt",
+      "condition": [
+        {
+          "id": 85400146
+        },
+        {
+          "id": 85400147
+        },
+        {
+          "id": 85400148
+        }
+      ]
+    },
+    {
+      "id": 84900108,
+      "idCN": "车载缝纫机/棉花枕头缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "棉花枕头缝制法",
+      "unlock": 11400298,
+      "iconPath": "Item/Goods/Big/mianhuazhentou",
+      "condition": [
+        {
+          "id": 85400149
+        },
+        {
+          "id": 85400150
+        },
+        {
+          "id": 85400151
+        }
+      ]
+    },
+    {
+      "id": 84900110,
+      "idCN": "车载缝纫机/冲锋衣缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "冲锋衣缝制法",
+      "unlock": 11400300,
+      "iconPath": "Item/Goods/Big/chongfengyi",
+      "condition": [
+        {
+          "id": 85400132
+        },
+        {
+          "id": 85400133
+        },
+        {
+          "id": 85400134
+        }
+      ]
+    },
+    {
+      "id": 84900109,
+      "idCN": "车载缝纫机/轻奢女装剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "轻奢女装剪裁法",
+      "unlock": 11400299,
+      "iconPath": "Item/Goods/Big/qingshenvzhuang",
+      "condition": [
+        {
+          "id": 85400152
+        },
+        {
+          "id": 85400153
+        },
+        {
+          "id": 85400154
+        }
+      ]
+    },
+    {
+      "id": 84900111,
+      "idCN": "车载缝纫机/手工编织地毯织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "手工编织地毯织造法",
+      "unlock": 11400301,
+      "iconPath": "Item/Goods/Big/shougongbianzhiditan",
+      "condition": [
+        {
+          "id": 85400135
+        },
+        {
+          "id": 85400136
+        },
+        {
+          "id": 85400137
+        }
+      ]
+    },
+    {
+      "id": 84900115,
+      "idCN": "车载缝纫机/抗污染防护服缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "抗污染防护服缝制法",
+      "unlock": 11400304,
+      "iconPath": "Item/Goods/Big/kangwiranfanghufu",
+      "condition": [
+        {
+          "id": 85400161
+        },
+        {
+          "id": 85400162
+        },
+        {
+          "id": 85400163
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载缝纫机-抗污染防护服缝制法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/SewingMachine/Home_SewingMachine",
+          "Way3": "84900115",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900116,
+      "idCN": "车载缝纫机/灯芯绒织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "灯芯绒织造法",
+      "unlock": 11400306,
+      "iconPath": "Item/Goods/Big/dengxinrong",
+      "condition": [
+        {
+          "id": 85400167
+        },
+        {
+          "id": 85400168
+        },
+        {
+          "id": 85400169
+        }
+      ]
+    },
+    {
+      "id": 84900112,
+      "idCN": "车载缝纫机/羽绒服缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羽绒服缝制法",
+      "unlock": 11400302,
+      "iconPath": "Item/Goods/Big/yurongfu",
+      "condition": [
+        {
+          "id": 85400155
+        },
+        {
+          "id": 85400156
+        },
+        {
+          "id": 85400157
+        }
+      ]
+    },
+    {
+      "id": 84900114,
+      "idCN": "车载缝纫机/无纺布粘制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "无纺布粘制法",
+      "unlock": 11400303,
+      "iconPath": "Item/Goods/Big/wufangbu",
+      "condition": [
+        {
+          "id": 85400158
+        },
+        {
+          "id": 85400159
+        },
+        {
+          "id": 85400160
+        }
+      ]
+    },
+    {
+      "id": 84900117,
+      "idCN": "车载缝纫机/灯芯绒休闲裤剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "灯芯绒休闲裤剪裁法",
+      "unlock": 11400307,
+      "iconPath": "Item/Goods/Big/dengxinrongxiuxianku",
+      "condition": [
+        {
+          "id": 85400170
+        },
+        {
+          "id": 85400171
+        },
+        {
+          "id": 85400172
+        }
+      ]
+    },
+    {
+      "id": 84900118,
+      "idCN": "车载缝纫机/羊毛布料织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羊毛布料织造法",
+      "unlock": 11400308,
+      "iconPath": "Item/Goods/Big/yangmaobuliao",
+      "condition": [
+        {
+          "id": 85400173
+        },
+        {
+          "id": 85400174
+        },
+        {
+          "id": 85400175
+        }
+      ]
+    },
+    {
+      "id": 84900119,
+      "idCN": "车载缝纫机/法兰绒织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "法兰绒织造法",
+      "unlock": 11400309,
+      "iconPath": "Item/Goods/Big/falanrong",
+      "condition": [
+        {
+          "id": 85400176
+        },
+        {
+          "id": 85400177
+        },
+        {
+          "id": 85400178
+        }
+      ]
+    },
+    {
+      "id": 84900121,
+      "idCN": "车载缝纫机/法兰绒靠垫缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "法兰绒靠垫缝制法",
+      "unlock": 11400311,
+      "iconPath": "Item/Goods/Big/falanrongkaodian",
+      "condition": [
+        {
+          "id": 85400182
+        },
+        {
+          "id": 85400183
+        },
+        {
+          "id": 85400184
+        }
+      ]
+    },
+    {
+      "id": 84900122,
+      "idCN": "车载缝纫机/花呢织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "花呢织造法",
+      "unlock": 11400312,
+      "iconPath": "Item/Goods/Big/huane",
+      "condition": [
+        {
+          "id": 85400185
+        },
+        {
+          "id": 85400186
+        },
+        {
+          "id": 85400187
+        }
+      ]
+    },
+    {
+      "id": 84900123,
+      "idCN": "车载缝纫机/花呢上衣剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "花呢上衣剪裁法",
+      "unlock": 11400313,
+      "iconPath": "Item/Goods/Big/huaneshangyi",
+      "condition": [
+        {
+          "id": 85400188
+        },
+        {
+          "id": 85400189
+        },
+        {
+          "id": 85400190
+        }
+      ]
+    },
+    {
+      "id": 84900120,
+      "idCN": "车载缝纫机/法兰绒睡衣剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "法兰绒睡衣剪裁法",
+      "unlock": 11400310,
+      "iconPath": "Item/Goods/Big/falanrongshuiyi",
+      "condition": [
+        {
+          "id": 85400179
+        },
+        {
+          "id": 85400180
+        },
+        {
+          "id": 85400181
+        }
+      ]
+    },
+    {
+      "id": 84900124,
+      "idCN": "车载缝纫机/西服面料织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "西服面料织造法",
+      "unlock": 11400315,
+      "iconPath": "Item/Goods/Big/xifubuliao",
+      "condition": [
+        {
+          "id": 85400191
+        },
+        {
+          "id": 85400192
+        },
+        {
+          "id": 85400193
+        }
+      ]
+    },
+    {
+      "id": 84900126,
+      "idCN": "车载缝纫机/羊绒衫剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羊绒衫剪裁法",
+      "unlock": 11400317,
+      "iconPath": "Item/Goods/Big/yangrongshan",
+      "condition": [
+        {
+          "id": 85400197
+        },
+        {
+          "id": 85400198
+        },
+        {
+          "id": 85400199
+        }
+      ]
+    },
+    {
+      "id": 84900129,
+      "idCN": "车载缝纫机/丝绸布料织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "丝绸布料织造法",
+      "unlock": 11400320,
+      "iconPath": "Item/Goods/Big/sichoubuliao",
+      "condition": [
+        {
+          "id": 85400206
+        },
+        {
+          "id": 85400207
+        },
+        {
+          "id": 85400208
+        }
+      ]
+    },
+    {
+      "id": 84900125,
+      "idCN": "车载缝纫机/西服剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "西服剪裁法",
+      "unlock": 11400316,
+      "iconPath": "Item/Goods/Big/xifu",
+      "condition": [
+        {
+          "id": 85400194
+        },
+        {
+          "id": 85400195
+        },
+        {
+          "id": 85400196
+        }
+      ]
+    },
+    {
+      "id": 84900127,
+      "idCN": "车载缝纫机/蕾丝花边织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "蕾丝花边织造法",
+      "unlock": 11400318,
+      "iconPath": "Item/Goods/Big/leisihuabian",
+      "condition": [
+        {
+          "id": 85400200
+        },
+        {
+          "id": 85400201
+        },
+        {
+          "id": 85400202
+        }
+      ]
+    },
+    {
+      "id": 84900128,
+      "idCN": "车载缝纫机/蕾丝连衣裙缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "蕾丝连衣裙缝制法",
+      "unlock": 11400319,
+      "iconPath": "Item/Goods/Big/leisilianyiqun",
+      "condition": [
+        {
+          "id": 85400203
+        },
+        {
+          "id": 85400204
+        },
+        {
+          "id": 85400205
+        }
+      ]
+    },
+    {
+      "id": 84900131,
+      "idCN": "车载缝纫机/锦缎织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "锦缎织造法",
+      "unlock": 11400322,
+      "iconPath": "Item/Goods/Big/jinduan",
+      "condition": [
+        {
+          "id": 85400212
+        },
+        {
+          "id": 85400213
+        },
+        {
+          "id": 85400214
+        }
+      ]
+    },
+    {
+      "id": 84900130,
+      "idCN": "车载缝纫机/金丝织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "金丝织造法",
+      "unlock": 11400321,
+      "iconPath": "Item/Goods/Big/jinsi",
+      "condition": [
+        {
+          "id": 85400209
+        },
+        {
+          "id": 85400210
+        },
+        {
+          "id": 85400211
+        }
+      ]
+    },
+    {
+      "id": 84900132,
+      "idCN": "车载缝纫机/天鹅绒织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "天鹅绒织造法",
+      "unlock": 11400323,
+      "iconPath": "Item/Goods/Big/tianerong",
+      "condition": [
+        {
+          "id": 85400215
+        },
+        {
+          "id": 85400216
+        },
+        {
+          "id": 85400217
+        }
+      ]
+    },
+    {
+      "id": 84900133,
+      "idCN": "车载缝纫机/天鹅绒椅披缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "天鹅绒椅披缝制法",
+      "unlock": 11400324,
+      "iconPath": "Item/Goods/Big/tianerongyipi",
+      "condition": [
+        {
+          "id": 85400218
+        },
+        {
+          "id": 85400219
+        },
+        {
+          "id": 85400220
+        }
+      ]
+    },
+    {
+      "id": 84900134,
+      "idCN": "车载缝纫机/高级女装剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "高级女装剪裁法",
+      "unlock": 11400325,
+      "iconPath": "Item/Goods/Big/gaojinvzhuang",
+      "condition": [
+        {
+          "id": 85400221
+        },
+        {
+          "id": 85400222
+        },
+        {
+          "id": 85400223
+        }
+      ]
+    },
+    {
+      "id": 84900136,
+      "idCN": "车载缝纫机/岚心锦织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "岚心锦织造法",
+      "unlock": 11400327,
+      "iconPath": "Item/Goods/Big/lanxinjin",
+      "condition": [
+        {
+          "id": 85400227
+        },
+        {
+          "id": 85400239
+        },
+        {
+          "id": 85400240
+        }
+      ]
+    },
+    {
+      "id": 84900137,
+      "idCN": "车载缝纫机/岚心锦服剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "岚心锦服剪裁法",
+      "unlock": 11400328,
+      "iconPath": "Item/Goods/Big/lanxinjinfu",
+      "condition": [
+        {
+          "id": 85400228
+        },
+        {
+          "id": 85400243
+        },
+        {
+          "id": 85400244
+        }
+      ]
+    },
+    {
+      "id": 84900138,
+      "idCN": "车载缝纫机/雪金锦袍剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "雪金锦袍剪裁法",
+      "unlock": 11400329,
+      "iconPath": "Item/Goods/Big/qipao",
+      "condition": [
+        {
+          "id": 85400229
+        },
+        {
+          "id": 85400230
+        },
+        {
+          "id": 85400231
+        }
+      ]
+    },
+    {
+      "id": 84900139,
+      "idCN": "车载缝纫机/真丝睡衣剪裁法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "真丝睡衣剪裁法",
+      "unlock": 11400330,
+      "iconPath": "Item/Goods/Big/zhensishuiyi",
+      "condition": [
+        {
+          "id": 85400232
+        },
+        {
+          "id": 85400233
+        },
+        {
+          "id": 85400234
+        }
+      ]
+    },
+    {
+      "id": 84900140,
+      "idCN": "车载缝纫机/真丝羽绒枕头缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "真丝羽绒枕头缝制法",
+      "unlock": 11400331,
+      "iconPath": "Item/Goods/Big/zhenzhiyurongzhentou",
+      "condition": [
+        {
+          "id": 85400235
+        },
+        {
+          "id": 85400236
+        },
+        {
+          "id": 85400237
+        }
+      ]
+    },
+    {
+      "id": 84900141,
+      "idCN": "车载缝纫机/宇航服缝制指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "宇航服缝制指南",
+      "unlock": 11400332,
+      "iconPath": "Item/Goods/Big/yuhangfu",
+      "condition": [
+        {
+          "id": 85400238
+        },
+        {
+          "id": 85400241
+        },
+        {
+          "id": 85400242
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载缝纫机-宇航服缝制指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/SewingMachine/Home_SewingMachine",
+          "Way3": "84900141",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900135,
+      "idCN": "车载缝纫机/织锦缎织造法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "织锦缎织造法",
+      "unlock": 11400326,
+      "iconPath": "Item/Goods/Big/zhijinduan",
+      "condition": [
+        {
+          "id": 85400224
+        },
+        {
+          "id": 85400225
+        },
+        {
+          "id": 85400226
+        }
+      ]
+    },
+    {
+      "id": 84900077,
+      "idCN": "监狱缝纫机/宇航服缝制指南",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "宇航服缝制指南",
+      "unlock": 11400332,
+      "iconPath": "Item/Goods/Small/yuhangfu",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900233,
+      "perNum": 4,
+      "perTime": 300,
+      "costList": [
+        {
+          "id": 82900222,
+          "num": 5
+        },
+        {
+          "id": 82900256,
+          "num": 5
+        },
+        {
+          "id": 82900174,
+          "num": 5
+        },
+        {
+          "id": 82900243,
+          "num": 5
+        },
+        {
+          "id": 82900242,
+          "num": 5
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 15,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900078,
+      "idCN": "监狱缝纫机/34岚心锦服剪裁法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "岚心锦服剪裁法",
+      "unlock": 11400328,
+      "iconPath": "Item/Goods/Small/lanxinjinfu",
+      "condition": [],
+      "electricityOccupation": 200,
+      "product": 82900231,
+      "perNum": 11,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900230,
+          "num": 8
+        },
+        {
+          "id": 82900275,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 8
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900076,
+      "idCN": "监狱缝纫机/33岚心锦织造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "岚心锦织造法",
+      "unlock": 11400327,
+      "iconPath": "Item/Goods/Small/lanxinjin",
+      "condition": [],
+      "electricityOccupation": 200,
+      "product": 82900230,
+      "perNum": 11,
+      "perTime": 240,
+      "costList": [
+        {
+          "id": 82900201,
+          "num": 8
+        },
+        {
+          "id": 82900275,
+          "num": 4
+        },
+        {
+          "id": 82900242,
+          "num": 4
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601353,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 12
+    },
+    {
+      "id": 84900079,
+      "idCN": "监狱原料车间/人造纤维/6太空棉制造法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "太空棉制造法",
+      "unlock": 11400345,
+      "iconPath": "Item/Goods/Small/taikongmian",
+      "condition": [],
+      "electricityOccupation": 300,
+      "product": 82900222,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 1125
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601349,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3
+    },
+    {
+      "id": 84900113,
+      "idCN": "制造工作台/银制列车工艺品制作指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "银制列车工艺品制作指南",
+      "unlock": 11400314,
+      "iconPath": "Item/Goods/Small/yinzhilieche",
+      "condition": [
+        {
+          "id": 85400245
+        },
+        {
+          "id": 85400246
+        },
+        {
+          "id": 85400247
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-银制列车工艺品制作指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900113",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900080,
+      "idCN": "制造工作台/金制列车工艺品制作指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "金制列车工艺品制作指南",
+      "unlock": 11400337,
+      "iconPath": "Item/Goods/Small/jinzhilieche",
+      "condition": [
+        {
+          "id": 85400248
+        },
+        {
+          "id": 85400249
+        },
+        {
+          "id": 85400250
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "制造工作台-金制列车工艺品制作指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900080",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900081,
+      "idCN": "制造工作台/宝石工艺品制作宝典",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "宝石工艺品制作宝典",
+      "unlock": 11400340,
+      "iconPath": "Item/Goods/Small/baoshigongyiping",
+      "condition": [
+        {
+          "id": 85400109
+        },
+        {
+          "id": 85400251
+        },
+        {
+          "id": 85400252
+        }
+      ],
+      "Getway": []
+    },
+    {
+      "id": 84900082,
+      "idCN": "车载缝纫机/防弹背心缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "防弹背心缝制法",
+      "unlock": 11400305,
+      "iconPath": "Item/Goods/Big/fangdanbeixin",
+      "condition": [
+        {
+          "id": 85400164
+        },
+        {
+          "id": 85400165
+        },
+        {
+          "id": 85400166
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载缝纫机-防弹背心缝制法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/SewingMachine/Home_SewingMachine",
+          "Way3": "84900082",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900083,
+      "idCN": "车载缝纫机/阿妮塔连体衣缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "阿妮塔连体衣缝制法",
+      "unlock": 11400359,
+      "iconPath": "Item/Goods/Big/anitaliantiyi",
+      "condition": [
+        {
+          "id": 85400253
+        },
+        {
+          "id": 85400254
+        },
+        {
+          "id": 85400255
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载缝纫机-阿妮塔连体衣缝制法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/SewingMachine/Home_SewingMachine",
+          "Way3": "84900083",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900084,
+      "idCN": "监狱缝纫机/阿妮塔连体衣缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "阿妮塔连体衣缝制法",
+      "unlock": 11400359,
+      "iconPath": "Item/Goods/small/anitaliantiyi",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900217,
+      "perNum": 7,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900256,
+          "num": 6
+        },
+        {
+          "id": 82900222,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        },
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900085,
+      "idCN": "车载加工车床/碳纤维索工艺指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "碳纤维索工艺指南",
+      "unlock": 11400392,
+      "iconPath": "Item/Goods/Small/tanxianweisuo",
+      "condition": [
+        {
+          "id": 85400258
+        },
+        {
+          "id": 85400256
+        },
+        {
+          "id": 85400257
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-碳纤维索工艺指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900085",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900086,
+      "idCN": "车载炼矿机/玄武岩纤维溶制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "玄武岩纤维溶制法",
+      "unlock": 11400393,
+      "iconPath": "Item/Goods/Small/xuanwuyanxianwei",
+      "condition": [
+        {
+          "id": 85400260
+        },
+        {
+          "id": 85400259
+        },
+        {
+          "id": 85400261
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-玄武岩纤维溶制法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900086",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900142,
+      "idCN": "车载缝纫机/羽绒睡袋缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "羽绒睡袋缝制法",
+      "unlock": 11400394,
+      "iconPath": "Item/Goods/Big/yurongshuidai",
+      "condition": [
+        {
+          "id": 85400264
+        },
+        {
+          "id": 85400263
+        },
+        {
+          "id": 85400262
+        }
+      ]
+    },
+    {
+      "id": 84900143,
+      "idCN": "监狱原料车间/动物纤维/3鹅绒取制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "鹅绒取制法",
+      "unlock": 11400395,
+      "iconPath": "Item/Goods/Small/erong",
+      "condition": [],
+      "electricityOccupation": 200,
+      "product": 82900304,
+      "perNum": 1,
+      "perTime": 60,
+      "costList": [
+        {
+          "id": 11400001,
+          "num": 396
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 1
+        }
+      ],
+      "formulaType": 12601352,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 3,
+      "warehouseType": "material"
+    },
+    {
+      "id": 84900144,
+      "idCN": "监狱缝纫机/35羽绒睡袋缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "羽绒睡袋缝制法",
+      "unlock": 11400394,
+      "iconPath": "Item/Goods/Small/yurongshuidai",
+      "condition": [],
+      "electricityOccupation": 100,
+      "product": 82900305,
+      "perNum": 7,
+      "perTime": 120,
+      "costList": [
+        {
+          "id": 82900228,
+          "num": 2
+        },
+        {
+          "id": 82900272,
+          "num": 2
+        },
+        {
+          "id": 82900242,
+          "num": 2
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 6,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900145,
+      "idCN": "监狱缝纫机/36鹅绒被缝制法",
+      "mod": "监狱配方",
+      "isInformalData": false,
+      "name": "鹅绒被缝制法",
+      "unlock": 11400396,
+      "iconPath": "Item/Goods/Small/erongbei",
+      "condition": [],
+      "electricityOccupation": 150,
+      "product": 82900303,
+      "perNum": 10,
+      "perTime": 180,
+      "costList": [
+        {
+          "id": 82900228,
+          "num": 3
+        },
+        {
+          "id": 82900304,
+          "num": 3
+        },
+        {
+          "id": 82900242,
+          "num": 3
+        }
+      ],
+      "programmeList": [
+        {
+          "count": 2
+        },
+        {
+          "count": 4
+        },
+        {
+          "count": 8
+        }
+      ],
+      "formulaType": 12601354,
+      "isAdded": true,
+      "expGetList": [
+        {
+          "count": 0,
+          "id": 11400114
+        }
+      ],
+      "addScore": 9,
+      "warehouseType": "product"
+    },
+    {
+      "id": 84900146,
+      "idCN": "车载缝纫机/鹅绒被缝制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "鹅绒被缝制法",
+      "unlock": 11400396,
+      "iconPath": "Item/Goods/Big/erongbei",
+      "condition": [
+        {
+          "id": 85400266
+        },
+        {
+          "id": 85400267
+        },
+        {
+          "id": 85400265
+        }
+      ]
+    },
+    {
+      "id": 84900147,
+      "idCN": "车载缝纫机/鹅绒取制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "鹅绒取制法",
+      "unlock": 11400397,
+      "iconPath": "Item/Goods/Big/erong",
+      "condition": [
+        {
+          "id": 85400269
+        },
+        {
+          "id": 85400268
+        },
+        {
+          "id": 85400270
+        }
+      ]
+    },
+    {
+      "id": 84900148,
+      "idCN": "车载炼矿机/孔雀绿涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "孔雀绿涂料提炼法",
+      "unlock": 11400623,
+      "iconPath": "Item/item/Small/tuliao_green2",
+      "condition": [
+        {
+          "id": 85400273
+        },
+        {
+          "id": 85400271
+        },
+        {
+          "id": 85400272
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-孔雀绿涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900148",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900149,
+      "idCN": "车载炼矿机/静谧蓝涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "静谧蓝涂料提炼法",
+      "unlock": 11400624,
+      "iconPath": "Item/item/Small/tuliao_blue",
+      "condition": [
+        {
+          "id": 85400274
+        },
+        {
+          "id": 85400275
+        },
+        {
+          "id": 85400276
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-静谧蓝涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900149",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900150,
+      "idCN": "车载炼矿机/竞速黄涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "竞速黄涂料提炼法",
+      "unlock": 11400625,
+      "iconPath": "Item/item/Small/tuliao_yellow",
+      "condition": [
+        {
+          "id": 85400277
+        },
+        {
+          "id": 85400278
+        },
+        {
+          "id": 85400279
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-竞速黄涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900150",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900151,
+      "idCN": "车载炼矿机/钛白涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "钛白涂料提炼法",
+      "unlock": 11400626,
+      "iconPath": "Item/item/Small/tuliao_white",
+      "condition": [
+        {
+          "id": 85400282
+        },
+        {
+          "id": 85400280
+        },
+        {
+          "id": 85400281
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-钛白涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900151",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900152,
+      "idCN": "车载炼矿机/皓月银涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "皓月银涂料提炼法",
+      "unlock": 11400627,
+      "iconPath": "Item/item/Small/tuliao_silvery",
+      "condition": [
+        {
+          "id": 85400283
+        },
+        {
+          "id": 85400284
+        },
+        {
+          "id": 85400285
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-皓月银涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900152",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900153,
+      "idCN": "车载炼矿机/熔岩橙涂料提炼法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "熔岩橙涂料提炼法",
+      "unlock": 11400628,
+      "iconPath": "Item/item/Small/tuliao_orange",
+      "condition": [
+        {
+          "id": 85400286
+        },
+        {
+          "id": 85400287
+        },
+        {
+          "id": 85400288
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载链矿机-熔岩橙涂料提炼法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Refiner/Home_Refiner",
+          "Way3": "84900153",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900154,
+      "idCN": "车载加工车床/钛钢轨条压制法",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "钛钢轨条压制法",
+      "unlock": 11400698,
+      "iconPath": "Item/Goods/Small/taigangguitiao",
+      "condition": [
+        {
+          "id": 85400291
+        },
+        {
+          "id": 85400289
+        },
+        {
+          "id": 85400290
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-钛钢轨条压制法",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "84900154",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900156,
+      "idCN": "车载加工车床/树脂复合木板层压指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "树脂复合木板层压指南",
+      "unlock": 11400910,
+      "iconPath": "Item/Goods/Small/shuzhifuhemuban180",
+      "condition": [
+        {
+          "id": 85400292
+        },
+        {
+          "id": 85400293
+        },
+        {
+          "id": 85400294
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "车载加工车床-树脂复合木板层压指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Home_MachiningLathe",
+          "Way3": "",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900157,
+      "idCN": "制造工作台/精钢伐木斧工艺指南",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "精钢伐木斧工艺指南",
+      "unlock": 11400911,
+      "iconPath": "Item/Goods/Small/famufu180",
+      "condition": [
+        {
+          "id": 85400297
+        },
+        {
+          "id": 85400295
+        },
+        {
+          "id": 85400296
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "精钢伐木斧工艺指南",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900157",
+          "funcId": -1
+        }
+      ]
+    },
+    {
+      "id": 84900158,
+      "idCN": "制造工作台/黑胡桃木座钟工艺宝典",
+      "mod": "默认配方",
+      "isInformalData": false,
+      "name": "黑胡桃木座钟工艺宝典",
+      "unlock": 11400337,
+      "iconPath": "Item/Goods/Small/heihutaozhong180",
+      "condition": [
+        {
+          "id": 85400302
+        },
+        {
+          "id": 85400303
+        },
+        {
+          "id": 85400301
+        }
+      ],
+      "Getway": [
+        {
+          "DisplayName": "黑胡桃木座钟工艺宝典",
+          "FromLevel": -1,
+          "UIName": "UI/Home_MachiningLathe/Worktable/Home_Worktable",
+          "Way3": "84900158",
+          "funcId": -1
+        }
+      ]
+    }
+  ]
+}

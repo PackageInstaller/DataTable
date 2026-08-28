@@ -1,0 +1,841 @@
+{
+  "version": 1,
+  "hash": "7378693701275453CC99292BCC3E856F96E4C9137C4DD27ABF7BEB14FD25D4EB",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131817523902,
+    "etc": "factory=TrainSoundFactory"
+  },
+  "count": 10,
+  "records": [
+    {
+      "id": 88100001,
+      "idCN": "1莉薇娅",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "莉薇娅",
+      "soundDes": "无垠号CBCRR23的默认语音播报。由列车长助理莉薇娅担任播报员。",
+      "soundIcon": "RolePlus/Livia/Face",
+      "soundIndex": 1,
+      "unLockCost": [],
+      "voiceDeparture": [
+        {
+          "id": 30000984,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30000984,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30003190,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30003190,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        }
+      ],
+      "voiceArrive": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        }
+      ],
+      "voiceArrivePassenger": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        }
+      ],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30000984
+    },
+    {
+      "id": 88100002,
+      "idCN": "2及川播报",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "及川いぞう",
+      "soundDes": "受科伦巴商会邀请为无垠号提供特别播报的及川いぞう先生的语音播报。",
+      "soundIcon": "RolePlus/Fenia/Face",
+      "soundIndex": 2,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30002683,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30002683,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005567,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005567,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [],
+      "voiceArrivePassenger": [],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30002683
+    },
+    {
+      "id": 88100003,
+      "idCN": "3堺正幸",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "堺正幸",
+      "soundDes": "受科伦巴商会邀请为无垠号提供特别播报的堺正幸先生的语音播报。曾担任日本JR北海道·东日本新干线等多条线路车内自动播报员。",
+      "soundIcon": "",
+      "soundIndex": 3,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30005596,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30005596,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005605,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005605,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [],
+      "voiceArrivePassenger": [],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30005596
+    },
+    {
+      "id": 88100004,
+      "idCN": "4水谷",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "水谷ケイコ",
+      "soundDes": "受科伦巴商会邀请为无垠号提供特别播报的水谷ケイコ女士的语音播报。曾担任日本东武各线路、新京成电铁-8900形等多条线路车内自动播报员。",
+      "soundIcon": "",
+      "soundIndex": 4,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30005620,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30005620,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005629,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005629,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [],
+      "voiceArrivePassenger": [],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30005620
+    },
+    {
+      "id": 88100005,
+      "idCN": "5克里斯泰勒",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "克里斯泰勒·夏里",
+      "soundDes": "受科伦巴商会邀请为无垠号提供特别播报的克里斯泰勒·夏里女士的语音播报。曾担任JR东日本首都圈各线路、东急各线路等多条线路车内英语自动播报员。",
+      "soundIcon": "",
+      "soundIndex": 5,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30005643,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30005643,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005653,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30005653,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [],
+      "voiceArrivePassenger": [],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30005653
+    },
+    {
+      "id": 88100006,
+      "idCN": "6无名",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "无名",
+      "soundDes": "异乡来客·无名录制的列车播报。无垠号的特殊保镖，从今天开始工作！",
+      "soundIcon": "",
+      "soundIndex": 6,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30006171,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30006171,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006193,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006193,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [],
+      "voiceArrivePassenger": [],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30006171
+    },
+    {
+      "id": 88100007,
+      "idCN": "7生驹",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "生驹",
+      "soundDes": "异乡来客·生驹录制的列车播报。虽说是被半强行地委托了录制，不过他看起来很开心。",
+      "soundIcon": "",
+      "soundIndex": 7,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006269,
+          "type": ""
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006269,
+          "type": ""
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006279,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006279,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [],
+      "voiceArrivePassenger": [],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30006269
+    },
+    {
+      "id": 88100008,
+      "idCN": "8莉薇娅韩语",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "莉薇娅（韩）",
+      "soundDes": "无垠号CBCRR23的默认语音播报。由列车长助理莉薇娅担任播报员。",
+      "soundIcon": "RolePlus/Livia/Face",
+      "soundIndex": 8,
+      "unLockCost": [
+        {
+          "id": 11400001,
+          "num": 10000
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30006224,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006227,
+          "type": ""
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30006224,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006227,
+          "type": ""
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30006412,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006413,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30006412,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006413,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        },
+        {
+          "id": 30006410,
+          "type": ""
+        }
+      ],
+      "voiceArrivePassenger": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        },
+        {
+          "id": 30006410,
+          "type": ""
+        }
+      ],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30006224
+    },
+    {
+      "id": 88100009,
+      "idCN": "9韩国声优男",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "韩国声优男",
+      "soundDes": "雷索纳斯特别邀请在《KTX》、《ITX-青春》、《新村号》和《木槿花号》担任播报员Go Gu-in为无垠号播报！他的声音平稳流畅，让人有身临其境之感，仿佛此刻已经踏上漫漫旅途。",
+      "soundIcon": "",
+      "soundIndex": 9,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30006405,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationStart,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006411,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006406,
+          "type": ""
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30006405,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationStart,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006411,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006406,
+          "type": ""
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30006408,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006409,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30006408,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006409,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        },
+        {
+          "id": 30006407,
+          "type": ""
+        }
+      ],
+      "voiceArrivePassenger": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        },
+        {
+          "id": 30006407,
+          "type": ""
+        }
+      ],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30006405
+    },
+    {
+      "id": 88100010,
+      "idCN": "10韩国声优女",
+      "mod": "默认",
+      "isInformalData": false,
+      "soundName": "韩国声优女",
+      "soundDes": "雷索纳斯特别邀请首尔地铁1~8号线的播音员姜羲先为无垠号播报！她播音语调沉稳而准确，带领列车进入更加真实的世界。",
+      "soundIcon": "",
+      "soundIndex": 10,
+      "unLockCost": [
+        {
+          "id": 11400005,
+          "num": 300
+        }
+      ],
+      "voiceDeparture": [
+        {
+          "id": 30006432,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationStart,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006433,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006434,
+          "type": ""
+        }
+      ],
+      "voiceDeparturePassenger": [
+        {
+          "id": 30006432,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationStart,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006433,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceDeparturePassenger"
+        },
+        {
+          "id": 30006434,
+          "type": ""
+        }
+      ],
+      "voiceWillArrive": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30006436,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006437,
+          "type": ""
+        }
+      ],
+      "voiceWillArrivePassenger": [
+        {
+          "id": 30001938,
+          "type": ""
+        },
+        {
+          "id": 30006436,
+          "type": ""
+        },
+        {
+          "id": -1,
+          "type": "stationEnd,voiceWillArrivePassenger"
+        },
+        {
+          "id": 30006437,
+          "type": ""
+        }
+      ],
+      "voiceArrive": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        },
+        {
+          "id": 30006435,
+          "type": ""
+        }
+      ],
+      "voiceArrivePassenger": [
+        {
+          "id": -1,
+          "type": "stationEnd,voiceArrivePassenger"
+        },
+        {
+          "id": 30006435,
+          "type": ""
+        }
+      ],
+      "voiceGetIn": [],
+      "voiceGetInPassenger": [],
+      "tryListenId": 30006432
+    }
+  ]
+}

@@ -1,0 +1,3585 @@
+{
+  "version": 1,
+  "hash": "B0CD31FCD3A913628B076A6ACAD49B400662A7C2D421848EA2A7BE565566FF83",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131696632017,
+    "etc": "factory=KabaneriMapFactory"
+  },
+  "count": 17,
+  "records": [
+    {
+      "id": 97000001,
+      "idCN": "关卡1",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 90,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 17.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 350,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 350,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 150000,
+          "time": 90
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 48000
+        },
+        {
+          "id": 11400004,
+          "num": 18
+        },
+        {
+          "id": 11400389,
+          "num": 10
+        },
+        {
+          "id": 11700147,
+          "num": 10
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 24,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 1
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 13,
+          "eventid": 72800030,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        }
+      ],
+      "levelId": "I",
+      "levelName": "铁道清缴I",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅰ"
+    },
+    {
+      "id": 97000003,
+      "idCN": "关卡2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 105,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 17.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 380,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 380,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 200000,
+          "time": 105
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 60000
+        },
+        {
+          "id": 11400004,
+          "num": 21
+        },
+        {
+          "id": 11400389,
+          "num": 13
+        },
+        {
+          "id": 11700147,
+          "num": 13
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 30,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 1
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500018,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 12,
+          "eventid": 72800029,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 20,
+          "eventid": 72800015,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "Ⅱ",
+      "levelName": "铁道清缴Ⅱ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅱ"
+    },
+    {
+      "id": 97000004,
+      "idCN": "关卡3",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 120,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 16.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 410,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 410,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 260000,
+          "time": 120
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 72000
+        },
+        {
+          "id": 11400004,
+          "num": 24
+        },
+        {
+          "id": 11400389,
+          "num": 16
+        },
+        {
+          "id": 11700147,
+          "num": 16
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 36,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 1
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500022,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 11,
+          "eventid": 72800028,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 30,
+          "eventid": 72800016,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "Ⅲ",
+      "levelName": "铁道清缴Ⅲ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅲ"
+    },
+    {
+      "id": 97000002,
+      "idCN": "关卡4",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 135,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 15.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 440,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 440,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 330000,
+          "time": 135
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 84000
+        },
+        {
+          "id": 11400004,
+          "num": 27
+        },
+        {
+          "id": 11400389,
+          "num": 20
+        },
+        {
+          "id": 11700147,
+          "num": 20
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 42,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 1
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 10,
+          "eventid": 72800027,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 40,
+          "eventid": 72800017,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "Ⅳ",
+      "levelName": "铁道清缴Ⅳ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅳ"
+    },
+    {
+      "id": 97000005,
+      "idCN": "关卡5",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 150,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 14.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 470,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 470,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 410000,
+          "time": 150
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 96000
+        },
+        {
+          "id": 11400004,
+          "num": 30
+        },
+        {
+          "id": 11400389,
+          "num": 24
+        },
+        {
+          "id": 11700147,
+          "num": 24
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 48,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 1
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500004,
+          "weight": 1
+        },
+        {
+          "id": 90500012,
+          "weight": 1
+        },
+        {
+          "id": 90500013,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 9,
+          "eventid": 72800026,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 5,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 5,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 5,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 50,
+          "eventid": 72800018,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "V",
+      "levelName": "铁道清缴V",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅴ"
+    },
+    {
+      "id": 97000006,
+      "idCN": "关卡6",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 180,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 13.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 500,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 500,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 600000,
+          "time": 180
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 120000
+        },
+        {
+          "id": 11400004,
+          "num": 36
+        },
+        {
+          "id": 11400389,
+          "num": 30
+        },
+        {
+          "id": 11700147,
+          "num": 30
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 60,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 1
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        },
+        {
+          "id": 90500022,
+          "weight": 1
+        },
+        {
+          "id": 90500018,
+          "weight": 1
+        },
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        },
+        {
+          "id": 90500024,
+          "weight": 1
+        },
+        {
+          "id": 90500039,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800003,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 6,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 6,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 6,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 60,
+          "eventid": 72800019,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "Ⅵ",
+      "levelName": "铁道清缴Ⅵ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅵ"
+    },
+    {
+      "id": 97000007,
+      "idCN": "关卡7",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 300,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 13.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 530,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 530,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 0,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 1000000,
+          "time": 300
+        }
+      ],
+      "completeAwardS": [],
+      "tokenRatio": 0.0,
+      "tokenId": 11400389,
+      "fatigueStart": 0,
+      "itemCost": [
+        {
+          "id": 11400414,
+          "num": 0
+        }
+      ],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        },
+        {
+          "id": 90500022,
+          "weight": 1
+        },
+        {
+          "id": 90500018,
+          "weight": 1
+        },
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        },
+        {
+          "id": 90500024,
+          "weight": 1
+        },
+        {
+          "id": 90500039,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800003,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 70,
+          "eventid": 72800020,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 3,
+          "loopTime": 55
+        }
+      ],
+      "levelId": "Ⅶ",
+      "levelName": "铁道清缴Ⅶ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅶ"
+    },
+    {
+      "id": 97000008,
+      "idCN": "无限测试",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 300,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 13.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 530,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 530,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 0,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 180000,
+          "time": 90
+        },
+        {
+          "pointLimit": 210000,
+          "time": 105
+        },
+        {
+          "pointLimit": 320000,
+          "time": 120
+        },
+        {
+          "pointLimit": 360000,
+          "time": 135
+        },
+        {
+          "pointLimit": 500000,
+          "time": 150
+        },
+        {
+          "pointLimit": 600000,
+          "time": 180
+        },
+        {
+          "pointLimit": 1000000,
+          "time": 300
+        }
+      ],
+      "completeAwardS": [],
+      "tokenRatio": 0.0,
+      "tokenId": 11400389,
+      "fatigueStart": 0,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        },
+        {
+          "id": 90500022,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "none",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "none",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800003,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        }
+      ],
+      "levelId": "Ⅶ",
+      "levelName": "铁道清缴Ⅶ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅶ"
+    },
+    {
+      "id": 97000009,
+      "idCN": "仅视频用/测试关卡",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "UnlimitTime",
+      "gameTime": 300,
+      "baseMonsterNum": 30,
+      "baseMonsterNumP1": 17.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 350,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 350,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 10,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100001,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [],
+      "grid3Pool": [],
+      "rewardLimit": [],
+      "completeAwardS": [],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 0,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "grid",
+          "eventVal": 2,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 3,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 4,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 5,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 6,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 7,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 8,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        },
+        {
+          "eventType": "grid",
+          "eventVal": 9,
+          "eventid": 72800022,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 5
+        }
+      ],
+      "levelId": "I",
+      "levelName": "铁道清缴I",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅰ"
+    },
+    {
+      "id": 97000011,
+      "idCN": "全桦树狂潮/金币/关卡1",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 75,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 17.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 350,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 350,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 41,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 43,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 72000,
+          "time": 75
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 50000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 30,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 13,
+          "eventid": 72800030,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        }
+      ],
+      "levelId": "1",
+      "levelName": "铁道清缴I",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅰ"
+    },
+    {
+      "id": 97000012,
+      "idCN": "全桦树狂潮/金币/关卡2",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 90,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 17.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 380,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 380,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 26,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 120000,
+          "time": 90
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 60000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 40,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500018,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 12,
+          "eventid": 72800029,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 20,
+          "eventid": 72800015,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "2",
+      "levelName": "铁道清缴Ⅱ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅱ"
+    },
+    {
+      "id": 97000013,
+      "idCN": "全桦树狂潮/金币/关卡3",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 105,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 16.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 410,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 410,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 29,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 11,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 178000,
+          "time": 105
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 70000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 50,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500022,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 11,
+          "eventid": 72800028,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 30,
+          "eventid": 72800016,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "3",
+      "levelName": "铁道清缴Ⅲ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅲ"
+    },
+    {
+      "id": 97000014,
+      "idCN": "全桦树狂潮/金币/关卡4",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 120,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 15.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 440,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 440,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 32,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 276000,
+          "time": 120
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 80000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 60,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 10,
+          "eventid": 72800027,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 4,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 40,
+          "eventid": 72800017,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "4",
+      "levelName": "铁道清缴Ⅳ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅳ"
+    },
+    {
+      "id": 97000015,
+      "idCN": "全桦树狂潮/金币/关卡5",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 135,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 14.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 470,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 470,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 42,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 394000,
+          "time": 135
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 90000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 70,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500004,
+          "weight": 1
+        },
+        {
+          "id": 90500012,
+          "weight": 1
+        },
+        {
+          "id": 90500013,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 9,
+          "eventid": 72800026,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 5,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 5,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 5,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 50,
+          "eventid": 72800018,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "5",
+      "levelName": "铁道清缴V",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅴ"
+    },
+    {
+      "id": 97000016,
+      "idCN": "全桦树狂潮/金币/关卡7",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 165,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 13.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 530,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 530,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 54,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 700000,
+          "time": 165
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 110000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 90,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        },
+        {
+          "id": 90500022,
+          "weight": 1
+        },
+        {
+          "id": 90500018,
+          "weight": 1
+        },
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        },
+        {
+          "id": 90500024,
+          "weight": 1
+        },
+        {
+          "id": 90500039,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800003,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 70,
+          "eventid": 72800020,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 3,
+          "loopTime": 55
+        }
+      ],
+      "levelId": "7",
+      "levelName": "铁道清缴Ⅶ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅵ"
+    },
+    {
+      "id": 97000017,
+      "idCN": "全桦树狂潮/金币/关卡8",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 180,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 13.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 560,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 560,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 72,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 2,
+          "endTime": 999999,
+          "monsID": 72600023,
+          "startTime": 0
+        },
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 880000,
+          "time": 180
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 120000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 100,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        },
+        {
+          "id": 90500022,
+          "weight": 1
+        },
+        {
+          "id": 90500018,
+          "weight": 1
+        },
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        },
+        {
+          "id": 90500024,
+          "weight": 1
+        },
+        {
+          "id": 90500039,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800003,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 3,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 70,
+          "eventid": 72800020,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 3,
+          "loopTime": 55
+        }
+      ],
+      "levelId": "8",
+      "levelName": "铁道清缴VIII",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅵ"
+    },
+    {
+      "id": 97000020,
+      "idCN": "全桦树狂潮/金币/关卡6",
+      "mod": "默认类型",
+      "isInformalData": false,
+      "mapType": "LimitTime",
+      "gameTime": 150,
+      "baseMonsterNum": 21,
+      "baseMonsterNumP1": 13.0,
+      "baseMonsterNumP2": 180.0,
+      "baseMonsterHp": 500,
+      "baseMonsterHpRandom": 100,
+      "baseMonsterHpP1": 100.0,
+      "baseMonsterHpP2": 90.0,
+      "baseMonsterAtk": 500,
+      "bossHpParam": 3.0,
+      "bossAtkParam": 3.0,
+      "baseMonsterSocre": 46,
+      "scoreParam": 0.0,
+      "monsterGenertor": [
+        {
+          "Weight": 34,
+          "endTime": 999999,
+          "monsID": 72600002,
+          "startTime": 0
+        },
+        {
+          "Weight": 5,
+          "endTime": 999999,
+          "monsID": 72600021,
+          "startTime": 0
+        },
+        {
+          "Weight": 13,
+          "endTime": 999999,
+          "monsID": 72600019,
+          "startTime": 0
+        }
+      ],
+      "gridPool": [
+        {
+          "grid": 97100002,
+          "weight": 100
+        },
+        {
+          "grid": 97100008,
+          "weight": 100
+        },
+        {
+          "grid": 97100001,
+          "weight": 100
+        },
+        {
+          "grid": 97100003,
+          "weight": 100
+        },
+        {
+          "grid": 97100009,
+          "weight": 100
+        }
+      ],
+      "grid2Pool": [
+        {
+          "grid": 97100006,
+          "weight": 100
+        },
+        {
+          "grid": 97100014,
+          "weight": 100
+        },
+        {
+          "grid": 97100015,
+          "weight": 100
+        },
+        {
+          "grid": 97100016,
+          "weight": 100
+        },
+        {
+          "grid": 97100004,
+          "weight": 100
+        },
+        {
+          "grid": 97100013,
+          "weight": 100
+        },
+        {
+          "grid": 97100005,
+          "weight": 100
+        },
+        {
+          "grid": 97100012,
+          "weight": 100
+        }
+      ],
+      "grid3Pool": [
+        {
+          "grid": 97100007,
+          "weight": 100
+        },
+        {
+          "grid": 97100010,
+          "weight": 100
+        },
+        {
+          "grid": 97100011,
+          "weight": 100
+        }
+      ],
+      "rewardLimit": [
+        {
+          "pointLimit": 532000,
+          "time": 150
+        }
+      ],
+      "completeAwardS": [
+        {
+          "id": 11400001,
+          "num": 100000
+        }
+      ],
+      "tokenRatio": 1.0,
+      "tokenId": 11400001,
+      "fatigueStart": 80,
+      "itemCost": [],
+      "weatherPool": [
+        {
+          "id": 90500035,
+          "weight": 1
+        },
+        {
+          "id": 90500022,
+          "weight": 1
+        },
+        {
+          "id": 90500018,
+          "weight": 1
+        },
+        {
+          "id": 90500031,
+          "weight": 1
+        },
+        {
+          "id": 90500033,
+          "weight": 1
+        },
+        {
+          "id": 90500029,
+          "weight": 1
+        },
+        {
+          "id": 90500020,
+          "weight": 1
+        },
+        {
+          "id": 90500024,
+          "weight": 1
+        },
+        {
+          "id": 90500039,
+          "weight": 1
+        }
+      ],
+      "luaEventList": [
+        {
+          "eventType": "time",
+          "eventVal": 8,
+          "eventid": 72800013,
+          "isLoop": true,
+          "loopFloat": 3,
+          "loopOver": 8,
+          "loopTime": 8
+        },
+        {
+          "eventType": "time",
+          "eventVal": 21,
+          "eventid": 72800014,
+          "isLoop": true,
+          "loopFloat": 5,
+          "loopOver": 5,
+          "loopTime": 21
+        },
+        {
+          "eventType": "time",
+          "eventVal": 5,
+          "eventid": 72800003,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 99,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 34,
+          "eventid": 72800002,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 6,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 55,
+          "eventid": 72800001,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 6,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 89,
+          "eventid": 72800012,
+          "isLoop": true,
+          "loopFloat": 8,
+          "loopOver": 6,
+          "loopTime": 34
+        },
+        {
+          "eventType": "time",
+          "eventVal": 60,
+          "eventid": 72800019,
+          "isLoop": false,
+          "loopFloat": 0,
+          "loopOver": 0,
+          "loopTime": 0
+        }
+      ],
+      "levelId": "6",
+      "levelName": "铁道清缴Ⅵ",
+      "levelIcon": "UI/Kabaneri/LevelImg/Level/Ⅵ"
+    }
+  ]
+}

@@ -1,0 +1,864 @@
+{
+  "version": 1,
+  "hash": "D4F62A8BC9089D127D45640805CACB51A87EBE93D59BD0C1B68783F55B09FA0D",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131827479936,
+    "etc": "factory=ParkSealFactory"
+  },
+  "count": 40,
+  "records": [
+    {
+      "id": 60800001,
+      "idCN": "ParkSealFactory测试品",
+      "mod": "单个印章",
+      "isInformalData": false,
+      "typeInfo": "A"
+    },
+    {
+      "id": 60800002,
+      "idCN": "单个叠加/红",
+      "mod": "单个印章",
+      "isInformalData": false,
+      "typeInfo": "A",
+      "itemId": 11400422,
+      "skillId": 12303084,
+      "name": "血盟"
+    },
+    {
+      "id": 60800003,
+      "idCN": "单个叠加/黄",
+      "mod": "单个印章",
+      "isInformalData": false,
+      "typeInfo": "A",
+      "itemId": 11400421,
+      "skillId": 12303086,
+      "name": "窥兆"
+    },
+    {
+      "id": 60800004,
+      "idCN": "单个叠加/蓝",
+      "mod": "单个印章",
+      "isInformalData": false,
+      "typeInfo": "A",
+      "itemId": 11400423,
+      "skillId": 12303087,
+      "name": "静域"
+    },
+    {
+      "id": 60800005,
+      "idCN": "单个叠加/紫",
+      "mod": "单个印章",
+      "isInformalData": false,
+      "typeInfo": "A",
+      "itemId": 11400424,
+      "skillId": 12303085,
+      "name": "幽冥"
+    },
+    {
+      "id": 60800006,
+      "idCN": "四色组合/混沌调和-红黄蓝紫",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "ABCD",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303097,
+      "name": "皇家圣焰"
+    },
+    {
+      "id": 60800007,
+      "idCN": "四色组合/四色同源-红4",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAA",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        }
+      ],
+      "combineSkillId": 12303102,
+      "name": "极彩火花"
+    },
+    {
+      "id": 60800008,
+      "idCN": "四色组合/四色同源-黄4",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAA",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303103,
+      "name": "极彩火花"
+    },
+    {
+      "id": 60800009,
+      "idCN": "四色组合/四色同源-蓝4",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAA",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303104,
+      "name": "极彩火花"
+    },
+    {
+      "id": 60800010,
+      "idCN": "四色组合/四色同源-紫4",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAA",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303105,
+      "name": "极彩火花"
+    },
+    {
+      "id": 60800011,
+      "idCN": "四色组合/双生共鸣-红2黄2",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABB",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303098,
+      "name": "二重幻华"
+    },
+    {
+      "id": 60800012,
+      "idCN": "四色组合/双生共鸣-红2蓝2",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABB",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303100,
+      "name": "二重幻华"
+    },
+    {
+      "id": 60800013,
+      "idCN": "四色组合/双生共鸣-红2紫2",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABB",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303101,
+      "name": "二重幻华"
+    },
+    {
+      "id": 60800014,
+      "idCN": "四色组合/双生共鸣-黄2蓝2",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABB",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303099,
+      "name": "二重幻华"
+    },
+    {
+      "id": 60800015,
+      "idCN": "四色组合/双生共鸣-黄2紫2",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABB",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303106,
+      "name": "二重幻华"
+    },
+    {
+      "id": 60800016,
+      "idCN": "四色组合/双生共鸣-蓝2紫2",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABB",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303107,
+      "name": "二重幻华"
+    },
+    {
+      "id": 60800017,
+      "idCN": "四色组合/三曜引幽-3红1黄",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303108,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800018,
+      "idCN": "四色组合/三曜引幽-3红1蓝",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303109,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800019,
+      "idCN": "四色组合/三曜引幽-3红1紫",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303110,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800020,
+      "idCN": "四色组合/三曜引幽-3黄1红",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400422
+        }
+      ],
+      "combineSkillId": 12303111,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800021,
+      "idCN": "四色组合/三曜引幽-3黄1蓝",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303113,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800022,
+      "idCN": "四色组合/三曜引幽-3黄1紫",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303114,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800023,
+      "idCN": "四色组合/三曜引幽-3蓝1红",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400422
+        }
+      ],
+      "combineSkillId": 12303112,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800024,
+      "idCN": "四色组合/三曜引幽-3蓝1黄",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303115,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800025,
+      "idCN": "四色组合/三曜引幽-3蓝1紫",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303116,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800026,
+      "idCN": "四色组合/三曜引幽-3紫1红",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400422
+        }
+      ],
+      "combineSkillId": 12303117,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800027,
+      "idCN": "四色组合/三曜引幽-3紫1黄",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303118,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800028,
+      "idCN": "四色组合/三曜引幽-3紫1蓝",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AAAB",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303119,
+      "name": "月映星辉"
+    },
+    {
+      "id": 60800029,
+      "idCN": "四色组合/双核衍变-红2黄1蓝1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303120,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800030,
+      "idCN": "四色组合/双核衍变-红2黄1紫1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303121,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800031,
+      "idCN": "四色组合/双核衍变-红2蓝1紫1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303123,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800032,
+      "idCN": "四色组合/双核衍变-黄2红1蓝1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303124,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800033,
+      "idCN": "四色组合/双核衍变-黄2红1紫1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303125,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800034,
+      "idCN": "四色组合/双核衍变-黄2蓝1紫1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303127,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800035,
+      "idCN": "四色组合/双核衍变-蓝2红1黄1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303128,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800036,
+      "idCN": "四色组合/双核衍变-蓝2红1紫1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303126,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800037,
+      "idCN": "四色组合/双核衍变-蓝2黄1紫1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400423
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400424
+        }
+      ],
+      "combineSkillId": 12303053,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800038,
+      "idCN": "四色组合/双核衍变-紫2红1黄1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400421
+        }
+      ],
+      "combineSkillId": 12303129,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800039,
+      "idCN": "四色组合/双核衍变-紫2红1蓝1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400422
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303130,
+      "name": "星屑幽光"
+    },
+    {
+      "id": 60800040,
+      "idCN": "四色组合/双核衍变-紫2黄1蓝1",
+      "mod": "组合印章",
+      "isInformalData": false,
+      "typeInfo": "AABC",
+      "combineSeal": [
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400424
+        },
+        {
+          "id": 11400421
+        },
+        {
+          "id": 11400423
+        }
+      ],
+      "combineSkillId": 12303131,
+      "name": "星屑幽光"
+    }
+  ]
+}

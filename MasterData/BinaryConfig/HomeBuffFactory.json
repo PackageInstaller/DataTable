@@ -1,0 +1,2641 @@
+{
+  "version": 1,
+  "hash": "6397FAAEA459F3E83EA495654E1C88D6208B5C3FF8FD1790E7C1D235EB586102",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131772262675,
+    "etc": "factory=HomeBuffFactory"
+  },
+  "count": 197,
+  "records": [
+    {
+      "id": 84100001,
+      "idCN": "初始产品",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "intensifyDesc": "",
+      "buffType": "HaggleSuccessRate",
+      "param": 0.0,
+      "intensifyParam": 0.0,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100002,
+      "idCN": "拉面buff/速度增加",
+      "mod": "列车加速",
+      "isInformalData": false,
+      "name": "激情驾驶，Passion！",
+      "desc": "列车最高时速增加%d%%",
+      "buffType": "AddSpeedPercentage",
+      "indexSpeedMin": 0.04,
+      "indexSpeedMax": 0.06,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100003,
+      "idCN": "喝酒buff/议价失败",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "议价失败时增加的疲劳值-2",
+      "intensifyDesc": "议价失败时增加的疲劳值-3",
+      "buffType": "ReduceBargainFailEnergy",
+      "param": 2.0,
+      "intensifyParam": 3.0,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100004,
+      "idCN": "喝酒buff/砍价幅度",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所砍价幅度+1%",
+      "intensifyDesc": "交易所砍价幅度+1.5%",
+      "buffType": "HaggleRange",
+      "param": 0.01,
+      "intensifyParam": 0.015,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100005,
+      "idCN": "喝酒buff/抬价幅度",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所抬价幅度+1%",
+      "intensifyDesc": "交易所抬价幅度+1.5%",
+      "buffType": "RiseRange",
+      "param": 0.01,
+      "intensifyParam": 0.015,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100006,
+      "idCN": "喝酒buff/砍价次数",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所砍价次数+1",
+      "intensifyDesc": "交易所砍价次数+1",
+      "buffType": "AddHaggleNum",
+      "param": 1.0,
+      "intensifyParam": 1.0,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100007,
+      "idCN": "喝酒buff/抬价次数",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所抬价次数+1",
+      "intensifyDesc": "交易所抬价次数+1",
+      "buffType": "AddRiseNum",
+      "param": 1.0,
+      "intensifyParam": 1.0,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100008,
+      "idCN": "喝酒buff/砍价成功率",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所砍价成功率+10%",
+      "intensifyDesc": "交易所砍价成功率+15%",
+      "buffType": "HaggleSuccessRate",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100009,
+      "idCN": "喝酒buff/抬价成功率",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所抬价成功率+10%",
+      "intensifyDesc": "交易所抬价成功率+15%",
+      "buffType": "RiseSuccessRate",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100010,
+      "idCN": "喝酒buff/所有交易品买入量",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "所有交易品可买入数量+10%",
+      "intensifyDesc": "所有交易品可买入数量+15%",
+      "buffType": "AddQty",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100011,
+      "idCN": "喝酒buff/特产品买入量",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "特产品可买入数量+10%",
+      "intensifyDesc": "特产品可买入数量+15%",
+      "buffType": "AddSpecQty",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100012,
+      "idCN": "喝酒buff/交易品议价成功率",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "亚莉奈的心意",
+      "desc": "交易所议价成功率100%",
+      "intensifyDesc": "交易所议价成功率100%",
+      "buffType": "AddSuccessRate",
+      "param": 1.0,
+      "intensifyParam": 1.0,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100013,
+      "idCN": "拉面buff/默契度1.2",
+      "mod": "队员默契",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "buffType": "AddTrust",
+      "indexTrust": 0.12,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100014,
+      "idCN": "拉面buff/默契度1.4",
+      "mod": "队员默契",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "buffType": "AddTrust",
+      "indexTrust": 0.14,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100015,
+      "idCN": "拉面buff/默契度1.6",
+      "mod": "队员默契",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "buffType": "AddTrust",
+      "indexTrust": 0.16,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100016,
+      "idCN": "拉面buff/默契度1.8",
+      "mod": "队员默契",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "buffType": "AddTrust",
+      "indexTrust": 0.18,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100017,
+      "idCN": "拉面buff/默契度2",
+      "mod": "队员默契",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "buffType": "AddTrust",
+      "indexTrust": 0.2,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100018,
+      "idCN": "拉面buff/加速刹车性能提升",
+      "mod": "列车加速",
+      "isInformalData": false,
+      "name": "激情驾驶，Passion！",
+      "desc": "列车加速性能和刹车性能提升%d%%",
+      "buffType": "AccelerationBrakingPerformance",
+      "indexSpeedMin": 0.16,
+      "indexSpeedMax": 0.18,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100019,
+      "idCN": "议价道具buff/豆蔻姜百合",
+      "mod": "议价道具",
+      "isInformalData": false,
+      "name": "豆蔻姜百合",
+      "desc": "议价成功率+10%，直至本次交易结束。",
+      "buffType": "AddSuccessRate",
+      "param": 0.1,
+      "continueTime": -1
+    },
+    {
+      "id": 84100020,
+      "idCN": "议价道具buff/娃娃鱼同盟徽章",
+      "mod": "议价道具",
+      "isInformalData": false,
+      "name": "娃娃鱼同盟徽章",
+      "desc": "下1次议价直接达到上限。",
+      "buffType": "OneOfUs",
+      "param": 1.0,
+      "continueTime": -1
+    },
+    {
+      "id": 84100021,
+      "idCN": "议价道具buff/银枝薄荷糖",
+      "mod": "议价道具",
+      "isInformalData": false,
+      "name": "银枝薄荷糖",
+      "desc": "议价成功率+5%，直至本次交易结束。",
+      "buffType": "AddSuccessRate",
+      "param": 0.05,
+      "continueTime": -1
+    },
+    {
+      "id": 84100022,
+      "idCN": "议价道具buff/一元二次",
+      "mod": "议价道具",
+      "isInformalData": false,
+      "name": "一元二次",
+      "desc": "议价次数+1，直至本次交易结束。",
+      "buffType": "AddBargainNum",
+      "param": 1.0,
+      "continueTime": -1
+    },
+    {
+      "id": 84100026,
+      "idCN": "活动buff/红茶税收减免3",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "交易【红茶】时税收减免3%",
+      "param": -0.03,
+      "continueTime": 0,
+      "buffType": "TaxCuts",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900046
+        }
+      ],
+      "endTime": ""
+    },
+    {
+      "id": 84100027,
+      "idCN": "活动buff/红茶税收减免5",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "交易【红茶】时税收减免5%",
+      "param": -0.02,
+      "continueTime": 0,
+      "buffType": "TaxCuts",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900046
+        }
+      ],
+      "endTime": ""
+    },
+    {
+      "id": 84100028,
+      "idCN": "活动buff/红茶买入数量加30",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【红茶】可买入数量+30%",
+      "param": 0.3,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900046
+        }
+      ],
+      "endTime": ""
+    },
+    {
+      "id": 84100029,
+      "idCN": "活动buff/红茶买入数量加50",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【红茶】可买入数量+50%",
+      "param": 0.2,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900046
+        }
+      ],
+      "endTime": ""
+    },
+    {
+      "id": 84100032,
+      "idCN": "战斗buff/元素/引雷概率",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "引雷概率！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300499,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100033,
+      "idCN": "战斗buff/元素/引雷伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "引雷伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300500,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100034,
+      "idCN": "战斗buff/元素/点燃时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "点燃！",
+      "desc": "开局额外获得1点费用，可叠加",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300489,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100035,
+      "idCN": "战斗buff/元素/点燃伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "点燃伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300488,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100036,
+      "idCN": "战斗buff/元素/急燃急爆伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "急燃伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300495,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100037,
+      "idCN": "战斗buff/元素/冻结时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "冻结！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300490,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100038,
+      "idCN": "战斗buff/元素/冻结概率",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "冻结概率！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300491,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100039,
+      "idCN": "战斗buff/技术/击晕时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "击晕！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300494,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100040,
+      "idCN": "战斗buff/技术/磁化时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "磁化！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300487,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100041,
+      "idCN": "战斗buff/技术/重伤时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "重伤！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300502,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100042,
+      "idCN": "战斗buff/技术/崩坏时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "崩坏！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300485,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100043,
+      "idCN": "战斗buff/技术/斩裂伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "斩裂伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300501,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100044,
+      "idCN": "战斗buff/技术/撕裂伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "撕裂伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300497,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100045,
+      "idCN": "战斗buff/技术/灼心伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "灼心伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300504,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100046,
+      "idCN": "战斗buff/技术/撕裂时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "撕裂！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300498,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100047,
+      "idCN": "战斗buff/技术/灼心次数",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "灼心次数！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300503,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100048,
+      "idCN": "战斗buff/技术/狂暴时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "狂暴！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300484,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100049,
+      "idCN": "战斗buff/控制/昏睡",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "昏睡！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300492,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100050,
+      "idCN": "战斗buff/控制/枷锁",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "枷锁！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300496,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100051,
+      "idCN": "战斗buff/控制/诅咒",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "诅咒！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300505,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100052,
+      "idCN": "战斗buff/控制/混乱",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "混乱！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300493,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100053,
+      "idCN": "战斗buff/控制/变萌",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "变萌！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300486,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100054,
+      "idCN": "战斗buff/抗性/击晕",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "击晕缩短！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300483,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100055,
+      "idCN": "战斗buff/抗性/点燃",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "点燃缩短！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300481,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100056,
+      "idCN": "战斗buff/抗性/冻结",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "冻结缩短！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300482,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100057,
+      "idCN": "战斗buff/防御/隐形",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "隐形！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300480,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100058,
+      "idCN": "战斗buff/防御/无敌",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "无敌！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300479,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100059,
+      "idCN": "战斗buff/防御/霸体",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "霸体！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300475,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100060,
+      "idCN": "战斗buff/防御/格挡",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "格挡！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300476,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100061,
+      "idCN": "战斗buff/防御/护盾",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "护盾！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300478,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100062,
+      "idCN": "战斗buff/防御/护盾耐久",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "护盾耐久！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300477,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100063,
+      "idCN": "战斗buff/防御/受到治疗",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "受到治疗！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300444,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100064,
+      "idCN": "战斗buff/防御/造成治疗",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "造成治疗！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300474,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100065,
+      "idCN": "战斗buff/防御/格挡回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "格挡回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300438,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100066,
+      "idCN": "战斗buff/防御/隐形回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "隐形回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300471,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100067,
+      "idCN": "战斗buff/防御/霸体回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "霸体回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300437,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100068,
+      "idCN": "战斗buff/防御/无敌回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "无敌回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300446,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100069,
+      "idCN": "战斗buff/防御/昏睡回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "昏睡回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300439,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100070,
+      "idCN": "战斗buff/中立卡/奇异火花伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "奇异火花伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300377,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100071,
+      "idCN": "战斗buff/中立卡/黑8伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "黑8伤害",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300376,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100072,
+      "idCN": "战斗buff/中立卡/暗艺伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "暗艺伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300374,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100073,
+      "idCN": "战斗buff/中立卡/生成暗艺回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "生成暗艺回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300379,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100074,
+      "idCN": "战斗buff/中立卡/生成黑卡回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "生成黑卡回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300380,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100075,
+      "idCN": "战斗buff/中立卡/新星伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "新星伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300436,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100076,
+      "idCN": "战斗buff/中立卡/奇异火花吸血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "奇异火花吸血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300378,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100077,
+      "idCN": "战斗buff/中立卡/暗艺吸血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "暗艺吸血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300375,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100030,
+      "idCN": "战斗buff团队版/防御/霸体回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "霸体回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301558,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100031,
+      "idCN": "战斗buff团队版/防御/隐形",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "隐形！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301549,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100023,
+      "idCN": "战斗buff团队版/元素/引雷伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "引雷伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301563,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100024,
+      "idCN": "战斗buff团队版/抗性/点燃",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "点燃缩短！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301561,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100025,
+      "idCN": "战斗buff团队版/元素/冻结时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "冻结！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301573,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100078,
+      "idCN": "战斗buff团队版/防御/受到治疗",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "受到治疗！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301582,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100079,
+      "idCN": "战斗buff团队版/控制/变萌",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "变萌！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301568,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100080,
+      "idCN": "战斗buff团队版/元素/点燃伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "点燃伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301579,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100081,
+      "idCN": "战斗buff团队版/控制/昏睡",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "昏睡！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301554,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100082,
+      "idCN": "战斗buff团队版/中立卡/奇异火花吸血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "奇异火花吸血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301580,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100083,
+      "idCN": "战斗buff团队版/技术/灼心次数",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "灼心次数！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301591,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100084,
+      "idCN": "战斗buff团队版/控制/诅咒",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "诅咒！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301564,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100085,
+      "idCN": "战斗buff团队版/技术/灼心伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "灼心伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301578,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100086,
+      "idCN": "战斗buff团队版/中立卡/生成黑卡回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "生成黑卡回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301577,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100087,
+      "idCN": "战斗buff团队版/技术/重伤时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "重伤！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301588,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100088,
+      "idCN": "战斗buff团队版/技术/斩裂伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "斩裂伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301557,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100089,
+      "idCN": "战斗buff团队版/中立卡/暗艺伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "暗艺伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301562,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100090,
+      "idCN": "战斗buff团队版/技术/击晕时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "击晕！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301565,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100091,
+      "idCN": "战斗buff团队版/防御/无敌回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "无敌回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301587,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100092,
+      "idCN": "战斗buff团队版/元素/引雷概率",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "引雷概率！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301589,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100093,
+      "idCN": "战斗buff团队版/防御/造成治疗",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "造成治疗！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301550,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100094,
+      "idCN": "战斗buff团队版/防御/隐形回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "隐形回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301549,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100095,
+      "idCN": "战斗buff团队版/防御/无敌",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "无敌！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301590,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100096,
+      "idCN": "战斗buff团队版/中立卡/奇异火花伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "奇异火花伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301560,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100097,
+      "idCN": "战斗buff团队版/抗性/冻结",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "冻结缩短！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301573,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100098,
+      "idCN": "战斗buff团队版/元素/点燃时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "点燃！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301592,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100099,
+      "idCN": "战斗buff团队版/防御/格挡",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "格挡！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301572,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100100,
+      "idCN": "战斗buff团队版/元素/急燃急爆伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "急燃伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301567,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100101,
+      "idCN": "战斗buff团队版/中立卡/新星伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "新星伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301553,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100102,
+      "idCN": "战斗buff团队版/防御/护盾耐久",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "护盾耐久！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301574,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100103,
+      "idCN": "战斗buff团队版/控制/混乱",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "混乱！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301569,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100104,
+      "idCN": "战斗buff团队版/技术/狂暴时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "狂暴！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301583,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100105,
+      "idCN": "战斗buff团队版/中立卡/暗艺吸血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "暗艺吸血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301571,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100106,
+      "idCN": "战斗buff团队版/中立卡/生成暗艺回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "生成暗艺回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301585,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100107,
+      "idCN": "战斗buff团队版/控制/枷锁",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "枷锁！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301552,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100108,
+      "idCN": "战斗buff团队版/抗性/击晕",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "击晕缩短！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12300483,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100109,
+      "idCN": "战斗buff团队版/防御/昏睡回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "昏睡回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301584,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100110,
+      "idCN": "战斗buff团队版/技术/磁化时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "磁化！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301556,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100111,
+      "idCN": "战斗buff团队版/元素/冻结概率",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "冻结概率！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301586,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100112,
+      "idCN": "战斗buff团队版/技术/撕裂时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "撕裂！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301548,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100113,
+      "idCN": "战斗buff团队版/防御/格挡回血",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "格挡回血！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301581,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100114,
+      "idCN": "战斗buff团队版/技术/崩坏时间",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "崩坏！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301576,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100115,
+      "idCN": "战斗buff团队版/防御/霸体",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "霸体！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301575,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100116,
+      "idCN": "战斗buff团队版/技术/撕裂伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "撕裂伤害！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301551,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100117,
+      "idCN": "战斗buff团队版/中立卡/黑8伤害",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "黑8伤害",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301566,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100118,
+      "idCN": "战斗buff团队版/防御/护盾",
+      "mod": "战斗buff",
+      "isInformalData": false,
+      "name": "护盾！",
+      "desc": "",
+      "buffType": "HomeBattleBuff",
+      "battleBuff": 12301555,
+      "continueTime": 1800
+    },
+    {
+      "id": 84100119,
+      "idCN": "活动buff/列车美味评分1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "美味评分+100%",
+      "desc": "美味评分+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "endFoodGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Delicious",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100120,
+      "idCN": "活动buff/列车绿植评分1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "绿植评分+100%",
+      "desc": "绿植评分+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "endPlantGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Plant",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100121,
+      "idCN": "活动buff/列车医疗评分1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "医疗评分+100%",
+      "desc": "医疗评分+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "enMedicalGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Medical",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100122,
+      "idCN": "活动buff/列车水族评分1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "水族评分+100%",
+      "desc": "水族评分+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "endFishGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Fish",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100123,
+      "idCN": "活动buff/列车宠物评分1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "宠物评分+100%",
+      "desc": "宠物评分+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "endPetGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Pet",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100124,
+      "idCN": "活动buff/列车娱乐评分1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "娱乐评分+100%",
+      "desc": "娱乐评分+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "endPlayGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Happiness",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100136,
+      "idCN": "监狱Buff/性格buff/生产成品",
+      "mod": "监狱相关",
+      "isInformalData": false,
+      "name": "生产总量增加",
+      "desc": "生产总量增加<color=#FFB800>%d</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "OutputAdd",
+      "param": -1.0,
+      "paramList": []
+    },
+    {
+      "id": 84100126,
+      "idCN": "监狱Buff/组长buff/员工激励",
+      "mod": "监狱相关",
+      "isInformalData": false,
+      "name": "员工激励",
+      "desc": "生产时间缩短<color=#0CB7E5>%d%%</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "WorkingHoursDec",
+      "param": -1.0,
+      "paramList": [
+        {
+          "probabilityParam": 0.05,
+          "programme": 1
+        },
+        {
+          "probabilityParam": 0.05,
+          "programme": 2
+        },
+        {
+          "probabilityParam": 0.05,
+          "programme": 4
+        },
+        {
+          "probabilityParam": 0.05,
+          "programme": 8
+        }
+      ],
+      "probabilityParamClient": 5.0
+    },
+    {
+      "id": 84100129,
+      "idCN": "监狱Buff/特长buff/剪裁",
+      "mod": "囚犯特长",
+      "isInformalData": false,
+      "name": "纺织品额外生产率提高",
+      "desc": "纺织品额外生产率提高<color=#0CB7E5>%d%%</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "ExtraOutputAdd",
+      "param": -1.0,
+      "formulaType": "Textile",
+      "paramList": [
+        {
+          "probabilityParam": 0.02,
+          "programme": 1
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 2
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 4
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 8
+        }
+      ],
+      "probabilityParamClient": 2.0
+    },
+    {
+      "id": 84100131,
+      "idCN": "监狱Buff/组长buff/工艺改进",
+      "mod": "监狱相关",
+      "isInformalData": false,
+      "name": "工艺改进",
+      "desc": "额外生产率提高<color=#0CB7E5>%d%%</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "ExtraOutputAdd",
+      "param": -1.0,
+      "paramList": [
+        {
+          "probabilityParam": 0.03,
+          "programme": 1
+        },
+        {
+          "probabilityParam": 0.03,
+          "programme": 2
+        },
+        {
+          "probabilityParam": 0.03,
+          "programme": 4
+        },
+        {
+          "probabilityParam": 0.03,
+          "programme": 8
+        }
+      ],
+      "probabilityParamClient": 3.0
+    },
+    {
+      "id": 84100133,
+      "idCN": "监狱Buff/组长buff/质量监控",
+      "mod": "监狱相关",
+      "isInformalData": false,
+      "name": "质量监控",
+      "desc": "额外生产率提高<color=#0CB7E5>%d%%</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "ExtraOutputAdd",
+      "param": -1.0,
+      "paramList": [
+        {
+          "probabilityParam": 0.02,
+          "programme": 1
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 2
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 4
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 8
+        }
+      ],
+      "probabilityParamClient": 2.0
+    },
+    {
+      "id": 84100139,
+      "idCN": "监狱Buff/组长buff/安全督导",
+      "mod": "监狱相关",
+      "isInformalData": false,
+      "name": "安全督导",
+      "desc": "生产违规事件下降<color=#0CB7E5>%d%%</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "AccidentRateDec",
+      "param": -1.0,
+      "paramList": [
+        {
+          "probabilityParam": 5.0,
+          "programme": 1
+        },
+        {
+          "probabilityParam": 5.0,
+          "programme": 2
+        },
+        {
+          "probabilityParam": 5.0,
+          "programme": 4
+        },
+        {
+          "probabilityParam": 5.0,
+          "programme": 8
+        }
+      ],
+      "probabilityParamClient": 5.0
+    },
+    {
+      "id": 84100140,
+      "idCN": "活动buff/列车宠物评分70%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "宠物评分+70%",
+      "desc": "宠物评分+70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "endPetGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Pet",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100141,
+      "idCN": "活动buff/列车宠物评分50%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "宠物评分+50%",
+      "desc": "宠物评分+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "endPetGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Pet",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100142,
+      "idCN": "活动buff/列车绿植评分70%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "绿植评分+70%",
+      "desc": "绿植评分+70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "endPlantGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Plant",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100143,
+      "idCN": "活动buff/列车绿植评分50%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "绿植评分+50%",
+      "desc": "绿植评分+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "endPlantGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Plant",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100144,
+      "idCN": "活动buff/列车美味评分70%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "美味评分+0.70%",
+      "desc": "美味评分+0.70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "endFoodGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Delicious",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100145,
+      "idCN": "活动buff/列车美味评分50%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "美味评分+50%",
+      "desc": "美味评分+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "endFoodGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Delicious",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100146,
+      "idCN": "活动buff/列车水族评分70%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "水族评分+70%",
+      "desc": "水族评分+70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "endFishGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Fish",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100147,
+      "idCN": "活动buff/列车水族评分50%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "水族评分+50%",
+      "desc": "水族评分+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "endFishGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Fish",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100148,
+      "idCN": "活动buff/列车医疗评分70%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "医疗评分+70%",
+      "desc": "医疗评分+70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "enMedicalGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Medical",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100149,
+      "idCN": "活动buff/列车医疗评分50%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "医疗评分+50%",
+      "desc": "医疗评分+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "enMedicalGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Medical",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100150,
+      "idCN": "活动buff/列车娱乐评分70%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "娱乐评分+70%",
+      "desc": "娱乐评分+70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "endPlayGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Happiness",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100151,
+      "idCN": "活动buff/列车娱乐评分50%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "娱乐评分+50%",
+      "desc": "娱乐评分+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "endPlayGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Happiness",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100152,
+      "idCN": "事件触发buff/事件下限增加1",
+      "mod": "事件触发buff",
+      "isInformalData": false,
+      "name": "事件触发下限加1",
+      "desc": "事件触发下限加1",
+      "continueTime": 0,
+      "showIcon": "",
+      "buffType": "eventTriggerMin",
+      "param": 1.0
+    },
+    {
+      "id": 84100153,
+      "idCN": "事件触发buff/事件上限增加1",
+      "mod": "事件触发buff",
+      "isInformalData": false,
+      "name": "事件触发上限加1",
+      "desc": "事件触发上限加1",
+      "continueTime": 0,
+      "showIcon": "",
+      "buffType": "eventTriggerMax",
+      "param": 1.0
+    },
+    {
+      "id": 84100154,
+      "idCN": "活动buff/传单增加1倍",
+      "mod": "传单数量",
+      "isInformalData": false,
+      "name": "活动期间传单增加1倍",
+      "desc": "活动期间传单增加1倍",
+      "continueTime": 0,
+      "showIcon": "",
+      "buffType": "LeafletBuffNum",
+      "param": 1.0
+    },
+    {
+      "id": 84100155,
+      "idCN": "活动buff/传单增加1.5倍",
+      "mod": "传单数量",
+      "isInformalData": false,
+      "name": "活动期间传单增加150%倍",
+      "desc": "活动期间传单增加150%倍",
+      "continueTime": 0,
+      "showIcon": "",
+      "buffType": "LeafletBuffNum",
+      "param": 1.5
+    },
+    {
+      "id": 84100125,
+      "idCN": "监狱Buff/性格buff/刑期延长",
+      "mod": "监狱相关",
+      "isInformalData": false,
+      "name": "刑期延长",
+      "desc": "刑期延长<color=#FFB800>%d</color>天",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "TimeAdd",
+      "param": -1.0,
+      "paramList": []
+    },
+    {
+      "id": 84100127,
+      "idCN": "监狱Buff/特长buff/织造",
+      "mod": "囚犯特长",
+      "isInformalData": false,
+      "name": "布料额外生产率提高",
+      "desc": "布料额外生产率提高<color=#0CB7E5>%d%%</color>",
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "ExtraOutputAdd",
+      "param": -1.0,
+      "formulaType": "Stitching",
+      "paramList": [
+        {
+          "probabilityParam": 0.02,
+          "programme": 1
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 2
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 4
+        },
+        {
+          "probabilityParam": 0.02,
+          "programme": 8
+        }
+      ],
+      "probabilityParamClient": 2.0
+    },
+    {
+      "id": 84100128,
+      "idCN": "活动buff/收益绿植1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的绿植评分收益增加100%",
+      "desc": "的绿植评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "pricePlantGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100132,
+      "idCN": "活动buff/收益舒适度1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的舒适度评分收益增加100%",
+      "desc": "的舒适度评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "priceComfortGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100138,
+      "idCN": "活动buff/收益美味1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的美味评分收益增加100%",
+      "desc": "的美味评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "priceFoodGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100156,
+      "idCN": "活动buff/收益宠物1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的宠物评分收益增加100%",
+      "desc": "的宠物评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "pricePetGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100157,
+      "idCN": "活动buff/收益医疗1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的医疗评分收益增加100%",
+      "desc": "的医疗评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "priceMedicalGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100158,
+      "idCN": "活动buff/收益娱乐1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的娱乐评分收益增加100%",
+      "desc": "的娱乐评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "pricePlayGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100159,
+      "idCN": "活动buff/收益水族1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "的水族评分收益增加100%",
+      "desc": "的水族评分收益增加100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "priceFishGrade",
+      "showIcon": "UI/Activity/GoldenWeek/EventPng/eventWeek_price",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100160,
+      "idCN": "活动buff/座椅价格20",
+      "mod": "座椅价格",
+      "isInformalData": false,
+      "name": "的座位价格提升20铁盟币",
+      "desc": "的座位价格提升20",
+      "continueTime": 0,
+      "showIcon": "UI/DriveLog/Icon40x40/Seat",
+      "buffType": "priceSeatNum",
+      "param": 20.0
+    },
+    {
+      "id": 84100134,
+      "idCN": "回归/战斗收益",
+      "mod": "回归buff",
+      "isInformalData": false,
+      "name": "战斗收益",
+      "desc": "回归列车长的前5次混响浮标战斗结算奖励将翻倍",
+      "continueTime": 1800,
+      "showIcon": "",
+      "buffType": "fight",
+      "param": 5,
+      "listReturn": [
+        {
+          "id": 20100454
+        },
+        {
+          "id": 20100455
+        },
+        {
+          "id": 20100456
+        },
+        {
+          "id": 20100457
+        },
+        {
+          "id": 20100458
+        },
+        {
+          "id": 20100463
+        },
+        {
+          "id": 20100468
+        },
+        {
+          "id": 20100469
+        },
+        {
+          "id": 20100471
+        },
+        {
+          "id": 20100510
+        },
+        {
+          "id": 20100511
+        },
+        {
+          "id": 20100988
+        },
+        {
+          "id": 20100680
+        },
+        {
+          "id": 20101072
+        },
+        {
+          "id": 20101425
+        },
+        {
+          "id": 20101875
+        }
+      ]
+    },
+    {
+      "id": 84100162,
+      "idCN": "回归/议价收益",
+      "mod": "回归buff",
+      "isInformalData": false,
+      "name": "协商收益",
+      "desc": "回归列车长的前10次议价行为将不会增加疲劳度",
+      "continueTime": 1800,
+      "showIcon": "",
+      "buffType": "trade",
+      "param": 10,
+      "listReturn": []
+    },
+    {
+      "id": 84100163,
+      "idCN": "回归/列车收益",
+      "mod": "回归buff",
+      "isInformalData": false,
+      "name": "协商收益",
+      "desc": "回归列车长的拖车免费次数将增加2次",
+      "continueTime": 1800,
+      "showIcon": "",
+      "buffType": "train",
+      "param": 2,
+      "listReturn": []
+    },
+    {
+      "id": 84100172,
+      "idCN": "大富翁buff/福神",
+      "mod": "大富翁相关",
+      "isInformalData": false,
+      "name": "福神",
+      "desc": "车站每分钟产出 +10%",
+      "param": 0.1,
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "StationEarning"
+    },
+    {
+      "id": 84100173,
+      "idCN": "大富翁buff/穷神",
+      "mod": "大富翁相关",
+      "isInformalData": false,
+      "name": "穷神",
+      "desc": "车站每分钟产出 -10%",
+      "param": -0.1,
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "StationEarning"
+    },
+    {
+      "id": 84100130,
+      "idCN": "黑月游乐城活动buff/冰冻门票",
+      "mod": "黑月游乐城相关",
+      "isInformalData": false,
+      "name": "霜雪邀请函",
+      "desc": "本局【奇妙巡游】额外获得10%【梦的一角】",
+      "param": 0.1,
+      "continueTime": -1,
+      "showIcon": "",
+      "buffType": "CoinAdd"
+    },
+    {
+      "id": 84100135,
+      "idCN": "活动buff/钛矿石买入数量买加10",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+10%",
+      "param": 0.1,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100161,
+      "idCN": "活动buff/钛矿石买入数量买加20",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+20%",
+      "param": 0.2,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100164,
+      "idCN": "活动buff/钛矿石买入数量买加30",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+30%",
+      "param": 0.3,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100165,
+      "idCN": "活动buff/钛矿石买入数量买加40",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+40%",
+      "param": 0.4,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100166,
+      "idCN": "活动buff/钛矿石买入数量买加50",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+50%",
+      "param": 0.5,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100167,
+      "idCN": "活动buff/钛矿石买入数量买加60",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+60%",
+      "param": 0.6,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100168,
+      "idCN": "活动buff/钛矿石买入数量买加70",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+70%",
+      "param": 0.7,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100169,
+      "idCN": "活动buff/钛矿石买入数量买加80",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+80%",
+      "param": 0.8,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100170,
+      "idCN": "活动buff/钛矿石买入数量买加90",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+90%",
+      "param": 0.9,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100171,
+      "idCN": "活动buff/钛矿石买入数量买加100",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "【钛矿石】可买入数量+100%",
+      "param": 1.0,
+      "continueTime": 0,
+      "buffType": "AddQty",
+      "showIcon": "",
+      "goodsList": [
+        {
+          "id": 82900198
+        }
+      ],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100137,
+      "idCN": "活动buff/钛钢轨条订单收益+1%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+1%",
+      "param": 0.01,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100174,
+      "idCN": "活动buff/钛钢轨条订单收益+2%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+2%",
+      "param": 0.02,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100175,
+      "idCN": "活动buff/钛钢轨条订单收益+3%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+3%",
+      "param": 0.03,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100176,
+      "idCN": "活动buff/钛钢轨条订单收益+4%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+4%",
+      "param": 0.04,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100177,
+      "idCN": "活动buff/钛钢轨条订单收益+5%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+5%",
+      "param": 0.05,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100178,
+      "idCN": "活动buff/钛钢轨条订单收益+6%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+6%",
+      "param": 0.06,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100179,
+      "idCN": "活动buff/钛钢轨条订单收益+7%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+7%",
+      "param": 0.07,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100180,
+      "idCN": "活动buff/钛钢轨条订单收益+8%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+8%",
+      "param": 0.08,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100181,
+      "idCN": "活动buff/钛钢轨条订单收益+9%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+9%",
+      "param": 0.09,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100182,
+      "idCN": "活动buff/钛钢轨条订单收益+10%",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "",
+      "desc": "钛钢轨条订单收益+10%",
+      "param": 0.1,
+      "continueTime": 0,
+      "buffType": "pddGrade",
+      "showIcon": "",
+      "goodsList": [],
+      "endTime": ""
+    },
+    {
+      "id": 84100183,
+      "idCN": "活动buff/海岛收益舒适度1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "海岛的舒适度评分收益增加200%",
+      "desc": "海岛的舒适度评分收益增加200%",
+      "param": 2.0,
+      "continueTime": 0,
+      "buffType": "islandPriceComfortGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Comfortable",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100185,
+      "idCN": "活动buff/海岛收益绿植1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "海岛的绿植评分收益增加200%",
+      "desc": "海岛的绿植评分收益增加200%",
+      "param": 2.0,
+      "continueTime": 0,
+      "buffType": "islandPricePlantGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Plant",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100186,
+      "idCN": "活动buff/海岛收益水族1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "海岛的水族评分收益增加200%",
+      "desc": "海岛的水族评分收益增加200%",
+      "param": 2.0,
+      "continueTime": 0,
+      "buffType": "islandPriceFishGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Fish",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100188,
+      "idCN": "活动buff/海岛收益娱乐1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "海岛的娱乐评分收益增加200%",
+      "desc": "海岛的娱乐评分收益增加200%",
+      "param": 2.0,
+      "continueTime": 0,
+      "buffType": "islandPricePlayGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Happiness",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100189,
+      "idCN": "活动buff/海岛收益美味1",
+      "mod": "活动buff",
+      "isInformalData": false,
+      "name": "海岛的美味评分收益增加200%",
+      "desc": "海岛的美味评分收益增加200%",
+      "param": 2.0,
+      "continueTime": 0,
+      "buffType": "islandPriceFoodGrade",
+      "showIcon": "UI/DriveLog/Icon40x40/Delicious",
+      "goodsList": [],
+      "endTime": "2099-05-11 00:00:00"
+    },
+    {
+      "id": 84100184,
+      "idCN": "喝酒buff武林/特产品买入量",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "特产品可买入数量+10%",
+      "intensifyDesc": "特产品可买入数量+15%",
+      "buffType": "AddSpecQty",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100187,
+      "idCN": "喝酒buff武林/砍价成功率",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所砍价成功率+10%",
+      "intensifyDesc": "交易所砍价成功率+15%",
+      "buffType": "HaggleSuccessRate",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100190,
+      "idCN": "喝酒buff武林/砍价幅度",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所砍价幅度+1%",
+      "intensifyDesc": "交易所砍价幅度+1.5%",
+      "buffType": "HaggleRange",
+      "param": 0.01,
+      "intensifyParam": 0.015,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100191,
+      "idCN": "喝酒buff武林/抬价次数",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所抬价次数+1",
+      "intensifyDesc": "交易所抬价次数+1",
+      "buffType": "AddRiseNum",
+      "param": 1.0,
+      "intensifyParam": 1.0,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100192,
+      "idCN": "喝酒buff武林/议价失败",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "议价失败时增加的疲劳值-2",
+      "intensifyDesc": "议价失败时增加的疲劳值-3",
+      "buffType": "ReduceBargainFailEnergy",
+      "param": 2.0,
+      "intensifyParam": 3.0,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100193,
+      "idCN": "喝酒buff武林/所有交易品买入量",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "所有交易品可买入数量+10%",
+      "intensifyDesc": "所有交易品可买入数量+15%",
+      "buffType": "AddQty",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100194,
+      "idCN": "喝酒buff武林/抬价成功率",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所抬价成功率+10%",
+      "intensifyDesc": "交易所抬价成功率+15%",
+      "buffType": "RiseSuccessRate",
+      "param": 0.1,
+      "intensifyParam": 0.15,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100195,
+      "idCN": "喝酒buff武林/抬价幅度",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所抬价幅度+1%",
+      "intensifyDesc": "交易所抬价幅度+1.5%",
+      "buffType": "RiseRange",
+      "param": 0.01,
+      "intensifyParam": 0.015,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100196,
+      "idCN": "喝酒buff武林/砍价次数",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所砍价次数+1",
+      "intensifyDesc": "交易所砍价次数+1",
+      "buffType": "AddHaggleNum",
+      "param": 1.0,
+      "intensifyParam": 1.0,
+      "continueTime": 1800,
+      "showIcon": ""
+    },
+    {
+      "id": 84100197,
+      "idCN": "喝酒buff武林/交易品议价成功率",
+      "mod": "喝酒相关",
+      "isInformalData": false,
+      "name": "赠君一盏春",
+      "desc": "交易所议价成功率100%",
+      "intensifyDesc": "交易所议价成功率100%",
+      "buffType": "AddSuccessRate",
+      "param": 1.0,
+      "intensifyParam": 1.0,
+      "continueTime": 1800,
+      "showIcon": ""
+    }
+  ]
+}

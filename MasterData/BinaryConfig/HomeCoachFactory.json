@@ -1,0 +1,4555 @@
+{
+  "version": 1,
+  "hash": "EC010EC1ECD5182BBBEFDA4388BE03D5BE633B334535BFCCD39746706E1FA1CC",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131684245507,
+    "etc": "factory=HomeCoachFactory"
+  },
+  "count": 30,
+  "records": [
+    {
+      "id": 81200024,
+      "idCN": "初始/01车头-车长室",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 47,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": 81300135,
+      "doorRightFurniture": 81300174,
+      "defaultFloor": 81300148,
+      "defaultWallPaper": 81300149,
+      "bayInfos": [
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600417,
+          "offsetX": 12
+        },
+        {
+          "bayFurniture": -1,
+          "bayType": 12600415,
+          "offsetX": 47
+        }
+      ],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "车长室",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/head",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/head",
+      "skinList": [
+        {
+          "id": 70500001,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/normal"
+        },
+        {
+          "id": 70500032,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/black"
+        },
+        {
+          "id": 70500038,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/gold"
+        },
+        {
+          "id": 70500044,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/miku"
+        },
+        {
+          "id": 70500045,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/eva"
+        },
+        {
+          "id": 70500062,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/red"
+        },
+        {
+          "id": 70500056,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/yalinai"
+        },
+        {
+          "id": 70500068,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/nicola"
+        },
+        {
+          "id": 70500081,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/Dorothy"
+        },
+        {
+          "id": 70500088,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/taini"
+        },
+        {
+          "id": 70500100,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/suoma"
+        },
+        {
+          "id": 70500123,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/xiaer"
+        },
+        {
+          "id": 70500130,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/jingliu"
+        },
+        {
+          "id": 70500142,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/yalai"
+        },
+        {
+          "id": 70500161,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/paladi"
+        },
+        {
+          "id": 70500179,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/peiluota"
+        },
+        {
+          "id": 70500191,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/dieyi"
+        },
+        {
+          "id": 70500213,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/wuchana"
+        },
+        {
+          "id": 70500254,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/luojieertianshi"
+        },
+        {
+          "id": 70500260,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/aoliweien"
+        },
+        {
+          "id": 70500289,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/zhenxiao"
+        },
+        {
+          "id": 70500275,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/keluoyi"
+        },
+        {
+          "id": 70500293,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/Ren"
+        },
+        {
+          "id": 70500317,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/siluokayi"
+        },
+        {
+          "id": 70500310,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/heluna"
+        },
+        {
+          "id": 70500350,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/duola"
+        },
+        {
+          "id": 70500356,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/hekadi"
+        },
+        {
+          "id": 70500362,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/jiaer"
+        },
+        {
+          "id": 70500368,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/Tistar"
+        },
+        {
+          "id": 70500380,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/ktsyh"
+        },
+        {
+          "id": 70500386,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/xldcx"
+        },
+        {
+          "id": 70500392,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/ShanaSkin"
+        },
+        {
+          "id": 70500404,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/denisha"
+        },
+        {
+          "id": 70500410,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/LQEHY"
+        },
+        {
+          "id": 70500416,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/spdlx"
+        },
+        {
+          "id": 70500422,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/yiluonamuguang"
+        },
+        {
+          "id": 70500428,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/aimier"
+        },
+        {
+          "id": 70500298,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/yikala"
+        },
+        {
+          "id": 70500106,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/dongfeng"
+        },
+        {
+          "id": 70500136,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/bcrl"
+        },
+        {
+          "id": 70500173,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/jinzixiaojie"
+        },
+        {
+          "id": 70500192,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/wumin"
+        },
+        {
+          "id": 70500193,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/dasiting"
+        },
+        {
+          "id": 70500269,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/majila"
+        },
+        {
+          "id": 70500298,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/yikala"
+        },
+        {
+          "id": 70500393,
+          "num": 2,
+          "skinshow": "UI/TrainSkinFriend/Shana"
+        },
+        {
+          "id": 70500076,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/huobaoshengyi"
+        },
+        {
+          "id": 70500094,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/nightchains"
+        },
+        {
+          "id": 70500124,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/zhengqi"
+        },
+        {
+          "id": 70500148,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/MoshenZ"
+        },
+        {
+          "id": 70500149,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/Box"
+        },
+        {
+          "id": 70500167,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/washake"
+        },
+        {
+          "id": 70500185,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/jiatiecheng"
+        },
+        {
+          "id": 70500270,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/monvqilv"
+        },
+        {
+          "id": 70500327,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/huiye"
+        },
+        {
+          "id": 70500253,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/moyanhao"
+        },
+        {
+          "id": 70500225,
+          "num": 3,
+          "skinshow": "UI/TrainSkinFriend/WYXGX"
+        },
+        {
+          "id": 70500251,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/023"
+        },
+        {
+          "id": 70500216,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV2"
+        },
+        {
+          "id": 70500217,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV3"
+        },
+        {
+          "id": 70500218,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV4"
+        },
+        {
+          "id": 70500219,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV5"
+        },
+        {
+          "id": 70500220,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV6"
+        },
+        {
+          "id": 70500221,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV7"
+        },
+        {
+          "id": 70500222,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV8"
+        },
+        {
+          "id": 70500223,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV9"
+        },
+        {
+          "id": 70500224,
+          "num": 1,
+          "skinshow": "UI/TrainSkinFriend/LV10"
+        }
+      ],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400012,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [
+        {
+          "id": 80300308
+        },
+        {
+          "id": 80300336
+        }
+      ],
+      "space": 25.0,
+      "weaponNum": 2,
+      "accessoryNum": 1,
+      "electricCost": 4500,
+      "characterNum": 0,
+      "carriagedurability": 3400,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 21,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200021,
+      "idCN": "建造模板/04标准货厢-建造",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600247,
+      "defaultSkin": 70500002,
+      "CoachX": 60,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 0.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": -1,
+      "defaultWallPaper": -1,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "标准货厢",
+      "describe": "科伦巴制式标准货厢，可满足列车组日常载货运输需求。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/goods",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/goods",
+      "skinList": [
+        {
+          "id": 70500002,
+          "num": 1
+        },
+        {
+          "id": 70500035,
+          "num": 1
+        },
+        {
+          "id": 70500041,
+          "num": 1
+        },
+        {
+          "id": 70500050,
+          "num": 1
+        },
+        {
+          "id": 70500051,
+          "num": 1
+        },
+        {
+          "id": 70500065,
+          "num": 1
+        },
+        {
+          "id": 70500059,
+          "num": 2
+        },
+        {
+          "id": 70500071,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500084,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500091,
+          "num": 2
+        },
+        {
+          "id": 70500103,
+          "num": 2
+        },
+        {
+          "id": 70500120,
+          "num": 2
+        },
+        {
+          "id": 70500133,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500145,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500162,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500182,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500196,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500229,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500257,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500266,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500322,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500279,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500302,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500323,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500346,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500353,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500359,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500365,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500371,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500383,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500389,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500401,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500407,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500413,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500419,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500425,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500431,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500109,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500139,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500176,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500201,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500206,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500272,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500313,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500396,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500078,
+          "num": 3
+        },
+        {
+          "id": 70500097,
+          "num": 3
+        },
+        {
+          "id": 70500127,
+          "num": 3
+        },
+        {
+          "id": 70500152,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500160,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500155,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500170,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500188,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500324,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500331,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500299,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500295,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500288,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500291,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500290,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500297,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500282,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500292,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500294,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500296,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": true,
+      "cannotDecorate": true,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        }
+      ],
+      "waittime": 21600,
+      "JumptimeList": [
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "defaultTemplate": -1,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 500000
+        }
+      ],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 100.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 1600,
+      "characterNum": 0,
+      "carriagedurability": 800,
+      "carriageRubbish": 0,
+      "speedEffect": -6.0,
+      "passengerCapacity": 0,
+      "Armor": 3,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200022,
+      "idCN": "初始/02护卫队车厢-初始",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600213,
+      "defaultSkin": 70500005,
+      "CoachX": 86,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": 81300135,
+      "doorRightFurniture": 81300334,
+      "defaultFloor": 81300024,
+      "defaultWallPaper": 81300025,
+      "bayInfos": [
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600418,
+          "offsetX": 12
+        },
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600292,
+          "offsetX": 73
+        },
+        {
+          "bayFurniture": -1,
+          "bayType": 12600416,
+          "offsetX": 86
+        }
+      ],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "护卫队车厢",
+      "describe": "无垠号车组标准护卫队车厢，可提供更大的生活空间。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/normal",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/normal",
+      "skinList": [
+        {
+          "id": 70500005
+        },
+        {
+          "id": 70500033
+        },
+        {
+          "id": 70500039
+        },
+        {
+          "id": 70500046
+        },
+        {
+          "id": 70500047
+        },
+        {
+          "id": 70500063
+        },
+        {
+          "id": 70500057,
+          "num": 2
+        },
+        {
+          "id": 70500069,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500082,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500089,
+          "num": 2
+        },
+        {
+          "id": 70500101,
+          "num": 2
+        },
+        {
+          "id": 70500122,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500131,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500143,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500166,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500180,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500194,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500227,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500255,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500264,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500347,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500276,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500300,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500319,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500344,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500351,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500357,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500363,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500369,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500381,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500387,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500399,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500405,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500411,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500417,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500423,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500429,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500107,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500137,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500174,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500199,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500204,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500252,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500311,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500394,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500077,
+          "num": 3
+        },
+        {
+          "id": 70500095,
+          "num": 3
+        },
+        {
+          "id": 70500125,
+          "num": 3
+        },
+        {
+          "id": 70500150,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500153,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500168,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500186,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500318,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500328,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500240,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500226,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500232,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500233,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500234,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500235,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500236,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500237,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500238,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500239,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": false,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400003,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        }
+      ],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 50.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 2100,
+      "characterNum": 10,
+      "carriagedurability": 1300,
+      "carriageRubbish": 10,
+      "speedEffect": -4.0,
+      "passengerCapacity": 0,
+      "Armor": 8,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200030,
+      "idCN": "建造模板/02护卫队车厢-建造",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600213,
+      "defaultSkin": 70500005,
+      "CoachX": 86,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": 81300135,
+      "doorRightFurniture": 81300334,
+      "defaultFloor": 81300024,
+      "defaultWallPaper": 81300025,
+      "bayInfos": [
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600415,
+          "offsetX": 12
+        },
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600292,
+          "offsetX": 73
+        },
+        {
+          "bayFurniture": -1,
+          "bayType": 12600416,
+          "offsetX": 86
+        }
+      ],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "护卫队车厢",
+      "describe": "无垠号车组标准护卫队车厢，可提供更大的生活空间。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/normal",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/normal",
+      "skinList": [
+        {
+          "id": 70500005
+        },
+        {
+          "id": 70500033
+        },
+        {
+          "id": 70500039
+        },
+        {
+          "id": 70500046
+        },
+        {
+          "id": 70500047
+        },
+        {
+          "id": 70500063
+        },
+        {
+          "id": 70500057,
+          "num": 2
+        },
+        {
+          "id": 70500069,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500082,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500089,
+          "num": 2
+        },
+        {
+          "id": 70500101,
+          "num": 2
+        },
+        {
+          "id": 70500122,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500131,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500143,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500166,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500180,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500194,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500227,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500255,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500264,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500347,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500276,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500300,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500319,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500344,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500351,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500357,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500363,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500369,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500381,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500387,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500399,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500405,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500411,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500417,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500423,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500429,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500107,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500137,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500174,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500199,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500204,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500252,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500311,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500394,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500077,
+          "num": 3
+        },
+        {
+          "id": 70500095,
+          "num": 3
+        },
+        {
+          "id": 70500125,
+          "num": 3
+        },
+        {
+          "id": 70500150,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500153,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500168,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500186,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500318,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500328,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500240,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500226,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500232,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500233,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500234,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500235,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500236,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500237,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500238,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500239,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": false,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 2000000
+        }
+      ],
+      "waittime": 21600,
+      "JumptimeList": [
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "defaultTemplate": 81400008,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        }
+      ],
+      "unlockLevel": 0,
+      "Achieve": 81001120,
+      "weaponTypeList": [],
+      "space": 50.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 2100,
+      "characterNum": 10,
+      "carriagedurability": 1300,
+      "carriageRubbish": 10,
+      "speedEffect": -4.0,
+      "passengerCapacity": 0,
+      "Armor": 8,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200001,
+      "idCN": "初始/03基础客厢-初始",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600167,
+      "defaultSkin": 70500003,
+      "CoachX": 89,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": 81300135,
+      "doorRightFurniture": 81300334,
+      "defaultFloor": 81300027,
+      "defaultWallPaper": 81300028,
+      "bayInfos": [
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600415,
+          "offsetX": 15
+        },
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600414,
+          "offsetX": 76
+        },
+        {
+          "bayFurniture": -1,
+          "bayType": 12600416,
+          "offsetX": 89
+        }
+      ],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "基础客厢",
+      "describe": "无垠号车组标准64座客车车厢，可提供更高的载客能力。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/passenger",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/passenger",
+      "skinList": [
+        {
+          "id": 70500003
+        },
+        {
+          "id": 70500034
+        },
+        {
+          "id": 70500040
+        },
+        {
+          "id": 70500048
+        },
+        {
+          "id": 70500049
+        },
+        {
+          "id": 70500064
+        },
+        {
+          "id": 70500058,
+          "num": 2
+        },
+        {
+          "id": 70500070,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500083,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500090,
+          "num": 2
+        },
+        {
+          "id": 70500102,
+          "num": 2
+        },
+        {
+          "id": 70500121,
+          "num": 2
+        },
+        {
+          "id": 70500132,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500144,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500165,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500181,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500195,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500228,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500256,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500265,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500320,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500277,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500301,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500321,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500345,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500352,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500358,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500364,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500370,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500382,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500388,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500400,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500406,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500412,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500418,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500424,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500430,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500108,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500138,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500175,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500200,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500205,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500271,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500312,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500395,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500087,
+          "num": 3
+        },
+        {
+          "id": 70500096,
+          "num": 3
+        },
+        {
+          "id": 70500126,
+          "num": 3
+        },
+        {
+          "id": 70500151,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500154,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500169,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500187,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500332,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500329,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500250,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500241,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500242,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500243,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500244,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500245,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500246,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500247,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500248,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500249,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": false,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400004,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 860000
+        }
+      ],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 50.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 2100,
+      "characterNum": 0,
+      "carriagedurability": 1300,
+      "carriageRubbish": 10,
+      "speedEffect": -5.0,
+      "passengerCapacity": 64,
+      "Armor": 5,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200002,
+      "idCN": "建造模板/03基础客厢-建造",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600167,
+      "defaultSkin": 70500003,
+      "CoachX": 89,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": 81300135,
+      "doorRightFurniture": 81300334,
+      "defaultFloor": 81300027,
+      "defaultWallPaper": 81300028,
+      "bayInfos": [
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600415,
+          "offsetX": 15
+        },
+        {
+          "bayFurniture": 81300159,
+          "bayType": 12600414,
+          "offsetX": 76
+        },
+        {
+          "bayFurniture": -1,
+          "bayType": 12600416,
+          "offsetX": 89
+        }
+      ],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "标准客厢",
+      "describe": "无垠号车组标准64座客车车厢，可提供更高的载客能力。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/passenger",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/passenger",
+      "skinList": [
+        {
+          "id": 70500003
+        },
+        {
+          "id": 70500034
+        },
+        {
+          "id": 70500040
+        },
+        {
+          "id": 70500048
+        },
+        {
+          "id": 70500049
+        },
+        {
+          "id": 70500064
+        },
+        {
+          "id": 70500058,
+          "num": 2
+        },
+        {
+          "id": 70500070,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500083,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500090,
+          "num": 2
+        },
+        {
+          "id": 70500102,
+          "num": 2
+        },
+        {
+          "id": 70500121,
+          "num": 2
+        },
+        {
+          "id": 70500132,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500144,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500165,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500181,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500195,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500228,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500256,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500265,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500320,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500277,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500301,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500321,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500345,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500352,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500358,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500364,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500370,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500382,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500388,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500400,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500406,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500412,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500418,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500424,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500430,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500108,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500138,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500175,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500200,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500205,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500271,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500312,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500395,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500087,
+          "num": 3
+        },
+        {
+          "id": 70500096,
+          "num": 3
+        },
+        {
+          "id": 70500126,
+          "num": 3
+        },
+        {
+          "id": 70500151,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500154,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500169,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500187,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500332,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500329,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500250,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500241,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500242,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500243,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500244,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500245,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500246,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500247,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500248,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500249,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": false,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 3000000
+        }
+      ],
+      "waittime": 21600,
+      "JumptimeList": [
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "defaultTemplate": 81400011,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 860000
+        }
+      ],
+      "unlockLevel": 30,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 50.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 2100,
+      "characterNum": 0,
+      "carriagedurability": 1300,
+      "carriageRubbish": 10,
+      "speedEffect": -5.0,
+      "passengerCapacity": 64,
+      "Armor": 5,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200003,
+      "idCN": "车站店面/01炸鸡店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 33,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300169,
+      "defaultWallPaper": 81300170,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400005,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 500,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200004,
+      "idCN": "车站店面/02奶茶店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300001,
+      "defaultWallPaper": 81300004,
+      "bayInfos": [],
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400006,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0
+    },
+    {
+      "id": 81200005,
+      "idCN": "建造模板/05武装车厢-建造",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600142,
+      "defaultSkin": 70500004,
+      "CoachX": 60,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 0.0,
+      "doorLeftFurniture": 81300135,
+      "doorRightFurniture": 81300159,
+      "defaultFloor": 81300027,
+      "defaultWallPaper": 81300028,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "武装车厢",
+      "describe": "铁盟拖挂式武器平台车厢，可提供武装搭载能力。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/weapon",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/weapon",
+      "skinList": [
+        {
+          "id": 70500004,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500036
+        },
+        {
+          "id": 70500042
+        },
+        {
+          "id": 70500052
+        },
+        {
+          "id": 70500053
+        },
+        {
+          "id": 70500066
+        },
+        {
+          "id": 70500060,
+          "num": 2
+        },
+        {
+          "id": 70500072,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500085,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500092,
+          "num": 2
+        },
+        {
+          "id": 70500104,
+          "num": 2
+        },
+        {
+          "id": 70500119,
+          "num": 2
+        },
+        {
+          "id": 70500134,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500146,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500164,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500183,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500197,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500230,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500258,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500267,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500330,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500280,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500303,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500325,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500348,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500354,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500360,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500366,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500372,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500384,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500390,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500402,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500408,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500414,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500420,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500426,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500432,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500207,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500273,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500314,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500397,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500110,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500140,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500177,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500202,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500098,
+          "num": 3
+        },
+        {
+          "id": 70500128,
+          "num": 3
+        },
+        {
+          "id": 70500316,
+          "num": 3,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": true,
+      "cannotDecorate": true,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 5000000
+        }
+      ],
+      "waittime": 21600,
+      "JumptimeList": [
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "defaultTemplate": -1,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 2500000
+        }
+      ],
+      "unlockLevel": 60,
+      "Achieve": -1,
+      "weaponTypeList": [
+        {
+          "id": 80300309
+        }
+      ],
+      "space": 25.0,
+      "weaponNum": 1,
+      "accessoryNum": 0,
+      "electricCost": 3100,
+      "characterNum": 0,
+      "carriagedurability": 2100,
+      "carriageRubbish": 0,
+      "speedEffect": -6.0,
+      "passengerCapacity": 0,
+      "Armor": 13,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200006,
+      "idCN": "建造模板/04重型货厢-建造",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600247,
+      "defaultSkin": 70500002,
+      "CoachX": 60,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 0.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": -1,
+      "defaultWallPaper": -1,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "重型货厢",
+      "describe": "科伦巴制式重型货厢，可提供更大的载货能力。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/goods",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/goods",
+      "skinList": [
+        {
+          "id": 70500002,
+          "num": 1
+        },
+        {
+          "id": 70500035,
+          "num": 1
+        },
+        {
+          "id": 70500041,
+          "num": 1
+        },
+        {
+          "id": 70500050,
+          "num": 1
+        },
+        {
+          "id": 70500051,
+          "num": 1
+        },
+        {
+          "id": 70500065,
+          "num": 1
+        },
+        {
+          "id": 70500059,
+          "num": 2
+        },
+        {
+          "id": 70500071,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500084,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500091,
+          "num": 2
+        },
+        {
+          "id": 70500103,
+          "num": 2
+        },
+        {
+          "id": 70500120,
+          "num": 2
+        },
+        {
+          "id": 70500133,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500145,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500162,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500182,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500196,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500229,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500257,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500266,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500322,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500279,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500302,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500323,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500346,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500353,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500359,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500365,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500371,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500383,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500389,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500401,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500407,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500413,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500419,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500425,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500431,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500109,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500139,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500176,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500201,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500206,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500272,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500313,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500396,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500078,
+          "num": 3
+        },
+        {
+          "id": 70500097,
+          "num": 3
+        },
+        {
+          "id": 70500127,
+          "num": 3
+        },
+        {
+          "id": 70500152,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500160,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500155,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500170,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500188,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500324,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500331,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500299,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500295,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500288,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500291,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500290,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500297,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500282,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500292,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500294,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500296,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": true,
+      "cannotDecorate": true,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 3000000
+        }
+      ],
+      "waittime": 21600,
+      "JumptimeList": [
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "defaultTemplate": -1,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 1500000
+        }
+      ],
+      "unlockLevel": 0,
+      "Achieve": 81000407,
+      "weaponTypeList": [],
+      "space": 120.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 2500,
+      "characterNum": 0,
+      "carriagedurability": 1300,
+      "carriageRubbish": 0,
+      "speedEffect": -11.0,
+      "passengerCapacity": 0,
+      "Armor": 5,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200007,
+      "idCN": "建造模板/04轻型货厢-建造",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600247,
+      "defaultSkin": 70500002,
+      "CoachX": 60,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 0.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": -1,
+      "defaultWallPaper": -1,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "轻型货厢",
+      "describe": "科伦巴制式轻型货厢，可提供一定的载货能力。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/goods",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/goods",
+      "skinList": [
+        {
+          "id": 70500002,
+          "num": 1
+        },
+        {
+          "id": 70500035,
+          "num": 1
+        },
+        {
+          "id": 70500041,
+          "num": 1
+        },
+        {
+          "id": 70500050,
+          "num": 1
+        },
+        {
+          "id": 70500051,
+          "num": 1
+        },
+        {
+          "id": 70500065,
+          "num": 1
+        },
+        {
+          "id": 70500059,
+          "num": 2
+        },
+        {
+          "id": 70500071,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500084,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500091,
+          "num": 2
+        },
+        {
+          "id": 70500103,
+          "num": 2
+        },
+        {
+          "id": 70500120,
+          "num": 2
+        },
+        {
+          "id": 70500133,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500145,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500162,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500182,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500196,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500229,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500257,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500266,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500322,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500279,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500302,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500323,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500346,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500353,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500359,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500365,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500371,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500383,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500389,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500401,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500407,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500413,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500419,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500425,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500431,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500109,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500139,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500176,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500201,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500206,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500272,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500313,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500396,
+          "num": 2,
+          "skinshow": ""
+        },
+        {
+          "id": 70500078,
+          "num": 3
+        },
+        {
+          "id": 70500097,
+          "num": 3
+        },
+        {
+          "id": 70500127,
+          "num": 3
+        },
+        {
+          "id": 70500152,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500160,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500155,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500170,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500188,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500324,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500331,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500299,
+          "num": 3,
+          "skinshow": ""
+        },
+        {
+          "id": 70500295,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500288,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500291,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500290,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500297,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500282,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500292,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500294,
+          "num": 1,
+          "skinshow": ""
+        },
+        {
+          "id": 70500296,
+          "num": 1,
+          "skinshow": ""
+        }
+      ],
+      "cannotMove": true,
+      "cannotDecorate": true,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 2000000
+        }
+      ],
+      "waittime": 21600,
+      "JumptimeList": [
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "defaultTemplate": -1,
+      "returnMaterialList": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        }
+      ],
+      "unlockLevel": 0,
+      "Achieve": 81000401,
+      "weaponTypeList": [],
+      "space": 80.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 800,
+      "characterNum": 0,
+      "carriagedurability": 500,
+      "carriageRubbish": 0,
+      "speedEffect": -1.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200008,
+      "idCN": "车站店面/03彼得酒吧",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300181,
+      "defaultWallPaper": 81300183,
+      "bayInfos": [],
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400007,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0
+    },
+    {
+      "id": 81200009,
+      "idCN": "车站店面/04烤肉店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300218,
+      "defaultWallPaper": 81300219,
+      "bayInfos": [],
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400009,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0
+    },
+    {
+      "id": 81200010,
+      "idCN": "车站店面/05奶茶店大头贴机",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300001,
+      "defaultWallPaper": 81300004,
+      "bayInfos": [],
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400010,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0
+    },
+    {
+      "id": 81200011,
+      "idCN": "车站店面/06服装店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300285,
+      "defaultWallPaper": 81300286,
+      "bayInfos": [],
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400002,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0
+    },
+    {
+      "id": 81200012,
+      "idCN": "车站店面/07拉面店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 45,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300168,
+      "defaultWallPaper": 81300310,
+      "bayInfos": [],
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400013,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0
+    },
+    {
+      "id": 81200013,
+      "idCN": "监狱/1号车间",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 45,
+      "CoachZ": 20,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300364,
+      "defaultWallPaper": 81300363,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400014,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 40.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200015,
+      "idCN": "游乐场/海岛/海岛区域1-初始",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12601336,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 17,
+      "CoachY": 8,
+      "doorOffsetX": 0.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300383,
+      "defaultWallPaper": 81300384,
+      "bayInfos": [
+        {
+          "bayFurniture": -1,
+          "bayType": 12601346,
+          "offsetX": 30
+        }
+      ],
+      "limitFloorYInDesign": 2,
+      "resetImgFloorPath": "UI/Playground/Grid01",
+      "selectImgFloorPath": "UI/Playground/Grid02",
+      "errorImgFloorPath": "UI/Playground/Grid03",
+      "resetImgWallPath": "UI/Playground/WallGrid01",
+      "selectImgWallPath": "UI/Playground/WallGrid02",
+      "errorImgWallPath": "UI/Playground/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 0,
+      "JumptimeList": [],
+      "defaultTemplate": 81400015,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200014,
+      "idCN": "游乐场/海岛/海岛区域2-扩建1",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12601368,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 17,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300383,
+      "defaultWallPaper": 81300384,
+      "bayInfos": [
+        {
+          "bayFurniture": -1,
+          "bayType": 12601346,
+          "offsetX": 30
+        }
+      ],
+      "limitFloorYInDesign": 2,
+      "resetImgFloorPath": "UI/Playground/Grid01",
+      "selectImgFloorPath": "UI/Playground/Grid02",
+      "errorImgFloorPath": "UI/Playground/Grid03",
+      "resetImgWallPath": "UI/Playground/WallGrid01",
+      "selectImgWallPath": "UI/Playground/WallGrid02",
+      "errorImgWallPath": "UI/Playground/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 600000
+        },
+        {
+          "id": 11400218,
+          "num": 6000
+        }
+      ],
+      "waittime": 0,
+      "JumptimeList": [],
+      "defaultTemplate": -1,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 6,
+      "studyNeedLevel": 7,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200016,
+      "idCN": "游乐场/海岛/海岛区域3-扩建2",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12601368,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 17,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300383,
+      "defaultWallPaper": 81300384,
+      "bayInfos": [
+        {
+          "bayFurniture": -1,
+          "bayType": 12601346,
+          "offsetX": 30
+        }
+      ],
+      "limitFloorYInDesign": 2,
+      "resetImgFloorPath": "UI/Playground/Grid01",
+      "selectImgFloorPath": "UI/Playground/Grid02",
+      "errorImgFloorPath": "UI/Playground/Grid03",
+      "resetImgWallPath": "UI/Playground/WallGrid01",
+      "selectImgWallPath": "UI/Playground/WallGrid02",
+      "errorImgWallPath": "UI/Playground/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 700000
+        },
+        {
+          "id": 11400218,
+          "num": 7000
+        }
+      ],
+      "waittime": 0,
+      "JumptimeList": [],
+      "defaultTemplate": -1,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 12,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200017,
+      "idCN": "游乐场/海岛/海岛区域4-扩建3",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12601368,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 17,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300383,
+      "defaultWallPaper": 81300384,
+      "bayInfos": [
+        {
+          "bayFurniture": -1,
+          "bayType": 12601346,
+          "offsetX": 30
+        }
+      ],
+      "limitFloorYInDesign": 2,
+      "resetImgFloorPath": "UI/Playground/Grid01",
+      "selectImgFloorPath": "UI/Playground/Grid02",
+      "errorImgFloorPath": "UI/Playground/Grid03",
+      "resetImgWallPath": "UI/Playground/WallGrid01",
+      "selectImgWallPath": "UI/Playground/WallGrid02",
+      "errorImgWallPath": "UI/Playground/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 800000
+        },
+        {
+          "id": 11400218,
+          "num": 8000
+        }
+      ],
+      "waittime": 0,
+      "JumptimeList": [],
+      "defaultTemplate": -1,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 18,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200018,
+      "idCN": "游乐场/海岛/海岛区域5-扩建4",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12601368,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 17,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300383,
+      "defaultWallPaper": 81300384,
+      "bayInfos": [
+        {
+          "bayFurniture": -1,
+          "bayType": 12601346,
+          "offsetX": 30
+        }
+      ],
+      "limitFloorYInDesign": 2,
+      "resetImgFloorPath": "UI/Playground/Grid01",
+      "selectImgFloorPath": "UI/Playground/Grid02",
+      "errorImgFloorPath": "UI/Playground/Grid03",
+      "resetImgWallPath": "UI/Playground/WallGrid01",
+      "selectImgWallPath": "UI/Playground/WallGrid02",
+      "errorImgWallPath": "UI/Playground/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 900000
+        },
+        {
+          "id": 11400218,
+          "num": 9000
+        }
+      ],
+      "waittime": 0,
+      "JumptimeList": [],
+      "defaultTemplate": -1,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 24,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200019,
+      "idCN": "游乐场/海岛/海岛区域6-扩建5",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12601368,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 17,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300383,
+      "defaultWallPaper": 81300384,
+      "bayInfos": [
+        {
+          "bayFurniture": -1,
+          "bayType": 12601346,
+          "offsetX": 30
+        }
+      ],
+      "limitFloorYInDesign": 2,
+      "resetImgFloorPath": "UI/Playground/Grid01",
+      "selectImgFloorPath": "UI/Playground/Grid02",
+      "errorImgFloorPath": "UI/Playground/Grid03",
+      "resetImgWallPath": "UI/Playground/WallGrid01",
+      "selectImgWallPath": "UI/Playground/WallGrid02",
+      "errorImgWallPath": "UI/Playground/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        },
+        {
+          "id": 11400218,
+          "num": 10000
+        }
+      ],
+      "waittime": 0,
+      "JumptimeList": [],
+      "defaultTemplate": -1,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 10,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 30,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200023,
+      "idCN": "监狱/牢房",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600213,
+      "defaultSkin": 70500005,
+      "CoachX": 167,
+      "CoachZ": 10,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300554,
+      "defaultWallPaper": 81300555,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "护卫队车厢",
+      "describe": "无垠号车组标准护卫队车厢，可提供更大的生活空间。",
+      "level": 1,
+      "thumbnail": "UI/Trainfactory/Edit/CarriageType/normal",
+      "thumbnailone": "UI/Trainfactory/Edit/CarriageType/normal",
+      "skinList": [],
+      "cannotMove": false,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400017,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 50.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 2100,
+      "characterNum": 36,
+      "carriagedurability": 1300,
+      "carriageRubbish": 10,
+      "speedEffect": -4.0,
+      "passengerCapacity": 0,
+      "Armor": 8,
+      "playgroundLv": 0,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200045,
+      "idCN": "车站店面/08黑月服装店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300662,
+      "defaultWallPaper": 81300663,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400018,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200046,
+      "idCN": "公司/公司大厅",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 33,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300169,
+      "defaultWallPaper": 81300170,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400021,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 500,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200047,
+      "idCN": "车站店面/09寿司店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 30,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300696,
+      "defaultWallPaper": -1,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400020,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 0,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200048,
+      "idCN": "公司/公司商店",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 33,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300169,
+      "defaultWallPaper": 81300170,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400022,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 500,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200049,
+      "idCN": "公司/公司仓库",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 33,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300169,
+      "defaultWallPaper": 81300170,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400023,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 500,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    },
+    {
+      "id": 81200057,
+      "idCN": "公司/远征大厅",
+      "mod": "车厢属性",
+      "isInformalData": false,
+      "coachType": 12600165,
+      "defaultSkin": 70500001,
+      "CoachX": 33,
+      "CoachZ": 15,
+      "CoachY": 8,
+      "doorOffsetX": 1.0,
+      "doorLeftFurniture": -1,
+      "doorRightFurniture": -1,
+      "defaultFloor": 81300169,
+      "defaultWallPaper": 81300170,
+      "bayInfos": [],
+      "limitFloorYInDesign": -1,
+      "resetImgFloorPath": "Home/Grid/Grid01",
+      "selectImgFloorPath": "Home/Grid/Grid02",
+      "errorImgFloorPath": "Home/Grid/Grid03",
+      "resetImgWallPath": "Home/Grid/WallGrid01",
+      "selectImgWallPath": "Home/Grid/WallGrid02",
+      "errorImgWallPath": "Home/Grid/WallGrid03",
+      "name": "",
+      "describe": "",
+      "level": 1,
+      "thumbnail": "",
+      "thumbnailone": "",
+      "skinList": [],
+      "cannotMove": true,
+      "cannotDecorate": false,
+      "buildMaterialList": [],
+      "waittime": 21600,
+      "JumptimeList": [],
+      "defaultTemplate": 81400024,
+      "returnMaterialList": [],
+      "unlockLevel": 0,
+      "Achieve": -1,
+      "weaponTypeList": [],
+      "space": 0.0,
+      "weaponNum": 0,
+      "accessoryNum": 0,
+      "electricCost": 0,
+      "characterNum": 0,
+      "carriagedurability": 500,
+      "carriageRubbish": 0,
+      "speedEffect": 0.0,
+      "passengerCapacity": 0,
+      "Armor": 0,
+      "playgroundLv": 1,
+      "studyNeedLevel": 1,
+      "studyMaterialList": [],
+      "nextCoach": -1
+    }
+  ]
+}

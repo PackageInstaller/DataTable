@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "hash": "D2D053CB77F3F94645ADE5B20883355458E36F5F4B10B6C5599269522F4CD881",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131696495374,
+    "etc": "factory=CardAIConditionFactory"
+  },
+  "count": 38,
+  "records": [
+    {
+      "id": 96200001,
+      "idCN": "初始产品",
+      "mod": "GS脚本"
+    },
+    {
+      "id": 96200002,
+      "idCN": "是队长技",
+      "mod": "判断队长技",
+      "isInformalData": false,
+      "isInvert": false
+    },
+    {
+      "id": 96200003,
+      "idCN": "弃牌按钮可用",
+      "mod": "弃牌按钮可用",
+      "isInformalData": false,
+      "isInvert": false
+    },
+    {
+      "id": 96200004,
+      "idCN": "卡牌颜色/红",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": false,
+      "color": "Red"
+    },
+    {
+      "id": 96200005,
+      "idCN": "卡牌颜色/蓝",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": false,
+      "color": "Blue"
+    },
+    {
+      "id": 96200006,
+      "idCN": "卡牌颜色/绿",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": false,
+      "color": "Green"
+    },
+    {
+      "id": 96200007,
+      "idCN": "卡牌颜色/黄",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": false,
+      "color": "Yellow"
+    },
+    {
+      "id": 96200008,
+      "idCN": "卡牌颜色/紫",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": false,
+      "color": "Purple"
+    },
+    {
+      "id": 96200009,
+      "idCN": "卡牌颜色/黑",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": false,
+      "color": "Black"
+    },
+    {
+      "id": 96200010,
+      "idCN": "卡牌设置/保留手牌",
+      "mod": "手牌数大于",
+      "isInformalData": false,
+      "isInvert": false
+    },
+    {
+      "id": 96200011,
+      "idCN": "释放者存活",
+      "mod": "卡牌角色存活",
+      "isInformalData": false,
+      "isInvert": false
+    },
+    {
+      "id": 96200012,
+      "idCN": "卡牌颜色/非黑",
+      "mod": "卡牌颜色",
+      "isInformalData": false,
+      "isInvert": true,
+      "color": "Black"
+    },
+    {
+      "id": 96200013,
+      "idCN": "条件集/手牌可用",
+      "mod": "条件集",
+      "isInformalData": false,
+      "isInvert": false,
+      "conditionList": [
+        {
+          "conditionId": 96200012
+        },
+        {
+          "conditionId": 96200011
+        },
+        {
+          "conditionId": 96200014
+        },
+        {
+          "conditionId": 96200023
+        },
+        {
+          "conditionId": 96200024
+        },
+        {
+          "conditionId": 96200032
+        },
+        {
+          "conditionId": 96200033
+        }
+      ]
+    },
+    {
+      "id": 96200014,
+      "idCN": "卡牌费用可用",
+      "mod": "卡牌费用可用",
+      "isInformalData": false,
+      "isInvert": false
+    },
+    {
+      "id": 96200015,
+      "idCN": "条件集/全部手牌不可用",
+      "mod": "条件集_所有手牌",
+      "isInformalData": false,
+      "isInvert": false,
+      "conditionList": [
+        {
+          "conditionId": 96200017
+        }
+      ]
+    },
+    {
+      "id": 96200016,
+      "idCN": "条件集/全部手牌不可用且弃牌可用",
+      "mod": "条件集",
+      "isInformalData": false,
+      "isInvert": false,
+      "conditionList": [
+        {
+          "conditionId": 96200015
+        },
+        {
+          "conditionId": 96200034
+        }
+      ]
+    },
+    {
+      "id": 96200017,
+      "idCN": "条件集/手牌不可用",
+      "mod": "条件集",
+      "isInformalData": false,
+      "isInvert": true,
+      "conditionList": [
+        {
+          "conditionId": 96200013
+        }
+      ]
+    },
+    {
+      "id": 96200018,
+      "idCN": "Buff检测/卡牌Buff",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000103
+    },
+    {
+      "id": 96200019,
+      "idCN": "Buff检测/释放者Buff",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000111
+    },
+    {
+      "id": 96200020,
+      "idCN": "Buff检测/小队Buff",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000112
+    },
+    {
+      "id": 96200021,
+      "idCN": "是手牌得意技",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000115
+    },
+    {
+      "id": 96200022,
+      "idCN": "是队长技GS",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000114
+    },
+    {
+      "id": 96200023,
+      "idCN": "Buff检测/释放者未被禁锢",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000130
+    },
+    {
+      "id": 96200024,
+      "idCN": "Buff检测/卡牌未被禁锢",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000131
+    },
+    {
+      "id": 96200028,
+      "idCN": "选择操作/有队友生命值小于x",
+      "mod": "队伍中有人的属性满足条件",
+      "isInformalData": false,
+      "isInvert": true,
+      "targetType": "Ally",
+      "attributeType": "CurrentHp",
+      "condition": "Less",
+      "numberType": "Percent",
+      "number_SN": 10000
+    },
+    {
+      "id": 96200029,
+      "idCN": "选择操作/当前费用小于x",
+      "mod": "费用不少于",
+      "isInformalData": false,
+      "isInvert": false,
+      "costNum": 0
+    },
+    {
+      "id": 96200030,
+      "idCN": "选择操作/当前费用大于等于x",
+      "mod": "费用不少于",
+      "isInformalData": false,
+      "isInvert": true,
+      "costNum": 0
+    },
+    {
+      "id": 96200031,
+      "idCN": "选择操作/手牌数小于等于x",
+      "mod": "手牌数大于",
+      "isInformalData": false,
+      "isInvert": false,
+      "cardNum": 0
+    },
+    {
+      "id": 96200025,
+      "idCN": "选择操作/敌方卡牌优先级",
+      "mod": "卡牌Tag",
+      "isInformalData": false,
+      "isInvert": false,
+      "tagList": [
+        {
+          "tagId": 12601403
+        }
+      ],
+      "tagType": "Or"
+    },
+    {
+      "id": 96200026,
+      "idCN": "选择操作/手牌数大于",
+      "mod": "手牌数大于",
+      "isInformalData": false,
+      "isInvert": true,
+      "cardNum": 0
+    },
+    {
+      "id": 96200032,
+      "idCN": "Buff检测/卡牌未被禁用",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000141
+    },
+    {
+      "id": 96200033,
+      "idCN": "Buff检测/卡牌未被禁止拖拽",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000142
+    },
+    {
+      "id": 96200027,
+      "idCN": "弃牌按钮/脚本",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000158
+    },
+    {
+      "id": 96200034,
+      "idCN": "弃牌按钮/条件",
+      "mod": "条件集",
+      "isInformalData": false,
+      "isInvert": false,
+      "conditionList": [
+        {
+          "conditionId": 96200003
+        },
+        {
+          "conditionId": 96200027
+        }
+      ]
+    },
+    {
+      "id": 96200035,
+      "idCN": "条件集/判断手牌权重低于弃牌按钮",
+      "mod": "条件集_所有手牌",
+      "isInformalData": false,
+      "isInvert": false,
+      "conditionList": [
+        {
+          "conditionId": 96200036
+        }
+      ]
+    },
+    {
+      "id": 96200036,
+      "idCN": "判断手牌权重低于弃牌按钮",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000174
+    },
+    {
+      "id": 96200039,
+      "idCN": "弃牌按钮/判断手牌权重低于弃牌按钮且弃牌可用",
+      "mod": "条件集",
+      "isInformalData": false,
+      "isInvert": false,
+      "conditionList": [
+        {
+          "conditionId": 96200003
+        },
+        {
+          "conditionId": 96200027
+        },
+        {
+          "conditionId": 96200035
+        }
+      ]
+    },
+    {
+      "id": 96200037,
+      "idCN": "条件/夏洛蒂·澄心/辉光大于等于50层",
+      "mod": "GS脚本",
+      "isInformalData": false,
+      "isInvert": false,
+      "logicId": 60000190
+    }
+  ]
+}

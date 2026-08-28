@@ -1,0 +1,98 @@
+{
+  "version": 1,
+  "hash": "D8EFE45C2B4F079BD1CA89849A1CECAD0B83A56F59E3610E46A43AAF62B6661B",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131824370334,
+    "etc": "factory=MapControlFactory"
+  },
+  "count": 2,
+  "records": [
+    {
+      "id": 60400002,
+      "idCN": "地图类活动/大富翁总控",
+      "mod": "大富翁配置",
+      "isInformalData": false,
+      "monopolyList": [
+        {
+          "id": 88600012
+        }
+      ],
+      "diceNum": 5,
+      "diceWeekendNum": 8,
+      "diceTimeNum": [
+        {
+          "endTime": "14:30:00",
+          "num": 2,
+          "startTime": "11:30:00"
+        },
+        {
+          "endTime": "21:00:00",
+          "num": 3,
+          "startTime": "18:00:00"
+        }
+      ],
+      "diceTimeWeekendNum": [
+        {
+          "endTime": "14:30:00",
+          "num": 3,
+          "startTime": "11:30:00"
+        },
+        {
+          "endTime": "21:00:00",
+          "num": 5,
+          "startTime": "18:00:00"
+        }
+      ],
+      "diceLimit": 50,
+      "showRankNum": 10,
+      "refreshRankTime": 1,
+      "monopolyRank": 84300021,
+      "antedate": 2,
+      "playerNum": 8,
+      "gameDate": 7,
+      "gameMinLV": 25,
+      "joinTicket": [
+        {
+          "id": 11400001,
+          "num": 100000
+        },
+        {
+          "id": 11400005,
+          "num": 100
+        }
+      ],
+      "clickLimit": 25,
+      "refreshLimit": 25,
+      "itemUseLimit": 1,
+      "diceItemList": [
+        {
+          "id": "diceChange"
+        },
+        {
+          "id": "diceFix"
+        },
+        {
+          "id": "diceFixPlus"
+        }
+      ],
+      "roundItemList": [
+        {
+          "id": "investNum"
+        },
+        {
+          "id": "randomArrow"
+        }
+      ],
+      "pathLimit": 10,
+      "itemLimit": 30,
+      "moneyId": 11400333
+    },
+    {
+      "id": 60400003,
+      "idCN": "黑月游乐城总控",
+      "mod": "魔女活动配置",
+      "isInformalData": false
+    }
+  ]
+}

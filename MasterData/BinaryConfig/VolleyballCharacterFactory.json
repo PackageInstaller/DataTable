@@ -1,0 +1,2002 @@
+{
+  "version": 1,
+  "hash": "473D37B957CAAD16F58090818BE8E0A48A4F9A4A51DA626155A452EC561A5843",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131697678515,
+    "etc": "factory=VolleyballCharacterFactory"
+  },
+  "count": 10,
+  "records": [
+    {
+      "id": 72200001,
+      "idCN": "1列车长(男)",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000137,
+      "resPath": "Volleyball/Spine/volleyball_Player_boy/volleyball_Player_boy_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Player_boy",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "列车长",
+      "profilePhoto": 82600006
+    },
+    {
+      "id": 72200003,
+      "idCN": "2莉薇娅",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000055,
+      "resPath": "Volleyball\\Spine\\volleyball_Livia\\volleyball_Livia_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Livia",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "莉薇娅",
+      "profilePhoto": 82600310
+    },
+    {
+      "id": 72200004,
+      "idCN": "3弗兰",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000160,
+      "resPath": "Volleyball/Spine/volleyball_Flan/volleyball_Flan_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Flan",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "弗兰",
+      "profilePhoto": 82600483
+    },
+    {
+      "id": 72200005,
+      "idCN": "4艾略特",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000134,
+      "resPath": "Volleyball/Spine/volleyball_Eliot/volleyball_Eliot_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Eliot",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "艾略特",
+      "profilePhoto": 82600326
+    },
+    {
+      "id": 72200006,
+      "idCN": "5静流",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000468,
+      "resPath": "Volleyball\\Spine\\volleyball_Shizuru\\volleyball_Shizuru_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Shizuru",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "静流",
+      "profilePhoto": 82600490
+    },
+    {
+      "id": 72200007,
+      "idCN": "6夏尔",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000254,
+      "resPath": "Volleyball/Spine/volleyball_Shire/volleyball_Shire_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Shire",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "夏尔",
+      "profilePhoto": 82600481
+    },
+    {
+      "id": 72200008,
+      "idCN": "7妮蔻拉",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000032,
+      "resPath": "Volleyball/Spine/volleyball_Nicola/volleyball_Nicola_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Nicola",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "妮蔻拉",
+      "profilePhoto": 82600479
+    },
+    {
+      "id": 72200009,
+      "idCN": "8亚莉奈",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000051,
+      "resPath": "Volleyball/Spine/volleyball_Arina/volleyball_Arina_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Arina",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "亚莉奈",
+      "profilePhoto": 82600331
+    },
+    {
+      "id": 72200010,
+      "idCN": "9西蒙",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": -1,
+      "resPath": "Volleyball/Spine/volleyball_Simon/volleyball_Simon_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Simon",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "西蒙",
+      "profilePhoto": 82600297
+    },
+    {
+      "id": 72200002,
+      "idCN": "1列车长(女)",
+      "mod": "人物",
+      "isInformalData": false,
+      "roleID": 10000173,
+      "resPath": "Volleyball/Spine/volleyball_Player_girl/volleyball_Player_girl_SkeletonData",
+      "uiPath": "UI/VolleyBall/VolleyBallCharacter/Swimwear_Player_girl",
+      "anime": [
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_jump_1_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_jump_1_4_stroke",
+          "beforeAnime": 10,
+          "effect": 11105979,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 9
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_meet_1",
+          "beforeAnime": 2,
+          "effect": 11105980,
+          "sound": 30005316,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_1",
+          "beforeAnime": 15,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_stop_2",
+          "beforeAnime": 0,
+          "effect": 11105981,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_fall_1_3",
+          "beforeAnime": 5,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 10,
+          "anime": "volleyball_serve_1",
+          "beforeAnime": 66,
+          "effect": 11105995,
+          "sound": 30005406,
+          "soundLoop": false,
+          "soundStartTime": 65
+        },
+        {
+          "afterAnim": 27,
+          "anime": "volleyball_serve_2",
+          "beforeAnime": 70,
+          "effect": 11105996,
+          "sound": 30005407,
+          "soundLoop": false,
+          "soundStartTime": 69
+        },
+        {
+          "afterAnim": 26,
+          "anime": "volleyball_serve_3",
+          "beforeAnime": 100,
+          "effect": 11105997,
+          "sound": 30005408,
+          "soundLoop": false,
+          "soundStartTime": 99
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_1",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_pup_1_2",
+          "beforeAnime": 0,
+          "effect": 11105982,
+          "sound": 30005187,
+          "soundLoop": false,
+          "soundStartTime": 1
+        },
+        {
+          "afterAnim": 30,
+          "anime": "volleyball_pup_1_3",
+          "beforeAnime": 0,
+          "effect": -1,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        },
+        {
+          "afterAnim": 0,
+          "anime": "volleyball_run",
+          "beforeAnime": 0,
+          "effect": 11105978,
+          "sound": -1,
+          "soundLoop": false,
+          "soundStartTime": 0
+        }
+      ],
+      "serveAnimData": [
+        {
+          "animName": "volleyball_serve_1",
+          "ballMoveEndHeight": 1.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 10.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球1",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_2",
+          "ballMoveEndHeight": 4.5,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 6.0,
+          "ballMoveTime": 2.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球2",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_serve_3",
+          "ballMoveEndHeight": 6.0,
+          "ballMoveEndPosOffsetY": 0.0,
+          "ballMoveMaxHeight": 5.0,
+          "ballMoveTime": 1.0,
+          "ballStartXOffset": 1.0,
+          "serveName": "发球3",
+          "weight": 50
+        }
+      ],
+      "happyAnim": [
+        {
+          "animName": "volleyball_happy_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_happy_02",
+          "weight": 100
+        }
+      ],
+      "sadAnim": [
+        {
+          "animName": "volleyball_sad_01",
+          "weight": 100
+        },
+        {
+          "animName": "volleyball_sad_02",
+          "weight": 100
+        }
+      ],
+      "defaultJumpHeight": 2.5,
+      "jumpTime": 1.0,
+      "fallSpeed": 0.0,
+      "fallAcc": 10.0,
+      "moveSpeed": 8.0,
+      "maxSlidingDis": 4.0,
+      "canSlidingDis": 6.0,
+      "slidingSpeed": 16.0,
+      "roleName": "列车长",
+      "profilePhoto": 82600007
+    }
+  ]
+}

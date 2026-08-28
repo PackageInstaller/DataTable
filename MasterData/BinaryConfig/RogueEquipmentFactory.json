@@ -1,0 +1,1703 @@
+{
+  "version": 1,
+  "hash": "30FD2E82A08E108111C41E6927982E5D5E4D063089398160E6AD2C06B03F759B",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131821888638,
+    "etc": "factory=RogueEquipmentFactory"
+  },
+  "count": 80,
+  "records": [
+    {
+      "id": 89600001,
+      "idCN": "测试1",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "11",
+      "quality": "Blue",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\23",
+      "des": "战斗胜利后，增加1次刷新推力的机会",
+      "attributeList": [],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600002,
+      "idCN": "测试2",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "22",
+      "quality": "Blue",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\24",
+      "des": "选择推力时，增加1次推力的选择机会",
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600003,
+      "idCN": "测试3",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "22",
+      "quality": "Purple",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\25",
+      "des": "【无休之所】所有商品价格降低20%",
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600004,
+      "idCN": "测试4",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "33",
+      "quality": "Purple",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\26",
+      "des": "开局使敌方全体【昏睡】，持续6秒",
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600005,
+      "idCN": "测试5",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "44",
+      "quality": "Golden",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\27",
+      "des": "立即获得100点【尘埃】\r后续获得尘埃时，获得数量增加30%",
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600006,
+      "idCN": "测试6",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "55",
+      "quality": "Golden",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\28",
+      "des": "获得该【幸运骰子】时，随机获得1个【金色推力】，1个【紫色推力】，1个【蓝色推力】",
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600007,
+      "idCN": "测试7",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "66",
+      "quality": "Orange",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\29",
+      "des": "立即丢弃自身所有橙色以下的【幸运骰子】，每丢弃1个【幸运骰子】全队生命值上限提高20%，可叠加\r\r每丢弃1个【紫色幸运骰子】，获得1个随机【金色幸运骰子】\r\r每丢弃1个【金色幸运骰子】，获得1个随机【紫色幸运骰子】",
+      "attributeList": [],
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600008,
+      "idCN": "测试8",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "77",
+      "quality": "Orange",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\30",
+      "des": "无视【行动值负荷】带来的影响\r\r我方全体造成伤害时无视敌方单位的防御力提升和伤害减免效果",
+      "attributeList": [],
+      "isNegative": false,
+      "rogueId": -1
+    },
+    {
+      "id": 89600009,
+      "idCN": "测试9",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "88",
+      "quality": "Blue",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\31",
+      "des": "立即增加20点【行动值】，同时自身每次行动后额外增加1点【行动值】\r\r每拥有1点【行动值】全队攻击力提高1%，超过【行动值负荷】时效果翻9倍",
+      "attributeList": [],
+      "isNegative": true,
+      "rogueId": -1
+    },
+    {
+      "id": 89600010,
+      "idCN": "测试10",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "99",
+      "quality": "Blue",
+      "iconPath": "Item\\weapon\\Diguo\\Big\\22",
+      "des": "我方单位阵亡时使我方全体触发【崩解！】，同时战斗结束后本场战斗所有单位移除本次【下潜】\r\r【崩解！】：立即触发【复活】、【无敌】和【狂暴】，持续至战斗结束",
+      "attributeList": [],
+      "isNegative": true,
+      "rogueId": -1
+    },
+    {
+      "id": 89600015,
+      "idCN": "骰子/黑/奇货可居",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "奇货可居",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/qihuokeju",
+      "des": "强化推力时，所需【尘埃】数量提高50%，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900206
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "IntensifyNum",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600016,
+      "idCN": "骰子/黑/漫天要价",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "漫天要价",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/mantianyaojia",
+      "des": "【无休之所】所有商品价格提高50%，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900207
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "EnterStore",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600017,
+      "idCN": "骰子/黑/垄断",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "垄断",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/longduan",
+      "des": "复苏队员时，所需【尘埃】数量提高50%",
+      "attributeList": [
+        {
+          "id": 89900208
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600018,
+      "idCN": "骰子/黑/苛捐杂税",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "苛捐杂税",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/kejuanzashui",
+      "des": "每累计获得100点【尘埃】时，失去20点【尘埃】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900231,
+          "effectId": 89900274,
+          "opportunity": "GetCoin"
+        }
+      ],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600019,
+      "idCN": "骰子/橙/运思",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "运思",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yunsi",
+      "des": "连续进入3次同色方块时，获得1个随机金色【蕴念骰子】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900236,
+          "effectId": 89900279,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600020,
+      "idCN": "骰子/橙/玲珑",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "玲珑",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/linglong",
+      "des": "连续进入3次同色方块时，获得1个随机金色【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900237,
+          "effectId": 89900280,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600021,
+      "idCN": "骰子/橙/玄机",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "玄机",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/xuanji",
+      "des": "每次获得黑色【蕴念骰子】时，获得1个随机金色【蕴念骰子】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900238,
+          "effectId": 89900281,
+          "opportunity": "GetWeapon"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600022,
+      "idCN": "骰子/金/转念",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "转念",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/zhuannian",
+      "des": "转动魔方时，有25%概率获得1个随机【蕴念骰子】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900285,
+          "opportunity": "Turn"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600023,
+      "idCN": "骰子/金/灵机",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "灵机",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/lingji",
+      "des": "转动魔方时，有25%概率强化1个随机【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900286,
+          "opportunity": "Turn"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600024,
+      "idCN": "骰子/金/醍醐灌顶",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "醍醐灌顶",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/tihuguanding",
+      "des": "每次获得【灵感】时，我方全体等级+3",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900290,
+          "opportunity": "GetSpecial"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600025,
+      "idCN": "骰子/橙/勃发",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "勃发",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/bofa",
+      "des": "每次战斗开局时，立刻激活【队长技】",
+      "attributeList": [
+        {
+          "id": 89900215
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600026,
+      "idCN": "骰子/紫/移易",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "移易",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yiyi",
+      "des": "每次失去【推力】时，获得1个随机【蕴念骰子】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900293,
+          "opportunity": "LoseBuff"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600027,
+      "idCN": "骰子/紫/涌溢",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "涌溢",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yongyi",
+      "des": "每次获得橙色【蕴念骰子】时，强化1个随机【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900251,
+          "effectId": 89900294,
+          "opportunity": "GetWeapon"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600028,
+      "idCN": "骰子/橙/猩红沙漏",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "猩红沙漏",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/xinghongshalou",
+      "des": "转动魔方时，获得20点【尘埃】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900305,
+          "opportunity": "Turn"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600029,
+      "idCN": "骰子/紫/扑朔",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "扑朔",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/pushuo",
+      "des": "连续进入2次紫色方块时，有50%概率强化1个随机蓝色【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900254,
+          "effectId": 89900297,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600030,
+      "idCN": "骰子/橙/解构",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "解构",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jiegou",
+      "des": "【位面奇点】额外掉落1枚【灵感】",
+      "attributeList": [
+        {
+          "id": 89900223
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600031,
+      "idCN": "骰子/橙/复利",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "复利",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/fuli",
+      "des": "每回合开始时，获得当前【尘埃】数量的5%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900036,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600032,
+      "idCN": "骰子/金/盈余",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "盈余",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yingyu",
+      "des": "【尘埃】数量≥150时，每次战斗开局获得1点费用，同时抽1张牌，优先得意技能牌",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900124,
+          "effectId": 89900122,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600033,
+      "idCN": "骰子/紫/价格压制",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "价格压制",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jiageyazhi",
+      "des": "【无休之所】所有商品价格降低10%",
+      "attributeList": [
+        {
+          "id": 89900224
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600034,
+      "idCN": "骰子/紫/盘剥",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "盘剥",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/panbo",
+      "des": "【位面奇点】掉落的【尘埃】数量提高50%",
+      "attributeList": [
+        {
+          "id": 89900225
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600035,
+      "idCN": "骰子/紫/居利思义",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "居利思义",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/julisiyi",
+      "des": "战斗事件获得的【尘埃】数量提高40%，非战斗事件获得的【尘埃】数量降低20%",
+      "attributeList": [
+        {
+          "id": 89900226
+        },
+        {
+          "id": 89900227
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600036,
+      "idCN": "骰子/紫/贴现",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "贴现",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/tiexian",
+      "des": "每回合开始时，获得10~30点【尘埃】，生效3次后该骰子损毁",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900037,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600037,
+      "idCN": "骰子/蓝/低波红利",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "低波红利",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/dibohongli",
+      "des": "每回合开始时，获得当前位面已行动回合数双倍量的【尘埃】",
+      "attributeList": [
+        {
+          "id": 89900228
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600038,
+      "idCN": "骰子/蓝/开源",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "开源",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/kaiyuan",
+      "des": "每次进入黄色方块时，获得当前【尘埃】数量的5%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900270,
+          "effectId": 89900311,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600039,
+      "idCN": "骰子/蓝/节流",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "节流",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jieliu",
+      "des": "强化推力时，所需【尘埃】数量降低10%",
+      "attributeList": [
+        {
+          "id": 89900229
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600040,
+      "idCN": "骰子/蓝/捡漏",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "捡漏",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jianlou",
+      "des": "每次进入紫色方块时，获得5点【尘埃】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900271,
+          "effectId": 89900312,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600041,
+      "idCN": "骰子/橙/财险",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "财险",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/caixian",
+      "des": "每失去1个【推力】，强化1个随机【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900121,
+          "effectId": 89900123,
+          "opportunity": "LoseBuff"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600042,
+      "idCN": "骰子/橙/妙义",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "妙义",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/miaoyi",
+      "des": "每次获得金色【蕴念骰子】时，强化1个随机【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900239,
+          "effectId": 89900282,
+          "opportunity": "GetWeapon"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600043,
+      "idCN": "骰子/蓝/掠夺",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "掠夺",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/lueduo",
+      "des": "战斗胜利后，额外获得5点【尘埃】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900045,
+          "opportunity": "BattleVictory"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600044,
+      "idCN": "骰子/金/套现",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "套现",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/taoxian",
+      "des": "每失去1个【蕴念骰子】，获得100点【尘埃】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900264,
+          "effectId": 89900306,
+          "opportunity": "LoseWeapon"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600045,
+      "idCN": "骰子/紫/绝地反击",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "绝地反击",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/juedifanji",
+      "des": "停留在角块时，我方全体造成的伤害提高20%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900253,
+          "effectId": 89900296,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600046,
+      "idCN": "骰子/黑/潜渊症",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "潜渊症",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/qianyuanzheng",
+      "des": "所有位面的行动回合上限-2",
+      "attributeList": [
+        {
+          "id": 89900204
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600047,
+      "idCN": "骰子/黑/药石无功",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "药石无功",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yaoshiwugong",
+      "des": "敌我双方全体造成的治疗效果降低50%，同时敌我双方防御力-50",
+      "attributeList": [
+        {
+          "id": 89900205
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600048,
+      "idCN": "骰子/黑/深渊胎动",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "深渊胎动",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shenyuantaidong",
+      "des": "每12秒触发1次胎动，移除我方队长10%生命值并生成1张【负能】加入手牌",
+      "attributeList": [
+        {
+          "id": 89900209
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600049,
+      "idCN": "骰子/黑/概率云",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "概率云",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/gailvyun",
+      "des": "每回合开始时，我方全体所有概率触发机制概率±5~10%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900275,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600050,
+      "idCN": "骰子/黑/忐忑",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "忐忑",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/tante",
+      "des": "每次战斗开局时，我方全体随机触发【攻击力+50，防御力-50】/【防御力+50，攻击力-50】，生效3次后该骰子损毁",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900276,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600051,
+      "idCN": "骰子/黑/负累",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "负累",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/fulei",
+      "des": "每次战斗开局时，随机丢弃1~3张手牌并生成等量的【负能】加入牌库，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900210
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600052,
+      "idCN": "骰子/黑/脱力",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "脱力",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/tuoli",
+      "des": "每次战斗开局时，失去2点费用并生成1张【负能】加入手牌，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900211
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600053,
+      "idCN": "骰子/黑/衰竭",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "衰竭",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shuaijie",
+      "des": "每次战斗开局时，移除我方全体10%生命值，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900212
+        }
+      ],
+      "conditionList": [],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600054,
+      "idCN": "骰子/黑/积弱",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "积弱",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jiruo",
+      "des": "每回合开始时，我方全体防御力-10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900277,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600056,
+      "idCN": "骰子/橙/激发",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "激发",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jifa",
+      "des": "每次战斗开局时的生命值越低，造成的最终伤害越高",
+      "attributeList": [
+        {
+          "id": 89900214
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600055,
+      "idCN": "骰子/黑/渗漏",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "渗漏",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shenlou",
+      "des": "每回合开始时，失去10点【尘埃】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900278,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": true,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600057,
+      "idCN": "骰子/橙/杠杆",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "杠杆",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/ganggan",
+      "des": "手牌数量≤1时，抽1张牌，基于该卡费用抽取等量的卡牌，且能超出手牌上限，每场战斗限1次",
+      "attributeList": [
+        {
+          "id": 89900213
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600059,
+      "idCN": "骰子/金/狂热",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "狂热",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/kuangre",
+      "des": "连续进入2次红色方块时，我方全体造成的最终伤害提高2%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900245,
+          "effectId": 89900288,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600058,
+      "idCN": "骰子/金/勇进",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "勇进",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yongjin",
+      "des": "每次进入橙色方块时，我方全体攻击力+10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900244,
+          "effectId": 89900287,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600061,
+      "idCN": "骰子/金/双重保险",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "双重保险",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shuangchongbaoxian",
+      "des": "任意我方濒死时，【无敌】5秒，各限1次\r我方处于【无敌】状态时，每秒攻击力和防御力+2",
+      "attributeList": [
+        {
+          "id": 89900216
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600060,
+      "idCN": "骰子/金/绝对领域",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "绝对领域",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/jueduilingyu",
+      "des": "停留在中心块时，我方全体造成/受到的伤害提高/降低20%（魔方的中心位置的地块）",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900246,
+          "effectId": 89900289,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600062,
+      "idCN": "骰子/金/固若金汤",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "固若金汤",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/guruojintang",
+      "des": "\"每次战斗开局时，我方全体获得【护盾】，持续至战斗结束\\n\r【护盾】耐久为目标生命值的30%\"",
+      "attributeList": [
+        {
+          "id": 89900217
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600063,
+      "idCN": "骰子/金/生生不息",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "生生不息",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shengshengbuxi",
+      "des": "每回合开始时，回复我方全体5%生命值",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900291,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600064,
+      "idCN": "骰子/紫/振奋",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "振奋",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/zhenfen",
+      "des": "每次战斗开局时，我方全体攻击力+20%，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900218
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600065,
+      "idCN": "骰子/紫/迸流",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "迸流",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/bengliu",
+      "des": "每次战斗开局时，获得5点费用，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900219
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600066,
+      "idCN": "骰子/紫/萌动",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "萌动",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/mengdong",
+      "des": "每次进入绿色方块时，我方全体生命值上限+2000",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900252,
+          "effectId": 89900295,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600067,
+      "idCN": "骰子/紫/深壁",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "深壁",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shenbi",
+      "des": "连续进入2次蓝色方块时，我方全体受到的最终伤害降低1%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900255,
+          "effectId": 89900298,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600068,
+      "idCN": "骰子/蓝/内聚",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "内聚",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/neiju",
+      "des": "每次战斗开局时，我方全体防御力+20%，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900220
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600069,
+      "idCN": "骰子/蓝/活化",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "活化",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/huohua",
+      "des": "每次战斗开局时，回复我方全体10%生命值，生效3次后该骰子损毁",
+      "attributeList": [
+        {
+          "id": 89900221
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "BattleEnd",
+      "efficacyNum": 3
+    },
+    {
+      "id": 89600070,
+      "idCN": "骰子/蓝/深沟",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "深沟",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/shengou",
+      "des": "每次进入蓝色方块时，我方全体防御力+10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900259,
+          "effectId": 89900302,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600071,
+      "idCN": "骰子/蓝/模棱两可",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "模棱两可",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/molengliangke",
+      "des": "停留在棱块时，我方全体受到的伤害降低20%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900260,
+          "effectId": 89900303,
+          "opportunity": "MoveEnd"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600072,
+      "idCN": "骰子/橙/套利",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "套利",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/taoli",
+      "des": "每失去1点【尘埃】，我方全体造成的最终伤害提高0.05%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900262,
+          "effectId": 89900304,
+          "opportunity": "LoseCoin"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600073,
+      "idCN": "骰子/金/熔断",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "熔断",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/rongduan",
+      "des": "每失去1点【尘埃】，我方全体受到的最终伤害降低0.05%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900265,
+          "effectId": 89900307,
+          "opportunity": "LoseCoin"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600074,
+      "idCN": "骰子/金/寸累",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "寸累",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/cunlei",
+      "des": "每拥有1点【尘埃】，我方全体造成的最终伤害提高0.05%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900266,
+          "effectId": 89900308,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600075,
+      "idCN": "骰子/金/定投",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "定投",
+      "quality": "Golden",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/chaijiedingtou",
+      "des": "每回合开始时，失去30点【尘埃】，我方全体攻击力+10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900109,
+          "effectId": 89900110,
+          "opportunity": "RoundStart"
+        },
+        {
+          "conditionId": -1,
+          "effectId": 89900309,
+          "opportunity": "RoundStart"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600076,
+      "idCN": "骰子/紫/财势",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "财势",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/keji",
+      "des": "每拥有1点【尘埃】，我方全体受到的最终伤害降低0.05%",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900268,
+          "effectId": 89900310,
+          "opportunity": "GetCoin"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600077,
+      "idCN": "骰子/紫/厚积薄发",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "厚积薄发",
+      "quality": "Purple",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/houjibofa",
+      "des": "位于第三位面时，我方全体等级+10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": 89900249,
+          "effectId": 89900292,
+          "opportunity": "Enter"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600078,
+      "idCN": "骰子/蓝/扬弃",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "扬弃",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yangqi",
+      "des": "每次战斗开局时，立刻激活【弃牌】指令",
+      "attributeList": [
+        {
+          "id": 89900222
+        }
+      ],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600079,
+      "idCN": "骰子/蓝/蓄锐",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "蓄锐",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/xurui",
+      "des": "战斗胜利后，我方全体攻击力+10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900299,
+          "opportunity": "BattleVictory"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600080,
+      "idCN": "骰子/蓝/步步为营",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "步步为营",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/bubuweiying",
+      "des": "战斗胜利后，我方全体防御力+10",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900300,
+          "opportunity": "BattleVictory"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600081,
+      "idCN": "骰子/蓝/养精",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "养精",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/yangjing",
+      "des": "战斗胜利后，回复我方全体5%生命值",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900301,
+          "opportunity": "BattleVictory"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600082,
+      "idCN": "骰子/蓝/溶汇",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "溶汇",
+      "quality": "Blue",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/ronghui",
+      "des": "基于当前位面进入黄色方块的次数，与【位面奇点】战斗开局时获得等量费用",
+      "attributeList": [],
+      "conditionList": [],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600087,
+      "idCN": "骰子/橙/慧心",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "慧心",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/huixin",
+      "des": "每次获得【灵感】时，获得1个随机【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900283,
+          "opportunity": "GetSpecial"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    },
+    {
+      "id": 89600088,
+      "idCN": "骰子/橙/奇巧",
+      "mod": "默认",
+      "isInformalData": true,
+      "name": "奇巧",
+      "quality": "Orange",
+      "iconPath": "UI/CubeRogue/ItemTouzi/500/qiqiao",
+      "des": "转动魔方时，有50%概率获得1个随机【推力】",
+      "attributeList": [],
+      "conditionList": [
+        {
+          "conditionId": -1,
+          "effectId": 89900284,
+          "opportunity": "Turn"
+        }
+      ],
+      "isNegative": false,
+      "isSaveEffect": false,
+      "rogueId": -1,
+      "efficacyType": "RoundEnd",
+      "efficacyNum": -1
+    }
+  ]
+}

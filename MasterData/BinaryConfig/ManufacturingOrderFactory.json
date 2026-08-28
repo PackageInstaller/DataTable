@@ -1,0 +1,5984 @@
+{
+  "version": 1,
+  "hash": "E17DBD6A709C943689B103203D264C31ABD787B274898098C5E7975BFA4EBC42",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131823891936,
+    "etc": "factory=ManufacturingOrderFactory"
+  },
+  "count": 152,
+  "records": [
+    {
+      "id": 60300001,
+      "idCN": "组队订单-金箔",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金箔订单",
+      "des": "",
+      "requireItemList": [
+        {
+          "id": 82900102,
+          "num": 600
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 10000
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 100000
+        },
+        {
+          "id": 11400612,
+          "num": 100
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900004,
+      "timeLimit": 129600,
+      "isTeam": true
+    },
+    {
+      "id": 60300002,
+      "idCN": "普通订单/精密零件1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "精密零件",
+      "des": "上游合金材料季度涨幅过高，需锁定当前报价避免后续成本激增，科伦巴商会急需%d份精密零件。",
+      "requireItemList": [
+        {
+          "id": 11700180,
+          "num": 54
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 6561
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 65610
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900011,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300006,
+      "idCN": "普通订单/诱饵气球1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "诱饵气球",
+      "des": "近期铁路沿线发现大规模桦树生物迁徙，科伦巴商会需%d份诱饵气球保证列车组正常运行。",
+      "requireItemList": [
+        {
+          "id": 11400049,
+          "num": 12
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 8100
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 81000
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900006,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300003,
+      "idCN": "普通订单/修格里严选礼包1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "修格里严选礼包",
+      "des": "为配合即将启动的节日促销，确保有充足库存作为赠品或销售商品，科伦巴市场部急需采购%d份修格里严选礼包。",
+      "requireItemList": [
+        {
+          "id": 82900188,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 12234
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 122342
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900024,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300004,
+      "idCN": "普通订单/金箔1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金箔",
+      "des": "受金价波动影响，预计近期金箔价格将上涨，为锁定当前成本并确保生产计划顺利进行，科伦巴生产部急需%d份金箔。",
+      "requireItemList": [
+        {
+          "id": 82900102,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 15552
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 155520
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900004,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300005,
+      "idCN": "普通订单/黄铜线圈1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "黄铜线圈",
+      "des": "为满足下季度生产订单需求，并应对近期原材料市场价格波动，确保充足库存并锁定当前成本，科伦巴制造部门急需采购%d份黄铜线圈。",
+      "requireItemList": [
+        {
+          "id": 82900177,
+          "num": 160
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 15120
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 151200
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900027,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300007,
+      "idCN": "普通订单/铁轨用特种钢材1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "铁轨用特种钢材",
+      "des": "为确保篝火城重点铁路项目建设顺利进行，科伦巴与铁盟签订合作条约，需立即采购%d份铁轨用特种钢材。",
+      "requireItemList": [
+        {
+          "id": 82900084,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 11664
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 116640
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900029,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300008,
+      "idCN": "普通订单/桦树原质1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦树原质",
+      "des": "为保障武器生产线顺畅运行，阿妮塔科技向科伦巴定向采购%d份桦树原质。",
+      "requireItemList": [
+        {
+          "id": 11700066,
+          "num": 16
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 10800
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 108000
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900005,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300009,
+      "idCN": "普通订单/仙人掌汁1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "仙人掌汁",
+      "des": "鉴于科伦巴下属列车组对仙人掌制品的迫切需求，需采购%d份新鲜仙人掌汁以保证列车组行驶安全。",
+      "requireItemList": [
+        {
+          "id": 11700006,
+          "num": 16
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 11880
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 118800
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900019,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300010,
+      "idCN": "普通订单/漆黑涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "漆黑涂料",
+      "des": "为满足科伦巴对极致黑色效果的需求，并应用于需要减少光反射的特殊产品，需采购%d份漆黑涂料，以提升产品性能和美观度。",
+      "requireItemList": [
+        {
+          "id": 11700165,
+          "num": 20
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 12299
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 122985
+        },
+        {
+          "id": 11400612,
+          "num": 2
+        },
+        {
+          "id": 11400106,
+          "num": 20
+        }
+      ],
+      "requireProduction": 84900009,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300011,
+      "idCN": "普通订单/诱饵爆炸气球1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "诱饵爆炸气球",
+      "des": "为满足更好的应对桦树生物潮，科伦巴商会需%d份诱饵爆炸气球保证列车组正常运行。",
+      "requireItemList": [
+        {
+          "id": 11400069,
+          "num": 18
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 36450
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 364500
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900013,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300012,
+      "idCN": "普通订单/镀金零件1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "镀金零件",
+      "des": "为保障精密设备的稳定运行和关键连接点的性能，科伦巴商会急需补充采购具备优良导电和抗氧化特性的%d份镀金零件。",
+      "requireItemList": [
+        {
+          "id": 11700181,
+          "num": 18
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 21870
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 218700
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900007,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300013,
+      "idCN": "普通订单/年货大礼包1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "年货大礼包",
+      "des": "预估节日消费旺季需求激增，为保障线上线下销售渠道的节日商品供应，科伦巴零售部门需提前备货%d份年货大礼包。",
+      "requireItemList": [
+        {
+          "id": 82900109,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 18714
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 187142
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900021,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300014,
+      "idCN": "普通订单/海角水产礼盒1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "海角水产礼盒",
+      "des": "鉴于消费者对海角城水产的认可度较高，为保障海产旺季的充足供应，并确保产品品质，需提前采购%d份海角水产礼盒进行备货。",
+      "requireItemList": [
+        {
+          "id": 82900187,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 16796
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 167962
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900022,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300015,
+      "idCN": "普通订单/银制列车工艺品1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "银制列车工艺品",
+      "des": "鉴于银制工艺品稳定的市场表现和列车主题的吸引力，为保障即将到来的销售旺季充足供应并维持产品品质，采购部需备货%d份银制列车工艺品。",
+      "requireItemList": [
+        {
+          "id": 82900237,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 21060
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 210600
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900113,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300016,
+      "idCN": "普通订单/纯金线材1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金线材",
+      "des": "为满足精密工业订单的快速增长，并应对原材料价格上涨趋势，科伦巴部门需紧急采购%d份纯金线材，以确保生产交付能力。",
+      "requireItemList": [
+        {
+          "id": 82900170,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 31104
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 311040
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900008,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300017,
+      "idCN": "普通订单/高导电容1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "高导电容",
+      "des": "鉴于高端电子产品市场需求持续扩大，为保障科伦巴电子核心产品性能优势及产能稳定，需采购%d份高导电容，以应对未来生产需求增长。",
+      "requireItemList": [
+        {
+          "id": 11700187,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 17496
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 174960
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900032,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300018,
+      "idCN": "普通订单/石墨烯1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯",
+      "des": "为支持科伦巴在电池技术和复合材料领域的创新项目，需采购%d份石墨烯，用于实验和初步生产测试。",
+      "requireItemList": [
+        {
+          "id": 82900032,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 12442
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 124416
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900014,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300019,
+      "idCN": "普通订单/精钢1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "精钢",
+      "des": "为满足科伦巴商会日益增长的订单，保障生产线的稳定运行，需采购%d份精钢，确保按时交付客户订单，并维持合理库存水平。",
+      "requireItemList": [
+        {
+          "id": 82900162,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 14796
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 147960
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900028,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300020,
+      "idCN": "普通订单/高导热陶瓷1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "高导热陶瓷",
+      "des": "为替换现有散热材料，降低生产成本并提升产品散热性能，科伦巴计划采购%d份高导热陶瓷，用于新一代产品的研发和生产，预计可显著提高产品能效比。",
+      "requireItemList": [
+        {
+          "id": 82900199,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 14092
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 140918
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900030,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300021,
+      "idCN": "普通订单/噪音髓液1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音髓液",
+      "des": "鉴于噪音髓液对桦树生物的特殊克制效果，为支持列车长对抗潜在的桦树生物威胁，需采购%d份噪音髓液，以保障列车组的安全防卫能力。",
+      "requireItemList": [
+        {
+          "id": 11700149,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 12960
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 129600
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900016,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300022,
+      "idCN": "普通订单/玄武岩纤维1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "玄武岩纤维",
+      "des": "为替代现有玻纤材料，提升阿妮塔科技的复合材料产品的强度和耐腐蚀性，现向科伦巴商会定向采购%d份玄武岩纤维，用于建筑、汽车和航空航天等领域的应用开发。",
+      "requireItemList": [
+        {
+          "id": 82900238,
+          "num": 100
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 14864
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 148635
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900086,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300023,
+      "idCN": "普通订单/青绿涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "青绿涂料",
+      "des": "为满足科伦巴新一季家居产品线的色彩需求，并提升产品的美观度和市场吸引力，需采购%d份青绿涂料，确保产品风格与市场趋势保持一致。",
+      "requireItemList": [
+        {
+          "id": 11700008,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 18533
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 185328
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900033,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300024,
+      "idCN": "普通订单/孔雀绿涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "孔雀绿涂料",
+      "des": "为配合科伦巴产品线全新升级，满足高端客户对独特色彩的需求，需采购%d份高品质孔雀绿涂料，用于打造具有奢华质感和艺术气息的墙面装饰。",
+      "requireItemList": [
+        {
+          "id": 11700264,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 21384
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 213840
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900148,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300025,
+      "idCN": "普通订单/静谧蓝涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "静谧蓝涂料",
+      "des": "为响应市场对舒缓、放松风格的追求，应用于需要营造平静氛围的室内设计，需采购%d份静谧蓝涂料，以满足项目需求并扩大市场份额。",
+      "requireItemList": [
+        {
+          "id": 11700265,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 22118
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 221184
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900149,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300026,
+      "idCN": "普通订单/竞速黄涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "竞速黄涂料",
+      "des": "为满足科伦巴列车涂装业务对个性化色彩的需求，打造更具运动感和活力的视觉效果，需采购%d份竞速黄涂料，为顾客提供更具风格化的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700266,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 15120
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 151200
+        },
+        {
+          "id": 11400612,
+          "num": 3
+        },
+        {
+          "id": 11400106,
+          "num": 30
+        }
+      ],
+      "requireProduction": 84900150,
+      "timeLimit": 43200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300027,
+      "idCN": "普通订单/纯金零件1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金零件",
+      "des": "科伦巴高端设备制造部门急需%d份纯金零件，以满足精密部件的特殊需求，确保产品的卓越品质与收藏价值。",
+      "requireItemList": [
+        {
+          "id": 11700182,
+          "num": 12
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 58320
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 583200
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900012,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300028,
+      "idCN": "普通订单/水产甄选礼盒1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "水产甄选礼盒",
+      "des": "预估节日期间礼品市场需求旺盛，为保障科伦巴生线上线下渠道的节日供应，以及满足企业客户的定制礼品需求，需提前备货%d份水产甄选礼盒。",
+      "requireItemList": [
+        {
+          "id": 82900186,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 29756
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 297562
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900023,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300029,
+      "idCN": "普通订单/金制列车工艺品1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金制列车工艺品",
+      "des": "为配合科伦巴与铁盟的联合列车展览，并提升高端纪念品的销售额，需采购%d份金制列车工艺品，以满足收藏家和铁路爱好者的需求。",
+      "requireItemList": [
+        {
+          "id": 82900236,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 33696
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 336960
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900080,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300030,
+      "idCN": "普通订单/超导线圈1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "超导线圈",
+      "des": "为推进科伦巴与阿妮塔科技新式列车共创项目的研发进程，确保核心部件的性能稳定可靠，需采购%d份超导线圈，用于列车驱动的测试与优化。",
+      "requireItemList": [
+        {
+          "id": 11700188,
+          "num": 12
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 43740
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 437400
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900010,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300031,
+      "idCN": "普通订单/石墨烯电池1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯电池",
+      "des": "为提升科伦巴列车组的续航能力，保持市场领先地位，需采购%d份石墨烯电池，用于配给科伦巴所属列车组。",
+      "requireItemList": [
+        {
+          "id": 82900141,
+          "num": 60
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 31104
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 311040
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900015,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300032,
+      "idCN": "普通订单/钛合金1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛合金",
+      "des": "阿妮塔发射中心向科伦巴冶金部门定向采集%d份钛合金，用于新一代深空探测器的结构制造，以提升其强度、耐腐蚀性和轻量化性能。",
+      "requireItemList": [
+        {
+          "id": 82900181,
+          "num": 72
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24494
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 244944
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900031,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300033,
+      "idCN": "普通订单/噪音激酶1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音激酶",
+      "des": "鉴于噪音激酶对桦树生物的极强克制效果，以及其在新型武器制造中的潜力，需采购%d份噪音激酶，以支持生物安全防卫、武器研发和相关医学研究。",
+      "requireItemList": [
+        {
+          "id": 11700159,
+          "num": 20
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 40500
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 405000
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900017,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300034,
+      "idCN": "普通订单/深眠精华1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "深眠精华",
+      "des": "考虑到深眠精华提取难度较大且具有潜在的应用价值，科伦巴研究部门需采购%d份深眠精华，用于探索其特殊性质及潜在应用方向。",
+      "requireItemList": [
+        {
+          "id": 11700042,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 34560
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 345600
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900039,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300035,
+      "idCN": "普通订单/桦石发财树1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦石发财树",
+      "des": "为丰富科伦巴礼品系列的种类，并满足部分客户对具有特殊寓意和装饰价值产品的需求，拟采购%d份桦石发财树。",
+      "requireItemList": [
+        {
+          "id": 82900031,
+          "num": 60
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 39593
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 395928
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900020,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300036,
+      "idCN": "普通订单/形而上粒子1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "形而上粒子",
+      "des": "鉴于形而上粒子对桦树生物的强大克制效果，为提升科伦巴列车组对桦树生物威胁的防御能力，需采购%d份形而上粒子。",
+      "requireItemList": [
+        {
+          "id": 11700146,
+          "num": 8
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 34668
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 346680
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900090,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300037,
+      "idCN": "普通订单/碳纤维索1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "碳纤维索",
+      "des": "为提升科伦巴工程项目的施工效率和安全性，并满足特定高强度、轻量化需求，需采购%d份碳纤维索，应用于桥梁建设、高空作业及其他特殊工业领域。",
+      "requireItemList": [
+        {
+          "id": 82900218,
+          "num": 100
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 28364
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 283635
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900085,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300038,
+      "idCN": "普通订单/霞光红涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "霞光红涂料",
+      "des": "为满足科伦巴高端定制系列的色彩需求，并营造温暖、奢华的氛围，需采购%d份霞光红涂料，用于打造具有独特视觉效果和情感价值的产品。",
+      "requireItemList": [
+        {
+          "id": 11700003,
+          "num": 16
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24013
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 240127
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900035,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300039,
+      "idCN": "普通订单/暮光紫涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "暮光紫涂料",
+      "des": "为配合科伦巴新推出的艺术涂装定制服务，并满足客户对氛围的营造需求，需采购%d份暮光紫涂料，用于打造具有个性化和艺术感的装饰作品。",
+      "requireItemList": [
+        {
+          "id": 11700027,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 30375
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 303750
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900034,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300040,
+      "idCN": "普通订单/钛白涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛白涂料",
+      "des": "为确保科伦巴所有涂料产品的色彩饱和度和遮盖力，并满足对高品质白色涂料的广泛需求，需采购%d份钛白涂料，作为通用底漆和调色原料。",
+      "requireItemList": [
+        {
+          "id": 11700267,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 28377
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 283770
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900151,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300041,
+      "idCN": "普通订单/皓月银涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "皓月银涂料",
+      "des": "为满足科伦巴列车制造部门对金属质感和高端外观的需求，并提升车辆的科技感和时尚感，需采购%d份皓月银涂料，用于列车外壳喷涂以及相关内饰部件的装饰。",
+      "requireItemList": [
+        {
+          "id": 11700268,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 29700
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 297000
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900152,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300042,
+      "idCN": "普通订单/熔岩橙涂料1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "熔岩橙涂料",
+      "des": "为配合科伦巴热情系列的色彩设计，并增强产品的活力和视觉冲击力，需采购%d份熔岩橙涂料，用于相关产品的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700269,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 38948
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 389480
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900153,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300043,
+      "idCN": "普通订单/航天元器件1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "航天元器件",
+      "des": "为确保阿妮塔发射中心与科伦巴的合作项目的顺利进行，并满足航天设备高可靠性和稳定性的要求，需采购%d份航天元器件，用于设备的控制、通信和能源系统。",
+      "requireItemList": [
+        {
+          "id": 11700047,
+          "num": 6
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 79786
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 797858
+        },
+        {
+          "id": 11400612,
+          "num": 8
+        },
+        {
+          "id": 11400106,
+          "num": 80
+        }
+      ],
+      "requireProduction": 84900036,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 5
+    },
+    {
+      "id": 60300044,
+      "idCN": "普通订单/精密零件2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "精密零件",
+      "des": "上游合金材料季度涨幅过高，需锁定当前报价避免后续成本激增，科伦巴商会急需%d份精密零件。",
+      "requireItemList": [
+        {
+          "id": 11700180,
+          "num": 108
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 13122
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 131220
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900011,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300045,
+      "idCN": "普通订单/诱饵气球2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "诱饵气球",
+      "des": "近期铁路沿线发现大规模桦树生物迁徙，科伦巴商会需%d份诱饵气球保证列车组正常运行。",
+      "requireItemList": [
+        {
+          "id": 11400049,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 16200
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 162000
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900006,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300046,
+      "idCN": "普通订单/修格里严选礼包2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "修格里严选礼包",
+      "des": "为配合即将启动的节日促销，确保有充足库存作为赠品或销售商品，科伦巴市场部急需采购%d份修格里严选礼包。",
+      "requireItemList": [
+        {
+          "id": 82900188,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24468
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 244685
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900024,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300047,
+      "idCN": "普通订单/金箔2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金箔",
+      "des": "受金价波动影响，预计近期金箔价格将上涨，为锁定当前成本并确保生产计划顺利进行，科伦巴生产部急需%d份金箔。",
+      "requireItemList": [
+        {
+          "id": 82900102,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 31104
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 311040
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900004,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300048,
+      "idCN": "普通订单/黄铜线圈2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "黄铜线圈",
+      "des": "为满足下季度生产订单需求，并应对近期原材料市场价格波动，确保充足库存并锁定当前成本，科伦巴制造部门急需采购%d份黄铜线圈。",
+      "requireItemList": [
+        {
+          "id": 82900177,
+          "num": 320
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 30240
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 302400
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900027,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300049,
+      "idCN": "普通订单/铁轨用特种钢材2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "铁轨用特种钢材",
+      "des": "为确保篝火城重点铁路项目建设顺利进行，科伦巴与铁盟签订合作条约，需立即采购%d份铁轨用特种钢材。",
+      "requireItemList": [
+        {
+          "id": 82900084,
+          "num": 160
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 23328
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 233280
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900029,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300050,
+      "idCN": "普通订单/桦树原质2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦树原质",
+      "des": "为保障武器生产线顺畅运行，阿妮塔科技向科伦巴定向采购%d份桦树原质。",
+      "requireItemList": [
+        {
+          "id": 11700066,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 21600
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 216000
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900005,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300051,
+      "idCN": "普通订单/仙人掌汁2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "仙人掌汁",
+      "des": "鉴于科伦巴下属列车组对仙人掌制品的迫切需求，需采购%d份新鲜仙人掌汁以保证列车组行驶安全。",
+      "requireItemList": [
+        {
+          "id": 11700006,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 23760
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 237600
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900019,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300052,
+      "idCN": "普通订单/漆黑涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "漆黑涂料",
+      "des": "为满足科伦巴对极致黑色效果的需求，并应用于需要减少光反射的特殊产品，需采购%d份漆黑涂料，以提升产品性能和美观度。",
+      "requireItemList": [
+        {
+          "id": 11700165,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24597
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 245970
+        },
+        {
+          "id": 11400612,
+          "num": 4
+        },
+        {
+          "id": 11400106,
+          "num": 40
+        }
+      ],
+      "requireProduction": 84900009,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300053,
+      "idCN": "普通订单/诱饵爆炸气球2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "诱饵爆炸气球",
+      "des": "为满足更好的应对桦树生物潮，科伦巴商会需%d份诱饵爆炸气球保证列车组正常运行。",
+      "requireItemList": [
+        {
+          "id": 11400069,
+          "num": 36
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 72900
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 729000
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900013,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300054,
+      "idCN": "普通订单/镀金零件2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "镀金零件",
+      "des": "为保障精密设备的稳定运行和关键连接点的性能，科伦巴商会急需补充采购具备优良导电和抗氧化特性的%d份镀金零件。",
+      "requireItemList": [
+        {
+          "id": 11700181,
+          "num": 36
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 43740
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 437400
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900007,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300055,
+      "idCN": "普通订单/年货大礼包2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "年货大礼包",
+      "des": "预估节日消费旺季需求激增，为保障线上线下销售渠道的节日商品供应，科伦巴零售部门需提前备货%d份年货大礼包。",
+      "requireItemList": [
+        {
+          "id": 82900109,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 37428
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 374285
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900021,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300056,
+      "idCN": "普通订单/海角水产礼盒2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "海角水产礼盒",
+      "des": "鉴于消费者对海角城水产的认可度较高，为保障海产旺季的充足供应，并确保产品品质，需提前采购%d份海角水产礼盒进行备货。",
+      "requireItemList": [
+        {
+          "id": 82900187,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 33592
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 335923
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900022,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300057,
+      "idCN": "普通订单/银制列车工艺品2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "银制列车工艺品",
+      "des": "鉴于银制工艺品稳定的市场表现和列车主题的吸引力，为保障即将到来的销售旺季充足供应并维持产品品质，采购部需备货%d份银制列车工艺品。",
+      "requireItemList": [
+        {
+          "id": 82900237,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 42120
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 421200
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900113,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300058,
+      "idCN": "普通订单/纯金线材2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金线材",
+      "des": "为满足精密工业订单的快速增长，并应对原材料价格上涨趋势，科伦巴部门需紧急采购%d份纯金线材，以确保生产交付能力。",
+      "requireItemList": [
+        {
+          "id": 82900170,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 62208
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 622080
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900008,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300059,
+      "idCN": "普通订单/高导电容2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "高导电容",
+      "des": "鉴于高端电子产品市场需求持续扩大，为保障科伦巴电子核心产品性能优势及产能稳定，需采购%d份高导电容，以应对未来生产需求增长。",
+      "requireItemList": [
+        {
+          "id": 11700187,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 34992
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 349920
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900032,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300060,
+      "idCN": "普通订单/石墨烯2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯",
+      "des": "为支持科伦巴在电池技术和复合材料领域的创新项目，需采购%d份石墨烯，用于实验和初步生产测试。",
+      "requireItemList": [
+        {
+          "id": 82900032,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24883
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 248832
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900014,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300061,
+      "idCN": "普通订单/精钢2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "精钢",
+      "des": "为满足科伦巴商会日益增长的订单，保障生产线的稳定运行，需采购%d份精钢，确保按时交付客户订单，并维持合理库存水平。",
+      "requireItemList": [
+        {
+          "id": 82900162,
+          "num": 160
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 29592
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 295920
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900028,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300062,
+      "idCN": "普通订单/高导热陶瓷2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "高导热陶瓷",
+      "des": "为替换现有散热材料，降低生产成本并提升产品散热性能，科伦巴计划采购%d份高导热陶瓷，用于新一代产品的研发和生产，预计可显著提高产品能效比。",
+      "requireItemList": [
+        {
+          "id": 82900199,
+          "num": 128
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 28184
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 281837
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900030,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300063,
+      "idCN": "普通订单/噪音髓液2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音髓液",
+      "des": "鉴于噪音髓液对桦树生物的特殊克制效果，为支持列车长对抗潜在的桦树生物威胁，需采购%d份噪音髓液，以保障列车组的安全防卫能力。",
+      "requireItemList": [
+        {
+          "id": 11700149,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 25920
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 259200
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900016,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300064,
+      "idCN": "普通订单/玄武岩纤维2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "玄武岩纤维",
+      "des": "为替代现有玻纤材料，提升阿妮塔科技的复合材料产品的强度和耐腐蚀性，现向科伦巴商会定向采购%d份玄武岩纤维，用于建筑、汽车和航空航天等领域的应用开发。",
+      "requireItemList": [
+        {
+          "id": 82900238,
+          "num": 200
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 29727
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 297270
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900086,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300065,
+      "idCN": "普通订单/青绿涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "青绿涂料",
+      "des": "为满足科伦巴新一季家居产品线的色彩需求，并提升产品的美观度和市场吸引力，需采购%d份青绿涂料，确保产品风格与市场趋势保持一致。",
+      "requireItemList": [
+        {
+          "id": 11700008,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 37066
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 370656
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900033,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300066,
+      "idCN": "普通订单/孔雀绿涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "孔雀绿涂料",
+      "des": "为配合科伦巴产品线全新升级，满足高端客户对独特色彩的需求，需采购%d份高品质孔雀绿涂料，用于打造具有奢华质感和艺术气息的墙面装饰。",
+      "requireItemList": [
+        {
+          "id": 11700264,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 42768
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 427680
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900148,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300067,
+      "idCN": "普通订单/静谧蓝涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "静谧蓝涂料",
+      "des": "为响应市场对舒缓、放松风格的追求，应用于需要营造平静氛围的室内设计，需采购%d份静谧蓝涂料，以满足项目需求并扩大市场份额。",
+      "requireItemList": [
+        {
+          "id": 11700265,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 44237
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 442368
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900149,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300068,
+      "idCN": "普通订单/竞速黄涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "竞速黄涂料",
+      "des": "为满足科伦巴列车涂装业务对个性化色彩的需求，打造更具运动感和活力的视觉效果，需采购%d份竞速黄涂料，为顾客提供更具风格化的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700266,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 30240
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 302400
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900150,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300069,
+      "idCN": "普通订单/纯金零件2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金零件",
+      "des": "科伦巴高端设备制造部门急需%d份纯金零件，以满足精密部件的特殊需求，确保产品的卓越品质与收藏价值。",
+      "requireItemList": [
+        {
+          "id": 11700182,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 116640
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1166400
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900012,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300070,
+      "idCN": "普通订单/水产甄选礼盒2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "水产甄选礼盒",
+      "des": "预估节日期间礼品市场需求旺盛，为保障科伦巴生线上线下渠道的节日供应，以及满足企业客户的定制礼品需求，需提前备货%d份水产甄选礼盒。",
+      "requireItemList": [
+        {
+          "id": 82900186,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 59512
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 595123
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900023,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300071,
+      "idCN": "普通订单/金制列车工艺品2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金制列车工艺品",
+      "des": "为配合科伦巴与铁盟的联合列车展览，并提升高端纪念品的销售额，需采购%d份金制列车工艺品，以满足收藏家和铁路爱好者的需求。",
+      "requireItemList": [
+        {
+          "id": 82900236,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 67392
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 673920
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900080,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300072,
+      "idCN": "普通订单/超导线圈2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "超导线圈",
+      "des": "为推进科伦巴与阿妮塔科技新式列车共创项目的研发进程，确保核心部件的性能稳定可靠，需采购%d份超导线圈，用于列车驱动的测试与优化。",
+      "requireItemList": [
+        {
+          "id": 11700188,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 87480
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 874800
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900010,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300073,
+      "idCN": "普通订单/石墨烯电池2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯电池",
+      "des": "为提升科伦巴列车组的续航能力，保持市场领先地位，需采购%d份石墨烯电池，用于配给科伦巴所属列车组。",
+      "requireItemList": [
+        {
+          "id": 82900141,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 62208
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 622080
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900015,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300074,
+      "idCN": "普通订单/钛合金2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛合金",
+      "des": "阿妮塔发射中心向科伦巴冶金部门定向采集%d份钛合金，用于新一代深空探测器的结构制造，以提升其强度、耐腐蚀性和轻量化性能。",
+      "requireItemList": [
+        {
+          "id": 82900181,
+          "num": 144
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 48989
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 489888
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900031,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300075,
+      "idCN": "普通订单/噪音激酶2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音激酶",
+      "des": "鉴于噪音激酶对桦树生物的极强克制效果，以及其在新型武器制造中的潜力，需采购%d份噪音激酶，以支持生物安全防卫、武器研发和相关医学研究。",
+      "requireItemList": [
+        {
+          "id": 11700159,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 81000
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 810000
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900017,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300076,
+      "idCN": "普通订单/深眠精华2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "深眠精华",
+      "des": "考虑到深眠精华提取难度较大且具有潜在的应用价值，科伦巴研究部门需采购%d份深眠精华，用于探索其特殊性质及潜在应用方向。",
+      "requireItemList": [
+        {
+          "id": 11700042,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 69120
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 691200
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900039,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300077,
+      "idCN": "普通订单/桦石发财树2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦石发财树",
+      "des": "为丰富科伦巴礼品系列的种类，并满足部分客户对具有特殊寓意和装饰价值产品的需求，拟采购%d份桦石发财树。",
+      "requireItemList": [
+        {
+          "id": 82900031,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 79186
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 791856
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900020,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300078,
+      "idCN": "普通订单/形而上粒子2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "形而上粒子",
+      "des": "鉴于形而上粒子对桦树生物的强大克制效果，为提升科伦巴列车组对桦树生物威胁的防御能力，需采购%d份形而上粒子。",
+      "requireItemList": [
+        {
+          "id": 11700146,
+          "num": 16
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 69336
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 693360
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900090,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300079,
+      "idCN": "普通订单/碳纤维索2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "碳纤维索",
+      "des": "为提升科伦巴工程项目的施工效率和安全性，并满足特定高强度、轻量化需求，需采购%d份碳纤维索，应用于桥梁建设、高空作业及其他特殊工业领域。",
+      "requireItemList": [
+        {
+          "id": 82900218,
+          "num": 200
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 56727
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 567270
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900085,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300080,
+      "idCN": "普通订单/霞光红涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "霞光红涂料",
+      "des": "为满足科伦巴高端定制系列的色彩需求，并营造温暖、奢华的氛围，需采购%d份霞光红涂料，用于打造具有独特视觉效果和情感价值的产品。",
+      "requireItemList": [
+        {
+          "id": 11700003,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 48025
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 480254
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900035,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300081,
+      "idCN": "普通订单/暮光紫涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "暮光紫涂料",
+      "des": "为配合科伦巴新推出的艺术涂装定制服务，并满足客户对氛围的营造需求，需采购%d份暮光紫涂料，用于打造具有个性化和艺术感的装饰作品。",
+      "requireItemList": [
+        {
+          "id": 11700027,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 60750
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 607500
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900034,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300082,
+      "idCN": "普通订单/钛白涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛白涂料",
+      "des": "为确保科伦巴所有涂料产品的色彩饱和度和遮盖力，并满足对高品质白色涂料的广泛需求，需采购%d份钛白涂料，作为通用底漆和调色原料。",
+      "requireItemList": [
+        {
+          "id": 11700267,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 56754
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 567540
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900151,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300083,
+      "idCN": "普通订单/皓月银涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "皓月银涂料",
+      "des": "为满足科伦巴列车制造部门对金属质感和高端外观的需求，并提升车辆的科技感和时尚感，需采购%d份皓月银涂料，用于列车外壳喷涂以及相关内饰部件的装饰。",
+      "requireItemList": [
+        {
+          "id": 11700268,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 59400
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 594000
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900152,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300084,
+      "idCN": "普通订单/熔岩橙涂料2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "熔岩橙涂料",
+      "des": "为配合科伦巴热情系列的色彩设计，并增强产品的活力和视觉冲击力，需采购%d份熔岩橙涂料，用于相关产品的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700269,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 77896
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 778961
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900153,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300085,
+      "idCN": "普通订单/航天元器件2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "航天元器件",
+      "des": "为确保阿妮塔发射中心与科伦巴的合作项目的顺利进行，并满足航天设备高可靠性和稳定性的要求，需采购%d份航天元器件，用于设备的控制、通信和能源系统。",
+      "requireItemList": [
+        {
+          "id": 11700047,
+          "num": 12
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 159572
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1595716
+        },
+        {
+          "id": 11400612,
+          "num": 16
+        },
+        {
+          "id": 11400106,
+          "num": 160
+        }
+      ],
+      "requireProduction": 84900036,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 5
+    },
+    {
+      "id": 60300086,
+      "idCN": "普通订单/精密零件3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "精密零件",
+      "des": "上游合金材料季度涨幅过高，需锁定当前报价避免后续成本激增，科伦巴商会急需%d份精密零件。",
+      "requireItemList": [
+        {
+          "id": 11700180,
+          "num": 162
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 19683
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 196830
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900011,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300087,
+      "idCN": "普通订单/诱饵气球3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "诱饵气球",
+      "des": "近期铁路沿线发现大规模桦树生物迁徙，科伦巴商会需%d份诱饵气球保证列车组正常运行。",
+      "requireItemList": [
+        {
+          "id": 11400049,
+          "num": 36
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24300
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 243000
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900006,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300088,
+      "idCN": "普通订单/修格里严选礼包3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "修格里严选礼包",
+      "des": "为配合即将启动的节日促销，确保有充足库存作为赠品或销售商品，科伦巴市场部急需采购%d份修格里严选礼包。",
+      "requireItemList": [
+        {
+          "id": 82900188,
+          "num": 144
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 36703
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 367027
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900024,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300089,
+      "idCN": "普通订单/金箔3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金箔",
+      "des": "受金价波动影响，预计近期金箔价格将上涨，为锁定当前成本并确保生产计划顺利进行，科伦巴生产部急需%d份金箔。",
+      "requireItemList": [
+        {
+          "id": 82900102,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 46656
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 466560
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900004,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300090,
+      "idCN": "普通订单/黄铜线圈3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "黄铜线圈",
+      "des": "为满足下季度生产订单需求，并应对近期原材料市场价格波动，确保充足库存并锁定当前成本，科伦巴制造部门急需采购%d份黄铜线圈。",
+      "requireItemList": [
+        {
+          "id": 82900177,
+          "num": 480
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 45360
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 453600
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900027,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300091,
+      "idCN": "普通订单/铁轨用特种钢材3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "铁轨用特种钢材",
+      "des": "为确保篝火城重点铁路项目建设顺利进行，科伦巴与铁盟签订合作条约，需立即采购%d份铁轨用特种钢材。",
+      "requireItemList": [
+        {
+          "id": 82900084,
+          "num": 240
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 34992
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 349920
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900029,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300092,
+      "idCN": "普通订单/桦树原质3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦树原质",
+      "des": "为保障武器生产线顺畅运行，阿妮塔科技向科伦巴定向采购%d份桦树原质。",
+      "requireItemList": [
+        {
+          "id": 11700066,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 32400
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 324000
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900005,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300093,
+      "idCN": "普通订单/仙人掌汁3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "仙人掌汁",
+      "des": "鉴于科伦巴下属列车组对仙人掌制品的迫切需求，需采购%d份新鲜仙人掌汁以保证列车组行驶安全。",
+      "requireItemList": [
+        {
+          "id": 11700006,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 35640
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 356400
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900019,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300094,
+      "idCN": "普通订单/漆黑涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "漆黑涂料",
+      "des": "为满足科伦巴对极致黑色效果的需求，并应用于需要减少光反射的特殊产品，需采购%d份漆黑涂料，以提升产品性能和美观度。",
+      "requireItemList": [
+        {
+          "id": 11700165,
+          "num": 60
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 36896
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 368955
+        },
+        {
+          "id": 11400612,
+          "num": 6
+        },
+        {
+          "id": 11400106,
+          "num": 60
+        }
+      ],
+      "requireProduction": 84900009,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 2
+    },
+    {
+      "id": 60300095,
+      "idCN": "普通订单/诱饵爆炸气球3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "诱饵爆炸气球",
+      "des": "为满足更好的应对桦树生物潮，科伦巴商会需%d份诱饵爆炸气球保证列车组正常运行。",
+      "requireItemList": [
+        {
+          "id": 11400069,
+          "num": 54
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 109350
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1093500
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900013,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300096,
+      "idCN": "普通订单/镀金零件3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "镀金零件",
+      "des": "为保障精密设备的稳定运行和关键连接点的性能，科伦巴商会急需补充采购具备优良导电和抗氧化特性的%d份镀金零件。",
+      "requireItemList": [
+        {
+          "id": 11700181,
+          "num": 54
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 65610
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 656100
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900007,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300097,
+      "idCN": "普通订单/年货大礼包3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "年货大礼包",
+      "des": "预估节日消费旺季需求激增，为保障线上线下销售渠道的节日商品供应，科伦巴零售部门需提前备货%d份年货大礼包。",
+      "requireItemList": [
+        {
+          "id": 82900109,
+          "num": 144
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 56143
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 561427
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900021,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300098,
+      "idCN": "普通订单/海角水产礼盒3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "海角水产礼盒",
+      "des": "鉴于消费者对海角城水产的认可度较高，为保障海产旺季的充足供应，并确保产品品质，需提前采购%d份海角水产礼盒进行备货。",
+      "requireItemList": [
+        {
+          "id": 82900187,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 50388
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 503885
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900022,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300099,
+      "idCN": "普通订单/银制列车工艺品3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "银制列车工艺品",
+      "des": "鉴于银制工艺品稳定的市场表现和列车主题的吸引力，为保障即将到来的销售旺季充足供应并维持产品品质，采购部需备货%d份银制列车工艺品。",
+      "requireItemList": [
+        {
+          "id": 82900237,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 63180
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 631800
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900113,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300100,
+      "idCN": "普通订单/纯金线材3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金线材",
+      "des": "为满足精密工业订单的快速增长，并应对原材料价格上涨趋势，科伦巴部门需紧急采购%d份纯金线材，以确保生产交付能力。",
+      "requireItemList": [
+        {
+          "id": 82900170,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 93312
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 933120
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900008,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300101,
+      "idCN": "普通订单/高导电容3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "高导电容",
+      "des": "鉴于高端电子产品市场需求持续扩大，为保障科伦巴电子核心产品性能优势及产能稳定，需采购%d份高导电容，以应对未来生产需求增长。",
+      "requireItemList": [
+        {
+          "id": 11700187,
+          "num": 72
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 52488
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 524880
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900032,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300102,
+      "idCN": "普通订单/石墨烯3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯",
+      "des": "为支持科伦巴在电池技术和复合材料领域的创新项目，需采购%d份石墨烯，用于实验和初步生产测试。",
+      "requireItemList": [
+        {
+          "id": 82900032,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 37325
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 373248
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900014,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300103,
+      "idCN": "普通订单/精钢3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "精钢",
+      "des": "为满足科伦巴商会日益增长的订单，保障生产线的稳定运行，需采购%d份精钢，确保按时交付客户订单，并维持合理库存水平。",
+      "requireItemList": [
+        {
+          "id": 82900162,
+          "num": 240
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 44388
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 443880
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900028,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300104,
+      "idCN": "普通订单/高导热陶瓷3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "高导热陶瓷",
+      "des": "为替换现有散热材料，降低生产成本并提升产品散热性能，科伦巴计划采购%d份高导热陶瓷，用于新一代产品的研发和生产，预计可显著提高产品能效比。",
+      "requireItemList": [
+        {
+          "id": 82900199,
+          "num": 192
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 42276
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 422755
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900030,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300105,
+      "idCN": "普通订单/噪音髓液3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音髓液",
+      "des": "鉴于噪音髓液对桦树生物的特殊克制效果，为支持列车长对抗潜在的桦树生物威胁，需采购%d份噪音髓液，以保障列车组的安全防卫能力。",
+      "requireItemList": [
+        {
+          "id": 11700149,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 38880
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 388800
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900016,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300106,
+      "idCN": "普通订单/玄武岩纤维3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "玄武岩纤维",
+      "des": "为替代现有玻纤材料，提升阿妮塔科技的复合材料产品的强度和耐腐蚀性，现向科伦巴商会定向采购%d份玄武岩纤维，用于建筑、汽车和航空航天等领域的应用开发。",
+      "requireItemList": [
+        {
+          "id": 82900238,
+          "num": 300
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 44591
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 445905
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900086,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300107,
+      "idCN": "普通订单/青绿涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "青绿涂料",
+      "des": "为满足科伦巴新一季家居产品线的色彩需求，并提升产品的美观度和市场吸引力，需采购%d份青绿涂料，确保产品风格与市场趋势保持一致。",
+      "requireItemList": [
+        {
+          "id": 11700008,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 55598
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 555984
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900033,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300108,
+      "idCN": "普通订单/孔雀绿涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "孔雀绿涂料",
+      "des": "为配合科伦巴产品线全新升级，满足高端客户对独特色彩的需求，需采购%d份高品质孔雀绿涂料，用于打造具有奢华质感和艺术气息的墙面装饰。",
+      "requireItemList": [
+        {
+          "id": 11700264,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 64152
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 641520
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900148,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300109,
+      "idCN": "普通订单/静谧蓝涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "静谧蓝涂料",
+      "des": "为响应市场对舒缓、放松风格的追求，应用于需要营造平静氛围的室内设计，需采购%d份静谧蓝涂料，以满足项目需求并扩大市场份额。",
+      "requireItemList": [
+        {
+          "id": 11700265,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 66355
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 663552
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900149,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300110,
+      "idCN": "普通订单/竞速黄涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "竞速黄涂料",
+      "des": "为满足科伦巴列车涂装业务对个性化色彩的需求，打造更具运动感和活力的视觉效果，需采购%d份竞速黄涂料，为顾客提供更具风格化的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700266,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 45360
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 453600
+        },
+        {
+          "id": 11400612,
+          "num": 9
+        },
+        {
+          "id": 11400106,
+          "num": 90
+        }
+      ],
+      "requireProduction": 84900150,
+      "timeLimit": 129600,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 3
+    },
+    {
+      "id": 60300111,
+      "idCN": "普通订单/纯金零件3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金零件",
+      "des": "科伦巴高端设备制造部门急需%d份纯金零件，以满足精密部件的特殊需求，确保产品的卓越品质与收藏价值。",
+      "requireItemList": [
+        {
+          "id": 11700182,
+          "num": 36
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 174960
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1749600
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900012,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300112,
+      "idCN": "普通订单/水产甄选礼盒3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "水产甄选礼盒",
+      "des": "预估节日期间礼品市场需求旺盛，为保障科伦巴生线上线下渠道的节日供应，以及满足企业客户的定制礼品需求，需提前备货%d份水产甄选礼盒。",
+      "requireItemList": [
+        {
+          "id": 82900186,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 89268
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 892685
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900023,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300113,
+      "idCN": "普通订单/金制列车工艺品3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金制列车工艺品",
+      "des": "为配合科伦巴与铁盟的联合列车展览，并提升高端纪念品的销售额，需采购%d份金制列车工艺品，以满足收藏家和铁路爱好者的需求。",
+      "requireItemList": [
+        {
+          "id": 82900236,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 101088
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1010880
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900080,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300114,
+      "idCN": "普通订单/超导线圈3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "超导线圈",
+      "des": "为推进科伦巴与阿妮塔科技新式列车共创项目的研发进程，确保核心部件的性能稳定可靠，需采购%d份超导线圈，用于列车驱动的测试与优化。",
+      "requireItemList": [
+        {
+          "id": 11700188,
+          "num": 36
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 131220
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1312200
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900010,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300115,
+      "idCN": "普通订单/石墨烯电池3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯电池",
+      "des": "为提升科伦巴列车组的续航能力，保持市场领先地位，需采购%d份石墨烯电池，用于配给科伦巴所属列车组。",
+      "requireItemList": [
+        {
+          "id": 82900141,
+          "num": 180
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 93312
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 933120
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900015,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300116,
+      "idCN": "普通订单/钛合金3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛合金",
+      "des": "阿妮塔发射中心向科伦巴冶金部门定向采集%d份钛合金，用于新一代深空探测器的结构制造，以提升其强度、耐腐蚀性和轻量化性能。",
+      "requireItemList": [
+        {
+          "id": 82900181,
+          "num": 216
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 73483
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 734832
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900031,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300117,
+      "idCN": "普通订单/噪音激酶3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音激酶",
+      "des": "鉴于噪音激酶对桦树生物的极强克制效果，以及其在新型武器制造中的潜力，需采购%d份噪音激酶，以支持生物安全防卫、武器研发和相关医学研究。",
+      "requireItemList": [
+        {
+          "id": 11700159,
+          "num": 60
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 121500
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1215000
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900017,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300118,
+      "idCN": "普通订单/深眠精华3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "深眠精华",
+      "des": "考虑到深眠精华提取难度较大且具有潜在的应用价值，科伦巴研究部门需采购%d份深眠精华，用于探索其特殊性质及潜在应用方向。",
+      "requireItemList": [
+        {
+          "id": 11700042,
+          "num": 96
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 103680
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1036800
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900039,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300119,
+      "idCN": "普通订单/桦石发财树3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦石发财树",
+      "des": "为丰富科伦巴礼品系列的种类，并满足部分客户对具有特殊寓意和装饰价值产品的需求，拟采购%d份桦石发财树。",
+      "requireItemList": [
+        {
+          "id": 82900031,
+          "num": 180
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 118778
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1187784
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900020,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300120,
+      "idCN": "普通订单/形而上粒子3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "形而上粒子",
+      "des": "鉴于形而上粒子对桦树生物的强大克制效果，为提升科伦巴列车组对桦树生物威胁的防御能力，需采购%d份形而上粒子。",
+      "requireItemList": [
+        {
+          "id": 11700146,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 104004
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1040040
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900090,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300121,
+      "idCN": "普通订单/碳纤维索3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "碳纤维索",
+      "des": "为提升科伦巴工程项目的施工效率和安全性，并满足特定高强度、轻量化需求，需采购%d份碳纤维索，应用于桥梁建设、高空作业及其他特殊工业领域。",
+      "requireItemList": [
+        {
+          "id": 82900218,
+          "num": 300
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 85091
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 850905
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900085,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300122,
+      "idCN": "普通订单/霞光红涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "霞光红涂料",
+      "des": "为满足科伦巴高端定制系列的色彩需求，并营造温暖、奢华的氛围，需采购%d份霞光红涂料，用于打造具有独特视觉效果和情感价值的产品。",
+      "requireItemList": [
+        {
+          "id": 11700003,
+          "num": 48
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 72038
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 720382
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900035,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300123,
+      "idCN": "普通订单/暮光紫涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "暮光紫涂料",
+      "des": "为配合科伦巴新推出的艺术涂装定制服务，并满足客户对氛围的营造需求，需采购%d份暮光紫涂料，用于打造具有个性化和艺术感的装饰作品。",
+      "requireItemList": [
+        {
+          "id": 11700027,
+          "num": 72
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 91125
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 911250
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900034,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300124,
+      "idCN": "普通订单/钛白涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛白涂料",
+      "des": "为确保科伦巴所有涂料产品的色彩饱和度和遮盖力，并满足对高品质白色涂料的广泛需求，需采购%d份钛白涂料，作为通用底漆和调色原料。",
+      "requireItemList": [
+        {
+          "id": 11700267,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 85131
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 851310
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900151,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300125,
+      "idCN": "普通订单/皓月银涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "皓月银涂料",
+      "des": "为满足科伦巴列车制造部门对金属质感和高端外观的需求，并提升车辆的科技感和时尚感，需采购%d份皓月银涂料，用于列车外壳喷涂以及相关内饰部件的装饰。",
+      "requireItemList": [
+        {
+          "id": 11700268,
+          "num": 120
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 89100
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 891000
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900152,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300126,
+      "idCN": "普通订单/熔岩橙涂料3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "熔岩橙涂料",
+      "des": "为配合科伦巴热情系列的色彩设计，并增强产品的活力和视觉冲击力，需采购%d份熔岩橙涂料，用于相关产品的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700269,
+          "num": 72
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 116844
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1168441
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900153,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 4
+    },
+    {
+      "id": 60300127,
+      "idCN": "普通订单/航天元器件3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "航天元器件",
+      "des": "为确保阿妮塔发射中心与科伦巴的合作项目的顺利进行，并满足航天设备高可靠性和稳定性的要求，需采购%d份航天元器件，用于设备的控制、通信和能源系统。",
+      "requireItemList": [
+        {
+          "id": 11700047,
+          "num": 18
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 239357
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 2393574
+        },
+        {
+          "id": 11400612,
+          "num": 24
+        },
+        {
+          "id": 11400106,
+          "num": 240
+        }
+      ],
+      "requireProduction": 84900036,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": false,
+      "rarity": 5
+    },
+    {
+      "id": 60300128,
+      "idCN": "组队订单/纯金零件",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "纯金零件",
+      "des": "科伦巴高端设备制造部门急需%d份纯金零件，以满足精密部件的特殊需求，确保产品的卓越品质与收藏价值。",
+      "requireItemList": [
+        {
+          "id": 11700182,
+          "num": 12
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 58320
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 583200
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900012,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300129,
+      "idCN": "组队订单/水产甄选礼盒",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "水产甄选礼盒",
+      "des": "预估节日期间礼品市场需求旺盛，为保障科伦巴生线上线下渠道的节日供应，以及满足企业客户的定制礼品需求，需提前备货%d份水产甄选礼盒。",
+      "requireItemList": [
+        {
+          "id": 82900186,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 29756
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 297562
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900023,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300130,
+      "idCN": "组队订单/金制列车工艺品",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "金制列车工艺品",
+      "des": "为配合科伦巴与铁盟的联合列车展览，并提升高端纪念品的销售额，需采购%d份金制列车工艺品，以满足收藏家和铁路爱好者的需求。",
+      "requireItemList": [
+        {
+          "id": 82900236,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 33696
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 336960
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900080,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300131,
+      "idCN": "组队订单/超导线圈",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "超导线圈",
+      "des": "为推进科伦巴与阿妮塔科技新式列车共创项目的研发进程，确保核心部件的性能稳定可靠，需采购%d份超导线圈，用于列车驱动的测试与优化。",
+      "requireItemList": [
+        {
+          "id": 11700188,
+          "num": 12
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 43740
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 437400
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900010,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300132,
+      "idCN": "组队订单/石墨烯电池",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "石墨烯电池",
+      "des": "为提升科伦巴列车组的续航能力，保持市场领先地位，需采购%d份石墨烯电池，用于配给科伦巴所属列车组。",
+      "requireItemList": [
+        {
+          "id": 82900141,
+          "num": 60
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 31104
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 311040
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900015,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300133,
+      "idCN": "组队订单/钛合金",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛合金",
+      "des": "阿妮塔发射中心向科伦巴冶金部门定向采集%d份钛合金，用于新一代深空探测器的结构制造，以提升其强度、耐腐蚀性和轻量化性能。",
+      "requireItemList": [
+        {
+          "id": 82900181,
+          "num": 72
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24494
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 244944
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900031,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300134,
+      "idCN": "组队订单/噪音激酶",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "噪音激酶",
+      "des": "鉴于噪音激酶对桦树生物的极强克制效果，以及其在新型武器制造中的潜力，需采购%d份噪音激酶，以支持生物安全防卫、武器研发和相关医学研究。",
+      "requireItemList": [
+        {
+          "id": 11700159,
+          "num": 20
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 40500
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 405000
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900017,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300135,
+      "idCN": "组队订单/深眠精华",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "深眠精华",
+      "des": "考虑到深眠精华提取难度较大且具有潜在的应用价值，科伦巴研究部门需采购%d份深眠精华，用于探索其特殊性质及潜在应用方向。",
+      "requireItemList": [
+        {
+          "id": 11700042,
+          "num": 32
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 34560
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 345600
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900039,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300136,
+      "idCN": "组队订单/桦石发财树",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "桦石发财树",
+      "des": "为丰富科伦巴礼品系列的种类，并满足部分客户对具有特殊寓意和装饰价值产品的需求，拟采购%d份桦石发财树。",
+      "requireItemList": [
+        {
+          "id": 82900031,
+          "num": 60
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 39593
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 395928
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900020,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300137,
+      "idCN": "组队订单/形而上粒子",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "形而上粒子",
+      "des": "鉴于形而上粒子对桦树生物的强大克制效果，为提升科伦巴列车组对桦树生物威胁的防御能力，需采购%d份形而上粒子。",
+      "requireItemList": [
+        {
+          "id": 11700146,
+          "num": 8
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 34668
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 346680
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900090,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300138,
+      "idCN": "组队订单/碳纤维索",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "碳纤维索",
+      "des": "为提升科伦巴工程项目的施工效率和安全性，并满足特定高强度、轻量化需求，需采购%d份碳纤维索，应用于桥梁建设、高空作业及其他特殊工业领域。",
+      "requireItemList": [
+        {
+          "id": 82900218,
+          "num": 100
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 28364
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 283635
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900085,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300139,
+      "idCN": "组队订单/霞光红涂料",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "霞光红涂料",
+      "des": "为满足科伦巴高端定制系列的色彩需求，并营造温暖、奢华的氛围，需采购%d份霞光红涂料，用于打造具有独特视觉效果和情感价值的产品。",
+      "requireItemList": [
+        {
+          "id": 11700003,
+          "num": 16
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24013
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 240127
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900035,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "paint"
+    },
+    {
+      "id": 60300140,
+      "idCN": "组队订单/暮光紫涂料",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "暮光紫涂料",
+      "des": "为配合科伦巴新推出的艺术涂装定制服务，并满足客户对氛围的营造需求，需采购%d份暮光紫涂料，用于打造具有个性化和艺术感的装饰作品。",
+      "requireItemList": [
+        {
+          "id": 11700027,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 30375
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 303750
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900034,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "paint"
+    },
+    {
+      "id": 60300141,
+      "idCN": "组队订单/钛白涂料",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛白涂料",
+      "des": "为确保科伦巴所有涂料产品的色彩饱和度和遮盖力，并满足对高品质白色涂料的广泛需求，需采购%d份钛白涂料，作为通用底漆和调色原料。",
+      "requireItemList": [
+        {
+          "id": 11700267,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 28377
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 283770
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900151,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "paint"
+    },
+    {
+      "id": 60300142,
+      "idCN": "组队订单/皓月银涂料",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "皓月银涂料",
+      "des": "为满足科伦巴列车制造部门对金属质感和高端外观的需求，并提升车辆的科技感和时尚感，需采购%d份皓月银涂料，用于列车外壳喷涂以及相关内饰部件的装饰。",
+      "requireItemList": [
+        {
+          "id": 11700268,
+          "num": 40
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 29700
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 297000
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900152,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "paint"
+    },
+    {
+      "id": 60300143,
+      "idCN": "组队订单/熔岩橙涂料",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "熔岩橙涂料",
+      "des": "为配合科伦巴热情系列的色彩设计，并增强产品的活力和视觉冲击力，需采购%d份熔岩橙涂料，用于相关产品的涂装。",
+      "requireItemList": [
+        {
+          "id": 11700269,
+          "num": 24
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 38948
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 389480
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900153,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "paint"
+    },
+    {
+      "id": 60300144,
+      "idCN": "组队订单/航天元器件",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "航天元器件",
+      "des": "为确保阿妮塔发射中心与科伦巴的合作项目的顺利进行，并满足航天设备高可靠性和稳定性的要求，需采购%d份航天元器件，用于设备的控制、通信和能源系统。",
+      "requireItemList": [
+        {
+          "id": 11700047,
+          "num": 6
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 79786
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 797858
+        },
+        {
+          "id": 11400612,
+          "num": 8
+        },
+        {
+          "id": 11400106,
+          "num": 80
+        }
+      ],
+      "requireProduction": 84900036,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 5,
+      "isProductionGet": true,
+      "orderType": "other"
+    },
+    {
+      "id": 60300145,
+      "idCN": "特殊订单/特殊征收-钛钢轨条1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛钢轨条",
+      "des": "为提升特殊项目的施工效率与安全性，并满足特定高强度、轻量化需求，现面向各商会征集钛钢轨条。",
+      "requireItemList": [
+        {
+          "id": 82900325,
+          "num": 80
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 68040
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 680400
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900154,
+      "timeLimit": 86400,
+      "isTeam": false,
+      "isSpecial": true,
+      "rarity": 4
+    },
+    {
+      "id": 60300146,
+      "idCN": "特殊订单/特殊征收-钛钢轨条2",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛钢轨条",
+      "des": "为推进科伦巴与阿妮塔科技新式列车共创项目的研发进程，确保核心部件的性能稳定可靠，需采购%d份超导线圈，用于列车驱动的测试与优化。",
+      "requireItemList": [
+        {
+          "id": 82900325,
+          "num": 160
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 136080
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 1360800
+        },
+        {
+          "id": 11400612,
+          "num": 10
+        },
+        {
+          "id": 11400106,
+          "num": 100
+        }
+      ],
+      "requireProduction": 84900154,
+      "timeLimit": 172800,
+      "isTeam": false,
+      "isSpecial": true,
+      "rarity": 4
+    },
+    {
+      "id": 60300147,
+      "idCN": "特殊订单/特殊征收-钛钢轨条3",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "钛钢轨条",
+      "des": "为提升科伦巴工程项目的施工效率和安全性，并满足特定高强度、轻量化需求，需采购%d份碳纤维索，应用于桥梁建设、高空作业及其他特殊工业领域。",
+      "requireItemList": [
+        {
+          "id": 82900325,
+          "num": 240
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 204120
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 2041200
+        },
+        {
+          "id": 11400612,
+          "num": 15
+        },
+        {
+          "id": 11400106,
+          "num": 150
+        }
+      ],
+      "requireProduction": 84900154,
+      "timeLimit": 259200,
+      "isTeam": false,
+      "isSpecial": true,
+      "rarity": 4
+    },
+    {
+      "id": 60300148,
+      "idCN": "组队订单/防弹背心",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "防弹背心",
+      "des": "增强铁安局对违法犯罪行为的打击力度，强化整顿中心悔过意识，科伦巴商会竭诚为铁安局提供支援，现定向采购%d件防弹背心。",
+      "requireItemList": [
+        {
+          "id": 82900164,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24598
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 245981
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900082,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "clothing"
+    },
+    {
+      "id": 60300149,
+      "idCN": "组队订单/抗污染防护服",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "抗污染防护服",
+      "des": "为确保阿妮塔科技作业安全，稳步推进桦树空间探索工程，特向科伦巴商会特订购抗污染防护服%d套。",
+      "requireItemList": [
+        {
+          "id": 82900173,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 24192
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 241920
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900115,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "clothing"
+    },
+    {
+      "id": 60300150,
+      "idCN": "组队订单/阿妮塔连体衣",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "阿妮塔连体衣",
+      "des": "为了给阿妮塔科技的员工提供舒适美观兼具技术性的制式服装，特向科伦巴商会特订购阿妮塔连体衣%d 套。",
+      "requireItemList": [
+        {
+          "id": 82900217,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 26516
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 265162
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900083,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "clothing"
+    },
+    {
+      "id": 60300151,
+      "idCN": "组队订单/阿尼塔连体衣1",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "阿妮塔连体衣",
+      "des": "为了给阿妮塔科技的员工提供舒适美观兼具技术性的制式服装，特向科伦巴商会特订购阿妮塔连体衣%d 套。",
+      "requireItemList": [
+        {
+          "id": 82900217,
+          "num": 64
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 26516
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 265162
+        },
+        {
+          "id": 11400612,
+          "num": 5
+        },
+        {
+          "id": 11400106,
+          "num": 50
+        }
+      ],
+      "requireProduction": 84900083,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 4,
+      "isProductionGet": true,
+      "orderType": "clothing"
+    },
+    {
+      "id": 60300152,
+      "idCN": "组队订单/宇航服",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "宇航服",
+      "des": "为保障保障阿妮塔航天宇航员在极端太空环境中的生命安全与作业舒适，以及未来可能的发射任务，特向科伦巴商会特订购宇航服%d 套。",
+      "requireItemList": [
+        {
+          "id": 82900233,
+          "num": 16
+        }
+      ],
+      "moneyList": [
+        {
+          "id": 11400001,
+          "num": 21384
+        }
+      ],
+      "rewardsList": [
+        {
+          "id": 11400001,
+          "num": 213840
+        },
+        {
+          "id": 11400612,
+          "num": 8
+        },
+        {
+          "id": 11400106,
+          "num": 80
+        }
+      ],
+      "requireProduction": 84900141,
+      "timeLimit": 604800,
+      "isTeam": true,
+      "isSpecial": false,
+      "rarity": 5,
+      "isProductionGet": true,
+      "orderType": "clothing"
+    }
+  ]
+}

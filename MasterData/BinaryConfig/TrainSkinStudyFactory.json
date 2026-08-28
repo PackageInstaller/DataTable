@@ -1,0 +1,1249 @@
+{
+  "version": 1,
+  "hash": "4C9FE89972530B9F9E053EE0FB9AAA02A65BE73D441F70D38D370E41E618B246",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131823493270,
+    "etc": "factory=TrainSkinStudyFactory"
+  },
+  "count": 22,
+  "records": [
+    {
+      "id": 60100001,
+      "idCN": "基础配置",
+      "mod": "基础配置",
+      "isInformalData": false,
+      "enumList": [
+        {
+          "studyPic": "UI/TrainStudy/UImap/StudyMap/icon1",
+          "trainType": 60100004
+        }
+      ],
+      "seeLong": 100.0,
+      "tx": 0.0,
+      "ty": 0.0,
+      "tz": 0.0,
+      "tyo": 0.0,
+      "skinList": [],
+      "mapList": []
+    },
+    {
+      "id": 60100003,
+      "idCN": "研发/无垠/个性化定制023",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "个性化定制023",
+      "showPic": 70500251,
+      "itemPrepare": [],
+      "levelPrepare": 15,
+      "powerPrepare": 15,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 6
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 3000000
+        },
+        {
+          "id": 11700002,
+          "num": 1
+        },
+        {
+          "id": 11700180,
+          "num": 20
+        }
+      ],
+      "timeCost": 14400.0,
+      "reward": [
+        {
+          "id": 11400654,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 1
+    },
+    {
+      "id": 60100004,
+      "idCN": "科技树/纯色",
+      "mod": "科技树",
+      "isInformalData": false,
+      "name": "纯色外观",
+      "studyPic": "UI/TrainStudy/UImap/Icon/tag2",
+      "order": 2
+    },
+    {
+      "id": 60100005,
+      "idCN": "研发/无垠/mk2",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk2",
+      "showPic": 70500216,
+      "itemPrepare": [
+        {
+          "id": 11400654
+        }
+      ],
+      "levelPrepare": 20,
+      "powerPrepare": 20,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 12
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 5000000
+        },
+        {
+          "id": 11700185,
+          "num": 2
+        },
+        {
+          "id": 11700183,
+          "num": 20
+        },
+        {
+          "id": 11700180,
+          "num": 30
+        }
+      ],
+      "timeCost": 21600.0,
+      "reward": [
+        {
+          "id": 11400655,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 2
+    },
+    {
+      "id": 60100007,
+      "idCN": "研发/无垠/mk4",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk4",
+      "showPic": 70500218,
+      "itemPrepare": [
+        {
+          "id": 11400656
+        }
+      ],
+      "levelPrepare": 30,
+      "powerPrepare": 30,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 24
+        },
+        {
+          "id": 85300001,
+          "lv": 24
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 13000000
+        },
+        {
+          "id": 11700186,
+          "num": 3
+        },
+        {
+          "id": 11700187,
+          "num": 20
+        },
+        {
+          "id": 11700181,
+          "num": 30
+        }
+      ],
+      "timeCost": 43200.0,
+      "reward": [
+        {
+          "id": 11400657,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 4
+    },
+    {
+      "id": 60100008,
+      "idCN": "研发/无垠/mk5",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk5",
+      "showPic": 70500219,
+      "itemPrepare": [
+        {
+          "id": 11400657
+        }
+      ],
+      "levelPrepare": 35,
+      "powerPrepare": 35,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 30
+        },
+        {
+          "id": 85300001,
+          "lv": 30
+        },
+        {
+          "id": 85300005,
+          "lv": 30
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 21000000
+        },
+        {
+          "id": 11700186,
+          "num": 5
+        },
+        {
+          "id": 11700187,
+          "num": 30
+        },
+        {
+          "id": 11700181,
+          "num": 50
+        }
+      ],
+      "timeCost": 57600.0,
+      "reward": [
+        {
+          "id": 11400658,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 5
+    },
+    {
+      "id": 60100009,
+      "idCN": "研发/无垠/mk6",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk6",
+      "showPic": 70500220,
+      "itemPrepare": [
+        {
+          "id": 11400658
+        }
+      ],
+      "levelPrepare": 40,
+      "powerPrepare": 40,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 36
+        },
+        {
+          "id": 85300001,
+          "lv": 36
+        },
+        {
+          "id": 85300005,
+          "lv": 36
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 34000000
+        },
+        {
+          "id": 11700186,
+          "num": 8
+        },
+        {
+          "id": 11700187,
+          "num": 50
+        },
+        {
+          "id": 11700181,
+          "num": 80
+        }
+      ],
+      "timeCost": 72000.0,
+      "reward": [
+        {
+          "id": 11400567,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 6
+    },
+    {
+      "id": 60100011,
+      "idCN": "研发/无垠/mk7",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk7",
+      "showPic": 70500221,
+      "itemPrepare": [
+        {
+          "id": 11400567
+        }
+      ],
+      "levelPrepare": 45,
+      "powerPrepare": 45,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 42
+        },
+        {
+          "id": 85300001,
+          "lv": 42
+        },
+        {
+          "id": 85300005,
+          "lv": 42
+        },
+        {
+          "id": 85300006,
+          "lv": 12
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 55000000
+        },
+        {
+          "id": 11700143,
+          "num": 5
+        },
+        {
+          "id": 11700188,
+          "num": 20
+        },
+        {
+          "id": 11700182,
+          "num": 20
+        },
+        {
+          "id": 11700047,
+          "num": 10
+        }
+      ],
+      "timeCost": 86400.0,
+      "reward": [
+        {
+          "id": 11400568,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 7
+    },
+    {
+      "id": 60100012,
+      "idCN": "研发/无垠/mk8",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk8",
+      "showPic": 70500222,
+      "itemPrepare": [
+        {
+          "id": 11400568
+        }
+      ],
+      "levelPrepare": 50,
+      "powerPrepare": 50,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 48
+        },
+        {
+          "id": 85300001,
+          "lv": 48
+        },
+        {
+          "id": 85300005,
+          "lv": 48
+        },
+        {
+          "id": 85300006,
+          "lv": 24
+        },
+        {
+          "id": 85300002,
+          "lv": 12
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 89000000
+        },
+        {
+          "id": 11700143,
+          "num": 8
+        },
+        {
+          "id": 11700188,
+          "num": 30
+        },
+        {
+          "id": 11700182,
+          "num": 30
+        },
+        {
+          "id": 11700047,
+          "num": 20
+        }
+      ],
+      "timeCost": 115200.0,
+      "reward": [
+        {
+          "id": 11400575,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 8
+    },
+    {
+      "id": 60100013,
+      "idCN": "研发/无垠/mk3",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk3",
+      "showPic": 70500217,
+      "itemPrepare": [
+        {
+          "id": 11400655
+        }
+      ],
+      "levelPrepare": 25,
+      "powerPrepare": 25,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 18
+        },
+        {
+          "id": 85300001,
+          "lv": 18
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 8000000
+        },
+        {
+          "id": 11700185,
+          "num": 3
+        },
+        {
+          "id": 11700183,
+          "num": 30
+        },
+        {
+          "id": 11700181,
+          "num": 20
+        }
+      ],
+      "timeCost": 28800.0,
+      "reward": [
+        {
+          "id": 11400656,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 3
+    },
+    {
+      "id": 60100002,
+      "idCN": "科技树/无垠号升级",
+      "mod": "科技树",
+      "isInformalData": false,
+      "name": "无垠号改装升级",
+      "studyPic": "UI/TrainStudy/UImap/Icon/tag1",
+      "order": 1
+    },
+    {
+      "id": 60100006,
+      "idCN": "研发/纯色/5红",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "霞光红-06",
+      "showPic": 70500062,
+      "itemPrepare": [
+        {
+          "id": 11400648
+        },
+        {
+          "id": 11400647
+        },
+        {
+          "id": 11400646
+        },
+        {
+          "id": 11400644
+        }
+      ],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 1
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 0
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 2500000
+        },
+        {
+          "id": 11700003,
+          "num": 100
+        },
+        {
+          "id": 11700206,
+          "num": 1
+        }
+      ],
+      "timeCost": 21600.0,
+      "reward": [
+        {
+          "id": 11400645,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100004,
+      "order": 5
+    },
+    {
+      "id": 60100014,
+      "idCN": "研发/纯色/1黑",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "漆黑-00",
+      "showPic": 70500032,
+      "itemPrepare": [],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 1
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 0
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 500000
+        },
+        {
+          "id": 11700165,
+          "num": 100
+        }
+      ],
+      "timeCost": 21600.0,
+      "reward": [
+        {
+          "id": 11400644,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100004,
+      "order": 1
+    },
+    {
+      "id": 60100015,
+      "idCN": "研发/纯色/2金",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "黄金-100",
+      "showPic": 70500038,
+      "itemPrepare": [
+        {
+          "id": 11400644
+        }
+      ],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 1
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 0
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        },
+        {
+          "id": 82900102,
+          "num": 200
+        }
+      ],
+      "timeCost": 21600.0,
+      "reward": [
+        {
+          "id": 11400646,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100004,
+      "order": 2
+    },
+    {
+      "id": 60100016,
+      "idCN": "研发/纯色/3青",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "青绿-39",
+      "showPic": 70500044,
+      "itemPrepare": [
+        {
+          "id": 11400646
+        },
+        {
+          "id": 11400644
+        }
+      ],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 1
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 0
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 1500000
+        },
+        {
+          "id": 11700008,
+          "num": 100
+        }
+      ],
+      "timeCost": 21600.0,
+      "reward": [
+        {
+          "id": 11400647,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100004,
+      "order": 3
+    },
+    {
+      "id": 60100017,
+      "idCN": "研发/纯色/4紫",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "暮光紫-01",
+      "showPic": 70500045,
+      "itemPrepare": [
+        {
+          "id": 11400647
+        },
+        {
+          "id": 11400646
+        },
+        {
+          "id": 11400644
+        }
+      ],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 1
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 0
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 2000000
+        },
+        {
+          "id": 11700027,
+          "num": 100
+        }
+      ],
+      "timeCost": 21600.0,
+      "reward": [
+        {
+          "id": 11400648,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100004,
+      "order": 4
+    },
+    {
+      "id": 60100010,
+      "idCN": "研发/无垠/mk9",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk9",
+      "showPic": 70500223,
+      "itemPrepare": [
+        {
+          "id": 11400575
+        }
+      ],
+      "levelPrepare": 55,
+      "powerPrepare": 55,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 54
+        },
+        {
+          "id": 85300001,
+          "lv": 54
+        },
+        {
+          "id": 85300005,
+          "lv": 54
+        },
+        {
+          "id": 85300006,
+          "lv": 36
+        },
+        {
+          "id": 85300002,
+          "lv": 24
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 144000000
+        },
+        {
+          "id": 11700143,
+          "num": 13
+        },
+        {
+          "id": 11700188,
+          "num": 50
+        },
+        {
+          "id": 11700182,
+          "num": 50
+        },
+        {
+          "id": 11700047,
+          "num": 30
+        }
+      ],
+      "timeCost": 144000.0,
+      "reward": [
+        {
+          "id": 11400578,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 9
+    },
+    {
+      "id": 60100018,
+      "idCN": "研发/无垠/mk10",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "无垠号mk10",
+      "showPic": 70500224,
+      "itemPrepare": [
+        {
+          "id": 11400578
+        }
+      ],
+      "levelPrepare": 60,
+      "powerPrepare": 60,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 60
+        },
+        {
+          "id": 85300001,
+          "lv": 60
+        },
+        {
+          "id": 85300005,
+          "lv": 60
+        },
+        {
+          "id": 85300006,
+          "lv": 48
+        },
+        {
+          "id": 85300002,
+          "lv": 36
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 233000000
+        },
+        {
+          "id": 11700143,
+          "num": 21
+        },
+        {
+          "id": 11700146,
+          "num": 80
+        },
+        {
+          "id": 11700182,
+          "num": 80
+        },
+        {
+          "id": 11700047,
+          "num": 50
+        }
+      ],
+      "timeCost": 172800.0,
+      "reward": [
+        {
+          "id": 11400618,
+          "num": 1
+        }
+      ],
+      "treeStudy": 60100002,
+      "order": 10
+    },
+    {
+      "id": 60100019,
+      "idCN": "科技树/活动",
+      "mod": "科技树",
+      "isInformalData": false,
+      "name": "活动",
+      "studyPic": "UI/TrainStudy/UImap/Icon/tag1",
+      "order": 3
+    },
+    {
+      "id": 60100020,
+      "idCN": "研发/活动/学会列车",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "个性化定制023",
+      "showPic": -1,
+      "itemPrepare": [],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 6
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        }
+      ],
+      "timeCost": 14400.0,
+      "reward": [],
+      "treeStudy": 60100019,
+      "order": 1
+    },
+    {
+      "id": 60100021,
+      "idCN": "研发/活动/瓦沙克金",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "个性化定制023",
+      "showPic": -1,
+      "itemPrepare": [
+        {
+          "id": 11400368
+        }
+      ],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 6
+        },
+        {
+          "id": 85300001,
+          "lv": 1
+        },
+        {
+          "id": 85300005,
+          "lv": 1
+        },
+        {
+          "id": 85300006,
+          "lv": 1
+        },
+        {
+          "id": 85300002,
+          "lv": 1
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11400001,
+          "num": 1000000
+        }
+      ],
+      "timeCost": 14400.0,
+      "reward": [],
+      "treeStudy": 60100019,
+      "order": 1
+    },
+    {
+      "id": 60100022,
+      "idCN": "研发/活动/萃境号",
+      "mod": "研发皮肤",
+      "isInformalData": false,
+      "name": "萃境号",
+      "showPic": -1,
+      "itemPrepare": [],
+      "levelPrepare": 1,
+      "powerPrepare": 1,
+      "energyPrepare": [
+        {
+          "id": 85300004,
+          "lv": 60
+        },
+        {
+          "id": 85300001,
+          "lv": 60
+        },
+        {
+          "id": 85300005,
+          "lv": 60
+        },
+        {
+          "id": 85300006,
+          "lv": 60
+        },
+        {
+          "id": 85300002,
+          "lv": 60
+        }
+      ],
+      "cityPrepare": [
+        {
+          "id": 83000001,
+          "lv": 1
+        }
+      ],
+      "itemCost": [
+        {
+          "id": 11700143,
+          "num": 34
+        },
+        {
+          "id": 11400001,
+          "num": 1200000000
+        }
+      ],
+      "timeCost": 14400.0,
+      "reward": [],
+      "treeStudy": 60100019,
+      "order": 1
+    }
+  ]
+}

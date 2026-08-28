@@ -1,0 +1,168 @@
+{
+  "version": 1,
+  "hash": "C3E80991931CCC8E804174F51C4D2417894454499953375A80F8E433C2413964",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131697588818,
+    "etc": "factory=MonopolyGridFactory"
+  },
+  "count": 11,
+  "records": [
+    {
+      "id": 91100001,
+      "idCN": "宝箱",
+      "mod": "宝箱",
+      "isInformalData": false,
+      "name": "宝箱",
+      "desc": "这是一个宝箱",
+      "resPath": "Enemy3D/Box",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601185,
+      "rewards": [
+        {
+          "id": 11400005,
+          "maxCount": 1,
+          "minCount": 1,
+          "rate": 100.0
+        }
+      ]
+    },
+    {
+      "id": 91100002,
+      "idCN": "普通格子",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "普通格子",
+      "desc": "这是一个普通格子",
+      "resPath": "Monopoly/tile_road",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601182
+    },
+    {
+      "id": 91100003,
+      "idCN": "战斗格子",
+      "mod": "战斗",
+      "isInformalData": false,
+      "name": "战斗格子",
+      "desc": "这是一个战斗格子",
+      "resPath": "",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601182
+    },
+    {
+      "id": 91100004,
+      "idCN": "继续移动格子",
+      "mod": "继续移动",
+      "isInformalData": false,
+      "name": "战斗格子",
+      "desc": "这是一个战斗格子",
+      "resPath": "",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601178,
+      "continueStep": -1
+    },
+    {
+      "id": 91100005,
+      "idCN": "选择格子",
+      "mod": "奖励多选一",
+      "isInformalData": false,
+      "name": "",
+      "desc": "",
+      "resPath": "",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": -1,
+      "openPanelPath": "",
+      "rewards": []
+    },
+    {
+      "id": 91100006,
+      "idCN": "打开ui",
+      "mod": "打开界面",
+      "isInformalData": false,
+      "name": "打开UI格子",
+      "desc": "这是一个打开UI格子",
+      "resPath": "Monopoly/tile_road",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601178,
+      "openPanelPath": "UI/Monopoly/Shop/MonopolyShop",
+      "canReopen": false
+    },
+    {
+      "id": 91100007,
+      "idCN": "转向格子",
+      "mod": "转向",
+      "isInformalData": false,
+      "name": "转向格子",
+      "desc": "这是一个转向格子",
+      "resPath": "",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601182
+    },
+    {
+      "id": 91100008,
+      "idCN": "传送格子",
+      "mod": "传送",
+      "isInformalData": false,
+      "name": "传送格子",
+      "desc": "这是一个传送格子",
+      "resPath": "Enemy3D/Door",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601182
+    },
+    {
+      "id": 91100009,
+      "idCN": "商店",
+      "mod": "商店",
+      "isInformalData": false,
+      "name": "打开UI格子",
+      "desc": "这是一个打开UI格子",
+      "resPath": "",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601178,
+      "openPanelPath": "UI/Monopoly/Shop/MonopolyShop",
+      "canReopen": false,
+      "goods": []
+    },
+    {
+      "id": 91100010,
+      "idCN": "奖励多选一",
+      "mod": "奖励多选一",
+      "isInformalData": false,
+      "name": "宝箱",
+      "desc": "这是一个宝箱",
+      "resPath": "Enemy3D/Box",
+      "basePath": "Enemy3D/MonopolyBase",
+      "imagePath": "",
+      "nodeType": 12601185,
+      "openPanelPath": "",
+      "rewards": [
+        {
+          "id": 11400005,
+          "maxCount": 1,
+          "minCount": 1
+        }
+      ]
+    },
+    {
+      "id": 91100011,
+      "idCN": "路线",
+      "mod": "路线",
+      "isInformalData": false,
+      "name": "路线",
+      "desc": "这是一段路线",
+      "resPath": "Monopoly/tile_road",
+      "basePath": "Monopoly/tile_road",
+      "imagePath": "",
+      "nodeType": 12601185
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+local DataModel = {}
+return DataModel

@@ -1,0 +1,2262 @@
+{
+  "version": 1,
+  "hash": "C237C6BB2D7B7363D4AF362C7B73512B19DA4B3241B371E2F291BD2138B12FB5",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131129846317,
+    "etc": "factory=TrainRoadMsgFactory"
+  },
+  "count": 49,
+  "records": [
+    {
+      "id": 90500001,
+      "idCN": "2白天01-10点复古日光",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_01",
+      "fogEnable": true,
+      "fogColor": "#77B0D1",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_01",
+      "skyColorStr": "140,180,200",
+      "equatorColorStr": "40,60,90",
+      "groundColorStr": "6,18,40",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "200,230,230",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "95,137,133"
+    },
+    {
+      "id": 90500030,
+      "idCN": "5夜晚01-22点无云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Night_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Night_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Night_01",
+      "fogEnable": true,
+      "fogColor": "#618EB7",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Night_01",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "21,56,77",
+      "groundColorStr": "5,82,94",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "85,135,150",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "204,221,224",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500031,
+      "idCN": "3下午01-16点多云搁浅",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_01",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Afternoon_01",
+      "fogEnable": true,
+      "fogColor": "#407D8C",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_01",
+      "skyColorStr": "84,118,144",
+      "equatorColorStr": "25,35,60",
+      "groundColorStr": "3,14,30",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "135,227,217",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "180,212,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [],
+      "waterColorFarStr": "6,8,10",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        }
+      ]
+    },
+    {
+      "id": 90500032,
+      "idCN": "3下午03-16点多云搁浅白雾大",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_02",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Afternoon_02",
+      "fogEnable": true,
+      "fogColor": "#7CC0C3",
+      "fogMode": "Exponential",
+      "fogDensity": 0.001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_02",
+      "skyColorStr": "35,100,126",
+      "equatorColorStr": "20,70,70",
+      "groundColorStr": "3,13,31",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "155,206,215",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "185,220,220",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "moon_TREE3"
+        },
+        {
+          "effectUrl": "wuran_TREE3"
+        }
+      ],
+      "waterColorFarStr": "63,103,132",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        },
+        {
+          "weatherId": 50000035
+        }
+      ]
+    },
+    {
+      "id": 90500033,
+      "idCN": "3下午02-16点多云搁浅浓雾",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_02",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Afternoon_01_b",
+      "fogEnable": true,
+      "fogColor": "#184452",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_01_b",
+      "skyColorStr": "157,168,110",
+      "equatorColorStr": "107,150,171",
+      "groundColorStr": "7,67,99",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.2,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "38,103,111",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "122,176,191",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "moon_TREE3"
+        },
+        {
+          "effectUrl": "wuran_TREE3"
+        }
+      ],
+      "waterColorFarStr": "4,6,8",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        }
+      ]
+    },
+    {
+      "id": 90500002,
+      "idCN": "1清晨01-7点粉色天空梦幻",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunrise_Morning_01",
+      "fogEnable": true,
+      "fogColor": "#BE8FB7",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunrise_Morning_01",
+      "skyColorStr": "78,61,116",
+      "equatorColorStr": "41,59,104",
+      "groundColorStr": "9,33,87",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,200,200",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,240,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "15,10,8",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500003,
+      "idCN": "2白天04-10点韩国妹日光",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_04",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_04",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_04",
+      "fogEnable": true,
+      "fogColor": "#48748E",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04",
+      "skyColorStr": "192,179,123",
+      "equatorColorStr": "78,100,90",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.55,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "230,225,195",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,235",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "32,38,41"
+    },
+    {
+      "id": 90500004,
+      "idCN": "4黄昏01-18点火烧云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_01",
+      "fogEnable": true,
+      "fogColor": "#FFAAB0",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_01",
+      "skyColorStr": "11,25,77",
+      "equatorColorStr": "46,20,8",
+      "groundColorStr": "25,25,50",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "255,170,160",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,230,210",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "8,2,14"
+    },
+    {
+      "id": 90500005,
+      "idCN": "3下午03-16点多云搁浅白雾小",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_02",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Afternoon_03",
+      "fogEnable": true,
+      "fogColor": "#90F6F8",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_03",
+      "skyColorStr": "35,100,126",
+      "equatorColorStr": "20,70,70",
+      "groundColorStr": "3,13,31",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "200,250,253",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "200,230,230",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [],
+      "waterColorFarStr": "91,134,168",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        },
+        {
+          "weatherId": 50000035
+        }
+      ]
+    },
+    {
+      "id": 90500006,
+      "idCN": "1清晨04-青白风格化",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_03",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_03",
+      "fogEnable": true,
+      "fogColor": "#5BAECA",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_03",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "4,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "120,220,220",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "200,240,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [],
+      "waterColorFarStr": "30,42,56",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        },
+        {
+          "weatherId": 50000035
+        }
+      ]
+    },
+    {
+      "id": 90500007,
+      "idCN": "2白天02-14点复古日光热",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_02",
+      "fogEnable": true,
+      "fogColor": "#77B0D1",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_02",
+      "skyColorStr": "215,215,170",
+      "equatorColorStr": "40,60,90",
+      "groundColorStr": "6,18,40",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "200,230,230",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "92,123,89"
+    },
+    {
+      "id": 90500029,
+      "idCN": "4黄昏05-17点新海诚日落开始",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_05",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_05",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_05",
+      "fogEnable": true,
+      "fogColor": "#2B7EDB",
+      "fogMode": "Exponential",
+      "fogDensity": 0.00015,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_05",
+      "skyColorStr": "180,174,93",
+      "equatorColorStr": "55,72,106",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.55,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "150",
+          "colorStr": "180,173,217",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "245,245,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "5,7,9"
+    },
+    {
+      "id": 90500008,
+      "idCN": "1清晨02-6点灰粉日出",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_02",
+      "processPath": "Environment\\Sky_System\\PP_Sunrise_Morning_02",
+      "fogEnable": true,
+      "fogColor": "#A1726D",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunrise_Morning_02",
+      "skyColorStr": "80,56,118",
+      "equatorColorStr": "111,70,56",
+      "groundColorStr": "14,32,99",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,210,185",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,245,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "24,15,13"
+    },
+    {
+      "id": 90500009,
+      "idCN": "1清晨03-6点沙漠日出",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_03",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_03",
+      "processPath": "Environment\\Sky_System\\PP_Sunrise_Morning_03",
+      "fogEnable": true,
+      "fogColor": "#BE9E8F",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0004,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunrise_Morning_03",
+      "skyColorStr": "115,61,85",
+      "equatorColorStr": "186,123,96",
+      "groundColorStr": "22,34,79",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "255,220,185",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,250,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "51,36,21"
+    },
+    {
+      "id": 90500010,
+      "idCN": "5夜晚03-24点晴天无月极光",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_01",
+      "processPath": "Environment\\Sky_System\\PP_Moonless_Night_01",
+      "fogEnable": true,
+      "fogColor": "#0D2D48",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0002,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Moonless_Night_01",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "20,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "69,139,144",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "203,218,221",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500011,
+      "idCN": "2白天04-10点韩国妹日光紫色",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_04_c",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_04",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_04_c",
+      "fogEnable": true,
+      "fogColor": "#9491D4",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04_c",
+      "skyColorStr": "46,51,159",
+      "equatorColorStr": "116,108,179",
+      "groundColorStr": "14,55,99",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.45,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "215",
+          "colorStr": "253,178,190",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,245,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "23,14,26"
+    },
+    {
+      "id": 90500012,
+      "idCN": "4黄昏02-19点火烧云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_02",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_02",
+      "fogEnable": true,
+      "fogColor": "#AB4030",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_01",
+      "skyColorStr": "11,25,77",
+      "equatorColorStr": "51,18,6",
+      "groundColorStr": "25,25,50",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "255,190,160",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,215,187",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "20,5,5"
+    },
+    {
+      "id": 90500013,
+      "idCN": "4黄昏03-19点火烧云沙丘",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_03",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_03",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_03",
+      "fogEnable": true,
+      "fogColor": "#AB4030",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_03",
+      "skyColorStr": "113,62,39",
+      "equatorColorStr": "60,23,10",
+      "groundColorStr": "25,25,50",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "255,175,105",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,215,187",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "30,15,12"
+    },
+    {
+      "id": 90500014,
+      "idCN": "4黄昏04-19点火烧云沙丘点云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_04",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_04",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_03",
+      "fogEnable": true,
+      "fogColor": "#411113",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_04",
+      "skyColorStr": "109,37,23",
+      "equatorColorStr": "60,23,10",
+      "groundColorStr": "19,13,77",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "255,148,105",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,215,187",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "70,30,11"
+    },
+    {
+      "id": 90500015,
+      "idCN": "5夜晚02-23点晴天无月极光",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_02",
+      "processPath": "Environment\\Sky_System\\PP_Moonless_Night_01",
+      "fogEnable": true,
+      "fogColor": "#0D2D48",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0002,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Moonless_Night_02",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "20,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "170",
+          "colorStr": "75,145,165",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "210,237,241",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500016,
+      "idCN": "2白天04-10点韩国妹日光云雾",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_05",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_05",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_04",
+      "fogEnable": true,
+      "fogColor": "#48748E",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04",
+      "skyColorStr": "192,179,123",
+      "equatorColorStr": "78,100,90",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.4,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "237,252,255",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "140,158,169",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500017,
+      "idCN": "2白天04-12点韩国妹日光无云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_06",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_06",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_06",
+      "fogEnable": true,
+      "fogColor": "#3977B0",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_06",
+      "skyColorStr": "250,250,250",
+      "equatorColorStr": "75,90,100",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.4,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "210,210,255",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "240,255,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "84,97,114"
+    },
+    {
+      "id": 90500018,
+      "idCN": "2白天04-10点强烈日光雨云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_07",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_07",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_07",
+      "fogEnable": true,
+      "fogColor": "#48748E",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04",
+      "skyColorStr": "200,185,140",
+      "equatorColorStr": "10,39,68",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.55,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "191,226,240",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "225,235,235",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "59,70,84"
+    },
+    {
+      "id": 90500019,
+      "idCN": "5夜晚04-24点共振无月极光",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Resonance_Day_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Resonance_Day_01",
+      "processPath": "Environment\\Sky_System\\PP_Moonless_Night_01",
+      "fogEnable": true,
+      "fogColor": "#0D4048",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0002,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Moonless_Night_01",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "20,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "170",
+          "colorStr": "70,140,145",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "204,221,224",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500020,
+      "idCN": "5夜晚05-20点多云搁浅",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Night_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_01",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Night_01",
+      "fogEnable": true,
+      "fogColor": "#103743",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Night_01",
+      "skyColorStr": "67,135,127",
+      "equatorColorStr": "25,40,60",
+      "groundColorStr": "0,53,58",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "35,99,109",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "75,130,140",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "moon_TREE3"
+        },
+        {
+          "effectUrl": "wuran_TREE3"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        }
+      ]
+    },
+    {
+      "id": 90500021,
+      "idCN": "2白天02-14点复古日光热沙漠",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_02G",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_02_b",
+      "fogEnable": true,
+      "fogColor": "#C8B498",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0006,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_02",
+      "skyColorStr": "214,182,112",
+      "equatorColorStr": "135,97,72",
+      "groundColorStr": "53,24,12",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,247,198",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "58,58,31"
+    },
+    {
+      "id": 90500024,
+      "idCN": "5夜晚02-23点晴天无月极光绿",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_02",
+      "processPath": "Environment\\Sky_System\\PP_Moonless_Night_02",
+      "fogEnable": true,
+      "fogColor": "#0D2D48",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0002,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Moonless_Night_02",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "20,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "170",
+          "colorStr": "75,145,165",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "210,237,241",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ]
+    },
+    {
+      "id": 90500025,
+      "idCN": "5夜晚03-24点晴天无月极光绿",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Moonless_Night_01",
+      "processPath": "Environment\\Sky_System\\PP_Moonless_Night_02",
+      "fogEnable": true,
+      "fogColor": "#0D2D48",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0002,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Moonless_Night_01",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "20,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "69,139,144",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "203,218,221",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500026,
+      "idCN": "5夜晚04-24点共振无月极光绿",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Resonance_Day_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Resonance_Day_01",
+      "processPath": "Environment\\Sky_System\\PP_Moonless_Night_02",
+      "fogEnable": true,
+      "fogColor": "#0D4048",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0002,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Moonless_Night_01",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "20,16,32",
+      "groundColorStr": "3,20,20",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "170",
+          "colorStr": "70,140,145",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "204,221,224",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500027,
+      "idCN": "5夜晚05-24点多云搁浅绿",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Night_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_01",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Night_02",
+      "fogEnable": true,
+      "fogColor": "#103743",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Night_02",
+      "skyColorStr": "67,135,127",
+      "equatorColorStr": "25,40,60",
+      "groundColorStr": "0,53,58",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "35,99,109",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "75,130,140",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "moon_TREE3"
+        },
+        {
+          "effectUrl": "wuran_TREE3"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        }
+      ]
+    },
+    {
+      "id": 90500028,
+      "idCN": "5夜晚01-22点无云绿",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Night_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Night_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Night_02",
+      "fogEnable": true,
+      "fogColor": "#618EB7",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Night_01",
+      "skyColorStr": "8,26,41",
+      "equatorColorStr": "21,56,77",
+      "groundColorStr": "5,82,94",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "85,135,150",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "204,221,224",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "haiou_ring_7FP"
+        },
+        {
+          "effectUrl": "haiou_ANITARSS"
+        },
+        {
+          "effectUrl": "haiou_SHIP"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500038,
+      "idCN": "6桦树空间测试",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "CommonEffect/Particle/Materials/Huashukongjian/M_Sky_huashukongjian",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_01",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Night_02",
+      "fogEnable": true,
+      "fogColor": "#103743",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Night_02",
+      "skyColorStr": "67,135,127",
+      "equatorColorStr": "25,40,60",
+      "groundColorStr": "0,53,58",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.314,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "35,99,109",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "75,130,140",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "moon_TREE3"
+        },
+        {
+          "effectUrl": "wuran_TREE3"
+        }
+      ],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500039,
+      "idCN": "3下午04-16点地卫二",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Somantaka_eye2",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Somantaka_eye2",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Night_03",
+      "fogEnable": true,
+      "fogColor": "#2F2F40",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_05",
+      "skyColorStr": "67,86,135",
+      "equatorColorStr": "25,25,60",
+      "groundColorStr": "11,8,46",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "225",
+          "colorStr": "185,200,245",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "200,200,230",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [],
+      "waterColorFarStr": "15,12,14"
+    },
+    {
+      "id": 90500040,
+      "idCN": "1清晨01-7点粉色天空梦幻粉蓝",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Niji01",
+      "fogEnable": true,
+      "fogColor": "#BE8FB7",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunrise_Morning_01",
+      "skyColorStr": "78,61,116",
+      "equatorColorStr": "41,59,104",
+      "groundColorStr": "9,33,87",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,200,200",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,240,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "17,10,20"
+    },
+    {
+      "id": 90500041,
+      "idCN": "1清晨01-7点粉色天空梦幻沙漠热",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_01",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_01",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Niji02",
+      "fogEnable": true,
+      "fogColor": "#BE8FB7",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunrise_Morning_01",
+      "skyColorStr": "78,61,116",
+      "equatorColorStr": "41,59,104",
+      "groundColorStr": "9,33,87",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,200,200",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,240,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "10,7,5"
+    },
+    {
+      "id": 90500042,
+      "idCN": "1清晨05-7点新海诚日出",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_05b",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_05",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_05b",
+      "fogEnable": true,
+      "fogColor": "#1F73E0",
+      "fogMode": "Exponential",
+      "fogDensity": 0.00015,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_05b",
+      "skyColorStr": "180,174,93",
+      "equatorColorStr": "55,72,106",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.55,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "150",
+          "colorStr": "180,173,217",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "245,245,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "4,6,8"
+    },
+    {
+      "id": 90500043,
+      "idCN": "6地卫二粉",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Somantaka_eye2",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Somantaka_eye2",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Night_04",
+      "fogEnable": true,
+      "fogColor": "#2F2F40",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_05",
+      "skyColorStr": "67,86,135",
+      "equatorColorStr": "25,25,60",
+      "groundColorStr": "11,8,46",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "185,200,245",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "200,200,230",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [],
+      "waterColorFarStr": "20,16,31"
+    },
+    {
+      "id": 90500044,
+      "idCN": "4黄昏06-17点地卫二黄",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Somantaka_eye2",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Somantaka_eye2",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Night_05",
+      "fogEnable": true,
+      "fogColor": "#2F2F40",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Cloudy_Afternoon_05",
+      "skyColorStr": "67,86,135",
+      "equatorColorStr": "25,25,60",
+      "groundColorStr": "11,8,46",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "255",
+          "colorStr": "185,200,245",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "200,200,230",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [],
+      "waterColorFarStr": "18,5,1"
+    },
+    {
+      "id": 90500037,
+      "idCN": "4黄昏05-17点新海诚日落开始黄",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_05",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_05",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_05y",
+      "fogEnable": true,
+      "fogColor": "#2B7EDB",
+      "fogMode": "Exponential",
+      "fogDensity": 0.00015,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_05",
+      "skyColorStr": "180,174,93",
+      "equatorColorStr": "55,72,106",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.55,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "165",
+          "colorStr": "226,197,205",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "245,245,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "10,7,13"
+    },
+    {
+      "id": 90500022,
+      "idCN": "2白天04-10点强烈日光乌云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_08",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_08",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_07",
+      "fogEnable": true,
+      "fogColor": "#405E6F",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04",
+      "skyColorStr": "200,185,140",
+      "equatorColorStr": "26,64,82",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "225",
+          "colorStr": "130,166,180",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "225,235,235",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "49,59,63",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500045,
+      "idCN": "4黄昏04-19点火烧云共振",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Resonance_Day_02",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Resonance_Day_02",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_03",
+      "fogEnable": true,
+      "fogColor": "#411113",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_04",
+      "skyColorStr": "109,37,23",
+      "equatorColorStr": "60,23,10",
+      "groundColorStr": "19,13,77",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,148,105",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,215,187",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "72,31,22"
+    },
+    {
+      "id": 90500046,
+      "idCN": "3下午05-16点搁浅冬日",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_06",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_06",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Afternoon_06",
+      "fogEnable": true,
+      "fogColor": "#5C8DBA",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_07",
+      "skyColorStr": "250,210,135",
+      "equatorColorStr": "84,92,139",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.45,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "225",
+          "colorStr": "152,172,200",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "240,255,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "88,98,120"
+    },
+    {
+      "id": 90500047,
+      "idCN": "1清晨03-6点海边日出",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_03",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunrise_Morning_03",
+      "processPath": "Environment\\Sky_System\\PP_Sunrise_Morning_03b",
+      "fogEnable": true,
+      "fogColor": "#BE9E8F",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0004,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunrise_Morning_04",
+      "skyColorStr": "115,61,85",
+      "equatorColorStr": "186,123,96",
+      "groundColorStr": "22,34,79",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "255,189,191",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,250,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "46,18,36"
+    },
+    {
+      "id": 90500023,
+      "idCN": "3下午05-16点搁浅冬日粉紫",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_05",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Cloudy_Afternoon_05",
+      "processPath": "Environment\\Sky_System\\PP_Cloudy_Afternoon_06",
+      "fogEnable": true,
+      "fogColor": "#8081B9",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_07",
+      "skyColorStr": "250,210,135",
+      "equatorColorStr": "84,92,139",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.45,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "225",
+          "colorStr": "211,194,222",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "240,255,255",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "75,69,79",
+      "weatherRateSN": 0,
+      "weatherList": [
+        {
+          "weatherId": 50000033
+        },
+        {
+          "weatherId": 50000036
+        },
+        {
+          "weatherId": 50000034
+        }
+      ]
+    },
+    {
+      "id": 90500036,
+      "idCN": "2白天04-10点韩国妹日光乌云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_08",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_08",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_08",
+      "fogEnable": true,
+      "fogColor": "#48748E",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04",
+      "skyColorStr": "192,179,123",
+      "equatorColorStr": "78,100,90",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "225",
+          "colorStr": "225,240,240",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "130,140,140"
+    },
+    {
+      "id": 90500048,
+      "idCN": "3下午06-16点日光点云",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_09",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_09",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_09",
+      "fogEnable": true,
+      "fogColor": "#48828E",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0003,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_09",
+      "skyColorStr": "192,179,123",
+      "equatorColorStr": "78,100,90",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "237,252,255",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,240",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "109,147,147"
+    },
+    {
+      "id": 90500050,
+      "idCN": "4黄昏03-19点火烧云沙丘点云强烈",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_09",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunset_Dusk_09",
+      "processPath": "Environment\\Sky_System\\PP_Sunset_Dusk_09",
+      "fogEnable": true,
+      "fogColor": "#8A2D27",
+      "fogMode": "Exponential",
+      "fogDensity": 0.0001,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunset_Dusk_03",
+      "skyColorStr": "135,37,11",
+      "equatorColorStr": "60,23,10",
+      "groundColorStr": "19,13,77",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "180",
+          "colorStr": "255,175,105",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,215,187",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "60,29,17"
+    },
+    {
+      "id": 90500052,
+      "idCN": "剧情副本-黄彼得",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_10",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_10",
+      "processPath": "Environment/RN_Scenes/PP_S_C3_HBD",
+      "fogEnable": true,
+      "fogColor": "#DBCAC1",
+      "fogMode": "Exponential",
+      "fogDensity": 0.005,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_S_C3_HBD",
+      "skyColorStr": "183,175,129",
+      "equatorColorStr": "135,104,71",
+      "groundColorStr": "38,71,73",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.5,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [],
+      "inactiveList": [],
+      "waterColorFarStr": "0,0,0",
+      "weatherRateSN": 0,
+      "weatherList": []
+    },
+    {
+      "id": 90500035,
+      "idCN": "2白天04-10点韩国妹日光2",
+      "mod": "TrainRoadMsgCA",
+      "isInformalData": false,
+      "name": "",
+      "skyBoxPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_04",
+      "cubeMapPath": "Environment\\Sky_System\\Map_Sky_Sunny_Day_04",
+      "processPath": "Environment\\Sky_System\\PP_Sunny_Day_04",
+      "fogEnable": true,
+      "fogColor": "#48748E",
+      "fogMode": "Exponential",
+      "fogDensity": 0.009,
+      "sceneObjectPath": "Environment\\Sky_System\\LF_Sunny_Day_04",
+      "skyColorStr": "192,179,123",
+      "equatorColorStr": "78,100,90",
+      "groundColorStr": "36,56,75",
+      "viewDistance": 3000.0,
+      "intensityMultiplie": 0.55,
+      "enableRainbow": false,
+      "rainbowDistance": 6000.0,
+      "rainbowAngle": 60,
+      "effectList": [
+        {
+          "alphaStr": "200",
+          "colorStr": "230,225,195",
+          "parentName": "Shuiqi"
+        },
+        {
+          "alphaStr": "255",
+          "colorStr": "255,255,235",
+          "parentName": "Shuiqi_pubu"
+        }
+      ],
+      "inactiveList": [
+        {
+          "effectUrl": "shuimianwuqi_BOSS_02"
+        },
+        {
+          "effectUrl": "BOSS_02"
+        }
+      ],
+      "waterColorFarStr": "32,38,41",
+      "weatherRateSN": 0,
+      "weatherList": []
+    }
+  ]
+}

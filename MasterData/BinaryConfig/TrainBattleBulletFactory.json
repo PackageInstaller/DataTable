@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "hash": "0CA5ADDC03352CCD2B3CE707EB46B6B8A87C6576EA4C42415F7BB0F7FEA64E63",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131697000784,
+    "etc": "factory=TrainBattleBulletFactory"
+  },
+  "count": 12,
+  "records": [
+    {
+      "id": 72400001,
+      "idCN": "初始产品",
+      "mod": "直线子弹",
+      "isInformalData": false,
+      "Name": "机关枪子弹",
+      "Damage": 1,
+      "BulletEffect": 11107975,
+      "MoveSpeed": 1.0,
+      "HitEffect": 11103914,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": []
+    },
+    {
+      "id": 72400002,
+      "idCN": "跟踪火箭弹",
+      "mod": "跟踪弹",
+      "isInformalData": false,
+      "Name": "追踪弹",
+      "Damage": 1,
+      "BulletEffect": 11105463,
+      "MoveSpeed": 2.0,
+      "HitEffect": 11105465,
+      "Knockback": 0.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": [],
+      "RotationSpeed": 5.0,
+      "SearchAngle": 135.0,
+      "RotAddSpeed": 4.0,
+      "LockEnemyNum": 5
+    },
+    {
+      "id": 72400003,
+      "idCN": "射线弹",
+      "mod": "射线弹",
+      "isInformalData": false,
+      "Name": "追踪弹",
+      "Damage": 1,
+      "BulletEffect": 11105497,
+      "MoveSpeed": 0.2,
+      "HitEffect": 11105465,
+      "Knockback": 0.0,
+      "HitRecycle": false,
+      "LifeTime": 10.0,
+      "TargetType": [],
+      "ChildBulletList": [],
+      "MaxLength": 100.0,
+      "TrailParticleCount": 5,
+      "MoveHitToSource": 0.0
+    },
+    {
+      "id": 72400004,
+      "idCN": "射线弹x2",
+      "mod": "射线弹",
+      "isInformalData": false,
+      "Name": "追踪弹",
+      "Damage": 5,
+      "BulletEffect": 11105500,
+      "MoveSpeed": 0.2,
+      "HitEffect": 11105465,
+      "Knockback": 0.0,
+      "HitRecycle": false,
+      "LifeTime": 10.0,
+      "TargetType": [],
+      "ChildBulletList": [],
+      "MaxLength": 100.0,
+      "TrailParticleCount": 5,
+      "MoveHitToSource": 0.0
+    },
+    {
+      "id": 72400005,
+      "idCN": "射线弹x4",
+      "mod": "射线弹",
+      "isInformalData": false,
+      "Name": "追踪弹",
+      "Damage": 10,
+      "BulletEffect": 11105501,
+      "MoveSpeed": 0.2,
+      "HitEffect": 11105465,
+      "Knockback": 0.0,
+      "HitRecycle": false,
+      "LifeTime": 10.0,
+      "TargetType": [],
+      "ChildBulletList": [],
+      "MaxLength": 100.0,
+      "TrailParticleCount": 5,
+      "MoveHitToSource": 0.0
+    },
+    {
+      "id": 72400006,
+      "idCN": "榴弹",
+      "mod": "榴弹",
+      "isInformalData": false,
+      "Name": "机关枪子弹",
+      "Damage": 1,
+      "BulletEffect": 11103913,
+      "MoveSpeed": 4.0,
+      "HitEffect": 11103914,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": [
+        {
+          "dirX": 0.0,
+          "dirY": 0.0,
+          "dirZ": 0.0,
+          "id": 72300010,
+          "offsetX": 0.0,
+          "offsetY": 0.0,
+          "offsetZ": 0.0
+        }
+      ],
+      "StartUpSpeed": 0.0,
+      "Gravity": 9.8,
+      "DamageRange": 100.0
+    },
+    {
+      "id": 72400007,
+      "idCN": "静态子弹",
+      "mod": "静态子弹",
+      "isInformalData": false,
+      "Name": "怪物自爆",
+      "Damage": 1,
+      "BulletEffect": 11105569,
+      "MoveSpeed": 0.0,
+      "HitEffect": 11103914,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 1.0,
+      "TargetType": [
+        {
+          "tType": 12601154
+        }
+      ],
+      "ChildBulletList": [],
+      "BornPosType": "Self",
+      "CheckType": "Sphere",
+      "CheckAreaParam1": 30.0,
+      "CheckAreaParam2": 0.0,
+      "CheckAreaParam3": 0.0,
+      "CheckTime": 0.0
+    },
+    {
+      "id": 72400009,
+      "idCN": "怪物子弹",
+      "mod": "直线子弹",
+      "isInformalData": false,
+      "Name": "机关枪子弹",
+      "Damage": 1,
+      "BulletEffect": 11103913,
+      "MoveSpeed": 2.0,
+      "HitEffect": 11103914,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601154
+        }
+      ],
+      "ChildBulletList": []
+    },
+    {
+      "id": 72400010,
+      "idCN": "爆炸子弹",
+      "mod": "静态子弹",
+      "isInformalData": false,
+      "Name": "榴弹爆炸",
+      "Damage": 1,
+      "BulletEffect": 11105569,
+      "MoveSpeed": 0.0,
+      "HitEffect": -1,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 0.6,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": [],
+      "BornPosType": "Self",
+      "CheckType": "Sphere",
+      "CheckAreaParam1": 30.0,
+      "CheckAreaParam2": 0.0,
+      "CheckAreaParam3": 0.0,
+      "CheckTime": 0.5
+    },
+    {
+      "id": 72400008,
+      "idCN": "视频测试/1",
+      "mod": "直线子弹",
+      "isInformalData": false,
+      "Name": "机关枪子弹",
+      "Damage": 1,
+      "BulletEffect": 11107975,
+      "MoveSpeed": 1.0,
+      "HitEffect": -1,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": []
+    },
+    {
+      "id": 72400011,
+      "idCN": "视频测试/2",
+      "mod": "直线子弹",
+      "isInformalData": false,
+      "Name": "机关枪子弹",
+      "Damage": 1,
+      "BulletEffect": 11107979,
+      "MoveSpeed": 1.0,
+      "HitEffect": -1,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": []
+    },
+    {
+      "id": 72400012,
+      "idCN": "视频测试/3",
+      "mod": "直线子弹",
+      "isInformalData": false,
+      "Name": "机关枪子弹",
+      "Damage": 1,
+      "BulletEffect": 11107980,
+      "MoveSpeed": 1.0,
+      "HitEffect": -1,
+      "Knockback": 1.0,
+      "HitRecycle": true,
+      "LifeTime": 5.0,
+      "TargetType": [
+        {
+          "tType": 12601155
+        }
+      ],
+      "ChildBulletList": []
+    }
+  ]
+}

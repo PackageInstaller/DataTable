@@ -1,0 +1,2107 @@
+{
+  "version": 1,
+  "hash": "FC3B0B8828AE33C59A3C53B49D9316F89DDBCC19079D8F4AE726F92A0C0BADDF",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131681773911,
+    "etc": "factory=HomeStationPlaceFactory"
+  },
+  "count": 16,
+  "records": [
+    {
+      "id": 81500001,
+      "idCN": "初始产品",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": -1,
+      "serverId": -1,
+      "bgm": -1,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "cameraLeft": 0.0,
+      "cameraRight": 0.0,
+      "animationCameraX": 0.0,
+      "animationCameraY": 0.0,
+      "animationCameraZ": 0.0,
+      "animationCameraRot": 0.0,
+      "animationFieldOfView": 0.0,
+      "animationPrefab": "",
+      "dressStoreList": [],
+      "keepSingleMealList": [],
+      "keepTeamMealList": [],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": -1,
+      "bgBuffDesLCZ": "",
+      "decBuffDesLCZ": "",
+      "titleBuffDesMember": -1,
+      "bgBuffDesMember": "",
+      "decBuffDesMember": "",
+      "bgTop": "",
+      "nameSingle": "",
+      "iconSingleOn": "",
+      "iconSingleOff": "",
+      "nameTeam": "",
+      "iconTeamOn": "",
+      "iconTeamOff": "",
+      "bgRight": "",
+      "picRightTip": "",
+      "textRightTip": -1,
+      "listPrefab": "",
+      "bgSettlement": "",
+      "iconSettlement": "",
+      "textTitle": -1,
+      "textSettlement": -1,
+      "animeName": "",
+      "animeEndName": "",
+      "isPickFood": false
+    },
+    {
+      "id": 81500002,
+      "idCN": "炸鸡店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000098,
+          "isRandom": false,
+          "npcX": 21.0,
+          "npcZ": 3.0,
+          "tree": ""
+        },
+        {
+          "id": 70000069,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000100,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000101,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000068,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        }
+      ],
+      "resId": 81200003,
+      "serverId": 70000092,
+      "bgm": 30000880,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000119,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000121,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000103,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000110,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000106,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": "PassengerKCD:root"
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [
+        {
+          "activityId": 86000001,
+          "bubbleString": "UI/HomeBubble/InteractiveIcon/Quest",
+          "endTime": "",
+          "eventId": 20700124,
+          "eventType": "Dialog",
+          "homeQId": 70000070,
+          "qXPos": 16,
+          "qYPos": 4,
+          "questId": 81000598,
+          "startTime": ""
+        }
+      ],
+      "cameraLeft": 10.0,
+      "cameraRight": 24.0,
+      "animationCameraX": 16.5,
+      "animationCameraY": 7.57,
+      "animationCameraZ": -17.3,
+      "animationCameraRot": 42.6,
+      "animationFieldOfView": 40.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "keepSingleMealList": [
+        {
+          "id": 83300006
+        },
+        {
+          "id": 83300005
+        },
+        {
+          "id": 83300001
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300007
+        },
+        {
+          "id": 83300008
+        },
+        {
+          "id": 83300009
+        },
+        {
+          "id": 83300010
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601570,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberFastFood",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipFastFood",
+      "bgTop": "UI/HomeKeepFastFood/BGtop",
+      "nameSingle": "双人套餐",
+      "iconSingleOn": "UI/HomeKeepFastFood/SingleMealPicked",
+      "iconSingleOff": "UI/HomeKeepFastFood/SingleMealUnpicked",
+      "nameTeam": "团队套餐",
+      "iconTeamOn": "UI/HomeKeepFastFood/TeamMealPicked",
+      "iconTeamOff": "UI/HomeKeepFastFood/TeamMealunPicked",
+      "bgRight": "UI/HomeKeepFastFood/BGMemberList",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipFastFood",
+      "textRightTip": 80601257,
+      "listPrefab": "ScrollGrid_MealList",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettle",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleFastFood",
+      "textTitle": 80601260,
+      "textSettlement": 80601257,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": "UI/HomeSticker/BG"
+    },
+    {
+      "id": 81500003,
+      "idCN": "奶茶店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "resId": 81200004,
+      "serverId": 70000159,
+      "bgm": 30000880,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [
+        {
+          "activityId": 86000002,
+          "bubbleString": "UI/HomeBubble/InteractiveIcon/Quest0",
+          "endTime": "",
+          "eventId": 20700193,
+          "eventType": "Dialog",
+          "homeQId": 70000172,
+          "isAuto": true,
+          "qXPos": 20,
+          "qYPos": 5,
+          "questId": 81001218,
+          "startTime": ""
+        },
+        {
+          "activityId": 86000001,
+          "bubbleString": "UI/HomeBubble/InteractiveIcon/Quest",
+          "endTime": "",
+          "eventId": 20700060,
+          "eventType": "Dialog",
+          "homeQId": 70000071,
+          "qXPos": 19,
+          "qYPos": 5,
+          "questId": 81000596,
+          "startTime": ""
+        },
+        {
+          "activityId": 86000001,
+          "bubbleString": "UI/HomeBubble/InteractiveIcon/Quest",
+          "endTime": "",
+          "eventId": 20700186,
+          "eventType": "Dialog",
+          "homeQId": 70000129,
+          "qXPos": 22,
+          "qYPos": 5,
+          "questId": 81000609,
+          "startTime": ""
+        }
+      ],
+      "cameraLeft": 10.8,
+      "cameraRight": 28.3,
+      "animationCameraX": 13.8,
+      "animationCameraY": 10.0,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/MilkTea",
+      "dressStoreList": [],
+      "keepSingleMealList": [
+        {
+          "id": 83300024
+        },
+        {
+          "id": 83300023
+        },
+        {
+          "id": 83300025
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300026
+        },
+        {
+          "id": 83300027
+        },
+        {
+          "id": 83300029
+        },
+        {
+          "id": 83300028
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601569,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberMilkTea",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipMilkTea",
+      "bgTop": "UI/HomeKeepFastFood/bgTopMilkTea",
+      "nameSingle": "双人套餐",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedMilkTea",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedMilkTea",
+      "nameTeam": "团队套餐",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedMilkTea",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedMilkTea",
+      "bgRight": "UI/HomeKeepFastFood/bgRightMilkTea",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipMilkTea",
+      "textRightTip": 80601258,
+      "listPrefab": "Group_MilkTea",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementMilkTea",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleFastFood",
+      "textTitle": 80601259,
+      "textSettlement": 80601258,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500004,
+      "idCN": "彼得酒吧",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "resId": 81200008,
+      "serverId": 70000160,
+      "bgm": 30002381,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "cameraLeft": 6.5,
+      "cameraRight": 36.5,
+      "animationCameraX": 21.5,
+      "animationCameraY": 10.0,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "keepSingleMealList": [
+        {
+          "id": 83300033
+        },
+        {
+          "id": 83300031
+        },
+        {
+          "id": 83300032
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300037
+        },
+        {
+          "id": 83300034
+        },
+        {
+          "id": 83300035
+        },
+        {
+          "id": 83300036
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601568,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberBar",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipBar",
+      "bgTop": "UI/HomeKeepFastFood/bgTopPetersBar",
+      "nameSingle": "双人项目",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedPetersBar",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedPetersBar",
+      "nameTeam": "团队项目",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedPetersBar",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedPetersBar",
+      "bgRight": "UI/HomeKeepFastFood/bgRightPetersBar",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipPetersBar",
+      "textRightTip": 80601575,
+      "listPrefab": "Group_Bar",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementBar",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleBar",
+      "textTitle": 80601581,
+      "textSettlement": 80601575,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false
+    },
+    {
+      "id": 81500005,
+      "idCN": "烤肉店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "resId": 81200009,
+      "serverId": 70000160,
+      "bgm": 30000880,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "cameraLeft": 6.5,
+      "cameraRight": 36.5,
+      "animationCameraX": 21.5,
+      "animationCameraY": 10.0,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "keepSingleMealList": [
+        {
+          "id": 83300033
+        },
+        {
+          "id": 83300031
+        },
+        {
+          "id": 83300032
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300037
+        },
+        {
+          "id": 83300034
+        },
+        {
+          "id": 83300035
+        },
+        {
+          "id": 83300036
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601568,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberBar",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipBar",
+      "bgTop": "UI/HomeKeepFastFood/bgTopPetersBar",
+      "nameSingle": "双人项目",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedPetersBar",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedPetersBar",
+      "nameTeam": "团队项目",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedPetersBar",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedPetersBar",
+      "bgRight": "UI/HomeKeepFastFood/bgRightPetersBar",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipPetersBar",
+      "textRightTip": 80601575,
+      "listPrefab": "Group_Bar",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementBar",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleBar",
+      "textTitle": 80601581,
+      "textSettlement": 80601575,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false
+    },
+    {
+      "id": 81500006,
+      "idCN": "奶茶店大头贴机",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "resId": 81200010,
+      "serverId": 70000159,
+      "bgm": 30000880,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "cameraLeft": 10.8,
+      "cameraRight": 28.3,
+      "animationCameraX": 13.8,
+      "animationCameraY": 10.0,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/MilkTea",
+      "dressStoreList": [],
+      "keepSingleMealList": [
+        {
+          "id": 83300024
+        },
+        {
+          "id": 83300023
+        },
+        {
+          "id": 83300025
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300026
+        },
+        {
+          "id": 83300027
+        },
+        {
+          "id": 83300029
+        },
+        {
+          "id": 83300028
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601569,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberMilkTea",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipMilkTea",
+      "bgTop": "UI/HomeKeepFastFood/bgTopMilkTea",
+      "nameSingle": "双人套餐",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedMilkTea",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedMilkTea",
+      "nameTeam": "团队套餐",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedMilkTea",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedMilkTea",
+      "bgRight": "UI/HomeKeepFastFood/bgRightMilkTea",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipMilkTea",
+      "textRightTip": 80601258,
+      "listPrefab": "Group_MilkTea",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementMilkTea",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleFastFood",
+      "textTitle": 80601259,
+      "textSettlement": 80601258,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": "UI/HomeSticker/BGMilkTea"
+    },
+    {
+      "id": 81500007,
+      "idCN": "服装店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200011,
+      "serverId": 70000174,
+      "bgm": 30000180,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [
+        {
+          "activityId": -1,
+          "bubbleString": "UI/HomeBubble/InteractiveIcon/Quest0",
+          "endTime": "",
+          "eventId": 20700284,
+          "eventType": "Dialog",
+          "homeQId": 70000137,
+          "qXPos": 15,
+          "qYPos": 10,
+          "questId": 81001147,
+          "startTime": ""
+        },
+        {
+          "activityId": -1,
+          "bubbleString": "UI/HomeBubble/InteractiveIcon/Quest0",
+          "endTime": "",
+          "eventId": 20700329,
+          "eventType": "Dialog",
+          "homeQId": 70000148,
+          "qXPos": 15,
+          "qYPos": 10,
+          "questId": 81001212,
+          "startTime": ""
+        }
+      ],
+      "levelOpen": 10,
+      "lockedTip": -1,
+      "cameraLeft": 9.676,
+      "cameraRight": 20.185,
+      "animationCameraX": 21.5,
+      "animationCameraY": 10.0,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [
+        {
+          "id": 40300016
+        }
+      ],
+      "bgStore": "UI/ChangeSkin/DressStore/BGStore",
+      "keepSingleMealList": [
+        {
+          "id": 83300033
+        },
+        {
+          "id": 83300031
+        },
+        {
+          "id": 83300032
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300037
+        },
+        {
+          "id": 83300034
+        },
+        {
+          "id": 83300035
+        },
+        {
+          "id": 83300036
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601568,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberBar",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipBar",
+      "bgTop": "UI/HomeKeepFastFood/bgTopPetersBar",
+      "nameSingle": "双人项目",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedPetersBar",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedPetersBar",
+      "nameTeam": "团队项目",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedPetersBar",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedPetersBar",
+      "bgRight": "UI/HomeKeepFastFood/bgRightPetersBar",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipPetersBar",
+      "textRightTip": 80601575,
+      "listPrefab": "Group_Bar",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementBar",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleBar",
+      "textTitle": 80601581,
+      "textSettlement": 80601575,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500008,
+      "idCN": "拉面店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "resId": 81200012,
+      "serverId": 70000114,
+      "bgm": 30000880,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 10,
+      "lockedTip": 80607594,
+      "cameraLeft": 11.0,
+      "cameraRight": 35.0,
+      "animationCameraX": 21.47,
+      "animationCameraY": 10.4,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "keepSingleMealList": [
+        {
+          "id": 83300030
+        },
+        {
+          "id": 83300047
+        },
+        {
+          "id": 83300045
+        },
+        {
+          "id": 83300043
+        },
+        {
+          "id": 83300039
+        },
+        {
+          "id": 83300041
+        },
+        {
+          "id": 83300049
+        },
+        {
+          "id": 83300053
+        },
+        {
+          "id": 83300051
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300038
+        },
+        {
+          "id": 83300048
+        },
+        {
+          "id": 83300046
+        },
+        {
+          "id": 83300044
+        },
+        {
+          "id": 83300040
+        },
+        {
+          "id": 83300042
+        },
+        {
+          "id": 83300050
+        },
+        {
+          "id": 83300054
+        },
+        {
+          "id": 83300052
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601570,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberRamen",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipRamen",
+      "bgTop": "UI/HomeKeepFastFood/bgTopRamen",
+      "nameSingle": "双人拉面",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedRamen",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedRamen",
+      "nameTeam": "团队拉面",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedRamen",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedRamen",
+      "bgRight": "UI/HomeKeepFastFood/bgRightRamen",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipRamen",
+      "textRightTip": 80602630,
+      "listPrefab": "ScrollGrid_Ramen",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementRamen",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleRamen",
+      "textTitle": 80601260,
+      "textSettlement": 80602630,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500010,
+      "idCN": "整顿中心/车间",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200013,
+      "serverId": 70000020,
+      "bgm": 30000880,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "cameraLeft": 11.0,
+      "cameraRight": 35.0,
+      "animationCameraX": 21.47,
+      "animationCameraY": 10.4,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "keepSingleMealList": [
+        {
+          "id": 83300030
+        },
+        {
+          "id": 83300047
+        },
+        {
+          "id": 83300045
+        },
+        {
+          "id": 83300043
+        },
+        {
+          "id": 83300039
+        },
+        {
+          "id": 83300041
+        },
+        {
+          "id": 83300049
+        },
+        {
+          "id": 83300053
+        },
+        {
+          "id": 83300051
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300038
+        },
+        {
+          "id": 83300048
+        },
+        {
+          "id": 83300046
+        },
+        {
+          "id": 83300044
+        },
+        {
+          "id": 83300040
+        },
+        {
+          "id": 83300042
+        },
+        {
+          "id": 83300050
+        },
+        {
+          "id": 83300054
+        },
+        {
+          "id": 83300052
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601570,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberRamen",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipRamen",
+      "bgTop": "UI/HomeKeepFastFood/bgTopRamen",
+      "nameSingle": "双人拉面",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedRamen",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedRamen",
+      "nameTeam": "团队拉面",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedRamen",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedRamen",
+      "bgRight": "UI/HomeKeepFastFood/bgRightRamen",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipRamen",
+      "textRightTip": 80602630,
+      "listPrefab": "ScrollGrid_Ramen",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementRamen",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleRamen",
+      "textTitle": 80601260,
+      "textSettlement": 80602630,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500009,
+      "idCN": "整顿中心/牢房",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200023,
+      "serverId": 70000020,
+      "bgm": 30000880,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 10,
+      "lockedTip": -1,
+      "cameraLeft": 13.0,
+      "cameraRight": 155.0,
+      "animationCameraX": 21.47,
+      "animationCameraY": 10.4,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "keepSingleMealList": [
+        {
+          "id": 83300030
+        },
+        {
+          "id": 83300047
+        },
+        {
+          "id": 83300045
+        },
+        {
+          "id": 83300043
+        },
+        {
+          "id": 83300039
+        },
+        {
+          "id": 83300041
+        },
+        {
+          "id": 83300049
+        },
+        {
+          "id": 83300053
+        },
+        {
+          "id": 83300051
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300038
+        },
+        {
+          "id": 83300048
+        },
+        {
+          "id": 83300046
+        },
+        {
+          "id": 83300044
+        },
+        {
+          "id": 83300040
+        },
+        {
+          "id": 83300042
+        },
+        {
+          "id": 83300050
+        },
+        {
+          "id": 83300054
+        },
+        {
+          "id": 83300052
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601570,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberRamen",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipRamen",
+      "bgTop": "UI/HomeKeepFastFood/bgTopRamen",
+      "nameSingle": "双人拉面",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedRamen",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedRamen",
+      "nameTeam": "团队拉面",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedRamen",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedRamen",
+      "bgRight": "UI/HomeKeepFastFood/bgRightRamen",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipRamen",
+      "textRightTip": 80602630,
+      "listPrefab": "ScrollGrid_Ramen",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementRamen",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleRamen",
+      "textTitle": 80601260,
+      "textSettlement": 80602630,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500011,
+      "idCN": "黑月游乐城服装店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200045,
+      "serverId": 70000327,
+      "bgm": 30000180,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 10,
+      "lockedTip": -1,
+      "cameraLeft": 9.676,
+      "cameraRight": 20.185,
+      "animationCameraX": 21.5,
+      "animationCameraY": 10.0,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [
+        {
+          "id": 40300097
+        }
+      ],
+      "bgStore": "UI/ChangeSkin/DressStore/BGHYStore",
+      "keepSingleMealList": [
+        {
+          "id": 83300033
+        },
+        {
+          "id": 83300031
+        },
+        {
+          "id": 83300032
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300037
+        },
+        {
+          "id": 83300034
+        },
+        {
+          "id": 83300035
+        },
+        {
+          "id": 83300036
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601568,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberBar",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipBar",
+      "bgTop": "UI/HomeKeepFastFood/bgTopPetersBar",
+      "nameSingle": "双人项目",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedPetersBar",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedPetersBar",
+      "nameTeam": "团队项目",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedPetersBar",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedPetersBar",
+      "bgRight": "UI/HomeKeepFastFood/bgRightPetersBar",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipPetersBar",
+      "textRightTip": 80601575,
+      "listPrefab": "Group_Bar",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementBar",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleBar",
+      "textTitle": 80601581,
+      "textSettlement": 80601575,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500012,
+      "idCN": "公司/公司大厅",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200046,
+      "serverId": 70000370,
+      "bgm": 30000880,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 1,
+      "lockedTip": -1,
+      "cameraLeft": 10.0,
+      "cameraRight": 24.0,
+      "animationCameraX": 16.5,
+      "animationCameraY": 7.57,
+      "animationCameraZ": -17.3,
+      "animationCameraRot": 42.6,
+      "animationFieldOfView": 40.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "bgStore": "",
+      "keepSingleMealList": [],
+      "keepTeamMealList": [],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": -1,
+      "bgBuffDesLCZ": "",
+      "decBuffDesLCZ": "",
+      "titleBuffDesMember": -1,
+      "bgBuffDesMember": "",
+      "decBuffDesMember": "",
+      "bgTop": "",
+      "nameSingle": "",
+      "iconSingleOn": "",
+      "iconSingleOff": "",
+      "nameTeam": "",
+      "iconTeamOn": "",
+      "iconTeamOff": "",
+      "bgRight": "",
+      "picRightTip": "",
+      "textRightTip": -1,
+      "listPrefab": "",
+      "bgSettlement": "",
+      "iconSettlement": "",
+      "textTitle": -1,
+      "textSettlement": -1,
+      "animeName": "",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500013,
+      "idCN": "寿司店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "resId": 81200047,
+      "serverId": 70000342,
+      "bgm": 30000880,
+      "npcRefreshList": [
+        {
+          "id": 70000151,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000150,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000102,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000109,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000116,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000117,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000152,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        },
+        {
+          "id": 70000153,
+          "isRandom": true,
+          "npcX": 1.0,
+          "npcZ": 1.0,
+          "tree": ""
+        }
+      ],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 10,
+      "lockedTip": -1,
+      "cameraLeft": 8.0,
+      "cameraRight": 22.0,
+      "animationCameraX": 7.68,
+      "animationCameraY": 10.4,
+      "animationCameraZ": -35.0,
+      "animationCameraRot": 15.0,
+      "animationFieldOfView": 23.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "bgStore": "",
+      "keepSingleMealList": [
+        {
+          "id": 83300072
+        },
+        {
+          "id": 83300058
+        },
+        {
+          "id": 83300056
+        },
+        {
+          "id": 83300062
+        },
+        {
+          "id": 83300060
+        },
+        {
+          "id": 83300067
+        }
+      ],
+      "keepTeamMealList": [
+        {
+          "id": 83300069
+        },
+        {
+          "id": 83300073
+        },
+        {
+          "id": 83300071
+        },
+        {
+          "id": 83300061
+        },
+        {
+          "id": 83300070
+        },
+        {
+          "id": 83300068
+        }
+      ],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": 80601565,
+      "bgBuffDesLCZ": "UI/HomeKeepFastFood/BGBuffLCZ",
+      "decBuffDesLCZ": "UI/HomeKeepFastFood/LineTipLCZ",
+      "titleBuffDesMember": 80601570,
+      "bgBuffDesMember": "UI/HomeKeepFastFood/BGBuffMemberRamen",
+      "decBuffDesMember": "UI/HomeKeepFastFood/LineTipRamen",
+      "bgTop": "UI/HomeKeepFastFood/bgTopSushi",
+      "nameSingle": "双人套餐",
+      "iconSingleOn": "UI/HomeKeepFastFood/iconSinglePickedSushi",
+      "iconSingleOff": "UI/HomeKeepFastFood/iconSingleUnpickedSushi",
+      "nameTeam": "团队套餐",
+      "iconTeamOn": "UI/HomeKeepFastFood/iconTeamPickedSushi",
+      "iconTeamOff": "UI/HomeKeepFastFood/iconTeamUnpickedSushi",
+      "bgRight": "UI/HomeKeepFastFood/bgRightSushi",
+      "picRightTip": "UI/HomeKeepFastFood/picRightTipSushi",
+      "textRightTip": 80602630,
+      "listPrefab": "ScrollGrid_Sushi",
+      "bgSettlement": "UI/HomeKeepFastFood/BGSettlementSushi",
+      "iconSettlement": "UI/HomeKeepFastFood/IconSettleRamen",
+      "textTitle": 80601260,
+      "textSettlement": 80602630,
+      "animeName": "dorm_sit_eat",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500014,
+      "idCN": "公司/公司商店",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200048,
+      "serverId": 70000379,
+      "bgm": 30000880,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 1,
+      "lockedTip": -1,
+      "cameraLeft": 10.0,
+      "cameraRight": 24.0,
+      "animationCameraX": 16.5,
+      "animationCameraY": 7.57,
+      "animationCameraZ": -17.3,
+      "animationCameraRot": 42.6,
+      "animationFieldOfView": 40.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "bgStore": "",
+      "keepSingleMealList": [],
+      "keepTeamMealList": [],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": -1,
+      "bgBuffDesLCZ": "",
+      "decBuffDesLCZ": "",
+      "titleBuffDesMember": -1,
+      "bgBuffDesMember": "",
+      "decBuffDesMember": "",
+      "bgTop": "",
+      "nameSingle": "",
+      "iconSingleOn": "",
+      "iconSingleOff": "",
+      "nameTeam": "",
+      "iconTeamOn": "",
+      "iconTeamOff": "",
+      "bgRight": "",
+      "picRightTip": "",
+      "textRightTip": -1,
+      "listPrefab": "",
+      "bgSettlement": "",
+      "iconSettlement": "",
+      "textTitle": -1,
+      "textSettlement": -1,
+      "animeName": "",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500015,
+      "idCN": "公司/公司仓库",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200049,
+      "serverId": 70000382,
+      "bgm": 30000880,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 1,
+      "lockedTip": -1,
+      "cameraLeft": 10.0,
+      "cameraRight": 24.0,
+      "animationCameraX": 16.5,
+      "animationCameraY": 7.57,
+      "animationCameraZ": -17.3,
+      "animationCameraRot": 42.6,
+      "animationFieldOfView": 40.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "bgStore": "",
+      "keepSingleMealList": [],
+      "keepTeamMealList": [],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": -1,
+      "bgBuffDesLCZ": "",
+      "decBuffDesLCZ": "",
+      "titleBuffDesMember": -1,
+      "bgBuffDesMember": "",
+      "decBuffDesMember": "",
+      "bgTop": "",
+      "nameSingle": "",
+      "iconSingleOn": "",
+      "iconSingleOff": "",
+      "nameTeam": "",
+      "iconTeamOn": "",
+      "iconTeamOff": "",
+      "bgRight": "",
+      "picRightTip": "",
+      "textRightTip": -1,
+      "listPrefab": "",
+      "bgSettlement": "",
+      "iconSettlement": "",
+      "textTitle": -1,
+      "textSettlement": -1,
+      "animeName": "",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    },
+    {
+      "id": 81500016,
+      "idCN": "公司/远征大厅",
+      "mod": "基础店面",
+      "isInformalData": false,
+      "npcList": [],
+      "resId": 81200057,
+      "serverId": 70000383,
+      "bgm": 30000880,
+      "npcRefreshList": [],
+      "entranceList": [],
+      "exitList": [],
+      "eventList": [],
+      "levelOpen": 1,
+      "lockedTip": -1,
+      "cameraLeft": 10.0,
+      "cameraRight": 24.0,
+      "animationCameraX": 16.5,
+      "animationCameraY": 7.57,
+      "animationCameraZ": -17.3,
+      "animationCameraRot": 42.6,
+      "animationFieldOfView": 40.0,
+      "animationPrefab": "Home/Prefabs/FastFood",
+      "dressStoreList": [],
+      "bgStore": "",
+      "keepSingleMealList": [],
+      "keepTeamMealList": [],
+      "inviteTimes": 6,
+      "titleBuffDesLCZ": -1,
+      "bgBuffDesLCZ": "",
+      "decBuffDesLCZ": "",
+      "titleBuffDesMember": -1,
+      "bgBuffDesMember": "",
+      "decBuffDesMember": "",
+      "bgTop": "",
+      "nameSingle": "",
+      "iconSingleOn": "",
+      "iconSingleOff": "",
+      "nameTeam": "",
+      "iconTeamOn": "",
+      "iconTeamOff": "",
+      "bgRight": "",
+      "picRightTip": "",
+      "textRightTip": -1,
+      "listPrefab": "",
+      "bgSettlement": "",
+      "iconSettlement": "",
+      "textTitle": -1,
+      "textSettlement": -1,
+      "animeName": "",
+      "animeEndName": "",
+      "isPickFood": false,
+      "bgPhoto": ""
+    }
+  ]
+}

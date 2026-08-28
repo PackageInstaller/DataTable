@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "hash": "A9078C6BD16325786078C79EAA4FE1359593B2B245A979267E0D10F3CAD5C5ED",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131822068035,
+    "etc": "factory=RogueTeamFactory"
+  },
+  "count": 6,
+  "records": [
+    {
+      "id": 89700001,
+      "idCN": "盈缺之策",
+      "mod": "默认",
+      "isInformalData": false,
+      "startTime": "",
+      "name": "盈缺之策",
+      "des": "在场上召唤1个【辉蚀之月】，使用【队长技】时，释放1枚【星石】\\n【星石】对生命值最高的敌方造成1段负能伤害并移除我方全体1000点生命值",
+      "iconPath": "UI/CubeRogue/TacticsIcon/Big/YingQue",
+      "tabIconPath": "UI/CubeRogue/TacticsIcon/Red/YingQue_1",
+      "cardIconPath": "UI/CubeRogue/TacticsSelection/Assets_New/yingque",
+      "cardBigIcon": "UI/CubeRogue/TacticsIcon/CardBig/YingQue",
+      "shadePath": "UI/CubeRogue/QualityBG/Buff/TypeIcon/YingQue",
+      "initialEffectList": [
+        {
+          "id": 12303371
+        }
+      ],
+      "extraBuffList": [
+        {
+          "id": 89500005,
+          "num": 2,
+          "prepositionId": -1
+        },
+        {
+          "id": 89500003,
+          "num": 3,
+          "prepositionId": -1
+        },
+        {
+          "id": 89500017,
+          "num": 4,
+          "prepositionId": 89500034
+        },
+        {
+          "id": 89500002,
+          "num": 6,
+          "prepositionId": 89500035
+        },
+        {
+          "id": 89500004,
+          "num": 8,
+          "prepositionId": 89500158
+        }
+      ],
+      "addWeight": 3
+    },
+    {
+      "id": 89700002,
+      "idCN": "回生之策",
+      "mod": "默认",
+      "isInformalData": false,
+      "startTime": "",
+      "name": "回生之策",
+      "des": "在场上召唤1个【司命一】，每8秒生成1张【庇佑】加入手牌，且能超出手牌上限",
+      "iconPath": "UI/CubeRogue/TacticsIcon/Big/HuiSheng",
+      "tabIconPath": "UI/CubeRogue/TacticsIcon/Red/HuiSheng_1",
+      "cardIconPath": "UI/CubeRogue/TacticsSelection/Assets_New/huisheng",
+      "cardBigIcon": "UI/CubeRogue/TacticsIcon/CardBig/HuiSheng",
+      "shadePath": "UI/CubeRogue/QualityBG/Buff/TypeIcon/HuiSheng",
+      "initialEffectList": [
+        {
+          "id": 12303200
+        }
+      ],
+      "extraBuffList": [
+        {
+          "id": 89500046,
+          "num": 2
+        },
+        {
+          "id": 89500038,
+          "num": 3
+        },
+        {
+          "id": 89500047,
+          "num": 4,
+          "prepositionId": 89500034
+        },
+        {
+          "id": 89500040,
+          "num": 6,
+          "prepositionId": 89500035
+        },
+        {
+          "id": 89500048,
+          "num": 8,
+          "prepositionId": 89500158
+        }
+      ],
+      "addWeight": 3
+    },
+    {
+      "id": 89700003,
+      "idCN": "捍卫之策",
+      "mod": "默认",
+      "isInformalData": false,
+      "startTime": "",
+      "name": "捍卫之策",
+      "des": "在场上召唤1个【磐石之垣】，为我方全体抵御10%伤害，并将伤害积累转化为【负压】",
+      "iconPath": "UI/CubeRogue/TacticsIcon/Big/HanWei",
+      "tabIconPath": "UI/CubeRogue/TacticsIcon/Red/HanWei_1",
+      "cardIconPath": "UI/CubeRogue/TacticsSelection/Assets_New/hanwei",
+      "cardBigIcon": "UI/CubeRogue/TacticsIcon/CardBig/HanWei",
+      "shadePath": "UI/CubeRogue/QualityBG/Buff/TypeIcon/HanWei",
+      "initialEffectList": [
+        {
+          "id": 12303333
+        }
+      ],
+      "extraBuffList": [
+        {
+          "id": 89500064,
+          "num": 2,
+          "prepositionId": -1
+        },
+        {
+          "id": 89500075,
+          "num": 3,
+          "prepositionId": -1
+        },
+        {
+          "id": 89500060,
+          "num": 4,
+          "prepositionId": 89500034
+        },
+        {
+          "id": 89500074,
+          "num": 6,
+          "prepositionId": 89500035
+        },
+        {
+          "id": 89500073,
+          "num": 8,
+          "prepositionId": 89500158
+        }
+      ],
+      "addWeight": 3
+    },
+    {
+      "id": 89700004,
+      "idCN": "术窍之策",
+      "mod": "默认",
+      "isInformalData": false,
+      "startTime": "2030-05-02 04:59:00",
+      "name": "术窍之策",
+      "des": "所有附加伤害（引雷、点燃、斩裂）造成伤害提高15%",
+      "iconPath": "UI/CubeRogue/TacticsIcon/Big/ShuQiao",
+      "tabIconPath": "UI/CubeRogue/TacticsIcon/Red/ShuQiao_1",
+      "cardIconPath": "UI/CubeRogue/TacticsSelection/Assets_New/shuqiao",
+      "cardBigIcon": "UI/CubeRogue/TacticsIcon/CardBig/ShuQiao",
+      "shadePath": "UI/CubeRogue/QualityBG/Buff/TypeIcon/ShuQiao",
+      "initialEffectList": [],
+      "extraBuffList": [
+        {
+          "id": -1,
+          "num": 2,
+          "prepositionId": 89500026
+        },
+        {
+          "id": -1,
+          "num": 3,
+          "prepositionId": 89500029
+        },
+        {
+          "id": -1,
+          "num": 4,
+          "prepositionId": 89500035
+        },
+        {
+          "id": -1,
+          "num": 6,
+          "prepositionId": 89500034
+        },
+        {
+          "id": -1,
+          "num": 8,
+          "prepositionId": 89500034
+        }
+      ],
+      "addWeight": 3
+    },
+    {
+      "id": 89700005,
+      "idCN": "时运之策",
+      "mod": "默认",
+      "isInformalData": false,
+      "startTime": "2030-05-02 04:59:00",
+      "name": "时运之策",
+      "des": "手牌补充冷却时间缩短0.5秒",
+      "iconPath": "UI/CubeRogue/TacticsIcon/Big/ShiYun",
+      "tabIconPath": "UI/CubeRogue/TacticsIcon/Red/ShiYun_1",
+      "cardIconPath": "UI/CubeRogue/TacticsSelection/Assets_New/shiyun",
+      "cardBigIcon": "UI/CubeRogue/TacticsIcon/CardBig/ShiYun",
+      "shadePath": "UI/CubeRogue/QualityBG/Buff/TypeIcon/ShiYun",
+      "initialEffectList": [],
+      "extraBuffList": [
+        {
+          "id": -1,
+          "num": 2,
+          "prepositionId": 89500026
+        },
+        {
+          "id": -1,
+          "num": 3,
+          "prepositionId": 89500029
+        },
+        {
+          "id": -1,
+          "num": 4,
+          "prepositionId": 89500035
+        },
+        {
+          "id": -1,
+          "num": 6,
+          "prepositionId": 89500034
+        },
+        {
+          "id": -1,
+          "num": 8,
+          "prepositionId": 89500034
+        }
+      ],
+      "addWeight": 3
+    },
+    {
+      "id": 89700006,
+      "idCN": "源流之策",
+      "mod": "默认",
+      "isInformalData": false,
+      "startTime": "",
+      "name": "源流之策",
+      "des": "在场上召唤1个【漩晶枢】，打出黄卡时，释放1枚【溶蚀弹】，对随机敌方造成1段负能伤害",
+      "iconPath": "UI/CubeRogue/TacticsIcon/Big/YuanLiu",
+      "tabIconPath": "UI/CubeRogue/TacticsIcon/Red/YuanLiu_1",
+      "cardIconPath": "UI/CubeRogue/TacticsSelection/Assets_New/yuanliu",
+      "cardBigIcon": "UI/CubeRogue/TacticsIcon/CardBig/YuanLiu",
+      "shadePath": "UI/CubeRogue/QualityBG/Buff/TypeIcon/YuanLiu",
+      "initialEffectList": [
+        {
+          "id": 12303617
+        }
+      ],
+      "extraBuffList": [
+        {
+          "id": 89500122,
+          "num": 2,
+          "prepositionId": -1
+        },
+        {
+          "id": 89500123,
+          "num": 3,
+          "prepositionId": -1
+        },
+        {
+          "id": 89500124,
+          "num": 4,
+          "prepositionId": 89500034
+        },
+        {
+          "id": 89500125,
+          "num": 6,
+          "prepositionId": 89500035
+        },
+        {
+          "id": 89500126,
+          "num": 8,
+          "prepositionId": 89500158
+        }
+      ],
+      "addWeight": 3
+    }
+  ]
+}

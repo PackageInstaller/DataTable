@@ -1,0 +1,2041 @@
+{
+  "version": 1,
+  "hash": "FFE9F7DB2828B8C8963398D6789F0BB257D6F75F6F196D0774E31F981AE81C05",
+  "meta": {
+    "author": "此位置待支持，需要每名编辑者能提供自己用户名",
+    "date": 134322131773782534,
+    "etc": "factory=RankFactory"
+  },
+  "count": 60,
+  "records": [
+    {
+      "id": 84300001,
+      "idCN": "总利润",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "交易所新星排行榜",
+      "nameEN": "MONEY MAKER LEADERBOARD",
+      "tabName": "总利润",
+      "rankName": "总利润",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_1",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "profit",
+      "timeType": "all",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300002,
+      "idCN": "单次利润",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "单笔利润排行榜",
+      "nameEN": "SINGLE TRADE PROFITS",
+      "tabName": "单笔利润",
+      "rankName": "单笔利润",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_1",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "profitSingle",
+      "timeType": "all",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300003,
+      "idCN": "环保积分",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "环保人士排行榜",
+      "nameEN": "CLEAN MASTER LEADERBOARD",
+      "tabName": "环保声望",
+      "rankName": "环保声望",
+      "titlePng": "UI/RankList/bg_type_2",
+      "iconPng": "",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "environmental",
+      "timeType": "forever",
+      "sectionType": "onebased",
+      "gradeSectionList": [],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300004,
+      "idCN": "建设活动",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "我造我路建设排行榜",
+      "nameEN": "MONEY MAKER LEADERBOARD",
+      "tabName": "建设排行榜",
+      "rankName": "建设进度",
+      "titlePng": "UI/RankList/bg_type_3",
+      "iconPng": "",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "constructionActivity",
+      "timeType": "forever",
+      "sectionType": "onebased",
+      "gradeSectionList": [],
+      "isInquireArea": false,
+      "activityId": 86000002,
+      "topTips": 80606902,
+      "statisticsStartTime": "",
+      "statisticsEndTime": "2024-05-15 05:00:00"
+    },
+    {
+      "id": 84300005,
+      "idCN": "虚演刻录",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "虚演刻录排行榜",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "towerRank",
+      "timeType": "forever",
+      "sectionType": "default",
+      "gradeSectionList": [
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300009,
+      "idCN": "营收报表/总",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "营收总和排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "all",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300010,
+      "idCN": "营收报表/贸易",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "贸易营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "trade",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300011,
+      "idCN": "营收报表/战斗",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "战斗营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "battle",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300012,
+      "idCN": "营收报表/客运",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "客运营收排行榜",
+      "nameEN": "PASSENGER REVENUE RANKING",
+      "tabName": "客运营收",
+      "rankName": "客运营收",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_1",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "passenger",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300013,
+      "idCN": "营收报表/素材",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "素材营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "material",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300014,
+      "idCN": "营收报表/商会",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "商会营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "coc",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300015,
+      "idCN": "营收报表/垃圾",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "垃圾营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "trash",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300016,
+      "idCN": "营收报表/海岛",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "海岛营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "island",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300017,
+      "idCN": "营收报表/整顿中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "整顿中心营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "prison",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300019,
+      "idCN": "单次客运",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "单次客运收益榜",
+      "nameEN": "SINGLE PASSENGER REVENUE",
+      "tabName": "单次客运",
+      "rankName": "单次客运",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_1",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "passengerSingle",
+      "timeType": "all",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300021,
+      "idCN": "大富翁投资额",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "大富翁投资额",
+      "nameEN": "",
+      "tabName": "大富翁投资额",
+      "rankName": "大富翁投资额",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "Item/item/monopolyFund",
+      "peopleNum": 10,
+      "rankNumMax": 20000,
+      "rankType": "monopolyInvest",
+      "timeType": "forever",
+      "sectionType": "onebased",
+      "gradeSectionList": [],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300006,
+      "idCN": "投资排行榜/总",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "篝火投资排行榜",
+      "nameEN": "TOTAL INVESTMENT RANKING",
+      "tabName": "投资总榜",
+      "rankName": "投资总榜",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300020,
+      "idCN": "投资排行榜/七号自由港",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "七号自由港投资排行榜",
+      "nameEN": "FREEPORT Ⅶ INVESTMENT RANKING",
+      "tabName": "七号自由港",
+      "rankName": "七号自由港",
+      "skipStation": 83000020,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300022,
+      "idCN": "投资排行榜/修格里城",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "修格里城投资排行榜",
+      "nameEN": "SHOGGOLITH CITY INVESTMENT RANKING",
+      "tabName": "修格里城",
+      "rankName": "修格里城",
+      "skipStation": 83000001,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300023,
+      "idCN": "投资排行榜/曼德矿场",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "曼德矿场投资排行榜",
+      "nameEN": "MANDER MINE INVESTMENT RANKING",
+      "tabName": "曼德矿场",
+      "rankName": "曼德矿场",
+      "skipStation": 83000053,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300024,
+      "idCN": "投资排行榜/澄明数据中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "澄明数据中心投资排行榜",
+      "nameEN": "CDCA BUREAU INVESTMENT RANKING",
+      "tabName": "澄明数据中心",
+      "rankName": "澄明数据中心",
+      "skipStation": 83000029,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300025,
+      "idCN": "投资排行榜/阿妮塔发射中心",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "阿妮塔发射中心投资排行榜",
+      "nameEN": "ANITA ROCKET LAUCH CENTER INVESTMENT RANKING",
+      "tabName": "阿妮塔发射中心",
+      "rankName": "阿妮塔发射中心",
+      "skipStation": 83000010,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300026,
+      "idCN": "投资排行榜/海角城",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "海角城投资排行榜",
+      "nameEN": "CAPE CITY INVESTMENT RANKING",
+      "tabName": "海角城",
+      "rankName": "海角城",
+      "skipStation": 83000002,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300027,
+      "idCN": "投资排行榜/贡露城",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "贡露城投资排行榜",
+      "nameEN": "GRONRU CITY INVESTMENT RANKING",
+      "tabName": "贡露城",
+      "rankName": "贡露城",
+      "skipStation": 83000052,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300028,
+      "idCN": "投资排行榜/岚心城",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "岚心城投资排行榜",
+      "nameEN": "RANSHIN CITY INVESTMENT RANKING",
+      "tabName": "岚心城",
+      "rankName": "岚心城",
+      "skipStation": 83000006,
+      "titlePng": "UI/RankList/bg_type_5",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "totalInvestment",
+      "timeType": "total",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300029,
+      "idCN": "营收报表/制造订单",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "拼单单营收排行榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "manufacturing",
+      "timeType": "daily",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300030,
+      "idCN": "总佣金",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "佣金排行榜",
+      "nameEN": "",
+      "tabName": "总佣金",
+      "rankName": "总佣金",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_1",
+      "iconPng": "UI/RankList/icon_coin",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "commission",
+      "timeType": "all",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300031,
+      "idCN": "魔女BOSS总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "魔女BOSS",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "witchesDamage",
+      "timeType": "forever",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300032,
+      "idCN": "魔女BOSS日榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "魔女BOSS",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 100,
+      "rankNumMax": 9999,
+      "rankType": "witchesDamageDaily",
+      "timeType": "daily",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300033,
+      "idCN": "虎闰千富榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "虎闰千富榜",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 1000,
+      "rankNumMax": 999999,
+      "rankType": "TigerGold",
+      "timeType": "forever",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300035,
+      "idCN": "签到挑战/01期克洛伊/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "轰雷排行榜",
+      "nameEN": "Thunder Leaderboard",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuff",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300036,
+      "idCN": "签到挑战/01期克洛伊/日榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "轰雷排行榜",
+      "nameEN": "Thunder Leaderboard",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuff",
+      "timeType": "daily",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300037,
+      "idCN": "签到挑战/00测试金币/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "醒游梦境轰雷排行榜",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleGold",
+      "timeType": "forever",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300038,
+      "idCN": "签到挑战/00测试金币/日榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "醒游梦境轰雷排行榜",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleGold",
+      "timeType": "daily",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300039,
+      "idCN": "签到挑战/00测试伤害/日榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "醒游梦境轰雷排行榜",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleDamage",
+      "timeType": "daily",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300040,
+      "idCN": "签到挑战/00测试伤害/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "醒游梦境轰雷排行榜",
+      "nameEN": "CALCULATION RECORDING LEADERBOARD",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleDamage",
+      "timeType": "forever",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300041,
+      "idCN": "签到挑战/02期伊卡菈/日榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "燎原排行榜",
+      "nameEN": "Blazefire Leaderboard",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffTwo",
+      "timeType": "daily",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300042,
+      "idCN": "签到挑战/02期伊卡菈/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "燎原排行榜",
+      "nameEN": "Blazefire Leaderboard",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffTwo",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300034,
+      "idCN": "签到挑战/03期伊利亚德/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "冻伤排行榜",
+      "nameEN": "Frozen Leaderboard",
+      "tabName": "",
+      "rankName": "虚演进程",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffThree",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300043,
+      "idCN": "世界BOSS/01期/普通01",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "",
+      "nameEN": "",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "worldBoss",
+      "timeType": "forever",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300044,
+      "idCN": "签到挑战/04期斯洛卡伊/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "撕裂排行榜",
+      "nameEN": "Tear Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffFour",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300045,
+      "idCN": "签到挑战/05期海伦娜/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "伤害排行榜",
+      "nameEN": "Damage Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleDamage",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300046,
+      "idCN": "签到挑战/06期切茜娅/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "蚀灭排行榜",
+      "nameEN": "Corrosion Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffFive",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300047,
+      "idCN": "签到挑战/07期朵拉弥丝/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【同调】点数排行榜",
+      "nameEN": "Tuning Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffSix",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300050,
+      "idCN": "签到挑战/08期时萝/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【无人机】释放数量排行榜",
+      "nameEN": "Drone Deployment Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffSeven",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300051,
+      "idCN": "签到挑战/09期赫卡蒂/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【灵击陨石】排行榜",
+      "nameEN": "Meteor Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffEight",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300052,
+      "idCN": "签到挑战/11期陈书闲/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "伤害排行榜",
+      "nameEN": "Damage Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleDamageThree",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300053,
+      "idCN": "签到挑战/12期沃斯托克/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "最高单次伤害排行榜",
+      "nameEN": "Damage Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "MaxHit",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300054,
+      "idCN": "签到挑战/13期蒂丝塔尔/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【迸裂】/【擘裂】次数排行榜",
+      "nameEN": "Bust/shatter Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffNine",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300056,
+      "idCN": "签到挑战/14期卡塔斯·业火/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【点燃】次数排行榜",
+      "nameEN": "Ignite Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffTen",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300055,
+      "idCN": "签到挑战/14期夏娜/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【存在之力】层数排行榜",
+      "nameEN": "Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffEleven",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300057,
+      "idCN": "时尚排行榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "时尚排行榜",
+      "nameEN": "FASHION RANKING",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "",
+      "iconPng": "",
+      "peopleNum": 1000,
+      "rankNumMax": 9999,
+      "rankType": "fashion",
+      "timeType": "forever",
+      "sectionType": "onebased",
+      "gradeSectionList": [],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300058,
+      "idCN": "签到挑战/16期露比/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【锁定】次数排行榜",
+      "nameEN": "Lock Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffTwelve",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300059,
+      "idCN": "武林总利润",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "武林源交易所新星排行榜",
+      "nameEN": "MONEY MAKER LEADERBOARD",
+      "tabName": "总利润",
+      "rankName": "总利润",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_wl",
+      "iconPng": "Item/item/2026/jiaozi49",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "profitWL",
+      "timeType": "all",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300060,
+      "idCN": "武林单次利润",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "武林源单笔利润排行榜",
+      "nameEN": "SINGLE TRADE PROFITS",
+      "tabName": "单笔利润",
+      "rankName": "单笔利润",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_wl",
+      "iconPng": "Item/item/2026/jiaozi49",
+      "peopleNum": 10,
+      "rankNumMax": 9999,
+      "rankType": "profitSingleWL",
+      "timeType": "all",
+      "sectionType": "onebased",
+      "gradeSectionList": [
+        {
+          "grade": 30
+        },
+        {
+          "grade": 40
+        },
+        {
+          "grade": 50
+        },
+        {
+          "grade": 60
+        },
+        {
+          "grade": 70
+        },
+        {
+          "grade": 80
+        },
+        {
+          "grade": 90
+        }
+      ],
+      "isInquireArea": false,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300061,
+      "idCN": "签到挑战/17期迪妮莎/总榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【重伤】次数排行榜",
+      "nameEN": "Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffThirteen",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300062,
+      "idCN": "签到挑战/18期蓝鹊儿/费用消耗排行榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "费用消耗排行榜",
+      "nameEN": "Cost Consumption Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffFourteen",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300063,
+      "idCN": "签到挑战/30期美琪/压制触发次数排行榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【压制】触发次数排行榜",
+      "nameEN": "Suppression Trigger Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffFifteen",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300064,
+      "idCN": "签到挑战/31期多萝西SP/玩偶乘客运载数量排行榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【玩偶乘客】运载数量排行榜",
+      "nameEN": "Doll Passenger Transport Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffSixteen",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    },
+    {
+      "id": 84300065,
+      "idCN": "签到挑战/33期爱弥儿/劣化叠加次数排行榜",
+      "mod": "默认",
+      "isInformalData": false,
+      "name": "【劣化】叠加次数排行榜",
+      "nameEN": "Deterioration Stack Leaderboard",
+      "tabName": "",
+      "rankName": "",
+      "skipStation": -1,
+      "titlePng": "UI/RankList/bg_type_4",
+      "iconPng": "UI/RankList/icon_disk",
+      "peopleNum": 500,
+      "rankNumMax": 9999,
+      "rankType": "signBattleBuffSeventeen",
+      "timeType": "mix",
+      "sectionType": "default",
+      "gradeSectionList": [],
+      "isInquireArea": true,
+      "activityId": -1,
+      "topTips": -1,
+      "statisticsStartTime": "",
+      "statisticsEndTime": ""
+    }
+  ]
+}
