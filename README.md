@@ -18,7 +18,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/AngelicaAsterR` | AngelicaAsterR | 当归紫苑 |
 | `game/AzurLane` | AzurLane | 碧蓝航线 |
 | `game/BlackBeacon` | BlackBeacon | 黑色信标 |
-| `game/CatFantasy` | CatFantasy |
+| `game/CatFantasy` | CatFantasy | 猫之城 |
 | `game/CounterSide` | CounterSide | 未来战 |
 | `game/CuisineDimension` | CuisineDimension | 料理次元 |
 | `game/DengekiBunkoCROSSINGVOID` | DengekiBunkoCROSSINGVOID | 电击文库灵境交错 |
