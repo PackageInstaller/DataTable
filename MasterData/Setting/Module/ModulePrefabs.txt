@@ -1,0 +1,841 @@
+id	name	var	cameraState	path	moduleTag	back	home	resources	bgm	backAni	goods	status	descr	descr_zh_TW	descr_en_UK	descr_ja_JP	descr_ko_KR	descr_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	debugger	Debugger		Prefabs/DebuggerWindow.prefab		0	0	0	0	1		1						
+2	开发启动器	OpenWaitingUI		Prefabs/DevLaunchPad.prefab		0	0	0	0	1		1						
+4	章节城市选择页面对话框	CityChapterUI		Prefabs/BattleUI/Chapter/UIBattleChapter.prefab		1	1	0	0	1		1						
+5	战斗前的区域选择页面对话框	UIBattlePrepare		Prefabs/BattleUI/Chapter/UIBattleQuestPrepare.prefab		1	1	0	0	1		1						
+6	主界面对应的场景	UISceneHome		Scenes/HomeScene.unity		1	1	0	0	1		2						
+7	战前选择界面	UISceneBattleMapPrepare		Prefabs/BattleUI/BattleEntryRoot.prefab		1	1	1	0	1		1						
+8	编队界面	TeamDialog	2	Prefabs/BattleUI/TeamDialog.prefab		1	1	1	0	1		1						
+13	游戏更新检测的逻页面	LoginDialog	2	Prefabs/GameInit.prefab		0	0	0	0	1		1						
+12	游戏分包更新界面	QuestTaskDetailDialog	2	Prefabs/GameStart/GameStart.prefab		0	0	0	0	0		1						
+15	登录注册页面	PassportDialog	2	Prefabs/PassportDialog.prefab		0	0	0	0	1		1						
+16	进入游建立角色弹出框	GameCreateRole	1	Prefabs/CreateRoleNew/CreateRoleNew.prefab		0	0	0	0	1		1						
+17	章节结算	ChapterResultDialog	1	Prefabs/BattleUI/ChapterResultDialog.prefab		0	0	0	0	1		1						
+19	战斗中界面	BattleDialog	1	Prefabs/BattleUI/BattleDialog.prefab		0	0	0	0	1		1						
+20	编队角色选择界面	ChoiceCards	2	Prefabs/BattleUI/ChoiceCards.prefab		1	1	0	0	1		1						
+21	战斗编队选择界面	UIBattleTeamDialog	2	Prefabs/BattleUI/UIBattleTeamDialog.prefab		1	1	1	0	1		1						
+23	商城界面	ShopDialog	2	Prefabs/Shops/ShopDiaLog.prefab		1	1	1	0	1		1						
+24	筛选界面	ScreenPanel	2	Prefabs/BattleUI/ScreenPanel.prefab		1	1	0	0	1		1						
+25	邮箱界面	MailBox	2	Prefabs/MailBox/MailBox.prefab	邮件	1	1	0	0	1		1	邮件	郵件	Mail	メール	우편	อีเมล
+27	队伍占领界面	CapturePanel		Prefabs/BattleUI/CapturePanel.prefab		0	0	0	0	1		1						
+28	抽卡界面	DrawCard		Prefabs/Draw/DrawCardDialog.prefab		1	1	1	0	1		1						
+29	卡牌详情界面	CardDetails		Prefabs/Draw/CardDetailsDialog.prefab		1	1	0	0	1		1						
+30	卡牌展示界面	CardShow		Prefabs/Draw/CardShowDialog.prefab		1	1	0	0	1		1						
+32	公告页面	UINoticeDialog	3	Prefabs/Notice/NoticeDialog.prefab		0	0	0	0	1		3						
+33	社区窗口页面	CommunityDialog		Prefabs/Notice/CommunityDialog.prefab		0	0	0	0	1		3						
+100	通用道具不足界面	CommonLackMaterialDialog	3	Prefabs/Common/CommonLackMaterial.prefab		0	0	0	0	1		1						
+99	养成2d立绘	Cultivate2dDrawingDialog	2	Prefabs/Cultivate/CultivatePreviewDialog.prefab		0	0	0	0	1		1						
+101	养成入口对话框	CultivateEntry	1	Prefabs/CultivateOversea/CultivateOverseaCardsEntry.prefab	战斗员	1	1	0	0	0		1	战斗员	戰鬥員	Combatant	戦闘員	전투원	ตัวละคร
+102	养成人物页面	CultivateMain	1	Prefabs/CultivateOversea/CultivateOverseaMainDialog.prefab	培养	1	1	0	0	0		1	培养	培養	Combatant	強化	육성	พัฒนา
+103	主界面对应的第一层ui界面	UIHomeView	1	Prefabs/Cultivate/UIHomeView.prefab		0	0	1	0	1		1						
+104	第三方卡牌展示界面	CardPreviewThirdPartyDialog	1	Prefabs/CultivateOversea/CultivateOverseaPreviewThirdParty.prefab		1	1	0	0	1		1						
+105	卡牌猫种介绍界面	CardCatTypePreviewDialog	1	Prefabs/IllustratedHandbook/IllustratedHandbookCatDetailsDialog.prefab		1	1	0	0	1		1						
+108	猫球介绍界面	CatBallPreviewDialog	1	Prefabs/IllustratedHandbook/IllustbookCatballSkillDialog.prefab		1	1	0	0	1		1						
+106	装备主界面容器	UICultivateEquipMainDialog		Prefabs/Cultivate/UICultivateEquipMainDialog.prefab		1	1	0	0	1		1						
+107	装备主界面套装筛选弹出窗口	UICultivateEquipSuitFilterDialog		Prefabs/Cultivate/UICultivateEquipSuitFilterDialog.prefab		0	0	0	0	1		1						
+109	装备自定义套装界面	UICultivateEquipDiySuitDialog		Prefabs/Cultivate/UICultivateEquipDiySuitDialog.prefab		1	1	0	0	1		1						
+110	装备替换提示弹窗	UICultivateEquipReplaceTipDialog		Prefabs/Cultivate/UICultivateEquipReplaceTipDialog.prefab		0	0	0	0	1		1						
+111	装备养成升级界面	UICultivateEquipUpgradeLevelDialog		Prefabs/Cultivate/UICultivateEquipUpgradeLevelDialog.prefab		1	1	1	0	1		1						
+112	养成观察人物弹窗	UICultivateObserveDialog		Prefabs/CultivateOversea/CultivateOverseaObserveDialog.prefab		1	1	0	0	0		1						
+113	养成卡牌列表	UICultivateArmedForcesListDialog		Prefabs/Cultivate/CultivateArmedForcesList.prefab		0	0	0	0	0		1						
+114	装备养成套装编辑弹窗	UICultivateEquipDiySuitEditDialog		Prefabs/Cultivate/UICultivateEquipDiySuitEditDialog.prefab		0	0	0	0	1		1						
+115	养成升级成功弹窗	UICultivateLevelUpFinishDialog		Prefabs/Cultivate/CultivateLevelUpSecondConfirmPanel.prefab		0	0	0	0	1		1						
+116	升级打脸	UICultivatePlayerUpgradeDialog	2	Prefabs/Common/PlayerUpgradeDialog.prefab		0	0	0	0	1		1						
+117	功能解锁页面	CommonFunctionUnlockDialog		Prefabs/Common/CommonFunctionUnlockDialog.prefab		0	0	0	0	1		1						
+118	卡牌展示	CommonCardDisplayDialog		Prefabs/Share/Share.prefab		0	0	0	0	1		1						
+119	共鸣节点编辑	UICultivateResonanceDialog		Prefabs/Cultivate/CultivateResonanceDialog.prefab		1	1	0	0	1		1						
+120	背包	Backpack	2	Prefabs/Backpack/Backpack.prefab	仓库	1	1	0	bgm_city	1		1	仓库	倉庫	Inventory	倉庫	창고	โกดัง
+131	出售面板	BackpackPopupDialog	3	Prefabs/Backpack/BackpackPropSalePopup.prefab		1	1	1	0	1		1						
+132	养成觉醒成功页面	CardProgressionBreakSuccess	1	Prefabs/CultivateOversea/CultivateOverseaBreakSuccess.prefab		0	0	0	0	1		1						
+133	养成属性提升成功页面	CardProgressionAttributePromoteSuccess	1	Prefabs/CultivateOversea/CultivateOverseaAttributePromoteSuccess.prefab		0	0	0	0	1		1						
+134	养成收集奖励界面	CardProgressionCollectRewardsDialog	3	Prefabs/CultivateOversea/CultivateOverseaCollectRewardPopup.prefab		1	1	0	0	1		1						
+135	养成职业总览界面	CardProgressionCareerPreview	3	Prefabs/CultivateOversea/CultivateOverseaCareerPreview.prefab		0	0	0	0	1		1						
+136	养成好感度弹窗界面	CardProgressionFavorPopup	1	Prefabs/CultivateOversea/CultivateOverseaFeelingPopup.prefab		0	0	0	0	1		1						
+137	养成专武升级弹窗界面	CardProgressionExclusiveWeaponLevelUp	1	Prefabs/CultivateOversea/CultivateOverseaSpecialWeaponLevelUp.prefab		0	0	0	0	1		1						
+121	等级指引	LevelGuideDialog		Prefabs/LevelGuide/LevelGuide.prefab		0	0	0	0	1		1						
+122	卡牌职业与属性详情展示	UICultivateCardCareerDescView		Prefabs/Cultivate/UICultivateCardCareerDescView.prefab		0	0	0	0	1		1						
+123	养成突破预览页面	CardProgressionBreakPreview	1	Prefabs/CultivateOversea/CultivateOverseaBreakPreview.prefab		0	0	0	0	1		1						
+124	养成升级成功页面	CardProgressionLevelUpSuccess	1	Prefabs/CultivateOversea/CultivateOverseaLevelupSuccess.prefab		0	0	0	0	1		1						
+125	养成升阶成功页面	CardProgressionAdvanceLevelUpSuccess	1	Prefabs/CultivateOversea/CultivateOverseaEvolutonSuccess.prefab		0	0	0	0	1		1						
+126	养成升星成功页面	CardProgressionStarUpSuccess	1	Prefabs/CultivateOversea/CultivateOverseaStarupSuccess.prefab		0	0	0	0	1		1						
+127	养成升星预览页面	CardProgressionStarUpPreview	1	Prefabs/CultivateOversea/CultivateOverseaStarupPreview.prefab		0	0	0	0	1		1						
+128	养成资料(档案与羁绊)页面	CardProgressionIntroduction	1	Prefabs/CultivateOversea/CultivateOverseaIllustratedHandbookAndFetter.prefab		1	1	0	0	0		1						
+129	养成资料羁绊提示页面	CardProgressionSynergiesTips	1	Prefabs/CultivateOversea/CultivateOverseaFetterPopupTips.prefab		1	1	0	0	0		1						
+130	养成好感度页面	CardProgressionFavor	1	Prefabs/CultivateOversea/CultivateOverseaFeeling.prefab		1	1	0	0	0		1						
+300	风暴巅峰-主界面	PVPArenaMain	2	Prefabs/PVP/PVPMain.prefab		1	1	0	bgm_action	1		1						
+301	风暴巅峰-对抗界面弹窗	PVPArenaAgainstDialog	2	Prefabs/PVP/PVPAgainstDialog.prefab		1	1	1	bgm_action	1		1						
+302	风暴巅峰-玩家信息弹窗	PVPArenaPlayerMatcherInfoDialog	2	Prefabs/PVP/PVPPlayerInfoDialog.prefab		0	0	0	bgm_action	1		1						
+303	风暴巅峰-回放弹窗	PVPArenaReplayDialog	2	Prefabs/PVP/PVPReplayDialog.prefab		1	1	0	bgm_action	1		1						
+304	风暴巅峰-编队弹窗	PVPArenaFormationDialog	2	Prefabs/PVP/PVPFormationDialog.prefab		1	1	0	bgm_action	1		1						
+305	风暴巅峰-投票弹窗	PVPArenaPlayerQuizDialog	2	Prefabs/PVP/PVPElectDialog.prefab		1	1	0	bgm_action	1		1						
+306	风暴巅峰-准备弹窗	PVPPlayerReadyDialog	2	Prefabs/PVP/PVPPlayerReadyDialog.prefab		0	0	0	bgm_action	1		1						
+307	风暴巅峰-投票结果弹窗	PVPArenaQuizResultDialog	2	Prefabs/PVP/PVPQuizResults.prefab		0	0	0	bgm_action	1		1						
+308	风暴巅峰-排行奖励弹窗	PVPArenaRankRewardDialog	2	Prefabs/PVP/PVPRewardPreview.prefab		0	0	0	bgm_action	1		1						
+309	风暴巅峰-比赛结果弹窗	PVPArenaMatchResultDialog	2	Prefabs/PVP/PVPResult.prefab		0	0	0	bgm_action	1		1						
+310	风暴巅峰-荣誉榜单弹窗	PVPArenaHonorListDialog	2	Prefabs/PVP/PVPHonorListDialog.prefab		1	1	0	bgm_action	1		1						
+311	风暴巅峰-投票列表弹窗	PVPArenaQuizListDialog	2	Prefabs/PVP/PVPSelectionListDialog.prefab		0	0	0	bgm_action	1		1						
+403	关卡掉落弹窗	UIQuestDropDetailDialog		Prefabs/Common/QuestDropDetailDialog.prefab		1	1	0	0	1		1						
+404	boss详情弹窗	UIBossDetailDialog	2	Prefabs/FightReady/BossDetailDialog.prefab		1	0	0	0	0		1						
+405	抽卡道具副本主界面	UIGachaCoinQuestDialog		Prefabs/BattleSelection/GachaCoinQuest/GachaCoinQuestDialog.prefab		1	1	1	0	1		1						
+406	新的行动入口	ActionEntryDialog	1	Prefabs/BattleSelection/ActionDialog.prefab	html	1	1	1	0	1		1	行动	行動	Action	行動	행동	ลงมือ
+500	任务弹窗	UITasksDialog	2	Prefabs/OverseaTasks/OverseaTasksDialog.prefab	任务	1	1	0	0	1		1	任务	任務	Mission	任務	미션	ภารกิจ
+514	材料合成入口页面	UICompositeEntryDialog		Prefabs/MaterialComposite/MaterialComposite.prefab	合成	1	1	1	bgm_action	1		1	合成	合成	Fusion	合成	합성	การผสาน
+515	材料合成确认页面	UICompositePreviewDialog		Prefabs/MaterialComposite/MaterialPreview.prefab		0	0	0	bgm_action	1		1						
+50	实名认证弹窗	UIRealAuthenticationDialog		Prefabs/CreateRole/UIRealAuthenticationDialog.prefab		1	1	0	0	1		1						
+700	关卡选择	UIFightMap		Prefabs/FightReady/FightMap.prefab	html	1	1	0	0	1		1	材料补给	材料補給	Material Supply	素材補給	재료 보급	เสบียงวัตถุดิบ
+701	英雄选择	UIFightChoose	2	Prefabs/FightReady/FightChoose.prefab		1	1	0	0	1		1						
+702	准备详情	UIFightReady	2	Prefabs/FightReady/FightReady.prefab		1	1	0	0	1		1						
+703	战前剧情	UIFightStory		Prefabs/FightReady/FightStory.prefab		0	0	0	0	1		1						
+704	奖励信息	UIFightBonus		Prefabs/FightReady/FightBonus.prefab		0	0	0	0	1		1						
+706	技能描述弹框	UISkillDes		Prefabs/Common/SkillDes.prefab		1	1	0	0	1		1						
+600	新战斗开始界面	UIBattleStartDialog	3	Prefabs/UIBattling/UIBattleStartDialog.prefab		0	0	0	0	1		1						
+601	新战斗中界面	UIBattlingDialog	3	Prefabs/UIBattling/UIBattlingDialog.prefab		0	0	0	0	1		1						
+603	战中CutIn界面	UIBattlingCutInDialog	3	Prefabs/UIBattling/UIBattlingCutInDialog.prefab		0	0	0	0	1		1						
+602	战中人物战斗信息界面	UIBattlingCharactorBattleInfoDialog	3	Prefabs/UIBattling/UIBattlingCharactorBattleInfoDialog.prefab		0	0	0	0	1		1						
+604	战中CharactorInfo界面	UIBattlingCharactorInfoDialog	3	Prefabs/UIBattling/UIBattlingCharactorInfoDialog.prefab		0	0	0	0	1		1						
+608	新战斗结算界面	UIBattleEndDialog	3	Prefabs/UIBattling/BattleEnd/UIBattleEndDialog.prefab		0	0	1	0	1		1						
+1001	新战斗界面	BattleScene		Scenes/BattleLoading.unity		0	0	0	0	1		2						
+1002	新手引导图	UIGuideDialog		Prefabs/Guide/Guide.prefab		0	0	0	0	1		1						
+803	体力界面	UIHPDialog	1	Prefabs/Common/StengthDialog.prefab		0	0	0	0	1		1						
+1101	通用奖励界面	UICommonRewardPop	2	Prefabs/Common/CommonRewardPopWinDialog.prefab		1	1	0	0	1		1						
+1102	通用奖励界面2	UICommonRewardPop2	3	Prefabs/Common/CommonRewardPopWinDialog2.prefab		0	0	0	0	1		1						
+51	防沉迷提示	AntiIndulgenceDialog		Prefabs/CreateRole/AntiIndulgenceDialog.prefab		1	1	0	0	1		1						
+710	战斗选择	BattleSelection		Prefabs/BattleSelection/BattleSelectionDialog.prefab	行动	1	1	1	bgm_action	1		1	行动	行動	Action	行動	행동	ลงมือ
+2101	夜间巡逻地图	UIPatrolMazePrimaryMapDialog		Prefabs/Patrol/PatrolPrimaryMapDialog130201.prefab	html	1	0	0	0	0		1	夜间巡逻	夜間巡邏	Nightly Patrol	夜間パトロール	야간 순찰	ลาดตระเวนยามราตรี
+2102	迷宫背包	UIMazeBagDialog		Prefabs/Maze/UIMazeBagDialog.prefab		1	1	0	bgm_action	1		1						
+2103	迷宫战斗界面	UIMazeBattle		Prefabs/Maze/UIMazeBattle.prefab		0	0	0	bgm_action	1		1						
+2104	迷宫阵容界面	UIMazeTeamDialog		Prefabs/Maze/UIMazeTeamDialog.prefab		1	1	0	bgm_action	1		1						
+2105	迷宫迷宫常看点信息界面	UIViewPointEventDialog		Prefabs/Maze/UIViewPointEventDialog.prefab		0	0	0	bgm_action	1		1						
+711	章节奖励	UIChapterReward		Prefabs/BattleSelection/ChapterRewardDialog.prefab		1	1	0	0	1		1						
+720	编队选择	UIFightTeamCardChoose	2	Prefabs/FightTeam/FightChooseCardsDialog.prefab	战斗员选择	1	0	0	0	1		1	战斗员选择	戰鬥員選擇	Combatant	戦闘員選択	전투원 선택	เลือกตัวละคร
+721	编队卡牌详情	UIFightTeamChoose	2	Prefabs/FightTeam/FightTeamDialog.prefab	战斗员编队	1	0	1	0	0		1	战斗员编队	戰鬥員編隊	Team	戦闘員編成	전투원 편성	จัดทีมตัวละคร
+2106	迷宫剧情点激活界面	UIMazeStoryEventDialog		Prefabs/Maze/UIMazeStoryEventDialog.prefab		1	1	0	0	1		1						
+2201	剧情对话	ChapterDialog		Prefabs/Chapter/ChapterDialog.prefab		0	0	0	0	1		1						
+605	战中属性详情界面	UIBattlingAttributeCircleDialog	3	Prefabs/UIBattling/UIBattlingAttributeCircleDialog.prefab		1	1	0	0	1		1						
+606	战中波次变化展示界面	UIBattlingWaveChangeDialog	3	Prefabs/UIBattling/UIBattlingWaveChangeDialog.prefab		1	1	0	0	1		1						
+2107	迷宫选择圣物界面	UIMazeChooseBuffDialog		Prefabs/Maze/UIMazeChooseBuffDialog.prefab		0	0	0	0	1		1						
+2108	迷宫助阵界面	UIMazeJoinBattleEventDialog		Prefabs/Maze/UIMazeJoinBattleEventDialog.prefab		1	1	0	0	1		1						
+2109	夜间巡逻道具选择角色	UIPatrolMazeGoodsChooseRoleDialog		Prefabs/Patrol/PatrolChooseRolePopup130201.prefab		0	0	0	0	0		1						
+2110	夜间巡逻出战选择	UIPatrolMazeEnterTeamPopup		Prefabs/Patrol/PatrolPrepareBeforeFightPopup130201.prefab		0	0	0	0	0		1						
+2111	夜间巡逻主界面	UIPatrolMazeMainDialog		Prefabs/Patrol/PatrolMainDialog130201.prefab	html	1	0	1	0	0		1	夜间巡逻	夜間巡邏	Nightly Patrol	夜間パトロール	야간 순찰	ลาดตระเวนยามราตรี
+2112	夜间巡逻任务界面	UIPatrolPrimaryMapAreaTaskDialog		Prefabs/Patrol/PatrolPrimaryMapAreaTaskDialog130201.prefab		0	0	0	0	0		1						
+2113	夜间巡逻阵容推荐界面	UIPatrolEnterRecommendDialog		Prefabs/Patrol/PatrolPrepareRecommendDialog130201.prefab	1	1	0	0	0	0		1	初始阵容推荐	初始陣容推薦	Starting Lineup	おすすめ編成	디폴트 진영 추천	แนะนำทีมเริ่มต้น
+2114	夜间巡逻阵容推荐圣物预览	UIPatrolEnterBuffPreviewDialog		Prefabs/Patrol/PatrolPrepareRecommendBuffPreview130201.prefab	0	0	0	0	0	0		1						
+607	战中退出二级确认界面	UIBattlingBackToFightReadyDialog	3	Prefabs/UIBattling/UIBattlingSuspendDialog.prefab		0	0	0	0	1		1						
+712	副本奖励	UIDailyEnergyBox		Prefabs/BattleSelection/EnergyBoxDialog.prefab		1	1	0	0	1		1						
+2211	新抽卡界面	GachaponEntry	3	Prefabs/Gachapon/GachaponEntry.prefab	召唤	1	1	1	0	1		1	召唤	召喚	Summon	召喚	소환	รับสมัคร
+2212	新抽卡成员	GachaponMember	3	Prefabs/Gachapon/GachaponMember.prefab		0	0	0	0	1		1						
+2213	新抽卡确认	GachaponConfirm	3	Prefabs/Gachapon/GachaponConfirm.prefab		0	0	1	0	1		1						
+2214	新抽卡结果3d	GachaponResult	2	Prefabs/Gachapon/GachaponResult.prefab		0	0	0	0	1		1						
+2220	用户协议	UIUserAgreementDialog		Prefabs/Notice/UIUserAgreementDialog.prefab		1	1	0	0	1		1						
+851	商品详情	StoreItemDetailsDialog	2	Prefabs/Store/StoreItemDetailsDialog.prefab		0	0	0	0	1		1						
+852	商店入口	StoreEntry	2	Prefabs/Store/StoreEntry.prefab	商城	1	1	1	0	1		1	商城	商城	Shop	ショップ	캐시샵	มอลล์
+853	物品商店	StoreItem	2	Prefabs/Store/StoreItem.prefab		1	1	1	0	1		1						
+854	免费钻商店	StoreFreeDiamond	2	Prefabs/Store/StoreFreeDiamond.prefab	猫眼石商店	1	1	1	0	1		1	猫眼石商店	貓眼石商店	Opal Shop	キャッツアイ	캣츠아이 상점	ร้านค้าโอปอล
+856	钻石不足弹窗	RechargePopUp		Prefabs/Store/RechargePopUp.prefab		0	0	0	0	1		1						
+871	委托战斗结算界面	UIEntrustEndDialog		Prefabs/FightTeam/UIEntrustEndDialog.prefab		0	0	0	0	1		1						
+872	战前合卡界面	UISkillCompoundDialog		Prefabs/FightTeam/UISkillCompoundDialog.prefab		1	1	0	0	1		1						
+873	委托选择界面	UIEntrustTasksDialog		Prefabs/FightTeam/EntrustTasksDialog.prefab	委托	1	1	0	0	1		1	委托	委託	Commission	依頼	의뢰	ภารกิจ
+857	碎片兑换	StoreExchange	3	Prefabs/Store/StoreExchange.prefab		1	1	0	0	1		1						
+858	月卡	StoreMonthCard		Prefabs/Store/StoreMonthCard.prefab	月卡	0	0	1	0	1		1	月卡	月卡	Monthly Plan	月間プラン	월간 구독	บัตรรายเดือน
+859	礼包	StoreChests		Prefabs/Store/StoreGiftBag.prefab	礼包	1	1	1	0	1		1	礼包	禮包	Bundle	ギフトパック	패키지	แพ็กเกจ
+860	礼包购买	StoreChestsPurchase		Prefabs/Store/StoreGiftBagPurchaseDialog.prefab		0	0	1	0	1		1	礼包购买	禮包購買	Pack Purchase	ギフトパック購入	패키지 구매	ซื้อแพ็ก
+609	战斗结算试炼等级提升界面	BattleEndTrialLvDialog	3	Prefabs/UIBattling/BattleEnd/BattleEndTrialLvDialog.prefab		0	0	0	0	1		1						
+1100	试炼主界面	TrailStageMain	2	Prefabs/TrailStage/TrailStageMain.prefab	1099;trial_index.html	1	1	0	0	1		1	风暴挑战	風暴挑戰	Challenge of Storms	ストームチャレンジ	폭풍 도전	ท้าทายคลื่นพายุ
+1107	试炼弹出提示	TrailStagePopupShow	2	Prefabs/TrailStage/TrailStagePopupShow.prefab		0	0	0	0	1		1						
+1103	试炼关卡	TrailStageChallenge	2	Prefabs/TrailStage/TrailStageChallenge.prefab	挑战关卡	1	1	0	0	1		1	挑战关卡	挑戰關卡	Challenge Mission	挑戦ステージ	스테이지 도전	ด่านท้าทาย
+1104	试炼排名	UITrailStageRankDialog	2	Prefabs/TrailStage/TrailStageRankDialog.prefab	风暴排行榜	1	1	0	0	1		1	风暴排行榜	風暴排行榜	Rankings	ストームランキング	스톰아이 랭킹	บอร์ดอันดับสตอร์มอาย
+1105	试炼奖励预览	TrailStageParagraphReward	2	Prefabs/TrailStage/TrailStageParagraphReward.prefab		1	1	0	0	1		1						
+1106	试炼任务	UITrailStageTasks	2	Prefabs/TrailStage/TrailTaskDialog.prefab		1	1	0	0	1		1						
+1109	试炼队伍预览(新版没了)	UITrailStageTeamPreviewDialog		Prefabs/TrailStage/TrailTeamPreviewDialog.prefab		1	1	0	0	1		1						
+1215	海外图鉴档案界面	IllustratedHandbookMainDialog	2	Prefabs/IllustratedHandbook/IllustratedHandbookMainDialog.prefab	1	1	1	0	0	0		1	战斗员档案	戰鬥員檔案	Combatant Archive	戦闘員プロファイル	전투원 파일	ไฟล์ตัวละคร
+1216	海外图鉴入口界面	IllustratedHandbookEntryDialog	2	Prefabs/IllustratedHandbook/IllustbookEntryDialog.prefab	1	1	1	0	0	1		1	图鉴	圖鑑	Gallery	図鑑	도감	สมุดภาพ
+1217	海外图鉴名词百科	IllustratedHandbookProperNounDialog	2	Prefabs/IllustratedHandbook/IllustbookProperNounDialog.prefab	1	1	1	0	0	0		1						
+1218	海外图鉴区域介绍	IllustratedHandbookAreaIntroDialog	2	Prefabs/IllustratedHandbook/IllustbookAreaDescriptionDialog.prefab	1	1	1	0	0	0		1	区域介绍	區域介紹	Introduction	エリア紹介	지역 소개	แนะนำเขตพื้นที่
+1219	海外图鉴猫球列表	IllustratedHandbookCatballListDialog	2	Prefabs/IllustratedHandbook/IllustbookCatballListDialog.prefab	1	1	1	0	0	0		1	猫球档案	貓球檔案	Cato Archive	ガト一覧	냥냥볼 파일	ไฟล์แคทบอล
+2202	剧情qte	ChapterQTE		Prefabs/Chapter/ChapterQTE.prefab		0	0	0	0	1		1						
+1110	礼包码兑换	UISettingCDKExchange	2	Prefabs/Setting/SettingSecondPopUpExchangeGift.prefab		0	0	0	0	1		1						
+1108	设置页面	UISettingDialog	2	Prefabs/Setting/SettingDialog.prefab	设置	1	1	0	0	1		1	设置	設置	Settings	設定	설정	ตั้งค่า
+610	战中跳过回合确认	UIBattlingPassRoundDialog	3	Prefabs/UIBattling/UIBattlingPassRoundDialog.prefab		0	0	0	0	1		1						
+2203	剧情loading	ChapterLoading		Prefabs/Chapter/ChapterLoading.Prefab		0	0	0	0	1		2						
+2310	看板娘切换	UIChangeCharacterBillboard		Prefabs/Cultivate/UIHomeRoleChangeDialog.prefab		1	1	0	0	0		1						
+620	战中玩法引导界面	UIGamePlayGuideDialog	3	Prefabs/UIGamePlayGuide/UIGamePlayGuideDialog.prefab		0	0	0	0	1		1						
+2320	主线关卡选择界面	UIMainChapterDialog	2	Prefabs/MainChapter/MainChapterDialog.prefab		1	1	1	0	1	4190001;3000004	1						
+2324	角色副本关卡界面	UIRolePlotDialog	2	Prefabs/RolePlot/RolePlot.prefab		1	1	0	0	0		1						
+2330	手机玩法主界面	UIFeelingMainDialog		Prefabs/Feeling/FeelingMain.prefab		0	0	0	0	1		1						
+2331	手机信息主界面	UIFeelingCommunicationDialog		Prefabs/Feeling/FeelingCommunicationDialog.prefab		1	1	0	0	1		1						
+2332	手机购物主界面	UIFeelingShopDialog		Prefabs/Feeling/FeelingShopDialog.prefab		1	1	1	0	1		1						
+2333	手机消息记录界面	UIFeelingMessageRecordDialog		Prefabs/Feeling/FeelingMessageRecordDialog.prefab		0	0	0	0	1		1						
+2334	手机好感度界面	UIFeelingFavorabilityDialog		Prefabs/Feeling/FeelingFavorabilityDialog.prefab		1	1	0	0	1		1						
+2335	手机好感度奖励界面	UIFeelingFavorabilityRewardDialog		Prefabs/Feeling/FeelingFavorabilityRewardDialog.prefab		0	0	0	0	1		1						
+2336	手机好感度换装界面	UIFeelingFavorabilityFigureDialog		Prefabs/Feeling/FeelingFavorabilityFigureDialog.prefab		1	1	0	0	1		1						
+2337	手机角色陪伴天数信息界面	UIFeelingFavorabilityRewardDetailsDialog		Prefabs/Feeling/FeelingFavorabilityRewardDetailsDialog.prefab		0	0	0	0	1		1						
+2338	送礼反馈界面	UIFeelingShopOpenPresentsDialog		Prefabs/Feeling/FeelingShopOpenPresentsDialog.prefab		0	0	0	0	1		1						
+2339	手机通话界面	UIFeelingCallDialog		Prefabs/Feeling/FeelingCallDialog.prefab		1	1	0	0	1		1						
+2340	摇一摇界面	UIFeelingNaughtyDialog		Prefabs/Feeling/FeelingNaughtyDialog.prefab		1	1	0	0	1		1						
+2341	一个单独的对话界面	UIFeelingNaughtyFrameMessageDialog		Prefabs/Feeling/FeelingNaughtyFrameMessageDialog.prefab		0	0	0	0	1		1						
+2342	好感度升级界面	UIFeelingShopAscensionDialog		Prefabs/Feeling/FeelingShopAscensionDialog.prefab		0	0	0	0	1		1						
+2343	明信片界面	UIFeelingNaughtyPostcardsDialog		Prefabs/Feeling/FeelingNaughtyPostcardsDialog.prefab		1	1	0	bgm_city	1		1						
+2344	成就界面	AchievementDialog		Prefabs/Achievement/AchievementDialog.prefab	荣誉室	1	1	1	0	1		1	荣誉室	榮譽室	Hall of Honor	栄誉室	영예의 방	หอเกียรติยศ
+2400	新手活动界面	BeginnerEventDialog	1	Prefabs/BeginnerEvent/BeginnerEventDialog.prefab		0	0	1	0	1		1						
+2401	新手活动奖励选择界面	RewardSelect	1	Prefabs/BeginnerEvent/RewardSelect.prefab		1	1	0	0	1		1						
+611	战斗统计界面	BattleStatisticPopupDialog	3	Prefabs/UIBattling/BattleEnd/BattleStatisticPopup.prefab		0	0	0	0	1		1						
+621	战中玩法手册界面	UIGamePlayGuideBookDialog	3	Prefabs/UIGamePlayGuide/UIGamePlayGuideBookDialog.prefab		0	0	0	0	1		1						
+2610	爬塔主界面	UIClimbTowerMainDialog	2	Prefabs/ClimbTower/ClimbTowerMain.prefab	html	1	1	0	bgm_action	1		1	绪能采集	緒能採集	Pathos Collection	エネルギー採集	이모션 에너지 채집	รวบรวมพลังงานพาโธส
+2611	爬塔录像界面	UIClimbTowerVideoDialog		Prefabs/ClimbTower/ClimbTowerVideoDialog.prefab		1	1	0	bgm_action	0		1						
+2612	世界boss主界面	UIWorldBossMainDialog	2	Prefabs/WorldBoss/WorldBossMain.prefab	1099;boss_index.html	1	1	1	bgm_world_boss	0		1	世界首领	世界首領	World Boss	ワールドBOSS	월드 보스	เวิลด์บอส
+2613	世界boss场景	WorldBossEntry		Scenes/WorldBossSceneEnter.unity		1	1	0	bgm_world_boss	1		2						
+2614	世界boss怪物介绍	UIWorldBossDetailsDialog		Prefabs/WorldBoss/WorldBossDetailsDialog.prefab	敌方详情	1	1	0	bgm_world_boss	1		1	敌方详情	敵方詳情	Details	敵の詳細	적 정보	รายละเอียดฝ่ายศัตรู
+2615	世界bossbuff介绍	UIWorldBossBuffDetailsDialog		Prefabs/WorldBoss/WorldBossBuffDetailsDialog.prefab		0	0	0	bgm_world_boss	1		1						
+2616	世界boss排行榜	UIWorldBossPlayerRankingsDialog		Prefabs/WorldBoss/WorldBossPlayerRankingsDialog.prefab		1	1	0	bgm_world_boss	0		1						
+2617	世界boss编队	UIWorldBossFormationDialog		Prefabs/WorldBoss/WorldBossFormationDialog.prefab	战斗员编队	1	1	0	bgm_world_boss	1		1	战斗员编队	戰鬥員編隊	Team	戦闘員編成	전투원 편성	จัดทีมตัวละคร
+2619	世界boss排名奖励	UIWorldBossRankRewardDialog	2	Prefabs/WorldBoss/WorldBossRankRewardDialog.prefab		0	0	0	bgm_world_boss	1		1						
+2618	世界boss奖励	UIWorldBossDamageBonusDialog	2	Prefabs/WorldBoss/WorldBossDamageBonusDialog.prefab		0	0	0	bgm_world_boss	0		1						
+2410	常驻活动主界面	ResidentEventMain		Prefabs/ResidentEvent/ResidentEventMain.prefab	活动	0	0	0	0	1		1	活动	活動	Event	イベント	이벤트	กิจกรรม
+2411	成长基金界面	GrowthFundDialog		Prefabs/ResidentEvent/GrowthFundDialog.prefab		0	0	1	0	1		1						
+612	世界Boss队伍波次信息	UIBattlingWorldBossStartDialog	3	Prefabs/UIBattling/UIBattlingWorldBossStartDialog.prefab		0	0	0	0	1		1						
+2620	竹林主界面	UIBambooMainDialog		Prefabs/Bamboo120101/BambooMain120101.prefab		1	1	1	0	1	9000042	1						
+2621	竹林奖励界面	UIBambooRewardDialog		Prefabs/Bamboo120101/BambooRewardDialog120101.prefab		1	1	0	0	1		1						
+2622	竹林挑战界面	UIBambooChallengeDialog		Prefabs/Bamboo120101/BambooChallengeDialog120101.prefab		1	1	1	0	1	9000042	1						
+2623	竹林作战界面	UIBambooCheckpointDialog		Prefabs/Bamboo120101/BambooCheckpointDialog120101.prefab		1	1	1	0	1	9000042	1						
+2510	好友列表主页	FriendMain	2	Prefabs/Friend/FriendMain.prefab	好友	1	1	0	0	1		1	好友	好友	Friends	フレンド	친구	เพื่อน
+2511	收到pvp邀请	FriendInvitationReceive		Prefabs/Friend/FriendInvitationReceive.prefab		0	0	0	0	0		1						
+2512	发送pvp邀请	FriendInvitationSend		Prefabs/Friend/FriendInvitationSend.prefab		0	0	0	0	0		1						
+2513	忽略收起的pvp邀请	FriendPromptDialog		Prefabs/Friend/FriendPromptDialog.prefab		0	0	0	0	1		1						
+1840	增益buff界面	UIBuffUpDialog		Prefabs/FightTeam/BuffUpDialog.prefab		0	0	0	0	1		1						
+2710	主线选择界面	UIMainBattlePanelDialog	2	Prefabs/BattleSelection/MainBattlePanel.prefab	剧情	1	1	0	0	1		1	剧情	劇情	Story	ストーリー	스토리	เนื้อเรื่อง
+613	战中PVPUI	UIBattlingPVPInfoDialog	3	Prefabs/UIBattling/UIBattlingPVPInfoDialog.prefab		0	0	0	0	1		1						
+622	战中角色Buff列表	UIBattlingBuffInfoListDialog	3	Prefabs/UIBattling/UIBattlingBuffInfoListDialog.prefab		0	0	0	0	1		1						
+623	战中关卡提示	UIBattlingLevelTipsDialog	3	Prefabs/UIBattling/UIBattlingLevelTipsDialog.prefab		0	0	0	0	1		1						
+2520	定向作战主界面	DirectionalDialog		Prefabs/Directional/DirectionalDialog.prefab	html	1	1	0	bgm_action	1		1	定向作战	定向作戰	Targeted Battle	定向作戦	고정 전투	การต่อสู้เฉพาะทาง
+2521	定向作战解锁难度弹窗	DirectionalUpgradePopup		Prefabs/Directional/DirectionalUpgradePopup.prefab		0	0	0	bgm_action	1		1						
+1300	window登录界面	UIWindowLoginDialog		Prefabs/Notice/UIWindowLoginDialog.prefab		0	0	0	0	1		1						
+2525	周扭蛋任务主界面	WeekTasksMainDialog	1	Prefabs/WeekTasks/WeekTasksMainDialog.prefab	扭蛋机	1	1	0	bgm_city	1		1	扭蛋机	扭蛋機	Gacha Machine	ガチャマシン	뽑기	ตู้กาชาปอง
+2526	周扭蛋奖励预览界面	WeekTasksRewardPreviewDialog		Prefabs/WeekTasks/WeekTasksRewardPreviewDialog.prefab		0	0	0	bgm_city	1		1						
+861	累计充值奖励界面	CumulativeRechargeDialog		Prefabs/Store/StoreChargeReward.prefab	html	1	1	0	0	1		1	累计充值	累計儲值	Total Top-up	累計チャージ	누적 충전	เตินเงินสะสม
+2530	角色互动界面	UIMainInteractionDialog		Prefabs/MainInteraction/MainInteraction.prefab		1	1	0	0	0		1						
+2536	制造界面	ForgingDialog		Prefabs/Forging/ForgingDialog.prefab	制造	1	1	1	0	1		1	制造	製造	Crafte	製作	제작	สร้าง
+2537	制造界面挑战弹窗	ForgingChallengePopup		Prefabs/Forging/ForgingChallengePopup.prefab		0	0	0	0	1		1						
+2538	制造界面升级弹窗	ForgingUpgradePopup		Prefabs/Forging/ForgingUpgradePopup.prefab		0	0	0	0	1		1						
+2540	活动界面	UIActivityMainDialog	2	Prefabs/Activity/ActivityMainDialog.prefab	活动	1	1	1	0	1		1	活动	活動	Event	イベント	이벤트	กิจกรรม
+862	首充奖励界面	InvestPopup	1	Prefabs/OverseaInvest/InvestMainDialog.prefab		0	0	0	0	1		1						
+624	战中气泡	UIBattlingBubble	3	Prefabs/UIBattling/UIBattingBubbleNode.prefab		0	0	0	0	1		1						
+2542	天赋材料奖励展示	UITalentMaterialGetRewardsDialog		Prefabs/TalentMaterial/TalentMaterialGetRewardsDialog.prefab		0	0	0	bgm_action	1		1						
+2543	天赋材料选择buff	UITalentMaterialLevelSelectionDialog		Prefabs/TalentMaterial/TalentMaterialLevelSelectionDialog.prefab		0	0	0	bgm_action	1		1						
+2544	天赋材料购买门票	UITalentMaterialPurchaseDialog		Prefabs/TalentMaterial/TalentMaterialPurchaseDialog.prefab		0	0	0	bgm_action	1		1						
+2550	钓鱼主界面	UIFishPoolGoFishingDialog		Prefabs/FishPool/FishPoolGoFishingDialog.prefab		1	1	1	bgm_city	1	4198002;4198001	1						
+2551	钓鱼等级界面	UIFishPoolLevelOfFishDialog		Prefabs/FishPool/FishPoolLevelOfFishDialog.prefab		0	0	0	bgm_city	1		1						
+2552	钓鱼入口界面	UIFishPoolMainDialog		Prefabs/FishPool/FishPoolMain.prefab	1099;fishing_index.html	1	1	1	bgm_city	0		1	钓鱼场	釣魚場	Fishery	釣り場	낚시터	บ่อตกปลา
+2553	钓鱼公告界面	UIFishPoolNoticePopupDialog		Prefabs/FishPool/FishPoolNoticePopup.prefab		0	0	0	bgm_city	1		1						
+2554	钓鱼结算界面	UIFishHarvestDisPlayPopupDialog		Prefabs/FishPool/FishHarvestDisPlayPopup.prefab		0	0	0	bgm_city	1		1						
+2555	钓鱼背包商店界面	UIFishPoolStoreBackPackPopupDialog	3	Prefabs/FishPool/FishPoolStoreBackPackPopup.prefab	背包	1	1	1	bgm_city	1		1	背包	背包	Inventory	バッグ	인벤토리	กระเป๋า
+2556	钓鱼鱼篓界面	UIFishPoolCreelDialog		Prefabs/FishPool/FishPoolCreelDialog.prefab	鱼篓	1	1	0	bgm_city	1		1	鱼篓	魚簍	Junket	魚籠	통발	ตระกร้าปลา
+2557	钓鱼图鉴界面	UIFishPoolFishAltasDialog	2	Prefabs/FishPool/FishPoolFishAltas.prefab	图鉴	1	1	0	bgm_city	1		1	图鉴	圖鑑	Gallery	図鑑	도감	สมุดภาพ
+2558	钓鱼挂机界面	UIFishPoolHangUpDialog		Prefabs/FishPool/FishPoolHangUpDialog.prefab	托管	1	1	0	bgm_city	1		1	托管	託管	Auto	依頼	의뢰	มอบหมาย
+625	战中卡牌吞噬界面	UIBattlingEatCard	3	Prefabs/UIBattling/UIBattlingEatCard.prefab		0	0	0	0	1		1						
+2570	夜巡入口界面	PatrolEntryDialog	2	Prefabs/Patrol/PatrolEntryDialog.prefab	html	1	1	1	bgm_action	1		1	夜间巡逻	夜間巡邏	Nightly Patrol	夜間パトロール	야간 순찰	ลาดตระเวนยามราตรี
+2571	夜间夜巡补给商店	UIPatrolMazeStoreEventDialog	2	Prefabs/Patrol/PatrolStoreEventDialog130201.prefab	1	1	0	1	0	0		1	补给商店	補給商店	Supply Shop	補給ショップ	보급 상점	ร้านค้าเสบียง
+2572	夜巡助战选择界面	PatrolHelpSelectDialog	2	Prefabs/Patrol/PatrolHelpSelectDialog.prefab	助战邀请	1	1	1	bgm_action	1		1	助战邀请	助戰邀請	Invite	キズナ請求	서포터 초대	คำเชิญช่วยเหลือ
+2573	夜巡商店界面	PatrolStoreEventDialog	2	Prefabs/Patrol/PatrolStoreEventDialog.prefab		1	1	1	bgm_action	1		1						
+2574	夜巡剧情界面	PatrolPlotDialog	2	Prefabs/Patrol/PatrolPlotDialog.prefab	休息点	1	1	1	bgm_action	1		1	突发事件	突發事件	Emergency	突発事件	돌발 사건	เหตุการณ์ฉุกเฉิน
+2575	夜巡事件弹窗界面	UIPatrolMazeQuestEventDialog	2	Prefabs/Patrol/ChoiceEventDialog130201.prefab	html	1	0	1	0	0		1	夜间巡逻	夜間巡邏	Nightly Patrol	夜間パトロール	야간 순찰	ลาดตระเวนยามราตรี
+2576	夜巡BUFF选择界面	UIPatrolMazeBuffChooseDialog	2	Prefabs/Patrol/BuffChooseDialog130201.prefab		0	0	0	0	0		1						
+2577	夜巡左侧背包buff小队预览界面	PatrolBtnLeftNodeDialog	2	Prefabs/Patrol/PartolBtnLeftNode.prefab		0	0	0	bgm_action	1		1						
+2578	夜巡道具选择指定角色使用界面	PatrolChooseRolePopup	2	Prefabs/Patrol/PatrolChooseRolePopup.prefab		0	0	0	bgm_action	1		1						
+3001	触发礼包界面	TriggerGiftBag		Prefabs/TriggerGiftBag/TriggerGiftBag.prefab		0	0	0	0	1		1						
+2580	点单界面	UIMainInteractionOrderDialog		Prefabs/MainInteraction/MainInteractionOrder.prefab	邀请	1	1	1	0	0		1	邀请	邀請	Invite	招待	초대	เชิญ
+2581	战斗料理界面	UIMainInteractionCookingMenuDialog		Prefabs/MainInteraction/MainInteractionCookingMenu.prefab	料理	1	1	1	0	0		1	料理	料理	Food	料理	요리	อาหาร
+2582	关卡战斗料理界面	UIChooseCookingPopupDialog		Prefabs/FightTeam/ChooseCookingPopupDialog.prefab		1	1	0	0	1		1						
+2583	好感度展示界面	UIMainInteractionFeelingDialog		Prefabs/MainInteraction/MainInteractionFeeling.prefab		0	0	0	0	0		1						
+2584	钓鱼的通用获得奖励界面	UICommonGetRewardsDialog		Prefabs/Common/CommonUnexpectedHarvestPopup.prefab		0	0	0	0	1		1						
+2222	新抽卡过场动画	GachaponGuideAnim	2	Prefabs/Gachapon/GachaponGuide.prefab		0	0	0	0	1		1						
+2224	新抽卡结果2d	GachaponResultViewNew	2	Prefabs/Gachapon/GachaponResultViewNew.prefab		0	0	1	0	1		1						
+2227	新抽卡结果2d_光暗卡池	GachaponResultViewSpecial	2	Prefabs/Gachapon/GachaponResultViewSpecial.prefab		0	0	1	0	1		1						
+626	战中卡牌抉择界面	UIBattlingPickCard	3	Prefabs/UIBattling/UIBattlingPickCard.prefab		0	0	0	0	1		1						
+627	战中卡牌发现界面	UIBattlingDiscoverCard	3	Prefabs/UIBattling/UIBattlingDiscoverCard.prefab		0	0	0	0	1		1						
+2590	新手礼包购买界面	CommonGiftBagPurchaseDialog	2	Prefabs/BeginnerEvent/BeginnerEventGiftBagPurchaseDialog.prefab		0	0	1	0	1		1						
+3713	猫屋培育完成界面	CatHouseCultivationGetCatPopup		Prefabs/CatHouse/Cultivation/CatHouseCultivationGetCatPopup.prefab		0	0	0	0	1		1						
+2225	新手抽卡查看	GachaponCheckCache		Prefabs/Gachapon/GachaponCheckCache.prefab	1099;save_index.html	0	0	0	0	1		1	查看暂存	查看暫存	Temporary	セーブした結果をチェック	재고 확인	ตรวจสอบ​การ​เก็บ​ชั่วคราว​
+2226	新手暂存确认	GachaponCacheConfirm		Prefabs/Gachapon/CacheSecondConfirmPopUp.prefab		1	1	0	0	1		1						
+2559	钓鱼收藏品界面	UIFshPoolCollectionDialog		Prefabs/FishPool/FshPoolCollectionDialog.prefab	收藏品	1	1	0	bgm_city	1		1	收藏品	收藏品	Collection	コレクション	소장품	ของสะสม
+2560	不走商城的购买界面	UICommonBuyItemDialog	2	Prefabs/Common/CommonBuyItemDialog.prefab		0	0	1	0	1		1						
+2561	钓鱼收藏品获得界面	UIFishPoolGetCollectionPopupDialog		Prefabs/FishPool/FishPoolGetCollectionPopup.prefab		0	0	0	bgm_city	1		1						
+2562	主界面timeline跳过页面	UIMainInteractionSkipDialog		Prefabs/MainInteraction/MainInteractionSkip.prefab		1	1	0	bgm_city	1		1						
+3763	猫球抽卡	MaidCoffeeCatDrawEntryDialog		Prefabs/OverseaManage/OverseaManageCatballDrawEntryDialog.prefab		1	1	1	0	0	4199005;3000003	1						
+3764	猫球抽卡设置	MaidCoffeeCatSettingDialog		Prefabs/OverseaManage/OverseaManageCatballSettingPopup.prefab		1	1	0	0	1		1						
+3765	猫球抽卡概率	MaidCoffeePreviewRateDialog		Prefabs/OverseaManage/OverseaManageCatballDrawMember.prefab		1	1	0	0	1		1						
+3766	猫球抽卡结果	MaidCoffeeCatDrawPreviewDialog		Prefabs/OverseaManage/OverseaManageCatballDisplayDialog.prefab		1	1	0	0	1		1						
+2528	活动单奖励界面	SingleSignPanel		Prefabs/Activity/SingleSignPanel.prefab		0	0	0	0	1		1						
+2565	木桩主界面	TrainFieldChooseModeDialog	2	Prefabs/TrainField/TrainFieldChooseModeDialog.prefab		1	1	0	0	1		1						
+2566	木桩排行榜界面	TrainFieldRankDialog		Prefabs/TrainField/TrainFieldRankDialog.prefab		1	1	0	0	1		1						
+2567	木桩测试记录界面	TrainFieldTestRecordDialog		Prefabs/TrainField/TrainFieldTestRecordDialog.prefab		1	1	0	0	1		1						
+629	木人桩属性切换界面	TrainFieldChooseAttributePopup	3	Prefabs/UIBattling/TrainField/TrainFieldChooseAttributePopup.prefab		0	0	0	0	1		1						
+863	每日礼包	StoreDailyGiftBag		Prefabs/Store/StoreDailyGiftBag.prefab		0	0	1	0	1		1	每日礼包	每日禮包	Daily Pack	デイリーパック	데일리 패키지	แพ็กรายวัน
+864	二级货币兑换	StoreDiamondExchangeDialog	3	Prefabs/Store/StoreExchangeOpals.prefab		0	0	1	0	1		1						
+630	新手任务完成	UIBattlingTrainingTargetFinishDialog	3	Prefabs/UIBattling/UIBattlingTrainingTargetFinishDialog.prefab		0	0	0	0	1		1						
+150	通用武装风格展示界面	CommonStylePreView		Prefabs/Common/CommonStylePreview.prefab		1	1	0	0	1		1						
+2529	活动召回分享	ActivityRecallShareDialog	2	Prefabs/Activity/ShareActivityBackPanel.prefab		1	1	0	0	1		1						
+2535	漂流瓶	UIFishPoolDriftingBottleDialog		Prefabs/FishPool/FishPoolDriftingBottleDialog.prefab		0	0	0	0	1		1						
+3775	角色剧情	UIPolePlotListDialog	2	Prefabs/RolePlot/PolePlotListDialog.prefab		1	1	0	0	0		1						
+3776	角色剧情章节奖励	UIPolePlotEndRewardPopupDialog	2	Prefabs/RolePlot/PolePlotEndRewardPopup.prefab		0	0	0	0	1		1						
+3778	角色剧情cg展示	UIPolePlotCGEndingDialog	2	Prefabs/RolePlot/PolePlotCGEndingDialog.prefab		0	0	0	0	1		1						
+3777	角色剧情cg收集	UIPolePlotCGCollectPopupDialog	2	Prefabs/RolePlot/PolePlotCGCollectPopup.prefab		0	0	0	0	1		1						
+6231	个人信息选择卡牌	Player2DMemberChooseDialog	2	Prefabs/PlayerNew/Player2DMemberChooseDialog.prefab		1	1	0	0	0		1						
+6230	个人信息头像选择	Player2DHeadChooseDialog	1	Prefabs/PlayerNew/Player2DHeadChooseDialog.prefab		1	1	0	0	0		1						
+2598	个人信息主界面	Player2DMainDialog	2	Prefabs/PlayerNew/Player2DMainDialog.prefab		0	0	0	0	0		1						
+3900	预下载主界面	PreDownloadEntryMainDialog	1	Prefabs/PreDownload/PredownloadEntryMainDialog.prefab		0	0	0	0	1		1						
+3905	预下载猫球分享界面	PreDownloadCatShareDialog	2	Prefabs/PreDownload/PredownloadCatDiscoverDialog.prefab		1	1	0	0	1		1						
+3906	预下载猫球显示界面	PreDownloadCatDisplayDialog		Prefabs/PreDownload/PredownloadCatDisplayDialog.prefab		1	1	0	0	1		1						
+3907	预下载下载进度显示界面	PreDownloadLoadHintDialog	3	Prefabs/PreDownload/PredownloadLoadHintDialog.prefab		0	0	0	0	0		1						
+151	通用分享预览弹窗	CommonSharePreviewDialog	3	Prefabs/Common/CommonShareDialog.prefab		0	0	0	0	0		1						
+2630	中型pt活动主页	MediumPtMainDialog	2	Prefabs/MediumPt/MediumPtMainDialog.prefab		1	1	1	0	1		1						
+2631	中型pt活动最终奖励预览	MediumPtRewardDialog	3	Prefabs/MediumPt/MediumPtRewardDialog.prefab		0	0	1	0	1		1						
+2632	中型pt活动剧情解锁	MediumPtUnlockDialog	3	Prefabs/MediumPt/MediumPtUnlockDialog.prefab		0	0	1	0	1		1						
+2633	中型pt活动关卡选择	MediumPtClearChooseDialog	3	Prefabs/MediumPt/MediumPtClearChooseDialog.prefab		1	1	1	0	1		1						
+2634	中型pt活动累计点数奖励	CommonActivityListDialog	3	Prefabs/Common/CommonActivityListDialog.prefab		1	1	0	0	1		1						
+2801	自选礼包	OptionalGiftSelectDialog		Prefabs/HomeGift/GiftSelectDialog.prefab		0	0	0	0	1		1						
+2802	自选礼包奖励	OptionalGiftSelectRewardDialog		Prefabs/HomeGift/GiftSelectRewardDialog.prefab		0	0	0	0	1		1						
+2803	停服公告界面	LoginStopServices	2	Prefabs/LoginStopService.prefab		0	0	0	0	0		1						
+2805	登录奖励	FeatureSignDialog	2	Prefabs/DailyCheck/ThankChooseGiftWhite.prefab		0	0	0	0	1		1						
+2806	登录信件	FeatureSignLetter	3	Prefabs/DailyCheck/ThankLetter.prefab		0	0	0	0	0		1						
+2807	登录吐槽	FeatureSignRoast	3	Prefabs/DailyCheck/ThankLetterFillPopUp.prefab		0	0	0	0	0		1						
+2804	支付loading	UINetWorkPlaying	3	Prefabs/NetWorkPaying.prefab		0	0	0	0	0		1						
+2810	音乐播放器	MusicPlayerDialog	1	Prefabs/MusicPlayer/MusicPlayerDialog.prefab		1	1	0	0	1		1						
+2640	天梯竞技-兑换	LadderCompetionExchangeOpals	2	Prefabs/LadderCompetion/LadderCompetionExchangeOpals.prefab		0	0	1	0	0	3000002	1						
+2641	天梯竞技-主界面	LadderCompetionMainDialog	2	Prefabs/LadderCompetion/LadderCompetionMain.prefab	html	1	1	1	0	0		1	天梯竞技场	天梯競技場	The Arena	アリーナランク戦	래더 아레나	สกายอารีน่า
+2642	天梯竞技-排行榜	LadderCompetionRankDialog	2	Prefabs/LadderCompetion/LadderCompetionRankDialog.prefab		1	1	0	0	0		1						
+2643	天梯竞技-奖励界面	LadderCompetionSeasonRewardDialog	2	Prefabs/LadderCompetion/LadderCompetionSeasonRewardDialog.prefab		1	1	0	0	0		1						
+2644	天梯竞技-任务界面	LadderCompetionTaskRewardDialog	2	Prefabs/LadderCompetion/LadderCompetionTaskRewardDialog.prefab		0	0	0	0	0		1						
+2645	天梯竞技-段位升级	LadderCompetionDanAnimDialog		Prefabs/LadderCompetion/LadderCompetionDanAnim.prefab		0	0	0	0	1		1						
+2646	天梯竞技-匹配加载	LadderCompetionLoadingDialog		Prefabs/LadderCompetion/LadderCompetionLoadingDialog.prefab		0	0	0	0	1		1						
+2647	天梯竞技-匹配中	LadderCompetionMatchDialog		Prefabs/LadderCompetion/LadderCompetionMatchDialog.prefab		0	0	0	0	0		1						
+2648	天梯竞技-赛季结算	LadderCompetionSeasonSettlementDialog		Prefabs/LadderCompetion/LadderCompetionSeasonSettlementDialog.prefab		0	0	0	0	0		1						
+2649	天梯竞技-对战记录	LadderCompetionBattleRecordDialog		Prefabs/LadderCompetion/LadderCompetionBattleRecordDialog.prefab		1	1	0	0	0		1						
+2699	pvp猜拳先后手界面	PvpFingerGuessingDialog		Prefabs/FingerGuess/FingerGuessDialog.prefab		0	0	0	0	0		1						
+2660	钓鱼排行榜	UIFishpoolActivityRankDialog		Prefabs/FishPool/FishpoolActivityRankDialog.prefab		1	1	0	0	0		1						
+2661	钓鱼排行榜奖励	UIFishPoolActivityRankRewardDialog		Prefabs/FishPool/FishPoolActivityRankRewardDialog.prefab		0	0	0	0	0		1						
+2662	钓鱼积分奖励	UIFishPoolContestRewardsPopupDialog		Prefabs/FishPool/FishPoolContestRewardsPopup.prefab		0	0	0	0	0		1						
+2663	钓鱼兑换	UIFishPoolRedeemFishingCouponsPopupDialog		Prefabs/FishPool/FishPoolRedeemFishingCouponsPopup.prefab		0	0	0	0	0		1						
+2664	钓鱼选择道具	UIFishPoolChooseFishingCouponPopupDialog		Prefabs/FishPool/FishPoolChooseFishingCouponPopup.prefab		0	0	0	0	0		1						
+2670	暗夜猫爬塔	UINightCatITowerDialog	2	Prefabs/NightCatInstance/NightCatITowerDialog.prefab	侵蚀空间	1	1	1	0	0		1	侵蚀空间	侵蝕空間	Erosion Space	侵食空間	침식 공간	มิติกัดกร่อน
+2671	暗夜猫爬塔奖励	UINightCatIToweRewardPopupDialog		Prefabs/NightCatInstance/NightCatIToweRewardPopup.prefab		0	0	1	0	0		1						
+2672	暗夜猫buff	UINightCatInstanceBuffDisplayDialog		Prefabs/NightCatInstance/NightCatInstanceBuffDisplayDialog.prefab	增益道具	1	1	1	0	0		1	增益道具	增益道具	Power-ups	ボーナスアイテム	버프 아이템	ไอเทมบัฟ
+2681	暗夜猫主界面	ActivityNightCatDialog	2	Prefabs/NightCatInstance/NightCatInstanceMainDialog.prefab		1	1	1	0	0		1						
+2682	暗夜猫关卡界面	ActivityNightCatPlotDialog	2	Prefabs/NightCatInstance/NightCatPlotDialog.prefab		1	1	1	0	0		1						
+2691	Boss挑战主界面	ActivityBossChallengeDialog	2	Prefabs/BossFight/BossFightDialog.prefab	html	1	1	0	0	0		1	紧急封锁	緊急封鎖	Emergency Lockdown	緊急封鎖	긴급 봉쇄	ปิดล้อมฉุกเฉิน
+2692	Boss挑战击杀奖励界面	ActivityBossChallengeRewardDialog	2	Prefabs/BossFight/BossFightKillRewardPopup.prefab		0	0	0	0	0		1						
+2693	Boss挑战难度选择界面	ActivityBossChallengeDifficultyDialog	2	Prefabs/BossFight/DifficultyLevelChooseDialog.prefab		0	0	0	0	0		1						
+2650	高端副本	AdvancedTrainingDialog	2	Prefabs/AdvancedTraining/AdvancedTrainingDialog.prefab		1	1	0	0	0		1						
+2694	广告界面 	UIHomeAdvertDialog		Prefabs/AdvertDialog.prefab		0	0	0	0	0		1						
+2695	广告集合	UIHomeGatherActivityDialog		Prefabs/RoleStage/RoleStageMain.prefab		1	1	0	0	0		1						
+2697	钓鱼任务	UIFishPoolActivityTaskDialog		Prefabs/FishPool/FishPoolActivityTaskDialog.prefab		0	0	0	0	0		1						
+2698	钓鱼兑换	FishPoolActivityFeedDialog		Prefabs/FishPool/FishPoolActivityFeedDialog.prefab		0	0	0	0	0		1						
+2900	万圣节挑战入口	UIJackpotDungoenChallengeDialog		Prefabs/JackpotDungoen/Challenge/JackpotDungoenChallenge1209.prefab		1	1	1	0	0		1						
+2910	万圣节奖池	UIJackpotDungoenExchangeDialog		Prefabs/JackpotDungoen/Exchange/JackpotDungoenExchangeDialog1209.prefab		1	1	1	0	0		1						
+2920	万圣节主界面	UIJackpotDungoenMainDialog		Prefabs/JackpotDungoen/Main/JackpotDungoenMainDialog1209.prefab		1	1	1	0	0		1						
+2930	万圣节剧情	UIJackpotDungoenReviewDialog		Prefabs/JackpotDungoen/Review/JackpotDungoenReviewDialog.prefab		0	0	0	0	0		1						
+4000	福利	UIWelfareMainDialog	2	Prefabs/Welfare/WelfareMainDialog.prefab	福利	1	1	1	0	1		1	福利	福利	Benefits	ボーナス	보너스	สวัสดิการ
+2940	钓鱼自动结束	UIFishPoolAutoSettlementDialog		Prefabs/FishPool/FishPoolAutoSettlementDialog.prefab		0	0	0	0	0		1						
+2941	钓鱼自动设置	UIFishPoolAutoChooseFrequencyDialog		Prefabs/FishPool/FishPoolAutoChooseFrequencyDialog.prefab		0	0	0	0	0		1						
+3010	春节活动对应的场景	UISceneMapDecryption		Scenes/MooncitySceneEnter.unity		0	0	0	0	1		2						
+3011	春节活动主界面	MapDecryptionHomeView	1	Prefabs/SpringFestival121401/SpringFestivalHomeView.prefab		0	0	0	0	0		1						
+3012	春节探索或追踪界面	MapDecryptionExploreTracking	1	Prefabs/SpringFestival121401/SpringFestivalExploreTracking.prefab		1	0	0	0	0		1						
+3013	春节事件结果界面	MapDecryptionEventResultPopup	1	Prefabs/SpringFestival121401/SpringFestivalEventResultPopup.prefab		0	0	0	0	0		1						
+3014	春节古物修复界面	MapDecryptionAntiqueRestorationDialog	1	Prefabs/SpringFestival121401/SpringFestivalAntiqueRestoration.prefab		1	0	0	0	0		1						
+3015	春节转盘界面	MapDecryptionRotaryTableDialog	1	Prefabs/SpringFestival121401/SpringFestivalTurntableDialog.prefab		1	0	0	0	0		1						
+3016	春节常服界面	MapDecryptionClothesDialog	1	Prefabs/SpringFestival121401/SpringFestivalClothesDialog.prefab		1	0	0	0	0		1						
+3017	春节商店界面	MapDecryptionStoreDialog	1	Prefabs/SpringFestival121401/SpringFestivalStoreDialog.prefab		1	0	1	0	0	9000023	1						
+3018	春节红包界面	MapDecryptionRedBagDialog	1	Prefabs/SpringFestival121401/SpringFestivalStoreRedBagPopup.prefab		1	0	0	0	0		1						
+3019	春节PC提示界面	MapDecryptionPCTipsDialog	1	Prefabs/SpringFestival121401/SpringFestivalPcTipsPopup.prefab		1	0	0	0	0		1						
+3020	春节2D迷宫UI界面	MapDecryption2DMazeUI	1	Prefabs/SpringFestival121401/Springfestival2DMazeUI.prefab		0	0	0	0	0		1						
+3030	限时兑换界面弹窗	ActivityLimitFlashSaleExchangePopup	1	Prefabs/Activity/LimitFlashSaleExchangePopup140001.prefab		0	0	0	0	0		1						
+2942	感恩节PK	CHOOSE_ROLE	2	Prefabs/Thanksgiving/ThanksgivingChooseRoleDialog121301.prefab		1	1	0	0	0		1						
+2943	感恩节PK	MAIN_DIALOG	2	Prefabs/Thanksgiving/ThanksgivingMainDialog121301.prefab	html	1	1	0	0	0		1	星辉熠然	星輝熠然	Starshine Splendor	輝くスターたち	샤이닝 스타라이트	ประกายดาราจรัสฟ้า
+2944	感恩节PK	TASK_DRAW	2	Prefabs/Thanksgiving/ThanksgivingTaskDialog121301.prefab		0	0	0	0	0		1						
+2945	感恩节PK	POINT_DRAW	2	Prefabs/Thanksgiving/ThankgivingFlowerRewardDialog121301.prefab		0	0	0	0	0		1						
+2946	感恩节PK	RANKING_LOOK	2	Prefabs/Thanksgiving/ThanksgivingRankingsDialog121301.prefab		1	1	0	0	0		1						
+2947	感恩节PK	RANKING_LOOK_REWARD	2	Prefabs/Thanksgiving/ThanksgivingRankRewardDialog121301.prefab		0	0	0	0	0		1						
+2948	感恩节PK	PK_RESULT	2	Prefabs/Thanksgiving/ThanksgivingPKResultDialog121301.prefab		0	0	0	0	0		1						
+2950	翻牌活动任务弹窗	ActivityTurnOverCardsTaskPopup	2	Prefabs/Activity/ActivityTurnOverCardsTaskPopup.prefab		0	0	0	0	0		1						
+2955	冰雪节主界面	SnowFestivalMainDialog	2	Prefabs/SnowFestival/SnowFestivalMainDialog121501.prefab		1	1	0	0	0		1						
+2956	冰雪节章节弹窗	SnowFestivalChapterPopDialog	2	Prefabs/SnowFestival/SnowFestivalChapterPopDialog121501.prefab		0	0	0	0	0		1						
+2957	冰雪节剧情回顾	SnowFestivalPlotReviewDialog	2	Prefabs/SnowFestival/SnowFestivalPlotReviewDialog121501.prefab		0	0	0	0	0		1						
+2958	冰雪节积分任务	SnowFestivalScoreTaskDialog	2	Prefabs/SnowFestival/SnowFestivalScoreTaskDialog121501.prefab		1	1	0	0	0		1						
+3080	送信	UIActivityRoleLettersDialog	1	Prefabs/Activity/ActivityRoleLetters.prefab		0	0	0	0	0		1						
+3081	十选一	GachaponNumberOfRoundsDialog		Prefabs/Gachapon/GachaponResultNewPlayer.prefab		0	0	0	0	0		1						
+3082	抽卡:海外自选卡池弹窗	GachaponDIYCardSelectPopup	3	Prefabs/Gachapon/GachaponDIYCardSelectPopup.prefab		0	0	0	0	0		1						
+3083	抽卡友情卡池结果弹窗	GachaponFriendshipResultDialog	3	Prefabs/Gachapon/GachaponFriendshipResultDialog.prefab		0	0	0	0	0		1						
+3130	主线地图	UIActionPrimaryMapDialog		Prefabs/Action/ActionPrimaryMapDialog.prefab		1	1	0	0	0		1						
+631	战力比拼	UIBattlingRivalDialog	3	Prefabs/UIBattling/UIBattlingRivalDialog.prefab		0	0	0	0	0		1						
+3060	猫球选人界面	CatBallChooseCardsDialog	2	Prefabs/FightTeam/CatballChooseCardsDialog.prefab	猫球编队	1	1	0	0	1		1	猫球编队	貓球編隊	Cato Formation	ガト編成	냥냥볼 편성	จัดทีมแคทบอล
+3061	猫球养成界面	CatBallCultivateDialog	3	Prefabs/OverseaManage/OverseaManageCatballCultivateDialog.prefab	猫球	1	1	1	0	0		1	猫球详情	貓球詳情	Details	ガト詳細	냥냥볼 정보	รายละเอียดแคทบอล
+3062	猫球养成升星成功界面	CatBallCultivateStarUpSuccess		Prefabs/OverseaManage/OverseaManageCatballStarupSuccess.prefab		1	1	0	0	0		1						
+3063	猫球养成入口界面	CatBallDrawEntryDialog	2	Prefabs/OverseaManage/OverseaManageCatballDrawEntryDialog.prefab	猫球列表	1	1	1	0	0		1	猫球列表	貓球列表	List	ガト	냥냥볼 리스트	รายชื่อแคทบอล
+3064	猫球养成合成界面	CatBallExchangePopup		Prefabs/OverseaManage/OverseaManageCatballExchangePopup.prefab		0	0	1	0	0		1						
+3065	猫球养成抽卡成功界面	CatBallDrawResultDialog	2	Prefabs/OverseaManage/OverseaManageCatballDrawResultDialog.prefab		0	0	0	0	0		1						
+3066	猫球养成抽卡概率界面	CatBallDrawMember	2	Prefabs/OverseaManage/OverseaManageCatballDrawMember.prefab		1	1	0	0	0		1						
+3067	猫球标识介绍	CatBallAttributeIconPreview	2	Prefabs/OverseaManage/OverseaManageCatballAttributeIconPreview.prefab		1	1	0	0	0		1						
+3084	咖啡店进入场景	UIMaidCoffeeEnterScene		Scenes/MaidCoffeeSceneEnter.unity		1	1	0	bgm_world_boss	1		2						
+3070	咖啡店休息室主界面	OverManegeLoungeMainDialog		Prefabs/OverseaManage/OverManegeLoungeMainDialog.prefab		1	1	0	0	0		1						
+3072	咖啡店休息室抚摸界面	OverManegeLoungeStrokeDialog		Prefabs/OverseaManage/OverManegeLoungeStrokeDialog.prefab		1	1	0	0	0		1						
+3085	咖啡店主界面	UIMaidCoffeeMainDialog		Prefabs/OverseaManage/OverseaManageMainDialog.prefab		1	0	1	0	0		1						
+3086	咖啡店营业界面	UIMaidCoffeeManagerDialog		Prefabs/OverseaManage/OverseaManageMainSecondDialog.prefab		1	1	1	0	0	3000003;3000016	1						
+3087	咖啡店报表界面	UIMaidCoffeeStatementDialog	3	Prefabs/OverseaManage/OSManageOperateStatementDialog.prefab		1	1	1	0	0	3000003;3000016	1						
+3088	咖啡店猫球选择界面	UIMaidCoffeeCatBallDialog	2	Prefabs/OverseaManage/OverseaManagePersonnelCatballDialog.prefab		1	1	0	0	0		1						
+3089	咖啡店料理主界面	UIMaidCoffeeCookingMainDialog	2	Prefabs/OverseaManage/OverseaManageCookingListMainDialog.prefab		1	1	0	0	0		1						
+3090	咖啡店人员管理主界面	UIMaidCoffeePersonMainDialog		Prefabs/OverseaManage/OverseaManagePersonnelMainDialog.prefab		1	1	0	0	0		1						
+3091	咖啡店人员选择界面	UIMaidCoffeePersonSelectDialog	2	Prefabs/OverseaManage/OverseaManagePersonnelRoleDialog.prefab		1	1	0	0	0		1						
+3101	咖啡店人员管理猫球电量弹出	UIMaidCoffeePersonChargeDialog	2	Prefabs/OverseaManage/OverseaManagePersonnelChargePopup.prefab		0	0	0	0	0		1						
+3131	区域商店	UIActionCityStoreDialog		Prefabs/Action/ActionCityStoreDialog.prefab		1	1	1	0	0		1						
+3132	区域二级地图	UIActionSecondMapDialog		Prefabs/Action/ActionSecondMapDialog.prefab		1	1	0	0	0		1						
+3133	区域副本集合页	UIActionDungoenCollectionDialog		Prefabs/Action/ActionDungoenCollectionDialog.prefab		1	1	0	0	0		1						
+3103	开格子活动补给站	OpenGridActivityDepotShop	2	Prefabs/Activity/ActivityOpenLatticeSupplyDialog1110.prefab		0	0	1	0	0		1						
+3104	开格子任务界面	OpenGridActivityTask	2	Prefabs/Activity/ActivityOpenLatticeTaskDialog1110.prefab		0	0	1	0	0		1						
+3105	开格子活动兑换商店	OpenGridActivityShop	2	Prefabs/Activity/ActivityOpenLatticeStoreDialog1110.prefab		0	0	1	0	0		1						
+3106	开格子活动奖励预览	OpenGridRewardPopup	2	Prefabs/Activity/ActivityOpenLatticeRewardPopup1110.prefab		0	0	1	0	0		1						
+3134	区域材料三级副本	UIActionPointMapDialog		Prefabs/Action/ActionPointMapDialog.prefab		1	1	1	0	0		1						
+3201	海外装备回收界面	CultivateOverseaEquipmentReclaimDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentReclaimDialog.prefab	装备分解html	1	1	1	0	1		1	装备分解	裝備分解	Salvage	装備分解	장비 분해	แยกส่วนอุปกรณ์
+3202	海外装备升级界面	CultivateOverseaEquipmentUpgradeDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentUpgradeDialog.prefab		0	0	1	0	0		1						
+3203	海外装备升星界面	CultivateOverseaEquipmentStarRiseDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentStarRiseDialog.prefab		0	0	1	0	0		1						
+3204	海外装备洗练界面	CultivateOverseaEquipmentClearDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentClearDialog.prefab		0	0	1	0	0		1						
+3205	海外养成升级成功弹窗	CultivateLevelUpSecondConfirmPanel	2	Prefabs/CultivateOversea/CultivateLevelUpSecondConfirmPanel.prefab		0	0	0	0	1		1						
+3206	海外装备主界面套装筛选弹出窗口	CultivateOverseaEquipmentSuitFilterDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentSuitFilterDialog.prefab		0	0	0	0	1		1						
+3207	海外装备属性详情界面	CultivateOverseaEquipAttributePreview		Prefabs/CultivateOversea/CultivateOverseaEquipAttributePreview.prefab		0	0	0	0	0		1						
+3208	海外装备升阶界面	CultivateOverseaEquipmentLadderRiseDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentLadderRiseDialog.prefab		0	0	1	0	0		1						
+3209	海外装备升阶强化界面	CultivateOverseaEquipmentLadderUpgradeDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentLadderUpgradeDialog.prefab		0	0	1	0	0		1						
+3211	海外装备重铸界面	CultivateOverseaEquipmentReforgeDialog		Prefabs/CultivateOversea/CultivateOverseaEquipmentReforgeDialog.prefab		0	0	1	0	0		1						
+3135	区域好感度提升	UIActionImpressionDialog		Prefabs/Action/ActionImpressionDialog.prefab		0	0	0	0	0		1						
+3092	咖啡店菜单设置界面	UIMaidCoffeeMenuSettingDialog	0	Prefabs/OverseaManage/OverseaManageMenuSettingDialog.prefab		1	1	1	0	0	3000003	1						
+3093	咖啡店料理制作奖励	UIMaidCoffeeCookingPopDialog	2	Prefabs/OverseaManage/OverseaManageCookingListPopupDialog.prefab		0	0	0	0	0		1						
+3098	咖啡店外卖页面	UIMaidCoffeeTakeoutDialog	3	Prefabs/OverseaManage/OverseaManageTakeoutDialog.prefab		1	1	1	0	0	3000018	1						
+3023	外卖弹出层页面	UIMaidCoffeeTakeoutPopupDialog	3	Prefabs/OverseaManage/OverseaManageTakeoutRegionPopup.prefab		1	1	0	0	0		1						
+3024	vip订单页面	TakeoutVipOrderDialog	2	Prefabs/OverseaManage/OverseaManageVipOrderDialog.prefab		1	1	1	0	0	3000002;3000016	1						
+3025	vip订单提示	OverseaManageVipOrderTips	2	Prefabs/OverseaManage/OverseaManageVipOrderTips.prefab		1	1	1	0	0		1						
+3026	外卖车队页面	OverseaManageTakeoutTipsPopUp	3	Prefabs/OverseaManage/OverseaManageTakeoutTipsPopUp.prefab		1	1	0	0	0		1						
+3136	区域boss战集合	UIActionBossCollectionDialog		Prefabs/Action/ActionBossCollectionDialog.prefab		1	1	0	0	0		1						
+3137	区域boss战集合入口弹窗	UIActionBossCollectionBossPopupDialog		Prefabs/Action/ActionBossCollectionBossPopup.prefab		0	0	0	0	0		1						
+3138	区域boss战集合难度弹窗	UIActionBossCollectionDestoryPopupDialog		Prefabs/Action/ActionBossCollectionDestoryPopup.prefab		0	0	0	0	0		1						
+3094	咖啡店升级页面	UIMaidCoffeeCattyMain	2	Prefabs/OverseaManage/OverseaManageCafeCattyDialog.prefab		1	1	1	0	0	3000003	1						
+3096	咖啡店签名页面	UIMaidCoffeeCattySign	2	Prefabs/OverseaManage/OverseaManageCafeCattyLetterDialog.prefab		0	0	0	0	0		1						
+3097	咖啡店星星提示页面	UIMaidCoffeeCattyStarTip	2	Prefabs/OverseaManage/OverseaManageCafeCattyStarTips.prefab		0	0	1	0	0		1						
+3099	咖啡店排行榜	UIMaidCoffeeCattyRank	2	Prefabs/OverseaManage/OverseaManageCafeCattyRankingsDialog.prefab		1	1	0	0	0		1						
+4010	咖啡店排行榜	UIMainChapterSideLinePopupDialog		Prefabs/MainChapter/MainChapterSideLinePopup.prefab		0	0	0	0	0		1						
+3139	sp副本首页	UIActionSPMapDialog		Prefabs/Action/ActionSPMapDialog.prefab		1	1	0	0	0		1						
+3231	梦空间关卡1进入场景	UIDreamSpaceLvl1SceneEnter	3	Scenes/DreamSpaceLvl1SceneEnter.unity		1	1	0	bgm_world_boss	1		2						
+3140	区域组队场景	AnnihilationTeamEntry		Scenes/RegionTeamEnter.unity		1	1	0	0	1		2						
+3141	区域组队	UIActionTeamDestoryDialog		Prefabs/Action/ActionTeamDestoryDialog.prefab		1	0	0	0	0		1						
+3142	区域邀请	UIActionTeamInvitePopupDialog	2	Prefabs/Action/ActionTeamInvitePopup.prefab		0	0	0	0	0		1						
+3143	PC提示	UICommonPcTip		Prefabs/Common/InputPcTipsPopup.prefab		0	0	0	0	0		1						
+3145	区域奖励	UIActionPointMapDropMessagePopUpDialog	2	Prefabs/Action/ActionPointMapDropMessagePopUp.prefab		0	0	0	0	0		1						
+3251	杂货铺主页	GroceryDialog	2	Prefabs/OverseaStore/OverseaStoreEntryDialog.prefab		1	1	1	0	0		1						
+3252	杂货铺装备卡池预览	GroceryEquipmentPreviewDialog	3	Prefabs/OverseaStore/OverseaStoreEquipDrawMember.prefab		0	0	0	0	0		1						
+3253	杂货铺装备卡池抽取筛选	GroceryEquipmentCallSettingDialog	3	Prefabs/OverseaStore/OverseaStoreEquipDrawScreen.prefab		0	0	0	0	0		1						
+3254	杂货铺装备卡池结果展示	OverseaStoreEquipDrawResultDialog	2	Prefabs/OverseaStore/OverseaStoreEquipDrawResultDialog.prefab		0	0	1	0	0		1						
+3255	杂货铺装备卡池过场动画	OverseaStoreEquipDrawOpenDialog	2	Prefabs/OverseaStore/OverseaStoreEquipDrawOpenDialog.prefab		0	0	0	0	0		1						
+3256	杂货铺核心兑换	OverseaStoreCoreExchangeDialog	2	Prefabs/OverseaStore/OverseaStoreCoreExchangeDialog.prefab		1	1	1	0	0		1						
+3146	区域邀请	ActionTeamInvitationReceive		Prefabs/Action/ActionTeamInvitationReceive.prefab		0	0	0	0	0		1						
+632	通用托管	CommonHostingDialog	3	Prefabs/Common/CommonDeposit.prefab		0	0	0	0	0		1						
+3147	区域装备合集	UIActionEquipCollectionDialog		Prefabs/Action/ActionEquipCollectionDialog.prefab		1	1	0	0	0		1						
+3148	区域歼灭战入口	ActionPointMapBossDialog	3	Prefabs/Action/ActionPointMapBossDialog.prefab	巨型傀入侵html	1	0	1	0	0		1	协力战	協力戰	Invasion	協同作戦	협력전	ผนึกกำลัง
+3151	福利-订阅-弹窗	ResidentPrivilegeToastPopUp		Prefabs/ResidentEvent/ResidentPrivilegeToastPopUp.prefab		0	0	1	0	1		1						
+3152	限时特惠	SpecialGift	1	Prefabs/OverseaInvest/OverseaContinuousRechargeDialog.prefab		0	0	0	0	1		1						
+3161	异步PVP主界面	LadderStruggleMainDialog	2	Prefabs/LadderSrtruggle/LadderStruggleMainDialog.prefab	幻影斗技场html	1	1	1	0	0		1	幻影斗技场	幻影鬥技場	Phantom Clash	ファントム闘技場	팬텀 투기장	แฟนธอมอารีน่า
+3162	异步PVP编队界面	LadderStruggleFormationDialog	2	Prefabs/LadderSrtruggle/LadderStruggleChooseTeamDialog.prefab	选择队伍	1	1	0	0	0		1	选择队伍	選擇隊伍	Team Selection	チーム選択	팀 선택	เลือกทีม
+3163	异步PVP结算界面	LadderStruggleBattleEndDialog	3	Prefabs/UIBattling/BattleEnd/UIBattleEndPVP.prefab		0	0	0	0	1		1						
+3164	异步PVP快速战斗界面	LadderStruggleBattleAbstractDialog	2	Prefabs/LadderSrtruggle/LadderStruggleResultDialog.prefab		0	0	0	0	1		1						
+3165	异步PVPRank界面	LadderStruggleRankDialog	2	Prefabs/LadderSrtruggle/LadderStruggleRankDialog.prefab	排行榜html	1	1	0	0	0		1	排行榜	排行榜	Leaderboard	ランキング	랭킹	บอร์ดอันดับ
+3166	异步PVPRank奖励预览界面	LadderStruggleRankRewardDialog	2	Prefabs/LadderSrtruggle/LadderStruggleRankRewardDialog.prefab		0	0	0	0	1		1						
+3167	异步PVP对战记录界面	LadderStruggleRecordDialog	2	Prefabs/LadderSrtruggle/LadderStruggleRecordDialog.prefab	对战记录	1	1	0	0	0		1	对战记录	對戰記錄	Battle Records	対戦履歴	대전 기록	บันทึกการต่อสู้
+3168	异步PVP对战记录详情界面	LadderStruggleRecordPopup	2	Prefabs/LadderSrtruggle/LadderStruggleRecordPopup.prefab		0	0	0	0	1		1						
+3169	异步PVP一次性任务奖励界面	LadderStruggleTaskRewardDialog	2	Prefabs/LadderSrtruggle/LadderStruggleTaskRewardDialog.prefab		0	0	0	0	0		1						
+3178	国服周年庆-活动：转盘排行榜	UIActivityRotaryTableRankingsDialog	3	Prefabs/Anniversary/AnniversaryTurntableRankingsDialog.prefab		1	0	0	0	0		1						
+3179	国服周年庆-活动：转盘兑换	UIActivityRotaryTableExchangeDialog	3	Prefabs/Anniversary/AnniversaryTurntableRankRewardPopup122501.prefab		1	0	0	0	0		1						
+3180	国服周年庆-活动:转盘排行奖励	UIActivityRotaryTableRankRewardPopup	3	Prefabs/Anniversary/AnniversaryTurntableRewardPreviewPopup122501.prefab		1	0	1	0	0		1						
+3181	单队异步PVP主界面	LadderStruggleSingleMainDialog	2	Prefabs/LadderSrtruggle/LadderStruggleMainDialog.prefab	幻影斗技场html	1	1	1	0	0		1	幻影特训场	幻影特訓場	Master Duel	ファントム特訓場	팬텀 특훈장	สนามซ้อมแฟนธอม
+3182	单队异步PVP编队界面	LadderStruggleSingleFormationDialog	2	Prefabs/LadderSrtruggleSingle/LadderStruggleSingleChooseTeamDialog.prefab	选择队伍	1	1	0	0	0		1	选择队伍	選擇隊伍	Team Selection	チーム選択	팀 선택	เลือกทีม
+3183	单队异步PVP结算界面	LadderStruggleSingleBattleEndDialog	3	Prefabs/UIBattling/BattleEnd/UIBattleEndPVP.prefab		0	0	0	0	1		1						
+3184	单队异步PVP快速战斗界面	LadderStruggleSingleBattleAbstractDialog	2	Prefabs/LadderSrtruggleSingle/LadderStruggleSingleResultDialog.prefab		0	0	0	0	1		1						
+3185	单队异步PVPRank界面	LadderStruggleSingleRankDialog	2	Prefabs/LadderSrtruggle/LadderStruggleRankDialog.prefab	排行榜html	1	1	0	0	0		1	排行榜	排行榜	Leaderboard	ランキング	랭킹	บอร์ดอันดับ
+3186	单队异步PVPRank奖励预览界面	LadderStruggleSingleRankRewardDialog	2	Prefabs/LadderSrtruggle/LadderStruggleRankRewardDialog.prefab		0	0	0	0	1		1						
+3187	单队异步PVP对战记录界面	LadderStruggleSingleRecordDialog	2	Prefabs/LadderSrtruggle/LadderStruggleRecordDialog.prefab	对战记录	1	1	0	0	0		1	对战记录	對戰記錄	Battle Records	対戦履歴	대전 기록	บันทึกการต่อสู้
+3188	单队异步PVP对战记录详情界面	LadderStruggleSingleRecordPopup	2	Prefabs/LadderSrtruggleSingle/LadderStruggleSingleRecordPopup.prefab		0	0	0	0	1		1						
+3189	单队异步PVP一次性任务奖励界面	LadderStruggleSingleTaskRewardDialog	2	Prefabs/LadderSrtruggle/LadderStruggleTaskRewardDialog.prefab		0	0	0	0	0		1						
+3170	梦境入口	UIActionDreamlandEntryDialog	2	Prefabs/Action/ActionDreamlandEntryDialog.prefab		1	1	0	0	0		1						
+3171	梦境结算	UIActionDreamlandBattleEndNode		Prefabs/Action/ActionDreamlandBattleEndDialog.prefab		1	1	0	0	0		1						
+3172	好感度预览	ActionImpressionFavorabilityDialog		Prefabs/Action/ActionImpressionFavorabilityDialog.prefab		0	0	0	0	0		1						
+3261	海外商城主页	OverseaStore	2	Prefabs/OverseaMall/OverseaMallEntryDialog.prefab		1	1	1	0	0		1						
+3271	海外咖啡厅排行榜奖励	OverseaCattyRankReward	2	Prefabs/OverseaManage/OverseaManageCafeCattyRankRewardDialog.prefab		0	0	0	0	0		1						
+3281	扫荡准备页面	UISweepPrepareDialog	2	Prefabs/Action/ActionPointMapWipeOutPopup.prefab		0	0	1	0	1		1						
+3282	扫荡结果界面	UISweepResultDialog	3	Prefabs/Action/FightTeamEndLevel.prefab		0	0	0	0	1		1						
+3292	pass卡购买等级	UIBattlePassBuyRatingDialog	2	Prefabs/BattlePass/BattlePassBuyRating.prefab		0	0	1	0	1		1						
+3293	噩梦回响pass卡购买等级	UIDarkDreamPassBuyRatingDialog	2	Prefabs/ResidentEvent/DarkDreamPassBuyRating.prefab		0	0	1	0	1		1						
+3296	pass卡入口	UIBattlePassEntryDialog	2	Prefabs/BattlePass/BattlePassEntryDialog.prefab		1	1	1	0	1		1						
+633	战中Boss秀界面	UIBattlingBossShowDialog	3	Prefabs/UIBattling/UIBattlingBossShowDialog.prefab		0	0	0	0	0		1						
+3294	钓鱼解锁自动	UIFishPoolAutoFishUnlockPopupDialog		Prefabs/FishPool/FishPoolAutoFishUnlockPopup.prefab		0	0	0	0	1		1						
+634	连续作战确认界面	UIBattleEndContinuousFightConfirmDialog	3	Prefabs/UIBattling/BattleEnd/UIBattleEndContinuousFightConfirm.prefab	倒计时	0	0	0	0	1		1	连续作战确认界面	連續作戰確認介面	Result	連続作戦確認ページ	연속 전투 확인 페이지	หน้าต่าง​ยืนยัน​การต่อสู้​ต่อเนื่อง​
+635	连续作战结算界面	UIBattleEndContinuousFightSummaryDialog	3	Prefabs/UIBattling/BattleEnd/UIBattleEndContinuousFightSummary.prefab	作战总结	0	0	0	0	1		1	连续作战结算界面	連續作戰結算介面	Result	連続作戦完了ページ	연속 전투 결산 페이지	หน้าต่าง​สรุป​ผล​การต่อสู้​ต่อเนื่อง​
+3295	连续作战编队界面	UIFightTeamContinuousFightPopupDialog		Prefabs/FightTeam/FightTeamContinuousFightPopup.prefab		0	0	0	0	1		1						
+3300	料理制作结果界面	OverseaCookingMakeResult	2	Prefabs/OverseaManage/OverseaManageCookingListResultDialog.prefab		0	0	0	0	0		1						
+636	战中尾刀界面	UIBattlingFinalBlowDialog	3	Prefabs/UIBattling/UIBattlingFinalBlowDialog.prefab		0	0	0	0	1		1						
+637	战中引导合卡提示界面	UIBattlingPlayReminderDialog	3	Prefabs/UIBattling/UIBattlingPlayReminderDialog.prefab		0	0	0	0	0		1						
+3310	区域任务	UIActionConstructDialog		Prefabs/Action/ActionConstructDialog.prefab		1	1	1	0	0		1						
+3311	区域任务奖励	UIActionConstructRewardDialog		Prefabs/Action/ActionConstructRewardDialog.prefab		0	0	0	0	0		1						
+3320	套餐推荐	UIMaidCoffeeRecommend	2	Prefabs/OverseaManage/OverseaManegeMenuRecommendPopup.prefab		0	0	0	0	0		1						
+3331	操作台	ConvertExchangeDialog	2	Prefabs/Convert/ConvertExchangeDialog.prefab		1	1	0	0	0		1						
+3332	材料置换选择界面	ConvertChooseMaterialPopup	2	Prefabs/Convert/ConvertChooseMaterialPopup.prefab		0	0	0	0	0		1						
+3335	章节奖励界面	UIMainBattleChapterRewardPopupDialog	2	Prefabs/BattleSelection/MainBattleChapterRewardPopup.prefab		1	0	1	0	0	4190001	1						
+3336	宝箱展示界面	UICommonChestPreviewPopUpDialog	3	Prefabs/Common/CommonChestPreviewPopUp.prefab		0	0	0	0	0		1						
+3337	宝箱使用界面	UICommonChestUsePopUpDialog	2	Prefabs/Common/CommonChestUsePopUp.prefab		0	0	0	0	0		1						
+3338	视频预览界面	MoviePreviewDialog	2	Prefabs/Common/MoviePreviewDialog.prefab		1	0	0	0	0		1						
+3350	咖啡店装修主界面	OverseaRenovaMainDialog		Prefabs/OverseaManage/OverseaRenovaMainDialog.prefab		1	0	0	0	0		1						
+3351	咖啡店装修清单界面	OverseaRenovaListDialog		Prefabs/OverseaManage/OverseaRenovaInventoryPopup.prefab		0	0	1	0	0	3000002	1						
+3352	咖啡店装修美观度说明	OverseaRenovaAesthetics		Prefabs/OverseaManage/OverseaRenovaAestheticsPopup.prefab		1	0	0	0	0		1						
+5001	聊天入口界面	OverseaChatMainDialog	3	Prefabs/OverseaChat/OverseaChatDialog.prefab		0	0	0	0	0		1						
+3360	pt主页	UIActivityPtMainDialog		Prefabs/ActivityPt/ActivityPtMain.prefab		1	1	1	0	0		1						
+3361	pt商店	UIActivityPtShopDialog		Prefabs/ActivityPt/ActivityPtShopDialog.prefab		1	1	1	0	1		1						
+3362	pt任务	UIActivityPtTaskDialog		Prefabs/ActivityPt/ActivityPtTaskDialog.prefab		1	1	1	0	1		1						
+3363	咖啡厅营业报表详情界面	MaidCoffeeReportDetails		Prefabs/OverseaManage/OSManageReportDetailsDialog.prefab		0	0	0	1	1		1						
+3364	咖啡店猫球食物展示	OverseaCatBallFoodShow	3	Prefabs/OverseaManage/OverseaManagePersonnelFoodPopup.prefab		1	1	0	0	0		1						
+3400	养成时装升级界面	CardProgressionFashionLevelUp	3	Prefabs/CultivateOversea/CultivateOverseaFashionLevelUp.prefab		0	0	0	0	0		1						
+3401	养成时装属性预览界面	CardProgressionFashionAttributePreview	3	Prefabs/CultivateOversea/CultivateOverseaFashionUpgradePreview.prefab		0	0	0	0	0		1						
+3500	版本热点聚合页	HotPointCollectionMain	1	Prefabs/Hotpoint/HotpointMain.prefab		0	0	0	0	0		1						
+3501	玩法更新弹版功能	ActionRecommendPopup	2	Prefabs/Action/ActionRecommendPopup.prefab		0	0	0	0	0		1						
+3600	全局属性养成入口	HomelandTalentEntryDialog	2	Prefabs/Homeland/HomelandTalentEntryDialog.prefab		1	1	0	0	0		1						
+3601	全局属性养成-战略强化	HomelandTalentDisplayDialog	2	Prefabs/Homeland/HomelandTalentDisplayDialog.prefab		1	1	1	0	0	4119001	1						
+3700	场景启动器	SceneLaunch	2	Scenes/SceneLaunch.unity		1	0	0	0	0		2						
+3701	社团GVG主界面	ClubGvgGroupMainDialog	2	Prefabs/OverClub/OverseaClubGvgGroupMainDialog.prefab		1	0	1	0	0		1						
+3702	社团GVG建筑团队状态界面	ClubGVGGroupBaseBuildingTeamStatusPopup	3	Prefabs/OverClub/OverseaClubGvgGroupBaseTeamStatusPopup.prefab		1	0	0	0	0		1						
+3703	社团GVG编队展示界面	ClubGvgGroupCheckTeamPopup	3	Prefabs/OverClub/OverseaClubGvgGroupCheckTeamPopup.prefab		1	0	0	0	0		1						
+3704	社团GVG编队界面	ClubGvgGroupEditTeamPopup	3	Prefabs/OverClub/OverseaClubGvgGroupEditTeamPopup.prefab		1	0	0	0	0		1						
+3705	社团GVG社团战报界面	ClubGvgGroupFightMessageDialog	3	Prefabs/OverClub/OverseaClubGvgGroupFightMessageDialog.prefab		1	0	0	0	0		1						
+3706	社团GVG社团战斗记录界面	ClubGvgGroupFightRecordsPopup	3	Prefabs/OverClub/OverseaClubGvgGroupFightRecordsPopup.prefab		1	0	0	0	0		1						
+3707	社团GVG社团战斗记录详情界面	ClubGvgGroupFightRecordDetailsPopup	3	Prefabs/OverClub/OverseaClubGvgGroupFightRecordDetailsPopup.prefab		1	0	0	0	0		1						
+3708	社团GVG排行榜界面	ClubGvgGroupRankingsDialog	3	Prefabs/OverClub/OverseaClubGvgGroupRankingsDialog.prefab		1	0	0	0	0		1						
+3709	社团GVG排行榜奖励界面	ClubGvgGroupRankingsRewardPopup	3	Prefabs/OverClub/OverseaClubGvgGroupRankingsRewardPopup.prefab		1	0	0	0	0		1						
+3710	社团GVG报名列表界面	ClubGVGGroupEnrollListPopup	2	Prefabs/OverClub/OverseaClubGvgGroupEnrollListPopup.prefab		1	0	0	0	0		1						
+6000	通用玩家头像二级弹窗	UICommonPlayerHeadOption	3	Prefabs/Common/CommonPlayerHeadOption.prefab		0	0	0	0	0		1						
+6001	社团列表界面	UIOverseaClubListDialog	2	Prefabs/OverClub/OverseaClubListDialog.prefab	1	1	1	0	0	1		1	社团列表	社團列表	Clan List	ギルドリスト	클럽 리스트	รายชื่อชมรม
+6002	社团创建界面	UIOverseaClubCreatePopup	3	Prefabs/OverClub/OverseaClubCreateAndModifyPopup.prefab		0	0	0	0	0		1						
+6003	社团改名弹窗	UIOverseaClubModifyNamePopup	3	Prefabs/OverClub/OverseaClubModifyNamePopup.prefab		0	0	0	0	0		1						
+6004	社团改公告弹窗	UIOverseaClubModifyNoticePopup	3	Prefabs/OverClub/OverseaClubModifyNoticePopup.prefab		0	0	0	0	0		1						
+6005	社团主界面	UIOverseaClubEntryDialog	2	Prefabs/OverClub/OverseaClubEntryDialog.prefab	1	1	1	1	0	1		1	社团	社團	Clan	ギルド	클럽	ชมรม
+6006	社团申请列表弹窗	UIOverseaClubApplyListPopup	3	Prefabs/OverClub/OverseaClubApplyForListPopup.prefab		0	0	0	0	0		1						
+6007	社团大厅界面	UIOverseaClubHallDialog		Prefabs/OverClub/OverseaClubHallDialog.prefab	1	1	1	1	0	1		1	社团	社團	Clan	ギルド	클럽	ชมรม
+6008	社团捐献界面	UIOverseaClubDonationDialog		Prefabs/OverClub/OverseaClubDonationDialog.prefab	1	1	1	1	0	1		1	社团捐献	社團捐獻	Donate	ギルド貢献	클럽 기부	บริจาคให้ชมรม
+6009	社团活动界面	UIOverseaClubActivityDialog	2	Prefabs/OverClub/OverseaClubActivityDialog.prefab	1	1	1	1	0	1		1	社团活动	社團活動	Event	ギルドイベント	클럽 이벤트	กิจกรรมชมรม
+6010	成长任务二级界面	UITaskGrowUpSecondPanel	3	Prefabs/OverseaTasks/OverseaGrowUpTasksOverviewDialog.prefab		1	1	0	0	0		1						
+6011	社团Boss主界面	OverseaClubBossMainDialog	2	Prefabs/OverClub/OverseaClubBossMainDialog.prefab	html	1	1	1	0	1		1	社团特训	社團特訓	Clan Campaign	ギルド特訓	클럽 트레이닝	ฝึกพิเศษของชมรม
+6012	社团看板娘切换	UIOverseaClubHallChangeCatDialog		Prefabs/OverClub/OverseaClubHallChangeCatDialog.prefab		1	0	0	0	0		1						
+6020	爬塔入口	UIOverseaTowerEntryDialog	2	Prefabs/OverseaTower/OverseaTowerEntryDialog.prefab		1	1	0	0	0		1						
+6021	爬塔关卡	UIOverseaTowerInsideDialog	2	Prefabs/OverseaTower/OverseaTowerInsideDialog.prefab		1	1	1	0	0		1						
+6022	爬塔收益	UIOverseaTowerCollectPopup	2	Prefabs/OverseaTower/OverseaTowerCollectPopup.prefab		1	1	1	0	0		1						
+6023	爬塔排行榜	OverseaTowerRankDialog	2	Prefabs/OverseaTower/OverseaTowerRankDialog.prefab		1	0	0	0	0		1						
+6123	入职福利页面	UIActivityEntryWelfareDialog	3	Prefabs/Activity/ActivityEntry.prefab		0	0	0	0	0		1						
+6124	快速售卖界面	UIFastSellDialog		Prefabs/OverseaManage/OverseaManageFastSellingPopup.prefab		0	0	1	0	0	4199001	1						
+6131	编队	FightTeamPresetDialog	3	Prefabs/FightTeam/FightTeamPresetDialog.prefab		1	0	0	0	0		1						
+6132	编队改名	FightTeamNamePopup	3	Prefabs/FightTeam/FightTeamNamePopup.prefab		1	0	0	0	0		1						
+6133	餐厅星级奖励	MaidCafeStarReward	2	Prefabs/OverseaManage/OverseaManageCafeCattyStarRewardPopup.prefab		0	0	0	0	0		1						
+6134	限时礼包(完美效劳)界面	LimitedTimeSaleDialog	1	Prefabs/LimitedTimeSale/LimitedTimeSaleDialog.prefab		0	0	0	0	1		1						
+6200	双旦活动主界面	UIActivityMidFestivalMainDialog	2	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalMain12000201.prefab		1	0	1	1	0	9000010;9000013	1						
+6140	咖啡厅客人对话界面	MaidCoffeeGuestTalkingDialog	3	Prefabs/OverseaManage/OverseaManageCustomerTalkingNode.prefab		0	0	0	0	0		1						
+6201	双旦活动故事界面	UIActivityMidFestivalStoryDialog	2	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalStory12000201.prefab		1	0	1	1	0	9000010;9000013	1						
+6202	双旦活动记录界面	UIActivityMidFestivalRecordDialog	2	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalRecord12000201.prefab		1	0	1	1	0	9000010;9000013	1						
+6203	双旦活动商店界面	UIActivityMidFestivalShopDialog	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalShopDialog12000201.prefab		1	0	1	1	0		1						
+6204	双旦活动任务界面	UIActivityMidFestivalTaskDialog	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalTaskDialog12000201.prefab		1	0	1	1	0	9000013	1						
+6205	双旦活动BOSS主界面	UIActivityMidFestivalBossDialog	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalBossMain.prefab		1	0	1	1	0		1						
+6206	双旦活动BOSS伤害排行奖励界面	UIActivityMidFestivalBossDamageRewardRankDialog	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalBossDamageBonusDialog.prefab		1	0	1	1	0		1						
+6207	双旦活动BOSS玩家排行奖励界面	UIActivityMidFestivalBossPlayerRankDialog	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalBossRankRewardDialog.prefab		1	0	1	1	0		1						
+6208	双旦活动BOSS详情页面	UIActivityMidFestivalBossDetailDialog	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalBossDetailsDialog.prefab	1	1	0	1	1	0		1	敌方详情	敵方詳情	Details	敵の詳細	적 정보	รายละเอียดฝ่ายศัตรู
+6209	双旦活动主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000201	3	Prefabs/ActivityMidFestival/12000201/ActivityMidFestivalEntranceAnimation12000201.prefab		0	0	0	0	0		1						
+6141	咖啡厅客人提交随机物品界面	MaidCoffeeGuestSubGoodsDialog	3	Prefabs/OverseaManage/OverseaManageCustomerItemSubmissionPopup.prefab		0	0	0	0	0		1						
+6142	咖啡厅客人图鉴界面	MaidCoffeeGuestCustomerDialog	2	Prefabs/OverseaManage/OverseaManageCustomerInfoDialog.prefab		1	0	0	0	0		1						
+6210	定向研究活动原料采购界面	UIActivityDirectDrawPurchaseDialog	3	Prefabs/ActivityDirectDraw/ActivityDirectDrawPurchasePopup11200101.prefab		1	0	1	0	0		1						
+6211	定向研究活动概率清单界面	UIActivityDirectDrawMemberDialog	3	Prefabs/ActivityDirectDraw/ActivityDirectDrawMember11200101.prefab		1	0	1	0	0		1						
+6217	回归购买界面	RegressionPurchaseDialog	3	Prefabs/Activity/ActivityRegressionRewardPopUpDialog.prefab		0	0	1	0	0		1						
+6220	idol3D	IdolLive3D_MainUI	3	Prefabs/IdolLive3D_MainUI.prefab		1	0	0	0	0		1						
+6221	暗夜猫Boss主界面	UINightCatBossDialog	3	Prefabs/NightCatInstance/NightCatInstanceBossDialog.prefab		1	1	0	1	0		1						
+6222	暗夜猫Boss伤害排行奖励界面	UINightCatBossRankRewardDialog	3	Prefabs/NightCatInstance/NightCatInstanceBossRankRewardDialog.prefab		1	1	0	0	0		1						
+6223	社团Boss排行奖励界面	UIClubBossRankRewardDialog	3	Prefabs/OverClub/OverseaClubBossRankRewardDialog.prefab		1	0	0	0	0		1						
+6224	社团Boss任务界面	UIClubBossTaskDialog	3	Prefabs/OverClub/OverseaClubBossTaskRewardPopup.prefab		0	0	0	0	0		1						
+6225	社团Boss挑战界面	UIClubBossChallengeDialog	2	Prefabs/OverClub/OverseaClubBossChallengeDialog.prefab		1	0	0	0	0		1						
+6212	选服界面	SelectServerDialog	3	Prefabs/SelectServer/SelectServerDialog.prefab		0	0	0	0	0		1						
+6213	快速捕鱼界面	UIFastNettingFishDialog	3	Prefabs/FishPool/FishPoolGoFishingFastFishingPopup.prefab		0	0	0	0	0		1						
+6214	快速捕鱼结算界面	UIFastNettingFishRewardDialog	3	Prefabs/FishPool/FishPoolGoFishingRewardDialog.prefab		0	0	0	0	0		1						
+6215	快速捕鱼捕捞动画界面	UIFastNettingFishCatchingAnimationDialog	3	Prefabs/FishPool/FishPoolGoFishingAnimationPopup.prefab		0	0	0	0	0		1						
+6226	社团Boss挑战记录	UIClubBossRecordDialog	3	Prefabs/OverClub/OverseaClubBossRecordDialog.prefab		1	0	0	0	0		1						
+6227	社团Boss挑战排名	UIClubBossRankDialog	3	Prefabs/OverClub/OverseaClubBossRankDialog.prefab		1	0	0	0	0		1						
+6228	社团Boss详情	UIClubBossDetailsDialog	3	Prefabs/OverClub/OverseaClubBossDetailsDialog.prefab		1	0	0	0	0		1						
+3210	排行榜聚合页	OverseaRankPageDialog	2	Prefabs/Cultivate/OverseaRankpageDialog.prefab		1	0	0	0	0		1						
+6240	幸运赏详情	LuckRewardsDetailDialog	3	Prefabs/ResidentEvent/ResidentLuckyRewardPopup.prefab		1	0	0	0	0		1						
+6241	混沌回忆主界面	ActionDarkDreamMainDialog	3	Prefabs/Action/ActionDarkDreamMainDialog.prefab	噩梦回响html	1	1	0	0	0		1	噩梦回响	噩夢迴響	Nightmare's Call	悪夢回想	나이트메어	เสียงสะท้อนฝันร้าย
+6242	混沌回忆节点界面	ActionDarkDreamLevelDetails	2	Prefabs/Action/ActionDarkDreamLevelDetails.prefab		1	0	0	0	0		1						
+6243	混沌回忆星级奖励界面	ActionDarkDreamRewardPopup	2	Prefabs/Action/ActionDarkDreamRewardPopup.prefab		0	0	0	0	0		1						
+6250	个人举报界面	UIAccusationMainDialog	3	Prefabs/PlayerNew/Player2DReportPopup.prefab		1	0	0	0	0		1						
+6251	定向召唤页面	UIDirectDrawDialog	3	Prefabs/ActivityDirectDraw/ActivityDirectDrawMainDialog11200101.prefab		1	1	1	0	0	9000011;3000002	1						
+6260	通用商店页面面	UIActivityCommonShopDialog	3	Prefabs/Activity/ActivityCommonShopDialog.prefab		1	1	1	0	0		1						
+6261	海外夜巡剧情	UIPatrolPlotEventDialog	3	Prefabs/Patrol/PatrolPlotEventDialog130201.prefab		0	0	0	0	0		1						
+6270	食契联动歼灭战选关界面	UIActivityFoodAnnihilationEntryDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossMain.prefab	夺回祭酒	1	0	1	0	0		1	寻回桃花酒	尋回桃花酒	Reclaim Peach Blossom Brew	桃花酒奪還	도화주 찾기	ตามหาสุราดอกท้อ
+6271	食契联动歼灭战排行榜	UIActivityFoodAnnihilationRankDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossRankDialog.prefab		1	0	0	0	0		1						
+6272	食契联动歼灭战排行榜奖励预览	UIActivityFoodAnnihilationRankRewardPopupDialog	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossRankingRewardPopup.prefab		0	0	0	0	1		1						
+6273	食契联动歼灭战排行榜说明预览	UIActivityFoodAnnihilationRankDescPopupDialog	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossRankingDescPopup.prefab		0	0	0	0	1		1						
+6274	食契联动歼灭战伤害奖励预览	UIActivityFoodAnnihilationDamageRewardPopupDialog	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossDamageRewardPopup.prefab		0	0	0	0	1		1						
+6275	食契联动歼灭战组队房间	UIActivityFoodAnnihilationTeamDialog	1	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossTeamDestoryDialog.prefab		1	0	1	0	0		1						
+6276	食契联动结算翻牌界面	UIActivityFoodAnnihilationFilpCardDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslSettlementFlipRewardDialog.prefab		0	0	0	0	0		1						
+6280	乱流幻境入口界面	UIActionFairylandStageSelectDialog	2	Prefabs/Action/ActionFairylandStageSelectDialog.prefab	猫族秘境html	1	0	1	0	0	3000024	1	猫族秘境	貓族秘境	Felinian Fairyland	フェリニアンス秘境	캣족 비경	มิติลับเผ่าแมว
+6281	乱流幻境进入场景	FairylandSceneEnter	3	Scenes/FairylandSceneEnter.unity		1	1	0	0	1		2						
+6282	乱流幻境界面	FairylandSceneDialog		Prefabs/Action/ActionFairylandDifficultySelectDialog.prefab		1	0	0	bgm_teamfight_secretarea	0		1						
+6283	乱流幻境关卡详情界面	FairylandLevelDetailsDialog		Prefabs/Action/ActionFairylandLevelDetailsDialog.prefab		1	0	0	0	0		1						
+6284	乱流幻境副本结算界面	FairylandFinishPopupDialog		Prefabs/Action/ActionFairylandFinishPopup.prefab		0	0	0	0	1		3						
+6290	活动皮肤卡池规则	ActivityGachaponRuleDialog	3	Prefabs/GachaponSkin/GachaponSkinMember.prefab		0	0	0	0	0		1						
+6291	活动皮肤卡池	ActivityGachaponSkinDialog	3	Prefabs/GachaponSkin/GachaponSkinEntry.prefab		1	0	0	0	0		1						
+6293	皮肤兑换抽奖卡池规则	ActivityGachaponPropRuleDialog	3	Prefabs/GachaponSkin/GachaponSkinPropDescPopUp.prefab		0	0	0	0	0		1						
+6294	皮肤兑换抽奖任务	ActivityGachaponSkinTaskDialog	3	Prefabs/GachaponSkin/GachaponSkinTaskDialog.prefab		0	0	0	0	0		1						
+6296	装备刻印	CultivateOverseaEquipEngraveChoosePopup	1	Prefabs/CultivateOversea/CultivateOverseaEquipEngraveChoosePopup.prefab		0	0	0	0	0		1						
+6297	装备刻印成功	CultivateOverseaEquipEngraveSuccessDialog	3	Prefabs/CultivateOversea/CultivateOverseaEquipEngraveSuccessDialog.prefab		0	0	0	0	0		1						
+6300	PromoterPopup	UIActivityPromoterPopup	3	Prefabs/Activity/ActivityPromoterPopup12001101.prefab		0	0	0	0	0		1						
+6285	乱流幻境结束弹窗	FairylandFinishPopup		Prefabs/Action/ActionFairylandFinishPopup.prefab		0	0	0	0	1		1						
+6301	梦境奇缘入场界面	ActivityDreamAdventureslDreamAdventuresEntranceAnimation	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslDreamAdventuresEntranceAnimation.prefab		0	0	0	0	0		1						
+6302	梦境奇缘主界面	ActivityDreamAdventuresMain	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresMain.prefab		1	1	1	0	0		1						
+6303	梦境奇缘商城界面	ActivityDreamAdventureslDreamAdventuresShopDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslDreamAdventuresShopDialog.prefab	节日商铺	1	0	1	0	0		1	节日商铺	節日商鋪	Festival Shop	大道店	기념일 상점	ร้านค้าเทศกาล
+6304	梦境奇缘任务界面	ActivityDreamAdventureslDreamAdventuresTaskDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslDreamAdventuresTaskDialog.prefab	节日规划	1	0	0	0	0		1	节日规划	節日規劃	Fest Plan	日程表	기념일 미션	แผนเทศกาล
+6305	梦境奇缘翻牌界面	ActivityDreamAdventureslSettlementFlipRewardDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslSettlementFlipRewardDialog.prefab		1	0	0	0	0		1						
+6306	梦境奇缘地图界面	ActivityDreamAdventureslStoryMap	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMap.prefab		0	0	0	0	0		1						
+6307	梦境奇缘筹备界面	ActivityDreamAdventuresPrepareMain	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresPrepareMain.prefab		1	0	0	0	0		1						
+6308	梦境奇缘筹备奖励界面	ActivityDreamAdventuresScheduleRewardPopup	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresScheduleRewardPopup.prefab		1	0	0	0	0		1						
+6309	梦境奇缘乐谱收集界面	ActivityDreamCollectionDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresCollectMain.prefab		1	0	0	0	0		1						
+6310	梦境奇缘乐谱奖励页面	ActivityDreamAdventuresCollectRewardPopup	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresCollectRewardPopup.prefab		0	0	0	0	0		1						
+6286	乱流幻境PC操作提示弹窗	FairylandInputPcTipsPopup		Prefabs/Action/ActionFairylandInputPcTipsPopup.prefab		0	0	0	0	1		1						
+6401	货币兑换二次弹窗	CurrencyExchangePopup	3	Prefabs/Common/SecondCurrencyPopUp1.prefab		0	0	0	0	1		1						
+6402	虹晶购买快捷弹窗	PrimaryCurrencyPopup	3	Prefabs/Common/SecondCurrencyPopUp2.prefab		0	0	0	0	1		1						
+6287	阵容推荐界面	RecommendLineUpDialog	2	Prefabs/FightTeam/FightTeamRecommendLineupDialog.prefab	阵容推荐	1	0	0	0	0		1						
+6403	社团弹劾成功	OverseaClubImpeachSuccess	3	Prefabs/OverClub/OverseaClubImpeachSuccessPopup.prefab		0	0	0	0	1		1						
+6404	社团弹劾失败	OverseaClubImpeachFail	3	Prefabs/OverClub/OverseaClubImpeachLosePopup.prefab		0	0	0	0	1		1						
+6405	家具商城购买清单界面	OverseaMallRenovaDialog		Prefabs/OverseaMall/OverseaMallInventoryPopup.prefab		0	0	0	0	0		1						
+6406	情绪共鸣弹窗	UIFightTeamLineupBonusPopupDialog	3	Prefabs/FightTeam/FightTeamBonusPopup.prefab		0	0	0	0	0		1						
+6407	世界boss天气详情界面	WorldBossWeatherBonusDialog	2	Prefabs/WorldBoss/WorldBossWeatherBonusPopup.prefab		1	0	0	0	0		1						
+6500	烹饪操作指南界面	ActivityCakeShopInstructionDialog		Prefabs/ActivityCakeShop/ActivityCakeShopInstructionDialog.prefab		0	0	0	0	0		1						
+6501	烹饪入口界面	ActivityCakeShopFightDialog		Prefabs/ActivityCakeShop/ActivityCakeShopFightDialog.prefab		1	0	1	0	0	9030001;9030002	1						
+6502	烹饪界面	ActivityOperateMainDialog		Prefabs/ActivityCakeShop/ActivityOperateMainDialog.prefab		0	0	0	0	0		1						
+6503	烹饪升级界面	ActivityCakeShopFightBuffDialog		Prefabs/ActivityCakeShop/ActivityCakeShopFightBuffDialog.prefab		1	0	1	0	0	9030002	1						
+6504	烹饪排行榜界面	ActivityCakeShopFightRankingsDialog		Prefabs/ActivityCakeShop/ActivityCakeShopFightRankingsDialog.prefab		1	0	1	0	0	9030001;9030002	1						
+6505	烹饪结算界面	ActivityOperatePopup		Prefabs/ActivityCakeShop/ActivityOperatePopup.prefab		0	0	0	0	1	9030001;9030002	1						
+6506	烹饪暂停界面	ActivityOperateSuspendDialog		Prefabs/ActivityCakeShop/ActivityOperateSuspendDialog.prefab		0	0	0	0	0		1						
+6507	猫娘乐园主界面	ActivityCakeShopOptionEntryDialog		Prefabs/ActivityCakeShop/ActivityCakeShopOptionEntryDialog.prefab		1	0	0	0	0		1						
+6508	猫娘乐园抽奖界面	ActivityCakeShopDrawDialog		Prefabs/ActivityCakeShop/ActivityCakeShopDrawDialog.prefab		1	0	1	0	0		1						
+6509	猫娘乐园主线章节界面	ActivityCakeShopMainLineDialog		Prefabs/ActivityCakeShop/ActivityCakeShopMainLineDialog.prefab		1	0	0	0	0		1						
+6510	猫娘乐园主线章节详情界面	ActivityCakeShopMainLineDetailsDialog		Prefabs/ActivityCakeShop/ActivityCakeShopMainLineDetailsDialog.prefab		1	0	0	0	0		1						
+6511	猫娘乐园任务界面	ActivityCakeShopTaskDialog		Prefabs/ActivityCakeShop/ActivityCakeShopTaskDialog.prefab		1	0	0	0	0		1						
+6512	猫娘乐园Boss挑战界面	ActivityCakeShopBossMain		Prefabs/ActivityCakeShop/ActivityCakeShopBossMain.prefab		1	0	0	0	0		1						
+6513	猫娘乐园Boss排名奖励界面	ActivityCakeShopBossRankRewardDialog		Prefabs/ActivityCakeShop/ActivityCakeShopBossRankRewardDialog.prefab		1	0	0	0	0		1						
+6514	猫娘乐园Boss伤害排名奖励界面	ActivityCakeShopBossDamageBonusDialog		Prefabs/ActivityCakeShop/ActivityCakeShopBossDamageBonusDialog.prefab		1	0	0	0	0		1						
+6515	猫娘乐园Boss详情界面	ActivityCakeShopBossDetailsDialog		Prefabs/ActivityCakeShop/ActivityCakeShopBossDetailsDialog.prefab		1	0	0	0	0		1						
+6516	绑定手机	SettingBindPhonePopup	2	Prefabs/Setting/SettingBindPhonePopup.prefab		0	0	0	0	1		1						
+6519	绑定手机	SettingBindEmailPopup	2	Prefabs/Setting/SettingBindMailPopup.prefab		0	0	0	0	1		1						
+6517	烹饪排行榜奖励预览界面	ActivityCookingRankRewardPreviewDialog		Prefabs/ActivityCakeShop/ActivityCakeShopFightRankingsRewardDialog.prefab		1	0	0	0	0		1						
+6521	猫车背景界面	OverseaClubCatCarBackgroundDialog	2	Prefabs/OverClub/OverseaClubCatCarBackgroundDialog.prefab	猫猫巴士大追击html	1	0	0	bgm_catbus_highway	0		1	猫猫巴士大追击	貓貓巴士大追擊	Urban Whisker Chase	ニャンコバス大競走	냥냥버스 대작전	รถบัสเหมียวตะลุยโลก
+6522	猫车Boss结算	OverseaClubCatCarBossSettlementDialog		Prefabs/OverClub/OverseaClubCatCarBossSettlementDialog.prefab	奖券结算界面	1	0	0	0	0		1	奖券结算界面	獎券結算介面	Ticket Results Screen	抽選券リザルト	티켓 결산 페이지	หน้าสรุปผลตั๋วรางวัล
+6523	猫车奖池界面	OverseaClubCatCarLottoRewardPopup		Prefabs/OverClub/OverseaClubCatCarLottoRewardPopup.prefab		1	0	0	0	0		1						
+6524	猫车里程结算界面	OverseaClubCatCarMileageSettlementDialog		Prefabs/OverClub/OverseaClubCatCarMileageSettlementDialog.prefab	里程结算界面	1	0	0	0	0		1	里程结算界面	里程結算介面	Milestone Results Screen	走行距離リザルト	마일리지 결산 페이지	หน้าสรุปผลระยะทาง
+6525	猫车排行榜界面	OverseaClubCatCarRankDialog	2	Prefabs/OverClub/OverseaClubCatCarRankDialog.prefab		1	0	0	0	0		1						
+6526	猫车掷骰子界面	OverseaClubCatCarRollDiceDialog		Prefabs/OverClub/OverseaClubCatCarRollDiceDialog.prefab		1	0	1	0	0	3000002	1						
+6527	猫车刮奖界面	OverseaClubCatCarScrapeRewardDialog		Prefabs/OverClub/OverseaClubCatCarScrapeRewardDialog.prefab	猫猫巴士大追击html	1	0	1	bgm_catbus_highway	0	3000026	1	猫猫巴士大追击	貓貓巴士大追擊	Urban Whisker Chase	ニャンコバス大競走	냥냥버스 대작전	รถบัสเหมียวตะลุยโลก
+6528	猫车加速	OverseaClubCatCarSpeedDialog		Prefabs/OverClub/OverseaClubCatCarSpeedDialog.prefab		1	0	0	0	0		1						
+6529	猫车Loading	OverseaClubCatCarStartEntryDialog		Prefabs/OverClub/OverseaClubCatCarStartEntryDialog.prefab		1	0	0	0	0		1						
+6530	猫车各赛道奖励预览界面	OverseaClubCatCarTrackRewardPopup		Prefabs/OverClub/OverseaClubCatCarTrackRewardPopup.prefab		1	0	0	0	0		1						
+6535	家园信息录入入口界面	HomelandCheckInEntryDialog	2	Prefabs/Homeland/HomelandInforEntryDialog.prefab	信息录入	1	1	0	0	0		1						
+6536	家园信息录入详情界面	HomelandCheckInDialog	2	Prefabs/Homeland/HomelandInforIntelligenceDialog.prefab	信息录入	1	1	0	0	0		1						
+6537	餐厅拜访主界面	OverseaManageOthersMainDialog		Prefabs/OverseaManage/OverseaManageOthersMainDialog.prefab		1	0	0	0	0		1						
+6538	餐厅拜访好友列表界面	OverseaManageMerchantFriendDialog		Prefabs/OverseaManage/OverseaManageMerchantFriendDialog.prefab		1	0	0	0	0		1						
+6539	餐厅拜访对话界面	OverseaManageMerchantTalkingNode		Prefabs/OverseaManage/OverseaManageMerchantTalkingNode.prefab		0	0	1	0	0		1						
+6555	时装预热记录	ActivityFashionPreheatingHistory	2	Prefabs/Activity/ActivityNewReleaseReward.prefab		0	0	0	0	0		1						
+6556	时装预热规则	ActivityFashionPreheatingRule	2	Prefabs/Activity/ActivityNewReleaseMember.prefab		0	0	0	0	0		1						
+6557	时装抽奖动画	ActivityFashionPreheatingGetRewards		Prefabs/Activity/ActivityNewReleaseGetAnimation.prefab		1	0	0	0	0		1						
+6561	社团神兽主界面	OverseaClubFeedCatMain	3	Prefabs/OverClub/OverseaClubFeedCatMain.prefab	灵猫投喂html	1	0	1	0	0	3000017	1	灵猫投喂	靈貓投喂	Feed	カトゥス	소울캣 먹이주기	ป้อนอาหารสปิริตแคท
+6562	社团神兽捐献界面	OverseaClubFeedingDonatePopup	3	Prefabs/OverClub/OverseaClubFeedingDonatePopup.prefab		1	0	1	0	0	3000002;3000017	1						
+6563	社团神兽食物选择界面	OverseaClubFeedingFoodPopup	3	Prefabs/OverClub/OverseaClubFeedingFoodPopup.prefab		1	0	0	0	0	3000002	1						
+6564	社团神兽外观洗练说明界面	OverseaClubFeedingSkinMember	3	Prefabs/OverClub/OverseaClubFeedingSkinMember.prefab		0	0	0	0	0		1						
+6565	社团神兽成长阶段界面	OverseaClubFeedingStagePopup	3	Prefabs/OverClub/OverseaClubFeedingStagePopup.prefab		0	0	0	0	0		1						
+6566	社团神兽升阶界面	OverseaClubFeedingUpDialog	3	Prefabs/OverClub/OverseaClubFeedingUpDialog.prefab		1	0	0	0	0		1						
+6558	信息录入录入总览	HomelandCheckInPopupOverviewDialog	2	Prefabs/Homeland/HomelandInforSelectTeamPopup.prefab		0	0	0	0	0		1						
+6559	信息录入选择队伍	HomelandCheckInPopupSelectDialog	2	Prefabs/Homeland/HomelandInforSelectTeamPopup.prefab		0	0	0	0	0		1						
+6560	签到日历	SignCalendarDialog		Prefabs/DailyCheck/DailyCheckCalendarDialog.prefab		1	0	0	0	0		1						
+6570	清理内存	PredownloadMemoryTipsPopup		Prefabs/PreDownload/PredownloadMemoryTipsPopup.prefab		1	0	0	0	0		1						
+6571	新首充奖励界面	InvestNewPopup	1	Prefabs/OverseaInvest/InvestMainType2Dialog.prefab		0	0	0	0	1		1						
+6572	新首充前置奖励	InvestNewThankDialog	2	Prefabs/OverseaInvest/InvestMainThankChooseGift.prefab		0	0	0	0	1		1						
+6573	在线奖励	OnlineRewardPopup	2	Prefabs/OnlineReward/OnlineRewardPopup.prefab		0	0	0	0	1		1						
+6574	月卡2次确认框	MonthCardSecondComfirm	3	Prefabs/Common/SecondCurrencyPopUp3MonthlyCard.prefab		0	0	0	0	1		1						
+6575	月卡续费打脸	MonthCardPopUp	3	Prefabs/ResidentEvent/MonthlyCardRenewalDialog.prefab		0	0	0	0	1		1						
+6581	海外商城自选礼包购买界面	OverseaStoreOptionalGiftPopup	3	Prefabs/OverseaMall/OverseaMallDIYGiftChooseRewardPopup.prefab		0	0	1	0	0		1						
+6590	白塔入口	DreamSpaceLevelEnter	3	Scenes/DreamSpaceLevelEnter.unity		1	1	0	0	1		2						
+6591	白塔界面	DreamSpaceMainDialog		Prefabs/Action/ActionDreamlandMain.prefab		0	0	0	0	0		1						
+6592	白塔暂停界面	DreamSpaceSuspendDialog		Prefabs/Action/ActionDreamlandSuspendDialog.prefab		0	0	0	0	0		1						
+6593	怪谈事件主界面	ActivityCrisisContractMain	3	Prefabs/CrisisContract/12001502/ActivityCrisisContractMain.prefab	怪谈事件簿html	1	0	1	0	0		1	怪谈事件簿	怪談事件簿	Files of the Uncanny	怪談事件簿	괴담 사건 기록부	แฟ้มเรื่องสยองขวัญ
+6594	怪谈事件排行榜界面	ActivityCrisisContractRankDialog		Prefabs/CrisisContract/12001502/ActivityCrisisContractRankDialog.prefab		1	0	0	0	0		1						
+6595	怪谈事件伤害奖励一览	ActivityCrisisContractRankingDescPopup		Prefabs/CrisisContract/12001502/ActivityCrisisContractRankingDescPopup.prefab		0	0	0	0	0		1						
+6596	怪谈事件商店界面	ActivityCrisisContractShopDialog		Prefabs/CrisisContract/12001502/ActivityCrisisContractShopDialog.prefab		1	0	1	0	0		1						
+6597	怪谈事件任务界面	ActivityCrisisContractTaskDialog		Prefabs/CrisisContract/12001502/ActivityCrisisContractTaskDialog.prefab		1	0	0	0	0		1						
+6598	怪谈事件合约标题	ActivityCrisisContractLevelListDialog		Prefabs/CrisisContract/12001502/ActivityCrisisContractLevelListDialog.prefab	html	1	0	0	0	0		1						
+6599	怪谈事件闪屏	ActivityCrisisContractAnimation		Prefabs/CrisisContract/12001502/ActivityCrisisContractAnimation.prefab		0	0	0	0	0		1						
+6601	海外装备装备预设界面	CultivateOverseaEquipmentPresetCheckDialog	3	Prefabs/CultivateOversea/CultivateOverseaEquipmentPresetCheckDialog.prefab		1	0	0	0	0		1						
+6602	海外装备装备预设选择界面	CultivateOverseaEquipmentPresetChooseDialog	3	Prefabs/CultivateOversea/CultivateOverseaEquipmentPresetChooseDialog.prefab		0	0	0	0	0		1						
+6603	海外装备装备预设命名弹窗	CultivateOverseaEquipmentPresetNamePopup	3	Prefabs/CultivateOversea/CultivateOverseaEquipmentPresetNamePopup.prefab		0	0	0	0	0		1						
+6604	海外商城充值上限提示界面	OverseaMallChargePopup	3	Prefabs/OverseaMall/OverseaMallChargePopup.prefab		0	0	0	0	0		1						
+6621	推送建议界面	PushSuggestionDialog	3	Prefabs/Setting/PushSuggestion.prefab		0	0	0	0	0		1						
+6631	跑酷游戏测试界面	ParkourGameTest	3	Prefabs/Activity/ParkourGame/ParkourGameTestDialog.prefab		1	0	0	0	0		1						
+6632	跑酷游戏外部主界面	ParkourGameOptionDialog	2	Prefabs/OverseaParkour12001801/OverseaParkourOptionDialog12001801.prefab		1	0	0	0	0		1						
+6634	跑酷游戏商店界面	ParkourGameShopDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourShopDialog12001801.prefab		1	0	0	0	0		1						
+6635	跑酷游戏任务界面	ParkourGameTaskDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourTaskDialog12001801.prefab		1	0	0	0	0		1						
+6636	跑酷游戏游戏内主界面	ParkourGameMainDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourMainDialog12001801.prefab		0	0	0	0	0		1						
+6637	跑酷游戏选择关卡界面	OverseaParkourMainlineDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourMainlineDialog12001801.prefab		1	0	0	0	0		1						
+6638	跑酷选择关卡2界面	OverseaParkourGamePrepareDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourStartRunFightDialog.prefab		1	0	0	0	0		1						
+6710	跑酷游戏世界boss	ParkourBossMain	3	Prefabs/OverseaParkour12001801/OverseaParkourBossMain12001801.prefab		1	0	0	0	0		1						
+6711	跑酷游戏bossDetail	ParkourBossDetailDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourBossDetailsDialog12001801.prefab		1	0	0	0	0		1						
+6712	跑酷游戏世界bonus	ParkourBossDetailDamageBonusDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourBossDamageBonusDialog12001801.prefab		1	0	0	0	0		1						
+6713	跑酷游戏世界Reward	ParkourBossMainRankRewardDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourBossRankRewardDialog12001801.prefab		1	0	0	0	0		1						
+6641	限时连续礼包	LimitedTimeContinuousGiftDialog	3	Prefabs/RechargeLimitGift/OverseaContinuousRechargeLimitGiftDialog.prefab		0	0	0	0	0		1						
+6642	通用自选礼包	CommonChooseRewardPopup	3	Prefabs/Common/CommonChooseRewardPopup.prefab		0	0	0	0	0		1						
+6643	皮肤商店页面面	UIActivitySkinShopDialog	3	Prefabs/Activity/ActivityCommonShopTabLeftDialog.prefab		1	1	1	0	0		1						
+6645	老玩家返利	CashFeedbackDialog	3	Prefabs/Cultivate/MoneyFeedbackPopup.prefab		0	0	0	0	0		1						
+6647	工资系统	SalaryPlanDialog	3	Prefabs/Cultivate/SalaryPlanDialog.prefab		0	0	0	0	0		1						
+6648	工资系统弹出	SalaryPlanPopup	3	Prefabs/Cultivate/SalaryPlanPopup.prefab		0	0	0	0	0		1						
+6714	跑酷选关剧情弹窗	ParkourGameSelectStoyDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourMainlineDetailsStoryNormalPopup12001801.prefab		0	0	0	0	0		1						
+6715	跑酷选关跑酷弹窗	ParkourGameSelectParkourDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourMainlineDetailsStoryStarLevelPopup12001801.prefab		0	0	0	0	0		1						
+6716	跑酷选关排行榜弹窗	OverseaParkourRankDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourMainlineRankingDialog12001801.prefab		0	0	0	0	0		1						
+6720	社团加入信息介绍	UIOverseaClubOverallInformationAddDialog	3	Prefabs/OverClub/OverseaClubOverallInformationAddDialog.prefab		0	0	0	0	0		1						
+6721	抽卡回馈任务	GachaponComTaskDialog	3	Prefabs/Gachapon/GachaponComTaskDialog.prefab	回馈任务	1	1	0	0	1		1						
+6646	通用皮肤场景预览界面	CommonSkinScenePreviewDialog	3	Prefabs/Common/CommonSkinScenePreviewDialog.prefab		1	0	0	0	0		1						
+10000	活动商店	UIActivityCommonShopTabUpDialog	2	Prefabs/Activity/ActivityCommonShopTabUpDialog.prefab	0	1	0	0	0	0		1	商店	商店	Shop	ショップ	상점	ร้านค้า
+10001	和风战牌_主界面	UIActivityJapanesePokerEntryDialog	2	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerEntryDialog.prefab	html	1	0	0	0	0		1	牌王挑战	牌王挑戰	King of Cards	王者戦	에이스 도전	ท้าทายเจ้าแห่งการ์ด
+10002	和风战牌_规则界面	UIActivityJapanesePokerCradRulePopup	3	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerCradRulePopup.prefab		0	0	0	0	0		1						
+10003	和风战牌_收集册	UIActivityJapanesePokerCollectDialog	2	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerCollectDialog.prefab	0	1	0	0	0	0		1	牌册	牌冊	Card Album	デッキ	카드 앨범	อัลบัมการ์ด
+10004	和风战牌_关卡详情	UIActivityJapanesePokerChooseDialog	2	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerChooseDialog.prefab	0	1	0	0	0	0		1	牌王挑战	牌王挑戰	King of Cards	王者戦	에이스 도전	ท้าทายเจ้าแห่งการ์ด
+10005	和风战牌_编辑牌组	UIActivityJapanesePokerEditDialog	2	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerEditDialog.prefab	0	1	0	0	0	0		1	编辑牌组	編輯牌組	Edit Deck	デッキ編成	카드 덱 편집	จัดชุดการ์ด
+10006	和风战牌_牌组等级	UIActivityJapanesePokerLvRulePopup	3	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerLvRulePopup.prefab		0	0	0	0	0		1						
+10007	和风战牌_卡牌奖励	UIActivityJapanesePokerBuyAnimation	3	Prefabs/ActivityJapaneseLevel/PokerEnter/ActivityJapanesePokerBuyAnimation.prefab		0	0	0	0	0		1						
+10008	和风战牌_连接中	UIActivityJapanesePokerMatchDialog		Prefabs/ActivityJapaneseLevel/PokerBattle/ActivityJapanesePokerMatchDialog.prefab		0	0	0	0	0		1						
+10009	和风战牌_VS	UIActivityJapanesePokerCardVsDialog	2	Prefabs/ActivityJapaneseLevel/PokerBattle/ActivityJapanesePokerCardVs.prefab		0	0	0	0	0		1						
+10010	和风战牌_比赛	UIActivityJapanesePokerPlayerBattleDialog	2	Prefabs/ActivityJapaneseLevel/PokerBattle/ActivityJapanesePokerPlayerBattleDialog.prefab		0	0	0	0	0		1						
+10011	和风战牌_结果	UIActivityJapanesePokerBattleResult	2	Prefabs/ActivityJapaneseLevel/PokerBattle/ActivityJapanesePokerBattleResult.prefab		0	0	0	0	0		1						
+10012	和风战牌_指南	UiActivityJapanesePokerHandbook	3	Prefabs/ActivityJapaneseLevel/PokerBattle/ActivityJapanesePokerRule.prefab		0	0	0	0	0		1						
+6651	和风副本主界面	JapaneseStoryEntryMain	2	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryEntryMain.prefab		1	1	1	0	0		1						
+6652	和风副本关卡选择界面	ActivityJapaneseStoryChapterDialog	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryChapterDialog.prefab		1	0	1	0	0		1						
+6653	和风副本章节选择界面	ActivityJapaneseStoryLevelMain	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryLevelMain.prefab		1	0	0	0	0		1						
+6654	和风副本章节任务界面	ActivityJapaneseStoryTaskDialog	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryTaskDialog.prefab		1	0	0	0	0		1						
+6655	和风副本Boss界面	ActivityJapaneseStoryBossDialog	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryBossMain.prefab		1	0	0	0	0		1						
+6656	和风副本Boss界面	ActivityJapaneseStoryBossRankRewardsDialog	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryBossRankRerwardDialog.prefab		1	0	0	0	0		1						
+6657	回归活动主界面 	RegressionNewDialog	2	Prefabs/RegressionNew/RegressionNewDialog5010.prefab		1	0	0	0	0		1						
+6658	和风副本Boss详情界面	ActivityJapaneseStoryBossDetailsDialog	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseStoryBossDetailsDialog.prefab		1	0	0	0	0		1						
+6661	装备自动洗练界面	CultivateOverseaEquipmentClearAutoPopup	2	Prefabs/CultivateOversea/CultivateOverseaEquipmentClearAutoPopup.prefab		0	0	0	0	0		1						
+6588	loading的cg图预览	CgPreviewDialog	2	Prefabs/BeginnerEvent/BeginnerEventLoadingPanel.prefab		0	0	0	0	0		1						
+6665	idol3DV2	IdolLive3D_MainUI_V2	3	Prefabs/IdolLive3D_MainUI_V2.prefab		1	0	0	0	0		1						
+6666	双旦活动主界面	ActivityMidFestivalMain_12000202	2	Prefabs/ActivityMidFestival/12000202/ActivityMidFestivalMain12000202.prefab		1	0	1	1	0	9000063;9000064	1						
+6667	双旦活动故事界面	ActivityMidFestivalStory_12000202	2	Prefabs/ActivityMidFestival/12000202/ActivityMidFestivalStory12000202.prefab		1	0	1	1	0	9000063;9000064	1						
+6668	双旦活动记录界面	ActivityMidFestivalRecord_12000202	2	Prefabs/ActivityMidFestival/12000202/ActivityMidFestivalRecord12000202.prefab		1	0	1	1	0	9000063;9000064	1						
+6669	双旦活动任务界面	ActivityMidFestivalTaskDialog12000202	3	Prefabs/ActivityMidFestival/12000202/ActivityMidFestivalTaskDialog12000202.prefab		1	0	1	1	0	9000064	1						
+6670	双旦活动主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000202	3	Prefabs/ActivityMidFestival/12000202/ActivityMidFestivalEntranceAnimation12000202.prefab		0	0	0	0	0		1						
+6680	进化之路buff选择界面	ActivityThrowDiceBuffEffectDialog	3	Prefabs/Activity/ActivityMonopolyBuffChooseDialog140004.prefab		0	0	0	0	0		1						
+6681	进化之路任务界面	ActivityThrowDiceTaskDialog	3	Prefabs/Activity/ActivityMonopolyTaskRewardpopup140004.prefab		0	0	0	0	0		1						
+6682	dmm菜单弹窗	DmmMenuItemDialog	3	Prefabs/MenuDialog.prefab		0	0	0	0	0		1						
+6683	SingleSignPayDialog	SingleSignPayDialog	3	Prefabs/SingleSignPay/SingleSignPayDialog.prefab		1	0	0	0	0		1						
+6684	和风副本成就界面	ActivityJapaneseRewardDialog	3	Prefabs/ActivityJapaneseLevel/Story/ActivityJapaneseRewardDialog.prefab		1	0	0	0	0		1						
+6685	三段包下载	ThirdPackageDownloadDialog	3	Prefabs/MainDownLoadDialog.prefab		0	0	0	0	0		1						
+6686	混沌回忆排行榜	ActionDarkDreamNewFunctionRankDialog	3	Prefabs/Action/ActionDarkDreamNewFunctionRankDialog.prefab		1	0	0	0	0		1						
+6687	死亡悼影主界面	MournMainDialog	3	Prefabs/ActivityMourn12002501/MournMainDialog.prefab		1	0	0	0	0		1						
+6688	死亡悼影Boss主界面 	MournBossDialog	3	Prefabs/ActivityMourn12002501/MournBossDialog.prefab		1	0	0	0	0		1						
+6689	死亡悼影Boss排行榜	MournBossRankRewardDialog	3	Prefabs/ActivityMourn12002501/MournBossRankRewardDialog.prefab		0	0	0	0	0		1						
+6690	死亡悼影Buff界面	MournBuffDisplayDialog	3	Prefabs/ActivityMourn12002501/MournBuffDisplayDialog.prefab		1	0	0	0	0		1						
+6691	死亡悼影剧情主界面	MournChapterEntryDialog	3	Prefabs/ActivityMourn12002501/MournChapterEntryDialog.prefab		1	0	0	0	0		1						
+6692	死亡悼影剧情章节界面	MournPlotDialog	3	Prefabs/ActivityMourn12002501/MournPlotDialog.prefab		0	0	0	0	0		1						
+6693	死亡悼影爬塔主界面	MournTowerDialog	3	Prefabs/ActivityMourn12002501/MournTowerDialog.prefab		1	0	0	0	0		1						
+6694	死亡悼影爬塔奖励展示	MournToweRewardPopup	3	Prefabs/ActivityMourn12002501/MournToweRewardPopup.prefab		0	0	0	0	0		1						
+6695	刮刮乐弹出页面	SlotMachinePopUp	3	Prefabs/Activity/ActivityScratchDrawTicketPopUp120030.prefab		0	0	0	0	0		1						
+6696	通用副本Boss详情界面	CommonBossDetailsDialog	3	Prefabs/Common/CommonBossDetailsDialog.prefab		1	0	0	0	0		1						
+6697	时装通行证购买等级界面	UIActivityFashionPassBuyLevelDialog	2	Prefabs/Activity/ActivitySkinPassBuyRating.prefab		0	0	0	0	0		1						
+6698	食契约本成就奖励	ActivityDreamAdventuresRewardDialog	3	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresRewardDialog.prefab		1	0	0	0	0		1						
+6699	跑酷无限模式Reward	ParkourRankRewardDialog	3	Prefabs/OverseaParkour12001801/OverseaParkourRankRewardDialog12001801.prefab		1	0	0	0	0		1						
+6700	回响排名奖励界面	ActionDarkDreamRankRewardDialog		Prefabs/Action/ActionDarkDreamRankRewardDialog.prefab		1	0	0	0	0		1						
+6821	微缩世界掉落奖励	OverseaParkourDropMessagePopUp		Prefabs/OverseaParkour12001801/OverseaParkourDropMessagePopUp.prefab		0	0	0	0	0		1						
+6822	微缩世界奖励界面	OverseaParkourRewardDialog		Prefabs/OverseaParkour12001801/OverseaParkourRewardDialog.prefab		1	0	0	0	0		1						
+6823	通用奖励获得界面	GachaponSkinBlendResultDialog	2	Prefabs/GachaponSkin/GachaponSkinBlendResultDialog.prefab		0	0	0	0	1		1						
+6824	食契排行榜分榜界面	UIActivityFoodAnnihilationBranchRankDialog	2	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventureslStoryMapBossRankBranchDialog.prefab		1	0	0	0	0		1						
+6830	限时招募抽卡主界面前置	UIActivityTimeLimitedMainDialog		Prefabs/ActivityDK12003501/ActivityDKMainDialog.prefab		1	0	0	0	0		1						
+6831	限时招募抽卡主玩法界面	UIActivityTimeLimitedMainGameDialog		Prefabs/ActivityDK12003501/ActivityDKRecruitDialog.prefab		0	0	0	0	0		1						
+6832	时装秀场功能规则说明界面	GachaponSkinBlendMember	2	Prefabs/GachaponSkin/GachaponSkinBlendMember.prefab		0	0	0	0	1		1						
+6833	限时招募详情界面	UIActivityTimeLimitedProbabilityPanel		Prefabs/ActivityDK12003501/ActivityDKMemberPopUp.prefab		0	0	0	0	1		1						
+6834	限时招募免费招募	UIActivityTimeLimitedObtainedFreePanel		Prefabs/ActivityDK12003501/ActivityDKobtainedFreeDialog.prefab		0	0	0	0	1		1						
+6840	猫娘人气比拼主界面	ActivityCatGirlPKMainPanel	1	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKMainPanel.prefab	人气投票html	1	0	0	0	0		1						
+6841	猫娘PK比拼选择角色和卡的界面	ActivityCatGirlPKCardAndRoleDialog	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKShortlistDialog.prefab		1	0	0	0	0		1						
+6842	猫娘人气比拼选卡界面	ActvityCatGirlPKSelectCardDialog	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKArmedSelectDialog.prefab		1	0	0	0	0		1						
+6843	猫娘人气比拼投票界面	ActivityCatGirlPKVoteDialog	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKVoteDialog.prefab		1	0	0	0	0		1						
+6844	猫娘人气比拼首次观看晋级名单	ActivityCatGirlPKRoleViewPopUp	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKRoleViewPopUp.prefab		0	0	0	0	0		1						
+6845	猫娘人气比拼查看直通名单	ActivityCatGirlPKRoleViewDialog	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKRoleViewDialog.prefab		1	0	0	0	0		1						
+6846	猫娘人气比拼每日任务	ActivityCatGirlPKGetTicketDialog	1	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKGetTicketDialog.prefab		0	0	0	0	0		1						
+6847	猫娘人气比拼投票奖励界面	ActivityCatGirlPKVoteRewardDialog	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKVoteRewardDialog.prefab		1	0	0	0	0		1						
+6848	猫娘人气比拼应援排行榜	ActivityCatGirlPKRankingDialog	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKRankingDialog.prefab		1	0	0	0	0		1						
+6849	猫娘人气比拼应援排行榜奖励	ActivityCatGirlPKRankingListRewardPopup	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKRankingListRewardPopup.prefab		1	0	0	0	0		1						
+6850	猫娘人气比拼应援排行榜分数	ActivityCatGirlPKRankingDescPopup	2	Prefabs/ActivityCatGirlPK12003201/ActivityCatGirlPKRankingDescPopup.prefab		1	0	0	0	0		1						
+3100	新年基金展示卡池	ActivityNewYearFundLookPopup	2	Prefabs/Activity/ActivityNewYearFundLookPopup.prefab		0	0	0	0	0		1						
+6851	猫娘乐园换皮主界面	ActivityMountainOptionEntryDialog		Prefabs/ActivityMountain/11300302/ActivityMountainOptionEntryDialog.prefab		1	0	1	0	0		1						
+6852	猫娘乐园换皮抽奖界面	ActivityMountainDrawDialog		Prefabs/ActivityMountain/11300302/ActivityMountainDrawDialog.prefab		1	0	1	0	0		1						
+6853	猫娘乐园换皮主线章节界面	ActivityMountainMainLineDialog		Prefabs/ActivityMountain/11300302/ActivityMountainMainLineDialog.prefab		1	0	0	0	0		1						
+6854	猫娘乐园换皮主线章节详情界面	ActivityMountainMainLineDetailsDialog		Prefabs/ActivityMountain/11300302/ActivityMountainMainLineDetailsDialog.prefab		1	0	0	0	0		1						
+6855	猫娘乐园任务界面	ActivityMountainTaskDialog		Prefabs/ActivityMountain/11300302/ActivityMountainTaskDialog.prefab		1	0	0	0	0		1						
+6856	通用Boss挑战界面	CommonActivityBossMain		Prefabs/Common/CommonActivityBossMain.prefab		1	0	1	0	0		1						
+6857	春节烹饪活动界面	ActivityMountainOperateMainDialog		Prefabs/ActivityMountain/11300302/ActivityMountainOperateMainDialog.prefab		0	0	0	0	0		1						
+6858	春节烹饪活动入口界面	ActivityMountainFightDialog		Prefabs/ActivityMountain/11300302/ActivityMountainFightDialog.prefab		1	0	1	0	0	9000077;9000078	1						
+6859	春节烹饪活动升级界面	ActivityMountainFightBuffDialog		Prefabs/ActivityMountain/11300302/ActivityMountainFightBuffDialog.prefab		1	0	1	0	0	9000078	1						
+6860	通用Boss排名界面	CommonActivityBossRankRewardDialog		Prefabs/Common/CommonActivityBossRankRewardDialog.prefab		1	0	0	0	0		1						
+6861	通用Boss伤害奖励界面	CommonActivityBossDamageBonusDialog		Prefabs/Common/CommonActivityBossDamageBonusDialog.prefab		1	0	0	0	0		1						
+6862	通用Boss掉落详情界面	CommonActivityBossDropMessagePopUp		Prefabs/Common/CommonActivityBossDropMessagePopUp.prefab		1	0	0	0	0		1						
+6863	春节烹饪结算弹窗	ActivityMountainOperatePopup		Prefabs/ActivityMountain/11300302/ActivityOperatePopup.prefab		0	0	0	0	0		1						
+6864	春节烹饪暂停界面	ActivityMountainOperateSuspendDialog		Prefabs/ActivityMountain/11300302/ActivityOperateSuspendDialog.prefab		0	0	0	0	0		1						
+6865	通用排行榜界面	CommonRankingsDialog		Prefabs/Common/CommonActivityShopFightRankingsDialog.prefab		1	0	0	0	0		1						
+6866	新手活动主界面	BeginnerAssembleMainDialog		Prefabs/BeginnerAssemble/BeginnerAssembleMainDialog.prefab		1	0	0	0	0		1						
+6867	春节烹饪操作说明界面	ActivityMountainInstructionDialog		Prefabs/ActivityMountain/11300302/ActivityMountainInstructionDialog.prefab		0	0	0	0	0		1						
+6868	春节烹饪操作说明界面	ActivityMountainInstructionDialog		Prefabs/ActivityMountain/11300302/ActivityMountainInstructionDialog.prefab		0	0	0	0	0		1						
+6869	通用成就奖励界面	CommonActivityAchievementDialog	3	Prefabs/Common/CommonActivityAchievementDialog.prefab		1	0	0	0	0		1						
+6870	双旦活动主界面	ActivityMidFestivalMain_12000203	2	Prefabs/ActivityMidFestival/12000203/ActivityMidFestivalMain12000203.prefab		1	0	1	1	0	9000063;9000064	1						
+6871	双旦活动故事界面	ActivityMidFestivalStory_12000203	2	Prefabs/ActivityMidFestival/12000203/ActivityMidFestivalStory12000203.prefab		1	0	1	1	0	9000063;9000064	1						
+6872	双旦活动记录界面	ActivityMidFestivalRecord_12000203	2	Prefabs/ActivityMidFestival/12000203/ActivityMidFestivalRecord12000203.prefab		1	0	1	1	0	9000063;9000064	1						
+6873	双旦活动任务界面	ActivityMidFestivalTaskDialog12000203	3	Prefabs/ActivityMidFestival/12000203/ActivityMidFestivalTaskDialog12000203.prefab		1	0	1	1	0	9000064	1						
+6874	双旦活动主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000203	3	Prefabs/ActivityMidFestival/12000203/ActivityMidFestivalEntranceAnimation12000203.prefab		0	0	0	0	0		1						
+6875	活动界面	RecommendTeamDialog	2	Prefabs/RecommendTeam/RecommendTeamDialog.prefab	阵容推荐	1	1	1	0	1		1						
+6876	双旦活动主界面	ActivityMidFestivalMain_12000204	2	Prefabs/ActivityMidFestival/12000204/ActivityMidFestivalMain12000204.prefab		1	0	1	1	0	9000063;9000064	1						
+6877	双旦活动故事界面	ActivityMidFestivalStory_12000204	2	Prefabs/ActivityMidFestival/12000204/ActivityMidFestivalStory12000204.prefab		1	0	1	1	0	9000063;9000064	1						
+6878	双旦活动记录界面	ActivityMidFestivalRecord_12000204	2	Prefabs/ActivityMidFestival/12000204/ActivityMidFestivalRecord12000204.prefab		1	0	1	1	0	9000063;9000064	1						
+6879	双旦活动任务界面	ActivityMidFestivalTaskDialog12000204	3	Prefabs/ActivityMidFestival/12000204/ActivityMidFestivalTaskDialog12000204.prefab		1	0	1	1	0	9000064	1						
+6880	双旦活动主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000204	3	Prefabs/ActivityMidFestival/12000204/ActivityMidFestivalEntranceAnimation12000204.prefab		0	0	0	0	0		1						
+6881	双旦活动主界面	ActivityMidFestivalMain_12000205	2	Prefabs/ActivityMidFestival/12000205/ActivityMidFestivalMain12000205.prefab		1	0	1	1	0	9000085;9000086	1						
+6882	双旦活动故事界面	ActivityMidFestivalStory_12000205	2	Prefabs/ActivityMidFestival/12000205/ActivityMidFestivalStory12000205.prefab		1	0	1	1	0	9000085;9000086	1						
+6883	双旦活动记录界面	ActivityMidFestivalRecord_12000205	2	Prefabs/ActivityMidFestival/12000205/ActivityMidFestivalRecord12000205.prefab		1	0	1	1	0	9000085;9000086	1						
+6884	双旦活动任务界面	ActivityMidFestivalTaskDialog12000205	3	Prefabs/ActivityMidFestival/12000205/ActivityMidFestivalTaskDialog12000205.prefab		1	0	1	1	0	9000085;9000086	1						
+6885	双旦活动主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000205	3	Prefabs/ActivityMidFestival/12000205/ActivityMidFestivalEntranceAnimation12000205.prefab		0	0	0	0	0		1						
+6886	心愿烟火活动主界面	ActivityMidFestivalMain_12000206	2	Prefabs/ActivityMidFestival/12000206/ActivityMidFestivalMain12000206.prefab		1	0	1	1	0	9000088;9000089	1						
+6887	心愿烟火故事界面	ActivityMidFestivalStory_12000206	2	Prefabs/ActivityMidFestival/12000206/ActivityMidFestivalStory12000206.prefab		1	0	1	1	0	9000088;9000089	1						
+6888	心愿烟火记录界面	ActivityMidFestivalRecord_12000206	2	Prefabs/ActivityMidFestival/12000206/ActivityMidFestivalRecord12000206.prefab		1	0	1	1	0	9000088;9000089	1						
+6889	心愿烟火任务界面	ActivityMidFestivalTaskDialog12000206	3	Prefabs/ActivityMidFestival/12000206/ActivityMidFestivalTaskDialog12000206.prefab		1	0	1	1	0	9000088;9000089	1						
+6890	心愿烟火主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000206	3	Prefabs/ActivityMidFestival/12000206/ActivityMidFestivalEntranceAnimation12000206.prefab		0	0	0	0	0		1						
+6891	猫娘乐园换皮抽奖界面	ActivityMountainDrawDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainDrawDialog.prefab		1	0	1	0	0		1						
+6892	猫娘乐园换皮主线章节界面	ActivityMountainMainLineDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainMainLineDialog.prefab		1	0	0	0	0		1						
+6893	猫娘乐园换皮主线章节详情界面	ActivityMountainMainLineDetailsDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainMainLineDetailsDialog.prefab		1	0	0	0	0		1						
+6894	猫娘乐园任务界面	ActivityMountainTaskDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainTaskDialog.prefab		1	0	0	0	0		1						
+6895	猫娘乐园换皮主界面	ActivityMountainOptionEntryDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainOptionEntryDialog.prefab		1	0	1	0	0		1						
+6896	猫娘乐园烹饪换皮主界面	ActivityMountainOperateMainDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainOperateMainDialog.prefab		1	0	1	0	0	9000094	1						
+6897	春节烹饪活动入口界面	ActivityMountainFightDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainFightDialog.prefab		1	0	1	0	0	9000093;9000094	1						
+6898	春节烹饪活动升级界面	ActivityMountainFightBuffDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainFightBuffDialog.prefab		1	0	1	0	0	9000094	1						
+6899	春节烹饪结算弹窗	ActivityMountainOperatePopup_11300303		Prefabs/ActivityMountain/11300303/ActivityOperatePopup.prefab		0	0	0	0	0		1						
+6900	春节烹饪暂停界面	ActivityMountainOperateSuspendDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityOperateSuspendDialog.prefab		0	0	0	0	0		1						
+6901	春节烹饪操作说明界面	ActivityMountainInstructionDialog_11300303		Prefabs/ActivityMountain/11300303/ActivityMountainInstructionDialog.prefab		0	0	0	0	0		1						
+6911	临界重构	CustomTrainMainDialog	3	Prefabs/CustomTrain/CustomTrainMainDialog.prefab	html	1	0	0	0	0		1	临界重构	臨界重構	Critical Fracture	臨界リファクター	임계 재구성	วิกฤตอนันต์
+6912	临界重构排行榜	CustomTrainrewardPreviewPopup	3	Prefabs/CustomTrain/CustomTrainRewardPreviewPopup.prefab		0	0	0	0	0		1						
+6902	一千朵彼岸花活动主界面	ActivityMidFestivalMain_12000207	2	Prefabs/ActivityMidFestival/12000207/ActivityMidFestivalMain12000207.prefab		1	0	1	1	0	9000102;9000103	1						
+6903	一千朵彼岸花故事界面	ActivityMidFestivalStory_12000207	2	Prefabs/ActivityMidFestival/12000207/ActivityMidFestivalStory12000207.prefab		1	0	1	1	0	9000102;9000103	1						
+6904	一千朵彼岸花记录界面	ActivityMidFestivalRecord_12000207	2	Prefabs/ActivityMidFestival/12000207/ActivityMidFestivalRecord12000207.prefab		1	0	1	1	0	9000102;9000103	1						
+6905	一千朵彼岸花任务界面	ActivityMidFestivalTaskDialog12000207	3	Prefabs/ActivityMidFestival/12000207/ActivityMidFestivalTaskDialog12000207.prefab		1	0	1	1	0	9000102;9000103	1						
+6906	一千朵彼岸花主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000207	3	Prefabs/ActivityMidFestival/12000207/ActivityMidFestivalEntranceAnimation12000207.prefab		0	0	0	0	0		1						
+6907	终电残响活动主界面	ActivityMidFestivalMain_12000208	2	Prefabs/ActivityMidFestival/12000208/ActivityMidFestivalMain12000208.prefab		1	0	1	1	0	9000104;9000105	1						
+6908	终电残响故事界面	ActivityMidFestivalStory_12000208	2	Prefabs/ActivityMidFestival/12000208/ActivityMidFestivalStory12000208.prefab		1	0	1	1	0	9000104;9000105	1						
+6909	终电残响记录界面	ActivityMidFestivalRecord_12000208	2	Prefabs/ActivityMidFestival/12000208/ActivityMidFestivalRecord12000208.prefab		1	0	1	1	0	9000104;9000105	1						
+6910	终电残响任务界面	ActivityMidFestivalTaskDialog12000208	3	Prefabs/ActivityMidFestival/12000208/ActivityMidFestivalTaskDialog12000208.prefab		1	0	1	1	0	9000104;9000105	1						
+6913	终电残响主界面进入动画界面	ActivityMidFestivalEntranceAnimation_12000208	3	Prefabs/ActivityMidFestival/12000208/ActivityMidFestivalEntranceAnimation12000208.prefab		0	0	0	0	0		1						

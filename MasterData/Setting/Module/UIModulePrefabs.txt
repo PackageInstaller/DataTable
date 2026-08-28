@@ -1,0 +1,134 @@
+id	name	desc	path	atlasTag	status
+int	int	int	int	int	int
+1	FriendPromptDialog	好友PVP的提示	Prefabs/Friend/FriendPromptDialog.prefab	friend	1
+2	FriendReadyDialog	好友PVP加载界面	Prefabs/Friend/FriendReadyDialog.prefab	congratulation;playerupgrade;friend	1
+3	LoadingPanel	加载界面	Prefabs/Common/LoadingPanel.prefab	loading	1
+4	LoginLoadingPanel	登录加载界面	Prefabs/LoginLoadingPanel.prefab	loading	1
+5	CultivateIntelligence	养成情报	Prefabs/Cultivate/CultivateIntelligence.prefab	gachapon_entry;cultivate_main	1
+6	CultivateAwakening	养成技能	Prefabs/Cultivate/CultivateAwakening.prefab	cultivate_main;cultivate_attributeicon	1
+7	CultivateEquipInfoNode	养成涂鸦(装备)	Prefabs/Cultivate/CultivateEquipInfoNode.prefab	cultivate_equip;cultivate_main	1
+8	CultivateResonance	养成共鸣(天赋)	Prefabs/Cultivate/CultivateResonance.prefab	cultivate_resonance;cultivate_equip;gachapon_entry	1
+9	CultivateStyle	养成风格	Prefabs/Cultivate/CultivateStyle.prefab	cultivate_main	1
+10	UICultivateStarTeamRatingDialog	团队评级提升	Prefabs/Cultivate/UICultivateStarTeamRatingDialog.prefab	cultivate_main	1
+11	CultivateCardSkillUpgradeSuccessDialog	卡牌觉醒提升	Prefabs/Cultivate/CultivateCardSkillUpgradeSuccessDialog.prefab	cultivate_main;cultivate_attributeicon	1
+12	UICultivateEquipLevelUpSuccessDialog	装备等级提升	Prefabs/Cultivate/UICultivateEquipLevelUpSuccessDialog.prefab	cultivate_main;cultivate_equip	1
+13	UpgradeFinishDialog	卡牌星级提升	Prefabs/Cultivate/UpgradeFinishDialog.prefab	cultivate_main	1
+14	UICultivateCookingGetDialog	料理恭喜获得	Prefabs/Cultivate/UICultivateCookingGetDialog.prefab	maininteraction	1
+15	FishPoolLevelUpDialog	钓鱼等级提升	Prefabs/Cultivate/FishPoolLevelUpDialog.prefab	fishpool	1
+16	CultivateTalentSmallNode1	卡牌天赋小节点1	Prefabs/Cultivate/CultivateTalentSmallNode1.prefab	cultivate_resonance	1
+17	CultivateTalentSmallNode2	卡牌天赋小节点2	Prefabs/Cultivate/CultivateTalentSmallNode2.prefab	cultivate_resonance	1
+18	CultivateTalentSmallNode3	卡牌天赋小节点3	Prefabs/Cultivate/CultivateTalentSmallNode3.prefab	cultivate_resonance	1
+19	CultivateTalentSmallNode4	卡牌天赋小节点4	Prefabs/Cultivate/CultivateTalentSmallNode4.prefab	cultivate_resonance	1
+20	CultivateTalentBigNode1	卡牌天赋大节点1	Prefabs/Cultivate/CultivateTalentBigNode1.prefab	cultivate_resonance	1
+21	CultivateTalentBigNode2	卡牌天赋大节点2	Prefabs/Cultivate/CultivateTalentBigNode2.prefab	cultivate_resonance	1
+22	CultivateTalentBigNode3	卡牌天赋大节点3	Prefabs/Cultivate/CultivateTalentBigNode3.prefab	cultivate_resonance	1
+23	CultivateTalentBigNode4	卡牌天赋大节点4	Prefabs/Cultivate/CultivateTalentBigNode4.prefab	cultivate_resonance	1
+24	CultivateResonancePanel	卡牌天赋面板	Prefabs/Cultivate/CultivateResonancePanel.prefab	cultivate_resonance;cultivate_equip;gachapon_entry	1
+25	UISystemGuideDialog	系统引导界面	Prefabs/Guide/UISystemGuideDialog.prefab	gameplayguide	1
+26	CommonCardSkillDesc	技能描述界面	Prefabs/Common/CommonCardSkillDesc.prefab	cultivate_main;cultivate_attributeicon	1
+27	CatHouseTipsNode	猫屋 提示界面	Prefabs/CatHouse/CatHouseTipsNode.prefab	cathouse_common;cathouse_interaction;cathouse_cultivation	1
+28	UICultivateEquipComparedView	养成装备对比界面	Prefabs/Cultivate/UICultivateEquipComparedView.prefab	cultivate_equip	1
+29	EquipDiySuitTips	养成装备自定义套装提示界面	Prefabs/Cultivate/EquipDiySuitTips.prefab	cultivate_equip	1
+30	UICultivateEquipIntroductionTipsBoard	养成装备简介提示界面	Prefabs/Cultivate/UICultivateEquipIntroductionTipsBoard.prefab	cultivate_equip	1
+31	CardAwakeningDesc	养成技能详情界面	Prefabs/Cultivate/CardAwakeningDesc.prefab	cultivate_main;cultivate_attributeicon	1
+32	UISystemGuideTipsBoard	系统引导对话提示界面	Prefabs/Guide/UISystemGuideTipsBoard.prefab	gameplayguide	1
+33	QuestionnairePanel	问卷活动页	Prefabs/Activity/QuestionnairePanel.prefab	bamboo_bamboomain;gachapon_entry	1
+34	SignPanel	签到活动页	Prefabs/Activity/SignPanel.prefab	activity;gachapon_entry	1
+35	AccumulatedRechargePanel	累充活动页	Prefabs/Activity/AccumulatedRechargePanel.prefab	activity;gachapon_entry	1
+36	TimeLimitedTaskPanel	限时任务页	Prefabs/Activity/LimitedTimeEventPanel.prefab	gachapon_entry	1
+37	PVPPlayerReadyDialog	风暴巅峰战斗准备界面	Prefabs/PVP/PVPPlayerReadyDialog.prefab	pvp_pvpplayerready;pvp_pvpcommon	1
+38	CatHousDataDetailsNode	猫屋 基因详情界面	Prefabs/CatHouse/CatHousDataDetailsNode.prefab	cathouse_common	1
+39	StoreRecommend	商城推荐页	Prefabs/Store/StoreRecommend.prefab	store_common;player	1
+40	StoreChargeDialog	钻石商城	Prefabs/Store/StoreChargeDialog.prefab	store_charge;store_common	1
+41	StoreGiftBag	礼包商城	Prefabs/Store/StoreGiftBag.prefab	store_common	1
+42	StoreMonthCard	月卡商城	Prefabs/ResidentEvent/ResidentMonthlyCardDialog.prefab		1
+43	CultivateArmCompose	养成卡牌合成	Prefabs/Cultivate/CultivateArmComposeDialog.prefab	cultivate_main	1
+45	CultivateLifeSkillTips	养成生活技能提示	Prefabs/Cultivate/CultivateLifeSkillTips.prefab	cultivate_main	1
+46	ModuleToastDialog	规则说明弹窗	Prefabs/Common/ModuleToastDialog.prefab	moduletoast	1
+47	FishpoolGetRecipesDialog	获得食谱	Prefabs/FishPool/FishpoolGetRecipesDialog.prefab		1
+48	CultivateCardsEntryPerspectivePanel	卡牌入口列表节点	Prefabs/Cultivate/CultivateCardsEntryPerspectivePanel.prefab	cultivate_main	1
+49	MainInteractionGetRecipesDialog	获得好感度料理	Prefabs/MainInteraction/MainInteractionGetRecipesDialog.prefab		1
+50	GuideCameraNode	系统相机节点	Prefabs/Guide/GuideCameraNode.prefab		1
+51	RecallPanel	召回	Prefabs/Activity/ActivityRecallPanel.prefab	activity	1
+52	RegressionPanel	回归	Prefabs/Activity/ActivityRegressionPanel.prefab	activity	1
+53	RegressionBindPanel	回归绑定召回码	Prefabs/Activity/ActivityRegressionExchangePopUp.prefab	activity	1
+54	PreDownloadCameraNode	预下载相机节点	Prefabs/PreDownload/PreDownloadCameraNode.prefab		1
+55	BambooPanel	竹林副本	Prefabs/Activity/BambooPanel.prefab		1
+56	PlayerSignDialog	日常签到	Prefabs/DailyCheck/DailyCheck.prefab		1
+57	PhysicalStrengthDialog	体力领取	Prefabs/ResidentEvent/PhysicalStrengthDialog.prefab		1
+58	WelfareLevelGift	商城等级礼包	Prefabs/ResidentEvent/StoreLevelGiftDialog.prefab		1
+59	LoginQueueDialog	登录排队等候界面	Prefabs/LoginQueueWaitDialog.prefab		1
+60	DirectionalEntryDialog	定向作战入口界面	Prefabs/Activity/DirectionalEntryDialog.prefab		1
+61	MediumPTEntryDialog	中型pt本入口界面	Prefabs/Activity/MediumPtEntryDialog.prefab		1
+62	LadderCompetionEntryDialog	天梯竞技入口界面	Prefabs/Activity/LadderCompetionEntryDialog.prefab		1
+63	LadderCompetionLoadingDialog	天梯竞技战斗加载界面	Prefabs/LadderCompetion/LadderCompetionLoadingDialog.prefab		1
+64	ClayEntryDialog	网页跳转活动	Prefabs/Activity/ClayEntryDialog.prefab		1
+65	ActivityCatBallRescuePanel	基因概率up活动	Prefabs/Activity/ActivityCatBallRescuePanel.prefab		1
+66	ActivityFishPoolContestDialog	钓鱼竞赛活动	Prefabs/Activity/ActivityFishPoolContestDialog.prefab		1
+67	ActivityWorldBossEntryDialog	Boss挑战活动	Prefabs/Activity/ActivityWorldBossEntryDialog.prefab		1
+68	ActivityNightCatPanel	暗夜猫活动入口界面	Prefabs/Activity/ActivityNightCatPanel.prefab		1
+69	WeekTasksEntryDialog	周扭蛋任务	Prefabs/Activity/WeekTasksEntryDialog.prefab		1
+70	UICultivateEquipSettingPanel	装备快速选择界面	Prefabs/Cultivate/UICultivateEquipSettingPanel.prefab		1
+71	UICatHousePrivilegeCard	孵化月卡	Prefabs/CatHouse/CatHousePrivilegeCard.prefab		1
+72	StoreStyle	皮肤商城	Prefabs/Store/StoreStyle.prefab		1
+73	SpecifySceneLoadingPanel	加载界面	Prefabs/Common/SpecifySceneLoadingPanel.prefab		1
+75	SpringFestivalRoleDialogueBubble	春节活动人物气泡界面	Prefabs/SpringFestival/SpringFestivalRoleDialogueBubble.prefab		1
+76	CultivateOverseaEquipmentDialog	养成装备(海外)	Prefabs/CultivateOversea/CultivateOverseaEquipmentDialog.prefab		1
+77	CardProgressionEquipmentComparedNode	装备比较node(海外)	Prefabs/CultivateOversea/CultivateOverseaEquipDetailsGroup.prefab		1
+78	CultivateOverseaSecondConfirmLevelUpNode	海外装备升级二次确认界面	Prefabs/CultivateOversea/CultivateOverseaSecondConfirmLevelUpNode.prefab		1
+79	CultivateOverseaSecondConfirmStarRiseNode	海外装备升星二次确认界面	Prefabs/CultivateOversea/CultivateOverseaSecondConfirmStarRiseNode.prefab		1
+80	CultivateOverseaEquipSettingPanel	海外装备快速选择界面	Prefabs/CultivateOversea/CultivateOverseaEquipmentSettingPanel.prefab		1
+81	OverseaManageCafeCattyUpgradePopup	海外咖啡经营升级界面	Prefabs/OverseaManage/OverseaManageCafeCattyUpgradePopup.prefab		1
+82	OverseaManageCookingListPopupDialog	海外咖啡经营食谱升级界面	Prefabs/OverseaManage/OverseaManageCookingListPopupDialog.prefab		1
+83	OverseaStoreCoinDialog	海外杂货铺核心商城界面	Prefabs/OverseaStore/OverseaStoreCoinDialog.prefab		1
+84	OverseaStoreEquipDrawBlueDialog	海外杂货铺装备商城子界面:PVP高级	Prefabs/OverseaStore/OverseaStoreEquipDrawBlueDialog.prefab		1
+85	OverseaStoreEquipDrawGreenDialog	海外杂货铺装备商城子界面:PVP低级	Prefabs/OverseaStore/OverseaStoreEquipDrawGreenDialog.prefab		1
+86	OverseaStoreEquipDrawRedDialog	海外杂货铺装备商城子界面:PVP中级	Prefabs/OverseaStore/OverseaStoreEquipDrawRedDialog.prefab		1
+87	OverseaStoreEquipDrawCoinDialog	海外杂货铺装备商城子界面:金币	Prefabs/OverseaStore/OverseaStoreEquipDrawCoinDialog.prefab		1
+88	OverseaStoreEquipDrawEntryDialog	海外杂货铺装备商城主界面	Prefabs/OverseaStore/OverseaStoreEquipDrawEntryDialog.prefab		1
+89	OverseaStoreCatCarDialog	海外杂货铺猫车商城	Prefabs/OverseaStore/OverseaStoreCatCarDialog.prefab		1
+90	OverseaStoreNonsynchronousPvpDialog	海外杂货铺异步PVP商城	Prefabs/OverseaStore/OverseaStoreNonsynchronousPvpDialog.prefab		1
+91	OverseaStoreSynchronousPvpDialog	海外杂货铺同步PVP商城	Prefabs/OverseaStore/OverseaStoreSynchronousPvpDialog.prefab		1
+92	OverseaStoreRewardNode	海外杂货铺异步PVP奖励节点	Prefabs/OverseaStore/OverseaStoreRewardNode.prefab		1
+93	ResidentPrivilegeDialog	海外订阅	Prefabs/ResidentEvent/ResidentPrivilegeDialog.prefab		1
+94	GrowthFundDialog	海外成长基金	Prefabs/ResidentEvent/GrowthFundDialog.prefab		1
+95	CatBallLevelUpSuccess	咖啡屋猫球升级成功	Prefabs/OverseaManage/OverseaManageCatballLevelupSuccess.prefab		1
+96	CatBallStarUpSuccess	咖啡屋猫球升星成功	Prefabs/OverseaManage/OverseaManageCatballStarupSuccess.prefab		1
+97	OverseaMallChargeDialog	海外商城充值界面	Prefabs/OverseaMall/OverseaMallChargeDialog.prefab		1
+98	OverseaMallIndulgenceActivityDialog	海外商城通用界面	Prefabs/OverseaMall/OverseaMallIndulgenceActivityDialog.prefab		1
+99	OverseaMallIndulgenceDailyDialog	海外商城每日礼包界面	Prefabs/OverseaMall/OverseaMallIndulgenceDailyDialog.prefab		1
+100	OverseaMallSkinShopDialog	海外商城皮肤商城界面	Prefabs/OverseaMall/OverseaMallSkinShopDialog.prefab		1
+101	DailyOfferDialog	海外商城每日特惠	Prefabs/OverseaMall/OverseaMallIndulgenceDailyDialog.prefab		1
+102	OverseaManageCookingMenuPopupDialog	海外咖啡经营升级界面	Prefabs/OverseaManage/OverseaManageCookingMenuPopupDialog.prefab		1
+103	StoreChargeReward	海外累计充值	Prefabs/ResidentEvent/StoreChargeReward.prefab		1
+104	OverseaStoreSpecialityDialog	海外杂货铺特产商城	Prefabs/OverseaStore/OverseaStoreSpecialityDialog.prefab		1
+105	ResdientAdvertisementDialog	海外杂货铺特产商城	Prefabs/ResidentEvent/ResdientAdvertisementDialog.prefab		1
+106	ResidentLuckyRewardDialog2990	幸运赏	Prefabs/ResidentEvent/ResidentLuckyRewardDialog2990.prefab		1
+107	OverseaRenovaAestheticsLevelupPopup	海外咖啡厅装修美观度提升界面	Prefabs/OverseaManage/OverseaRenovaAestheticsLevelupPopup.prefab		1
+108	OverseaStoreClubDialog	海外杂货铺社团商城	Prefabs/OverseaStore/OverseaStoreClubDialog.prefab		1
+109	ActivityMidFestivalNode	双旦活动入口节点	Prefabs/Activity/ActivityMidFestivalDialog12000201.prefab		1
+111	WhiteLevelGiftNode	小折送礼	Prefabs/ResidentEvent/SpecialGiftPackageDialog.prefab		1
+112	OverseaMallGiftPackDialog	海外礼包商城界面	Prefabs/OverseaMall/OverseaMallGiftPackDialog.prefab		1
+113	OverseaMallEventSpecialDialog	海外限时礼包商城界面	Prefabs/OverseaMall/OverseaMallEventSpecialDialog.prefab		1
+114	OverseaClubBossRankConfirmPopup	海外咖啡经营升级界面	Prefabs/OverClub/OverseaClubBossRankConfirmPopup.prefab		1
+115	PatrolMazeCardsRecoveryPopup	夜间夜巡卡牌回血弹窗	Prefabs/Patrol/PatrolRecoveryPopup130201.prefab		1
+116	OverseaMallCrystalDialog	海外商城一级货币充值界面	Prefabs/OverseaMall/OverseaMallCrystalDialog.prefab		1
+117	OverseaMallFurnitureDialog	海外商城家具商店	Prefabs/OverseaMall/OverseaMallFurnitureDialog.prefab		1
+118	CommonUpLampDialog	跑马灯界面	Prefabs/Common/CommonUpLampDialog.prefab		1
+119	DarkDreamPassContractManual	噩梦回响PASS卡	Prefabs/ResidentEvent/DarkDreamPassContractManual.prefab		1
+120	ActivityDreamCollectionTipsNode	梦境奇缘乐谱收集提示节点	Prefabs/ActivityDreamAdventures12000801/ActivityDreamAdventuresCollectTips.prefab		1
+121	OverseaOptionalGiftDialog	海外自选礼包商城	Prefabs/OverseaMall/OverseaMallDIYGiftDialog.prefab		1
+122	ResidentBindAccountDialog	绑定账号得好礼	Prefabs/ResidentEvent/ResidentBindAccountDialog.prefab		1
+123	OverseaStoreLimitedTimeSkinNode	海外商城限时皮肤商城	Prefabs/OverseaMall/OverseaMallSkinActivityShopDialog.prefab		1
+124	OverseaStoreLightDrakDialog	海外杂货铺光暗商城	Prefabs/OverseaStore/OverseaStoreLightDrakDialog.prefab		1
+125	DailyInvest	海外每日投资	Prefabs/ResidentEvent/ResdientBondPanel120020.prefab		1
+126	ClubGvgGroupEndPopup	GVG结算界面	Prefabs/OverClub/OverseaClubGvgGroupEndPopup.prefab		1
+127	ResidentAdventure	冒险荣誉	Prefabs/ResidentEvent/ResidentAdventureDialog.prefab		1
+128	OverseaMallSkinActivityShopSpecialDialog	海外皮肤商城页面	Prefabs/OverseaMall/OverseaMallSkinActivityShopSpecialDialog.prefab		1
+129	ResdientFeedbackDialog	vip福利	Prefabs/ResidentEvent/ResdientFeedbackDialog.prefab		1
+130	UIActivityPaySignEntryNode	付费签到	Prefabs/Activity/SingleSignPayPanel12002201.prefab		1
+131	ActivityThrowDiceMainDialog	投骰向前冲	Prefabs/Activity/ActivityMonopolyDialog140004.prefab		1
+133	ResidentFolloweMailDialog	邮箱绑定	Prefabs/ResidentEvent/ResidentFolloweMailDialog.prefab		1
+134	CultivateOverseaSecondConfirmLadderRiseNode	装备升阶成功界面	Prefabs/CultivateOversea/CultivateOverseaSecondConfirmLadderRiseNode.prefab		1
+135	ResidentUpgradeBenefits	飞行300抽	Prefabs/ResidentEvent/ResidentUpgradeBenefits.prefab		1
+136	ActivityCustomTrainNode	临界重构	Prefabs/Activity/ActivityCustomTrainDialog.prefab		1

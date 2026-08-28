@@ -1,0 +1,43 @@
+id	timelinePath	voiceId	roleId	type	shape	unlockType	unlockId	unlockNum	position	cardId	targetNum	given	weight	scRoleId	endTime	targetPosition	endCall	scEndCall	bubbleBox	ifEnd	ifSkin	status
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1010003	89:101008_home_d_3_timeline.prefab	vo_101_home_D3	101	3	0												1010099			0	0	1
+1010004	89:101008_home_d_4_timeline.prefab	vo_101_home_D4	101	3	0												1010099			0	0	1
+1010006	89:101008_home_d_6_timeline.prefab	vo_101_home_D6	101	3	0												1010099			0	0	1
+1010101	89:101008_enter_d_1_timeline.prefab	vo_homeenter_101008_01	101	1	0												1010099			1	0	1
+1010102	89:101008_enter_d_2_timeline.prefab	vo_homeenter_101008_02	101	1	0												1010099			1	0	1
+1010201	89:101008_exit_d_1_timeline.prefab		101	6	0															1	0	1
+1010099			101	8	0										40		1010003;1010004;1010006;1010201		1	1	0	1
+1020001	89:102008_home_c_1_timeline.prefab	vo_102_home_C1	102	3	0												1020099			0	0	1
+1020002	89:102008_home_c_2_timeline.prefab	vo_102_home_C2	102	3	0												1020099			0	0	1
+1020010	89:102008_home_c_10_timeline.prefab	vo_102_home_C10	102	3	0												1020099			0	0	1
+1020101	89:102008_enter_c_1_timeline.prefab	vo_homeenter_102008_01	102	1	0												1020099			1	0	1
+1020102	89:102008_enter_c_2_timeline.prefab	vo_homeenter_102008_02	102	1	0												1020099			1	0	1
+1020201	89:102008_exit_c_1_timeline.prefab		102	6	0															1	0	1
+1020099			102	8	0										40		1020001;1020002;1020010;1020201		1	1	0	1
+1030003	89:103008_home_a_3_timeline.prefab	vo_103_home_A3	103	3	0												1030099			0	0	1
+1030007	89:103008_home_a_7_timeline.prefab	vo_103_home_A7	103	3	0												1030099			0	0	1
+1030008	89:103008_home_a_8_timeline.prefab	vo_103_home_A8	103	3	0												1030099			0	0	1
+1030101	89:103008_enter_a_1_timeline.prefab	vo_homeenter_103008_01	103	1	0												1030099			1	0	1
+1030102	89:103008_enter_a_2_timeline.prefab		103	1	0												1030099			1	0	1
+1030201	89:103008_exit_a_1_timeline.prefab		103	6	0															1	0	1
+1030099			103	8	0										40		1030003;1030007;1030008;1030201		1	1	0	1
+1040001	89:104003_home_b_1_timeline.prefab	vo_104_home_B1	104	3	0												1040099			0	0	1
+1040002	89:104003_home_b_2_timeline.prefab	vo_104_home_B2	104	3	0												1040099			0	0	1
+1040006	89:104003_home_b_6_timeline.prefab	vo_104_home_B6	104	3	0												1040099			0	0	1
+1040101	89:104003_enter_d_1_timeline.prefab	vo_homeenter_104003_01	104	1	0												1040099			1	0	1
+1040201	89:104003_exit_b_1_timeline.prefab		104	6	0															1	0	1
+1040099			104	8	0										40		1040001;1040002;1040006;1040201		1	1	0	1
+1080001	89:108008_home_e_2_timeline.prefab	vo_108_home_E2	108	3	0												1080003			1	0	1
+1080002	89:108008_home_e_3_timeline.prefab	vo_108_home_E3	108	3	0												1080003			1	0	1
+1080004	89:108008_enter_e_1_timeline.prefab	vo_homeenter_108008_01	108	1	0												1080003			0	0	1
+1080003			108	8	0										60		1080001;1080002		1	1	0	1
+1050101	89:105008_enter_d_1_timeline.prefab	vo_homeenter_105008_01	105	1	0												1050099			1	0	1
+1050201	89:105008_exit_d_1_timeline.prefab		105	6	0															1	0	1
+1050099			105	8	0										40		1050099;1050201		1	1	0	1
+1060101	89:106008_enter_c_1_timeline.prefab	vo_homeenter_106008_01	106	1	0												1060099			1	0	1
+1060201	89:106008_exit_c_1_timeline.prefab		106	6	0															1	0	1
+1060099			106	8	0										40		1060099;1050201		1	1	0	1
+1070101	89:107008_enter_b_1_timeline.prefab	vo_homeenter_107008_01	107	1	0												1070099			1	0	1
+1070201	89:107008_exit_b_1_timeline.prefab		107	6	0															1	0	1
+1070099			107	8	0										40		1070099;1070201		1	1	0	1
+1090099			109	8	0										40		1090099		1	1	0	1

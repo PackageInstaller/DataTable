@@ -1,0 +1,34 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	3				<color=#d8d8d8>新海市，大雪。街巷摆满了冰雪节的装饰，路面结霜，几乎没什么车辆。</color>		1	57:dialg_bg_301				17									1					sfx_story_winter_snowstreet																												1																														
+3	4				<color=#d8d8d8>一抹红色闪过，疾驰的跑车恰到好处地甩尾滑行，以不可思议的角度转入小巷。</color>																1						sfx_story_winter_zhuanwan																											1																														
+4	5				<color=#d8d8d8>紧跟其后的黑色警备车辆完全来不及反应，朝着原本的方向远去。</color>																1																																	1																														
+5	6				<color=#d8d8d8>等开车的调查员反应过来，来到巷尾之时，车上早已没了那位金发碧眼的女郎的踪影。</color>																1																																	1																														
+6	7				<color=#d8d8d8>一只三花猫脚步轻盈地从那位调查员身后溜走，转过街角，南弥生从内推开了民居的大门。</color>																1						sfx_story_winter_jiaobu																											1																														
+7	8						1	57:dialg_bg_301				17	0	104003		200101	100101		20		1						sfx_story_03_bodianhua																											1																														
+8	9			南弥生	你好，请帮我预订今晚去阿瑞西亚的航班。随便哪座城市都行，我要进行一场冒险式旅行。									104003		200101	100101		20		1									vo_Nanmisheng_00_11												1	44;1.5											1																														
+9	10				<color=#d8d8d8>挂断电话，南弥生看了一眼身后小巷拉起的警戒线，勾起了唇角。</color>									104003		200101			20		1						sfx_story_01_tishiyin															1	44;1.5											1																														
+10	11			南弥生	啊~又完成一笔大生意。希望驾照的主人看到违章记录的时候不要哭晕过去。									104003		200101			20		1																					1	44;1.5											1																														
+11	12			南弥生	剩下来的时间，正好够去给孩子们买点伴手礼。									104003		200101	100201		20		1																					1	44;1.5											1																														
+12	13				<color=#d8d8d8>不远处，耸立着新海城市地标——高塔研究院，被落雪妆点成纯洁的白色。</color>									104003		200101	100201		20		1																					1	44;1.5											1																														
+13	14			南弥生	唔，来新海一个多月，竟然还没去看过高塔，就去那附近吧。									104003		200101	100201		20		1									vo_Nanmisheng_00_09												1	44;1.5											1																														
+14	15			南弥生	高塔步行街可是在新海必去榜单前列呢，应该会很热闹吧！									104003		201301	100201		20		1																					1	44;1.5											1																														
+15	16											17	0								1					-1	sfx_story_03_kaimen																											1																														
+16	17			情绪检测器	叮咚——您的情绪状况，极佳，请继续保持。		1	57:dialg_bg_225						104003			100201		20		1					bgm_home_bigband02	sfx_story_01_tishiyin															1												1																														
+17	18			导购员	你好，这些是添加了舒缓效果情绪粒子的酒心巧克力，要来一点吗？									104003		200101	100201		20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+18	19			导购员	客人是来新海市旅游的吧？建议多带一点回去，这可是新海市刚刚研发出来的情绪甜点。									104003		200101	100201		20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+19	20			导购员	很多顾客回购，据说也有很好的助眠效果呢！一箱二十四袋更优惠哦~									104003		200101	100201		20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+20	21			南弥生	听起来很诱人。请帮我寄五箱到这个地址……另外，再来一包路上吃。									104003		200101			20		1									vo_Nanmisheng_00_11												1	44;1.5											1																														
+21	22			导购员	客人，您一次购买这么多，这一包就送您了。									104003		200101			20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+22	23			导购员	哦对了，因为含有少量酒精，所以不能给孩子吃。									104003		200101			20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+23	24			南弥生	咦？包装上写的酒精含量只有0.25克吧？									104003		200201	100201		20		1									vo_Nanmisheng_00_07												1	44;1.5											1																														
+24	25			导购员	是的客人，孩子误食一两个的话也是没问题的，但还是不建议给孩子吃呢。									104003		200201	100201		20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+25	26			南弥生	一个都不行吗？									104003		200201			20		1																					1	44;1.5											1																														
+26	27			导购员	这……在新海市，给未成年人吃任何含有酒精的饮食都属于虐待行为。									104003		200501			20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+27	28			南弥生	啊~别担心，我可是尊重当地风俗礼法的模范游客。									104003		200501	100201		20		1									vo_Nanmisheng_00_12												1	44;1.5											1																														
+28	29			南弥生	只要不在新海市范围内就没问题了吧。									104003		201301	100201		20		1																					1	44;1.5											1																														
+29	30			导购员	客人您说什么？									104003		200101			20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+30	31			南弥生	没什么~这边的几种糖每种都两箱。还是寄到刚才的地址。									104003		200101	101301		20		1									vo_Nanmisheng_00_05												1	44;1.5											1																														
+31	32			导购员	好的客人。不过，您这个地址在樱岛，需要经过耀州中转，快递费用很高……									104003		200101	101301		20		1			18:npc_icon_472_1	1																	1	44;1.5											1																														
+32	33			南弥生	没关系，我这次来新海出差，谈成了一单大生意，赚了不少呢~									104003		200101	101301		20		1																					1	44;1.5											1																														
+33	0			南弥生	所以啊，我对新海的印象非常非常好哦！									104003		200101			20		1																					0	44;1.5											1																														

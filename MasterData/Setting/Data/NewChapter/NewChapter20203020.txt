@@ -1,0 +1,35 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2			小音	欢迎光临！啊，是调查官哥哥~欢迎欢迎~	欢迎光临！啊，是调查官姐姐~欢迎欢迎~	1	57:dialg_bg_261	8	1.2		17		106008			100101		20		1					bgm_plot_happy01	sfx_story_01_fengling																42;1.5											1																														
+2	3			我	小音你好呀，今天是你看店嘛。				8	1.2				106008			100101		20		1																						42;1.5											1																														
+3	4			小音	是呀是呀，呼呼，调查官哥哥来得正好呢……	是呀是呀，呼呼，调查官姐姐来得正好呢……			8	1.2				106008		200102	100101		20		1																						42;1.5											1																														
+4	5			小音	今天夏日绵绵甜品店有新品上架噢，是小音特制的布丁~调查官哥哥要尝尝嘛？	今天夏日绵绵甜品店有新品上架噢，是小音特制的布丁~调查官姐姐要尝尝嘛？			8	1.2				106008					20		1																						42;1.5											1																														
+5	6			我	好啊，我身边这位赫德嘉姐姐应该会很喜欢哦~				8	1.2				106008					20		1																					1	42;1.5											1																														
+6	7			赫德嘉	……嗯。				8	1.2				106008					20		1			18:npc_icon_578_1	1					vo_Hedejia_00_01												1	42;1.5											1																														
+7	8			小音	赫德嘉姐姐……似乎有点不开心……				8	1.2				106008			101001		20		1									vo_Xiaoyin_00_02												1	42;1.5											1																														
+8	9			小音	姐姐要先吃一点爆米花吗？小音这里有最好吃的爆米花，小音每次吃了就会开心起来唷~				8	1.2				106008					20		1																					1	42;1.5											1																														
+9	10				<color=#d8d8d8>小音抱起一个小凳子，往陈列着各种口味的爆米花架走去。</color>																1				1																		1;1											1																														
+10	11			小音	嘿咻嘿咻……																1			18:card_icon_106008_1						vo_Xiaoyin_00_01																								1																														
+11	12				<color=#d8d8d8>稚嫩的小身板熟练地爬上凳子，垫着脚，尝试去拿取架子上方的爆米花。</color>																1																																	1																														
+12	13			小音	唔……啊？																1			18:card_icon_106008_15	1	-1																												1																														
+13	14				<color=#d8d8d8>小音不小心失去了平衡，抓着架子摔倒在地。架子上的东西也都掉了下来，洒了一地。</color>																1						sfx_story_03_shuaidao																											1																														
+14	15			我	小音？！你没事吧？！																1																																	1																														
+15	16				<color=#d8d8d8>没等我反应过来，赫德嘉第一时间冲了上去，检查起了小音的伤势。</color>																1						sfx_story_01_tingxia																											1																														
+16	17			我	！（好快的速度！）																1																																	1																														
+17			3																		1														上前查看小音的伤势	18																		1																														
+18	19			小音	赫德嘉姐姐、调查官哥哥，让你们担心了，我没事……唔！	赫德嘉姐姐、调查官姐姐，让你们担心了，我没事……唔！			8	1.2				106008			100401		20		1																						42;1.5											1																														
+19	20			赫德嘉	你的手扭伤了！店里有急救箱吗，我来处理一下。				8	1.2				106008			100401		20		1			18:npc_icon_578_1	1																	1	42;1.5											1																														
+20	21			小音	谢谢赫德嘉姐姐，小音的手没有那么疼了。				8	1.2				106008		200601			20		1																					1	42;1.5											1																														
+21	22			我	伤处处理得很认真细致呢，幸好有赫德嘉在这里。				8	1.2				106008		200601			20		1																					1	42;1.5											1																														
+22	23			赫德嘉	不用客气，作为医生，这是我的职责……				8	1.2				106008		200601			20		1			18:npc_icon_578_1	1																	1	42;1.5											1																														
+23	24			我	小音你的衣服也脏了，要不然先去楼上换下衣服，休息一下吧。				8	1.2				106008		200601			20		1																					0	42;1.5											1																														
+24	25			小音	可是小音还要看店……				8	1.2				106008		200601	100501		20		1																						42;1.5											1																														
+25	26			我	看样子伊德和内特都不在店里……就让哥哥来给你看店。	看样子伊德和内特都不在店里……就让姐姐来给你看店。			8	1.2				106008		200601	100501		20		1																						42;1.5											1																														
+26	27			小音	可是可是，赫德嘉姐姐的布丁我还没有做……				8	1.2				106008		200601			20		1																						42;1.5											1																														
+27	28			赫德嘉	小音，布丁的制作材料都有准备好么？				8	1.2				106008		200601			20		1			18:npc_icon_578_1	1																	1	42;1.5											1																														
+28	29			小音	都准备好啦，在厨房里面~				8	1.2				106008		200501			20		1																					1	42;1.5											1																														
+29	30			赫德嘉	嗯，那么就让姐姐来做吧……				8	1.2				106008		200501			20		1			18:npc_icon_578_1	1					vo_Hedejia_00_01												1	42;1.5											1																														
+30	31			小音	这个这个，赫德嘉姐姐帮了小音大忙，还要麻烦你做布丁，小音……心里过意不去……				8	1.2				106008		200501	101001		20		1																					1	42;1.5											1																														
+31	32			赫德嘉	没有关系，平常我也经常自己做布丁的……				8	1.2				106008		200501	101001		20		1			18:npc_icon_578_1	1																	1	42;1.5											1																														
+32	33			赫德嘉	调查官……店长先生，这样可以吗？	调查官……店长女士，这样可以吗？															1			18:npc_icon_578_1	1																		1;1											1																														
+33	0			我	今天本来就是我要请你的，我作为临时店长也来帮你打打下手吧。																1																																	1																														

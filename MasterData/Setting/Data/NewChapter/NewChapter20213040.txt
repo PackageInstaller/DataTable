@@ -1,0 +1,60 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2			云灿	事情的经过就是这样，遗迹那边对阿明来说危险……所以老板你的草药还有存货吗？		1	57:dialg_bg_61				17		113008			101301		20		1					bgm_universal_survey01																1	43;0											1																														
+2	3			古董店老板	原来是这么一回事……哎呀，云灿大小姐还是一如既往地忙碌呢。									113008					20		1			18:npc_icon_343_3	1																	1	43;1											1																														
+3	4			古董店老板	这样吧，草药还有，云灿大小姐今天又是帮我忙又是照顾生意，啊，那我这个草药呢……									113008					20		1			18:npc_icon_343_3	1																	1	43;1											1																														
+4	5			古董店老板	……今天草药也大出血了，买一送一！_n今日特惠，下不为例，嘿嘿。									113008			100301		20		1			18:npc_icon_343_2	1																	1	43;1											1																														
+5	6			云灿	好啦，阿明，赶紧回去按照药方煎药服药吧——哦，对了。		1	57:dialg_bg_48				17		113008					20		1																					1	43;1											1																														
+6	59				<color=#d8d8d8>云灿从贴身的小包里，拿出了古董店老板今天赠送的添头——一包草药。</color>									113008					20		1																					1	43;1											1																														
+59	7			云灿	多亏带着这个，我才想起来老板这边还有草药呢。									113008					20		1																					1	43;1											1																														
+7	8			云灿	这份你也拿去吧。以后就不要跑到那么危险的地方去了，知道了吗？									113008			101301		20		1																					1	43;1											1																														
+8	9			阿明	嗯！我会好好盯着炉子，好好煎药，不浪费云灿姐姐和大哥哥的一片心意！	嗯！我会好好盯着炉子，好好煎药，不浪费云灿姐姐和大姐姐的一片心意！								113008			101301		20		1			18:npc_icon_355_1	1																	1	43;1											1																														
+9	10			阿明	……									113008					20		1			18:npc_icon_355_3	1																	1	43;1											1																														
+10	11			阿明	一直以来，谢谢云灿姐姐的帮助了！									113008					20		1			18:npc_icon_355_1	1																	1	43;1											1																														
+11	12				<color=#d8d8d8>阿明带着草药，往他家的方向跑去。他边跑边回头，向着我们挥手告别。</color>									113008					20		1					-1	sfx_rolestory_jiaobujin															1	43;1											1																														
+12	13			云灿	总算也有一个好结果了……									113008		201301	100301		20		1																					0	43;1											1																														
+13	14			我	这也是云灿你乐于助人的结的善果嘛。									113008			100301		20		1																						43;1											1																														
+14	15			云灿	嘿嘿，也没有啦——									113008		200101			20		1									vo_Yuncan_00_01													43;1											1																														
+15	16				<color=#d8d8d8>「咕噜噜——」</color>_n<color=#d8d8d8>云灿的肚子发出了一声小小的抗议。</color>									113008		200501			20		1						sfx_story_sea_e																43;1											1																														
+16	17			云灿	……好、好丢脸……！									113008		200401			20		1					bgm_plot_happy01				vo_Yuncan_00_03													43;1											1																														
+17	18			我	哈哈，忙了一天了，云灿早就饿了吧。我们去预约的餐厅吃饭吧？									113008					20		1																						43;1											1																														
+18	19			云灿	啊！我都忘了！现在去也赶不上时间了……都要打烊了……									113008					20		1									vo_Yuncan_00_08													43;1											1																														
+19	20				<color=#d8d8d8>云灿不好意思地摸了摸头，语气低了下去。</color>									113008					20		1																						43;1											1																														
+20	21			云灿	啊！对了！嘿嘿，要不回我的住处吧，我来给#playerName做一顿耀州菜，如何？									113008			101301		20		1																						43;1											1																														
+21	22			我	好啊，很荣幸能尝一尝云灿小姐的手艺。									113008			101301		20		1																						43;1											1																														
+22	23			云灿	嘿嘿……不过现在厨房里的香料只有干辣椒、辣椒酱和辣味火锅底料了……									113008		200101	101301		20		1									vo_Yuncan_00_01													43;1											1																														
+23	24			我	欸？都是……辣的吗？									113008		200101	101301		20		1																						43;1											1																														
+24	25			云灿	嗯嗯，都是云沛上次带给我的，用特辣的朝天椒做的！									113008		200101			20		1									vo_Yuncan_00_09													43;1											1																														
+25	26			我	嗯……我、我会努力的。									113008		200101			20		1					-1																	43;1											1																														
+26	27											17	0								1								sfx_story_sea_haishang																									1																														
+27	28			我	呼，云灿小姐的手艺很好呢。		1	57:dialg_bg_258													1																																	1																														
+28	29			云灿	嘿嘿，多谢夸奖。																1																																	1																														
+29	30				<color=#d8d8d8>夕阳的余晖洒向大海，波光粼粼的海浪轻轻拂上沙滩，发出柔和的声响。</color>																1					bgm_plot_trust01																												1																														
+30	31			我	今天难得有这么安静舒适的时候呢……我们今天得跑了大半个利兹城了吧？																1																																	1																														
+31	32			云灿	我倒是已经习惯这样的生活啦——									113008					20		1																						43;1											1																														
+32	33			我	哈哈，看得出云灿在利兹丹姆很受欢迎呢，感觉像是有求必应的万事屋……									113008					20		1																						43;1											1																														
+33	34			我	……我有些好奇，云灿会觉得累吗？									113008					20		1																						43;1											1																														
+34	35			云灿	……									113008		201301			20		1																						43;1											1																														
+35	36			云灿	#playerName，原来我听说过一个这样的故事——									113008					20		1																					1	43;1											1																														
+36	37				<color=#d8d8d8>云灿蹲了下来，将手伸入抚上沙滩的海浪之中。</color>									113008					20		1																					1	43;1											1																														
+37	55			云灿	说退潮之后，海边的沙滩上有很多小鱼搁浅了。它们是被风暴卷上了岸边……									113008		201301			20		1																					1	43;1											1																														
+55	56			云灿	……在烈日之下，它们奄奄一息。									113008		201301			20		1																					1	43;1											1																														
+56	39			云灿	就在这个时候，有一个孩子来到海边，一条条捡起小鱼……									113008					20		1																					0	43;1											1																														
+39	40			云灿	……把它们放回大海之中。									113008					20		1																					0	43;1											1																														
+40	57			云灿	有人问这个孩子：_n「沙滩上有这么多小鱼，你救得过来吗？」									113008			101301		20		1																					0	43;1											1																														
+57	41			云灿	孩子说：「我不知道！」									113008			101301		20		1																					0	43;1											1																														
+41	42			云灿	「那你为什么还要去救呢？谁会在乎呢？」_n孩子一边捡鱼一边答道——									113008			101301		20		1																					0	43;1											1																														
+42	43			云灿	「这条小鱼在乎！这条也在乎！还有这一条，这一条……_n它们都在乎！」									113008		200401			20		1																					0	43;1											1																														
+43	44				<color=#d8d8d8>云灿抬起头来，微微一笑。夕阳的光芒把她的身影添上了一层金色的光辉。</color>									113008					20		1																					1	43;1											1																														
+44	45			云灿	所以，#playerName，利兹丹姆的大家向我求助，我觉得每一个求助都很重要……									113008			101301		20		1																					1	43;1											1																														
+45	46			云灿	就像今天阿明的妈妈一样，如果我们没有去看……阿明也许就危险了……									113008		200401			20		1																					0	43;1											1																														
+46	47			云灿	这样的生活虽然有些累，但是……									113008		200401			20		1																						43;1											1																														
+47	48				<color=#d8d8d8>云灿说着说着，在沙滩上转了一个圈。</color>														20		1																						43;1											1																														
+48	49			云灿	……我觉得在利兹丹姆的日子，很开心。									113008		201301	100301		20		1									vo_Yuncan_00_09													43;1											1																														
+49	50			我	我明白了……谢谢你分享给我我这个故事，还有你的想法——嗯？									113008		200101	100301		20		1																						43;1											1																														
+50	58				<color=#d8d8d8>眼前的海滩上，也有一些鱼搁浅了。它们奄奄一息。</color>									113008					20		1																						43;1											1																														
+58			3											113008					20		1														救救搁浅的鱼	51							43;1											1																														
+51	52			我	云灿，要不要比赛一下，看谁救的鱼多？									113008					20		1																						43;1											1																														
+52	53			云灿	嘿嘿，好啊好啊！我吃饱了正好想活动活动呢~									113008			100101		20		1									vo_Yuncan_00_01													43;1											1																														
+53	54				<color=#d8d8d8>橘红色的夕阳沉淀在海平线上，一条条的小鱼在它温暖的余晖下回归大海。</color>																1																						1;2											1																														
+54	0											18	0								1																																	1																														

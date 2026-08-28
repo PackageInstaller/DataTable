@@ -1,0 +1,54 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2			我	咦，竟然都到这个时间了吗？		1	57:dialg_bg_272				17									1					bgm_universal_survey01																												1																														
+2	3				<color=#d8d8d8>看了看墙上的钟，竟然已经到午餐时间了。忙碌的时候，时间果然过得很快。</color>																1																																	1																														
+3			3																		1														一起回贝克猫吃饭？	4																		1																														
+4	5			斯泰茜	……调查官，暴风眼的餐厅本来就是免费的员工自助餐。_n还有，我已经准备好午餐了。																1			18:npc_icon_579_1																														1																														
+5	6				<color=#d8d8d8>斯泰茜有些别扭地将餐盒中的三明治递了过来，还附有装在保温杯中的汤。</color>																1						sfx_story_02_chabei																											1																														
+6	7			我	这个看起来很棒啊，我真的可以吃吗？																1																																	1																														
+7	8			斯泰茜	……哼哼，多谢夸奖。_n吃吧，本来就是为你准备……不、不是！只是材料多了而已！																1			18:npc_icon_579_2																														1																														
+8			3																		1														可疑的说法……	9																		1																														
+9	10			斯泰茜	我、我只是不希望你把工作的时间浪费在去餐厅吃饭上而已！																1			18:npc_icon_579_4																														1																														
+10	11			斯泰茜	还有，一个上午才处理了那么些文件，调查官，你的能力该不会就只有这些吧？																1			18:npc_icon_579_2																														1																														
+11	12			我	这个……																1																																	1																														
+12	13				<color=#d8d8d8>看到似乎有些恼羞成怒的斯泰茜，还是暂且避避风头比较好。</color>																1					-1																												1																														
+13	14			我	哎呀，吃饱了吃饱了，为了表达谢意，这些餐具我就先拿去洗了吧。							17									1																																	1																														
+14	15			斯泰茜	……还是我去吧。调查官，你只要好好工作就行了。																1			18:npc_icon_579_2																														1																														
+15	16				<color=#d8d8d8>斯泰茜好像也意识到了什么，拿起餐具飞快地跑掉了。</color>_n<color=#d8d8d8>她离开后不久，就有人敲响房门。</color>																1					sfx_story_02_mengdidakai	sfx_story_02_qiaomen	1.5																										1																														
+16	17			？？？	抱歉，打扰了。																1			18:npc_icon_417_2																														1																														
+17	18				<color=#d8d8d8>进来的是一名穿着科搜部制服的青年，面色焦躁，似乎心情很不好。</color>																1																																	1																														
+18	19			林轩	我是科搜部的林轩，前几天提交的申请，到现在都没有消息，请问是怎么回事？																1			18:npc_icon_417_1																														1																														
+19	20				<color=#d8d8d8>申请吗……我找一下。</color>																1																																	1																														
+20	21				<color=#d8d8d8>输入姓名，我开始搜索文件。</color>_n<color=#d8d8d8>但搜索到的文件特别多，找起来很费力。</color>																1						sfx_story_02_dianzijianpan																											1																														
+21	22			林轩	还没好吗？你们办事效率还真是差啊！																1			18:npc_icon_417_1		bgm_bg_gx_tower01																												1																														
+22			3																		1														抱歉，我对流程还不太熟悉。;暴风眼的硬件设备太落后了。;不服的话就去投诉我啊！	23;24;25																		1																														
+23	26			林轩	哼，看不起我们科搜部的人，也不用找这么拙劣的借口吧！																1			18:npc_icon_417_1																														1																														
+24	26			林轩	别把什么事情都推到硬件上，你难道不应该在自己身上找找问题吗？																1			18:npc_icon_417_1																														1																														
+50																					1																																	1																														
+25	26				<color=#d8d8d8>虽然很想这样怼回去，但除了得罪人以外解决不了任何问题，还是算了。</color>																1																																	1																														
+26	27			林轩	我们科搜部在外面辛辛苦苦跑任务，你们天天坐在办公室里，结果连个申请文件都找不到？																1			18:npc_icon_417_1																														1																														
+27	28			我	我知道你很着急，请再给我一点时间。																1																																	1																														
+28	29			林轩	我已经在这里等很久了，你还要浪费我多少时间？																1			18:npc_icon_417_1																														1																														
+29	30				<color=#d8d8d8>这时，斯泰茜抱着洗好的餐具回到了办公室。</color>																1						sfx_story_02_mengdidakai																											1																														
+30	31			斯泰茜	你是科搜部的……_n啊，我知道了，是来查询申请文件流程进度的是吗？																1			18:npc_icon_579_1																														1																														
+31	32			斯泰茜	请稍等，我现在就为您查询。																1			18:npc_icon_579_1																														1																														
+32	33			林轩	快一点，我和你们不一样，时间很宝贵的。																1			18:npc_icon_417_1																														1																														
+33	34				<color=#d8d8d8>斯泰茜熟练地操作着数据终端，很快就找到了那份申请文件。</color>_n<color=#d8d8d8>但立刻，她就皱起了眉头。</color>																1						sfx_story_02_dianzijianpan																											1																														
+34	35			斯泰茜	很抱歉，您的申请因为材料不齐全，已经被退回了。																1			18:npc_icon_579_1																														1																														
+35	36			林轩	怎么可能？为什么我没有收到消息？一定是你们弄错了。																1			18:npc_icon_417_2																														1																														
+36	37			斯泰茜	按照规定，您的申请需要补充情绪检测报告和履历表，这两份文件都没有。																1			18:npc_icon_579_1																														1																														
+37	38			斯泰茜	另外，您还需要在规定时间内获得部门主管的签名许可才行。																1			18:npc_icon_579_1																														1																														
+38	39			斯泰茜	最后，您可以查看一下邮箱的回收站，看看退回消息是否被当成垃圾消息直接删除了。																1			18:npc_icon_579_1																														1																														
+39	40			林轩	那、那个……我知道了！如果等会发现是你们弄错了，我还会回来的！																1			18:npc_icon_417_2																														1																														
+40	41				<color=#d8d8d8>男人灰溜溜地逃出了办公室。</color>_n<color=#d8d8d8>斯泰茜松了口气，刚才强硬的气势忽然间就消失了。</color>																1					-1	sfx_story_03_lamen																											1																														
+41	42			我	斯泰茜，我真的对你刮目相看了。																1																																	1																														
+42	43			斯泰茜	人家只是对这种情况比较有经验而已……_n还有，调查官，请不要小看文书工作！																1			18:npc_icon_579_1																														1																														
+43	44			斯泰茜	虽然没有外勤那么危险，但这也是支撑暴风眼乃至整个新海市和平的重要工作！																1			18:npc_icon_579_1																														1																														
+44	51			我	明白，我会好好努力的。\n对了，斯泰茜，我能问下关于你之前的行动小队的事吗？																1																																	1																														
+51	52			我	对了，刚刚我看到有一份特殊小队成立申请被驳回了三十五次，_n最后依然没有通过……																1																																	1																														
+52	45			我	那个是……你的小队吗？																1																																	1																														
+45	46				<color=#d8d8d8>听到这句话，斯泰茜放松的表情忽然再次紧张起来，她停下了手头的工作。</color>																1																																	1																														
+46	47			斯泰茜	抱歉，调查官。那件事和现在的工作没有任何关系。																1			18:npc_icon_579_1																														1																														
+47	48			斯泰茜	另外，从刚才开始你就没有在工作了吧？_n还有很多文件，请不要偷懒好吗？																1			18:npc_icon_579_1																														1																														
+48	49			斯泰茜	距离下班的时间不多了，豪威尔调查长让你过来，可不是来喝茶聊天的。																1			18:npc_icon_579_1																														1																														
+49	0				<color=#d8d8d8>看来她不愿意提起过去的事情，还是以后再找机会吧。</color>																1																																	1																														

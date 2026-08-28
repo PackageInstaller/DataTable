@@ -1,0 +1,87 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2		0	摊主	阿诚！阿诚！_n额头好烫，好像发高烧了！		1	57:dialg_bg_57				17									1			18:npc_icon_326_3	1	bgm_bg_gx_tower01																												1																														
+2	3		0	阿诚	呜……好热……好痛苦……																1			18:npc_icon_328_3	1																													1																														
+3			3																		1														不是情绪病。	4																		1																														
+4	5		0	我	不像是情绪病，更像一般的疾病。																1																																	1																														
+5	6		0	丝卡蕾特	他，并非「不虔者」……																1			18:npc_icon_583_1	1																													1																														
+6	7		0	中年女性	你是圣教团的吧？救救我们阿诚吧！																1			18:npc_icon_327_3	1																													1																														
+7	8		0	丝卡蕾特	丝卡蕾特、是罪孽之身，没有资格……																1			18:npc_icon_583_1	1																													1																														
+8	9		0	中年女性	圣教团不是有治所有病的特殊疗法吗？_n求「先知大人」眷顾阿诚……呜呜……																1			18:npc_icon_327_3	1																													1																														
+9			3																		1														（特殊疗法？）	10																		1																														
+10	11		0	我	（可以治疗所有疾病？听上去……）																1																																	1																														
+11	12		0	丝卡蕾特	……_n丝卡蕾特，明白了。																1			18:npc_icon_583_1	1																													1																														
+12	13		0	丝卡蕾特	《渡世书》、曾教诲，「尘世，乃千罪之庭」。_n「涤罪」、可以涤荡罪孽，成为、洁净之人。																1			18:npc_icon_583_1	1																													1																														
+13	14		0	丝卡蕾特	丝卡蕾特、没有资格「涤罪」。_n只能、加重「惩戒」……抵消「罪孽」。																1			18:npc_icon_583_1	1																													1																														
+14	15		0	丝卡蕾特	这次，丝卡蕾特、也听到了呼唤。_n已经、不想再……																1			18:npc_icon_583_1	1																													1																														
+15			3																		1														（这次？）	16																		1																														
+16	17		0	我	（呼唤……_n难道，她还在愧疚之前在小巷没救下人？）																1																																	1																														
+17	18		0	我	丝卡蕾特，你先听我说……																1																																	1																														
+18	19		0		<color=#d8d8d8>——嘶嘶。</color>		1	57:dialg_bg_100													1					-1	sfx_story_03_cao		op5_nengliang_loop																									1																														
+19	20		0		<color=#d8d8d8>那是扎根黑暗的污秽之光。</color>_n<color=#d8d8d8>它们宛如猩红色「荆棘」，咬破皮囊倏然生长。</color>																1																																	1																														
+20	21		0	我	（之前见过这个，是丝卡蕾特的情绪武装。_n有种不好的预感……不能让她就这样步入歧途。）																1																																	1																														
+21	22		0	丝卡蕾特	「荆棘」……去解放，面前之人的罪孽吧。																1			18:npc_icon_583_1	1																													1																														
+22			3																		1														等一下！	23																		1																														
+23	24		11								3	5	1								1						sfx_story_03_xie		-1																									1																														
+24	25		0		<color=#d8d8d8>身体抢先理智一步，挡在了「荆棘」的前面。</color>_n<color=#d8d8d8>接着响起的，是血肉撕裂的声音。</color>							5	1								1																																	1																														
+25	26		0	丝卡蕾特	？！																1			18:npc_icon_583_1	1																													1																														
+26	27		0									18	0								1								sfx_story_01_erming																									1																														
+27	28		11				1	57:dialg_bg_57			3										1						sfx_story_03_shuidi																											1																														
+28	29		0		<color=#d8d8d8>预想中的剧痛，却没有传来。</color>																1																																	1																														
+29	30		0		<color=#d8d8d8>「荆棘」及时偏移了方向，堪堪划过手臂。</color>_n<color=#d8d8d8>殷红的血从撕裂的伤口缓缓滴落。</color>																1																																	1																														
+30	31		0	我	嘶……_n（只是手臂划了一道，还真是疼啊……）																1																																	1																														
+31	32		0	丝卡蕾特	血…………_n您、受伤了……！是、丝卡蕾特的「荆棘」…………																1			18:npc_icon_583_1	1	bgm_story01_inter																												1																														
+32	33		0	丝卡蕾特	丝卡蕾特、想要救人……_n丝卡蕾特、不想伤害您……																1			18:npc_icon_583_5	1																													1																														
+33	34		0	丝卡蕾特	您是、洁净之人，丝卡蕾特却、擅加「惩戒」……_n丝卡蕾特、罪孽深重……																1			18:npc_icon_583_5	1																													1																														
+34	35		0	丝卡蕾特	「荆棘」……惩戒、丝卡蕾特……_n惩戒……惩戒……必须惩戒、罪孽的…………																1			18:npc_icon_583_5	1																													1																														
+35			3																		1														呼唤她	36																		1																														
+36	37		0	我	丝卡蕾特！																1						Story_catcity_sound_0_05																											1																														
+37	38		0	丝卡蕾特	！…………啊。_n「荆棘」、血……您、在这儿吗……？																1			18:npc_icon_583_5	1																													1																														
+38			3																		1														我在。	39																		1																														
+39	40		0	我	我在这里，丝卡蕾特。_n很抱歉鲁莽地冲上来，事态紧急。																1																																	1																														
+40	41		0	丝卡蕾特	…………您、在这儿。_n丝卡蕾特、可以、感受到您……																1			18:npc_icon_583_5	1																													1																														
+41	42		0	我	你为什么要用「荆棘」治疗那个男孩，可以告诉我吗？																1																																	1																														
+42	43		0	丝卡蕾特	…………《渡世书》、曾教诲，_n「凡是苦涩的，凡是疼痛的，一切、造就宽恕，一切、罪赎解脱」。																1			18:npc_icon_583_5	1																													1																														
+43	44		0	丝卡蕾特	释放鲜血，会带来疼痛。_n疼痛、是「惩戒」……可以、减轻「罪孽」。																1			18:npc_icon_583_5	1																													1																														
+44	45		0	丝卡蕾特	丝卡蕾特……要帮他、减轻「罪孽」。																1			18:npc_icon_583_5	1																													1																														
+45	46		0	摊主	这可是圣教团验证过的方子，「放血疗法」！不会有错！																1			18:npc_icon_326_2	1																													1																														
+46	47		0	中年女性	呜呜呜……求求您， 快用这个办法治疗阿诚吧……																1			18:npc_icon_327_3	1																													1																														
+47			3																		1														（放血疗法……）	48																		1																														
+48	49		0	我	你们先别着急……_n（从没听说过有这种疗法，听上去很奇怪。）																1																																	1																														
+49	50		0	声音	嘶嘶……																1						sfx_story_03_cao																											1																														
+50	51		0		<color=#d8d8d8>「荆棘」游走在丝卡蕾特的身体上。</color>_n<color=#d8d8d8>衣料与「荆棘」摩擦的声音，仿佛蝮蛇的嘶声吐信。</color>																1																																	1																														
+51	52		0	丝卡蕾特	丝卡蕾特、不愿再伤害……_n回去吧……																1			18:npc_icon_583_1	1																													1																														
+52	53		0		<color=#d8d8d8>听到丝卡蕾特的指示，「荆棘」停止了游走。</color>_n<color=#d8d8d8>它们潜入皮囊，重新回归到丝卡蕾特的身体里。</color>																1																																	1																														
+53	54		0		<color=#d8d8d8>微微扬起的衣袖之下，偶然露出丝卡蕾特的一截手腕。</color>_n<color=#d8d8d8>那里交叉错落着一道道赤红痕迹。</color>																1																																	1																														
+54			3																		1														伤疤？;受伤？	55;56																		1																														
+55	57		0	我	丝卡蕾特，你手腕上的……是伤疤？																1																																	1																														
+56	57		0	我	丝卡蕾特，你的手腕……你也受伤了？																1																																	1																														
+57	58		0	丝卡蕾特	……遣派「荆棘」，会烙印、痕迹……_n还有，接受「惩戒」后……																1			18:npc_icon_583_1	1																													1																														
+58	59		0	丝卡蕾特	丝卡蕾特、是罪孽的……_n它们，即是罪证。																1			18:npc_icon_583_1	1																													1																														
+59	60		0		<color=#d8d8d8>丝卡蕾特不动声色地用衣袖重新盖住了手腕。</color>_n<color=#d8d8d8>她似乎并不愿意被看到那些痕迹。</color>																1						op11_yifumoca																											1																														
+60	61		0	我	（一定很疼吧。）																1																																	1																														
+61			3																		1														摸摸头;牵起手	62;63																		1																														
+62	63		0	我	丝卡蕾特，疼痛只是疼痛，_n其他什么都不会带给你。																1																																	1																														
+63	64		0	我	饿了就要吃饭，坏了的食物就要扔掉。_n无论你是怎样的人，都值得被珍视，要记得爱惜自己。																1																																	1																														
+64	65		0	丝卡蕾特	…………_n从未有人、对丝卡蕾特、说过这些……																1			18:npc_icon_583_1	1																													1																														
+65	66		0	我	现在有我对你说了。																1																																	1																														
+66	67		11		<color=#d8d8d8>嗡——</color>		1	57:dialg_bg_100			1.5	8	1								1								sfx_story_01_erming																									1																														
+67	68		0				1	57:dialg_bg_57				6	0								1																																	1																														
+68			3																		1								-1						（头晕……）	69																		1																														
+69	70		0	我	（糟糕，说话说了太久，伤口一直没处理。_n得去医院一下。）																1																																	1																														
+70	71		0	摊主	拜托……阿诚越来越虚弱，请您仁慈……																1			18:npc_icon_326_3	1																													1																														
+71	72		0	我	那个叫阿诚的男孩，他患的应该不是情绪病，还是去医院比较好。																1																																	1																														
+72	73		0	中年女性	医院？我不信，圣教团才是真理！_n你们到底能不能救我家阿诚？！要不然我去请其他圣教团的人！																1			18:npc_icon_327_3	1																													1																														
+73	75		0	我	（事态麻烦了……）																1																																	1																														
+74	76		0	丝卡蕾特	——请跟随。_n丝卡蕾特、会为你们、指引方向。																1			18:npc_icon_583_1	1	-1																												1																														
+75	77		0	我	丝卡蕾特……？																1																																	1																														
+76	75		0	中年女性	啊啊，那太好了——！_n感谢「先知大人」的垂怜！																1			18:npc_icon_327_1	1																													1																														
+77	78		0	丝卡蕾特	丝卡蕾特、会指引大家、_n前往您所说的「医院」……																1			18:npc_icon_583_1	1																													1																														
+78	79		0	丝卡蕾特	以及，您的伤……_n……																1			18:npc_icon_583_1	1																													1																														
+79	80		0	丝卡蕾特	对不起，全部都是、丝卡蕾特的错……_n丝卡蕾特、明明、不想您疼痛……																1			18:npc_icon_583_5	1	bgm_plot_trust01																												1																														
+80	81		0		<color=#d8d8d8>女孩的声音，第一次出现了明显的感情颤动。</color>_n<color=#d8d8d8>那是混杂了自责、后怕与喜悦的复杂感情。</color>																1																																	1																														
+81			3																		1														就像之前说的那样	82																		1																														
+82	83		0	我	这不是你的错，丝卡蕾特。																1																																	1																														
+83	84		0	丝卡蕾特	对不起，对不起，对不起……																1			18:npc_icon_583_5	1																													1																														
+84	85		0	丝卡蕾特	丝卡蕾特……记住了。_n不会……再让您、疼痛。																1			18:npc_icon_583_5	1																													1																														
+85	0		0		<color=#d8d8d8>女孩小声地，同时也是郑重地，\n呢喃出这样一句近乎誓言的话语。</color>																1																																	1																														

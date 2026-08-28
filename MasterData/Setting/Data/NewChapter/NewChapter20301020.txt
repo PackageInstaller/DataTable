@@ -1,0 +1,41 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	3				<color=#d8d8d8>特莉丝的歌声飘荡在空中，如午后温暖的阳光一般，让人觉得温暖而又安详。</color>		1	57:dialg_bg_157				17									1					bgm_universal_triss_lead01															1													1																														
+3	4				<color=#d8d8d8>司机狰狞的面容变得平静，双眼也恢复了神采。四周围观的行人也听着歌声静静出神。</color>																1																				1													1																														
+4	5			艾琳娜	这歌声简直就是犯规……而且和以前比起来更加圆润空灵了，这样根本不可能嬴的嘛……				4	1.3				10900001		200401			21		1									vo_Ailinna_00_02											1													1																														
+5	6			艾琳娜	不对不对不对！本小姐也一直在努力，怎么能就这样认输？				4	1.3				10900001		200302			21		1																				1													1																														
+6	7				<color=#d8d8d8>歌声渐渐消失，所有人依然保持安静，直到有人开始拍手，掌声才如潮水一般响了起来。</color>																1					-1															1													1																														
+7	8			司机	发生什么事了？为什么……																1			18:npc_icon_421_1	1	sfx_story_03_yilun															1													1																														
+8	9			路人	特莉丝！是特莉丝！																1			18:npc_icon_465_1	1																1													1																														
+9	10			路人	特莉丝小姐，请给我签名！																1			18:npc_icon_460_1	1																1													1																														
+10	11			特莉丝	好啦，接下来的事情就交给暴风眼吧。艾琳娜，跑起来！				8	1.1				103008;10900001		200101;200201			14;26		1									vo_Telisi_00_06											1													1																														
+11	12											17	0								1						sfx_rolestory_jiaobujin														1													1																														
+12	13				<color=#d8d8d8>特莉丝拉着艾琳娜，熟练地钻出人群，跑到了另一条没有什么人的街道才停了下来。</color>		1	57:dialg_bg_33													1					-1	sfx_rolestory_jiaobuyuna														1													1																														
+13	14			特莉丝	这里应该安全了……				2	1.3				103008					21		1					bgm_plot_trust01															1													1																														
+14	15			艾琳娜	呼、呼……特莉丝，没想到你竟然还有这样一面……				2	1.1				10900001;103008		200902;200501			14;26		1																				1	103008;10900001												1																														
+15	16			特莉丝	在你眼中，我应该是什么样子的？				2	1.1				10900001;103008		200902;200401	0;10210		14;26		1									vo_Telisi_00_07											1	103008;10900001												1																														
+16	17			艾琳娜	是个靠天赋哄骗歌迷的人！_n别以为朗博曼家族的幕后操作能瞒住所有人。				2	1.1				10900001;103008		200902;0	0;10210		14;26		1																				1	103008;10900001												1																														
+17	18			特莉丝	原来是这样的吗……				2	1.1				10900001;103008		200902;0	0;10210		14;26		1									vo_Telisi_00_15											1	103008;10900001												1																														
+18	19			艾琳娜	不过，从你刚才的歌声里，本小姐也听出了不少东西。				2	1.1				10900001;103008		201301;200501			14;26		1									vo_Ailinna_00_02											1	103008;10900001												1																														
+19	20			艾琳娜	就算在刚才那样的环境下，还能保持气息和音准……_n看来你平时确实下了不少功夫。				2	1.1				10900001;103008		200902;200901			14;26		1																				1	103008;10900001												1																														
+20	21			特莉丝	咦，你能听出来吗？_n确实，我喜欢的是音乐本身，它对我有着特殊的意义。				2	1.1				10900001;103008		200902;200901	0;100801		14;26		1									vo_Telisi_00_07											1	103008;10900001												1																														
+21	22			特莉丝	除此之外的荣誉、名声什么的，不过是可有可无的装饰罢了。_n我也是最近才明白这些。				2	1.1				10900001;103008		200201;200901	0;100801		14;26		1																				1	103008;10900001												1																														
+22	23			特莉丝	能得到著名偶像艾琳娜小姐的夸奖，我很高兴哟~				2	1.1				10900001;103008		200201;200901	0;100801		14;26		1																				1	103008;10900001												1																														
+23	24			艾琳娜	……哼，本小姐只是实话实说而已。				2	1.1				10900001;103008		0;200101	10202;0		14;26		1									vo_Ailinna_00_03											1	103008;10900001												1																														
+24	25				<color=#d8d8d8>艾琳娜扭过头，似乎不想再继续话题。</color>_n<color=#d8d8d8>特莉丝没有追究，只是微笑着整理了一下衣服。</color>				2	1.1				10900001;103008		0;200101	10202;0		14;26		1																				1	103008;10900001												1																														
+25	26			特莉丝	那么，艾琳娜小姐，你能解释一下刚才到底在干什么吗？_n还是说，这是不能提起的秘密？				2	1.1				10900001;103008					14;26		1																				1	103008;10900001												1																														
+26	27			艾琳娜	哼，本小姐才没有不能对人说的秘密呢！_n我只是听说了留响空间，出来碰碰运气而已。				2	1.1				10900001;103008					14;26		1									vo_Ailinna_00_06											1	103008;10900001												1																														
+27	28			艾琳娜	正好看到有不少人在等着歌声来净化身心，我就想试试自己能不能做到……				2	1.1				10900001;103008		200401;0			14;26		1																				1	103008;10900001												1																														
+28	29			艾琳娜	才不是想学你，你不要误会！_n本小姐真的只是想帮帮他们而已。				2	1.1				10900001;103008		200902;0			14;26		1																				1	103008;10900001												1																														
+29	30			特莉丝	那么，你是怎么知道留响空间的？				2	1.1				10900001;103008		200901;200801			14;26		1																				1	103008;10900001												1																														
+30	31			艾琳娜	当然网上听来的啦！_n和音乐有关的信息，本小姐都不会放过！				2	1.1				10900001;103008		200401;200801	100101;0		14;26		1																				1	103008;10900001												1																														
+31	32			艾琳娜	本小姐还特意买了留响空间的录音，结果听起来也就是普通的歌曲而已。				2	1.1				10900001;103008		200401;200801	100101;0		14;26		1																				1	103008;10900001												1																														
+32	33			特莉丝	原来如此，看来只是个巧合……				2	1.1				10900001;103008		200401;200801	100101;10210		14;26		1									vo_Telisi_00_15											1	103008;10900001												1																														
+33	34			艾琳娜	才不是巧合！_n你们肯定是故意打算让本小姐出丑的吧！真是一辈子的失策……				2	1.1				10900001;103008		200302;200801	100101;10210		14;26		1									vo_Ailinna_00_07											1	103008;10900001												1																														
+34	35				<color=#d8d8d8>特莉丝看到满脸悔恨的艾琳娜，心中不由觉得几分好笑。</color>				2	1.1				10900001;103008		200902;200101			14;26		1																				1	103008;10900001												1																														
+35	36				<color=#d8d8d8>这个一直以来都和自己过不去的女孩子，其实内心之中似乎也并不复杂。</color>				2	1.1				10900001;103008		200902;200101			14;26		1																				1	103008;10900001												1																														
+36	37			特莉丝	好啦，时间也不早了，我们回去吧。				2	1.1				10900001;103008		200201;200101	0;100101		14;26		1																				1	103008;10900001												1																														
+37	38			艾琳娜	回去？……回哪里？等等，你想把本小姐带到哪里去啊！				2	1.1				10900001;103008		200201;200101	0;100101		14;26		1																				1	103008;10900001												1																														
+38	39			特莉丝	当然是回去找调查官咯，我们还有很多事情要问你呢。				2	1.1				10900001;103008		200201;200101			14;26		1																				1	103008;10900001												1																														
+39	40			艾琳娜	别，快住手！在安雅姐到来之前，本小姐什么都不会说的！																1			18:npc_icon_492_3						vo_Ailinna_00_01											1													1																														
+40	0			艾琳娜	绝对不会——！！！																1			18:npc_icon_492_3																	1													1																														

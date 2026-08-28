@@ -1,0 +1,45 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2				<color=#d8d8d8>那是被誉为利兹丹姆国宝的伟大之物。</color>		1	57:story_cg_049_1				17									1																																	1																														
+2	3				<color=#d8d8d8>如今，已落入他的手中——</color>																1																																	1																														
+3	4			杰克皇	荣光之戒……真是巧夺天工的精妙设计！\n有多少人的命运因你而改变……																1			18:npc_icon_177_1	1					vo_Jiekehuang_00_06																								1																														
+4	5			杰克皇	……但我不同！\n我能走到今天，全仰赖我自身为拥有尊严而付出的努力！																1			18:npc_icon_177_1	1																													1																														
+5	6			？？？	您今天的心情很不错啊。\n——可不要因此忘记，我们的「协议」啊？																1			18:npc_icon_381_1	1					vo_Bulai_00_08																								1																														
+6	7			杰克皇	……谁？！来人！有人擅闯——		1	57:dialg_bg_72				17		20018			100901		27		1					bgm_role_doctor_dark	sfx_story_01_shafa			vo_Jiekehuang_00_05												1	41;0.7											1																														
+7	8			？？？	别紧张，杰克皇先生。是我。									20018			100901		27		1			18:npc_icon_381_1	1					vo_Bulai_00_01												1	41;0.7											1																														
+8	9			杰克皇	这个声音……是你？\n你是怎么进来的？！									20018					27		1																					1	41;0.7											1																														
+9	10			？？？	和我的目的相比，手段不值一提。									20018					27		1			18:npc_icon_381_1	1																	1	41;0.7											1																														
+10	11			？？？	我这次来，是想跟你分享一些关于荣光之戒的情报。									20018					27		1			18:npc_icon_381_1	1																	1	41;0.7											1																														
+11	12			杰克皇	荣光之戒？……呵呵，你的消息真灵通啊？									20018			101201		27		1									vo_Jiekehuang_00_06												1	41;0.7											1																														
+12	13			？？？	杰克皇先生以为，是谁促成了这桩交易？									20018			101201		27		1			18:npc_icon_381_1	1																	1	41;0.7											1																														
+13	14			杰克皇	嗯……？！									20018		200501			27		1									vo_Jiekehuang_00_05												1	41;0.7											1																														
+14	15				<color=#d8d8d8>敲门声突然响起，似乎为杰克皇争取了调整情绪的时间。</color>									20018		200501			27		1						sfx_story_03_qiaomen															1	41;0.7											1																														
+15	16			前台	老板！您怎么了，没事吧？！									20018					27		1			18:npc_icon_344_3	1																	0	41;0.7											1																														
+16	17			杰克皇	我没事，都下去吧。									20018					27		1									vo_Jiekehuang_00_04												0	41;0.7											1																														
+17	18			杰克皇	……话说回来，医生先生。									20030;20018					13;27		1																					20018;20030	1;1											1																														
+18	19			杰克皇	你怎么亲自来找我？之前不是只信赖加密通讯吗？									20030;20018			0;100501		13;27		1																					20018;20030	1;1											1																														
+19	20			医生	我很欣赏你啊，杰克皇先生。									20030;20018			100101;100501		13;27		1						sfx_story_01_guzhang	1		vo_Bulai_00_08												20018;20030	1;1											1																														
+20	21			医生	否则，我也不会绕过圣教团和某势力，直接跟你交易那些——									20030;20018			100101;100501		13;27		1																					20018;20030	1;1											1																														
+21	22			医生	——情绪载体。		0							20030;20018		200501;200601			13;27		1																					20018;20030	1;1											1																														
+22	23			杰克皇	……那些劣等品！									20030;20018		200501;200601	0;101201		13;27		1									vo_Jiekehuang_00_05												20018;20030	1;1											1																														
+23	24			杰克皇	从你手上的收来的古董，比你说的更脆弱和危险！									20030;20018		200501;200601	0;101201		13;27		1																					20018;20030	1;1											1																														
+24	25			杰克皇	你知不知道我花了多少钱买通贵族家的仆从，让他们帮忙销毁古董碎片？！									20030;20018		200101;200601	0;100301		13;27		1																					20018;20030	1;1											1																														
+25	26			杰克皇	而且现在，暴风眼的人似乎也盯上我了……									20030;20018		200101;200601	0;100301		13;27		1																					20018;20030	1;1											1																														
+26	27			医生	你只是想金盆洗手，其实不用找借口。									20030;20018		200601;200601	0;100301		13;27		1									vo_Bulai_00_08												20018;20030	1;1											1																														
+27	28			杰克皇	………									20030;20018		200601;200601			13;27		1																					20018;20030	1;1											1																														
+28	29			医生	不过，今天确实是我们协议中，最后的交货日。									20030;20018		0;200601	100501;0		13;27		1																					20018;20030	1;1											1																														
+29	30			医生	作为诚意，最后的这批货物，就送给你了。									20030;20018		200101;200601	100501;0		13;27		1																					20018;20030	1;1											1																														
+30	31			杰克皇	送——？！你、你会获得什么好处？									20030;20018		200101;200501	100501;100501		13;27		1									vo_Jiekehuang_00_03												20018;20030	1;1											1																														
+31	32			医生	把它们卖出去——我就能获得最重要的「阈值」。\n而你，也能赚得最有价值的一桶金。									20030;20018		200101;200501	0;100501		13;27		1																					20018;20030	1;1											1																														
+32	33			杰克皇	……那之后，我们就再无瓜葛了？！									20030;20018		200101;0	0;101001		13;27		1																					20018;20030	1;1											1																														
+33	34			医生	你想这么理解也可以呢。\n可不要马虎啊，不然……									20030;20018			100301;101001		13;27		1									vo_Bulai_00_02												20018;20030	1;1											1																														
+34	35			医生	我一直很希望，海蕾小姐能成为我的助手呢。									20030;20018		200101;0	100301;0		13;27		1																					20018;20030	1;1											1																														
+35	36			杰克皇	……呵呵，没想到医生先生连那种上不了台面的小鬼都不放过啊。									20030;20018		200101;0	100301;100701		13;27		1									vo_Jiekehuang_00_06												20018;20030	1;1											1																														
+36	37			医生	这说辞真是令人伤心呢，我可是一心为海蕾小姐好才这么说的。									20030;20018		200101;0	100301;100701		13;27		1									vo_Bulai_00_01												20018;20030	1;1											1																														
+37	38			医生	不过，杰克皇先生，你确定要这么快将荣光之戒脱手吗？									20030;20018		200101;0	100301;0		13;27		1																					20018;20030	1;1											1																														
+38	39			医生	要知道，那可是传说中的存在，是可以让人快速获得能力的圣物啊……									20030;20018		200101;0			13;27		1																					20018;20030	1;1											1																														
+39	40			杰克皇	我现在很清醒，也明白你的意思。\n但做生意，最讲究的就是信誉。									20030;20018		200101;200101	0;100301		13;27		1									vo_Jiekehuang_00_06												20018;20030	1;1											1																														
+40	41			杰克皇	既然我已经答应了买家，就必不会违背先前的承诺。\n这是我用以获得尊重的原则。									20030;20018		200101;200101	0;100301		13;27		1																					20018;20030	1;1											1																														
+41	42			医生	看到你如此讲信誉，我很感动……\n货物会在你需要的时候送到指定地点。									20030;20018			100101;0		13;27		1						sfx_story_01_guzhang	1														20018;20030	1;1											1																														
+42	43			医生	那，杰克皇先生……		1	57:dialg_bg_100				17		20030			100101		21		1					-1				vo_Bulai_00_08												0												1																														
+43	0			医生	永·别·了。									20030		200101			21		1						sfx_story_03_shuidi	1																										1																														

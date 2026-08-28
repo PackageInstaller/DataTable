@@ -1,0 +1,45 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2		2		昆士区丨贝克街的猫																1						op_jianpan																											1																														
+2	3				<color=#d8d8d8>滴——滴——滴……</color>		1	57:dialg_bg_1	0	1.5		17		108008			10202		14		1						sfx_story_01_xiaoxi		sfx_story_02_dianzijianpan																									1																														
+3	4				<color=#d8d8d8>绵绵不断的机械提示音在还未苏醒的餐厅内回响，雪花般纷乱的外卖订单几乎淹没了台面。</color>				0	1.5				108008			10202		14		1																																	1																														
+4	5				<color=#d8d8d8>小白有条不紊地将订单按地区分类， 忙于备餐的双手在虚空中划出清晰残影。</color>				0	1.5				108008					14		1																																	1																														
+5	6			我	……早啊小白，今天早上有那么多外送单？				0	1.5				108008					14		1					bgm_universal_survey01																												1																														
+6	7			小白	……是的，调查官。尤其是柴郡猫乐园的附近街区，订单量存在显著增幅。				0	1.5				108008			101301		14		1								-1	vo_Xiaobai_00_08													3;1											1																														
+7	8			小白	虽然新闻没有进行报道，但还是有不少居民受到了绪能乱流点爆炸的影响……				0	1.5				108008					14		1																						3;1											1																														
+8			3						0	1.5				108008					14		1														柴郡猫乐园……	9							3;1											1																														
+9	10			我	达利娅所说的纯黑者集体自爆……果然留下不小的影响。				0	1.5				108008					14		1																						3;1											1																														
+10	11			我	议会那边……没有动作吗？				0	1.5				108008					14		1																						3;1											1																														
+11	12			小白	抱歉，调查官。根据现有信息，我无法分析官方采取了何种应对措施。				0	1.5				108008		201301	101601		14		1									vo_Xiaobai_00_04													3;1											1																														
+12	13			小白	但从历史的经验来看，想要做到如此高的保密性，势必要放弃一些东西。				0	1.5				108008		200701			14		1																						3;1											1																														
+13	14			我	……				0	1.5				108008					14		1																						3;1											1																														
+14			3						0	1.5				108008					14		1														可是……;不行……	15;16							3;1											1																														
+15	17			我	我们拿到了如此隐秘的情报，却什么都做不了吗……				0	1.5				108008					14		1																						3;1											1																														
+16	17			我	我们拿到了如此隐秘的情报，应该在力所能及的地方做点什么……				0	1.5				108008					14		1																						3;1											1																														
+17	18			小白	看来，调查官想到计划了？				0	1.5				108008		200201	100701		14		1									vo_Xiaobai_00_07													3;1											1																														
+18			3						0	1.5				108008		200201	100701		14		1														或许可以前往现场……	19							3;1											1																														
+19	20			我	采集一些爆炸后的环境情绪粒子样本进行回溯路径推导……				0	1.5				108008					14		1																						3;1											1																														
+20	21			我	我们能尝试将结果与先前收集的绪能乱流的情绪粒子进行对比吗？				0	1.5				108008					14		1																						3;1											1																														
+21	22			我	没准能获取一些关于纯黑者的信息，从而推测背后势力的画像……				0	1.5				108008					14		1																						3;1											1																														
+22	23			小白	技术上来说，可以实现。				0	1.5				108008					14		1																						3;1											1																														
+23	24			小白	但我需要提醒的是，当我们从达利娅那得知纯黑者自爆事件的消息时……				0	1.5				108008			101301		14		1																						3;1											1																														
+24	25			小白	我们所能收集到的信息已经时效性很低了。				0	1.5				108008			101301		14		1																						3;1											1																														
+25	26			小白	环境情绪粒子极易受到各方因素干扰，甚至真凶亲自返场销毁部分证据也说不定。				0	1.5				108008					14		1																						3;1											1																														
+26			3						0	1.5				108008					14		1														我明白。	27							3;1											1																														
+27	28			我	无论结果如何，我认为我应该走这一趟。				0	1.5				108008					14		1																						3;1											1																														
+28	29				<color=#d8d8d8>小白了然般点点头，从桌下拿出保温箱装点包装好的食物。</color>				0	1.5				108008					14		1																						3;1											1																														
+29	30			小白	正好，我们有现成的伪装措施。我会通知其他战斗员接管店铺内的事宜……				0	1.5				108008			10202		14		1																						3;1											1																														
+30	31			小白	准备好了就出发吧，调查官。		1	57:dialg_bg_33				17									1			18:npc_icon_498_1		-1			sfx_story_03_yilun																									1																														
+31	32			我	本次行动的目的只有采集纯黑者自爆后的环境情绪粒子……尽量隐蔽行动，速战速决。																1																																	1																														
+32	33			小白	好。为了避免引起不必要的麻烦，接下来我会以省电模式的状态陪伴调查官行动。																1			18:npc_icon_498_1																														1																														
+33			3																		1														辛苦你了小白。	34																		1																														
+34	35			我	明知拿到线索的希望渺茫，还特地陪我走一趟……																1																																	1																														
+35	36			小白	支持调查官的行动是我的职责所在。																1			18:npc_icon_498_1																														1																														
+36	37			小白	即使最终没有得到有用的信息，这一次出行也可以有效缓解调查官紧绷的精神状态。																1			18:npc_icon_498_1																														1																														
+37	38			小白	知无不为总是更安心的。																1			18:npc_icon_498_1																														1																														
+38	39				<color=#d8d8d8>小小白漆黑滚圆的豆豆眼仿佛透着平静却充满信任的神采。</color>																1																																	1																														
+39	40			我	（小白对情绪的感知力真敏锐啊……这是猫族的特性？猫族AI也会具备这样的特性吗？）																1																																	1																														
+40	41			我	嗯。我们先从乐园外围开始采集吧，视情况再决定是否潜入……																1																																	1																														
+41	42				<color=#d8d8d8>讨论戛然而止。</color>																1																																	1																														
+42	43				<color=#d8d8d8>远方，柴郡猫乐园检票处站立着几个模糊的身影。</color>																1																																	1																														
+43	0			我	（今天的柴郡猫乐园，并不平静啊……）																1																																	1																														

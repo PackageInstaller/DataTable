@@ -1,0 +1,11 @@
+id	type	refresh	comparisonOperators	otherParam	showType	status	condition	condition_zh_TW	condition_en_UK	condition_ja_JP	condition_ko_KR	condition_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int
+100	1001	0	0	0	2	1	关卡通关	關卡通關	Clear the stage.	ステージクリア	스테이지 클리어	ผ่านด่าน
+200	1008	0	2	0	2	1	无武装死亡	無戰鬥員死亡	No Combatant perishes.	戦闘不能なしでクリアする。	전투원이 사망하지 않음	ไม่มีตัวละครที่เสียชีวิต
+201	1008	0	2	0	2	1	武装死亡数量不超过_target_num_个	戰鬥員死亡數量不超過_target_num_個	Less than _target_num_ Combatants perish.	戦闘不能_target_num_体以下でクリアする。	전투원 사망 횟수가 _target_num_회 이하	จำนวน​ตัวละคร​ที่​เสียชีวิต​ไม่​เกิน​ _target_num_​ คน​
+300	1007	0	0	0	1	1	在_time_回合内完成所有战斗	在_time_回合內完成所有戰鬥	Complete all battles in _time_ turn(s).	_time_ターン以内でクリアする。	_time_턴 내 전체 전투 클리어	ผ่าน​การต่อสู้​ทั้งหมด​ภายใน​ _time_​ เทิร์น​
+400	1009	0	1	0	2	1	通关时所有武装生命不低于_target_num_%	通關時所有戰鬥員生命不低於_target_num_%	All Combatants' HP is not lower than _target_num_% when clearing the stage.	クリア時、すべての戦闘員のHP≥_target_num_%。	클리어 시 모든 전투원 HP가 _target_num_% 이상	เมื่อ​ผ่าน​ด่าน​ HP​ ของ​ตัวละคร​ทั้งหมด​เหลือ​ไม่​ต่ำกว่า​ _target_num_%​
+401	1017	0	1	0	2	1	通关时友方特殊召唤单位生命不低于_target_num_%	通關時友方特殊召喚單位生命不低於_target_num_%	Allies' summoned units' HP is not lower than _target_num_% when clearing the stage.	クリア時、味方の特殊召喚物のHP≥_target_num_%。	클리어 시 특수 소환된 친구 HP가 _target_num_% 이상	เมื่อ​ผ่าน​ด่าน​ HP​ ของ​ยูนิต​อัญเชิญ​พิเศษ​ของ​ฝ่าย​เรา​เหลือ​ไม่​ต่ำกว่า​ _target_num_%​
+500	1005	2	2	0	3	1	单回合造成_target_num_以上伤害	單回合造成_target_num_以上傷害	Deal more than _target_num_ damage in one turn.	1ターンで_target_num_以上のダメージを与える	한 턴 내 가한 대미지가 _target_num_이상	สร้าง​ดา​เม​จ​เกิน​กว่า​ _target_num_​ ใน​เทิร์น​เดียว​
+600	1005	1	1	0	3	1	单次攻击造成_target_num_以上伤害	單次攻擊造成_target_num_以上傷害	Deal more than _target_num_ damage with one attack.	単回攻撃で_target_num_以上のダメージを与える	단일 공격으로 가한 대미지가 _target_num_이상	สร้าง​ดา​เม​จ​จาก​การ​โจมตี​เกิน​กว่า​ _target_num_​ ใน​เทิร์น​เดียว​
+601	1004	0	1	0	1	1	击败_target_num_个敌人	擊敗_target_num_個敵人	Defeat _target_num_ enemies.	敵を_target_num_名倒す。	적_target_num_ 명 처치	เอาชนะ​ศัตรู​ _target_num_​ ตัว​

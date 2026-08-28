@@ -1,0 +1,37 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	3			我	怎么……又是这里？！我不是已经回分部了吗？		1	57:dialg_bg_32				17									1					bgm_op_dream			sfx_story_01_erming																									1																														
+3	4			我	不对啊，我为什么要说又？																1																																	1																														
+4			3																		1														好像有点模糊的印象。	5																		1																														
+5	6			我	想起来了……这里是梦境空间。娜卡好像说过，我能通过现实遗留的情绪粒子，捕捉到其中的信息。																1								-1																									1																														
+6	7			我	可能是其他人的，也可能是我自己的……																1																																	1																														
+7	8			我	这次，她不在……																1																																	1																														
+8	9			小男孩	糖……嘻嘻，拿到了……\n啊呜——																1																																	1																														
+9	10			小男孩	没有……味道……吃……不到……																1																																	1																														
+10	11				<color=#d8d8d8>画面慢放，男孩的肉体瞬间化作情绪粒子，凝练成一颗难看的糖果。</color>																1																																	1																														
+11	12			我	消失了……这就是今天梦境的源头吗？																1																																	1																														
+12	13						1	57:dialg_bg_100				10	30								1					-1	op2_jingtoulayuan																											1																														
+13	14						1	57:dialg_bg_273				17	0								1					bgm_bg_gx_tower01																												1																														
+14	15				<color=#d8d8d8>冰冷的，纯白的房间，被从睡梦中唤醒、粗暴地驱赶至此的孩子们麻木地看着彼此。</color>																1																																	1																														
+15	16				<color=#d8d8d8>房间中是排成方阵的五排金属椅子，每张椅子的间隔都在半米左右。</color>																1																																	1																														
+16	17			实验员	请安静！按照之前的位置坐好。																1			18:npc_icon_514_1																														1																														
+17	18			实验员	好，就是这样。今天我们来做一个情绪测试，大家不要害怕，很快就会结束的。																1			18:npc_icon_514_1																														1																														
+18	19			实验员	都坐好……等等，扫描怎么显示多了个人？																1			18:npc_icon_514_1																														1																														
+19	20			实验员	难道柜子里有人？																1			18:npc_icon_514_1																														1																														
+20	21				<color=#d8d8d8>咚咚咚——</color>																1						sfx_story_02_qiaomen																											1																														
+21	22			实验员	嗯？什么声音？！你们待着这里不要离开，我去看看。																1			18:npc_icon_514_1																														1																														
+22	23				<color=#d8d8d8>哐啷——</color>																1						sfx_story_02_jinggai																											1																														
+23	24			720	别担心，他们都不会管的。你的运气真好，差点就被发现了。																1			18:npc_icon_470_1																														1																														
+24	25			720	你是，1号吧。今天的实验，和你无关，你快走吧！																1			18:npc_icon_470_2																														1																														
+25	26			陌生的孩子	你怎么知道？																1																																	1																														
+26	27			720	我们以前见过，你不记得了吗？我之前拜托过你一件事……虽然现在也没那么重要了……																1			18:npc_icon_470_2																														1																														
+27	28			720	你又偷偷跑出来了啊。真羡慕……																1			18:npc_icon_470_2																														1																														
+28	29			720	和我一批的孩子，变得越来越奇怪。好像没有情绪一样。																1			18:npc_icon_470_2																														1																														
+29	30			720	这个实验肯定不对劲，所以，你快走吧！																1			18:npc_icon_470_2																														1																														
+30	31			陌生的孩子	那你呢？																1																																	1																														
+31	32			720	我啊，我走了，会被发现的。那样你不就暴露了！																1			18:npc_icon_470_2																														1																														
+32	33			720	如果你能离开这里，告诉爸爸，我想他了。然后……然后让他不要伤心吧。																1			18:npc_icon_470_2																														1																														
+33	34			陌生的孩子	我想起来了，你之前让我帮你找你的父亲……																1																																	1																														
+34	35			720	拜托你了！好了，快走！实验员可能要回来了！																1			18:npc_icon_470_2																														1																														
+35	36		12	陌生的孩子	我会回来救你的！																1					sfx_rolestory_jiaobujin																												1																														
+36	0											18	0								1																																	1																														

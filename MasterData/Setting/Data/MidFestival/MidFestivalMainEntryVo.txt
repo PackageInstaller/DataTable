@@ -1,0 +1,42 @@
+id	activityId	moduleId	type	unlockLevel	lockPicture	unlockPicture	status	name	name_zh_TW	name_en_UK	name_ja_JP	name_ko_KR	name_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int
+101	1	6201	1	0	150:activity_letterfrom_letter_unlock	150:activity_letterfrom_letter_unlock	1	追踪事件	追蹤事件	Trackdown	事件追跡	사건추적	ติดตามเรื่องราว
+102	1	6202	2	50020107	150:activity_letterfrom_fight_lock	150:activity_letterfrom_fight_unlock	1	复盘记录	複盤記錄	Reenactment	事件記録	기록복기	บันทึกทบทวน
+103	1	6856	3	50020508	150:activity_letterfrom_boss_lock	150:activity_letterfrom_boss_unlock	1	狂想再临	狂想再臨	Fantasia Revival	狂想再現	망상재림	เพ้อฝันอีกครา
+104	1	6203	4	0	150:activity_letterfrom_home_bth_1	150:activity_letterfrom_home_bth_1	1	购物清单	購物清單	Shopping List	買い物リスト	쇼핑 리스트	รายการช็อปปิง
+105	1	6204	5	0	150:activity_letterfrom_home_bth_2	150:activity_letterfrom_home_bth_2	1	灵犀索引	靈犀索引	Connected Index	以心伝心	감응색인	ดัชนีจิตใจ
+201	2	6667	1	0			1	开始营业	開始營業	Open for Business	営業開始	영업 시작	เริ่มเปิดร้านลุย
+202	2	6668	2	50021108			1	外勤记录	外勤記錄	Fieldwork Logs	外勤記録	외출 기록	บันทึกภาคสนาม
+203	2	6856	3	50021402			1	暗影对决	暗影對決	Shadow Duel	暗影対決	그림자 대결	ศึกในเงามืด
+204	2	6869	4	0			1	酒水供应	酒水供應	Beverage Service	ドリンク提供	주류 공급	จัดสรรเครื่องดื่ม
+205	2	6669	5	0			1	酒吧运营	酒吧運營	Bar Management	運営プラン	바 운영	บริหารบาร์
+301	3	6871	1	0			1	游玩指南	遊玩指南	Exploration Guide	ガイドマップ	플레이 가이드	ไกด์เที่ยวเล่น
+302	3	6872	2	50022105			1	场地清理	場地清理	Site Cleanup	会場清掃	장소 정리	เก็บกวาดสถานที่
+303	3	6856	3	50022402			1	演出现场	演出現場	Event Venue	パフォーマンス会場	공연 현장	สถานที่การแสดง
+304	3	6869	4	0			1	收集活动	收集活動	Collection Event	コレクション	수집 이벤트	กิจกรรมเก็บสะสม
+305	3	6873	5	0			1	集市筹备	集市籌備	Market Preparation	出店準備	장터 준비	จัดเตรียมตลาดนัด
+401	4	6877	1	0			1	当日快讯	當日快訊	Daily Roundup	ニュース速報	당일 속보	ข่าวด่วนประจำวัน
+402	4	6878	2	50023104			1	采访回顾	採訪回顧	Interview Recap	取材メモ	인터뷰 회고	ย้อนหลังสัมภาษณ์
+403	4	6856	3	50023401			1	特约专访	特約專訪	Special Interview	独占インタビュー	특별 탐방	สัมภาษณ์แขกพิเศษ
+404	4	6869	4	0			1	逸趣补给	逸趣補給	Happy Crate	社内補給	일문 보급	เสบียงรื่นรมย์
+405	4	6879	5	0			1	采风计划	采風計畫	Inspiration Expedition	撮影プラン	민속 수집	เก็บบรรยากาศ
+501	5	6882	1	0			1	我们的故事	我們的故事	Our Story	私たちの物語	우리의 이야기	เรื่องราวของพวกเรา
+502	5	6883	2	50024105			1	周边巡查	周邊巡查	Neighborhood Patrol	周辺巡回	주변 순찰	ตรวจตราโดยรอบ
+503	5	6856	3	50024402			1	清理进程	清理進程	Cleanup Process	粛清進捗	청소 절차	เริ่มเก็บกวาด
+504	5	6869	4	0			1	义卖小铺	義賣小鋪	Charity Shop	バザー	바자회	ร้านขายของการกุศล
+505	5	6884	5	0			1	今日订单	今日訂單	Today's Orders	オーダー	오늘의 주문	ออเดอร์วันนี้
+601	6	6887	1	0			1	假日出游	假日出遊	Holiday Outing	サマーバカンス	휴일 나들이	ทริปวันหยุด
+602	6	6888	2	50025105			1	海滩巡游	海灘巡遊	Beach Tour	ピーチパレード	해변 순회	เดินเล่นชายหาด
+603	6	6856	3	50025406			1	幻境再临	幻境再臨	Mirage Revisited	心象世界	환상 재림	แดนมายาหวนคืน
+604	6	6869	4	0			1	礼品商店	禮品商店	Gift Shop	記念品商店	기프트 상점	กิฟต์ชอป
+605	6	6889	5	0			1	假日任务	假日任務	Holiday Mission	バカンス任務	휴일 임무	ภารกิจวันหยุด
+701	7	6903	1	0			1	珐兰风物志	琺蘭風物志	Farlant Gazetteer	ファラント紀行	파란트 풍물지	อักขรานุกรมภูมิศาสตร์ฟาร์แลนต์
+702	7	6904	2	50026106			1	尘封回忆录	塵封回憶錄	Dustbound Memoirs	閉ざされた回想録	봉인된 기억록	บันทึกความทรงจำที่ถูกผนึก
+703	7	6856	3	50026310			1	殷红悼亡诗	殷紅悼亡詩	Crimson Elegy	深紅の追悼詩	진홍의 추도시	บทอาลัยกวีสีชาด
+704	7	6869	4	0			1	纪念集市	紀念集市	Memorial Fair	記念マーケット	기념 시장	ตลาดแห่งความทรงจำ
+705	7	6905	5	0			1	庆典导览	慶典導覽	Festival Guide	シャラマン祭案内	축제 가이드	ไกด์นำชมงานฉลอง
+801	8	6908	1	0			1	追踪事件	追蹤事件	Trackdown	事件追跡	사건추적	ติดตามเรื่องราว
+802	8	6909	2	50027109			1	循环录像	迴圈錄影	Endless Reel	ループ録画	반복 기록	
+803	8	6856	3	50027302			1	直面恐惧	直面恐懼	Face the Dread	恐怖と対峙	공포와 대면	
+804	8	6869	4	0			1	售票窗口	售票窗口	Fare Booth	きっぷ売り場	매표소	
+805	8	6910	5	0			1	站台公告	月臺公告	Platform Call	電光掲示板	승강장 안내	

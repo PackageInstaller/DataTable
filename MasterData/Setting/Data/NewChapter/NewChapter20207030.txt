@@ -1,0 +1,48 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2				<color=#d8d8d8>走出夏日绵绵甜品店没多远，就与鬼鬼祟祟躲在垃圾桶后面的内特成功汇合。</color>		1	57:dialg_bg_81				17									1					bgm_universal_survey01																												1																														
+2	3			我	小白，可以麻烦你看一下伊德离开的方向有哪些商业区域吗？																1																																	1																														
+3	4			小白	对伊德的性格与爱好进行分析，推测目的地吗……虽然正确率较低，但确实是不错的选择。				4	1.1				108008					27		1																						40;1											1																														
+4	5			我	（其实根本目的并不是「找到伊德」吧，重要的只是「找伊德」这个行为罢了……）				4	1.1				108008		201301			27		1																						40;1											1																														
+5	6			我	（只要能把内特和小音哄好，别出什么危险就——）				4	1.1				108008		201301			27		1																						40;1											1																														
+6	7			小白	伊德前往的，应该是位于新海市边界的一家Live House。				4	1.1				108008			101301		27		1																						40;1											1																														
+7			3						4	1.1				108008			101301		27		1														Live House……？;太明确了吧？	8;9							40;1											1																														
+8	10			我	伊德的兴趣爱好真广泛啊……				4	1.1				108008					27		1																						40;1											1																														
+9	13			我	小白，你能查到闪金财团掌舵人的私人行程？				4	1.1				108008					27		1																						40;1											1																														
+10	11			内特	诶？可是之前怎么从来没听伊德老大提起过……				4	1.1				106008;105008;108008		200601;0;0	0;101001;0		13;20;27		1																						34;1											1																														
+11	12			小音	唔，伊德去玩的话，为什么不直接和我们说呢？				4	1.1				106008;105008			100601;101001		13;20		1																						34;1											1																														
+12	17			小白	……所以，伊德前往Live House属于小概率事件。				4	1.1				106008;105008			100601;101001		13;20		1			18:card_icon_108008_2	1																		34;1											1																														
+13	14			小白	我无意冒犯，只是不小心看到了自动驾驶系统的页面……				4	1.1				106008;105008;108008			100601;101001;0		13;20;27		1			18:card_icon_108008_2	1						vo_Xiaobai_00_06												34;1											1																														
+14	15			我	……				4	1.1				106008;105008			100601;101001		13;20		1																						34;1											1																														
+15	16			内特	咳！以我对老大的了解来看，如果只是普通出游，他会直接和我们解释……				4	1.1				106008;105008			0;101001		13;20		1																						34;1											1																														
+16	17			小音	唔，有秘密！				4	1.1				106008;105008		200801;0	101401;101001		13;20		1										vo_Xiaoyin_00_02												34;1											1																														
+17	18			内特	总之，伊德老大去Live House……一定有其他目的！				4	1.1				106008;105008		200801;200301	101401;101001		13;20		1																						34;1											1																														
+18	19			内特	难道说，伊德老大是去打工的！因为公司出了资金问题，又不好意思和我们说……				4	1.1				106008;105008		200801;200301	101401;101001		13;20		1																						34;1											1																														
+19	20			内特	这样就说得过去了嘛！伊德老大那么帅，一定是去兼职主唱的！				4	1.1				106008;105008		0;200501			13;20		1																					105008;0	34;1											1																														
+20	21			小音	哦哦！伊德要唱歌嘛？				4	1.1				106008;105008		0;200501	101001;0		13;20		1																					105008;0	34;1											1																														
+21	22			内特	伊德老大缺钱怎么不和我说！打工战士申请出战！				4	1.1				106008;105008			101001;100301		13;20		1																					0;0	34;1											1																														
+22	23			小音	小音力气很大的！可以帮忙……敲鼓！				4	1.1				106008;105008		200801;0	0;100301		13;20		1																						34;1											1																														
+23	24			我	……你们想象中的那些场景，怎么想都不会发生吧！				4	1.1				106008;105008		200801;0	0;100301		13;20		1																						34;1											1																														
+24	25			内特	哎呀别管这些细节了！出发吧，调查官！暗夜猫特别潜行任务，正式开启！				4	1.1				106008;105008					13;20		1					-1																	34;1											1																														
+25	26				<color=#d8d8d8>白日的Live House就像沸点前的预热，店内唯有一位驻唱歌手，气氛并不算热烈。</color>		1	57:dialg_bg_184				17									1					bgm_chapter03_Livehouse																												1																														
+26	27				<color=#d8d8d8>伊德正与一位穿着严实的神秘人坐在远离人群的角落，夸张的墨镜挡住了那个男人的面容。在这个以个性与独特自我标榜的小世界里竟也不显得突兀。</color>																1						sfx_story_02_chabei																											1																														
+27	28			？？？	你钓的鱼还没上钩？他们还真沉得住气啊。				2	1.1				107008			100301		13		1			18:npc_icon_330_1	1																	1	38;1											1																														
+28	29			？？？	如果真的被他们发现了我的真实身份，怕不是要惊掉大牙。				2	1.1				107008			100301		13		1			18:npc_icon_330_1	1																	1	38;1											1																														
+29	30			？？？	……想想那个画面就觉得有趣，哈哈哈。				2	1.1				107008			100301		13		1			18:npc_icon_330_1	1																	1	38;1											1																														
+30	31			伊德	……辛苦你跑一趟。				2	1.1				107008			100301		13		1										vo_Yide_00_02											1	38;1											1																														
+31	32			？？？	小事而已。我还以为下一次见到你，还得等到他的祭日。				2	1.1				107008			100301		13		1			18:npc_icon_330_1	1																	1	38;1											1																														
+32	33			伊德	……				2	1.1				107008		201301	100301		13		1										vo_Yide_00_02											1	38;1											1																														
+33	34				<color=#d8d8d8>低声的交谈声陷入沉默，歌手突然高亢的歌声也无法冲碎无言的屏障。</color>				2	1.1				107008					13		1																					1	38;1											1																														
+34	35				<color=#d8d8d8>内特和小音轻手轻脚地从沙发后探出脑袋，在略显沉重的谈话氛围下不敢轻举妄动。</color>				2	1.1				107008					13		1																					1	38;1											1																														
+35	36			内特	伊德老大……				2	1.1				107008					13		1			18:card_icon_106008_1	1																	0	38;1											1																														
+36	37			小音	伊德……				2	1.1				107008					13		1			18:card_icon_105008_9	1																	0	38;1											1																														
+37	38			我	嘘……				2	1.1				107008					13		1																					1	38;1											1																														
+38	39				<color=#d8d8d8>嗡嗡——</color>				2	1.1				107008		200301			13		1						sfx_story_02_wengweng															1	38;1											1																														
+39	40				<color=#d8d8d8>搁置在桌面上的手机震动了两下，伊德垂眸瞥了一眼。</color>\n<color=#d8d8d8>他起身整理了风衣外套，没有告别，转身离开。</color>																1																																	1																														
+40	41				<color=#d8d8d8>瞬息间，那位神秘人也悄然退场。角落好似从未出现过任何身影。</color>																1																																	1																														
+41	42			我	伊德好像在进行什么重要计划，我们留在这里会影响他的安排，早点回去吧？																1																																	1																														
+42	43			我	……？																1																																	1																														
+43	44				<color=#d8d8d8>不知为何身旁的回应是一片安静，沙发后两小只的身影早已消失。</color>																1																						1;1											1																														
+44	45			小白	他们两个刚刚变成猫形态从沙发下面溜走了……我没拦住。				4	1.1				108008		200601			20		1																						43;1											1																														
+45	46			我	……该说，不愧是猫吗？				4	1.1				108008		200601			20		1																						43;1											1																														
+46	0			我	看来只能追上去了。小白，我们也走吧。				4	1.1				108008					20		1																						43;1											1																														

@@ -1,0 +1,38 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2			？？	「新海市的愿景是成为一座人和猫和谐共存的城市」。		1	57:dialg_bg_100				17									1																																	1																														
+2	3			？？	那么，「老鼠」还能在这座城里有一席生存之地吗？																1						sfx_story_03_shuidi																											1																														
+3	4			落魄男子	呼——呼——		1	57:dialg_bg_57				17									1			18:npc_icon_351_3			sfx_rolestory_jiaobuyuna																											1																														
+4	5			？？	喂！喂！这边！																1						sfx_rolestory_jiaobujin	1																										1																														
+5			3																		1														躲入小巷	6																		1																														
+6	7			暴风眼小队队长	目标不见了……继续搜查！																1			18:npc_icon_417_1																														1																														
+7	8			暴风眼小队队员	是！																1			18:npc_icon_320_2																														1																														
+8	9											17	0								1						sfx_rolestory_jiaobuyuna																											1																														
+9	10			落魄男子	呼——呼——		1	57:dialg_bg_108													1			18:npc_icon_351_3																														1																														
+10	11			？？	喂喂！停下——				2	1.1											1			18:npc_icon_381_1		bgm_role_doctor_dark																												1																														
+11	12		12	落魄男子	啊啊啊，别抓我和我的猫！				2	1.1											1			18:npc_icon_351_3																														1																														
+12	13			？？	抓你干嘛？本大爷又不是暴风眼那群家伙。				2	1.1											1			18:npc_icon_381_1																														1																														
+13	14			？？	不用跑了，你暂时安全了。暴风眼没有追到这里，这里也没有E-system的监控。				2	1.1											1			18:npc_icon_381_1																														1																														
+14	15			落魄男子	是刚才那个声音？……谢谢你，呼，总算能喘口气了……				2	1.1											1			18:npc_icon_351_1																														1																														
+15	16			咪咪	喵呜……				2	1.1											1			18:npc_icon_390_3																														1																														
+16	17			？？	你怀抱里的猫，是叫咪咪吧？				2	1.1											1			18:npc_icon_381_1																														1																														
+17	18			落魄男子	是的。唉，咪咪，这段时间和我东躲西藏，你也受苦了……				2	1.1											1			18:npc_icon_351_1																														1																														
+18	19			落魄男子	不对，你怎么知道她的名字？				2	1.1											1			18:npc_icon_351_2			sfx_story_01_shafa																											1																														
+19	20			？？	「人和猫和谐共存的城市」，呵呵，到头来也容不下人和猫。真是讽刺。				2	1.1											1			18:npc_icon_381_1																														1																														
+20	21				<color=#d8d8d8>小巷不起眼的阴暗角落里，一对蓝色的眼眸悄然出现，</color>																1																																	1																														
+21	22				<color=#d8d8d8>目光幽幽地打量着这边，最后落在了怀抱里不知所措的猫咪身上。</color>																1																																	1																														
+22	23			？？	汉姆，35岁，居住地在南港区枯木巷，码头工人，感染重度情绪病，1周前成为纯黑者。																1			18:npc_icon_544_1																														1																														
+23	24			落魄男子	你……到底是——				8	1.1											1			18:npc_icon_351_3																														1																														
+24	25				<color=#d8d8d8>「啪嗒」，那对蓝色眼眸的主人从阴影中轻轻一跳，靠了过来。</color>				8	1.1											1						sfx_story_01_suliao																											1																														
+25	26			落魄男子	嗯？这是……小猫咪？是你在说话吗？				8	1.1											1			18:npc_icon_351_3																														1																														
+26	27			？？	喂喂，本大爷怎么可能是一只小猫咪？！是我在远程操控她和你说话。				8	1.1											1			18:npc_icon_544_1																														1																														
+27	28			？？	这是改造过的猫球，可以躲避E-System的追踪，还有暴风眼那群麻烦的家伙。				8	1.1											1			18:npc_icon_544_1																														1																														
+28	29			落魄男子	「会说话的猫球使者」……难道你就是他们说的……「摆渡人」？				8	1.1											1			18:npc_icon_351_3																														1																														
+29	30			？？	本大爷还有个这样的外号？呵呵，倒也不错……				8	1.1											1			18:npc_icon_544_1																														1																														
+30	31			？？	那么，你，还有你的猫咪，想要新的「护照」吗？想要去「乐园」的「船票」吗？				8	1.1											1			18:npc_icon_544_1																														1																														
+31			3						8	1.1											1														我想要	32																		1																														
+32	33			落魄男子	是是是，我想——				8	1.1											1			18:npc_icon_351_3																														1																														
+33	34			？？	别那么着急答应，想要「护照」或者「船票」，你得先答应一个条件——				8	1.1											1			18:npc_icon_544_1																														1																														
+34	35			？？	「新海市的愿景是成为一座人和猫和谐共存的城市」。		1	57:dialg_bg_100				6									1			18:npc_icon_304_4		-1	sfx_story_03_shuidi																											1																														
+35	36			？？	那像我们这样、被他们视为「老鼠」的存在，就该死？		1	57:dialg_bg_100													1			18:npc_icon_304_4																														1																														
+36	0			弗莉	呵呵，本大爷可不答应。		1	57:dialg_bg_100													1			18:npc_icon_304_2																														1																														

@@ -1,0 +1,63 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2		2		中心区 | 情绪干预中心		1	57:dialg_bg_29	8	1.2											1						op_jianpan																											1																														
+2	3			护士	患者被评定为重度情绪病，需要在重症区接受情绪治疗。_n其他项目正常，治疗顺利的话，大约一周左右就可以转轻症了。				8	1.2		17									1			18:npc_icon_318_3																														1																														
+3	4			护士	如果没有其他问题我就先走了。				8	1.2											1			18:npc_icon_318_3																														1																														
+4	5			我	（虽然一切都在顺利进行着，但有一个可能性一直牵动着我，不知道是不是她………）																1					bgm_universal_survey01																												1																														
+5	6			祈	店长要不要看望一下那个受害者呢？																1			18:npc_icon_596_1																														1																														
+6	7			我	嗯？你是说那个女孩？她也在医院里吗？																1																																	1																														
+7	8			祈	是哦，还是店长的熟人呢。																1			18:npc_icon_596_1																														1																														
+8	9			我	熟人？我怎么不知道？\n不对，你怎么知道是我认识的人？																1																																	1																														
+9	10			祈	到了就知道了。\n抓紧我的手哦~，不要走丢喽~																1			18:npc_icon_596_1																														1																														
+10	11			我	是她！		1	57:dialg_bg_34				17									1																																	1																														
+11	12			祈	很惊讶吧，几天前店长协助调查案件的受害人居然是他的女友。																1			18:npc_icon_596_6																														1																														
+12	13			我	原来是他把女友关到屋子里吗？还真……																1																																	1																														
+13	14			小倩	嗯？是#playerName调查官吗？																1			18:npc_icon_459_3																														1																														
+14	15				<color=#d8d8d8>病床的女孩注意到了站在门口的人招了招手示意进来坐坐。</color>\n<color=#d8d8d8>而祈却躲在了门后，摆摆手表示自己不适合进去。</color>																1					-1																												1																														
+15	16			我	身体恢复的怎么样。				7	1.2											1						sfx_rolestory_yifu																											1																														
+16	17			小倩	恢复得还不错，医生说这几天就可以办出院手续了，谢谢调查官关心。				7	1.2											1			18:npc_icon_459_1																														1																														
+17	18			我	关于案件，我这边……				7	1.2											1																																	1																														
+18	19			小倩	不用了调查官，我醒来之后已经把事情的经过告诉案件负责人了。				7	1.2											1			18:npc_icon_459_1																														1																														
+19	20			我	这样啊，抱歉提了不该提的事情。				7	1.2											1																																	1																														
+20	21			小倩	没事的，都已经过去了，我还要谢谢调查官当时把我救出来。				7	1.2											1			18:npc_icon_459_1																														1																														
+21	22			我	那你之后打算怎么办？				7	1.2											1																																	1																														
+22	23			小倩	嗯……..，我可能会离开新海市，回到家乡生活。\n也许这里不太适合我。				7	1.2											1			18:npc_icon_459_1																														1																														
+23	24				<color=#d8d8d8>在她的话语中，总能听得出一丝的失望与无奈。</color>\n<color=#d8d8d8>我们聊了不久就离开了病房。</color>																1																																	1																														
+24	25			我	祈，你是不是对我说谎了。		1	57:dialg_bg_255				17									1					bgm_plot_trust01																												1																														
+25	26			祈	哪有~，我对店长可是一心一意的，怎么可能会骗你呢~				2	1.1											1			18:npc_icon_596_1																														1																														
+26	27			我	我让人调查了周围情绪粒子情况，除了昨天，其他怪谈时段的情绪粒子都有异常。				2	1.1											1																																	1																														
+27	28			我	有人制造傀化物的线索是你提供的，如果不吸收情绪粒子，很可能出现傀化事件。				2	1.1											1																																	1																														
+28	29			祈	冤枉啊，我只是说过「他的出现会找来一堆傀化物」，而和制造傀化物联系到一起的是店长你。				2	1.1											1			18:npc_icon_596_1																														1																														
+29	30			我	所以……，这些都是借口，你的目的是让我看一场怪谈，是吧。				2	1.1											1																																	1																														
+30	31			祈	猜对了呢，看来店长已经很深入的了解我了，只不过还没有那么深入~				2	1.1											1			18:npc_icon_596_4																														1																														
+31	32			我	我已经知道你设计怪谈的目的，也看到了整个全部，所以你想干什么？				2	1.1											1																																	1																														
+32	33			祈	很简单，我想知道亲爱的店长对这件事的看法。				2	1.1											1			18:npc_icon_596_1																														1																														
+33	34			我	看法，指这个怪谈吗？				2	1.1											1																																	1																														
+34	35			祈	不论男女，总有很多人以玩弄感情为乐。或是故意又或是巧合，这样的事情一直在发生。																1			18:npc_icon_596_6																														1																														
+35	36			祈	所以我想知道，在店长眼里，要怎样做才能避免这样的悲剧。																1			18:npc_icon_596_6																														1																														
+36			3																		1														施害者……;不予解读;换个角度	37;38;39																		1																														
+37	41			我	案件是由施害者一手造成的，如果要避免再发生，要从源头下手。																1																																	1																														
+38	41			我	经历的事情不同，所能体会的也不同，表现行为也不尽相同，其中的原因也很复杂，我不好说。																1																																	1																														
+39	40			我	这种事情不是你一个人就能实现的，换一个角度思考，\n如果让未经历的人避免，让经历过的人抬头。也是一种方法。																1																																	1																														
+40	41			我	这也是你这个「心灵按摩师」在做的事情，不是吗？																1																																	1																														
+41	42				<color=#d8d8d8>祈没有说话，只是小小的思考了一下，然后露出微笑。</color>																1																																	1																														
+42	43			祈	好吧，店长的回答我就满满的收下了。				2	1.1											1			18:npc_icon_596_1																														1																														
+43	44			祈	我也会遵守承诺，我不再扮演这个怪谈角色了，附加删除怪谈网站上的内容专栏。				2	1.1											1			18:npc_icon_596_1																														1																														
+44	45			我	还有专栏？				2	1.1											1																																	1																														
+45	46			祈	哎呀，忘记告诉店长了，我是怪谈网站的管理员哦~不然怪谈怎么在这么短的时间遍布网络呢~				2	1.1											1			18:npc_icon_596_1																														1																														
+46	47			我	还真是个大人物……				2	1.1											1																																	1																														
+47	48			祈	呵呵，店长之后如果想要和我深入交流的话，记得来闻心茶社哦~，我会躺在床上等你的~																1			18:npc_icon_596_4																														1																														
+48	49			我	有时间我一定会去的，但你最好是坐着等我……																1																																	1																														
+49	50			祈	那再见了调查官，今天晚上也要梦到我哦~																1			18:npc_icon_596_4																														1																														
+50	51			我	还是算了，我不希望再被「诅咒」了……																1																																	1																														
+51	52		2		贝克街的猫 | 房间		1	57:dialg_bg_7	8	1.2											1					-1	op_jianpan																											1																														
+52	53				<color=#d8d8d8>躺在床上回忆起这一天的经历，有一种不真实的感觉，像是看了一场电影。</color>				8	1.2		17									1																																	1																														
+53	54			我	祈…….，虽然聊天的时候说着一些不着调的话，但心思十分细腻。_n对待人和事情有着很独到见解，有一种……，耀州侠客的风范。				8	1.2											1																																	1																														
+54	55			我	还有金阙，她口中的神明……，闻心茶社究竟是什么地方。				8	1.2											1																																	1																														
+55	56			我	有时间一定要拜访一下，说不定……她们知道关于我身体的秘密。				8	1.2											1																																	1																														
+56	57			？？？	#playerName~我的小宝贝有没有想我呀~		1	57:dialg_bg_100				18									1			18:npc_icon_596_5																														1																														
+57	58				<color=#d8d8d8>一双白皙柔软的双手环住肩膀，</color>\n<color=#d8d8d8>一对柔软的物体顶在后背上。</color>																1																																	1																														
+58	59			我	嗯？这熟悉的声音……																1					bgm_prologue_ditu																												1																														
+59	60			祈	才分别不过十小时就把我忘了，真让人伤心，我想想要怎么惩罚你呢~																1			18:npc_icon_596_4																														1																														
+60	61			祈	今晚就让我好好享受我的「心灵按摩」吧，保证让您终身难忘，啊~																1			18:npc_icon_596_4																														1																														
+61	0			我	你有完没完！							1									1																																	1																														

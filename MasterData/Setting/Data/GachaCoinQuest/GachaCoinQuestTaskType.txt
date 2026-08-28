@@ -1,0 +1,17 @@
+id	condition	status
+int	int	int
+1	副本通关	1
+2	角色重伤数量小于等于_target_num_个	1
+3	通关时所有角色生命不低于_target_num_%	1
+4	在_target_num_回合内获得胜利	1
+5	单回合造成_target_num_以上伤害	1
+6	单次攻击造成_target_num_以上伤害	1
+7	通关时使用_target_type_属性角色累计造成_target_num_以上伤害	1
+8	以包含_target_num_个_target_type_属性角色通关	1
+9	编队中不超过_target_num_个角色通关	1
+10	本场战斗中BOSS同时获得_target_num_层以上_target_type_状态	1
+11	本场战斗中己方一名角色同时获得_target_num_层以上_target_type_状态	1
+12	本场战斗中己方一名角色同时获得_target_num_层以下_target_type_状态	1
+13	编队中_target_type_职业角色少于_target_num_通关	1
+14	编队中稀有度_target_type_的角色大于_target_num_通关	1
+15	编队中稀有度_target_type_的角色小于_target_num_通关	1

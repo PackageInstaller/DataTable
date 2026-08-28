@@ -1,0 +1,43 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2				<color=#d8d8d8>在赶往下一个任务地点时，因为有些口渴，便在路边的便利店买了瓶饮料。</color>		1	57:dialg_bg_195				17									1					bgm_universal_survey01	sfx_story_03_kaimen																											1																														
+2	3			我	呼！果然这个时候就应该来一瓶冰镇的Neco cola。……咦，那是？																1																																	1																														
+3	4				<color=#d8d8d8>在便利店门口我看到了刚才的那位猫族少女，她手中拿着手机，似乎正在和别人争吵。</color>																1																																	1																														
+4	5			猫族少女	——退钱！你做的插件根本用不了。				8	1.1											1			18:npc_icon_582_2						vo_Hailei_00_01																								1																														
+5	6			？？	退什么钱？当初你找我预定插件的时候也没给钱啊……\n而且没头没脑的，你在说什么？				8	1.1											1			18:npc_icon_304_2						vo_Fuli_00_03														1										1																														
+6	7			猫族少女	今天我用你的插件抢任务，结果全被某个……某个任性的家伙抢走了。				8	1.1											1			18:npc_icon_582_2																														1																														
+7	8			？？	等等，你说的那个人，用的难道是暴风眼配发的手机？				8	1.1											1			18:npc_icon_304_4																				1										1																														
+8	9			猫族少女	好像是。所以？				8	1.1											1			18:npc_icon_582_1																														1																														
+9	10			？？	暴风眼有无回者联盟的内部线路，会优先分配任务，这不是插件的问题。				8	1.1											1			18:npc_icon_304_2																				1										1																														
+10	11			？？	当然，如果你想要更高优先级的插件也不是不行……\n得加钱。				8	1.1											1			18:npc_icon_304_1																				1										1																														
+11	12			猫族少女	要钱？免谈！				8	1.1											1			18:npc_icon_582_2																														1																														
+12	13			？？	那就没办法了。总之绝对不是我的错，要怪就怪你找了个赢不了的对手吧。				8	1.1											1			18:npc_icon_304_1																				1										1																														
+13	14			猫族少女	喂？喂！_n……可恶，挂我电话？				8	1.1											1			18:npc_icon_582_2			sfx_story_02_guaduan			vo_Hailei_00_01																								1																														
+14	15				<color=#d8d8d8>猫族少女转过身，发现背后站着人，顿时露出了受惊的表情。</color>				8	1.1											1					-1	sfx_story_01_shafa																											1																														
+15	16			猫族少女	抢任务的家伙……你为什么会在这里？				8	1.1											1			18:npc_icon_582_1		bgm_prologue_ditu																												1																														
+16	17			猫族少女	今天真是流年不利，不光任务没接到，还总是碰到你这个抢生意的。				8	1.1											1			18:npc_icon_582_2						vo_Hailei_00_01																								1																														
+17	18			猫族少女	喂，你手上的这个饮料瓶还要吗？不要的话就给我吧！				8	1.1											1			18:npc_icon_582_2																														1																														
+18			3						8	1.1											1														这是珍贵的宝物。;你很喜欢Naco cola吗？;你打算对空瓶做什么？	19;21;23																		1																														
+19	20			我	这是珍贵的宝物，我要留做传家宝。				8	1.1											1																																	1																														
+20	25			猫族少女	谁会拿空瓶当传家宝啊！				8	1.1											1			18:npc_icon_582_2																														1																														
+21	22			我	你很喜欢Naco cola吗？可惜这瓶已经喝完了，要不我再买一瓶送你？				8	1.1											1																																	1																														
+22	25			猫族少女	你能请我喝饮料当然最好……不过，喝完的空瓶我也要。				8	1.1											1			18:npc_icon_582_1																														1																														
+23	24			我	你……该不会想要拿空瓶做什么破坏公序良俗的事情吧？				8	1.1											1																																	1																														
+24	25			猫族少女	请你告诉我，一个空瓶到底怎么样才能破坏公序良俗！				8	1.1											1			18:npc_icon_582_2																														1																														
+25	26			我	能问一句，你要空瓶到底打算做什么？				8	1.1											1																																	1																														
+26	27			猫族少女	卖钱。一两个空瓶虽然不值多少钱，但这东西到处都是，凑多了总能赚一些。				8	1.1											1			18:npc_icon_582_1																														1																														
+27	28			猫族少女	……咳咳，反正对你也没有坏处吧。_n保持城市整洁的话，遭遇傀化物的风险也会降低。				8	1.1											1			18:npc_icon_582_1						vo_Hailei_00_06																								1																														
+28	29			我	原来你还是环保爱好者……_n那么这个空瓶就拜托你了，请好好珍惜它。				8	1.1											1																																	1																														
+29	30			海蕾	什、什么环保爱好者，别乱说……_n不过，谢啦。				8	1.1											1			18:npc_icon_582_4																														1																														
+30	31				<color=#d8d8d8>她接过瓶子，竟然微笑了一下。</color>				8	1.1											1																																	1																														
+31	32			海蕾	我叫海蕾，以后要是有人在这个街道找你麻烦，可以来找我。				8	1.1											1			18:npc_icon_582_4																														1																														
+32	33			海蕾	毕竟像你这样有公职的人，总不能随便动手的，对吧？				8	1.1											1			18:npc_icon_582_4																														1																														
+33	34			我	确实如此，那以后就拜托你……				8	1.1											1																																	1																														
+34	35			海蕾	起价五百新海币，断手三百断腿五百，五个人以上价钱可以商量。				8	1.1											1			18:npc_icon_582_4																														1																														
+35			3						8	1.1											1														……我选择合法渠道。;我考虑一下。;说定了。	36;38;39																		1																														
+36	37			我	……抱歉，身为公职人员，我还是用合法手段来解决问题吧。				8	1.1											1																																	1																														
+37	40			海蕾	好吧，希望以后还有合作的机会。				8	1.1											1			18:npc_icon_582_1																														1																														
+38	39			海蕾	那你慢慢考虑。夜路走多了总会遇到事的，不是吗？				8	1.1											1			18:npc_icon_582_4																														1																														
+39	40			海蕾	一言为定！				8	1.1											1			18:npc_icon_582_4																														1																														
+40	41				<color=#d8d8d8>海蕾拿着空瓶，随意挥了挥手，毫不留恋地转身离开。</color>																1																																	1																														
+41	0				<color=#d8d8d8>或许，以后可能真的有需要她帮忙的时候？不过现在，还是继续完成任务吧。</color>																1																																	1																														

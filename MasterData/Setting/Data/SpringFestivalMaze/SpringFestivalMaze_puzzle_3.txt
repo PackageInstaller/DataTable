@@ -1,0 +1,11 @@
+id	group	rowType	eventKey	initLayout	solvedLayout	solvedEventKey	finalLayout	notes	status
+int	int	int	int	int	int	int	int	int	int
+101	301	BaseInfo		12;4;11;3;null;6;9;2;8			3;4;6;2;null;8;12;11;9		1
+1011	301	TeachingPuzzle	1.5-condition		0_2=2	1.5-solved		教学解谜	1
+1012	301	TeachingPuzzle	1.2-condition		0_1=2	1.2-solved		教学解谜,彻底解开谜题	1
+104	302	BaseInfo		12;4;11;3;null;6;9;2;8			3;4;6;2;null;8;12;11;9		1
+105	302	ChildPuzzle			2_0=6;2_1=8	6.1-solved		解锁后点亮 红色激光	1
+106	302	ChildPuzzle			2_2=9;2_1=8	9.1-solved		解锁后点亮 绿色激光	1
+107	302	ChildPuzzle			0_2=12;1_2=11	12.1-solved		解锁后点亮 蓝色激光	1
+108	302	AllSolved				1.1-solved		彻底解开谜题	1
+109	303	BaseInfo		12;4;11;3;null;6;9;2;8			3;4;6;2;null;8;12;11;9		1

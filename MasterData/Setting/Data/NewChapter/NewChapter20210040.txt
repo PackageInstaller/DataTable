@@ -1,0 +1,56 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2			艾可	调查官！我们来接你啦~今天的工作完成得如何？		1	57:dialg_bg_272	7	1.1		17		102008;101008			10205;0		13;20		1					bgm_prologue_ditu	sfx_story_03_lamen			vo_Aike_00_01													8;1											1																														
+2	3			非天	下午好，调查官。				7	1.1				102008;101008			10205;0		13;20		1									vo_Feitian_00_01													8;1											1																														
+3	4				<color=#d8d8d8>艾可和非天的声音打断了整理文件的思路，原来都到下班的时间了吗……</color>				7	1.1				102008;101008			10205;0		13;20		1																						8;1											1																														
+4	5			我	我觉得……进度应该还不错。稍等，我整理一下就走。				7	1.1				102008;101008			10205;0		13;20		1																						8;1											1																														
+5	6			斯泰茜	这里是资料室，涉及到机密数据，无关人等请离开。				7	1.1				102008;101008		200601;0	10205;0		13;20		1			18:npc_icon_579_1	1																	1;102008	37;1											1																														
+6	7			艾可	哎呀，这不是斯泰茜吗？原来你也在啊。抱歉，因为你个头太小了所以我都没注意到呢。				7	1.1				102008;101008		200201			13;20		1																					1;102008	37;1											1																														
+7	8			斯泰茜	你也没比我高多少！_n算了，调查官，这里没你的事情了，赶紧带她们回去吧。				7	1.1				102008;101008		200601			13;20		1			18:npc_icon_579_2	1					vo_Sitaixi_00_02												1;102008	37;1											1																														
+8	9			我	那么我就先告辞了。_n……斯泰茜，你不走吗？				7	1.1				102008;101008		200601			13;20		1																					1;102008	37;1											1																														
+9	10			斯泰茜	我还有一些工作需要收尾。				7	1.1				102008;101008		200601			13;20		1			18:npc_icon_579_1	1																	1;102008	37;1											1																														
+10	11				<color=#d8d8d8>向斯泰茜告别，离开办公室之后，艾可叹了口气。</color>		1	57:dialg_bg_323				17									1					-1	sfx_story_03_lamen																											1																														
+11	12			艾可	那个斯泰茜啊，又开始了。_n明明可以大家一起做的工作，总喜欢自己单独完成。				7	1.1				102008		200601	10205		20		1																					1	43;1											1																														
+12	51			艾可	嘛，虽然艾可在某种程度上也能理解吧……				7	1.1				102008		200601	10205		20		1																					1	43;1											1																														
+51	13			艾可	「自己整理的话就不需要和别人解释了」之类的理由。_n但果然还是——太死板了！				7	1.1				102008		200601	10205		20		1																					1	43;1											1																														
+13	14			我	她以前就经常那样吗？				7	1.1				102008		200601	10205		20		1																					1	43;1											1																														
+14	15			艾可	……唔，关于那家伙的事情，艾可才不想知道呢！				7	1.1				102008		200302	10205		20		1																					1	43;1											1																														
+15	16			我	这样吗……				7	1.1				102008		200302	10205		20		1																					1	43;1											1																														
+16	17				<color=#d8d8d8>虽然只「共事」了一天，但斯泰茜也算是同伴了。</color>_n<color=#d8d8d8>要不要帮她一把呢？</color>				7	1.1				102008		200302	10205		20		1																					1	43;1											1																														
+17			3						7	1.1				102008		200302	10205		20		1														给豪威尔发消息。;让艾可出面。	18;20						1	43;1											1																														
+18	19				<color=#d8d8d8>拿出手机，将斯泰茜又在加班的事情告知了豪威尔调查长。</color>				7	1.1				102008		200302	10205		20		1																					1	43;1											1																														
+19	25				<color=#d8d8d8>一旁的艾可好像也拿出了手机在发送消息。</color>				7	1.1				102008		200302	10205		20		1																					1	43;1											1																														
+20	21			我	艾可，你要不要去劝一下斯泰茜？				7	1.1				102008		200302	10205		20		1																						43;1											1																														
+21	22			艾可	咦？我为什么要帮她啊！				7	1.1				102008		200601	10205		20		1																						43;1											1																														
+22	25				<color=#d8d8d8>虽然这么说着，艾可还是拿出了手机发了条消息。</color>				7	1.1				102008		200601			20		1																						43;1											1																														
+23	24			我	呃……这样好像有点不太好。\n还是和豪威尔调查长说一声吧。				7	1.1				102008		200601			20		1																						43;1											1																														
+24	25				<color=#d8d8d8>拿出手机，将斯泰茜又在加班的事情告知了豪威尔调查长。</color>_n<color=#d8d8d8>艾可好像也发了条消息。</color>				7	1.1				102008		200601			20		1																						43;1											1																														
+25	26			非天	调查官，还不打算回去吗？				7	1.1				101008		200601	100201		27		1																						40;1											1																														
+26	27			我	稍等，有点事情我想确认一下。				7	1.1				101008		200601	100201		27		1																						40;1											1																														
+27	28				<color=#d8d8d8>没过多久，就看到豪威尔调查长的身影出现在办公室门口。</color>		1	57:dialg_bg_272				17									1					-1	sfx_story_03_lamen																											1																														
+28	29			豪威尔	斯泰茜，这里就只有你一个？																1			18:npc_icon_187_5																														1																														
+29	30			斯泰茜	是的。如果你找调查官，刚才已经回去了。																1			18:npc_icon_579_1																														1																														
+30	31			豪威尔	那个家伙……算了，没事了。_n你还有事情要忙？																1			18:npc_icon_187_5						vo_Haoweier_00_05																								1																														
+31	32			斯泰茜	我想把剩下的申请文件处理掉。_n否则又像刚才那样，有人上门来催就不好了。																1			18:npc_icon_579_1																														1																														
+32	33			豪威尔	你啊……																1			18:npc_icon_187_6																														1																														
+33	34				<color=#d8d8d8>豪威尔忽然伸出手，揉了揉斯泰茜的脑袋。</color>																1						sfx_rolestory_yifu																											1																														
+34	35			斯泰茜	……调查长？																1			18:npc_icon_579_2		bgm_plot_trust01																												1																														
+35	36			豪威尔	你辛苦了。_n这些文件也不会长腿跑掉，剩下的事情放着明天做也可以。																1			18:npc_icon_187_5																														1																														
+36	37			豪威尔	你最近都在加班，还经常熬夜不是吗？所以今天就早点回去休息好了。																1			18:npc_icon_187_5																														1																														
+37	38			斯泰茜	可是工作……																1			18:npc_icon_579_2																														1																														
+38	39			豪威尔	这是命令。_n对了，现在餐厅还开着，晚上我请客，想吃什么随便点。																1			18:npc_icon_187_5																														1																														
+39	40			斯泰茜	……中午的时候，调查官也说过同样的话。																1			18:npc_icon_579_2																														1																														
+40	52			豪威尔	啊哈哈哈……_n那家伙以前，也老是这么没大没小地对我说话。																1			18:npc_icon_187_5						vo_Haoweier_00_08																								1																														
+52	53			豪威尔	对亏了他，才不至于成为斯泰茜你最崇拜的那种「勤勉」的大人。	对亏了她，才不至于成为斯泰茜你最崇拜的那种「勤勉」的大人。															1			18:npc_icon_187_5																														1																														
+53	41			斯泰茜	……哼，真是个奇怪的调查官。																1			18:npc_icon_579_2																														1																														
+41	42				<color=#d8d8d8>大家看着豪威尔与斯泰茜离开办公室，这才从隐蔽处现身。</color>		1	57:dialg_bg_323				17									1																																	1																														
+42	43			非天	现在可以安心了吧，调查官？									102008;101008		200601;200101	10205;10215		13;20		1																						8;1											1																														
+43	44			我	当然。									102008;101008		200601;200101	10205;0		13;20		1																						8;1											1																														
+44	45			艾可	嘻嘻，晚上小白会做什么好吃的菜呢？									102008;101008		201301;200101	10205;0		13;20		1									vo_Aike_00_02												0;102008	8;1											1																														
+45	46			我	艾可，你的心情不错呀。									102008;101008		200101;200101	10205;0		13;20		1																					0;102008	8;1											1																														
+46	47			艾可	是啊，因为我很期待晚餐呢。									102008;101008		200901;200101	10205;0		13;20		1																					0;102008	8;1											1																														
+47	48			我	难道是因为见到了斯泰茜的缘故？									102008;101008		200601;200101	10205;0		13;20		1																					0;102008	8;1											1																														
+48	49			艾可	你、你在乱说什么喵！艾可什么都不知道喵！_n快点回去吧，调查官，艾可肚子饿啦！									102008;101008		200701;200101	10205;0		13;20		1																					0;0	8;1											1																														
+49	50			我	好好好，就当是这样吧——									102008;101008		200701;200101	10205;0		13;20		1																						8;1											1																														
+50	54				<color=#d8d8d8>身后的喧闹似乎引起了斯泰茜的注意。</color>_n<color=#d8d8d8>她偷偷向身后投来一瞥，那眼神中——</color>																1																						1;1											1																														
+54	0				<color=#d8d8d8>……似乎，带着些许她自己都说不明的羡慕。</color>																1																																	1																														

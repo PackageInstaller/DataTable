@@ -1,0 +1,84 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2			？？？	姐姐还等着我呢……		1	57:dialg_bg_100				17									1						sfx_story_03_zuyin																											1																														
+2	3			？？？	大家也还等着我呢……							22	20								1						sfx_story_03_shuidi																											1																														
+3	4			我	糟糕，出门的时候忘了带伞……		1	57:dialg_bg_235				17									1					sfx_story_02_rainystreet																												1																														
+4	5			小白	我已经提醒过三次，然而调查官并没有把这件事放在心上。																1			18:card_icon_108008_6			sfx_story_03_zuyin																	1										1																														
+5	6			我	没办法，情况紧急啊……																1																																	1																														
+6	7			小白	预计半小时后这场雨就会停了。_n另外，热水已经准备好了。																1			18:card_icon_108008_2																				1										1																														
+7	8			我	唔，被发现了？_n但既然衣服都湿透了，干脆慢慢走回去吧。																1																																	1																														
+8	9			小白	请您不要逞强。_n以后还请更多地留意我的提醒，也许能避免麻烦了。																1			18:card_icon_108008_2																				1										1																														
+9	10			我	下次一定——																1						sfx_story_01_tishiyin	1																										1																														
+10	11				转过街角，雾蒙蒙的街道上，有一个身影在雨中缓慢地移动着。																1																																	1																														
+11	12			我	看来有人和我一样，被这场雨打得手足无措啊。																1																																	1																														
+12			3																		1														上前询问;快点回去	13;14																		1																														
+13	15			我	上去看看吧，可能是遇到什么困难了……																1																																	1																														
+14	15			我	赶紧回去吧，被淋了这么久，怕是真的要感冒了……																1																																	1																														
+15	16				<color=#d8d8d8>走到那个人的后面时，她主动让开了左边的空间。</color>																1						sfx_story_01_shafa																											1																														
+16	17				<color=#d8d8d8>瞥过一眼，却被一对软趴趴的耳朵吸引了注意。</color>																1																																	1																														
+17	18			我	拉斐尔？																1																																	1																														
+18	19			拉斐尔	你是……之前那个……帮我一起做饼干的哥哥…….	你是……之前那个……帮我一起做饼干的姐姐…….															1			18:npc_icon_581_1						vo_Lafeier_00_04																								1																														
+19	20			我	你怎么在这？																1																																	1																														
+20	21			我	不对，你没带伞吗？怎么不先避避雨。																1																																	1																														
+21	22			拉斐尔	那……那个，我忘带伞了，然后……																1			18:npc_icon_581_5																														1																														
+22			3																		1														和我回去吧	23																		1																														
+23	24			我	先和我回贝克猫吧，这么淋下去会感冒的。																1																																	1																														
+24	25			拉斐尔	好，好的，谢谢哥哥。	好，好的，谢谢姐姐。															1			18:npc_icon_581_1																														1																														
+25	26						1	57:dialg_bg_236				17	0								1					-1	sfx_story_01_mensheng																											1																														
+26	27			小白	店长，热水已经准备……				0	1.1				108008			100201		20		1									vo_Xiaobai_00_06													43;1											1																														
+27	28				<color=#d8d8d8>刚刚走下楼梯的小白，似乎在用短暂的停顿表达惊讶。</color>				0	1.1				108008					20		1																						43;1											1																														
+28	29			小白	店长，这位客人是……				0	1.1				108008		200701			20		1																					1	43;1											1																														
+29	30			我	她是拉斐尔。_n小白，你先带她去洗热水澡吧，记得准备一套换洗衣物。				0	1.1				108008		200701			20		1																					1	43;1											1																														
+30	31			小白	好的，我这就去办。_n那店长是打算自然风干吗？	好的，我这就去办。_n那店长是想和她一起洗吗？			0	1.1				108008			10202		20		1									vo_Xiaobai_00_03												0	43;1											1																														
+31	32			我	咳，我回房间换一下衣服。_n你快带她去浴室吧，淋雨了容易着凉。				0	1.1				108008					20		1																						43;1											1																														
+32	33			小白	好的。拉斐尔小姐，前面是台阶，请留神脚下。				0	1.1				108008			101301		20		1																						43;1											1																														
+33	34			拉斐尔	……谢，谢谢……我自己可以的……。																1			18:npc_icon_581_4	1																		1;1											1																														
+34	35			我	或许是作为调查官的直觉，总觉得今天的拉斐尔有些奇怪。																1																																	1																														
+35	36			我	她脸上的是雨水……还是泪水……																1																																	1																														
+36	37											17	0								1						sfx_story_01_keting																											1																														
+37	38			小白	店长，拉斐尔小姐已经洗好了。_n我先去准备一些热饮。																1			18:card_icon_108008_2	1	bgm_plot_trust01				vo_Xiaobai_00_06																								1																														
+38	39			拉斐尔	哥哥没有洗吗？不行，这样哥哥可能会感冒的。	姐姐没有洗吗？不行，这样姐姐可能会感冒的。															1			18:npc_icon_581_5	1																													1																														
+39	40			我	没事，擦干后换好衣服再吹吹头发，就不会感冒。																1																																	1																														
+40	41			拉斐尔	这样嘛？呼——太好了。																1			18:npc_icon_581_1	1					vo_Lafeier_00_03																								1																														
+41			3																		1														淋雨的原因？	42																		1																														
+42	43			我	不过，你为什么会在街上淋雨赶路呢？是有什么很重要的事情吗？																1																																	1																														
+43	44			拉斐尔	啊……我今天和简姐姐约好了，要去情绪干预中心找她……																1			18:npc_icon_581_5	1																													1																														
+44	45			拉斐尔	……但是，半路突然下雨了。_n我……没有带伞，来不及避雨就被淋湿了呢。																1			18:npc_icon_581_1						vo_Lafeier_00_03																								1																														
+45	46			拉斐尔	然后我想反正也淋湿了，就先回家收拾一下吧，说不定今天还可以再去一次。																1			18:npc_icon_581_1	1																													1																														
+46	47			拉斐尔	去地铁站的路上就遇到了哥哥……还要谢谢您能收留我。	去地铁站的路上就遇到了姐姐……还要谢谢您能收留我。															1			18:npc_icon_581_4	1					vo_Lafeier_00_02																								1																														
+47	48			我	这样吗……																1																																	1																														
+48	49				<color=#d8d8d8>拉斐尔又露出这样可爱的笑容，仿佛所有事情都不足以让她烦恼。</color>																1																																	1																														
+49	50			小白	这是刚煮好的姜汁糖水，可以先喝一些暖暖身子。				0	1.1				108008			101301		20		1						sfx_story_02_chabei																43;1											1																														
+50	51			拉斐尔	谢谢小白小姐~				0	1.1				108008			101301		20		1			18:npc_icon_581_4	1																		43;1											1																														
+51	52			小白	不用客气拉斐尔小姐，直接叫我小白就行。				0	1.1				108008		200101			20		1																					1	43;1											1																														
+52	53			拉斐尔	好的，小白姐姐~				0	1.1				108008		200101			20		1			18:npc_icon_581_4	1					vo_Lafeier_00_02												1	43;1											1																														
+53			3																		1														（情绪转变好快……）	54							1;1											1																														
+54	55			我	（我记得她在雨里还有些恍惚，并没有说得那么轻松……）																1																																	1																														
+55	56			我	（或许，是我多虑了？）																1																																	1																														
+56	57			拉斐尔	唉？外面的雨好像变小了，过一会是不是可以出门了？																1			18:npc_icon_581_5	1					vo_Lafeier_00_04																								1																														
+57	58			小白	根据实时卫星观测，预计一小时后天气就会转晴。																1			18:card_icon_108008_2	1																													1																														
+58	59			拉斐尔	太好了！哥哥，小白姐姐，谢谢你们帮我。_n等雨停了我就要去情绪干预中心了。	太好了！姐姐，小白姐姐，谢谢你们帮我。_n等雨停了我就要去情绪干预中心了。															1			18:npc_icon_581_1	1																													1																														
+59	60			我	还要去吗？今天淋了雨，要不先休息一下。																1																																	1																														
+60	61			拉斐尔	嗯……。简姐姐很忙的，如果错过今天，不知道下次还能不能见到……																1			18:npc_icon_581_1	1					vo_Lafeier_00_03																								1																														
+61	62			拉斐尔	而且，我已经很长时间没见到简姐姐了，我不想……再等了。																1			18:npc_icon_581_4	1																													1																														
+62	63				<color=#d8d8d8>拉斐尔又露出那柔软的笑容，只不过夹杂着一些其他感情。</color>																1																																	1																														
+63			3																		1														我陪你去吧	64																		1																														
+64	65			拉斐尔	哎？没关系的，我自己可以。	哎？没关系的，我自己可以。															1			18:npc_icon_581_5	1					vo_Lafeier_00_04																								1																														
+65	66			拉斐尔	哥哥应该还有其他事要忙吧……	姐姐应该还有其他事要忙吧……															1			18:npc_icon_581_5	1																													1																														
+66	67			拉斐尔	竟然开着这么大的一家店呢！真的好厉害呀~~																1			18:npc_icon_581_1	1																													1																														
+67			3																		1														太会夸人了……	68																		1																														
+68	69			小白	下雨天到店客人很少，大多数顾客都会选择外卖。所以不是很忙。																1			18:card_icon_108008_2	1																													1																														
+69	70			我	嗯，我还是陪你去吧。_n如果拉斐尔遇到什么麻烦，我还可以帮忙。																1																																	1																														
+70	71			拉斐尔	那……那就麻烦哥哥了。	那……那就麻烦姐姐了。															1			18:npc_icon_581_4	1					vo_Lafeier_00_02																								1																														
+71	72			小白	……调查官，请等一下。				0	1.1				108008		200301			20		1					-1				vo_Xiaobai_00_01													43;1											1																														
+72	73				<color=#d8d8d8>出门前的间隙，被小白轻轻拽住了袖口。</color>				0	1.1				108008		200301			20		1																						43;1											1																														
+73	74			小白	刚才，我为拉斐尔小姐洗澡时。_n看到她的膝盖上有擦伤。				0	1.1				108008		200301			20		1																						43;1											1																														
+74	75			小白	但拉斐尔小姐，并不想告诉我发生了什么。				0	1.1				108008		200301			20		1																						43;1											1																														
+75			3						0	1.1				108008		200301			20		1														伤口……难道？	76							43;1											1																														
+76	77			我	是霸凌行为？				0	1.1				108008		200301			20		1																						43;1											1																														
+77	78			小白	……调查官应该也看出来了，_n拉斐尔小姐并不是纯种猫族。				0	1.1				108008		200301	101301		20		1																						43;1											1																														
+78	79			小白	作为E-System名下的AI，我相信新海市的法律条规已经相当完善。				0	1.1				108008		200301	101301		20		1									vo_Xiaobai_00_02													43;1											1																														
+79	80			小白	但即使如此，在少数群体的社会福祉保障方面，官方依旧存在许多漏洞。				0	1.1				108008		200301	101301		20		1																						43;1											1																														
+80			3						0	1.1				108008					20		1														我会弄明白事情经过。	81							43;1											1																														
+81	82			小白	「——每个群体，都孕育着新海市的未来。」				0	1.1				108008					20		1																						43;1											1																														
+82	0			小白	娜卡女士曾这样说过。_n请您接过这份意志吧。				0	1.1				108008					20		1																						43;1											1																														

@@ -1,0 +1,17 @@
+id	isAction	isOwnClick	isEnemyClick	isEffectTarget	isUseSkillsBuff	isUseSkillsAtk	isUseSkillsDebuff	isUseSkillsTherapy	isUseSkillsSp	isGetSp	isSkillGetSp	word	status
+int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	0	1	1	1	0	0	0	0	0	1	1	无法行动（眩晕）	1
+2	0	1	1	1	0	0	0	0	0	1	1	禁用全部技能（睡眠）	1
+3	1	1	1	1	0	1	1	1	1	1	1	禁用增益技能	1
+4	1	1	1	1	1	0	1	1	1	1	1	禁用攻击技能	1
+5	1	1	1	1	1	1	0	1	1	1	1	禁用减益技能	1
+6	1	1	1	1	1	1	1	0	1	1	1	禁用恢复技能	1
+7	1	1	1	1	1	1	1	1	0	1	1	禁用SP技能	1
+8	1	1	1	1	1	1	1	1	1	0	1	禁止获得情绪点	1
+9	1	1	0	1	1	1	1	1	1	1	1	隐身	1
+10	1	0	0	0	0	0	0	0	0	1	1	放逐	1
+11	1	1	1	1	1	1	1	1	1	1	0	释放技能不能获得sp点	1
+12	1	1	1	1	1	0	0	0	1	1	1	只能使用增益技能	1
+13	1	1	1	1	0	1	0	0	1	1	1	只能使用攻击技能	1
+14	1	1	1	1	0	0	1	0	1	1	1	只能使用减益技能	1
+15	1	1	1	1	0	0	0	1	1	1	1	只能使用恢复技能	1

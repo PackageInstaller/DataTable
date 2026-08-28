@@ -1,0 +1,260 @@
+---
+--- 社团大厅，相机自动跟随
+--- Author: dawanfan
+--- Date: 2024-4-24 18:28:55
+---
+
+
+---@type LuaParametersReader
+local LuaParametersReader = import('Game.Utils.LuaParametersReader')
+local LuaParametersType = LuaParametersReader.Type 
+local LuaParameters = CS.Engine.Modules.LuaParameters
+
+local Quaternion = CS.UnityEngine.Quaternion
+local Mathf = CS.UnityEngine.Mathf
+local Time = CS.UnityEngine.Time
+local KTool = CS.Engine.Lib.KTool
+local Vector3 = CS.UnityEngine.Vector3
+local EventsModule = CS.Engine.Modules.EventsModule
+local GameContants = CS.Game.GameContants
+local DreamSpaceUtils = CS.DreamSpace.DreamSpaceUtils
+
+
+--- from: Assets/BundleResources/Prefabs/OverClub/OverseaClubPlayerController.prefab > name: autoFollow
+---@class OverseaClubAutoFollow
+---@field Env                           	OverseaClubAutoFollow                   
+---@field controller                    	Engine.Modules.LuaBehaviour             
+---@field catLuaParams                  	Engine.Modules.LuaParameters            	@ 0    
+---@field humanLuaParams                	Engine.Modules.LuaParameters            	@ 1    
+local OverseaClubAutoFollow = Class("OverseaClubAutoFollow")
+
+
+function OverseaClubAutoFollow:__init()
+    self.controller = nil
+
+
+
+    self.currentParams = nil -- self.humanParams or self.catParams -- 当前使用的版本;
+
+    self.viewRotateController = nil -- ViewRotateController
+
+    self.vcam = nil -- CinemachineVirtualCamera
+    self.mCamera = nil -- Camera
+
+        
+    --self.ws = CS.System.Collections.Generic["LinkedList`1[System.Single]"]() -- LinkedList<float> 用一组值来平滑 w
+    self.ws = { 0, 0, 0, 0, 0}
+    self.wsIdx = 1  -- [1,5]
+    self.wSum = 0.0
+
+
+    self.moveSmoothMagnitude = 0.0 -- 时间性的 role moveMagnitude, role 开始移动后, 此值渐变为 1.0, role 停止后 此值渐变为 0.0
+end
+
+
+function OverseaClubAutoFollow:__delete()
+    self.OnCatEyeOpenVision = nil
+end
+
+
+function OverseaClubAutoFollow:Start()
+    KTool.SetActive(self.controller.gameObject, true)    
+end
+
+
+function OverseaClubAutoFollow:Init(vcam_, viewRotateController_)
+
+
+    assert( self.humanLuaParams and self.catLuaParams )
+
+
+    local selfParams = KTool.GetComponent(self.controller.gameObject, typeof(LuaParameters))
+    assert( selfParams )
+
+    self.isYawActive     = LuaParametersReader.Read( selfParams, "isYawActive", LuaParametersType.Bool ) -- 
+    self.isPitchActive   = LuaParametersReader.Read( selfParams, "isPitchActive", LuaParametersType.Bool ) -- 
+
+
+    -------------------------------------
+    self.humanParams = {} 
+    -- 偏航自动跟随:
+    self.humanParams.autoYawRotateSpeed      = LuaParametersReader.Read( self.humanLuaParams, "autoYawRotateSpeed", LuaParametersType.Float ) -- 推荐区间 [2f,4f]
+    self.humanParams.yawDelayWeightSpeed     = LuaParametersReader.Read( self.humanLuaParams, "yawDelayWeightSpeed", LuaParametersType.Float ) -- 延迟起步的快慢
+    self.humanParams.isFlipYawRotateDirection = LuaParametersReader.Read( self.humanLuaParams, "isFlipYawRotateDirection", LuaParametersType.Bool ) -- 若发现自动跟随 旋转反了, 切换本值来修复
+
+    -- 俯仰自动回正: 
+    self.humanParams.targetPitchDegree           = LuaParametersReader.Read( self.humanLuaParams, "targetPitchDegree", LuaParametersType.Float ) --  角度, (俯角为正)
+    self.humanParams.autoPitchRotateSpeed        = LuaParametersReader.Read( self.humanLuaParams, "autoPitchRotateSpeed", LuaParametersType.Float ) --  推荐区间 [2f,4f]
+    self.humanParams.pitchDelayWeightSpeed       = LuaParametersReader.Read( self.humanLuaParams, "pitchDelayWeightSpeed", LuaParametersType.Float ) --  延迟起步的快慢
+    self.humanParams.idleTimeBeforePitch         = LuaParametersReader.Read( self.humanLuaParams, "idleTimeBeforePitch", LuaParametersType.Float ) -- 延迟数秒后, 才触发 俯仰自动回正
+    self.humanParams.isFlipPitchRotateDirection  = LuaParametersReader.Read( self.humanLuaParams, "isFlipPitchRotateDirection", LuaParametersType.Bool ) -- false;
+
+    -------------------------------------
+    self.catParams = {} 
+    -- 偏航自动跟随:
+    self.catParams.autoYawRotateSpeed      = LuaParametersReader.Read( self.catLuaParams, "autoYawRotateSpeed", LuaParametersType.Float ) -- 推荐区间 [2f,4f]
+    self.catParams.yawDelayWeightSpeed     = LuaParametersReader.Read( self.catLuaParams, "yawDelayWeightSpeed", LuaParametersType.Float ) -- 延迟起步的快慢
+    self.catParams.isFlipYawRotateDirection = LuaParametersReader.Read( self.catLuaParams, "isFlipYawRotateDirection", LuaParametersType.Bool ) -- 若发现自动跟随 旋转反了, 切换本值来修复
+
+    -- 俯仰自动回正: 
+    self.catParams.targetPitchDegree           = LuaParametersReader.Read( self.catLuaParams, "targetPitchDegree", LuaParametersType.Float ) --  角度, (俯角为正)
+    self.catParams.autoPitchRotateSpeed        = LuaParametersReader.Read( self.catLuaParams, "autoPitchRotateSpeed", LuaParametersType.Float ) --  推荐区间 [2f,4f]
+    self.catParams.pitchDelayWeightSpeed       = LuaParametersReader.Read( self.catLuaParams, "pitchDelayWeightSpeed", LuaParametersType.Float ) --  延迟起步的快慢
+    self.catParams.idleTimeBeforePitch         = LuaParametersReader.Read( self.catLuaParams, "idleTimeBeforePitch", LuaParametersType.Float ) -- 延迟数秒后, 才触发 俯仰自动回正
+    self.catParams.isFlipPitchRotateDirection  = LuaParametersReader.Read( self.catLuaParams, "isFlipPitchRotateDirection", LuaParametersType.Bool ) -- false;
+
+
+
+    self.vcam = vcam_
+    self.viewRotateController = viewRotateController_
+
+    -- must after Awake()
+    self.mCamera = DreamSpaceUtils.GetMainCamera()
+
+    -- Avoid users setting too large values:
+    self.humanParams.targetPitchDegree = Mathf.Clamp(self.humanParams.targetPitchDegree, -85, 85)
+    self.catParams.targetPitchDegree = Mathf.Clamp(self.catParams.targetPitchDegree, -85, 85)
+
+    self:SwitchToCat()
+
+    -- self.OnSwitchToCat   = Bind( self,  self.SwitchToCat )
+    -- self.OnSwitchToHuman = Bind( self,  self.SwitchToHuman )
+    -- EventsModule.AddListener(GameContants.MorphologyToCat, self.OnSwitchToCat)
+    -- EventsModule.AddListener(GameContants.MorphologyToHuman, self.OnSwitchToHuman)
+end
+
+
+
+
+
+function OverseaClubAutoFollow:OnDestroy()
+
+    -- EventsModule.RemoveListener(GameContants.MorphologyToCat, self.OnSwitchToCat)
+    -- EventsModule.RemoveListener(GameContants.MorphologyToHuman, self.OnSwitchToHuman)
+    -- self.OnSwitchToCat = nil
+    -- self.OnSwitchToHuman = nil
+
+    self.controller = nil --删除lua层引用到的c#对象 否则不会产生c# gc回收到对象
+    self:Delete()
+end
+
+
+function OverseaClubAutoFollow:SwitchToCat()
+    self.currentParams = self.catParams
+end
+
+
+function OverseaClubAutoFollow:SwitchToHuman()
+    self.currentParams = self.humanParams
+end
+
+
+-- !!! 旧版平滑函数, 会导致 GC;
+-- function AutoFollow:GetW(newW_)
+--     if self.ws.Count > 5 then
+--         self.wSum = self.wSum - self.ws.First.Value
+--         self.ws:RemoveFirst()
+--     end
+--     self.ws:AddLast( newW_ )
+--     self.wSum = self.wSum + newW_
+--     return ( self.wSum / self.ws.Count )
+-- end
+
+
+
+-- !!! 暂时弃用平滑,  未来出现抖动了再回来实现:
+function OverseaClubAutoFollow:GetW(newW_)
+    --print("koko - ws: " .. tostring(newW_) )
+    return newW_
+
+    -- self.wsIdx = self.wsIdx >= 5 and 1 or (self.wsIdx + 1) -- [1,5]
+    -- self.ws[self.wsIdx] = newW_
+
+    -- local sum = 0.0
+    -- for i=1,5 do 
+    --     sum = sum + self.ws[i]
+    -- end 
+    -- local ret = (sum / 5.8)
+    -- return ret
+end
+
+
+
+-- param: autoYawDelayTime_ [0f,inf], 每次玩家手动旋转相机后, 此值都会被重置为 0f, 然后慢慢累加
+-- 以避免 autoFollow 过快地接管相机旋转;
+function OverseaClubAutoFollow:AutoYaw(autoYawDelayTime_)
+    if self.isYawActive == false then
+        return
+    end
+
+    local delayWeight = Mathf.Clamp01(autoYawDelayTime_ * self.currentParams.yawDelayWeightSpeed * 0.1)
+
+    local dotVal = 0
+    local sign = 0
+    local lastVTargetPos = self.viewRotateController:GetLastVTargetPos()
+
+    local moveDir = self.viewRotateController.follow.position - lastVTargetPos -- 猫在上一帧里的运动
+    local moveMagnitude = moveDir.magnitude
+
+    -- 一个时间性变化的值, 表示 role 是否在走动
+    self.moveSmoothMagnitude = Mathf.MoveTowards( 
+        self.moveSmoothMagnitude,
+        ((moveMagnitude > 0.001) and 1.0 or 0.0),
+        1.0 * Time.deltaTime
+    )
+
+    if moveMagnitude > 0.001 then -- 此处不要用 float.MinValue
+        moveDir:Normalize()
+        local oldForward = (lastVTargetPos - self.viewRotateController:GetLastVCamPos()).normalized -- 上一帧里 vcam 朝向
+
+        dotVal = 1 - Mathf.Abs(Vector3.Dot(oldForward, moveDir)) -- [0f,1f], 夹角越大值越大
+        -- 截掉 小夹角区间, 即: 角色向前向后运动时, 相机几乎不旋转;
+        dotVal = Mathf.Clamp01(KTool.Remap(0.15, 1, 0, 1, dotVal))
+
+        sign = Vector3.SignedAngle(oldForward, oldForward + moveDir, Vector3.up) < 0 and 1 or -1 -- 区分 向左向右
+        sign = sign * (self.currentParams.isFlipYawRotateDirection and -1 or 1)
+    end
+
+    -- 存入, 再取均值
+    -- 注意, 不能加入 deltaTime, 这里的每个 变量 都不受 deltaTime 关联
+
+
+    -- !!! 此处曾经存在GC:
+    --CS.LuaProfiler.Begin(2)
+    local w = self:GetW(delayWeight * dotVal * sign * self.moveSmoothMagnitude * 0.04 * self.currentParams.autoYawRotateSpeed * 1.0 ) 
+    --CS.LuaProfiler.End(2)
+
+    
+    --print( "w = " .. w )
+    --ViewRotateController.RotateX(self.vcam, w) -- 目前只旋转 xz 平面;
+    self.viewRotateController:RotateX(w) -- 目前只旋转 xz 平面;
+
+end
+
+
+-- 俯仰
+function OverseaClubAutoFollow:AutoPitch(autoPitchDelayTime_)
+
+    if not self.isPitchActive then
+        return
+    end
+
+    autoPitchDelayTime_ = autoPitchDelayTime_ - self.currentParams.idleTimeBeforePitch
+    local delayWeight = Mathf.Clamp(autoPitchDelayTime_ * self.currentParams.pitchDelayWeightSpeed * 0.1, 0, 1)
+
+    local forward = self.mCamera.transform.forward
+    local right = self.mCamera.transform.right
+    local forwardPlanar =  Vector3.ProjectOnPlane( forward, Vector3.up ).normalized
+    local tgtDir = Quaternion.AngleAxis(self.currentParams.targetPitchDegree, right) * forwardPlanar
+
+    local degree = Vector3.SignedAngle(forward, tgtDir, right)
+    -- 防止单帧旋转角度过大, 测试表明, 单帧10度已经是非常快的旋转了, 一般不会碰到这个上界, 故写成定值;
+    degree = Mathf.Min(Mathf.Abs(degree), 10) * (degree < 0 and -1 or 1)
+
+    local h = (self.currentParams.isFlipPitchRotateDirection and -1 or 1) * degree * delayWeight * self.currentParams.autoPitchRotateSpeed * Time.deltaTime
+    --ViewRotateController.RotateY(self.vcam, h)
+    self.viewRotateController:RotateY(h)
+
+end
+
+return OverseaClubAutoFollow

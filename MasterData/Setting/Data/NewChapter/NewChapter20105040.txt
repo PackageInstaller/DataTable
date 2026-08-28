@@ -1,0 +1,44 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2				<color=#d8d8d8>经过一些波折，解除了绪能点的异常情况的众人又一次回到了侦探社。</color>		1	57:dialg_bg_43	4	1.1		17		102008					24		1				1	bgm_plot_trust01	sfx_story_02_mengdidakai																40;0											1																														
+2	3			艾可	总算顺利解决啦，幸好还没出什么大乱子~				4	1.1				102008			10205		24		1									vo_Aike_00_01													40;0.5											1																														
+3	4			可可	谢谢你们过来帮忙。				4	1.1				102008			10205		24		1			18:npc_icon_601_4	1																		40;0.5											1																														
+4	5			我	没事，我们也是接到了通知。幸好还有可可你在，我们才能这么快解决。				4	1.1				102008			10205		24		1				1																		40;0.5											1																														
+5	6			可可	这种事已经习惯了。				4	1.1				102008					24		1			18:npc_icon_601_4	1					vo_Keke_00_04													40;0.5											1																														
+6	7				<color=#d8d8d8>可可默默走到了角落的猫笼边，这时里面的猫咪正在安然入睡。</color>				4	1.1				102008		200201			24		1				1		sfx_rolestory_yifu															1	40;0.5											1																														
+7	8			我	刚刚走得急，为了不让小猫逃走，我就暂时把她关在了这个笼子里。				4	1.1				102008		200201			24		1				1																	1	40;0.5											1																														
+8	9			可可	嗯，这本来就是为此而准备的。				4	1.1				102008		200201			24		1			18:npc_icon_601_1	1					vo_Keke_00_02												1	40;0.5											1																														
+9	10			艾可	没错没错！侦探社偶尔也会接到一些寻找丢失的宠物的委托。				4	1.1				102008			10205		24		1				1																	0	40;0.5											1																														
+10	11			艾可	这些小动物被找到后，在委托人来接他们之前就会被暂时安置在这些笼子里啦~				4	1.1				102008			10205		24		1				1																		40;0.5											1																														
+11	12			我	原来如此。不过现在这只猫你打算怎么办呢？				4	1.1				102008			10205		24		1				1																		40;0.5											1																														
+12	13			可可	暂时会让它留在这里，我得查清楚它是不是真的和绪能点存在联系。				4	1.1				102008		200201	10205		24		1			18:npc_icon_601_1	1																	1	40;0.5											1																														
+13	14			艾可	你看看，可可这个研究狂，连一只可怜的小猫咪都不愿意放过……				4	1.1				102008		200302			24		1				1																	1	40;0.5											1																														
+14	15			可可	我有自己的目的，所以现在才站在这里。				4	1.1				102008		200302			24		1			18:npc_icon_601_1	1																	1	31;1											1																														
+15	16				<color=#d8d8d8>可可的语气依旧很冷淡，但听上去却异常坚定有力。</color>				4	1.1				102008		200302			24		1				1																	1	31;1											1																														
+16	17			可可	而且如果它真的是从绪能点诞生的灵体，那么它就无法离开这里……				4	1.1				102008		200601	10205		24		1			18:npc_icon_601_3	1																	1	31;1											1																														
+17			3						4	1.1				102008		200601	10205		24		1				1										这是什么意思？;你似乎已经有了答案。	18;20						1	31;1											1																														
+18	19			我	因为它是有这里的力量创造的灵体，所以才无法离开吗？				4	1.1				102008		200601	10205		24		1				1																	1	31;1											1																														
+19	24			可可	对，因为只是由情绪粒子聚合而成的灵体就算有了短暂的「生命」，也会很快消散。				4	1.1				102008		200601	10205		24		1			18:npc_icon_601_1	1					vo_Keke_00_02												1	31;1											1																														
+20	21			我	（可可留下它的原因也许不是为了继续调查两者的联系，或者说……不仅仅是这样。）				4	1.1				102008		200601	10205		24		1				1																	1	31;1											1																														
+21	22			我	你留下小猫，只是为了求证你心中的这个答案吗？				4	1.1				102008		200601			24		1				1																	1	31;1											1																														
+22	23			可可	所谓的答案并不会让人满足，我想要了解的不止如此。				4	1.1				102008		200201			24		1			18:npc_icon_601_1	1																	1	31;1											1																														
+23	24			可可	而且如果我的想法没有错，这只猫很快就会消失。				4	1.1				102008		200201			24		1			18:npc_icon_601_1	1																	1	31;1											1																														
+24	25			可可	这个世界对它而言，不过只是一场梦。正如它对世界来说，也同样只是个「幻影」。				4	1.1				102008		200201			24		1			18:npc_icon_601_1	1																	1	31;1											1																														
+25	26			艾可	什么？！小猫咪会消失掉吗？				4	1.1				102008		200401	10202		24		1				1																	0	40;0.5											1																														
+26	27			我	艾可，可可说的只是有这种可能。				4	1.1				102008		200401	10202		24		1				1																		40;0.5											1																														
+27	28			艾可	可是！可是……那样的话，小猫咪也太可怜了吧！				4	1.1				102008		200401	10202		24		1				1					vo_Aike_00_09													40;0.5											1																														
+28	29				<color=#d8d8d8>艾可在一旁哭诉着，可可却毫不在意，轻手轻脚地将猫咪的笼子打开。</color>				4	1.1				102008		200401	10202		24		1				1																		40;0.5											1																														
+29	30				<color=#d8d8d8>注意到这一举动的艾可立刻被转移了注意力。</color>				4	1.1				102008		200201			24		1				1																	1	40;0.5											1																														
+30	31			艾可	可可，你要对小猫咪做什么啊？				4	1.1				102008		200302	100301		24		1				1																	1	40;0.5											1																														
+31	32			可可	它受伤了，估计是刚刚被追的时候不小心扭到了脚。				4	1.1				102008		200201	100301		24		1			18:npc_icon_601_1	1																	1	40;0.5											1																														
+32	33			艾可	真的吗？可是都没有伤口什么的啊，你怎么知道的？				4	1.1				102008		200201			24		1				1																	1	40;0.5											1																														
+33	34				<color=#d8d8d8>可可没有回答艾可的问题，只是拿着一些药膏，想要给猫咪上药。</color>				4	1.1				102008		200601			24		1				1																	1	37;1											1																														
+34	35			猫	喵呜——				4	1.1											1																						37;0.5											1																														
+35	36				<color=#d8d8d8>果不其然，被可可的动静惊醒的猫咪又一次对可可发出了警告。</color>				4	1.1											1																						37;0.5											1																														
+36	37				<color=#d8d8d8>然而可可并没有躲开猫咪对自己的攻击，任凭猫咪抓伤了自己的手背。</color>				4	1.1											1																						37;0.5											1																														
+37	38				<color=#d8d8d8>很快，猫咪像是明白了可可并不会与伤害自己，逐渐安静了下来。</color>				4	1.1											1																						37;0.5											1																														
+38	39				<color=#d8d8d8>而可可也顺利地为猫咪处理好了伤势。</color>				4	1.1											1																						37;0.5											1																														
+39	40				<color=#d8d8d8>虽然只是短短一瞬间，但此刻那个总是神色淡漠的可可的眼底也难得流露出了暖意。</color>				4	1.1											1																						37;0.5											1																														
+40	41				<color=#d8d8d8>即便这个小小的「生命」只是一个意外出现的「幻影」……</color>				4	1.1											1																						37;0.5											1																														
+41	42				<color=#d8d8d8>也希望它能拥有一个温柔的「梦」。</color>				4	1.1											1																						37;0.5											1																														
+42	0								4	1.1		18	0								1																						37;0.5											1																														

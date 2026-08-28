@@ -1,0 +1,48 @@
+id	nextId	sameTime	type	characterName	desc	fedesc	sceneType	sceneId	scenePivot	sceneScale	flashBackTime	screenAnim	screenTime	characterId	characterRes	faceId	action	loop	position	rotation	eyes	effect	enter	avatar	exist	music	sound	soundtime	loopSE	voice	fevoice	speaker	displayItem	itemAction	option	jumpId	durationTime	transientNum	battleGroupId	function	vague	lookAt	moveCamera	headEffect	feOption	feCharacterName	effectRootId	messageId	sceneBgId	EntryTip	bgEffectPos	speakId	speakIcon	status	characterName_zh_TW	characterName_en_UK	characterName_ja_JP	characterName_ko_KR	characterName_th_TH	fedesc_zh_TW	fedesc_en_UK	fedesc_ja_JP	fedesc_ko_KR	fedesc_th_TH	desc_zh_TW	desc_en_UK	desc_ja_JP	desc_ko_KR	desc_th_TH	option_zh_TW	option_en_UK	option_ja_JP	option_ko_KR	option_th_TH	feOption_zh_TW	feOption_en_UK	feOption_ja_JP	feOption_ko_KR	feOption_th_TH	feCharacterName_zh_TW	feCharacterName_en_UK	feCharacterName_ja_JP	feCharacterName_ko_KR	feCharacterName_th_TH
+int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int	int
+1	2				<color=#d8d8d8>跟着可可在错综复杂大楼的各处奔走，但没人知道最终的目的地。</color>		1	57:dialg_bg_77	2	1.1		17		102008		200601	10205		19		1				1	bgm_bg_gx_tower01																1												1																														
+2	3			我	可可刚刚说追踪残留下来的痕迹是什么意思？				2	1.1				102008		200601	10205		19		1				1																	1												1																														
+3	4			艾可	应该是在说那只猫咪残留的行动轨迹什么的吧……				2	1.1				102008		200601	10205		19		1				1																	0	43;0.5											1																														
+4	5			艾可	可可刚刚不是扫描了猫咪的情绪粒子数据嘛，他就是依靠那些数据区分并且追踪位置的。				2	1.1				102008		200601	10205		19		1				1																		43;0.5											1																														
+5	6			我	还能做到这样的事情吗？				2	1.1				102008			10205		19		1				1																		43;0.5											1																														
+6	7			艾可	嘿嘿~就像艾可拥有发明的天才一样，这个大概也是可可他的天赋吧~				2	1.1				102008		200901	10205		19		1				1					vo_Aike_00_02													43;0.5											1																														
+7	8			艾可	不过这种追踪时间过得越久，残留下来的情绪粒子的痕迹就会越来越浅……				2	1.1				102008		200601	10205		19		1				1																		43;0.5											1																														
+8	9			我	说得对。而且现在绪能点周围的本身情绪粒子的浓度就很高，干扰也会更大……				2	1.1				102008					19		1				1																		43;0.5											1																														
+9	10			我	（可可……真的能找到吗……不，我应该相信他才对。）				2	1.1				102008					19		1				1																		43;0.5											1																														
+10	11				<color=#d8d8d8>很快，可可终于停下了脚步。</color>				5	1.2		17		102008					19		1				1		sfx_story_01_tingxia																43;0.5											1																														
+11	12			我	这里是……				5	1.2				102008					19		1				1																		43;0.5											1																														
+12	13			艾可	不知道，艾可也没来过这里。				5	1.2				102008		200601			19		1				1																		43;0.5											1																														
+13	14			可可	这里是封印绪能点的阵法中心。				5	1.2				102008		200601			19		1			18:npc_icon_601_3	1					vo_Keke_00_02													43;0.5											1																														
+14	15			艾可	居然是这里吗？之前我问千辰那家伙把阵布在哪，他还一直神神秘秘的，不肯告诉我！				5	1.2				102008		200302	10205		19		1				1					vo_Aike_00_07												1	43;0.5											1																														
+15	16				<color=#d8d8d8>可可在四处查勘了一番，似乎并没有发现什么异常。</color>				5	1.2				102008		200302	10205		19		1				1																	1	43;0.5											1																														
+16	17			可可	这里应该就是那只猫最初出现的地方，不过它是怎么出现的这一点却没有任何痕迹。				5	1.2				102008		200601	10205		19		1			18:npc_icon_601_3	1					vo_Keke_00_04												1	43;0.5											1																														
+17			3						5	1.2				102008		200601			19		1				1										或许和情绪粒子有关？;或许和绪能点有关？	18;22						1	43;0.5											1																														
+18	19			我	它会不会是因为这里的情绪粒子逐渐积蓄后，才形成的灵体呢？				5	1.2				102008					19		1				1																	1	43;0.5											1																														
+19	20			艾可	有可能哦！很多灵异故事都是这么写的！				5	1.2				102008		200803	10202		19		1				1					vo_Aike_00_06												1	43;0.5											1																														
+20	21			可可	这不是故事。而且绪能点已经被完全封印了，不太可能出现大量情绪粒子聚集。				5	1.2				102008		200803	10202		19		1			18:npc_icon_601_3	1																	1	43;0.5											1																														
+21	26			可可	再加上千辰会定期来检查阵法，如这里能有形成灵体的大量情绪粒子，不可能不被发现。				5	1.2				102008		200601			19		1			18:npc_icon_601_3	1																	1	43;0.5											1																														
+22	23			我	会不会……它就是从绪能点的深处逃出来的呢？				5	1.2				102008					19		1				1																	1	43;0.5											1																														
+23	24			艾可	调查官总有一些出人意料的想法呢！				5	1.2				102008		200601	10205		19		1				1																	1	43;0.5											1																														
+24	25			可可	我不能否定你的推测。确实现在我们还不能完全了解绪能点的真正面目是什么。				5	1.2				102008		200601	10205		19		1			18:npc_icon_601_3	1																	1	43;0.5											1																														
+25	26			可可	但如果是这样的话，				5	1.2				102008		200601	10205		19		1			18:npc_icon_601_3	1																	1	43;0.5											1																														
+26	27			艾可	哎呀！你们别在这磨磨唧唧地推测了，先想办法解决绪能点的异常问题吧！				5	1.2				102008		200302			19		1				1																	1	43;0.5											1																														
+27	28			我	可我们来这一路上都没有发现什么可疑的地方，难道是封印的法阵出现了什么问题吗？				5	1.2				102008		200302			19		1				1																	1	43;0.5											1																														
+28	29			可可	千辰不在，我没办法确定是不是法阵的问题。不过……				5	1.2				102008					19		1			18:npc_icon_601_1	1					vo_Keke_00_04												1	43;0.5											1																														
+29	30			艾可	对了，我记得千辰说过，这种封印的法阵需要用施术者重要的东西作为稳定法阵的核心。				5	1.2				102008		200201	100301		19		1				1					vo_Aike_00_05												1	43;0.5											1																														
+30	31			可可	没错，一般核心都会放在法阵的中央，但现在法阵上却什么都没有。				5	1.2				102008			100301		19		1			18:npc_icon_601_4	1					vo_Keke_00_02												1	43;0.5											1																														
+31	32			我	也不能说什么都没有吧……				5	1.2				102008			100301		19		1				1																	1	43;0.5											1																														
+32	33			艾可	怎么了？调查官你发现了什么吗？				5	1.2				102008		200201			19		1				1																	0	43;0.5											1																														
+33	34			我	你们看那不是掉了什么东西吗？				5	1.2				102008		200201			19		1				1																		43;0.5											1																														
+34	35			艾可	这是……猫薄荷玩具？调查官你不会觉得这个是法阵的核心吧？				5	1.2				102008		200201	10201		19		1				1																		43;0.5											1																														
+35	36				<color=#d8d8d8>艾可拾起地上那个有着夸张表情的粉色的「鱼」，随意晃了晃，对此有些难以置信。</color>				5	1.2				102008		200201			19		1				1																		43;0.5											1																														
+36	37			我	呃……我只是有这样的感觉。																1				1																		1;1											1																														
+37	38			我	（虽然我也不能确定，但如果刚刚看到的记忆里那个光点的鱼影是这个的话……）																1				1																													1																														
+38	39				<color=#d8d8d8>然而艾可的疑惑还没解开，可可就夺走了艾可手中的「鱼」，将其放置在法阵的中心。</color>																1				1	-1																												1																														
+39	40			艾可	你干啥什么啊可可——																1			18:card_icon_102008_6	1																													1																														
+40	41				<color=#d8d8d8>接触到那条」鱼「的瞬间，整个法阵都散发出了一道奇异的光。</color>																1				1		Story_catcity_sound_0_10																											1																														
+41	42			艾可	成、成功了？																1			18:card_icon_102008_6	1																													1																														
+42	43			可可	看来是这样。																1			18:npc_icon_601_4	1					vo_Keke_00_02																								1																														
+43	44			艾可	那……这、这条「鱼」就是千辰他最重要的东西？噗哈哈哈——																1			18:card_icon_102008_11	1																													1																														
+44	45			我	艾可，你笑得太过分了。																1				1																													1																														
+45	46			艾可	不是，难怪他死活都不告诉我他设置法阵的地点，原来……是这样啊~																1			18:card_icon_102008_11	1																													1																														
+46	0			可可	结束了，走吧。																1			18:npc_icon_601_4	1					vo_Keke_00_04																								1																														
