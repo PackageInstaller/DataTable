@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/29.0">
+
+
+	<!-- A universally unique application identifier. Must be unique across all AIR applications.
+	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
+	<id>com.p7.cnlz.m4399.debug</id>
+
+	<!-- Used as the filename for the application. Required. -->
+	<filename>cnlz</filename>
+
+	<!-- The name that is displayed in the AIR application installer. 
+	May have multiple values for each language. See samples or xsd schema file. Optional. -->
+	<name>超能陆战-debug</name>
+	
+	<!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade. 
+	Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
+	An updated version of application must have a versionNumber value higher than the previous version. Required for namespace >= 2.5 . -->
+	<versionNumber>1.4.0</versionNumber>
+	<versionLabel>1.4.0.03231836</versionLabel>
+		         
+	
+	<initialWindow>
+		<!-- The main SWF or HTML file of the application. Required. -->
+		<!-- Note: In Flash Builder, the SWF reference is set automatically. -->
+		<content>ENCRYPTTank2014xMobile.swf</content>
+
+        <aspectRatio>portrait</aspectRatio>
+
+        <renderMode>direct</renderMode>
+
+
+		<!-- Whether or not to pan when a soft keyboard is raised or lowered (either "pan" or "none").  Optional.  Defaults "pan." -->
+		<softKeyboardBehavior>none</softKeyboardBehavior>
+
+		<!-- Display Resolution for the app (either "standard" or "high"). Optional, OSX-only. Default "standard" -->
+		<requestedDisplayResolution>high</requestedDisplayResolution>
+		<autoOrients>false</autoOrients>
+        <fullScreen>true</fullScreen>
+        <visible>true</visible>
+    </initialWindow>
+
+	
+	<icon>
+		<image512x512>tankicon512.png</image512x512>
+		<image128x128>tankicon128.png</image128x128>
+		<image72x72>tankicon72.png</image72x72>
+	</icon>
+
+
+<android>
+        <manifestAdditions><![CDATA[
+			<manifest android:installLocation="auto">
+			    <uses-sdk android:minSdkVersion="8" /> 
+			    <application>
+			        <activity>
+			            <intent-filter>
+			                <action android:name="android.intent.action.MAIN" />
+			                <category android:name="android.intent.category.LAUNCHER" />
+			            </intent-filter>
+			        </activity>
+					
+					<activity
+android:name="cn.m4399.recharge.ui.activity.RechargeActivity"
+android:launchMode="singleTask"
+android:configChanges="orientation|screenSize|keyboardHidden"
+android:theme="@style/m4399ActivityTheme"/>
+
+<activity
+android:name="cn.m4399.operate.ui.activity.LoginActivity"
+android:configChanges="orientation|screenSize|keyboardHidden"
+android:launchMode="singleTask"
+android:theme="@style/m4399TransparentStyle" />
+<activity
+android:name="cn.m4399.operate.ui.activity.UserCenterActivity"
+android:hardwareAccelerated="false"
+android:launchMode="singleTask"
+android:configChanges="orientation|screenSize|keyboardHidden"
+android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+<activity
+android:name="cn.m4399.operate.ui.activity.CustomWebActivity"
+android:launchMode="singleTask"
+android:configChanges="orientation|screenSize|keyboardHidden"
+android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+
+<activity
+android:name="com.alipay.sdk.app.H5PayActivity"
+android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+android:exported="false"
+android:screenOrientation="behind"
+android:windowSoftInputMode="adjustResize|stateHidden" />
+			    </application>
+			
+			<uses-permission android:name="android.permission.CALL_PHONE"/>
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.SEND_SMS" />
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+<uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
+<uses-permission android:name="android.permission.WAKE_LOCK"/>
+<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+   				
+			</manifest>
+			
+		]]></manifestAdditions>
+    </android>
+    <iPhone>
+        <InfoAdditions><![CDATA[
+			<key>UIDeviceFamily</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+			</array>
+		]]></InfoAdditions>
+        <requestedDisplayResolution>high</requestedDisplayResolution>
+    </iPhone>
+
+<extensions>
+        <extensionID>com.qh360.ane.360ANE</extensionID>
+        <extensionID>com.baidu.ane.baiduANE</extensionID>
+        <extensionID>com.downjoy.ane.DownjoyANE</extensionID>
+        <extensionID>com.talkingdata.game</extensionID>
+        <extensionID>com.RecNow.ane.RecNowANE</extensionID>
+        <extensionID>com.tencent.ane.tencentANE</extensionID>
+        <extensionID>com.uc.ane.ucANE</extensionID>
+        <extensionID>com.wdj.ane.wdjANE</extensionID>
+        <extensionID>com.xiaomi.ane.xiaomiANE</extensionID>
+        <extensionID>com.alipay.ane.AlipayANE</extensionID>
+    </extensions>
+</application>

@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<application xmlns="http://ns.adobe.com/air/application/50.1">
+
+<!-- Adobe AIR Application Descriptor File Template.
+
+	Specifies parameters for identifying, installing, and launching AIR applications.
+
+	xmlns - The Adobe AIR namespace: http://ns.adobe.com/air/application/3.5
+			The last segment of the namespace specifies the version 
+			of the AIR runtime required for this application to run.
+			
+	minimumPatchLevel - The minimum patch level of the AIR runtime required to run 
+			the application. Optional.
+-->
+
+	<!-- A universally unique application identifier. Must be unique across all AIR applications.
+	Using a reverse DNS-style name as the id is recommended. (Eg. com.example.ExampleApplication.) Required. -->
+	<id>com.gameduchy.jdzdDevelop</id>
+
+	<!-- Used as the filename for the application. Required. -->
+	<filename>jdzdDevelop</filename>
+
+	<!-- The name that is displayed in the AIR application installer. 
+	May have multiple values for each language. See samples or xsd schema file. Optional. -->
+	<name>机动战队大作战</name>
+	
+	<!-- A string value of the format <0-999>.<0-999>.<0-999> that represents application version which can be used to check for application upgrade. 
+	Values can also be 1-part or 2-part. It is not necessary to have a 3-part value.
+	An updated version of application must have a versionNumber value higher than the previous version. Required for namespace >= 2.5 . -->
+	<versionNumber>2.50.0</versionNumber>
+		         
+	<!-- A string value (such as "v1", "2.5", or "Alpha 1") that represents the version of the application, as it should be shown to users. Optional. -->
+	<versionLabel>2.50.0</versionLabel>
+
+	<!-- Description, displayed in the AIR application installer.
+	May have multiple values for each language. See samples or xsd schema file. Optional. -->
+	<!-- <description></description> -->
+
+	<!-- Copyright information. Optional -->
+	<!-- <copyright></copyright> -->
+
+	<!-- Publisher ID. Used if you're updating an application created prior to 1.5.3 -->
+	<!-- <publisherID></publisherID> -->
+
+	<!-- Settings for the application's initial window. Required. -->
+	<initialWindow>
+		<!-- The main SWF or HTML file of the application. Required. -->
+		<!-- Note: In Flash Builder, the SWF reference is set automatically. -->
+		<content>ENCRYPTTank2014xMobilePreloader.swf</content>
+		
+		<!-- The title of the main window. Optional. -->
+		<!-- <title></title> -->
+
+		<!-- The type of system chrome to use (either "standard" or "none"). Optional. Default standard. -->
+		<!-- <systemChrome></systemChrome> -->
+
+		<!-- Whether the window is transparent. Only applicable when systemChrome is none. Optional. Default false. -->
+		<!-- <transparent></transparent> -->
+
+		<!-- Whether the window is initially visible. Optional. Default false. -->
+		<!-- <visible></visible> -->
+
+		<!-- Whether the user can minimize the window. Optional. Default true. -->
+		<!-- <minimizable></minimizable> -->
+
+		<!-- Whether the user can maximize the window. Optional. Default true. -->
+		<!-- <maximizable></maximizable> -->
+
+		<!-- Whether the user can resize the window. Optional. Default true. -->
+		<!-- <resizable></resizable> -->
+
+		<!-- The window's initial width in pixels. Optional. -->
+		<!-- <width></width> -->
+
+		<!-- The window's initial height in pixels. Optional. -->
+		<!-- <height></height> -->
+
+		<!-- The window's initial x position. Optional. -->
+		<!-- <x></x> -->
+
+		<!-- The window's initial y position. Optional. -->
+		<!-- <y></y> -->
+
+		<!-- The window's minimum size, specified as a width/height pair in pixels, such as "400 200". Optional. -->
+		<!-- <minSize></minSize> -->
+
+		<!-- The window's initial maximum size, specified as a width/height pair in pixels, such as "1600 1200". Optional. -->
+		<!-- <maxSize></maxSize> -->
+
+        <!-- The aspect ratio of the app ("portrait" or "landscape" or "any"). Optional. Mobile only. Default is the natural orientation of the device -->
+
+        <aspectRatio>portrait</aspectRatio>
+
+        <!-- Whether the app will begin auto-orienting on launch. Optional. Mobile only. Default false -->
+
+        <!-- <autoOrients></autoOrients> -->
+
+        <!-- Whether the app launches in full screen. Optional. Mobile only. Default false -->
+
+        <!-- <fullScreen></fullScreen> -->
+
+        <!-- The render mode for the app (either auto, cpu, gpu, or direct). Optional. Default auto -->
+
+        <renderMode>direct</renderMode>
+
+        <!-- Whether the default direct mode rendering context allocates storage for depth and stencil buffers.  Optional.  Default false. -->
+        <!-- <depthAndStencil></depthAndStencil> -->
+
+		<!-- Whether or not to pan when a soft keyboard is raised or lowered (either "pan" or "none").  Optional.  Defaults "pan." -->
+		<softKeyboardBehavior>none</softKeyboardBehavior>
+
+		<!-- Display Resolution for the app (either "standard" or "high"). Optional, OSX-only. Default "standard" -->
+		<requestedDisplayResolution>high</requestedDisplayResolution>
+		<autoOrients>false</autoOrients>
+        <fullScreen>true</fullScreen>
+        <visible>true</visible>
+    </initialWindow>
+
+	<!-- We recommend omitting the supportedProfiles element, -->
+	<!-- which in turn permits your application to be deployed to all -->
+	<!-- devices supported by AIR. If you wish to restrict deployment -->
+	<!-- (i.e., to only mobile devices) then add this element and list -->
+	<!-- only the profiles which your application does support. -->
+	<!-- <supportedProfiles>desktop extendedDesktop mobileDevice extendedMobileDevice</supportedProfiles> -->
+
+	<!-- Languages supported by application -->
+	<!-- Only these languages can be specified -->
+	<!-- <supportedLanguages>en de cs es fr it ja ko nl pl pt ru sv tr zh</supportedLanguages> -->
+
+	<!-- The subpath of the standard default installation location to use. Optional. -->
+	<!-- <installFolder></installFolder> -->
+
+	<!-- The subpath of the Programs menu to use. (Ignored on operating systems without a Programs menu.) Optional. -->
+	<!-- <programMenuFolder></programMenuFolder> -->
+
+	<!-- The icon the system uses for the application. For at least one resolution,
+	specify the path to a PNG file included in the AIR package. Optional. -->
+	<icon>
+		<image29x29>icon-29.png</image29x29>
+		<image40x40>icon-40.png</image40x40>
+		<image50x50>icon-50.png</image50x50>
+		<image57x57>icon-57.png</image57x57>
+		<image58x58>icon-58.png</image58x58>
+		<image72x72>icon-72.png</image72x72>
+		<image76x76>icon-76.png</image76x76>
+		<image80x80>icon-80.png</image80x80>
+		<image87x87>icon-87.png</image87x87>
+		<image114x114>icon-114.png</image114x114>
+		<image120x120>icon-120.png</image120x120>
+		<image128x128>icon-128.png</image128x128>
+		<image144x144>icon-144.png</image144x144>
+		<image152x152>icon-152.png</image152x152>
+		<image180x180>icon-180.png</image180x180>
+		<image512x512>icon-512.png</image512x512>
+		<image1024x1024>icon-1024.png</image1024x1024>
+	</icon>
+	<!-- <icon>
+		<image16x16></image16x16>
+		<image29x29></image29x29>
+		<image32x32></image32x32>
+		<image36x36></image36x36>
+		<image40x40></image40x40>
+		<image44x44></image44x44>
+		<image48x48></image48x48>
+		<image50x50></image50x50>
+		<image57x57></image57x57>
+		<image58x58></image58x58>
+		<image60x60></image60x60>
+		<image66x66></image66x66>
+		<image72x72></image72x72>
+		<image75x75></image75x75>
+		<image76x76></image76x76>
+		<image80x80></image80x80>
+		<image87x87></image87x87>
+		<image96x96></image96x96>
+		<image100x100></image100x100>
+		<image114x114></image114x114>
+		<image120x120></image120x120>
+		<image128x128></image128x128>
+		<image144x144></image144x144>
+		<image152x152></image152x152>
+		<image180x180></image180x180>
+		<image192x192></image192x192>
+		<image512x512></image512x512>
+		<image732x412></image732x412>
+		<image1024x1024></image1024x1024>
+	</icon> -->
+
+	<!-- Whether the application handles the update when a user double-clicks an update version
+	of the AIR file (true), or the default AIR application installer handles the update (false).
+	Optional. Default false. -->
+	<!-- <customUpdateUI></customUpdateUI> -->
+	
+	<!-- Whether the application can be launched when the user clicks a link in a web browser.
+	Optional. Default false. -->
+	<!-- <allowBrowserInvocation></allowBrowserInvocation> -->
+
+	<!-- Listing of file types for which the application can register. Optional. -->
+	<!-- <fileTypes> -->
+
+		<!-- Defines one file type. Optional. -->
+		<!-- <fileType> -->
+
+			<!-- The name that the system displays for the registered file type. Required. -->
+			<!-- <name></name> -->
+
+			<!-- The extension to register. Required. -->
+			<!-- <extension></extension> -->
+			
+			<!-- The description of the file type. Optional. -->
+			<!-- <description></description> -->
+			
+			<!-- The MIME content type. -->
+			<!-- <contentType></contentType> -->
+			
+			<!-- The icon to display for the file type. Optional. -->
+			<!-- <icon>
+				<image16x16></image16x16>
+				<image32x32></image32x32>
+				<image48x48></image48x48>
+				<image128x128></image128x128>
+			</icon> -->
+			
+		<!-- </fileType> -->
+	<!-- </fileTypes> -->
+
+    <!-- iOS specific capabilities -->
+	<!-- <iPhone> -->
+		<!-- A list of plist key/value pairs to be added to the application Info.plist -->
+		<!-- <InfoAdditions>
+            <![CDATA[
+                <key>UIDeviceFamily</key>
+                <array>
+                    <string>1</string>
+                    <string>2</string>
+                </array>
+                <key>UIStatusBarStyle</key>
+                <string>UIStatusBarStyleBlackOpaque</string>
+                <key>UIRequiresPersistentWiFi</key>
+                <string>YES</string>
+            ]]>
+        </InfoAdditions> -->
+        <!-- A list of plist key/value pairs to be added to the application Entitlements.plist -->
+		<!-- <Entitlements>
+            <![CDATA[
+                <key>keychain-access-groups</key>
+                <array>
+                    <string></string>
+                    <string></string>
+                </array>
+            ]]>
+        </Entitlements> -->
+	<!-- Display Resolution for the app (either "standard" or "high"). Optional. Default "standard" -->
+	<!-- <requestedDisplayResolution></requestedDisplayResolution> -->
+	<!-- Forcing Render Mode CPU for the devices mentioned. Optional  -->
+	<!-- <forceCPURenderModeForDevices></forceCPURenderModeForDevices> -->
+	<!-- File containing line separated list of external swf paths. These swfs won't be 
+	packaged inside the application and corresponding stripped swfs will be output in 
+	externalStrippedSwfs folder. -->
+	<!-- <externalSwfs></externalSwfs> -->
+	<!-- </iPhone> -->
+
+	<!-- Specify Android specific tags that get passed to AndroidManifest.xml file. -->
+    <!--<android> -->
+    <!--	<manifestAdditions>
+		<![CDATA[
+			<manifest android:installLocation="auto">
+				<uses-permission android:name="android.permission.INTERNET"/>
+				<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+				<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+				<uses-feature android:required="true" android:name="android.hardware.touchscreen.multitouch"/>
+				<application android:enabled="true">
+					<activity android:excludeFromRecents="false">
+						<intent-filter>
+							<action android:name="android.intent.action.MAIN"/>
+							<category android:name="android.intent.category.LAUNCHER"/>
+						</intent-filter>
+					</activity>
+				</application>
+            </manifest>
+		]]>
+        </manifestAdditions> -->
+	    <!-- Color depth for the app (either "32bit" or "16bit"). Optional. Default 16bit before namespace 3.0, 32bit after -->
+        <!-- <colorDepth></colorDepth> -->
+        <!-- Indicates if the app contains video or not. Necessary for ordering of video planes with graphics plane, especially in Jellybean - if you app does video this must be set to true - valid values are true or false -->
+        <!-- <containsVideo></containsVideo> -->
+    <!-- </android> -->
+	<!-- End of the schema for adding the android specific tags in AndroidManifest.xml file -->
+
+<android>
+        <manifestAdditions><![CDATA[
+			<manifest android:installLocation="auto">
+			   <queries>
+					<package android:name="com.tencent.mobileqq" />
+					<package android:name="com.tencent.mm" />
+					<package android:name="com.eg.android.AlipayGphone" />
+					<package android:name="com.sina.weibo" />
+					 <!-- freeme -->
+					<package android:name="com.android.creator" />
+					<package android:name="com.zhuoyi.security.lite" />
+					<package android:name="com.freeme.secureguard" />
+					<package android:name="com.android.secureguard" />
+					<!-- zte -->
+					<package android:name="com.mdid.msa" />
+					<!-- samsung -->
+					<package android:name="com.samsung.android.deviceidservice" />
+					<!-- coolpad -->
+					<package android:name="com.coolpad.deviceidsupport" />
+					<!-- oppo -->
+					<package android:name="com.heytap.openid" />
+					
+					<package android:name="com.taptap.global" />
+					<package android:name="com.taptap.global.lite" />
+					<package android:name="com.taptap" />
+
+					<intent>
+						<action android:name="com.taptap.sdk.action" />
+
+						<category android:name="android.intent.category.DEFAULT" />
+					</intent>
+					<intent>
+						<action android:name="com.taptap.global.sdk.action" />
+
+						<category android:name="android.intent.category.DEFAULT" />
+					</intent>
+
+				</queries>
+			    <application android:usesCleartextTraffic="true" android:allowBackup="false" android:extractNativeLibs="true">
+				        <meta-data
+					android:name="com.huawei.hms.client.service.name:ads-identifier"
+					android:value="ads-identifier:3.4.62.300" />
+				<uses-library
+                android:name="org.apache.http.legacy"
+                android:required="false" />
+				
+				
+				<provider
+				android:name="com.taptap.sdk.kit.internal.TapTapKitInitProvider"
+				android:authorities="com.gameduchy.jdzdDevelop.TapTapKitInitProvider"
+				android:exported="false" />
+<activity
+            android:name="com.taptap.sdk.login.impl.ui.activity.TapTapLoginActivity"
+            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="behind"
+            android:theme="@style/TapFullScreenTheme" />
+							<provider
+							android:name="com.taptap.sdk.update.internal.TapUpdateFileProvider"
+							android:authorities="com.gameduchy.jdzdDevelop.com.taptap.sdk.update.internal.fileProvider"
+							android:exported="false"
+							android:grantUriPermissions="true" >
+							<meta-data
+								android:name="android.support.FILE_PROVIDER_PATHS"
+								android:resource="@xml/tapupdate_file_provider" />
+						</provider>
+						<provider
+							android:name="com.taptap.sdk.update.download.OkDownloadProvider"
+							android:authorities="com.gameduchy.jdzdDevelop.com.taptap.services.update.okdownload"
+							android:exported="false" />
+
+						<meta-data
+							android:name="com.taptap.services.update.loader"
+							android:value="true" />
+				<provider
+							android:name="com.taptap.sdk.themis.lite.ThemisProvider"
+							android:authorities="com.gameduchy.jdzdDevelop.themisLite"
+							android:exported="false" />
+							
+				
+				<meta-data android:name="android.max_aspect" 
+    android:value="2.1" />
+			        <activity>
+			            <intent-filter>
+			                <action android:name="android.intent.action.MAIN" />
+			                <category android:name="android.intent.category.LAUNCHER" />
+			            </intent-filter>
+						<intent-filter>
+						
+                <data
+                    android:host="jdzd"
+                    android:path="/mainActivity"
+                    android:port="8080"
+                    android:scheme="gameduchy"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.BROWSABLE"/>
+            </intent-filter>
+			        </activity>
+					<!-- qq -->
+					<activity
+       android:name="com.tencent.tauth.AuthActivity"
+       android:noHistory="true"
+	   android:exported="true"
+       android:launchMode="singleTask" >
+    <intent-filter>
+           <action android:name="android.intent.action.VIEW" />
+           <category android:name="android.intent.category.DEFAULT" />
+           <category android:name="android.intent.category.BROWSABLE" />
+           <data android:scheme="tencent1105146552" />
+    </intent-filter>
+ </activity>
+<activity
+       android:name="com.tencent.connect.common.AssistActivity"
+       android:configChanges="orientation|keyboardHidden"
+       android:screenOrientation="behind" 
+android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+<!-- weixin -->
+			<activity android:name=".wxapi.WXEntryActivity" android:label="@string/app_name" android:exported="true"/> 
+			<activity android:name=".wxapi.WXPayEntryActivity" android:label="@string/app_name" android:exported="true"/> 
+			
+			
+			<activity
+    android:name="com.alipay.sdk.app.H5PayActivity"
+    android:configChanges="orientation|keyboardHidden|navigation|screenSize"
+    android:exported="false"
+    android:screenOrientation="behind"
+    android:windowSoftInputMode="adjustResize|stateHidden" >
+</activity>
+ <activity
+    android:name="com.alipay.sdk.app.H5AuthActivity"
+    android:configChanges="orientation|keyboardHidden|navigation"
+    android:exported="false"
+    android:screenOrientation="behind"
+    android:windowSoftInputMode="adjustResize|stateHidden" >
+</activity>
+<activity android:name="com.alipay.activity.PayDemoActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+			<!-- 配置的第三方参数属性 -->
+			        <meta-data
+			            android:name="appid"
+			            android:value="Y3XIUOewIC97N0em0Z7Pq4" />
+			        <meta-data
+			            android:name="appsecret"
+			            android:value="WyTRyq2pDl80T6x3JAGVB1" />
+			        <meta-data
+			            android:name="appkey"
+			            android:value="HfMEEoIEGW9vt2F7c3FWJ4" />	
+<!-- weibo -->
+         <activity
+            android:name="com.sina.weibo.sdk.demo.WBShareActivity"
+            android:configChanges="keyboardHidden|orientation">
+        </activity>
+		<activity
+            android:name="com.sina.weibo.sdk.web.WebActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="false"
+            android:theme="@style/SDKTheme"
+            android:windowSoftInputMode="adjustResize"
+           />
+        <activity
+            android:name="com.sina.weibo.sdk.share.ShareTransActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            />
+        <activity
+            android:name="com.sina.weibo.sdk.share.ShareStoryActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="false"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+             />
+        <activity
+            android:name="com.sina.weibo.sdk.share.ShareResultActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+			android:exported="true"
+            >
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_STORY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+		
+		<!-- paypal -->	
+		<activity android:name="com.paypal.android.sdk.payments.PaymentActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentMethodActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PaymentConfirmActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.LoginActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PayPalFuturePaymentActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentConsentActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.FuturePaymentInfoActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.PayPalProfileSharingActivity" />
+        <activity android:name="com.paypal.android.sdk.payments.ProfileSharingConsentActivity" />
+		<activity android:name="com.paypal.example.paypalandroidsdkexample.SampleActivity" />
+
+        <service
+            android:name="com.paypal.android.sdk.payments.PayPalService"
+            android:exported="false" />
+
+			 <!--TalkingData
+ <service android:name="com.gametalkingdata.push.service.PushService" android:process=":push" android:exported="true"></service>
+ 
+ <receiver android:name="com.gametalkingdata.push.service.PushServiceReceiver" android:exported="true">
+<intent-filter>
+    <action android:name="android.intent.action.CMD"></action>
+    <action android:name="android.talkingdata.action.notification.SHOW"></action>
+    <action android:name="android.talkingdata.action.media.MESSAGE"></action>
+    <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+    <action android:name="android.net.conn.CONNECTIVITY_CHANGE"></action>
+    <action android:name="android.intent.action.USER_PRESENT"></action>
+</intent-filter>
+</receiver>
+<receiver android:name="com.tendcloud.tenddata.TalkingDataMessageReceiver" android:enabled="true">
+<intent-filter>
+    <action android:name="android.talkingdata.action.media.SILENT"></action>
+    <action android:name="android.talkingdata.action.media.TD.TOKEN"></action>
+</intent-filter>
+<intent-filter>
+    <action android:name="com.talkingdata.notification.click"></action>
+    <action android:name="com.talkingdata.message.click"></action>
+</intent-filter>
+</receiver>
+			-->				
+ </application>
+			    
+<!-- Android LtargetSdkVersion22 -->
+<!--<uses-sdk android:minSdkVersion="9" android:targetSdkVersion="22" />-->
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+<uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+<uses-permission android:name="android.permission.INTERNET" />
+<uses-permission android:name="android.permission.WAKE_LOCK" />
+<uses-feature android:required="false" android:name="android.hardware.touchscreen.multitouch"/>
+<uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+				
+	<uses-permission android:name="com.asus.msa.SupplementaryDID.ACCESS" />
+    <!-- freeme -->
+    <uses-permission android:name="freemme.permission.msa" />
+    <uses-permission android:name="freemme.permission.msa.SECURITY_ACCESS" />
+
+
+			</manifest>
+			
+		]]></manifestAdditions>
+		<!--<BuildLegacyAPK>true</BuildLegacyAPK>-->
+		<disableSensorAccess>true</disableSensorAccess>
+    </android>
+    <iPhone>
+        <InfoAdditions><![CDATA[
+			<key>UIDeviceFamily</key>
+			<array>
+				<string>1</string>
+				<string>2</string>
+			</array>
+		]]></InfoAdditions>
+        <requestedDisplayResolution>high</requestedDisplayResolution>
+    </iPhone>
+<extensions>
+		<extensionID>com.paypal.ane.paypalANE</extensionID>
+        <extensionID>com.alipay.ane.AlipayANE</extensionID>
+        <extensionID>com.talkingdata.game</extensionID>
+	<extensionID>com.weixin.ane.weixinANE</extensionID>
+	<extensionID>com.weibo.ane.weiboANE</extensionID>
+	<extensionID>com.appsflyer.adobeair</extensionID>
+	<extensionID>com.thinkingdata.ane</extensionID>
+	<extensionID>com.reyun.ane</extensionID>
+	<extensionID>com.taptap.ane</extensionID>
+    </extensions>
+</application>
