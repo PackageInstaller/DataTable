@@ -34,6 +34,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/GirlsCreationR` | GirlsCreationR | 草画 |
 | `game/GoddessOrder` | GoddessOrder | 最速关服二游 |
 | `game/IMYSR` | IMYSR | 爱丽丝圣礼 |
+| `game/IronSaga` | IronSaga |
 | `game/KalpaOfUniverse` | KalpaOfUniverse | 天地劫 |
 | `game/LostSword` | LostSword | 丢剑 |
 | `game/MAkeDrama` | MAkeDrama | MAkeDrama |
