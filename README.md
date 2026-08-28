@@ -54,7 +54,7 @@ git clone -b game/AnchorPanic --single-branch --depth 1 https://github.com/Packa
 | `game/OshiroProjectRE` | OshiroProjectRE | 我去没r18(御城) |
 | `game/OtogiFrontierR` | OtogiFrontierR | 村人 |
 | `game/PathToNowhere` | PathToNowhere | 无期迷途 |
-| `game/Resonance` | Resonance |
+| `game/Resonance` | Resonance | 雷索纳斯 |
 | `game/Reverse1999` | Reverse1999 | 重返未来1999 |
 | `game/ReverseBlue` | ReverseBlue | 反向蓝 |
 | `game/RevivedWitch` | RevivedWitch | 复苏的魔女 |
