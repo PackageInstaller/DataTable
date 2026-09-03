@@ -1,0 +1,279 @@
+{
+  "TacticsCard_Xji": {
+    "Id": "TacticsCard_Xji",
+    "Type": "yellow",
+    "SkillPic": "battlepic_camera",
+    "SkillCost": 5,
+    "Skill": "ToolCard_XCZi2",
+    "Weight": 1,
+    "Condition": {},
+    "TagPic": "TacticsCard_Camera",
+    "AutoWeight": "",
+    "ToolCard": 1,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_RageUp_Single": {
+    "Id": "TacticsCard_RageUp_Single",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_RageUp_Single",
+    "SkillCost": 12,
+    "Skill": "TacticsCard_RageUp_Single",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M03S03"
+    },
+    "TagPic": "TacticsCard_RageUp_Single",
+    "AutoWeight": "50",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_HurtRateUp_Multi": {
+    "Id": "TacticsCard_HurtRateUp_Multi",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_HurtRateUp_Multi",
+    "SkillCost": 15,
+    "Skill": "TacticsCard_HurtRateUp_Multi",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M03S03"
+    },
+    "TagPic": "TacticsCard_HurtRateUp_Multi",
+    "AutoWeight": "40",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_LZHua": {
+    "Id": "TacticsCard_LZHua",
+    "Type": "yellow",
+    "SkillPic": "battlepic_lzmdian",
+    "SkillCost": 5,
+    "Skill": "Skill_ToolCard_LZHua",
+    "Weight": 1,
+    "Condition": {},
+    "TagPic": "TacticsCard_LZHua",
+    "AutoWeight": "",
+    "ToolCard": 1,
+    "CardRange": "RANGE_LZHua"
+  },
+  "TacticsCard_Dispel_Single": {
+    "Id": "TacticsCard_Dispel_Single",
+    "Type": "green",
+    "SkillPic": "TacticsCard_Dispel",
+    "SkillCost": 8,
+    "Skill": "TacticsCard_Dispel_Single",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M05S08"
+    },
+    "TagPic": "TacticsCard_Dispel_Single",
+    "AutoWeight": "10",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Dispel_Multi": {
+    "Id": "TacticsCard_Dispel_Multi",
+    "Type": "green",
+    "SkillPic": "TacticsCard_MasterTaunt",
+    "SkillCost": 12,
+    "Skill": "TacticsCard_Dispel_Multi",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M05S08"
+    },
+    "TagPic": "TacticsCard_Dispel_Multi",
+    "AutoWeight": "20",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Summon": {
+    "Id": "TacticsCard_Summon",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_Summon",
+    "SkillCost": 15,
+    "Skill": "TacticsCard_Summon",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M03S03"
+    },
+    "TagPic": "TacticsCard_Summon",
+    "AutoWeight": "110",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Undead": {
+    "Id": "TacticsCard_Undead",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_Sacrifice",
+    "SkillCost": 18,
+    "Skill": "TacticsCard_Undead",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M05S08"
+    },
+    "TagPic": "TacticsCard_Undead",
+    "AutoWeight": "120",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_HurtRateUp_Single": {
+    "Id": "TacticsCard_HurtRateUp_Single",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_HurtRateUp_Single",
+    "SkillCost": 8,
+    "Skill": "TacticsCard_HurtRateUp_Single",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M03S03"
+    },
+    "TagPic": "TacticsCard_HurtRateUp_Single",
+    "AutoWeight": "30",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Cure_Single": {
+    "Id": "TacticsCard_Cure_Single",
+    "Type": "green",
+    "SkillPic": "TacticsCard_Cure_Single",
+    "SkillCost": 10,
+    "Skill": "TacticsCard_Cure_Single",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M05S08"
+    },
+    "TagPic": "TacticsCard_Cure_Single",
+    "AutoWeight": "30",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Stealth": {
+    "Id": "TacticsCard_Stealth",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_Stealth",
+    "SkillCost": 12,
+    "Skill": "TacticsCard_Stealth",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M04S08"
+    },
+    "TagPic": "TacticsCard_Stealth",
+    "AutoWeight": "0",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Damage_Single": {
+    "Id": "TacticsCard_Damage_Single",
+    "Type": "red",
+    "SkillPic": "TacticsCard_Damage_Single",
+    "SkillCost": 12,
+    "Skill": "TacticsCard_Damage_Single",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M04S08"
+    },
+    "TagPic": "TacticsCard_Damage_Single",
+    "AutoWeight": "90",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Freeze_Single": {
+    "Id": "TacticsCard_Freeze_Single",
+    "Type": "red",
+    "SkillPic": "TacticsCard_Freeze_Single",
+    "SkillCost": 12,
+    "Skill": "TacticsCard_Freeze_Single",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M04S08"
+    },
+    "TagPic": "TacticsCard_Freeze_Single",
+    "AutoWeight": "70",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_RageUp_Multi": {
+    "Id": "TacticsCard_RageUp_Multi",
+    "Type": "yellow",
+    "SkillPic": "TacticsCard_RageUp_Multi",
+    "SkillCost": 18,
+    "Skill": "TacticsCard_RageUp_Multi",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M03S03"
+    },
+    "TagPic": "TacticsCard_RageUp_Multi",
+    "AutoWeight": "60",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Freeze_Multi": {
+    "Id": "TacticsCard_Freeze_Multi",
+    "Type": "red",
+    "SkillPic": "TacticsCard_Freeze_Multi",
+    "SkillCost": 20,
+    "Skill": "TacticsCard_Freeze_Multi",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M04S08"
+    },
+    "TagPic": "TacticsCard_Freeze_Multi",
+    "AutoWeight": "80",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_QHDeng": {
+    "Id": "TacticsCard_QHDeng",
+    "Type": "yellow",
+    "SkillPic": "battlepic_light_on",
+    "SkillCost": 8,
+    "Skill": "Skill_ToolCard_QHDeng",
+    "Weight": 1,
+    "Condition": {},
+    "TagPic": "TacticsCard_QHDeng",
+    "AutoWeight": "",
+    "ToolCard": 1,
+    "CardRange": "RANGE_Deng"
+  },
+  "TacticsCard_Damage_Multi": {
+    "Id": "TacticsCard_Damage_Multi",
+    "Type": "red",
+    "SkillPic": "TacticsCard_Damage_Multi",
+    "SkillCost": 20,
+    "Skill": "TacticsCard_Damage_Multi",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M04S08"
+    },
+    "TagPic": "TacticsCard_Damage_Multi",
+    "AutoWeight": "100",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_Cure_Multi": {
+    "Id": "TacticsCard_Cure_Multi",
+    "Type": "green",
+    "SkillPic": "TacticsCard_Cure_Multi",
+    "SkillCost": 18,
+    "Skill": "TacticsCard_Cure_Multi",
+    "Weight": 1,
+    "Condition": {
+      "STAGE": "M05S08"
+    },
+    "TagPic": "TacticsCard_Cure_Multi",
+    "AutoWeight": "40",
+    "ToolCard": null,
+    "CardRange": "Target_FLBDSi"
+  },
+  "TacticsCard_FZhou": {
+    "Id": "TacticsCard_FZhou",
+    "Type": "yellow",
+    "SkillPic": "battlepic_fzhou",
+    "SkillCost": 5,
+    "Skill": "Skill_ToolCard_FZhou",
+    "Weight": 1,
+    "Condition": {},
+    "TagPic": "TacticsCard_Fzhou",
+    "AutoWeight": "",
+    "ToolCard": 1,
+    "CardRange": "RANGE_GXiang"
+  }
+}

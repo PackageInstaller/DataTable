@@ -1,0 +1,3885 @@
+{
+  "Japan_2_XiaoGuaiA1": {
+    "Id": "Japan_2_XiaoGuaiA1",
+    "Name": "Japan_2_XiaoGuaiA1_Name",
+    "BpFactor": 14425,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_LRDQMian",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_2_XiaoGuaiA1",
+    "EnemyMaster": "Japan_2_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_2_BossA1": {
+    "Id": "Japan_2_BossA1",
+    "Name": "Japan_2_BossA1_Name",
+    "BpFactor": 35061,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_NXYYi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_2_BossA1",
+    "EnemyMaster": "Japan_2_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_3_JingYingB1": {
+    "Id": "Japan_3_JingYingB1",
+    "Name": "Japan_3_JingYingB1_Name",
+    "BpFactor": 34748,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_SDTZi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_3_JingYingB1",
+    "EnemyMaster": "Japan_3_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_JingYingA1": {
+    "Id": "Japan_4_JingYingA1",
+    "Name": "Japan_4_JingYingA1_Name",
+    "BpFactor": 37517,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_LDu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_JingYingA1",
+    "EnemyMaster": "Japan_4_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_Boss_5": {
+    "Id": "Japan_1_Boss_5",
+    "Name": "Japan_1_BossCaiDan4_Name",
+    "BpFactor": 83370,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_YLCMBing_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_Boss_5_Card",
+    "EnemyMaster": "Japan_1_Boss_5_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_Boss_4": {
+    "Id": "Japan_1_Boss_4",
+    "Name": "Japan_1_BossCaiDan3_Name",
+    "BpFactor": 66979,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Master_LieSha",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_Boss_4_Card",
+    "EnemyMaster": "Japan_1_Boss_4_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_Boss_3": {
+    "Id": "Japan_1_Boss_3",
+    "Name": "Japan_1_BossCaiDan2_Name",
+    "BpFactor": 50488,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_YLNPu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_Boss_3_Card",
+    "EnemyMaster": "Japan_1_Boss_3_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_Boss_2": {
+    "Id": "Japan_1_Boss_2",
+    "Name": "Japan_1_BossCaiDan1_Name",
+    "BpFactor": 999999,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_SLMen",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Japan_1_Boss_2",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_Boss_2_Card",
+    "EnemyMaster": "Japan_1_Boss_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_2_JingYingA1": {
+    "Id": "Japan_2_JingYingA1",
+    "Name": "Japan_2_JingYingA1_Name",
+    "BpFactor": 25244,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_YDZZong",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_2_JingYingA1",
+    "EnemyMaster": "Japan_2_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYingB1": {
+    "Id": "Japan_1_JingYingB1",
+    "Name": "Japan_1_JingYingB1_Name",
+    "BpFactor": 23039,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_BBLMa",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_1_JingYingB1",
+    "EnemyMaster": "Japan_1_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_3_BossA2": {
+    "Id": "Japan_3_BossA2",
+    "Name": "Japan_3_BossB1_Name",
+    "BpFactor": 44065,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_NXYYi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_3_BossA2",
+    "EnemyMaster": "Japan_3_BossA2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_3_BossA1": {
+    "Id": "Japan_3_BossA1",
+    "Name": "Japan_3_BossA1_Name",
+    "BpFactor": 44065,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_YBYa",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_3_BossA1",
+    "EnemyMaster": "Japan_3_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYingA1": {
+    "Id": "Japan_1_JingYingA1",
+    "Name": "Japan_1_JingYingA1_Name",
+    "BpFactor": 21036,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_ZTXChang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_1_JingYingA1",
+    "EnemyMaster": "Japan_1_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_3_XiaoGuaiB1": {
+    "Id": "Japan_3_XiaoGuaiB1",
+    "Name": "Japan_3_XiaoGuaiB1_Name",
+    "BpFactor": 25180,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_CFZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_3_XiaoGuaiB1",
+    "EnemyMaster": "Japan_3_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_XiaoGuaiA1": {
+    "Id": "Japan_4_XiaoGuaiA1",
+    "Name": "Japan_4_XiaoGuaiA1_Name",
+    "BpFactor": 26798,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_XXZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_XiaoGuaiA1",
+    "EnemyMaster": "Japan_4_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_XiaoGuaiC1": {
+    "Id": "Japan_4_XiaoGuaiC1",
+    "Name": "Japan_4_XiaoGuaiC1_Name",
+    "BpFactor": 32753,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_SZZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_XiaoGuaiC1",
+    "EnemyMaster": "Japan_4_XiaoGuaiC1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_JingYingC1": {
+    "Id": "Japan_4_JingYingC1",
+    "Name": "Japan_4_JingYingC1_Name",
+    "BpFactor": 44663,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_DDing",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_JingYingC1",
+    "EnemyMaster": "Japan_4_JingYingC1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYing_5": {
+    "Id": "Japan_1_JingYing_5",
+    "Name": "Japan_1_JingYingCaiDan3_Name",
+    "BpFactor": 62528,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_LRDCMian",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_JingYing_5_Card",
+    "EnemyMaster": "Japan_1_JingYing_5_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_XiaoGuaiB1": {
+    "Id": "Japan_1_XiaoGuaiB1",
+    "Name": "Japan_1_XiaoGuaiB1_Name",
+    "BpFactor": 13356,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MYHYan",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_1_XiaoGuaiB1",
+    "EnemyMaster": "Japan_1_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYing_7": {
+    "Id": "Japan_1_JingYing_7",
+    "Name": "Japan_1_JingYingCaiDan5_Name",
+    "BpFactor": 66696,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Gold_LMao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_JingYing_7_Card",
+    "EnemyMaster": "Japan_1_JingYing_7_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYing_6": {
+    "Id": "Japan_1_JingYing_6",
+    "Name": "Japan_1_JingYingCaiDan4_Name",
+    "BpFactor": 62528,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLMYao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_JingYing_6_Card",
+    "EnemyMaster": "Japan_1_JingYing_6_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_CaiDanBoss": {
+    "Id": "Japan_1_CaiDanBoss",
+    "Name": "Japan_1_CaiDanBoss_Name",
+    "BpFactor": 63790,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_YFZZhu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "JapanP02Card",
+    "EnemyMaster": "JapanP02U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYing_3": {
+    "Id": "Japan_1_JingYing_3",
+    "Name": "Japan_1_JingYingCaiDan1_Name",
+    "BpFactor": 42074,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_PKQShiA",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_JingYing_3_Card",
+    "EnemyMaster": "Japan_1_JingYing_3_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_JingYingB1": {
+    "Id": "Japan_4_JingYingB1",
+    "Name": "Japan_4_JingYingB1_Name",
+    "BpFactor": 41090,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_KTSJKe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_JingYingB1",
+    "EnemyMaster": "Japan_4_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_BossA1": {
+    "Id": "Japan_1_BossA1",
+    "Name": "Japan_1_BossA1_Name",
+    "BpFactor": 29216,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_JSJJu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_1_BossA1",
+    "EnemyMaster": "Japan_1_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_JingYing_4": {
+    "Id": "Japan_1_JingYing_4",
+    "Name": "Japan_1_JingYingCaiDan2_Name",
+    "BpFactor": 52878,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_MYKSi_Big",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Japan_1_JingYing_4_Card",
+    "EnemyMaster": "Japan_1_JingYing_4_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_2_JingYingB1": {
+    "Id": "Japan_2_JingYingB1",
+    "Name": "Japan_2_JingYingB1_Name",
+    "BpFactor": 27648,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_CZheng",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_2_JingYingB1",
+    "EnemyMaster": "Japan_2_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_CaiDanRenZhe": {
+    "Id": "Japan_1_CaiDanRenZhe",
+    "Name": "Japan_1_CaiDanRenZhe_Name",
+    "BpFactor": 43472,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_YFZZhu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "JapanP01Card",
+    "EnemyMaster": "JapanP01U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_2_CaiDanGeGe": {
+    "Id": "Japan_2_CaiDanGeGe",
+    "Name": "Japan_2_CaiDanMuXiangGeGe_Name",
+    "BpFactor": 67790,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_ALSi_Enemy",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "JapanP03Card",
+    "EnemyMaster": "JapanP03U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_2_XiaoGuaiB1": {
+    "Id": "Japan_2_XiaoGuaiB1",
+    "Name": "Japan_2_XiaoGuaiB1_Name",
+    "BpFactor": 20035,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_LRDCMian",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_2_XiaoGuaiB1",
+    "EnemyMaster": "Japan_2_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_3_XiaoGuaiA1": {
+    "Id": "Japan_3_XiaoGuaiA1",
+    "Name": "Japan_3_XiaoGuaiA1_Name",
+    "BpFactor": 22662,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_CSZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_3_XiaoGuaiA1",
+    "EnemyMaster": "Japan_3_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_XiaoGuaiB1": {
+    "Id": "Japan_4_XiaoGuaiB1",
+    "Name": "Japan_4_XiaoGuaiB1_Name",
+    "BpFactor": 29775,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_FHZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_XiaoGuaiB1",
+    "EnemyMaster": "Japan_4_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_1_XiaoGuaiA1": {
+    "Id": "Japan_1_XiaoGuaiA1",
+    "Name": "Japan_1_XiaoGuaiA1_Name",
+    "BpFactor": 12020,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MYKSi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_19",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_1_XiaoGuaiA1",
+    "EnemyMaster": "Japan_1_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_2_CaiDanBoss": {
+    "Id": "Japan_2_CaiDanBoss",
+    "Name": "Japan_2_CaiDanBoss_Name",
+    "BpFactor": 92059,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_BEr",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_4",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "JapanP04Card",
+    "EnemyMaster": "JapanP04U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 2
+  },
+  "Japan_3_JingYingA1": {
+    "Id": "Japan_3_JingYingA1",
+    "Name": "Japan_3_JingYingA1_Name",
+    "BpFactor": 31727,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_TPGZhu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_3_JingYingA1",
+    "EnemyMaster": "Japan_3_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Japan_4_BossA1": {
+    "Id": "Japan_4_BossA1",
+    "Name": "Japan_4_BossA1_Name",
+    "BpFactor": 56275,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_YLMGZhu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_2_1",
+    "BlockBattleConfig": "Normal_Stage_5",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Yehuo_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardJapan_4_BossA1",
+    "EnemyMaster": "Japan_4_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_CaiDanBoss": {
+    "Id": "Alice_4_CaiDanBoss",
+    "Name": "Alice_4_CaiDanBoss_Name",
+    "BpFactor": 37624,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_PKWHou_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_4_CaiDanBoss_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP09Card",
+    "EnemyMaster": "AliceP09U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_BossA1": {
+    "Id": "Alice_2_BossA1",
+    "Name": "Alice_2_BossA1_Name",
+    "BpFactor": 16050,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_PKWHou",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_2_BossA1",
+    "EnemyMaster": "Alice_2_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_XiaoGuaiA1": {
+    "Id": "Alice_3_XiaoGuaiA1",
+    "Name": "Alice_3_XiaoGuaiA1_Name",
+    "BpFactor": 9144,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_PKQShiJ",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_3_XiaoGuaiA1",
+    "EnemyMaster": "Alice_3_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_DaHuiLang": {
+    "Id": "Alice_2_DaHuiLang",
+    "Name": "Alice_2_DaHuiLang_Name",
+    "BpFactor": 17136,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_MYKSi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_2_DaHuiLang_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP02Card",
+    "EnemyMaster": "AliceP02U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_1_XiaoGuaiA1": {
+    "Id": "Alice_1_XiaoGuaiA1",
+    "Name": "Alice_1_XiaoGuaiA1_Name",
+    "BpFactor": 5869,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MYKSi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_1",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_1_XiaoGuaiA1",
+    "EnemyMaster": "Alice_1_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_1_BossA1": {
+    "Id": "Alice_1_BossA1",
+    "Name": "Alice_1_BossA1_Name",
+    "BpFactor": 13755,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_MOHJiang_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_1",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_1_BossA1",
+    "EnemyMaster": "Alice_1_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_NvWu": {
+    "Id": "Alice_2_NvWu",
+    "Name": "Alice_2_NvWu_Name",
+    "BpFactor": 20000,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_YLWShi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_2_NvWu_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP04Card",
+    "EnemyMaster": "AliceP04U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_XiaoGuaiA1": {
+    "Id": "Alice_2_XiaoGuaiA1",
+    "Name": "Alice_2_XiaoGuaiA1_Name",
+    "BpFactor": 7704,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MOGJiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_2_XiaoGuaiA1",
+    "EnemyMaster": "Alice_2_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_CaiDanBoss": {
+    "Id": "Alice_3_CaiDanBoss",
+    "Name": "Alice_3_CaiDanBoss_Name",
+    "BpFactor": 31400,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_PKQShiA_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_3_CaiDanBoss_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP07Card",
+    "EnemyMaster": "AliceP07U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_JingYingA1": {
+    "Id": "Alice_3_JingYingA1",
+    "Name": "Alice_3_JingYingA1_Name",
+    "BpFactor": 13335,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_PKQShiJ_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_3_JingYingA1",
+    "EnemyMaster": "Alice_3_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_CaiDanBaoXiangGuai": {
+    "Id": "Alice_4_CaiDanBaoXiangGuai",
+    "Name": "Alice_4_CaiDanBaoXiangGuai_Name",
+    "BpFactor": 32504,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_MYJShi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_4_CaiDanBaoXiangGuai_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP08Card",
+    "EnemyMaster": "AliceP08U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_BossA1": {
+    "Id": "Alice_3_BossA1",
+    "Name": "Alice_3_BossA1_Name",
+    "BpFactor": 19050,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_PKGWang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_3_BossA1",
+    "EnemyMaster": "Alice_3_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_JingYingB1": {
+    "Id": "Alice_4_JingYingB1",
+    "Name": "Alice_4_JingYingB1_Name",
+    "BpFactor": 17756,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLNPu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_JingYingB1",
+    "EnemyMaster": "Alice_4_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_JingYingB1": {
+    "Id": "Alice_2_JingYingB1",
+    "Name": "Alice_2_JingYingB1_Name",
+    "BpFactor": 12305,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_PKQShiA",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_2_JingYingB1",
+    "EnemyMaster": "Alice_2_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_CaiDanBoss": {
+    "Id": "Alice_2_CaiDanBoss",
+    "Name": "Alice_2_CaiDanBoss_Name",
+    "BpFactor": 25008,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_YLNPu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_2_CaiDanBoss_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP05Card",
+    "EnemyMaster": "AliceP05U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_1_CaiDanBoss": {
+    "Id": "Alice_1_CaiDanBoss",
+    "Name": "Alice_1_CaiDanBoss_Name",
+    "BpFactor": 16240,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_MOHJiang_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_1",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_1_CaiDanBoss_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP01Card",
+    "EnemyMaster": "AliceP01U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_BoLiPingGuai": {
+    "Id": "Alice_3_BoLiPingGuai",
+    "Name": "Alice_3_BoLiPingGuai_Name",
+    "BpFactor": 25752,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_MYHYan",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_3_BoLiPingGuai_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP06Card",
+    "EnemyMaster": "AliceP06U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_WaiPo": {
+    "Id": "Alice_2_WaiPo",
+    "Name": "Alice_2_WaiPo_Name",
+    "BpFactor": 18280,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_YLWShi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "Alice_2_WaiPo_Name",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "AliceP03Card",
+    "EnemyMaster": "AliceP03U01N08",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_1_XiaoGuaiB1": {
+    "Id": "Alice_1_XiaoGuaiB1",
+    "Name": "Alice_1_XiaoGuaiB1_Name",
+    "BpFactor": 7336,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MOHJiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_1",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_1_XiaoGuaiB1",
+    "EnemyMaster": "Alice_1_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_XiaoGuaiB1": {
+    "Id": "Alice_2_XiaoGuaiB1",
+    "Name": "Alice_2_XiaoGuaiB1_Name",
+    "BpFactor": 8560,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MOHJiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_2_XiaoGuaiB1",
+    "EnemyMaster": "Alice_2_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_XiaoGuaiA1": {
+    "Id": "Alice_4_XiaoGuaiA1",
+    "Name": "Alice_4_XiaoGuaiA1_Name",
+    "BpFactor": 11117,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MOGJiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_XiaoGuaiA1",
+    "EnemyMaster": "Alice_4_XiaoGuaiA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_XiaoGuaiC1": {
+    "Id": "Alice_4_XiaoGuaiC1",
+    "Name": "Alice_4_XiaoGuaiC1_Name",
+    "BpFactor": 13587,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MOGJu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_XiaoGuaiC1",
+    "EnemyMaster": "Alice_4_XiaoGuaiC1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_1_JingYingB1": {
+    "Id": "Alice_1_JingYingB1",
+    "Name": "Alice_1_JingYingB1_Name",
+    "BpFactor": 10546,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_MOGJiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_1",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_1_JingYingB1",
+    "EnemyMaster": "Alice_1_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_XiaoGuaiB1": {
+    "Id": "Alice_4_XiaoGuaiB1",
+    "Name": "Alice_4_XiaoGuaiB1_Name",
+    "BpFactor": 12352,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_MOHJiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_XiaoGuaiB1",
+    "EnemyMaster": "Alice_4_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_JingYingB1": {
+    "Id": "Alice_3_JingYingB1",
+    "Name": "Alice_3_JingYingB1_Name",
+    "BpFactor": 14605,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_PKQShiA_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_3_JingYingB1",
+    "EnemyMaster": "Alice_3_JingYingB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_1_JingYingA1": {
+    "Id": "Alice_1_JingYingA1",
+    "Name": "Alice_1_JingYingA1_Name",
+    "BpFactor": 9629,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_MOGJu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_1",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_1_JingYingA1",
+    "EnemyMaster": "Alice_1_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_2_JingYingA1": {
+    "Id": "Alice_2_JingYingA1",
+    "Name": "Alice_2_JingYingA1_Name",
+    "BpFactor": 11235,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_PKQShiJ",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_2_JingYingA1",
+    "EnemyMaster": "Alice_2_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_JingYingC1": {
+    "Id": "Alice_4_JingYingC1",
+    "Name": "Alice_4_JingYingC1_Name",
+    "BpFactor": 23160,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLGJia",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_JingYingC1",
+    "EnemyMaster": "Alice_4_JingYingC1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_JingYingA1": {
+    "Id": "Alice_4_JingYingA1",
+    "Name": "Alice_4_JingYingA1_Name",
+    "BpFactor": 12970,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLWShi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_JingYingA1",
+    "EnemyMaster": "Alice_4_JingYingA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_4_BossA1": {
+    "Id": "Alice_4_BossA1",
+    "Name": "Alice_4_BossA1_Name",
+    "BpFactor": 29182,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_YSuo",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_12",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_4_BossA1",
+    "EnemyMaster": "Alice_4_BossA1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Alice_3_XiaoGuaiB1": {
+    "Id": "Alice_3_XiaoGuaiB1",
+    "Name": "Alice_3_XiaoGuaiB1_Name",
+    "BpFactor": 10160,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_PKQShiA",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": null,
+    "Background": "Battle_Scene_Map_1_2",
+    "BlockBattleConfig": "Normal_Stage_3",
+    "StarCondition": null,
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "",
+    "BlockBubble": "",
+    "VictoryConditions": null,
+    "BossHeadPic": "",
+    "PointPicture": null,
+    "BGM": [
+      "Mus_Battle_Whale",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "CardAlice_3_XiaoGuaiB1",
+    "EnemyMaster": "Alice_3_XiaoGuaiB1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_Boss_1": {
+    "Id": "Egypt_1_Boss_1",
+    "Name": "Egypt_1_Boss1_Name",
+    "BpFactor": 48956,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_NFDDi",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_1_Boss_1_Card",
+    "EnemyMaster": "Egypt_1_Boss_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_JingYingNB1": {
+    "Id": "Egypt_4_JingYingNB1",
+    "Name": "Egypt_4_JingYingNB1_Name",
+    "BpFactor": 39835,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLCMBing_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_JingYing_1_Card",
+    "EnemyMaster": "Egypt_4_JingYing_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_JingYingNB2": {
+    "Id": "Egypt_4_JingYingNB2",
+    "Name": "Egypt_4_JingYingNB2_Name",
+    "BpFactor": 39835,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLMYao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_JingYing_2_Card",
+    "EnemyMaster": "Egypt_4_JingYing_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_2_Boss_1": {
+    "Id": "Egypt_2_Boss_1",
+    "Name": "Egypt_2_Boss1_Name",
+    "BpFactor": 50435,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_KXuan",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_2_Boss_1_Card",
+    "EnemyMaster": "Egypt_2_Boss_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_2_JingYing_2": {
+    "Id": "Egypt_2_JingYing_2",
+    "Name": "Egypt_2_JingYing2_Name",
+    "BpFactor": 39772,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLMYao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_2_JingYing_2_Card",
+    "EnemyMaster": "Egypt_2_JingYing_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_2_JingYing_1": {
+    "Id": "Egypt_2_JingYing_1",
+    "Name": "Egypt_2_JingYing1_Name",
+    "BpFactor": 42365,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_2_JingYing_1_Card",
+    "EnemyMaster": "Egypt_2_JingYing_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_3_Boss_1": {
+    "Id": "Egypt_3_Boss_1",
+    "Name": "Egypt_3_Boss1_Name",
+    "BpFactor": 60290,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_Enemy_SSRMXiang",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_3_Boss_1_Card",
+    "EnemyMaster": "Egypt_3_Boss_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_2_PuTong_1": {
+    "Id": "Egypt_2_PuTong_1",
+    "Name": "Egypt_2_XiaoGuaiA1_Name",
+    "BpFactor": 20750,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_2_PuTong_1_Card",
+    "EnemyMaster": "Egypt_2_PuTong_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_2_PuTong_4": {
+    "Id": "Egypt_2_PuTong_4",
+    "Name": "Egypt_2_XiaoGuaiC1_Name",
+    "BpFactor": 28820,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMYao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "Egypt_2_PuTong_4_PlayerCard",
+    "EnemyCard": "Egypt_2_PuTong_4_Card",
+    "EnemyMaster": "Egypt_2_PuTong_4_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_JingYing_1": {
+    "Id": "Egypt_4_JingYing_1",
+    "Name": "Egypt_4_JingYing1_Name",
+    "BpFactor": 39835,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLCMBing_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_JingYing_1_Card",
+    "EnemyMaster": "Egypt_4_JingYing_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_JingYing_3": {
+    "Id": "Egypt_4_JingYing_3",
+    "Name": "Egypt_4_JingYing3_Name",
+    "BpFactor": 55326,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_XXZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_JingYing_3_Card",
+    "EnemyMaster": "Egypt_4_JingYing_3_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_JingYing_2": {
+    "Id": "Egypt_4_JingYing_2",
+    "Name": "Egypt_4_JingYing2_Name",
+    "BpFactor": 43629,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLMYao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_JingYing_2_Card",
+    "EnemyMaster": "Egypt_4_JingYing_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_Boss_1": {
+    "Id": "Egypt_4_Boss_1",
+    "Name": "Egypt_4_Boss1_Name",
+    "BpFactor": 68288,
+    "Type": "BossEnemy",
+    "RoleModel": "Model_TTKMeng",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_Boss_1_Card",
+    "EnemyMaster": "Egypt_4_Boss_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_TeShu_2": {
+    "Id": "Egypt_1_TeShu_2",
+    "Name": "Egypt_1_XiaoGuaiC1_Name",
+    "BpFactor": 25178,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S02",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "Egypt_1_TeShu_2_PlayerCard",
+    "EnemyCard": "Egypt_1_TeShu_2_Card",
+    "EnemyMaster": "Egypt_1_TeShu_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_TeShu_1": {
+    "Id": "Egypt_1_TeShu_1",
+    "Name": "Egypt_1_XiaoGuaiC1_Name",
+    "BpFactor": 27975,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S02",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "Egypt_1_TeShu_1_PlayerCard",
+    "EnemyCard": "Egypt_1_TeShu_1_Card",
+    "EnemyMaster": "Egypt_1_TeShu_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_3_PuTong_1": {
+    "Id": "Egypt_3_PuTong_1",
+    "Name": "Egypt_3_XiaoGuai1_Name",
+    "BpFactor": 27131,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_3_PuTong_1_Card",
+    "EnemyMaster": "Egypt_3_PuTong_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_JingYing_2": {
+    "Id": "Egypt_1_JingYing_2",
+    "Name": "Egypt_1_JingYing2_Name",
+    "BpFactor": 38606,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_CFZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_1_JingYing_2_Card",
+    "EnemyMaster": "Egypt_1_JingYing_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_JingYing_1": {
+    "Id": "Egypt_1_JingYing_1",
+    "Name": "Egypt_1_JingYing1_Name",
+    "BpFactor": 29374,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLMYao",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_1_JingYing_1_Card",
+    "EnemyMaster": "Egypt_1_JingYing_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_PuTong_1": {
+    "Id": "Egypt_4_PuTong_1",
+    "Name": "Egypt_4_XiaoGuai1_Name",
+    "BpFactor": 28454,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_PuTong_1_Card",
+    "EnemyMaster": "Egypt_4_PuTong_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_4_XiaoGuaiD1": {
+    "Id": "Egypt_4_XiaoGuaiD1",
+    "Name": "Egypt_4_XiaoGuaiD1_Name",
+    "BpFactor": 34777,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S05",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_4_PuTong_1_Card",
+    "EnemyMaster": "Egypt_4_PuTong_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_PuTong_2": {
+    "Id": "Egypt_1_PuTong_2",
+    "Name": "Egypt_1_XiaoGuaiC2_Name",
+    "BpFactor": 22380,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_CFZhe",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "Egypt_1_PuTong_2_PlayerCard",
+    "EnemyCard": "Egypt_1_PuTong_2_Card",
+    "EnemyMaster": "Egypt_1_PuTong_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_3_JingYing_1": {
+    "Id": "Egypt_3_JingYing_1",
+    "Name": "Egypt_3_MiYa1_Name",
+    "BpFactor": 37983,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_YMHTPu",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_3_JingYing_1_Card",
+    "EnemyMaster": "Egypt_3_JingYing_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_3_JingYing_2": {
+    "Id": "Egypt_3_JingYing_2",
+    "Name": "Egypt_3_JingYing2_Name",
+    "BpFactor": 48533,
+    "Type": "EliteEnemy",
+    "RoleModel": "Model_Enemy_YLCMBing_Enemy01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S03",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_3_JingYing_2_Card",
+    "EnemyMaster": "Egypt_3_JingYing_2_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  },
+  "Egypt_1_PuTong_1": {
+    "Id": "Egypt_1_PuTong_1",
+    "Name": "Egypt_1_XiaoGuaiA1_Name",
+    "BpFactor": 20142,
+    "Type": "NormalEnemy",
+    "RoleModel": "Model_Enemy_YLMNYi_01",
+    "SpecialRuleShow": null,
+    "BlockDesc": "",
+    "Time": 180000,
+    "Background": "Battle_Scene_Map_3_1",
+    "BlockBattleConfig": "Normal",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      },
+      {
+        "type": "MyHpRatio",
+        "value": 80
+      },
+      {
+        "type": "MyDeath",
+        "value": 2
+      }
+    ],
+    "PointReward": "",
+    "ShowItem": "",
+    "EnemyName": "EnemyArmy_Name_E11S01",
+    "BlockBubble": "",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "BossHeadPic": "DFQi",
+    "PointPicture": 1,
+    "BGM": [
+      "Mus_Battle_Desert",
+      "",
+      ""
+    ],
+    "PlayerCard": "PlayerCard",
+    "EnemyCard": "Egypt_1_PuTong_1_Card",
+    "EnemyMaster": "Egypt_1_PuTong_1_Master",
+    "SpecialSkillShow": [],
+    "BossRound": 1
+  }
+}

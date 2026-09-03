@@ -1,0 +1,4762 @@
+{
+  "N1": {
+    "Id": "N1",
+    "NextId": "N2",
+    "Count": 1,
+    "OptionList": [
+      [
+        "4E",
+        "IB_ATTR"
+      ],
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HU",
+        "HS_RSR"
+      ],
+      [
+        "5E",
+        "5E",
+        "5E",
+        "MC",
+        "HB_R",
+        "HU",
+        "HS_SRR"
+      ],
+      [
+        "5E",
+        "HB_RSR",
+        "HU"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv4",
+    "BossMasterAttr": "NB_Master_Lv4",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 25,
+          "12": 20,
+          "15": 100,
+          "14": 75
+        },
+        "attrLv": "P_Hero_Lv1"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 35,
+          "14": 80
+        },
+        "attrLv": "P_Hero_Lv2"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        350
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv1": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabN1",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "N2": {
+    "Id": "N2",
+    "NextId": "N3",
+    "Count": 2,
+    "OptionList": [
+      [
+        "5E",
+        "HB_RSR",
+        "HS_SR",
+        "IB_ATTR"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HU",
+        "HB_SR",
+        "HS_SRSSR"
+      ],
+      [
+        "6E",
+        "6E",
+        "MC",
+        "HU",
+        "HB_SR",
+        "HS_SSRSR"
+      ],
+      [
+        "7E",
+        "7E",
+        "7E",
+        "MC",
+        "HU"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv7",
+    "BossMasterAttr": "NB_Master_Lv7",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 40,
+          "12": 35,
+          "15": 35,
+          "14": 90
+        },
+        "attrLv": "P_Hero_Lv4"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 45,
+          "12": 40,
+          "15": 35,
+          "14": 95
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 45,
+          "12": 40,
+          "15": 35,
+          "14": 95
+        },
+        "attrLv": "P_Hero_Lv5"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        700
+      ],
+      [
+        2,
+        750
+      ],
+      [
+        2,
+        800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv4": 10
+      },
+      {
+        "P_Hero_Lv5": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabN2",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "N3": {
+    "Id": "N3",
+    "NextId": "",
+    "Count": 3,
+    "OptionList": [
+      [
+        "7E",
+        "7E",
+        "MC",
+        "HU",
+        "HB_SRSSR"
+      ],
+      [
+        "7E",
+        "7E",
+        "7E",
+        "MC",
+        "HU",
+        "IB_ATTR",
+        "HB_SR",
+        "HB_SRSSR",
+        "HS_SSRSR"
+      ],
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HB_SSRSR",
+        "HS_SSRSR"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 50,
+          "12": 45,
+          "15": 35,
+          "14": 100
+        },
+        "attrLv": "P_Hero_Lv6"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 55,
+          "12": 50,
+          "15": 35,
+          "14": 105
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 60,
+          "12": 55,
+          "15": 35,
+          "14": 110
+        },
+        "attrLv": "P_Hero_Lv8"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ],
+      [
+        5,
+        5,
+        5,
+        5
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv6": 10
+      },
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabN3",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I9": {
+    "Id": "I9",
+    "NextId": "I10",
+    "Count": 9,
+    "OptionList": [
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "IB_USE",
+        "HU",
+        "HS_SRSSR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HB_SR",
+        "HU",
+        "HU",
+        "IS",
+        "RO"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HU",
+        "HU",
+        "HS_SSR",
+        "CI"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 30,
+          "13": 40,
+          "12": 35,
+          "15": 54,
+          "14": 46
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 40,
+          "13": 57,
+          "12": 50,
+          "15": 74,
+          "14": 64
+        },
+        "attrLv": "P_Hero_Lv10"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "3": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I8": {
+    "Id": "I8",
+    "NextId": "I9",
+    "Count": 8,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I16": {
+    "Id": "I16",
+    "NextId": "I17",
+    "Count": 16,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I19": {
+    "Id": "I19",
+    "NextId": "I20",
+    "Count": 19,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I18": {
+    "Id": "I18",
+    "NextId": "I19",
+    "Count": 18,
+    "OptionList": [
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "IB_USE",
+        "HU",
+        "HS_SRSSR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HB_SR",
+        "HU",
+        "HU",
+        "IS",
+        "RO"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HU",
+        "HU",
+        "HS_SSR",
+        "CI"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 30,
+          "13": 40,
+          "12": 35,
+          "15": 54,
+          "14": 46
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 40,
+          "13": 57,
+          "12": 50,
+          "15": 74,
+          "14": 64
+        },
+        "attrLv": "P_Hero_Lv10"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "3": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I10": {
+    "Id": "I10",
+    "NextId": "I11",
+    "Count": 10,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I1": {
+    "Id": "I1",
+    "NextId": "I2",
+    "Count": 1,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I11": {
+    "Id": "I11",
+    "NextId": "I12",
+    "Count": 11,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I3": {
+    "Id": "I3",
+    "NextId": "I4",
+    "Count": 3,
+    "OptionList": [
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "IB_USE",
+        "HU",
+        "HS_SRSSR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HB_SR",
+        "HU",
+        "HU",
+        "IS",
+        "RO"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HU",
+        "HU",
+        "HS_SSR",
+        "CI"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 30,
+          "13": 40,
+          "12": 35,
+          "15": 54,
+          "14": 46
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 40,
+          "13": 57,
+          "12": 50,
+          "15": 74,
+          "14": 64
+        },
+        "attrLv": "P_Hero_Lv10"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "3": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I2": {
+    "Id": "I2",
+    "NextId": "I3",
+    "Count": 2,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I5": {
+    "Id": "I5",
+    "NextId": "I6",
+    "Count": 5,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I4": {
+    "Id": "I4",
+    "NextId": "I5",
+    "Count": 4,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I7": {
+    "Id": "I7",
+    "NextId": "I8",
+    "Count": 7,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I6": {
+    "Id": "I6",
+    "NextId": "I7",
+    "Count": 6,
+    "OptionList": [
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "IB_USE",
+        "HU",
+        "HS_SRSSR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HB_SR",
+        "HU",
+        "HU",
+        "IS",
+        "RO"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HU",
+        "HU",
+        "HS_SSR",
+        "CI"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 30,
+          "13": 40,
+          "12": 35,
+          "15": 54,
+          "14": 46
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 40,
+          "13": 57,
+          "12": 50,
+          "15": 74,
+          "14": 64
+        },
+        "attrLv": "P_Hero_Lv10"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "3": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I15": {
+    "Id": "I15",
+    "NextId": "I16",
+    "Count": 15,
+    "OptionList": [
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "IB_USE",
+        "HU",
+        "HS_SRSSR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HB_SR",
+        "HU",
+        "HU",
+        "IS",
+        "RO"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HU",
+        "HU",
+        "HS_SSR",
+        "CI"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 30,
+          "13": 40,
+          "12": 35,
+          "15": 54,
+          "14": 46
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 40,
+          "13": 57,
+          "12": 50,
+          "15": 74,
+          "14": 64
+        },
+        "attrLv": "P_Hero_Lv10"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "3": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I13": {
+    "Id": "I13",
+    "NextId": "I14",
+    "Count": 13,
+    "OptionList": [
+      [
+        "4E",
+        "4E",
+        "4E",
+        "MC",
+        "HB_R",
+        "HB_R",
+        "HU"
+      ],
+      [
+        "6E",
+        "6E",
+        "6E",
+        "MC",
+        "HB_SR",
+        "IB_ATTR",
+        "RO"
+      ],
+      [
+        "8E",
+        "8E",
+        "MC",
+        "HU",
+        "HS_SR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv1",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv2",
+      "NE_Hero_Lv3",
+      "NE_Hero_Lv3"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv1",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv2",
+      "NE_Master_Lv3",
+      "NE_Master_Lv3"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv3",
+    "BossMasterAttr": "NB_Master_Lv3",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 24,
+          "12": 20,
+          "15": 35,
+          "14": 28
+        },
+        "attrLv": "P_Hero_Lv4"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        1,
+        10
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        300
+      ],
+      [
+        2,
+        400
+      ],
+      [
+        2,
+        500
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv2": 10
+      },
+      {
+        "P_Hero_Lv3": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "1": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV1",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV2",
+      "PansLabNE_LV3",
+      "PansLabNE_LV3"
+    ],
+    "BossReward": "PansLabNB_1",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I14": {
+    "Id": "I14",
+    "NextId": "I15",
+    "Count": 14,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I12": {
+    "Id": "I12",
+    "NextId": "I13",
+    "Count": 12,
+    "OptionList": [
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "IB_USE",
+        "HU",
+        "HS_SRSSR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HB_SR",
+        "HU",
+        "HU",
+        "IS",
+        "RO"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HU",
+        "HU",
+        "HS_SSR",
+        "CI"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv7",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv8",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9",
+      "NE_Hero_Lv9"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv7",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv8",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9",
+      "NE_Master_Lv9"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv10",
+    "BossMasterAttr": "NB_Master_Lv10",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 30,
+          "13": 40,
+          "12": 35,
+          "15": 54,
+          "14": 46
+        },
+        "attrLv": "P_Hero_Lv7"
+      },
+      {
+        "price": {
+          "11": 40,
+          "13": 57,
+          "12": 50,
+          "15": 74,
+          "14": 64
+        },
+        "attrLv": "P_Hero_Lv10"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        1200
+      ],
+      [
+        2,
+        1500
+      ],
+      [
+        2,
+        1800
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv7": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      },
+      {
+        "P_Hero_Lv7": 10,
+        "P_Hero_Lv8": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "3": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV7",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV8",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9",
+      "PansLabNE_LV9"
+    ],
+    "BossReward": "PansLabNB_3",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I17": {
+    "Id": "I17",
+    "NextId": "I18",
+    "Count": 17,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  },
+  "I20": {
+    "Id": "I20",
+    "NextId": "",
+    "Count": 20,
+    "OptionList": [
+      [
+        "8E",
+        "8E",
+        "8E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "HS_RSR",
+        "HS_SRR"
+      ],
+      [
+        "10E",
+        "10E",
+        "10E",
+        "10E",
+        "MC",
+        "HB_SR",
+        "HU",
+        "IS",
+        "RO",
+        "EI"
+      ],
+      [
+        "10E",
+        "10E",
+        "MC",
+        "IB_ATTR",
+        "HU",
+        "HS_SSRSR"
+      ]
+    ],
+    "EnemyHeroAttr": [
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv4",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv5",
+      "NE_Hero_Lv6",
+      "NE_Hero_Lv6"
+    ],
+    "EnemyMasterAttr": [
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv4",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv5",
+      "NE_Master_Lv6",
+      "NE_Master_Lv6"
+    ],
+    "BossHeroAttr": "NB_Hero_Lv6",
+    "BossMasterAttr": "NB_Master_Lv6",
+    "HeroShopAttr": [
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 15,
+          "13": 30,
+          "12": 25,
+          "15": 41,
+          "14": 34
+        },
+        "attrLv": "P_Hero_Lv5"
+      },
+      {
+        "price": {
+          "11": 20,
+          "13": 35,
+          "12": 30,
+          "15": 48,
+          "14": 40
+        },
+        "attrLv": "P_Hero_Lv6"
+      }
+    ],
+    "ItemShopAttr": [
+      [
+        3,
+        30
+      ]
+    ],
+    "HeroUpAttr": [
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ],
+      [
+        3,
+        5,
+        7,
+        10
+      ]
+    ],
+    "MasterCureAttr": [
+      [
+        2,
+        600
+      ],
+      [
+        2,
+        800
+      ],
+      [
+        2,
+        1000
+      ]
+    ],
+    "HeroBoxAttr": [
+      {
+        "P_Hero_Lv5": 10
+      },
+      {
+        "P_Hero_Lv6": 10
+      }
+    ],
+    "ItemBoxAttr": [
+      {
+        "2": 10
+      }
+    ],
+    "ItemExchangeAttr": {
+      "3": 10
+    },
+    "EnemyReward": [
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV4",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV5",
+      "PansLabNE_LV6",
+      "PansLabNE_LV6"
+    ],
+    "BossReward": "PansLabNB_2",
+    "ChapterReward": "PansLabI",
+    "ChapterRewardHero": {
+      "11": [
+        10,
+        10
+      ],
+      "13": [
+        10,
+        10
+      ],
+      "12": [
+        10,
+        10
+      ],
+      "15": [
+        10,
+        10
+      ],
+      "14": [
+        10,
+        10
+      ]
+    }
+  }
+}

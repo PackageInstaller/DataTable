@@ -1,0 +1,1814 @@
+{
+  "PM03P04": {
+    "Id": "PM03P04",
+    "Name": "StagePtc_Name_PM03P04",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM03P04",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM03P03"
+    ],
+    "ShowCondition": {
+      "LEVEL": 23
+    },
+    "UnlockCondition": {
+      "LEVEL": 23
+    },
+    "PassReward": "StagePraPtReward_PM03P04",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 3,
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_4",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S04A01",
+      "PrM01S04A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U04A"
+    ],
+    "SelfCard": "PrCardM01S04A",
+    "EnemyHero": "PrCardM01S04B",
+    "EnemyMaster": "PrMaster01U04B",
+    "SpecialSkillShow": []
+  },
+  "PM02P02": {
+    "Id": "PM02P02",
+    "Name": "StagePtc_Name_PM02P02",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM02P02",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM02P01"
+    ],
+    "ShowCondition": {
+      "LEVEL": 16
+    },
+    "UnlockCondition": {
+      "LEVEL": 16
+    },
+    "PassReward": "StagePraPtReward_PM02P02",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 2,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_2",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S02A01",
+      "PrM01S02A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U02A"
+    ],
+    "SelfCard": "PrCardM01S02A",
+    "EnemyHero": "PrCardM01S02B",
+    "EnemyMaster": "PrMaster01U02B",
+    "SpecialSkillShow": []
+  },
+  "PM02P03": {
+    "Id": "PM02P03",
+    "Name": "StagePtc_Name_PM02P03",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM02P03",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM02P02"
+    ],
+    "ShowCondition": {
+      "LEVEL": 17
+    },
+    "UnlockCondition": {
+      "LEVEL": 17
+    },
+    "PassReward": "StagePraPtReward_PM02P03",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 3,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_3",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S03A01",
+      "PrM01S03A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U03A"
+    ],
+    "SelfCard": "PrCardM01S03A",
+    "EnemyHero": "PrCardM01S03B",
+    "EnemyMaster": "PrMaster01U03B",
+    "SpecialSkillShow": []
+  },
+  "PM02P01": {
+    "Id": "PM02P01",
+    "Name": "StagePtc_Name_PM02P01",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM02P01",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [],
+    "ShowCondition": {
+      "LEVEL": 15
+    },
+    "UnlockCondition": {
+      "LEVEL": 15
+    },
+    "PassReward": "StagePraPtReward_PM02P01",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 4,
+    "Time": 180000,
+    "HeroNumber": 10,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_1",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S01A01",
+      "PrM01S01A02",
+      "PrM01S01A03",
+      "PrM01S01A04",
+      "PrM01S01A05",
+      "PrM01S01A06",
+      "PrM01S01A07",
+      "PrM01S01A08",
+      "PrM01S01A09",
+      "PrM01S01A10"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U01A"
+    ],
+    "SelfCard": "PrCardM01S01A",
+    "EnemyHero": "PrCardM01S01B",
+    "EnemyMaster": "PrMaster01U01B",
+    "SpecialSkillShow": []
+  },
+  "PM02P04": {
+    "Id": "PM02P04",
+    "Name": "StagePtc_Name_PM02P04",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM02P04",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM02P03"
+    ],
+    "ShowCondition": {
+      "LEVEL": 18
+    },
+    "UnlockCondition": {
+      "LEVEL": 18
+    },
+    "PassReward": "StagePraPtReward_PM02P04",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 4,
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_4",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S04A01",
+      "PrM01S04A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U04A"
+    ],
+    "SelfCard": "PrCardM01S04A",
+    "EnemyHero": "PrCardM01S04B",
+    "EnemyMaster": "PrMaster01U04B",
+    "SpecialSkillShow": []
+  },
+  "PM02P05": {
+    "Id": "PM02P05",
+    "Name": "StagePtc_Name_PM02P05",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM02P05",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM02P04"
+    ],
+    "ShowCondition": {
+      "LEVEL": 19
+    },
+    "UnlockCondition": {
+      "LEVEL": 19
+    },
+    "PassReward": "StagePraPtReward_PM02P05",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 2,
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_5",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S05A01",
+      "PrM01S05A02",
+      "PrM01S05A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U05A"
+    ],
+    "SelfCard": "PrCardM01S05A",
+    "EnemyHero": "PrCardM01S05B",
+    "EnemyMaster": "PrMaster01U05B",
+    "SpecialSkillShow": []
+  },
+  "PM03P05": {
+    "Id": "PM03P05",
+    "Name": "StagePtc_Name_PM03P05",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM03P05",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM03P04"
+    ],
+    "ShowCondition": {
+      "LEVEL": 24
+    },
+    "UnlockCondition": {
+      "LEVEL": 24
+    },
+    "PassReward": "StagePraPtReward_PM03P05",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 4,
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_5",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S05A01",
+      "PrM01S05A02",
+      "PrM01S05A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U05A"
+    ],
+    "SelfCard": "PrCardM01S05A",
+    "EnemyHero": "PrCardM01S05B",
+    "EnemyMaster": "PrMaster01U05B",
+    "SpecialSkillShow": []
+  },
+  "PM01P03": {
+    "Id": "PM01P03",
+    "Name": "StagePtc_Name_PM01P03",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P03",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P02"
+    ],
+    "ShowCondition": {
+      "LEVEL": 15
+    },
+    "UnlockCondition": {
+      "LEVEL": 15
+    },
+    "PassReward": "StagePraPtReward_PM01P03",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 4,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_2",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S03A01",
+      "PrM01S03A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U03A"
+    ],
+    "SelfCard": "PrCardM01S03A",
+    "EnemyHero": "PrCardM01S03B",
+    "EnemyMaster": "PrMaster01U03B",
+    "SpecialSkillShow": []
+  },
+  "PM01P09": {
+    "Id": "PM01P09",
+    "Name": "StagePtc_Name_PM01P09",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P09",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P10"
+    ],
+    "ShowCondition": {
+      "LEVEL": 3
+    },
+    "UnlockCondition": {
+      "LEVEL": 1
+    },
+    "PassReward": "StagePraPtReward_PM01P09",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 1,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_9",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S09A01",
+      "PrM01S09A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U09A"
+    ],
+    "SelfCard": "PrCardM01S09A",
+    "EnemyHero": "PrCardM01S09B",
+    "EnemyMaster": "PrMaster01U09B",
+    "SpecialSkillShow": []
+  },
+  "PM01P08": {
+    "Id": "PM01P08",
+    "Name": "StagePtc_Name_PM01P08",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P08",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P07"
+    ],
+    "ShowCondition": {
+      "LEVEL": 17
+    },
+    "UnlockCondition": {
+      "LEVEL": 17
+    },
+    "PassReward": "StagePraPtReward_PM01P08",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 4,
+    "Time": 180000,
+    "HeroNumber": 4,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_7",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S08A01",
+      "PrM01S08A02",
+      "PrM01S08A03",
+      "PrM01S08A04"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U08A"
+    ],
+    "SelfCard": "PrCardM01S08A",
+    "EnemyHero": "PrCardM01S08B",
+    "EnemyMaster": "PrMaster01U08B",
+    "SpecialSkillShow": []
+  },
+  "PM03P01": {
+    "Id": "PM03P01",
+    "Name": "StagePtc_Name_PM03P01",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM03P01",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [],
+    "ShowCondition": {
+      "LEVEL": 20
+    },
+    "UnlockCondition": {
+      "LEVEL": 20
+    },
+    "PassReward": "StagePraPtReward_PM03P01",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 3,
+    "Time": 180000,
+    "HeroNumber": 10,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_1",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S01A01",
+      "PrM01S01A02",
+      "PrM01S01A03",
+      "PrM01S01A04",
+      "PrM01S01A05",
+      "PrM01S01A06",
+      "PrM01S01A07",
+      "PrM01S01A08",
+      "PrM01S01A09",
+      "PrM01S01A10"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U01A"
+    ],
+    "SelfCard": "PrCardM01S01A",
+    "EnemyHero": "PrCardM01S01B",
+    "EnemyMaster": "PrMaster01U01B",
+    "SpecialSkillShow": []
+  },
+  "PM03P03": {
+    "Id": "PM03P03",
+    "Name": "StagePtc_Name_PM03P03",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM03P03",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM03P02"
+    ],
+    "ShowCondition": {
+      "LEVEL": 22
+    },
+    "UnlockCondition": {
+      "LEVEL": 22
+    },
+    "PassReward": "StagePraPtReward_PM03P03",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 2,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_3",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S03A01",
+      "PrM01S03A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U03A"
+    ],
+    "SelfCard": "PrCardM01S03A",
+    "EnemyHero": "PrCardM01S03B",
+    "EnemyMaster": "PrMaster01U03B",
+    "SpecialSkillShow": []
+  },
+  "PM03P02": {
+    "Id": "PM03P02",
+    "Name": "StagePtc_Name_PM03P02",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM03P02",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM03P01"
+    ],
+    "ShowCondition": {
+      "LEVEL": 21
+    },
+    "UnlockCondition": {
+      "LEVEL": 21
+    },
+    "PassReward": "StagePraPtReward_PM03P02",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 4,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_2",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S02A01",
+      "PrM01S02A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U02A"
+    ],
+    "SelfCard": "PrCardM01S02A",
+    "EnemyHero": "PrCardM01S02B",
+    "EnemyMaster": "PrMaster01U02B",
+    "SpecialSkillShow": []
+  },
+  "PM01P10": {
+    "Id": "PM01P10",
+    "Name": "StagePtc_Name_PM01P10",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P10",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [],
+    "ShowCondition": {
+      "LEVEL": 3
+    },
+    "UnlockCondition": {
+      "LEVEL": 1
+    },
+    "PassReward": "StagePraPtReward_PM01P10",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 1,
+    "Time": 180000,
+    "HeroNumber": 4,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_10",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S10A01",
+      "PrM01S10A02",
+      "PrM01S10A03",
+      "PrM01S10A04"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U10A"
+    ],
+    "SelfCard": "PrCardM01S10A",
+    "EnemyHero": "PrCardM01S10B",
+    "EnemyMaster": "PrMaster01U10B",
+    "SpecialSkillShow": []
+  },
+  "PM01P02": {
+    "Id": "PM01P02",
+    "Name": "StagePtc_Name_PM01P02",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P02",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P09"
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "UnlockCondition": {
+      "LEVEL": 1
+    },
+    "PassReward": "StagePraPtReward_PM01P02",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 3,
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_1",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S02A01",
+      "PrM01S02A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U02A"
+    ],
+    "SelfCard": "PrCardM01S02A",
+    "EnemyHero": "PrCardM01S02B",
+    "EnemyMaster": "PrMaster01U02B",
+    "SpecialSkillShow": []
+  },
+  "PM01P01": {
+    "Id": "PM01P01",
+    "Name": "StagePtc_Name_PM01P01",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P01",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "HeroBase_Name_YFZZhu",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "UnlockCondition": {
+      "LEVEL": 1
+    },
+    "PassReward": "StagePraPtReward_PM01P01",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 2,
+    "Time": 180000,
+    "HeroNumber": 10,
+    "CostCount": 99,
+    "BlockBattleConfig": "BattleZero",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [],
+    "SelfAlterHero": [
+      "PrM01S01A01",
+      "PrM01S01A02",
+      "PrM01S01A03",
+      "PrM01S01A04",
+      "PrM01S01A05",
+      "PrM01S01A07",
+      "PrM01S01A08",
+      "PrM01S01A09",
+      "PrM01S01A11",
+      "PrM01S01A12",
+      "PrM01S01A14",
+      "PrM01S01A17",
+      "PrM01S01A19",
+      "PrM01S01A20",
+      "PrM01S01A23",
+      "PrM01S01A25",
+      "PrM01S01A26",
+      "PrM01S01A28",
+      "PrM01S01A29",
+      "PrM01S01A31",
+      "PrM01S01A34",
+      "PrM01S01A35",
+      "PrM01S01A36",
+      "PrM01S01A37",
+      "PrM01S01A38",
+      "PrM01S01A39",
+      "PrM01S01A40",
+      "PrM01S01A42",
+      "PrM01S01A44",
+      "PrM01S01A45",
+      "PrM01S01A47",
+      "PrM01S01A50",
+      "PrM01S01A52",
+      "PrM01S01A53"
+    ],
+    "SelfMaster": [
+      "PrMaster01U01A"
+    ],
+    "SelfCard": "PrCardM01S01A",
+    "EnemyHero": "PrCardM01S01B",
+    "EnemyMaster": "PrMaster01U01B",
+    "SpecialSkillShow": []
+  },
+  "PM01P07": {
+    "Id": "PM01P07",
+    "Name": "StagePtc_Name_PM01P07",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P07",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P05"
+    ],
+    "ShowCondition": {
+      "LEVEL": 15
+    },
+    "UnlockCondition": {
+      "LEVEL": 15
+    },
+    "PassReward": "StagePraPtReward_PM01P07",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 3,
+    "Time": 180000,
+    "HeroNumber": 4,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_6",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S07A01",
+      "PrM01S07A02",
+      "PrM01S07A03",
+      "PrM01S07A04"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U07A"
+    ],
+    "SelfCard": "PrCardM01S07A",
+    "EnemyHero": "PrCardM01S07B",
+    "EnemyMaster": "PrMaster01U07B",
+    "SpecialSkillShow": []
+  },
+  "PM01P06": {
+    "Id": "PM01P06",
+    "Name": "StagePtc_Name_PM01P06",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P06",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P05"
+    ],
+    "ShowCondition": {
+      "LEVEL": 15
+    },
+    "UnlockCondition": {
+      "LEVEL": 15
+    },
+    "PassReward": "StagePraPtReward_PM01P06",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 2,
+    "Time": 180000,
+    "HeroNumber": 4,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_5",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S06A01",
+      "PrM01S06A02",
+      "PrM01S06A03",
+      "PrM01S06A04"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U06A"
+    ],
+    "SelfCard": "PrCardM01S06A",
+    "EnemyHero": "PrCardM01S06B",
+    "EnemyMaster": "PrMaster01U06B",
+    "SpecialSkillShow": []
+  },
+  "PM01P05": {
+    "Id": "PM01P05",
+    "Name": "StagePtc_Name_PM01P05",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P05",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P03"
+    ],
+    "ShowCondition": {
+      "LEVEL": 15
+    },
+    "UnlockCondition": {
+      "LEVEL": 15
+    },
+    "PassReward": "StagePraPtReward_PM01P05",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 3,
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_4",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S05A01",
+      "PrM01S05A02",
+      "PrM01S05A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U05A"
+    ],
+    "SelfCard": "PrCardM01S05A",
+    "EnemyHero": "PrCardM01S05B",
+    "EnemyMaster": "PrMaster01U05B",
+    "SpecialSkillShow": []
+  },
+  "PM01P04": {
+    "Id": "PM01P04",
+    "Name": "StagePtc_Name_PM01P04",
+    "Icon": "item_213003",
+    "Img": "battle_scene_1.jpg",
+    "RoleModel": {
+      "text": "StagePtc_Bubble1",
+      "role": "YFZZhu"
+    },
+    "SortMode": {
+      "type": "TIME",
+      "order": "ASC"
+    },
+    "StageDesc": "StagePtc_Desc_PM01P04",
+    "Background": "Battle_Scene_Sp07",
+    "EnemyName": "StagePtc_Enemy_Name",
+    "PointHead": "Model_YFZZhu",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "PrePoint": [
+      "PM01P06"
+    ],
+    "ShowCondition": {
+      "LEVEL": 15
+    },
+    "UnlockCondition": {
+      "LEVEL": 15
+    },
+    "PassReward": "StagePraPtReward_PM01P04",
+    "StarCondition": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "Cost": {
+      "amount": 100,
+      "id": "IR_Gold"
+    },
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "DifficultyLevel": 2,
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_3",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "PrM01S04A01",
+      "PrM01S04A02",
+      "PrM01S04A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "PrMaster01U04A"
+    ],
+    "SelfCard": "PrCardM01S04A",
+    "EnemyHero": "PrCardM01S04B",
+    "EnemyMaster": "PrMaster01U04B",
+    "SpecialSkillShow": []
+  }
+}

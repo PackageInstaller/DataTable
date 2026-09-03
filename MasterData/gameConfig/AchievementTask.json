@@ -1,0 +1,3402 @@
+{
+  "Achievement_Lift41": {
+    "Id": "Achievement_Lift41",
+    "Name": "Achievement_Lift41_Name",
+    "Next": [
+      "Achievement_Lift42"
+    ],
+    "OrderNum": 1048,
+    "Reward": "Achievement_Lift41_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_34",
+    "LeftWord": "Achievement_Lift41_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift41_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterStarSum",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Lift40": {
+    "Id": "Achievement_Lift40",
+    "Name": "Achievement_Lift40_Name",
+    "Next": [
+      "Achievement_Lift41"
+    ],
+    "OrderNum": 1047,
+    "Reward": "Achievement_Lift40_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_34",
+    "LeftWord": "Achievement_Lift40_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift40_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterStarSum",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Lift43": {
+    "Id": "Achievement_Lift43",
+    "Name": "Achievement_Lift43_Name",
+    "Next": [
+      "Achievement_Lift44"
+    ],
+    "OrderNum": 1050,
+    "Reward": "Achievement_Lift43_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_34",
+    "LeftWord": "Achievement_Lift43_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift43_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterStarSum",
+        "factor1": [
+          40
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Lift42": {
+    "Id": "Achievement_Lift42",
+    "Name": "Achievement_Lift42_Name",
+    "Next": [
+      "Achievement_Lift43"
+    ],
+    "OrderNum": 1049,
+    "Reward": "Achievement_Lift42_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_34",
+    "LeftWord": "Achievement_Lift42_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift42_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterStarSum",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Lift09": {
+    "Id": "Achievement_Lift09",
+    "Name": "Achievement_Lift09_Name",
+    "Next": [
+      "Achievement_Lift_Day_1"
+    ],
+    "OrderNum": 1009,
+    "Reward": "Achievement_Lift09_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift09_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift09_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          90
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift08": {
+    "Id": "Achievement_Lift08",
+    "Name": "Achievement_Lift08_Name",
+    "Next": [
+      "Achievement_Lift09"
+    ],
+    "OrderNum": 1008,
+    "Reward": "Achievement_Lift08_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift08_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift08_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          60
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift47": {
+    "Id": "Achievement_Lift47",
+    "Name": "Achievement_Lift47_Name",
+    "Next": [
+      "Achievement_Lift48"
+    ],
+    "OrderNum": 1054,
+    "Reward": "Achievement_Lift47_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift47_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift47_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AchievementPoint",
+        "params": [
+          "Achievement_Tab1"
+        ],
+        "factor1": [
+          400
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift46": {
+    "Id": "Achievement_Lift46",
+    "Name": "Achievement_Lift46_Name",
+    "Next": [
+      "Achievement_Lift47"
+    ],
+    "OrderNum": 1053,
+    "Reward": "Achievement_Lift46_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift46_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift46_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AchievementPoint",
+        "params": [
+          "Achievement_Tab1"
+        ],
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift05": {
+    "Id": "Achievement_Lift05",
+    "Name": "Achievement_Lift05_Name",
+    "Next": [
+      "Achievement_Lift06"
+    ],
+    "OrderNum": 1005,
+    "Reward": "Achievement_Lift05_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift05_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift05_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          15
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift04": {
+    "Id": "Achievement_Lift04",
+    "Name": "Achievement_Lift04_Name",
+    "Next": [
+      "Achievement_Lift05"
+    ],
+    "OrderNum": 1004,
+    "Reward": "Achievement_Lift04_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift04_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift04_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          7
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift07": {
+    "Id": "Achievement_Lift07",
+    "Name": "Achievement_Lift07_Name",
+    "Next": [
+      "Achievement_Lift08"
+    ],
+    "OrderNum": 1007,
+    "Reward": "Achievement_Lift07_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift07_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift07_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          45
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift06": {
+    "Id": "Achievement_Lift06",
+    "Name": "Achievement_Lift06_Name",
+    "Next": [
+      "Achievement_Lift07"
+    ],
+    "OrderNum": 1006,
+    "Reward": "Achievement_Lift06_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift06_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift06_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift01": {
+    "Id": "Achievement_Lift01",
+    "Name": "Achievement_Lift01_Name",
+    "Next": [
+      "Achievement_Lift02"
+    ],
+    "OrderNum": 1001,
+    "Reward": "Achievement_Lift01_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_05",
+    "LeftWord": "Achievement_Lift01_LeftWord",
+    "RightPicture": "achievement_word_33",
+    "RightWord": "Achievement_Lift01_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_GoldAchieve",
+        "factor1": [
+          1000000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift03": {
+    "Id": "Achievement_Lift03",
+    "Name": "Achievement_Lift03_Name",
+    "Next": [],
+    "OrderNum": 1003,
+    "Reward": "Achievement_Lift03_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_05",
+    "LeftWord": "Achievement_Lift03_LeftWord",
+    "RightPicture": "achievement_word_33",
+    "RightWord": "Achievement_Lift03_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_GoldAchieve",
+        "factor1": [
+          10000000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift02": {
+    "Id": "Achievement_Lift02",
+    "Name": "Achievement_Lift02_Name",
+    "Next": [
+      "Achievement_Lift03"
+    ],
+    "OrderNum": 1002,
+    "Reward": "Achievement_Lift02_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_05",
+    "LeftWord": "Achievement_Lift02_LeftWord",
+    "RightPicture": "achievement_word_33",
+    "RightWord": "Achievement_Lift02_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_GoldAchieve",
+        "factor1": [
+          3000000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift30": {
+    "Id": "Achievement_Lift30",
+    "Name": "Achievement_Lift30_Name",
+    "Next": [],
+    "OrderNum": 1037,
+    "Reward": "Achievement_Lift30_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift30_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift30_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AddFriend",
+        "factor1": [
+          60
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift31": {
+    "Id": "Achievement_Lift31",
+    "Name": "Achievement_Lift31_Name",
+    "Next": [
+      "Achievement_Lift32"
+    ],
+    "OrderNum": 1038,
+    "Reward": "Achievement_Lift31_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift31_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Lift31_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterCollect",
+        "factor1": [
+          0,
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift32": {
+    "Id": "Achievement_Lift32",
+    "Name": "Achievement_Lift32_Name",
+    "Next": [
+      "Achievement_Lift33"
+    ],
+    "OrderNum": 1039,
+    "Reward": "Achievement_Lift32_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift32_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Lift32_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterCollect",
+        "factor1": [
+          0,
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift33": {
+    "Id": "Achievement_Lift33",
+    "Name": "Achievement_Lift33_Name",
+    "Next": [],
+    "OrderNum": 1040,
+    "Reward": "Achievement_Lift33_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift33_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Lift33_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterCollect",
+        "factor1": [
+          0,
+          8
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Lift34": {
+    "Id": "Achievement_Lift34",
+    "Name": "Achievement_Lift34_Name",
+    "Next": [
+      "Achievement_Lift35"
+    ],
+    "OrderNum": 1041,
+    "Reward": "Achievement_Lift34_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Lift34_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Lift34_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterEmblemUp",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift35": {
+    "Id": "Achievement_Lift35",
+    "Name": "Achievement_Lift35_Name",
+    "Next": [
+      "Achievement_Lift36"
+    ],
+    "OrderNum": 1042,
+    "Reward": "Achievement_Lift35_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Lift35_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Lift35_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterEmblemUp",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift36": {
+    "Id": "Achievement_Lift36",
+    "Name": "Achievement_Lift36_Name",
+    "Next": [],
+    "OrderNum": 1043,
+    "Reward": "Achievement_Lift36_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Lift36_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Lift36_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterEmblemUp",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift37": {
+    "Id": "Achievement_Lift37",
+    "Name": "Achievement_Lift37_Name",
+    "Next": [
+      "Achievement_Lift38"
+    ],
+    "OrderNum": 1044,
+    "Reward": "Achievement_Lift37_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Lift37_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift37_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_KernelLevel",
+        "factor1": [
+          15,
+          1
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift38": {
+    "Id": "Achievement_Lift38",
+    "Name": "Achievement_Lift38_Name",
+    "Next": [
+      "Achievement_Lift39"
+    ],
+    "OrderNum": 1045,
+    "Reward": "Achievement_Lift38_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Lift38_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift38_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_KernelLevel",
+        "factor1": [
+          15,
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift39": {
+    "Id": "Achievement_Lift39",
+    "Name": "Achievement_Lift39_Name",
+    "Next": [],
+    "OrderNum": 1046,
+    "Reward": "Achievement_Lift39_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Lift39_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift39_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_KernelLevel",
+        "factor1": [
+          15,
+          15
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift49": {
+    "Id": "Achievement_Lift49",
+    "Name": "Achievement_Lift49_Name",
+    "Next": [],
+    "OrderNum": 1056,
+    "Reward": "Achievement_Lift49_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift49_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift49_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AchievementPoint",
+        "params": [
+          "Achievement_Tab1"
+        ],
+        "factor1": [
+          1200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift45": {
+    "Id": "Achievement_Lift45",
+    "Name": "Achievement_Lift45_Name",
+    "Next": [
+      "Achievement_Lift46"
+    ],
+    "OrderNum": 1052,
+    "Reward": "Achievement_Lift45_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift45_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift45_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AchievementPoint",
+        "params": [
+          "Achievement_Tab1"
+        ],
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift18": {
+    "Id": "Achievement_Lift18",
+    "Name": "Achievement_Lift18_Name",
+    "Next": [
+      "Achievement_Lift19"
+    ],
+    "OrderNum": 1025,
+    "Reward": "Achievement_Lift18_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift18_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift18_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          90
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift19": {
+    "Id": "Achievement_Lift19",
+    "Name": "Achievement_Lift19_Name",
+    "Next": [
+      "Achievement_Lift20"
+    ],
+    "OrderNum": 1026,
+    "Reward": "Achievement_Lift19_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift19_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift19_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift16": {
+    "Id": "Achievement_Lift16",
+    "Name": "Achievement_Lift16_Name",
+    "Next": [
+      "Achievement_Lift17"
+    ],
+    "OrderNum": 1023,
+    "Reward": "Achievement_Lift16_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift16_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift16_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          70
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift17": {
+    "Id": "Achievement_Lift17",
+    "Name": "Achievement_Lift17_Name",
+    "Next": [
+      "Achievement_Lift18"
+    ],
+    "OrderNum": 1024,
+    "Reward": "Achievement_Lift17_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift17_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift17_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          80
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift14": {
+    "Id": "Achievement_Lift14",
+    "Name": "Achievement_Lift14_Name",
+    "Next": [
+      "Achievement_Lift15"
+    ],
+    "OrderNum": 1021,
+    "Reward": "Achievement_Lift14_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift14_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift14_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift15": {
+    "Id": "Achievement_Lift15",
+    "Name": "Achievement_Lift15_Name",
+    "Next": [
+      "Achievement_Lift16"
+    ],
+    "OrderNum": 1022,
+    "Reward": "Achievement_Lift15_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift15_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift15_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          60
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift12": {
+    "Id": "Achievement_Lift12",
+    "Name": "Achievement_Lift12_Name",
+    "Next": [
+      "Achievement_Lift13"
+    ],
+    "OrderNum": 1019,
+    "Reward": "Achievement_Lift12_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift12_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift12_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift13": {
+    "Id": "Achievement_Lift13",
+    "Name": "Achievement_Lift13_Name",
+    "Next": [
+      "Achievement_Lift14"
+    ],
+    "OrderNum": 1020,
+    "Reward": "Achievement_Lift13_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift13_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift13_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          40
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift10": {
+    "Id": "Achievement_Lift10",
+    "Name": "Achievement_Lift10_Name",
+    "Next": [
+      "Achievement_Lift11"
+    ],
+    "OrderNum": 1017,
+    "Reward": "Achievement_Lift10_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift10_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift10_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift11": {
+    "Id": "Achievement_Lift11",
+    "Name": "Achievement_Lift11_Name",
+    "Next": [
+      "Achievement_Lift12"
+    ],
+    "OrderNum": 1018,
+    "Reward": "Achievement_Lift11_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift11_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift11_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift27": {
+    "Id": "Achievement_Lift27",
+    "Name": "Achievement_Lift27_Name",
+    "Next": [],
+    "OrderNum": 1034,
+    "Reward": "Achievement_Lift27_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_29",
+    "LeftWord": "Achievement_Lift27_LeftWord",
+    "RightPicture": "achievement_word_21",
+    "RightWord": "Achievement_Lift27_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DiamondAchieve",
+        "factor1": [
+          10000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift26": {
+    "Id": "Achievement_Lift26",
+    "Name": "Achievement_Lift26_Name",
+    "Next": [
+      "Achievement_Lift27"
+    ],
+    "OrderNum": 1033,
+    "Reward": "Achievement_Lift26_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_29",
+    "LeftWord": "Achievement_Lift26_LeftWord",
+    "RightPicture": "achievement_word_21",
+    "RightWord": "Achievement_Lift26_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DiamondAchieve",
+        "factor1": [
+          5000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift25": {
+    "Id": "Achievement_Lift25",
+    "Name": "Achievement_Lift25_Name",
+    "Next": [
+      "Achievement_Lift26"
+    ],
+    "OrderNum": 1032,
+    "Reward": "Achievement_Lift25_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_29",
+    "LeftWord": "Achievement_Lift25_LeftWord",
+    "RightPicture": "achievement_word_21",
+    "RightWord": "Achievement_Lift25_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DiamondAchieve",
+        "factor1": [
+          2000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift24": {
+    "Id": "Achievement_Lift24",
+    "Name": "Achievement_Lift24_Name",
+    "Next": [],
+    "OrderNum": 1031,
+    "Reward": "Achievement_Lift24_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_39",
+    "LeftWord": "Achievement_Lift24_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift24_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CrystalAchieve",
+        "factor1": [
+          10000000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift23": {
+    "Id": "Achievement_Lift23",
+    "Name": "Achievement_Lift23_Name",
+    "Next": [
+      "Achievement_Lift24"
+    ],
+    "OrderNum": 1030,
+    "Reward": "Achievement_Lift23_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_39",
+    "LeftWord": "Achievement_Lift23_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift23_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CrystalAchieve",
+        "factor1": [
+          3000000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift22": {
+    "Id": "Achievement_Lift22",
+    "Name": "Achievement_Lift22_Name",
+    "Next": [
+      "Achievement_Lift23"
+    ],
+    "OrderNum": 1029,
+    "Reward": "Achievement_Lift22_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_39",
+    "LeftWord": "Achievement_Lift22_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift22_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CrystalAchieve",
+        "factor1": [
+          1000000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift21": {
+    "Id": "Achievement_Lift21",
+    "Name": "Achievement_Lift21_Name",
+    "Next": [],
+    "OrderNum": 1028,
+    "Reward": "Achievement_Lift21_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift21_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift21_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          120
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift20": {
+    "Id": "Achievement_Lift20",
+    "Name": "Achievement_Lift20_Name",
+    "Next": [
+      "Achievement_Lift21"
+    ],
+    "OrderNum": 1027,
+    "Reward": "Achievement_Lift20_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Lift20_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Lift20_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          110
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift29": {
+    "Id": "Achievement_Lift29",
+    "Name": "Achievement_Lift29_Name",
+    "Next": [
+      "Achievement_Lift30"
+    ],
+    "OrderNum": 1036,
+    "Reward": "Achievement_Lift29_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift29_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift29_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AddFriend",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift28": {
+    "Id": "Achievement_Lift28",
+    "Name": "Achievement_Lift28_Name",
+    "Next": [
+      "Achievement_Lift29"
+    ],
+    "OrderNum": 1035,
+    "Reward": "Achievement_Lift28_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift28_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift28_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AddFriend",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift48": {
+    "Id": "Achievement_Lift48",
+    "Name": "Achievement_Lift48_Name",
+    "Next": [
+      "Achievement_Lift49"
+    ],
+    "OrderNum": 1055,
+    "Reward": "Achievement_Lift48_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Lift48_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Lift48_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_AchievementPoint",
+        "params": [
+          "Achievement_Tab1"
+        ],
+        "factor1": [
+          750
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_7": {
+    "Id": "Achievement_Lift_Day_7",
+    "Name": "Achievement_Lift_Day_7_Name",
+    "Next": [],
+    "OrderNum": 1016,
+    "Reward": "Achievement_Lift_Day_7_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_7_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_7_LeftWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          500
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_6": {
+    "Id": "Achievement_Lift_Day_6",
+    "Name": "Achievement_Lift_Day_6_Name",
+    "Next": [
+      "Achievement_Lift_Day_7"
+    ],
+    "OrderNum": 1015,
+    "Reward": "Achievement_Lift_Day_6_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_6_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_6_LeftWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          365
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_5": {
+    "Id": "Achievement_Lift_Day_5",
+    "Name": "Achievement_Lift_Day_5_Name",
+    "Next": [
+      "Achievement_Lift_Day_6"
+    ],
+    "OrderNum": 1014,
+    "Reward": "Achievement_Lift_Day_5_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_5_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_5_LeftWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          300
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_4": {
+    "Id": "Achievement_Lift_Day_4",
+    "Name": "Achievement_Lift_Day_4_Name",
+    "Next": [
+      "Achievement_Lift_Day_5"
+    ],
+    "OrderNum": 1013,
+    "Reward": "Achievement_Lift_Day_4_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_4_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_4_LeftWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          250
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_3": {
+    "Id": "Achievement_Lift_Day_3",
+    "Name": "Achievement_Lift_Day_3_Name",
+    "Next": [
+      "Achievement_Lift_Day_4"
+    ],
+    "OrderNum": 1012,
+    "Reward": "Achievement_Lift_Day_3_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_3_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_3_LeftWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_2": {
+    "Id": "Achievement_Lift_Day_2",
+    "Name": "Achievement_Lift_Day_2_Name",
+    "Next": [
+      "Achievement_Lift_Day_3"
+    ],
+    "OrderNum": 1011,
+    "Reward": "Achievement_Lift_Day_2_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_2_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_2_LeftWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          160
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift_Day_1": {
+    "Id": "Achievement_Lift_Day_1",
+    "Name": "Achievement_Lift_Day_1_Name",
+    "Next": [
+      "Achievement_Lift_Day_2"
+    ],
+    "OrderNum": 1010,
+    "Reward": "Achievement_Lift_Day_1_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Lift_Day_1_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Lift_Day_1_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_CheckinSum",
+        "factor1": [
+          120
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Lift44": {
+    "Id": "Achievement_Lift44",
+    "Name": "Achievement_Lift44_Name",
+    "Next": [],
+    "OrderNum": 1051,
+    "Reward": "Achievement_Lift44_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_34",
+    "LeftWord": "Achievement_Lift44_LeftWord",
+    "RightPicture": "achievement_word_38",
+    "RightWord": "Achievement_Lift44_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MasterStarSum",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns04": {
+    "Id": "Achievement_Bouns04",
+    "Name": "Achievement_Bouns04_Name",
+    "Next": [
+      "Achievement_Bouns05"
+    ],
+    "OrderNum": 3004,
+    "Reward": "Achievement_Bouns04_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_38",
+    "LeftWord": "Achievement_Bouns04_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Bouns04_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_ComposeHero",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns05": {
+    "Id": "Achievement_Bouns05",
+    "Name": "Achievement_Bouns05_Name",
+    "Next": [],
+    "OrderNum": 3005,
+    "Reward": "Achievement_Bouns05_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_38",
+    "LeftWord": "Achievement_Bouns05_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Bouns05_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_ComposeHero",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns06": {
+    "Id": "Achievement_Bouns06",
+    "Name": "Achievement_Bouns06_Name",
+    "Next": [],
+    "OrderNum": 3006,
+    "Reward": "Achievement_Bouns06_Reward",
+    "AchievePoint": 20,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Bouns06_LeftWord",
+    "RightPicture": "achievement_word_13",
+    "RightWord": "Achievement_Bouns06_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DiamondDrawTen",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns07": {
+    "Id": "Achievement_Bouns07",
+    "Name": "Achievement_Bouns07_Name",
+    "Next": [
+      "Achievement_Bouns08"
+    ],
+    "OrderNum": 3007,
+    "Reward": "Achievement_Bouns07_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_09",
+    "LeftWord": "Achievement_Bouns07_LeftWord",
+    "RightPicture": "achievement_word_15",
+    "RightWord": "Achievement_Bouns07_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DrawSame",
+        "factor1": [
+          2
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Bouns13": {
+    "Id": "Achievement_Bouns13",
+    "Name": "Achievement_Bouns13_Name",
+    "Next": [
+      "Achievement_Bouns14"
+    ],
+    "OrderNum": 3013,
+    "Reward": "Achievement_Bouns13_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Bouns13_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Bouns13_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDislikeGift",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns01": {
+    "Id": "Achievement_Bouns01",
+    "Name": "Achievement_Bouns01_Name",
+    "Next": [
+      "Achievement_Bouns02"
+    ],
+    "OrderNum": 3001,
+    "Reward": "Achievement_Bouns01_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_30",
+    "LeftWord": "Achievement_Bouns01_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Bouns01_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_UseExp",
+        "factor1": [
+          500
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns02": {
+    "Id": "Achievement_Bouns02",
+    "Name": "Achievement_Bouns02_Name",
+    "Next": [
+      "Achievement_Bouns03"
+    ],
+    "OrderNum": 3002,
+    "Reward": "Achievement_Bouns02_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_30",
+    "LeftWord": "Achievement_Bouns02_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Bouns02_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_UseExp",
+        "factor1": [
+          2000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Bouns03": {
+    "Id": "Achievement_Bouns03",
+    "Name": "Achievement_Bouns03_Name",
+    "Next": [],
+    "OrderNum": 3003,
+    "Reward": "Achievement_Bouns03_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_30",
+    "LeftWord": "Achievement_Bouns03_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Bouns03_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_UseExp",
+        "factor1": [
+          5000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Bouns10": {
+    "Id": "Achievement_Bouns10",
+    "Name": "Achievement_Bouns10_Name",
+    "Next": [
+      "Achievement_Bouns11"
+    ],
+    "OrderNum": 3010,
+    "Reward": "Achievement_Bouns10_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_22",
+    "LeftWord": "Achievement_Bouns10_LeftWord",
+    "RightPicture": "achievement_word_39",
+    "RightWord": "Achievement_Bouns10_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DrawRarity",
+        "params": [
+          14
+        ],
+        "factor1": [
+          2
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns08": {
+    "Id": "Achievement_Bouns08",
+    "Name": "Achievement_Bouns08_Name",
+    "Next": [
+      "Achievement_Bouns09"
+    ],
+    "OrderNum": 3008,
+    "Reward": "Achievement_Bouns08_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_09",
+    "LeftWord": "Achievement_Bouns08_LeftWord",
+    "RightPicture": "achievement_word_15",
+    "RightWord": "Achievement_Bouns08_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DrawSame",
+        "factor1": [
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Bouns09": {
+    "Id": "Achievement_Bouns09",
+    "Name": "Achievement_Bouns09_Name",
+    "Next": [],
+    "OrderNum": 3009,
+    "Reward": "Achievement_Bouns09_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_09",
+    "LeftWord": "Achievement_Bouns09_LeftWord",
+    "RightPicture": "achievement_word_15",
+    "RightWord": "Achievement_Bouns09_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DrawSame",
+        "factor1": [
+          4
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Bouns11": {
+    "Id": "Achievement_Bouns11",
+    "Name": "Achievement_Bouns11_Name",
+    "Next": [],
+    "OrderNum": 3011,
+    "Reward": "Achievement_Bouns11_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_22",
+    "LeftWord": "Achievement_Bouns11_LeftWord",
+    "RightPicture": "achievement_word_39",
+    "RightWord": "Achievement_Bouns11_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DrawRarity",
+        "params": [
+          14
+        ],
+        "factor1": [
+          3
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns14": {
+    "Id": "Achievement_Bouns14",
+    "Name": "Achievement_Bouns14_Name",
+    "Next": [],
+    "OrderNum": 3014,
+    "Reward": "Achievement_Bouns14_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Bouns14_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Bouns14_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDislikeGift",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns15": {
+    "Id": "Achievement_Bouns15",
+    "Name": "Achievement_Bouns15_Name",
+    "Next": [],
+    "OrderNum": 3015,
+    "Reward": "Achievement_Bouns15_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_19",
+    "LeftWord": "Achievement_Bouns15_LeftWord",
+    "RightPicture": "achievement_word_10",
+    "RightWord": "Achievement_Bouns15_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_DrawNoSSR",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Bouns12": {
+    "Id": "Achievement_Bouns12",
+    "Name": "Achievement_Bouns12_Name",
+    "Next": [
+      "Achievement_Bouns13"
+    ],
+    "OrderNum": 3012,
+    "Reward": "Achievement_Bouns12_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Bouns12_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Bouns12_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDislikeGift",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Dream28": {
+    "Id": "Achievement_Dream28",
+    "Name": "Achievement_Dream28_Name",
+    "Next": [
+      "Achievement_Dream29"
+    ],
+    "OrderNum": 28,
+    "Reward": "Achievement_Dream28_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream28_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream28_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_joinTournament",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream29": {
+    "Id": "Achievement_Dream29",
+    "Name": "Achievement_Dream29_Name",
+    "Next": [],
+    "OrderNum": 29,
+    "Reward": "Achievement_Dream29_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream29_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream29_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_joinTournament",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream20": {
+    "Id": "Achievement_Dream20",
+    "Name": "Achievement_Dream20_Name",
+    "Next": [
+      "Achievement_Dream21"
+    ],
+    "OrderNum": 20,
+    "Reward": "Achievement_Dream20_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream20_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream20_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapAllDP",
+        "params": [
+          "EGYPT",
+          "JAPEN"
+        ],
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream21": {
+    "Id": "Achievement_Dream21",
+    "Name": "Achievement_Dream21_Name",
+    "Next": [
+      "Achievement_Dream22"
+    ],
+    "OrderNum": 21,
+    "Reward": "Achievement_Dream21_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream21_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream21_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapAllDP",
+        "params": [
+          "EGYPT",
+          "JAPEN"
+        ],
+        "factor1": [
+          300
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream22": {
+    "Id": "Achievement_Dream22",
+    "Name": "Achievement_Dream22_Name",
+    "Next": [],
+    "OrderNum": 22,
+    "Reward": "Achievement_Dream22_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream22_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream22_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapAllDP",
+        "params": [
+          "EGYPT",
+          "JAPEN"
+        ],
+        "factor1": [
+          500
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream23": {
+    "Id": "Achievement_Dream23",
+    "Name": "Achievement_Dream23_Name",
+    "Next": [
+      "Achievement_Dream24"
+    ],
+    "OrderNum": 23,
+    "Reward": "Achievement_Dream23_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream23_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream23_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapFightWin",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream24": {
+    "Id": "Achievement_Dream24",
+    "Name": "Achievement_Dream24_Name",
+    "Next": [
+      "Achievement_Dream25"
+    ],
+    "OrderNum": 24,
+    "Reward": "Achievement_Dream24_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream24_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream24_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapFightWin",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream25": {
+    "Id": "Achievement_Dream25",
+    "Name": "Achievement_Dream25_Name",
+    "Next": [
+      "Achievement_Dream26"
+    ],
+    "OrderNum": 25,
+    "Reward": "Achievement_Dream25_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream25_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream25_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapFightWin",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream26": {
+    "Id": "Achievement_Dream26",
+    "Name": "Achievement_Dream26_Name",
+    "Next": [],
+    "OrderNum": 26,
+    "Reward": "Achievement_Dream26_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream26_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream26_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapFightWin",
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream27": {
+    "Id": "Achievement_Dream27",
+    "Name": "Achievement_Dream27_Name",
+    "Next": [
+      "Achievement_Dream28"
+    ],
+    "OrderNum": 27,
+    "Reward": "Achievement_Dream27_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream27_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream27_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_joinTournament",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream02": {
+    "Id": "Achievement_Dream02",
+    "Name": "Achievement_Dream02_Name",
+    "Next": [
+      "Achievement_Dream03"
+    ],
+    "OrderNum": 2,
+    "Reward": "Achievement_Dream02_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Dream02_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Dream02_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "NORMAL"
+        ],
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream03": {
+    "Id": "Achievement_Dream03",
+    "Name": "Achievement_Dream03_Name",
+    "Next": [
+      "Achievement_Dream04"
+    ],
+    "OrderNum": 3,
+    "Reward": "Achievement_Dream03_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Dream03_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Dream03_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "NORMAL"
+        ],
+        "factor1": [
+          250
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream01": {
+    "Id": "Achievement_Dream01",
+    "Name": "Achievement_Dream01_Name",
+    "Next": [
+      "Achievement_Dream02"
+    ],
+    "OrderNum": 1,
+    "Reward": "Achievement_Dream01_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Dream01_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Dream01_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "NORMAL"
+        ],
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream06": {
+    "Id": "Achievement_Dream06",
+    "Name": "Achievement_Dream06_Name",
+    "Next": [],
+    "OrderNum": 6,
+    "Reward": "Achievement_Dream06_Reward",
+    "AchievePoint": 30,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Dream06_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Dream06_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "NORMAL"
+        ],
+        "factor1": [
+          1200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream07": {
+    "Id": "Achievement_Dream07",
+    "Name": "Achievement_Dream07_Name",
+    "Next": [
+      "Achievement_Dream08"
+    ],
+    "OrderNum": 7,
+    "Reward": "Achievement_Dream07_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream07_LeftWord",
+    "RightPicture": "achievement_word_05",
+    "RightWord": "Achievement_Dream07_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "ELITE"
+        ],
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream04": {
+    "Id": "Achievement_Dream04",
+    "Name": "Achievement_Dream04_Name",
+    "Next": [
+      "Achievement_Dream05"
+    ],
+    "OrderNum": 4,
+    "Reward": "Achievement_Dream04_Reward",
+    "AchievePoint": 20,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Dream04_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Dream04_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "NORMAL"
+        ],
+        "factor1": [
+          600
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream05": {
+    "Id": "Achievement_Dream05",
+    "Name": "Achievement_Dream05_Name",
+    "Next": [
+      "Achievement_Dream06"
+    ],
+    "OrderNum": 5,
+    "Reward": "Achievement_Dream05_Reward",
+    "AchievePoint": 20,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Dream05_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Dream05_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "NORMAL"
+        ],
+        "factor1": [
+          1000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream08": {
+    "Id": "Achievement_Dream08",
+    "Name": "Achievement_Dream08_Name",
+    "Next": [
+      "Achievement_Dream09"
+    ],
+    "OrderNum": 8,
+    "Reward": "Achievement_Dream08_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream08_LeftWord",
+    "RightPicture": "achievement_word_05",
+    "RightWord": "Achievement_Dream08_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "ELITE"
+        ],
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream09": {
+    "Id": "Achievement_Dream09",
+    "Name": "Achievement_Dream09_Name",
+    "Next": [
+      "Achievement_Dream10"
+    ],
+    "OrderNum": 9,
+    "Reward": "Achievement_Dream09_Reward",
+    "AchievePoint": 20,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream09_LeftWord",
+    "RightPicture": "achievement_word_05",
+    "RightWord": "Achievement_Dream09_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "ELITE"
+        ],
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream32": {
+    "Id": "Achievement_Dream32",
+    "Name": "Achievement_Dream32_Name",
+    "Next": [],
+    "OrderNum": 32,
+    "Reward": "Achievement_Dream32_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_30",
+    "LeftWord": "Achievement_Dream32_LeftWord",
+    "RightPicture": "achievement_word_39",
+    "RightWord": "Achievement_Dream32_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_playerpracticestagestar",
+        "factor1": [
+          15
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream31": {
+    "Id": "Achievement_Dream31",
+    "Name": "Achievement_Dream31_Name",
+    "Next": [
+      "Achievement_Dream32"
+    ],
+    "OrderNum": 31,
+    "Reward": "Achievement_Dream31_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_30",
+    "LeftWord": "Achievement_Dream31_LeftWord",
+    "RightPicture": "achievement_word_39",
+    "RightWord": "Achievement_Dream31_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_playerpracticestagestar",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream30": {
+    "Id": "Achievement_Dream30",
+    "Name": "Achievement_Dream30_Name",
+    "Next": [
+      "Achievement_Dream31"
+    ],
+    "OrderNum": 30,
+    "Reward": "Achievement_Dream30_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_30",
+    "LeftWord": "Achievement_Dream30_LeftWord",
+    "RightPicture": "achievement_word_39",
+    "RightWord": "Achievement_Dream30_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_playerpracticestagestar",
+        "factor1": [
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream19": {
+    "Id": "Achievement_Dream19",
+    "Name": "Achievement_Dream19_Name",
+    "Next": [
+      "Achievement_Dream20"
+    ],
+    "OrderNum": 19,
+    "Reward": "Achievement_Dream19_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream19_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream19_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapAllDP",
+        "params": [
+          "EGYPT",
+          "JAPEN"
+        ],
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream18": {
+    "Id": "Achievement_Dream18",
+    "Name": "Achievement_Dream18_Name",
+    "Next": [
+      "Achievement_Dream19"
+    ],
+    "OrderNum": 18,
+    "Reward": "Achievement_Dream18_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_06",
+    "LeftWord": "Achievement_Dream18_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Dream18_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_MapAllDP",
+        "params": [
+          "EGYPT",
+          "JAPEN"
+        ],
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream15": {
+    "Id": "Achievement_Dream15",
+    "Name": "Achievement_Dream15_Name",
+    "Next": [
+      "Achievement_Dream16"
+    ],
+    "OrderNum": 15,
+    "Reward": "Achievement_Dream15_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_03",
+    "LeftWord": "Achievement_Dream15_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Dream15_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_LabFight",
+        "params": [
+          "NORMAL",
+          "INFINITY"
+        ],
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream14": {
+    "Id": "Achievement_Dream14",
+    "Name": "Achievement_Dream14_Name",
+    "Next": [
+      "Achievement_Dream15"
+    ],
+    "OrderNum": 14,
+    "Reward": "Achievement_Dream14_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_03",
+    "LeftWord": "Achievement_Dream14_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Dream14_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_LabFight",
+        "params": [
+          "NORMAL",
+          "INFINITY"
+        ],
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream17": {
+    "Id": "Achievement_Dream17",
+    "Name": "Achievement_Dream17_Name",
+    "Next": [],
+    "OrderNum": 17,
+    "Reward": "Achievement_Dream17_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_03",
+    "LeftWord": "Achievement_Dream17_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Dream17_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_LabFight",
+        "params": [
+          "NORMAL",
+          "INFINITY"
+        ],
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream16": {
+    "Id": "Achievement_Dream16",
+    "Name": "Achievement_Dream16_Name",
+    "Next": [
+      "Achievement_Dream17"
+    ],
+    "OrderNum": 16,
+    "Reward": "Achievement_Dream16_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_03",
+    "LeftWord": "Achievement_Dream16_LeftWord",
+    "RightPicture": "achievement_word_30",
+    "RightWord": "Achievement_Dream16_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_LabFight",
+        "params": [
+          "NORMAL",
+          "INFINITY"
+        ],
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream11": {
+    "Id": "Achievement_Dream11",
+    "Name": "Achievement_Dream11_Name",
+    "Next": [
+      "Achievement_Dream12"
+    ],
+    "OrderNum": 11,
+    "Reward": "Achievement_Dream11_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_09",
+    "LeftWord": "Achievement_Dream11_LeftWord",
+    "RightPicture": "achievement_word_15",
+    "RightWord": "Achievement_Dream11_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_winArenaChallenge",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream10": {
+    "Id": "Achievement_Dream10",
+    "Name": "Achievement_Dream10_Name",
+    "Next": [],
+    "OrderNum": 10,
+    "Reward": "Achievement_Dream10_Reward",
+    "AchievePoint": 30,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Dream10_LeftWord",
+    "RightPicture": "achievement_word_05",
+    "RightWord": "Achievement_Dream10_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_BlockStarSum",
+        "params": [
+          "ELITE"
+        ],
+        "factor1": [
+          400
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream13": {
+    "Id": "Achievement_Dream13",
+    "Name": "Achievement_Dream13_Name",
+    "Next": [],
+    "OrderNum": 13,
+    "Reward": "Achievement_Dream13_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_09",
+    "LeftWord": "Achievement_Dream13_LeftWord",
+    "RightPicture": "achievement_word_15",
+    "RightWord": "Achievement_Dream13_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_winArenaChallenge",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Dream12": {
+    "Id": "Achievement_Dream12",
+    "Name": "Achievement_Dream12_Name",
+    "Next": [
+      "Achievement_Dream13"
+    ],
+    "OrderNum": 12,
+    "Reward": "Achievement_Dream12_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_09",
+    "LeftWord": "Achievement_Dream12_LeftWord",
+    "RightPicture": "achievement_word_15",
+    "RightWord": "Achievement_Dream12_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_winArenaChallenge",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero04": {
+    "Id": "Achievement_Hero04",
+    "Name": "Achievement_Hero04_Name",
+    "Next": [
+      "Achievement_Hero05"
+    ],
+    "OrderNum": 2004,
+    "Reward": "Achievement_Hero04_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Hero04_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Hero04_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarityOver",
+        "factor1": [
+          13,
+          24
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Hero33": {
+    "Id": "Achievement_Hero33",
+    "Name": "Achievement_Hero33_Name",
+    "Next": [
+      "Achievement_Hero34"
+    ],
+    "OrderNum": 2033,
+    "Reward": "Achievement_Hero33_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_16",
+    "LeftWord": "Achievement_Hero33_LeftWord",
+    "RightPicture": "achievement_word_13",
+    "RightWord": "Achievement_Hero33_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroSkillUp",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero23": {
+    "Id": "Achievement_Hero23",
+    "Name": "Achievement_Hero23_Name",
+    "Next": [
+      "Achievement_Hero24"
+    ],
+    "OrderNum": 2023,
+    "Reward": "Achievement_Hero23_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_38",
+    "LeftWord": "Achievement_Hero23_LeftWord",
+    "RightPicture": "achievement_word_20",
+    "RightWord": "Achievement_Hero23_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          10,
+          1
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero11": {
+    "Id": "Achievement_Hero11",
+    "Name": "Achievement_Hero11_Name",
+    "Next": [
+      "Achievement_Hero12"
+    ],
+    "OrderNum": 2011,
+    "Reward": "Achievement_Hero11_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Hero11_LeftWord",
+    "RightPicture": "achievement_word_09",
+    "RightWord": "Achievement_Hero11_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroGift",
+        "factor1": [
+          100
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero10": {
+    "Id": "Achievement_Hero10",
+    "Name": "Achievement_Hero10_Name",
+    "Next": [
+      "Achievement_Hero11"
+    ],
+    "OrderNum": 2010,
+    "Reward": "Achievement_Hero10_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Hero10_LeftWord",
+    "RightPicture": "achievement_word_09",
+    "RightWord": "Achievement_Hero10_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroGift",
+        "factor1": [
+          30
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero13": {
+    "Id": "Achievement_Hero13",
+    "Name": "Achievement_Hero13_Name",
+    "Next": [],
+    "OrderNum": 2013,
+    "Reward": "Achievement_Hero13_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Hero13_LeftWord",
+    "RightPicture": "achievement_word_09",
+    "RightWord": "Achievement_Hero13_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroGift",
+        "factor1": [
+          500
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero12": {
+    "Id": "Achievement_Hero12",
+    "Name": "Achievement_Hero12_Name",
+    "Next": [
+      "Achievement_Hero13"
+    ],
+    "OrderNum": 2012,
+    "Reward": "Achievement_Hero12_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Hero12_LeftWord",
+    "RightPicture": "achievement_word_09",
+    "RightWord": "Achievement_Hero12_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroGift",
+        "factor1": [
+          200
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero15": {
+    "Id": "Achievement_Hero15",
+    "Name": "Achievement_Hero15_Name",
+    "Next": [
+      "Achievement_Hero16"
+    ],
+    "OrderNum": 2015,
+    "Reward": "Achievement_Hero15_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Hero15_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Hero15_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDate",
+        "factor1": [
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero14": {
+    "Id": "Achievement_Hero14",
+    "Name": "Achievement_Hero14_Name",
+    "Next": [
+      "Achievement_Hero15"
+    ],
+    "OrderNum": 2014,
+    "Reward": "Achievement_Hero14_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Hero14_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Hero14_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDate",
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero17": {
+    "Id": "Achievement_Hero17",
+    "Name": "Achievement_Hero17_Name",
+    "Next": [
+      "Achievement_Hero18"
+    ],
+    "OrderNum": 2017,
+    "Reward": "Achievement_Hero17_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Hero17_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Hero17_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDate",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero16": {
+    "Id": "Achievement_Hero16",
+    "Name": "Achievement_Hero16_Name",
+    "Next": [
+      "Achievement_Hero17"
+    ],
+    "OrderNum": 2016,
+    "Reward": "Achievement_Hero16_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Hero16_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Hero16_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDate",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero19": {
+    "Id": "Achievement_Hero19",
+    "Name": "Achievement_Hero19_Name",
+    "Next": [
+      "Achievement_Hero20"
+    ],
+    "OrderNum": 2019,
+    "Reward": "Achievement_Hero19_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Hero19_LeftWord",
+    "RightPicture": "achievement_word_31",
+    "RightWord": "Achievement_Hero19_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          7,
+          1
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero18": {
+    "Id": "Achievement_Hero18",
+    "Name": "Achievement_Hero18_Name",
+    "Next": [],
+    "OrderNum": 2018,
+    "Reward": "Achievement_Hero18_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_24",
+    "LeftWord": "Achievement_Hero18_LeftWord",
+    "RightPicture": "achievement_word_23",
+    "RightWord": "Achievement_Hero18_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroDate",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero31": {
+    "Id": "Achievement_Hero31",
+    "Name": "Achievement_Hero31_Name",
+    "Next": [],
+    "OrderNum": 2031,
+    "Reward": "Achievement_Hero31_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_27",
+    "LeftWord": "Achievement_Hero31_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Hero31_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_QualityCollect",
+        "factor1": [
+          60,
+          5
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Hero30": {
+    "Id": "Achievement_Hero30",
+    "Name": "Achievement_Hero30_Name",
+    "Next": [
+      "Achievement_Hero31"
+    ],
+    "OrderNum": 2030,
+    "Reward": "Achievement_Hero30_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_27",
+    "LeftWord": "Achievement_Hero30_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Hero30_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_QualityCollect",
+        "factor1": [
+          50,
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero37": {
+    "Id": "Achievement_Hero37",
+    "Name": "Achievement_Hero37_Name",
+    "Next": [
+      "Achievement_Hero38"
+    ],
+    "OrderNum": 2037,
+    "Reward": "Achievement_Hero37_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_17",
+    "LeftWord": "Achievement_Hero37_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Hero37_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_heroStarUp",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero36": {
+    "Id": "Achievement_Hero36",
+    "Name": "Achievement_Hero36_Name",
+    "Next": [
+      "Achievement_Hero37"
+    ],
+    "OrderNum": 2036,
+    "Reward": "Achievement_Hero36_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_17",
+    "LeftWord": "Achievement_Hero36_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Hero36_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_heroStarUp",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero35": {
+    "Id": "Achievement_Hero35",
+    "Name": "Achievement_Hero35_Name",
+    "Next": [],
+    "OrderNum": 2035,
+    "Reward": "Achievement_Hero35_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_16",
+    "LeftWord": "Achievement_Hero35_LeftWord",
+    "RightPicture": "achievement_word_13",
+    "RightWord": "Achievement_Hero35_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroSkillUp",
+        "factor1": [
+          1000
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero34": {
+    "Id": "Achievement_Hero34",
+    "Name": "Achievement_Hero34_Name",
+    "Next": [
+      "Achievement_Hero35"
+    ],
+    "OrderNum": 2034,
+    "Reward": "Achievement_Hero34_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_16",
+    "LeftWord": "Achievement_Hero34_LeftWord",
+    "RightPicture": "achievement_word_13",
+    "RightWord": "Achievement_Hero34_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroSkillUp",
+        "factor1": [
+          300
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero42": {
+    "Id": "Achievement_Hero42",
+    "Name": "Achievement_Hero42_Name",
+    "Next": [
+      "Achievement_Hero43"
+    ],
+    "OrderNum": 2042,
+    "Reward": "Achievement_Hero42_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Hero42_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Hero42_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_equipStarUp",
+        "factor1": [
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero43": {
+    "Id": "Achievement_Hero43",
+    "Name": "Achievement_Hero43_Name",
+    "Next": [],
+    "OrderNum": 2043,
+    "Reward": "Achievement_Hero43_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Hero43_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Hero43_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_equipStarUp",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero38": {
+    "Id": "Achievement_Hero38",
+    "Name": "Achievement_Hero38_Name",
+    "Next": [],
+    "OrderNum": 2038,
+    "Reward": "Achievement_Hero38_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_17",
+    "LeftWord": "Achievement_Hero38_LeftWord",
+    "RightPicture": "achievement_word_06",
+    "RightWord": "Achievement_Hero38_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_heroStarUp",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero02": {
+    "Id": "Achievement_Hero02",
+    "Name": "Achievement_Hero02_Name",
+    "Next": [
+      "Achievement_Hero03"
+    ],
+    "OrderNum": 2002,
+    "Reward": "Achievement_Hero02_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Hero02_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Hero02_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarityOver",
+        "factor1": [
+          13,
+          12
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero03": {
+    "Id": "Achievement_Hero03",
+    "Name": "Achievement_Hero03_Name",
+    "Next": [
+      "Achievement_Hero04"
+    ],
+    "OrderNum": 2003,
+    "Reward": "Achievement_Hero03_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Hero03_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Hero03_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarityOver",
+        "factor1": [
+          13,
+          18
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero26": {
+    "Id": "Achievement_Hero26",
+    "Name": "Achievement_Hero26_Name",
+    "Next": [],
+    "OrderNum": 2026,
+    "Reward": "Achievement_Hero26_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_38",
+    "LeftWord": "Achievement_Hero26_LeftWord",
+    "RightPicture": "achievement_word_20",
+    "RightWord": "Achievement_Hero26_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          10,
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero01": {
+    "Id": "Achievement_Hero01",
+    "Name": "Achievement_Hero01_Name",
+    "Next": [
+      "Achievement_Hero02"
+    ],
+    "OrderNum": 2001,
+    "Reward": "Achievement_Hero01_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Hero01_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Hero01_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarityOver",
+        "factor1": [
+          13,
+          6
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero20": {
+    "Id": "Achievement_Hero20",
+    "Name": "Achievement_Hero20_Name",
+    "Next": [
+      "Achievement_Hero21"
+    ],
+    "OrderNum": 2020,
+    "Reward": "Achievement_Hero20_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Hero20_LeftWord",
+    "RightPicture": "achievement_word_31",
+    "RightWord": "Achievement_Hero20_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          7,
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero21": {
+    "Id": "Achievement_Hero21",
+    "Name": "Achievement_Hero21_Name",
+    "Next": [
+      "Achievement_Hero22"
+    ],
+    "OrderNum": 2021,
+    "Reward": "Achievement_Hero21_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Hero21_LeftWord",
+    "RightPicture": "achievement_word_31",
+    "RightWord": "Achievement_Hero21_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          7,
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero22": {
+    "Id": "Achievement_Hero22",
+    "Name": "Achievement_Hero22_Name",
+    "Next": [],
+    "OrderNum": 2022,
+    "Reward": "Achievement_Hero22_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_33",
+    "LeftWord": "Achievement_Hero22_LeftWord",
+    "RightPicture": "achievement_word_31",
+    "RightWord": "Achievement_Hero22_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          7,
+          20
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero05": {
+    "Id": "Achievement_Hero05",
+    "Name": "Achievement_Hero05_Name",
+    "Next": [],
+    "OrderNum": 2005,
+    "Reward": "Achievement_Hero05_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_21",
+    "LeftWord": "Achievement_Hero05_LeftWord",
+    "RightPicture": "achievement_word_29",
+    "RightWord": "Achievement_Hero05_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarityOver",
+        "factor1": [
+          13,
+          30
+        ]
+      }
+    ],
+    "Hide": 1
+  },
+  "Achievement_Hero08": {
+    "Id": "Achievement_Hero08",
+    "Name": "Achievement_Hero08_Name",
+    "Next": [],
+    "OrderNum": 2008,
+    "Reward": "Achievement_Hero08_Reward",
+    "AchievePoint": 30,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Hero08_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Hero08_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarity",
+        "factor1": [
+          14,
+          8
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero09": {
+    "Id": "Achievement_Hero09",
+    "Name": "Achievement_Hero09_Name",
+    "Next": [
+      "Achievement_Hero10"
+    ],
+    "OrderNum": 2009,
+    "Reward": "Achievement_Hero09_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_35",
+    "LeftWord": "Achievement_Hero09_LeftWord",
+    "RightPicture": "achievement_word_09",
+    "RightWord": "Achievement_Hero09_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroGift",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero28": {
+    "Id": "Achievement_Hero28",
+    "Name": "Achievement_Hero28_Name",
+    "Next": [
+      "Achievement_Hero29"
+    ],
+    "OrderNum": 2028,
+    "Reward": "Achievement_Hero28_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_27",
+    "LeftWord": "Achievement_Hero28_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Hero28_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_QualityCollect",
+        "factor1": [
+          30,
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero29": {
+    "Id": "Achievement_Hero29",
+    "Name": "Achievement_Hero29_Name",
+    "Next": [
+      "Achievement_Hero30"
+    ],
+    "OrderNum": 2029,
+    "Reward": "Achievement_Hero29_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_27",
+    "LeftWord": "Achievement_Hero29_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Hero29_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_QualityCollect",
+        "factor1": [
+          40,
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero40": {
+    "Id": "Achievement_Hero40",
+    "Name": "Achievement_Hero40_Name",
+    "Next": [
+      "Achievement_Hero41"
+    ],
+    "OrderNum": 2040,
+    "Reward": "Achievement_Hero40_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Hero40_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Hero40_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_equipStarUp",
+        "factor1": [
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero41": {
+    "Id": "Achievement_Hero41",
+    "Name": "Achievement_Hero41_Name",
+    "Next": [
+      "Achievement_Hero42"
+    ],
+    "OrderNum": 2041,
+    "Reward": "Achievement_Hero41_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Hero41_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Hero41_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_equipStarUp",
+        "factor1": [
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero24": {
+    "Id": "Achievement_Hero24",
+    "Name": "Achievement_Hero24_Name",
+    "Next": [
+      "Achievement_Hero25"
+    ],
+    "OrderNum": 2024,
+    "Reward": "Achievement_Hero24_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_38",
+    "LeftWord": "Achievement_Hero24_LeftWord",
+    "RightPicture": "achievement_word_20",
+    "RightWord": "Achievement_Hero24_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          10,
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero25": {
+    "Id": "Achievement_Hero25",
+    "Name": "Achievement_Hero25_Name",
+    "Next": [
+      "Achievement_Hero26"
+    ],
+    "OrderNum": 2025,
+    "Reward": "Achievement_Hero25_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_38",
+    "LeftWord": "Achievement_Hero25_LeftWord",
+    "RightPicture": "achievement_word_20",
+    "RightWord": "Achievement_Hero25_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroLoveLevel",
+        "factor1": [
+          10,
+          10
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero39": {
+    "Id": "Achievement_Hero39",
+    "Name": "Achievement_Hero39_Name",
+    "Next": [
+      "Achievement_Hero40"
+    ],
+    "OrderNum": 2039,
+    "Reward": "Achievement_Hero39_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_18",
+    "LeftWord": "Achievement_Hero39_LeftWord",
+    "RightPicture": "achievement_word_19",
+    "RightWord": "Achievement_Hero39_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_equipStarUp",
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero32": {
+    "Id": "Achievement_Hero32",
+    "Name": "Achievement_Hero32_Name",
+    "Next": [
+      "Achievement_Hero33"
+    ],
+    "OrderNum": 2032,
+    "Reward": "Achievement_Hero32_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_16",
+    "LeftWord": "Achievement_Hero32_LeftWord",
+    "RightPicture": "achievement_word_13",
+    "RightWord": "Achievement_Hero32_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroSkillUp",
+        "factor1": [
+          50
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero27": {
+    "Id": "Achievement_Hero27",
+    "Name": "Achievement_Hero27_Name",
+    "Next": [
+      "Achievement_Hero28"
+    ],
+    "OrderNum": 2027,
+    "Reward": "Achievement_Hero27_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_27",
+    "LeftWord": "Achievement_Hero27_LeftWord",
+    "RightPicture": "achievement_word_34",
+    "RightWord": "Achievement_Hero27_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_QualityCollect",
+        "factor1": [
+          20,
+          5
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero06": {
+    "Id": "Achievement_Hero06",
+    "Name": "Achievement_Hero06_Name",
+    "Next": [
+      "Achievement_Hero07"
+    ],
+    "OrderNum": 2006,
+    "Reward": "Achievement_Hero06_Reward",
+    "AchievePoint": 10,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Hero06_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Hero06_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarity",
+        "factor1": [
+          14,
+          1
+        ]
+      }
+    ],
+    "Hide": 0
+  },
+  "Achievement_Hero07": {
+    "Id": "Achievement_Hero07",
+    "Name": "Achievement_Hero07_Name",
+    "Next": [
+      "Achievement_Hero08"
+    ],
+    "OrderNum": 2007,
+    "Reward": "Achievement_Hero07_Reward",
+    "AchievePoint": 20,
+    "LeftPicture": "achievement_word_10",
+    "LeftWord": "Achievement_Hero07_LeftWord",
+    "RightPicture": "achievement_word_17",
+    "RightWord": "Achievement_Hero07_RightWord",
+    "Condition": [
+      {
+        "conditionType": "Condi_HeroRarity",
+        "factor1": [
+          14,
+          3
+        ]
+      }
+    ],
+    "Hide": 0
+  }
+}

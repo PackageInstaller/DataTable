@@ -1,0 +1,228 @@
+{
+  "BSNCT_01_DP14": {
+    "Id": "BSNCT_01_DP14",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansOpenTreasureBox",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP13": {
+    "Id": "BSNCT_01_DP13",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansOpenHeroBox",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP12": {
+    "Id": "BSNCT_01_DP12",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansMasterCure",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP11": {
+    "Id": "BSNCT_01_DP11",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansHeroUpNum",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP10": {
+    "Id": "BSNCT_01_DP10",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansBuyTreasureNum",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP3": {
+    "Id": "BSNCT_01_DP3",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansHeroLevelReachNum",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          3,
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP2": {
+    "Id": "BSNCT_01_DP2",
+    "Name": "BSNCT_01_DP2_Name",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansRarityHeroNum",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          12,
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP1": {
+    "Id": "BSNCT_01_DP1",
+    "Name": "BSNCT_01_DP1_Name",
+    "Condition": [
+      {
+        "conditionType": "Condi_PlayerLevel",
+        "factor1": [
+          60
+        ]
+      }
+    ],
+    "DP": 120
+  },
+  "BSNCT_01_DP7": {
+    "Id": "BSNCT_01_DP7",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansFightWin",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP6": {
+    "Id": "BSNCT_01_DP6",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansUseTreasure",
+        "params": [
+          "BSNCT_01",
+          "TestItem_1"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP5": {
+    "Id": "BSNCT_01_DP5",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansTreasureGet",
+        "params": [
+          "BSNCT_01",
+          "TestItem_1"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP4": {
+    "Id": "BSNCT_01_DP4",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansGoldGet",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP9": {
+    "Id": "BSNCT_01_DP9",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansBuyHeroNum",
+        "params": [
+          "BSNCT_01"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  },
+  "BSNCT_01_DP8": {
+    "Id": "BSNCT_01_DP8",
+    "Name": "",
+    "Condition": [
+      {
+        "conditionType": "Condi_PansWInPoint",
+        "params": [
+          "BSNCT_01",
+          "BSNCT_01_S1"
+        ],
+        "factor1": [
+          1
+        ]
+      }
+    ],
+    "DP": 10
+  }
+}

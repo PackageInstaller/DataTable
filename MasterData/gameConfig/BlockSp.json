@@ -1,0 +1,464 @@
+{
+  "StageSp_Exp": {
+    "Id": "StageSp_Exp",
+    "Index": 1,
+    "Name": "StageSp_Exp_Name",
+    "ENName": "UITitle_EN_Tiantaitexun",
+    "SubPoint": [
+      "SP_Exp_1",
+      "SP_Exp_2",
+      "SP_Exp_3",
+      "SP_Exp_4",
+      "SP_Exp_5",
+      "SP_Exp_6",
+      "SP_Exp_7",
+      "SP_Exp_8",
+      "SP_Exp_9",
+      "SP_Exp_10",
+      "SP_Exp_11",
+      "SP_Exp_12",
+      "SP_Exp_13",
+      "SP_Exp_14",
+      "SP_Exp_15",
+      "SP_Exp_16",
+      "SP_Exp_17",
+      "SP_Exp_18",
+      "SP_Exp_19"
+    ],
+    "UnlockCondition": "BlockSp_Exp",
+    "Reset": "BlockSp_Exp",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": [
+      "SpPro_Exp_1",
+      "SpPro_Exp_2",
+      "SpPro_Exp_3",
+      "SpPro_Exp_4",
+      "SpPro_Exp_5",
+      "SpPro_Exp_6",
+      "SpPro_Exp_7",
+      "SpPro_Exp_8",
+      "SpPro_Exp_9",
+      "SpPro_Exp_10",
+      "SpPro_Exp_11",
+      "SpPro_Exp_12",
+      "SpPro_Exp_13",
+      "SpPro_Exp_14",
+      "SpPro_Exp_15",
+      "SpPro_Exp_16",
+      "SpPro_Exp_17",
+      "SpPro_Exp_18"
+    ],
+    "ShowReward": "StageSp_Exp_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSP_Exp_Rule1",
+    "RuleDesc": [
+      "BlockSP_Exp_Rule2",
+      "BlockSP_Exp_Rule3",
+      "BlockSP_Exp_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Exp",
+    "SpecialDesc": [
+      "StageSp_Exp_Desc1",
+      "StageSp_Exp_Desc2"
+    ],
+    "IntroductionHero": [
+      {
+        "Job": [
+          "Attack",
+          "Summon"
+        ],
+        "Skill": "StageSp_Exp_Skill"
+      }
+    ]
+  },
+  "StageSp_Gold": {
+    "Id": "StageSp_Gold",
+    "Index": 2,
+    "Name": "StageSp_Gold_Name",
+    "ENName": "UITitle_EN_Caituanxuanshang",
+    "SubPoint": [
+      "SP_Gold_1",
+      "SP_Gold_2",
+      "SP_Gold_3",
+      "SP_Gold_4",
+      "SP_Gold_5",
+      "SP_Gold_6",
+      "SP_Gold_7",
+      "SP_Gold_8",
+      "SP_Gold_9",
+      "SP_Gold_10",
+      "SP_Gold_11",
+      "SP_Gold_12",
+      "SP_Gold_13",
+      "SP_Gold_14",
+      "SP_Gold_15",
+      "SP_Gold_16",
+      "SP_Gold_17",
+      "SP_Gold_18",
+      "SP_Gold_19"
+    ],
+    "UnlockCondition": "BlockSp_Gold",
+    "Reset": "BlockSp_Gold",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": [
+      "SpPro_Gold_1",
+      "SpPro_Gold_2",
+      "SpPro_Gold_3",
+      "SpPro_Gold_4",
+      "SpPro_Gold_5",
+      "SpPro_Gold_6",
+      "SpPro_Gold_7",
+      "SpPro_Gold_8",
+      "SpPro_Gold_9",
+      "SpPro_Gold_10",
+      "SpPro_Gold_11",
+      "SpPro_Gold_12",
+      "SpPro_Gold_13",
+      "SpPro_Gold_14",
+      "SpPro_Gold_15",
+      "SpPro_Gold_16",
+      "SpPro_Gold_17",
+      "SpPro_Gold_18"
+    ],
+    "ShowReward": "StageSp_Gold_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSP_Gold_Rule1",
+    "RuleDesc": [
+      "BlockSP_Gold_Rule2",
+      "BlockSP_Gold_Rule3",
+      "BlockSP_Gold_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Gold",
+    "SpecialDesc": [
+      "StageSp_Gold_Desc1",
+      "StageSp_Gold_Desc2"
+    ],
+    "IntroductionHero": [
+      {
+        "Job": [
+          "Aoe"
+        ],
+        "Skill": "StageSp_Gold_Skill"
+      }
+    ]
+  },
+  "StageSp_Equipment": {
+    "Id": "StageSp_Equipment",
+    "Index": 4,
+    "Name": "StageSp_Equipment_Name",
+    "ENName": "UITitle_EN_Wuledaochang",
+    "SubPoint": [
+      "SP_Equipment_1",
+      "SP_Equipment_2",
+      "SP_Equipment_3",
+      "SP_Equipment_4",
+      "SP_Equipment_5",
+      "SP_Equipment_6",
+      "SP_Equipment_7",
+      "SP_Equipment_8",
+      "SP_Equipment_9",
+      "SP_Equipment_10",
+      "SP_Equipment_11",
+      "SP_Equipment_12",
+      "SP_Equipment_13",
+      "SP_Equipment_14",
+      "SP_Equipment_15"
+    ],
+    "UnlockCondition": "BlockSp_Equipment",
+    "Reset": "BlockSp_Equipment",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": null,
+    "ShowReward": "StageSp_Equipment_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSp_Equipment_Rule1",
+    "RuleDesc": [
+      "BlockSp_Equipment_Rule2",
+      "BlockSp_Equipment_Rule3",
+      "BlockSp_Equipment_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Equipment",
+    "SpecialDesc": [
+      "StageSp_Equipment_Desc1",
+      "StageSp_Equipment_Desc2"
+    ],
+    "IntroductionHero": null
+  },
+  "StageSp_Skill_3": {
+    "Id": "StageSp_Skill_3",
+    "Index": 7,
+    "Name": "StageSp_Skill_3_Name",
+    "ENName": "UITitle_EN_Gubaomishi",
+    "SubPoint": [
+      "SP_Skill_3_1",
+      "SP_Skill_3_2",
+      "SP_Skill_3_3",
+      "SP_Skill_3_4",
+      "SP_Skill_3_5",
+      "SP_Skill_3_6",
+      "SP_Skill_3_7",
+      "SP_Skill_3_8",
+      "SP_Skill_3_9",
+      "SP_Skill_3_10",
+      "SP_Skill_3_11",
+      "SP_Skill_3_12",
+      "SP_Skill_3_13",
+      "SP_Skill_3_14",
+      "SP_Skill_3_15"
+    ],
+    "UnlockCondition": "BlockSp_Skill_3",
+    "Reset": "BlockSp_Skill_3",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": null,
+    "ShowReward": "StageSp_Skill_3_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSp_Skill_3_Rule1",
+    "RuleDesc": [
+      "BlockSp_Skill_3_Rule2",
+      "BlockSp_Skill_3_Rule3",
+      "BlockSp_Skill_3_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Skill_3",
+    "SpecialDesc": [
+      "StageSp_Skill_3_Desc1",
+      "StageSp_Skill_3_Desc2"
+    ],
+    "IntroductionHero": null
+  },
+  "StageSp_Skill_2": {
+    "Id": "StageSp_Skill_2",
+    "Index": 6,
+    "Name": "StageSp_Skill_2_Name",
+    "ENName": "UITitle_EN_Shengdianxueyuan",
+    "SubPoint": [
+      "SP_Skill_2_1",
+      "SP_Skill_2_2",
+      "SP_Skill_2_3",
+      "SP_Skill_2_4",
+      "SP_Skill_2_5",
+      "SP_Skill_2_6",
+      "SP_Skill_2_7",
+      "SP_Skill_2_8",
+      "SP_Skill_2_9",
+      "SP_Skill_2_10",
+      "SP_Skill_2_11",
+      "SP_Skill_2_12",
+      "SP_Skill_2_13",
+      "SP_Skill_2_14",
+      "SP_Skill_2_15"
+    ],
+    "UnlockCondition": "BlockSp_Skill_2",
+    "Reset": "BlockSp_Skill_2",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": null,
+    "ShowReward": "StageSp_Skill_2_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSp_Skill_2_Rule1",
+    "RuleDesc": [
+      "BlockSp_Skill_2_Rule2",
+      "BlockSp_Skill_2_Rule3",
+      "BlockSp_Skill_2_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Skill_2",
+    "SpecialDesc": [
+      "StageSp_Skill_2_Desc1",
+      "StageSp_Skill_2_Desc2"
+    ],
+    "IntroductionHero": null
+  },
+  "StageSp_Skill_1": {
+    "Id": "StageSp_Skill_1",
+    "Index": 5,
+    "Name": "StageSp_Skill_1_Name",
+    "ENName": "UITitle_EN_Tushuchanglang",
+    "SubPoint": [
+      "SP_Skill_1_1",
+      "SP_Skill_1_2",
+      "SP_Skill_1_3",
+      "SP_Skill_1_4",
+      "SP_Skill_1_5",
+      "SP_Skill_1_6",
+      "SP_Skill_1_7",
+      "SP_Skill_1_8",
+      "SP_Skill_1_9",
+      "SP_Skill_1_10",
+      "SP_Skill_1_11",
+      "SP_Skill_1_12",
+      "SP_Skill_1_13",
+      "SP_Skill_1_14",
+      "SP_Skill_1_15"
+    ],
+    "UnlockCondition": "BlockSp_Skill_1",
+    "Reset": "BlockSp_Skill_1",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": null,
+    "ShowReward": "StageSp_Skill_1_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSp_Skill_1_Rule1",
+    "RuleDesc": [
+      "BlockSp_Skill_1_Rule2",
+      "BlockSp_Skill_1_Rule3",
+      "BlockSp_Skill_1_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Skill_1",
+    "SpecialDesc": [
+      "StageSp_Skill_1_Desc1",
+      "StageSp_Skill_1_Desc2"
+    ],
+    "IntroductionHero": null
+  },
+  "StageSp_Crystal": {
+    "Id": "StageSp_Crystal",
+    "Index": 3,
+    "Name": "StageSp_Crystal_Name",
+    "ENName": "UITitle_EN_Monvzuozhan",
+    "SubPoint": [
+      "SP_Crystal_1",
+      "SP_Crystal_2",
+      "SP_Crystal_3",
+      "SP_Crystal_4",
+      "SP_Crystal_5",
+      "SP_Crystal_6",
+      "SP_Crystal_7",
+      "SP_Crystal_8",
+      "SP_Crystal_9",
+      "SP_Crystal_10",
+      "SP_Crystal_11",
+      "SP_Crystal_12",
+      "SP_Crystal_13",
+      "SP_Crystal_14",
+      "SP_Crystal_15",
+      "SP_Crystal_16",
+      "SP_Crystal_17",
+      "SP_Crystal_18",
+      "SP_Crystal_19"
+    ],
+    "UnlockCondition": "BlockSp_Crystal",
+    "Reset": "BlockSp_Crystal",
+    "ResetTime": {
+      "week": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "ProgressType": "KILL",
+    "ProgressReward": [
+      "SpPro_Crystal_1",
+      "SpPro_Crystal_2",
+      "SpPro_Crystal_3",
+      "SpPro_Crystal_4",
+      "SpPro_Crystal_5",
+      "SpPro_Crystal_6",
+      "SpPro_Crystal_7",
+      "SpPro_Crystal_8",
+      "SpPro_Crystal_9",
+      "SpPro_Crystal_10",
+      "SpPro_Crystal_11",
+      "SpPro_Crystal_12",
+      "SpPro_Crystal_13",
+      "SpPro_Crystal_14",
+      "SpPro_Crystal_15",
+      "SpPro_Crystal_16",
+      "SpPro_Crystal_17",
+      "SpPro_Crystal_18"
+    ],
+    "ShowReward": "StageSp_Crystal_ShowReward",
+    "BackGround": "",
+    "BGDesc": "BlockSP_Crystal_Rule1",
+    "RuleDesc": [
+      "BlockSP_Crystal_Rule2",
+      "BlockSP_Crystal_Rule3",
+      "BlockSP_Crystal_Rule4"
+    ],
+    "ExtraRewardReset": "BlockExtra_Crystal",
+    "SpecialDesc": [
+      "StageSp_Crystal_Desc1",
+      "StageSp_Crystal_Desc2"
+    ],
+    "IntroductionHero": [
+      {
+        "Job": [
+          "Defense"
+        ],
+        "Skill": "StageSp_Crystal_Skill_1",
+        "Value": 2
+      },
+      {
+        "Job": [
+          "Cure"
+        ],
+        "Skill": "StageSp_Crystal_Skill_2"
+      }
+    ]
+  }
+}

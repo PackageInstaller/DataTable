@@ -1,0 +1,1291 @@
+{
+  "Tower_1_Master3": {
+    "Id": "Tower_1_Master3",
+    "Master": "Tower_1_PlayerMaster_3",
+    "AttackSkill": "Sk_Attack_Master_BiLei",
+    "ActionSkill1": "Sk_Action1_Master_BiLei",
+    "ActionSkill2": "Sk_Action2_Master_BiLei",
+    "ActionSkill3": "Sk_Action3_Master_BiLei",
+    "TeamSkillCondition": [
+      {
+        "Scope": [
+          0,
+          3
+        ],
+        "Tag": [
+          [
+            "Cost14Down"
+          ]
+        ]
+      }
+    ],
+    "Point": [
+      "Tower_1_Point1",
+      "Tower_1_Point2",
+      "Tower_1_Point3",
+      "Tower_1_Point4",
+      "Tower_1_Point5",
+      "Tower_1_Point6",
+      "Tower_1_Point7",
+      "Tower_1_Point8",
+      "Tower_1_Point9"
+    ],
+    "Factor": [
+      1,
+      1.1,
+      1.3,
+      1.5,
+      1.9,
+      2.2,
+      2.7,
+      3.3,
+      4
+    ],
+    "MinAttack": [
+      1200,
+      1300,
+      1500,
+      1800,
+      2100,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "Buff": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "TeamSkill1": "SectSkill_Master_BiLei_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_BiLei_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "YLSBai"
+            ],
+            [
+              "Star5Up",
+              "WEDe"
+            ],
+            [
+              "Star5Up",
+              "LLan"
+            ],
+            [
+              "Star5Up",
+              "BEr"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_BiLei_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "LLan"
+            ],
+            [
+              "SGHQShou"
+            ],
+            [
+              "TPGZhu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_BiLei_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            [
+              15,
+              1
+            ],
+            [
+              100,
+              1
+            ]
+          ],
+          "range": "group",
+          "type": "avgcost",
+          "param": []
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_BiLei_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_BiLei_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "Feature": "Tower_1_MasterBase_Feature_3",
+    "Sex": 1
+  },
+  "Tower_1_Master2": {
+    "Id": "Tower_1_Master2",
+    "Master": "Tower_1_PlayerMaster_2",
+    "AttackSkill": "Sk_Attack_Master_LieSha",
+    "ActionSkill1": "Sk_Action1_Master_LieSha",
+    "ActionSkill2": "Sk_Action2_Master_LieSha",
+    "ActionSkill3": "Sk_Action3_Master_LieSha",
+    "TeamSkillCondition": [
+      {
+        "Scope": [
+          0,
+          3
+        ],
+        "Tag": [
+          [
+            "Cost14Up"
+          ]
+        ]
+      }
+    ],
+    "Point": [
+      "Tower_1_Point1",
+      "Tower_1_Point2",
+      "Tower_1_Point3",
+      "Tower_1_Point4",
+      "Tower_1_Point5",
+      "Tower_1_Point6",
+      "Tower_1_Point7",
+      "Tower_1_Point8",
+      "Tower_1_Point9"
+    ],
+    "Factor": [
+      1,
+      1.1,
+      1.3,
+      1.5,
+      1.9,
+      2.2,
+      2.7,
+      3.3,
+      4
+    ],
+    "MinAttack": [
+      1200,
+      1300,
+      1500,
+      1800,
+      2100,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "Buff": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "TeamSkill1": "SectSkill_Master_LieSha_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_LieSha_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "BBLMa"
+            ],
+            [
+              "Star5Up",
+              "KTSJKe"
+            ],
+            [
+              "Star5Up",
+              "YBYa"
+            ],
+            [
+              "Star5Up",
+              "ZTXChang"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_LieSha_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "BBLMa"
+            ],
+            [
+              "CZheng"
+            ],
+            [
+              "TPGZhu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_LieSha_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            [
+              0,
+              1
+            ],
+            [
+              15,
+              1
+            ]
+          ],
+          "range": "group",
+          "type": "avgcost",
+          "param": []
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_LieSha_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_LieSha_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "Feature": "Tower_1_MasterBase_Feature_2",
+    "Sex": 1
+  },
+  "Tower_1_Master1": {
+    "Id": "Tower_1_Master1",
+    "Master": "Tower_1_PlayerMaster_1",
+    "AttackSkill": "Sk_Attack_Master_XueZhan",
+    "ActionSkill1": "Sk_Action1_Master_XueZhan",
+    "ActionSkill2": "Sk_Action2_Master_XueZhan",
+    "ActionSkill3": "Sk_Action3_Master_XueZhan",
+    "TeamSkillCondition": [
+      {
+        "Scope": [
+          3,
+          3
+        ],
+        "Tag": [
+          [
+            "ZTXChang"
+          ],
+          [
+            "FTLEShi"
+          ],
+          [
+            "CLMan"
+          ]
+        ]
+      }
+    ],
+    "Point": [
+      "Tower_1_Point1",
+      "Tower_1_Point2",
+      "Tower_1_Point3",
+      "Tower_1_Point4",
+      "Tower_1_Point5",
+      "Tower_1_Point6",
+      "Tower_1_Point7",
+      "Tower_1_Point8",
+      "Tower_1_Point9"
+    ],
+    "Factor": [
+      1,
+      1.1,
+      1.3,
+      1.5,
+      1.9,
+      2.2,
+      2.7,
+      3.3,
+      4
+    ],
+    "MinAttack": [
+      1200,
+      1300,
+      1500,
+      1800,
+      2100,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "Buff": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "TeamSkill1": "SectSkill_Master_XueZhan_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            8,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star1Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_XueZhan_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "ZTXChang"
+            ],
+            [
+              "Star5Up",
+              "XLai"
+            ],
+            [
+              "Star5Up",
+              "PNCao"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_XueZhan_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Summon"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_XueZhan_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_XueZhan_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            8,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_XueZhan_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "Feature": "Tower_1_MasterBase_Feature_1",
+    "Sex": 1
+  },
+  "Tower_1_Master6": {
+    "Id": "Tower_1_Master6",
+    "Master": "Tower_1_PlayerMaster_6",
+    "AttackSkill": "Sk_Attack_Master_LiMing",
+    "ActionSkill1": "Sk_Action1_Master_LiMing",
+    "ActionSkill2": "Sk_Action2_Master_LiMing",
+    "ActionSkill3": "Sk_Action3_Master_LiMing",
+    "TeamSkillCondition": [],
+    "Point": [
+      "Tower_1_Point1",
+      "Tower_1_Point2",
+      "Tower_1_Point3",
+      "Tower_1_Point4",
+      "Tower_1_Point5",
+      "Tower_1_Point6",
+      "Tower_1_Point7",
+      "Tower_1_Point8",
+      "Tower_1_Point9"
+    ],
+    "Factor": [
+      1,
+      1.1,
+      1.3,
+      1.5,
+      1.9,
+      2.2,
+      2.7,
+      3.3,
+      4
+    ],
+    "MinAttack": [
+      1200,
+      1300,
+      1500,
+      1800,
+      2100,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "Buff": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "TeamSkill1": "SectSkill_Master_LiMing_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star1Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_LiMing_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "TPGZhu"
+            ],
+            [
+              "FEMSi"
+            ],
+            [
+              "FLBDSi"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_LiMing_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_LiMing_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            3,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost13Down"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_LiMing_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            [
+              80,
+              1
+            ],
+            [
+              100,
+              1
+            ]
+          ],
+          "range": "hold",
+          "type": "percent",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ],
+      [
+        {
+          "scope": [
+            15,
+            100
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_LiMing_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "Feature": "Tower_1_MasterBase_Feature_6",
+    "Sex": 0
+  },
+  "Tower_1_Master5": {
+    "Id": "Tower_1_Master5",
+    "Master": "Tower_1_PlayerMaster_5",
+    "AttackSkill": "Sk_Attack_Master_SenLing",
+    "ActionSkill1": "Sk_Action1_Master_SenLing",
+    "ActionSkill2": "Sk_Action2_Master_SenLing",
+    "ActionSkill3": "Sk_Action3_Master_SenLing",
+    "TeamSkillCondition": [
+      {
+        "Scope": [
+          6,
+          15
+        ],
+        "Tag": [
+          [
+            "Cure"
+          ],
+          [
+            "Support"
+          ]
+        ]
+      }
+    ],
+    "Point": [
+      "Tower_1_Point1",
+      "Tower_1_Point2",
+      "Tower_1_Point3",
+      "Tower_1_Point4",
+      "Tower_1_Point5",
+      "Tower_1_Point6",
+      "Tower_1_Point7",
+      "Tower_1_Point8",
+      "Tower_1_Point9"
+    ],
+    "Factor": [
+      1,
+      1.1,
+      1.3,
+      1.5,
+      1.9,
+      2.2,
+      2.7,
+      3.3,
+      4
+    ],
+    "MinAttack": [
+      1200,
+      1300,
+      1500,
+      1800,
+      2100,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "Buff": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "TeamSkill1": "SectSkill_Master_SenLing_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cure"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_SenLing_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "LFEr"
+            ],
+            [
+              "Star5Up",
+              "JNLong"
+            ],
+            [
+              "Star5Up",
+              "MTZMEShi"
+            ],
+            [
+              "Star5Up",
+              "YLMGZhu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_SenLing_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "TPGZhu"
+            ],
+            [
+              "YLMGZhu"
+            ],
+            [
+              "MTZMEShi"
+            ],
+            [
+              "MLYTLSha"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_SenLing_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost12"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost13"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost14"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost15"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost16"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost17"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost18"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_SenLing_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_SenLing_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "Feature": "Tower_1_MasterBase_Feature_5",
+    "Sex": 1
+  },
+  "Tower_1_Master4": {
+    "Id": "Tower_1_Master4",
+    "Master": "Tower_1_PlayerMaster_4",
+    "AttackSkill": "Sk_Attack_Master_FuHun",
+    "ActionSkill1": "Sk_Action1_Master_FuHun",
+    "ActionSkill2": "Sk_Action2_Master_FuHun",
+    "ActionSkill3": "Sk_Action3_Master_FuHun",
+    "TeamSkillCondition": [
+      {
+        "Scope": [
+          6,
+          15
+        ],
+        "Tag": [
+          [
+            "Aoe"
+          ]
+        ]
+      }
+    ],
+    "Point": [
+      "Tower_1_Point1",
+      "Tower_1_Point2",
+      "Tower_1_Point3",
+      "Tower_1_Point4",
+      "Tower_1_Point5",
+      "Tower_1_Point6",
+      "Tower_1_Point7",
+      "Tower_1_Point8",
+      "Tower_1_Point9"
+    ],
+    "Factor": [
+      1,
+      1.1,
+      1.3,
+      1.5,
+      1.9,
+      2.2,
+      2.7,
+      3.3,
+      4
+    ],
+    "MinAttack": [
+      1200,
+      1300,
+      1500,
+      1800,
+      2100,
+      2500,
+      3000,
+      3500,
+      4000
+    ],
+    "Buff": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      7
+    ],
+    "TeamSkill1": "SectSkill_Master_FuHun_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Aoe"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_FuHun_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "MGNa"
+            ],
+            [
+              "Star5Up",
+              "XSMLi"
+            ],
+            [
+              "Star5Up",
+              "SDTZi"
+            ],
+            [
+              "Star5Up",
+              "LDu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_FuHun_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "SLMen"
+            ],
+            [
+              "YLMGZhu"
+            ],
+            [
+              "TPGZhu"
+            ],
+            [
+              "SDTZi"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_FuHun_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Aoe"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cure"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_FuHun_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_FuHun_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "Feature": "Tower_1_MasterBase_Feature_4",
+    "Sex": 1
+  }
+}

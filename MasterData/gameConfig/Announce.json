@@ -1,0 +1,1953 @@
+{
+  "Announce_Arena4": {
+    "Id": "Announce_Arena4",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank4"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena5": {
+    "Id": "Announce_Arena5",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank5"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena6": {
+    "Id": "Announce_Arena6",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank6"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena7": {
+    "Id": "Announce_Arena7",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank7"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena1": {
+    "Id": "Announce_Arena1",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank1"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena2": {
+    "Id": "Announce_Arena2",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank2"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena3": {
+    "Id": "Announce_Arena3",
+    "Type": "ARENA_RANK",
+    "ReachType": "",
+    "Condition": [
+      "Arena_Rank3"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 8,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Arena_1": {
+    "Id": "Announce_Arena_1",
+    "Type": "ARENA_REPORT",
+    "ReachType": "",
+    "Condition": [
+      10
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 2,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena_1A"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=1"
+  },
+  "Announce_Arena_2": {
+    "Id": "Announce_Arena_2",
+    "Type": "ARENA_PLAYER",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Arena_2A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Chapter_NormalPass": {
+    "Id": "Announce_Chapter_NormalPass",
+    "Type": "STAGE_FINISH",
+    "ReachType": "",
+    "Condition": [
+      "NORMAL"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Chapter_NormalPassA"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_ClubPointStar10": {
+    "Id": "Announce_ClubPointStar10",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_10"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Club_Kill": {
+    "Id": "Announce_Club_Kill",
+    "Type": "CLUB_BOSS_KILL",
+    "ReachType": "",
+    "Condition": null,
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-BATTLE"
+    ],
+    "Label": 3,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_Kill"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubMapBoss_RobSSS": {
+    "Id": "Announce_ClubMapBoss_RobSSS",
+    "Type": "CLUBMAPBOSS_GRADE",
+    "ReachType": "",
+    "Condition": [
+      8
+    ],
+    "Channel": [
+      "CHATROOM-WORDPEACESWEAR",
+      "CHATROOM-WORDPEACE"
+    ],
+    "Label": 1,
+    "NotifyGroup": 6,
+    "Times": 1,
+    "Words": [
+      "ClubMapBoss_Chat_System2"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Huanjinghuilang_Clear": {
+    "Id": "Announce_Huanjinghuilang_Clear",
+    "Type": "HJHL_LEVEL",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_Huanjinghuilang_Clear"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_KOF_Final": {
+    "Id": "Announce_KOF_Final",
+    "Type": "KOF_FINAL",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_KOF_Word4"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree2": {
+    "Id": "Announce_ExplorDegree2",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_2"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree3": {
+    "Id": "Announce_ExplorDegree3",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_3"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree1": {
+    "Id": "Announce_ExplorDegree1",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_1"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree6": {
+    "Id": "Announce_ExplorDegree6",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_6"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree7": {
+    "Id": "Announce_ExplorDegree7",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_7"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree4": {
+    "Id": "Announce_ExplorDegree4",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_4"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree5": {
+    "Id": "Announce_ExplorDegree5",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_5"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree8": {
+    "Id": "Announce_ExplorDegree8",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_8"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ExplorDegree9": {
+    "Id": "Announce_ExplorDegree9",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "MapPoint_9"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ExplorDegree"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubMapBoss_RobS": {
+    "Id": "Announce_ClubMapBoss_RobS",
+    "Type": "CLUBMAPBOSS_GRADE",
+    "ReachType": "",
+    "Condition": [
+      6
+    ],
+    "Channel": [
+      "CHATROOM-WORDPEACESWEAR",
+      "CHATROOM-WORDPEACE"
+    ],
+    "Label": 1,
+    "NotifyGroup": 6,
+    "Times": 1,
+    "Words": [
+      "ClubMapBoss_Chat_System2"
+    ],
+    "Priority": 3,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_GetTwoHero_SP": {
+    "Id": "Announce_GetTwoHero_SP",
+    "Type": "HERO_LUCKY",
+    "ReachType": "",
+    "Condition": [
+      2,
+      15
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "CHAT-WORLD"
+    ],
+    "Label": 7,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_GetTwoHero_SP"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Club_Leave": {
+    "Id": "Announce_Club_Leave",
+    "Type": "CLUB_OUT",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_LeaveA"
+    ],
+    "Priority": 2,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=3"
+  },
+  "Announce_Player_Rankup": {
+    "Id": "Announce_Player_Rankup",
+    "Type": "PLAYER_LEVELUP",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Player_RankupA"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_StarUp1": {
+    "Id": "Announce_StarUp1",
+    "Type": "HERO_STAR",
+    "ReachType": "",
+    "Condition": [
+      5,
+      6,
+      7
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarUp1A"
+    ],
+    "Priority": 2,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_KOF_JoinAlert": {
+    "Id": "Announce_KOF_JoinAlert",
+    "Type": "KOF_JOINALERT",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_KOF_Word1"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarUp2": {
+    "Id": "Announce_StarUp2",
+    "Type": "HERO_STAR",
+    "ReachType": "",
+    "Condition": [
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_StarUp2A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_ClubMapBoss_S": {
+    "Id": "Announce_ClubMapBoss_S",
+    "Type": "CLUBMAPBOSS_GRADE",
+    "ReachType": "",
+    "Condition": [
+      6
+    ],
+    "Channel": [
+      "CHATROOM-WORDPEACESWEAR",
+      "CHATROOM-WORDPEACE"
+    ],
+    "Label": 1,
+    "NotifyGroup": 6,
+    "Times": 1,
+    "Words": [
+      "ClubMapBoss_Chat_System1"
+    ],
+    "Priority": 3,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating10": {
+    "Id": "Announce_StarRating10",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_10"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Club_Create": {
+    "Id": "Announce_Club_Create",
+    "Type": "CLUB_SETUP",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_CreateA"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=3"
+  },
+  "Announce_KOF_JoinAlertt": {
+    "Id": "Announce_KOF_JoinAlertt",
+    "Type": "KOF_JOINALERTT",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_KOF_Word2"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "HeroAwaken": {
+    "Id": "HeroAwaken",
+    "Type": "HERO_AWAKEN",
+    "ReachType": "",
+    "Condition": null,
+    "Channel": [
+      "CHAT-WORLD",
+      "CHAT-UNION"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Hero_Awaken"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_GetHero1": {
+    "Id": "Announce_GetHero1",
+    "Type": "HERO_RARE",
+    "ReachType": "",
+    "Condition": [
+      14
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_GetHero1A"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=1"
+  },
+  "Announce_CardPointStar2": {
+    "Id": "Announce_CardPointStar2",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_2"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CardPointStar1": {
+    "Id": "Announce_CardPointStar1",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_1"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_WeaponGot": {
+    "Id": "Announce_WeaponGot",
+    "Type": "WEAPON_GET",
+    "ReachType": "",
+    "Condition": [
+      14,
+      15
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_WeaponGotA"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=1"
+  },
+  "Announce_Club_LvUp": {
+    "Id": "Announce_Club_LvUp",
+    "Type": "CLUB_LEVELUP",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_LvUpA"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=3"
+  },
+  "Announce_Club_Leave1": {
+    "Id": "Announce_Club_Leave1",
+    "Type": "CLUB_OUT",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SELF",
+      "CHAT-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_Leave1A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_GM": {
+    "Id": "Announce_GM",
+    "Type": "GM_TEXT",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 3,
+    "Words": [
+      "Announce_GM"
+    ],
+    "Priority": 1,
+    "ExpireTime": 1500,
+    "Link": ""
+  },
+  "Announce_StarRating9": {
+    "Id": "Announce_StarRating9",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_9"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating8": {
+    "Id": "Announce_StarRating8",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_8"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating5": {
+    "Id": "Announce_StarRating5",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_5"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating4": {
+    "Id": "Announce_StarRating4",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_4"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating7": {
+    "Id": "Announce_StarRating7",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_7"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating6": {
+    "Id": "Announce_StarRating6",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_6"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating1": {
+    "Id": "Announce_StarRating1",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_1"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar3": {
+    "Id": "Announce_ClubPointStar3",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_3"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating3": {
+    "Id": "Announce_StarRating3",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_3"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_StarRating2": {
+    "Id": "Announce_StarRating2",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "PointStar_2"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_StarRating"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar2": {
+    "Id": "Announce_ClubPointStar2",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_2"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_KOF_End": {
+    "Id": "Announce_KOF_End",
+    "Type": "KOF_END",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_KOF_Word6"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Relation_Achieve": {
+    "Id": "Announce_Relation_Achieve",
+    "Type": "HERO_RELATION",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_Relation_AchieveA"
+    ],
+    "Priority": 2,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=1"
+  },
+  "Announce_ClubPointStar9": {
+    "Id": "Announce_ClubPointStar9",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_9"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CLUB_BASHENOrange": {
+    "Id": "Announce_CLUB_BASHENOrange",
+    "Type": "BASHEN",
+    "ReachType": "GREATEREQUAL",
+    "Condition": [
+      3
+    ],
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-UNION",
+      "CHAT-WORLD",
+      "FLOW-BASHEN"
+    ],
+    "Label": 1,
+    "NotifyGroup": 7,
+    "Times": 1,
+    "Words": [
+      "Announce_EightPieceOrange_Text"
+    ],
+    "Priority": 2,
+    "ExpireTime": 3600,
+    "Link": ""
+  },
+  "Announce_ClubMapBoss_RobSS": {
+    "Id": "Announce_ClubMapBoss_RobSS",
+    "Type": "CLUBMAPBOSS_GRADE",
+    "ReachType": "",
+    "Condition": [
+      7
+    ],
+    "Channel": [
+      "CHATROOM-WORDPEACESWEAR",
+      "CHATROOM-WORDPEACE"
+    ],
+    "Label": 1,
+    "NotifyGroup": 6,
+    "Times": 1,
+    "Words": [
+      "ClubMapBoss_Chat_System2"
+    ],
+    "Priority": 2,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Club_ChangeName": {
+    "Id": "Announce_Club_ChangeName",
+    "Type": "CLUB_NAME",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_ChangeNameA"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=3"
+  },
+  "Announce_CardPointStar10": {
+    "Id": "Announce_CardPointStar10",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_10"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Club_Hurt": {
+    "Id": "Announce_Club_Hurt",
+    "Type": "CLUB_BOSS_HURT",
+    "ReachType": "",
+    "Condition": null,
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-BATTLE"
+    ],
+    "Label": 3,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_Hurt"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Chapter_HardPass": {
+    "Id": "Announce_Chapter_HardPass",
+    "Type": "STAGE_FINISH",
+    "ReachType": "",
+    "Condition": [
+      "ELITE"
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Chapter_HardPassA"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_KOF_Start": {
+    "Id": "Announce_KOF_Start",
+    "Type": "KOF_START",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_KOF_Word3"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Club_SSR": {
+    "Id": "Announce_Club_SSR",
+    "Type": "CLUB_BOSS_SSR",
+    "ReachType": "",
+    "Condition": null,
+    "Channel": [
+      "CHAT-WORLD",
+      "CHAT-UNION",
+      "FLOW-BATTLE"
+    ],
+    "Label": 3,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_SSR"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CooperateBoss": {
+    "Id": "Announce_CooperateBoss",
+    "Type": "COOPERATE_BOSS_INVITE",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SYSTEM"
+    ],
+    "Label": 1,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "CooperateBoss_AnnounceContent"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_TwoWeaponGot": {
+    "Id": "Announce_TwoWeaponGot",
+    "Type": "WEAPON_LUCKY",
+    "ReachType": "",
+    "Condition": [
+      2,
+      14
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "CHAT-WORLD"
+    ],
+    "Label": 7,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_TwoWeaponGot"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Club_Join1": {
+    "Id": "Announce_Club_Join1",
+    "Type": "CLUB_JOIN",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SELF",
+      "CHAT-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_Join1A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_CardPointStar3": {
+    "Id": "Announce_CardPointStar3",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_3"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar8": {
+    "Id": "Announce_ClubPointStar8",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_8"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_GetHero3": {
+    "Id": "Announce_GetHero3",
+    "Type": "HERO_RARE",
+    "ReachType": "",
+    "Condition": [
+      15
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_GetHero3A"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_GetHero2": {
+    "Id": "Announce_GetHero2",
+    "Type": "HERO_FIRSTGET",
+    "ReachType": "",
+    "Condition": [
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_GetHero2A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_CardPointStar7": {
+    "Id": "Announce_CardPointStar7",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_7"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CardPointStar6": {
+    "Id": "Announce_CardPointStar6",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_6"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CardPointStar5": {
+    "Id": "Announce_CardPointStar5",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_5"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CardPointStar4": {
+    "Id": "Announce_CardPointStar4",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_4"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar1": {
+    "Id": "Announce_ClubPointStar1",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_1"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CardPointStar9": {
+    "Id": "Announce_CardPointStar9",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_9"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_CardPointStar8": {
+    "Id": "Announce_CardPointStar8",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "Combat_8"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 6,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_CardPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar5": {
+    "Id": "Announce_ClubPointStar5",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_5"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar4": {
+    "Id": "Announce_ClubPointStar4",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_4"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar7": {
+    "Id": "Announce_ClubPointStar7",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_7"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_ClubPointStar6": {
+    "Id": "Announce_ClubPointStar6",
+    "Type": "RANKING_LIST",
+    "ReachType": "",
+    "Condition": [
+      1,
+      "ClubCombat_6"
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "FLOW-HOME"
+    ],
+    "Label": 3,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_ClubPointStar"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_Club_Join": {
+    "Id": "Announce_Club_Join",
+    "Type": "CLUB_JOIN",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_JoinA"
+    ],
+    "Priority": 2,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=3"
+  },
+  "Announce_WeaponGot1": {
+    "Id": "Announce_WeaponGot1",
+    "Type": "WEAPON_GET",
+    "ReachType": "",
+    "Condition": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 2,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_WeaponGot1A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Club_JobChange1": {
+    "Id": "Announce_Club_JobChange1",
+    "Type": "CLUB_CHENGE",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "CHAT-UNION",
+      "FLOW-UNION"
+    ],
+    "Label": 4,
+    "NotifyGroup": 2,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_JobChange1A"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": "view://chatMainView&viewType=popup&tabType=3"
+  },
+  "Announce_Club_JobChange2": {
+    "Id": "Announce_Club_JobChange2",
+    "Type": "CLUB_CHENGE",
+    "ReachType": "",
+    "Condition": [],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 4,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Club_JobChange2A"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_ClubMapBoss_SS": {
+    "Id": "Announce_ClubMapBoss_SS",
+    "Type": "CLUBMAPBOSS_GRADE",
+    "ReachType": "",
+    "Condition": [
+      7
+    ],
+    "Channel": [
+      "CHATROOM-WORDPEACESWEAR",
+      "CHATROOM-WORDPEACE"
+    ],
+    "Label": 1,
+    "NotifyGroup": 6,
+    "Times": 1,
+    "Words": [
+      "ClubMapBoss_Chat_System1"
+    ],
+    "Priority": 2,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_FeelingUpgrade": {
+    "Id": "Announce_FeelingUpgrade",
+    "Type": "FEELING_GET",
+    "ReachType": "",
+    "Condition": [
+      10
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 1,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_FeelingUpgrade"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_Upgrade": {
+    "Id": "Announce_Upgrade",
+    "Type": "LEAD_LEVELUP",
+    "ReachType": "",
+    "Condition": [
+      60
+    ],
+    "Channel": [
+      "BASE-SELF"
+    ],
+    "Label": 1,
+    "NotifyGroup": 4,
+    "Times": 1,
+    "Words": [
+      "Announce_Upgrade"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "HeroIdentityAwake": {
+    "Id": "HeroIdentityAwake",
+    "Type": "HERO_IDEAWAKEN",
+    "ReachType": "",
+    "Condition": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "Channel": [
+      "CHAT-WORLD",
+      "CHAT-UNION"
+    ],
+    "Label": 1,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Hero_IdentityAwake"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  },
+  "Announce_GetTwoHero": {
+    "Id": "Announce_GetTwoHero",
+    "Type": "HERO_LUCKY",
+    "ReachType": "",
+    "Condition": [
+      2,
+      14
+    ],
+    "Channel": [
+      "BASE-SYSTEM",
+      "CHAT-WORLD"
+    ],
+    "Label": 7,
+    "NotifyGroup": 1,
+    "Times": 1,
+    "Words": [
+      "Announce_GetTwoHero"
+    ],
+    "Priority": null,
+    "ExpireTime": null,
+    "Link": ""
+  },
+  "Announce_ClubMapBoss_SSS": {
+    "Id": "Announce_ClubMapBoss_SSS",
+    "Type": "CLUBMAPBOSS_GRADE",
+    "ReachType": "",
+    "Condition": [
+      8
+    ],
+    "Channel": [
+      "CHATROOM-WORDPEACESWEAR",
+      "CHATROOM-WORDPEACE"
+    ],
+    "Label": 1,
+    "NotifyGroup": 6,
+    "Times": 1,
+    "Words": [
+      "ClubMapBoss_Chat_System1"
+    ],
+    "Priority": 1,
+    "ExpireTime": 600,
+    "Link": ""
+  }
+}

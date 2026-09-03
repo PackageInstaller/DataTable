@@ -1,0 +1,2138 @@
+{
+  "ClubMapBoss_II": {
+    "Id": "ClubMapBoss_II",
+    "ResetSystem": {
+      "resetTime": [
+        "00:00:00",
+        "6:00:00",
+        "12:00:00",
+        "18:00:00"
+      ],
+      "max": 10,
+      "initial": 40,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "addValue": 10
+    }
+  },
+  "ClubMapBoss_Prise": {
+    "Id": "ClubMapBoss_Prise",
+    "ResetSystem": {
+      "resetTime": [
+        "00:00:00",
+        "6:00:00",
+        "12:00:00",
+        "18:00:00"
+      ],
+      "max": 10,
+      "initial": 40,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "addValue": 10
+    }
+  },
+  "ClubMapBoss_Change": {
+    "Id": "ClubMapBoss_Change",
+    "ResetSystem": {
+      "resetTime": [
+        "00:00:00"
+      ],
+      "max": 10,
+      "initial": 10,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 10,
+      "addValue": 10
+    }
+  },
+  "ClubMapBoss_Gift": {
+    "Id": "ClubMapBoss_Gift",
+    "ResetSystem": {
+      "resetTime": [
+        "00:00:00",
+        "6:00:00",
+        "12:00:00",
+        "18:00:00"
+      ],
+      "max": 5,
+      "initial": 20,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "addValue": 5
+    }
+  },
+  "AcitvityFemaleStamina_Reset": {
+    "Id": "AcitvityFemaleStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityAnimalStamina_Reset": {
+    "Id": "AcitvityAnimalStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "ShopReset_RefreshTime": {
+    "Id": "ShopReset_RefreshTime",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "ChessArena_ResetTime": {
+    "Id": "ChessArena_ResetTime",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 5
+    }
+  },
+  "AcitvitySnowflakeStamina_Reset": {
+    "Id": "AcitvitySnowflakeStamina_Reset",
+    "ResetSystem": {
+      "initial": 5,
+      "storage": 5000,
+      "cd": 28800,
+      "resetMode": "CD",
+      "limit": 50,
+      "addValue": 1
+    }
+  },
+  "DrawCard_Pvp_Free": {
+    "Id": "DrawCard_Pvp_Free",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityDeepSeaStamina_Reset_Re": {
+    "Id": "AcitvityDeepSeaStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "ClubBaShenReset": {
+    "Id": "ClubBaShenReset",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityMagicStamina_Reset_Re": {
+    "Id": "AcitvityMagicStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityBakingStamina_Reset_Re": {
+    "Id": "AcitvityBakingStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityCollapsedStamina_Reset": {
+    "Id": "AcitvityCollapsedStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "CheckInRewardRefresh": {
+    "Id": "CheckInRewardRefresh",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "MONTH",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "BlockSp_Exp": {
+    "Id": "BlockSp_Exp",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 20,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 10,
+      "addValue": 10,
+      "unlockId": "BlockSp_Exp"
+    }
+  },
+  "GalleryDateTimes": {
+    "Id": "GalleryDateTimes",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 3
+    }
+  },
+  "BlockExtra_Equipment": {
+    "Id": "BlockExtra_Equipment",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 2,
+      "setValue": 2
+    }
+  },
+  "Club_Value": {
+    "Id": "Club_Value",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "PansLabNormalTimes": {
+    "Id": "PansLabNormalTimes",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 3
+    }
+  },
+  "BattlePass_DailyTask": {
+    "Id": "BattlePass_DailyTask",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ]
+    }
+  },
+  "DrawCard_GoldFree": {
+    "Id": "DrawCard_GoldFree",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "Idle_Fire": {
+    "Id": "Idle_Fire",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 2
+    }
+  },
+  "2": {
+    "Id": "2",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 5
+    }
+  },
+  "BlockSp_Gold": {
+    "Id": "BlockSp_Gold",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 20,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 10,
+      "addValue": 10,
+      "unlockId": "BlockSp_Gold"
+    }
+  },
+  "BlockExtra_Exp": {
+    "Id": "BlockExtra_Exp",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 4,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 2,
+      "addValue": 2,
+      "unlockId": "BlockSp_Exp"
+    }
+  },
+  "AcitvityDramaStamina_Re_Reset": {
+    "Id": "AcitvityDramaStamina_Re_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityStamina_Reset": {
+    "Id": "AcitvityStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "Shop_BuyRefreshTime": {
+    "Id": "Shop_BuyRefreshTime",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityDeepSeaStamina_Reset": {
+    "Id": "AcitvityDeepSeaStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "EliteStage_FreeTimes": {
+    "Id": "EliteStage_FreeTimes",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "initial": 99999,
+      "storage": 99999,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "setValue": 99999
+    }
+  },
+  "MonthCardForever_Reset": {
+    "Id": "MonthCardForever_Reset",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "initial": 0,
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvitySummerStamina_Reset_Re": {
+    "Id": "AcitvitySummerStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "CheckIn_Reset": {
+    "Id": "CheckIn_Reset",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "DrawCard_EquipOff": {
+    "Id": "DrawCard_EquipOff",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 1
+    }
+  },
+  "BattlePass_ClubTask": {
+    "Id": "BattlePass_ClubTask",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ]
+    }
+  },
+  "AcitvityFireworksStamina_Reset_Re": {
+    "Id": "AcitvityFireworksStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityReZeroStamina_Reset_Re": {
+    "Id": "AcitvityReZeroStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityZuoHeStamina_Reset_Re": {
+    "Id": "AcitvityZuoHeStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityMusicFestivalStamina_Reset_Re": {
+    "Id": "AcitvityMusicFestivalStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DrawCard_DiamondOff": {
+    "Id": "DrawCard_DiamondOff",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 1
+    }
+  },
+  "AcitvityKnightStamina_Reset": {
+    "Id": "AcitvityKnightStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "BlockSp_Skill_2": {
+    "Id": "BlockSp_Skill_2",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 10,
+      "setValue": 10
+    }
+  },
+  "BlockSp_Skill_3": {
+    "Id": "BlockSp_Skill_3",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 10,
+      "setValue": 10
+    }
+  },
+  "BlockSp_Skill_1": {
+    "Id": "BlockSp_Skill_1",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 10,
+      "setValue": 10
+    }
+  },
+  "NewArena_Reset": {
+    "Id": "NewArena_Reset",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityZuoHeStamina_Reset": {
+    "Id": "AcitvityZuoHeStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "3": {
+    "Id": "3",
+    "ResetSystem": {
+      "addValue": 1,
+      "resetMode": "CD",
+      "initial": 120,
+      "storage": 5000,
+      "cd": 300
+    }
+  },
+  "BlockExtra_Crystal": {
+    "Id": "BlockExtra_Crystal",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 4,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 2,
+      "addValue": 2,
+      "unlockId": "BlockSp_Crystal"
+    }
+  },
+  "ClubBlock_Reset": {
+    "Id": "ClubBlock_Reset",
+    "ResetSystem": {
+      "resetDate": [
+        5
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 1
+    }
+  },
+  "AcitvityAnimalStamina_Reset_Re": {
+    "Id": "AcitvityAnimalStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "Friend_Gift_MaxGetTimes": {
+    "Id": "Friend_Gift_MaxGetTimes",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 30,
+      "setValue": 30
+    }
+  },
+  "AcitvityBakingStamina_Reset": {
+    "Id": "AcitvityBakingStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityHalloween_2nd_Stamina_Reset": {
+    "Id": "AcitvityHalloween_2nd_Stamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "RTPKDouble_Times": {
+    "Id": "RTPKDouble_Times",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 3
+    }
+  },
+  "BlockExtra_Skill_1": {
+    "Id": "BlockExtra_Skill_1",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 2,
+      "setValue": 2
+    }
+  },
+  "WorldBoss_Reset": {
+    "Id": "WorldBoss_Reset",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 3,
+      "storage": 3,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 3,
+      "addValue": 3
+    }
+  },
+  "Crusade_Energy_Recovery": {
+    "Id": "Crusade_Energy_Recovery",
+    "ResetSystem": {
+      "addValue": 1,
+      "resetMode": "CD",
+      "initial": 500,
+      "storage": 500,
+      "cd": 180
+    }
+  },
+  "AcitvityPurewhite_2nd_Stamina_Reset": {
+    "Id": "AcitvityPurewhite_2nd_Stamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DailyTask_Activity": {
+    "Id": "DailyTask_Activity",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "DailyBoardLimited": {
+    "Id": "DailyBoardLimited",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 1
+    }
+  },
+  "Club_MailTimes": {
+    "Id": "Club_MailTimes",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "Hero_StoryPoint": {
+    "Id": "Hero_StoryPoint",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 15
+    }
+  },
+  "Hero_StoryPointSingle": {
+    "Id": "Hero_StoryPointSingle",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 1
+    }
+  },
+  "MapPointReset": {
+    "Id": "MapPointReset",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 20,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 10,
+      "addValue": 10,
+      "unlockId": "Map_Explore"
+    }
+  },
+  "AcitvityFamilyStamina_Reset_Re": {
+    "Id": "AcitvityFamilyStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "CooperateBoss": {
+    "Id": "CooperateBoss",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 10,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 10,
+      "addValue": 10
+    }
+  },
+  "Tower_1_Reset": {
+    "Id": "Tower_1_Reset",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 3,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 3,
+      "addValue": 1,
+      "unlockId": "Unlock_Tower_1"
+    }
+  },
+  "DailyLoginCount": {
+    "Id": "DailyLoginCount",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityRiddleStamina_Reset": {
+    "Id": "AcitvityRiddleStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "BlockExtra_Skill_2": {
+    "Id": "BlockExtra_Skill_2",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 2,
+      "setValue": 2
+    }
+  },
+  "AcitvitySummerReStamina_Reset": {
+    "Id": "AcitvitySummerReStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityWuXiuHuiStamina_Reset": {
+    "Id": "AcitvityWuXiuHuiStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "SignIn": {
+    "Id": "SignIn",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "00:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "BlockExtra_Skill_3": {
+    "Id": "BlockExtra_Skill_3",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 2,
+      "setValue": 2
+    }
+  },
+  "AcitvityDetectiveStamina_Reset": {
+    "Id": "AcitvityDetectiveStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DrawCard_Pve_Free": {
+    "Id": "DrawCard_Pve_Free",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "Friend_add": {
+    "Id": "Friend_add",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 30,
+      "setValue": 30
+    }
+  },
+  "shop1": {
+    "Id": "shop1",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "00:00:00",
+        "06:00:00",
+        "12:00:00",
+        "18:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "shop3": {
+    "Id": "shop3",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "00:00:00",
+        "06:00:00",
+        "12:00:00",
+        "18:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "shop2": {
+    "Id": "shop2",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "00:00:00",
+        "06:00:00",
+        "12:00:00",
+        "18:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "DrawCard_TimeUp": {
+    "Id": "DrawCard_TimeUp",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "Club_Donation_Times": {
+    "Id": "Club_Donation_Times",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 5
+    }
+  },
+  "AcitvitySummerStamina_Reset": {
+    "Id": "AcitvitySummerStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "PansLabInfReward": {
+    "Id": "PansLabInfReward",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "HeroAfkEvent": {
+    "Id": "HeroAfkEvent",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "ClubBlock_Times": {
+    "Id": "ClubBlock_Times",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 4,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 4,
+      "addValue": 2
+    }
+  },
+  "AcitvityPurewhiteStamina_Reset": {
+    "Id": "AcitvityPurewhiteStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvitySamuraiStamina_Reset_Re": {
+    "Id": "AcitvitySamuraiStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityFire_2nd_Stamina_Reset": {
+    "Id": "AcitvityFire_2nd_Stamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityDuskStamina_Re_Reset": {
+    "Id": "AcitvityDuskStamina_Re_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "Maze_Reset": {
+    "Id": "Maze_Reset",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 30,
+      "storage": 30,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 30,
+      "addValue": 30
+    }
+  },
+  "AcitvityMagicStamina_Reset": {
+    "Id": "AcitvityMagicStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityKnight_2nd_Stamina_Reset": {
+    "Id": "AcitvityKnight_2nd_Stamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityStoryBook_2nd_Stamina_Reset": {
+    "Id": "AcitvityStoryBook_2nd_Stamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityDuskStamina_Reset": {
+    "Id": "AcitvityDuskStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "BlockSp_Equipment": {
+    "Id": "BlockSp_Equipment",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 10,
+      "setValue": 10
+    }
+  },
+  "AcitvityDramaStamina_Reset": {
+    "Id": "AcitvityDramaStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DrawCard_Club_Free": {
+    "Id": "DrawCard_Club_Free",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvitySpringStamina_Reset_Re": {
+    "Id": "AcitvitySpringStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityReZeroStamina_Reset": {
+    "Id": "AcitvityReZeroStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "PansLabInfRankReward": {
+    "Id": "PansLabInfRankReward",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvitySilentNightStamina_Reset": {
+    "Id": "AcitvitySilentNightStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DrawCard_Chongzhi": {
+    "Id": "DrawCard_Chongzhi",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "Friend_Gift_MaxGiveTimes": {
+    "Id": "Friend_Gift_MaxGiveTimes",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 100,
+      "setValue": 100
+    }
+  },
+  "MonthCardReset": {
+    "Id": "MonthCardReset",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "StageArenaStamina_Reset": {
+    "Id": "StageArenaStamina_Reset",
+    "ResetSystem": {
+      "initial": 5,
+      "storage": 20,
+      "cd": 10800,
+      "resetMode": "CD",
+      "limit": 20,
+      "addValue": 1
+    }
+  },
+  "AcitvityMusicFestivalStamina_Reset": {
+    "Id": "AcitvityMusicFestivalStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DrawCard_EquipFree": {
+    "Id": "DrawCard_EquipFree",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityHalloweenStamina_Reset_Re": {
+    "Id": "AcitvityHalloweenStamina_Reset_Re",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityFamilyStamina_Reset": {
+    "Id": "AcitvityFamilyStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "WeeklyReward_Activity": {
+    "Id": "WeeklyReward_Activity",
+    "ResetSystem": {
+      "resetDate": [
+        1
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "MapDailyRewardReset": {
+    "Id": "MapDailyRewardReset",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 2,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 1,
+      "addValue": 1,
+      "unlockId": "Map_Explore"
+    }
+  },
+  "AcitvityHolidayStamina_Reset": {
+    "Id": "AcitvityHolidayStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "EightDaysCheckIn_Reset": {
+    "Id": "EightDaysCheckIn_Reset",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "00:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "Club_HomeChange": {
+    "Id": "Club_HomeChange",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 3
+    }
+  },
+  "1": {
+    "Id": "1",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "5": {
+    "Id": "5",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "21:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "ActivityFemaleStamina_Re_Reset": {
+    "Id": "ActivityFemaleStamina_Re_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "PTPK_Reset": {
+    "Id": "PTPK_Reset",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 9999
+    }
+  },
+  "AcitvityFireWorksStamina_Reset": {
+    "Id": "AcitvityFireWorksStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityFireStamina_Reset": {
+    "Id": "AcitvityFireStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityStoryBookStamina_Reset": {
+    "Id": "AcitvityStoryBookStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvityEasterStamina_Reset": {
+    "Id": "AcitvityEasterStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvitySilentNight_2nd_Stamina_Reset": {
+    "Id": "AcitvitySilentNight_2nd_Stamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "DrawCard_DiamondFree": {
+    "Id": "DrawCard_DiamondFree",
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "setValue": 0
+    }
+  },
+  "AcitvityFireStamina_Reset_2nd": {
+    "Id": "AcitvityFireStamina_Reset_2nd",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "EliteStage_CostTimes": {
+    "Id": "EliteStage_CostTimes",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "initial": 0,
+      "storage": 0,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "setValue": 0
+    }
+  },
+  "BlockSp_Crystal": {
+    "Id": "BlockSp_Crystal",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 20,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 10,
+      "addValue": 10,
+      "unlockId": "BlockSp_Crystal"
+    }
+  },
+  "AcitvityHalloweenStamina_Reset": {
+    "Id": "AcitvityHalloweenStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "BlockExtra_Gold": {
+    "Id": "BlockExtra_Gold",
+    "ResetSystem": {
+      "resetTime": [
+        "05:00:00"
+      ],
+      "max": 4,
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "DAY",
+      "setValue": 2,
+      "addValue": 2,
+      "unlockId": "BlockSp_Gold"
+    }
+  },
+  "AcitvityTerrorStamina_Reset": {
+    "Id": "AcitvityTerrorStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvitySamuraiStamina_Reset": {
+    "Id": "AcitvitySamuraiStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvitySunflowerStamina_Reset": {
+    "Id": "AcitvitySunflowerStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  },
+  "AcitvitySpringStamina_Reset": {
+    "Id": "AcitvitySpringStamina_Reset",
+    "ResetSystem": {
+      "initial": 200,
+      "storage": 5000,
+      "cd": 540,
+      "resetMode": "CD",
+      "limit": 400,
+      "addValue": 1
+    }
+  }
+}

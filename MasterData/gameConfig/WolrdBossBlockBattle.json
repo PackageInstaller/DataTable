@@ -1,0 +1,2042 @@
+{
+  "WBSE02E": {
+    "Id": "WBSE02E",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE01E",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSN11M": {
+    "Id": "WBSN11M",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-10-01 05:00:00",
+          "2025-10-03 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "HSYZhai",
+          "SGHQShou"
+        ],
+        "Party": [
+          "XD",
+          "DWH"
+        ]
+      },
+      {
+        "Party": [
+          "MNJH",
+          "SSZS"
+        ],
+        "HeroId": [
+          "PDLa",
+          "AJTa"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-10-03 05:00:00",
+          "2025-10-08 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN01M": {
+    "Id": "WBSN01M",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-08-20 05:00:00",
+          "2025-08-23 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "ZTXChang",
+          "TPGZhu"
+        ],
+        "Party": [
+          "WNSXJ",
+          "BSNCT"
+        ]
+      },
+      {
+        "Party": [
+          "XD",
+          "DWH"
+        ],
+        "HeroId": [
+          "MZGXiu",
+          "BDFen"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-08-23 05:00:00",
+          "2025-08-28 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN01M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M11": {
+    "Id": "WBSN11M11",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-12-01 05:00:00",
+          "2022-12-04 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SP_KTSJKe",
+          "LLKe"
+        ],
+        "Party": [
+          "UNKNOWN",
+          "BSNCT"
+        ]
+      },
+      {
+        "Party": [
+          "SSZS",
+          "DWH"
+        ],
+        "HeroId": [
+          "XXFSi",
+          "SP_PNCao"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-12-04 05:00:00",
+          "2022-12-08 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M11",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M10": {
+    "Id": "WBSN11M10",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-11-16 05:00:00",
+          "2022-11-19 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "HLDKen",
+          "SDTZi"
+        ],
+        "Party": [
+          "WNSXJ",
+          "SSZS"
+        ]
+      },
+      {
+        "Party": [
+          "BSNCT",
+          "MNJH"
+        ],
+        "HeroId": [
+          "SGHQShou",
+          "SP_ALSi"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-11-19 05:00:00",
+          "2022-11-23 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M9",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M13": {
+    "Id": "WBSN11M13",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-12-16 05:00:00",
+          "2022-12-19 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SP_ALPo",
+          "MTZMEShi"
+        ],
+        "Party": [
+          "XD",
+          "WNSXJ"
+        ]
+      },
+      {
+        "Party": [
+          "MNJH",
+          "DWH"
+        ],
+        "HeroId": [
+          "GLFu_L",
+          "HLa"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-12-19 05:00:00",
+          "2022-12-23 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M12",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M12": {
+    "Id": "WBSN11M12",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-12-16 05:00:00",
+          "2022-12-19 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SP_ALPo",
+          "MTZMEShi"
+        ],
+        "Party": [
+          "XD",
+          "WNSXJ"
+        ]
+      },
+      {
+        "Party": [
+          "MNJH",
+          "DWH"
+        ],
+        "HeroId": [
+          "GLFu_L",
+          "HLa"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-12-19 05:00:00",
+          "2022-12-23 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M12",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSE22E12": {
+    "Id": "WBSE22E12",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E12",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E13": {
+    "Id": "WBSE22E13",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E12",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E10": {
+    "Id": "WBSE22E10",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E9",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E11": {
+    "Id": "WBSE22E11",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E12",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSN11M9": {
+    "Id": "WBSN11M9",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-11-16 05:00:00",
+          "2022-11-19 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "HLDKen",
+          "SDTZi"
+        ],
+        "Party": [
+          "WNSXJ",
+          "SSZS"
+        ]
+      },
+      {
+        "Party": [
+          "BSNCT",
+          "MNJH"
+        ],
+        "HeroId": [
+          "SGHQShou",
+          "SP_ALSi"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-11-19 05:00:00",
+          "2022-11-23 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M9",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M8": {
+    "Id": "WBSN11M8",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-11-01 05:00:00",
+          "2022-11-04 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "YLMGZhu",
+          "MYing"
+        ],
+        "Party": [
+          "WNSXJ",
+          "MNJH"
+        ]
+      },
+      {
+        "Party": [
+          "XD",
+          "SSZS"
+        ],
+        "HeroId": [
+          "BDZSheng",
+          "SP_ALPo"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-11-04 05:00:00",
+          "2022-11-09 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M5": {
+    "Id": "WBSN11M5",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-12-24 05:00:00",
+          "2025-12-27 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "YXZChun",
+          "YSLBin"
+        ],
+        "Party": [
+          "DWH",
+          "MNJH"
+        ]
+      },
+      {
+        "Party": [
+          "WNSXJ",
+          "XD"
+        ],
+        "HeroId": [
+          "BLTu",
+          "LSLTe"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-12-27 05:00:00",
+          "2026-01-01 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M4": {
+    "Id": "WBSN11M4",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-12-03 05:00:00",
+          "2025-12-06 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SLMen",
+          "TLSi"
+        ],
+        "Party": [
+          "SSZS",
+          "MNJH"
+        ]
+      },
+      {
+        "Party": [
+          "WNSXJ",
+          "XD"
+        ],
+        "HeroId": [
+          "MZGXiu",
+          "HGEr"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-12-06 05:00:00",
+          "2025-12-11 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M7": {
+    "Id": "WBSN11M7",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_1",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-10-01 05:00:00",
+          "2022-10-04 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SGBao",
+          "YBYa"
+        ],
+        "Party": [
+          "SSZS",
+          "DWH"
+        ]
+      },
+      {
+        "Party": [
+          "BSNCT",
+          "WNSXJ"
+        ],
+        "HeroId": [
+          "HSYZhai",
+          "SP_PNCao"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2022-10-04 05:00:00",
+          "2022-10-08 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M7",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M6": {
+    "Id": "WBSN11M6",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2026-01-14 05:00:00",
+          "2026-01-17 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SP_ALPo",
+          "XLDBLTe"
+        ],
+        "Party": [
+          "MNJH",
+          "WNSXJ"
+        ]
+      },
+      {
+        "Party": [
+          "SSZS",
+          "BSNCT"
+        ],
+        "HeroId": [
+          "FLYDe",
+          "BHTZi"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2026-01-17 05:00:00",
+          "2026-01-22 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M7",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSE02E2": {
+    "Id": "WBSE02E2",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE02E2",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSN11M3": {
+    "Id": "WBSN11M3",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-11-12 05:00:00",
+          "2025-11-15 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "SGHQShou",
+          "QTQCi"
+        ],
+        "Party": [
+          "XD",
+          "DWH"
+        ]
+      },
+      {
+        "Party": [
+          "SSZS",
+          "BSNCT"
+        ],
+        "HeroId": [
+          "SLMen",
+          "BHTZi"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-11-15 05:00:00",
+          "2025-11-20 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSN11M2": {
+    "Id": "WBSN11M2",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-10-22 05:00:00",
+          "2025-10-25 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "ZTXChang",
+          "MGNa"
+        ],
+        "Party": [
+          "WNSXJ",
+          "MNJH"
+        ]
+      },
+      {
+        "Party": [
+          "XD",
+          "DWH"
+        ],
+        "HeroId": [
+          "TJHDe",
+          "NXYYi"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-10-25 05:00:00",
+          "2025-10-30 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN11M",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSE22E": {
+    "Id": "WBSE22E",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E8": {
+    "Id": "WBSE22E8",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E7",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E9": {
+    "Id": "WBSE22E9",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss2",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E9",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSN01M2": {
+    "Id": "WBSN01M2",
+    "Name": "Activity_WorldBoss_Vanguard_Name",
+    "Desc": "BlockPoint_WB1M_BlockDesc",
+    "SoulForceRotatesBuff": [
+      {
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-09-10 05:00:00",
+          "2025-09-13 05:00:00"
+        ],
+        "FirstDesc": "",
+        "HeroId": [
+          "KMLa",
+          "CZheng"
+        ],
+        "Party": [
+          "SSZS",
+          "DWH"
+        ]
+      },
+      {
+        "Party": [
+          "BSNCT",
+          "MNJH"
+        ],
+        "HeroId": [
+          "XHMao",
+          "KTSJKe"
+        ],
+        "PartyBuffId": "WorldBoss_Buff_2",
+        "HeroBuffId": {
+          "3": "WorldBoss_hero_startBuff_3",
+          "Awaken": "WorldBoss_hero_startBuff_awaken",
+          "5": "WorldBoss_hero_startBuff_5",
+          "4": "WorldBoss_hero_startBuff_4",
+          "6": "WorldBoss_hero_startBuff_6"
+        },
+        "Time": [
+          "2025-09-13 05:00:00",
+          "2025-09-18 05:00:00"
+        ]
+      }
+    ],
+    "PointType": "NORMAL",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBM01P01U01N08",
+    "EnemyCard": "CardWBSN01M2",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_JSJJu",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-01 05:00:00"
+    },
+    "ConfigLevelLimitID": "LevelLimit_WB",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_JSJJu",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_juju"
+      ]
+    }
+  },
+  "WBSE22E2": {
+    "Id": "WBSE22E2",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E3": {
+    "Id": "WBSE22E3",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E4": {
+    "Id": "WBSE22E4",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E5": {
+    "Id": "WBSE22E5",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E6": {
+    "Id": "WBSE22E6",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E7",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  },
+  "WBSE22E7": {
+    "Id": "WBSE22E7",
+    "Name": "Activity_WorldBoss_Boss_Name",
+    "Desc": "BlockPoint_WB1E_BlockDesc",
+    "SoulForceRotatesBuff": null,
+    "PointType": "BOSS",
+    "BlockBattleConfig": "Activity_WorldBoss1",
+    "CardsExcept": null,
+    "EnemyMaster": "WBE01P01U01N08",
+    "EnemyCard": "CardWBSE22E7",
+    "EnemyName": "NORMAL",
+    "HeroAttrExtraLua": null,
+    "BlockBubble": "",
+    "BGM": [
+      "Mus_Battle_Whale_Boss",
+      "",
+      ""
+    ],
+    "BossHeadPic": "",
+    "BlockPrompt": "",
+    "PointHead": "Model_Enemy_NShou",
+    "Background": "Collapsed_Scene05",
+    "StoryLink": null,
+    "ReslutBoard": null,
+    "PointBoard": null,
+    "LoadingBorad": null,
+    "SpecialRuleShow": [],
+    "SpecialSkillShow": [],
+    "BossRound": 1,
+    "PointTime": {
+      "start": "2022-05-08 05:00:00"
+    },
+    "ConfigLevelLimitID": "",
+    "Master": "",
+    "ItemCard": null,
+    "BlockInformation": {
+      "BossDetail": {
+        "BossModel": "Model_Enemy_NShou",
+        "show": "1"
+      },
+      "SpecialRule": [
+        "SpecialRule_worldboss_nianshou"
+      ]
+    }
+  }
+}

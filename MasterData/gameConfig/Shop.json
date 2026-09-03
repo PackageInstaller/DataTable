@@ -1,0 +1,2188 @@
+{
+  "Shop_StageArena": {
+    "Id": "Shop_StageArena",
+    "Name": "Shop_StageArenaName",
+    "ENName": "Shop_StageArenaEN",
+    "UnlockSystem": "Shop_StageArenaShop_Unlock",
+    "Positions": [
+      {
+        "ShopId": "Shop_StageArena_10",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_9",
+        "Condition": {
+          "TIME": [
+            1635724800,
+            1638316799
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_6",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_7",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_StageArena_8",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_NewArenaCoin",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_NewArenaCoin",
+    "Shop_Id": 10008,
+    "ShopType": "Normal"
+  },
+  "Shop_Association": {
+    "Id": "Shop_Association",
+    "Name": "Shop_AssociationName",
+    "ENName": "Shop_AssociationEN",
+    "UnlockSystem": "Shop_Association_Unlock",
+    "Positions": [
+      {
+        "ShopId": "Shop_Association_UR220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_UR220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_UR220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_UR221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_STONE220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_STONE220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_STONE220910",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_STONE221112",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFA220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFA220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFA220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFA221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFB220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFB220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFB220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_IHFB221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_16",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_17",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_18_20250401",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_19",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_8",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_9",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_10",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_11",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_12",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_13",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_14",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Association_15",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Club",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_Club",
+    "Shop_Id": 10012,
+    "ShopType": "Normal"
+  },
+  "Shop_GoldPartner": {
+    "Id": "Shop_GoldPartner",
+    "Name": "Shop_GoldPartner_Name",
+    "ENName": "Shop_GoldPartner_ENName",
+    "UnlockSystem": "Shop_GoldPartner_Unlock",
+    "Positions": [
+      {
+        "Sort": 1,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_1",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 2,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_2",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 3,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_3",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 4,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_4",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 5,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_5",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 6,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_6",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 7,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_7",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 8,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_8",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 9,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_9",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 10,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_10",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 11,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_11",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 12,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_12",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 13,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_13",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 14,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_14",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 15,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_15",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 16,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_16",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 17,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_17",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 18,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_18",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 19,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_19",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 20,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_20",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 21,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_21",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 22,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_22",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 23,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_23",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 24,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_24",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 25,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_25",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 26,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_26",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 27,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_27",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 28,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_28",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 29,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_29",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 30,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_30",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 31,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_31",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      },
+      {
+        "Sort": 32,
+        "Scale": {
+          "XOffst": 50,
+          "Zoom": 0.7,
+          "YOffset": -150
+        },
+        "ShopId": "Shop_GoldPartner_32",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "CIRCLE",
+      "circleStartTime": "2025-04-11 05:00:00",
+      "circleTime": 14,
+      "circleNum": 2
+    },
+    "DefaultCostType": "IHF_HeroStone_SSR",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IHF_HeroStone_SSR",
+    "Shop_Id": 10013,
+    "ShopType": "GoldPartner"
+  },
+  "Shop_PVE": {
+    "Id": "Shop_PVE",
+    "Name": "Shop_PVEName",
+    "ENName": "Shop_PVEEN",
+    "UnlockSystem": "Shop_PVE_Unlock",
+    "Positions": [
+      {
+        "ShopId": "Shop_PVE_UR220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_UR220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_UR220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_UR221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_STONE220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_STONE220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_STONE220910",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_STONE221112",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFA220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFA220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFA220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFA221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFB220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFB220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFB220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_IHFB221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_17",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_18",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_19_20250401",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_20_20250401",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_8",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_9",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_10",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_11",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_12",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_13",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_14",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_15",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVE_16",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Pve",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_Pve",
+    "Shop_Id": 10011,
+    "ShopType": "Normal"
+  },
+  "Shop_Crystal": {
+    "Id": "Shop_Crystal",
+    "Name": "Shop_Crystal_Name",
+    "ENName": "UITitle_EN_Shuijing",
+    "UnlockSystem": "Unlock_Shop_Crystal",
+    "Positions": [
+      {
+        "ShopId": "Shop_Crystal_1",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_2",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_3",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_4",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_5",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_6",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_7",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_8",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_9",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_10",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_11",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_12",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_13",
+        "Condition": {
+          "LEVEL": 60
+        }
+      },
+      {
+        "ShopId": "Shop_Crystal_14",
+        "Condition": {
+          "LEVEL": 60
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00"
+      ],
+      "storage": 1,
+      "setValue": 1
+    },
+    "DefaultCostType": "IR_Crystal",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "IR_Crystal",
+    "RefreshPrice": [
+      20,
+      30,
+      50,
+      50,
+      80,
+      80,
+      100
+    ],
+    "RsShow": "IR_Crystal",
+    "Shop_Id": 10007,
+    "ShopType": "Normal"
+  },
+  "Shop_Diamond": {
+    "Id": "Shop_Diamond",
+    "Name": "Shop_Diamond_Name",
+    "ENName": "UITitle_EN_Zhuanshi",
+    "UnlockSystem": "Unlock_Shop_Diamond",
+    "Positions": [
+      {
+        "ShopId": "Shop_Diamond_1",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Diamond_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Diamond",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "IR_Diamond",
+    "RefreshPrice": [
+      20,
+      30,
+      50,
+      50,
+      80,
+      80,
+      100
+    ],
+    "RsShow": "IR_Diamond",
+    "Shop_Id": 10006,
+    "ShopType": "Normal"
+  },
+  "Shop_URMap": {
+    "Id": "Shop_URMap",
+    "Name": "Shop_URMap",
+    "ENName": "",
+    "UnlockSystem": "Shop_URMap_Unlock",
+    "Positions": [
+      {
+        "ShopId": "Shop_URmap_1",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_2",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_3",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_4",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_5",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_6",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_7",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_8",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_9",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_10",
+        "Condition": {
+          "CIRCLE": 1,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_11",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_12",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_13",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_14",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_15",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_16",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_17",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_18",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_19",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_20",
+        "Condition": {
+          "CIRCLE": 2,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_21",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_22",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_23",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_24",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_25",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_26",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_27",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_28",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_29",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      },
+      {
+        "ShopId": "Shop_URmap_30",
+        "Condition": {
+          "CIRCLE": 3,
+          "LEVEL": 50
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "CIRCLE",
+      "circleStartTime": "2025-06-17 05:00:00",
+      "circleTime": 10,
+      "circleNum": 3
+    },
+    "DefaultCostType": "IR_URMapCoin",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_URMapCoin",
+    "Shop_Id": 10009,
+    "ShopType": "Normal"
+  },
+  "Shop1": {
+    "Id": "Shop1",
+    "Name": "Shop1_Name",
+    "ENName": "UITitle_EN_Zahuo",
+    "UnlockSystem": "Shop_Groceries",
+    "Positions": [
+      {
+        "ShopId": "Shop1_1",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop1_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop1_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop1_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop1_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop1_6",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop1_7",
+        "Condition": {
+          "LEVEL": 40
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetDate": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "resetMode": "WEEK",
+      "resetTime": [
+        "05:00:00",
+        "12:00:00",
+        "20:00:00"
+      ],
+      "storage": 1,
+      "setValue": 1
+    },
+    "DefaultCostType": "IR_Gold",
+    "RefreshMaxTimes": 3,
+    "RefreshCurrency": "IR_Diamond",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_Gold",
+    "Shop_Id": 10001,
+    "ShopType": "Normal"
+  },
+  "Shop3": {
+    "Id": "Shop3",
+    "Name": "Shop3_Name",
+    "ENName": "UITitle_EN_Jingji",
+    "UnlockSystem": "Shop_Arena",
+    "Positions": [
+      {
+        "ShopId": "Shop3_1",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_6",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_7",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop3_8",
+        "Condition": {
+          "LEVEL": 25
+        }
+      },
+      {
+        "ShopId": "Shop3_9",
+        "Condition": {
+          "ELITESTAGE": "E06S08"
+        }
+      },
+      {
+        "ShopId": "Shop3_10",
+        "Condition": {
+          "ELITESTAGE": "E08S12"
+        }
+      },
+      {
+        "ShopId": "Shop3_11",
+        "Condition": {
+          "ELITESTAGE": "E11S16"
+        }
+      },
+      {
+        "ShopId": "Shop3_12",
+        "Condition": {
+          "ELITESTAGE": "E13S16"
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Arena",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "IR_Diamond",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_Arena",
+    "Shop_Id": 10002,
+    "ShopType": "Normal"
+  },
+  "Shop_PVP": {
+    "Id": "Shop_PVP",
+    "Name": "Shop_PVPName",
+    "ENName": "Shop_PVPEN",
+    "UnlockSystem": "Shop_PVP_Unlock",
+    "Positions": [
+      {
+        "ShopId": "Shop_PVP_UR220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_UR220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_UR220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_UR221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_STONE220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_STONE220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_STONE220910",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_STONE221112",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFA220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFA220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFA220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFA221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFB220506",
+        "Condition": {
+          "TIME": [
+            "2025-06-01 05:00:00",
+            "2025-08-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFB220708",
+        "Condition": {
+          "TIME": [
+            "2025-08-01 05:00:00",
+            "2025-10-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFB220910_1",
+        "Condition": {
+          "TIME": [
+            "2025-10-01 05:00:00",
+            "2025-12-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_IHFB221112_1",
+        "Condition": {
+          "TIME": [
+            "2025-12-01 05:00:00",
+            "2026-02-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_17",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_18",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_21",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_19_20250401",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_20",
+        "Condition": {
+          "TIME": [
+            "2025-05-01 05:00:00",
+            "2025-06-01 05:00:00"
+          ],
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_8",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_9",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_10",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_11",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_12",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_13",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_14",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_15",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_PVP_16",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Arena",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_Arena",
+    "Shop_Id": 10010,
+    "ShopType": "Normal"
+  },
+  "Shop5": {
+    "Id": "Shop5",
+    "Name": "Shop5_Name",
+    "ENName": "UITitle_EN_Jieshe",
+    "UnlockSystem": "Shop_Club",
+    "Positions": [
+      {
+        "ShopId": "Shop5_1",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_6",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_7",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop5_8",
+        "Condition": {
+          "LEVEL": 25
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Club",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "IR_Diamond",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_Club",
+    "Shop_Id": 10003,
+    "ShopType": "Normal"
+  },
+  "Shop7": {
+    "Id": "Shop7",
+    "Name": "Shop7_Name",
+    "ENName": "UITitle_EN_Shengshi",
+    "UnlockSystem": "Shop_KOF",
+    "Positions": [
+      {
+        "ShopId": "Shop7_1",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_6",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_7",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_8",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop7_9",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_KON",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "IR_Diamond",
+    "RefreshPrice": [
+      100,
+      200,
+      300
+    ],
+    "RsShow": "IR_KON",
+    "Shop_Id": 10005,
+    "ShopType": "Normal"
+  },
+  "Shop6": {
+    "Id": "Shop6",
+    "Name": "Shop6_Name",
+    "ENName": "UITitle_EN_Zhuangbei",
+    "UnlockSystem": "Shop_Equip",
+    "Positions": [
+      {
+        "ShopId": "Shop_Equip_1",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_2",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_3",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_4",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_5",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_6",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_7",
+        "Condition": {
+          "LEVEL": 1
+        }
+      },
+      {
+        "ShopId": "Shop_Equip_8",
+        "Condition": {
+          "LEVEL": 1
+        }
+      }
+    ],
+    "ResetSystem": {
+      "resetMode": "NONE"
+    },
+    "DefaultCostType": "IR_Equip13",
+    "RefreshMaxTimes": 0,
+    "RefreshCurrency": "IR_Diamond",
+    "RefreshPrice": [
+      200
+    ],
+    "RsShow": "IR_Equip13",
+    "Shop_Id": 10004,
+    "ShopType": "Normal"
+  }
+}

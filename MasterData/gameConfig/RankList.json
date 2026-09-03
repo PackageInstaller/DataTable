@@ -1,0 +1,937 @@
+{
+  "MapPoint_9": {
+    "Id": "MapPoint_9",
+    "NextId": "",
+    "ShowRank": 9,
+    "Type": 14,
+    "Condition": 300,
+    "Reward": "MapPoint_9_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_9_Reward"
+      },
+      {
+        "50": "MapPoint_9_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_8": {
+    "Id": "MapPoint_8",
+    "NextId": "MapPoint_9",
+    "ShowRank": 8,
+    "Type": 14,
+    "Condition": 270,
+    "Reward": "MapPoint_8_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_8_Reward"
+      },
+      {
+        "50": "MapPoint_8_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_7": {
+    "Id": "MapPoint_7",
+    "NextId": "MapPoint_8",
+    "ShowRank": 7,
+    "Type": 14,
+    "Condition": 240,
+    "Reward": "MapPoint_7_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_7_Reward"
+      },
+      {
+        "50": "MapPoint_7_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_6": {
+    "Id": "MapPoint_6",
+    "NextId": "MapPoint_7",
+    "ShowRank": 6,
+    "Type": 14,
+    "Condition": 200,
+    "Reward": "MapPoint_6_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_6_Reward"
+      },
+      {
+        "50": "MapPoint_6_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_5": {
+    "Id": "MapPoint_5",
+    "NextId": "MapPoint_6",
+    "ShowRank": 5,
+    "Type": 14,
+    "Condition": 170,
+    "Reward": "MapPoint_5_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_5_Reward"
+      },
+      {
+        "50": "MapPoint_5_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_4": {
+    "Id": "MapPoint_4",
+    "NextId": "MapPoint_5",
+    "ShowRank": 4,
+    "Type": 14,
+    "Condition": 140,
+    "Reward": "MapPoint_4_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_4_Reward"
+      },
+      {
+        "50": "MapPoint_4_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_3": {
+    "Id": "MapPoint_3",
+    "NextId": "MapPoint_4",
+    "ShowRank": 3,
+    "Type": 14,
+    "Condition": 100,
+    "Reward": "MapPoint_3_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_3_Reward"
+      },
+      {
+        "50": "MapPoint_3_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_2": {
+    "Id": "MapPoint_2",
+    "NextId": "MapPoint_3",
+    "ShowRank": 2,
+    "Type": 14,
+    "Condition": 70,
+    "Reward": "MapPoint_2_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_2_Reward"
+      },
+      {
+        "50": "MapPoint_2_50_Reward"
+      }
+    ]
+  },
+  "MapPoint_1": {
+    "Id": "MapPoint_1",
+    "NextId": "MapPoint_2",
+    "ShowRank": 1,
+    "Type": 14,
+    "Condition": 40,
+    "Reward": "MapPoint_1_Reward",
+    "ConditionDes": "MapPoint_Desc",
+    "StageRank": [
+      {
+        "1": "MapPoint_1_Reward"
+      },
+      {
+        "50": "MapPoint_1_50_Reward"
+      }
+    ]
+  },
+  "Combat_5": {
+    "Id": "Combat_5",
+    "NextId": "Combat_6",
+    "ShowRank": 5,
+    "Type": 1,
+    "Condition": 95000,
+    "Reward": "Combat_5_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_5_Reward"
+      },
+      {
+        "50": "Combat_5_50_Reward"
+      }
+    ]
+  },
+  "Combat_4": {
+    "Id": "Combat_4",
+    "NextId": "Combat_5",
+    "ShowRank": 4,
+    "Type": 1,
+    "Condition": 61000,
+    "Reward": "Combat_4_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_4_Reward"
+      },
+      {
+        "50": "Combat_4_50_Reward"
+      }
+    ]
+  },
+  "Combat_7": {
+    "Id": "Combat_7",
+    "NextId": "Combat_8",
+    "ShowRank": 7,
+    "Type": 1,
+    "Condition": 200000,
+    "Reward": "Combat_7_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_7_Reward"
+      },
+      {
+        "50": "Combat_7_50_Reward"
+      }
+    ]
+  },
+  "Combat_6": {
+    "Id": "Combat_6",
+    "NextId": "Combat_7",
+    "ShowRank": 6,
+    "Type": 1,
+    "Condition": 140000,
+    "Reward": "Combat_6_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_6_Reward"
+      },
+      {
+        "50": "Combat_6_50_Reward"
+      }
+    ]
+  },
+  "Combat_1": {
+    "Id": "Combat_1",
+    "NextId": "Combat_2",
+    "ShowRank": 1,
+    "Type": 1,
+    "Condition": 20000,
+    "Reward": "Combat_1_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_1_Reward"
+      },
+      {
+        "50": "Combat_1_50_Reward"
+      }
+    ]
+  },
+  "Combat_3": {
+    "Id": "Combat_3",
+    "NextId": "Combat_4",
+    "ShowRank": 3,
+    "Type": 1,
+    "Condition": 38000,
+    "Reward": "Combat_3_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_3_Reward"
+      },
+      {
+        "50": "Combat_3_50_Reward"
+      }
+    ]
+  },
+  "Combat_2": {
+    "Id": "Combat_2",
+    "NextId": "Combat_3",
+    "ShowRank": 2,
+    "Type": 1,
+    "Condition": 28000,
+    "Reward": "Combat_2_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_2_Reward"
+      },
+      {
+        "50": "Combat_2_50_Reward"
+      }
+    ]
+  },
+  "Combat_9": {
+    "Id": "Combat_9",
+    "NextId": "Combat_10",
+    "ShowRank": 9,
+    "Type": 1,
+    "Condition": 300000,
+    "Reward": "Combat_9_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_9_Reward"
+      },
+      {
+        "50": "Combat_9_50_Reward"
+      }
+    ]
+  },
+  "Combat_8": {
+    "Id": "Combat_8",
+    "NextId": "Combat_9",
+    "ShowRank": 8,
+    "Type": 1,
+    "Condition": 240000,
+    "Reward": "Combat_8_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_8_Reward"
+      },
+      {
+        "50": "Combat_8_50_Reward"
+      }
+    ]
+  },
+  "Combat_11": {
+    "Id": "Combat_11",
+    "NextId": "Combat_12",
+    "ShowRank": 11,
+    "Type": 1,
+    "Condition": 420000,
+    "Reward": "Combat_11_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_11_Reward"
+      },
+      {
+        "50": "Combat_11_50_Reward"
+      }
+    ]
+  },
+  "Combat_10": {
+    "Id": "Combat_10",
+    "NextId": "Combat_11",
+    "ShowRank": 10,
+    "Type": 1,
+    "Condition": 360000,
+    "Reward": "Combat_10_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_10_Reward"
+      },
+      {
+        "50": "Combat_10_50_Reward"
+      }
+    ]
+  },
+  "Combat_13": {
+    "Id": "Combat_13",
+    "NextId": "",
+    "ShowRank": 13,
+    "Type": 1,
+    "Condition": 600000,
+    "Reward": "Combat_13_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_13_Reward"
+      },
+      {
+        "50": "Combat_13_50_Reward"
+      }
+    ]
+  },
+  "Combat_12": {
+    "Id": "Combat_12",
+    "NextId": "Combat_13",
+    "ShowRank": 12,
+    "Type": 1,
+    "Condition": 500000,
+    "Reward": "Combat_12_Reward",
+    "ConditionDes": "Combat_Desc",
+    "StageRank": [
+      {
+        "1": "Combat_12_Reward"
+      },
+      {
+        "50": "Combat_12_50_Reward"
+      }
+    ]
+  },
+  "Price_1": {
+    "Id": "Price_1",
+    "NextId": "Price_2",
+    "ShowRank": 1,
+    "Type": 51,
+    "Condition": 20000,
+    "Reward": "Price_1_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_1_Reward"
+      },
+      {
+        "50": "Price_1_50_Reward"
+      }
+    ]
+  },
+  "Price_3": {
+    "Id": "Price_3",
+    "NextId": "Price_4",
+    "ShowRank": 3,
+    "Type": 51,
+    "Condition": 38000,
+    "Reward": "Price_3_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_3_Reward"
+      },
+      {
+        "50": "Price_3_50_Reward"
+      }
+    ]
+  },
+  "Price_2": {
+    "Id": "Price_2",
+    "NextId": "Price_3",
+    "ShowRank": 2,
+    "Type": 51,
+    "Condition": 28000,
+    "Reward": "Price_2_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_2_Reward"
+      },
+      {
+        "50": "Price_2_50_Reward"
+      }
+    ]
+  },
+  "Price_5": {
+    "Id": "Price_5",
+    "NextId": "Price_6",
+    "ShowRank": 5,
+    "Type": 51,
+    "Condition": 95000,
+    "Reward": "Price_5_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_5_Reward"
+      },
+      {
+        "50": "Price_5_50_Reward"
+      }
+    ]
+  },
+  "Price_4": {
+    "Id": "Price_4",
+    "NextId": "Price_5",
+    "ShowRank": 4,
+    "Type": 51,
+    "Condition": 61000,
+    "Reward": "Price_4_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_4_Reward"
+      },
+      {
+        "50": "Price_4_50_Reward"
+      }
+    ]
+  },
+  "Price_7": {
+    "Id": "Price_7",
+    "NextId": "Price_8",
+    "ShowRank": 7,
+    "Type": 51,
+    "Condition": 200000,
+    "Reward": "Price_7_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_7_Reward"
+      },
+      {
+        "50": "Price_7_50_Reward"
+      }
+    ]
+  },
+  "Price_6": {
+    "Id": "Price_6",
+    "NextId": "Price_7",
+    "ShowRank": 6,
+    "Type": 51,
+    "Condition": 140000,
+    "Reward": "Price_6_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_6_Reward"
+      },
+      {
+        "50": "Price_6_50_Reward"
+      }
+    ]
+  },
+  "Price_9": {
+    "Id": "Price_9",
+    "NextId": "Price_10",
+    "ShowRank": 9,
+    "Type": 51,
+    "Condition": 300000,
+    "Reward": "Price_9_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_9_Reward"
+      },
+      {
+        "50": "Price_9_50_Reward"
+      }
+    ]
+  },
+  "Price_8": {
+    "Id": "Price_8",
+    "NextId": "Price_9",
+    "ShowRank": 8,
+    "Type": 51,
+    "Condition": 240000,
+    "Reward": "Price_8_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_8_Reward"
+      },
+      {
+        "50": "Price_8_50_Reward"
+      }
+    ]
+  },
+  "Price_11": {
+    "Id": "Price_11",
+    "NextId": "Price_12",
+    "ShowRank": 11,
+    "Type": 51,
+    "Condition": 420000,
+    "Reward": "Price_11_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_11_Reward"
+      },
+      {
+        "50": "Price_11_50_Reward"
+      }
+    ]
+  },
+  "Price_10": {
+    "Id": "Price_10",
+    "NextId": "Price_11",
+    "ShowRank": 10,
+    "Type": 51,
+    "Condition": 360000,
+    "Reward": "Price_10_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_10_Reward"
+      },
+      {
+        "50": "Price_10_50_Reward"
+      }
+    ]
+  },
+  "Price_13": {
+    "Id": "Price_13",
+    "NextId": "",
+    "ShowRank": 13,
+    "Type": 51,
+    "Condition": 600000,
+    "Reward": "Price_13_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_13_Reward"
+      },
+      {
+        "50": "Price_13_50_Reward"
+      }
+    ]
+  },
+  "Price_12": {
+    "Id": "Price_12",
+    "NextId": "Price_13",
+    "ShowRank": 12,
+    "Type": 51,
+    "Condition": 500000,
+    "Reward": "Price_12_Reward",
+    "ConditionDes": "Price_Desc",
+    "StageRank": [
+      {
+        "1": "Price_12_Reward"
+      },
+      {
+        "50": "Price_12_50_Reward"
+      }
+    ]
+  },
+  "PointStar_1": {
+    "Id": "PointStar_1",
+    "NextId": "PointStar_2",
+    "ShowRank": 1,
+    "Type": 2,
+    "Condition": 300,
+    "Reward": "PointStar_1_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_1_Reward"
+      },
+      {
+        "50": "PointStar_1_50_Reward"
+      }
+    ]
+  },
+  "PointStar_2": {
+    "Id": "PointStar_2",
+    "NextId": "PointStar_3",
+    "ShowRank": 2,
+    "Type": 2,
+    "Condition": 500,
+    "Reward": "PointStar_2_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_2_Reward"
+      },
+      {
+        "50": "PointStar_2_50_Reward"
+      }
+    ]
+  },
+  "PointStar_3": {
+    "Id": "PointStar_3",
+    "NextId": "PointStar_4",
+    "ShowRank": 3,
+    "Type": 2,
+    "Condition": 800,
+    "Reward": "PointStar_3_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_3_Reward"
+      },
+      {
+        "50": "PointStar_3_50_Reward"
+      }
+    ]
+  },
+  "PointStar_4": {
+    "Id": "PointStar_4",
+    "NextId": "PointStar_5",
+    "ShowRank": 4,
+    "Type": 2,
+    "Condition": 1200,
+    "Reward": "PointStar_4_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_4_Reward"
+      },
+      {
+        "50": "PointStar_4_50_Reward"
+      }
+    ]
+  },
+  "PointStar_5": {
+    "Id": "PointStar_5",
+    "NextId": "PointStar_6",
+    "ShowRank": 5,
+    "Type": 2,
+    "Condition": 1500,
+    "Reward": "PointStar_5_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_5_Reward"
+      },
+      {
+        "50": "PointStar_5_50_Reward"
+      }
+    ]
+  },
+  "PointStar_6": {
+    "Id": "PointStar_6",
+    "NextId": "PointStar_7",
+    "ShowRank": 6,
+    "Type": 2,
+    "Condition": 1900,
+    "Reward": "PointStar_6_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_6_Reward"
+      },
+      {
+        "50": "PointStar_6_50_Reward"
+      }
+    ]
+  },
+  "PointStar_7": {
+    "Id": "PointStar_7",
+    "NextId": "PointStar_8",
+    "ShowRank": 7,
+    "Type": 2,
+    "Condition": 2400,
+    "Reward": "PointStar_7_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_7_Reward"
+      },
+      {
+        "50": "PointStar_7_50_Reward"
+      }
+    ]
+  },
+  "PointStar_8": {
+    "Id": "PointStar_8",
+    "NextId": "PointStar_9",
+    "ShowRank": 8,
+    "Type": 2,
+    "Condition": 2800,
+    "Reward": "PointStar_8_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_8_Reward"
+      },
+      {
+        "50": "PointStar_8_50_Reward"
+      }
+    ]
+  },
+  "PointStar_9": {
+    "Id": "PointStar_9",
+    "NextId": "PointStar_10",
+    "ShowRank": 9,
+    "Type": 2,
+    "Condition": 3300,
+    "Reward": "PointStar_9_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_9_Reward"
+      },
+      {
+        "50": "PointStar_9_50_Reward"
+      }
+    ]
+  },
+  "PointStar_10": {
+    "Id": "PointStar_10",
+    "NextId": "",
+    "ShowRank": 10,
+    "Type": 2,
+    "Condition": 4300,
+    "Reward": "PointStar_10_Reward",
+    "ConditionDes": "PointStar_Desc",
+    "StageRank": [
+      {
+        "1": "PointStar_10_Reward"
+      },
+      {
+        "50": "PointStar_10_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_5": {
+    "Id": "ClubCombat_5",
+    "NextId": "ClubCombat_6",
+    "ShowRank": 5,
+    "Type": 9,
+    "Condition": 1300000,
+    "Reward": "ClubCombat_5_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_5_Reward"
+      },
+      {
+        "10": "ClubCombat_5_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_4": {
+    "Id": "ClubCombat_4",
+    "NextId": "ClubCombat_5",
+    "ShowRank": 4,
+    "Type": 9,
+    "Condition": 800000,
+    "Reward": "ClubCombat_4_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_4_Reward"
+      },
+      {
+        "10": "ClubCombat_4_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_7": {
+    "Id": "ClubCombat_7",
+    "NextId": "ClubCombat_8",
+    "ShowRank": 7,
+    "Type": 9,
+    "Condition": 3000000,
+    "Reward": "ClubCombat_7_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_7_Reward"
+      },
+      {
+        "10": "ClubCombat_7_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_6": {
+    "Id": "ClubCombat_6",
+    "NextId": "ClubCombat_7",
+    "ShowRank": 6,
+    "Type": 9,
+    "Condition": 2100000,
+    "Reward": "ClubCombat_6_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_6_Reward"
+      },
+      {
+        "10": "ClubCombat_6_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_1": {
+    "Id": "ClubCombat_1",
+    "NextId": "ClubCombat_2",
+    "ShowRank": 1,
+    "Type": 9,
+    "Condition": 200000,
+    "Reward": "ClubCombat_1_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_1_Reward"
+      },
+      {
+        "10": "ClubCombat_1_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_10": {
+    "Id": "ClubCombat_10",
+    "NextId": "",
+    "ShowRank": 10,
+    "Type": 9,
+    "Condition": 5500000,
+    "Reward": "ClubCombat_10_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_10_Reward"
+      },
+      {
+        "10": "ClubCombat_10_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_3": {
+    "Id": "ClubCombat_3",
+    "NextId": "ClubCombat_4",
+    "ShowRank": 3,
+    "Type": 9,
+    "Condition": 450000,
+    "Reward": "ClubCombat_3_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_3_Reward"
+      },
+      {
+        "10": "ClubCombat_3_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_2": {
+    "Id": "ClubCombat_2",
+    "NextId": "ClubCombat_3",
+    "ShowRank": 2,
+    "Type": 9,
+    "Condition": 300000,
+    "Reward": "ClubCombat_2_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_2_Reward"
+      },
+      {
+        "10": "ClubCombat_2_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_9": {
+    "Id": "ClubCombat_9",
+    "NextId": "ClubCombat_10",
+    "ShowRank": 9,
+    "Type": 9,
+    "Condition": 4800000,
+    "Reward": "ClubCombat_9_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_9_Reward"
+      },
+      {
+        "10": "ClubCombat_9_50_Reward"
+      }
+    ]
+  },
+  "ClubCombat_8": {
+    "Id": "ClubCombat_8",
+    "NextId": "ClubCombat_9",
+    "ShowRank": 8,
+    "Type": 9,
+    "Condition": 3700000,
+    "Reward": "ClubCombat_8_Reward",
+    "ConditionDes": "ClubCombat_Desc",
+    "StageRank": [
+      {
+        "1": "ClubCombat_8_Reward"
+      },
+      {
+        "10": "ClubCombat_8_50_Reward"
+      }
+    ]
+  }
+}

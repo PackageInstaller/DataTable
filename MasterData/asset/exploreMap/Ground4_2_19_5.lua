@@ -1,0 +1,10 @@
+return function ()
+return {
+[0] = {
+{43,43,43,43,},
+{43,43,43,43,},
+ nil,
+ nil,
+},
+}
+end

@@ -1,0 +1,685 @@
+{
+  "P04S01": {
+    "Id": "P04S01",
+    "BlockMapID": "M04",
+    "PrePoint": "M04S02",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P04S01_FirstReward",
+    "PointReward": "P04S01_Reward",
+    "ShowItem": "P04S01_ShowReward",
+    "Name": "StagePtc_Name_P04S01",
+    "Desc": "P04P01_Desc",
+    "StageDesc": "StagePtc_Desc_P04P01",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M04S01",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr04S01A01",
+      "Pr04S01A02",
+      "Pr04S01A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr04MasterU01A"
+    ],
+    "SelfCard": "Pr04CardS01A",
+    "EnemyHero": "Pr04CardS01B",
+    "EnemyMaster": "Pr04MasterU01B",
+    "SpecialSkillShow": [],
+    "PointHead": "CLMan",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P07S01": {
+    "Id": "P07S01",
+    "BlockMapID": "M07",
+    "PrePoint": "M07S03",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P07S01_FirstReward",
+    "PointReward": "P07S01_Reward",
+    "ShowItem": "P07S01_ShowReward",
+    "Name": "StagePtc_Name_P07S01",
+    "Desc": "P07P01_Desc",
+    "StageDesc": "StagePtc_Desc_P07P01",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 5,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M07S01",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr07S01A01",
+      "Pr07S01A02",
+      "Pr07S01A03",
+      "Pr07S01A04",
+      "Pr07S01A05"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr07MasterU01A"
+    ],
+    "SelfCard": "Pr07CardS01A",
+    "EnemyHero": "Pr07CardS01B",
+    "EnemyMaster": "Pr07MasterU01B",
+    "SpecialSkillShow": [],
+    "PointHead": "TPGZhu",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P07S02": {
+    "Id": "P07S02",
+    "BlockMapID": "M07",
+    "PrePoint": "M07S06",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P07S02_FirstReward",
+    "PointReward": "P07S02_Reward",
+    "ShowItem": "P07S02_ShowReward",
+    "Name": "StagePtc_Name_P07S02",
+    "Desc": "P07P02_Desc",
+    "StageDesc": "StagePtc_Desc_P07P02",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M07S02",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr07S02A01",
+      "Pr07S02A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr07MasterU02A"
+    ],
+    "SelfCard": "Pr07CardS02A",
+    "EnemyHero": "Pr07CardS02B",
+    "EnemyMaster": "Pr07MasterU02B",
+    "SpecialSkillShow": [],
+    "PointHead": "BBLMa",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P04S02": {
+    "Id": "P04S02",
+    "BlockMapID": "M04",
+    "PrePoint": "M04S05",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P04S02_FirstReward",
+    "PointReward": "P04S02_Reward",
+    "ShowItem": "P04S02_ShowReward",
+    "Name": "StagePtc_Name_P04S02",
+    "Desc": "P04P02_Desc",
+    "StageDesc": "StagePtc_Desc_P04P02",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 4,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M04S02",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr04S02A01",
+      "Pr04S02A02",
+      "Pr04S02A03",
+      "Pr04S02A04"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr04MasterU02A"
+    ],
+    "SelfCard": "Pr04CardS02A",
+    "EnemyHero": "Pr04CardS02B",
+    "EnemyMaster": "Pr04MasterU02B",
+    "SpecialSkillShow": [],
+    "PointHead": "XLai",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P05S02": {
+    "Id": "P05S02",
+    "BlockMapID": "M05",
+    "PrePoint": "M05S05",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P05S02_FirstReward",
+    "PointReward": "P05S02_Reward",
+    "ShowItem": "P05S02_ShowReward",
+    "Name": "StagePtc_Name_P05S02",
+    "Desc": "P05P02_Desc",
+    "StageDesc": "StagePtc_Desc_P05P02",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M05S02",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr05S02A01",
+      "Pr05S02A02"
+    ],
+    "SelfAlterHero": [
+      "Pr05S02A03"
+    ],
+    "SelfMaster": [
+      "Pr05MasterU02A"
+    ],
+    "SelfCard": "Pr05CardS02A",
+    "EnemyHero": "Pr05CardS02B",
+    "EnemyMaster": "Pr05MasterU02B",
+    "SpecialSkillShow": [],
+    "PointHead": "SSQXin",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P02S01": {
+    "Id": "P02S01",
+    "BlockMapID": "M02",
+    "PrePoint": "M02S04",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P02S01_FirstReward",
+    "PointReward": "P02S01_Reward",
+    "ShowItem": "P02S01_ShowReward",
+    "Name": "StagePtc_Name_P02S01",
+    "Desc": "P02S01_Desc",
+    "StageDesc": "StagePtc_Desc_P02P01",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M02S01",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr02S01A01",
+      "Pr02S01A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr02MasterU01A"
+    ],
+    "SelfCard": "Pr02CardS01A",
+    "EnemyHero": "Pr02CardS01B",
+    "EnemyMaster": "Pr02MasterU01B",
+    "SpecialSkillShow": [],
+    "PointHead": "TPGZhu",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": {
+      "enter": [
+        "guide_plot_11"
+      ]
+    }
+  },
+  "P05S01": {
+    "Id": "P05S01",
+    "BlockMapID": "M05",
+    "PrePoint": "M05S02",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P05S01_FirstReward",
+    "PointReward": "P05S01_Reward",
+    "ShowItem": "P05S01_ShowReward",
+    "Name": "StagePtc_Name_P05S01",
+    "Desc": "P05P01_Desc",
+    "StageDesc": "StagePtc_Desc_P05P01",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M05S01",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr05S01A01",
+      "Pr05S01A02",
+      "Pr05S01A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr05MasterU01A"
+    ],
+    "SelfCard": "Pr05CardS01A",
+    "EnemyHero": "Pr05CardS01B",
+    "EnemyMaster": "Pr05MasterU01B",
+    "SpecialSkillShow": [],
+    "PointHead": "FTLEShi",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P06S02": {
+    "Id": "P06S02",
+    "BlockMapID": "M06",
+    "PrePoint": "M06S05",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P06S02_FirstReward",
+    "PointReward": "P06S02_Reward",
+    "ShowItem": "P06S02_ShowReward",
+    "Name": "StagePtc_Name_P06S02",
+    "Desc": "P06P02_Desc",
+    "StageDesc": "StagePtc_Desc_P06P02",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 3,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M06S02",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr06S02A01",
+      "Pr06S02A02",
+      "Pr06S02A03"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr06MasterU02A"
+    ],
+    "SelfCard": "Pr06CardS02A",
+    "EnemyHero": "Pr06CardS02B",
+    "EnemyMaster": "Pr06MasterU02B",
+    "SpecialSkillShow": [],
+    "PointHead": "SDTZi",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  },
+  "P03S01": {
+    "Id": "P03S01",
+    "BlockMapID": "M03",
+    "PrePoint": "M03S03",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P03S01_FirstReward",
+    "PointReward": "P03S01_Reward",
+    "ShowItem": "P03S01_ShowReward",
+    "Name": "StagePtc_Name_P03S01",
+    "Desc": "P03S01_Desc",
+    "StageDesc": "StagePtc_Desc_P03P01",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 1,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M03S01",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr03S01A01"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr03MasterU01A"
+    ],
+    "SelfCard": "Pr03CardS01A",
+    "EnemyHero": "Pr03CardS01B",
+    "EnemyMaster": "Pr03MasterU01B",
+    "SpecialSkillShow": [],
+    "PointHead": "ZTXChang",
+    "StageGuide": "",
+    "TouchOff": 1,
+    "StoryLink": null
+  },
+  "P06S01": {
+    "Id": "P06S01",
+    "BlockMapID": "M06",
+    "PrePoint": "M06S02",
+    "StaminaCost": 1,
+    "StaminaBack": 0,
+    "FirstReward": "P06S01_FirstReward",
+    "PointReward": "P06S01_Reward",
+    "ShowItem": "P06S01_ShowReward",
+    "Name": "StagePtc_Name_P06S01",
+    "Desc": "P06P01_Desc",
+    "StageDesc": "StagePtc_Desc_P06P01",
+    "Background": "Battle_Scene_Sp07",
+    "BGM": [
+      "Mus_Battle_Xunlianguan",
+      "",
+      ""
+    ],
+    "VictoryConditions": [
+      {
+        "type": "Pass"
+      }
+    ],
+    "VictoryDesc": "VictoryDesc_1",
+    "Time": 180000,
+    "HeroNumber": 2,
+    "CostCount": 99,
+    "BlockBattleConfig": "Practice_M06S01",
+    "PopGuidance": 0,
+    "GuideList": [],
+    "SpecialRules": [
+      "StagePtc_SpecialRuleTest01"
+    ],
+    "Guidance": [
+      "StagePtc_Guid_Test"
+    ],
+    "GuidanceEnemy": [
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY",
+      "EMPTY"
+    ],
+    "LosePrompt": [
+      "StagePtc_Guid_Lose_Test"
+    ],
+    "SelfFixedHero": [
+      "Pr06S01A01",
+      "Pr06S01A02"
+    ],
+    "SelfAlterHero": [],
+    "SelfMaster": [
+      "Pr06MasterU01A"
+    ],
+    "SelfCard": "Pr06CardS01A",
+    "EnemyHero": "Pr06CardS01B",
+    "EnemyMaster": "Pr06MasterU01B",
+    "SpecialSkillShow": [],
+    "PointHead": "ZZBBWei",
+    "StageGuide": "",
+    "TouchOff": 0,
+    "StoryLink": null
+  }
+}

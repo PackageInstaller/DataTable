@@ -1,0 +1,66 @@
+{
+  "PM01": {
+    "Id": "PM01",
+    "MapName": "StagePracticeMap_Name_PM01",
+    "MapIcon": "",
+    "Location": "1",
+    "UnlockCondition": {
+      "LEVEL": 1
+    },
+    "Tip": "PM01_UnlockTips",
+    "PreMap": "",
+    "StarCondition": null,
+    "RewardIcon": "item_213003",
+    "StarReward": "RewardTest",
+    "SubPoint": [
+      "PM01P10",
+      "PM01P02",
+      "PM01P03",
+      "PM01P05",
+      "PM01P07",
+      "PM01P04"
+    ]
+  },
+  "PM03": {
+    "Id": "PM03",
+    "MapName": "StagePracticeMap_Name_PM03",
+    "MapIcon": "",
+    "Location": "3",
+    "UnlockCondition": {
+      "LEVEL": 99
+    },
+    "Tip": "PM03_UnlockTips",
+    "PreMap": "PM02",
+    "StarCondition": 5,
+    "RewardIcon": "item_213003",
+    "StarReward": "RewardTest",
+    "SubPoint": [
+      "PM02P01",
+      "PM02P02",
+      "PM02P03",
+      "PM02P04",
+      "PM02P05"
+    ]
+  },
+  "PM02": {
+    "Id": "PM02",
+    "MapName": "StagePracticeMap_Name_PM02",
+    "MapIcon": "",
+    "Location": "2",
+    "UnlockCondition": {
+      "LEVEL": 99
+    },
+    "Tip": "PM02_UnlockTips",
+    "PreMap": "PM01",
+    "StarCondition": 5,
+    "RewardIcon": "item_213003",
+    "StarReward": "RewardTest",
+    "SubPoint": [
+      "PM02P01",
+      "PM02P02",
+      "PM02P03",
+      "PM02P04",
+      "PM02P05"
+    ]
+  }
+}

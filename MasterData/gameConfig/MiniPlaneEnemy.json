@@ -1,0 +1,2803 @@
+{
+  "Wave_8_3": {
+    "Id": "Wave_8_3",
+    "type": 5,
+    "hp": 20,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.55
+            ],
+            "point3": [
+              0.5,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 0,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": "Fly_Reward_2"
+  },
+  "Wave_8_2": {
+    "Id": "Wave_8_2",
+    "type": 5,
+    "hp": 20,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.55
+            ],
+            "point3": [
+              0.5,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 0,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": "Fly_Reward_1"
+  },
+  "Wave_8_1": {
+    "Id": "Wave_8_1",
+    "type": 6,
+    "hp": 500,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.5
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.49
+            ],
+            "time": 900000000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "Split",
+        "factor": {
+          "beginDelayTime": 1500,
+          "degree": 280,
+          "point1": [
+            0
+          ],
+          "ammoType": 1,
+          "delayTime": [
+            0,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            4400
+          ],
+          "bulletNum": 13,
+          "speed": 7
+        }
+      },
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            0,
+            100,
+            100,
+            300,
+            100,
+            100,
+            10000
+          ],
+          "speed": 7,
+          "beginDelayTime": 4200
+        }
+      }
+    ],
+    "score": 500,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 1,
+    "RewardId": ""
+  },
+  "Wave_8_4": {
+    "Id": "Wave_8_4",
+    "type": 4,
+    "hp": 20,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              -0.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.75
+            ],
+            "point3": [
+              0.6,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.6,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.45
+            ],
+            "point3": [
+              0.8,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.75
+            ],
+            "point3": [
+              0.6,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.6,
+              -0.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 0,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": "Fly_Reward_3"
+  },
+  "Wave_1_2": {
+    "Id": "Wave_1_2",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.4
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              0.8
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      40,
+      40
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_1_3": {
+    "Id": "Wave_1_3",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              0.2
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      60,
+      60
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_1_1": {
+    "Id": "Wave_1_1",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.2
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              1.2
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      20,
+      20
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_1_4": {
+    "Id": "Wave_1_4",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.8
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              -0.2
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      80,
+      80
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_1": {
+    "Id": "Wave_6_1",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              2,
+              0.05
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.5,
+              0.05
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_3": {
+    "Id": "Wave_6_3",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.9,
+              0.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.6,
+              0.1
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_2": {
+    "Id": "Wave_6_2",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              2,
+              0.85
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.5,
+              0.85
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_5": {
+    "Id": "Wave_6_5",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.7,
+              0.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.8,
+              0.1
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_4": {
+    "Id": "Wave_6_4",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.9,
+              0.8
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.6,
+              0.8
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_7": {
+    "Id": "Wave_6_7",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.8,
+              0.2
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.7,
+              0.2
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_6": {
+    "Id": "Wave_6_6",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.7,
+              0.8
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.8,
+              0.8
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_7_1": {
+    "Id": "Wave_7_1",
+    "type": 3,
+    "hp": 50,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.3
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1500
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.31
+            ],
+            "accelerateType": "EaseIn",
+            "time": 90000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.2,
+              0.2
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 3000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "Split",
+        "factor": {
+          "beginDelayTime": 1500,
+          "degree": 340,
+          "point1": [
+            0
+          ],
+          "ammoType": 1,
+          "delayTime": [
+            0,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            6000
+          ],
+          "bulletNum": 4,
+          "speed": 10
+        }
+      }
+    ],
+    "score": 50,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_7_2": {
+    "Id": "Wave_7_2",
+    "type": 3,
+    "hp": 50,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "accelerateType": "EaseSineOut",
+            "time": 1500
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.61
+            ],
+            "accelerateType": "EaseIn",
+            "time": 90000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.2,
+              0.8
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 3000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "Split",
+        "factor": {
+          "beginDelayTime": 2800,
+          "degree": 540,
+          "point1": [
+            0
+          ],
+          "ammoType": 1,
+          "delayTime": [
+            0,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            4000
+          ],
+          "bulletNum": 4,
+          "speed": 10
+        }
+      }
+    ],
+    "score": 50,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_7_3": {
+    "Id": "Wave_7_3",
+    "type": 3,
+    "hp": 50,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.45
+            ],
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 2000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            0,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            4500
+          ],
+          "speed": 7,
+          "beginDelayTime": 1000
+        }
+      }
+    ],
+    "score": 50,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_7_4": {
+    "Id": "Wave_7_4",
+    "type": 3,
+    "hp": 50,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.45
+            ],
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 2000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.25
+            ],
+            "time": 4000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.75
+            ],
+            "time": 4000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            0,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            100,
+            4500
+          ],
+          "speed": 7,
+          "beginDelayTime": 1000
+        }
+      }
+    ],
+    "score": 50,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_9": {
+    "Id": "Wave_6_9",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.6,
+              0.2
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.9,
+              0.2
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_4_4": {
+    "Id": "Wave_4_4",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              -0.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.75
+            ],
+            "point3": [
+              0.6,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.6,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.45
+            ],
+            "point3": [
+              0.8,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.75
+            ],
+            "point3": [
+              0.6,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.6,
+              -0.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_4_3": {
+    "Id": "Wave_4_3",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              -0.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.75
+            ],
+            "point3": [
+              0.6,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.6,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.45
+            ],
+            "point3": [
+              0.8,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.8,
+              0.6
+            ],
+            "point2": [
+              0.7,
+              0.75
+            ],
+            "point3": [
+              0.6,
+              0.6
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.6,
+              -0.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_4_2": {
+    "Id": "Wave_4_2",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.55
+            ],
+            "point3": [
+              0.5,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_4_1": {
+    "Id": "Wave_4_1",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.55
+            ],
+            "point3": [
+              0.5,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.5,
+              0.4
+            ],
+            "point2": [
+              0.6,
+              0.25
+            ],
+            "point3": [
+              0.7,
+              0.4
+            ],
+            "time": 600
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_8": {
+    "Id": "Wave_6_8",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.8,
+              0.7
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.7,
+              0.7
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_2_4": {
+    "Id": "Wave_2_4",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.9,
+              0.4
+            ],
+            "accelerateType": "EaseSineOut",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.9,
+              0.41
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.4
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            1500,
+            30000
+          ],
+          "speed": 7,
+          "beginDelayTime": 1500
+        }
+      }
+    ],
+    "score": 10,
+    "appearPlace": [
+      -15,
+      35
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_5_4": {
+    "Id": "Wave_5_4",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "point2": [
+              0.5,
+              0.5
+            ],
+            "point3": [
+              0.3,
+              0.3
+            ],
+            "time": 2000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              0.3
+            ],
+            "accelerateType": "EaseIn",
+            "time": 100
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_2_1": {
+    "Id": "Wave_2_1",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.75,
+              0.05
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.75,
+              0.06
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              1
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            1500,
+            30000
+          ],
+          "speed": 7,
+          "beginDelayTime": 1500
+        }
+      }
+    ],
+    "score": 10,
+    "appearPlace": [
+      -15,
+      35
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_5_3": {
+    "Id": "Wave_5_3",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "point2": [
+              0.5,
+              0.5
+            ],
+            "point3": [
+              0.3,
+              0.3
+            ],
+            "time": 2000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              0.3
+            ],
+            "accelerateType": "EaseIn",
+            "time": 100
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_2_3": {
+    "Id": "Wave_2_3",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.65,
+              0.25
+            ],
+            "accelerateType": "EaseSineOut",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.65,
+              0.26
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.6
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            1500,
+            30000
+          ],
+          "speed": 7,
+          "beginDelayTime": 1500
+        }
+      }
+    ],
+    "score": 10,
+    "appearPlace": [
+      -15,
+      35
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_2_2": {
+    "Id": "Wave_2_2",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.75,
+              0.3
+            ],
+            "accelerateType": "EaseSineOut",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.75,
+              0.31
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.8
+            ],
+            "accelerateType": "EaseSineIn",
+            "time": 2000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            1500,
+            30000
+          ],
+          "speed": 7,
+          "beginDelayTime": 1500
+        }
+      }
+    ],
+    "score": 10,
+    "appearPlace": [
+      -15,
+      35
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_3_1": {
+    "Id": "Wave_3_1",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.8
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.8
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.4,
+              0.2
+            ],
+            "accelerateType": "EaseInOut",
+            "time": 1500
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.2
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [
+      {
+        "type": "FixedTrack",
+        "factor": {
+          "point1": [
+            0
+          ],
+          "delayTime": [
+            500,
+            30000
+          ],
+          "speed": 7,
+          "beginDelayTime": 1500
+        }
+      }
+    ],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_3_2": {
+    "Id": "Wave_3_2",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.8
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.8,
+              0.8
+            ],
+            "accelerateType": "EaseIn",
+            "time": 800
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.4,
+              0.2
+            ],
+            "accelerateType": "EaseInOut",
+            "time": 1500
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.1,
+              0.2
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_11": {
+    "Id": "Wave_6_11",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.4,
+              0.2
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -1.1,
+              0.2
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_10": {
+    "Id": "Wave_6_10",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.6,
+              0.7
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.9,
+              0.7
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_13": {
+    "Id": "Wave_6_13",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.7,
+              0.45
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.8,
+              0.45
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_5_1": {
+    "Id": "Wave_5_1",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "point2": [
+              0.5,
+              0.5
+            ],
+            "point3": [
+              0.3,
+              0.3
+            ],
+            "time": 2000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              0.3
+            ],
+            "accelerateType": "EaseIn",
+            "time": 100
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_15": {
+    "Id": "Wave_6_15",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.3,
+              0.45
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -1.2,
+              0.45
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_14": {
+    "Id": "Wave_6_14",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.5,
+              0.45
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -1,
+              0.45
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_6_12": {
+    "Id": "Wave_6_12",
+    "type": 2,
+    "hp": 10,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              1.4,
+              0.7
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -1.1,
+              0.7
+            ],
+            "time": 5000
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 10,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  },
+  "Wave_5_2": {
+    "Id": "Wave_5_2",
+    "type": 1,
+    "hp": 5,
+    "PlaneMoveType": [
+      [
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              1.1
+            ],
+            "time": 1
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "accelerateType": "EaseIn",
+            "time": 1000
+          }
+        },
+        {
+          "type": "Bezier",
+          "factor": {
+            "point1": [
+              0.7,
+              0.7
+            ],
+            "point2": [
+              0.5,
+              0.5
+            ],
+            "point3": [
+              0.3,
+              0.3
+            ],
+            "time": 2000
+          }
+        },
+        {
+          "type": "Move",
+          "factor": {
+            "point1": [
+              -0.1,
+              0.3
+            ],
+            "accelerateType": "EaseIn",
+            "time": 100
+          }
+        }
+      ]
+    ],
+    "BulletMoveType": [],
+    "score": 5,
+    "appearPlace": [
+      -1,
+      -1
+    ],
+    "IsCount": 0,
+    "RewardId": ""
+  }
+}

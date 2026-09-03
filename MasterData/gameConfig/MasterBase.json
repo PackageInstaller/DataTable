@@ -1,0 +1,3867 @@
+{
+  "Master_LiMing": {
+    "Id": "Master_LiMing",
+    "RoleModel": "Model_Master_LiMing",
+    "Name": "MasterBase_Name_6",
+    "Desc": "MasterBase_Desc_6",
+    "Feature": "MasterBase_Feature_6",
+    "IfHidden": 1,
+    "Rank": 6,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_LiMing",
+    "BasePower": 511,
+    "AttackSkill": "Sk_Attack_Master_LiMing",
+    "ActionSkill1": "Sk_Action1_Master_LiMing",
+    "ActionSkill2": "Sk_Action2_Master_LiMing",
+    "ActionSkill3": "Sk_Action3_Master_LiMing",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_LiMing",
+      "Player_Master"
+    ],
+    "NamePic": "word_tcdmm_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_LiMing",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 6,
+    "TeamSkill1": "SectSkill_Master_LiMing_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star1Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_LiMing_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "TPGZhu"
+            ],
+            [
+              "FEMSi"
+            ],
+            [
+              "FLBDSi"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_LiMing_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_LiMing_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            3,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost13Down"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_LiMing_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            [
+              80,
+              1
+            ],
+            [
+              100,
+              1
+            ]
+          ],
+          "range": "hold",
+          "type": "percent",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ],
+      [
+        {
+          "scope": [
+            15,
+            100
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_LiMing_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.2
+    ],
+    "LeadStage": "LeadStage_LiMing_001",
+    "LeadMasterSkill": [
+      "LeadStage_LiMing_PVE_Skill_002"
+    ],
+    "Background": "leadStage_scene_nvzhu",
+    "TreeColor": [
+      0,
+      208,
+      227
+    ],
+    "Sex": 0,
+    "Infoshow": "IM_InfoBase_12"
+  },
+  "Master_LieSha": {
+    "Id": "Master_LieSha",
+    "RoleModel": "Model_Master_LieSha",
+    "Name": "MasterBase_Name_2",
+    "Desc": "MasterBase_Desc_2",
+    "Feature": "MasterBase_Feature_2",
+    "IfHidden": 1,
+    "Rank": 2,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_LieSha",
+    "BasePower": 540,
+    "AttackSkill": "Sk_Attack_Master_LieSha",
+    "ActionSkill1": "Sk_Action1_Master_LieSha",
+    "ActionSkill2": "Sk_Action2_Master_LieSha",
+    "ActionSkill3": "Sk_Action3_Master_LieSha",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_LieSha",
+      "Player_Master"
+    ],
+    "NamePic": "word_stdh_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_LieSha",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 2,
+    "TeamSkill1": "SectSkill_Master_LieSha_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_LieSha_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "BBLMa"
+            ],
+            [
+              "Star5Up",
+              "KTSJKe"
+            ],
+            [
+              "Star5Up",
+              "YBYa"
+            ],
+            [
+              "Star5Up",
+              "ZTXChang"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_LieSha_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "BBLMa"
+            ],
+            [
+              "CZheng"
+            ],
+            [
+              "TPGZhu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_LieSha_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            [
+              0,
+              1
+            ],
+            [
+              15,
+              1
+            ]
+          ],
+          "range": "group",
+          "type": "avgcost",
+          "param": []
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_LieSha_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_LieSha_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_LieSha_001",
+    "LeadMasterSkill": [
+      "LeadStage_LieSha_PVE_Skill_002"
+    ],
+    "Background": "leadStage_scene_zi",
+    "TreeColor": [
+      159,
+      31,
+      248
+    ],
+    "Sex": 1,
+    "Infoshow": "IM_InfoBase_8"
+  },
+  "Master_SenLing": {
+    "Id": "Master_SenLing",
+    "RoleModel": "Model_Master_SenLing",
+    "Name": "MasterBase_Name_5",
+    "Desc": "MasterBase_Desc_5",
+    "Feature": "MasterBase_Feature_5",
+    "IfHidden": 1,
+    "Rank": 5,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_SenLing",
+    "BasePower": 511,
+    "AttackSkill": "Sk_Attack_Master_SenLing",
+    "ActionSkill1": "Sk_Action1_Master_SenLing",
+    "ActionSkill2": "Sk_Action2_Master_SenLing",
+    "ActionSkill3": "Sk_Action3_Master_SenLing",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_SenLing",
+      "Player_Master"
+    ],
+    "NamePic": "word_tcdmm_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_BiLei",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 5,
+    "TeamSkill1": "SectSkill_Master_SenLing_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cure"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_SenLing_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "LFEr"
+            ],
+            [
+              "Star5Up",
+              "JNLong"
+            ],
+            [
+              "Star5Up",
+              "MTZMEShi"
+            ],
+            [
+              "Star5Up",
+              "YLMGZhu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_SenLing_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "TPGZhu"
+            ],
+            [
+              "YLMGZhu"
+            ],
+            [
+              "MTZMEShi"
+            ],
+            [
+              "MLYTLSha"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_SenLing_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost12"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost13"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost14"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost15"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost16"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost17"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost18"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_SenLing_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_SenLing_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_SenLing_001",
+    "LeadMasterSkill": [
+      "LeadStage_SenLing_PVE_Skill_002"
+    ],
+    "Background": "leadStage_scene_lv",
+    "TreeColor": [
+      0,
+      211,
+      119
+    ],
+    "Sex": 1,
+    "Infoshow": "IM_InfoBase_11"
+  },
+  "Master_XueZhan": {
+    "Id": "Master_XueZhan",
+    "RoleModel": "Model_Master_XueZhan",
+    "Name": "MasterBase_Name_1",
+    "Desc": "MasterBase_Desc_1",
+    "Feature": "MasterBase_Feature_1",
+    "IfHidden": 1,
+    "Rank": 1,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_XueZhan",
+    "BasePower": 482,
+    "AttackSkill": "Sk_Attack_Master_XueZhan",
+    "ActionSkill1": "Sk_Action1_Master_XueZhan",
+    "ActionSkill2": "Sk_Action2_Master_XueZhan",
+    "ActionSkill3": "Sk_Action3_Master_XueZhan",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_XueZhan",
+      "Player_Master"
+    ],
+    "NamePic": "word_bsty_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_XueZhan",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 1,
+    "TeamSkill1": "SectSkill_Master_XueZhan_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            8,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star1Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_XueZhan_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "ZTXChang"
+            ],
+            [
+              "Star5Up",
+              "XLai"
+            ],
+            [
+              "Star5Up",
+              "PNCao"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_XueZhan_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Summon"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_XueZhan_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_XueZhan_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            8,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_XueZhan_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_XueZhan_001",
+    "LeadMasterSkill": [
+      "LeadStage_XueZhan_PVE_Skill_002"
+    ],
+    "Background": "leadStage_scene_hong",
+    "TreeColor": [
+      231,
+      0,
+      130
+    ],
+    "Sex": 1,
+    "Infoshow": "IM_InfoBase_7"
+  },
+  "Master_ZhaoHuan": {
+    "Id": "Master_ZhaoHuan",
+    "RoleModel": "Model_Master_ZhaoHuan",
+    "Name": "MasterBase_Name_8",
+    "Desc": "MasterBase_Desc_8",
+    "Feature": "MasterBase_Feature_8",
+    "IfHidden": 0,
+    "Rank": 8,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_ZhaoHuan",
+    "BasePower": 511,
+    "AttackSkill": "Sk_Attack_Master_ZhaoHuan",
+    "ActionSkill1": "Sk_Action1_Master_ZhaoHuan",
+    "ActionSkill2": "Sk_Action2_Master_ZhaoHuan",
+    "ActionSkill3": "Sk_Action3_Master_ZhaoHuan",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_ZhaoHuan",
+      "Player_Master"
+    ],
+    "NamePic": "word_bsje_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_BiLei",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 8,
+    "TeamSkill1": "SectSkill_Master_BiLei_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            [
+              16,
+              1
+            ],
+            [
+              99,
+              1
+            ]
+          ],
+          "range": "group",
+          "type": "avgcost",
+          "param": []
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_BiLei_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            2,
+            2
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "YLSBai"
+            ],
+            [
+              "WEDe"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_BiLei_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost16Up"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            0,
+            4
+          ],
+          "range": "group",
+          "type": "typevalue",
+          "param": [
+            []
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_BiLei_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cost16Up"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "typevalue",
+          "param": [
+            []
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_BiLei_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            [
+              80,
+              1
+            ],
+            [
+              100,
+              1
+            ]
+          ],
+          "range": "hold",
+          "type": "percent",
+          "param": [
+            [
+              "Cost16Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_BiLei_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_ZhaoHuan_001",
+    "LeadMasterSkill": [],
+    "Background": "",
+    "TreeColor": null,
+    "Sex": 1,
+    "Infoshow": ""
+  },
+  "Master_BiLei": {
+    "Id": "Master_BiLei",
+    "RoleModel": "Model_Master_BiLei",
+    "Name": "MasterBase_Name_3",
+    "Desc": "MasterBase_Desc_3",
+    "Feature": "MasterBase_Feature_3",
+    "IfHidden": 1,
+    "Rank": 3,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_BiLei",
+    "BasePower": 511,
+    "AttackSkill": "Sk_Attack_Master_BiLei",
+    "ActionSkill1": "Sk_Action1_Master_BiLei",
+    "ActionSkill2": "Sk_Action2_Master_BiLei",
+    "ActionSkill3": "Sk_Action3_Master_BiLei",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_BiLei",
+      "Player_Master"
+    ],
+    "NamePic": "word_wznsn_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_BiLei",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 3,
+    "TeamSkill1": "SectSkill_Master_BiLei_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_BiLei_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "YLSBai"
+            ],
+            [
+              "Star5Up",
+              "WEDe"
+            ],
+            [
+              "Star5Up",
+              "LLan"
+            ],
+            [
+              "Star5Up",
+              "BEr"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_BiLei_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "LLan"
+            ],
+            [
+              "SGHQShou"
+            ],
+            [
+              "TPGZhu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_BiLei_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            [
+              15,
+              1
+            ],
+            [
+              100,
+              1
+            ]
+          ],
+          "range": "group",
+          "type": "avgcost",
+          "param": []
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_BiLei_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_BiLei_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_BiLei_001",
+    "LeadMasterSkill": [
+      "LeadStage_BiLei_PVE_Skill_002"
+    ],
+    "Background": "leadStage_scene_huang",
+    "TreeColor": [
+      255,
+      223,
+      76
+    ],
+    "Sex": 1,
+    "Infoshow": "IM_InfoBase_9"
+  },
+  "Master_WuShi": {
+    "Id": "Master_WuShi",
+    "RoleModel": "Model_Master_WuShi",
+    "Name": "MasterBase_Name_6",
+    "Desc": "MasterBase_Desc_6",
+    "Feature": "MasterBase_Feature_6",
+    "IfHidden": 0,
+    "Rank": 6,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_WuShi",
+    "BasePower": 554,
+    "AttackSkill": "Sk_Attack_Master_WuShi",
+    "ActionSkill1": "Sk_Action1_Master_WuShi",
+    "ActionSkill2": "Sk_Action2_Master_WuShi",
+    "ActionSkill3": "Sk_Action3_Master_WuShi",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_WuShi",
+      "Player_Master"
+    ],
+    "NamePic": "word_chz_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_BiLei",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 6,
+    "TeamSkill1": "SectSkill_Master_XueZhan_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            3,
+            3
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "ZTXChang"
+            ],
+            [
+              "FTLEShi"
+            ],
+            [
+              "CLMan"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_XueZhan_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            2,
+            2
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "ATSheng"
+            ],
+            [
+              "XLai"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_XueZhan_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cure"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Aoe"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Summon"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Support"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            99
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Curse"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_XueZhan_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            7,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ],
+            [
+              "Defense"
+            ],
+            [
+              "Aoe"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_XueZhan_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "ZZBBWei"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_XueZhan_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_WuShi_001",
+    "LeadMasterSkill": [],
+    "Background": "",
+    "TreeColor": null,
+    "Sex": 1,
+    "Infoshow": ""
+  },
+  "Master_JiangJun": {
+    "Id": "Master_JiangJun",
+    "RoleModel": "Model_Master_JiangJun",
+    "Name": "MasterBase_Name_7",
+    "Desc": "MasterBase_Desc_7",
+    "Feature": "MasterBase_Feature_7",
+    "IfHidden": 0,
+    "Rank": 7,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_JiangJun",
+    "BasePower": 454,
+    "AttackSkill": "Sk_Attack_Master_JiangJun",
+    "ActionSkill1": "Sk_Action1_Master_JiangJun",
+    "ActionSkill2": "Sk_Action2_Master_JiangJun",
+    "ActionSkill3": "Sk_Action3_Master_JiangJun",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_JiangJun",
+      "Player_Master"
+    ],
+    "NamePic": "word_gsw_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_BiLei",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 7,
+    "TeamSkill1": "SectSkill_Master_LieSha_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            [
+              0,
+              1
+            ],
+            [
+              12,
+              1
+            ]
+          ],
+          "range": "group",
+          "type": "avgcost",
+          "param": []
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_LieSha_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            2,
+            2
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "BBLMa"
+            ],
+            [
+              "MKLJLuo"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_LieSha_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ],
+            [
+              "Aoe"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_LieSha_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            6,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Summon"
+            ],
+            [
+              "Curse"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_LieSha_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            [
+              80,
+              1
+            ],
+            [
+              100,
+              1
+            ]
+          ],
+          "range": "hold",
+          "type": "percent",
+          "param": [
+            [
+              "Cost13Down"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_LieSha_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_JiangJun_001",
+    "LeadMasterSkill": [],
+    "Background": "",
+    "TreeColor": null,
+    "Sex": 1,
+    "Infoshow": ""
+  },
+  "Master_FuHun": {
+    "Id": "Master_FuHun",
+    "RoleModel": "Model_Master_FuHun",
+    "Name": "MasterBase_Name_4",
+    "Desc": "MasterBase_Desc_4",
+    "Feature": "MasterBase_Feature_4",
+    "IfHidden": 1,
+    "Rank": 4,
+    "Speed": 200,
+    "BaseStar": 1,
+    "StarUpItemId": "IMF_Master_FuHun",
+    "BasePower": 468,
+    "AttackSkill": "Sk_Attack_Master_FuHun",
+    "ActionSkill1": "Sk_Action1_Master_FuHun",
+    "ActionSkill2": "Sk_Action2_Master_FuHun",
+    "ActionSkill3": "Sk_Action3_Master_FuHun",
+    "Tactics": [],
+    "BaseAttack": 150.0,
+    "BaseDefence": 45.0,
+    "BaseHp": 1200.0,
+    "AttackFactor": 1.0,
+    "DefenceFactor": 1.0,
+    "HpFactor": 1.0,
+    "Anger": {
+      "a1": [
+        10,
+        1000
+      ],
+      "a3": 0,
+      "a2": 50,
+      "a4": 15
+    },
+    "AtkRate": 1.0,
+    "DefRate": 1.0,
+    "DefWeaken": 0.0,
+    "AtkWeaken": 0.0,
+    "AOEDerate": 0.15,
+    "CritRate": 0.0,
+    "UncritRate": 0.0,
+    "CritStrg": 0.0,
+    "BlockRate": 0.0,
+    "UnblockRate": 0.0,
+    "BlockStrg": 0.0,
+    "HurtRate": 0.0,
+    "UnhurtRate": 0.0,
+    "Absorption": 0.0,
+    "Reflection": 0.0,
+    "EffectRate": 0.0,
+    "UneffectRate": 0.0,
+    "EffectStrg": 0.0,
+    "BeCuredRate": 0.0,
+    "UndeadRate": 0.0,
+    "DoubleRate": 0.0,
+    "CounterRate": 0.0,
+    "Flags": [
+      "Master_FuHun",
+      "Player_Master"
+    ],
+    "NamePic": "word_qgzl_zj.png",
+    "StarPointBG": null,
+    "StarPointSets": [
+      [
+        "Master_CommonStar_1_1",
+        "Master_CommonStar_1_2",
+        "Master_CommonStar_1_3",
+        "Master_CommonStar_1_4",
+        "Master_CommonStar_1_5",
+        "Master_CommonStar_1_6"
+      ],
+      [
+        "Master_CommonStar_2_1",
+        "Master_CommonStar_2_2",
+        "Master_CommonStar_2_3",
+        "Master_CommonStar_2_4",
+        "Master_CommonStar_2_5",
+        "Master_CommonStar_2_6"
+      ],
+      [
+        "Master_CommonStar_3_1",
+        "Master_CommonStar_3_2",
+        "Master_CommonStar_3_3",
+        "Master_CommonStar_3_4",
+        "Master_CommonStar_3_5",
+        "Master_CommonStar_3_6"
+      ],
+      [
+        "Master_CommonStar_4_1",
+        "Master_CommonStar_4_2",
+        "Master_CommonStar_4_3",
+        "Master_CommonStar_4_4",
+        "Master_CommonStar_4_5",
+        "Master_CommonStar_4_6"
+      ],
+      [
+        "Master_CommonStar_5_1",
+        "Master_CommonStar_5_2",
+        "Master_CommonStar_5_3",
+        "Master_CommonStar_5_4",
+        "Master_CommonStar_5_5",
+        "Master_CommonStar_5_6"
+      ]
+    ],
+    "UseUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "lv": 22
+      },
+      "ActionSkill2": {
+        "lv": 10
+      },
+      "ActionSkill1": {
+        "lv": 1
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "LevelUnlock": {
+      "PassiveSkill": {
+        "lv": 1
+      },
+      "AttackSkill": {
+        "lv": 1
+      },
+      "ActionSkill3": {
+        "star": 2
+      },
+      "ActionSkill2": {
+        "star": 2
+      },
+      "ActionSkill1": {
+        "star": 2
+      },
+      "AttrSkill2": {
+        "star": 6
+      },
+      "AttrSkill1": {
+        "star": 5
+      }
+    },
+    "CompositePay": 20,
+    "Type": "ATK",
+    "LevelUpPicture": "zjsj_BiLei",
+    "SkillCost": {
+      "PassiveSkill": {
+        "amount": [
+          1,
+          2,
+          4,
+          6,
+          8,
+          10,
+          15,
+          20,
+          25,
+          40
+        ],
+        "code": "ISU_Master"
+      },
+      "AttackSkill": {
+        "amount": [
+          1,
+          3,
+          6,
+          9,
+          12,
+          15,
+          24,
+          30,
+          38,
+          60
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill3": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill2": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "ActionSkill1": {
+        "amount": [
+          1,
+          5,
+          10,
+          15,
+          20,
+          25,
+          38,
+          50,
+          64,
+          100
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill2": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      },
+      "AttrSkill1": {
+        "amount": [
+          1,
+          10,
+          20,
+          30,
+          40,
+          50,
+          75,
+          100,
+          125,
+          200
+        ],
+        "code": "ISU_Master"
+      }
+    },
+    "ShowGallery": "WNSXJ",
+    "MasterOrder": 4,
+    "TeamSkill1": "SectSkill_Master_FuHun_1",
+    "TeamSkillCondition1": [
+      [
+        {
+          "scope": [
+            5,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Aoe"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill2": "SectSkill_Master_FuHun_2",
+    "TeamSkillCondition2": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "hold",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up",
+              "MGNa"
+            ],
+            [
+              "Star5Up",
+              "XSMLi"
+            ],
+            [
+              "Star5Up",
+              "SDTZi"
+            ],
+            [
+              "Star5Up",
+              "LDu"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill3": "SectSkill_Master_FuHun_3",
+    "TeamSkillCondition3": [
+      [
+        {
+          "scope": [
+            4,
+            4
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "SLMen"
+            ],
+            [
+              "YLMGZhu"
+            ],
+            [
+              "TPGZhu"
+            ],
+            [
+              "SDTZi"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill4": "SectSkill_Master_FuHun_4",
+    "TeamSkillCondition4": [
+      [
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Attack"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Defense"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Aoe"
+            ]
+          ]
+        },
+        {
+          "scope": [
+            1,
+            10
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Cure"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill5": "SectSkill_Master_FuHun_5",
+    "TeamSkillCondition5": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Rarity14"
+            ],
+            [
+              "Rarity15"
+            ]
+          ]
+        }
+      ]
+    ],
+    "TeamSkill6": "SectSkill_Master_FuHun_6",
+    "TeamSkillCondition6": [
+      [
+        {
+          "scope": [
+            10,
+            100
+          ],
+          "range": "group",
+          "type": "tag",
+          "param": [
+            [
+              "Star5Up"
+            ]
+          ]
+        }
+      ]
+    ],
+    "RtpkPercent": [
+      1,
+      1,
+      1.25
+    ],
+    "LeadStage": "LeadStage_FuHun_001",
+    "LeadMasterSkill": [
+      "LeadStage_FuHun_PVE_Skill_002"
+    ],
+    "Background": "leadStage_scene_lan",
+    "TreeColor": [
+      22,
+      126,
+      255
+    ],
+    "Sex": 1,
+    "Infoshow": "IM_InfoBase_10"
+  }
+}

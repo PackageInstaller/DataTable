@@ -1,0 +1,974 @@
+{
+  "MNJH_Love3": {
+    "Id": "MNJH_Love3",
+    "Reward": "MNJH_Love3",
+    "Condition": {
+      "HeroLove": 40
+    },
+    "ConditionDesc": "MNJH_Love3_Desc",
+    "ConditionName": "MNJH_Love3_Name",
+    "Next": [
+      "MNJH_Love4"
+    ]
+  },
+  "MNJH_Star3": {
+    "Id": "MNJH_Star3",
+    "Reward": "MNJH_Star3",
+    "Condition": {
+      "HeroStar": 40
+    },
+    "ConditionDesc": "MNJH_Star3_Desc",
+    "ConditionName": "MNJH_Star3_Name",
+    "Next": [
+      "MNJH_Star4"
+    ]
+  },
+  "MNJH_Num3": {
+    "Id": "MNJH_Num3",
+    "Reward": "MNJH_Num3",
+    "Condition": {
+      "HeroNum": 10
+    },
+    "ConditionDesc": "MNJH_Num3_Desc",
+    "ConditionName": "MNJH_Num3_Name",
+    "Next": []
+  },
+  "MNJH_Num2": {
+    "Id": "MNJH_Num2",
+    "Reward": "MNJH_Num2",
+    "Condition": {
+      "HeroNum": 8
+    },
+    "ConditionDesc": "MNJH_Num2_Desc",
+    "ConditionName": "MNJH_Num2_Name",
+    "Next": [
+      "MNJH_Num3"
+    ]
+  },
+  "MNJH_Num1": {
+    "Id": "MNJH_Num1",
+    "Reward": "MNJH_Num1",
+    "Condition": {
+      "HeroNum": 5
+    },
+    "ConditionDesc": "MNJH_Num1_Desc",
+    "ConditionName": "MNJH_Num1_Name",
+    "Next": [
+      "MNJH_Num2"
+    ]
+  },
+  "WNSXJ_Star5": {
+    "Id": "WNSXJ_Star5",
+    "Reward": "WNSXJ_Star5",
+    "Condition": {
+      "HeroStar": 60
+    },
+    "ConditionDesc": "WNSXJ_Star5_Desc",
+    "ConditionName": "WNSXJ_Star5_Name",
+    "Next": []
+  },
+  "BSNCT_Num1": {
+    "Id": "BSNCT_Num1",
+    "Reward": "BSNCT_Num1",
+    "Condition": {
+      "HeroNum": 5
+    },
+    "ConditionDesc": "BSNCT_Num1_Desc",
+    "ConditionName": "BSNCT_Num1_Name",
+    "Next": [
+      "BSNCT_Num2"
+    ]
+  },
+  "WNSXJ_Num3": {
+    "Id": "WNSXJ_Num3",
+    "Reward": "WNSXJ_Num3",
+    "Condition": {
+      "HeroNum": 10
+    },
+    "ConditionDesc": "WNSXJ_Num3_Desc",
+    "ConditionName": "WNSXJ_Num3_Name",
+    "Next": []
+  },
+  "BSNCT_Num3": {
+    "Id": "BSNCT_Num3",
+    "Reward": "BSNCT_Num3",
+    "Condition": {
+      "HeroNum": 10
+    },
+    "ConditionDesc": "BSNCT_Num3_Desc",
+    "ConditionName": "BSNCT_Num3_Name",
+    "Next": []
+  },
+  "BSNCT_Num2": {
+    "Id": "BSNCT_Num2",
+    "Reward": "BSNCT_Num2",
+    "Condition": {
+      "HeroNum": 8
+    },
+    "ConditionDesc": "BSNCT_Num2_Desc",
+    "ConditionName": "BSNCT_Num2_Name",
+    "Next": [
+      "BSNCT_Num3"
+    ]
+  },
+  "DWH_Love6": {
+    "Id": "DWH_Love6",
+    "Reward": "DWH_Love6",
+    "Condition": {
+      "HeroLove": 100
+    },
+    "ConditionDesc": "DWH_Love6_Desc",
+    "ConditionName": "DWH_Love6_Name",
+    "Next": []
+  },
+  "WNSXJ_Love3": {
+    "Id": "WNSXJ_Love3",
+    "Reward": "WNSXJ_Love3",
+    "Condition": {
+      "HeroLove": 40
+    },
+    "ConditionDesc": "WNSXJ_Love3_Desc",
+    "ConditionName": "WNSXJ_Love3_Name",
+    "Next": [
+      "WNSXJ_Love4"
+    ]
+  },
+  "WNSXJ_Love1": {
+    "Id": "WNSXJ_Love1",
+    "Reward": "WNSXJ_Love1",
+    "Condition": {
+      "HeroLove": 10
+    },
+    "ConditionDesc": "WNSXJ_Love1_Desc",
+    "ConditionName": "WNSXJ_Love1_Name",
+    "Next": [
+      "WNSXJ_Love2"
+    ]
+  },
+  "WNSXJ_Love6": {
+    "Id": "WNSXJ_Love6",
+    "Reward": "WNSXJ_Love6",
+    "Condition": {
+      "HeroLove": 100
+    },
+    "ConditionDesc": "WNSXJ_Love6_Desc",
+    "ConditionName": "WNSXJ_Love6_Name",
+    "Next": []
+  },
+  "SMZS_Num3": {
+    "Id": "SMZS_Num3",
+    "Reward": "SMZS_Num3",
+    "Condition": {
+      "HeroNum": 10
+    },
+    "ConditionDesc": "SMZS_Num3_Desc",
+    "ConditionName": "SMZS_Num3_Name",
+    "Next": []
+  },
+  "WNSXJ_Love4": {
+    "Id": "WNSXJ_Love4",
+    "Reward": "WNSXJ_Love4",
+    "Condition": {
+      "HeroLove": 60
+    },
+    "ConditionDesc": "WNSXJ_Love4_Desc",
+    "ConditionName": "WNSXJ_Love4_Name",
+    "Next": [
+      "WNSXJ_Love5"
+    ]
+  },
+  "WNSXJ_Love5": {
+    "Id": "WNSXJ_Love5",
+    "Reward": "WNSXJ_Love5",
+    "Condition": {
+      "HeroLove": 80
+    },
+    "ConditionDesc": "WNSXJ_Love5_Desc",
+    "ConditionName": "WNSXJ_Love5_Name",
+    "Next": [
+      "WNSXJ_Love6"
+    ]
+  },
+  "BSNCT_Love6": {
+    "Id": "BSNCT_Love6",
+    "Reward": "BSNCT_Love6",
+    "Condition": {
+      "HeroLove": 100
+    },
+    "ConditionDesc": "BSNCT_Love6_Desc",
+    "ConditionName": "BSNCT_Love6_Name",
+    "Next": []
+  },
+  "BSNCT_Love4": {
+    "Id": "BSNCT_Love4",
+    "Reward": "BSNCT_Love4",
+    "Condition": {
+      "HeroLove": 60
+    },
+    "ConditionDesc": "BSNCT_Love4_Desc",
+    "ConditionName": "BSNCT_Love4_Name",
+    "Next": [
+      "BSNCT_Love5"
+    ]
+  },
+  "BSNCT_Love5": {
+    "Id": "BSNCT_Love5",
+    "Reward": "BSNCT_Love5",
+    "Condition": {
+      "HeroLove": 80
+    },
+    "ConditionDesc": "BSNCT_Love5_Desc",
+    "ConditionName": "BSNCT_Love5_Name",
+    "Next": [
+      "BSNCT_Love6"
+    ]
+  },
+  "BSNCT_Love2": {
+    "Id": "BSNCT_Love2",
+    "Reward": "BSNCT_Love2",
+    "Condition": {
+      "HeroLove": 25
+    },
+    "ConditionDesc": "BSNCT_Love2_Desc",
+    "ConditionName": "BSNCT_Love2_Name",
+    "Next": [
+      "BSNCT_Love3"
+    ]
+  },
+  "BSNCT_Love3": {
+    "Id": "BSNCT_Love3",
+    "Reward": "BSNCT_Love3",
+    "Condition": {
+      "HeroLove": 40
+    },
+    "ConditionDesc": "BSNCT_Love3_Desc",
+    "ConditionName": "BSNCT_Love3_Name",
+    "Next": [
+      "BSNCT_Love4"
+    ]
+  },
+  "BSNCT_Love1": {
+    "Id": "BSNCT_Love1",
+    "Reward": "BSNCT_Love1",
+    "Condition": {
+      "HeroLove": 10
+    },
+    "ConditionDesc": "BSNCT_Love1_Desc",
+    "ConditionName": "BSNCT_Love1_Name",
+    "Next": [
+      "BSNCT_Love2"
+    ]
+  },
+  "MNJH_Love1": {
+    "Id": "MNJH_Love1",
+    "Reward": "MNJH_Love1",
+    "Condition": {
+      "HeroLove": 10
+    },
+    "ConditionDesc": "MNJH_Love1_Desc",
+    "ConditionName": "MNJH_Love1_Name",
+    "Next": [
+      "MNJH_Love2"
+    ]
+  },
+  "SMZS_Num1": {
+    "Id": "SMZS_Num1",
+    "Reward": "SMZS_Num1",
+    "Condition": {
+      "HeroNum": 5
+    },
+    "ConditionDesc": "SMZS_Num1_Desc",
+    "ConditionName": "SMZS_Num1_Name",
+    "Next": [
+      "SMZS_Num2"
+    ]
+  },
+  "XD_Num1": {
+    "Id": "XD_Num1",
+    "Reward": "XD_Num1",
+    "Condition": {
+      "HeroNum": 5
+    },
+    "ConditionDesc": "XD_Num1_Desc",
+    "ConditionName": "XD_Num1_Name",
+    "Next": [
+      "XD_Num2"
+    ]
+  },
+  "XD_Num2": {
+    "Id": "XD_Num2",
+    "Reward": "XD_Num2",
+    "Condition": {
+      "HeroNum": 8
+    },
+    "ConditionDesc": "XD_Num2_Desc",
+    "ConditionName": "XD_Num2_Name",
+    "Next": [
+      "XD_Num3"
+    ]
+  },
+  "XD_Num3": {
+    "Id": "XD_Num3",
+    "Reward": "XD_Num3",
+    "Condition": {
+      "HeroNum": 10
+    },
+    "ConditionDesc": "XD_Num3_Desc",
+    "ConditionName": "XD_Num3_Name",
+    "Next": []
+  },
+  "MNJH_Love4": {
+    "Id": "MNJH_Love4",
+    "Reward": "MNJH_Love4",
+    "Condition": {
+      "HeroLove": 60
+    },
+    "ConditionDesc": "MNJH_Love4_Desc",
+    "ConditionName": "MNJH_Love4_Name",
+    "Next": [
+      "MNJH_Love5"
+    ]
+  },
+  "MNJH_Love5": {
+    "Id": "MNJH_Love5",
+    "Reward": "MNJH_Love5",
+    "Condition": {
+      "HeroLove": 80
+    },
+    "ConditionDesc": "MNJH_Love5_Desc",
+    "ConditionName": "MNJH_Love5_Name",
+    "Next": [
+      "MNJH_Love6"
+    ]
+  },
+  "MNJH_Love6": {
+    "Id": "MNJH_Love6",
+    "Reward": "MNJH_Love6",
+    "Condition": {
+      "HeroLove": 100
+    },
+    "ConditionDesc": "MNJH_Love6_Desc",
+    "ConditionName": "MNJH_Love6_Name",
+    "Next": []
+  },
+  "SMZS_Num2": {
+    "Id": "SMZS_Num2",
+    "Reward": "SMZS_Num2",
+    "Condition": {
+      "HeroNum": 8
+    },
+    "ConditionDesc": "SMZS_Num2_Desc",
+    "ConditionName": "SMZS_Num2_Name",
+    "Next": [
+      "SMZS_Num3"
+    ]
+  },
+  "DWH_Love5": {
+    "Id": "DWH_Love5",
+    "Reward": "DWH_Love5",
+    "Condition": {
+      "HeroLove": 80
+    },
+    "ConditionDesc": "DWH_Love5_Desc",
+    "ConditionName": "DWH_Love5_Name",
+    "Next": [
+      "DWH_Love6"
+    ]
+  },
+  "DWH_Love4": {
+    "Id": "DWH_Love4",
+    "Reward": "DWH_Love4",
+    "Condition": {
+      "HeroLove": 60
+    },
+    "ConditionDesc": "DWH_Love4_Desc",
+    "ConditionName": "DWH_Love4_Name",
+    "Next": [
+      "DWH_Love5"
+    ]
+  },
+  "BSNCT_Star4": {
+    "Id": "BSNCT_Star4",
+    "Reward": "BSNCT_Star4",
+    "Condition": {
+      "HeroStar": 50
+    },
+    "ConditionDesc": "BSNCT_Star4_Desc",
+    "ConditionName": "BSNCT_Star4_Name",
+    "Next": [
+      "BSNCT_Star5"
+    ]
+  },
+  "BSNCT_Star5": {
+    "Id": "BSNCT_Star5",
+    "Reward": "BSNCT_Star5",
+    "Condition": {
+      "HeroStar": 60
+    },
+    "ConditionDesc": "BSNCT_Star5_Desc",
+    "ConditionName": "BSNCT_Star5_Name",
+    "Next": []
+  },
+  "BSNCT_Star2": {
+    "Id": "BSNCT_Star2",
+    "Reward": "BSNCT_Star2",
+    "Condition": {
+      "HeroStar": 30
+    },
+    "ConditionDesc": "BSNCT_Star2_Desc",
+    "ConditionName": "BSNCT_Star2_Name",
+    "Next": [
+      "BSNCT_Star3"
+    ]
+  },
+  "BSNCT_Star3": {
+    "Id": "BSNCT_Star3",
+    "Reward": "BSNCT_Star3",
+    "Condition": {
+      "HeroStar": 40
+    },
+    "ConditionDesc": "BSNCT_Star3_Desc",
+    "ConditionName": "BSNCT_Star3_Name",
+    "Next": [
+      "BSNCT_Star4"
+    ]
+  },
+  "DWH_Love3": {
+    "Id": "DWH_Love3",
+    "Reward": "DWH_Love3",
+    "Condition": {
+      "HeroLove": 40
+    },
+    "ConditionDesc": "DWH_Love3_Desc",
+    "ConditionName": "DWH_Love3_Name",
+    "Next": [
+      "DWH_Love4"
+    ]
+  },
+  "BSNCT_Star1": {
+    "Id": "BSNCT_Star1",
+    "Reward": "BSNCT_Star1",
+    "Condition": {
+      "HeroStar": 15
+    },
+    "ConditionDesc": "BSNCT_Star1_Desc",
+    "ConditionName": "BSNCT_Star1_Name",
+    "Next": [
+      "BSNCT_Star2"
+    ]
+  },
+  "DWH_Star5": {
+    "Id": "DWH_Star5",
+    "Reward": "DWH_Star5",
+    "Condition": {
+      "HeroStar": 60
+    },
+    "ConditionDesc": "DWH_Star5_Desc",
+    "ConditionName": "DWH_Star5_Name",
+    "Next": []
+  },
+  "DWH_Love1": {
+    "Id": "DWH_Love1",
+    "Reward": "DWH_Love1",
+    "Condition": {
+      "HeroLove": 10
+    },
+    "ConditionDesc": "DWH_Love1_Desc",
+    "ConditionName": "DWH_Love1_Name",
+    "Next": [
+      "DWH_Love2"
+    ]
+  },
+  "SMZS_Love4": {
+    "Id": "SMZS_Love4",
+    "Reward": "SMZS_Love4",
+    "Condition": {
+      "HeroLove": 60
+    },
+    "ConditionDesc": "SMZS_Love4_Desc",
+    "ConditionName": "SMZS_Love4_Name",
+    "Next": [
+      "SMZS_Love5"
+    ]
+  },
+  "SMZS_Love5": {
+    "Id": "SMZS_Love5",
+    "Reward": "SMZS_Love5",
+    "Condition": {
+      "HeroLove": 80
+    },
+    "ConditionDesc": "SMZS_Love5_Desc",
+    "ConditionName": "SMZS_Love5_Name",
+    "Next": [
+      "SMZS_Love6"
+    ]
+  },
+  "DWH_Star1": {
+    "Id": "DWH_Star1",
+    "Reward": "DWH_Star1",
+    "Condition": {
+      "HeroStar": 15
+    },
+    "ConditionDesc": "DWH_Star1_Desc",
+    "ConditionName": "DWH_Star1_Name",
+    "Next": [
+      "DWH_Star2"
+    ]
+  },
+  "SMZS_Love3": {
+    "Id": "SMZS_Love3",
+    "Reward": "SMZS_Love3",
+    "Condition": {
+      "HeroLove": 40
+    },
+    "ConditionDesc": "SMZS_Love3_Desc",
+    "ConditionName": "SMZS_Love3_Name",
+    "Next": [
+      "SMZS_Love4"
+    ]
+  },
+  "DWH_Star3": {
+    "Id": "DWH_Star3",
+    "Reward": "DWH_Star3",
+    "Condition": {
+      "HeroStar": 40
+    },
+    "ConditionDesc": "DWH_Star3_Desc",
+    "ConditionName": "DWH_Star3_Name",
+    "Next": [
+      "DWH_Star4"
+    ]
+  },
+  "DWH_Star2": {
+    "Id": "DWH_Star2",
+    "Reward": "DWH_Star2",
+    "Condition": {
+      "HeroStar": 30
+    },
+    "ConditionDesc": "DWH_Star2_Desc",
+    "ConditionName": "DWH_Star2_Name",
+    "Next": [
+      "DWH_Star3"
+    ]
+  },
+  "WNSXJ_Num1": {
+    "Id": "WNSXJ_Num1",
+    "Reward": "WNSXJ_Num1",
+    "Condition": {
+      "HeroNum": 5
+    },
+    "ConditionDesc": "WNSXJ_Num1_Desc",
+    "ConditionName": "WNSXJ_Num1_Name",
+    "Next": [
+      "WNSXJ_Num2"
+    ]
+  },
+  "MNJH_Star4": {
+    "Id": "MNJH_Star4",
+    "Reward": "MNJH_Star4",
+    "Condition": {
+      "HeroStar": 50
+    },
+    "ConditionDesc": "MNJH_Star4_Desc",
+    "ConditionName": "MNJH_Star4_Name",
+    "Next": [
+      "MNJH_Star5"
+    ]
+  },
+  "WNSXJ_Num2": {
+    "Id": "WNSXJ_Num2",
+    "Reward": "WNSXJ_Num2",
+    "Condition": {
+      "HeroNum": 8
+    },
+    "ConditionDesc": "WNSXJ_Num2_Desc",
+    "ConditionName": "WNSXJ_Num2_Name",
+    "Next": [
+      "WNSXJ_Num3"
+    ]
+  },
+  "DWH_Love2": {
+    "Id": "DWH_Love2",
+    "Reward": "DWH_Love2",
+    "Condition": {
+      "HeroLove": 25
+    },
+    "ConditionDesc": "DWH_Love2_Desc",
+    "ConditionName": "DWH_Love2_Name",
+    "Next": [
+      "DWH_Love3"
+    ]
+  },
+  "SMZS_Star3": {
+    "Id": "SMZS_Star3",
+    "Reward": "SMZS_Star3",
+    "Condition": {
+      "HeroStar": 40
+    },
+    "ConditionDesc": "SMZS_Star3_Desc",
+    "ConditionName": "SMZS_Star3_Name",
+    "Next": [
+      "SMZS_Star4"
+    ]
+  },
+  "SMZS_Star2": {
+    "Id": "SMZS_Star2",
+    "Reward": "SMZS_Star2",
+    "Condition": {
+      "HeroStar": 30
+    },
+    "ConditionDesc": "SMZS_Star2_Desc",
+    "ConditionName": "SMZS_Star2_Name",
+    "Next": [
+      "SMZS_Star3"
+    ]
+  },
+  "WNSXJ_Star2": {
+    "Id": "WNSXJ_Star2",
+    "Reward": "WNSXJ_Star2",
+    "Condition": {
+      "HeroStar": 30
+    },
+    "ConditionDesc": "WNSXJ_Star2_Desc",
+    "ConditionName": "WNSXJ_Star2_Name",
+    "Next": [
+      "WNSXJ_Star3"
+    ]
+  },
+  "SMZS_Love6": {
+    "Id": "SMZS_Love6",
+    "Reward": "SMZS_Love6",
+    "Condition": {
+      "HeroLove": 100
+    },
+    "ConditionDesc": "SMZS_Love6_Desc",
+    "ConditionName": "SMZS_Love6_Name",
+    "Next": []
+  },
+  "SMZS_Star5": {
+    "Id": "SMZS_Star5",
+    "Reward": "SMZS_Star5",
+    "Condition": {
+      "HeroStar": 60
+    },
+    "ConditionDesc": "SMZS_Star5_Desc",
+    "ConditionName": "SMZS_Star5_Name",
+    "Next": []
+  },
+  "WNSXJ_Star4": {
+    "Id": "WNSXJ_Star4",
+    "Reward": "WNSXJ_Star4",
+    "Condition": {
+      "HeroStar": 50
+    },
+    "ConditionDesc": "WNSXJ_Star4_Desc",
+    "ConditionName": "WNSXJ_Star4_Name",
+    "Next": [
+      "WNSXJ_Star5"
+    ]
+  },
+  "DWH_Star4": {
+    "Id": "DWH_Star4",
+    "Reward": "DWH_Star4",
+    "Condition": {
+      "HeroStar": 50
+    },
+    "ConditionDesc": "DWH_Star4_Desc",
+    "ConditionName": "DWH_Star4_Name",
+    "Next": [
+      "DWH_Star5"
+    ]
+  },
+  "XD_Star5": {
+    "Id": "XD_Star5",
+    "Reward": "XD_Star5",
+    "Condition": {
+      "HeroStar": 60
+    },
+    "ConditionDesc": "XD_Star5_Desc",
+    "ConditionName": "XD_Star5_Name",
+    "Next": []
+  },
+  "XD_Star4": {
+    "Id": "XD_Star4",
+    "Reward": "XD_Star4",
+    "Condition": {
+      "HeroStar": 50
+    },
+    "ConditionDesc": "XD_Star4_Desc",
+    "ConditionName": "XD_Star4_Name",
+    "Next": [
+      "XD_Star5"
+    ]
+  },
+  "WNSXJ_Star3": {
+    "Id": "WNSXJ_Star3",
+    "Reward": "WNSXJ_Star3",
+    "Condition": {
+      "HeroStar": 40
+    },
+    "ConditionDesc": "WNSXJ_Star3_Desc",
+    "ConditionName": "WNSXJ_Star3_Name",
+    "Next": [
+      "WNSXJ_Star4"
+    ]
+  },
+  "XD_Star1": {
+    "Id": "XD_Star1",
+    "Reward": "XD_Star1",
+    "Condition": {
+      "HeroStar": 15
+    },
+    "ConditionDesc": "XD_Star1_Desc",
+    "ConditionName": "XD_Star1_Name",
+    "Next": [
+      "XD_Star2"
+    ]
+  },
+  "MNJH_Star5": {
+    "Id": "MNJH_Star5",
+    "Reward": "MNJH_Star5",
+    "Condition": {
+      "HeroStar": 60
+    },
+    "ConditionDesc": "MNJH_Star5_Desc",
+    "ConditionName": "MNJH_Star5_Name",
+    "Next": []
+  },
+  "XD_Star3": {
+    "Id": "XD_Star3",
+    "Reward": "XD_Star3",
+    "Condition": {
+      "HeroStar": 40
+    },
+    "ConditionDesc": "XD_Star3_Desc",
+    "ConditionName": "XD_Star3_Name",
+    "Next": [
+      "XD_Star4"
+    ]
+  },
+  "XD_Star2": {
+    "Id": "XD_Star2",
+    "Reward": "XD_Star2",
+    "Condition": {
+      "HeroStar": 30
+    },
+    "ConditionDesc": "XD_Star2_Desc",
+    "ConditionName": "XD_Star2_Name",
+    "Next": [
+      "XD_Star3"
+    ]
+  },
+  "XD_Love5": {
+    "Id": "XD_Love5",
+    "Reward": "XD_Love5",
+    "Condition": {
+      "HeroLove": 80
+    },
+    "ConditionDesc": "XD_Love5_Desc",
+    "ConditionName": "XD_Love5_Name",
+    "Next": [
+      "XD_Love6"
+    ]
+  },
+  "XD_Love4": {
+    "Id": "XD_Love4",
+    "Reward": "XD_Love4",
+    "Condition": {
+      "HeroLove": 60
+    },
+    "ConditionDesc": "XD_Love4_Desc",
+    "ConditionName": "XD_Love4_Name",
+    "Next": [
+      "XD_Love5"
+    ]
+  },
+  "SMZS_Star4": {
+    "Id": "SMZS_Star4",
+    "Reward": "SMZS_Star4",
+    "Condition": {
+      "HeroStar": 50
+    },
+    "ConditionDesc": "SMZS_Star4_Desc",
+    "ConditionName": "SMZS_Star4_Name",
+    "Next": [
+      "SMZS_Star5"
+    ]
+  },
+  "XD_Love6": {
+    "Id": "XD_Love6",
+    "Reward": "XD_Love6",
+    "Condition": {
+      "HeroLove": 100
+    },
+    "ConditionDesc": "XD_Love6_Desc",
+    "ConditionName": "XD_Love6_Name",
+    "Next": []
+  },
+  "XD_Love1": {
+    "Id": "XD_Love1",
+    "Reward": "XD_Love1",
+    "Condition": {
+      "HeroLove": 10
+    },
+    "ConditionDesc": "XD_Love1_Desc",
+    "ConditionName": "XD_Love1_Name",
+    "Next": [
+      "XD_Love2"
+    ]
+  },
+  "MNJH_Star1": {
+    "Id": "MNJH_Star1",
+    "Reward": "MNJH_Star1",
+    "Condition": {
+      "HeroStar": 15
+    },
+    "ConditionDesc": "MNJH_Star1_Desc",
+    "ConditionName": "MNJH_Star1_Name",
+    "Next": [
+      "MNJH_Star2"
+    ]
+  },
+  "XD_Love3": {
+    "Id": "XD_Love3",
+    "Reward": "XD_Love3",
+    "Condition": {
+      "HeroLove": 40
+    },
+    "ConditionDesc": "XD_Love3_Desc",
+    "ConditionName": "XD_Love3_Name",
+    "Next": [
+      "XD_Love4"
+    ]
+  },
+  "XD_Love2": {
+    "Id": "XD_Love2",
+    "Reward": "XD_Love2",
+    "Condition": {
+      "HeroLove": 25
+    },
+    "ConditionDesc": "XD_Love2_Desc",
+    "ConditionName": "XD_Love2_Name",
+    "Next": [
+      "XD_Love3"
+    ]
+  },
+  "SMZS_Love2": {
+    "Id": "SMZS_Love2",
+    "Reward": "SMZS_Love2",
+    "Condition": {
+      "HeroLove": 25
+    },
+    "ConditionDesc": "SMZS_Love2_Desc",
+    "ConditionName": "SMZS_Love2_Name",
+    "Next": [
+      "SMZS_Love3"
+    ]
+  },
+  "WNSXJ_Love2": {
+    "Id": "WNSXJ_Love2",
+    "Reward": "WNSXJ_Love2",
+    "Condition": {
+      "HeroLove": 25
+    },
+    "ConditionDesc": "WNSXJ_Love2_Desc",
+    "ConditionName": "WNSXJ_Love2_Name",
+    "Next": [
+      "WNSXJ_Love3"
+    ]
+  },
+  "SMZS_Star1": {
+    "Id": "SMZS_Star1",
+    "Reward": "SMZS_Star1",
+    "Condition": {
+      "HeroStar": 15
+    },
+    "ConditionDesc": "SMZS_Star1_Desc",
+    "ConditionName": "SMZS_Star1_Name",
+    "Next": [
+      "SMZS_Star2"
+    ]
+  },
+  "MNJH_Star2": {
+    "Id": "MNJH_Star2",
+    "Reward": "MNJH_Star2",
+    "Condition": {
+      "HeroStar": 30
+    },
+    "ConditionDesc": "MNJH_Star2_Desc",
+    "ConditionName": "MNJH_Star2_Name",
+    "Next": [
+      "MNJH_Star3"
+    ]
+  },
+  "WNSXJ_Star1": {
+    "Id": "WNSXJ_Star1",
+    "Reward": "WNSXJ_Star1",
+    "Condition": {
+      "HeroStar": 15
+    },
+    "ConditionDesc": "WNSXJ_Star1_Desc",
+    "ConditionName": "WNSXJ_Star1_Name",
+    "Next": [
+      "WNSXJ_Star2"
+    ]
+  },
+  "DWH_Num1": {
+    "Id": "DWH_Num1",
+    "Reward": "DWH_Num1",
+    "Condition": {
+      "HeroNum": 5
+    },
+    "ConditionDesc": "DWH_Num1_Desc",
+    "ConditionName": "DWH_Num1_Name",
+    "Next": [
+      "DWH_Num2"
+    ]
+  },
+  "DWH_Num2": {
+    "Id": "DWH_Num2",
+    "Reward": "DWH_Num2",
+    "Condition": {
+      "HeroNum": 8
+    },
+    "ConditionDesc": "DWH_Num2_Desc",
+    "ConditionName": "DWH_Num2_Name",
+    "Next": [
+      "DWH_Num3"
+    ]
+  },
+  "DWH_Num3": {
+    "Id": "DWH_Num3",
+    "Reward": "DWH_Num3",
+    "Condition": {
+      "HeroNum": 10
+    },
+    "ConditionDesc": "DWH_Num3_Desc",
+    "ConditionName": "DWH_Num3_Name",
+    "Next": []
+  },
+  "SMZS_Love1": {
+    "Id": "SMZS_Love1",
+    "Reward": "SMZS_Love1",
+    "Condition": {
+      "HeroLove": 10
+    },
+    "ConditionDesc": "SMZS_Love1_Desc",
+    "ConditionName": "SMZS_Love1_Name",
+    "Next": [
+      "SMZS_Love2"
+    ]
+  },
+  "MNJH_Love2": {
+    "Id": "MNJH_Love2",
+    "Reward": "MNJH_Love2",
+    "Condition": {
+      "HeroLove": 25
+    },
+    "ConditionDesc": "MNJH_Love2_Desc",
+    "ConditionName": "MNJH_Love2_Name",
+    "Next": [
+      "MNJH_Love3"
+    ]
+  }
+}

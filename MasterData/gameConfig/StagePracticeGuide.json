@@ -1,0 +1,4410 @@
+{
+  "SPG_PM01P15_8": {
+    "Id": "SPG_PM01P15_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P15_10": {
+    "Id": "SPG_PM01P15_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P12_5": {
+    "Id": "SPG_PM01P12_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6",
+        "op7",
+        "op8",
+        "op9",
+        "op10"
+      ]
+    }
+  },
+  "SPG_PM01P13_2": {
+    "Id": "SPG_PM01P13_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM04P03_9": {
+    "Id": "SPG_PM04P03_9",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P06_4": {
+    "Id": "SPG_PM01P06_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 6000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P06A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM04P03_8": {
+    "Id": "SPG_PM04P03_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P04_11": {
+    "Id": "SPG_PM01P04_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P04_10": {
+    "Id": "SPG_PM01P04_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P11_14": {
+    "Id": "SPG_PM01P11_14",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P15_5": {
+    "Id": "SPG_PM01P15_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM01P14_3": {
+    "Id": "SPG_PM01P14_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P16_1": {
+    "Id": "SPG_PM01P16_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P05_1": {
+    "Id": "SPG_PM01P05_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P05_2": {
+    "Id": "SPG_PM01P05_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P05_3": {
+    "Id": "SPG_PM01P05_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P05_4": {
+    "Id": "SPG_PM01P05_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op7",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op8",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 9000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P05A01E1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P05A01E2"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P05_5": {
+    "Id": "SPG_PM01P05_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6",
+        "op7",
+        "op8"
+      ]
+    }
+  },
+  "SPG_PM01P05_6": {
+    "Id": "SPG_PM01P05_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P05_7": {
+    "Id": "SPG_PM01P05_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P05_8": {
+    "Id": "SPG_PM01P05_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P05_9": {
+    "Id": "SPG_PM01P05_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P15_7": {
+    "Id": "SPG_PM01P15_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P16_3": {
+    "Id": "SPG_PM01P16_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P07_6": {
+    "Id": "SPG_PM01P07_6",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM02P04_1": {
+    "Id": "SPG_PM02P04_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM02P04_2": {
+    "Id": "SPG_PM02P04_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P04A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM02P04_3": {
+    "Id": "SPG_PM02P04_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM02P04_4": {
+    "Id": "SPG_PM02P04_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM02P04_5": {
+    "Id": "SPG_PM02P04_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM02P04_6": {
+    "Id": "SPG_PM02P04_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM02P04_7": {
+    "Id": "SPG_PM02P04_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM02P04_8": {
+    "Id": "SPG_PM02P04_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM02P04_9": {
+    "Id": "SPG_PM02P04_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P14_4": {
+    "Id": "SPG_PM01P14_4",
+    "Type": "Wait",
+    "Factor": {
+      "millis": 4000
+    }
+  },
+  "SPG_PM03P04_11": {
+    "Id": "SPG_PM03P04_11",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM03P04_10": {
+    "Id": "SPG_PM03P04_10",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P12_7": {
+    "Id": "SPG_PM01P12_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P09_8": {
+    "Id": "SPG_PM01P09_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P09_9": {
+    "Id": "SPG_PM01P09_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P12_1": {
+    "Id": "SPG_PM01P12_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P09_4": {
+    "Id": "SPG_PM01P09_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 9000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P09A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM04P04_2": {
+    "Id": "SPG_PM04P04_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P04N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P04N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P04N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P04N4"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P04N5"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P04N6"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM04P04A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P09_6": {
+    "Id": "SPG_PM01P09_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P09_7": {
+    "Id": "SPG_PM01P09_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P16_5": {
+    "Id": "SPG_PM01P16_5",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P16N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P16N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P16N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P16N4"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P16N5"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P16N6"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM01P16A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P09_1": {
+    "Id": "SPG_PM01P09_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P09_2": {
+    "Id": "SPG_PM01P09_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM04P04_3": {
+    "Id": "SPG_PM04P04_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM04P04_10": {
+    "Id": "SPG_PM04P04_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P01_11": {
+    "Id": "SPG_PM01P01_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM02P01_9": {
+    "Id": "SPG_PM02P01_9",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM02P01_8": {
+    "Id": "SPG_PM02P01_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P09_5": {
+    "Id": "SPG_PM01P09_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM04P04_11": {
+    "Id": "SPG_PM04P04_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM02P01_5": {
+    "Id": "SPG_PM02P01_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM02P01_4": {
+    "Id": "SPG_PM02P01_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM02P01_7": {
+    "Id": "SPG_PM02P01_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM02P01_6": {
+    "Id": "SPG_PM02P01_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM02P01_1": {
+    "Id": "SPG_PM02P01_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM04P04_12": {
+    "Id": "SPG_PM04P04_12",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM02P01_3": {
+    "Id": "SPG_PM02P01_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5"
+      ]
+    }
+  },
+  "SPG_PM02P01_2": {
+    "Id": "SPG_PM02P01_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 9000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P01A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM03P04_7": {
+    "Id": "SPG_PM03P04_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM03P04_6": {
+    "Id": "SPG_PM03P04_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM03P04_5": {
+    "Id": "SPG_PM03P04_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM03P04_4": {
+    "Id": "SPG_PM03P04_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM03P04_3": {
+    "Id": "SPG_PM03P04_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5"
+      ]
+    }
+  },
+  "SPG_PM03P04_2": {
+    "Id": "SPG_PM03P04_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 8000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM03P04A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM03P04_1": {
+    "Id": "SPG_PM03P04_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P07_11": {
+    "Id": "SPG_PM01P07_11",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P06_3": {
+    "Id": "SPG_PM01P06_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM04P03_4": {
+    "Id": "SPG_PM04P03_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P07_12": {
+    "Id": "SPG_PM01P07_12",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM03P04_9": {
+    "Id": "SPG_PM03P04_9",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM03P04_8": {
+    "Id": "SPG_PM03P04_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM03P02_5": {
+    "Id": "SPG_PM03P02_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM03P02_4": {
+    "Id": "SPG_PM03P02_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM03P02_7": {
+    "Id": "SPG_PM03P02_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM03P02_6": {
+    "Id": "SPG_PM03P02_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM03P02_1": {
+    "Id": "SPG_PM03P02_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P06_1": {
+    "Id": "SPG_PM01P06_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM03P02_3": {
+    "Id": "SPG_PM03P02_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM03P02_2": {
+    "Id": "SPG_PM03P02_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 8000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM03P02N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM03P02N2"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM03P02A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P05_15": {
+    "Id": "SPG_PM01P05_15",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM03P02_9": {
+    "Id": "SPG_PM03P02_9",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM03P02_8": {
+    "Id": "SPG_PM03P02_8",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P07_4": {
+    "Id": "SPG_PM01P07_4",
+    "Type": "Wait",
+    "Factor": {
+      "millis": 5000
+    }
+  },
+  "SPG_PM01P12_2": {
+    "Id": "SPG_PM01P12_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P09_3": {
+    "Id": "SPG_PM01P09_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P12_11": {
+    "Id": "SPG_PM01P12_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P15_9": {
+    "Id": "SPG_PM01P15_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P01_12": {
+    "Id": "SPG_PM01P01_12",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P14_2": {
+    "Id": "SPG_PM01P14_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P01_7": {
+    "Id": "SPG_PM01P01_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P14_7": {
+    "Id": "SPG_PM01P14_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P05_10": {
+    "Id": "SPG_PM01P05_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P07_5": {
+    "Id": "SPG_PM01P07_5",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 8000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P07N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P07N1"
+            }
+          ]
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM01P07A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P08_9": {
+    "Id": "SPG_PM01P08_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P15_1": {
+    "Id": "SPG_PM01P15_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P11_15": {
+    "Id": "SPG_PM01P11_15",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P14_1": {
+    "Id": "SPG_PM01P14_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P15_3": {
+    "Id": "SPG_PM01P15_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P11_12": {
+    "Id": "SPG_PM01P11_12",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op7"
+    }
+  },
+  "SPG_PM01P11_11": {
+    "Id": "SPG_PM01P11_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P11_10": {
+    "Id": "SPG_PM01P11_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P05_12": {
+    "Id": "SPG_PM01P05_12",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op7"
+    }
+  },
+  "SPG_PM01P05_16": {
+    "Id": "SPG_PM01P05_16",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P12_18": {
+    "Id": "SPG_PM01P12_18",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P12_4": {
+    "Id": "SPG_PM01P12_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op7",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op8",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op9",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        },
+        {
+          "id": "op10",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 8000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 840,
+              "id": "PM01P12N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 840,
+              "id": "PM01P12N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 600,
+              "id": "PM01P12N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 840,
+              "id": "PM01P12N4"
+            },
+            {
+              "hp": 9999,
+              "rp": 840,
+              "id": "PM01P12N5"
+            }
+          ]
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P12A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM02P03_3": {
+    "Id": "SPG_PM02P03_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM02P03_2": {
+    "Id": "SPG_PM02P03_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 7000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P03N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P03N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P03N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P03N4"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM02P03A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM02P03_1": {
+    "Id": "SPG_PM02P03_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM02P03_7": {
+    "Id": "SPG_PM02P03_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM02P03_6": {
+    "Id": "SPG_PM02P03_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM02P03_5": {
+    "Id": "SPG_PM02P03_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM02P03_4": {
+    "Id": "SPG_PM02P03_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM02P03_9": {
+    "Id": "SPG_PM02P03_9",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM02P03_8": {
+    "Id": "SPG_PM02P03_8",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P15_4": {
+    "Id": "SPG_PM01P15_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 10000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P15A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P10_3": {
+    "Id": "SPG_PM01P10_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P12_6": {
+    "Id": "SPG_PM01P12_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P13_13": {
+    "Id": "SPG_PM01P13_13",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P14_5": {
+    "Id": "SPG_PM01P14_5",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 9000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P14N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P14N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P14N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P14N4"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM01P14A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P16_14": {
+    "Id": "SPG_PM01P16_14",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P10_10": {
+    "Id": "SPG_PM01P10_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P13_10": {
+    "Id": "SPG_PM01P13_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P10_12": {
+    "Id": "SPG_PM01P10_12",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P10_13": {
+    "Id": "SPG_PM01P10_13",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P13_1": {
+    "Id": "SPG_PM01P13_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P08_13": {
+    "Id": "SPG_PM01P08_13",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P12_13": {
+    "Id": "SPG_PM01P12_13",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op8"
+    }
+  },
+  "SPG_PM04P01_11": {
+    "Id": "SPG_PM04P01_11",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM04P01_10": {
+    "Id": "SPG_PM04P01_10",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P13_12": {
+    "Id": "SPG_PM01P13_12",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P13_11": {
+    "Id": "SPG_PM01P13_11",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P16_2": {
+    "Id": "SPG_PM01P16_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P06_7": {
+    "Id": "SPG_PM01P06_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P01_13": {
+    "Id": "SPG_PM01P01_13",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P10_11": {
+    "Id": "SPG_PM01P10_11",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P12_16": {
+    "Id": "SPG_PM01P12_16",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P16_11": {
+    "Id": "SPG_PM01P16_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P08_7": {
+    "Id": "SPG_PM01P08_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P05_14": {
+    "Id": "SPG_PM01P05_14",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P12_17": {
+    "Id": "SPG_PM01P12_17",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P15_13": {
+    "Id": "SPG_PM01P15_13",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P15_12": {
+    "Id": "SPG_PM01P15_12",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P15_11": {
+    "Id": "SPG_PM01P15_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P08_6": {
+    "Id": "SPG_PM01P08_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P12_14": {
+    "Id": "SPG_PM01P12_14",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op9"
+    }
+  },
+  "SPG_PM01P15_14": {
+    "Id": "SPG_PM01P15_14",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P12_15": {
+    "Id": "SPG_PM01P12_15",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op10"
+    }
+  },
+  "SPG_PM01P14_10": {
+    "Id": "SPG_PM01P14_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P14_11": {
+    "Id": "SPG_PM01P14_11",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P09_10": {
+    "Id": "SPG_PM01P09_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P09_11": {
+    "Id": "SPG_PM01P09_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P16_4": {
+    "Id": "SPG_PM01P16_4",
+    "Type": "Wait",
+    "Factor": {
+      "millis": 4000
+    }
+  },
+  "SPG_PM01P06_6": {
+    "Id": "SPG_PM01P06_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P16_6": {
+    "Id": "SPG_PM01P16_6",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM01P16_7": {
+    "Id": "SPG_PM01P16_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM04P03_11": {
+    "Id": "SPG_PM04P03_11",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM04P03_10": {
+    "Id": "SPG_PM04P03_10",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM04P04_8": {
+    "Id": "SPG_PM04P04_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM04P04_9": {
+    "Id": "SPG_PM04P04_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM04P04_6": {
+    "Id": "SPG_PM04P04_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P04_7": {
+    "Id": "SPG_PM04P04_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM04P04_4": {
+    "Id": "SPG_PM04P04_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM04P04_5": {
+    "Id": "SPG_PM04P04_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM02P01_11": {
+    "Id": "SPG_PM02P01_11",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM02P01_10": {
+    "Id": "SPG_PM02P01_10",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM04P02_10": {
+    "Id": "SPG_PM04P02_10",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM04P04_1": {
+    "Id": "SPG_PM04P04_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P07_10": {
+    "Id": "SPG_PM01P07_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P05_13": {
+    "Id": "SPG_PM01P05_13",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op8"
+    }
+  },
+  "SPG_PM01P14_8": {
+    "Id": "SPG_PM01P14_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P14_9": {
+    "Id": "SPG_PM01P14_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P02_8": {
+    "Id": "SPG_PM04P02_8",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM04P02_9": {
+    "Id": "SPG_PM04P02_9",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM04P02_4": {
+    "Id": "SPG_PM04P02_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM04P02_5": {
+    "Id": "SPG_PM04P02_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM04P02_6": {
+    "Id": "SPG_PM04P02_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P02_7": {
+    "Id": "SPG_PM04P02_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P14_6": {
+    "Id": "SPG_PM01P14_6",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM04P02_1": {
+    "Id": "SPG_PM04P02_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM04P02_2": {
+    "Id": "SPG_PM04P02_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard",
+            "icon": "Model_H051"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 9000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P02N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P02N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P02N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P02N4"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM04P02A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM04P02_3": {
+    "Id": "SPG_PM04P02_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM02P02_8": {
+    "Id": "SPG_PM02P02_8",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM02P02_9": {
+    "Id": "SPG_PM02P02_9",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P16_12": {
+    "Id": "SPG_PM01P16_12",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P16_13": {
+    "Id": "SPG_PM01P16_13",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P16_10": {
+    "Id": "SPG_PM01P16_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P07_7": {
+    "Id": "SPG_PM01P07_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM02P02_2": {
+    "Id": "SPG_PM02P02_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 6000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM02P02A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM02P02_3": {
+    "Id": "SPG_PM02P02_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3"
+      ]
+    }
+  },
+  "SPG_PM02P02_1": {
+    "Id": "SPG_PM02P02_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM02P02_6": {
+    "Id": "SPG_PM02P02_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM02P02_7": {
+    "Id": "SPG_PM02P02_7",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM02P02_4": {
+    "Id": "SPG_PM02P02_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM02P02_5": {
+    "Id": "SPG_PM02P02_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P02_10": {
+    "Id": "SPG_PM01P02_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P07_2": {
+    "Id": "SPG_PM01P07_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P15_2": {
+    "Id": "SPG_PM01P15_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P03_10": {
+    "Id": "SPG_PM01P03_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM03P01_8": {
+    "Id": "SPG_PM03P01_8",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P07_3": {
+    "Id": "SPG_PM01P07_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P11_13": {
+    "Id": "SPG_PM01P11_13",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM03P01_9": {
+    "Id": "SPG_PM03P01_9",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P07_1": {
+    "Id": "SPG_PM01P07_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P16_15": {
+    "Id": "SPG_PM01P16_15",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P02_3": {
+    "Id": "SPG_PM01P02_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P02_2": {
+    "Id": "SPG_PM01P02_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P02_1": {
+    "Id": "SPG_PM01P02_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P12_3": {
+    "Id": "SPG_PM01P12_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P02_7": {
+    "Id": "SPG_PM01P02_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P02_6": {
+    "Id": "SPG_PM01P02_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P02_5": {
+    "Id": "SPG_PM01P02_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM01P02_4": {
+    "Id": "SPG_PM01P02_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 6000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P02A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P12_8": {
+    "Id": "SPG_PM01P12_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P12_9": {
+    "Id": "SPG_PM01P12_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P02_9": {
+    "Id": "SPG_PM01P02_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P02_8": {
+    "Id": "SPG_PM01P02_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P03_11": {
+    "Id": "SPG_PM01P03_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P10_6": {
+    "Id": "SPG_PM01P10_6",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM01P10_7": {
+    "Id": "SPG_PM01P10_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P10_4": {
+    "Id": "SPG_PM01P10_4",
+    "Type": "Wait",
+    "Factor": {
+      "millis": 4000
+    }
+  },
+  "SPG_PM01P10_5": {
+    "Id": "SPG_PM01P10_5",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 8000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P10N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P10N2"
+            }
+          ]
+        },
+        {
+          "energy": 10000,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 1000,
+              "id": "PM01P10A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P10_2": {
+    "Id": "SPG_PM01P10_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P07_8": {
+    "Id": "SPG_PM01P07_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P06_5": {
+    "Id": "SPG_PM01P06_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3"
+      ]
+    }
+  },
+  "SPG_PM01P10_1": {
+    "Id": "SPG_PM01P10_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P12_12": {
+    "Id": "SPG_PM01P12_12",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op7"
+    }
+  },
+  "SPG_PM01P06_2": {
+    "Id": "SPG_PM01P06_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P12_10": {
+    "Id": "SPG_PM01P12_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P07_9": {
+    "Id": "SPG_PM01P07_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P08_8": {
+    "Id": "SPG_PM01P08_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P13_3": {
+    "Id": "SPG_PM01P13_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P10_8": {
+    "Id": "SPG_PM01P10_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P10_9": {
+    "Id": "SPG_PM01P10_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM03P01_2": {
+    "Id": "SPG_PM03P01_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 9000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM03P01A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM03P01_3": {
+    "Id": "SPG_PM03P01_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3"
+      ]
+    }
+  },
+  "SPG_PM03P01_1": {
+    "Id": "SPG_PM03P01_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM03P01_6": {
+    "Id": "SPG_PM03P01_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM03P01_7": {
+    "Id": "SPG_PM03P01_7",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM03P01_4": {
+    "Id": "SPG_PM03P01_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM03P01_5": {
+    "Id": "SPG_PM03P01_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM02P04_12": {
+    "Id": "SPG_PM02P04_12",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P13_7": {
+    "Id": "SPG_PM01P13_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM02P04_10": {
+    "Id": "SPG_PM02P04_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM02P04_11": {
+    "Id": "SPG_PM02P04_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P13_4": {
+    "Id": "SPG_PM01P13_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P13A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P02_11": {
+    "Id": "SPG_PM01P02_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM03P02_10": {
+    "Id": "SPG_PM03P02_10",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P16_8": {
+    "Id": "SPG_PM01P16_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P07_13": {
+    "Id": "SPG_PM01P07_13",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P13_6": {
+    "Id": "SPG_PM01P13_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM03P03_12": {
+    "Id": "SPG_PM03P03_12",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM03P03_10": {
+    "Id": "SPG_PM03P03_10",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM03P03_11": {
+    "Id": "SPG_PM03P03_11",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P04_9": {
+    "Id": "SPG_PM01P04_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P04_8": {
+    "Id": "SPG_PM01P04_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P03_7": {
+    "Id": "SPG_PM04P03_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM04P03_6": {
+    "Id": "SPG_PM04P03_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P03_1": {
+    "Id": "SPG_PM04P03_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P15_6": {
+    "Id": "SPG_PM01P15_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM04P03_3": {
+    "Id": "SPG_PM04P03_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5"
+      ]
+    }
+  },
+  "SPG_PM04P03_2": {
+    "Id": "SPG_PM04P03_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P03A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P04_1": {
+    "Id": "SPG_PM01P04_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P04_3": {
+    "Id": "SPG_PM01P04_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P04_2": {
+    "Id": "SPG_PM01P04_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P04_5": {
+    "Id": "SPG_PM01P04_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM01P04_4": {
+    "Id": "SPG_PM01P04_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "fighter": "PM01P04N1",
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 3000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P04A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P04_7": {
+    "Id": "SPG_PM01P04_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P04_6": {
+    "Id": "SPG_PM01P04_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P09_12": {
+    "Id": "SPG_PM01P09_12",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM04P01_9": {
+    "Id": "SPG_PM04P01_9",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM04P01_8": {
+    "Id": "SPG_PM04P01_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P16_9": {
+    "Id": "SPG_PM01P16_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P14_12": {
+    "Id": "SPG_PM01P14_12",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM01P06_9": {
+    "Id": "SPG_PM01P06_9",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P06_8": {
+    "Id": "SPG_PM01P06_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P01_3": {
+    "Id": "SPG_PM04P01_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5"
+      ]
+    }
+  },
+  "SPG_PM04P01_2": {
+    "Id": "SPG_PM04P01_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM04P01A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM04P01_1": {
+    "Id": "SPG_PM04P01_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P05_11": {
+    "Id": "SPG_PM01P05_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM04P01_7": {
+    "Id": "SPG_PM04P01_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM04P01_6": {
+    "Id": "SPG_PM04P01_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM04P01_5": {
+    "Id": "SPG_PM04P01_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM04P01_4": {
+    "Id": "SPG_PM04P01_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P01_4": {
+    "Id": "SPG_PM01P01_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P01A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P01_5": {
+    "Id": "SPG_PM01P01_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM01P01_6": {
+    "Id": "SPG_PM01P01_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM02P03_10": {
+    "Id": "SPG_PM02P03_10",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P01_1": {
+    "Id": "SPG_PM01P01_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P01_2": {
+    "Id": "SPG_PM01P01_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P01_3": {
+    "Id": "SPG_PM01P01_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P11_8": {
+    "Id": "SPG_PM01P11_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P01_8": {
+    "Id": "SPG_PM01P01_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P01_9": {
+    "Id": "SPG_PM01P01_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P01_14": {
+    "Id": "SPG_PM01P01_14",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P08_5": {
+    "Id": "SPG_PM01P08_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM01P08_4": {
+    "Id": "SPG_PM01P08_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P08A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P03_8": {
+    "Id": "SPG_PM01P03_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM01P03_9": {
+    "Id": "SPG_PM01P03_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P08_1": {
+    "Id": "SPG_PM01P08_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM04P03_5": {
+    "Id": "SPG_PM04P03_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P08_3": {
+    "Id": "SPG_PM01P08_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P08_2": {
+    "Id": "SPG_PM01P08_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P03_2": {
+    "Id": "SPG_PM01P03_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P03_3": {
+    "Id": "SPG_PM01P03_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P03_1": {
+    "Id": "SPG_PM01P03_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  },
+  "SPG_PM01P03_6": {
+    "Id": "SPG_PM01P03_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P03_7": {
+    "Id": "SPG_PM01P03_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P03_4": {
+    "Id": "SPG_PM01P03_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "fighter": "PM01P03N2",
+            "cost": 2000,
+            "type": "SkillCard",
+            "icon": "Model_H005"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "fighter": "PM01P03N1",
+            "cost": 3000,
+            "type": "SkillCard",
+            "icon": "Model_H017"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 7000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P03A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P03_5": {
+    "Id": "SPG_PM01P03_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4"
+      ]
+    }
+  },
+  "SPG_PM01P13_9": {
+    "Id": "SPG_PM01P13_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P13_8": {
+    "Id": "SPG_PM01P13_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM03P03_8": {
+    "Id": "SPG_PM03P03_8",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM03P03_9": {
+    "Id": "SPG_PM03P03_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P06_11": {
+    "Id": "SPG_PM01P06_11",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P06_10": {
+    "Id": "SPG_PM01P06_10",
+    "Type": "Complete",
+    "Factor": null
+  },
+  "SPG_PM03P03_4": {
+    "Id": "SPG_PM03P03_4",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM03P03_5": {
+    "Id": "SPG_PM03P03_5",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM03P03_6": {
+    "Id": "SPG_PM03P03_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op3"
+    }
+  },
+  "SPG_PM03P03_7": {
+    "Id": "SPG_PM03P03_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P13_5": {
+    "Id": "SPG_PM01P13_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5"
+      ]
+    }
+  },
+  "SPG_PM03P03_1": {
+    "Id": "SPG_PM03P03_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM03P03_2": {
+    "Id": "SPG_PM03P03_2",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee"
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM03P03A01E1"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM03P03_3": {
+    "Id": "SPG_PM03P03_3",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6"
+      ]
+    }
+  },
+  "SPG_PM01P01_10": {
+    "Id": "SPG_PM01P01_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P08_14": {
+    "Id": "SPG_PM01P08_14",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "EndCombo"
+      ]
+    }
+  },
+  "SPG_PM01P08_11": {
+    "Id": "SPG_PM01P08_11",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op6"
+    }
+  },
+  "SPG_PM01P08_10": {
+    "Id": "SPG_PM01P08_10",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op5"
+    }
+  },
+  "SPG_PM01P11_9": {
+    "Id": "SPG_PM01P11_9",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op4"
+    }
+  },
+  "SPG_PM01P08_12": {
+    "Id": "SPG_PM01P08_12",
+    "Type": "EndSection",
+    "Factor": null
+  },
+  "SPG_PM01P11_7": {
+    "Id": "SPG_PM01P11_7",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op2"
+    }
+  },
+  "SPG_PM01P11_6": {
+    "Id": "SPG_PM01P11_6",
+    "Type": "ExpectOp",
+    "Factor": {
+      "id": "op1"
+    }
+  },
+  "SPG_PM01P11_5": {
+    "Id": "SPG_PM01P11_5",
+    "Type": "ShowOpSeq",
+    "Factor": {
+      "seq": [
+        "op1",
+        "op2",
+        "op3",
+        "op4",
+        "op5",
+        "op6",
+        "op7"
+      ]
+    }
+  },
+  "SPG_PM01P11_4": {
+    "Id": "SPG_PM01P11_4",
+    "Type": "BeginSection",
+    "Factor": {
+      "operations": [
+        {
+          "id": "op1",
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op2",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op3",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op4",
+          "timeout": 2000,
+          "op": {
+            "cost": 3000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op5",
+          "timeout": 2000,
+          "op": {
+            "cost": 2000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op6",
+          "timeout": 2000,
+          "op": {
+            "cost": 1000,
+            "type": "SkillCard"
+          }
+        },
+        {
+          "id": "op7",
+          "timeout": 2000,
+          "op": {
+            "type": "UniqueSkill"
+          }
+        }
+      ],
+      "resets": [
+        {
+          "energy": 12000,
+          "role": "trainee",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11N1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11N2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11N3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11N4"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11N5"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11N6"
+            }
+          ]
+        },
+        {
+          "energy": 0,
+          "role": "partner",
+          "fighters": [
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11A01E1"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11A01E2"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11A01E3"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11A01E4"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P11A01E6"
+            },
+            {
+              "hp": 9999,
+              "rp": 0,
+              "id": "PM01P011A01E6"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "SPG_PM01P11_3": {
+    "Id": "SPG_PM01P11_3",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "GoFighting"
+      ]
+    }
+  },
+  "SPG_PM01P11_2": {
+    "Id": "SPG_PM01P11_2",
+    "Type": "ShowGuideDetail",
+    "Factor": null
+  },
+  "SPG_PM01P11_1": {
+    "Id": "SPG_PM01P11_1",
+    "Type": "Wait",
+    "Factor": {
+      "events": [
+        "WaveEntered"
+      ]
+    }
+  }
+}

@@ -1,0 +1,7018 @@
+{
+  "Gem1041": {
+    "Id": "Gem1041",
+    "Name": "GemName1041",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitSpecial_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      45,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_l_show_N",
+    "SuccessReward": "Gem2041",
+    "FailReward": "Gem1041"
+  },
+  "Gem1043": {
+    "Id": "Gem1043",
+    "Name": "GemName1043",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitSpecial_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.006,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_r_show_N",
+    "SuccessReward": "Gem2043",
+    "FailReward": "Gem1043"
+  },
+  "Gem1042": {
+    "Id": "Gem1042",
+    "Name": "GemName1042",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitSpecial_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_m_show_N",
+    "SuccessReward": "Gem2042",
+    "FailReward": "Gem1042"
+  },
+  "Gem1023": {
+    "Id": "Gem1023",
+    "Name": "GemName1023",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitDef_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.006,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_r_show_N",
+    "SuccessReward": "Gem2023",
+    "FailReward": "Gem1023"
+  },
+  "Gem1022": {
+    "Id": "Gem1022",
+    "Name": "GemName1022",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitDef_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_m_show_N",
+    "SuccessReward": "Gem2022",
+    "FailReward": "Gem1022"
+  },
+  "Gem1021": {
+    "Id": "Gem1021",
+    "Name": "GemName1021",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitDef_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      45,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_l_show_N",
+    "SuccessReward": "Gem2021",
+    "FailReward": "Gem1021"
+  },
+  "Gem2001": {
+    "Id": "Gem2001",
+    "Name": "GemName2001",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitCri_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      82.5,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_l_show_R",
+    "SuccessReward": "Gem3001",
+    "FailReward": "Gem2001"
+  },
+  "Gem2002": {
+    "Id": "Gem2002",
+    "Name": "GemName2002",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitCri_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_m_show_R",
+    "SuccessReward": "Gem3002",
+    "FailReward": "Gem2002"
+  },
+  "Gem2003": {
+    "Id": "Gem2003",
+    "Name": "GemName2003",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitCri_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.011,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_r_show_R",
+    "SuccessReward": "Gem3003",
+    "FailReward": "Gem2003"
+  },
+  "Gem4053": {
+    "Id": "Gem4053",
+    "Name": "GemName4053",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitAtk_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_r_show_SSR",
+    "SuccessReward": "Gem5053",
+    "FailReward": "Gem4053"
+  },
+  "Gem2022": {
+    "Id": "Gem2022",
+    "Name": "GemName2022",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitDef_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_m_show_R",
+    "SuccessReward": "Gem3022",
+    "FailReward": "Gem2022"
+  },
+  "Gem2023": {
+    "Id": "Gem2023",
+    "Name": "GemName2023",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitDef_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.011,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_r_show_R",
+    "SuccessReward": "Gem3023",
+    "FailReward": "Gem2023"
+  },
+  "Gem2021": {
+    "Id": "Gem2021",
+    "Name": "GemName2021",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitDef_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      82.5,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_l_show_R",
+    "SuccessReward": "Gem3021",
+    "FailReward": "Gem2021"
+  },
+  "Gem3032": {
+    "Id": "Gem3032",
+    "Name": "GemName3032",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitUnblock_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_m_show_SR",
+    "SuccessReward": "Gem4032",
+    "FailReward": "Gem3032"
+  },
+  "Gem3033": {
+    "Id": "Gem3033",
+    "Name": "GemName3033",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitUnblock_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.016,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_r_show_SR",
+    "SuccessReward": "Gem4033",
+    "FailReward": "Gem3033"
+  },
+  "Gem3031": {
+    "Id": "Gem3031",
+    "Name": "GemName3031",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitUnblock_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      120,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_l_show_SR",
+    "SuccessReward": "Gem4031",
+    "FailReward": "Gem3031"
+  },
+  "Gem4051": {
+    "Id": "Gem4051",
+    "Name": "GemName4051",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitAtk_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      150,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_l_show_SSR",
+    "SuccessReward": "Gem5051",
+    "FailReward": "Gem4051"
+  },
+  "Gem2041": {
+    "Id": "Gem2041",
+    "Name": "GemName2041",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitSpecial_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      82.5,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_l_show_R",
+    "SuccessReward": "Gem3041",
+    "FailReward": "Gem2041"
+  },
+  "Gem2042": {
+    "Id": "Gem2042",
+    "Name": "GemName2042",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitSpecial_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_m_show_R",
+    "SuccessReward": "Gem3042",
+    "FailReward": "Gem2042"
+  },
+  "Gem2043": {
+    "Id": "Gem2043",
+    "Name": "GemName2043",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitSpecial_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.011,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_r_show_R",
+    "SuccessReward": "Gem3043",
+    "FailReward": "Gem2043"
+  },
+  "Gem1012": {
+    "Id": "Gem1012",
+    "Name": "GemName1012",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitBlock_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_m_show_N",
+    "SuccessReward": "Gem2012",
+    "FailReward": "Gem1012"
+  },
+  "Gem1013": {
+    "Id": "Gem1013",
+    "Name": "GemName1013",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitBlock_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.006,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_r_show_N",
+    "SuccessReward": "Gem2013",
+    "FailReward": "Gem1013"
+  },
+  "Gem1011": {
+    "Id": "Gem1011",
+    "Name": "GemName1011",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitBlock_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      45,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_l_show_N",
+    "SuccessReward": "Gem2011",
+    "FailReward": "Gem1011"
+  },
+  "Gem3051": {
+    "Id": "Gem3051",
+    "Name": "GemName3051",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitAtk_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      120,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_l_show_SR",
+    "SuccessReward": "Gem4051",
+    "FailReward": "Gem3051"
+  },
+  "Gem3052": {
+    "Id": "Gem3052",
+    "Name": "GemName3052",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitAtk_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_m_show_SR",
+    "SuccessReward": "Gem4052",
+    "FailReward": "Gem3052"
+  },
+  "Gem3053": {
+    "Id": "Gem3053",
+    "Name": "GemName3053",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitAtk_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.016,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_r_show_SR",
+    "SuccessReward": "Gem4053",
+    "FailReward": "Gem3053"
+  },
+  "Gem4011": {
+    "Id": "Gem4011",
+    "Name": "GemName4011",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitBlock_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      150,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_l_show_SSR",
+    "SuccessReward": "Gem5011",
+    "FailReward": "Gem4011"
+  },
+  "Gem3011": {
+    "Id": "Gem3011",
+    "Name": "GemName3011",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitBlock_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      120,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_l_show_SR",
+    "SuccessReward": "Gem4011",
+    "FailReward": "Gem3011"
+  },
+  "Gem3012": {
+    "Id": "Gem3012",
+    "Name": "GemName3012",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitBlock_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_m_show_SR",
+    "SuccessReward": "Gem4012",
+    "FailReward": "Gem3012"
+  },
+  "Gem3013": {
+    "Id": "Gem3013",
+    "Name": "GemName3013",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitBlock_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.016,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_r_show_SR",
+    "SuccessReward": "Gem4013",
+    "FailReward": "Gem3013"
+  },
+  "Gem4033": {
+    "Id": "Gem4033",
+    "Name": "GemName4033",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitUnblock_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_r_show_SSR",
+    "SuccessReward": "Gem5033",
+    "FailReward": "Gem4033"
+  },
+  "Gem4032": {
+    "Id": "Gem4032",
+    "Name": "GemName4032",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitUnblock_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_m_show_SSR",
+    "SuccessReward": "Gem5032",
+    "FailReward": "Gem4032"
+  },
+  "Gem4031": {
+    "Id": "Gem4031",
+    "Name": "GemName4031",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitUnblock_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      150,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_l_show_SSR",
+    "SuccessReward": "Gem5031",
+    "FailReward": "Gem4031"
+  },
+  "GemW001": {
+    "Id": "GemW001",
+    "Name": "GemW001_Name",
+    "Rareity": 1,
+    "Type": 1,
+    "Suitid": "SuitBase_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1,
+    "Levelup": 1,
+    "Addattr": [
+      "CRITRATE"
+    ],
+    "Addattrlev": [
+      0.0005
+    ],
+    "Attrnum": 1,
+    "Attrprobability": [
+      1
+    ],
+    "Attrprobabilitylev": [
+      1
+    ],
+    "Addattrnum": [
+      0
+    ],
+    "Numprobability": [
+      100
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "item_500002_red",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_base_show",
+    "SuccessReward": "",
+    "FailReward": "GemW001"
+  },
+  "Gem4052": {
+    "Id": "Gem4052",
+    "Name": "GemName4052",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitAtk_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_m_show_SSR",
+    "SuccessReward": "Gem5052",
+    "FailReward": "Gem4052"
+  },
+  "Gem3041": {
+    "Id": "Gem3041",
+    "Name": "GemName3041",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitSpecial_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      120,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_l_show_SR",
+    "SuccessReward": "Gem4041",
+    "FailReward": "Gem3041"
+  },
+  "Gem1031": {
+    "Id": "Gem1031",
+    "Name": "GemName1031",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitUnblock_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      45,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_l_show_N",
+    "SuccessReward": "Gem2031",
+    "FailReward": "Gem1031"
+  },
+  "Gem1032": {
+    "Id": "Gem1032",
+    "Name": "GemName1032",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitUnblock_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_m_show_N",
+    "SuccessReward": "Gem2032",
+    "FailReward": "Gem1032"
+  },
+  "Gem1033": {
+    "Id": "Gem1033",
+    "Name": "GemName1033",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitUnblock_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.006,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_r_show_N",
+    "SuccessReward": "Gem2033",
+    "FailReward": "Gem1033"
+  },
+  "Gem1052": {
+    "Id": "Gem1052",
+    "Name": "GemName1052",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitAtk_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_m_show_N",
+    "SuccessReward": "Gem2052",
+    "FailReward": "Gem1052"
+  },
+  "Gem1053": {
+    "Id": "Gem1053",
+    "Name": "GemName1053",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitAtk_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.006,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_r_show_N",
+    "SuccessReward": "Gem2053",
+    "FailReward": "Gem1053"
+  },
+  "Gem1051": {
+    "Id": "Gem1051",
+    "Name": "GemName1051",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitAtk_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      45,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_l_show_N",
+    "SuccessReward": "Gem2051",
+    "FailReward": "Gem1051"
+  },
+  "Gem2013": {
+    "Id": "Gem2013",
+    "Name": "GemName2013",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitBlock_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.011,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_r_show_R",
+    "SuccessReward": "Gem3013",
+    "FailReward": "Gem2013"
+  },
+  "Gem2012": {
+    "Id": "Gem2012",
+    "Name": "GemName2012",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitBlock_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_m_show_R",
+    "SuccessReward": "Gem3012",
+    "FailReward": "Gem2012"
+  },
+  "Gem2011": {
+    "Id": "Gem2011",
+    "Name": "GemName2011",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitBlock_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      82.5,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_l_show_R",
+    "SuccessReward": "Gem3011",
+    "FailReward": "Gem2011"
+  },
+  "GemW003": {
+    "Id": "GemW003",
+    "Name": "GemW003_Name",
+    "Rareity": 1,
+    "Type": 3,
+    "Suitid": "SuitBase_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1,
+    "Levelup": 1,
+    "Addattr": [
+      "CRITRATE"
+    ],
+    "Addattrlev": [
+      0.0005
+    ],
+    "Attrnum": 1,
+    "Attrprobability": [
+      1
+    ],
+    "Attrprobabilitylev": [
+      1
+    ],
+    "Addattrnum": [
+      0
+    ],
+    "Numprobability": [
+      100
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "item_500002",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_base_show",
+    "SuccessReward": "",
+    "FailReward": "GemW003"
+  },
+  "Gem4002": {
+    "Id": "Gem4002",
+    "Name": "GemName4002",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitCri_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_m_show_SSR",
+    "SuccessReward": "Gem5002",
+    "FailReward": "Gem4002"
+  },
+  "Gem4041": {
+    "Id": "Gem4041",
+    "Name": "GemName4041",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitSpecial_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      150,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_l_show_SSR",
+    "SuccessReward": "Gem5041",
+    "FailReward": "Gem4041"
+  },
+  "Gem2031": {
+    "Id": "Gem2031",
+    "Name": "GemName2031",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitUnblock_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      82.5,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_l_show_R",
+    "SuccessReward": "Gem3031",
+    "FailReward": "Gem2031"
+  },
+  "Gem4013": {
+    "Id": "Gem4013",
+    "Name": "GemName4013",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitBlock_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_r_show_SSR",
+    "SuccessReward": "Gem5013",
+    "FailReward": "Gem4013"
+  },
+  "Gem2033": {
+    "Id": "Gem2033",
+    "Name": "GemName2033",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitUnblock_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.011,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_r_show_R",
+    "SuccessReward": "Gem3033",
+    "FailReward": "Gem2033"
+  },
+  "Gem2032": {
+    "Id": "Gem2032",
+    "Name": "GemName2032",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitUnblock_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_m_show_R",
+    "SuccessReward": "Gem3032",
+    "FailReward": "Gem2032"
+  },
+  "GemW002": {
+    "Id": "GemW002",
+    "Name": "GemW002_Name",
+    "Rareity": 1,
+    "Type": 2,
+    "Suitid": "SuitBase_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 1,
+    "Levelup": 1,
+    "Addattr": [
+      "CRITRATE"
+    ],
+    "Addattrlev": [
+      0.0005
+    ],
+    "Attrnum": 1,
+    "Attrprobability": [
+      1
+    ],
+    "Attrprobabilitylev": [
+      1
+    ],
+    "Addattrnum": [
+      0
+    ],
+    "Numprobability": [
+      100
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "item_500003",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_base_show",
+    "SuccessReward": "",
+    "FailReward": "GemW002"
+  },
+  "Gem4012": {
+    "Id": "Gem4012",
+    "Name": "GemName4012",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitBlock_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_m_show_SSR",
+    "SuccessReward": "Gem5012",
+    "FailReward": "Gem4012"
+  },
+  "Gem3021": {
+    "Id": "Gem3021",
+    "Name": "GemName3021",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitDef_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      120,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_l_show_SR",
+    "SuccessReward": "Gem4021",
+    "FailReward": "Gem3021"
+  },
+  "Gem4003": {
+    "Id": "Gem4003",
+    "Name": "GemName4003",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitCri_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_r_show_SSR",
+    "SuccessReward": "Gem5003",
+    "FailReward": "Gem4003"
+  },
+  "Gem3023": {
+    "Id": "Gem3023",
+    "Name": "GemName3023",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitDef_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.016,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_r_show_SR",
+    "SuccessReward": "Gem4023",
+    "FailReward": "Gem3023"
+  },
+  "Gem3022": {
+    "Id": "Gem3022",
+    "Name": "GemName3022",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitDef_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_m_show_SR",
+    "SuccessReward": "Gem4022",
+    "FailReward": "Gem3022"
+  },
+  "Gem4042": {
+    "Id": "Gem4042",
+    "Name": "GemName4042",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitSpecial_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_m_show_SSR",
+    "SuccessReward": "Gem5042",
+    "FailReward": "Gem4042"
+  },
+  "Gem4043": {
+    "Id": "Gem4043",
+    "Name": "GemName4043",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitSpecial_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_r_show_SSR",
+    "SuccessReward": "Gem5043",
+    "FailReward": "Gem4043"
+  },
+  "Gem4001": {
+    "Id": "Gem4001",
+    "Name": "GemName4001",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitCri_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      150,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_l_show_SSR",
+    "SuccessReward": "Gem5001",
+    "FailReward": "Gem4001"
+  },
+  "Gem2053": {
+    "Id": "Gem2053",
+    "Name": "GemName2053",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitAtk_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.011,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_r_show_R",
+    "SuccessReward": "Gem3053",
+    "FailReward": "Gem2053"
+  },
+  "Gem2052": {
+    "Id": "Gem2052",
+    "Name": "GemName2052",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitAtk_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_m_show_R",
+    "SuccessReward": "Gem3052",
+    "FailReward": "Gem2052"
+  },
+  "Gem2051": {
+    "Id": "Gem2051",
+    "Name": "GemName2051",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitAtk_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.01375,
+      0.011,
+      0.011,
+      82.5,
+      0.0275
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_l_show_R",
+    "SuccessReward": "Gem3051",
+    "FailReward": "Gem2051"
+  },
+  "Gem4021": {
+    "Id": "Gem4021",
+    "Name": "GemName4021",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitDef_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      150,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_l_show_SSR",
+    "SuccessReward": "Gem5021",
+    "FailReward": "Gem4021"
+  },
+  "Gem1001": {
+    "Id": "Gem1001",
+    "Name": "GemName1001",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitCri_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      45,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_l_show_N",
+    "SuccessReward": "Gem2001",
+    "FailReward": "Gem1001"
+  },
+  "Gem3042": {
+    "Id": "Gem3042",
+    "Name": "GemName3042",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitSpecial_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_m_show_SR",
+    "SuccessReward": "Gem4042",
+    "FailReward": "Gem3042"
+  },
+  "Gem1003": {
+    "Id": "Gem1003",
+    "Name": "GemName1003",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitCri_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.006,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_r_show_N",
+    "SuccessReward": "Gem2003",
+    "FailReward": "Gem1003"
+  },
+  "Gem1002": {
+    "Id": "Gem1002",
+    "Name": "GemName1002",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitCri_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0075,
+      0.006,
+      0.006,
+      0.015
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_m_show_N",
+    "SuccessReward": "Gem2002",
+    "FailReward": "Gem1002"
+  },
+  "Gem3003": {
+    "Id": "Gem3003",
+    "Name": "GemName3003",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitCri_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.016,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_r_show_SR",
+    "SuccessReward": "Gem4003",
+    "FailReward": "Gem3003"
+  },
+  "Gem3002": {
+    "Id": "Gem3002",
+    "Name": "GemName3002",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitCri_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_m_show_SR",
+    "SuccessReward": "Gem4002",
+    "FailReward": "Gem3002"
+  },
+  "Gem3001": {
+    "Id": "Gem3001",
+    "Name": "GemName3001",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitCri_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.016,
+      0.016,
+      120,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_l_show_SR",
+    "SuccessReward": "Gem4001",
+    "FailReward": "Gem3001"
+  },
+  "Gem3043": {
+    "Id": "Gem3043",
+    "Name": "GemName3043",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitSpecial_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.016,
+      0.016,
+      0.016,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_r_show_SR",
+    "SuccessReward": "Gem4043",
+    "FailReward": "Gem3043"
+  },
+  "Gem4022": {
+    "Id": "Gem4022",
+    "Name": "GemName4022",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitDef_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_m_show_SSR",
+    "SuccessReward": "Gem5022",
+    "FailReward": "Gem4022"
+  },
+  "Gem4023": {
+    "Id": "Gem4023",
+    "Name": "GemName4023",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitDef_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.02,
+      0.02,
+      0.02,
+      0.05
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_r_show_SSR",
+    "SuccessReward": "Gem5023",
+    "FailReward": "Gem4023"
+  },
+  "Gem1063": {
+    "Id": "Gem1063",
+    "Name": "GemName1063",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitAssa_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.0072,
+      0.0048,
+      0.0048,
+      0.006,
+      0.018
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_r_show_N",
+    "SuccessReward": "Gem2063",
+    "FailReward": "Gem1063"
+  },
+  "Gem1062": {
+    "Id": "Gem1062",
+    "Name": "GemName1062",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitAssa_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.009,
+      0.0048,
+      0.0072,
+      0.012
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_m_show_N",
+    "SuccessReward": "Gem2062",
+    "FailReward": "Gem1062"
+  },
+  "Gem1061": {
+    "Id": "Gem1061",
+    "Name": "GemName1061",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitAssa_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.009,
+      0.006,
+      0.0048,
+      54,
+      0.012
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_l_show_N",
+    "SuccessReward": "Gem2061",
+    "FailReward": "Gem1061"
+  },
+  "Gem5033": {
+    "Id": "Gem5033",
+    "Name": "GemName5033",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitUnblock_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.021,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5071": {
+    "Id": "Gem5071",
+    "Name": "GemName5071",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitKni_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.025,
+      0.021,
+      124.8,
+      0.062
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5072": {
+    "Id": "Gem5072",
+    "Name": "GemName5072",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitKni_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.025,
+      0.017,
+      0.062
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5073": {
+    "Id": "Gem5073",
+    "Name": "GemName5073",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitKni_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.017,
+      0.025,
+      0.025,
+      0.021,
+      0.042
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5012": {
+    "Id": "Gem5012",
+    "Name": "GemName5012",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitBlock_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5013": {
+    "Id": "Gem5013",
+    "Name": "GemName5013",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitBlock_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.021,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5011": {
+    "Id": "Gem5011",
+    "Name": "GemName5011",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitBlock_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      156,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_block_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_block_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem2062": {
+    "Id": "Gem2062",
+    "Name": "GemName2062",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitAssa_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.0165,
+      0.0088,
+      0.0132,
+      0.022
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_m_show_R",
+    "SuccessReward": "Gem3062",
+    "FailReward": "Gem2062"
+  },
+  "Gem2063": {
+    "Id": "Gem2063",
+    "Name": "GemName2063",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitAssa_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.0132,
+      0.0088,
+      0.0088,
+      0.011,
+      0.033
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_r_show_R",
+    "SuccessReward": "Gem3063",
+    "FailReward": "Gem2063"
+  },
+  "Gem2061": {
+    "Id": "Gem2061",
+    "Name": "GemName2061",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitAssa_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.0165,
+      0.011,
+      0.0088,
+      99,
+      0.022
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_l_show_R",
+    "SuccessReward": "Gem3061",
+    "FailReward": "Gem2061"
+  },
+  "Gem5052": {
+    "Id": "Gem5052",
+    "Name": "GemName5052",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitAtk_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5022": {
+    "Id": "Gem5022",
+    "Name": "GemName5022",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitDef_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem4073": {
+    "Id": "Gem4073",
+    "Name": "GemName4073",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitKni_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.024,
+      0.024,
+      0.02,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_r_show_SSR",
+    "SuccessReward": "Gem5073",
+    "FailReward": "Gem4073"
+  },
+  "Gem4072": {
+    "Id": "Gem4072",
+    "Name": "GemName4072",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitKni_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.024,
+      0.016,
+      0.06
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_m_show_SSR",
+    "SuccessReward": "Gem5072",
+    "FailReward": "Gem4072"
+  },
+  "Gem4071": {
+    "Id": "Gem4071",
+    "Name": "GemName4071",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitKni_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.02,
+      0.024,
+      0.02,
+      120,
+      0.06
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_l_show_SSR",
+    "SuccessReward": "Gem5071",
+    "FailReward": "Gem4071"
+  },
+  "Gem5031": {
+    "Id": "Gem5031",
+    "Name": "GemName5031",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitUnblock_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      156,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5021": {
+    "Id": "Gem5021",
+    "Name": "GemName5021",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitDef_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      156,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5032": {
+    "Id": "Gem5032",
+    "Name": "GemName5032",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitUnblock_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_unblock_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_unblock_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5051": {
+    "Id": "Gem5051",
+    "Name": "GemName5051",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitAtk_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      156,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5041": {
+    "Id": "Gem5041",
+    "Name": "GemName5041",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitSpecial_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      156,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5043": {
+    "Id": "Gem5043",
+    "Name": "GemName5043",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitSpecial_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.021,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5042": {
+    "Id": "Gem5042",
+    "Name": "GemName5042",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitSpecial_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_special_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_special_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem3072": {
+    "Id": "Gem3072",
+    "Name": "GemName3072",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitKni_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.0192,
+      0.0128,
+      0.048
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_m_show_SR",
+    "SuccessReward": "Gem4072",
+    "FailReward": "Gem3072"
+  },
+  "Gem3073": {
+    "Id": "Gem3073",
+    "Name": "GemName3073",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitKni_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.0128,
+      0.0192,
+      0.0192,
+      0.016,
+      0.032
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_r_show_SR",
+    "SuccessReward": "Gem4073",
+    "FailReward": "Gem3073"
+  },
+  "Gem3071": {
+    "Id": "Gem3071",
+    "Name": "GemName3071",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitKni_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.016,
+      0.0192,
+      0.016,
+      96,
+      0.048
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_l_show_SR",
+    "SuccessReward": "Gem4071",
+    "FailReward": "Gem3071"
+  },
+  "Gem5001": {
+    "Id": "Gem5001",
+    "Name": "GemName5001",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitCri_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      156,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5003": {
+    "Id": "Gem5003",
+    "Name": "GemName5003",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitCri_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.021,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5002": {
+    "Id": "Gem5002",
+    "Name": "GemName5002",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitCri_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.026,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_crit_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_crit_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5023": {
+    "Id": "Gem5023",
+    "Name": "GemName5023",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitDef_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.021,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_def_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_def_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem1071": {
+    "Id": "Gem1071",
+    "Name": "GemName1071",
+    "Rareity": 2,
+    "Type": 1,
+    "Suitid": "SuitKni_1",
+    "Baseattr": "DEF",
+    "Baseattrnum": 472,
+    "Levelup": 23,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.0072,
+      0.006,
+      36,
+      0.018
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_l_show_N",
+    "SuccessReward": "Gem2071",
+    "FailReward": "Gem1071"
+  },
+  "Gem1072": {
+    "Id": "Gem1072",
+    "Name": "GemName1072",
+    "Rareity": 2,
+    "Type": 2,
+    "Suitid": "SuitKni_1",
+    "Baseattr": "HP",
+    "Baseattrnum": 5793,
+    "Levelup": 289,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.006,
+      0.0072,
+      0.0048,
+      0.018
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_m_show_N",
+    "SuccessReward": "Gem2072",
+    "FailReward": "Gem1072"
+  },
+  "Gem1073": {
+    "Id": "Gem1073",
+    "Name": "GemName1073",
+    "Rareity": 2,
+    "Type": 3,
+    "Suitid": "SuitKni_1",
+    "Baseattr": "ATK",
+    "Baseattrnum": 945,
+    "Levelup": 47,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.0048,
+      0.0072,
+      0.0072,
+      0.006,
+      0.012
+    ],
+    "Attrnum": 2,
+    "Attrprobability": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_r_show_N",
+    "SuccessReward": "Gem2073",
+    "FailReward": "Gem1073"
+  },
+  "Gem5063": {
+    "Id": "Gem5063",
+    "Name": "GemName5063",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitAssa_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.025,
+      0.017,
+      0.017,
+      0.021,
+      0.062
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5062": {
+    "Id": "Gem5062",
+    "Name": "GemName5062",
+    "Rareity": 6,
+    "Type": 2,
+    "Suitid": "SuitAssa_5",
+    "Baseattr": "HP",
+    "Baseattrnum": 20662,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.031,
+      0.017,
+      0.025,
+      0.042
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_m_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem5061": {
+    "Id": "Gem5061",
+    "Name": "GemName5061",
+    "Rareity": 6,
+    "Type": 1,
+    "Suitid": "SuitAssa_5",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1684,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.031,
+      0.021,
+      0.017,
+      187.2,
+      0.042
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_l_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem4061": {
+    "Id": "Gem4061",
+    "Name": "GemName4061",
+    "Rareity": 5,
+    "Type": 1,
+    "Suitid": "SuitAssa_4",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1574,
+    "Levelup": 78,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.03,
+      0.02,
+      0.016,
+      180,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_l_show_SSR",
+    "SuccessReward": "Gem5061",
+    "FailReward": "Gem4061"
+  },
+  "Gem4062": {
+    "Id": "Gem4062",
+    "Name": "GemName4062",
+    "Rareity": 5,
+    "Type": 2,
+    "Suitid": "SuitAssa_4",
+    "Baseattr": "HP",
+    "Baseattrnum": 19310,
+    "Levelup": 965,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.03,
+      0.016,
+      0.024,
+      0.04
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_m_show_SSR",
+    "SuccessReward": "Gem5062",
+    "FailReward": "Gem4062"
+  },
+  "Gem4063": {
+    "Id": "Gem4063",
+    "Name": "GemName4063",
+    "Rareity": 5,
+    "Type": 3,
+    "Suitid": "SuitAssa_4",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3150,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.024,
+      0.016,
+      0.016,
+      0.02,
+      0.06
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_r_show_SSR",
+    "SuccessReward": "Gem5063",
+    "FailReward": "Gem4063"
+  },
+  "Gem2071": {
+    "Id": "Gem2071",
+    "Name": "GemName2071",
+    "Rareity": 3,
+    "Type": 1,
+    "Suitid": "SuitKni_2",
+    "Baseattr": "DEF",
+    "Baseattrnum": 865,
+    "Levelup": 43,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.0132,
+      0.011,
+      66,
+      0.033
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      10,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_l_show_R",
+    "SuccessReward": "Gem3071",
+    "FailReward": "Gem2071"
+  },
+  "Gem2073": {
+    "Id": "Gem2073",
+    "Name": "GemName2073",
+    "Rareity": 3,
+    "Type": 3,
+    "Suitid": "SuitKni_2",
+    "Baseattr": "ATK",
+    "Baseattrnum": 1732,
+    "Levelup": 86,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.0088,
+      0.0132,
+      0.0132,
+      0.011,
+      0.022
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      8,
+      10,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_r_show_R",
+    "SuccessReward": "Gem3073",
+    "FailReward": "Gem2073"
+  },
+  "Gem2072": {
+    "Id": "Gem2072",
+    "Name": "GemName2072",
+    "Rareity": 3,
+    "Type": 2,
+    "Suitid": "SuitKni_2",
+    "Baseattr": "HP",
+    "Baseattrnum": 10620,
+    "Levelup": 530,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.011,
+      0.0132,
+      0.0088,
+      0.033
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Attrprobabilitylev": [
+      12,
+      8,
+      12,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_kni_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_kni_m_show_R",
+    "SuccessReward": "Gem3072",
+    "FailReward": "Gem2072"
+  },
+  "Gem3061": {
+    "Id": "Gem3061",
+    "Name": "GemName3061",
+    "Rareity": 4,
+    "Type": 1,
+    "Suitid": "SuitAssa_3",
+    "Baseattr": "DEF",
+    "Baseattrnum": 1259,
+    "Levelup": 62,
+    "Addattr": [
+      "CRITRATE",
+      "BLOCKRATE",
+      "UNCRITRATE",
+      "SPEED",
+      "HP_RATE"
+    ],
+    "Addattrlev": [
+      0.024,
+      0.016,
+      0.0128,
+      144,
+      0.032
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      10,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_l",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_l_show_SR",
+    "SuccessReward": "Gem4061",
+    "FailReward": "Gem3061"
+  },
+  "Gem5053": {
+    "Id": "Gem5053",
+    "Name": "GemName5053",
+    "Rareity": 6,
+    "Type": 3,
+    "Suitid": "SuitAtk_5",
+    "Baseattr": "ATK",
+    "Baseattrnum": 3371,
+    "Levelup": 157,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.021,
+      0.021,
+      0.021,
+      0.021,
+      0.052
+    ],
+    "Attrnum": 4,
+    "Attrprobability": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Attrprobabilitylev": [
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "Numprobability": [
+      0,
+      10,
+      20,
+      30,
+      40
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_atk_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_atk_r_show_SSR",
+    "SuccessReward": "[]",
+    "FailReward": "[]"
+  },
+  "Gem3063": {
+    "Id": "Gem3063",
+    "Name": "GemName3063",
+    "Rareity": 4,
+    "Type": 3,
+    "Suitid": "SuitAssa_3",
+    "Baseattr": "ATK",
+    "Baseattrnum": 2520,
+    "Levelup": 126,
+    "Addattr": [
+      "HURTRATE",
+      "UNHURTRATE",
+      "REFLECTION",
+      "ABSORPTION",
+      "ATK_RATE"
+    ],
+    "Addattrlev": [
+      0.0192,
+      0.0128,
+      0.0128,
+      0.016,
+      0.048
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      12,
+      10,
+      8
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_r",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_r_show_SR",
+    "SuccessReward": "Gem4063",
+    "FailReward": "Gem3063"
+  },
+  "Gem3062": {
+    "Id": "Gem3062",
+    "Name": "GemName3062",
+    "Rareity": 4,
+    "Type": 2,
+    "Suitid": "SuitAssa_3",
+    "Baseattr": "HP",
+    "Baseattrnum": 15448,
+    "Levelup": 772,
+    "Addattr": [
+      "CRITSTRG",
+      "BLOCKSTRG",
+      "UNBLOCKRATE",
+      "DEF_RATE"
+    ],
+    "Addattrlev": [
+      0.024,
+      0.0128,
+      0.0192,
+      0.032
+    ],
+    "Attrnum": 3,
+    "Attrprobability": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Attrprobabilitylev": [
+      8,
+      12,
+      8,
+      12
+    ],
+    "Addattrnum": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "Numprobability": [
+      0,
+      20,
+      20,
+      60
+    ],
+    "HeroLimit": null,
+    "Profession": null,
+    "Icon": "ico_e_tsoul_assa_m",
+    "Sort": 1,
+    "Showicon": "ico_e_tsoul_assa_m_show_SR",
+    "SuccessReward": "Gem4062",
+    "FailReward": "Gem3062"
+  }
+}

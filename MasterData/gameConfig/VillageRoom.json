@@ -1,0 +1,589 @@
+{
+  "Room6": {
+    "Id": "Room6",
+    "RoomArea": [
+      2950,
+      1740
+    ],
+    "Area": [
+      10,
+      9
+    ],
+    "Name": "Room6_Name",
+    "Desc": "Room6_Desc",
+    "Condition": {
+      "Block": "M01S04"
+    },
+    "ConditionDesc": "room6_ConditionDesc",
+    "SystemVillage_initialize": {},
+    "DecorateVillage_initialize": {
+      "QiZhuo": [
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "SiQiKongJian": [
+        [
+          2,
+          8,
+          1
+        ]
+      ],
+      "KaiHeiFangZhuo": [
+        [
+          5,
+          5,
+          1
+        ]
+      ]
+    },
+    "Outward_initialize": "Room6_Outward_1",
+    "PutAmount": 4,
+    "PutFunctionDesc": "Room6_PutFunctionDesc",
+    "PutEffect": {
+      "type": "SkillSpecialEffect",
+      "id": "Room6_PutEffect"
+    },
+    "PutEffectValue": {
+      "party": {
+        "13": 2,
+        "12": 1,
+        "15": 3,
+        "id": "DWH",
+        "14": 3
+      },
+      "13": [
+        5,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "12": [
+        2,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "15": [
+        9,
+        9,
+        9,
+        10,
+        11,
+        12
+      ],
+      "14": [
+        9,
+        9,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "Icon": "chengjian_bg_dikuai_6",
+    "UnlockBuilding": [
+      "UnlockRoom6_1",
+      "UnlockRoom6_2"
+    ],
+    "Sort": 6,
+    "ENName": "UITitle_EN_Room6",
+    "AutoUnlock": 1,
+    "PutSort": 6
+  },
+  "Room4": {
+    "Id": "Room4",
+    "RoomArea": [
+      1180,
+      1000
+    ],
+    "Area": [
+      7,
+      9
+    ],
+    "Name": "Room4_Name",
+    "Desc": "Room4_Desc",
+    "Condition": {
+      "Block": "M04S05"
+    },
+    "ConditionDesc": "room4_ConditionDesc",
+    "SystemVillage_initialize": {},
+    "DecorateVillage_initialize": {
+      "shuangrentangyi": [
+        [
+          6,
+          8,
+          1
+        ]
+      ],
+      "yongchi": [
+        [
+          2,
+          2,
+          1
+        ]
+      ]
+    },
+    "Outward_initialize": "Room4_Outward_1",
+    "PutAmount": 4,
+    "PutFunctionDesc": "Room4_PutFunctionDesc",
+    "PutEffect": {
+      "type": "SkillSpecialEffect",
+      "id": "Room4_PutEffect"
+    },
+    "PutEffectValue": {
+      "party": {
+        "13": 2,
+        "12": 1,
+        "15": 3,
+        "id": "MNJH",
+        "14": 3
+      },
+      "13": [
+        5,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "12": [
+        2,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "15": [
+        9,
+        9,
+        9,
+        10,
+        11,
+        12
+      ],
+      "14": [
+        9,
+        9,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "Icon": "chengjian_bg_dikuai_4",
+    "UnlockBuilding": [
+      "UnlockRoom4_1",
+      "UnlockRoom4_2"
+    ],
+    "Sort": 4,
+    "ENName": "UITitle_EN_Room4",
+    "AutoUnlock": null,
+    "PutSort": 5
+  },
+  "Room5": {
+    "Id": "Room5",
+    "RoomArea": [
+      1985,
+      1360
+    ],
+    "Area": [
+      8,
+      9
+    ],
+    "Name": "Room5_Name",
+    "Desc": "Room5_Desc",
+    "Condition": {
+      "Block": "M03S02"
+    },
+    "ConditionDesc": "room5_ConditionDesc",
+    "SystemVillage_initialize": {},
+    "DecorateVillage_initialize": {
+      "yushi": [
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "xiangxunyigui": [
+        [
+          7,
+          0,
+          1
+        ]
+      ],
+      "shuzhuangtai": [
+        [
+          6,
+          8,
+          1
+        ]
+      ]
+    },
+    "Outward_initialize": "Room5_Outward_1",
+    "PutAmount": 4,
+    "PutFunctionDesc": "Room5_PutFunctionDesc",
+    "PutEffect": {
+      "type": "SkillAttrEffect",
+      "id": "Room5_PutEffect"
+    },
+    "PutEffectValue": {
+      "party": {
+        "13": 2,
+        "12": 1,
+        "15": 2,
+        "id": "XD",
+        "14": 2
+      },
+      "13": [
+        2,
+        2,
+        2,
+        3,
+        4,
+        5
+      ],
+      "12": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "15": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        6
+      ],
+      "14": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "Icon": "chengjian_bg_dikuai_5",
+    "UnlockBuilding": [
+      "UnlockRoom5_1",
+      "UnlockRoom5_2"
+    ],
+    "Sort": 5,
+    "ENName": "UITitle_EN_Room5",
+    "AutoUnlock": null,
+    "PutSort": 2
+  },
+  "Room2": {
+    "Id": "Room2",
+    "RoomArea": [
+      3850,
+      1245
+    ],
+    "Area": [
+      10,
+      9
+    ],
+    "Name": "Room2_Name",
+    "Desc": "Room2_Desc",
+    "Condition": {
+      "Block": "M01S04"
+    },
+    "ConditionDesc": "room2_ConditionDesc",
+    "SystemVillage_initialize": {
+      "MainCity": [
+        4,
+        7,
+        1
+      ]
+    },
+    "DecorateVillage_initialize": {
+      "yaoyi": [
+        [
+          1,
+          7,
+          1
+        ]
+      ],
+      "maojia": [
+        [
+          3,
+          0,
+          1
+        ]
+      ],
+      "maoshapen": [
+        [
+          9,
+          7,
+          1
+        ]
+      ]
+    },
+    "Outward_initialize": "Room2_Outward_1",
+    "PutAmount": 4,
+    "PutFunctionDesc": "Room2_PutFunctionDesc",
+    "PutEffect": {
+      "type": "SkillAttrEffect",
+      "id": "Room2_PutEffect"
+    },
+    "PutEffectValue": {
+      "party": {
+        "13": 2,
+        "12": 1,
+        "15": 2,
+        "id": "WNSXJ",
+        "14": 2
+      },
+      "13": [
+        2,
+        2,
+        2,
+        3,
+        4,
+        5
+      ],
+      "12": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "15": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        6
+      ],
+      "14": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "Icon": "chengjian_bg_dikuai_2",
+    "UnlockBuilding": [
+      "UnlockRoom2_1",
+      "UnlockRoom2_2"
+    ],
+    "Sort": 2,
+    "ENName": "UITitle_EN_Room2",
+    "AutoUnlock": 1,
+    "PutSort": 1
+  },
+  "Room3": {
+    "Id": "Room3",
+    "RoomArea": [
+      4640,
+      1700
+    ],
+    "Area": [
+      8,
+      9
+    ],
+    "Name": "Room3_Name",
+    "Desc": "Room3_Desc",
+    "Condition": {
+      "Block": "M01S04"
+    },
+    "ConditionDesc": "room3_ConditionDesc",
+    "SystemVillage_initialize": {},
+    "DecorateVillage_initialize": {
+      "penquanji": [
+        [
+          3,
+          4,
+          1
+        ]
+      ],
+      "MaKaLongGui": [
+        [
+          7,
+          2,
+          1
+        ]
+      ],
+      "PinJianCanZhuo": [
+        [
+          1,
+          1,
+          1
+        ]
+      ]
+    },
+    "Outward_initialize": "Room3_Outward_1",
+    "PutAmount": 4,
+    "PutFunctionDesc": "Room3_PutFunctionDesc",
+    "PutEffect": {
+      "type": "SkillSpecialEffect",
+      "id": "Room3_PutEffect"
+    },
+    "PutEffectValue": {
+      "party": {
+        "13": 2,
+        "12": 1,
+        "15": 3,
+        "id": "BSNCT",
+        "14": 3
+      },
+      "13": [
+        5,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "12": [
+        2,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "15": [
+        9,
+        9,
+        9,
+        10,
+        11,
+        12
+      ],
+      "14": [
+        9,
+        9,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    "Icon": "chengjian_bg_dikuai_3",
+    "UnlockBuilding": [
+      "UnlockRoom3_1",
+      "UnlockRoom3_2"
+    ],
+    "Sort": 3,
+    "ENName": "UITitle_EN_Room3",
+    "AutoUnlock": 1,
+    "PutSort": 4
+  },
+  "Room1": {
+    "Id": "Room1",
+    "RoomArea": [
+      2860,
+      860
+    ],
+    "Area": [
+      8,
+      9
+    ],
+    "Name": "Room1_Name",
+    "Desc": "Room1_Desc",
+    "Condition": {
+      "Block": "M01S04"
+    },
+    "ConditionDesc": "room1_ConditionDesc",
+    "SystemVillage_initialize": {},
+    "DecorateVillage_initialize": {
+      "dazhixiang": [
+        [
+          5,
+          2,
+          1
+        ]
+      ],
+      "Dipu": [
+        [
+          1,
+          7,
+          1
+        ]
+      ],
+      "Beilu": [
+        [
+          4,
+          4,
+          1
+        ]
+      ]
+    },
+    "Outward_initialize": "Room1_Outward_1",
+    "PutAmount": 4,
+    "PutFunctionDesc": "Room1_PutFunctionDesc",
+    "PutEffect": {
+      "type": "SkillSpecialEffect",
+      "id": "Room1_PutEffect"
+    },
+    "PutEffectValue": {
+      "party": {
+        "13": 2,
+        "12": 1,
+        "15": 2,
+        "id": "SSZS",
+        "14": 2
+      },
+      "13": [
+        2,
+        2,
+        2,
+        3,
+        4,
+        5
+      ],
+      "12": [
+        1,
+        1,
+        2,
+        2,
+        3,
+        4
+      ],
+      "15": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        6
+      ],
+      "14": [
+        3,
+        3,
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    "Icon": "chengjian_bg_dikuai_1",
+    "UnlockBuilding": [
+      "UnlockRoom1_1",
+      "UnlockRoom1_2"
+    ],
+    "Sort": 1,
+    "ENName": "UITitle_EN_Room1",
+    "AutoUnlock": 1,
+    "PutSort": 3
+  }
+}

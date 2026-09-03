@@ -1,0 +1,708 @@
+{
+  "ACE_Reward_2": {
+    "Id": "ACE_Reward_2",
+    "Condition": [],
+    "Map": "AHalloweenM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      130,
+      14
+    ],
+    "Show": 1,
+    "Icon": "a2_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_2",
+    "Content": "ColourEgg_Content_2",
+    "Model": {
+      "Scale": 0.9,
+      "Type": "Bust4",
+      "Id": "Model_ALPo_WSJie"
+    }
+  },
+  "ACE_Reward_3": {
+    "Id": "ACE_Reward_3",
+    "Condition": [],
+    "Map": "AHalloweenM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      20,
+      -39
+    ],
+    "Show": 1,
+    "Icon": "a3_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_3",
+    "Content": "ColourEgg_Content_3",
+    "Model": {
+      "Scale": 0.9,
+      "Type": "Bust4",
+      "Id": "Model_ALPo_WSJie"
+    }
+  },
+  "ACE_STORY_5": {
+    "Id": "ACE_STORY_5",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM02",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_05a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      -55,
+      -5
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_5",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_4": {
+    "Id": "ACE_STORY_4",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM02",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_04a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      -360,
+      -144
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_4",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_7": {
+    "Id": "ACE_STORY_7",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM03",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_07a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      -360,
+      -224
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_7",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_6": {
+    "Id": "ACE_STORY_6",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM02",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_06a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      52,
+      85
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_6",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_1": {
+    "Id": "ACE_STORY_1",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM01",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_01a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      -360,
+      -144
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_1",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_Reward_1": {
+    "Id": "ACE_Reward_1",
+    "Condition": [],
+    "Map": "AHalloweenM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -250,
+      -42
+    ],
+    "Show": 1,
+    "Icon": "a1_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_1",
+    "Content": "ColourEgg_Content_1",
+    "Model": {
+      "Scale": 0.5,
+      "Type": "Portrait",
+      "Id": "Model_Enemy_MYKSi_Big"
+    }
+  },
+  "ACE_STORY_3": {
+    "Id": "ACE_STORY_3",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM01",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_03a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      52,
+      60
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_3",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_2": {
+    "Id": "ACE_STORY_2",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM01",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_02a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      -55,
+      -5
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_2",
+    "Content": " ",
+    "Model": null
+  },
+  "ACE_STORY_9": {
+    "Id": "ACE_STORY_9",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM03",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_09a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      52,
+      90
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_9",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_8": {
+    "Id": "ACE_STORY_8",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM03",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_08a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      -55,
+      -225
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_8",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_STORY_10": {
+    "Id": "ACE_STORY_10",
+    "Condition": [
+      {
+        "IR_HalloweenStaminaConsumed": "400"
+      }
+    ],
+    "Map": "AHalloweenM03",
+    "Enable": 1,
+    "StoryLink": "eventstory_Halloween_10a",
+    "Reward": "AHalloween_Story",
+    "Coordinates": [
+      243,
+      7
+    ],
+    "Show": 0,
+    "Icon": "",
+    "Name": "Story_Name_10",
+    "Content": "",
+    "Model": null
+  },
+  "ACE_Reward_8": {
+    "Id": "ACE_Reward_8",
+    "Condition": [],
+    "Map": "AHalloweenM03",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -237,
+      134
+    ],
+    "Show": 0,
+    "Icon": "c2_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_8",
+    "Content": "ColourEgg_Content_8",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YSLBin_WSJie"
+    }
+  },
+  "ACE_Reward_9": {
+    "Id": "ACE_Reward_9",
+    "Condition": [],
+    "Map": "AHalloweenM03",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -197,
+      -123
+    ],
+    "Show": 0,
+    "Icon": "c3_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_9",
+    "Content": "ColourEgg_Content_9",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YSLBin_WSJie"
+    }
+  },
+  "ACE_Reward_8_1": {
+    "Id": "ACE_Reward_8_1",
+    "Condition": [],
+    "Map": "AHalloweenM03",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -237,
+      134
+    ],
+    "Show": 0,
+    "Icon": "c2_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_8",
+    "Content": "ColourEgg_Content_8",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YSLBin_WSJie"
+    }
+  },
+  "ACE_Reward_9_1": {
+    "Id": "ACE_Reward_9_1",
+    "Condition": [],
+    "Map": "AHalloweenM03",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -197,
+      -123
+    ],
+    "Show": 0,
+    "Icon": "c3_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_9",
+    "Content": "ColourEgg_Content_9",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YSLBin_WSJie"
+    }
+  },
+  "ACE_Reward_1_1": {
+    "Id": "ACE_Reward_1_1",
+    "Condition": [],
+    "Map": "AHalloweenM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -250,
+      -42
+    ],
+    "Show": 1,
+    "Icon": "a1_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_1",
+    "Content": "ColourEgg_Content_1",
+    "Model": {
+      "Scale": 0.5,
+      "Type": "Portrait",
+      "Id": "Model_Enemy_MYKSi_Big"
+    }
+  },
+  "ACE_Reward_2_1": {
+    "Id": "ACE_Reward_2_1",
+    "Condition": [],
+    "Map": "AHalloweenM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      130,
+      14
+    ],
+    "Show": 1,
+    "Icon": "a2_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_2",
+    "Content": "ColourEgg_Content_2",
+    "Model": {
+      "Scale": 0.9,
+      "Type": "Bust4",
+      "Id": "Model_ALPo_WSJie"
+    }
+  },
+  "ACE_Reward_3_1": {
+    "Id": "ACE_Reward_3_1",
+    "Condition": [],
+    "Map": "AHalloweenM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      20,
+      -39
+    ],
+    "Show": 1,
+    "Icon": "a3_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_3",
+    "Content": "ColourEgg_Content_3",
+    "Model": {
+      "Scale": 0.9,
+      "Type": "Bust4",
+      "Id": "Model_ALPo_WSJie"
+    }
+  },
+  "ACE_Reward_4_1": {
+    "Id": "ACE_Reward_4_1",
+    "Condition": [],
+    "Map": "AHalloweenM02",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      5,
+      -230
+    ],
+    "Show": 1,
+    "Icon": "b1_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_4",
+    "Content": "ColourEgg_Content_4",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YLMGZhu_WSJie"
+    }
+  },
+  "ACE_Reward_4": {
+    "Id": "ACE_Reward_4",
+    "Condition": [],
+    "Map": "AHalloweenM02",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      5,
+      -230
+    ],
+    "Show": 1,
+    "Icon": "b1_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_4",
+    "Content": "ColourEgg_Content_4",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YLMGZhu_WSJie"
+    }
+  },
+  "ACE_Reward_5": {
+    "Id": "ACE_Reward_5",
+    "Condition": [],
+    "Map": "AHalloweenM02",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -270,
+      -34
+    ],
+    "Show": 1,
+    "Icon": "b2_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_5",
+    "Content": "ColourEgg_Content_5",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YLMGZhu_WSJie"
+    }
+  },
+  "ACE_Reward_5_1": {
+    "Id": "ACE_Reward_5_1",
+    "Condition": [],
+    "Map": "AHalloweenM02",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      -270,
+      -34
+    ],
+    "Show": 1,
+    "Icon": "b2_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_5",
+    "Content": "ColourEgg_Content_5",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YLMGZhu_WSJie"
+    }
+  },
+  "ACE_Reward_6": {
+    "Id": "ACE_Reward_6",
+    "Condition": [],
+    "Map": "AHalloweenM02",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      10,
+      -60
+    ],
+    "Show": 0,
+    "Icon": "b3_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_6",
+    "Content": "ColourEgg_Content_6",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YLMGZhu_WSJie"
+    }
+  },
+  "ACE_Reward_6_1": {
+    "Id": "ACE_Reward_6_1",
+    "Condition": [],
+    "Map": "AHalloweenM02",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      10,
+      -60
+    ],
+    "Show": 0,
+    "Icon": "b3_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_6",
+    "Content": "ColourEgg_Content_6",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YLMGZhu_WSJie"
+    }
+  },
+  "ACE_Reward_7": {
+    "Id": "ACE_Reward_7",
+    "Condition": [],
+    "Map": "AHalloweenM03",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      30,
+      -14
+    ],
+    "Show": 0,
+    "Icon": "c1_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_7",
+    "Content": "ColourEgg_Content_7",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YSLBin_WSJie"
+    }
+  },
+  "ACE_Reward_7_1": {
+    "Id": "ACE_Reward_7_1",
+    "Condition": [],
+    "Map": "AHalloweenM03",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "AHalloween_EE",
+    "Coordinates": [
+      30,
+      -14
+    ],
+    "Show": 0,
+    "Icon": "c1_wanshengjiechangjing",
+    "Name": "ColourEgg_Name_7",
+    "Content": "ColourEgg_Content_7",
+    "Model": {
+      "Scale": 0.6,
+      "Type": "Bust4",
+      "Id": "Model_YSLBin_WSJie"
+    }
+  },
+  "ACE_Gift_DeepSea_3": {
+    "Id": "ACE_Gift_DeepSea_3",
+    "Condition": [],
+    "Map": "DeepSeaM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "ACE_Gift_DeepSea_3_Reward",
+    "Coordinates": [
+      -50,
+      6310
+    ],
+    "Show": 1,
+    "Icon": "yaoshi_shenhaichangjing",
+    "Name": "ColourEgg_DeepSea_Name_3",
+    "Content": "ColourEgg_DeepSea_Desc_3",
+    "Model": {
+      "Scale": 0.9,
+      "Type": "Bust4",
+      "Id": "Model_ALPo"
+    }
+  },
+  "ACE_Gift_DeepSea_2": {
+    "Id": "ACE_Gift_DeepSea_2",
+    "Condition": [],
+    "Map": "DeepSeaM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "ACE_Gift_DeepSea_2_Reward",
+    "Coordinates": [
+      -450,
+      7100
+    ],
+    "Show": 1,
+    "Icon": "yumao_shenhaichangjing",
+    "Name": "ColourEgg_DeepSea_Name_2",
+    "Content": "ColourEgg_DeepSea_Desc_2",
+    "Model": {
+      "Scale": 0.9,
+      "Type": "Bust4",
+      "Id": "Model_ALPo"
+    }
+  },
+  "ACE_Gift_DeepSea_1": {
+    "Id": "ACE_Gift_DeepSea_1",
+    "Condition": [],
+    "Map": "DeepSeaM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "ACE_Gift_DeepSea_1_Reward",
+    "Coordinates": [
+      -220,
+      4600
+    ],
+    "Show": 1,
+    "Icon": "laba_shenhaichangjing",
+    "Name": "ColourEgg_DeepSea_Name_1",
+    "Content": "ColourEgg_DeepSea_Desc_1",
+    "Model": {
+      "Scale": 0.8,
+      "Type": "Bust4",
+      "Id": "Model_FLBDSi"
+    }
+  },
+  "ACE_Gift_DeepSea_6": {
+    "Id": "ACE_Gift_DeepSea_6",
+    "Condition": [],
+    "Map": "DeepSeaM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "ACE_Gift_DeepSea_6_Reward",
+    "Coordinates": [
+      -220,
+      3929
+    ],
+    "Show": 1,
+    "Icon": "shuimu_shenhaichangjing",
+    "Name": "ColourEgg_DeepSea_Name_5",
+    "Content": "ColourEgg_DeepSea_Desc_5",
+    "Model": null
+  },
+  "ACE_Gift_DeepSea_5": {
+    "Id": "ACE_Gift_DeepSea_5",
+    "Condition": [],
+    "Map": "DeepSeaM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "ACE_Gift_DeepSea_5_Reward",
+    "Coordinates": [
+      -240,
+      3828
+    ],
+    "Show": 1,
+    "Icon": "shuimu_shenhaichangjing",
+    "Name": "ColourEgg_DeepSea_Name_5",
+    "Content": "ColourEgg_DeepSea_Desc_5",
+    "Model": null
+  },
+  "ACE_Gift_DeepSea_4": {
+    "Id": "ACE_Gift_DeepSea_4",
+    "Condition": [],
+    "Map": "DeepSeaM01",
+    "Enable": 0,
+    "StoryLink": "",
+    "Reward": "ACE_Gift_DeepSea_4_Reward",
+    "Coordinates": [
+      -55,
+      1904
+    ],
+    "Show": 1,
+    "Icon": "xianglian_shenhaichangjing",
+    "Name": "ColourEgg_DeepSea_Name_4",
+    "Content": "ColourEgg_DeepSea_Desc_4",
+    "Model": {
+      "Scale": 0.8,
+      "Type": "Bust4",
+      "Id": "Model_FLBDSi"
+    }
+  }
+}

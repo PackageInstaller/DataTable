@@ -1,0 +1,171 @@
+{
+  "E07S03_C02": {
+    "Id": "E07S03_C02",
+    "Name": "E07S03_C02_Name",
+    "PointDesc": "E07S03_C02_Desc",
+    "MapDesc": "E07S03_C02_MapDesc",
+    "Reward": "E07S03_C02_Reward",
+    "Type": "DifCost",
+    "Value": {
+      "value": 4
+    }
+  },
+  "E07S03_C03": {
+    "Id": "E07S03_C03",
+    "Name": "E07S03_C03_Name",
+    "PointDesc": "E07S03_C03_Desc",
+    "MapDesc": "E07S03_C03_MapDesc",
+    "Reward": "E07S03_C03_Reward",
+    "Type": "SameCost",
+    "Value": {
+      "value": 3
+    }
+  },
+  "E07S01_C01": {
+    "Id": "E07S01_C01",
+    "Name": "E07S01_C01_Name",
+    "PointDesc": "E07S01_C01_Desc",
+    "MapDesc": "E07S01_C01_MapDesc",
+    "Reward": "E07S01_C01_Reward",
+    "Type": "FastWin",
+    "Value": {
+      "value": 4
+    }
+  },
+  "E07S01_C02": {
+    "Id": "E07S01_C02",
+    "Name": "E07S01_C02_Name",
+    "PointDesc": "E07S01_C02_Desc",
+    "MapDesc": "E07S01_C02_MapDesc",
+    "Reward": "E07S01_C02_Reward",
+    "Type": "GroupKill",
+    "Value": {
+      "value": 3
+    }
+  },
+  "E07S01_C03": {
+    "Id": "E07S01_C03",
+    "Name": "E07S01_C03_Name",
+    "PointDesc": "E07S01_C03_Desc",
+    "MapDesc": "E07S01_C03_MapDesc",
+    "Reward": "E07S01_C03_Reward",
+    "Type": "NoneType",
+    "Value": {
+      "type": [
+        "Attack",
+        "Summon"
+      ]
+    }
+  },
+  "E07S04_C01": {
+    "Id": "E07S04_C01",
+    "Name": "E07S04_C01_Name",
+    "PointDesc": "E07S04_C01_Desc",
+    "MapDesc": "E07S04_C01_MapDesc",
+    "Reward": "E07S04_C01_Reward",
+    "Type": "WinLive",
+    "Value": {
+      "value": 4
+    }
+  },
+  "E07S04_C03": {
+    "Id": "E07S04_C03",
+    "Name": "E07S04_C03_Name",
+    "PointDesc": "E07S04_C03_Desc",
+    "MapDesc": "E07S04_C03_MapDesc",
+    "Reward": "E07S04_C03_Reward",
+    "Type": "BackStab",
+    "Value": {}
+  },
+  "E07S04_C02": {
+    "Id": "E07S04_C02",
+    "Name": "E07S04_C02_Name",
+    "PointDesc": "E07S04_C02_Desc",
+    "MapDesc": "E07S04_C02_MapDesc",
+    "Reward": "E07S04_C02_Reward",
+    "Type": "QuickKill",
+    "Value": {
+      "id": [
+        "E07S04U01"
+      ],
+      "value": 2
+    }
+  },
+  "E08S01_C01": {
+    "Id": "E08S01_C01",
+    "Name": "E08S01_C01_Name",
+    "PointDesc": "E08S01_C01_Desc",
+    "MapDesc": "E08S01_C01_MapDesc",
+    "Reward": "E08S01_C01_Reward",
+    "Type": "DifType",
+    "Value": {
+      "value": 3
+    }
+  },
+  "E08S01_C03": {
+    "Id": "E08S01_C03",
+    "Name": "E08S01_C03_Name",
+    "PointDesc": "E08S01_C03_Desc",
+    "MapDesc": "E08S01_C03_MapDesc",
+    "Reward": "E08S01_C03_Reward",
+    "Type": "Time",
+    "Value": {
+      "value": 80
+    }
+  },
+  "E08S01_C02": {
+    "Id": "E08S01_C02",
+    "Name": "E08S01_C02_Name",
+    "PointDesc": "E08S01_C02_Desc",
+    "MapDesc": "E08S01_C02_MapDesc",
+    "Reward": "E08S01_C02_Reward",
+    "Type": "SameType",
+    "Value": {
+      "value": 3
+    }
+  },
+  "E07S02_C03": {
+    "Id": "E07S02_C03",
+    "Name": "E07S02_C03_Name",
+    "PointDesc": "E07S02_C03_Desc",
+    "MapDesc": "E07S02_C03_MapDesc",
+    "Reward": "E07S02_C03_Reward",
+    "Type": "EnemyKill",
+    "Value": {
+      "model": "Model_Enemy_MYKSi",
+      "value": 10
+    }
+  },
+  "E07S02_C02": {
+    "Id": "E07S02_C02",
+    "Name": "E07S02_C02_Name",
+    "PointDesc": "E07S02_C02_Desc",
+    "MapDesc": "E07S02_C02_MapDesc",
+    "Reward": "E07S02_C02_Reward",
+    "Type": "Range",
+    "Value": {
+      "range": "Col_Attack",
+      "value": 2
+    }
+  },
+  "E07S02_C01": {
+    "Id": "E07S02_C01",
+    "Name": "E07S02_C01_Name",
+    "PointDesc": "E07S02_C01_Desc",
+    "MapDesc": "E07S02_C01_MapDesc",
+    "Reward": "E07S02_C01_Reward",
+    "Type": "MasterKill",
+    "Value": {}
+  },
+  "E07S03_C01": {
+    "Id": "E07S03_C01",
+    "Name": "E07S03_C01_Name",
+    "PointDesc": "E07S03_C01_Desc",
+    "MapDesc": "E07S03_C01_MapDesc",
+    "Reward": "E07S03_C01_Reward",
+    "Type": "Straight",
+    "Value": {
+      "value": 3
+    }
+  }
+}

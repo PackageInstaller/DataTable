@@ -1,0 +1,1050 @@
+{
+  "GoldOre_Lv6": {
+    "Id": "GoldOre_Lv6",
+    "NextId": "GoldOre_Lv7",
+    "Level": 6,
+    "UpgradeTime": 14400,
+    "UpgradeTimeDiamond": 50,
+    "UpgradeCost": [
+      {
+        "amount": 25000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 25000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 3,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv7": {
+    "Id": "GoldOre_Lv7",
+    "NextId": "GoldOre_Lv8",
+    "Level": 7,
+    "UpgradeTime": 28800,
+    "UpgradeTimeDiamond": 60,
+    "UpgradeCost": [
+      {
+        "amount": 30000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 30000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 4,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv4": {
+    "Id": "GoldOre_Lv4",
+    "NextId": "GoldOre_Lv5",
+    "Level": 4,
+    "UpgradeTime": 1800,
+    "UpgradeTimeDiamond": 30,
+    "UpgradeCost": [
+      {
+        "amount": 15000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 15000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv5": {
+    "Id": "GoldOre_Lv5",
+    "NextId": "GoldOre_Lv6",
+    "Level": 5,
+    "UpgradeTime": 7200,
+    "UpgradeTimeDiamond": 40,
+    "UpgradeCost": [
+      {
+        "amount": 20000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 20000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv2": {
+    "Id": "GoldOre_Lv2",
+    "NextId": "GoldOre_Lv3",
+    "Level": 2,
+    "UpgradeTime": 180,
+    "UpgradeTimeDiamond": 10,
+    "UpgradeCost": [
+      {
+        "amount": 5000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 5000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv3": {
+    "Id": "GoldOre_Lv3",
+    "NextId": "GoldOre_Lv4",
+    "Level": 3,
+    "UpgradeTime": 600,
+    "UpgradeTimeDiamond": 20,
+    "UpgradeCost": [
+      {
+        "amount": 10000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 10000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv1": {
+    "Id": "GoldOre_Lv1",
+    "NextId": "GoldOre_Lv2",
+    "Level": 1,
+    "UpgradeTime": 60,
+    "UpgradeTimeDiamond": 0,
+    "UpgradeCost": [
+      {
+        "amount": 1000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 1000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv8": {
+    "Id": "GoldOre_Lv8",
+    "NextId": "GoldOre_Lv9",
+    "Level": 8,
+    "UpgradeTime": 43200,
+    "UpgradeTimeDiamond": 70,
+    "UpgradeCost": [
+      {
+        "amount": 40000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 40000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 5,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv9": {
+    "Id": "GoldOre_Lv9",
+    "NextId": "GoldOre_Lv10",
+    "Level": 9,
+    "UpgradeTime": 57600,
+    "UpgradeTimeDiamond": 80,
+    "UpgradeCost": [
+      {
+        "amount": 50000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 50000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 7,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv10": {
+    "Id": "GoldOre_Lv10",
+    "NextId": "GoldOre_Lv11",
+    "Level": 10,
+    "UpgradeTime": 64800,
+    "UpgradeTimeDiamond": 90,
+    "UpgradeCost": [
+      {
+        "amount": 60000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 60000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 9,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv11": {
+    "Id": "GoldOre_Lv11",
+    "NextId": "GoldOre_Lv12",
+    "Level": 11,
+    "UpgradeTime": 86400,
+    "UpgradeTimeDiamond": 100,
+    "UpgradeCost": [
+      {
+        "amount": 70000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 70000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 11,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "GoldOre_Lv12": {
+    "Id": "GoldOre_Lv12",
+    "NextId": "",
+    "Level": 12,
+    "UpgradeTime": 115200,
+    "UpgradeTimeDiamond": 110,
+    "UpgradeCost": [
+      {
+        "amount": 80000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 80000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 12,
+    "Effect": [
+      "GoldOre_Normal",
+      "GoldStorage_Normal"
+    ],
+    "Img": "pic_oregold_smc"
+  },
+  "CampOre_Lv8": {
+    "Id": "CampOre_Lv8",
+    "NextId": "",
+    "Level": 8,
+    "UpgradeTime": 43200,
+    "UpgradeTimeDiamond": 115,
+    "UpgradeCost": [
+      {
+        "amount": 70000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 70000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 8,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv1": {
+    "Id": "CampOre_Lv1",
+    "NextId": "CampOre_Lv2",
+    "Level": 1,
+    "UpgradeTime": 60,
+    "UpgradeTimeDiamond": 10,
+    "UpgradeCost": [
+      {
+        "amount": 1000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 1000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv3": {
+    "Id": "CampOre_Lv3",
+    "NextId": "CampOre_Lv4",
+    "Level": 3,
+    "UpgradeTime": 7200,
+    "UpgradeTimeDiamond": 40,
+    "UpgradeCost": [
+      {
+        "amount": 20000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 20000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 3,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv2": {
+    "Id": "CampOre_Lv2",
+    "NextId": "CampOre_Lv3",
+    "Level": 2,
+    "UpgradeTime": 1800,
+    "UpgradeTimeDiamond": 25,
+    "UpgradeCost": [
+      {
+        "amount": 10000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 10000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv5": {
+    "Id": "CampOre_Lv5",
+    "NextId": "CampOre_Lv6",
+    "Level": 5,
+    "UpgradeTime": 21600,
+    "UpgradeTimeDiamond": 70,
+    "UpgradeCost": [
+      {
+        "amount": 40000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 40000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 5,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv4": {
+    "Id": "CampOre_Lv4",
+    "NextId": "CampOre_Lv5",
+    "Level": 4,
+    "UpgradeTime": 14400,
+    "UpgradeTimeDiamond": 55,
+    "UpgradeCost": [
+      {
+        "amount": 30000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 30000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 4,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv7": {
+    "Id": "CampOre_Lv7",
+    "NextId": "CampOre_Lv8",
+    "Level": 7,
+    "UpgradeTime": 36000,
+    "UpgradeTimeDiamond": 100,
+    "UpgradeCost": [
+      {
+        "amount": 60000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 60000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 7,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CampOre_Lv6": {
+    "Id": "CampOre_Lv6",
+    "NextId": "CampOre_Lv7",
+    "Level": 6,
+    "UpgradeTime": 28800,
+    "UpgradeTimeDiamond": 85,
+    "UpgradeCost": [
+      {
+        "amount": 50000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 50000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 6,
+    "Effect": [
+      "CampOre"
+    ],
+    "Img": "pic_orecost_smc"
+  },
+  "CrystalOre_Lv12": {
+    "Id": "CrystalOre_Lv12",
+    "NextId": "",
+    "Level": 12,
+    "UpgradeTime": 115200,
+    "UpgradeTimeDiamond": 110,
+    "UpgradeCost": [
+      {
+        "amount": 80000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 80000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 12,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv11": {
+    "Id": "CrystalOre_Lv11",
+    "NextId": "CrystalOre_Lv12",
+    "Level": 11,
+    "UpgradeTime": 86400,
+    "UpgradeTimeDiamond": 100,
+    "UpgradeCost": [
+      {
+        "amount": 70000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 70000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 11,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv10": {
+    "Id": "CrystalOre_Lv10",
+    "NextId": "CrystalOre_Lv11",
+    "Level": 10,
+    "UpgradeTime": 64800,
+    "UpgradeTimeDiamond": 90,
+    "UpgradeCost": [
+      {
+        "amount": 60000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 60000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 10,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv9": {
+    "Id": "CrystalOre_Lv9",
+    "NextId": "CrystalOre_Lv10",
+    "Level": 9,
+    "UpgradeTime": 57600,
+    "UpgradeTimeDiamond": 80,
+    "UpgradeCost": [
+      {
+        "amount": 50000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 50000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 8,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv8": {
+    "Id": "CrystalOre_Lv8",
+    "NextId": "CrystalOre_Lv9",
+    "Level": 8,
+    "UpgradeTime": 43200,
+    "UpgradeTimeDiamond": 70,
+    "UpgradeCost": [
+      {
+        "amount": 40000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 40000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 6,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv7": {
+    "Id": "CrystalOre_Lv7",
+    "NextId": "CrystalOre_Lv8",
+    "Level": 7,
+    "UpgradeTime": 28800,
+    "UpgradeTimeDiamond": 60,
+    "UpgradeCost": [
+      {
+        "amount": 30000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 30000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 4,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv6": {
+    "Id": "CrystalOre_Lv6",
+    "NextId": "CrystalOre_Lv7",
+    "Level": 6,
+    "UpgradeTime": 14400,
+    "UpgradeTimeDiamond": 50,
+    "UpgradeCost": [
+      {
+        "amount": 25000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 25000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 3,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv5": {
+    "Id": "CrystalOre_Lv5",
+    "NextId": "CrystalOre_Lv6",
+    "Level": 5,
+    "UpgradeTime": 7200,
+    "UpgradeTimeDiamond": 40,
+    "UpgradeCost": [
+      {
+        "amount": 20000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 20000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv4": {
+    "Id": "CrystalOre_Lv4",
+    "NextId": "CrystalOre_Lv5",
+    "Level": 4,
+    "UpgradeTime": 1800,
+    "UpgradeTimeDiamond": 30,
+    "UpgradeCost": [
+      {
+        "amount": 15000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 15000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv3": {
+    "Id": "CrystalOre_Lv3",
+    "NextId": "CrystalOre_Lv4",
+    "Level": 3,
+    "UpgradeTime": 600,
+    "UpgradeTimeDiamond": 20,
+    "UpgradeCost": [
+      {
+        "amount": 10000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 10000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv2": {
+    "Id": "CrystalOre_Lv2",
+    "NextId": "CrystalOre_Lv3",
+    "Level": 2,
+    "UpgradeTime": 180,
+    "UpgradeTimeDiamond": 10,
+    "UpgradeCost": [
+      {
+        "amount": 5000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 5000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "CrystalOre_Lv1": {
+    "Id": "CrystalOre_Lv1",
+    "NextId": "CrystalOre_Lv2",
+    "Level": 1,
+    "UpgradeTime": 60,
+    "UpgradeTimeDiamond": 0,
+    "UpgradeCost": [
+      {
+        "amount": 1000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 1000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "CrystalOre_Normal",
+      "CrystalStorage_Normal"
+    ],
+    "Img": "pic_orecrystal_smc"
+  },
+  "ExpOre_Lv8": {
+    "Id": "ExpOre_Lv8",
+    "NextId": "ExpOre_Lv9",
+    "Level": 8,
+    "UpgradeTime": 43200,
+    "UpgradeTimeDiamond": 70,
+    "UpgradeCost": [
+      {
+        "amount": 40000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 40000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 6,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv9": {
+    "Id": "ExpOre_Lv9",
+    "NextId": "ExpOre_Lv10",
+    "Level": 9,
+    "UpgradeTime": 57600,
+    "UpgradeTimeDiamond": 80,
+    "UpgradeCost": [
+      {
+        "amount": 50000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 50000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 8,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv6": {
+    "Id": "ExpOre_Lv6",
+    "NextId": "ExpOre_Lv7",
+    "Level": 6,
+    "UpgradeTime": 14400,
+    "UpgradeTimeDiamond": 50,
+    "UpgradeCost": [
+      {
+        "amount": 25000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 25000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 3,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv7": {
+    "Id": "ExpOre_Lv7",
+    "NextId": "ExpOre_Lv8",
+    "Level": 7,
+    "UpgradeTime": 28800,
+    "UpgradeTimeDiamond": 60,
+    "UpgradeCost": [
+      {
+        "amount": 30000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 30000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 4,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv4": {
+    "Id": "ExpOre_Lv4",
+    "NextId": "ExpOre_Lv5",
+    "Level": 4,
+    "UpgradeTime": 1800,
+    "UpgradeTimeDiamond": 30,
+    "UpgradeCost": [
+      {
+        "amount": 15000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 15000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv5": {
+    "Id": "ExpOre_Lv5",
+    "NextId": "ExpOre_Lv6",
+    "Level": 5,
+    "UpgradeTime": 7200,
+    "UpgradeTimeDiamond": 40,
+    "UpgradeCost": [
+      {
+        "amount": 20000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 20000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 2,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv2": {
+    "Id": "ExpOre_Lv2",
+    "NextId": "ExpOre_Lv3",
+    "Level": 2,
+    "UpgradeTime": 180,
+    "UpgradeTimeDiamond": 10,
+    "UpgradeCost": [
+      {
+        "amount": 5000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 5000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv3": {
+    "Id": "ExpOre_Lv3",
+    "NextId": "ExpOre_Lv4",
+    "Level": 3,
+    "UpgradeTime": 600,
+    "UpgradeTimeDiamond": 20,
+    "UpgradeCost": [
+      {
+        "amount": 10000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 10000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv1": {
+    "Id": "ExpOre_Lv1",
+    "NextId": "ExpOre_Lv2",
+    "Level": 1,
+    "UpgradeTime": 60,
+    "UpgradeTimeDiamond": 0,
+    "UpgradeCost": [
+      {
+        "amount": 1000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 1000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 1,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv10": {
+    "Id": "ExpOre_Lv10",
+    "NextId": "ExpOre_Lv11",
+    "Level": 10,
+    "UpgradeTime": 64800,
+    "UpgradeTimeDiamond": 90,
+    "UpgradeCost": [
+      {
+        "amount": 60000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 60000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 10,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv11": {
+    "Id": "ExpOre_Lv11",
+    "NextId": "ExpOre_Lv12",
+    "Level": 11,
+    "UpgradeTime": 86400,
+    "UpgradeTimeDiamond": 100,
+    "UpgradeCost": [
+      {
+        "amount": 70000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 70000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 11,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  },
+  "ExpOre_Lv12": {
+    "Id": "ExpOre_Lv12",
+    "NextId": "ExpOre_Lv12",
+    "Level": 12,
+    "UpgradeTime": 115200,
+    "UpgradeTimeDiamond": 110,
+    "UpgradeCost": [
+      {
+        "amount": 80000,
+        "type": "IR_Gold"
+      },
+      {
+        "amount": 80000,
+        "type": "IR_Crystal"
+      }
+    ],
+    "ReturnFactor": 0.5,
+    "LevelCondition": 12,
+    "Effect": [
+      "ExpOre_Normal",
+      "ExpStorage_Normal"
+    ],
+    "Img": "pic_oreexp_smc"
+  }
+}

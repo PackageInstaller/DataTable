@@ -1,0 +1,53 @@
+{
+  "Club_Game": {
+    "Id": "Club_Game",
+    "Name": "Club_Game_Name",
+    "NameIcon": "txt_shetuan_wenzi01.png",
+    "MainTechIcon": "Club_Game.png",
+    "SystemDesc": "Club_Game_Desc",
+    "Unlock": {
+      "ClubLevel": 2,
+      "LEVEL": 20
+    },
+    "Order": 2,
+    "TechPoint": [
+      "Club_Contribute_1",
+      "Club_Contribute_2"
+    ],
+    "UnlockDesc": "Club_UnlockDesc"
+  },
+  "Club_RedPocket": {
+    "Id": "Club_RedPocket",
+    "Name": "Club_RedPocket_Name",
+    "NameIcon": "txt_shetuan_wenzi01.png",
+    "MainTechIcon": "Club_RedPocket.png",
+    "SystemDesc": "Club_RedPocket_Desc",
+    "Unlock": {
+      "ClubLevel": 3,
+      "LEVEL": 25
+    },
+    "Order": 3,
+    "TechPoint": [
+      "Club_Contribute_1",
+      "Club_Contribute_2"
+    ],
+    "UnlockDesc": "Club_UnlockDesc"
+  },
+  "Club_Contribute": {
+    "Id": "Club_Contribute",
+    "Name": "Club_Contribute_Name",
+    "NameIcon": "txt_shetuan_wenzi01.png",
+    "MainTechIcon": "Club_Contribute.png",
+    "SystemDesc": "Club_Contribute_Desc",
+    "Unlock": {
+      "ClubLevel": 1,
+      "LEVEL": 10
+    },
+    "Order": 1,
+    "TechPoint": [
+      "Club_Contribute_1",
+      "Club_Contribute_2"
+    ],
+    "UnlockDesc": "Club_UnlockDesc"
+  }
+}

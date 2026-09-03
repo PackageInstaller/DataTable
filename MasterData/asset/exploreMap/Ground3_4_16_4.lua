@@ -1,0 +1,10 @@
+return function ()
+return {
+[0] = {
+{0,0,452,452,},
+{0,0,452,452,},
+ nil,
+ nil,
+},
+}
+end

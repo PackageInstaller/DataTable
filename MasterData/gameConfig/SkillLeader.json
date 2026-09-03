@@ -1,0 +1,163 @@
+{
+  "URFLYDe_LeaderSkill": {
+    "Id": "URFLYDe_LeaderSkill",
+    "Triggered_Way": "Attack",
+    "birde_special": {
+      "UNHURT": [
+        0.1,
+        0.02,
+        0.4
+      ],
+      "HURT": [
+        0.1,
+        0.02,
+        0.4
+      ]
+    },
+    "Stacking_Way": "ATK_Team",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": []
+  },
+  "URYBYa_LeaderSkill": {
+    "Id": "URYBYa_LeaderSkill",
+    "Triggered_Way": "Party",
+    "birde_special": {
+      "HURT": [
+        0.15,
+        0,
+        0.15
+      ]
+    },
+    "Stacking_Way": "",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": [
+      "WNSXJ",
+      "XD"
+    ]
+  },
+  "URXDE_LeaderSkill": {
+    "Id": "URXDE_LeaderSkill",
+    "Triggered_Way": "Revive",
+    "birde_special": {
+      "HURT": [
+        0,
+        0.04,
+        0.2
+      ]
+    },
+    "Stacking_Way": "Resurrection",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": []
+  },
+  "URLDYu_LeaderSkill": {
+    "Id": "URLDYu_LeaderSkill",
+    "Triggered_Way": "Defend",
+    "birde_special": {
+      "UNHURT": [
+        0.05,
+        0.01,
+        0.2
+      ]
+    },
+    "Stacking_Way": "DEF_Team",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": []
+  },
+  "URBHTZi_LeaderSkill": {
+    "Id": "URBHTZi_LeaderSkill",
+    "Triggered_Way": "Revive",
+    "birde_special": {
+      "HURT": [
+        0,
+        0.04,
+        0.2
+      ]
+    },
+    "Stacking_Way": "Resurrection",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": []
+  },
+  "URQBTe_LeaderSkill": {
+    "Id": "URQBTe_LeaderSkill",
+    "Triggered_Way": "MInutes",
+    "birde_special": {
+      "UNHURT": [
+        0.15,
+        0,
+        0.15
+      ]
+    },
+    "Stacking_Way": "",
+    "Minutes": [
+      0,
+      8
+    ],
+    "Party": []
+  },
+  "URYSuo_LeaderSkill": {
+    "Id": "URYSuo_LeaderSkill",
+    "Triggered_Way": "Revive",
+    "birde_special": {
+      "UNHURT": [
+        0,
+        0.04,
+        0.2
+      ]
+    },
+    "Stacking_Way": "Resurrection",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": []
+  },
+  "URHSYZhai_LeaderSkill": {
+    "Id": "URHSYZhai_LeaderSkill",
+    "Triggered_Way": "Back",
+    "birde_special": {
+      "HURT": [
+        0,
+        0.05,
+        0.2
+      ]
+    },
+    "Stacking_Way": "back",
+    "Minutes": [
+      0,
+      30
+    ],
+    "Party": []
+  },
+  "URXHMao_LeaderSkill": {
+    "Id": "URXHMao_LeaderSkill",
+    "Triggered_Way": "Attack",
+    "birde_special": {
+      "HURT": [
+        0.05,
+        0.01,
+        0.2
+      ]
+    },
+    "Stacking_Way": "ATK_Team",
+    "Minutes": [
+      0,
+      1440
+    ],
+    "Party": []
+  }
+}

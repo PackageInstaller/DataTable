@@ -1,0 +1,470 @@
+{
+  "MapType8": {
+    "Id": "MapType8",
+    "OpenType": 1,
+    "UnlockCondition": {
+      "LEVEL": 100
+    },
+    "Num": 8,
+    "Name": "Map_LinShi_8",
+    "Img": "map_guanqiatu_01",
+    "BGImg": "bg_map_scene_01",
+    "BGStageAnim": "stage_3_shamoyibian",
+    "BeforeStoryName": "Map_Egypt_8_MapName",
+    "BeforeStory": "mapstory_Egypt_1_before_01",
+    "BeforeStoryPosition": [
+      340,
+      513
+    ],
+    "MapPointId": [
+      "MapPoint8_1",
+      "MapPoint8_2",
+      "MapPoint8_3",
+      "MapPoint8_4"
+    ],
+    "DPTask": [],
+    "DPNum": 100,
+    "DPTaskReward": [
+      {
+        "count": "25",
+        "reward": "Egypt_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "50",
+        "reward": "Egypt_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "75",
+        "reward": "Egypt_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "100",
+        "reward": "Egypt_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "Egypt": {
+    "Id": "Egypt",
+    "OpenType": 1,
+    "UnlockCondition": {
+      "LEVEL": 100
+    },
+    "Num": 3,
+    "Name": "Map_Egypt_Name",
+    "Img": "map_guanqiatu_03",
+    "BGImg": "bg_map_scene_03",
+    "BGStageAnim": "stage_3_shamoyibian",
+    "BeforeStoryName": "MapType_BeforeStoryName_Egypt_1",
+    "BeforeStory": "mapstory_Egypt_1_before_01",
+    "BeforeStoryPosition": [
+      336,
+      440
+    ],
+    "MapPointId": [
+      "Egypt_1",
+      "Egypt_2",
+      "Egypt_3",
+      "Egypt_4"
+    ],
+    "DPTask": [
+      "Map_DPTask_Egypt0_01",
+      "Map_DPTask_Egypt0_02",
+      "Map_DPTask_Egypt0_03",
+      "Map_DPTask_Egypt0_04",
+      "Map_DPTask_Egypt0_05",
+      "Map_DPTask_Egypt1_01",
+      "Map_DPTask_Egypt2_01",
+      "Map_DPTask_Egypt3_01",
+      "Map_DPTask_Egypt4_01"
+    ],
+    "DPNum": 18,
+    "DPTaskReward": [
+      {
+        "count": "5",
+        "reward": "Egypt_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "10",
+        "reward": "Egypt_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "15",
+        "reward": "Egypt_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "18",
+        "reward": "Egypt_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "MapType7": {
+    "Id": "MapType7",
+    "OpenType": 1,
+    "UnlockCondition": {
+      "LEVEL": 100
+    },
+    "Num": 7,
+    "Name": "Map_LinShi_7",
+    "Img": "map_guanqiatu_01",
+    "BGImg": "bg_map_scene_01",
+    "BGStageAnim": "stage_3_shamoyibian",
+    "BeforeStoryName": "Map_Egypt_7_MapName",
+    "BeforeStory": "mapstory_Egypt_1_before_01",
+    "BeforeStoryPosition": [
+      340,
+      513
+    ],
+    "MapPointId": [
+      "MapPoint7_1",
+      "MapPoint7_2",
+      "MapPoint7_3",
+      "MapPoint7_4"
+    ],
+    "DPTask": [],
+    "DPNum": 100,
+    "DPTaskReward": [
+      {
+        "count": "25",
+        "reward": "Egypt_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "50",
+        "reward": "Egypt_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "75",
+        "reward": "Egypt_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "100",
+        "reward": "Egypt_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "MapType5": {
+    "Id": "MapType5",
+    "OpenType": 1,
+    "UnlockCondition": {
+      "LEVEL": 100
+    },
+    "Num": 5,
+    "Name": "Map_LinShi_5",
+    "Img": "map_guanqiatu_01",
+    "BGImg": "bg_map_scene_01",
+    "BGStageAnim": "stage_3_shamoyibian",
+    "BeforeStoryName": "Map_Egypt_5_MapName",
+    "BeforeStory": "mapstory_Egypt_1_before_01",
+    "BeforeStoryPosition": [
+      340,
+      513
+    ],
+    "MapPointId": [
+      "MapPoint5_1",
+      "MapPoint5_2",
+      "MapPoint5_3",
+      "MapPoint5_4"
+    ],
+    "DPTask": [],
+    "DPNum": 100,
+    "DPTaskReward": [
+      {
+        "count": "25",
+        "reward": "Egypt_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "50",
+        "reward": "Egypt_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "75",
+        "reward": "Egypt_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "100",
+        "reward": "Egypt_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "Alice": {
+    "Id": "Alice",
+    "OpenType": null,
+    "UnlockCondition": {
+      "LEVEL": 1
+    },
+    "Num": 1,
+    "Name": "Map_Alice_Name",
+    "Img": "map_guanqiatu_01",
+    "BGImg": "bg_map_scene_01",
+    "BGStageAnim": "stage_1_tansuotonghua",
+    "BeforeStoryName": "MapType_BeforeStoryName_Alice_1",
+    "BeforeStory": "mapstory_Alice_1_before_01",
+    "BeforeStoryPosition": [
+      336,
+      440
+    ],
+    "MapPointId": [
+      "Alice_1",
+      "Alice_2",
+      "Alice_3",
+      "Alice_4"
+    ],
+    "DPTask": [
+      "Map_DPTask_Alice0_01",
+      "Map_DPTask_Alice0_02",
+      "Map_DPTask_Alice0_03",
+      "Map_DPTask_Alice0_04",
+      "Map_DPTask_Alice0_05",
+      "Map_DPTask_Alice0_06",
+      "Map_DPTask_Alice1_01",
+      "Map_DPTask_Alice1_02",
+      "Map_DPTask_Alice1_03",
+      "Map_DPTask_Alice1_04",
+      "Map_DPTask_Alice1_05",
+      "Map_DPTask_Alice1_06",
+      "Map_DPTask_Alice1_07",
+      "Map_DPTask_Alice1_08",
+      "Map_DPTask_Alice1_09",
+      "Map_DPTask_Alice1_10",
+      "Map_DPTask_Alice2_01",
+      "Map_DPTask_Alice2_02",
+      "Map_DPTask_Alice2_03",
+      "Map_DPTask_Alice2_04",
+      "Map_DPTask_Alice2_05",
+      "Map_DPTask_Alice2_06",
+      "Map_DPTask_Alice2_07",
+      "Map_DPTask_Alice3_01",
+      "Map_DPTask_Alice3_02",
+      "Map_DPTask_Alice3_03",
+      "Map_DPTask_Alice3_04",
+      "Map_DPTask_Alice3_05",
+      "Map_DPTask_Alice3_06",
+      "Map_DPTask_Alice3_07",
+      "Map_DPTask_Alice3_08",
+      "Map_DPTask_Alice4_01",
+      "Map_DPTask_Alice4_02",
+      "Map_DPTask_Alice4_03",
+      "Map_DPTask_Alice4_04",
+      "Map_DPTask_Alice4_05",
+      "Map_DPTask_Alice4_06",
+      "Map_DPTask_Alice4_07",
+      "Map_DPTask_Alice4_08",
+      "Map_DPTask_Alice4_09"
+    ],
+    "DPNum": 100,
+    "DPTaskReward": [
+      {
+        "count": "25",
+        "reward": "Alice_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "50",
+        "reward": "Alice_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "75",
+        "reward": "Alice_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "100",
+        "reward": "Alice_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "MapType6": {
+    "Id": "MapType6",
+    "OpenType": 1,
+    "UnlockCondition": {
+      "LEVEL": 100
+    },
+    "Num": 6,
+    "Name": "Map_LinShi_6",
+    "Img": "map_guanqiatu_01",
+    "BGImg": "bg_map_scene_01",
+    "BGStageAnim": "stage_3_shamoyibian",
+    "BeforeStoryName": "Map_Egypt_6_MapName",
+    "BeforeStory": "mapstory_Egypt_1_before_01",
+    "BeforeStoryPosition": [
+      340,
+      513
+    ],
+    "MapPointId": [
+      "MapPoint6_1",
+      "MapPoint6_2",
+      "MapPoint6_3",
+      "MapPoint6_4"
+    ],
+    "DPTask": [],
+    "DPNum": 100,
+    "DPTaskReward": [
+      {
+        "count": "25",
+        "reward": "Egypt_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "50",
+        "reward": "Egypt_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "75",
+        "reward": "Egypt_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "100",
+        "reward": "Egypt_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "China": {
+    "Id": "China",
+    "OpenType": 1,
+    "UnlockCondition": {
+      "LEVEL": 100
+    },
+    "Num": 4,
+    "Name": "Map_China_Name",
+    "Img": "map_guanqiatu_01",
+    "BGImg": "bg_map_scene_01",
+    "BGStageAnim": "stage_3_shamoyibian",
+    "BeforeStoryName": "MapType_BeforeStoryName_China_1",
+    "BeforeStory": "",
+    "BeforeStoryPosition": [
+      340,
+      513
+    ],
+    "MapPointId": [
+      "China_1",
+      "China_2",
+      "China_3",
+      "China_4"
+    ],
+    "DPTask": [],
+    "DPNum": 100,
+    "DPTaskReward": [
+      {
+        "count": "25",
+        "reward": "Egypt_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "50",
+        "reward": "Egypt_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "75",
+        "reward": "Egypt_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "100",
+        "reward": "Egypt_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  },
+  "Japan": {
+    "Id": "Japan",
+    "OpenType": null,
+    "UnlockCondition": {
+      "LEVEL": 32
+    },
+    "Num": 2,
+    "Name": "Map_Japan_Name",
+    "Img": "map_guanqiatu_02",
+    "BGImg": "bg_map_scene_02",
+    "BGStageAnim": "stage_2_shamoyibian",
+    "BeforeStoryName": "MapType_BeforeStoryName_Japan_1",
+    "BeforeStory": "mapstory_Japan_1_before_01",
+    "BeforeStoryPosition": [
+      336,
+      440
+    ],
+    "MapPointId": [
+      "Japan_1",
+      "Japan_2",
+      "Japan_3",
+      "Japan_4"
+    ],
+    "DPTask": [
+      "Map_DPTask_Japan0_01",
+      "Map_DPTask_Japan0_02",
+      "Map_DPTask_Japan0_03",
+      "Map_DPTask_Japan0_04",
+      "Map_DPTask_Japan0_05",
+      "Map_DPTask_Japan0_06",
+      "Map_DPTask_Japan1_01",
+      "Map_DPTask_Japan1_02",
+      "Map_DPTask_Japan1_03",
+      "Map_DPTask_Japan1_04",
+      "Map_DPTask_Japan1_05",
+      "Map_DPTask_Japan1_06",
+      "Map_DPTask_Japan1_07",
+      "Map_DPTask_Japan1_08",
+      "Map_DPTask_Japan2_01",
+      "Map_DPTask_Japan2_02",
+      "Map_DPTask_Japan2_03",
+      "Map_DPTask_Japan2_04",
+      "Map_DPTask_Japan2_05",
+      "Map_DPTask_Japan2_06",
+      "Map_DPTask_Japan2_07",
+      "Map_DPTask_Japan2_08",
+      "Map_DPTask_Japan3_01",
+      "Map_DPTask_Japan4_01"
+    ],
+    "DPNum": 54,
+    "DPTaskReward": [
+      {
+        "count": "12",
+        "reward": "Japan_DP1_Reward",
+        "icon": "1"
+      },
+      {
+        "count": "24",
+        "reward": "Japan_DP2_Reward",
+        "icon": "2"
+      },
+      {
+        "count": "40",
+        "reward": "Japan_DP3_Reward",
+        "icon": "3"
+      },
+      {
+        "count": "52",
+        "reward": "Japan_DP4_Reward",
+        "icon": "5"
+      }
+    ],
+    "MapCountReset": ""
+  }
+}

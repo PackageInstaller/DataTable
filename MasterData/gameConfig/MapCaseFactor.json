@@ -1,0 +1,7109 @@
+{
+  "Japan_3_BossB1_Battle1": {
+    "Id": "Japan_3_BossB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_3_BossB1_Name",
+    "Desc": "Japan_3_BossB1_Desc",
+    "Pic": "Hero_NXYYi5",
+    "Reward": "Japan_3_Boss1_Show",
+    "BpFactor": 49497,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanYaoDao_Choice1": {
+    "Id": "Japan_2_CaiDanYaoDao_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanYaoDao_Name",
+    "Desc": "Japan_2_CaiDanYaoDao_Desc1",
+    "Pic": "Japan_YaoDaoTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChaKan"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_BossCaiDan2_Battle1": {
+    "Id": "Japan_1_BossCaiDan2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_BossCaiDan2_Name",
+    "Desc": "Japan_1_BossCaiDan2_Desc",
+    "Pic": "Monster_YouLingNvPu5",
+    "Reward": "Japan_1_BossCaiDan2_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanYaoDao_Choice2": {
+    "Id": "Japan_2_CaiDanYaoDao_Choice2",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanYaoDao_Name",
+    "Desc": "Japan_2_CaiDanYaoDao_Desc2",
+    "Pic": "Japan_YaoDaoTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanYaoDao_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanYaoDao_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanYaoDao_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Japan_2_CaiDanYaoDao_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanSaiQianXiang_Choice2_4": {
+    "Id": "Japan_1_CaiDanSaiQianXiang_Choice2_4",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanSaiQianXiang_Name",
+    "Desc": "Japan_1_CaiDanSaiQianXiang_Desc2_4",
+    "Pic": "Japan_SaiQianXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IR_Gold",
+    "NeedNum": 10000,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_JinBiBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_BossA1_Battle1": {
+    "Id": "Japan_2_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_BossA1_Name",
+    "Desc": "Japan_2_BossA1_Desc",
+    "Pic": "Hero_NXYYi5",
+    "Reward": "Japan_2_Boss1_Show",
+    "BpFactor": 41342,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanSaiQianXiang_Choice2_1": {
+    "Id": "Japan_1_CaiDanSaiQianXiang_Choice2_1",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanSaiQianXiang_Name",
+    "Desc": "Japan_1_CaiDanSaiQianXiang_Desc2_1",
+    "Pic": "Japan_SaiQianXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IR_Gold",
+    "NeedNum": 100,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_JinBiBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanFanTuan1_Choice1": {
+    "Id": "Japan_2_CaiDanFanTuan1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanFanTuan_Name",
+    "Desc": "Japan_2_CaiDanFanTuan_Desc1",
+    "Pic": "Japan_CaiDanFanTuanTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Japan_2_CaiDanFanTuan_PickDesc1"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanSaiQianXiang_Choice2_3": {
+    "Id": "Japan_1_CaiDanSaiQianXiang_Choice2_3",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanSaiQianXiang_Name",
+    "Desc": "Japan_1_CaiDanSaiQianXiang_Desc2_3",
+    "Pic": "Japan_SaiQianXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IR_Gold",
+    "NeedNum": 5000,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_JinBiBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanSaiQianXiang_Choice2_2": {
+    "Id": "Japan_1_CaiDanSaiQianXiang_Choice2_2",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanSaiQianXiang_Name",
+    "Desc": "Japan_1_CaiDanSaiQianXiang_Desc2_2",
+    "Pic": "Japan_SaiQianXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IR_Gold",
+    "NeedNum": 1000,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_JinBiBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanFanTuan3_Choice1": {
+    "Id": "Japan_2_CaiDanFanTuan3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanFanTuan_Name",
+    "Desc": "Japan_2_CaiDanFanTuan_Desc3",
+    "Pic": "Japan_CaiDanFanTuanTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Japan_2_CaiDanFanTuan_PickDesc1"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanShuZhuang_Choice1_2_1": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice1_2_1",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc6",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_1_ItemShuZhi1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_HunYu2_Choice1": {
+    "Id": "Japan_HunYu2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_CaiDanHunYu2_Name",
+    "Desc": "Japan_CaiDanHunYu_Desc",
+    "Pic": "Japan_HunYuTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanRenZheWuQi2_Choice1": {
+    "Id": "Japan_1_CaiDanRenZheWuQi2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanRenZheWuQi2_Name",
+    "Desc": "Japan_1_CaiDanRenZheWuQi2_Desc",
+    "Pic": "Japan_RenZheWuQiTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYu1_Choice1": {
+    "Id": "Japan_2_CaiDanGouYu1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_2_CaiDanGouYu1_Name",
+    "Desc": "Japan_2_CaiDanGouYu1_Desc",
+    "Pic": "Japan_CaiDanZhenFa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_JingYingCaiDan5_Battle1": {
+    "Id": "Japan_1_JingYingCaiDan5_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingCaiDan5_Name",
+    "Desc": "Japan_1_JingYingCaiDan5_Desc",
+    "Pic": "Monster_ZhaoCaiMao5",
+    "Reward": "Japan_1_JingYingCaiDan5_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_4_XiaoGuaiA1_Battle1": {
+    "Id": "Japan_4_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_XiaoGuaiA1_Name",
+    "Desc": "Japan_4_XiaoGuaiA1_Desc",
+    "Pic": "Monster_HeiPiDaDao5",
+    "Reward": "Japan_4_XiaoGuai1_Show",
+    "BpFactor": 28545,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_XiaoGuaiA1_Battle1": {
+    "Id": "Japan_2_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_XiaoGuaiA1_Name",
+    "Desc": "Japan_2_XiaoGuaiA1_Desc",
+    "Pic": "Monster_LvGui5",
+    "Reward": "Japan_2_XiaoGuai1_Show",
+    "BpFactor": 15120,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_HunYu4_Choice1": {
+    "Id": "Japan_HunYu4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_CaiDanHunYu4_Name",
+    "Desc": "Japan_CaiDanHunYu_Desc",
+    "Pic": "Japan_HunYuTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanRenZheWuQi3_Choice1": {
+    "Id": "Japan_1_CaiDanRenZheWuQi3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanRenZheWuQi3_Name",
+    "Desc": "Japan_1_CaiDanRenZheWuQi3_Desc",
+    "Pic": "Japan_RenZheWuQiTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanRenZheWuQi4_Choice1": {
+    "Id": "Japan_1_CaiDanRenZheWuQi4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanRenZheWuQi4_Name",
+    "Desc": "Japan_1_CaiDanRenZheWuQi4_Desc",
+    "Pic": "Japan_RenZheWuQiTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_3_JingYingA1_Battle1": {
+    "Id": "Japan_3_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_3_JingYingA1_Name",
+    "Desc": "Japan_3_JingYingA1_Desc",
+    "Pic": "Hero_TPGZhu5",
+    "Reward": "Japan_3_JingYing1_Show",
+    "BpFactor": 35640,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanShuZhuang_Choice1": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc1",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_4_JingYingA1_Battle1": {
+    "Id": "Japan_4_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_JingYingA1_Name",
+    "Desc": "Japan_4_JingYingA1_Desc",
+    "Pic": "Hero_LDu5",
+    "Reward": "Japan_4_JingYing1_Show",
+    "BpFactor": 44958,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingCaiDan3_Battle1": {
+    "Id": "Japan_1_JingYingCaiDan3_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingCaiDan3_Name",
+    "Desc": "Japan_1_JingYingCaiDan3_Desc",
+    "Pic": "Monster_HongGui5",
+    "Reward": "Japan_1_JingYingCaiDan3_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingA2_Battle1": {
+    "Id": "Japan_1_JingYingA2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingA2_Name",
+    "Desc": "Japan_1_JingYingA2_Desc",
+    "Pic": "Hero_CLMan5",
+    "Reward": "Japan_1_JingYing1_Show",
+    "BpFactor": 23700,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanHuo_Choice1": {
+    "Id": "Japan_1_CaiDanHuo_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanHuo_Name",
+    "Desc": "Japan_1_CaiDanHuo_Desc1",
+    "Pic": "Japan_GouHuoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_1_CaiDanHuo_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_1_CaiDanHuo_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_1_CaiDanHuo_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Japan_1_CaiDanHuo_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanHuo_Choice2": {
+    "Id": "Japan_1_CaiDanHuo_Choice2",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanHuo_Name",
+    "Desc": "Japan_1_CaiDanHuo_Desc2",
+    "Pic": "Japan_GouHuoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_1_ItemShuYe1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_JingYingA1_Battle1": {
+    "Id": "Japan_2_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_JingYingA1_Name",
+    "Desc": "Japan_2_JingYingA1_Desc",
+    "Pic": "Hero_YDZZong5",
+    "Reward": "Japan_2_JingYing1_Show",
+    "BpFactor": 29766,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingA1_Battle1": {
+    "Id": "Japan_1_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingA1_Name",
+    "Desc": "Japan_1_JingYingA1_Desc",
+    "Pic": "Hero_ZTXChang5",
+    "Reward": "Japan_1_JingYing1_Show",
+    "BpFactor": 23700,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_4_XiaoGuaiC1_Battle1": {
+    "Id": "Japan_4_XiaoGuaiC1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_XiaoGuaiC1_Name",
+    "Desc": "Japan_4_XiaoGuaiC1_Desc",
+    "Pic": "Monster_HeiPiPiFeng5",
+    "Reward": "Japan_4_XiaoGuai3_Show",
+    "BpFactor": 39250,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_BossCaiDan3_Battle1": {
+    "Id": "Japan_1_BossCaiDan3_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_BossCaiDan3_Name",
+    "Desc": "Japan_1_BossCaiDan3_Desc",
+    "Pic": "Hero_MasterQiangShou5",
+    "Reward": "Japan_1_BossCaiDan3_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_XiaoGuaiA1_Battle1": {
+    "Id": "Japan_1_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_XiaoGuaiA1_Name",
+    "Desc": "Japan_1_XiaoGuaiA1_Desc",
+    "Pic": "Monster_MengYanKuiSi5",
+    "Reward": "Japan_1_XiaoGuai1_Show",
+    "BpFactor": 12040,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingCaiDan1_Battle1": {
+    "Id": "Japan_1_JingYingCaiDan1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingCaiDan1_Name",
+    "Desc": "Japan_1_JingYingCaiDan1_Desc",
+    "Pic": "Monster_PuKeQiShiA5",
+    "Reward": "Japan_1_JingYingCaiDan1_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_BuffA1_Choice1": {
+    "Id": "Japan_1_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_1_BuffA1_Name",
+    "Desc": "Japan_1_BuffA1_Desc",
+    "Pic": "Japan_ShenXiang_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_3_XiaoGuaiB1_Battle1": {
+    "Id": "Japan_3_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_3_XiaoGuaiB1_Name",
+    "Desc": "Japan_3_XiaoGuaiB1_Desc",
+    "Pic": "Monster_HeiPiDun5",
+    "Reward": "Japan_3_XiaoGuai2_Show",
+    "BpFactor": 28285,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanMiJi1_Choice1": {
+    "Id": "Japan_2_CaiDanMiJi1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMiJi1_Name",
+    "Desc": "Japan_2_CaiDanMiJi1_Desc",
+    "Pic": "Japan_CaiDanMiJiTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_DaKai"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_JingYingB1_Battle1": {
+    "Id": "Japan_1_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingB1_Name",
+    "Desc": "Japan_1_JingYingB1_Desc",
+    "Pic": "Hero_BBLMa5",
+    "Reward": "Japan_1_JingYing2_Show",
+    "BpFactor": 25956,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingCaiDan4_Battle1": {
+    "Id": "Japan_1_JingYingCaiDan4_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingCaiDan4_Name",
+    "Desc": "Japan_1_JingYingCaiDan4_Desc",
+    "Pic": "Monster_YLMYao5",
+    "Reward": "Japan_1_JingYingCaiDan4_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_4_JingYingC1_Battle1": {
+    "Id": "Japan_4_JingYingC1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_JingYingC1_Name",
+    "Desc": "Japan_4_JingYingC1_Desc",
+    "Pic": "Hero_DDing5",
+    "Reward": "Japan_4_JingYing3_Show",
+    "BpFactor": 53520,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanRenZheWuQi1_Choice1": {
+    "Id": "Japan_1_CaiDanRenZheWuQi1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanRenZheWuQi1_Name",
+    "Desc": "Japan_1_CaiDanRenZheWuQi1_Desc",
+    "Pic": "Japan_RenZheWuQiTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_HunYu3_Choice1": {
+    "Id": "Japan_HunYu3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_CaiDanHunYu3_Name",
+    "Desc": "Japan_CaiDanHunYu_Desc",
+    "Pic": "Japan_HunYuTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_BossA1_Battle1": {
+    "Id": "Japan_1_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_BossA1_Name",
+    "Desc": "Japan_1_BossA1_Desc",
+    "Pic": "Monster_JingShiDa5",
+    "Reward": "Japan_1_Boss1_Show",
+    "BpFactor": 32921,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Japan_3_XiaoGuaiA1_Battle1": {
+    "Id": "Japan_3_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_3_XiaoGuaiA1_Name",
+    "Desc": "Japan_3_XiaoGuaiA1_Desc",
+    "Pic": "Monster_HeiPiJian5",
+    "Reward": "Japan_3_XiaoGuai1_Show",
+    "BpFactor": 22630,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanLuoYe_Choice1": {
+    "Id": "Japan_1_CaiDanLuoYe_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanLuoYe_Name",
+    "Desc": "Japan_1_CaiDanLuoYe_Desc",
+    "Pic": "Japan_LuoYeTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYu2_Choice1": {
+    "Id": "Japan_2_CaiDanGouYu2_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_2_CaiDanGouYu2_Name",
+    "Desc": "Japan_2_CaiDanGouYu2_Desc",
+    "Pic": "Japan_CaiDanZhenFa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanShuZhuang_Choice4_1": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice4_1",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc8",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_1_ItemShuZhi1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYuQing_Choice2": {
+    "Id": "Japan_2_CaiDanGouYuQing_Choice2",
+    "Type": "TYPE4",
+    "Title": "Japan_2_CaiDanGouYuQing_Name",
+    "Desc": "Japan_2_CaiDanGouYuQing_Desc2",
+    "Pic": "Japan_CaiDaGouYuLvTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_2_ItemGouYuQing",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYuQing_Choice1": {
+    "Id": "Japan_2_CaiDanGouYuQing_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanGouYuQing_Name",
+    "Desc": "Japan_2_CaiDanGouYuQing_Desc1",
+    "Pic": "Japan_CaiDaGouYuLvTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_4_BuffA1_Choice1": {
+    "Id": "Japan_4_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_4_BuffA1_Name",
+    "Desc": "Japan_4_BuffA1_Desc",
+    "Pic": "Japan_ShenXiang_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanShuZhuang_Choice2_1": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice2_1",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc3",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_1_ItemShuYe1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanShuZhuang_Choice2_2": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice2_2",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc5",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc6"
+      },
+      "2": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_XiaoGuaiB1_Battle1": {
+    "Id": "Japan_2_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_XiaoGuaiB1_Name",
+    "Desc": "Japan_2_XiaoGuaiB1_Desc",
+    "Pic": "Monster_HongGui5",
+    "Reward": "Japan_2_XiaoGuai2_Show",
+    "BpFactor": 23625,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_BossCaiDan4_Battle1": {
+    "Id": "Japan_1_BossCaiDan4_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_BossCaiDan4_Name",
+    "Desc": "Japan_1_BossCaiDan4_Desc",
+    "Pic": "Monster_ChangMao_RedB5",
+    "Reward": "Japan_1_BossCaiDan4_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_4_BossA1_Battle1": {
+    "Id": "Japan_4_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_BossA1_Name",
+    "Desc": "Japan_4_BossA1_Desc",
+    "Pic": "Hero_YLMGZhu5",
+    "Reward": "Japan_4_Boss1_Show",
+    "BpFactor": 67438,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanShuZhuang_Choice1_2": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice1_2",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc4",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc5"
+      },
+      "2": {
+        "optionDesc": "Japan_1_CaiDanShuZhuang_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanShuZhuang_Choice1_1": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice1_1",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc2",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_1_ItemShuYe1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMiJi4_Choice1": {
+    "Id": "Japan_2_CaiDanMiJi4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMiJi4_Name",
+    "Desc": "Japan_2_CaiDanMiJi4_Desc",
+    "Pic": "Japan_CaiDanMiJiTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_DaKai"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_BossCaiDan1_Battle1": {
+    "Id": "Japan_1_BossCaiDan1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_BossCaiDan1_Name",
+    "Desc": "Japan_1_BossCaiDan1_Desc",
+    "Pic": "Hero_SLMen5",
+    "Reward": "Japan_1_BossCaiDan1_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanMiJi2_Choice1": {
+    "Id": "Japan_2_CaiDanMiJi2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMiJi2_Name",
+    "Desc": "Japan_2_CaiDanMiJi2_Desc",
+    "Pic": "Japan_CaiDanMiJiTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_DaKai"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanSaiQianXiang_Choice1": {
+    "Id": "Japan_1_CaiDanSaiQianXiang_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanSaiQianXiang_Name",
+    "Desc": "Japan_1_CaiDanSaiQianXiang_Desc1",
+    "Pic": "Japan_SaiQianXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanSaiQianXiang_Choice2": {
+    "Id": "Japan_1_CaiDanSaiQianXiang_Choice2",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanSaiQianXiang_Name",
+    "Desc": "Japan_1_CaiDanSaiQianXiang_Desc2",
+    "Pic": "Japan_SaiQianXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_1_CaiDanSaiQianXiang_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_1_CaiDanSaiQianXiang_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_1_CaiDanSaiQianXiang_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Japan_1_CaiDanSaiQianXiang_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYu3_Choice1": {
+    "Id": "Japan_2_CaiDanGouYu3_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_2_CaiDanGouYu3_Name",
+    "Desc": "Japan_2_CaiDanGouYu3_Desc",
+    "Pic": "Japan_CaiDanZhenFa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanGouYu_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanBoss_Battle1": {
+    "Id": "Japan_2_CaiDanBoss_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_CaiDanBoss_Name",
+    "Desc": "Japan_2_CaiDanBoss_Desc",
+    "Pic": "Hero_BEr5",
+    "Reward": "Japan_2_CaiDanBoss_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingA3_Battle1": {
+    "Id": "Japan_1_JingYingA3_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingA3_Name",
+    "Desc": "Japan_1_JingYingA3_Desc",
+    "Pic": "Hero_FTLEShi5",
+    "Reward": "Japan_1_JingYing1_Show",
+    "BpFactor": 23700,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanShuZhuang_Choice2_2_1": {
+    "Id": "Japan_1_CaiDanShuZhuang_Choice2_2_1",
+    "Type": "TYPE4",
+    "Title": "Japan_1_CaiDanShuZhuang_Name",
+    "Desc": "Japan_1_CaiDanShuZhuang_Desc7",
+    "Pic": "Japan_ShuZhuangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_1_ItemShuZhi1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_XiaoGuaiB1_Battle1": {
+    "Id": "Japan_1_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_XiaoGuaiB1_Name",
+    "Desc": "Japan_1_XiaoGuaiB1_Desc",
+    "Pic": "Monster_MengYanHuangYan5",
+    "Reward": "Japan_1_XiaoGuai2_Show",
+    "BpFactor": 15048,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_3_BuffA1_Choice1": {
+    "Id": "Japan_3_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_3_BuffA1_Name",
+    "Desc": "Japan_3_BuffA1_Desc",
+    "Pic": "Japan_ShenXiang_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_HunYu1_Choice1": {
+    "Id": "Japan_HunYu1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_CaiDanHunYu1_Name",
+    "Desc": "Japan_CaiDanHunYu_Desc",
+    "Pic": "Japan_HunYuTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_3_BossA1_Battle1": {
+    "Id": "Japan_3_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_3_BossA1_Name",
+    "Desc": "Japan_3_BossA1_Desc",
+    "Pic": "Hero_YBYa5",
+    "Reward": "Japan_3_Boss1_Show",
+    "BpFactor": 49497,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_JingYingCaiDan2_Battle1": {
+    "Id": "Japan_1_JingYingCaiDan2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_JingYingCaiDan2_Name",
+    "Desc": "Japan_1_JingYingCaiDan2_Desc",
+    "Pic": "Monster_MengYanKuiSi5",
+    "Reward": "Japan_1_JingYingCaiDan2_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_4_XiaoGuaiB1_Battle1": {
+    "Id": "Japan_4_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_XiaoGuaiB1_Name",
+    "Desc": "Japan_4_XiaoGuaiB1_Desc",
+    "Pic": "Monster_HeiPiChangZhang5",
+    "Reward": "Japan_4_XiaoGuai2_Show",
+    "BpFactor": 35680,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanYaoDao_Choice1": {
+    "Id": "Japan_1_CaiDanYaoDao_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanYaoDao_Name",
+    "Desc": "Japan_1_CaiDanYaoDao_Desc1",
+    "Pic": "Japan_YaoDaoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChaKan"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanYaoDao_Choice2": {
+    "Id": "Japan_1_CaiDanYaoDao_Choice2",
+    "Type": "TYPE5",
+    "Title": "Japan_1_CaiDanYaoDao_Name",
+    "Desc": "Japan_1_CaiDanYaoDao_Desc2",
+    "Pic": "Japan_YaoDaoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_1_CaiDanYaoDao_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_1_CaiDanYaoDao_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_1_CaiDanYaoDao_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Japan_1_CaiDanYaoDao_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanYaoDao_Choice3": {
+    "Id": "Japan_1_CaiDanYaoDao_Choice3",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanYaoDao_Name",
+    "Desc": "Japan_1_CaiDanYaoDao_Desc1",
+    "Pic": "Japan_YaoDaoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMuXiangShaoNv_Battle1": {
+    "Id": "Japan_2_CaiDanMuXiangShaoNv_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_CaiDanMuXiangShaoNv_Name",
+    "Desc": "Japan_2_CaiDanMuXiangShaoNv_Desc2",
+    "Pic": "Hero_ALSi_HeiHua5",
+    "Reward": "Japan_2_CaiDanXiaoDouZi_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanGouYuHong_Choice2": {
+    "Id": "Japan_2_CaiDanGouYuHong_Choice2",
+    "Type": "TYPE4",
+    "Title": "Japan_2_CaiDanGouYuHong_Name",
+    "Desc": "Japan_2_CaiDanGouYuHong_Desc2",
+    "Pic": "Japan_CaiDaGouYuHongTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_2_ItemGouYuHong",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYuHong_Choice1": {
+    "Id": "Japan_2_CaiDanGouYuHong_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanGouYuHong_Name",
+    "Desc": "Japan_2_CaiDanGouYuHong_Desc1",
+    "Pic": "Japan_CaiDaGouYuHongTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanBoss_Battle1": {
+    "Id": "Japan_1_CaiDanBoss_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_CaiDanBoss_Name",
+    "Desc": "Japan_1_CaiDanBoss_Desc",
+    "Pic": "Hero_YFZZhu5",
+    "Reward": "Japan_1_CaiDanBoss_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanGouYuHuang_Choice2": {
+    "Id": "Japan_2_CaiDanGouYuHuang_Choice2",
+    "Type": "TYPE4",
+    "Title": "Japan_2_CaiDanGouYuHuang_Name",
+    "Desc": "Japan_2_CaiDanGouYuHuang_Desc2",
+    "Pic": "Japan_CaiDaGouYuHuangTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Japan_2_ItemGouYuHuang",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanGouYuHuang_Choice1": {
+    "Id": "Japan_2_CaiDanGouYuHuang_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanGouYuHuang_Name",
+    "Desc": "Japan_2_CaiDanGouYuHuang_Desc1",
+    "Pic": "Japan_CaiDaGouYuHuangTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMiJi3_Choice1": {
+    "Id": "Japan_2_CaiDanMiJi3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMiJi3_Name",
+    "Desc": "Japan_2_CaiDanMiJi3_Desc",
+    "Pic": "Japan_CaiDanMiJiTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_DaKai"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_4_JingYingB1_Battle1": {
+    "Id": "Japan_4_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_4_JingYingB1_Name",
+    "Desc": "Japan_4_JingYingB1_Desc",
+    "Pic": "Hero_KTSJKe5",
+    "Reward": "Japan_4_JingYing2_Show",
+    "BpFactor": 49236,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_1_CaiDanRenZhe_Battle1": {
+    "Id": "Japan_1_CaiDanRenZhe_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_1_CaiDanRenZhe_Name",
+    "Desc": "Japan_1_CaiDanRenZhe_Desc",
+    "Pic": "Hero_YFZZhu5",
+    "Reward": "Japan_1_CaiDanRenZhe_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_BuffA1_Choice1": {
+    "Id": "Japan_2_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_2_BuffA1_Name",
+    "Desc": "Japan_2_BuffA1_Desc",
+    "Pic": "Japan_ShenXiang_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Japan1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanQianBao_Choice1": {
+    "Id": "Japan_1_CaiDanQianBao_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanQianBao_Name",
+    "Desc": "Japan_1_CaiDanQianBao_Desc",
+    "Pic": "Japan_QianBaoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanFanTuan2_Choice1": {
+    "Id": "Japan_2_CaiDanFanTuan2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanFanTuan_Name",
+    "Desc": "Japan_2_CaiDanFanTuan_Desc2",
+    "Pic": "Japan_CaiDanFanTuanTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Japan_2_CaiDanFanTuan_PickDesc1"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_3_JingYingB1_Battle1": {
+    "Id": "Japan_3_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_3_JingYingB1_Name",
+    "Desc": "Japan_3_JingYingB1_Desc",
+    "Pic": "Hero_SDTZi5",
+    "Reward": "Japan_3_JingYing2_Show",
+    "BpFactor": 39036,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanMuXiang_Choice1": {
+    "Id": "Japan_2_CaiDanMuXiang_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMuXiang_Name",
+    "Desc": "Japan_2_CaiDanMuXiang_Desc",
+    "Pic": "Japan_CaiDanMuXiangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_DaKai"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMengPo_Choice2": {
+    "Id": "Japan_2_CaiDanMengPo_Choice2",
+    "Type": "TYPE5",
+    "Title": "Japan_2_CaiDanMengPo_Name",
+    "Desc": "Japan_2_CaiDanMengPo_Desc2",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc1_1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc1_3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc1_2"
+      },
+      "4": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc1_4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMengPo_Choice3": {
+    "Id": "Japan_2_CaiDanMengPo_Choice3",
+    "Type": "TYPE5",
+    "Title": "Japan_2_CaiDanMengPo_Name",
+    "Desc": "Japan_2_CaiDanMengPo_Desc3",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc2_1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc2_3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc2_2"
+      },
+      "4": {
+        "optionDesc": "Japan_2_CaiDanMengPo_PickDesc2_4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMengPo_Choice1": {
+    "Id": "Japan_2_CaiDanMengPo_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMengPo_Name",
+    "Desc": "Japan_2_CaiDanMengPo_Desc1",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_JingYingB1_Battle1": {
+    "Id": "Japan_2_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Japan_2_JingYingB1_Name",
+    "Desc": "Japan_2_JingYingB1_Desc",
+    "Pic": "Hero_CZheng5",
+    "Reward": "Japan_2_JingYing2_Show",
+    "BpFactor": 32604,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Japan_2_CaiDanZhenFa1_Choice1": {
+    "Id": "Japan_2_CaiDanZhenFa1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanZhenFa_Name",
+    "Desc": "Japan_2_CaiDanZhenFa_Desc",
+    "Pic": "Japan_CaiDanZhenFa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMuXiangShaoNv_Choice1": {
+    "Id": "Japan_2_CaiDanMuXiangShaoNv_Choice1",
+    "Type": "TYPE5",
+    "Title": "Japan_2_CaiDanMuXiangShaoNv_Name",
+    "Desc": "Japan_2_CaiDanMuXiangShaoNv_Desc1",
+    "Pic": "Hero_ALSi_HeiHua5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Japan_2_CaiDanMuXiangShaoNv_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Japan_2_CaiDanMuXiangShaoNv_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Japan_2_CaiDanMuXiangShaoNv_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Japan_2_CaiDanMuXiangShaoNv_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_2_CaiDanMuXiangShaoNv_Choice2": {
+    "Id": "Japan_2_CaiDanMuXiangShaoNv_Choice2",
+    "Type": "TYPE1",
+    "Title": "Japan_2_CaiDanMuXiangShaoNv_Name",
+    "Desc": "Japan_2_CaiDanMuXiangShaoNv_Desc3",
+    "Pic": "Hero_ALSi_HeiHua5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Japan_2_CaiDanMuXiangShaoNv_PickDesc2_1",
+      "2": "Japan_2_CaiDanMuXiangShaoNv_PickDesc2_2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Japan_1_CaiDanShuYe_Choice1": {
+    "Id": "Japan_1_CaiDanShuYe_Choice1",
+    "Type": "TYPE1",
+    "Title": "Japan_1_CaiDanShuYe_Name",
+    "Desc": "Japan_1_CaiDanShuYe_Desc",
+    "Pic": "Japan_ShuYeTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengYin_Choice1": {
+    "Id": "China_1_DengYin_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng7_Name",
+    "Desc": "China_1_Deng7_Desc",
+    "Pic": "China_DengYin",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengMu_Choice2": {
+    "Id": "China_1_DengMu_Choice2",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng4_Name",
+    "Desc": "China_1_Deng4_1_Desc",
+    "Pic": "China_DengMu",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengMu_Choice1": {
+    "Id": "China_1_DengMu_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng4_Name",
+    "Desc": "China_1_Deng4_Desc",
+    "Pic": "China_DengMu",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengShui_Choice1": {
+    "Id": "China_1_DengShui_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng3_Name",
+    "Desc": "China_1_Deng3_Desc",
+    "Pic": "China_DengShui",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengShui_Choice2": {
+    "Id": "China_1_DengShui_Choice2",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng3_Name",
+    "Desc": "China_1_Deng3_1_Desc",
+    "Pic": "China_DengShui",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengYang_Choice1": {
+    "Id": "China_1_DengYang_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng8_Name",
+    "Desc": "China_1_Deng8_Desc",
+    "Pic": "China_DengYang",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengHuo_Choice1": {
+    "Id": "China_1_DengHuo_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng5_Name",
+    "Desc": "China_1_Deng5_Desc",
+    "Pic": "China_DengHuo",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_Deng0_Choice1": {
+    "Id": "China_1_Deng0_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng1_Name",
+    "Desc": "China_1_Deng1_Desc",
+    "Pic": "China_Deng0",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengJin_Choice2": {
+    "Id": "China_1_DengJin_Choice2",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng2_Name",
+    "Desc": "China_1_Deng2_1_Desc",
+    "Pic": "China_DengJin",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengJin_Choice1": {
+    "Id": "China_1_DengJin_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng2_Name",
+    "Desc": "China_1_Deng2_Desc",
+    "Pic": "China_DengJin",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "China_1_DengTu_Choice1": {
+    "Id": "China_1_DengTu_Choice1",
+    "Type": "TYPE1",
+    "Title": "China_1_Deng6_Name",
+    "Desc": "China_1_Deng6_Desc",
+    "Pic": "China_DengTu",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChuMo"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_TongHuaShu3_Choice1": {
+    "Id": "Alice_1_TongHuaShu3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_TongHuaShu_Name",
+    "Desc": "Alice_1_TongHuaShu_Desc3",
+    "Pic": "Alice_TongHuaShuTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanPingGuo4_Choice1": {
+    "Id": "Alice_4_CaiDanPingGuo4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_CaiDanPingGuo_Name",
+    "Desc": "Alice_4_CaiDanPingGuo_Desc4",
+    "Pic": "Alice_CaiDanPingGuoTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_BuffB1_Choice1": {
+    "Id": "Alice_4_BuffB1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffB1_Name",
+    "Desc": "Alice_1_BuffB1_Desc",
+    "Pic": "Alice_Yun_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanPingGuo3_Choice1": {
+    "Id": "Alice_4_CaiDanPingGuo3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_CaiDanPingGuo_Name",
+    "Desc": "Alice_4_CaiDanPingGuo_Desc3",
+    "Pic": "Alice_CaiDanPingGuoTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_TongHuaShu1_Choice1": {
+    "Id": "Alice_1_TongHuaShu1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_TongHuaShu_Name",
+    "Desc": "Alice_1_TongHuaShu_Desc1",
+    "Pic": "Alice_TongHuaShuTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_YuanYiShi_Choice1": {
+    "Id": "Alice_3_YuanYiShi_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_YuanYiShi_Name",
+    "Desc": "Alice_3_YuanYiShi_Desc1",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_YuanYiShi_Choice3": {
+    "Id": "Alice_3_YuanYiShi_Choice3",
+    "Type": "TYPE1",
+    "Title": "Alice_3_YuanYiShi_Name",
+    "Desc": "Alice_3_YuanYiShi_Desc3",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_HuLuoBo_Choice1": {
+    "Id": "Alice_1_HuLuoBo_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_HuLuoBo_Name",
+    "Desc": "Alice_1_HuLuoBo_Desc",
+    "Pic": "Alice_SanYueTuLuoBo_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_NaZou",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_XiaoGongZhu_Choice1": {
+    "Id": "Alice_4_XiaoGongZhu_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_1_XiaoGongZhu_Name",
+    "Desc": "Alice_4_XiaoGongZhu_Desc",
+    "Pic": "Hero_HLDNan5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_1_ItemHua",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_JingYingA1_Choice1": {
+    "Id": "Alice_2_JingYingA1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_2_JingYingA1_Name",
+    "Desc": "Alice_2_JingYingA1_Desc",
+    "Pic": "Monster_PuKeQiShiJ5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_2_Item4",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_DaHuiLang_Choice1": {
+    "Id": "Alice_2_DaHuiLang_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_2_DaHuiLang_Name",
+    "Desc": "Alice_2_DaHuiLang_Desc1",
+    "Pic": "Monster_MengYanKuiSi5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_CaiDanBoss_Battle1": {
+    "Id": "Alice_3_CaiDanBoss_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_CaiDanBoss_Name",
+    "Desc": "Alice_3_CaiDanBoss_Desc3",
+    "Pic": "Monster_PuKeQiShiA_Red5",
+    "Reward": "Alice_3_CaiDanBoss_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_YinCangMen1_Choice1": {
+    "Id": "Alice_4_YinCangMen1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_YinCangMen_Name",
+    "Desc": "Alice_4_YinCangMen1_Desc1",
+    "Pic": "Alice_YinCangMenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_YinCangMen1_Choice2": {
+    "Id": "Alice_4_YinCangMen1_Choice2",
+    "Type": "TYPE4",
+    "Title": "Alice_4_YinCangMen_Name",
+    "Desc": "Alice_4_YinCangMen1_Desc2",
+    "Pic": "Alice_YinCangMenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_DaKai"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_ItemYaoShi",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_MoGu2_Choice1": {
+    "Id": "Alice_MoGu2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_MoGu_Name",
+    "Desc": "Alice_MoGu_Desc",
+    "Pic": "Alice_MoGuTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc1",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_BuffB1_Choice1": {
+    "Id": "Alice_3_BuffB1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffA1_Name",
+    "Desc": "Alice_1_BuffA1_Desc",
+    "Pic": "Alice_Yun_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_SanYueTuMuPai_Choice1": {
+    "Id": "Alice_1_SanYueTuMuPai_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_SanYueTuMuPai_Name",
+    "Desc": "Alice_1_SanYueTuMuPai_Desc",
+    "Pic": "Alice_SanYueTuMuPai_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_SanYueTuMuPai_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_1_SanYueTuMuPai_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_1_SanYueTuMuPai_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_WaiPo_Choice2": {
+    "Id": "Alice_2_WaiPo_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_2_WaiPo_Name",
+    "Desc": "Alice_2_WaiPo_Desc2",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_WaiPo_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_WaiPo_Choice1": {
+    "Id": "Alice_2_WaiPo_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_2_WaiPo_Name",
+    "Desc": "Alice_2_WaiPo_Desc1",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_MoGu3_Choice1": {
+    "Id": "Alice_MoGu3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_MoGu_Name",
+    "Desc": "Alice_MoGu_Desc",
+    "Pic": "Alice_MoGuTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc1",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_YinCangMen2_Choice1": {
+    "Id": "Alice_4_YinCangMen2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_YinCangMen_Name",
+    "Desc": "Alice_4_YinCangMen2_Desc1",
+    "Pic": "Alice_YinCangMenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_XiaoGuaiB1_Battle1": {
+    "Id": "Alice_4_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_XiaoGuaiB1_Name",
+    "Desc": "Alice_4_XiaoGuaiB1_Desc",
+    "Pic": "Monster_MuOuHuaJiang5",
+    "Reward": "Alice_4_XiaoGuai2_Show",
+    "BpFactor": 12560,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_ZhuZiB1_Choice1": {
+    "Id": "Alice_4_ZhuZiB1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_4_BaoShiZhu1_Name",
+    "Desc": "Alice_4_BaoShiZhu1_Desc",
+    "Pic": "Alice_BaoShi_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XiangQian"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_Item2",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_BuffC1_Choice1": {
+    "Id": "Alice_4_BuffC1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffB1_Name",
+    "Desc": "Alice_1_BuffB1_Desc",
+    "Pic": "Alice_Yun_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_JingYingA1_Battle1": {
+    "Id": "Alice_3_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_JingYingA1_Name",
+    "Desc": "Alice_3_JingYingA1_Desc",
+    "Pic": "Monster_PuKeQiShiJ_Green5",
+    "Reward": "Alice_3_JingYing1_Show",
+    "BpFactor": 13130,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_SaoZhou_Choice1": {
+    "Id": "Alice_3_SaoZhou_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_SaoZhou_Name",
+    "Desc": "Alice_3_SaoZhou_Desc",
+    "Pic": "Alice_SaoZhouTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ShiQu"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_BuffA1_Choice1": {
+    "Id": "Alice_1_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffA1_Name",
+    "Desc": "Alice_1_BuffA1_Desc",
+    "Pic": "Alice_Yun_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_MoJing_Choice4": {
+    "Id": "Alice_4_MoJing_Choice4",
+    "Type": "TYPE5",
+    "Title": "Alice_4_MoJing_Name",
+    "Desc": "Alice_4_MoJing_Desc4",
+    "Pic": "Alice_MoJingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_MoJing_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_4_MoJing_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_MoJing_Choice2": {
+    "Id": "Alice_4_MoJing_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_4_MoJing_Name",
+    "Desc": "Alice_4_MoJing_Desc2",
+    "Pic": "Alice_MoJingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_MoJing_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_4_MoJing_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_MoJing_Choice3": {
+    "Id": "Alice_4_MoJing_Choice3",
+    "Type": "TYPE4",
+    "Title": "Alice_4_MoJing_Name",
+    "Desc": "Alice_4_MoJing_Desc3",
+    "Pic": "Alice_MoJingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_ItemMoJingPingGuo",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_BossA1_Battle1": {
+    "Id": "Alice_1_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_1_BossA1_Name",
+    "Desc": "Alice_1_BossA1_Desc",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "Alice_1_Boss1_Show",
+    "BpFactor": 5238,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_MoJing_Choice1": {
+    "Id": "Alice_4_MoJing_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_MoJing_Name",
+    "Desc": "Alice_4_MoJing_Desc1",
+    "Pic": "Alice_MoJingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_Tang4_Choice1": {
+    "Id": "Alice_2_Tang4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_2_Tang_Name",
+    "Desc": "Alice_2_Tang4_Desc",
+    "Pic": "Alice_TangTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc2",
+      "2": "Map_ChoiceDesc_QuXiao"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_CaiDanMuBei1_Choice1": {
+    "Id": "Alice_2_CaiDanMuBei1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_2_CaiDanMuBei_Name",
+    "Desc": "Alice_2_CaiDanMuBei_Desc",
+    "Pic": "Alice_CaiDanMuBei_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_XiaoGuaiA1_Battle1": {
+    "Id": "Alice_4_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_XiaoGuaiA1_Name",
+    "Desc": "Alice_4_XiaoGuaiA1_Desc",
+    "Pic": "Monster_MuOuGongJiang5",
+    "Reward": "Alice_4_XiaoGuai1_Show",
+    "BpFactor": 10048,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_XiaoGongZhu_Choice1": {
+    "Id": "Alice_3_XiaoGongZhu_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_1_XiaoGongZhu_Name",
+    "Desc": "Alice_3_XiaoGongZhu_Desc",
+    "Pic": "Hero_HLDNan5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_1_ItemHua",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_JingYingC1_Battle1": {
+    "Id": "Alice_4_JingYingC1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_JingYingC1_Name",
+    "Desc": "Alice_4_JingYingC1_Desc",
+    "Pic": "Monster_YouLingGuanJia5",
+    "Reward": "Alice_4_JingYing3_Show",
+    "BpFactor": 23550,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_2_Tang3_Choice1": {
+    "Id": "Alice_2_Tang3_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_2_Tang_Name",
+    "Desc": "Alice_2_Tang3_Desc",
+    "Pic": "Alice_TangTanBan_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc2",
+      "2": "Map_ChoiceDesc_QuXiao"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanBoss_Battle1": {
+    "Id": "Alice_4_CaiDanBoss_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_CaiDanBoss_Name",
+    "Desc": "Alice_4_CaiDanBoss_Desc4",
+    "Pic": "Monster_PuKeWangHou_Red5",
+    "Reward": "Alice_4_CaiDanBoss_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_QiZiA1_Choice1": {
+    "Id": "Alice_3_QiZiA1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_QiZiA1_Name",
+    "Desc": "Alice_3_QiZiA1_Desc",
+    "Pic": "Alice_QiZiGuoWang_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_YiDong"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_XiaoGuaiC1_Battle1": {
+    "Id": "Alice_4_XiaoGuaiC1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_XiaoGuaiC1_Name",
+    "Desc": "Alice_4_XiaoGuaiC1_Desc",
+    "Pic": "Monster_MuOuGongZhu5",
+    "Reward": "Alice_4_XiaoGuai2_Show",
+    "BpFactor": 13816,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_CaiDanBoss_Choice1": {
+    "Id": "Alice_4_CaiDanBoss_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_CaiDanBoss_Name",
+    "Desc": "Alice_4_CaiDanBoss_Desc1",
+    "Pic": "Monster_PuKeWangHou_Red5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_BuffA1_Choice1": {
+    "Id": "Alice_4_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffB1_Name",
+    "Desc": "Alice_1_BuffB1_Desc",
+    "Pic": "Alice_Yun_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_BossA1_Battle1": {
+    "Id": "Alice_4_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_BossA1_Name",
+    "Desc": "Alice_4_BossA1_Desc",
+    "Pic": "Hero_Ysuo5",
+    "Reward": "Alice_4_Boss1_Show",
+    "BpFactor": 29673,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_XiaoGuaiB1_Battle1": {
+    "Id": "Alice_1_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_1_XiaoGuaiB1_Name",
+    "Desc": "Alice_1_XiaoGuaiB1_Desc",
+    "Pic": "Monster_MuOuHuaJiang5",
+    "Reward": "Alice_1_XiaoGuai2_Show",
+    "BpFactor": 2792,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_2_XiaoHongMao1_Choice1": {
+    "Id": "Alice_2_XiaoHongMao1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_2_XiaoHongMao_Name",
+    "Desc": "Alice_2_XiaoHongMao_Desc",
+    "Pic": "Hero_CLMan_XHMao5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_2_XiaoHongMao_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_XianNvBang_Choice1": {
+    "Id": "Alice_3_XianNvBang_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_XianNvBang_Name",
+    "Desc": "Alice_3_XianNvBang_Desc",
+    "Pic": "Alice_XianNvBangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ShiQu"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_BossA1_Battle1": {
+    "Id": "Alice_2_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_BossA1_Name",
+    "Desc": "Alice_2_BossA1_Desc",
+    "Pic": "Monster_PuKeWangHou5",
+    "Reward": "Alice_2_Boss1_Show",
+    "BpFactor": 12180,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Alice_2_XiaoGuaiB1_Battle1": {
+    "Id": "Alice_2_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_XiaoGuaiB1_Name",
+    "Desc": "Alice_2_XiaoGuaiB1_Desc",
+    "Pic": "Monster_MuOuHuaJiang5",
+    "Reward": "Alice_2_XiaoGuai2_Show",
+    "BpFactor": 6496,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_CaiDanMuBei1_Choice1": {
+    "Id": "Alice_3_CaiDanMuBei1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_3_CaiDanMuBei_Name",
+    "Desc": "Alice_3_CaiDanMuBei_Desc",
+    "Pic": "Alice_CaiDanMuBei_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_Tang2_Choice1": {
+    "Id": "Alice_2_Tang2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_2_Tang_Name",
+    "Desc": "Alice_2_Tang2_Desc",
+    "Pic": "Alice_TangTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc2",
+      "2": "Map_ChoiceDesc_QuXiao"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_BossA1_Battle1": {
+    "Id": "Alice_3_BossA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_BossA1_Name",
+    "Desc": "Alice_3_BossA1_Desc",
+    "Pic": "Monster_PuKeGuoWang5",
+    "Reward": "Alice_3_Boss1_Show",
+    "BpFactor": 18756,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_CaiDanBoss_Choice3": {
+    "Id": "Alice_4_CaiDanBoss_Choice3",
+    "Type": "TYPE5",
+    "Title": "Alice_4_CaiDanBoss_Name",
+    "Desc": "Alice_4_CaiDanBoss_Desc3",
+    "Pic": "Monster_PuKeWangHou_Red5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_CaiDanBoss_PickDesc3_1"
+      },
+      "2": {
+        "optionDesc": "Alice_4_CaiDanBoss_PickDesc3_2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanBoss_Choice2": {
+    "Id": "Alice_4_CaiDanBoss_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_4_CaiDanBoss_Name",
+    "Desc": "Alice_4_CaiDanBoss_Desc2",
+    "Pic": "Monster_PuKeWangHou_Red5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_CaiDanBoss_PickDesc2_1"
+      },
+      "3": {
+        "optionDesc": "Alice_4_CaiDanBoss_PickDesc2_3"
+      },
+      "2": {
+        "optionDesc": "Alice_4_CaiDanBoss_PickDesc2_2"
+      },
+      "4": {
+        "optionDesc": "Alice_4_CaiDanBoss_PickDesc2_4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_ChouXiaoYa_Choice1": {
+    "Id": "Alice_2_ChouXiaoYa_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_2_ChouXiaoYa_Name",
+    "Desc": "Alice_2_ChouXiaoYa_Desc1",
+    "Pic": "Alice_ChouXiaoYaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc1_1"
+      },
+      "3": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc1_3"
+      },
+      "2": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc1_2"
+      },
+      "4": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc1_4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_ChouXiaoYa_Choice2": {
+    "Id": "Alice_2_ChouXiaoYa_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_2_ChouXiaoYa_Name",
+    "Desc": "Alice_2_ChouXiaoYa_Desc2",
+    "Pic": "Alice_ChouXiaoYaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc2_1"
+      },
+      "3": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc2_3"
+      },
+      "2": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc2_2"
+      },
+      "4": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc2_4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_ChouXiaoYa_Choice3": {
+    "Id": "Alice_2_ChouXiaoYa_Choice3",
+    "Type": "TYPE5",
+    "Title": "Alice_2_ChouXiaoYa_Name",
+    "Desc": "Alice_2_ChouXiaoYa_Desc3",
+    "Pic": "Alice_ChouXiaoYaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc3_1"
+      },
+      "2": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc3_2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_JingYingB1_Battle1": {
+    "Id": "Alice_2_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_JingYingB1_Name",
+    "Desc": "Alice_2_JingYingB1_Desc",
+    "Pic": "Monster_PuKeQiShiA5",
+    "Reward": "Alice_2_JingYing2_Show",
+    "BpFactor": 9340,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_2_JingYingB1_Battle2": {
+    "Id": "Alice_2_JingYingB1_Battle2",
+    "Type": "TYPE3",
+    "Title": "Alice_2_JingYingB1_Name",
+    "Desc": "Alice_2_JingYingB1_Desc",
+    "Pic": "Monster_PuKeQiShiA5",
+    "Reward": "Alice_2_JingYing2_Show",
+    "BpFactor": 9340,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_MoGu4_Choice1": {
+    "Id": "Alice_MoGu4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_MoGu_Name",
+    "Desc": "Alice_MoGu_Desc",
+    "Pic": "Alice_MoGuTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc1",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanMuBei1_Choice1": {
+    "Id": "Alice_4_CaiDanMuBei1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_4_CaiDanMuBei_Name",
+    "Desc": "Alice_4_CaiDanMuBei_Desc",
+    "Pic": "Alice_CaiDanMuBei_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_PiNuoCao2_Choice2": {
+    "Id": "Alice_4_PiNuoCao2_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao2_Desc2",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_PiNuoCao2_DescPickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_4_PiNuoCao2_DescPickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_JingYingA1_Battle1": {
+    "Id": "Alice_2_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_JingYingA1_Name",
+    "Desc": "Alice_2_JingYingA1_Desc",
+    "Pic": "Monster_PuKeQiShiJ5",
+    "Reward": "Alice_2_JingYing1_Show",
+    "BpFactor": 8525,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_2_BuffA1_Choice1": {
+    "Id": "Alice_2_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffA1_Name",
+    "Desc": "Alice_1_BuffA1_Desc",
+    "Pic": "Alice_Yun_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_CaiDanBoss_Choice1": {
+    "Id": "Alice_1_CaiDanBoss_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_CaiDanBoss_Name",
+    "Desc": "Alice_1_CaiDanBoss_Desc1",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ChaKan"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_XiaoGuaiB1_Battle1": {
+    "Id": "Alice_3_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_XiaoGuaiB1_Name",
+    "Desc": "Alice_3_XiaoGuaiB1_Desc",
+    "Pic": "Monster_PuKeQiShiA5",
+    "Reward": "Alice_3_XiaoGuai2_Show",
+    "BpFactor": 10004,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_ChaiJunMao1_Choice1": {
+    "Id": "Alice_1_ChaiJunMao1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_ChaiJunMao_Name",
+    "Desc": "Alice_1_ChaiJunMao_Desc1",
+    "Pic": "Alice_ChaiJunMaoTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_1_ChaiJunMao_PickDesc1"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_ZhuZiD1_Choice1": {
+    "Id": "Alice_4_ZhuZiD1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_4_BaoShiZhu3_Name",
+    "Desc": "Alice_4_BaoShiZhu3_Desc",
+    "Pic": "Alice_BaoShi_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XiangQian"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_Item4",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_XiaoGongZhu_Choice1": {
+    "Id": "Alice_2_XiaoGongZhu_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_1_XiaoGongZhu_Name",
+    "Desc": "Alice_2_XiaoGongZhu_Desc",
+    "Pic": "Hero_HLDNan5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_1_ItemHua",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanPingGuo1_Choice1": {
+    "Id": "Alice_4_CaiDanPingGuo1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_CaiDanPingGuo_Name",
+    "Desc": "Alice_4_CaiDanPingGuo_Desc1",
+    "Pic": "Alice_CaiDanPingGuoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_NanGua_Choice1": {
+    "Id": "Alice_3_NanGua_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_NanGua_Name",
+    "Desc": "Alice_3_NanGua_Desc",
+    "Pic": "Alice_NanGuaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ShiQu"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_CaiDanBaoXiangGuai_Battle1": {
+    "Id": "Alice_4_CaiDanBaoXiangGuai_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_CaiDanBaoXiangGuai_Name",
+    "Desc": "Alice_4_CaiDanBaoXiangGuai_Desc1",
+    "Pic": "Monster_MengYanJiaoShi5",
+    "Reward": "Alice_4_CaiDanBaoXiangGuai_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_MoGu5_Choice1": {
+    "Id": "Alice_MoGu5_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_MoGu_Name",
+    "Desc": "Alice_MoGu_Desc",
+    "Pic": "Alice_MoGuTanBan_05",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc1",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_BuffB1_Choice1": {
+    "Id": "Alice_1_BuffB1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffB1_Name",
+    "Desc": "Alice_1_BuffB1_Desc",
+    "Pic": "Alice_Yun_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffB_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_DaHuiLang_Battle1": {
+    "Id": "Alice_2_DaHuiLang_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_DaHuiLang_Name",
+    "Desc": "Alice_2_DaHuiLang_Desc2",
+    "Pic": "Monster_MengYanKuiSi5",
+    "Reward": "Alice_2_CaiDanDaHuiLang_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_JingYingB1_Battle1": {
+    "Id": "Alice_3_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_JingYingB1_Name",
+    "Desc": "Alice_3_JingYingB1_Desc",
+    "Pic": "Monster_PuKeQiShiA_Red5",
+    "Reward": "Alice_3_JingYing2_Show",
+    "BpFactor": 14380,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_MoGu1_Choice1": {
+    "Id": "Alice_MoGu1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_MoGu_Name",
+    "Desc": "Alice_MoGu_Desc",
+    "Pic": "Alice_MoGuTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc1",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_BuffA1_Choice1": {
+    "Id": "Alice_3_BuffA1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffA1_Name",
+    "Desc": "Alice_1_BuffA1_Desc",
+    "Pic": "Alice_Yun_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_CaiDanBoss_Choice2": {
+    "Id": "Alice_3_CaiDanBoss_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_3_CaiDanBoss_Name",
+    "Desc": "Alice_3_CaiDanBoss_Desc2",
+    "Pic": "Monster_PuKeQiShiA_Red5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_3_CaiDanBoss_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_3_CaiDanBoss_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_JingYingA1_Battle1": {
+    "Id": "Alice_4_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_JingYingA1_Name",
+    "Desc": "Alice_4_JingYingA1_Desc",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "Alice_4_JingYing1_Show",
+    "BpFactor": 13188,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_BoLiPingGuai_Battle1": {
+    "Id": "Alice_3_BoLiPingGuai_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_BoLiPingGuai_Name",
+    "Desc": "Alice_3_BoLiPingGuai_Desc",
+    "Pic": "Monster_MengYanHuangYan5",
+    "Reward": "Alice_3_BoLiPingGuai_show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_XiaoGuaiA1_Battle1": {
+    "Id": "Alice_1_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_1_XiaoGuaiA1_Name",
+    "Desc": "Alice_1_XiaoGuaiA1_Desc",
+    "Pic": "Monster_MengYanKuiSi5",
+    "Reward": "Alice_1_XiaoGuai1_Show",
+    "BpFactor": 2232,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_CaiDanMuBei1_Choice1": {
+    "Id": "Alice_1_CaiDanMuBei1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_CaiDanMuBei_Name",
+    "Desc": "Alice_1_CaiDanMuBei_Desc",
+    "Pic": "Alice_CaiDanMuBei_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc2"
+      },
+      "4": {
+        "optionDesc": "Alice_1_CaiDanMuBei_PickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_JingYingB1_Battle1": {
+    "Id": "Alice_4_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_4_JingYingB1_Name",
+    "Desc": "Alice_4_JingYingB1_Desc",
+    "Pic": "Monster_YouLingNvPu5",
+    "Reward": "Alice_4_JingYing2_Show",
+    "BpFactor": 18055,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_CaiDanBoss_Choice1": {
+    "Id": "Alice_3_CaiDanBoss_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_3_CaiDanBoss_Name",
+    "Desc": "Alice_3_CaiDanBoss_Desc1",
+    "Pic": "Monster_PuKeQiShiA_Red5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_ChaiJunMao_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc3_1"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_JingYingB1_Battle1": {
+    "Id": "Alice_1_JingYingB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_1_JingYingB1_Name",
+    "Desc": "Alice_1_JingYingB1_Desc",
+    "Pic": "Monster_MuOuGongJiang5",
+    "Reward": "Alice_1_JingYing2_Show",
+    "BpFactor": 4015,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_XiaoGongZhu_Choice1": {
+    "Id": "Alice_1_XiaoGongZhu_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_1_XiaoGongZhu_Name",
+    "Desc": "Alice_1_XiaoGongZhu_Desc",
+    "Pic": "Hero_HLDNan5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_1_ItemHua",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_NvWu_Battle1": {
+    "Id": "Alice_2_NvWu_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_NvWu_Name",
+    "Desc": "Alice_2_NvWu_Desc",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "Alice_2_CaiDanNvWu_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_PiNuoCao1_Choice4": {
+    "Id": "Alice_4_PiNuoCao1_Choice4",
+    "Type": "TYPE4",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao1_Desc4",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_ItemFangChuiZhen",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_PiNuoCao1_Choice2": {
+    "Id": "Alice_4_PiNuoCao1_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao1_Desc2",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_PiNuoCao1_DescPickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_4_PiNuoCao1_DescPickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_PiNuoCao1_Choice3": {
+    "Id": "Alice_4_PiNuoCao1_Choice3",
+    "Type": "TYPE5",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao1_Desc3",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_PiNuoCao1_DescPickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_4_PiNuoCao1_DescPickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_PiNuoCao1_Choice1": {
+    "Id": "Alice_4_PiNuoCao1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao1_Desc1",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_TengWan1_Choice1": {
+    "Id": "Alice_4_TengWan1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_4_TengWan1_Name",
+    "Desc": "Alice_4_TengWan1_Desc",
+    "Pic": "Alice_TengWan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JianDuan"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_Item1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_PiNuoCao2_Choice1": {
+    "Id": "Alice_4_PiNuoCao2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao2_Desc1",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_PiNuoCao2_Choice3": {
+    "Id": "Alice_4_PiNuoCao2_Choice3",
+    "Type": "TYPE5",
+    "Title": "Alice_4_PiNuoCao_Name",
+    "Desc": "Alice_4_PiNuoCao2_Desc3",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_4_PiNuoCao2_DescPickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_4_PiNuoCao2_DescPickDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_WaiPo_Battle1": {
+    "Id": "Alice_2_WaiPo_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_WaiPo_Name",
+    "Desc": "Alice_2_WaiPo_Desc3",
+    "Pic": "Monster_YouLingWuShi5",
+    "Reward": "Alice_2_CaiDanWaiPo_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_2_Tang1_Choice1": {
+    "Id": "Alice_2_Tang1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_2_Tang_Name",
+    "Desc": "Alice_2_Tang1_Desc",
+    "Pic": "Alice_TangTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc2",
+      "2": "Map_ChoiceDesc_QuXiao"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_JingYingA1_Battle2": {
+    "Id": "Alice_2_JingYingA1_Battle2",
+    "Type": "TYPE3",
+    "Title": "Alice_2_JingYingA1_Name",
+    "Desc": "Alice_2_JingYingA1_Desc",
+    "Pic": "Monster_PuKeQiShiJ5",
+    "Reward": "Alice_2_JingYing1_Show",
+    "BpFactor": 8525,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_XiaoGuaiA1_Battle1": {
+    "Id": "Alice_3_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_3_XiaoGuaiA1_Name",
+    "Desc": "Alice_3_XiaoGuaiA1_Desc",
+    "Pic": "Monster_PuKeQiShiJ5",
+    "Reward": "Alice_3_XiaoGuai1_Show",
+    "BpFactor": 8004,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_TongHuaShu2_Choice1": {
+    "Id": "Alice_1_TongHuaShu2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_TongHuaShu_Name",
+    "Desc": "Alice_1_TongHuaShu_Desc2",
+    "Pic": "Alice_TongHuaShuTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_TongHuaShu5_Choice1": {
+    "Id": "Alice_1_TongHuaShu5_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_TongHuaShu_Name",
+    "Desc": "Alice_1_TongHuaShu_Desc5",
+    "Pic": "Alice_TongHuaShuTanBan_05",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_ChaiJunMao2_Choice1": {
+    "Id": "Alice_1_ChaiJunMao2_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_ChaiJunMao_Name",
+    "Desc": "Alice_1_ChaiJunMao_Desc2",
+    "Pic": "Alice_ChaiJunMaoTanBan",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_ChaiJunMao_PickDesc3"
+      },
+      "2": {
+        "optionDesc": "Alice_1_ChaiJunMao_PickDesc2"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_ZhuZiC1_Choice1": {
+    "Id": "Alice_4_ZhuZiC1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_4_BaoShiZhu2_Name",
+    "Desc": "Alice_4_BaoShiZhu2_Desc",
+    "Pic": "Alice_BaoShi_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XiangQian"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_Item3",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_JingYingB1_Choice1": {
+    "Id": "Alice_2_JingYingB1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_2_JingYingB1_Name",
+    "Desc": "Alice_2_JingYingB1_Desc",
+    "Pic": "Monster_PuKeQiShiA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_2_Item4",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_ZhuZiA1_Choice1": {
+    "Id": "Alice_4_ZhuZiA1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_4_BaoShiZhu4_Name",
+    "Desc": "Alice_4_BaoShiZhu4_Desc",
+    "Pic": "Alice_BaoShi_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XiangQian"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_4_Item5",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_SanYueTuTuKeng_Choice2": {
+    "Id": "Alice_1_SanYueTuTuKeng_Choice2",
+    "Type": "TYPE4",
+    "Title": "Alice_1_LuoBoKeng_Name",
+    "Desc": "Alice_1_LuoBoKeng_Desc2",
+    "Pic": "Alice_SanYueTuLuoBoKengTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_1_ItemHuLuoBo",
+    "NeedNum": 1,
+    "CheckOption": "",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_SanYueTuTuKeng_Choice1": {
+    "Id": "Alice_1_SanYueTuTuKeng_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_LuoBoKeng_Name",
+    "Desc": "Alice_1_LuoBoKeng_Desc1",
+    "Pic": "Alice_SanYueTuLuoBoKengTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "item": "IM_Alice_1_ItemHuLuoBo",
+        "num": 1,
+        "optionDesc": "Alice_1_LuoBoKeng_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_1_LuoBoKeng_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_DaoCaoRen_Choice2": {
+    "Id": "Alice_3_DaoCaoRen_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_3_DaoCaoRen_Name",
+    "Desc": "Alice_3_DaoCaoRen_Desc2",
+    "Pic": "Alice_DaoCaoRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_3_TiePiRen_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_3_DaoCaoRen_PickDesc2"
+      },
+      "2": {
+        "optionDesc": "Alice_3_DaoCaoRen_PickDesc1"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_DaoCaoRen_Choice3": {
+    "Id": "Alice_3_DaoCaoRen_Choice3",
+    "Type": "TYPE4",
+    "Title": "Alice_3_DaoCaoRen_Name",
+    "Desc": "Alice_3_DaoCaoRen_Desc3",
+    "Pic": "Alice_DaoCaoRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_3_ItemXinZang",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_DaoCaoRen_Choice1": {
+    "Id": "Alice_3_DaoCaoRen_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_DaoCaoRen_Name",
+    "Desc": "Alice_3_DaoCaoRen_Desc1",
+    "Pic": "Alice_DaoCaoRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_TiePiRen_Choice1": {
+    "Id": "Alice_3_TiePiRen_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_TiePiRen_Name",
+    "Desc": "Alice_3_TiePiRen_Desc1",
+    "Pic": "Alice_TiePiRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_XunWen"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_FangChe_Choice1": {
+    "Id": "Alice_4_FangChe_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_FangChe_Name",
+    "Desc": "Alice_4_FangChe_Desc",
+    "Pic": "Alice_FangCheTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_4_FangChe_DescPickDesc1"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_TiePiRen_Choice3": {
+    "Id": "Alice_3_TiePiRen_Choice3",
+    "Type": "TYPE4",
+    "Title": "Alice_3_TiePiRen_Name",
+    "Desc": "Alice_3_TiePiRen_Desc3",
+    "Pic": "Alice_TiePiRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_3_ItemXinZang",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_TiePiRen_Choice2": {
+    "Id": "Alice_3_TiePiRen_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_3_TiePiRen_Name",
+    "Desc": "Alice_3_TiePiRen_Desc2",
+    "Pic": "Alice_TiePiRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_3_TiePiRen_PickDesc1"
+      },
+      "3": {
+        "optionDesc": "Alice_3_DaoCaoRen_PickDesc2"
+      },
+      "2": {
+        "optionDesc": "Alice_3_DaoCaoRen_PickDesc1"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_TiePiRen_Choice4": {
+    "Id": "Alice_3_TiePiRen_Choice4",
+    "Type": "TYPE4",
+    "Title": "Alice_3_TiePiRen_Name",
+    "Desc": "Alice_3_TiePiRen_Desc4",
+    "Pic": "Alice_TiePiRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_3_ItemTouGu",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_ZhuBanZhe1_Choice1": {
+    "Id": "Alice_2_ZhuBanZhe1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Alice_2_ZhuBanZhe1_Name",
+    "Desc": "Alice_2_ZhuBanZhe1_Desc",
+    "Pic": "Monster_YouLingGuanJia1",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_2_Item1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_ShuiJingXie_Choice1": {
+    "Id": "Alice_3_ShuiJingXie_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_ShuiJingXie_Name",
+    "Desc": "Alice_3_ShuiJingXie_Desc",
+    "Pic": "Alice_ShuiJingXieTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_ShiQu"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_YuanYiShi_Choice2": {
+    "Id": "Alice_3_YuanYiShi_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_3_YuanYiShi_Name",
+    "Desc": "Alice_3_YuanYiShi_Desc2",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_3_YuanYiShi_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_3_YuanYiShi_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_BoLiPing_Choice3": {
+    "Id": "Alice_3_BoLiPing_Choice3",
+    "Type": "TYPE4",
+    "Title": "Alice_3_BoLiPing_Name",
+    "Desc": "Alice_3_BoLiPing_Desc3",
+    "Pic": "Alice_BoLiPingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_3_ItemShiZi",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_BoLiPing_Choice2": {
+    "Id": "Alice_3_BoLiPing_Choice2",
+    "Type": "TYPE1",
+    "Title": "Alice_3_BoLiPing_Name",
+    "Desc": "Alice_3_BoLiPing_Desc2",
+    "Pic": "Alice_BoLiPingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_BoLiPing_Choice1": {
+    "Id": "Alice_3_BoLiPing_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_3_BoLiPing_Name",
+    "Desc": "Alice_3_BoLiPing_Desc1",
+    "Pic": "Alice_BoLiPingTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_3_BoLiPing_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_3_BoLiPing_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_CaiDanBoss_Battle1": {
+    "Id": "Alice_2_CaiDanBoss_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_CaiDanBoss_Name",
+    "Desc": "Alice_2_CaiDanBoss_Desc2",
+    "Pic": "Monster_YouLingNvPu5",
+    "Reward": "Alice_2_CaiDanBoss1_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_4_CaiDanPingGuo2_Choice1": {
+    "Id": "Alice_4_CaiDanPingGuo2_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_CaiDanPingGuo_Name",
+    "Desc": "Alice_4_CaiDanPingGuo_Desc2",
+    "Pic": "Alice_CaiDanPingGuoTanBan_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_MoGu_PickDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_3_DaoCaoRen_Choice4": {
+    "Id": "Alice_3_DaoCaoRen_Choice4",
+    "Type": "TYPE4",
+    "Title": "Alice_3_DaoCaoRen_Name",
+    "Desc": "Alice_3_DaoCaoRen_Desc4",
+    "Pic": "Alice_DaoCaoRenTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Alice_3_ItemTouGu",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_CaiDanBoss_Choice1": {
+    "Id": "Alice_2_CaiDanBoss_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_2_CaiDanBoss_Name",
+    "Desc": "Alice_2_CaiDanBoss_Desc1",
+    "Pic": "Monster_YouLingNvPu5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_2_WaiPo_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_2_ChouXiaoYa_PickDesc3_1"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_XiaoGuaiA1_Battle1": {
+    "Id": "Alice_2_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_2_XiaoGuaiA1_Name",
+    "Desc": "Alice_2_XiaoGuaiA1_Desc",
+    "Pic": "Monster_MuOuGongJiang5",
+    "Reward": "Alice_2_XiaoGuai1_Show",
+    "BpFactor": 5196,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_TongHuaShu4_Choice1": {
+    "Id": "Alice_1_TongHuaShu4_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_TongHuaShu_Name",
+    "Desc": "Alice_1_TongHuaShu_Desc4",
+    "Pic": "Alice_TongHuaShuTanBan_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_QuXiao",
+      "2": "Map_ChoiceDesc_QueDing"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_4_MoJingPingGuo_Choice1": {
+    "Id": "Alice_4_MoJingPingGuo_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_4_MoJingPingGuo_Name",
+    "Desc": "Alice_4_MoJingPingGuo_Desc",
+    "Pic": "Alice_MoJingPingGuoTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Alice_MoGu_PickDesc2",
+      "2": "Map_ChoiceDesc_NaZou"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_JingYingA1_Battle1": {
+    "Id": "Alice_1_JingYingA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_1_JingYingA1_Name",
+    "Desc": "Alice_1_JingYingA1_Desc",
+    "Pic": "Monster_MuOuGongZhu5",
+    "Reward": "Alice_1_JingYing1_Show",
+    "BpFactor": 3665,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Alice_3_QiZiB1_Choice1": {
+    "Id": "Alice_3_QiZiB1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_3_QiZiB1_Name",
+    "Desc": "Alice_3_QiZiB1_Desc",
+    "Pic": "Alice_QiZiMa_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_YiDong"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_2_BuffB1_Choice1": {
+    "Id": "Alice_2_BuffB1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_BuffA1_Name",
+    "Desc": "Alice_1_BuffA1_Desc",
+    "Pic": "Alice_Yun_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Map_Alice1_BuffA_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_MaoZi_Choice1": {
+    "Id": "Alice_1_MaoZi_Choice1",
+    "Type": "TYPE5",
+    "Title": "Alice_1_MaoZi_Name",
+    "Desc": "Alice_1_MaoZi_Desc",
+    "Pic": "Alice_MaoZi_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_MaoZi_PickDesc1"
+      },
+      "2": {
+        "optionDesc": "Alice_1_MaoZi_PickDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_CaiDanBoss_Battle1": {
+    "Id": "Alice_1_CaiDanBoss_Battle1",
+    "Type": "TYPE3",
+    "Title": "Alice_1_CaiDanBoss_Name",
+    "Desc": "Alice_1_CaiDanBoss_Desc2",
+    "Pic": "Monster_MuOuHuaJiangA5",
+    "Reward": "Alice_1_CaiDanBoss1_Show",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Alice_1_QingWa_Choice1": {
+    "Id": "Alice_1_QingWa_Choice1",
+    "Type": "TYPE1",
+    "Title": "Alice_1_QingWa_Name",
+    "Desc": "Alice_1_QingWa_Desc1",
+    "Pic": "Alice_QingWaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Alice_1_QingWa_PickDesc1"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_QingWa_Choice2": {
+    "Id": "Alice_1_QingWa_Choice2",
+    "Type": "TYPE5",
+    "Title": "Alice_1_QingWa_Name",
+    "Desc": "Alice_1_QingWa_Desc2",
+    "Pic": "Alice_QingWaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_QingWa_PickDesc2"
+      },
+      "3": {
+        "optionDesc": "Alice_1_QingWa_PickDesc4"
+      },
+      "2": {
+        "optionDesc": "Alice_1_QingWa_PickDesc3"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Alice_1_QingWa_Choice3": {
+    "Id": "Alice_1_QingWa_Choice3",
+    "Type": "TYPE5",
+    "Title": "Alice_1_QingWa_Name",
+    "Desc": "Alice_1_QingWa_Desc3",
+    "Pic": "Alice_QingWaTanBan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Alice_1_QingWa_PickDesc2_1"
+      },
+      "3": {
+        "optionDesc": "Alice_1_QingWa_PickDesc4_1"
+      },
+      "2": {
+        "optionDesc": "Alice_1_QingWa_PickDesc3_1"
+      },
+      "4": {
+        "optionDesc": "Alice_1_QingWa_PickDesc5"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_YouJun1_Choice1": {
+    "Id": "Egypt_4_YouJun1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Egypt_4_YouJun1_Name",
+    "Desc": "Egypt_4_YouJun1_Desc",
+    "Pic": "Monster_KongShou_Green5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Egypt_1_YouJun1_ChoiceDesc1",
+      "2": "Egypt_1_YouJun1_ChoiceDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_2_BUFF2_Choice1": {
+    "Id": "Egypt_2_BUFF2_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_2_BUFF2_Name",
+    "Desc": "Egypt_2_BUFF2_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_XiaoGuaiA1_Battle1": {
+    "Id": "Egypt_4_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_XiaoGuaiA1_Name",
+    "Desc": "Egypt_4_XiaoGuaiA1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_4_XiaoGuai1_Show",
+    "BpFactor": 66290,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_JingYing2_Battle1": {
+    "Id": "Egypt_2_JingYing2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_JingYing2_Name",
+    "Desc": "Egypt_2_JingYing2_Desc",
+    "Pic": "Monster_YLMYao5",
+    "Reward": "Egypt_2_JingYing1_Show",
+    "BpFactor": 59125,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_BUFF2_Choice1": {
+    "Id": "Egypt_1_BUFF2_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_1_BUFF2_Name",
+    "Desc": "Egypt_1_BUFF2_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_3_BUFF1_Choice1": {
+    "Id": "Egypt_3_BUFF1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_3_BUFF1_Name",
+    "Desc": "Egypt_3_BUFF1_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_1_YouJun1_Choice1": {
+    "Id": "Egypt_1_YouJun1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Egypt_1_YouJun1_Name",
+    "Desc": "Egypt_1_YouJun1_Desc",
+    "Pic": "Monster_KongShou_Green5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Egypt_1_YouJun1_ChoiceDesc1",
+      "2": "Egypt_1_YouJun1_ChoiceDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_JingYing3_Battle1": {
+    "Id": "Egypt_4_JingYing3_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_JingYing3_Name",
+    "Desc": "Egypt_4_JingYing3_Desc",
+    "Pic": "Monster_HeiPiDaDao2",
+    "Reward": "Egypt_4_JingYing1_Show",
+    "BpFactor": 145005,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_XiaoGuaiB1_Battle1": {
+    "Id": "Egypt_2_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_XiaoGuaiB1_Name",
+    "Desc": "Egypt_2_XiaoGuaiB1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_2_XiaoGuai2_Show",
+    "BpFactor": 37840,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_YouJun1_Choice1": {
+    "Id": "Egypt_2_YouJun1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Egypt_2_YouJun1_Name",
+    "Desc": "Egypt_2_YouJun1_Desc",
+    "Pic": "Monster_KongShou_Green5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Egypt_1_YouJun1_ChoiceDesc1",
+      "2": "Egypt_1_YouJun1_ChoiceDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_1_MiYa1_Choice1": {
+    "Id": "Egypt_1_MiYa1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_1_MiYa1_Name",
+    "Desc": "Egypt_1_MiYa1_Desc",
+    "Pic": "LiHui_Hero_YMHTPu",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_MiYa1_ChoiceDesc1"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_MiYa1_ChoiceDesc2"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_2_XiaoGuaiC1_Battle1": {
+    "Id": "Egypt_2_XiaoGuaiC1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_XiaoGuaiC1_Name",
+    "Desc": "Egypt_2_XiaoGuaiC1_Desc",
+    "Pic": "Monster_YLMYao5",
+    "Reward": "Egypt_2_XiaoGuai2_Show",
+    "BpFactor": 86912,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_JingYing2_Battle1": {
+    "Id": "Egypt_4_JingYing2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_JingYing2_Name",
+    "Desc": "Egypt_4_JingYing2_Desc",
+    "Pic": "Monster_YLMYao5",
+    "Reward": "Egypt_4_JingYing1_Show",
+    "BpFactor": 114348,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_BUFF2_Choice1": {
+    "Id": "Egypt_4_BUFF2_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_4_BUFF2_Name",
+    "Desc": "Egypt_4_BUFF2_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_3_Boss1_Battle1": {
+    "Id": "Egypt_3_Boss1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_3_Boss1_Name",
+    "Desc": "Egypt_3_Boss1_Desc",
+    "Pic": "Monster_FaLaoWang5",
+    "Reward": "Egypt_3_Boss1_Show",
+    "BpFactor": 139480,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_JingYing1_Battle1": {
+    "Id": "Egypt_1_JingYing1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_JingYing1_Name",
+    "Desc": "Egypt_1_JingYing1_Desc",
+    "Pic": "Monster_YLMYao5",
+    "Reward": "Egypt_1_JingYing1_Show",
+    "BpFactor": 47350,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_BUFF3_Choice1": {
+    "Id": "Egypt_4_BUFF3_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_4_BUFF3_Name",
+    "Desc": "Egypt_4_BUFF3_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_3_YouJun1_Choice1": {
+    "Id": "Egypt_3_YouJun1_Choice1",
+    "Type": "TYPE1",
+    "Title": "Egypt_3_YouJun1_Name",
+    "Desc": "Egypt_3_YouJun1_Desc",
+    "Pic": "Monster_KongShou_Green5",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Egypt_1_YouJun1_ChoiceDesc1",
+      "2": "Egypt_1_YouJun1_ChoiceDesc2"
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_XiangRiKui1_Choice1": {
+    "Id": "Egypt_4_XiangRiKui1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Egypt_3_XiangRiKui1_Name",
+    "Desc": "Egypt_3_XiangRiKui1_Desc",
+    "Pic": "Explore_TeShuZhiWu_02",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Egypt_1_Item2",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_JingYingNB2_Battle1": {
+    "Id": "Egypt_4_JingYingNB2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_JingYingNB2_Name",
+    "Desc": "Egypt_4_JingYingNB2_Desc",
+    "Pic": "Monster_YLMYao5",
+    "Reward": "Egypt_4_XiaoGuaiD1_Show",
+    "BpFactor": 39835,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_3_XiaoGuaiA1_Battle1": {
+    "Id": "Egypt_3_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_3_XiaoGuaiA1_Name",
+    "Desc": "Egypt_3_XiaoGuaiA1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_3_XiaoGuai1_Show",
+    "BpFactor": 55790,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_Boss1_Battle1": {
+    "Id": "Egypt_2_Boss1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_Boss1_Name",
+    "Desc": "Egypt_2_Boss1_Desc",
+    "Pic": "Hero_KXuan5",
+    "Reward": "Egypt_2_Boss1_Show",
+    "BpFactor": 103467,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_JingYing2_Battle1": {
+    "Id": "Egypt_1_JingYing2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_JingYing2_Name",
+    "Desc": "Egypt_1_JingYing2_Desc",
+    "Pic": "Monster_HeiPiDun5",
+    "Reward": "Egypt_1_JingYing2_Show",
+    "BpFactor": 62232,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_Boss1_Battle1": {
+    "Id": "Egypt_1_Boss1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_Boss1_Name",
+    "Desc": "Egypt_1_Boss1_Desc",
+    "Pic": "Hero_NFDDi5",
+    "Reward": "Egypt_1_Boss1_Show",
+    "BpFactor": 78918,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_XiaoGuaiC2_Battle1": {
+    "Id": "Egypt_1_XiaoGuaiC2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_XiaoGuaiC2_Name",
+    "Desc": "Egypt_1_XiaoGuaiC2_Desc",
+    "Pic": "Monster_HeiPiDun5",
+    "Reward": "Egypt_1_XiaoGuai1_Show",
+    "BpFactor": 45095,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_3_XiaoGuaiB2_Battle1": {
+    "Id": "Egypt_3_XiaoGuaiB2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_3_XiaoGuaiB2_Name",
+    "Desc": "Egypt_3_XiaoGuaiB2_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_3_XiaoGuai2_Show",
+    "BpFactor": 55790,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_JingYing1_Battle1": {
+    "Id": "Egypt_4_JingYing1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_JingYing1_Name",
+    "Desc": "Egypt_4_JingYing1_Desc",
+    "Pic": "Monster_ChangMao_RedB5",
+    "Reward": "Egypt_4_JingYing1_Show",
+    "BpFactor": 104406,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_KaiGuan1_Choice1": {
+    "Id": "Egypt_4_KaiGuan1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_1_KaiGuan1_Name",
+    "Desc": "Egypt_1_KaiGuan1_Desc",
+    "Pic": "Explore_KaiGuan_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_KaiGuan1_ChoiceDesc1"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_KaiGuan1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_JingYingNB1_Battle1": {
+    "Id": "Egypt_4_JingYingNB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_JingYingNB1_Name",
+    "Desc": "Egypt_4_JingYingNB1_Desc",
+    "Pic": "Monster_ChangMao_RedA5",
+    "Reward": "Egypt_4_XiaoGuaiD1_Show",
+    "BpFactor": 39835,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_XiaoGuaiC1_Battle1": {
+    "Id": "Egypt_1_XiaoGuaiC1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_XiaoGuaiC1_Name",
+    "Desc": "Egypt_1_XiaoGuaiC1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_1_XiaoGuai1_Show",
+    "BpFactor": 44095,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_XiaoGuaiD1_Battle1": {
+    "Id": "Egypt_4_XiaoGuaiD1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_XiaoGuaiD1_Name",
+    "Desc": "Egypt_4_XiaoGuaiD1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_4_XiaoGuaiD1_Show",
+    "BpFactor": 34777,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_BUFF1_Choice1": {
+    "Id": "Egypt_4_BUFF1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_4_BUFF1_Name",
+    "Desc": "Egypt_4_BUFF1_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_XiaoGuaiB1_Battle1": {
+    "Id": "Egypt_4_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_XiaoGuaiB1_Name",
+    "Desc": "Egypt_4_XiaoGuaiB1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_4_XiaoGuai2_Show",
+    "BpFactor": 66290,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_JingYing1_Battle1": {
+    "Id": "Egypt_2_JingYing1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_JingYing1_Name",
+    "Desc": "Egypt_2_JingYing1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_2_JingYing1_Show",
+    "BpFactor": 81594,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_3_BUFF2_Choice1": {
+    "Id": "Egypt_3_BUFF2_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_3_BUFF2_Name",
+    "Desc": "Egypt_3_BUFF2_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_1_XiaoGuaiB1_Battle1": {
+    "Id": "Egypt_1_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_XiaoGuaiB1_Name",
+    "Desc": "Egypt_1_XiaoGuaiB1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_1_XiaoGuai2_Show",
+    "BpFactor": 28860,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_BUFF1_Choice1": {
+    "Id": "Egypt_1_BUFF1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_1_BUFF1_Name",
+    "Desc": "Egypt_1_BUFF1_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_1_WanDouSheShou1_Choice1": {
+    "Id": "Egypt_1_WanDouSheShou1_Choice1",
+    "Type": "TYPE4",
+    "Title": "Egypt_1_WanDouSheShou1_Name",
+    "Desc": "Egypt_1_WanDouSheShou1_Desc",
+    "Pic": "Explore_TeShuZhiWu_03",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_LiKai",
+      "2": "Map_ChoiceDesc_JiYi"
+    },
+    "BattleOption": "",
+    "NeedItem": "IM_Egypt_1_Item1",
+    "NeedNum": 1,
+    "CheckOption": "2",
+    "CheckDes": "Map_ChoiceDesc_DaoJuBuZu",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_2_BUFF1_Choice1": {
+    "Id": "Egypt_2_BUFF1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_2_BUFF1_Name",
+    "Desc": "Egypt_2_BUFF1_Desc",
+    "Pic": "Explore_ShenTa_01",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_1_BUFF1_ChoiceDesc2"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_3_JingYing1_Battle1": {
+    "Id": "Egypt_3_JingYing1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_3_MiYa1_Name",
+    "Desc": "Egypt_3_MiYa1_Desc",
+    "Pic": "Hero_YMHTPu5",
+    "Reward": "Egypt_3_JingYing1_Show",
+    "BpFactor": 87870,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_XiaoGuaiA1_Battle1": {
+    "Id": "Egypt_2_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_XiaoGuaiA1_Name",
+    "Desc": "Egypt_2_XiaoGuaiA1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_2_XiaoGuai1_Show",
+    "BpFactor": 37840,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_YingTao1_Choice1": {
+    "Id": "Egypt_4_YingTao1_Choice1",
+    "Type": "TYPE5",
+    "Title": "Egypt_1_YingTao1_Name",
+    "Desc": "Egypt_1_YingTao1_Desc",
+    "Pic": "Explore_TeShuZhiWu_04",
+    "Reward": "",
+    "BpFactor": null,
+    "Order": [
+      "1",
+      "2",
+      "3",
+      "4"
+    ],
+    "Option": {
+      "1": {
+        "optionDesc": "Egypt_4_YingTao1_ChoiceDesc1"
+      },
+      "3": {
+        "optionDesc": "Egypt_4_YingTao1_ChoiceDesc3"
+      },
+      "2": {
+        "optionDesc": "Egypt_4_YingTao1_ChoiceDesc2"
+      },
+      "4": {
+        "optionDesc": "Egypt_4_YingTao1_ChoiceDesc4"
+      },
+      "out": {
+        "optionDesc": "Map_ChoiceDesc_LiKai"
+      }
+    },
+    "BattleOption": "",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": ""
+  },
+  "Egypt_4_XiaoGuaiB2_Battle1": {
+    "Id": "Egypt_4_XiaoGuaiB2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_XiaoGuaiB2_Name",
+    "Desc": "Egypt_4_XiaoGuaiB2_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_4_XiaoGuai2_Show",
+    "BpFactor": 66290,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_4_Boss1_Battle1": {
+    "Id": "Egypt_4_Boss1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_4_Boss1_Name",
+    "Desc": "Egypt_4_Boss1_Desc",
+    "Pic": "Hero_TTKMeng5",
+    "Reward": "Egypt_4_Boss1_Show",
+    "BpFactor": 178976,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "End",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_XiaoGuaiB2_Battle1": {
+    "Id": "Egypt_1_XiaoGuaiB2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_XiaoGuaiB2_Name",
+    "Desc": "Egypt_1_XiaoGuaiB2_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_1_XiaoGuai2_Show",
+    "BpFactor": 28860,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_3_JingYing2_Battle1": {
+    "Id": "Egypt_3_JingYing2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_3_JingYing2_Name",
+    "Desc": "Egypt_3_JingYing2_Desc",
+    "Pic": "Monster_ChangMao_RedB5",
+    "Reward": "Egypt_3_JingYing1_Show",
+    "BpFactor": 112280,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_2_XiaoGuaiB2_Battle1": {
+    "Id": "Egypt_2_XiaoGuaiB2_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_2_XiaoGuaiB2_Name",
+    "Desc": "Egypt_2_XiaoGuaiB2_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_2_XiaoGuai2_Show",
+    "BpFactor": 37840,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_3_XiaoGuaiB1_Battle1": {
+    "Id": "Egypt_3_XiaoGuaiB1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_3_XiaoGuaiB1_Name",
+    "Desc": "Egypt_3_XiaoGuaiB1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_3_XiaoGuai2_Show",
+    "BpFactor": 55790,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  },
+  "Egypt_1_XiaoGuaiA1_Battle1": {
+    "Id": "Egypt_1_XiaoGuaiA1_Battle1",
+    "Type": "TYPE3",
+    "Title": "Egypt_1_XiaoGuaiA1_Name",
+    "Desc": "Egypt_1_XiaoGuaiA1_Desc",
+    "Pic": "Monster_KongShou_RedA5",
+    "Reward": "Egypt_1_XiaoGuai1_Show",
+    "BpFactor": 28860,
+    "Order": null,
+    "Option": {
+      "1": "Map_ChoiceDesc_ZhanDou",
+      "2": "Map_ChoiceDesc_KuaiSuZhanDou"
+    },
+    "BattleOption": "1",
+    "NeedItem": "",
+    "NeedNum": null,
+    "CheckOption": "",
+    "CheckDes": "",
+    "Tag": "",
+    "QuickBattleOption": "2"
+  }
+}

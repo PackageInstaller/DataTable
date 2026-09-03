@@ -1,0 +1,206 @@
+{
+  "DH02N02_Point": {
+    "Id": "DH02N02_Point",
+    "Name": "DH02PointDes_Mid",
+    "BeforePoint": "DH02N01_Point",
+    "NextPoint": "DH02N03_Point",
+    "StarReward": [
+      "DH02N02_StarReward1",
+      "DH02N02_StarReward2",
+      "DH02N02_StarReward3"
+    ],
+    "StarNum": [
+      4,
+      6,
+      8
+    ],
+    "BlockId": "DH02N02M01"
+  },
+  "DH03N02_Point": {
+    "Id": "DH03N02_Point",
+    "Name": "DH3PointDes_Mid",
+    "BeforePoint": "DH03N01_Point",
+    "NextPoint": "DH03N03_Point",
+    "StarReward": [
+      "DH03N02_StarReward1",
+      "DH03N02_StarReward2",
+      "DH03N02_StarReward3"
+    ],
+    "StarNum": [
+      4,
+      6,
+      8
+    ],
+    "BlockId": "DH03N02M01"
+  },
+  "DH01N01_Point": {
+    "Id": "DH01N01_Point",
+    "Name": "DHPointDes_Easy",
+    "BeforePoint": "",
+    "NextPoint": "DH01N02_Point",
+    "StarReward": [
+      "DH01N01_StarReward1",
+      "DH01N01_StarReward2",
+      "DH01N01_StarReward3"
+    ],
+    "StarNum": [
+      1,
+      2,
+      3
+    ],
+    "BlockId": "DH01N01M01"
+  },
+  "DH02N01_Point": {
+    "Id": "DH02N01_Point",
+    "Name": "DH02PointDes_EASY",
+    "BeforePoint": "",
+    "NextPoint": "DH02N02_Point",
+    "StarReward": [
+      "DH02N01_StarReward1",
+      "DH02N01_StarReward2",
+      "DH02N01_StarReward3"
+    ],
+    "StarNum": [
+      1,
+      2,
+      3
+    ],
+    "BlockId": "DH02N01M01"
+  },
+  "DH04N03_Point": {
+    "Id": "DH04N03_Point",
+    "Name": "DH4PointDes_Hard",
+    "BeforePoint": "DH04N02_Point",
+    "NextPoint": "",
+    "StarReward": [
+      "DH04N03_StarReward1",
+      "DH04N03_StarReward2",
+      "DH04N03_StarReward3"
+    ],
+    "StarNum": [
+      9,
+      12,
+      15
+    ],
+    "BlockId": "DH04N03M01"
+  },
+  "DH03N01_Point": {
+    "Id": "DH03N01_Point",
+    "Name": "DH3PointDes_Easy",
+    "BeforePoint": "",
+    "NextPoint": "DH03N02_Point",
+    "StarReward": [
+      "DH03N01_StarReward1",
+      "DH03N01_StarReward2",
+      "DH03N01_StarReward3"
+    ],
+    "StarNum": [
+      1,
+      2,
+      3
+    ],
+    "BlockId": "DH03N01M01"
+  },
+  "DH04N02_Point": {
+    "Id": "DH04N02_Point",
+    "Name": "DH4PointDes_Mid",
+    "BeforePoint": "DH04N01_Point",
+    "NextPoint": "DH04N03_Point",
+    "StarReward": [
+      "DH04N02_StarReward1",
+      "DH04N02_StarReward2",
+      "DH04N02_StarReward3"
+    ],
+    "StarNum": [
+      4,
+      6,
+      8
+    ],
+    "BlockId": "DH04N02M01"
+  },
+  "DH01N03_Point": {
+    "Id": "DH01N03_Point",
+    "Name": "DHPointDes_Hard",
+    "BeforePoint": "DH01N02_Point",
+    "NextPoint": "",
+    "StarReward": [
+      "DH01N03_StarReward1",
+      "DH01N03_StarReward2",
+      "DH01N03_StarReward3"
+    ],
+    "StarNum": [
+      9,
+      12,
+      15
+    ],
+    "BlockId": "DH01N03M01"
+  },
+  "DH02N03_Point": {
+    "Id": "DH02N03_Point",
+    "Name": "DH02PointDes_Hard",
+    "BeforePoint": "DH02N02_Point",
+    "NextPoint": "",
+    "StarReward": [
+      "DH02N03_StarReward1",
+      "DH02N03_StarReward2",
+      "DH02N03_StarReward3"
+    ],
+    "StarNum": [
+      9,
+      12,
+      15
+    ],
+    "BlockId": "DH02N03M01"
+  },
+  "DH01N02_Point": {
+    "Id": "DH01N02_Point",
+    "Name": "DHPointDes_Mid",
+    "BeforePoint": "DH01N01_Point",
+    "NextPoint": "DH01N03_Point",
+    "StarReward": [
+      "DH01N02_StarReward1",
+      "DH01N02_StarReward2",
+      "DH01N02_StarReward3"
+    ],
+    "StarNum": [
+      4,
+      6,
+      8
+    ],
+    "BlockId": "DH01N02M01"
+  },
+  "DH03N03_Point": {
+    "Id": "DH03N03_Point",
+    "Name": "DH3PointDes_Hard",
+    "BeforePoint": "DH03N02_Point",
+    "NextPoint": "",
+    "StarReward": [
+      "DH03N03_StarReward1",
+      "DH03N03_StarReward2",
+      "DH03N03_StarReward3"
+    ],
+    "StarNum": [
+      9,
+      12,
+      15
+    ],
+    "BlockId": "DH03N03M01"
+  },
+  "DH04N01_Point": {
+    "Id": "DH04N01_Point",
+    "Name": "DH4PointDes_Easy",
+    "BeforePoint": "",
+    "NextPoint": "DH04N02_Point",
+    "StarReward": [
+      "DH04N01_StarReward1",
+      "DH04N01_StarReward2",
+      "DH04N01_StarReward3"
+    ],
+    "StarNum": [
+      1,
+      2,
+      3
+    ],
+    "BlockId": "DH04N01M01"
+  }
+}

@@ -1,0 +1,587 @@
+{
+  "ZombiesLevelExp_Egypt_1": {
+    "Id": "ZombiesLevelExp_Egypt_1",
+    "content": [
+      2,
+      4,
+      8,
+      15
+    ],
+    "clz": "int[]"
+  },
+  "ZombiesInit_Egypt_1": {
+    "Id": "ZombiesInit_Egypt_1",
+    "content": "Zombies_1_1",
+    "clz": "string"
+  },
+  "ZombiesInit_Egypt_3": {
+    "Id": "ZombiesInit_Egypt_3",
+    "content": "Zombies_3_1",
+    "clz": "string"
+  },
+  "ZombiesInit_Egypt_2": {
+    "Id": "ZombiesInit_Egypt_2",
+    "content": "Zombies_2_1",
+    "clz": "string"
+  },
+  "ZombiesSkillNum_Egypt_1": {
+    "Id": "ZombiesSkillNum_Egypt_1",
+    "content": 5,
+    "clz": "int"
+  },
+  "ZombiesInit_Egypt_4": {
+    "Id": "ZombiesInit_Egypt_4",
+    "content": "Zombies_4_1",
+    "clz": "string"
+  },
+  "ZombiesValue_Egypt_1": {
+    "Id": "ZombiesValue_Egypt_1",
+    "content": {
+      "Zombies_1_3": {
+        "combat": [
+          6484,
+          6808,
+          7148,
+          7506,
+          7881
+        ],
+        "hp": [
+          32420,
+          34040,
+          35740,
+          37530,
+          39405
+        ],
+        "atk": [
+          6484,
+          6808,
+          7148,
+          7506,
+          7881
+        ],
+        "translate": [
+          "Zombies_Name_3",
+          "Zombies_Desc_3"
+        ],
+        "speed": [
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "def": [
+          1945,
+          2042,
+          2144,
+          2252,
+          2364
+        ]
+      },
+      "Zombies_1_2": {
+        "combat": [
+          6484,
+          6808,
+          7148,
+          7506,
+          7881
+        ],
+        "hp": [
+          32420,
+          34040,
+          35740,
+          37530,
+          39405
+        ],
+        "atk": [
+          6484,
+          6808,
+          7148,
+          7506,
+          7881
+        ],
+        "translate": [
+          "Zombies_Name_2",
+          "Zombies_Desc_2"
+        ],
+        "speed": [
+          200,
+          300,
+          400,
+          500,
+          600
+        ],
+        "def": [
+          1945,
+          2042,
+          2144,
+          2252,
+          2364
+        ]
+      },
+      "Zombies_1_1": {
+        "combat": [
+          6484,
+          6808,
+          7148,
+          7506,
+          7881
+        ],
+        "hp": [
+          32420,
+          34040,
+          35740,
+          37530,
+          39405
+        ],
+        "atk": [
+          6484,
+          6808,
+          7148,
+          7506,
+          7881
+        ],
+        "translate": [
+          "Zombies_Name_1",
+          "Zombies_Desc_1"
+        ],
+        "speed": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ],
+        "def": [
+          1945,
+          2042,
+          2144,
+          2252,
+          2364
+        ]
+      }
+    },
+    "clz": "dict"
+  },
+  "ZombiesIteam_Egypt_1": {
+    "Id": "ZombiesIteam_Egypt_1",
+    "content": {
+      "Zombies_Exp": {
+        "type": "EXP",
+        "value": 1
+      },
+      "Zombies_Skill": {
+        "type": "SKILL"
+      },
+      "Zombies_3": {
+        "type": "CHANGE",
+        "value": "Zombies_3"
+      },
+      "Zombies_2": {
+        "type": "CHANGE",
+        "value": "Zombies_2"
+      }
+    },
+    "clz": "dict"
+  },
+  "ZombiesSkill_Egypt_1": {
+    "Id": "ZombiesSkill_Egypt_1",
+    "content": {
+      "Zombies_Buff1": "SkillAttrEffect",
+      "Zombies_Buff2": "SkillAttrEffect",
+      "Zombies_Buff3": "SkillAttrEffect",
+      "Zombies_Buff4": "SkillAttrEffect",
+      "Zombies_Buff5": "SkillAttrEffect",
+      "Zombies_Buff6": "SkillAttrEffect",
+      "Zombies_Buff7": "SkillAttrEffect"
+    },
+    "clz": "dict"
+  },
+  "ZombiesValue_Egypt_3": {
+    "Id": "ZombiesValue_Egypt_3",
+    "content": {
+      "Zombies_3_1": {
+        "combat": [
+          7493,
+          7867,
+          8261,
+          8674,
+          9108
+        ],
+        "hp": [
+          37465,
+          39335,
+          41305,
+          43370,
+          45540
+        ],
+        "atk": [
+          7493,
+          7867,
+          8261,
+          8674,
+          9108
+        ],
+        "translate": [
+          "Zombies_Name_1",
+          "Zombies_Desc_1"
+        ],
+        "speed": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ],
+        "def": [
+          2248,
+          2360,
+          2478,
+          2602,
+          2732
+        ]
+      },
+      "Zombies_3_3": {
+        "combat": [
+          7493,
+          7867,
+          8261,
+          8674,
+          9108
+        ],
+        "hp": [
+          37465,
+          39335,
+          41305,
+          43370,
+          45540
+        ],
+        "atk": [
+          7493,
+          7867,
+          8261,
+          8674,
+          9108
+        ],
+        "translate": [
+          "Zombies_Name_3",
+          "Zombies_Desc_3"
+        ],
+        "speed": [
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "def": [
+          2248,
+          2360,
+          2478,
+          2602,
+          2732
+        ]
+      },
+      "Zombies_3_2": {
+        "combat": [
+          7493,
+          7867,
+          8261,
+          8674,
+          9108
+        ],
+        "hp": [
+          37465,
+          39335,
+          41305,
+          43370,
+          45540
+        ],
+        "atk": [
+          7493,
+          7867,
+          8261,
+          8674,
+          9108
+        ],
+        "translate": [
+          "Zombies_Name_2",
+          "Zombies_Desc_2"
+        ],
+        "speed": [
+          200,
+          300,
+          400,
+          500,
+          600
+        ],
+        "def": [
+          2248,
+          2360,
+          2478,
+          2602,
+          2732
+        ]
+      }
+    },
+    "clz": "dict"
+  },
+  "ZombiesValue_Egypt_2": {
+    "Id": "ZombiesValue_Egypt_2",
+    "content": {
+      "Zombies_2_1": {
+        "combat": [
+          7079,
+          7433,
+          7805,
+          8195,
+          8605
+        ],
+        "hp": [
+          35395,
+          37165,
+          39025,
+          40975,
+          43025
+        ],
+        "atk": [
+          7079,
+          7433,
+          7805,
+          8195,
+          8605
+        ],
+        "translate": [
+          "Zombies_Name_1",
+          "Zombies_Desc_1"
+        ],
+        "speed": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ],
+        "def": [
+          2124,
+          2230,
+          2342,
+          2459,
+          2582
+        ]
+      },
+      "Zombies_2_2": {
+        "combat": [
+          7079,
+          7433,
+          7805,
+          8195,
+          8605
+        ],
+        "hp": [
+          35395,
+          37165,
+          39025,
+          40975,
+          43025
+        ],
+        "atk": [
+          7079,
+          7433,
+          7805,
+          8195,
+          8605
+        ],
+        "translate": [
+          "Zombies_Name_2",
+          "Zombies_Desc_2"
+        ],
+        "speed": [
+          200,
+          300,
+          400,
+          500,
+          600
+        ],
+        "def": [
+          2124,
+          2230,
+          2342,
+          2459,
+          2582
+        ]
+      },
+      "Zombies_2_3": {
+        "combat": [
+          7079,
+          7433,
+          7805,
+          8195,
+          8605
+        ],
+        "hp": [
+          35395,
+          37165,
+          39025,
+          40975,
+          43025
+        ],
+        "atk": [
+          7079,
+          7433,
+          7805,
+          8195,
+          8605
+        ],
+        "translate": [
+          "Zombies_Name_3",
+          "Zombies_Desc_3"
+        ],
+        "speed": [
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "def": [
+          2124,
+          2230,
+          2342,
+          2459,
+          2582
+        ]
+      }
+    },
+    "clz": "dict"
+  },
+  "ZombiesValue_Egypt_4": {
+    "Id": "ZombiesValue_Egypt_4",
+    "content": {
+      "Zombies_4_2": {
+        "combat": [
+          8002,
+          8402,
+          8822,
+          9263,
+          9727
+        ],
+        "hp": [
+          40010,
+          42010,
+          44110,
+          46315,
+          48635
+        ],
+        "atk": [
+          8002,
+          8402,
+          8822,
+          9263,
+          9727
+        ],
+        "translate": [
+          "Zombies_Name_2",
+          "Zombies_Desc_2"
+        ],
+        "speed": [
+          200,
+          300,
+          400,
+          500,
+          600
+        ],
+        "def": [
+          2401,
+          2521,
+          2647,
+          2779,
+          2918
+        ]
+      },
+      "Zombies_4_3": {
+        "combat": [
+          8002,
+          8402,
+          8822,
+          9263,
+          9727
+        ],
+        "hp": [
+          40010,
+          42010,
+          44110,
+          46315,
+          48635
+        ],
+        "atk": [
+          8002,
+          8402,
+          8822,
+          9263,
+          9727
+        ],
+        "translate": [
+          "Zombies_Name_3",
+          "Zombies_Desc_3"
+        ],
+        "speed": [
+          300,
+          400,
+          500,
+          600,
+          700
+        ],
+        "def": [
+          2401,
+          2521,
+          2647,
+          2779,
+          2918
+        ]
+      },
+      "Zombies_4_1": {
+        "combat": [
+          8002,
+          8402,
+          8822,
+          9263,
+          9727
+        ],
+        "hp": [
+          40010,
+          42010,
+          44110,
+          46315,
+          48635
+        ],
+        "atk": [
+          8002,
+          8402,
+          8822,
+          9263,
+          9727
+        ],
+        "translate": [
+          "Zombies_Name_1",
+          "Zombies_Desc_1"
+        ],
+        "speed": [
+          100,
+          200,
+          300,
+          400,
+          500
+        ],
+        "def": [
+          2401,
+          2521,
+          2647,
+          2779,
+          2918
+        ]
+      }
+    },
+    "clz": "dict"
+  }
+}

@@ -1,0 +1,262 @@
+{
+  "StageEP_M03_2": {
+    "Id": "StageEP_M03_2",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      575,
+      210
+    ],
+    "ShowCondition": {
+      "STAGE": "M03P03"
+    },
+    "Event": {
+      "optionLib": [
+        "Option_surprise_1"
+      ],
+      "story": "Surprise1",
+      "type": "STORY"
+    }
+  },
+  "StageEP_M03_3": {
+    "Id": "StageEP_M03_3",
+    "Resource": "asset/ui/stage/img_M03_event02.png",
+    "Coordinate": [
+      725,
+      565
+    ],
+    "ShowCondition": {
+      "STAGE": "M03P02"
+    },
+    "Event": {
+      "text": "StageEP_M03_3_1",
+      "reward": "StageEP_M03_3_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M03_1": {
+    "Id": "StageEP_M03_1",
+    "Resource": "asset/ui/stage/img_M03_event01.png",
+    "Coordinate": [
+      920,
+      426
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M03_1_1",
+      "reward": "StageEP_M03_1_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M02_2": {
+    "Id": "StageEP_M02_2",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      770,
+      243
+    ],
+    "ShowCondition": {
+      "STAGE": "M02P05"
+    },
+    "Event": {
+      "text": "StageEP_M02_2_1",
+      "reward": "StageEP_M02_2_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M02_1": {
+    "Id": "StageEP_M02_1",
+    "Resource": "asset/ui/stage/img_M02_event01.png",
+    "Coordinate": [
+      256,
+      140
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M02_1_1",
+      "reward": "StageEP_M02_1_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M05_2": {
+    "Id": "StageEP_M05_2",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      595,
+      222
+    ],
+    "ShowCondition": {
+      "STAGE": "M05P03"
+    },
+    "Event": {
+      "text": "StageEP_M05_2_1",
+      "reward": "StageEP_M05_2_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M01_1": {
+    "Id": "StageEP_M01_1",
+    "Resource": "asset/ui/stage/img_M01_event01.png",
+    "Coordinate": [
+      185,
+      228
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M01_1_1",
+      "reward": "StageEP_M01_1_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M01_2": {
+    "Id": "StageEP_M01_2",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      542,
+      338
+    ],
+    "ShowCondition": {
+      "STAGE": "M01P02"
+    },
+    "Event": {
+      "text": "StageEP_M01_2_1",
+      "reward": "StageEP_M01_2_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M01_3": {
+    "Id": "StageEP_M01_3",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      1042,
+      267
+    ],
+    "ShowCondition": {
+      "STAGE": "M01P04"
+    },
+    "Event": {
+      "text": "StageEP_M01_3_1",
+      "reward": "StageEP_M01_3_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M01_4": {
+    "Id": "StageEP_M01_4",
+    "Resource": "asset/ui/stage/img_M01_event02.png",
+    "Coordinate": [
+      398,
+      513
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M01_4_1",
+      "reward": "StageEP_M01_4_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M01_5": {
+    "Id": "StageEP_M01_5",
+    "Resource": "asset/ui/stage/img_M01_event03.png",
+    "Coordinate": [
+      903,
+      535
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M01_5_1",
+      "reward": "StageEP_M01_5_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M01_6": {
+    "Id": "StageEP_M01_6",
+    "Resource": "asset/ui/stage/img_M01_event04.png",
+    "Coordinate": [
+      698,
+      144
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M01_6_1",
+      "reward": "StageEP_M01_6_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M05_3": {
+    "Id": "StageEP_M05_3",
+    "Resource": "asset/ui/stage/img_M04_event01.png",
+    "Coordinate": [
+      501,
+      158
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M05_3_1",
+      "reward": "StageEP_M05_3_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M04_1": {
+    "Id": "StageEP_M04_1",
+    "Resource": "asset/ui/stage/img_M04_event01.png",
+    "Coordinate": [
+      501,
+      158
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "story": "Surprise2",
+      "reward": [
+        "StageEP_M04_1_1"
+      ],
+      "type": "STORY"
+    }
+  },
+  "StageEP_M04_3": {
+    "Id": "StageEP_M04_3",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      595,
+      222
+    ],
+    "ShowCondition": {
+      "STAGE": "M04P03"
+    },
+    "Event": {
+      "text": "StageEP_M04_3_1",
+      "reward": "StageEP_M04_3_1",
+      "type": "REWARD"
+    }
+  },
+  "StageEP_M04_2": {
+    "Id": "StageEP_M04_2",
+    "Resource": "asset/ui/stage/img_map_event.png",
+    "Coordinate": [
+      300,
+      400
+    ],
+    "ShowCondition": {
+      "LEVEL": 1
+    },
+    "Event": {
+      "text": "StageEP_M04_2_1",
+      "reward": "StageEP_M04_2_1",
+      "type": "REWARD"
+    }
+  }
+}

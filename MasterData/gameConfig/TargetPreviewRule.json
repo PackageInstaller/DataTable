@@ -1,0 +1,602 @@
+{
+  "TargetRow": {
+    "Id": "TargetRow",
+    "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
+  },
+  "MainTarget": {
+    "Id": "MainTarget",
+    "Function": "return MainTarget()"
+  },
+  "xiejiaocha": {
+    "Id": "xiejiaocha",
+    "Function": "return GenInfo(EnemyAll(OBLIQUE_CROSS),Red)"
+  },
+  "FriendMinHpRatio": {
+    "Id": "FriendMinHpRatio",
+    "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)"
+  },
+  "HealRandomFriend": {
+    "Id": "HealRandomFriend",
+    "Function": "return GenInfo(FriendAll(),Green,true)"
+  },
+  "HealMaster": {
+    "Id": "HealMaster",
+    "Function": "return GenInfo(FriendUnits(MASTER),Green)"
+  },
+  "Master": {
+    "Id": "Master",
+    "Function": "return GenInfo(EnemyUnits(MASTER),Red)"
+  },
+  "TargetCol": {
+    "Id": "TargetCol",
+    "Function": "return GenInfo(EnemyUnits(COL_OF(TARGET)),Red)"
+  },
+  "test": {
+    "Id": "test",
+    "Function": "return GenInfo(FriendUnits(MASTER),Green)+MainTarget()"
+  },
+  "EnemyHeroHpRatio40less": {
+    "Id": "EnemyHeroHpRatio40less",
+    "Function": "return GenInfo(EnemyUnits(MAKE_HPRATIO_FILTER(\"<\",40)*PETS),Red)"
+  },
+  "RandomEnemy": {
+    "Id": "RandomEnemy",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "FrontRow": {
+    "Id": "FrontRow",
+    "Function": "return GenInfo(EnemyAll(FRONT_ROW),Red)"
+  },
+  "Target_QBTe": {
+    "Id": "Target_QBTe",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_SP_SSQXin": {
+    "Id": "Target_SP_SSQXin",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_JNLong": {
+    "Id": "Target_JNLong",
+    "Function": "return MainTarget()"
+  },
+  "Target_XLai": {
+    "Id": "Target_XLai",
+    "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,1),Green)+GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
+  },
+  "Target_DNTLuo": {
+    "Id": "Target_DNTLuo",
+    "Function": "return MainTarget()"
+  },
+  "Target_SGBao": {
+    "Id": "Target_SGBao",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_BDFen": {
+    "Id": "Target_BDFen",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_PGNNi": {
+    "Id": "Target_PGNNi",
+    "Function": ""
+  },
+  "Target_XHMao": {
+    "Id": "Target_XHMao",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_MDSi": {
+    "Id": "Target_MDSi",
+    "Function": "return MainTarget()"
+  },
+  "Target_LFKLFTe": {
+    "Id": "Target_LFKLFTe",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_DDing": {
+    "Id": "Target_DDing",
+    "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
+  },
+  "Target_SP_ALPo": {
+    "Id": "Target_SP_ALPo",
+    "Function": "return MainTarget()"
+  },
+  "Target_GYCZi": {
+    "Id": "Target_GYCZi",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_XBKLDi": {
+    "Id": "Target_XBKLDi",
+    "Function": ""
+  },
+  "Target_HLMGen": {
+    "Id": "Target_HLMGen",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_BEr": {
+    "Id": "Target_BEr",
+    "Function": "return GenInfo(EnemyAll(MID_CROSS),Red)"
+  },
+  "Target_MYing": {
+    "Id": "Target_MYing",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_KEDGong": {
+    "Id": "Target_KEDGong",
+    "Function": "return MainTarget()"
+  },
+  "Target_SLMen": {
+    "Id": "Target_SLMen",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_LCYShi": {
+    "Id": "Target_LCYShi",
+    "Function": "return MainTarget()"
+  },
+  "Target_PSKe": {
+    "Id": "Target_PSKe",
+    "Function": "return GenInfo(FriendAll(),Green)"
+  },
+  "Target_SGHQShou": {
+    "Id": "Target_SGHQShou",
+    "Function": "return MainTarget()"
+  },
+  "Target_YLSBai": {
+    "Id": "Target_YLSBai",
+    "Function": "return MainTarget()"
+  },
+  "Target_LDYu": {
+    "Id": "Target_LDYu",
+    "Function": "return MainTarget()"
+  },
+  "Target_ALPo": {
+    "Id": "Target_ALPo",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_MZu": {
+    "Id": "Target_MZu",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_SP_PNCao": {
+    "Id": "Target_SP_PNCao",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_XSMLi": {
+    "Id": "Target_XSMLi",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_PDLa": {
+    "Id": "Target_PDLa",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_DFQi": {
+    "Id": "Target_DFQi",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_WTXXuan": {
+    "Id": "Target_WTXXuan",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_SP_ALSi": {
+    "Id": "Target_SP_ALSi",
+    "Function": "return MainTarget()"
+  },
+  "Target_ALSi": {
+    "Id": "Target_ALSi",
+    "Function": "return MainTarget()"
+  },
+  "Target_SRen": {
+    "Id": "Target_SRen",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_BBLMa": {
+    "Id": "Target_BBLMa",
+    "Function": "return MainTarget()"
+  },
+  "Target_YLMGZhu": {
+    "Id": "Target_YLMGZhu",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_LYSi": {
+    "Id": "Target_LYSi",
+    "Function": ""
+  },
+  "Target_YXNMei": {
+    "Id": "Target_YXNMei",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_MKLJLuo": {
+    "Id": "Target_MKLJLuo",
+    "Function": "return MainTarget()"
+  },
+  "Target_NFDDi": {
+    "Id": "Target_NFDDi",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_FLYDe": {
+    "Id": "Target_FLYDe",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_YMHTPu": {
+    "Id": "Target_YMHTPu",
+    "Function": "return MainTarget()"
+  },
+  "Target_MLYTLSha": {
+    "Id": "Target_MLYTLSha",
+    "Function": "return GenInfo(FriendAll(),Green)"
+  },
+  "Target_ZTXChang": {
+    "Id": "Target_ZTXChang",
+    "Function": "return MainTarget()"
+  },
+  "Target_YFZZhu": {
+    "Id": "Target_YFZZhu",
+    "Function": "return GenInfo(Slice(SortBy(EnemyUnits(PETS),\"<\",getHp),1,1),Red)"
+  },
+  "Target_JDCZhang": {
+    "Id": "Target_JDCZhang",
+    "Function": "return MainTarget()"
+  },
+  "Target_FEMSi": {
+    "Id": "Target_FEMSi",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_CKFSJi": {
+    "Id": "Target_CKFSJi",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_ADHWShi": {
+    "Id": "Target_ADHWShi",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_MTZMEShi": {
+    "Id": "Target_MTZMEShi",
+    "Function": "return MainTarget()"
+  },
+  "Target_AMLYa": {
+    "Id": "Target_AMLYa",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_DCJKang": {
+    "Id": "Target_DCJKang",
+    "Function": ""
+  },
+  "Target_LEMHou": {
+    "Id": "Target_LEMHou",
+    "Function": "return MainTarget()"
+  },
+  "Target_SNGLSi": {
+    "Id": "Target_SNGLSi",
+    "Function": ""
+  },
+  "Target_HLDKen": {
+    "Id": "Target_HLDKen",
+    "Function": ""
+  },
+  "Target_KTSJKe": {
+    "Id": "Target_KTSJKe",
+    "Function": "return MainTarget()"
+  },
+  "Target_MGNa": {
+    "Id": "Target_MGNa",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_AJTa": {
+    "Id": "Target_AJTa",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_SLWan": {
+    "Id": "Target_SLWan",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_LYXi": {
+    "Id": "Target_LYXi",
+    "Function": "return GenInfo(FriendAll(),Green)"
+  },
+  "Target_SP_KTSJKe": {
+    "Id": "Target_SP_KTSJKe",
+    "Function": "return MainTarget()"
+  },
+  "Target_FLEr": {
+    "Id": "Target_FLEr",
+    "Function": "return MainTarget()"
+  },
+  "Target_FTLEShi": {
+    "Id": "Target_FTLEShi",
+    "Function": "return MainTarget()"
+  },
+  "Target_NFEr": {
+    "Id": "Target_NFEr",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_YSTLu": {
+    "Id": "Target_YSTLu",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_LAMu": {
+    "Id": "Target_LAMu",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_FLBDSi": {
+    "Id": "Target_FLBDSi",
+    "Function": ""
+  },
+  "Target_LFEr": {
+    "Id": "Target_LFEr",
+    "Function": "return MainTarget()+GenInfo(Slice(SortBy(FriendUnits(PETS),\"<\",getHpRatio),1,1),Green)"
+  },
+  "Target_FTLYShi": {
+    "Id": "Target_FTLYShi",
+    "Function": "return MainTarget()"
+  },
+  "Target_CZheng": {
+    "Id": "Target_CZheng",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_ATSheng": {
+    "Id": "Target_ATSheng",
+    "Function": "return MainTarget()"
+  },
+  "Target_WSLi": {
+    "Id": "Target_WSLi",
+    "Function": "return MainTarget()"
+  },
+  "Target_BDPan": {
+    "Id": "Target_BDPan",
+    "Function": "return MainTarget()"
+  },
+  "Target_KMLa": {
+    "Id": "Target_KMLa",
+    "Function": "return MainTarget()"
+  },
+  "Target_GLFu_L": {
+    "Id": "Target_GLFu_L",
+    "Function": "return MainTarget()"
+  },
+  "Target_SP_DDing": {
+    "Id": "Target_SP_DDing",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_LSLTe": {
+    "Id": "Target_LSLTe",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_XDE": {
+    "Id": "Target_XDE",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_HGEr": {
+    "Id": "Target_HGEr",
+    "Function": "return MainTarget()"
+  },
+  "Target_YSLBin": {
+    "Id": "Target_YSLBin",
+    "Function": "return MainTarget()"
+  },
+  "Target_NDGEr": {
+    "Id": "Target_NDGEr",
+    "Function": "return GenInfo(FriendAll(),Green)"
+  },
+  "Target_FCXJi": {
+    "Id": "Target_FCXJi",
+    "Function": "return MainTarget()"
+  },
+  "Target_KXuan": {
+    "Id": "Target_KXuan",
+    "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
+  },
+  "Target_MLYDi": {
+    "Id": "Target_MLYDi",
+    "Function": "return MainTarget()"
+  },
+  "Target_BLTu": {
+    "Id": "Target_BLTu",
+    "Function": ""
+  },
+  "Target_GCZi": {
+    "Id": "Target_GCZi",
+    "Function": "return MainTarget()"
+  },
+  "Target_HSheng": {
+    "Id": "Target_HSheng",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_YMJDe": {
+    "Id": "Target_YMJDe",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_AMLBLTe": {
+    "Id": "Target_AMLBLTe",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_SSQXin": {
+    "Id": "Target_SSQXin",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_BDZSheng": {
+    "Id": "Target_BDZSheng",
+    "Function": "return MainTarget()"
+  },
+  "Target_BQDShe": {
+    "Id": "Target_BQDShe",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_YXZChun": {
+    "Id": "Target_YXZChun",
+    "Function": "return MainTarget()"
+  },
+  "Target_HSYZhai": {
+    "Id": "Target_HSYZhai",
+    "Function": "return MainTarget()"
+  },
+  "Target_XSLuo": {
+    "Id": "Target_XSLuo",
+    "Function": "return MainTarget()"
+  },
+  "Target_SSBYa": {
+    "Id": "Target_SSBYa",
+    "Function": "return MainTarget()"
+  },
+  "Target_YDZZong": {
+    "Id": "Target_YDZZong",
+    "Function": "return MainTarget()"
+  },
+  "Target_XDRLa": {
+    "Id": "Target_XDRLa",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_TLMi": {
+    "Id": "Target_TLMi",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_HLDNan": {
+    "Id": "Target_HLDNan",
+    "Function": "return GenInfo(Slice(SortBy(FriendUnits(),\"<\",getHpRatio),1,2),Green)"
+  },
+  "Target_YYing": {
+    "Id": "Target_YYing",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_HLa": {
+    "Id": "Target_HLa",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_SYAi": {
+    "Id": "Target_SYAi",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_CLMan": {
+    "Id": "Target_CLMan",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_SMSNv": {
+    "Id": "Target_SMSNv",
+    "Function": "return MainTarget()"
+  },
+  "Target_QTQCi": {
+    "Id": "Target_QTQCi",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_AJYHou": {
+    "Id": "Target_AJYHou",
+    "Function": "return MainTarget()"
+  },
+  "Target_XXFSi": {
+    "Id": "Target_XXFSi",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_SDTZi": {
+    "Id": "Target_SDTZi",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_MZGXiu": {
+    "Id": "Target_MZGXiu",
+    "Function": "return MainTarget()"
+  },
+  "Target_LLKe": {
+    "Id": "Target_LLKe",
+    "Function": "return MainTarget()"
+  },
+  "Target_TLSi": {
+    "Id": "Target_TLSi",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_YBYa": {
+    "Id": "Target_YBYa",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_WEDe": {
+    "Id": "Target_WEDe",
+    "Function": "return MainTarget()"
+  },
+  "Target_PNCao": {
+    "Id": "Target_PNCao",
+    "Function": "return MainTarget()"
+  },
+  "Target_XLDBLTe": {
+    "Id": "Target_XLDBLTe",
+    "Function": "return MainTarget()"
+  },
+  "Target_LLan": {
+    "Id": "Target_LLan",
+    "Function": ""
+  },
+  "Target_YKDMLai": {
+    "Id": "Target_YKDMLai",
+    "Function": "return MainTarget()"
+  },
+  "Target_NCai": {
+    "Id": "Target_NCai",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_GLin": {
+    "Id": "Target_GLin",
+    "Function": "return MainTarget()"
+  },
+  "Target_TPGZhu": {
+    "Id": "Target_TPGZhu",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_ZTXCun": {
+    "Id": "Target_ZTXCun",
+    "Function": "return GenInfo(EnemyAll(ROW_OF(TARGET)),Red)"
+  },
+  "Target_TJHDe": {
+    "Id": "Target_TJHDe",
+    "Function": "return GenInfo(EnemyAll(),Red)"
+  },
+  "Target_WLSTNCi": {
+    "Id": "Target_WLSTNCi",
+    "Function": "return GenInfo(EnemyAll(),Red,true)"
+  },
+  "Target_ZZBBWei": {
+    "Id": "Target_ZZBBWei",
+    "Function": "return GenInfo(EnemyAll(COL_OF(TARGET)),Red)"
+  },
+  "Target_BHTZi": {
+    "Id": "Target_BHTZi",
+    "Function": "return GenInfo(EnemyUnits(ROW_OF(TARGET)),Red)"
+  },
+  "Target_SP_WTXXuan": {
+    "Id": "Target_SP_WTXXuan",
+    "Function": "0"
+  },
+  "Target_FGao": {
+    "Id": "Target_FGao",
+    "Function": "return MainTarget()"
+  },
+  "Target_LDu": {
+    "Id": "Target_LDu",
+    "Function": ""
+  },
+  "Target_TTKMeng": {
+    "Id": "Target_TTKMeng",
+    "Function": ""
+  },
+  "Target_LEIMu": {
+    "Id": "Target_LEIMu",
+    "Function": "return MainTarget()"
+  },
+  "Target_JSTDing": {
+    "Id": "Target_JSTDing",
+    "Function": "return MainTarget()"
+  },
+  "Target_YSuo": {
+    "Id": "Target_YSuo",
+    "Function": "return MainTarget()"
+  },
+  "Target_NXYYi": {
+    "Id": "Target_NXYYi",
+    "Function": "return MainTarget()"
+  },
+  "RANGE_Deng": {
+    "Id": "RANGE_Deng",
+    "Function": "return AllCell()"
+  },
+  "RANGE_LZHua": {
+    "Id": "RANGE_LZHua",
+    "Function": "return HasBuff(\"RANGE_LZHua\")"
+  },
+  "RANGE_GXiang": {
+    "Id": "RANGE_GXiang",
+    "Function": "return GenInfo(EnemyAll(),Green)"
+  }
+}

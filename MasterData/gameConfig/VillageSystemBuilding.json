@@ -1,0 +1,902 @@
+{
+  "CardAcademy": {
+    "Id": "CardAcademy",
+    "Name": "CardAcademy_Name",
+    "Desc": "CardAcademy_Desc",
+    "Room": "Room5",
+    "BuildingLevel": "CardAcademy_Lv1",
+    "Type": "CardAcademy",
+    "Condition": {
+      "Block": "M03S02"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        3,
+        7
+      ]
+    ],
+    "Sort": 2,
+    "SurfaceList": [
+      "VillageSurface_CardAcademy_1"
+    ],
+    "DefaultSurface": "VillageSurface_CardAcademy_1",
+    "UseType": "lie",
+    "Space": [
+      3,
+      3
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CardAcademy_Lv5",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_CardAcademy_Text"
+  },
+  "MainCity": {
+    "Id": "MainCity",
+    "Name": "MainCity_Name",
+    "Desc": "MainCity_Desc",
+    "Room": "Room2",
+    "BuildingLevel": "MainCity_Lv1",
+    "Type": "MainCity",
+    "Condition": {
+      "Level": 1
+    },
+    "UnlockDesc": "Unlock_MainCity",
+    "IsMoved": 0,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 1,
+    "SurfaceList": [
+      "VillageSurface_MainCity_1"
+    ],
+    "DefaultSurface": "VillageSurface_MainCity_1",
+    "UseType": "",
+    "Space": [
+      3,
+      3
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "MainCity_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "MainCity_UpDesc",
+    "BuildDesc": "Build_MainCity_Text"
+  },
+  "CrystalOre_Normal_2": {
+    "Id": "CrystalOre_Normal_2",
+    "Name": "CrystalOre_Normal_Name",
+    "Desc": "CrystalOre_Normal_Desc",
+    "Room": "Room4",
+    "BuildingLevel": "CrystalOre_Normal_Lv1",
+    "Type": "CrystalOre",
+    "Condition": {
+      "Block": "M04S05"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 10,
+    "SurfaceList": [
+      "VillageSurface_CrystalOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_CrystalOre_Normal_1",
+    "UseType": "lie",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CrystalOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_CrystalOre_Normal_2_Text"
+  },
+  "CrystalOre_Normal_3": {
+    "Id": "CrystalOre_Normal_3",
+    "Name": "CrystalOre_Normal_Name",
+    "Desc": "CrystalOre_Normal_Desc",
+    "Room": "Room4",
+    "BuildingLevel": "CrystalOre_Normal_Lv1",
+    "Type": "CrystalOre",
+    "Condition": {
+      "BaseLevel": 2
+    },
+    "UnlockDesc": "Unlock_CrystalOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 11,
+    "SurfaceList": [
+      "VillageSurface_CrystalOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_CrystalOre_Normal_1",
+    "UseType": "lie",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CrystalOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_CrystalOre_Normal_3_Text"
+  },
+  "CrystalOre_Normal_1": {
+    "Id": "CrystalOre_Normal_1",
+    "Name": "CrystalOre_Normal_Name",
+    "Desc": "CrystalOre_Normal_Desc",
+    "Room": "Room4",
+    "BuildingLevel": "CrystalOre_Normal_Lv1",
+    "Type": "CrystalOre",
+    "Condition": {
+      "Block": "M04S05"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 9,
+    "SurfaceList": [
+      "VillageSurface_CrystalOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_CrystalOre_Normal_1",
+    "UseType": "lie",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CrystalOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_CrystalOre_Normal_1_Text"
+  },
+  "CrystalOre_Normal_6": {
+    "Id": "CrystalOre_Normal_6",
+    "Name": "CrystalOre_Normal_Name",
+    "Desc": "CrystalOre_Normal_Desc",
+    "Room": "Room4",
+    "BuildingLevel": "CrystalOre_Normal_Lv1",
+    "Type": "CrystalOre",
+    "Condition": {
+      "BaseLevel": 9
+    },
+    "UnlockDesc": "Unlock_CrystalOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 14,
+    "SurfaceList": [
+      "VillageSurface_CrystalOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_CrystalOre_Normal_1",
+    "UseType": "lie",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CrystalOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_CrystalOre_Normal_6_Text"
+  },
+  "CrystalOre_Normal_4": {
+    "Id": "CrystalOre_Normal_4",
+    "Name": "CrystalOre_Normal_Name",
+    "Desc": "CrystalOre_Normal_Desc",
+    "Room": "Room4",
+    "BuildingLevel": "CrystalOre_Normal_Lv1",
+    "Type": "CrystalOre",
+    "Condition": {
+      "BaseLevel": 3
+    },
+    "UnlockDesc": "Unlock_CrystalOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 12,
+    "SurfaceList": [
+      "VillageSurface_CrystalOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_CrystalOre_Normal_1",
+    "UseType": "lie",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CrystalOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_CrystalOre_Normal_4_Text"
+  },
+  "CrystalOre_Normal_5": {
+    "Id": "CrystalOre_Normal_5",
+    "Name": "CrystalOre_Normal_Name",
+    "Desc": "CrystalOre_Normal_Desc",
+    "Room": "Room4",
+    "BuildingLevel": "CrystalOre_Normal_Lv1",
+    "Type": "CrystalOre",
+    "Condition": {
+      "BaseLevel": 6
+    },
+    "UnlockDesc": "Unlock_CrystalOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 13,
+    "SurfaceList": [
+      "VillageSurface_CrystalOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_CrystalOre_Normal_1",
+    "UseType": "lie",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "CrystalOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_CrystalOre_Normal_5_Text"
+  },
+  "GoldOre_Normal_5": {
+    "Id": "GoldOre_Normal_5",
+    "Name": "GoldOre_Normal_Name",
+    "Desc": "GoldOre_Normal_Desc",
+    "Room": "Room3",
+    "BuildingLevel": "GoldOre_Normal_Lv1",
+    "Type": "GoldOre",
+    "Condition": {
+      "BaseLevel": 5
+    },
+    "UnlockDesc": "Unlock_GoldOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 7,
+    "SurfaceList": [
+      "VillageSurface_GoldOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_GoldOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "GoldOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_GoldOre_Normal_5_Text"
+  },
+  "GoldOre_Normal_4": {
+    "Id": "GoldOre_Normal_4",
+    "Name": "GoldOre_Normal_Name",
+    "Desc": "GoldOre_Normal_Desc",
+    "Room": "Room3",
+    "BuildingLevel": "GoldOre_Normal_Lv1",
+    "Type": "GoldOre",
+    "Condition": {
+      "BaseLevel": 2
+    },
+    "UnlockDesc": "Unlock_GoldOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 6,
+    "SurfaceList": [
+      "VillageSurface_GoldOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_GoldOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "GoldOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_GoldOre_Normal_4_Text"
+  },
+  "GoldOre_Normal_6": {
+    "Id": "GoldOre_Normal_6",
+    "Name": "GoldOre_Normal_Name",
+    "Desc": "GoldOre_Normal_Desc",
+    "Room": "Room3",
+    "BuildingLevel": "GoldOre_Normal_Lv1",
+    "Type": "GoldOre",
+    "Condition": {
+      "BaseLevel": 8
+    },
+    "UnlockDesc": "Unlock_GoldOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 8,
+    "SurfaceList": [
+      "VillageSurface_GoldOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_GoldOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "GoldOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_GoldOre_Normal_6_Text"
+  },
+  "GoldOre_Normal_1": {
+    "Id": "GoldOre_Normal_1",
+    "Name": "GoldOre_Normal_Name",
+    "Desc": "GoldOre_Normal_Desc",
+    "Room": "Room3",
+    "BuildingLevel": "GoldOre_Normal_Lv1",
+    "Type": "GoldOre",
+    "Condition": {
+      "Story": "S01S02"
+    },
+    "UnlockDesc": "Unlock_Building_Story",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        2
+      ]
+    ],
+    "Sort": 3,
+    "SurfaceList": [
+      "VillageSurface_GoldOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_GoldOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "GoldOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc4",
+    "BuildDesc": "Build_GoldOre_Normal_1_Text"
+  },
+  "GoldOre_Normal_3": {
+    "Id": "GoldOre_Normal_3",
+    "Name": "GoldOre_Normal_Name",
+    "Desc": "GoldOre_Normal_Desc",
+    "Room": "Room3",
+    "BuildingLevel": "GoldOre_Normal_Lv1",
+    "Type": "GoldOre",
+    "Condition": {
+      "Block": "M02S05"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 5,
+    "SurfaceList": [
+      "VillageSurface_GoldOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_GoldOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "GoldOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_GoldOre_Normal_3_Text"
+  },
+  "GoldOre_Normal_2": {
+    "Id": "GoldOre_Normal_2",
+    "Name": "GoldOre_Normal_Name",
+    "Desc": "GoldOre_Normal_Desc",
+    "Room": "Room3",
+    "BuildingLevel": "GoldOre_Normal_Lv1",
+    "Type": "GoldOre",
+    "Condition": {
+      "Story": "S01S02"
+    },
+    "UnlockDesc": "Unlock_Building_Story",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        4
+      ]
+    ],
+    "Sort": 4,
+    "SurfaceList": [
+      "VillageSurface_GoldOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_GoldOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "GoldOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc4",
+    "BuildDesc": "Build_GoldOre_Normal_2_Text"
+  },
+  "Camp_1": {
+    "Id": "Camp_1",
+    "Name": "Camp_Name",
+    "Desc": "Camp_Desc",
+    "Room": "Room1",
+    "BuildingLevel": "Camp_Lv1",
+    "Type": "Camp",
+    "Condition": {
+      "Block": "M03S04"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        2
+      ]
+    ],
+    "Sort": 21,
+    "SurfaceList": [
+      "VillageSurface_Camp_1"
+    ],
+    "DefaultSurface": "VillageSurface_Camp_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "Camp_Lv7",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_Camp_1_Text"
+  },
+  "Camp_2": {
+    "Id": "Camp_2",
+    "Name": "Camp_Name",
+    "Desc": "Camp_Desc",
+    "Room": "Room1",
+    "BuildingLevel": "Camp_Lv1",
+    "Type": "Camp",
+    "Condition": {
+      "Block": "M04S05"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        2,
+        0
+      ]
+    ],
+    "Sort": 22,
+    "SurfaceList": [
+      "VillageSurface_Camp_1"
+    ],
+    "DefaultSurface": "VillageSurface_Camp_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "Camp_Lv7",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_Camp_2_Text"
+  },
+  "Camp_3": {
+    "Id": "Camp_3",
+    "Name": "Camp_Name",
+    "Desc": "Camp_Desc",
+    "Room": "Room1",
+    "BuildingLevel": "Camp_Lv1",
+    "Type": "Camp",
+    "Condition": {
+      "BaseLevel": 3
+    },
+    "UnlockDesc": "Unlock_Camp",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 23,
+    "SurfaceList": [
+      "VillageSurface_Camp_1"
+    ],
+    "DefaultSurface": "VillageSurface_Camp_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "Camp_Lv7",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_Camp_3_Text"
+  },
+  "Camp_4": {
+    "Id": "Camp_4",
+    "Name": "Camp_Name",
+    "Desc": "Camp_Desc",
+    "Room": "Room1",
+    "BuildingLevel": "Camp_Lv1",
+    "Type": "Camp",
+    "Condition": {
+      "BaseLevel": 5
+    },
+    "UnlockDesc": "Unlock_Camp",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 24,
+    "SurfaceList": [
+      "VillageSurface_Camp_1"
+    ],
+    "DefaultSurface": "VillageSurface_Camp_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "Camp_Lv7",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_Camp_4_Text"
+  },
+  "Camp_5": {
+    "Id": "Camp_5",
+    "Name": "Camp_Name",
+    "Desc": "Camp_Desc",
+    "Room": "Room1",
+    "BuildingLevel": "Camp_Lv1",
+    "Type": "Camp",
+    "Condition": {
+      "BaseLevel": 7
+    },
+    "UnlockDesc": "Unlock_Camp",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 25,
+    "SurfaceList": [
+      "VillageSurface_Camp_1"
+    ],
+    "DefaultSurface": "VillageSurface_Camp_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "Camp_Lv7",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_Camp_5_Text"
+  },
+  "ExpOre_Normal_5": {
+    "Id": "ExpOre_Normal_5",
+    "Name": "ExpOre_Normal_Name",
+    "Desc": "ExpOre_Normal_Desc",
+    "Room": "Room6",
+    "BuildingLevel": "ExpOre_Normal_Lv1",
+    "Type": "ExpOre",
+    "Condition": {
+      "BaseLevel": 6
+    },
+    "UnlockDesc": "Unlock_ExpOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 19,
+    "SurfaceList": [
+      "VillageSurface_ExpOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_ExpOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "ExpOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_ExpOre_Normal_5_Text"
+  },
+  "ExpOre_Normal_4": {
+    "Id": "ExpOre_Normal_4",
+    "Name": "ExpOre_Normal_Name",
+    "Desc": "ExpOre_Normal_Desc",
+    "Room": "Room6",
+    "BuildingLevel": "ExpOre_Normal_Lv1",
+    "Type": "ExpOre",
+    "Condition": {
+      "BaseLevel": 3
+    },
+    "UnlockDesc": "Unlock_ExpOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 18,
+    "SurfaceList": [
+      "VillageSurface_ExpOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_ExpOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "ExpOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_ExpOre_Normal_4_Text"
+  },
+  "ExpOre_Normal_6": {
+    "Id": "ExpOre_Normal_6",
+    "Name": "ExpOre_Normal_Name",
+    "Desc": "ExpOre_Normal_Desc",
+    "Room": "Room6",
+    "BuildingLevel": "ExpOre_Normal_Lv1",
+    "Type": "ExpOre",
+    "Condition": {
+      "BaseLevel": 9
+    },
+    "UnlockDesc": "Unlock_ExpOre_Normal",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 20,
+    "SurfaceList": [
+      "VillageSurface_ExpOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_ExpOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "ExpOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc1",
+    "BuildDesc": "Build_ExpOre_Normal_6_Text"
+  },
+  "ExpOre_Normal_1": {
+    "Id": "ExpOre_Normal_1",
+    "Name": "ExpOre_Normal_Name",
+    "Desc": "ExpOre_Normal_Desc",
+    "Room": "Room6",
+    "BuildingLevel": "ExpOre_Normal_Lv1",
+    "Type": "ExpOre",
+    "Condition": {
+      "Story": "S02S02"
+    },
+    "UnlockDesc": "Unlock_Building_Story",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        2
+      ]
+    ],
+    "Sort": 15,
+    "SurfaceList": [
+      "VillageSurface_ExpOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_ExpOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "ExpOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc4",
+    "BuildDesc": "Build_ExpOre_Normal_1_Text"
+  },
+  "ExpOre_Normal_3": {
+    "Id": "ExpOre_Normal_3",
+    "Name": "ExpOre_Normal_Name",
+    "Desc": "ExpOre_Normal_Desc",
+    "Room": "Room6",
+    "BuildingLevel": "ExpOre_Normal_Lv1",
+    "Type": "ExpOre",
+    "Condition": {
+      "Block": "M02S05"
+    },
+    "UnlockDesc": "Unlock_Building_Stage",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 17,
+    "SurfaceList": [
+      "VillageSurface_ExpOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_ExpOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "ExpOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc3",
+    "BuildDesc": "Build_ExpOre_Normal_3_Text"
+  },
+  "ExpOre_Normal_2": {
+    "Id": "ExpOre_Normal_2",
+    "Name": "ExpOre_Normal_Name",
+    "Desc": "ExpOre_Normal_Desc",
+    "Room": "Room6",
+    "BuildingLevel": "ExpOre_Normal_Lv1",
+    "Type": "ExpOre",
+    "Condition": {
+      "Story": "S02S02"
+    },
+    "UnlockDesc": "Unlock_Building_Story",
+    "IsMoved": 1,
+    "InitialPosition": [
+      [
+        0,
+        0
+      ]
+    ],
+    "Sort": 16,
+    "SurfaceList": [
+      "VillageSurface_ExpOre_Normal_1"
+    ],
+    "DefaultSurface": "VillageSurface_ExpOre_Normal_1",
+    "UseType": "",
+    "Space": [
+      1,
+      1
+    ],
+    "Quality": 3,
+    "Unlook": 0,
+    "MaxLevel": "ExpOre_Normal_Lv12",
+    "ProspectShow": 0,
+    "Turn": 1,
+    "UnlockDescColor": "Build_Condition_UpDesc4",
+    "BuildDesc": "Build_ExpOre_Normal_2_Text"
+  }
+}

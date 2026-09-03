@@ -1,0 +1,2652 @@
+{
+  "DH01N02M04": {
+    "Id": "DH01N02M04",
+    "BattleDes": "DH01N02M04_BattleDes",
+    "Name": "DH01N02M04_BattleName",
+    "BeforeBattle": "DH01N02M03",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      },
+      "hero": {
+        "FTLEShi": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_01",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N02M04",
+    "EnemyMaster": "DH01N02M04W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.5,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 10
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "XLai"
+      }
+    ],
+    "BattleReward": "DH01N02M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH03N03M04": {
+    "Id": "DH03N03M04",
+    "BattleDes": "DH03N03M04_BattleDes",
+    "Name": "DH03N03M04_BattleName",
+    "BeforeBattle": "DH03N03M03",
+    "NextBattle": "DH03N03M05",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N03M04",
+    "EnemyMaster": "DH03N03M04W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 179400,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 185,
+      "equipLevel": 50
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "BQDShe"
+      },
+      {
+        "killCount": {
+          "MGNa": 3
+        }
+      }
+    ],
+    "BattleReward": "DH03N03M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH01N02M02": {
+    "Id": "DH01N02M02",
+    "BattleDes": "DH01N02M02_BattleDes",
+    "Name": "DH01N02M02_BattleName",
+    "BeforeBattle": "DH01N02M01",
+    "NextBattle": "DH01N02M03",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_02",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N02M02",
+    "EnemyMaster": "DH01N02M02W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.5,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 10
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "MKLJLuo"
+      }
+    ],
+    "BattleReward": "DH01N02M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N02M03": {
+    "Id": "DH01N02M03",
+    "BattleDes": "DH01N02M03_BattleDes",
+    "Name": "DH01N02M03_BattleName",
+    "BeforeBattle": "DH01N02M02",
+    "NextBattle": "DH01N02M04",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_03",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N02M03",
+    "EnemyMaster": "DH01N02M03W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.2,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 10
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "YFZZhu"
+      }
+    ],
+    "BattleReward": "DH01N02M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N02M01": {
+    "Id": "DH01N02M01",
+    "BattleDes": "DH01N02M01_BattleDes",
+    "Name": "DH01N02M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH01N02M02",
+    "BuffEffect": {
+      "camp": {
+        "BSNCT": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_01",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N02M01",
+    "EnemyMaster": "DH01N02M01W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.2,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 10
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "SSQXin"
+      }
+    ],
+    "BattleReward": "DH01N02M01_Reward",
+    "PositionLimit": [
+      3,
+      4,
+      6,
+      7,
+      9
+    ],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH02N01M02": {
+    "Id": "DH02N01M02",
+    "BattleDes": "DH02N01M02_BattleDes",
+    "Name": "DH02N01M02_BattleName",
+    "BeforeBattle": "DH02N01M01",
+    "NextBattle": "DH02N01M03",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ],
+        "Curse": [
+          "DH_HURTRATE"
+        ],
+        "Support": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N01M02",
+    "BattleFactor": [
+      72500,
+      72500,
+      72500
+    ],
+    "EnemyCard": "CardDH02N01M02",
+    "EnemyMaster": "DH02N01M02W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 160000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH02N01M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N01M03": {
+    "Id": "DH02N01M03",
+    "BattleDes": "DH02N01M03_BattleDes",
+    "Name": "DH02N01M03_BattleName",
+    "BeforeBattle": "DH02N01M02",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Defense": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N01M03",
+    "BattleFactor": [
+      72500,
+      72500,
+      72500
+    ],
+    "EnemyCard": "CardDH02N01M03",
+    "EnemyMaster": "DH02N01M03W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideA",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 160000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH02N01M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH03N02M04": {
+    "Id": "DH03N02M04",
+    "BattleDes": "DH03N02M04_BattleDes",
+    "Name": "DH03N02M04_BattleName",
+    "BeforeBattle": "DH03N02M03",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N02M04",
+    "EnemyMaster": "DH03N02M04W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 110000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 1,
+      "heroLevel": 150,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "BQDShe"
+      }
+    ],
+    "BattleReward": "DH03N02M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH02N02M04": {
+    "Id": "DH02N02M04",
+    "BattleDes": "DH02N02M04_BattleDes",
+    "Name": "DH02N02M04_BattleName",
+    "BeforeBattle": "DH02N02M03",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ],
+        "Curse": [
+          "DH_HURTRATE"
+        ]
+      },
+      "hero": {
+        "FTLEShi": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N02M04",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N02M04",
+    "EnemyMaster": "DH02N02M04W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "FTLEShi"
+      }
+    ],
+    "BattleReward": "DH02N02M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N02M01": {
+    "Id": "DH02N02M01",
+    "BattleDes": "DH02N02M01_BattleDes",
+    "Name": "DH02N02M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH02N02M02",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ],
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N02M01",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N02M01",
+    "EnemyMaster": "DH02N02M01W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "CLMan"
+      }
+    ],
+    "BattleReward": "DH02N02M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH03N02M01": {
+    "Id": "DH03N02M01",
+    "BattleDes": "DH03N02M01_BattleDes",
+    "Name": "DH03N02M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH03N02M02",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Defense": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N02M01",
+    "EnemyMaster": "DH03N02M01W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 110000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 1,
+      "heroLevel": 150,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "LLan"
+      }
+    ],
+    "BattleReward": "DH03N02M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH02N02M03": {
+    "Id": "DH02N02M03",
+    "BattleDes": "DH02N02M03_BattleDes",
+    "Name": "DH02N02M03_BattleName",
+    "BeforeBattle": "DH02N02M02",
+    "NextBattle": "DH02N02M04",
+    "BuffEffect": {
+      "profession": {
+        "Curse": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N02M03",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N02M03",
+    "EnemyMaster": "DH02N02M03W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "ZTXChang"
+      }
+    ],
+    "BattleReward": "DH02N02M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N02M02": {
+    "Id": "DH02N02M02",
+    "BattleDes": "DH02N02M02_BattleDes",
+    "Name": "DH02N02M02_BattleName",
+    "BeforeBattle": "DH02N02M01",
+    "NextBattle": "DH02N02M03",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ],
+        "Curse": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N02M02",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N02M02",
+    "EnemyMaster": "DH02N02M02W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 275000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "YLMGZhu"
+      }
+    ],
+    "BattleReward": "DH02N02M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH04N02M03": {
+    "Id": "DH04N02M03",
+    "BattleDes": "DH04N02M03_BattleDes",
+    "Name": "DH04N02M03_BattleName",
+    "BeforeBattle": "DH04N02M02",
+    "NextBattle": "DH04N02M04",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH04",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N02M03",
+    "EnemyMaster": "DH04N02M03W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 310000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 3,
+      "heroLevel": 300,
+      "equipLevel": 65
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "CZheng"
+      }
+    ],
+    "BattleReward": "DH04N02M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N02M02": {
+    "Id": "DH04N02M02",
+    "BattleDes": "DH04N02M02_BattleDes",
+    "Name": "DH04N02M02_BattleName",
+    "BeforeBattle": "DH04N02M01",
+    "NextBattle": "DH04N02M03",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N02M02",
+    "EnemyMaster": "DH04N02M02W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 310000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 3,
+      "heroLevel": 300,
+      "equipLevel": 65
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Attack": 2
+        }
+      }
+    ],
+    "BattleReward": "DH04N02M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N02M01": {
+    "Id": "DH04N02M01",
+    "BattleDes": "DH04N02M01_BattleDes",
+    "Name": "DH04N02M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH04N02M02",
+    "BuffEffect": {
+      "profession": {
+        "Defense": [
+          "DH_HP_RATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N02M01",
+    "EnemyMaster": "DH04N02M01W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 310000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 3,
+      "heroLevel": 300,
+      "equipLevel": 65
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Defense": 5
+        }
+      }
+    ],
+    "BattleReward": "DH04N02M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N02M04": {
+    "Id": "DH04N02M04",
+    "BattleDes": "DH04N02M04_BattleDes",
+    "Name": "DH04N02M04_BattleName",
+    "BeforeBattle": "DH04N02M03",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N02M04",
+    "EnemyMaster": "DH04N02M04W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 310000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 3,
+      "heroLevel": 300,
+      "equipLevel": 65
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Aoe": 3
+        }
+      }
+    ],
+    "BattleReward": "DH04N02M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH01N01M03": {
+    "Id": "DH01N01M03",
+    "BattleDes": "DH01N01M03_BattleDes",
+    "Name": "DH01N01M03_BattleName",
+    "BeforeBattle": "DH01N01M02",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      },
+      "hero": {
+        "FTLEShi": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_03",
+    "BattleFactor": [
+      72500,
+      72500,
+      72500
+    ],
+    "EnemyCard": "CardDH01N01M03",
+    "EnemyMaster": "DH01N01M03W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.5,
+    "RecommendStrength": 160000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 60,
+      "equipLevel": 5
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH01N01M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N01M02": {
+    "Id": "DH01N01M02",
+    "BattleDes": "DH01N01M02_BattleDes",
+    "Name": "DH01N01M02_BattleName",
+    "BeforeBattle": "DH01N01M01",
+    "NextBattle": "DH01N01M03",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_02",
+    "BattleFactor": [
+      72500,
+      72500,
+      72500
+    ],
+    "EnemyCard": "CardDH01N01M02",
+    "EnemyMaster": "DH01N01M02W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.2,
+    "RecommendStrength": 160000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 60,
+      "equipLevel": 5
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH01N01M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N01M01": {
+    "Id": "DH01N01M01",
+    "BattleDes": "DH01N01M01_BattleDes",
+    "Name": "DH01N01M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH01N01M02",
+    "BuffEffect": {
+      "camp": {
+        "BSNCT": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_01",
+    "BattleFactor": [
+      72500,
+      72500,
+      72500
+    ],
+    "EnemyCard": "CardDH01N01M01",
+    "EnemyMaster": "DH01N01M01W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.2,
+    "RecommendStrength": 160000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 60,
+      "equipLevel": 5
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH01N01M01_Reward",
+    "PositionLimit": [
+      3,
+      4,
+      6,
+      7,
+      9
+    ],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH02N03M02": {
+    "Id": "DH02N03M02",
+    "BattleDes": "DH02N03M02_BattleDes",
+    "Name": "DH02N03M02_BattleName",
+    "BeforeBattle": "DH02N03M01",
+    "NextBattle": "DH02N03M03",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N03M02",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N03M02",
+    "EnemyMaster": "DH02N03M02W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 3,
+      "heroLevel": 180,
+      "equipLevel": 40
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "ZTXChang"
+      },
+      {
+        "killCount": {
+          "MGNa": 3
+        }
+      }
+    ],
+    "BattleReward": "DH02N03M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N03M03": {
+    "Id": "DH02N03M03",
+    "BattleDes": "DH02N03M03_BattleDes",
+    "Name": "DH02N03M03_BattleName",
+    "BeforeBattle": "DH02N03M02",
+    "NextBattle": "DH02N03M04",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ],
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N03M03",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N03M03",
+    "EnemyMaster": "DH02N03M03W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 3,
+      "heroLevel": 180,
+      "equipLevel": 40
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "CZheng"
+      },
+      {
+        "killCount": {
+          "TPGZhu": 3
+        }
+      }
+    ],
+    "BattleReward": "DH02N03M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N03M01": {
+    "Id": "DH02N03M01",
+    "BattleDes": "DH02N03M01_BattleDes",
+    "Name": "DH02N03M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH02N03M02",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Curse": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N03M01",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N03M01",
+    "EnemyMaster": "DH02N03M01W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 3,
+      "heroLevel": 180,
+      "equipLevel": 40
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "CLMan"
+      },
+      {
+        "killCount": {
+          "SDTZi": 3
+        }
+      }
+    ],
+    "BattleReward": "DH02N03M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N03M04": {
+    "Id": "DH02N03M04",
+    "BattleDes": "DH02N03M04_BattleDes",
+    "Name": "DH02N03M04_BattleName",
+    "BeforeBattle": "DH02N03M03",
+    "NextBattle": "DH02N03M05",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ],
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N03M04",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N03M04",
+    "EnemyMaster": "DH02N03M04W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 3,
+      "heroLevel": 180,
+      "equipLevel": 40
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "killCount": {
+          "TPGZhu": 3
+        }
+      },
+      {
+        "killBossHero": "TPGZhu"
+      }
+    ],
+    "BattleReward": "DH02N03M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH02N03M05": {
+    "Id": "DH02N03M05",
+    "BattleDes": "DH02N03M05_BattleDes",
+    "Name": "DH02N03M05_BattleName",
+    "BeforeBattle": "DH02N03M04",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Curse": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N03M05",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH02N03M05",
+    "EnemyMaster": "DH02N03M05W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 3,
+      "heroLevel": 180,
+      "equipLevel": 40
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "killCount": {
+          "SDTZi": 3
+        }
+      },
+      {
+        "killBossHero": "SDTZi"
+      }
+    ],
+    "BattleReward": "DH02N03M05_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH01N03M01": {
+    "Id": "DH01N03M01",
+    "BattleDes": "DH01N03M01_BattleDes",
+    "Name": "DH01N03M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH01N03M02",
+    "BuffEffect": {
+      "camp": {
+        "BSNCT": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_02",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N03M01",
+    "EnemyMaster": "DH01N03M01W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.4,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 15
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "SSQXin"
+      },
+      {
+        "killBossHero": "ZTXChang"
+      }
+    ],
+    "BattleReward": "DH01N03M01_Reward",
+    "PositionLimit": [
+      3,
+      4,
+      6,
+      7,
+      9
+    ],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH02N01M01": {
+    "Id": "DH02N01M01",
+    "BattleDes": "DH02N01M01_BattleDes",
+    "Name": "DH02N01M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH02N01M02",
+    "BuffEffect": {
+      "profession": {
+        "Curse": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH02N01M01",
+    "BattleFactor": [
+      72500,
+      72500,
+      72500
+    ],
+    "EnemyCard": "CardDH02N01M01",
+    "EnemyMaster": "DH02N01M01W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.0,
+    "RecommendStrength": 160000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 1,
+      "heroLevel": 100,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH02N01M01_Reward",
+    "PositionLimit": [
+      2,
+      5
+    ],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": []
+  },
+  "DH01N03M03": {
+    "Id": "DH01N03M03",
+    "BattleDes": "DH01N03M03_BattleDes",
+    "Name": "DH01N03M03_BattleName",
+    "BeforeBattle": "DH01N03M02",
+    "NextBattle": "DH01N03M04",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_01",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N03M03",
+    "EnemyMaster": "DH01N03M03W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.5,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 15
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "YFZZhu"
+      },
+      {
+        "killBossHero": "BBLMa"
+      }
+    ],
+    "BattleReward": "DH01N03M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N03M02": {
+    "Id": "DH01N03M02",
+    "BattleDes": "DH01N03M02_BattleDes",
+    "Name": "DH01N03M02_BattleName",
+    "BeforeBattle": "DH01N03M01",
+    "NextBattle": "DH01N03M03",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_03",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N03M02",
+    "EnemyMaster": "DH01N03M02W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.2,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 15
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "MKLJLuo"
+      },
+      {
+        "usedHero": "LFEr"
+      }
+    ],
+    "BattleReward": "DH01N03M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N03M05": {
+    "Id": "DH01N03M05",
+    "BattleDes": "DH01N03M05_BattleDes",
+    "Name": "DH01N03M05_BattleName",
+    "BeforeBattle": "DH01N03M04",
+    "NextBattle": "",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Cure": [
+          "DH_CURERATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_03",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N03M05",
+    "EnemyMaster": "DH01N03M05W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.6,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 15
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "MLYTLSha"
+      },
+      {
+        "killCount": {
+          "BQDShe": 3
+        }
+      }
+    ],
+    "BattleReward": "DH01N03M05_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH01N03M04": {
+    "Id": "DH01N03M04",
+    "BattleDes": "DH01N03M04_BattleDes",
+    "Name": "DH01N03M04_BattleName",
+    "BeforeBattle": "DH01N03M03",
+    "NextBattle": "DH01N03M05",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      },
+      "hero": {
+        "FTLEShi": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BlockBattle_02",
+    "BattleFactor": [
+      104800,
+      104800,
+      104800
+    ],
+    "EnemyCard": "CardDH01N03M04",
+    "EnemyMaster": "DH01N03M04W01_Master_01",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 0.2,
+    "RecommendStrength": 480000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 140,
+      "equipLevel": 15
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "XLai"
+      },
+      {
+        "killCount": {
+          "SDTZi": 3
+        }
+      }
+    ],
+    "BattleReward": "DH01N03M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH04N01M02": {
+    "Id": "DH04N01M02",
+    "BattleDes": "DH04N01M02_BattleDes",
+    "Name": "DH04N01M02_BattleName",
+    "BeforeBattle": "DH04N01M01",
+    "NextBattle": "DH04N01M03",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH04",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N01M02",
+    "EnemyMaster": "DH04N01M02W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 130000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 2,
+      "heroLevel": 164,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH04N01M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N01M03": {
+    "Id": "DH04N01M03",
+    "BattleDes": "DH04N01M03_BattleDes",
+    "Name": "DH04N01M03_BattleName",
+    "BeforeBattle": "DH04N01M02",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N01M03",
+    "EnemyMaster": "DH04N01M03W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 130000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 2,
+      "heroLevel": 164,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH04N01M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N01M01": {
+    "Id": "DH04N01M01",
+    "BattleDes": "DH04N01M01_BattleDes",
+    "Name": "DH04N01M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH04N01M02",
+    "BuffEffect": {
+      "profession": {
+        "Defense": [
+          "DH_HP_RATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N01M01",
+    "EnemyMaster": "DH04N01M01W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 130000,
+    "Need": {
+      "heroStar": 5,
+      "leadStage": 2,
+      "heroLevel": 164,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH04N01M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N03M05": {
+    "Id": "DH04N03M05",
+    "BattleDes": "DH04N03M05_BattleDes",
+    "Name": "DH04N03M05_BattleName",
+    "BeforeBattle": "DH04N03M04",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Aoe": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N03M05",
+    "EnemyMaster": "DH04N03M05W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 490000,
+    "Need": {
+      "heroStar": 6,
+      "leadStage": 4,
+      "heroLevel": 300,
+      "equipLevel": 85
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Aoe": 3
+        }
+      },
+      {
+        "killCount": {
+          "SP_PNCao": 3
+        }
+      }
+    ],
+    "BattleReward": "DH04N03M05_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N03M01": {
+    "Id": "DH04N03M01",
+    "BattleDes": "DH04N03M01_BattleDes",
+    "Name": "DH04N03M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH04N03M02",
+    "BuffEffect": {
+      "profession": {
+        "Defense": [
+          "DH_HP_RATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N03M01",
+    "EnemyMaster": "DH04N03M01W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 490000,
+    "Need": {
+      "heroStar": 6,
+      "leadStage": 4,
+      "heroLevel": 300,
+      "equipLevel": 85
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Defense": 5
+        }
+      },
+      {
+        "killCount": {
+          "HGEr": 2
+        }
+      }
+    ],
+    "BattleReward": "DH04N03M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N03M02": {
+    "Id": "DH04N03M02",
+    "BattleDes": "DH04N03M02_BattleDes",
+    "Name": "DH04N03M02_BattleName",
+    "BeforeBattle": "DH04N03M01",
+    "NextBattle": "DH04N03M03",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N03M02",
+    "EnemyMaster": "DH04N03M02W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 490000,
+    "Need": {
+      "heroStar": 6,
+      "leadStage": 4,
+      "heroLevel": 300,
+      "equipLevel": 85
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Attack": 2
+        }
+      },
+      {
+        "killBossHero": "BBLMa"
+      }
+    ],
+    "BattleReward": "DH04N03M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N03M03": {
+    "Id": "DH04N03M03",
+    "BattleDes": "DH04N03M03_BattleDes",
+    "Name": "DH04N03M03_BattleName",
+    "BeforeBattle": "DH04N03M02",
+    "NextBattle": "DH04N03M04",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH04",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N03M03",
+    "EnemyMaster": "DH04N03M03W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 490000,
+    "Need": {
+      "heroStar": 6,
+      "leadStage": 4,
+      "heroLevel": 300,
+      "equipLevel": 85
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "CZheng"
+      },
+      {
+        "killCount": {
+          "CZheng": 3
+        }
+      }
+    ],
+    "BattleReward": "DH04N03M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH04N03M04": {
+    "Id": "DH04N03M04",
+    "BattleDes": "DH04N03M04_BattleDes",
+    "Name": "DH04N03M04_BattleName",
+    "BeforeBattle": "DH04N03M03",
+    "NextBattle": "DH04N03M05",
+    "BuffEffect": {
+      "profession": {
+        "Defense": [
+          "DH_HP_RATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH04N03M04",
+    "EnemyMaster": "DH04N03M04W01P08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 490000,
+    "Need": {
+      "heroStar": 6,
+      "leadStage": 4,
+      "heroLevel": 300,
+      "equipLevel": 85
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "occupationCount": {
+          "Defense": 4
+        }
+      },
+      {
+        "usedHero": "BQDShe"
+      }
+    ],
+    "BattleReward": "DH04N03M04_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH03N02M02": {
+    "Id": "DH03N02M02",
+    "BattleDes": "DH03N02M02_BattleDes",
+    "Name": "DH03N02M02_BattleName",
+    "BeforeBattle": "DH03N02M01",
+    "NextBattle": "DH03N02M03",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N02M02",
+    "EnemyMaster": "DH03N02M02W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 110000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 1,
+      "heroLevel": 150,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "MZGXiu"
+      }
+    ],
+    "BattleReward": "DH03N02M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH03N03M05": {
+    "Id": "DH03N03M05",
+    "BattleDes": "DH03N03M05_BattleDes",
+    "Name": "DH03N03M05_BattleName",
+    "BeforeBattle": "DH03N03M04",
+    "NextBattle": "",
+    "BuffEffect": {
+      "profession": {
+        "Support": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N03M05",
+    "EnemyMaster": "DH03N03M05W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 179400,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 185,
+      "equipLevel": 50
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "FLBDSi"
+      },
+      {
+        "killCount": {
+          "TLSi": 2
+        }
+      }
+    ],
+    "BattleReward": "DH03N03M05_Reward",
+    "PositionLimit": [
+      7,
+      9
+    ],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH03N02M03": {
+    "Id": "DH03N02M03",
+    "BattleDes": "DH03N02M03_BattleDes",
+    "Name": "DH03N02M03_BattleName",
+    "BeforeBattle": "DH03N02M02",
+    "NextBattle": "DH03N02M04",
+    "BuffEffect": {
+      "camp": {
+        "XD": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03N01M02",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N02M03",
+    "EnemyMaster": "DH03N02M03W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 110000,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 1,
+      "heroLevel": 150,
+      "equipLevel": 30
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "killCount": {
+          "QBTe": 2
+        }
+      }
+    ],
+    "BattleReward": "DH03N02M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH03N03M03": {
+    "Id": "DH03N03M03",
+    "BattleDes": "DH03N03M03_BattleDes",
+    "Name": "DH03N03M03_BattleName",
+    "BeforeBattle": "DH03N03M02",
+    "NextBattle": "DH03N03M04",
+    "BuffEffect": {
+      "camp": {
+        "XD": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03N01M02",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N03M03",
+    "EnemyMaster": "DH03N03M03W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 179400,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 185,
+      "equipLevel": 50
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "killCount": {
+          "QBTe": 2
+        }
+      },
+      {
+        "usedHero": "LCYShi"
+      }
+    ],
+    "BattleReward": "DH03N03M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH03N03M02": {
+    "Id": "DH03N03M02",
+    "BattleDes": "DH03N03M02_BattleDes",
+    "Name": "DH03N03M02_BattleName",
+    "BeforeBattle": "DH03N03M01",
+    "NextBattle": "DH03N03M03",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N03M02",
+    "EnemyMaster": "DH03N03M02W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 179400,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 185,
+      "equipLevel": 50
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "MZGXiu"
+      },
+      {
+        "killBossHero": "HSYZhai"
+      }
+    ],
+    "BattleReward": "DH03N03M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH03N03M01": {
+    "Id": "DH03N03M01",
+    "BattleDes": "DH03N03M01_BattleDes",
+    "Name": "DH03N03M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH03N03M02",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Defense": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N03M01",
+    "EnemyMaster": "DH03N03M01W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 179400,
+    "Need": {
+      "heroStar": 4,
+      "leadStage": 2,
+      "heroLevel": 185,
+      "equipLevel": 50
+    },
+    "Star": [
+      {
+        "win": 1
+      },
+      {
+        "usedHero": "LLan"
+      },
+      {
+        "usedHero": "BLTu"
+      }
+    ],
+    "BattleReward": "DH03N03M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH03N01M01": {
+    "Id": "DH03N01M01",
+    "BattleDes": "DH03N01M01_BattleDes",
+    "Name": "DH03N01M01_BattleName",
+    "BeforeBattle": "",
+    "NextBattle": "DH03N01M02",
+    "BuffEffect": {
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ],
+        "Defense": [
+          "DH_UNHURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N01M01",
+    "EnemyMaster": "DH03N01M01W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 56000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 0,
+      "heroLevel": 90,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH03N01M01_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  },
+  "DH03N01M03": {
+    "Id": "DH03N01M03",
+    "BattleDes": "DH03N01M03_BattleDes",
+    "Name": "DH03N01M03_BattleName",
+    "BeforeBattle": "DH03N01M02",
+    "NextBattle": "",
+    "BuffEffect": {
+      "camp": {
+        "XD": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03N01M02",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N01M03",
+    "EnemyMaster": "DH03N01M03W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 56000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 0,
+      "heroLevel": 90,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH03N01M03_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": [
+      "SpecialRule_Tittle",
+      "SpecialRule_TittleDes1",
+      "SpecialRule_TittleDes2"
+    ],
+    "Camp": null
+  },
+  "DH03N01M02": {
+    "Id": "DH03N01M02",
+    "BattleDes": "DH03N01M02_BattleDes",
+    "Name": "DH03N01M02_BattleName",
+    "BeforeBattle": "DH03N01M01",
+    "NextBattle": "DH03N01M03",
+    "BuffEffect": {
+      "camp": {
+        "DWH": [
+          "DH_HURTRATE"
+        ]
+      },
+      "profession": {
+        "Attack": [
+          "DH_HURTRATE"
+        ]
+      }
+    },
+    "BlockBattleConfig": "DH_BBattle_DH03",
+    "BattleFactor": [
+      1,
+      1,
+      1
+    ],
+    "EnemyCard": "CardDH03N01M02",
+    "EnemyMaster": "DH03N01M02W01N08",
+    "VictoryConditions": [
+      {
+        "winner": "SideB",
+        "type": "TimeOut"
+      }
+    ],
+    "OpenFAC": 1,
+    "Combat_Adjust_Rate": 1.0,
+    "RecommendStrength": 56000,
+    "Need": {
+      "heroStar": 3,
+      "leadStage": 0,
+      "heroLevel": 90,
+      "equipLevel": 20
+    },
+    "Star": [
+      {
+        "win": 1
+      }
+    ],
+    "BattleReward": "DH03N01M02_Reward",
+    "PositionLimit": [],
+    "SpecialRuleShow": null,
+    "Camp": null
+  }
+}

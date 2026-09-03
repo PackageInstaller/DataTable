@@ -1,0 +1,443 @@
+{
+  "Stage12": {
+    "Id": "Stage12",
+    "GameDuration": 60,
+    "DartNum": 6,
+    "MoveSpeed": 0.62,
+    "Accelerate": 0.0124,
+    "SpeedShift": [
+      -0.0124,
+      0.0124
+    ],
+    "RevertPoint": [
+      2,
+      8,
+      1
+    ],
+    "Direction": 0.6,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.35,
+      0.85
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold"
+    ]
+  },
+  "Stage13": {
+    "Id": "Stage13",
+    "GameDuration": 60,
+    "DartNum": 6,
+    "MoveSpeed": 0.62,
+    "Accelerate": 0.0124,
+    "SpeedShift": [
+      -0.0124,
+      0.0124
+    ],
+    "RevertPoint": [
+      0,
+      0,
+      0
+    ],
+    "Direction": 0.0,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.4
+    ],
+    "Reward": [
+      "Darts_Crystal"
+    ]
+  },
+  "Stage10": {
+    "Id": "Stage10",
+    "GameDuration": 60,
+    "DartNum": 5,
+    "MoveSpeed": 0.58,
+    "Accelerate": 0.029,
+    "SpeedShift": [
+      -0.029,
+      0.029
+    ],
+    "RevertPoint": [
+      2,
+      10,
+      1
+    ],
+    "Direction": 0.6,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.35,
+      0.85
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold"
+    ]
+  },
+  "Stage11": {
+    "Id": "Stage11",
+    "GameDuration": 60,
+    "DartNum": 6,
+    "MoveSpeed": 0.6,
+    "Accelerate": 0.012,
+    "SpeedShift": [
+      -0.012,
+      0.012
+    ],
+    "RevertPoint": [
+      2,
+      10,
+      2
+    ],
+    "Direction": 0.6,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.1,
+      0.3,
+      0.7
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold",
+      "Darts_Gold"
+    ]
+  },
+  "Stage14": {
+    "Id": "Stage14",
+    "GameDuration": 60,
+    "DartNum": 5,
+    "MoveSpeed": 0.62,
+    "Accelerate": 0.0124,
+    "SpeedShift": [
+      -0.0124,
+      0.0124
+    ],
+    "RevertPoint": [
+      2,
+      7,
+      2
+    ],
+    "Direction": 0.5,
+    "InitialDart": [
+      0.4,
+      0.8
+    ],
+    "InitialReward": [
+      0.1,
+      0.3,
+      0.7
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold",
+      "Darts_Gold"
+    ]
+  },
+  "Stage15": {
+    "Id": "Stage15",
+    "GameDuration": 60,
+    "DartNum": 5,
+    "MoveSpeed": 0.62,
+    "Accelerate": 0.0124,
+    "SpeedShift": [
+      -0.0124,
+      0.0124
+    ],
+    "RevertPoint": [
+      0,
+      6,
+      2
+    ],
+    "Direction": 0.5,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.35,
+      0.85
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Crystal"
+    ]
+  },
+  "Stage8": {
+    "Id": "Stage8",
+    "GameDuration": 60,
+    "DartNum": 4,
+    "MoveSpeed": 0.56,
+    "Accelerate": 0.028,
+    "SpeedShift": [
+      -0.028,
+      0.028
+    ],
+    "RevertPoint": [
+      0,
+      4,
+      1
+    ],
+    "Direction": 0.7,
+    "InitialDart": [
+      0.2,
+      0.5,
+      0.8
+    ],
+    "InitialReward": [
+      0.4
+    ],
+    "Reward": [
+      "Darts_Crystal"
+    ]
+  },
+  "Stage9": {
+    "Id": "Stage9",
+    "GameDuration": 60,
+    "DartNum": 3,
+    "MoveSpeed": 0.65,
+    "Accelerate": 0.0,
+    "SpeedShift": [
+      0,
+      0
+    ],
+    "RevertPoint": [
+      1,
+      6,
+      2
+    ],
+    "Direction": 0.7,
+    "InitialDart": [
+      0.1,
+      0.2,
+      0.4,
+      0.5,
+      0.7,
+      0.8,
+      1
+    ],
+    "InitialReward": [
+      0.3,
+      0.6,
+      0.9
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold",
+      "Darts_Gold"
+    ]
+  },
+  "Stage1": {
+    "Id": "Stage1",
+    "GameDuration": 60,
+    "DartNum": 4,
+    "MoveSpeed": 0.46,
+    "Accelerate": 0.023,
+    "SpeedShift": [
+      -0.023,
+      0.023
+    ],
+    "RevertPoint": [
+      0,
+      0,
+      0
+    ],
+    "Direction": 0.8,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.65
+    ],
+    "Reward": [
+      "Darts_Diamond"
+    ]
+  },
+  "Stage2": {
+    "Id": "Stage2",
+    "GameDuration": 60,
+    "DartNum": 5,
+    "MoveSpeed": 0.48,
+    "Accelerate": 0.024,
+    "SpeedShift": [
+      -0.024,
+      0.024
+    ],
+    "RevertPoint": [
+      0,
+      0,
+      0
+    ],
+    "Direction": 0.8,
+    "InitialDart": [
+      0.5
+    ],
+    "InitialReward": [
+      0.35,
+      0.65
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold"
+    ]
+  },
+  "Stage3": {
+    "Id": "Stage3",
+    "GameDuration": 60,
+    "DartNum": 5,
+    "MoveSpeed": 0.5,
+    "Accelerate": 0.025,
+    "SpeedShift": [
+      -0.025,
+      0.025
+    ],
+    "RevertPoint": [
+      0,
+      4,
+      1
+    ],
+    "Direction": 0.8,
+    "InitialDart": [
+      0.3,
+      0.7
+    ],
+    "InitialReward": [
+      0.1,
+      0.5,
+      0.9
+    ],
+    "Reward": [
+      "Darts_Gold",
+      "Darts_Gold",
+      "Darts_Gold"
+    ]
+  },
+  "Stage4": {
+    "Id": "Stage4",
+    "GameDuration": 60,
+    "DartNum": 1,
+    "MoveSpeed": 0.65,
+    "Accelerate": 0.1224,
+    "SpeedShift": [
+      -0.1224,
+      0.1224
+    ],
+    "RevertPoint": [
+      0,
+      0,
+      0
+    ],
+    "Direction": 0.5,
+    "InitialDart": [
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      0.9,
+      1
+    ],
+    "InitialReward": [
+      0.7
+    ],
+    "Reward": [
+      "Darts_Crystal"
+    ]
+  },
+  "Stage5": {
+    "Id": "Stage5",
+    "GameDuration": 60,
+    "DartNum": 5,
+    "MoveSpeed": 0.52,
+    "Accelerate": 0.026,
+    "SpeedShift": [
+      -0.026,
+      0.026
+    ],
+    "RevertPoint": [
+      0,
+      4,
+      1
+    ],
+    "Direction": 0.8,
+    "InitialDart": [
+      0.45,
+      0.8
+    ],
+    "InitialReward": [
+      0.2,
+      0.35
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold"
+    ]
+  },
+  "Stage6": {
+    "Id": "Stage6",
+    "GameDuration": 60,
+    "DartNum": 6,
+    "MoveSpeed": 0.53,
+    "Accelerate": 0.0265,
+    "SpeedShift": [
+      -0.0265,
+      0.0265
+    ],
+    "RevertPoint": [
+      0,
+      4,
+      1
+    ],
+    "Direction": 0.5,
+    "InitialDart": [
+      0.7
+    ],
+    "InitialReward": [
+      0.1,
+      0.35,
+      0.9
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold",
+      "Darts_Gold"
+    ]
+  },
+  "Stage7": {
+    "Id": "Stage7",
+    "GameDuration": 60,
+    "DartNum": 6,
+    "MoveSpeed": 0.54,
+    "Accelerate": 0.027,
+    "SpeedShift": [
+      -0.027,
+      0.027
+    ],
+    "RevertPoint": [
+      1,
+      2,
+      1
+    ],
+    "Direction": 0.7,
+    "InitialDart": [
+      0
+    ],
+    "InitialReward": [
+      0.3,
+      0.7
+    ],
+    "Reward": [
+      "Darts_Diamond",
+      "Darts_Gold"
+    ]
+  }
+}
