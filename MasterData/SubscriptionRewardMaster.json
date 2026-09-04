@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 11,
+    "Order": 1,
+    "Type": "OnlyOnceReward",
+    "Name": "購入時獲得",
+    "Description": "購入時にサブスクポイント×10",
+    "RewardPackageMasterId": 100,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 1,
+    "ReceivableDays": null
+  },
+  {
+    "Id": 12,
+    "Order": 2,
+    "Type": "OnlyOnceReward",
+    "Name": "購入時獲得",
+    "Description": "購入時に有償ジェム×900",
+    "RewardPackageMasterId": 101,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 1,
+    "ReceivableDays": null
+  },
+  {
+    "Id": 13,
+    "Order": 3,
+    "Type": "DailyReward",
+    "Name": "ログイン時獲得",
+    "Description": "適用期間中ログイン時に無償ジェム×60（15日間・合計900個）",
+    "RewardPackageMasterId": 102,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 1,
+    "ReceivableDays": 15
+  },
+  {
+    "Id": 14,
+    "Order": 4,
+    "Type": "AdditionalPerks",
+    "Name": "特典獲得",
+    "Description": "適用期間中、一日の時短採掘受け取り回数+2回\n適用期間中、採掘のトレーニングレポート、テクニカルレポート、資金獲得量+10%",
+    "RewardPackageMasterId": null,
+    "PerkGroupMasterId": 10000,
+    "AssetId": null,
+    "SubscriptionMasterId": 1,
+    "ReceivableDays": null
+  },
+  {
+    "Id": 21,
+    "Order": 1,
+    "Type": "OnlyOnceReward",
+    "Name": "購入時獲得",
+    "Description": "購入時にサブスクポイント×20",
+    "RewardPackageMasterId": 200,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 2,
+    "ReceivableDays": null
+  },
+  {
+    "Id": 22,
+    "Order": 2,
+    "Type": "OnlyOnceReward",
+    "Name": "購入時獲得",
+    "Description": "購入時に有償ジェム×3000",
+    "RewardPackageMasterId": 201,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 2,
+    "ReceivableDays": null
+  },
+  {
+    "Id": 23,
+    "Order": 3,
+    "Type": "DailyReward",
+    "Name": "ログイン時獲得",
+    "Description": "適用期間中ログイン時にスタンダードガチャチケット×1（10日間・合計10個）",
+    "RewardPackageMasterId": 202,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 2,
+    "ReceivableDays": 10
+  },
+  {
+    "Id": 24,
+    "Order": 4,
+    "Type": "DailyReward",
+    "Name": "ログイン時獲得",
+    "Description": "適用期間中ログイン時にスペシャルライセンス×1（25日間・合計25個）",
+    "RewardPackageMasterId": 203,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 2,
+    "ReceivableDays": 25
+  },
+  {
+    "Id": 25,
+    "Order": 5,
+    "Type": "DailyReward",
+    "Name": "ログイン時獲得",
+    "Description": "適用期間中ログイン時にノーマルライセンス×2（25日間・合計50個）",
+    "RewardPackageMasterId": 204,
+    "PerkGroupMasterId": null,
+    "AssetId": null,
+    "SubscriptionMasterId": 2,
+    "ReceivableDays": 25
+  },
+  {
+    "Id": 26,
+    "Order": 6,
+    "Type": "AdditionalPerks",
+    "Name": "特典獲得",
+    "Description": "適用期間中、採掘のトレーニングレポート、テクニカルレポート、資金獲得量+10%",
+    "RewardPackageMasterId": null,
+    "PerkGroupMasterId": 10001,
+    "AssetId": null,
+    "SubscriptionMasterId": 2,
+    "ReceivableDays": null
+  }
+]

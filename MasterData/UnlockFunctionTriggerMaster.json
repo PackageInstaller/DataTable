@@ -1,0 +1,226 @@
+[
+  {
+    "Id": 1,
+    "UnlockFunctionMasterId": 1,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":40}",
+    "Description": "メインクエスト1章2節2-7クリアで解放"
+  },
+  {
+    "Id": 2,
+    "UnlockFunctionMasterId": 2,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":11001,\"Sequence\":50}",
+    "Description": "総合シミュレートSTAGE50クリアで解放"
+  },
+  {
+    "Id": 3,
+    "UnlockFunctionMasterId": 3,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":21}",
+    "Description": "メインクエスト1章1節1-13クリアで解放"
+  },
+  {
+    "Id": 4,
+    "UnlockFunctionMasterId": 4,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":85}",
+    "Description": "メインクエスト1章3節3-21クリアで解放"
+  },
+  {
+    "Id": 5,
+    "UnlockFunctionMasterId": 5,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":33}",
+    "Description": "メインクエスト1章1節1-25クリアで解放"
+  },
+  {
+    "Id": 6,
+    "UnlockFunctionMasterId": 6,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":11001,\"Sequence\":12}",
+    "Description": "総合シミュレートSTAGE12クリアで解放"
+  },
+  {
+    "Id": 7,
+    "UnlockFunctionMasterId": 7,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":59}",
+    "Description": "メインクエスト1章2節2-26クリアで解放"
+  },
+  {
+    "Id": 8,
+    "UnlockFunctionMasterId": 8,
+    "UnlockFunctionTriggerType": "CharacterLevelOver",
+    "Configuration": "{\"CharacterCount\":5,\"Level\":200}",
+    "Description": "5人のキャラクターがレベル200到達で解放"
+  },
+  {
+    "Id": 9,
+    "UnlockFunctionMasterId": 9,
+    "UnlockFunctionTriggerType": "GachaRollCount",
+    "Configuration": "{\"Count\":40,\"GachaId\":1}",
+    "Description": "スタンダードガチャを40回引くと解放"
+  },
+  {
+    "Id": 10,
+    "UnlockFunctionMasterId": 10,
+    "UnlockFunctionTriggerType": "GetItem",
+    "Configuration": "{\"ItemCategory\":7}",
+    "Description": "カスタムアイテム入手で解放"
+  },
+  {
+    "Id": 11,
+    "UnlockFunctionMasterId": 11,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":33}",
+    "Description": "メインクエスト1章1節1-25クリアで解放"
+  },
+  {
+    "Id": 12,
+    "UnlockFunctionMasterId": 12,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":19}",
+    "Description": "メインクエスト1章1節1-11クリアで解放"
+  },
+  {
+    "Id": 13,
+    "UnlockFunctionMasterId": 13,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":16}",
+    "Description": "メインクエスト1-8クリアでスキップ機能が解放されます"
+  },
+  {
+    "Id": 14,
+    "UnlockFunctionMasterId": 14,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":45}",
+    "Description": "メインクエスト1章2節2-12クリアで解放"
+  },
+  {
+    "Id": 15,
+    "UnlockFunctionMasterId": 15,
+    "UnlockFunctionTriggerType": "ClearNormalLocationNode",
+    "Configuration": "{\"Type\":4}",
+    "Description": "戦術演習のNORMALクリアで解放"
+  },
+  {
+    "Id": 22,
+    "UnlockFunctionMasterId": 20,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":8}",
+    "Description": "メインクエスト序章0-8クリアで解放"
+  },
+  {
+    "Id": 16,
+    "UnlockFunctionMasterId": 26,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":33}",
+    "Description": "メインクエスト1章1節1-25クリアで解放"
+  },
+  {
+    "Id": 17,
+    "UnlockFunctionMasterId": 27,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":64}",
+    "Description": "メインクエスト1章2節2-31クリアで解放"
+  },
+  {
+    "Id": 18,
+    "UnlockFunctionMasterId": 28,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":100}",
+    "Description": "メインクエスト1章3節3-36クリアで解放"
+  },
+  {
+    "Id": 19,
+    "UnlockFunctionMasterId": 29,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":136}",
+    "Description": "メインクエスト2章1節4-36クリアで解放"
+  },
+  {
+    "Id": 20,
+    "UnlockFunctionMasterId": 30,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":172}",
+    "Description": "メインクエスト2章2節5-36クリアで解放"
+  },
+  {
+    "Id": 21,
+    "UnlockFunctionMasterId": 31,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":209}",
+    "Description": "メインクエスト2章3節6-37クリアで解放"
+  },
+  {
+    "Id": 23,
+    "UnlockFunctionMasterId": 32,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":10}",
+    "Description": "メインクエスト1-2クリアでバトル速度変更機能が解放されます"
+  },
+  {
+    "Id": 24,
+    "UnlockFunctionMasterId": 33,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":10}",
+    "Description": "メインクエスト1-2クリアでバトルカメラ変更機能が解放されます"
+  },
+  {
+    "Id": 25,
+    "UnlockFunctionMasterId": 34,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":12}",
+    "Description": "メインクエスト1-4クリアでコックピットカメラ機能が解放されます"
+  },
+  {
+    "Id": 26,
+    "UnlockFunctionMasterId": 35,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":33}",
+    "Description": "メインクエスト1章1節1-25クリアで解放"
+  },
+  {
+    "Id": 27,
+    "UnlockFunctionMasterId": 36,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":209}",
+    "Description": "メインクエスト2章3節6-37クリアで解放"
+  },
+  {
+    "Id": 28,
+    "UnlockFunctionMasterId": 37,
+    "UnlockFunctionTriggerType": "ClearMazeFloor",
+    "Configuration": "{\"Floor\":100}",
+    "Description": "メイズ探索エリア100クリアで解放"
+  },
+  {
+    "Id": 29,
+    "UnlockFunctionMasterId": 38,
+    "UnlockFunctionTriggerType": "ClearLocationNode",
+    "Configuration": "{\"LocationId\":10001,\"Sequence\":209}",
+    "Description": "メインクエスト2章3節6-37クリアで解放"
+  },
+  {
+    "Id": 30,
+    "UnlockFunctionMasterId": 39,
+    "UnlockFunctionTriggerType": "TacticScoreOver",
+    "Configuration": "{\"Order\":5,\"Score\":8000000}",
+    "Description": "難易度ENDLESSのScore8,000,000以上達成で初回スキップ機能が解放されます"
+  },
+  {
+    "Id": 31,
+    "UnlockFunctionMasterId": 40,
+    "UnlockFunctionTriggerType": "TacticDifficultyOver",
+    "Configuration": "{\"Order\":4}",
+    "Description": "戦術演習の「LEGEND」クリアで解放"
+  },
+  {
+    "Id": 32,
+    "UnlockFunctionMasterId": 41,
+    "UnlockFunctionTriggerType": "ClearMazeFloorAndDate",
+    "Configuration": "{\"Floor\":20,\"StartDate\":\"2026-08-25T12:30:00\",\"EndDate\":\"2026-09-08T04:59:59\"}",
+    "Description": "メイズ探索エリア20以上クリアで解放"
+  }
+]

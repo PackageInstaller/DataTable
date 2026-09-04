@@ -1,0 +1,975 @@
+[
+  {
+    "Id": 1,
+    "Name": "マイルーム_昼",
+    "Order": 12,
+    "UnlockGemQuantity": null,
+    "AssetId": "20012"
+  },
+  {
+    "Id": 2,
+    "Name": "ヒロイン私室（ノーマル）_昼",
+    "Order": 22,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20022"
+  },
+  {
+    "Id": 3,
+    "Name": "ヒロイン私室（ナチュラル）_昼",
+    "Order": 32,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20032"
+  },
+  {
+    "Id": 4,
+    "Name": "ヒロイン私室（モダン）_昼",
+    "Order": 42,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20042"
+  },
+  {
+    "Id": 5,
+    "Name": "ヒロイン私室（キュート）_昼",
+    "Order": 52,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20052"
+  },
+  {
+    "Id": 6,
+    "Name": "茶室_昼",
+    "Order": 62,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20062"
+  },
+  {
+    "Id": 7,
+    "Name": "公園_昼",
+    "Order": 72,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20072"
+  },
+  {
+    "Id": 8,
+    "Name": "空_昼",
+    "Order": 82,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20082"
+  },
+  {
+    "Id": 9,
+    "Name": "空_夕",
+    "Order": 83,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20083"
+  },
+  {
+    "Id": 10,
+    "Name": "空_夜",
+    "Order": 84,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20084"
+  },
+  {
+    "Id": 11,
+    "Name": "柊校舎教室_昼",
+    "Order": 92,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30012"
+  },
+  {
+    "Id": 12,
+    "Name": "柊校舎教室_夕",
+    "Order": 93,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30013"
+  },
+  {
+    "Id": 13,
+    "Name": "柊校舎廊下_昼",
+    "Order": 102,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30022"
+  },
+  {
+    "Id": 14,
+    "Name": "柊校舎食堂_昼",
+    "Order": 112,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30032"
+  },
+  {
+    "Id": 15,
+    "Name": "柊校舎中庭_昼",
+    "Order": 122,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30042"
+  },
+  {
+    "Id": 16,
+    "Name": "柊校舎屋上_昼",
+    "Order": 132,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30052"
+  },
+  {
+    "Id": 17,
+    "Name": "スカラ校舎教室_昼",
+    "Order": 142,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30062"
+  },
+  {
+    "Id": 18,
+    "Name": "スカラ校舎廊下_昼",
+    "Order": 152,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30072"
+  },
+  {
+    "Id": 19,
+    "Name": "スカラ校舎屋上_昼",
+    "Order": 162,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30082"
+  },
+  {
+    "Id": 20,
+    "Name": "ユーロタワー教室_昼",
+    "Order": 172,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30092"
+  },
+  {
+    "Id": 21,
+    "Name": "スカラ校舎内商店街_昼",
+    "Order": 182,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30102"
+  },
+  {
+    "Id": 22,
+    "Name": "LOC教室_昼",
+    "Order": 192,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30112"
+  },
+  {
+    "Id": 23,
+    "Name": "柊校舎校舎前_昼",
+    "Order": 202,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30122"
+  },
+  {
+    "Id": 24,
+    "Name": "シミュレーション室_その他",
+    "Order": 212,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30130"
+  },
+  {
+    "Id": 25,
+    "Name": "グラウンド_昼",
+    "Order": 222,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30142"
+  },
+  {
+    "Id": 26,
+    "Name": "MG格納庫_その他",
+    "Order": 232,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30150"
+  },
+  {
+    "Id": 27,
+    "Name": "カフェ_昼",
+    "Order": 242,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40012"
+  },
+  {
+    "Id": 28,
+    "Name": "ゲームセンター_昼",
+    "Order": 252,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40022"
+  },
+  {
+    "Id": 29,
+    "Name": "シッピングモール_昼",
+    "Order": 262,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40032"
+  },
+  {
+    "Id": 30,
+    "Name": "シティ街中_昼",
+    "Order": 272,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40042"
+  },
+  {
+    "Id": 31,
+    "Name": "生徒会室_昼",
+    "Order": 282,
+    "UnlockGemQuantity": 100,
+    "AssetId": "50012"
+  },
+  {
+    "Id": 32,
+    "Name": "生徒会廊下_昼",
+    "Order": 292,
+    "UnlockGemQuantity": 100,
+    "AssetId": "50022"
+  },
+  {
+    "Id": 33,
+    "Name": "メイズポータル入口_その他",
+    "Order": 302,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60010"
+  },
+  {
+    "Id": 34,
+    "Name": "メイズ内部_その他",
+    "Order": 312,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60020"
+  },
+  {
+    "Id": 35,
+    "Name": "特別養成校舎教室_昼",
+    "Order": 322,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30172"
+  },
+  {
+    "Id": 36,
+    "Name": "屋内訓練場_昼",
+    "Order": 332,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30162"
+  },
+  {
+    "Id": 37,
+    "Name": "マイルーム_夜",
+    "Order": 14,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20014"
+  },
+  {
+    "Id": 38,
+    "Name": "ヒロイン私室（ノーマル）_夜",
+    "Order": 24,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20024"
+  },
+  {
+    "Id": 39,
+    "Name": "ヒロイン私室（ナチュラル）_夜",
+    "Order": 34,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20034"
+  },
+  {
+    "Id": 40,
+    "Name": "ヒロイン私室（モダン）_夜",
+    "Order": 44,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20044"
+  },
+  {
+    "Id": 41,
+    "Name": "ヒロイン私室（キュート）_夜",
+    "Order": 54,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20054"
+  },
+  {
+    "Id": 42,
+    "Name": "公園_夕",
+    "Order": 73,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20073"
+  },
+  {
+    "Id": 43,
+    "Name": "空_朝",
+    "Order": 81,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20081"
+  },
+  {
+    "Id": 44,
+    "Name": "柊校舎廊下_夕",
+    "Order": 103,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30023"
+  },
+  {
+    "Id": 45,
+    "Name": "LOC教室_ハロウィン",
+    "Order": 342,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30202"
+  },
+  {
+    "Id": 46,
+    "Name": "LOC教室_ハロウィン_赤",
+    "Order": 345,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30205"
+  },
+  {
+    "Id": 47,
+    "Name": "グラウンド_夜",
+    "Order": 223,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30143"
+  },
+  {
+    "Id": 48,
+    "Name": "シティ街中_夕",
+    "Order": 273,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40043"
+  },
+  {
+    "Id": 49,
+    "Name": "原生帯_その他",
+    "Order": 350,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60030"
+  },
+  {
+    "Id": 50,
+    "Name": "ガレムグラード山岳山中_昼",
+    "Order": 362,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80012"
+  },
+  {
+    "Id": 51,
+    "Name": "マッド",
+    "Order": 370,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20090"
+  },
+  {
+    "Id": 52,
+    "Name": "会議室_昼",
+    "Order": 382,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30212"
+  },
+  {
+    "Id": 53,
+    "Name": "会議室_空き部屋_昼",
+    "Order": 392,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30222"
+  },
+  {
+    "Id": 54,
+    "Name": "MG工場_昼",
+    "Order": 402,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80032"
+  },
+  {
+    "Id": 55,
+    "Name": "MG工場_夜",
+    "Order": 404,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80034"
+  },
+  {
+    "Id": 56,
+    "Name": "温泉_昼",
+    "Order": 412,
+    "UnlockGemQuantity": 100,
+    "AssetId": "70012"
+  },
+  {
+    "Id": 57,
+    "Name": "温泉_夜",
+    "Order": 414,
+    "UnlockGemQuantity": 100,
+    "AssetId": "70014"
+  },
+  {
+    "Id": 58,
+    "Name": "旅館_その他",
+    "Order": 420,
+    "UnlockGemQuantity": 100,
+    "AssetId": "70020"
+  },
+  {
+    "Id": 59,
+    "Name": "旅館_昼",
+    "Order": 422,
+    "UnlockGemQuantity": 100,
+    "AssetId": "70022"
+  },
+  {
+    "Id": 60,
+    "Name": "旅館_夜",
+    "Order": 424,
+    "UnlockGemQuantity": 100,
+    "AssetId": "70024"
+  },
+  {
+    "Id": 61,
+    "Name": "シティ街中_夜",
+    "Order": 274,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40044"
+  },
+  {
+    "Id": 62,
+    "Name": "シティ街中クリスマス_夜",
+    "Order": 434,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40054"
+  },
+  {
+    "Id": 63,
+    "Name": "学園講堂_クリスマス_昼",
+    "Order": 442,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30232"
+  },
+  {
+    "Id": 64,
+    "Name": "住宅街_昼",
+    "Order": 452,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80042"
+  },
+  {
+    "Id": 65,
+    "Name": "一般家庭リビング_昼",
+    "Order": 462,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80052"
+  },
+  {
+    "Id": 66,
+    "Name": "神社_昼",
+    "Order": 472,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80062"
+  },
+  {
+    "Id": 67,
+    "Name": "煌晶帯_その他",
+    "Order": 480,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60040"
+  },
+  {
+    "Id": 68,
+    "Name": "メイズポータル入口_特殊1",
+    "Order": 305,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60015"
+  },
+  {
+    "Id": 69,
+    "Name": "ガレムグラード山岳雪山差分_昼",
+    "Order": 492,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80072"
+  },
+  {
+    "Id": 70,
+    "Name": "木のコテージ_昼",
+    "Order": 502,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80082"
+  },
+  {
+    "Id": 71,
+    "Name": "ユーロ廊下_昼",
+    "Order": 512,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30252"
+  },
+  {
+    "Id": 72,
+    "Name": "ユーロ中庭_昼",
+    "Order": 522,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30242"
+  },
+  {
+    "Id": 73,
+    "Name": "アストラルベルト_その他",
+    "Order": 530,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60060"
+  },
+  {
+    "Id": 74,
+    "Name": "双頭の斧補給基地その他",
+    "Order": 540,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60070"
+  },
+  {
+    "Id": 75,
+    "Name": "メイズ内部_特殊1",
+    "Order": 315,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60025"
+  },
+  {
+    "Id": 76,
+    "Name": "双頭の斧ストリート_昼",
+    "Order": 552,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80092"
+  },
+  {
+    "Id": 77,
+    "Name": "双頭の斧ストリート_夕",
+    "Order": 553,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80093"
+  },
+  {
+    "Id": 78,
+    "Name": "野外フェスステージ_昼",
+    "Order": 562,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30282"
+  },
+  {
+    "Id": 79,
+    "Name": "野外フェスステージ_夜",
+    "Order": 564,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30284"
+  },
+  {
+    "Id": 80,
+    "Name": "スカラ校区屋外円形闘技場_昼",
+    "Order": 572,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30292"
+  },
+  {
+    "Id": 81,
+    "Name": "スカラ校舎カジノ_その他",
+    "Order": 580,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30300"
+  },
+  {
+    "Id": 82,
+    "Name": "メイズ内カジノ内部_その他",
+    "Order": 590,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60090"
+  },
+  {
+    "Id": 83,
+    "Name": "メイズ内カジノ外観_その他",
+    "Order": 600,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60080"
+  },
+  {
+    "Id": 84,
+    "Name": "双頭の斧補給基地_地穴帯差分_その他",
+    "Order": 610,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60100"
+  },
+  {
+    "Id": 85,
+    "Name": "会議室_夜",
+    "Order": 384,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30214"
+  },
+  {
+    "Id": 86,
+    "Name": "会議室_特殊1",
+    "Order": 385,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30215"
+  },
+  {
+    "Id": 87,
+    "Name": "会議室_空き部屋_夜",
+    "Order": 394,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30224"
+  },
+  {
+    "Id": 88,
+    "Name": "ゾリャー校区街中_昼",
+    "Order": 622,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30312"
+  },
+  {
+    "Id": 89,
+    "Name": "LOC校区街中_昼",
+    "Order": 632,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30332"
+  },
+  {
+    "Id": 90,
+    "Name": "ゾリャー校舎教室_昼",
+    "Order": 642,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30322"
+  },
+  {
+    "Id": 91,
+    "Name": "ゾリャー校舎教室_夜",
+    "Order": 644,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30324"
+  },
+  {
+    "Id": 92,
+    "Name": "ゾリャー校舎教室_特殊1",
+    "Order": 645,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30325"
+  },
+  {
+    "Id": 93,
+    "Name": "LOC校区放送タワー地下通路_その他",
+    "Order": 650,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60110"
+  },
+  {
+    "Id": 94,
+    "Name": "Node-A_その他",
+    "Order": 660,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60120"
+  },
+  {
+    "Id": 95,
+    "Name": "Node-S_その他",
+    "Order": 670,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60130"
+  },
+  {
+    "Id": 96,
+    "Name": "Node-N_その他",
+    "Order": 680,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60140"
+  },
+  {
+    "Id": 97,
+    "Name": "Node-K_その他",
+    "Order": 690,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60150"
+  },
+  {
+    "Id": 98,
+    "Name": "メイズ地底湖_その他",
+    "Order": 700,
+    "UnlockGemQuantity": 100,
+    "AssetId": "60160"
+  },
+  {
+    "Id": 99,
+    "Name": "ノヴァセレス市街地_その他",
+    "Order": 710,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80100"
+  },
+  {
+    "Id": 100,
+    "Name": "ノヴァセレス市街地_昼",
+    "Order": 712,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80102"
+  },
+  {
+    "Id": 101,
+    "Name": "野外フェスステージ_コスプレ差分_昼",
+    "Order": 722,
+    "UnlockGemQuantity": 100,
+    "AssetId": "40062"
+  },
+  {
+    "Id": 102,
+    "Name": "ノヴァセレス_貴族屋敷客室_その他",
+    "Order": 730,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80150"
+  },
+  {
+    "Id": 103,
+    "Name": "ノヴァセレス_貴族屋敷廊下_その他",
+    "Order": 740,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80160"
+  },
+  {
+    "Id": 104,
+    "Name": "ノヴァセレス_貴族屋敷執務室_その他",
+    "Order": 750,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80170"
+  },
+  {
+    "Id": 105,
+    "Name": "アマツ_パーティー会場_昼",
+    "Order": 762,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80182"
+  },
+  {
+    "Id": 106,
+    "Name": "シミュレーション室_特殊1",
+    "Order": 215,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30135"
+  },
+  {
+    "Id": 107,
+    "Name": "保健室_夜",
+    "Order": 774,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30274"
+  },
+  {
+    "Id": 108,
+    "Name": "保健室_特殊1",
+    "Order": 775,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30275"
+  },
+  {
+    "Id": 109,
+    "Name": "海上_特殊1",
+    "Order": 785,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80125"
+  },
+  {
+    "Id": 110,
+    "Name": "セレノシア島内部_昼",
+    "Order": 792,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80192"
+  },
+  {
+    "Id": 111,
+    "Name": "荒廃した空差分_昼",
+    "Order": 802,
+    "UnlockGemQuantity": 100,
+    "AssetId": "20102"
+  },
+  {
+    "Id": 112,
+    "Name": "ユーロ校区街中_昼",
+    "Order": 812,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30342"
+  },
+  {
+    "Id": 113,
+    "Name": "夏のビーチ_昼",
+    "Order": 822,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80212"
+  },
+  {
+    "Id": 114,
+    "Name": "夏のビーチ_夕",
+    "Order": 823,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80213"
+  },
+  {
+    "Id": 115,
+    "Name": "夏のビーチ_夜",
+    "Order": 824,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80214"
+  },
+  {
+    "Id": 116,
+    "Name": "夏のビーチ_パラソルあり_昼",
+    "Order": 832,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80222"
+  },
+  {
+    "Id": 117,
+    "Name": "夏のビーチ_パラソルあり_夕",
+    "Order": 833,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80223"
+  },
+  {
+    "Id": 118,
+    "Name": "夏のビーチ_パラソルあり_夜",
+    "Order": 835,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80224"
+  },
+  {
+    "Id": 119,
+    "Name": "夏のビーチ_パラソルあり_特殊1",
+    "Order": 834,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80225"
+  },
+  {
+    "Id": 120,
+    "Name": "どこかのホテル_昼",
+    "Order": 842,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30352"
+  },
+  {
+    "Id": 121,
+    "Name": "どこかのホテル_夜",
+    "Order": 844,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30354"
+  },
+  {
+    "Id": 122,
+    "Name": "どこかのホテル_特殊1",
+    "Order": 845,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30355"
+  },
+  {
+    "Id": 123,
+    "Name": "森の中_夜",
+    "Order": 854,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80234"
+  },
+  {
+    "Id": 124,
+    "Name": "地上の洞窟_その他",
+    "Order": 860,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80240"
+  },
+  {
+    "Id": 125,
+    "Name": "野外フェスステージ_特殊1",
+    "Order": 565,
+    "UnlockGemQuantity": 100,
+    "AssetId": "30285"
+  },
+  {
+    "Id": 126,
+    "Name": "森の中_昼",
+    "Order": 852,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80232"
+  },
+  {
+    "Id": 127,
+    "Name": "セレノシア島浜辺_夕",
+    "Order": 873,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80133"
+  },
+  {
+    "Id": 128,
+    "Name": "セレノシア島浜辺_夜",
+    "Order": 874,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80134"
+  },
+  {
+    "Id": 129,
+    "Name": "拠点テント内部_その他",
+    "Order": 880,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80250"
+  },
+  {
+    "Id": 130,
+    "Name": "拠点テント内部_特殊1",
+    "Order": 885,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80255"
+  },
+  {
+    "Id": 131,
+    "Name": "拠点テント内部_特殊2",
+    "Order": 886,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80256"
+  },
+  {
+    "Id": 132,
+    "Name": "拠点テント内部_特殊3",
+    "Order": 887,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80257"
+  },
+  {
+    "Id": 133,
+    "Name": "拠点テント外_昼",
+    "Order": 892,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80262"
+  },
+  {
+    "Id": 134,
+    "Name": "拠点テント外_夕",
+    "Order": 893,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80263"
+  },
+  {
+    "Id": 135,
+    "Name": "拠点テント外_夜",
+    "Order": 894,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80264"
+  },
+  {
+    "Id": 136,
+    "Name": "カタパルト内部_その他",
+    "Order": 900,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80270"
+  },
+  {
+    "Id": 137,
+    "Name": "カタパルト内部コントロールシステム中枢_その他",
+    "Order": 910,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80280"
+  },
+  {
+    "Id": 138,
+    "Name": "アマツカゼ船内・廊下_昼",
+    "Order": 922,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80292"
+  },
+  {
+    "Id": 139,
+    "Name": "アマツカゼ船内・艦橋司令室_昼",
+    "Order": 932,
+    "UnlockGemQuantity": 100,
+    "AssetId": "80302"
+  }
+]

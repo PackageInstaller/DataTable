@@ -1,0 +1,371 @@
+[
+  {
+    "Id": 1,
+    "Name": "バトルシミュレート",
+    "Description": "【バトルシミュレート】が解放されました！",
+    "UnlockFunctionType": "BattleSimulator",
+    "JumpType": 8,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"BattleSimulator\",\"Frames\":[{\"Text\":\"ピコーン！バトルシミュレートが解放されましたね！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/68\"},{\"Text\":\"バトルシミュレートは、MGの仮想シミュレーションで\\n敵を討伐しステージを進めていく場所になります！\",\"Character\":\"n10001\"},{\"Text\":\"各レベルをクリアしていく事で学園レベルの強化アイテムや\\nライセンスなどを獲得することができますよ！\",\"Character\":\"n10001\"},{\"Text\":\"また、クリアする事で指揮官ランクや採掘レベルも\\n上げることができます！\",\"Character\":\"n10001\"},{\"Text\":\"シミュレートは全部で5種類準備しています！\\n総合はいつでも参加可能で全ての属性の生徒が出撃可能です！\",\"Character\":\"n10001\",\"Position\":-192000,\"Hole1\":{\"Name\":\"guideAllHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"属性シミュレートは、アグレッシブ・スマート・シャイ・\\nキュートの4種類があり、曜日によって挑戦できる種類が\\n異なります！\",\"Character\":\"n10001\",\"Position\":192000,\"Hole1\":{\"Name\":\"guideAttributeHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"各シミュレートでは、それぞれの属性に\\n属した生徒のみ出撃させることができますよ！\",\"Character\":\"n10001\",\"Position\":192000,\"Hole1\":{\"Name\":\"guideAttributeHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それではマスター！\\nシミュレートバトル……いってみよう！！\",\"Character\":\"n10001\"}]}]}"
+  },
+  {
+    "Id": 2,
+    "Name": "属性バトルシミュレート",
+    "Description": "【属性バトルシミュレート】が解放されました！",
+    "UnlockFunctionType": "AttributeBattleSimulator",
+    "JumpType": 5,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 3,
+    "Name": "メイズ探索",
+    "Description": "【メイズ探索】が解放されました！",
+    "UnlockFunctionType": "Maze",
+    "JumpType": 8,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"Maze\",\"Frames\":[{\"Text\":\"ピコーン！ここはピコが説明します！\\nいえ、ピコに説明させて下さい！！！！\",\"Character\":\"n10001\"},{\"Text\":\"広大なメイズ内はまだまだ未開拓のエリアが沢山存在します！\\nそれゆえ、毎回同じルートではないのです！！\",\"Character\":\"n10001\"},{\"Text\":\"探索中にメイズシフターとの戦闘がありますが、\\n無事掃討する事が出来れば<color=#b500f8>タツミヤ鉱</color>を獲得する事が出来ます！！\",\"Character\":\"n10001\"},{\"Text\":\"メイズ内はまだまだ解明されていない事も多く、\\n謎アイテムその１！メイズ内だけで真価を発揮するレリックです！！\",\"Character\":\"n10001\"},{\"Text\":\"道中レリックを見つけたら超高性能ＡＩがレリックの効果を特定します！\\n色んな効果があるので、エリア進行が有利になるように選択しましょう！\",\"Character\":\"n10001\"},{\"Text\":\"一定深度まで進行したらタツミヤ鉱を回収して戻って来てくださいね？\\n長時間メイズ内にいるのは危険なので！！\",\"Character\":\"n10001\"},{\"Text\":\"タツミヤ鉱と引き換えに<color=#ff1c0b>生徒のスキル強化アイテムを獲得</color>したり\\n<color=#ff1c0b>MGのパーツ強化</color>を行ってさらにステータスを伸ばす事が出来ますよ！\",\"Character\":\"n10001\"},{\"Text\":\"そうそう！明日から最高到達エリアによって\\n毎日メイズ探索にくる事でデイリー報酬を生徒会からお渡しします♪\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideRewardsHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"エリアを進めるにつれ報酬も豪華になるので、\\nより奥のエリアを目指して探索していきましょう！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideRewardsHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"最後に！大事な事をお伝えします！\",\"Character\":\"n10001\"},{\"Text\":\"先程生徒会長からも言われたとおり、\\nメイズでは生徒達のレベルは指揮官ランクによって制限されます！\",\"Character\":\"n10001\",\"Position\":148000,\"Hole1\":{\"Name\":\"guideRankHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"メイズ内は特殊な環境なのでマスターの指揮が\\nとても重要だってこと忘れないでくださいね！！\",\"Character\":\"n10001\",\"Position\":148000,\"Hole1\":{\"Name\":\"guideRankHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"とはいっても最初から奥深く行くわけじゃないので\\n最初は浅いエリアで腕試し的に初めていきましょう♪\",\"Character\":\"n10001\",\"Position\":148000},{\"Text\":\"解放されているエリアの最奥に最初からチャレンジするのは\\nとっても危険なのでエリア１からスタートして下さいね！\",\"Character\":\"n10001\"}]}],\"EnableAutoPlayUnlockFunction\":1}"
+  },
+  {
+    "Id": 4,
+    "Name": "戦術演習",
+    "Description": "【戦術演習】が解放されました！",
+    "UnlockFunctionType": "Tactic",
+    "JumpType": 8,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"Tactic\",\"Frames\":[{\"Text\":\"ピコピコピーン！\\nマスター！戦術演習にチャレンジする時が来ましたね！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/81\"},{\"Text\":\"戦術演習はゲストを相手にどれだけダメージが出せるか\\n簡単に言えばスコアアタックと呼ばれるものです！\",\"Character\":\"n10001\"},{\"Text\":\"戦術演習の結果はこちらのパネルに情報を表示してます！\\nスコアによって達成報酬が獲得出来るので高スコアを狙いましょう！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideScoreAndRewardsHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"報酬で獲得した戦術記録は交換所でモジュールの\\n強化素材と交換する事が出来ますよ！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideExchangeHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"一日の出撃回数は5回までなので、\\n相手の属性を見て編成を組んでみるのがおすすめです！\",\"Character\":\"n10001\"},{\"Text\":\"ランキングがありますが、ランキングに入る事で\\nより多くの戦術記録が手に入るので上位を目指して頑張っていきましょうー！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideRankingHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それじゃあマスター！\\n学園1位を目指してファイトだ！オー！！\",\"Character\":\"n10001\"}]}]}"
+  },
+  {
+    "Id": 5,
+    "Name": "課外活動",
+    "Description": "【課外活動】が解放されました！",
+    "UnlockFunctionType": "Volunteer",
+    "JumpType": 8,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 6,
+    "Name": "学園レベル",
+    "Description": "【学園レベル】が解放されました！",
+    "UnlockFunctionType": "SchoolLevel",
+    "JumpType": 6,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"SchoolLevel\",\"Frames\":[{\"Text\":\"ピコーン！超高性能ＡＩが支える学園レベルですよ！！\\n生徒達、いえ学園全体の生徒たちに共通するタイプや属性！\\nそれにまつわる技術サポートをしているのがここ学園レベルです！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/68\"},{\"Text\":\"学園全体のレベルの底上げのためにコツコツと\\nアップグレードを重ねて生徒達をサポートしていきましょう！\",\"Character\":\"n10001\"},{\"Text\":\"タイプと属性でそれぞれ分かれていますが、\\nレベルを上げる事でそのタイプ、その属性のキャラクターの\\nステータスに影響を与えます！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideCategoriesHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"物理タイプのレベルを上げれば物理タイプのキャラが\\nスマート属性のレベルを上げればスマート属性のキャラが強化されます！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideStatusHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"アップグレードキットはシミュレートやイベント\\nその他でも獲得出来るので、見つけたらゲットしておいて下さいね！\",\"Character\":\"n10001\"}]}]}"
+  },
+  {
+    "Id": 7,
+    "Name": "サークル",
+    "Description": "【サークル】が解放されました！",
+    "UnlockFunctionType": "Circle",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"Circle\",\"Frames\":[{\"Text\":\"ピコーン！\\nサークル機能が解放されてますよ！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/68\"},{\"Text\":\"サークルはどこかに所属するか自分で設立しましょう！\\nまずはボクのおすすめするサークルにまずは入ってみませんか？\",\"Character\":\"n10001\",\"Position\":372000,\"Hole1\":{\"Name\":\"guideViewHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"サークルに入ってサークルポイントをためると様々なアイテムと交換できますよ！\\nサークルメンバーと送る青春物語…最高だと思いませんか！\",\"Character\":\"n10001\"},{\"Text\":\"サークルに入ったら、ボクがまたご案内いたしますので！\\nまずは気になるところに入ってみましょう！\",\"Character\":\"n10001\"}],\"BranchGroup\":1,\"Group\":1},{\"PerformAt\":\"CircleJoined\",\"BranchGroup\":1,\"Group\":2,\"Frames\":[{\"Text\":\"ピコピコーン！おめでとうございます！\\nここからマスターとサークルメンバーの物語のはじまりです！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/102\"},{\"Text\":\"サークルメンバーみんなで達成するためのミッションがあります！\\nこれを達成する事でみんなが報酬を獲得することが出来ます！\",\"Character\":\"n10001\",\"Position\":0,\"Hole1\":{\"Name\":\"guideMissionButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"サークルでしか手に入らないサークルポイントも獲得できますよ！\",\"Character\":\"n10001\",\"Position\":0,\"Hole1\":{\"Name\":\"guideMissionButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"次は個別サポートについてです！\",\"Character\":\"n10001\",\"Position\":0,\"Hole1\":{\"Name\":\"guideSupportInfoHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"ちょっと詳しく説明するのでこちらに移動をお願いします！\",\"Character\":\"n10001\",\"Position\":0,\"Hole1\":{\"Name\":\"guideSupportInfoButtonHole\",\"ArrowDirection\":2}}]},{\"PerformAt\":\"CircleSupportInformation\",\"BranchGroup\":1,\"Group\":2,\"Frames\":[{\"Text\":\"サポート生徒を貸し出す事でサークルポイントが更に獲得出来ます！\",\"Character\":\"n10001\",\"Position\":-300000,\"Hole1\":{\"Name\":\"guideRentalHole\",\"ArrowDirection\":0,\"Block\":1},\"OrderInLayer\":21},{\"Text\":\"詳細は時間のある時にじっくり読んでみて下さい！\\nポイントでサークルガチャチケットと交換できるので\\n是非獲得してガチャを引いてみて下さい！！\",\"Character\":\"n10001\",\"Position\":180000,\"Hole1\":{\"Name\":\"guideGachaHole\",\"ArrowDirection\":0,\"Block\":1},\"OrderInLayer\":21},{\"Hole1\":{\"Name\":\"guideCloseHole\"},\"OrderInLayer\":21}],\"OnTheWay\":1},{\"PerformAt\":\"CircleCompleteSupportInformation\",\"BranchGroup\":1,\"Group\":2,\"Frames\":[{\"Text\":\"貸し出し生徒はここから設定する事が出来るので\\nお助けになりそうな生徒達を設定しておいて下さいね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideSupporterButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"あ、ちなみにサークルの交換所はここからでもいけますよ♪\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideExchangeHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"サークルの情報やサークルの管理、メンバーリストは\\nここから確認できるので気になるメンバーがいたらフレンド申請してみては！？\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideInfoButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"サークル対抗の制圧戦が開催されると、ここからでも参加可能！\\nランキングや進捗も確認出来るので開催されたら積極的に参加して下さいね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideBattleHole\",\"Block\":1,\"ArrowDirection\":0}}],\"OnTheWay\":1}]}"
+  },
+  {
+    "Id": 8,
+    "Name": "オーバーリミット",
+    "Description": "【オーバーリミット】が解放されました！",
+    "UnlockFunctionType": "OverLimit",
+    "JumpType": 37,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"OverLimit\",\"Frames\":[{\"Text\":\"ピコーン！生徒のレベルが最高レベルに到達しています！\\n限界を超えるため5名の生徒をベースレベルとして\\n強化を行っていきましょう！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/68\"},{\"Text\":\"オーバーリミットで強化出来るレベル上限値は\\n所持している生徒数の成長にあわせて増加していきます！\",\"Character\":\"n10001\"},{\"Text\":\"スロットにセットされたキャラクター達は\\nレベルリンクの時とルールは全く同じです！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideViewHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"スロットに設定された生徒たちはベースキャラと\\n同じレベルになりますが個別にレベルを上げたり、\\nリセットしたり出来なくなります！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideViewHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"スロットが足りない場合は\\nロックされているスロットを解放して下さいね！\",\"Character\":\"n10001\"},{\"Text\":\"オーバーリミットのレベルを上げる場合は\\n右下の強化ボタンから強化を行うようにして下さい！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideOverLimitButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それでは限界のその先へ一緒に参りましょう！！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideOverLimitButtonHole\",\"Block\":1,\"ArrowDirection\":0}}]}]}"
+  },
+  {
+    "Id": 9,
+    "Name": "ウィッシュリスト",
+    "Description": "【ウィッシュリスト】が解放されました！",
+    "UnlockFunctionType": "WishList",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"WishList\",\"Frames\":[{\"Text\":\"ピコーン！！マスター！！\\nウィッシュリストが解放されましたのでさっそく見てみましょう！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/81\"},{\"Hole1\":{\"Name\":\"guideWishListButtonHole\"}}]},{\"PerformAt\":\"WishListWindow\",\"Frames\":[{\"Text\":\"ウィッシュリストは、ガチャから排出される生徒を絞ることができますよ！\",\"Character\":\"n10001\",\"OrderInLayer\":21},{\"Text\":\"アグレッシブ・スマート・シャイ・キュートの4属性は、4スロットずつ生徒を設定することができます！\",\"Character\":\"n10001\",\"PositionType\":2,\"Hole1\":{\"Name\":\"guideAttributeHole\",\"Block\":1,\"ArrowDirection\":0},\"OrderInLayer\":21},{\"Text\":\"コミカル・クレバーの2属性は、1スロットずつ生徒を設定することができます！\\n狙いの生徒を積極的に設定していきましょう！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideAdditionalAttributeHole\",\"Block\":1,\"ArrowDirection\":0},\"OrderInLayer\":21}]}],\"EnableAutoPlayUnlockFunction\":1}"
+  },
+  {
+    "Id": 10,
+    "Name": "ギアカスタム",
+    "Description": "【ギアカスタム】が解放されました！",
+    "UnlockFunctionType": "GearCustom",
+    "JumpType": 7,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 11,
+    "Name": "メインクエストHARD",
+    "Description": "【メインクエストHARD】が解放されました！",
+    "UnlockFunctionType": "MainQuestHard",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 12,
+    "Name": "学園スポット",
+    "Description": "【学園スポット】が解放されました！",
+    "UnlockFunctionType": "Spot",
+    "JumpType": 38,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"Spot\",\"Frames\":[{\"Text\":\"ピコピコーン！\\n学園スポットでは、生徒たちと学園都市の様々なエリアで\\n会話を通して、親愛度を上げることができます！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/102\",\"Hole1\":{\"Name\":\"guideAreaHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"どうしても会いたい生徒がいるときは、待ち合わせを活用しましょう！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Hole1\":{\"Name\":\"guideButtonHole\"}}]},{\"PerformAt\":\"SpotCharacterSelection\",\"Frames\":[{\"Text\":\"待ち合わせは、待ち合わせした生徒が次の日に必ずエリアにやってくるようになります！\\n3人まで待ち合わせすることができますよ！\",\"Character\":\"n10001\"}]}],\"EnableAutoPlayUnlockFunction\":1}"
+  },
+  {
+    "Id": 13,
+    "Name": "バトルスキップ",
+    "Description": "【バトルスキップ】が解放されました！",
+    "UnlockFunctionType": "BattleSkip",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 14,
+    "Name": "レベルリンク",
+    "Description": "【レベルリンク】が解放されました！",
+    "UnlockFunctionType": "LevelLink",
+    "JumpType": 38,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"LevelLink\",\"Frames\":[{\"Text\":\"ピコーン！レベルリンクでは、設定した生徒のレベルを\\nベースレベルに合わせて同期させることができますよ！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/68\"},{\"Text\":\"レベルが最も高い5人の生徒が自動で配置され、\\n配置された生徒内の最も低いレベルが\\nベースレベルとなります。\",\"Character\":\"n10001\",\"Position\":0,\"Hole1\":{\"Name\":\"guideSlotHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"スロットに設定した生徒はベースレベルまでレベルが上昇しますが\\n個別にレベルを上げたりリセットしたりが出来なくなりますので\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideViewHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"個別でレベルを上げたい場合は一度スロットから外して下さいね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideViewHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"スロットが足りない場合はロックされているスロットを解放して下さいね！\",\"Character\":\"n10001\"},{\"Text\":\"基準となるキャラクターを均一にレベルを上げたい場合、\\nこちらから一括でレベルを上げる事が出来ますよ！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideEnhanceButtonHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それぞれ個別でレベルアップが手間な場合は\\nご利用してみて下さいね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideEnhanceButtonHole\",\"Block\":1,\"ArrowDirection\":0}}]}]}"
+  },
+  {
+    "Id": 15,
+    "Name": "モジュール",
+    "Description": "【モジュール】が解放されました！",
+    "UnlockFunctionType": "Module",
+    "JumpType": 7,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 16,
+    "Name": "クエスト準備",
+    "Description": "【クエスト準備】が解放されました！",
+    "UnlockFunctionType": "QuestPreparation",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"QuestPreparation\",\"Frames\":[{\"Text\":\"ピコピコーン！あらあら、ピコの力が必要ですか！？\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/102\"},{\"Text\":\"おほん！ではクエスト準備を改めて説明しますね！\\nまず敵情報を基に生徒やメモリーの編成の最適化を行います！\",\"Character\":\"n10001\"},{\"Text\":\"ぼくに任せてくれるなら超高性能AIが編成を考えるので\\nこのお任せ編成ボタンを押して3タイプから選んでくださいね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideAutoHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"火力タイプ・防御タイプ・バランスタイプで\\nお任せできますが、困ったらバランスタイプを選んでください！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideAutoHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"でもまだわからないですよ！！\\nそのうち学習が進めばボクがサポート出来るかもしれないので！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideMemoryHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"生徒とのエピソードや日々の暮らしの中で少しずつメモリーを作るのです♪\\nマスターのモノガタリはここから！思い出もここからです！\",\"Character\":\"n10001\"},{\"Text\":\"そして、もし編成が気に入ったなら編成一覧から\\n編成内容を<color=#0096ff>保存</color>したり、<color=#ff1c0b>呼び出し</color>たりする事ができますよ！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guidePartyList\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それでは準備画面の説明はここまで！\\n準備が出来たら出撃しましょう！\",\"Character\":\"n10001\"}]}]}"
+  },
+  {
+    "Id": 17,
+    "Name": "編成",
+    "Description": "【編成】が解放されました！",
+    "UnlockFunctionType": "Formation",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 18,
+    "Name": "採掘",
+    "Description": "【採掘】が解放されました！",
+    "UnlockFunctionType": "Mining",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 19,
+    "Name": "VIPランク",
+    "Description": "【VIPランク】が解放されました！",
+    "UnlockFunctionType": "VipRank",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"Vip\",\"Frames\":[{\"Text\":\"ピコピコーン！VIPランクが気になっちゃいましたか！？\\nVIPランクでは、ランクに応じた特典や報酬などが獲得できます！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/102\"},{\"Text\":\"VIPランクはショップでお買い物する事であがっていきます！\\n主な特典はこちらになります！それぞれをボクが説明していきますね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guidePerkHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"採掘で得られる資金の獲得量がアップしていきます！\\n毎日獲得できる放置報酬なので塵も積もればなんとやら！です！！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideMoneyPerkHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"そのほか、トレーニングレポートの獲得量！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideTrainingReportPerkHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それと、テクニカルレポートの獲得量！\\nキャラクターの成長に欠かせないアイテムの獲得効率がUPします！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideTechnicalReportPerkHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"毎日のログインボーナスで見逃してしまった！\\nと、なっても安心の見逃し補填受け取り回数アップもありますよ！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideLoginBonusPerkHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"採掘の時短受け取り回数もＶＩＰランクを上げる事で\\n回数が更にプラスされていきますからね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideMiningPerkHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"ウィークリー特典は毎週月曜日5時にリセットされますので\\nお受け取り忘れない様にしっかり受け取っておいて下さいね！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideWeeklyPerkHole\",\"Block\":1,\"ArrowDirection\":0},\"Hole2\":{\"Name\":\"guideWeeklyProductHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"お買い物すれば永続的にマスターのサポートが手厚くなりますが\\nここはあくまでお買い物したプラスαの特典だと思って下さいね！！\",\"Character\":\"n10001\"},{\"Text\":\"それではマスターのお買い物がより快適になりますように！\\n何かお困りごとがあれば、ボクをお呼び出し下さいね！！\",\"Character\":\"n10001\"}],\"CallbackAtStart\":\"GUIDE_DisableScroll\",\"CallbackAtEnd\":\"GUIDE_EnableScroll\"}],\"EnableAutoPlayUnlockFunction\":1}"
+  },
+  {
+    "Id": 20,
+    "Name": "生徒詳細",
+    "Description": "【生徒詳細】が解放されました！",
+    "UnlockFunctionType": "Detail",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 21,
+    "Name": "限界突破",
+    "Description": "【限界突破】が解放されました！",
+    "UnlockFunctionType": "RarityUp",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 22,
+    "Name": "スキル強化",
+    "Description": "【スキル強化】が解放されました！",
+    "UnlockFunctionType": "SkillEnhance",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 23,
+    "Name": "親愛度",
+    "Description": "【親愛度】が解放されました！",
+    "UnlockFunctionType": "Affection",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": "{\"Performances\":[{\"PerformAt\":\"Affection\",\"Frames\":[{\"Text\":\"ピコーン！親愛度についてですね！\\nまずはこちらからプレゼントを選択して贈ることが出来ます！\",\"Character\":\"n10001\",\"VoiceAssetId\":\"0/68\",\"Hole1\":{\"Name\":\"guideItemViewHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"プレゼントを贈る事で親愛度を高めて生徒達とのエピソードを紡ぐ事が出来ます！\",\"Character\":\"n10001\"},{\"Text\":\"何を上げていいかわからないっていうマスターはピコに頼って下さいね！\",\"Character\":\"n10001\"},{\"Text\":\"ピコに「おまかせ」してくれれば、生徒の好きなものを優先的に選び、\\n親愛度を１段階上昇するように選択します！！\",\"Character\":\"n10001\",\"Hole1\":{\"Name\":\"guideAutoPresentHole\",\"Block\":1,\"ArrowDirection\":0}},{\"Text\":\"それではマスターの想いをプレゼントに乗せて贈りましょう！\",\"Character\":\"n10001\"}]}]}"
+  },
+  {
+    "Id": 24,
+    "Name": "7Dayミッション",
+    "Description": "【7Dayミッション】が解放されました！",
+    "UnlockFunctionType": "SevenDayMission",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 25,
+    "Name": "サークル対抗戦",
+    "Description": "【サークル対抗戦】が解放されました！",
+    "UnlockFunctionType": "CircleBattle",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 26,
+    "Name": "メモリー",
+    "Description": "【メモリー編成】が解放されました！",
+    "UnlockFunctionType": "PartyMemory1",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 27,
+    "Name": "メモリー",
+    "Description": "メモリーの編成数が1枠増加しました",
+    "UnlockFunctionType": "PartyMemory2",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 28,
+    "Name": "メモリー",
+    "Description": "メモリーの編成数が1枠増加しました",
+    "UnlockFunctionType": "PartyMemory3",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 29,
+    "Name": "メモリー",
+    "Description": "メモリーの編成数が1枠増加しました",
+    "UnlockFunctionType": "PartyMemory4",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 30,
+    "Name": "メモリー",
+    "Description": "メモリーの編成数が1枠増加しました",
+    "UnlockFunctionType": "PartyMemory5",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 31,
+    "Name": "メモリー",
+    "Description": "メモリーの編成数が1枠増加しました",
+    "UnlockFunctionType": "PartyMemory6",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 32,
+    "Name": "バトル速度変更",
+    "Description": "【バトル速度変更】が解放されました！",
+    "UnlockFunctionType": "BattleSpeed",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 33,
+    "Name": "バトルカメラ変更",
+    "Description": "【バトルカメラ変更】が解放されました！",
+    "UnlockFunctionType": "BattleCameraViewChange",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 34,
+    "Name": "コックピットカメラ",
+    "Description": "【コックピットカメラ】が解放されました！",
+    "UnlockFunctionType": "BattleCokpitViewChange",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 35,
+    "Name": "イベント",
+    "Description": "【イベント】が解放されました！",
+    "UnlockFunctionType": "Event",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 36,
+    "Name": "公式MG競技",
+    "Description": "【公式MG競技】が解放されました！",
+    "UnlockFunctionType": "MgBattle",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 37,
+    "Name": "メイズ未開拓エリア",
+    "Description": "【メイズ未開拓エリア】が解放されました！",
+    "UnlockFunctionType": "MazeUnexplored",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 38,
+    "Name": "P-1グランプリ",
+    "Description": "【P-1 グランプリ】が解放されました！",
+    "UnlockFunctionType": "GrandPrix",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 39,
+    "Name": "戦術演習初回スキップ",
+    "Description": "【戦術演習の初回スキップ】が解放されました！",
+    "UnlockFunctionType": "TacticFirstSkip",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 40,
+    "Name": "複合戦術演習",
+    "Description": "【複合戦術演習】が解放されました！",
+    "UnlockFunctionType": "CompositeTactic",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  },
+  {
+    "Id": 41,
+    "Name": "前夜祭MGゼンヤサイダー",
+    "Description": "【前夜祭イベント】が解放されました！",
+    "UnlockFunctionType": "PreFestivalMaze",
+    "JumpType": null,
+    "JumpTargetId": null,
+    "EffectJson": null
+  }
+]

@@ -1,0 +1,110 @@
+[
+  {
+    "Id": 1,
+    "CharacterType": 1,
+    "CharacterAttribute": null,
+    "Order": 1,
+    "TabName": "物理タイプ",
+    "FullName": "物理タイプLEVEL",
+    "Description": "物理タイプの生徒のステータスがアップします!",
+    "ActuatorStatusGroupMasterId": 1,
+    "ActuatorRequirementGroupMasterId": 1,
+    "AssetId": "Actuator_1"
+  },
+  {
+    "Id": 2,
+    "CharacterType": 2,
+    "CharacterAttribute": null,
+    "Order": 2,
+    "TabName": "ENタイプ",
+    "FullName": "ENタイプLEVEL",
+    "Description": "EN型タイプの生徒のステータスがアップします",
+    "ActuatorStatusGroupMasterId": 1,
+    "ActuatorRequirementGroupMasterId": 2,
+    "AssetId": "Actuator_2"
+  },
+  {
+    "Id": 3,
+    "CharacterType": 3,
+    "CharacterAttribute": null,
+    "Order": 3,
+    "TabName": "敏捷タイプ",
+    "FullName": "敏捷タイプLEVEL",
+    "Description": "敏捷タイプの生徒のステータスがアップします",
+    "ActuatorStatusGroupMasterId": 1,
+    "ActuatorRequirementGroupMasterId": 3,
+    "AssetId": "Actuator_3"
+  },
+  {
+    "Id": 4,
+    "CharacterType": null,
+    "CharacterAttribute": 1,
+    "Order": 1,
+    "TabName": "アグレッシブ",
+    "FullName": "アグレッシブLEVEL",
+    "Description": "アグレッシブ属性キャラクターのステータスがアップします",
+    "ActuatorStatusGroupMasterId": 2,
+    "ActuatorRequirementGroupMasterId": 4,
+    "AssetId": "Actuator_4"
+  },
+  {
+    "Id": 5,
+    "CharacterType": null,
+    "CharacterAttribute": 2,
+    "Order": 2,
+    "TabName": "スマート",
+    "FullName": "スマートLEVEL",
+    "Description": "スマート属性キャラクターのステータスがアップします",
+    "ActuatorStatusGroupMasterId": 2,
+    "ActuatorRequirementGroupMasterId": 5,
+    "AssetId": "Actuator_5"
+  },
+  {
+    "Id": 6,
+    "CharacterType": null,
+    "CharacterAttribute": 3,
+    "Order": 3,
+    "TabName": "シャイ",
+    "FullName": "シャイLEVEL",
+    "Description": "シャイ属性キャラクターのステータスがアップします",
+    "ActuatorStatusGroupMasterId": 2,
+    "ActuatorRequirementGroupMasterId": 6,
+    "AssetId": "Actuator_6"
+  },
+  {
+    "Id": 7,
+    "CharacterType": null,
+    "CharacterAttribute": 4,
+    "Order": 4,
+    "TabName": "キュート",
+    "FullName": "キュートLEVEL",
+    "Description": "キュート属性キャラクターのステータスがアップします",
+    "ActuatorStatusGroupMasterId": 2,
+    "ActuatorRequirementGroupMasterId": 7,
+    "AssetId": "Actuator_7"
+  },
+  {
+    "Id": 8,
+    "CharacterType": null,
+    "CharacterAttribute": 5,
+    "Order": 5,
+    "TabName": "コミカル",
+    "FullName": "コミカルLEVEL",
+    "Description": "コミカル属性キャラクターのステータスがアップします",
+    "ActuatorStatusGroupMasterId": 2,
+    "ActuatorRequirementGroupMasterId": 8,
+    "AssetId": "Actuator_8"
+  },
+  {
+    "Id": 9,
+    "CharacterType": null,
+    "CharacterAttribute": 6,
+    "Order": 6,
+    "TabName": "クレバー",
+    "FullName": "クレバーLEVEL",
+    "Description": "クレバー属性キャラクターのステータスがアップします",
+    "ActuatorStatusGroupMasterId": 2,
+    "ActuatorRequirementGroupMasterId": 9,
+    "AssetId": "Actuator_9"
+  }
+]

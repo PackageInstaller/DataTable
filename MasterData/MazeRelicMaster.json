@@ -1,0 +1,3352 @@
+[
+  {
+    "Id": 1001,
+    "Names": {
+      "R": "バイタルコア"
+    },
+    "Descriptions": {
+      "R": "戦場に生まれた光脈が、味方全員を癒やす。戦闘開始時に味方全員のHPを<color=#27D327>4%回復</color>する。",
+      "Sr": "戦場に生まれた光脈が、味方全員を癒やす。戦闘開始時に味方全員のHPを<color=#27D327>15%回復</color>する。"
+    },
+    "AssetIds": {
+      "R": "1001"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1002,
+    "Names": {
+      "R": "エナジーセル"
+    },
+    "Descriptions": {
+      "R": "眠れる律動が溢れ満ちる、休憩時HPを追加で<color=#27D327>30%回復</color>する。",
+      "Sr": "眠れる律動が溢れ満ちる、休憩時HPを追加で<color=#27D327>100%回復</color>する。"
+    },
+    "AssetIds": {
+      "R": "1002"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1003,
+    "Names": {
+      "R": "ワームクラッシュ"
+    },
+    "Descriptions": {
+      "R": "侵蝕波が敵陣を蝕む、戦闘開始時敵全体の攻撃力<color=#ff701a>10%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "1003"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 1004,
+    "Names": {
+      "R": "パワーフォース"
+    },
+    "Descriptions": {
+      "R": "内圧がせり上がる、戦闘開始時に攻撃力を<color=#ff701a>5%アップ</color>する。",
+      "Sr": "内圧がせり上がる、戦闘開始時に攻撃力を<color=#ff701a>28%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1004"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1005,
+    "Names": {
+      "R": "ダブルストライク"
+    },
+    "Descriptions": {
+      "R": "集う刃が時を狙う、自身がAS3回毎に、次の攻撃の威力が<color=#ff701a>50%アップ</color>する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "R": "1005"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 1006,
+    "Names": {
+      "Sr": "エクスプロード"
+    },
+    "Descriptions": {
+      "Sr": "開放粒子が暴れ弾ける、戦闘中最初の攻撃スキル威力を<color=#ff701a>20%アップ</color>する。",
+      "Ssr": "開放粒子が暴れ弾ける、戦闘中最初の攻撃スキル威力を<color=#ff701a>63%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1006"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1007,
+    "Names": {
+      "Sr": "ライフフォース"
+    },
+    "Descriptions": {
+      "Sr": "活性化した細胞が命を満たす。獲得時、最大HPが<color=#ff701a>+20%</color>。"
+    },
+    "AssetIds": {
+      "Sr": "1007"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1008,
+    "Names": {
+      "Sr": "アブソリュート"
+    },
+    "Descriptions": {
+      "Sr": "全身を巡る力場が覚醒を促す。探索中、全員のスキルレベルを<color=#ff701a>1アップ</color>する（重複可）。",
+      "Ssr": "全身を巡る力場が覚醒を促す。探索中、全員のスキルレベルを<color=#ff701a>3アップ</color>する（重複可）。"
+    },
+    "AssetIds": {
+      "Sr": "1008"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1009,
+    "Names": {
+      "R": "リストア"
+    },
+    "Descriptions": {
+      "R": "微細なナノエネルギーが癒しを施す。ショップに来店する度に、HPを<color=#27D327>30%回復</color>する。",
+      "Sr": "微細なナノエネルギーが癒しを施す。ショップに来店する度に、HPを<color=#27D327>47%回復</color>する。",
+      "Ssr": "微細なナノエネルギーが癒しを施す。ショップに来店する度に、HPを<color=#27D327>64%回復</color>する。",
+      "Ur": "微細なナノエネルギーが癒しを施す。ショップに来店する度に、HPを<color=#27D327>81%回復</color>する。",
+      "Lr": "微細なナノエネルギーが癒しを施す。ショップに来店する度に、HPを<color=#27D327>100%回復</color>する。"
+    },
+    "AssetIds": {
+      "R": "1009"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1010,
+    "Names": {
+      "R": "ブーストギア"
+    },
+    "Descriptions": {
+      "R": "起動粒子が舞い加速、戦闘開始時味方全体の速度<color=#ff701a>10%アップ</color>する。",
+      "Sr": "起動粒子が舞い加速、戦闘開始時味方全体の速度<color=#ff701a>35%アップ</color>する。",
+      "Ssr": "起動粒子が舞い加速、戦闘開始時味方全体の速度<color=#ff701a>80%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1011,
+    "Names": {
+      "R": "ライフエクス"
+    },
+    "Descriptions": {
+      "R": "眠れる生命波が目覚める、獲得時最大HPを<color=#ff701a>+14%</color>する。"
+    },
+    "AssetIds": {
+      "R": "1011"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 1012,
+    "Names": {
+      "R": "ハーベスト"
+    },
+    "Descriptions": {
+      "R": "物質の芽吹きが形を取る、休憩時レリックをランダムに<color=#ff701a>1つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "R": "1012"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 1013,
+    "Names": {
+      "R": "タツミヤコア"
+    },
+    "Descriptions": {
+      "R": "集束鉱粒が煌めく、バトルで獲得出来るタツミヤ鉱が<color=#ff701a>12%アップ</color>。買い物で<color=#00aab9>効果を失う</color>。",
+      "Sr": "集束鉱粒が煌めく、バトルで獲得出来るタツミヤ鉱が<color=#ff701a>59%アップ</color>。買い物で<color=#00aab9>効果を失う</color>。",
+      "Ssr": "集束鉱粒が煌めく、バトルで獲得出来るタツミヤ鉱が<color=#ff701a>106%アップ</color>。買い物で<color=#00aab9>効果を失う</color>。",
+      "Ur": "集束鉱粒が煌めく、バトルで獲得出来るタツミヤ鉱が<color=#ff701a>153%アップ</color>。買い物で<color=#00aab9>効果を失う</color>。",
+      "Lr": "集束鉱粒が煌めく、バトルで獲得出来るタツミヤ鉱が<color=#ff701a>200%アップ</color>。買い物で<color=#00aab9>効果を失う</color>。"
+    },
+    "AssetIds": {
+      "R": "1013"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1014,
+    "Names": {
+      "R": "フェーズシフト"
+    },
+    "Descriptions": {
+      "R": "微細位相がずれ敵影を逸らす、戦闘開始時敵全体の行動速度を<color=#ff701a>10%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "1014"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 1015,
+    "Names": {
+      "R": "リフレクト"
+    },
+    "Descriptions": {
+      "R": "バリアが衝撃を反射。攻撃してきた敵単体に<color=#ff701a>50%の物理ダメージ</color>で反撃する（消費PP：1）。",
+      "Sr": "バリアが衝撃を反射。攻撃してきた敵単体に<color=#ff701a>187%の物理ダメージ</color>で反撃する（消費PP：1）。",
+      "Ssr": "バリアが衝撃を反射。攻撃してきた敵単体に<color=#ff701a>324%の物理ダメージ</color>で反撃する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "R": "1015"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1016,
+    "Names": {
+      "Sr": "ファストコード"
+    },
+    "Descriptions": {
+      "Sr": "加速制御が作動。3回ASを使用すると速度が<color=#ff701a>10%アップ</color>する効果を付与する（消費PP：1）。",
+      "Ssr": "加速制御が作動。3回ASを使用すると速度が<color=#ff701a>47%アップ</color>する効果を付与する（消費PP：1）。",
+      "Ur": "加速制御が作動。3回ASを使用すると速度が<color=#ff701a>94%アップ</color>する効果を付与する（消費PP：1）。",
+      "Lr": "加速制御が作動。3回ASを使用すると速度が<color=#ff701a>150%アップ</color>する効果を付与する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Sr": "1016"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1017,
+    "Names": {
+      "Ssr": "リバイバル"
+    },
+    "Descriptions": {
+      "Ssr": "再起動装置が発動。<color=#27D327>食いしばり</color>の効果を付与。効果発動時HPを<color=#27D327>50%回復</color>する（消費PP：1）（発動回数1回）。"
+    },
+    "AssetIds": {
+      "Ssr": "1017"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1018,
+    "Names": {
+      "Sr": "レゾナンス"
+    },
+    "Descriptions": {
+      "Sr": "同調現象が増幅。各味方は3回ASを使用毎に自身の攻撃力を<color=#ff701a>5%アップ</color>する（消費PP：1）。",
+      "Ssr": "同調現象が増幅。各味方は3回ASを使用毎に自身の攻撃力を<color=#ff701a>28%アップ</color>する（消費PP：1）。",
+      "Ur": "同調現象が増幅。各味方は3回ASを使用毎に自身の攻撃力を<color=#ff701a>55%アップ</color>する（消費PP：1）。",
+      "Lr": "同調現象が増幅。各味方は3回ASを使用毎に自身の攻撃力を<color=#ff701a>80%アップ</color>する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Sr": "1018"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1019,
+    "Names": {
+      "Ssr": "オーバーレイド"
+    },
+    "Descriptions": {
+      "Ssr": "攻撃演算が作動。戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>威力40のダメージ</color>を与える。",
+      "Ur": "攻撃演算が作動。戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>威力145のダメージ</color>を与える。",
+      "Lr": "攻撃演算が作動。戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>威力250のダメージ</color>を与える。"
+    },
+    "AssetIds": {
+      "Ssr": "1019"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1020,
+    "Names": {
+      "Sr": "ノヴァリカバリー"
+    },
+    "Descriptions": {
+      "Sr": "再生光が照射される。ボスバトルの戦闘開始時、HPを<color=#27D327>50%回復</color>する。",
+      "Ssr": "再生光が照射される。ボスバトルの戦闘開始時、HPを<color=#27D327>100%回復</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1020"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1021,
+    "Names": {
+      "Ssr": "トリニティAP"
+    },
+    "Descriptions": {
+      "Ssr": "周期演算が作動。3の倍数のターンのみ味方全員の<color=#ff701a>APを+1</color>する。",
+      "Ur": "周期演算が作動。3の倍数のターンのみ味方全員の<color=#ff701a>APを+3</color>する。",
+      "Lr": "周期演算が作動。3の倍数のターンのみ味方全員の<color=#ff701a>APを+6</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1021"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1022,
+    "Names": {
+      "Ssr": "インパルス"
+    },
+    "Descriptions": {
+      "Ssr": "出力制御層が防護する。戦闘中、<color=#ff701a>攻撃力ダウンの効果を受け付けない</color>。"
+    },
+    "AssetIds": {
+      "Ssr": "1022"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1023,
+    "Names": {
+      "Sr": "ダウンフォース"
+    },
+    "Descriptions": {
+      "Sr": "緩衝層が起動。各味方は3回AS使用毎に2行動分の被ダメ<color=#ff701a>8%ダウン</color>を自身に付与する（消費PP：1）。",
+      "Ssr": "緩衝層が起動。各味方は3回AS使用毎に2行動分の被ダメ<color=#ff701a>35%ダウン</color>を自身に付与する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Sr": "1023"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1024,
+    "Names": {
+      "Sr": "クアッドセレクタ（未使用）"
+    },
+    "Descriptions": {
+      "Sr": "選別機構が拡張。レリックの選択肢が<color=#ff701a>1つ</color>増加する（重複不可）。"
+    },
+    "AssetIds": {
+      "Sr": "1024"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1025,
+    "Names": {
+      "Sr": "レギオンソウル"
+    },
+    "Descriptions": {
+      "Sr": "再構築因子が活性。戦闘終了時のHPが50%以下の場合、最大HPの<color=#27D327>24%回復</color>する。",
+      "Ssr": "再構築因子が活性。戦闘終了時のHPが50%以下の場合、最大HPの<color=#27D327>72%回復</color>する。",
+      "Ur": "再構築因子が活性。戦闘終了時のHPが75%以下の場合、最大HPの<color=#27D327>72%回復</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1025"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1026,
+    "Names": {
+      "Ssr": "エクストーム"
+    },
+    "Descriptions": {
+      "Ssr": "極限防壁が展開。3ターン毎に1ヒットだけ<color=#ff701a>ダメージを1にする</color>効果を味方に付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "1026"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1027,
+    "Names": {
+      "Ssr": "ライフシェル"
+    },
+    "Descriptions": {
+      "Ssr": "生命装甲が形成される。獲得時、最大HPを<color=#ff701a>+28%</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1027"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1028,
+    "Names": {
+      "Ssr": "オメガミネラル"
+    },
+    "Descriptions": {
+      "Ssr": "未知鉱層が活性化し始めた。獲得時、現在所持するタツミヤ鉱の数を<color=#ff701a>3倍</color>に増加する。"
+    },
+    "AssetIds": {
+      "Ssr": "1028"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1029,
+    "Names": {
+      "Ssr": "ノヴァエンド"
+    },
+    "Descriptions": {
+      "Ssr": "臨界エネルギーが解放。3ターン終了時、味方平均攻撃力依存の<color=#ff701a>威力1040のダメージ</color>を与える。",
+      "Ur": "臨界エネルギーが解放。2ターン終了時、味方平均攻撃力依存の<color=#ff701a>威力1420のダメージ</color>を与える。",
+      "Lr": "臨界エネルギーが解放。1ターン終了時、味方平均攻撃力依存の<color=#ff701a>威力1800のダメージ</color>を与える。"
+    },
+    "AssetIds": {
+      "Ssr": "1029"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1030,
+    "Names": {
+      "Ur": "コレクターズ"
+    },
+    "Descriptions": {
+      "Ur": "深層記憶体が解放される。リスキーバトルルートを選択するとレリックを<color=#ff701a>1つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ur": "1030"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1031,
+    "Names": {
+      "Ssr": "アーマーシェル"
+    },
+    "Descriptions": {
+      "Ssr": "自律防壁が展開され、毎ターン防御力を<color=#ff701a>8%アップ</color>する。",
+      "Ur": "自律防壁が展開され、毎ターン防御力を<color=#ff701a>30%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1031"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1032,
+    "Names": {
+      "Ur": "ロストギャンブル"
+    },
+    "Descriptions": {
+      "Ur": "不安定因子が発現し、ランダムにレリックを<color=#ff701a>3つ</color>獲得するが味方はHPを最大HPの<color=#00aab9>10%</color>失う。"
+    },
+    "AssetIds": {
+      "Ur": "1032"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1033,
+    "Names": {
+      "Ssr": "シールドゼロ"
+    },
+    "Descriptions": {
+      "Ssr": "防御展開領域が起動し、戦闘中の最初の<color=#ff701a>ダメージを無効化</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1033"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1034,
+    "Names": {
+      "Ssr": "アブソーブ"
+    },
+    "Descriptions": {
+      "Ssr": "同調吸収層が起動。PSが発動する度にHPを<color=#27D327>4%回復</color>する。",
+      "Ur": "同調吸収層が起動。PSが発動する度にHPを<color=#27D327>15%回復</color>する。",
+      "Lr": "同調吸収層が起動。PSが発動する度にHPを<color=#27D327>50%回復</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1034"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1035,
+    "Names": {
+      "Ur": "ダイナモフロー"
+    },
+    "Descriptions": {
+      "Ur": "循環演算が加速し、2の倍数のターンのみ味方全員の<color=#ff701a>APを+1</color>する。",
+      "Lr": "循環演算が加速し、2の倍数のターンのみ味方全員の<color=#ff701a>APを+3</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "1035"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1036,
+    "Names": {
+      "R": "ライフカース"
+    },
+    "Descriptions": {
+      "R": "強力な呪いに蝕まれる、戦闘開始時、味方全員のHPが<color=#ff701a>10％ダウン</color>する。",
+      "Sr": "強力な呪いを克服した、戦闘開始時、味方全員のHPが<color=#ff701a>5％アップ</color>する。",
+      "Ssr": "強力な呪いを克服した、戦闘開始時、味方全員のHPが<color=#ff701a>30％アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1036"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1037,
+    "Names": {
+      "R": "ブーストカース"
+    },
+    "Descriptions": {
+      "R": "強力な呪いに蝕まれる、戦闘開始時、味方全員の攻撃力が<color=#ff701a>10％ダウン</color>する。",
+      "Sr": "強力な呪いを克服した、戦闘開始時、味方全員の攻撃力が<color=#ff701a>5％アップ</color>する。",
+      "Ssr": "強力な呪いを克服した、戦闘開始時、味方全員の攻撃力が<color=#ff701a>30％アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1037"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1038,
+    "Names": {
+      "R": "アーマーカース"
+    },
+    "Descriptions": {
+      "R": "強力な呪いに蝕まれる、戦闘開始時、味方全員の防御力が<color=#ff701a>10％ダウン</color>する。",
+      "Sr": "強力な呪いを克服した、戦闘開始時、味方全員の防御力が<color=#ff701a>5％アップ</color>する。",
+      "Ssr": "強力な呪いを克服した、戦闘開始時、味方全員の防御力が<color=#ff701a>30％アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1038"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1039,
+    "Names": {
+      "R": "スピードカース"
+    },
+    "Descriptions": {
+      "R": "強力な呪いに蝕まれる、戦闘開始時、味方全員の行動速度が<color=#ff701a>10％ダウン</color>する。",
+      "Sr": "強力な呪いを克服した、戦闘開始時、味方全員の行動速度が<color=#ff701a>5％アップ</color>する。",
+      "Ssr": "強力な呪いを克服した、戦闘開始時、味方全員の行動速度が<color=#ff701a>30％アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1039"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1040,
+    "Names": {
+      "Sr": "ネクロシール"
+    },
+    "Descriptions": {
+      "Sr": "凶暴な呪いが込められたお札、ターン開始時、2行動の与ダメージ<color=#ff701a>20%アップ</color>するがHPが<color=#00aab9>20％ダウン</color>する。",
+      "Ssr": "凶暴な呪いが込められたお札、ターン開始時、2行動の与ダメージ<color=#ff701a>30%アップ</color>する。",
+      "Ur": "凶暴な呪いが込められたお札、ターン開始時、2行動の与ダメージ<color=#ff701a>125%アップ</color>する。",
+      "Lr": "凶暴な呪いが込められたお札、ターン開始時、2行動の与ダメージ<color=#ff701a>200%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1040"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1041,
+    "Names": {
+      "R": "ライフシール"
+    },
+    "Descriptions": {
+      "R": "代償は対価を得る、戦闘開始時、味方のHPが<color=#27D327>10％回復</color>するが、与えるダメージが<color=#00aab9>5%ダウン</color>する。",
+      "Sr": "代償は対価を得る、戦闘開始時、味方のHPが<color=#27D327>10％回復</color>する。",
+      "Ssr": "代償は対価を得る、戦闘開始時、味方のHPが<color=#27D327>32％回復</color>する。",
+      "Ur": "代償は対価を得る、戦闘開始時、味方のHPが<color=#27D327>100％回復</color>し、与えるダメージが<color=#ff701a>10%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1041"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1042,
+    "Names": {
+      "R": "ブーストシール"
+    },
+    "Descriptions": {
+      "R": "代償は対価を得る、戦闘開始時、味方の攻撃力が<color=#ff701a>10％アップ</color>するが、与えるダメージが<color=#00aab9>5%ダウン</color>する。",
+      "Sr": "代償は対価を得る、戦闘開始時、味方の攻撃力が<color=#ff701a>10％アップ</color>する。",
+      "Ssr": "代償は対価を得る、戦闘開始時、味方の攻撃力が<color=#ff701a>32％アップ</color>する。",
+      "Ur": "代償は対価を得る、戦闘開始時、味方の攻撃力が<color=#ff701a>100％アップ</color>し、与えるダメージが<color=#ff701a>10%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1042"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1043,
+    "Names": {
+      "R": "アーマーシール"
+    },
+    "Descriptions": {
+      "R": "代償は対価を得る、戦闘開始時、味方の防御力が<color=#ff701a>10％アップ</color>するが、与えるダメージが<color=#00aab9>5%ダウン</color>する。",
+      "Sr": "代償は対価を得る、戦闘開始時、味方の防御力が<color=#ff701a>10％アップ</color>する。",
+      "Ssr": "代償は対価を得る、戦闘開始時、味方の防御力が<color=#ff701a>32％アップ</color>する。",
+      "Ur": "代償は対価を得る、戦闘開始時、味方の防御力が<color=#ff701a>100％アップ</color>し、与えるダメージが<color=#ff701a>10%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1043"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1044,
+    "Names": {
+      "R": "スピードシール"
+    },
+    "Descriptions": {
+      "R": "代償は対価を得る、戦闘開始時、味方の行動速度が<color=#ff701a>10％アップ</color>するが、与えるダメージが<color=#00aab9>5%ダウン</color>する。",
+      "Sr": "代償は対価を得る、戦闘開始時、味方の行動速度が<color=#ff701a>10％アップ</color>する。",
+      "Ssr": "代償は対価を得る、戦闘開始時、味方の行動速度が<color=#ff701a>32％アップ</color>する。",
+      "Ur": "代償は対価を得る、戦闘開始時、味方の行動速度が<color=#ff701a>100％アップ</color>し、与えるダメージが<color=#ff701a>10%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "1044"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1045,
+    "Names": {
+      "Sr": "ヒールリミット"
+    },
+    "Descriptions": {
+      "Sr": "わずかな時間力を得る、戦闘開始時、2行動の間回復量<color=#ff701a>15％アップ</color>する。",
+      "Ssr": "わずかな時間力を得る、戦闘開始時、2行動の間回復量<color=#ff701a>50％アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1045"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1046,
+    "Names": {
+      "Sr": "ブーストリミット"
+    },
+    "Descriptions": {
+      "Sr": "わずかな時間力を得る、戦闘開始時、2行動の間攻撃力を<color=#ff701a>15％アップ</color>する。",
+      "Ssr": "わずかな時間力を得る、戦闘開始時、2行動の間攻撃力を<color=#ff701a>50％アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1046"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1047,
+    "Names": {
+      "Sr": "アーマーリミット"
+    },
+    "Descriptions": {
+      "Sr": "わずかな時間力を得る、戦闘開始時、2行動の間防御力を<color=#ff701a>15％アップ</color>する。",
+      "Ssr": "わずかな時間力を得る、戦闘開始時、2行動の間防御力を<color=#ff701a>50％アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1047"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1048,
+    "Names": {
+      "Sr": "スピードリミット"
+    },
+    "Descriptions": {
+      "Sr": "わずかな時間力を得る、戦闘開始時、2行動の間行動速度を<color=#ff701a>15％アップ</color>する。",
+      "Ssr": "わずかな時間力を得る、戦闘開始時、2行動の間行動速度を<color=#ff701a>50％アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1048"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 1049,
+    "Names": {
+      "Ssr": "バーンミート"
+    },
+    "Descriptions": {
+      "Ssr": "燃え上がるように熱い肉、戦闘開始時、1行動分の<color=#00aab9>炎上</color>を受けるが、攻撃力が<color=#ff701a>15％アップ</color>する。",
+      "Ur": "燃え上がるように熱い肉、戦闘開始時、攻撃力が<color=#ff701a>45％アップ</color>する。",
+      "Lr": "燃え上がるように熱い肉、戦闘開始時、攻撃力が<color=#ff701a>220％アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1049"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1050,
+    "Names": {
+      "Ssr": "フロストミート"
+    },
+    "Descriptions": {
+      "Ssr": "凍えるように冷たい肉、戦闘開始時、1行動分の<color=#00aab9>凍結</color>を受けるが、与えるダメージが<color=#ff701a>15%アップ</color>する。",
+      "Ur": "凍えるように冷たい肉、戦闘開始時、与えるダメージが<color=#ff701a>45%アップ</color>する。",
+      "Lr": "凍えるように冷たい肉、戦闘開始時、与えるダメージが<color=#ff701a>220%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1050"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1051,
+    "Names": {
+      "Sr": "ビーストミート"
+    },
+    "Descriptions": {
+      "Sr": "何かの生物の肉？、戦闘開始時、1行動分の<color=#00aab9>気絶</color>を受けるが、HPを<color=#27D327>50%回復</color>する。",
+      "Ssr": "肉の成分解析に成功、戦闘開始時、HPを<color=#27D327>50%回復</color>する。",
+      "Ur": "肉の成分解析に成功、戦闘開始時、HPを<color=#27D327>80%回復</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1051"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1052,
+    "Names": {
+      "R": "バリアクラッシュ"
+    },
+    "Descriptions": {
+      "R": "侵蝕波が敵陣を蝕む、戦闘開始時敵全体の防御力<color=#ff701a>10%ダウン</color>する。",
+      "Sr": "侵蝕波が敵陣を蝕む、戦闘開始時敵全体の防御力<color=#ff701a>36%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "1052"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1053,
+    "Names": {
+      "Ssr": "ドライブエリクサー"
+    },
+    "Descriptions": {
+      "Ssr": "再生因子が反転し、回復スキルの回復効果が<color=#00aab9>50%ダウン</color>にするが、行動速度が<color=#ff701a>300アップ</color>する。",
+      "Ur": "再生因子が活性化し、行動速度が<color=#ff701a>300アップ</color>する。",
+      "Lr": "再生因子が活性化し、行動速度が<color=#ff701a>600アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1053"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1054,
+    "Names": {
+      "Ur": "コレクターズ"
+    },
+    "Descriptions": {
+      "Ur": "深層記憶体が解放される。リスキーバトルルートを選択するとレリックを<color=#ff701a>1つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ur": "1030"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 1055,
+    "Names": {
+      "Sr": "ナイトメアドール"
+    },
+    "Descriptions": {
+      "Sr": "凶悪な呪力が解放、戦闘開始時、敵全体の会心率を<color=#ff701a>10%ダウン</color>させる。",
+      "Ssr": "凶悪な呪力が解放、戦闘開始時、敵全体の会心率を<color=#ff701a>40%ダウン</color>させる。",
+      "Ur": "凶悪な呪力が解放、戦闘開始時、敵全体の会心率を<color=#ff701a>70%ダウン</color>させる。",
+      "Lr": "凶悪な呪力が解放、戦闘開始時、敵全体の会心率を<color=#ff701a>100%ダウン</color>させる。"
+    },
+    "AssetIds": {
+      "Sr": "1055"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1056,
+    "Names": {
+      "R": "オメガストーン（アグレッシブ）"
+    },
+    "Descriptions": {
+      "R": "究極因子が活性化し、戦闘開始時アグレッシブ属性の味方の防御力を<color=#ff701a>10%増加</color>させる。",
+      "Sr": "究極因子が活性化し、戦闘開始時アグレッシブ属性の味方の防御力を<color=#ff701a>32%増加</color>させる。",
+      "Ssr": "究極因子が活性化し、戦闘開始時アグレッシブ属性の味方の防御力を<color=#ff701a>54%増加</color>させる。",
+      "Ur": "究極因子が活性化し、戦闘開始時アグレッシブ属性の味方の防御力を<color=#ff701a>76%増加</color>させる。",
+      "Lr": "究極因子が活性化し、戦闘開始時アグレッシブ属性の味方の防御力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "1056"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1057,
+    "Names": {
+      "R": "オメガストーン（スマート）"
+    },
+    "Descriptions": {
+      "R": "究極因子が活性化し、戦闘開始時スマート属性の味方の防御力を<color=#ff701a>10%増加</color>させる。",
+      "Sr": "究極因子が活性化し、戦闘開始時スマート属性の味方の防御力を<color=#ff701a>32%増加</color>させる。",
+      "Ssr": "究極因子が活性化し、戦闘開始時スマート属性の味方の防御力を<color=#ff701a>54%増加</color>させる。",
+      "Ur": "究極因子が活性化し、戦闘開始時スマート属性の味方の防御力を<color=#ff701a>76%増加</color>させる。",
+      "Lr": "究極因子が活性化し、戦闘開始時スマート属性の味方の防御力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "1057"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1058,
+    "Names": {
+      "R": "オメガストーン（シャイ）"
+    },
+    "Descriptions": {
+      "R": "究極因子が活性化し、戦闘開始時シャイ属性の味方の防御力を<color=#ff701a>10%増加</color>させる。",
+      "Sr": "究極因子が活性化し、戦闘開始時シャイ属性の味方の防御力を<color=#ff701a>32%増加</color>させる。",
+      "Ssr": "究極因子が活性化し、戦闘開始時シャイ属性の味方の防御力を<color=#ff701a>54%増加</color>させる。",
+      "Ur": "究極因子が活性化し、戦闘開始時シャイ属性の味方の防御力を<color=#ff701a>76%増加</color>させる。",
+      "Lr": "究極因子が活性化し、戦闘開始時シャイ属性の味方の防御力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "1058"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1059,
+    "Names": {
+      "R": "オメガストーン（キュート）"
+    },
+    "Descriptions": {
+      "R": "究極因子が活性化し、戦闘開始時キュート属性の味方の防御力を<color=#ff701a>10%増加</color>させる。",
+      "Sr": "究極因子が活性化し、戦闘開始時キュート属性の味方の防御力を<color=#ff701a>32%増加</color>させる。",
+      "Ssr": "究極因子が活性化し、戦闘開始時キュート属性の味方の防御力を<color=#ff701a>54%増加</color>させる。",
+      "Ur": "究極因子が活性化し、戦闘開始時キュート属性の味方の防御力を<color=#ff701a>76%増加</color>させる。",
+      "Lr": "究極因子が活性化し、戦闘開始時キュート属性の味方の防御力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "1059"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1060,
+    "Names": {
+      "R": "オメガストーン（コミカル）"
+    },
+    "Descriptions": {
+      "R": "究極因子が活性化し、戦闘開始時コミカル属性の味方の防御力を<color=#ff701a>10%増加</color>させる。",
+      "Sr": "究極因子が活性化し、戦闘開始時コミカル属性の味方の防御力を<color=#ff701a>32%増加</color>させる。",
+      "Ssr": "究極因子が活性化し、戦闘開始時コミカル属性の味方の防御力を<color=#ff701a>54%増加</color>させる。",
+      "Ur": "究極因子が活性化し、戦闘開始時コミカル属性の味方の防御力を<color=#ff701a>76%増加</color>させる。",
+      "Lr": "究極因子が活性化し、戦闘開始時コミカル属性の味方の防御力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "1060"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1061,
+    "Names": {
+      "R": "オメガストーン（クレバー）"
+    },
+    "Descriptions": {
+      "R": "究極因子が活性化し、戦闘開始時クレバー属性の味方の防御力を<color=#ff701a>10%増加</color>させる。",
+      "Sr": "究極因子が活性化し、戦闘開始時クレバー属性の味方の防御力を<color=#ff701a>32%増加</color>させる。",
+      "Ssr": "究極因子が活性化し、戦闘開始時クレバー属性の味方の防御力を<color=#ff701a>54%増加</color>させる。",
+      "Ur": "究極因子が活性化し、戦闘開始時クレバー属性の味方の防御力を<color=#ff701a>76%増加</color>させる。",
+      "Lr": "究極因子が活性化し、戦闘開始時クレバー属性の味方の防御力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "1061"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1062,
+    "Names": {
+      "Sr": "みなぎるエナジードリンク"
+    },
+    "Descriptions": {
+      "Sr": "元気が湧いてくるエナジードリンク、戦闘開始時、会心率が<color=#00aab9>10%ダウン</color>するが、EXゲージが<color=#ff701a>1増加</color>する。",
+      "Ssr": "元気が湧いてくるエナジードリンク、戦闘開始時、EXゲージが<color=#ff701a>1増加</color>する。",
+      "Ur": "元気が湧いてくるエナジードリンク、戦闘開始時、EXゲージが<color=#ff701a>3増加</color>する。",
+      "Lr": "元気が湧いてくるエナジードリンク、戦闘開始時、EXゲージが<color=#ff701a>7増加</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "1062"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1063,
+    "Names": {
+      "Ssr": "バーサーク"
+    },
+    "Descriptions": {
+      "Ssr": "我を忘れるほど力が漲る、戦闘開始時、味方全体の行動速度が<color=#00aab9>100ダウン</color>するが、<color=#ff701a>PPを+1</color>する。",
+      "Ur": "我を忘れるほど力が漲る、戦闘開始時、味方全体の行動速度が<color=#00aab9>50ダウン</color>するが、<color=#ff701a>PPを+1</color>する。",
+      "Lr": "我を忘れるほど力が漲る、戦闘開始時、味方全体の<color=#ff701a>PPを+1</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "1063"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1064,
+    "Names": {
+      "Ur": "コレクターズ"
+    },
+    "Descriptions": {
+      "Ur": "深層記憶体が解放される。リスキーバトルルートを選択するとレリックを<color=#ff701a>1つ</color>獲得する。",
+      "Lr": "深層記憶体が解放される。リスキーバトルルートを選択するとレリックを<color=#ff701a>2つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ur": "1030"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1065,
+    "Names": {
+      "Ur": "パーフェクトストライク"
+    },
+    "Descriptions": {
+      "Ur": "古来より伝わる命中の秘術、戦闘開始時、味方全体に<color=#ff701a>1スキルの間必中</color>を付与する。",
+      "Lr": "古来より伝わる命中の秘術、戦闘開始時、味方全体に<color=#ff701a>3スキルの間必中</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ur": "1065"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1066,
+    "Names": {
+      "Ur": "コレクターズ"
+    },
+    "Descriptions": {
+      "Ur": "深層記憶体が解放される。リスキーバトルルートを選択するとレリックを<color=#ff701a>1つ</color>獲得する。",
+      "Lr": "深層記憶体が解放される。リスキーバトルルートを選択するとレリックを<color=#ff701a>2つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ur": "1030"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 1067,
+    "Names": {
+      "R": "錆びた黒斧"
+    },
+    "Descriptions": {
+      "R": "古びた歴戦の斧、戦闘開始時、敵味方全体の物理タイプの会心率を<color=#ff701a>10%ダウン</color>させる。",
+      "Sr": "古びた歴戦の斧、戦闘開始時、敵味方全体の物理タイプの会心率を<color=#ff701a>35%ダウン</color>させる。"
+    },
+    "AssetIds": {
+      "R": "9006"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 1068,
+    "Names": {
+      "R": "何かの鍵"
+    },
+    "Descriptions": {
+      "R": "何の効果もない鍵。"
+    },
+    "AssetIds": {
+      "R": "1068"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 2001,
+    "Names": {
+      "R": "オメガゲート"
+    },
+    "Descriptions": {
+      "R": "閉鎖領域が発動。リスキーバトルの戦闘開始時、敵のHPが<color=#ff701a>25%低下</color>する。",
+      "Sr": "閉鎖領域が発動。リスキーバトルの戦闘開始時、敵のHPが<color=#ff701a>37%低下</color>する。",
+      "Ssr": "閉鎖領域が発動。リスキーバトルの戦闘開始時、敵のHPが<color=#ff701a>49%低下</color>する。",
+      "Ur": "閉鎖領域が発動。リスキーバトルの戦闘開始時、敵のHPが<color=#ff701a>61%低下</color>する。",
+      "Lr": "閉鎖領域が発動。リスキーバトルの戦闘開始時、敵のHPが<color=#ff701a>75%低下</color>する。"
+    },
+    "AssetIds": {
+      "R": "2001"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2002,
+    "Names": {
+      "Sr": "ハルシールド"
+    },
+    "Descriptions": {
+      "Sr": "薄膜装甲が活性化し、2ターン目開始時に<color=#ff701a>被ダメージ-24%</color>の効果を付与する。",
+      "Ssr": "薄膜装甲が活性化し、2ターン目開始時に<color=#ff701a>被ダメージ-50%</color>の効果を付与する。"
+    },
+    "AssetIds": {
+      "Sr": "2002"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 2003,
+    "Names": {
+      "Sr": "エリートブースト"
+    },
+    "Descriptions": {
+      "Sr": "増幅因子が活性化しレリック獲得後にリスキーバトルを選択すると「<color=#ff701a>エリートブースト＋</color>」を1つ獲得する。",
+      "Ssr": "増幅因子が活性化しレリック獲得後にリスキーバトルを選択すると「<color=#ff701a>エリートブースト＋</color>」を2つ獲得する。"
+    },
+    "AssetIds": {
+      "Sr": "2003"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 2004,
+    "Names": {
+      "Sr": "エリートブースト＋"
+    },
+    "Descriptions": {
+      "Sr": "出力加速効果が発動し戦闘開始時に攻撃力を<color=#ff701a>10%アップ</color>する。",
+      "Ssr": "出力加速効果が発動し戦闘開始時に攻撃力を<color=#ff701a>35%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "2004"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 2005,
+    "Names": {
+      "Ssr": "アーマーギア"
+    },
+    "Descriptions": {
+      "Ssr": "装甲因子獲得により即時「<color=#ff701a>アーマーギア＋</color>」を得て、その後休憩時に同レリックを<color=#ff701a>1つ</color>獲得する。",
+      "Ur": "装甲因子獲得により即時「<color=#ff701a>アーマーギア＋</color>」を得て、その後休憩時に同レリックを<color=#ff701a>2つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "2005"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 2006,
+    "Names": {
+      "Ssr": "アーマーギア＋"
+    },
+    "Descriptions": {
+      "Ssr": "装甲強化効果が発動し戦闘開始時に防御力を<color=#ff701a>5%アップ</color>する。",
+      "Ur": "装甲強化効果が発動し戦闘開始時に防御力を<color=#ff701a>26%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2006"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 2007,
+    "Names": {
+      "Ssr": "エグゾシスム"
+    },
+    "Descriptions": {
+      "Ssr": "抑制因子が発動し、被ダメージの対象になった場合、相手の<color=#ff701a>スキル威力を20</color>下げる（消費PP：1）。",
+      "Ur": "抑制因子が発動し、被ダメージの対象になった場合、相手の<color=#ff701a>スキル威力を45</color>下げる（消費PP：1）。",
+      "Lr": "抑制因子が発動し、被ダメージの対象になった場合、相手の<color=#ff701a>スキル威力を70</color>下げる（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Ssr": "2007"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2008,
+    "Names": {
+      "Ssr": "ダメージカット"
+    },
+    "Descriptions": {
+      "Ssr": "防御装甲が展開され、3ターン目開始時に<color=#ff701a>被ダメージ-32%</color>の効果を付与する。",
+      "Ur": "防御装甲が展開され、3ターン目開始時に<color=#ff701a>被ダメージ-55%</color>の効果を付与する。",
+      "Lr": "防御装甲が展開され、3ターン目開始時に<color=#ff701a>被ダメージ-75%</color>の効果を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "2008"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2009,
+    "Names": {
+      "Ssr": "グラビオン"
+    },
+    "Descriptions": {
+      "Ssr": "重力緩衝装甲が作動し、戦闘開始時味方に1度だけ<color=#ff701a>ダメージを1に軽減</color>する効果を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "2009"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 2010,
+    "Names": {
+      "Ssr": "イレイザー"
+    },
+    "Descriptions": {
+      "Ssr": "消去因子が覚醒し獲得後に「<color=#ff701a>イレイザー＋</color>」を得てその後戦闘開始時に同レリックを1つ獲得する。",
+      "Ur": "消去因子が覚醒し獲得後に「<color=#ff701a>イレイザー＋</color>」を得てその後戦闘開始時に同レリックを2つ獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "2010"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 2011,
+    "Names": {
+      "Ssr": "イレイザー＋"
+    },
+    "Descriptions": {
+      "Ssr": "出力加速効果が発動し戦闘開始時に攻撃力を<color=#ff701a>5%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2011"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 2012,
+    "Names": {
+      "Ur": "ネオリジェネ"
+    },
+    "Descriptions": {
+      "Ur": "再生因子が活性し戦闘中の回復スキルの回復効果を<color=#ff701a>2倍</color>にする。",
+      "Lr": "再生因子が活性し戦闘中の回復スキルの回復効果を<color=#ff701a>4.5倍</color>にする。"
+    },
+    "AssetIds": {
+      "Ur": "2012"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2013,
+    "Names": {
+      "Ur": "バトルシンク"
+    },
+    "Descriptions": {
+      "Ur": "同調制御が起動し味方パーティー全員の<color=#ff701a>APを+1</color>する（重複不可）。",
+      "Lr": "同調制御が起動し味方パーティー全員の<color=#ff701a>APを+3</color>する（重複不可）。"
+    },
+    "AssetIds": {
+      "Ur": "2013"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2014,
+    "Names": {
+      "Ur": "エナジーリンク"
+    },
+    "Descriptions": {
+      "Ur": "接続因子が活性し味方パーティー全員の<color=#ff701a>PPを+1</color>する（重複不可）。",
+      "Lr": "接続因子が活性し味方パーティー全員の<color=#ff701a>PPを+3</color>する（重複不可）。"
+    },
+    "AssetIds": {
+      "Ur": "2014"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2015,
+    "Names": {
+      "Ur": "オメガマイン"
+    },
+    "Descriptions": {
+      "Ur": "採掘因子が活性しイベントルートを選択するたびにタツミヤ鉱が<color=#ff701a>50%増加</color>する。",
+      "Lr": "採掘因子が活性しイベントルートを選択するたびにタツミヤ鉱が<color=#ff701a>200%増加</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "2015"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2016,
+    "Names": {
+      "Ur": "フォース（物理）"
+    },
+    "Descriptions": {
+      "Ur": "物理制御機構が起動し戦闘開始時物理タイプの味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "物理制御機構が起動し戦闘開始時物理タイプの味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2016"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2017,
+    "Names": {
+      "Ur": "フォース（EN）"
+    },
+    "Descriptions": {
+      "Ur": "EN制御機構が起動し戦闘開始時ENタイプの味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "EN制御機構が起動し戦闘開始時ENタイプの味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2017"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2018,
+    "Names": {
+      "Ur": "フォース（敏捷）"
+    },
+    "Descriptions": {
+      "Ur": "敏捷制御機構が起動し戦闘開始時敏捷タイプの味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "敏捷制御機構が起動し戦闘開始時敏捷タイプの味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2018"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2019,
+    "Names": {
+      "Ur": "ブースト（アグレッシブ）"
+    },
+    "Descriptions": {
+      "Ur": "属性制御機構が起動し戦闘開始時アグレッシブ属性の味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "属性制御機構が起動し戦闘開始時アグレッシブ属性の味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2019"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2020,
+    "Names": {
+      "Ur": "ブースト（スマート）"
+    },
+    "Descriptions": {
+      "Ur": "属性制御機構が起動し戦闘開始時スマート属性の味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "属性制御機構が起動し戦闘開始時スマート属性の味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2020"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2021,
+    "Names": {
+      "Ur": "ブースト（シャイ）"
+    },
+    "Descriptions": {
+      "Ur": "属性制御機構が起動し戦闘開始時シャイ属性の味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "属性制御機構が起動し戦闘開始時シャイ属性の味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2021"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2022,
+    "Names": {
+      "Ur": "ブースト（キュート）"
+    },
+    "Descriptions": {
+      "Ur": "属性制御機構が起動し戦闘開始時キュート属性の味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "属性制御機構が起動し戦闘開始時キュート属性の味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2022"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2023,
+    "Names": {
+      "Ur": "ブースト（コミカル）"
+    },
+    "Descriptions": {
+      "Ur": "属性制御機構が起動し戦闘開始時コミカル属性の味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "属性制御機構が起動し戦闘開始時コミカル属性の味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2023"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2024,
+    "Names": {
+      "Ur": "ブースト（クレバー）"
+    },
+    "Descriptions": {
+      "Ur": "属性制御機構が起動し戦闘開始時クレバー属性の味方の攻撃力を<color=#ff701a>20%増加</color>させる。",
+      "Lr": "属性制御機構が起動し戦闘開始時クレバー属性の味方の攻撃力を<color=#ff701a>100%増加</color>させる。"
+    },
+    "AssetIds": {
+      "Ur": "2024"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2025,
+    "Names": {
+      "Ur": "パルスギア"
+    },
+    "Descriptions": {
+      "Ur": "出力連動機構が作動し、アクティブスキル使用時、威力を<color=#ff701a>50%増加</color>させる（消費PP：1）。",
+      "Lr": "出力連動機構が作動し、アクティブスキル使用時、威力を<color=#ff701a>200%増加</color>させる（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Ur": "2025"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2026,
+    "Names": {
+      "Ssr": "リスキースロット"
+    },
+    "Descriptions": {
+      "Ssr": "運命を操る、レリック獲得後にリスキーバトルを選択するとレリックをランダムに<color=#ff701a>1つ</color>獲得する（Good：50%、Bad：50%）。",
+      "Ur": "運命を操る、レリック獲得後にリスキーバトルを選択するとレリックをランダムに<color=#ff701a>2つ</color>獲得する（Good：75%、Bad：25%）。",
+      "Lr": "運命を操る、レリック獲得後にリスキーバトルを選択するとレリックをランダムに<color=#ff701a>3つ</color>獲得する（Good：100%、Bad：0%）。"
+    },
+    "AssetIds": {
+      "Ssr": "2026"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2027,
+    "Names": {
+      "Ur": "ミートコンボ"
+    },
+    "Descriptions": {
+      "Ur": "肉の旨みが食欲をそそる、戦闘開始時、基本ステータスが<color=#ff701a>15%</color>アップする。",
+      "Lr": "肉の旨みが食欲をそそる、戦闘開始時、基本ステータスが<color=#ff701a>50%</color>アップする。"
+    },
+    "AssetIds": {
+      "Ur": "2027"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2028,
+    "Names": {
+      "Ssr": "クォーツアルケミー"
+    },
+    "Descriptions": {
+      "Ssr": "全ては等価交換だ、ショップに来店する度に、クリスタル（SSR）を<color=#ff701a>1つ</color>獲得する。",
+      "Ur": "全ては等価交換だ、ショップに来店する度に、クリスタル（UR）を<color=#ff701a>1つ</color>獲得する。",
+      "Lr": "全ては等価交換だ、ショップに来店する度に、クリスタル（LR）を<color=#ff701a>2つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "2028"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2029,
+    "Names": {
+      "Ssr": "ジャックオランタン"
+    },
+    "Descriptions": {
+      "Ssr": "明かりが魔を除ける、ターン終了時、回復スキルの回復効果が<color=#ff701a>20%アップ</color>し、HPを<color=#27D327>50%回復</color>する。",
+      "Ur": "明かりが魔を除ける、ターン終了時、回復スキルの回復効果が<color=#ff701a>35%アップ</color>し、HPを<color=#27D327>65%回復</color>する。",
+      "Lr": "明かりが魔を除ける、ターン終了時、回復スキルの回復効果が<color=#ff701a>50%アップ</color>し、HPを<color=#27D327>80%回復</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2029"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2030,
+    "Names": {
+      "Ssr": "デュアルエレメント"
+    },
+    "Descriptions": {
+      "Ssr": "炎と氷が共鳴する、戦闘開始時、味方全体が3行動分の<color=#00aab9>炎上</color>を受けるが、敵全体に1行動分の<color=#ff701a>凍結</color>を付与する。",
+      "Ur": "炎と氷が共鳴する、戦闘開始時、味方全体が1行動分の<color=#00aab9>炎上</color>を受けるが、敵全体に2行動分の<color=#ff701a>凍結</color>を付与する。",
+      "Lr": "炎と氷が共鳴する、戦闘開始時、敵全体に3行動分の<color=#ff701a>凍結</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "2030"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2031,
+    "Names": {
+      "Sr": "古い羊皮紙"
+    },
+    "Descriptions": {
+      "Sr": "何かか記された羊皮紙、イベントルートを選択するたびに、HPを<color=#27D327>10%回復</color>する。",
+      "Ssr": "何かか記された羊皮紙、イベントルートを選択するたびに、HPを<color=#27D327>20%回復</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "2031"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 2032,
+    "Names": {
+      "Ssr": "魂の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "心臓に鎖が絡む、戦闘開始時、味方全体の最大HPが<color=#00aab9>50％ダウン</color>するが、HP以外の基本ステータスが<color=#ff701a>30%アップ</color>する。",
+      "Ur": "心臓に鎖が絡む、戦闘開始時、味方全体の最大HPが<color=#00aab9>30％ダウン</color>するが、HP以外の基本ステータスが<color=#ff701a>30%アップ</color>する。",
+      "Lr": "心臓に鎖が絡む、戦闘開始時、味方全体のHP以外の基本ステータスが<color=#ff701a>40%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2032"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2033,
+    "Names": {
+      "Ssr": "憤怒の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "怒りが収まらねぇ…、戦闘開始時、味方全体の防御力が<color=#00aab9>20%ダウン</color>するが、有利属性攻撃力が<color=#ff701a>25%アップ</color>する。",
+      "Ur": "怒りが収まらねぇ…、戦闘開始時、味方全体の防御力が<color=#00aab9>10%ダウン</color>するが、有利属性攻撃力が<color=#ff701a>30%アップ</color>する。",
+      "Lr": "怒りが収まらねぇ…、戦闘開始時、味方全体の有利属性攻撃力が<color=#ff701a>35%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2033"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2034,
+    "Names": {
+      "Ssr": "怠惰の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "何もしたくないzzz、戦闘開始時、味方全体の攻撃力が<color=#00aab9>20%ダウン</color>するが、有利属性防御力が<color=#ff701a>25%アップ</color>する。",
+      "Ur": "何もしたくないzzz、戦闘開始時、味方全体の攻撃力が<color=#00aab9>10%ダウン</color>するが、有利属性防御力が<color=#ff701a>30%アップ</color>する。",
+      "Lr": "何もしたくないzzz、戦闘開始時、味方全体の有利属性防御力が<color=#ff701a>35%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2034"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2035,
+    "Names": {
+      "Ssr": "強欲の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "全ては俺の所有物だ、バトル後、味方全体のHPが<color=#00aab9>10%ダウン</color>するが、タツミヤ鉱を<color=#ff701a>444個</color>獲得する。",
+      "Ur": "全ては俺の所有物だ、バトル後、味方全体のHPが<color=#00aab9>5%ダウン</color>するが、タツミヤ鉱を<color=#ff701a>555個</color>獲得する。",
+      "Lr": "全ては俺の所有物だ、バトル後、タツミヤ鉱を<color=#ff701a>666個</color>獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "2035"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2036,
+    "Names": {
+      "Ssr": "暴食の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "強者は喰らう全部だ…、戦闘開始時、味方全体の行動速度が<color=#00aab9>30%ダウン</color>するが、<color=#ff701a>APを+1</color>する。",
+      "Ur": "強者は喰らう全部だ…、戦闘開始時、味方全体の行動速度が<color=#00aab9>15%ダウン</color>するが、<color=#ff701a>AP・PPを+1</color>する。",
+      "Lr": "強者は喰らう全部だ…、戦闘開始時、<color=#ff701a>AP・PPを+2</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2036"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2037,
+    "Names": {
+      "Ssr": "色欲の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "愛して…愛して…私を、バトル出撃時、味方全員のHPを<color=#27D327>50%回復</color>するが、バトル後、味方全体のHPが<color=#00aab9>20%ダウン</color>する。",
+      "Ur": "愛して…愛して…私を、バトル出撃時、味方全員のHPを<color=#27D327>60%回復</color>するが、バトル後、味方全体のHPが<color=#00aab9>10%ダウン</color>する。",
+      "Lr": "愛して…愛して…私を、バトル出撃時、味方全員のHPを<color=#27D327>75%回復</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "2037"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2038,
+    "Names": {
+      "Ssr": "傲慢の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "敗北を味わいたい…、戦闘開始時、味方全体の<color=#00aab9>AP・PPを-1</color>するが、基本ステータスを<color=#ff701a>20%</color>アップする。",
+      "Ur": "敗北を味わいたい…、戦闘開始時、味方全体の<color=#00aab9>PPを-1</color>するが、基本ステータスを<color=#ff701a>40%</color>アップする。",
+      "Lr": "敗北を味わいたい…、戦闘開始時、味方全体の基本ステータスを<color=#ff701a>60%</color>アップする。"
+    },
+    "AssetIds": {
+      "Ssr": "2038"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2039,
+    "Names": {
+      "Ssr": "嫉妬の契約書"
+    },
+    "Descriptions": {
+      "Ssr": "憎憎憎ぃ、戦闘開始時、EXゲージが<color=#00aab9>2減少</color>するが、敵全体に1行動分の<color=#ff701a>暗闇</color>を付与する。暗闇中のスキル命中率50%",
+      "Ur": "憎憎憎ぃ、戦闘開始時、EXゲージが<color=#00aab9>1減少</color>するが、敵全体に2行動分の<color=#ff701a>暗闇</color>を付与する。暗闇中のスキル命中率40%",
+      "Lr": "憎憎憎ぃ、戦闘開始時、敵全体に3行動分の<color=#ff701a>暗闇</color>を付与する。暗闇中のスキル命中率20%"
+    },
+    "AssetIds": {
+      "Ssr": "2039"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2040,
+    "Names": {
+      "Ssr": "ネクロアルケミー"
+    },
+    "Descriptions": {
+      "Ssr": "代償は力を得る、バトル後、タツミヤ鉱が<color=#00aab9>30%減少</color>するが、戦闘開始時、敵全体の基本ステータスを<color=#ff701a>10%</color>ダウンさせる。",
+      "Ur": "代償は力を得る、バトル後、タツミヤ鉱が<color=#00aab9>20%減少</color>するが、戦闘開始時、敵全体の基本ステータスを<color=#ff701a>20%</color>ダウンさせる。",
+      "Lr": "代償は力を得る、バトル後、タツミヤ鉱が<color=#00aab9>10%減少</color>するが、戦闘開始時、敵全体の基本ステータスを<color=#ff701a>30%</color>ダウンさせる。"
+    },
+    "AssetIds": {
+      "Ssr": "2040"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2041,
+    "Names": {
+      "R": "水棲植物"
+    },
+    "Descriptions": {
+      "R": "水棲植物"
+    },
+    "AssetIds": {
+      "R": "2041"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 2042,
+    "Names": {
+      "Sr": "綺麗なシャボン玉"
+    },
+    "Descriptions": {
+      "Sr": "破裂し独特な煙が辺りを包む、戦闘開始時、敵全体に1行動の幻惑を付与する。幻惑はダメージ効果を回復効果へと変換する。回復値は本来のダメージ値の50%となる。",
+      "Ssr": "破裂し独特な煙が辺りを包む、戦闘開始時、敵全体に1行動の幻惑を付与する。幻惑はダメージ効果を回復効果へと変換する。回復値は本来のダメージ値の80%となる。",
+      "Ur": "破裂し独特な煙が辺りを包む、戦闘開始時、敵全体に2行動の幻惑を付与する。幻惑はダメージ効果を回復効果へと変換する。回復値は本来のダメージ値の80%となる。",
+      "Lr": "破裂し独特な煙が辺りを包む、戦闘開始時、敵全体に3行動の幻惑を付与する。幻惑はダメージ効果を回復効果へと変換する。回復値は本来のダメージ値の100%となる。"
+    },
+    "AssetIds": {
+      "Sr": "2042"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2043,
+    "Names": {
+      "Sr": "釣竿"
+    },
+    "Descriptions": {
+      "Ssr": "必ず何かが釣れる釣竿…、イベントルートを選択するたびに、レリックをランダムに<color=#ff701a>1つ</color>獲得する。",
+      "Ur": "必ず何かが釣れる釣竿…、イベントルートを選択するたびに、レリックをランダムに<color=#ff701a>2つ</color>獲得する。",
+      "Lr": "必ず何かが釣れる釣竿…、イベントルートを選択するたびに、レリックをランダムに<color=#ff701a>3つ</color>獲得する。"
+    },
+    "AssetIds": {
+      "Sr": "2043"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2044,
+    "Names": {
+      "Ssr": "ヘビーアンカー"
+    },
+    "Descriptions": {
+      "Ssr": "海底に沈んだ碇、戦闘開始時、味方全体の行動速度が<color=#00aab9>30%ダウン</color>するが、防御力が<color=#ff701a>40%</color>アップする。",
+      "Ur": "海底に沈んだ碇、戦闘開始時、味方全体の行動速度が<color=#00aab9>10%ダウン</color>するが、防御力が<color=#ff701a>75%</color>アップする。",
+      "Lr": "海底に沈んだ碇、戦闘開始時、味方全体の防御力が<color=#ff701a>120%</color>アップする。"
+    },
+    "AssetIds": {
+      "Ssr": "2044"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 2045,
+    "Names": {
+      "Ssr": "水没した宝箱"
+    },
+    "Descriptions": {
+      "Ssr": "バトル出撃時、クリスタルを<color=#ff701a>3つ</color>獲得する。※出撃するバトルによって獲得できるレアリティが異なる。",
+      "Ur": "バトル出撃時、クリスタルを<color=#ff701a>2つ</color>獲得する。※出撃するバトルによって獲得できるレアリティが異なる。"
+    },
+    "AssetIds": {
+      "Ssr": "2045"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3001,
+    "Names": {
+      "Sr": "デスコード"
+    },
+    "Descriptions": {
+      "Sr": "反転因子が発動し、次通常バトル後レリック獲得不可になり、次通常バトルでは<color=#ff701a>全ステータス2倍になる。"
+    },
+    "AssetIds": {
+      "Sr": "3001"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 3002,
+    "Names": {
+      "Sr": "ヴォイドアーマー"
+    },
+    "Descriptions": {
+      "Sr": "無効化強化装甲が展開し、被HP回復効果<color=#00aab9>100%ダウン</color>与ダメージ<color=#ff701a>100%アップ</color>する。",
+      "Ssr": "無効化強化装甲が展開し、被HP回復効果<color=#00aab9>50%ダウン</color>与ダメージ<color=#ff701a>100%アップ</color>する。",
+      "Ur": "無効化強化装甲が展開し、与ダメージ<color=#ff701a>120%アップ</color>する。",
+      "Lr": "無効化強化装甲が展開し、与ダメージ<color=#ff701a>150%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "3002"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3003,
+    "Names": {
+      "Sr": "テンションブースト"
+    },
+    "Descriptions": {
+      "Sr": "起動と共に脈動する補助波が走る、戦闘開始時、攻撃力を1行動分<color=#ff701a>15%アップ</color>する。",
+      "Ssr": "起動と共に脈動する補助波が走る、戦闘開始時、攻撃力を1行動分<color=#ff701a>60%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "3003"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 3004,
+    "Names": {
+      "Ssr": "ネガシフト"
+    },
+    "Descriptions": {
+      "Ssr": "微細な歪みが敵陣を蝕む、戦闘中毎ターンすべての敵の攻撃力を<color=#ff701a>3%ダウン</color>する。",
+      "Ur": "微細な歪みが敵陣を蝕む、戦闘中毎ターンすべての敵の攻撃力を<color=#ff701a>16%ダウン</color>する。",
+      "Lr": "微細な歪みが敵陣を蝕む、戦闘中毎ターンすべての敵の攻撃力を<color=#ff701a>30%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "3004"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3005,
+    "Names": {
+      "Ssr": "レゾナンスコア"
+    },
+    "Descriptions": {
+      "Ssr": "微振動が残響し新たな核を結ぶ、戦闘終了時「<color=#ff701a>レゾナンスコア＋</color>」を獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "3005"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 3006,
+    "Names": {
+      "Ssr": "レゾナンスコア+"
+    },
+    "Descriptions": {
+      "Ssr": "微かな波紋が身を満たす、獲得時味方パーティー全員の最大HPを<color=#ff701a>2%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "3006"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 3007,
+    "Names": {
+      "Ur": "タツミヤコレクト"
+    },
+    "Descriptions": {
+      "Ur": "バトルで獲得できるタツミヤ鉱が<color=#ff701a>25%アップ</color>する。",
+      "Lr": "バトルで獲得できるタツミヤ鉱が<color=#ff701a>100%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3007"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3008,
+    "Names": {
+      "Ur": "エニグマスフィア"
+    },
+    "Descriptions": {
+      "Ur": "完璧な球体をした謎の球体、戦闘開始時、味方全員の行動速度が<color=#ff701a>15%アップ</color>する。",
+      "Lr": "完璧な球体をした謎の球体、戦闘開始時、味方全員の行動速度が<color=#ff701a>100%アップ</color>し、<color=#ff701a>PPを+1</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3008"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3009,
+    "Names": {
+      "Ur": "ブラッドスフィア"
+    },
+    "Descriptions": {
+      "Ur": "赤く染まった謎の球体、戦闘開始時、味方全員のHPが<color=#ff701a>40％ダウン</color>するが、攻撃力が<color=#ff701a>20%アップ</color>する。",
+      "Lr": "赤く染まった謎の球体、戦闘開始時、攻撃力が<color=#ff701a>100%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3009"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3010,
+    "Names": {
+      "Ur": "ミスティックオブジェクト"
+    },
+    "Descriptions": {
+      "Ur": "神秘的な力を発する物体、戦闘開始時、味方全員の防御力が<color=#ff701a>10%アップ</color>する。",
+      "Lr": "神秘的な力を発する物体、戦闘開始時、味方全員の防御力が<color=#ff701a>30%アップ</color>し、<color=#ff701a>APを+1</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3010"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3011,
+    "Names": {
+      "Ur": "黄金像"
+    },
+    "Descriptions": {
+      "Ur": "黄金の輝きが幸運をもたらす、戦闘開始時、会心率が<color=#ff701a>10%アップ</color>する。",
+      "Lr": "黄金の輝きが幸運をもたらす、戦闘開始時、会心率と会心ダメージが<color=#ff701a>30%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3011"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3012,
+    "Names": {
+      "Ur": "スロウス"
+    },
+    "Descriptions": {
+      "Ur": "「あぁ、めんどくせぇ…」戦闘開始時、速度が<color=#00aab9>50%ダウン</color>する代わりに攻撃力が<color=#ff701a>50%アップ</color>する。",
+      "Lr": "「あぁ、めんどくせぇ…」戦闘開始時、攻撃力が<color=#ff701a>75%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3012"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3013,
+    "Names": {
+      "Ur": "ラスト"
+    },
+    "Descriptions": {
+      "Ur": "「……あなたに喜んでほしかった…」戦闘開始時、現在HPの<color=#00aab9>50%</color>を失う代わりにEXゲージが<color=#ff701a>最大</color>になる。",
+      "Lr": "「……あなたに喜んでほしかった…」戦闘開始時、EXゲージが<color=#ff701a>最大</color>になる。"
+    },
+    "AssetIds": {
+      "Ur": "3013"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3014,
+    "Names": {
+      "Ur": "ラース"
+    },
+    "Descriptions": {
+      "Ur": "「まったくこの世の全てが腹立たしい…」戦闘開始時、防御力が<color=#00aab9>25%ダウン</color>する代わりに攻撃力が<color=#ff701a>25%アップ</color>する。",
+      "Lr": "「まったくこの世の全てが腹立たしい…」戦闘開始時、攻撃力が<color=#ff701a>45%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3014"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3015,
+    "Names": {
+      "Ur": "グラトニー"
+    },
+    "Descriptions": {
+      "Ur": "「食べていい？」戦闘開始時、<color=#ff701a>APが+1</color>されるが<color=#00aab9>PPが-1</color>される。",
+      "Lr": "「食べていい？」戦闘開始時、<color=#ff701a>APが+1</color>される。"
+    },
+    "AssetIds": {
+      "Ur": "3015"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3016,
+    "Names": {
+      "Ur": "プライド"
+    },
+    "Descriptions": {
+      "Ur": "「今ならなんだって出来る気がするよ…」戦闘開始時、基本ステータスが<color=#ff701a>10%</color>アップする。",
+      "Lr": "「今ならなんだって出来る気がするよ…」戦闘開始時、基本ステータスが<color=#ff701a>40%</color>アップする。"
+    },
+    "AssetIds": {
+      "Ur": "3016"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3017,
+    "Names": {
+      "Ur": "グリード"
+    },
+    "Descriptions": {
+      "Ur": "「すべてオレの所有物だ」戦闘開始時、防御力が<color=#ff701a>20%</color>アップし、HPが<color=#27D327>10%</color>回復する。",
+      "Lr": "「すべてオレの所有物だ」戦闘開始時、防御力が<color=#ff701a>40%</color>アップし、HPが<color=#27D327>30%</color>回復する。"
+    },
+    "AssetIds": {
+      "Ur": "3017"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3018,
+    "Names": {
+      "Ur": "エンヴィー"
+    },
+    "Descriptions": {
+      "Ur": "「…妬む？仲間に？まさかな…」戦闘開始時、<color=#00aab9>APが-1</color>されるが<color=#ff701a>PPが+1</color>される。",
+      "Lr": "「…妬む？仲間に？まさかな…」戦闘開始時、<color=#ff701a>PPが+1</color>される。"
+    },
+    "AssetIds": {
+      "Ur": "3018"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3019,
+    "Names": {
+      "Sr": "巨大な毒翼"
+    },
+    "Descriptions": {
+      "Sr": "毒は薬にもなる、アクティブスキル使用時、2行動分の<color=#ff701a>毒</color>になるが、HPを<color=#27D327>10%回復</color>する（消費PP：1）。",
+      "Ssr": "毒は薬にもなる、アクティブスキル使用時、1行動分の<color=#ff701a>毒</color>になるが、HPを<color=#27D327>10%回復</color>する（消費PP：1）。",
+      "Ur": "毒は薬にもなる、アクティブスキル使用時、ASが発動する度にHPを<color=#27D327>20%回復</color>する（消費PP：1）。",
+      "Lr": "毒は薬にもなる、アクティブスキル使用時、ASが発動する度にHPを<color=#27D327>35%回復</color>する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Sr": "3019"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3020,
+    "Names": {
+      "Ur": "シャドウローブ"
+    },
+    "Descriptions": {
+      "Ur": "影に潜み闇を纏う、戦闘開始時、味方全体に2ヒットだけ攻撃を回避するバフを付与する。",
+      "Lr": "影に潜み闇を纏う、戦闘開始時、味方全体に7ヒットだけ攻撃を回避するバフを付与する。"
+    },
+    "AssetIds": {
+      "Ur": "3020"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3021,
+    "Names": {
+      "Ssr": "ネコ耳キャップ"
+    },
+    "Descriptions": {
+      "Ssr": "ユニークな形で周りを魅了する、自身の攻撃が会心攻撃になるたびに、2行動の間会心率を<color=#ff701a>20％アップ</color>する（消費PP：1）。",
+      "Ur": "ユニークな形で周りを魅了する、自身の攻撃が会心攻撃になるたびに、3行動の間会心率を<color=#ff701a>25％アップ</color>する（消費PP：1）。",
+      "Lr": "ユニークな形で周りを魅了する、自身の攻撃が会心攻撃になるたびに、4行動の間会心率を<color=#ff701a>30％アップ</color>する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Ssr": "3021"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3022,
+    "Names": {
+      "Ur": "マーマンの鱗"
+    },
+    "Descriptions": {
+      "Ur": "不思議な模様の鱗、戦闘開始時、会心ダメージを<color=#ff701a>20%アップ</color>する。",
+      "Lr": "不思議な模様の鱗、戦闘開始時、会心ダメージを<color=#ff701a>65%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "3022"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3023,
+    "Names": {
+      "Lr": "反転した黄金像"
+    },
+    "Descriptions": {
+      "Lr": "不気味な輝きが不幸をもたらす、戦闘開始時、味方全体が1行動分の<color=#00aab9>凍結</color>と3行動分の<color=#00aab9>毒</color>を受ける。（一度の戦闘後、消滅する）"
+    },
+    "AssetIds": {
+      "Lr": "3023"
+    },
+    "Rarity": "Lr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3024,
+    "Names": {
+      "Ssr": "色褪せた翼",
+      "Ur": "煌めく翼",
+      "Lr": "煌めく翼"
+    },
+    "Descriptions": {
+      "Ssr": "色褪せ薄汚れた翼、この状態では効果はないみたいだ…",
+      "Ur": "黄金に輝く神々しい翼、戦闘開始時、味方全員に2行動分の<color=#ff701a>毒無効</color>を付与する。",
+      "Lr": "この輝きを止められるものはいない、戦闘開始時、味方全員に2行動分の<color=#ff701a>毒無効・凍結無効</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "3024",
+      "Ur": "3024_1",
+      "Lr": "3024_1"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3025,
+    "Names": {
+      "Ssr": "色褪せた鱗",
+      "Ur": "煌めくマーマンの鱗"
+    },
+    "Descriptions": {
+      "Ssr": "色褪せ薄汚れた鱗、この状態では効果はないみたいだ…",
+      "Ur": "黄金に輝く綺麗な鱗、バトル終了時、レリック「<color=#ff701a>SSR色褪せた鱗</color>」を獲得する。",
+      "Lr": "それは黄金に発光し増殖する…、バトル終了時、レリック「<color=#ff701a>UR煌めくマーマンの鱗</color>」を獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "3025",
+      "Ur": "3025_1",
+      "Lr": "3025_1"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3026,
+    "Names": {
+      "Ssr": "色褪せた球体",
+      "Ur": "CHAOSスフィア",
+      "Lr": "CHAOSスフィア"
+    },
+    "Descriptions": {
+      "Ssr": "色褪せ薄汚れた球体、この状態では効果はないみたいだ…",
+      "Ur": "光と闇が混沌とする、戦闘開始時、味方全員のEXゲージが<color=#00aab9>2減少</color>するが、<color=#ff701a>AP・PPを+1</color>し、攻撃力・防御力を<color=#ff701a>20%アップ</color>する。",
+      "Lr": "混沌を纏い支配する、戦闘開始時、味方全員の<color=#ff701a>AP・PPを+2</color>し、攻撃力・防御力を<color=#ff701a>50%アップ</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "3026",
+      "Ur": "3026_1",
+      "Lr": "3026_1"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3027,
+    "Names": {
+      "Ur": "ネクロノミコン",
+      "Lr": "ネクロノミコン"
+    },
+    "Descriptions": {
+      "Ur": "狂気と死を招く禁書、戦闘開始時、味方全員の最大HPが<color=#00aab9>30%</color>減少するが、敵全体の基本ステータスを<color=#ff701a>15%</color>ダウンさせる。",
+      "Lr": "禁書の狂気は、触れる者の精神を深淵へと誘う、戦闘開始時、味方全員の最大HPが<color=#00aab9>10%</color>減少するが、敵全体の基本ステータスを<color=#ff701a>30%</color>ダウンさせる。"
+    },
+    "AssetIds": {
+      "Ur": "3027",
+      "Lr": "3027"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3028,
+    "Names": {
+      "Sr": "蒼草の鉢植え"
+    },
+    "Descriptions": {
+      "Sr": "不思議な香りで生物を惑わす、戦闘開始時、味方全体が<color=#00aab9>2行動分の毒</color>になるが、3行動の間、HPを<color=#27D327>10%回復</color>する効果を付与する。",
+      "Ssr": "不思議な香りで生物を惑わす、戦闘開始時、味方全体が<color=#00aab9>1行動分の毒</color>になるが、3行動の間、HPを<color=#27D327>12%回復</color>する効果を付与する。",
+      "Ur": "不思議な香りで生物を惑わす、戦闘開始時、味方全体に3行動の間、HPを<color=#27D327>15%回復</color>する効果を付与する。",
+      "Lr": "不思議な香りで生物を惑わす、戦闘開始時、味方全体に3行動の間、HPを<color=#27D327>25%回復</color>する効果を付与する。"
+    },
+    "AssetIds": {
+      "Sr": "3028"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3029,
+    "Names": {
+      "R": "蒼草の種"
+    },
+    "Descriptions": {
+      "R": "刺々しい種、戦闘開始時、味方全体のHPを<color=#27D327>5%回復</color>し、攻撃力を<color=#ff701a>2%アップ</color>する。",
+      "Sr": "刺々しい種、戦闘開始時、味方全体のHPを<color=#27D327>10%回復</color>し、攻撃力を<color=#ff701a>8%アップ</color>する。",
+      "Ssr": "刺々しい種、戦闘開始時、味方全体のHPを<color=#27D327>10%回復</color>し、攻撃力を<color=#ff701a>24%アップ</color>する。",
+      "Ur": "刺々しい種、戦闘開始時、味方全体のHPを<color=#27D327>15%回復</color>し、攻撃力を<color=#ff701a>35%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "3029"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 3030,
+    "Names": {
+      "R": "壊れた黄金像"
+    },
+    "Descriptions": {
+      "R": "今にも壊れそうな黄金像、リスキーバトルに出撃時、タツミヤ鉱を<color=#ff701a>300個</color>獲得する。（ノーマルバトル戦闘後、消滅する）"
+    },
+    "AssetIds": {
+      "R": "3030"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 3031,
+    "Names": {
+      "Ssr": "落涙する女神像"
+    },
+    "Descriptions": {
+      "Ssr": "慈悲の祈りで辺りを守る、戦闘開始時、味方全体に<color=#ff701a>味方平均HP×5%のENシールド</color>を付与する。",
+      "Ur": "慈悲の祈りで辺りを守る、戦闘開始時、味方全体に<color=#ff701a>味方平均HP×10%のENシールド</color>を付与する。",
+      "Lr": "慈悲の祈りで辺りを守る、戦闘開始時、味方全体に<color=#ff701a>味方平均HP×20%のENシールド</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "3031"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3032,
+    "Names": {
+      "Sr": "怪しい金床"
+    },
+    "Descriptions": {
+      "Sr": "怪しげなオーラを纏った金床、休憩時、ランダムに<color=#ff701a>レリックを1つ強化</color>する。"
+    },
+    "AssetIds": {
+      "Sr": "3032"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 3033,
+    "Names": {
+      "Sr": "怪しい金槌"
+    },
+    "Descriptions": {
+      "Sr": "古く使い込まれた金槌、戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>3ヒット威力15のダメージ</color>を与える。",
+      "Ssr": "古く使い込まれた金槌、戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>3ヒット威力30のダメージ</color>を与える。",
+      "Ur": "古く使い込まれた金槌、戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>3ヒット威力60のダメージ</color>を与える。",
+      "Lr": "古く使い込まれた金槌、戦闘開始時、敵全体に味方平均攻撃力依存の<color=#ff701a>3ヒット威力90のダメージ</color>を与える。"
+    },
+    "AssetIds": {
+      "Sr": "3033"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3034,
+    "Names": {
+      "Ssr": "金の長刀"
+    },
+    "Descriptions": {
+      "Ssr": "神々しい金の刃、戦闘開始時、敵全体に1行動分の<color=#ff701a>暗闇</color>を付与する。暗闇状態は30%の確率でスキルが命中しなくなる",
+      "Ur": "神々しい金の刃、戦闘開始時、敵全体に1行動分の<color=#ff701a>暗闇</color>を付与する。暗闇状態は40%の確率でスキルが命中しなくなる",
+      "Lr": "神々しい金の刃、戦闘開始時、敵全体に2行動分の<color=#ff701a>暗闇</color>を付与する。暗闇状態は50%の確率でスキルが命中しなくなる"
+    },
+    "AssetIds": {
+      "Ssr": "3034"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3035,
+    "Names": {
+      "R": "銀の長刀"
+    },
+    "Descriptions": {
+      "R": "研ぎ澄まされた銀の刃、戦闘開始時、敵全体の回復効果が<color=#ff701a>10%</color>ダウンする。",
+      "Sr": "研ぎ澄まされた銀の刃、戦闘開始時、敵全体の防御力と回復効果が<color=#ff701a>20%</color>ダウンする。",
+      "Ssr": "研ぎ澄まされた銀の刃、戦闘開始時、敵全体の防御力と回復効果が<color=#ff701a>35%</color>ダウンする。"
+    },
+    "AssetIds": {
+      "R": "3035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 3036,
+    "Names": {
+      "R": "澄んだ水",
+      "Sr": "澄んだ水",
+      "Ssr": "精製された純水"
+    },
+    "Descriptions": {
+      "R": "飲み水ではない澄んだ水、戦闘開始時、味方全体の最大HPが<color=#00aab9>5％ダウン</color>する。",
+      "Sr": "飲用に適した水、戦闘開始時、味方全体の最大HPが<color=#ff701a>5％アップ</color>し、防御力<color=#ff701a>10%アップ</color>する。",
+      "Ssr": "極めて綺麗な純水、戦闘開始時、味方全体の最大HPが<color=#ff701a>30％アップ</color>し、防御力<color=#ff701a>30%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "3036"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 3037,
+    "Names": {
+      "Ssr": "祈りの石像"
+    },
+    "Descriptions": {
+      "Ssr": "女性の姿をした石像、戦闘開始時、味方全員に2行動分の<color=#ff701a>炎上無効</color>を付与する。",
+      "Ur": "女性の姿をした石像、戦闘開始時、味方全員に3行動分の<color=#ff701a>炎上無効</color>を付与する。",
+      "Lr": "女性の姿をした石像、戦闘開始時、味方全員に5行動分の<color=#ff701a>炎上無効</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "3037"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3038,
+    "Names": {
+      "Ssr": "ボーンフィッシュ"
+    },
+    "Descriptions": {
+      "Ssr": "骨だけで泳ぐ不思議な魚、戦闘開始時、味方全体の防御力が<color=#00aab9>50%ダウン</color>するが、に<color=#ff701a>1ヒットだけ攻撃を回避するバフ</color>を付与する。",
+      "Ur": "骨だけで泳ぐ不思議な魚、戦闘開始時、味方全体の防御力が<color=#00aab9>30%ダウン</color>するが、に<color=#ff701a>5ヒットだけ攻撃を回避するバフ</color>を付与する。",
+      "Lr": "骨だけで泳ぐ不思議な魚、戦闘開始時、味方全体の防御力が<color=#00aab9>10%ダウン</color>するが、に<color=#ff701a>10ヒットだけ攻撃を回避するバフ</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "3038"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 3039,
+    "Names": {
+      "Sr": "珍しい化石"
+    },
+    "Descriptions": {
+      "Sr": "世にも珍しい化石、ショップに来店する度に、<color=#ff701a>タツミヤ鉱を500個</color>獲得する。",
+      "Ssr": "世にも珍しい化石、ショップに来店する度に、<color=#ff701a>タツミヤ鉱を1600個</color>獲得する。"
+    },
+    "AssetIds": {
+      "Sr": "3039"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 3040,
+    "Names": {
+      "Ssr": "不思議な金塊"
+    },
+    "Descriptions": {
+      "Ssr": "黄金に煌めく金塊、通常バトル選択時、<color=#ff701a>タツミヤ鉱が30％増加</color>する。リスキーバトル選択時、<color=#ff701a>レリック「不思議な金塊」</color>を獲得する。",
+      "Ur": "黄金に煌めく金塊、通常バトル選択時、<color=#ff701a>タツミヤ鉱が100％増加</color>する。リスキーバトル選択時、<color=#ff701a>レリック「不思議な金塊」</color>を獲得する。"
+    },
+    "AssetIds": {
+      "Ssr": "3040"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 3041,
+    "Names": {
+      "R": "粘りつく泥"
+    },
+    "Descriptions": {
+      "R": "酷くへばり付く塊、戦闘開始時、味方全体の行動速度が<color=#00aab9>10ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "3041"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 3042,
+    "Names": {
+      "Ssr": "クリプティックシェル"
+    },
+    "Descriptions": {
+      "Ssr": "空いた姿を誰も見たことがない…、毎ターン、味方全体の防御力を<color=#ff701a>25%アップ</color>させる。",
+      "Ur": "空いた姿を誰も見たことがない…、毎ターン、味方全体の防御力を<color=#ff701a>60%アップ</color>させる。",
+      "Lr": "空いた姿を誰も見たことがない…、毎ターン、味方全体の防御力を<color=#ff701a>100%アップ</color>させる。"
+    },
+    "AssetIds": {
+      "Ssr": "3042"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 4001,
+    "Names": {
+      "Sr": "アンチデバフ"
+    },
+    "Descriptions": {
+      "Sr": "浄化波が駆け抜ける、EXを使用時デバフを<color=#ff701a>すべて解除</color>する（消費PP：1）。"
+    },
+    "AssetIds": {
+      "Sr": "4001"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 4002,
+    "Names": {
+      "Ssr": "ライフコア"
+    },
+    "Descriptions": {
+      "Ssr": "命脈が光を放ち満ちる、獲得時最大HPが<color=#ff701a>14%アップ</color>しHPを<color=#27D327>全回復</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "4002"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 4003,
+    "Names": {
+      "Ssr": "ショップセール（未使用）"
+    },
+    "Descriptions": {
+      "Ssr": "レリックセールを開催！ショップの商品が<color=#ff701a>50%割引</color>！"
+    },
+    "AssetIds": {
+      "Ssr": "4003"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 4004,
+    "Names": {
+      "Ur": "アブソリュートカット"
+    },
+    "Descriptions": {
+      "Ur": "極点衝撃が敵を蝕む、戦闘開始時、敵のスキル威力を<color=#ff701a>20%</color>低下させる。",
+      "Lr": "極点衝撃が敵を蝕む、戦闘開始時、敵のスキル威力を<color=#ff701a>50%</color>低下させる。"
+    },
+    "AssetIds": {
+      "Ur": "4004"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 4005,
+    "Names": {
+      "Ur": "オメガプラグ"
+    },
+    "Descriptions": {
+      "Ur": "隠された回路が接続される、獲得時最大<color=#ff701a>APを+1</color>する。"
+    },
+    "AssetIds": {
+      "Ur": "4005"
+    },
+    "Rarity": "Ur",
+    "MaxRarity": "Ur"
+  },
+  {
+    "Id": 5001,
+    "Names": {
+      "Ssr": "パルスフィールド"
+    },
+    "Descriptions": {
+      "Ssr": "震える脈動が力を呼ぶ、戦闘開始時、HP50%以下の物理タイプの味方のスキル威力を<color=#ff701a>+100</color>する（重複不可）。",
+      "Ur": "震える脈動が力を呼ぶ、戦闘開始時、HP70%以下の物理タイプの味方のスキル威力を<color=#ff701a>+125</color>する（重複不可）。",
+      "Lr": "震える脈動が力を呼ぶ、戦闘開始時、HP90%以下の物理タイプの味方のスキル威力を<color=#ff701a>+150</color>する（重複不可）。"
+    },
+    "AssetIds": {
+      "Ssr": "5001"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 5002,
+    "Names": {
+      "Ssr": "ゼロフレア"
+    },
+    "Descriptions": {
+      "Ssr": "完璧な輝きが閃く、戦闘開始時、HP100%のENタイプの味方のスキル威力を<color=#ff701a>+100</color>する（重複不可）。",
+      "Ur": "完璧な輝きが閃く、戦闘開始時、HP75%以上のENタイプの味方のスキル威力を<color=#ff701a>+125</color>する（重複不可）。",
+      "Lr": "完璧な輝きが閃く、戦闘開始時、HP50%以上のENタイプの味方のスキル威力を<color=#ff701a>+150</color>する（重複不可）。"
+    },
+    "AssetIds": {
+      "Ssr": "5002"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 5003,
+    "Names": {
+      "Ssr": "タキオンドライブ"
+    },
+    "Descriptions": {
+      "Ssr": "タキオンの粒子が奔る、戦闘開始時、HP50%以下の敏捷タイプの味方の速度を<color=#ff701a>50%アップ</color>する（重複不可）。",
+      "Ur": "タキオンの粒子が奔る、戦闘開始時、HP75%以下の敏捷タイプの味方の速度を<color=#ff701a>75%アップ</color>する（重複不可）。",
+      "Lr": "タキオンの粒子が奔る、戦闘開始時、敏捷タイプの味方の速度を<color=#ff701a>100%アップ</color>する（重複不可）。"
+    },
+    "AssetIds": {
+      "Ssr": "5003"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 5004,
+    "Names": {
+      "Ssr": "カースコイル"
+    },
+    "Descriptions": {
+      "Ssr": "歪んだ螺旋が毒を撒く、戦闘開始時敵全体に3行動分の<color=#ff701a>毒</color>を付与する。",
+      "Ur": "歪んだ螺旋が毒を撒く、戦闘開始時敵全体に6行動分の<color=#ff701a>毒</color>を付与する。",
+      "Lr": "歪んだ螺旋が毒を撒く、戦闘開始時敵全体に10行動分の<color=#ff701a>毒</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "5004"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 5005,
+    "Names": {
+      "Ssr": "インフェルノ"
+    },
+    "Descriptions": {
+      "Ssr": "業火の奔流が襲いかかる、戦闘開始時敵全体に3行動分の<color=#ff701a>炎上</color>を付与する。",
+      "Ur": "業火の奔流が襲いかかる、戦闘開始時敵全体に6行動分の<color=#ff701a>炎上</color>を付与する。",
+      "Lr": "業火の奔流が襲いかかる、戦闘開始時敵全体に10行動分の<color=#ff701a>炎上</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "5005"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 5006,
+    "Names": {
+      "Ssr": "サイレントデバイス"
+    },
+    "Descriptions": {
+      "Ssr": "静寂の波動が縛る、戦闘開始時敵全体に<color=#ff701a>凍結</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "5006"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 7010,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7012,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7013,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7014,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7015,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7016,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7017,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7023,
+    "Names": {
+      "R": "めるのボイスレコーダー"
+    },
+    "Descriptions": {
+      "R": "指揮官の名を絶えず呼び続けるめるの声が録音されている。"
+    },
+    "AssetIds": {
+      "R": "7023"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 7024,
+    "Names": {
+      "R": "七彩のボイスレコーダー"
+    },
+    "Descriptions": {
+      "R": "途切れ途切れに皆を心配する七彩の声が録音されている。"
+    },
+    "AssetIds": {
+      "R": "7023"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 7025,
+    "Names": {
+      "R": "ちゆるのボイスレコーダー"
+    },
+    "Descriptions": {
+      "R": "苦痛にもがき呻くちゆるの声が録音されている。"
+    },
+    "AssetIds": {
+      "R": "7023"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 7026,
+    "Names": {
+      "R": "ラミのボイスレコーダー"
+    },
+    "Descriptions": {
+      "R": "錯乱して叫ぶラミの声が録音されている。"
+    },
+    "AssetIds": {
+      "R": "7023"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 7027,
+    "Names": {
+      "R": "白奈のボイスレコーダー"
+    },
+    "Descriptions": {
+      "R": "仲間に何度も助けを求める白奈の声が録音されている。"
+    },
+    "AssetIds": {
+      "R": "7023"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 7028,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7029,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7030,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7031,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7032,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7033,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7034,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7028"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7035,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7036,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7037,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7038,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7039,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7040,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 7041,
+    "Names": {
+      "R": "クリスタル"
+    },
+    "Descriptions": {
+      "R": "レリック強化・生成の素材。何の効果もない。"
+    },
+    "AssetIds": {
+      "R": "7035"
+    },
+    "Rarity": "R",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 8000,
+    "Names": {
+      "R": "プチフォース（物理）"
+    },
+    "Descriptions": {
+      "R": "未完成な物理制御機構が起動し、戦闘開始時物理タイプの味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2016"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8001,
+    "Names": {
+      "R": "プチフォース（EN）"
+    },
+    "Descriptions": {
+      "R": "未完成なEN制御機構が起動し、戦闘開始時ENタイプの味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2017"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8002,
+    "Names": {
+      "R": "プチフォース（敏捷）"
+    },
+    "Descriptions": {
+      "R": "未完成な敏捷制御機構が起動し、戦闘開始時敏捷タイプの味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2018"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8003,
+    "Names": {
+      "R": "プチブースト（アグレッシブ）"
+    },
+    "Descriptions": {
+      "R": "未完成な属性制御機構が起動し、戦闘開始時アグレッシブ属性の味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2019"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8004,
+    "Names": {
+      "R": "プチブースト（スマート）"
+    },
+    "Descriptions": {
+      "R": "未完成な属性制御機構が起動し、戦闘開始時スマート属性の味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2020"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8005,
+    "Names": {
+      "R": "プチブースト（シャイ）"
+    },
+    "Descriptions": {
+      "R": "未完成な属性制御機構が起動し、戦闘開始時シャイ属性の味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2021"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8006,
+    "Names": {
+      "R": "プチブースト（キュート）"
+    },
+    "Descriptions": {
+      "R": "未完成な属性制御機構が起動し、戦闘開始時キュート属性の味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2022"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8007,
+    "Names": {
+      "R": "プチブースト（コミカル）"
+    },
+    "Descriptions": {
+      "R": "未完成な属性制御機構が起動し、戦闘開始時コミカル属性の味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2023"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8008,
+    "Names": {
+      "R": "プチブースト（クレバー）"
+    },
+    "Descriptions": {
+      "R": "未完成な属性制御機構が起動し、戦闘開始時クレバー属性の味方の攻撃力を<color=#ff701a>10%増加</color>させる。"
+    },
+    "AssetIds": {
+      "R": "2024"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8009,
+    "Names": {
+      "R": "スカーミッシュ"
+    },
+    "Descriptions": {
+      "R": "攻防一体の型を得て、戦闘開始時味方の攻撃力が<color=#ff701a>3%増加</color>し、防御力が<color=#ff701a>8%増加</color>する。"
+    },
+    "AssetIds": {
+      "R": "1022"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8010,
+    "Names": {
+      "R": "ライフアップ"
+    },
+    "Descriptions": {
+      "R": "命の源が活性化する。獲得時、最大HPが<color=#ff701a>+10%</color>。"
+    },
+    "AssetIds": {
+      "R": "1007"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8011,
+    "Names": {
+      "R": "プチブーストギア"
+    },
+    "Descriptions": {
+      "R": "不安定な起動粒子が舞い加速、戦闘開始時味方全体の速度<color=#ff701a>+5%</color>する"
+    },
+    "AssetIds": {
+      "R": "1010"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8012,
+    "Names": {
+      "R": "プチワームクラッシュ"
+    },
+    "Descriptions": {
+      "R": "にじみ出る液体が敵陣を蝕む、戦闘開始時敵全体の攻撃力<color=#ff701a>5%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "1003"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8013,
+    "Names": {
+      "R": "プチフェーズシフト"
+    },
+    "Descriptions": {
+      "R": "わずかなズレで敵を惑わす、戦闘開始時敵全体の行動速度を<color=#ff701a>5%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "1014"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 8014,
+    "Names": {
+      "R": "プチフォース(物理)"
+    },
+    "Descriptions": {
+      "R": "わずかなズレで敵を惑わす、戦闘開始時物理タイプの味方の攻撃力を<color=#ff701a>10%アップ</color>する。"
+    },
+    "AssetIds": {
+      "R": "2016"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 9000,
+    "Names": {
+      "Lr": "ピンクマカローン"
+    },
+    "Descriptions": {
+      "Lr": "シティ街中で人気のお菓子、次のバトルで敵全体が1行動の<color=#ff701a>気絶</color>になるが、味方全体が99ターン<color=#00aab9>毒状態</color>になる。"
+    },
+    "AssetIds": {
+      "Lr": "9001"
+    },
+    "Rarity": "Lr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 9001,
+    "Names": {
+      "Lr": "謎の液体"
+    },
+    "Descriptions": {
+      "Lr": "特徴的な髪留めがビーカーの中に埋もれた謎の液体、次のバトルで味方の<color=#ff701a>EXゲージが満タン</color>でバトルがスタートするが、防御力が<color=#00aab9>30%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "Lr": "9002"
+    },
+    "Rarity": "Lr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 9002,
+    "Names": {
+      "Lr": "スカラタンフル"
+    },
+    "Descriptions": {
+      "Lr": "スカラ商店街で若者に人気なスイーツ、次のバトルで1番HPの高い味方が<color=#00aab9>戦闘不能</color>になるが、他のキャラクターはHPが<color=#27D327>全回復</color>する。"
+    },
+    "AssetIds": {
+      "Lr": "9003"
+    },
+    "Rarity": "Lr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 9003,
+    "Names": {
+      "Lr": "生徒会長のカレー"
+    },
+    "Descriptions": {
+      "Lr": "本格派のビーフカレー、次のバトルで敵全体が3行動<color=#ff701a>炎上</color>になり、敵全体の攻撃力が<color=#00aab9>20％アップ</color>する。"
+    },
+    "AssetIds": {
+      "Lr": "9004"
+    },
+    "Rarity": "Lr",
+    "MaxRarity": "Lr"
+  },
+  {
+    "Id": 9006,
+    "Names": {
+      "R": "沈黙の鳩時計"
+    },
+    "Descriptions": {
+      "R": "鳩が鳴かない鳩時計、次のバトルで敵全体の攻撃力が1行動分<color=#ff701a>100%ダウン</color>するが、味方全体の行動速度が<color=#00aab9>78%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "R": "9007"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 9007,
+    "Names": {
+      "R": "ノーガードナックル"
+    },
+    "Descriptions": {
+      "R": "攻撃は最大の防御、次のバトルで敵味方全体の防御力が<color=#ff701a>100%減少</color>する。"
+    },
+    "AssetIds": {
+      "R": "9008"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 9008,
+    "Names": {
+      "R": "サドンデス・ホイッスル"
+    },
+    "Descriptions": {
+      "R": "笛の音を聞いた者を破滅させる、次のバトルで敵味方全体の最大HPが<color=#ff701a>99.9%減少</color>する。"
+    },
+    "AssetIds": {
+      "R": "9009"
+    },
+    "Rarity": "R",
+    "MaxRarity": "R"
+  },
+  {
+    "Id": 9009,
+    "Names": {
+      "Sr": "ハニカムシールド"
+    },
+    "Descriptions": {
+      "Sr": "強固なバリアで身を守る、次のバトルで味方全体に<color=#ff701a>味方平均防御力×15%のシールド</color>を付与する。"
+    },
+    "AssetIds": {
+      "Sr": "9010"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 9010,
+    "Names": {
+      "Sr": "ネクロサークル"
+    },
+    "Descriptions": {
+      "Sr": "代償を糧に禁忌を操る、次のバトルで敵全体の基本ステータスを<color=#ff701a>30%ダウン</color>させるが、バトル後の<color=#00aab9>レリック獲得ができなくなる</color>。"
+    },
+    "AssetIds": {
+      "Sr": "9011"
+    },
+    "Rarity": "Sr",
+    "MaxRarity": "Sr"
+  },
+  {
+    "Id": 9012,
+    "Names": {
+      "Ssr": "8A3C660E305B3088"
+    },
+    "Descriptions": {
+      "Ssr": "何かのメイズシフターの一部…、次のバトルで味方全体の攻撃力を<color=#ff701a>20％アップ</color>させ、さらに<color=#ff701a>気絶無効</color>を付与する。"
+    },
+    "AssetIds": {
+      "Ssr": "9013"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 9015,
+    "Names": {
+      "Ssr": "謎の液体X"
+    },
+    "Descriptions": {
+      "Ssr": "誰かの髪留めが埋もれた謎の赤い液体、次のバトルで味方の<color=#ff701a>EXゲージが満タン</color>でバトルがスタートするが、攻撃力が<color=#00aab9>30%ダウン</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "9016"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 9017,
+    "Names": {
+      "Ssr": "カラフルマカローン"
+    },
+    "Descriptions": {
+      "Ssr": "シティ街中で人気の新作お菓子、次のバトルで敵全体が1行動の<color=#ff701a>気絶</color>になるが、ランダムに<color=#00aab9>レリックが2つ消滅</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "9015"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 9018,
+    "Names": {
+      "Ssr": "パーティープレート"
+    },
+    "Descriptions": {
+      "Ssr": "飲んで食らい祝う、次のバトルで味方全体の基本ステータスが<color=#ff701a>15%</color>アップし、<color=#ff701a>APとPPを+1</color>する。"
+    },
+    "AssetIds": {
+      "Ssr": "9017"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  },
+  {
+    "Id": 9019,
+    "Names": {
+      "Ssr": "カウントダウンホイッスル"
+    },
+    "Descriptions": {
+      "Ssr": "何かの始まりを知らせる笛、次のバトルで毎ターン、敵全体の攻撃力と防御力を<color=#ff701a>20%ダウン</color>させる。"
+    },
+    "AssetIds": {
+      "Ssr": "9018"
+    },
+    "Rarity": "Ssr",
+    "MaxRarity": "Ssr"
+  }
+]

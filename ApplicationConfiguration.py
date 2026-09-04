@@ -1,6 +1,4 @@
 import struct
-import sys
-import os
 
 class BinaryParser:
 

@@ -1,0 +1,53 @@
+[
+  {
+    "Id": 1,
+    "BackgroundAssetId": "60010",
+    "IntroductionEpisodeMasterId": 300101,
+    "Name": "メイズ",
+    "MazeType": "Normal",
+    "StartDate": null,
+    "ExplorationCloseDate": null,
+    "EndDate": null,
+    "CharacterLevelLimitMode": "PlayerRank",
+    "CharacterLevelLimit": null,
+    "BaseThreatLevel": 0,
+    "Level2RequiredThreatLevel": null,
+    "Level3RequiredThreatLevel": null,
+    "Level4RequiredThreatLevel": null,
+    "Level5RequiredThreatLevel": null
+  },
+  {
+    "Id": 5,
+    "BackgroundAssetId": "60010",
+    "IntroductionEpisodeMasterId": 300101,
+    "Name": "緊急脱出",
+    "MazeType": "StoryMaze",
+    "StartDate": null,
+    "ExplorationCloseDate": null,
+    "EndDate": null,
+    "CharacterLevelLimitMode": "AsConfiguredFixed",
+    "CharacterLevelLimit": 200,
+    "BaseThreatLevel": 0,
+    "Level2RequiredThreatLevel": null,
+    "Level3RequiredThreatLevel": null,
+    "Level4RequiredThreatLevel": null,
+    "Level5RequiredThreatLevel": null
+  },
+  {
+    "Id": 8,
+    "BackgroundAssetId": "40062",
+    "IntroductionEpisodeMasterId": null,
+    "Name": "前夜祭エリア",
+    "MazeType": "PreFestivalMaze",
+    "StartDate": "2026-08-25T12:30:00+00:00",
+    "ExplorationCloseDate": "2026-09-01T04:59:59+00:00",
+    "EndDate": "2026-09-08T04:59:59+00:00",
+    "CharacterLevelLimitMode": "AsConfiguredFixed",
+    "CharacterLevelLimit": 200,
+    "BaseThreatLevel": 1,
+    "Level2RequiredThreatLevel": 3,
+    "Level3RequiredThreatLevel": 6,
+    "Level4RequiredThreatLevel": 12,
+    "Level5RequiredThreatLevel": 20
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "Id": 11,
+    "PartyBonusMasterId": 1,
+    "Priority": 1,
+    "Description": "3体の同属性キャラクターを編成する",
+    "EffectText": "攻撃力+10%、HP+10%",
+    "AssetId": "3"
+  },
+  {
+    "Id": 12,
+    "PartyBonusMasterId": 1,
+    "Priority": 2,
+    "Description": "3体+2体の同属性キャラクターを編成する",
+    "EffectText": "攻撃力+15%、HP+15%",
+    "AssetId": "3_2"
+  },
+  {
+    "Id": 13,
+    "PartyBonusMasterId": 1,
+    "Priority": 3,
+    "Description": "4体の同属性キャラクターを編成する",
+    "EffectText": "攻撃力+15%、HP+20%",
+    "AssetId": "4"
+  },
+  {
+    "Id": 14,
+    "PartyBonusMasterId": 1,
+    "Priority": 4,
+    "Description": "5体の同属性キャラクターを編成する",
+    "EffectText": "攻撃力+25%、HP+25%",
+    "AssetId": "5"
+  },
+  {
+    "Id": 21,
+    "PartyBonusMasterId": 2,
+    "Priority": 1,
+    "Description": "1体以上",
+    "EffectText": "防御力+30%\t\t\t\t",
+    "AssetId": null
+  },
+  {
+    "Id": 22,
+    "PartyBonusMasterId": 2,
+    "Priority": 2,
+    "Description": "2体以上",
+    "EffectText": "攻撃力+10%、HP+10%\t",
+    "AssetId": null
+  },
+  {
+    "Id": 23,
+    "PartyBonusMasterId": 2,
+    "Priority": 3,
+    "Description": "3体以上",
+    "EffectText": "会心率+15%",
+    "AssetId": null
+  },
+  {
+    "Id": 24,
+    "PartyBonusMasterId": 2,
+    "Priority": 4,
+    "Description": "4体以上",
+    "EffectText": "攻撃力+15%、HP+15%",
+    "AssetId": null
+  },
+  {
+    "Id": 25,
+    "PartyBonusMasterId": 2,
+    "Priority": 5,
+    "Description": "5体以上",
+    "EffectText": "攻撃力+25%、HP+25%",
+    "AssetId": null
+  }
+]

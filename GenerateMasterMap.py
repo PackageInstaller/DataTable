@@ -55,17 +55,32 @@ def generate(cs: Path, o: Path):
         r'\[Key\((\d+)\)\]\s*(?:\[.*?\]\s*)*public\s+([\w\.<>\?`\[\]\s,]+)\s+(\w+)\s*\{', re.DOTALL
     )
 
+    def pick_class_body(class_name: str) -> str | None:
+        """同名类优先选带 MessagePack [Key] / IDataObject 的定义（避开 UI 同名类）。"""
+        class_start_pattern = re.compile(
+            fr'public class {re.escape(class_name)}\s*(?:\/\/[^\n]*)?(?::(?:.|\n)*?)?{{'
+        )
+        best, best_score = None, -1
+        for class_match in class_start_pattern.finditer(content):
+            start_brace = class_match.end() - 1
+            end_brace = find(content, start_brace)
+            if end_brace == -1:
+                continue
+            header = class_match.group(0)
+            body = content[start_brace:end_brace]
+            score = body.count("[Key(")
+            if "IDataObject" in header or "IMasterDataObject" in header or "IUserDataObject" in header:
+                score += 1000
+            if score > best_score:
+                best, best_score = body, score
+        return best
+
     while classes_to_parse:
         class_name = classes_to_parse.pop()
         if class_name in parsed_classes: continue
         parsed_classes.add(class_name)
-        class_start_pattern = re.compile(fr'public class {re.escape(class_name)}\s*(?:\/\/.*)?(?::(?:.|\n)*?)?{{')
-        class_match = class_start_pattern.search(content)
-        if not class_match: continue
-        start_brace = class_match.end() - 1
-        end_brace = find(content, start_brace)
-        if end_brace == -1: continue
-        class_body = content[start_brace:end_brace]
+        class_body = pick_class_body(class_name)
+        if not class_body: continue
         fields, field_types = {}, {}
         for prop_match in prop_pattern.finditer(class_body):
             key, prop_type, prop_name = prop_match.groups()
@@ -104,4 +119,4 @@ def generate(cs: Path, o: Path):
         f.write("}\n")
 
 if __name__ == "__main__":
-    generate(Path("il2cpp.cs"), Path("MasterMap.py"))
+    generate(Path("cs/il2cpp.cs"), Path("MasterMap.py"))
