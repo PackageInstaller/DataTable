@@ -11,6 +11,227 @@
     "m_Name": "skin_skill_data",
     "records": [
         {
+            "id": 10002,
+            "rarity": 0,
+            "name": "大きな橙色の果物",
+            "kana": "",
+            "text": "耐久を9秒毎に最大耐久の[0,0,0]%分回復し、追加で現在攻撃力の[0,1,0]%分回復する",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        },
+                        {
+                            "num": [
+                                101
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                270
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                52
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                271
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ],
+            "IconId": 3
+        },
+        {
+            "id": 10012,
+            "rarity": 0,
+            "name": "ネオンバトン",
+            "kana": "",
+            "text": "現在耐久が最大耐久の50%以上の場合、攻撃力+[0,0,0]\r\n<color=#ffa500>編成時、ルルイエ勢力の攻撃力+[0,1,0]、貫通率+[0,2,0]%</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 8,
+                    "param": [
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2000,
+                            "num": [
+                                50
+                            ],
+                            "option": [
+                                ">="
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 8,
+                    "param": [
+                        {
+                            "num": [
+                                75
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 86,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "IconId": 1
+        },
+        {
             "id": 10019,
             "rarity": 0,
             "name": "赤色グラフティ",
@@ -69,6 +290,189 @@
                     ],
                     "timing": 18,
                     "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "IconId": 1
+        },
+        {
+            "id": 10032,
+            "rarity": 0,
+            "name": "水晶のアクセサリー",
+            "kana": "",
+            "text": "<color=yellow><link=\"凍結\">凍結</link></color>状態を無効化する\r\n<color=#ffa500>編成時、味方ヴァイス全ての魔法防御力+[0,1,0]、凍結耐性+[0,2,0]</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 915,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 18,
+                    "param": [
+                        {
+                            "num": [
+                                25
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 29,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 416,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 29,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ],
+            "IconId": 4
+        },
+        {
+            "id": 10040,
+            "rarity": 0,
+            "name": "キャンディアタック！",
+            "kana": "",
+            "text": "会心率+[0,0,0]%、会心時、2秒間会心ダメージ率+[0,1,0]%\r\n<color=#ffa500>編成時、味方ヴァイス全ての攻撃力+[0,2,0]、会心率+[0,3,0]</color=#ffa500>",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 26,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 20,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 8,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 29,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 29,
                     "triggerData": [],
                     "activeData": []
                 }

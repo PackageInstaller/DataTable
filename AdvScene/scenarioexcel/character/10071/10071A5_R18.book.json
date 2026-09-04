@@ -1,0 +1,3433 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": -2195584510539435343
+    },
+    "m_Name": "10071A5_R18.book",
+    "importVersion": 0,
+    "importGridList": [
+        {
+            "rows": [
+                {
+                    "rowIndex": 0,
+                    "strings": [
+                        "",
+                        "Command",
+                        "Arg1",
+                        "Arg2",
+                        "Arg3",
+                        "Arg4",
+                        "Arg5",
+                        "Arg6",
+                        "WaitType",
+                        "Text",
+                        "PageCtrl",
+                        "Voice",
+                        "WindowType",
+                        "Arg7"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 1,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 2,
+                    "strings": [
+                        "",
+                        "Bg",
+                        "背景_ルルイエの民家(夜)"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 3,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_2005_0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 4,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 5,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 6,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯上",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "880",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 7,
+                    "strings": [
+                        "",
+                        "Sprite",
+                        "マスク黒帯下",
+                        "漫符_ブラック",
+                        "レイヤー_マスク全画面下",
+                        "3000",
+                        "-820",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 8,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 9,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 10,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 11,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveTo",
+                        "time=0 x=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 12,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "レイヤー_マスク全画面下",
+                        "MoveBy",
+                        "time=0 y=0",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 13,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "Add",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 14,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 15,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "MoveBy",
+                        "time=0 y=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 16,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "MoveBy",
+                        "time=0 y=6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 17,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯上",
+                        "ColorTo",
+                        "time=0 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 18,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "マスク黒帯下",
+                        "ColorTo",
+                        "time=0 alpha=0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 19,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt2_Ang",
+                        "layer_中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 20,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 21,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 22,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt2_Ang",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 23,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――チッ。\n相変わらずホコリクサい部屋だな。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_001"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 24,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺の部屋を訪れて早々、ムスクーマが悪態をついた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 25,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "一応掃除はしたんだけどな……。\nそれじゃあ、窓でも開けるか。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 26,
+                    "strings": [
+                        "",
+                        "Shake",
+                        "ムスクーマ",
+                        "",
+                        "time=0.2 x=20 y=-16",
+                        "",
+                        "",
+                        "",
+                        "NoWait"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 27,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "開けんなッ！\nもっとキショい空気が入ってくる！\nウチの繭にヘンなもん混ぜんなって言ってんだろ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_002"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 28,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "人間でたとえるなら『潔癖症』の彼女は、ひどく気難しい。\nしかし２回も俺の命を救ってくれた恩人でもある。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 29,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……まあ、その『２回目』のせいで、\n俺の体内には今も彼女の繭の一部が蠢いているわけだが。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 30,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（腹の中が、ずっと、どことなく重い。\n気のせいだろうか。それとも、本当に――）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 31,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 32,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt1_Nor",
+                        "layer_BU中",
+                        "",
+                        "-30",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 33,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ムスクーマが俺に鼻を近づけ、すんと鳴らす。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 34,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "オマエ。\nいい感じに『混ざって』きてるな。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_003"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 35,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt10_Est",
+                        "layer_BU中",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 36,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "これなら……食べられるかな……はは♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_004"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 37,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "舌なめずりをひとつ。\n色素の薄い彼女の舌は、不気味なほど鮮やかに赤い。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 38,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……お、俺を、食べるのか……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 39,
+                    "strings": [
+                        "",
+                        "Tween",
+                        "ムスクーマ",
+                        "MoveBy",
+                        "time=0.2 y=-20",
+                        "",
+                        "pingPong=2"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 40,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ。正確には――\nオマエがご丁寧にハラで育てた『それ』を、な。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_005"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 41,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "腹の中が、大きく波打った。\nにわかに動悸がする。全身が冷や汗を垂れ流す。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 42,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 43,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほら、帰ってこい。\n迎え入れてやるよ……ウチの中に……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_006"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 44,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_液体が垂れる"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 45,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt6_Shy"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 46,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――ぁむ……っ。\nはふ、んぢゅっ……じゅるるッ……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_007"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 47,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "覆いかぶさるように、彼女は俺に口づけた。\n絡めた舌から唾液を吸いあげ、細い喉が飲みくだす。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 48,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぢゅっ、ぢゅぶっ……んぐっ……はぁぁ。\nさっさと出てこい、ってのぉ……じゅる、じゅるるるっ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_008"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 49,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "美少女に熱烈なディープキスをされている。\n経緯はともあれ、その状況に肉体が反応するのは、\n男としてしょうがないことだろう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 50,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt5_Sur"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 51,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んむっ、ぢゅうぅぅ～～ッ……はぁぁ……っ。\n……出てこねえな？　腹の中で、詰まってる……？",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_009"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 52,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女の手がへそ辺りを撫でる。\nくすぐったさが、キスのせいで少しずつ快楽に溶けていく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 53,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt10_Est",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 54,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……あっ♪　あった♪\nはははっ、こんなとこに集まってたのかぁ……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_010"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 55,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "細い指先が、いよいよ『それ』を――\n勃ち上がりかけた陰茎を、服越しにツンとつついた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 56,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_布類を触る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 57,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "っ、ちょっと、ストップ……！\nえっと……ココに集まってるって、どういう……？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 58,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 59,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "オマエの股からウチのニオイがするって言ってんだよ。\n吸い上げるならこっちだったか。よいしょっと。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_011"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 60,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt5_Sur",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 61,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "――ってうわッ！？　クッサぁ……ッ！\nルルイエの隅っこみたいなニオイがする……。\nこれに口付けんのは……うげぇ、ムリだわ……。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_012"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 62,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "勝手に寄生して、勝手にキスして、勝手に文句を言って。\n本当にどこまでも自分勝手な奴である。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 63,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt9_Ama",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 64,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はーぁ。\nせっかくハラいっぱいになれると思ったのになぁ……。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_013"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 65,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "しかし。\n彼女の落ち込んだ顔を見ると、\nつい、なんとかしてやれないかと考えてしまう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 66,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "（我ながら、お人好しにもほどがあるな）"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 67,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ええと。\n要は、コレの中身を飲みたいのか？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 68,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt1_Nor",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 69,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ。ってかこの際、飲まなくてもいい。\nウチの体にくっついたら、勝手に中に入っていくし。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_014"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 70,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ほーー……。\nなるほどな……。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 71,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "よし。それならいい方法があるぞ。\n顔に近づけないで、中身だけを体にくっつける方法。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 72,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "Emt3_Gla",
+                        "",
+                        "",
+                        "",
+                        "0.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 73,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "へー？\nまあ、オマエの体の話だし……さっさと教えろよ、それ。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_015"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 74,
+                    "strings": [
+                        "",
+                        "Se",
+                        "SE_物体動作_布類を触る"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 75,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#FFFFFF",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 76,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯上",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 77,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "マスク黒帯下",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 78,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_01",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 79,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "グラデ_02",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 80,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_01"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 81,
+                    "strings": [
+                        "",
+                        "SpriteOff",
+                        "四角_02"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 82,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "Bgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 83,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.8",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 84,
+                    "strings": [
+                        "",
+                        "CharacterOff",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 85,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 86,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマR18_1",
+                        "Wait",
+                        "layer_R18",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 87,
+                    "strings": [
+                        "",
+                        "StopBgm",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 88,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.3",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 89,
+                    "strings": [
+                        "",
+                        "Bgm",
+                        "BGM_3001_0",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 90,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 91,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "ムスクーマA_wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10071/Bgv/vo_bgv_10071_001"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 92,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なんだよこの体勢……。\n本当にこれで中身が出てくるのか？",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_016"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 93,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ああ。これが、一番いっぱい出る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 94,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "お、おお……？\nなんかいつになくマジだな、オマエ……。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_017"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 95,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "亀頭を彼女の秘所に押し当てる。\n少しこわばったそこを慣らすよう、ゆっくりと擦りつける。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 96,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んっ……。ぁ、はぁ……ふ、ぅうっ……♪\nなんか……ヘンってか、くすぐったい、な……？",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_018"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 97,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "痛かったりしたらすぐ言ってくれ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 98,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ニンゲンの力なんか痛くねーし。\nオマエに付き合ってやるけど、さ。でも……ええと……。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_019"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 99,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……名前。呼べ。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_020"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 100,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ムスクーマ。\nちょっとだけ、俺に付き合って。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 101,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふぁあっ……♪\nはぁ……わぁーったよ。\n仕方ねえヤツだなぁ……ふはっ……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_021"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 102,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……可愛い。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 103,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "は？　今、なんて――。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_022"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 104,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "ムスクーマA_wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 105,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマR18_1",
+                        "Normal",
+                        "layer_R18",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 106,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_後背位",
+                        "TRUE",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 107,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "ムスクーマA_normal",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10071/Bgv/vo_bgv_10071_002"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 108,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぅあああああッ！？\nなにこれっ、ヘンな声、出るッ……くぅぅぅんっ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_023"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 109,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "セックスだよ。\n俺のおちんちんを、君のおまんこに入れてるんだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 110,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "知らない言葉、使うなぁぁっ……！\n早く、おちんちん？　の中身、出せよぉ……っ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_024"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 111,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "じゃないとっ……ぅうっ、ふぅ、くぅんッ！\nはぁっ……なんか、ヘンでっ……ふ、ぐぅぅ～～……ッ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_025"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 112,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "快楽は彼女にとって未知の感覚なのだろう。\n繭をガリガリと爪で掻き、獣のように息を荒げている。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 113,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あぁ、クソッ、ハラの中、混ざってる……！\nキショい、のにっ……ぅあああっ……！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_026"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 114,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "気持ちいい？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 115,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はあっ！？\nふざけんなっ、クソ、こんなの、気持ちいいわけ……ッ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_027"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 116,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "く、ひぃぃんっ……！　ふぅーっ、ぁ、ぁあんっ……！\nクソッ、さっさと、終わらせ……ふへぇぇぇ……っ♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_028"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 117,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "拒絶の言葉とは裏腹に、突き入れるたび、\nナカはねだるように肉棒に吸いついて引き入れる。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 118,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……そろそろ、気持ちよくなってきた？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 119,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "っ、はあぁっ！？　気持ちよく、ねえっ……！\n混ざってんのキショいって……ずっと、言ってんだろぉ……っ♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_029"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 120,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あからさまに虚勢だった。\n彼女のナカは既にぐしょ濡れで、すっかりとろけきっている。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 121,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ウチが気持ちいいとか、どーでもいいだろぉッ……！？\nおちんちんの中身ッ……さっさと出せぇ……！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_030"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 122,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そんなことないよ。\n君が気持ちいいと、より早く、いっぱい出る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 123,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んぇえっ……？\nふはぁぁっ、く、ぅぅ……マジ、かよぉ……っ？",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_031"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 124,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あぁ。だから、\nもし気持ちいいんなら、正直に言って。\n『おちんちん気持ちいい』って。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 125,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ほら、教えて。ムスクーマ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 126,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぅ、ぐぅぅ～～～～……ッ！\nふぅっ……は、ぅぅぅ～っ…………！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_032"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 127,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……きもち、いい。\nオマエのおちんちんが混ざるのっ……気持ちいい～……っ！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_033"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 128,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あぁっ、クソっ、意味わかんねえっ！\n知らないの混ざるの、クソキショいのにっ！\n気持ちよくてっ……なんか、嬉しいんだよぉっ……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_034"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 129,
+                    "strings": [
+                        "",
+                        "StopHSe",
+                        "SE_動作_行為_後背位",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 130,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "ムスクーマA_normal",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 131,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_後背位_激",
+                        "TRUE",
+                        "0.8"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 132,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマR18_1",
+                        "Fast",
+                        "layer_R18",
+                        "",
+                        "",
+                        "0.4"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 133,
+                    "strings": [
+                        "",
+                        "BgVoice",
+                        "ムスクーマA_fast",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "Character/ch_10071/Bgv/vo_bgv_10071_003"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 134,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んぐぅうぅぅッ！？\nぅあぁああッ、ぁ、はあぁああぁぁッ！！\nいきなりっ、激しくぅッ……！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_035"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 135,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぁああーーっ、おちんちん、混ざってるぅぅぅッ……！！\nやめろッ、これダメっ、ふぐ、ぅうう゛ぅ～～ッ！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_036"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 136,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "繭に顔をうずめ、ジタバタと暴れるムスクーマ。\n逃げようとする腰を引き寄せ、膨らんだ膣壁を責め続ける。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 137,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "うああぁっ、はあッ、やめっ……出るぅっ……！！\nお、おまんこっ、なんか、出ちゃう、ぅうぅう～～ッ！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_037"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 138,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぷしゃ、と音を立てて潮が漏れ出し、\n狭い繭の中が淫らな匂いで充満していく。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 139,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふああぁぁっ……♪　このニオイ、だめぇっ……♪\nこんなのっ、嗅ぐなあっ……ぅうう、あぁ～～ッ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_038"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 140,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "……ムスクーマも、\n自分のエッチな匂いには興奮しちゃうんだな。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 141,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぅう゛……ッ！　う、あぁぁああ～～～っ！！\n恥ずいぃっ、バカ、バカぁっ！！\nこんなの垂れ流してっ……まるで、オマエのことぉっ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_039"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 142,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は好きだよ。ムスクーマのこと。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 143,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "なッ…………ぁっ、だめ、だめだめだめっ……！！\nバカおまんこっ、我慢しろぉっ……ふぐぅぅ～～ッ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_040"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 144,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ムスクーマ、可愛い。\nもっとふたりで混ざり合おう。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 145,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "な、ぁあぁ……ッ♪　ぁ、だめっ、来るぅ……！\nひゃ、ンうう゛ぅう～～～ッ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_041"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 146,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "食いちぎらんばかりにナカが収縮する。\n膣肉が激しくうねり、真っ白な愛液が奥から噴き出した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 147,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ッ……はは、今のでイッちゃったのか。\nワガママなくせに、こういうとこ、本当に可愛いんだな……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 148,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぁあ゛～～ッ、黙れバカぁっ……！！\nふぅうう゛っ、も、やめろぉっ……♪\nおまんこ捏ねるの、なしぃ……ひぃぃんッ♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_042"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 149,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "もちろん、ここでやめるはずがない。\n絶頂の余韻に浸る彼女を押さえつけ、容赦なく犯す。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 150,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふおぉおっ、ぉ、ほぉおお゛おッ……！？\nだめなとこ、入ってるぅ゛ぅッ……！\nハラの奥っ……ぐちゃぐちゃに、潰れてるぅ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_043"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 151,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あぁ゛あ～～ッ、おまんこ、また来るぅぅッ……！！\nぁはあぁああ゛ッ、はぁ、ふあぁぁあぁんッ！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_044"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 152,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ムスクーマ、俺もそろそろイク……中身、全部出す……！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 153,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ナカ、出すぅっ……？\nぁ、だ、だめぇッ！　もうムリいっ！\nこれ以上されたらっ、ウチ……おかしくなるぅっ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_045"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 154,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ふぁああぁんっ♪\nい、今ので、中身ちょっと出すなぁッ……！\nサイアクかよぉっ、ばか、ぁあ゛っ、はぅぅぅぅ～ッ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_046"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 155,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "限界近くまで膨らんだ肉棒が、彼女の膣奥をつつく。\nそこに狙いを定め、俺はラストスパートとばかりに腰を振る。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 156,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あぁああぁーーッ！！　はあぁ、ひゃぁああぁ～～ッ！！\nソコだめええっ！　おまんこの奥、だめ、だってばあぁぁっ！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_047"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 157,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "イッてる、のにぃぃっ！　イクッ、またっ……！！\nウチの体、イクのでいっぱいに、なるぅぅッ！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_048"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 158,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "っ……出る……ッ！\nムスクーマ……俺でいっぱいになってくれ……！！"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 159,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "っ、あああ゛～～～ッ♪\nひぃっ、イ゛、クぅぅ、ん……ッ！\nハラの奥、おちんちんでいっぱいで、イクぅぅっ……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_049"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 160,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "あ゛ーーっ、あぁあぁぁっ……！！\nはぁ、ん、ぐぅぅッ……ひ、あぁああぁぁあぁ～～～……！！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_050"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 161,
+                    "strings": [
+                        "",
+                        "StopBgVoice",
+                        "ムスクーマA_fast"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 162,
+                    "strings": [
+                        "",
+                        "StopHSe",
+                        "SE_動作_行為_後背位_激",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.6"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 163,
+                    "strings": [
+                        "",
+                        "HideMessageWindow",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 164,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマR18_1",
+                        "Finish",
+                        "layer_R18",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "After"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 165,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 166,
+                    "strings": [
+                        "",
+                        "HSe",
+                        "SE_動作_行為_射精",
+                        "",
+                        "0.8",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 167,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "2.4",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 168,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.2",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 169,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 170,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマR18_1",
+                        "After",
+                        "layer_R18",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 171,
+                    "strings": [
+                        "",
+                        "FadeIn",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 172,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "0.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 173,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぅあぁぁっ……ナカ、あっつ……っ♪\nめっちゃ出てるしぃ……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_051"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 174,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "んッ、くぅん……っ♪\nおまんこの奥ぅ……こすりつけんなぁ……♪",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_052"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 175,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "そう言いながら、\n亀頭を咥えこんで離さないのは彼女の方だ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 176,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "俺は最後の一滴までナカに注ぎこんで、\n萎えたそれをゆっくりと引き抜いた。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 177,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ん、はぁぁーー……っ。\nやっと出た……なんか、すげー疲れたぁ……。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_053"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 178,
+                    "strings": [
+                        "",
+                        "",
+                        "主人公",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "このやり方だと嫌だった？"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 179,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "はぁ？　んなの、トーゼン……だし……。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_054"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 180,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "声がどんどん小さくなっていく。\n突き出された尻がかすかに震え、\n潮の残滓がぴゅっと噴き出した。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 181,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ぅううう～～ッ！\nあぁもうっ、クソッ、なんも言うなぁっ……！",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_055"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 182,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "それより！\nまだ、オマエのハラん中に『残ってる』んだよ。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_056"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 183,
+                    "strings": [
+                        "",
+                        "",
+                        "ムスクーマ",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ちゃんと、残さず出しきれよな。\n……やり方、オマエの好きにして、いいから。",
+                        "",
+                        "Character/ch_10071/R18/vo_r18_10071_057"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 184,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "ムスクーマの怒り方も、随分と可愛らしくなったものだ。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 185,
+                    "strings": [
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "彼女の『おねだり』に応えてやるべく、\n俺は再び自身の肉棒を奮い立たせるのだった。"
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 186,
+                    "strings": [
+                        "",
+                        "StopSound",
+                        "All",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 187,
+                    "strings": [
+                        "",
+                        "FadeOut",
+                        "#000000",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 188,
+                    "strings": [
+                        "",
+                        "Wait",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "1.5",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                },
+                {
+                    "rowIndex": 189,
+                    "strings": [
+                        "",
+                        "LayerReset",
+                        "レイヤー_マスク全画面",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        "",
+                        ""
+                    ],
+                    "isEmpty": 0,
+                    "isCommentOut": 0
+                }
+            ],
+            "name": "Assets/AdvScene/ScenarioExcel/character/10071/10071A5_R18.xlsx:10071A5_R18",
+            "type": 1,
+            "textLength": 8291,
+            "headerRow": 0,
+            "entityIndexTbl": [],
+            "entityDataList": []
+        }
+    ]
+}

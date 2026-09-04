@@ -164,6 +164,62 @@
                                 "m_walletCategory": "material_bag",
                                 "m_walletName": "growth_1h",
                                 "m_count": 1
+                            },
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.ticket.roguelike_skip",
+                                "m_count": 1
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "TableId": 1001,
+            "Tiers": [
+                {
+                    "Tier": 1,
+                    "Req": 300,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.engraving.butterfly",
+                                "m_count": 1
+                            },
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.engraving_exp.common_r",
+                                "m_count": 200
+                            },
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.engraving_exp.common_sr",
+                                "m_count": 80
+                            },
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.engraving_exp.common_ssr",
+                                "m_count": 40
+                            },
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.engraving_mutate.common",
+                                "m_count": 5
+                            }
+                        ]
+                    }
+                },
+                {
+                    "Tier": 2,
+                    "Req": 1200,
+                    "Rewards": {
+                        "m_rewards": [
+                            {
+                                "m_walletCategory": "item",
+                                "m_walletName": "item.unit_skin.12_1",
+                                "m_count": 1
                             }
                         ]
                     }

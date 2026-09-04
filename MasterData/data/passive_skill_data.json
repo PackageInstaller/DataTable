@@ -6088,6 +6088,1289 @@
                     "activeData": []
                 }
             ]
+        },
+        {
+            "id": 20068,
+            "rarity": 0,
+            "name": "多面体素粒子の噴出",
+            "kana": "",
+            "text": "<color=#ffa500>石化状態の前衛全ての被ダメージ-[0,0,0]%</color=#ffa500>\r\n<color=#ffa500>凍結状態の前衛全ての被ダメージ-[0,0,0]%</color=#ffa500>\r\n<color=#ffa500>（この効果はそれぞれ重複する）</color=#ffa500>",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "timing": 3,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "timing": 3,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 28,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 31,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 20069,
+            "rarity": 0,
+            "name": "猛暑の臨界点",
+            "kana": "",
+            "text": "会心時、1秒間魔法与ダメージ+[0,2,0]%\r\n自身と<color=yellow><link=\"日差しのクトゥルフの化身トークン\">日差しのクトゥルフの化身トークン</link></color>の会心ダメージ率+[0,0,0]%",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 26,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 80,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1008,
+                            "num": [
+                                30069
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 20,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 20070,
+            "rarity": 0,
+            "name": "日焼けの残痕",
+            "kana": "",
+            "text": "敵全ての恐怖耐性-[0,1,0]\r\n<color=#ffa500>編成時、カルコサ勢力のオーバースキルクールタイム-[0,0,0]%</color=#ffa500>",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1038,
+                    "param": [
+                        {
+                            "num": [
+                                5
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                7
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 29,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 423,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 29,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 2024,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 20071,
+            "rarity": 0,
+            "name": "猛暑の拒絶",
+            "kana": "",
+            "text": "通常攻撃が2連続攻撃になるが、物理与ダメージ[0,0,0]%",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                -30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                -10
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2024,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 2022,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 7,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1013,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2024,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 2022,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 20072,
+            "rarity": 0,
+            "name": "熱砂の忘却",
+            "kana": "",
+            "text": "耐久が0になると戦闘中1度だけ、最大耐久の[0,0,0]％分を回復して即復活し、最大耐久の[0,1,0]%分のバリアを展開する",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1041,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1063,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1042,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "timing": 10,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 20073,
+            "rarity": 0,
+            "name": "流氷の風鈴",
+            "kana": "",
+            "text": "<color=#ffa500>前衛全ての耐久を3秒毎に現在攻撃力の[0,0,0]%分回復する\r\n編成時、ルルイエ勢力の攻撃力+[0,1,0]%</color=#ffa500>",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 63,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                52
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                120
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                6
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1014,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 20074,
+            "rarity": 0,
+            "name": "黒日降臨",
+            "kana": "",
+            "text": "狂気中に耐久が0になると戦闘中1度だけ、最大耐久の[0,0,0]％分を回復し即復活する",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1041,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 33,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 40002,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 20075,
+            "rarity": 0,
+            "name": "青き炎の内包",
+            "kana": "",
+            "text": "火傷状態を無効化し、火傷状態の敵への与ダメージ+[0,0,0]%",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 30,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 914,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 20076,
+            "rarity": 0,
+            "name": "棺の解放",
+            "kana": "",
+            "text": "<color=#ffa500>通常回復時、回復対象の攻撃力が5秒間+[0,0,0]%上昇</color=#ffa500>\r\n<color=#ffa500>オーバー/オートスキル発動中、城壁以外の敵と前衛全ての回復率+[0,1,0]%</color=#ffa500>",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [
+                        {
+                            "type": 2024,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 2022,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 12,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 88,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 88,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 88,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 88,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                4
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [
+                        {
+                            "type": 2022,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [
+                        {
+                            "type": 2022,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [
+                        {
+                            "type": 2024,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [
+                        {
+                            "type": 2024,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 20077,
+            "rarity": 0,
+            "name": "捕食の連鎖",
+            "kana": "",
+            "text": "オート/オーバースキル発動中、範囲攻撃となる。攻撃範囲+[0,0,0]%\r\n（Lv1では範囲攻撃化、Lv2以降は攻撃範囲が増加する）",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1063,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 20078,
+            "rarity": 0,
+            "name": "黒鱗の連鎖爆砕",
+            "kana": "",
+            "text": "暗闇状態の敵全ての被ダメージが+[0,0,0]%",
+            "maxLevel": 3,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1063,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                -10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                -20
+                            ]
+                        }
+                    ],
+                    "timing": 3,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 32,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

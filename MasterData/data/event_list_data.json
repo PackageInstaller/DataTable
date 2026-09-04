@@ -14,6 +14,7 @@
             "id": 1,
             "tag": "TradePointEvent1",
             "event_type": 1,
+            "event_effect_category": 1,
             "name": "ポイント交換イベント",
             "resource_id": "Event_TradePoint_1",
             "chapter": 100000,
@@ -24,9 +25,11 @@
             "shop_id": 8000,
             "open_time": "2026/03/21 12:00:00",
             "close_time": "2026/04/02 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
@@ -35,6 +38,7 @@
             "id": 2,
             "tag": "TradePointEvent2",
             "event_type": 1,
+            "event_effect_category": 1,
             "name": "ポイント交換イベント",
             "resource_id": "Event_TradePoint_2",
             "chapter": 100001,
@@ -45,9 +49,11 @@
             "shop_id": 8001,
             "open_time": "2026/04/02 12:00:00",
             "close_time": "2026/04/13 12:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
@@ -56,6 +62,7 @@
             "id": 3,
             "tag": "TradePointEvent3",
             "event_type": 1,
+            "event_effect_category": 1,
             "name": "ポイント交換イベント",
             "resource_id": "Event_TradePoint_3",
             "chapter": 100002,
@@ -66,9 +73,11 @@
             "shop_id": 8002,
             "open_time": "2026/05/08 12:00:00",
             "close_time": "2026/05/22 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
@@ -77,6 +86,7 @@
             "id": 4,
             "tag": "BoxGachaEvent1",
             "event_type": 2,
+            "event_effect_category": 2,
             "name": "ボックスガチャイベント",
             "resource_id": "Event_BoxGacha_1",
             "chapter": 100003,
@@ -87,9 +97,11 @@
             "shop_id": 0,
             "open_time": "2026/05/22 12:00:00",
             "close_time": "2026/05/29 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "pt_event.box.BoxGacha1",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
@@ -98,6 +110,7 @@
             "id": 5,
             "tag": "TradePointEvent4",
             "event_type": 1,
+            "event_effect_category": 1,
             "name": "ポイント交換イベント",
             "resource_id": "Event_TradePoint_4",
             "chapter": 100004,
@@ -108,9 +121,11 @@
             "shop_id": 8003,
             "open_time": "2026/05/29 12:00:00",
             "close_time": "2026/06/12 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
@@ -119,6 +134,7 @@
             "id": 6,
             "tag": "FesEvent1",
             "event_type": 9,
+            "event_effect_category": 0,
             "name": "フェスイベント",
             "resource_id": "Event_Fes_1",
             "chapter": 0,
@@ -129,15 +145,18 @@
             "shop_id": 0,
             "open_time": "2026/06/12 12:00:00",
             "close_time": "2026/06/26 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 1,
             "gacha_id": "",
             "challenge_count_id": 0,
+            "is_show_picture_book": 0,
             "challenge_count_recovery_ids": []
         },
         {
             "id": 7,
             "tag": "TradePointEvent5",
             "event_type": 1,
+            "event_effect_category": 1,
             "name": "ポイント交換イベント",
             "resource_id": "Event_TradePoint_5",
             "chapter": 100005,
@@ -148,9 +167,11 @@
             "shop_id": 8004,
             "open_time": "2026/06/12 12:00:00",
             "close_time": "2026/06/26 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
@@ -159,6 +180,7 @@
             "id": 8,
             "tag": "BomQuestEvent1",
             "event_type": 10,
+            "event_effect_category": 0,
             "name": "邪神クエストイベント",
             "resource_id": "Event_BomQuest_1",
             "chapter": 0,
@@ -169,15 +191,18 @@
             "shop_id": 0,
             "open_time": "2026/06/12 12:00:00",
             "close_time": "2026/06/26 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 1,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 0,
             "challenge_count_recovery_ids": []
         },
         {
             "id": 9,
             "tag": "TradePointEvent6",
             "event_type": 1,
+            "event_effect_category": 1,
             "name": "ポイント交換イベント",
             "resource_id": "Event_TradePoint_6",
             "chapter": 100006,
@@ -188,17 +213,90 @@
             "shop_id": 8005,
             "open_time": "2026/07/10 11:00:00",
             "close_time": "2026/07/24 11:00:00",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "",
             "challenge_count_id": 1,
+            "is_show_picture_book": 1,
             "challenge_count_recovery_ids": [
                 1
             ]
         },
         {
+            "id": 10,
+            "tag": "TradePointEvent7",
+            "event_type": 1,
+            "event_effect_category": 1,
+            "name": "ポイント交換イベント",
+            "resource_id": "Event_TradePoint_7",
+            "chapter": 100007,
+            "contain_chapters": [
+                100007
+            ],
+            "need_chapter": 0,
+            "shop_id": 8006,
+            "open_time": "2026/07/24 11:00:00",
+            "close_time": "2026/08/07 11:00:00",
+            "challenge_close_time": "",
+            "event_dataTable_id": 0,
+            "gacha_id": "",
+            "challenge_count_id": 1,
+            "is_show_picture_book": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
+            "id": 11,
+            "tag": "BoxGachaEvent2",
+            "event_type": 2,
+            "event_effect_category": 2,
+            "name": "ボックスガチャイベント",
+            "resource_id": "Event_BoxGacha_2",
+            "chapter": 100008,
+            "contain_chapters": [
+                100008
+            ],
+            "need_chapter": 0,
+            "shop_id": 0,
+            "open_time": "2026/08/07 11:00:00",
+            "close_time": "2026/08/21 11:00:00",
+            "challenge_close_time": "2026/08/14 11:00:00",
+            "event_dataTable_id": 0,
+            "gacha_id": "pt_event.box.BoxGacha2",
+            "challenge_count_id": 1,
+            "is_show_picture_book": 1,
+            "challenge_count_recovery_ids": [
+                1
+            ]
+        },
+        {
+            "id": 12,
+            "tag": "BingoEvent1",
+            "event_type": 11,
+            "event_effect_category": 0,
+            "name": "ビンゴイベント",
+            "resource_id": "Event_Bingo_1",
+            "chapter": 0,
+            "contain_chapters": [
+                0
+            ],
+            "need_chapter": 0,
+            "shop_id": 0,
+            "open_time": "2026/08/14 11:00:00",
+            "close_time": "2026/09/04 11:00:00",
+            "challenge_close_time": "",
+            "event_dataTable_id": 1,
+            "gacha_id": "",
+            "challenge_count_id": 0,
+            "is_show_picture_book": 0,
+            "challenge_count_recovery_ids": []
+        },
+        {
             "id": 99998,
             "tag": "BoxGachaEvent1",
             "event_type": 2,
+            "event_effect_category": 2,
             "name": "ボックスガチャイベント",
             "resource_id": "Event_BoxGacha_1",
             "chapter": 0,
@@ -209,9 +307,11 @@
             "shop_id": 0,
             "open_time": "1022/03/14 12:00:00",
             "close_time": "2025/04/11 11:59:59",
+            "challenge_close_time": "",
             "event_dataTable_id": 0,
             "gacha_id": "pt_event.box.BoxGacha1",
             "challenge_count_id": 0,
+            "is_show_picture_book": 0,
             "challenge_count_recovery_ids": []
         }
     ]

@@ -243,6 +243,38 @@
             "sort_priority": 110000
         },
         {
+            "item_id": "item.unit_skin.32_1",
+            "display_name": "つきそい日和",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 110001
+        },
+        {
+            "item_id": "item.unit_skin.2_1",
+            "display_name": "七つの海をひとっ跳び",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 110002
+        },
+        {
+            "item_id": "item.unit_skin.40_1",
+            "display_name": "スウィーティー・ハニー",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 110003
+        },
+        {
+            "item_id": "item.unit_skin.12_1",
+            "display_name": "ルルイエポリス第三課",
+            "rarity": 1397969457,
+            "val_cap": 1,
+            "text": "見た目を変更するコスチューム",
+            "sort_priority": 110004
+        },
+        {
             "item_id": "item.bom_skin.40001_1",
             "display_name": "エルダークトゥルフ",
             "rarity": 1397969457,
@@ -255,7 +287,7 @@
             "display_name": "刻印の霊譜【破壊】",
             "rarity": 21041,
             "val_cap": 99999999,
-            "text": "【破壊】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "text": "【破壊】の刻印をユニットに刻むことができる\r\n攻撃力+10%～30%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
             "sort_priority": 40000
         },
         {
@@ -263,7 +295,7 @@
             "display_name": "刻印の霊譜【鉄壁】",
             "rarity": 21041,
             "val_cap": 99999999,
-            "text": "【鉄壁】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "text": "【鉄壁】の刻印をユニットに刻むことができる\r\n物理防御力+10%～30%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
             "sort_priority": 40100
         },
         {
@@ -271,7 +303,7 @@
             "display_name": "刻印の霊譜【強獣】",
             "rarity": 21041,
             "val_cap": 99999999,
-            "text": "【強獣】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "text": "【強獣】の刻印をユニットに刻むことができる\r\n攻撃力+4%～20%、耐久+4%～20%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
             "sort_priority": 40200
         },
         {
@@ -279,7 +311,7 @@
             "display_name": "刻印の霊譜【霊盾】",
             "rarity": 21041,
             "val_cap": 99999999,
-            "text": "【霊盾】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "text": "【霊盾】の刻印をユニットに刻むことができる\r\n物理防御力+5%～25%、魔法防御力+5%～25%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
             "sort_priority": 40300
         },
         {
@@ -287,8 +319,72 @@
             "display_name": "刻印の霊譜【会心】",
             "rarity": 21041,
             "val_cap": 99999999,
-            "text": "【会心】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "text": "【会心】の刻印をユニットに刻むことができる\r\n会心率+3%～15%、会心ダメージ率+3%～15%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
             "sort_priority": 40500
+        },
+        {
+            "item_id": "item.engraving.vitality",
+            "display_name": "刻印の霊譜【活力】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【活力】の刻印をユニットに刻むことができる\r\n耐久力+10%～30%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40600
+        },
+        {
+            "item_id": "item.engraving.magicseal",
+            "display_name": "刻印の霊譜【魔封】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【魔封】の刻印をユニットに刻むことができる\r\n魔法防御力+10%～30%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40700
+        },
+        {
+            "item_id": "item.engraving.healing",
+            "display_name": "刻印の霊譜【治癒】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【治癒】の刻印をユニットに刻むことができる\r\n回復率+10%～30%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40800
+        },
+        {
+            "item_id": "item.engraving.avoidance",
+            "display_name": "刻印の霊譜【霊避】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【霊避】の刻印をユニットに刻むことができる\r\n回避率+10%～30%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 40900
+        },
+        {
+            "item_id": "item.engraving.attackspeed",
+            "display_name": "刻印の霊譜【撃速】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【撃速】の刻印をユニットに刻むことができる\r\n攻撃速度+10%～30%（同効果は重複しない）（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 41000
+        },
+        {
+            "item_id": "item.engraving.movespeed",
+            "display_name": "刻印の霊譜【飛脚】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【飛脚】の刻印をユニットに刻むことができる\r\n移動速度+20%～40%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 41100
+        },
+        {
+            "item_id": "item.engraving.demolition",
+            "display_name": "刻印の霊譜【瓦解】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【瓦解】の刻印をユニットに刻むことができる\r\n貫通率+5%～25%（最大レベル）\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
+            "sort_priority": 41200
+        },
+        {
+            "item_id": "item.engraving.butterfly",
+            "display_name": "刻印の霊譜【蝶舞】",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "【蝶舞】の刻印をユニットに刻むことができる\r\n攻撃力+4%～20%、回避率+4%～20%（最大レベル）",
+            "sort_priority": 41300
         },
         {
             "item_id": "item.engraving_exp.common_r",
@@ -369,62 +465,6 @@
             "val_cap": 9999999,
             "text": "選択した魔晶Ⅴを入手可能",
             "sort_priority": 30140
-        },
-        {
-            "item_id": "item.engraving.vitality",
-            "display_name": "刻印の霊譜【活力】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【活力】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 40600
-        },
-        {
-            "item_id": "item.engraving.magicseal",
-            "display_name": "刻印の霊譜【魔封】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【魔封】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 40700
-        },
-        {
-            "item_id": "item.engraving.healing",
-            "display_name": "刻印の霊譜【治癒】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【治癒】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 40800
-        },
-        {
-            "item_id": "item.engraving.avoidance",
-            "display_name": "刻印の霊譜【霊避】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【霊避】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 40900
-        },
-        {
-            "item_id": "item.engraving.attackspeed",
-            "display_name": "刻印の霊譜【撃速】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【撃速】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 41000
-        },
-        {
-            "item_id": "item.engraving.movespeed",
-            "display_name": "刻印の霊譜【飛脚】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【飛脚】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 41100
-        },
-        {
-            "item_id": "item.engraving.demolition",
-            "display_name": "刻印の霊譜【瓦解】",
-            "rarity": 21041,
-            "val_cap": 99999999,
-            "text": "【瓦解】の刻印をユニットに刻むことができる\r\n<color=#87cefa>プリズンタワー等で入手できる</color>",
-            "sort_priority": 41200
         },
         {
             "item_id": "item.lottery_potential.crystal_r",
@@ -561,6 +601,70 @@
             "val_cap": 99999999,
             "text": "60個集めることで、対象の☆3キャラクターを抽選で入手可能\r\n\r\n<対象キャラクター>\r\n・ムルミィ・ゾォム\r\n・ゼラニュート\r\n・レヴナント\r\n・シェルン\r\n・キャピノラ\r\n・ルナリス\r\n・ネア・ウルム",
             "sort_priority": 12001
+        },
+        {
+            "item_id": "item.ex_af_synth.key",
+            "display_name": "黒き祝福",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "ドリームランドに存在する蠢く黒い粘液\r\nアーティファクトに使用すると、新たな力を目覚めさせる\r\nその見た目から祝福などデマだと思い、使用しない者が多いとか",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.ex_af_synth.alt",
+            "display_name": "無貌の流銀",
+            "rarity": 1397969457,
+            "val_cap": 99999999,
+            "text": "ドリームランドに存在する液体のような銀\r\nどんなアーティファクトにもなれる、千変の能力を持っている\r\nその能力はドリームランドの主を彷彿とさせる",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.select_unit.nor_mizugi2026_ticket1",
+            "display_name": "☆3選択券（水着2026）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\n・[燦閃]ネオン\r\n・[渚風]エレノワール\r\n・[炎波]イグナ\r\n・[痺夏]シゼル＝メ",
+            "sort_priority": 90002
+        },
+        {
+            "item_id": "item.select_unit.arena20260817_ticket",
+            "display_name": "☆3選択券（シーズン8/17）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\n・エレノワール\r\n・ネア・ウルム",
+            "sort_priority": 90003
+        },
+        {
+            "item_id": "item.select_unit.nor_lovecraft2026_ticket1",
+            "display_name": "☆3選択券（ラヴクラフト生誕祭）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\nネオン、ユラナ・ゾッタ、カルヴァレーナ、\r\nエレノワール、ミューゼ、シャーコット、\r\nグラン・ヴェルノ、フィロス、シゼル＝メ、\r\nディオネ、ムルミィ・ゾォム、ゼラニュート、\r\nレヴナント、シェルン、キャピノラ、\r\nルナリス、ネア・ウルム、フーシャ、\r\nマッドシーカー",
+            "sort_priority": 90004
+        },
+        {
+            "item_id": "item.select_unit.arena20260824_ticket",
+            "display_name": "☆3選択券（シーズン8/24）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\n・レヴナント\r\n・シャーコット",
+            "sort_priority": 90003
+        },
+        {
+            "item_id": "item.ticket.roguelike_skip",
+            "display_name": "決戦スキップチケット",
+            "rarity": 17201,
+            "val_cap": 9999,
+            "text": "アポカリプスモードでクリア済みの難易度中、一番高い難易度の決戦を最終ステージ後までスキップする。\r\n難易度に対応するチャレンジptと深淵の加護ptを入手する他、テーマに対応したアーティファクトもランダムで数個入手可能",
+            "sort_priority": 0
+        },
+        {
+            "item_id": "item.select_unit.arena20260831_ticket",
+            "display_name": "☆3選択券（シーズン8/31）",
+            "rarity": 21041,
+            "val_cap": 99999999,
+            "text": "以下の☆3キャラクターの中から一体を選択して入手可能\r\n\r\n<対象キャラクター>\r\n・ポポロット\r\n・ユラナ・ゾッタ",
+            "sort_priority": 90006
         }
     ]
 }

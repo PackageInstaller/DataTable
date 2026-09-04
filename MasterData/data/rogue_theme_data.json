@@ -42,7 +42,8 @@
             "mission_collective": 10001,
             "start_dt": "",
             "end_dt": "",
-            "next_update_text": ""
+            "next_update_text": "",
+            "skip_artifact_table_id": 1001
         },
         {
             "id": 2,
@@ -75,8 +76,9 @@
             "need_quest_id": 0,
             "mission_collective": 10002,
             "start_dt": "",
-            "end_dt": "2026/5/01 12:00:00",
-            "next_update_text": ""
+            "end_dt": "",
+            "next_update_text": "",
+            "skip_artifact_table_id": 0
         },
         {
             "id": 3,
@@ -105,8 +107,40 @@
             "need_quest_id": 0,
             "mission_collective": 10003,
             "start_dt": "",
-            "end_dt": "2026/7/10 11:00:00",
-            "next_update_text": ""
+            "end_dt": "",
+            "next_update_text": "",
+            "skip_artifact_table_id": 0
+        },
+        {
+            "id": 4,
+            "name": "破炎の仕手は荒野に咲く",
+            "text": "アーカムに緑を――エカ・インティの頼みで街に呼ばれた継承者は、\r\n街の資源を安定させるため郊外に森を創る計画を聞かされる。\r\nしかし植樹を予定していた荒れ地に、既に広大な森が広がっていた。\r\n不可解な現象を前に、アーカムの邪神クトゥグアが空に現れ、\r\n目の前の森を焼き払う。\r\nそれは、この街の生き方を問う、苦悩と選択の始まりであった――。",
+            "recommend_bom_id": 0,
+            "starter_relics": [
+                {
+                    "Id": 1,
+                    "Lv": 1
+                },
+                {
+                    "Id": 2,
+                    "Lv": 1
+                },
+                {
+                    "Id": 3,
+                    "Lv": 1
+                },
+                {
+                    "Id": 4,
+                    "Lv": 1
+                }
+            ],
+            "need_theme_id": 0,
+            "need_quest_id": 0,
+            "mission_collective": 10004,
+            "start_dt": "",
+            "end_dt": "2026/9/18 11:00:00",
+            "next_update_text": "",
+            "skip_artifact_table_id": 0
         }
     ]
 }

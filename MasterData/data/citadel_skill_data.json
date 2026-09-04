@@ -11,24 +11,24 @@
     "m_Name": "citadel_skill_data",
     "records": [
         {
-            "id": 1,
+            "id": 2,
             "skillDataList": [
                 {
                     "id": 0,
                     "rarity": 0,
-                    "name": "城壁スキル1",
+                    "name": "腐朽の城壁",
                     "kana": "",
-                    "text": "レベル1の城壁スキル1です",
+                    "text": "ステータス減少",
                     "maxLevel": 1,
                     "recipeId": 0,
                     "skipend": 0,
                     "talentList": [
                         {
-                            "talentId": 11,
+                            "talentId": 2,
                             "param": [
                                 {
                                     "num": [
-                                        10
+                                        80
                                     ]
                                 }
                             ],
@@ -45,11 +45,32 @@
                             "activeData": []
                         },
                         {
-                            "talentId": 3,
+                            "talentId": 12,
                             "param": [
                                 {
                                     "num": [
-                                        100
+                                        80
+                                    ]
+                                }
+                            ],
+                            "maxParam": [
+                                {
+                                    "num": [
+                                        0
+                                    ]
+                                }
+                            ],
+                            "timing": 1,
+                            "range": 1,
+                            "triggerData": [],
+                            "activeData": []
+                        },
+                        {
+                            "talentId": 17,
+                            "param": [
+                                {
+                                    "num": [
+                                        80
                                     ]
                                 }
                             ],
@@ -67,492 +88,6 @@
                         }
                     ],
                     "level": 1
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル1",
-                    "kana": "",
-                    "text": "レベル2の城壁スキル1です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        15
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 2
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル1",
-                    "kana": "",
-                    "text": "レベル3の城壁スキル1です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        20
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 3
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル1",
-                    "kana": "",
-                    "text": "レベル4の城壁スキル1です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        25
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 4
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル1",
-                    "kana": "",
-                    "text": "レベル5の城壁スキル1です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        30
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 5
-                }
-            ]
-        },
-        {
-            "id": 2,
-            "skillDataList": [
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル2",
-                    "kana": "",
-                    "text": "レベル1の城壁スキル2です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        5
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 1
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル2",
-                    "kana": "",
-                    "text": "レベル2の城壁スキル2です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        10
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 2
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル2",
-                    "kana": "",
-                    "text": "レベル3の城壁スキル2です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        15
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 3
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル2",
-                    "kana": "",
-                    "text": "レベル4の城壁スキル2です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        20
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 4
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル2",
-                    "kana": "",
-                    "text": "レベル5の城壁スキル2です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        25
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 5
-                }
-            ]
-        },
-        {
-            "id": 3,
-            "skillDataList": [
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル3",
-                    "kana": "",
-                    "text": "レベル1の城壁スキル3です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        5
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 1
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル3",
-                    "kana": "",
-                    "text": "レベル2の城壁スキル3です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        10
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 2
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル3",
-                    "kana": "",
-                    "text": "レベル3の城壁スキル3です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        15
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 3
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル3",
-                    "kana": "",
-                    "text": "レベル4の城壁スキル3です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        20
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 4
-                },
-                {
-                    "id": 0,
-                    "rarity": 0,
-                    "name": "城壁スキル3",
-                    "kana": "",
-                    "text": "レベル5の城壁スキル3です",
-                    "maxLevel": 1,
-                    "recipeId": 0,
-                    "skipend": 0,
-                    "talentList": [
-                        {
-                            "talentId": 11,
-                            "param": [
-                                {
-                                    "num": [
-                                        25
-                                    ]
-                                }
-                            ],
-                            "maxParam": [
-                                {
-                                    "num": [
-                                        0
-                                    ]
-                                }
-                            ],
-                            "timing": 1,
-                            "range": 1,
-                            "triggerData": [],
-                            "activeData": []
-                        }
-                    ],
-                    "level": 5
                 }
             ]
         }

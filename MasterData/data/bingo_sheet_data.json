@@ -1,0 +1,73 @@
+{
+    "m_GameObject": {
+        "m_FileID": 0,
+        "m_PathID": 0
+    },
+    "m_Enabled": 1,
+    "m_Script": {
+        "m_FileID": 0,
+        "m_PathID": 1261347362667705953
+    },
+    "m_Name": "bingo_sheet_data",
+    "records": [
+        {
+            "BingoId": 1,
+            "Datas": [
+                {
+                    "sheetData": {
+                        "no": 1,
+                        "lineTableId": 100001,
+                        "startTime": "2026/08/14 11:00:00",
+                        "rewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "unit",
+                                    "m_walletName": "74",
+                                    "m_count": 1
+                                }
+                            ]
+                        },
+                        "sheetType": 1,
+                        "lineCellCount": 5
+                    }
+                },
+                {
+                    "sheetData": {
+                        "no": 2,
+                        "lineTableId": 100002,
+                        "startTime": "2026/08/14 11:00:00",
+                        "rewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "item",
+                                    "m_walletName": "item.lottery_potential.crystal_sr",
+                                    "m_count": 1
+                                }
+                            ]
+                        },
+                        "sheetType": 1,
+                        "lineCellCount": 5
+                    }
+                },
+                {
+                    "sheetData": {
+                        "no": 3,
+                        "lineTableId": 100003,
+                        "startTime": "2026/08/21 11:00:00",
+                        "rewardList": {
+                            "m_rewards": [
+                                {
+                                    "m_walletCategory": "item",
+                                    "m_walletName": "item.select_potential.crystal_sr",
+                                    "m_count": 1
+                                }
+                            ]
+                        },
+                        "sheetType": 2,
+                        "lineCellCount": 6
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -146,7 +146,80 @@
                         {
                             "effectValue": 70,
                             "targetUnitIds": [
-                                66
+                                66,
+                                68
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": 1,
+            "eventId": 10,
+            "effectDatas": [
+                {
+                    "effectType": 1,
+                    "targetDatas": [
+                        {
+                            "effectValue": 30,
+                            "targetUnitIds": [
+                                73
+                            ]
+                        },
+                        {
+                            "effectValue": 70,
+                            "targetUnitIds": [
+                                69,
+                                70,
+                                71,
+                                72
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": 2,
+            "eventId": 11,
+            "effectDatas": [
+                {
+                    "effectType": 2,
+                    "targetDatas": [
+                        {
+                            "effectValue": 40,
+                            "targetUnitIds": [
+                                71
+                            ]
+                        },
+                        {
+                            "effectValue": 10,
+                            "targetUnitIds": [
+                                2
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "category": 100,
+            "eventId": 4,
+            "effectDatas": [
+                {
+                    "effectType": 3,
+                    "targetDatas": [
+                        {
+                            "effectValue": 30,
+                            "targetUnitIds": [
+                                78
+                            ]
+                        },
+                        {
+                            "effectValue": 70,
+                            "targetUnitIds": [
+                                77
                             ]
                         }
                     ]

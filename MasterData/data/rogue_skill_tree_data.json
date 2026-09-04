@@ -814,7 +814,9 @@
                     "no": 24,
                     "name": "最大耐久上昇",
                     "price": 2,
-                    "next_ids": [],
+                    "next_ids": [
+                        28
+                    ],
                     "buff_type": 1000,
                     "buff_value": 4
                 },
@@ -822,7 +824,9 @@
                     "no": 25,
                     "name": "物理防御上昇",
                     "price": 2,
-                    "next_ids": [],
+                    "next_ids": [
+                        28
+                    ],
                     "buff_type": 1004,
                     "buff_value": 4
                 },
@@ -830,7 +834,9 @@
                     "no": 26,
                     "name": "魔法防御上昇",
                     "price": 2,
-                    "next_ids": [],
+                    "next_ids": [
+                        29
+                    ],
                     "buff_type": 1006,
                     "buff_value": 4
                 },
@@ -838,8 +844,104 @@
                     "no": 27,
                     "name": "攻撃力上昇",
                     "price": 2,
+                    "next_ids": [
+                        29
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 28,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        30,
+                        31
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 29,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        32,
+                        33
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 30,
+                    "name": "攻撃力上昇",
+                    "price": 2,
+                    "next_ids": [
+                        34
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 31,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [
+                        35
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 32,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        36
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 33,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        37
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 34,
+                    "name": "攻撃力上昇",
+                    "price": 2,
                     "next_ids": [],
                     "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 35,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 36,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 37,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1006,
                     "buff_value": 4
                 }
             ]
@@ -1091,7 +1193,9 @@
                     "no": 24,
                     "name": "最大耐久上昇",
                     "price": 2,
-                    "next_ids": [],
+                    "next_ids": [
+                        28
+                    ],
                     "buff_type": 1000,
                     "buff_value": 4
                 },
@@ -1099,7 +1203,9 @@
                     "no": 25,
                     "name": "物理防御上昇",
                     "price": 2,
-                    "next_ids": [],
+                    "next_ids": [
+                        28
+                    ],
                     "buff_type": 1004,
                     "buff_value": 4
                 },
@@ -1107,7 +1213,9 @@
                     "no": 26,
                     "name": "魔法防御上昇",
                     "price": 2,
-                    "next_ids": [],
+                    "next_ids": [
+                        29
+                    ],
                     "buff_type": 1006,
                     "buff_value": 4
                 },
@@ -1115,8 +1223,483 @@
                     "no": 27,
                     "name": "攻撃力上昇",
                     "price": 2,
+                    "next_ids": [
+                        29
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 28,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        30,
+                        31
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 29,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        32,
+                        33
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 30,
+                    "name": "攻撃力上昇",
+                    "price": 2,
+                    "next_ids": [
+                        34
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 31,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [
+                        35
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 32,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        36
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 33,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        37
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 34,
+                    "name": "攻撃力上昇",
+                    "price": 2,
                     "next_ids": [],
                     "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 35,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 36,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 37,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                }
+            ]
+        },
+        {
+            "theme_id": 4,
+            "nodes": [
+                {
+                    "no": 1,
+                    "name": "最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        2,
+                        3,
+                        4
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 2,
+                    "name": "攻撃力上昇",
+                    "price": 1,
+                    "next_ids": [
+                        5,
+                        6
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 3,
+                    "name": "物理防御上昇",
+                    "price": 1,
+                    "next_ids": [
+                        5,
+                        6
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 4,
+                    "name": "魔法防御上昇",
+                    "price": 1,
+                    "next_ids": [
+                        5,
+                        6
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 5,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        7,
+                        8
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 6,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        9,
+                        10
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 7,
+                    "name": "最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        11
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 8,
+                    "name": "攻撃力上昇",
+                    "price": 1,
+                    "next_ids": [
+                        12
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 9,
+                    "name": "物理防御上昇",
+                    "price": 1,
+                    "next_ids": [
+                        13
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 10,
+                    "name": "魔法防御上昇",
+                    "price": 1,
+                    "next_ids": [
+                        14
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 11,
+                    "name": "最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        15
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 12,
+                    "name": "攻撃力上昇",
+                    "price": 1,
+                    "next_ids": [
+                        15
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 13,
+                    "name": "物理防御上昇",
+                    "price": 1,
+                    "next_ids": [
+                        16
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 14,
+                    "name": "魔法防御上昇",
+                    "price": 1,
+                    "next_ids": [
+                        16
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 15,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        17
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 16,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        17
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 17,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        18,
+                        19
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 18,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        20,
+                        21
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 19,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        22,
+                        23
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 20,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [
+                        24
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 21,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        25
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 22,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        26
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 23,
+                    "name": "攻撃力上昇",
+                    "price": 2,
+                    "next_ids": [
+                        27
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 24,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [
+                        28
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 25,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        28
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 26,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        29
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 27,
+                    "name": "攻撃力上昇",
+                    "price": 2,
+                    "next_ids": [
+                        29
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 28,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        30,
+                        31
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 29,
+                    "name": "城壁の最大耐久上昇",
+                    "price": 1,
+                    "next_ids": [
+                        32,
+                        33
+                    ],
+                    "buff_type": 1008,
+                    "buff_value": 5
+                },
+                {
+                    "no": 30,
+                    "name": "攻撃力上昇",
+                    "price": 2,
+                    "next_ids": [
+                        34
+                    ],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 31,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [
+                        35
+                    ],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 32,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        36
+                    ],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 33,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [
+                        37
+                    ],
+                    "buff_type": 1006,
+                    "buff_value": 4
+                },
+                {
+                    "no": 34,
+                    "name": "攻撃力上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1002,
+                    "buff_value": 4
+                },
+                {
+                    "no": 35,
+                    "name": "最大耐久上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1000,
+                    "buff_value": 4
+                },
+                {
+                    "no": 36,
+                    "name": "物理防御上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1004,
+                    "buff_value": 4
+                },
+                {
+                    "no": 37,
+                    "name": "魔法防御上昇",
+                    "price": 2,
+                    "next_ids": [],
+                    "buff_type": 1006,
                     "buff_value": 4
                 }
             ]

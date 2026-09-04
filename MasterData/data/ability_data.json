@@ -372,7 +372,17 @@
                     "timing": 1,
                     "range": 1,
                     "triggerData": [],
-                    "activeData": []
+                    "activeData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -456,7 +466,111 @@
                     "timing": 1,
                     "range": 1,
                     "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "rarity": 0,
+            "name": "水着エレノワール",
+            "kana": "",
+            "text": "クラス特性",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                30070
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                450
+                            ],
+                            "option": [
+                                "%30"
+                            ]
+                        }
+                    ],
                     "activeData": []
+                },
+                {
+                    "talentId": 1039,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
             ]
         },
@@ -1193,6 +1307,175 @@
                     ],
                     "timing": 1,
                     "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 30069,
+            "rarity": 0,
+            "name": "日差しのクトゥルフの化身",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 30070,
+            "rarity": 0,
+            "name": "水辺の招来",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1006,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 3,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 8,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 40002,
+                            "num": [
+                                5
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 518,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 3,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 21,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 31070,
+            "rarity": 0,
+            "name": "水辺の親玉招来",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 518,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
                     "triggerData": [],
                     "activeData": []
                 }
@@ -2274,6 +2557,135 @@
                                 0
                             ]
                         },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 900013,
+            "rarity": 0,
+            "name": "イグナ水渦Lv1",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 22,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                29
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 900014,
+            "rarity": 0,
+            "name": "イグナ水渦Lv2",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 22,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        },
+                        {
+                            "num": [
+                                29
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 900015,
+            "rarity": 0,
+            "name": "イグナ水渦Lv3",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 22,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                29
+                            ]
+                        }
+                    ],
+                    "maxParam": [
                         {
                             "num": [
                                 0
@@ -4320,6 +4732,334 @@
             ]
         },
         {
+            "id": 51013,
+            "rarity": 0,
+            "name": "ムーン＝ビースト",
+            "kana": "",
+            "text": "攻撃時、相手の物理防御を10秒間10%減少",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 12,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 51014,
+            "rarity": 0,
+            "name": "アルスカリ",
+            "kana": "",
+            "text": "攻撃時、スタンを10付与",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 508,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 51015,
+            "rarity": 0,
+            "name": "イブ＝ツトゥル",
+            "kana": "",
+            "text": "全ての相手の狂気耐性を50減少\r\n全ての相手に「死亡時、周りに狂気を振りまく」効果を付与\r\n攻撃時、狂気を30付与",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 421,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 517,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 517,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 7,
+                    "range": 2,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 51016,
+            "rarity": 0,
+            "name": "炎の吸血鬼",
+            "kana": "",
+            "text": "攻撃時、自身のHPの10%回復",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 51017,
+            "rarity": 0,
+            "name": "ナイトゴーント・エリート",
+            "kana": "",
+            "text": "攻撃時、自身の攻撃速度が増加（永続）",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 26,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                -1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
             "id": 55002,
             "rarity": 0,
             "name": "ザドキエル",
@@ -4419,7 +5159,7 @@
                         }
                     ],
                     "timing": 2,
-                    "range": 19,
+                    "range": 4,
                     "triggerData": [],
                     "activeData": [
                         {
@@ -4450,93 +5190,11 @@
                         }
                     ],
                     "timing": 1,
-                    "range": 4,
+                    "range": 1,
                     "triggerData": [],
                     "activeData": [
                         {
                             "type": 27,
-                            "num": [
-                                1
-                            ],
-                            "option": [
-                                ""
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "talentId": 1049,
-                    "param": [
-                        {
-                            "num": [
-                                1
-                            ]
-                        },
-                        {
-                            "num": [
-                                150
-                            ]
-                        }
-                    ],
-                    "maxParam": [
-                        {
-                            "num": [
-                                0
-                            ]
-                        },
-                        {
-                            "num": [
-                                0
-                            ]
-                        }
-                    ],
-                    "timing": 1,
-                    "range": 1,
-                    "triggerData": [],
-                    "activeData": []
-                },
-                {
-                    "talentId": 1044,
-                    "param": [
-                        {
-                            "num": [
-                                100
-                            ]
-                        },
-                        {
-                            "num": [
-                                1
-                            ]
-                        },
-                        {
-                            "num": [
-                                0
-                            ]
-                        }
-                    ],
-                    "maxParam": [
-                        {
-                            "num": [
-                                0
-                            ]
-                        },
-                        {
-                            "num": [
-                                0
-                            ]
-                        },
-                        {
-                            "num": [
-                                0
-                            ]
-                        }
-                    ],
-                    "timing": 2,
-                    "range": 19,
-                    "triggerData": [],
-                    "activeData": [
-                        {
-                            "type": 12,
                             "num": [
                                 1
                             ],
@@ -5161,6 +5819,343 @@
                     "timing": 2,
                     "range": 4,
                     "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 55010,
+            "rarity": 0,
+            "name": "[夏]カマエル",
+            "kana": "",
+            "text": "攻撃時に10秒間物理防御を100%低下させる",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 12,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 56001,
+            "rarity": 0,
+            "name": "カマエル（幻夢）",
+            "kana": "",
+            "text": "撃破時、一定時間攻撃アップ",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 18,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 56002,
+            "rarity": 0,
+            "name": "ザドキエル（幻夢）",
+            "kana": "",
+            "text": "味方全体のHPが対象者の最大HP10%回復する",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                300
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 56003,
+            "rarity": 0,
+            "name": "スイエル（幻夢）",
+            "kana": "",
+            "text": "攻撃した相手をスタンさせる。スタン中の敵には与ダメ400%",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 508,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 12,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                400
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 27,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": 56004,
+            "rarity": 0,
+            "name": "レリエル（幻夢）",
+            "kana": "",
+            "text": "自身にリジェネ、時間経過で攻撃力上昇",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 62,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                150
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        },
+                        {
+                            "num": [
+                                -1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                10037
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                300
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
                     "activeData": []
                 }
             ]
@@ -11910,6 +12905,619 @@
             ]
         },
         {
+            "id": 70017,
+            "rarity": 0,
+            "name": "クトゥグア（遠隔）",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1002,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1035,
+                    "param": [
+                        {
+                            "num": [
+                                14
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                600
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1033,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                1200
+                            ],
+                            "option": [
+                                "%300"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1033,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                1200
+                            ],
+                            "option": [
+                                "%600"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1033,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                1200
+                            ],
+                            "option": [
+                                "%900"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1080,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 514,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        },
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                80000
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                900
+                            ],
+                            "option": [
+                                "%800"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                80001
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                900
+                            ],
+                            "option": [
+                                "%800"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 70018,
+            "rarity": 0,
+            "name": "クトゥグア（近接）",
+            "kana": "",
+            "text": "",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1002,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1035,
+                    "param": [
+                        {
+                            "num": [
+                                14
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                600
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 511,
+                    "param": [
+                        {
+                            "num": [
+                                750
+                            ]
+                        },
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1033,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                1200
+                            ],
+                            "option": [
+                                "%300"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1033,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                1200
+                            ],
+                            "option": [
+                                "%600"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1033,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                1200
+                            ],
+                            "option": [
+                                "%900"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1080,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 514,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        },
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                80000
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                900
+                            ],
+                            "option": [
+                                "%800"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                80001
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                900
+                            ],
+                            "option": [
+                                "%800"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
             "id": 80001,
             "rarity": 0,
             "name": "[触手]椎形革張形兜",
@@ -11969,6 +13577,140 @@
                     "timing": 1,
                     "range": 1,
                     "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 80002,
+            "rarity": 0,
+            "name": "ガーディアン",
+            "kana": "",
+            "text": "経過時間で攻撃力と物理防御力が上昇",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        },
+                        {
+                            "num": [
+                                -1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                10037
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                300
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 11,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        },
+                        {
+                            "num": [
+                                -1
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                10037
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                300
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
                     "activeData": []
                 }
             ]
@@ -14207,6 +15949,211 @@
                     "range": 4,
                     "triggerData": [],
                     "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 1000022,
+            "rarity": 0,
+            "name": "[水着]ネオン",
+            "kana": "",
+            "text": "攻撃時に10秒間物理防御を30%低下させる",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 12,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 1000023,
+            "rarity": 0,
+            "name": "[水着]エレノワール",
+            "kana": "",
+            "text": "攻撃対象+2",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 47,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 1000024,
+            "rarity": 0,
+            "name": "[水着]イグナ",
+            "kana": "",
+            "text": "攻撃で敵を後退させる",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 511,
+                    "param": [
+                        {
+                            "num": [
+                                500
+                            ]
+                        },
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 1000025,
+            "rarity": 0,
+            "name": "[水着]シゼル＝メ",
+            "kana": "",
+            "text": "攻撃時スタン値を40加算する",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 508,
+                    "param": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 1000026,
+            "rarity": 0,
+            "name": "[水着]チェイシィ",
+            "kana": "",
+            "text": "属性特攻を3倍になる",
+            "maxLevel": 1,
+            "recipeId": 0,
+            "skipend": 0,
+            "talentList": [
+                {
+                    "talentId": 1005,
+                    "param": [
+                        {
+                            "num": [
+                                200
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 2,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1002,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
                 }
             ]
         },

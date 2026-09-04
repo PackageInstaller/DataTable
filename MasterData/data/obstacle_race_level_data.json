@@ -19,7 +19,8 @@
                         1001,
                         1002,
                         1003
-                    ]
+                    ],
+                    "score_continuous_id": 0
                 },
                 {
                     "start_time": 10,
@@ -27,7 +28,8 @@
                         1101,
                         1102,
                         1103
-                    ]
+                    ],
+                    "score_continuous_id": 0
                 },
                 {
                     "start_time": 20,
@@ -35,7 +37,40 @@
                         1201,
                         1202,
                         1203
-                    ]
+                    ],
+                    "score_continuous_id": 0
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "levels": [
+                {
+                    "start_time": 0,
+                    "generate_table_ids": [
+                        2001,
+                        2002,
+                        2003
+                    ],
+                    "score_continuous_id": 1
+                },
+                {
+                    "start_time": 10,
+                    "generate_table_ids": [
+                        2101,
+                        2102,
+                        2103
+                    ],
+                    "score_continuous_id": 2
+                },
+                {
+                    "start_time": 20,
+                    "generate_table_ids": [
+                        2201,
+                        2202,
+                        2203
+                    ],
+                    "score_continuous_id": 3
                 }
             ]
         }

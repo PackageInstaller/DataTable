@@ -339,6 +339,32 @@
                 6
             ],
             "shotBoneIndexes": []
+        },
+        {
+            "id": 14,
+            "type": 6,
+            "waitMotion": "sp_wait",
+            "mainMotion": "sp_action",
+            "waitTime": 180,
+            "posX": 0.0,
+            "posY": 0.0,
+            "posZ": 0.0,
+            "rotation": 0,
+            "omenFlag": 1,
+            "missile": 4,
+            "attackRate": 175,
+            "attackFixed": 0,
+            "targetNum": 0,
+            "sortConfig": 0,
+            "filterConfig": 3,
+            "blastTargetNum": 0,
+            "blastSortConfig": 0,
+            "blastFilterConfig": 0,
+            "hitType": 1,
+            "abilityIds": [
+                5
+            ],
+            "shotBoneIndexes": []
         }
     ]
 }

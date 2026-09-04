@@ -13355,6 +13355,3156 @@
             ]
         },
         {
+            "id": 68,
+            "iconId": 1,
+            "name": "多次元結晶の終絶",
+            "text": "発動時、前衛全ての<color=yellow><link=\"石化\">石化</link></color>と<color=yellow><link=\"凍結\">凍結</link></color>状態を回復、5秒間無効化する効果を付与する\r\n次回攻撃時のみ攻撃力+[0,0,0]%、回復/攻撃対象数+[0,1,0]、3連続回復/攻撃を行う",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 270,
+            "maxFirstCoolTime": 150,
+            "minCoolTime": 390,
+            "maxCoolTime": 270,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 1
+                },
+                {
+                    "index": 6,
+                    "timing": 38
+                },
+                {
+                    "index": 7,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                700
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                900
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 47,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 93,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 909,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 915,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                150
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 69,
+            "iconId": 1,
+            "name": "水飛沫の宣告",
+            "text": "次回攻撃時のみ、攻撃力+[0,0,0]%、会心率+[0,1,0]%、3連続攻撃となり、攻撃した敵の魔法防御力が3秒間[0,2,0]%低下",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 210,
+            "maxFirstCoolTime": 150,
+            "minCoolTime": 270,
+            "maxCoolTime": 210,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 2
+                },
+                {
+                    "index": 3,
+                    "timing": 38
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                200
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                400
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 78,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 17,
+                    "param": [
+                        {
+                            "num": [
+                                6
+                            ]
+                        },
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 70,
+            "iconId": 5,
+            "name": "麦帽の誘惑",
+            "text": "発動時、<color=yellow><link=\"水辺の招来トークン\">水辺の招来トークン</link></color>を場に1体追加で召喚する\r\n6秒間、自身と<color=yellow><link=\"水辺の親玉招来トークン\">水辺の親玉招来トークン</link></color>の攻撃力+[0,0,0]%、攻撃対象数+[0,1,0]",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 300,
+            "maxFirstCoolTime": 180,
+            "minCoolTime": 420,
+            "maxCoolTime": 300,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 0
+                },
+                {
+                    "index": 6,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        },
+                        {
+                            "num": [
+                                180
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 47,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        },
+                        {
+                            "num": [
+                                180
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        },
+                        {
+                            "num": [
+                                180
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1008,
+                            "num": [
+                                31070
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 47,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        },
+                        {
+                            "num": [
+                                180
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 3,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 1008,
+                            "num": [
+                                31070
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1012,
+                    "param": [
+                        {
+                            "num": [
+                                30070
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1039,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 71,
+            "iconId": 1,
+            "name": "陽炎の足跡",
+            "text": "次回攻撃時のみ攻撃速度-[0,0,0]となるが、攻撃力+[0,1,0]%、6連続魔法攻撃となり、攻撃回数を<color=yellow><link=\"割り振る\">割り振る</link></color>",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 210,
+            "maxFirstCoolTime": 150,
+            "minCoolTime": 240,
+            "maxCoolTime": 180,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 38
+                },
+                {
+                    "index": 6,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 29,
+                    "param": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20061
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1013,
+                    "param": [
+                        {
+                            "num": [
+                                6
+                            ]
+                        },
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 521,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 72,
+            "iconId": 3,
+            "name": "砂山の崩壊",
+            "text": "発動時に非ブロック中の場合、最大耐久+[0,0,0]%、耐久を最大耐久の[0,1,0]%分回復\r\nブロック中の場合は非ブロック中の効果が発動し、次回攻撃時のみ、攻撃力+[0,2,0]%、2連続範囲攻撃を行う",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 270,
+            "maxFirstCoolTime": 210,
+            "minCoolTime": 300,
+            "maxCoolTime": 240,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 33
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 0
+                },
+                {
+                    "index": 6,
+                    "timing": 0
+                },
+                {
+                    "index": 7,
+                    "timing": 0
+                },
+                {
+                    "index": 8,
+                    "timing": 0
+                },
+                {
+                    "index": 9,
+                    "timing": 39
+                },
+                {
+                    "index": 10,
+                    "timing": 0
+                },
+                {
+                    "index": 11,
+                    "timing": 38
+                },
+                {
+                    "index": 12,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                101
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1063,
+                    "param": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                500
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1039,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                101
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                30
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 5005,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ">="
+                            ]
+                        },
+                        {
+                            "type": 5005,
+                            "num": [
+                                4
+                            ],
+                            "option": [
+                                "<="
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                500
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1076,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1077,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20065
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 1,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 73,
+            "iconId": 1,
+            "name": "波打ち際の共鳴",
+            "text": "次回攻撃時のみ攻撃対象数が99体となり、攻撃した敵1体につき3秒間攻撃力が+3%上昇する",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 360,
+            "maxFirstCoolTime": 240,
+            "minCoolTime": 450,
+            "maxCoolTime": 330,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 2
+                },
+                {
+                    "index": 2,
+                    "timing": 38
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 2
+                },
+                {
+                    "index": 6,
+                    "timing": 38
+                },
+                {
+                    "index": 7,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 49,
+                    "param": [
+                        {
+                            "num": [
+                                99
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        },
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 49,
+                    "param": [
+                        {
+                            "num": [
+                                99
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        },
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 74,
+            "iconId": 3,
+            "name": "影爪の強制裁断",
+            "text": "発動時、耐久を半分回復し、自身を10秒間<color=yellow><link=\"狂気\">狂気</link></color>状態にする\r\nこのスキルで狂気になった場合、効果が[SEC,0,0]倍になる",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 180,
+            "maxFirstCoolTime": 120,
+            "minCoolTime": 450,
+            "maxCoolTime": 390,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 33
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 1063,
+                    "param": [
+                        {
+                            "num": [
+                                60
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 517,
+                    "param": [
+                        {
+                            "num": [
+                                99999
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        },
+                        {
+                            "num": [
+                                200
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                250
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        },
+                        {
+                            "num": [
+                                101
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1039,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 75,
+            "iconId": 1,
+            "name": "青き焔火の噴出",
+            "text": "次回攻撃時のみ最大耐久+[0,0,0]%、攻撃力+[0,1,0]%、攻撃対象数+3、攻撃時、高確率で10秒間<color=yellow><link=\"火傷\">火傷</link></color>状態にする",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 180,
+            "maxFirstCoolTime": 120,
+            "minCoolTime": 240,
+            "maxCoolTime": 180,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 2
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 38
+                },
+                {
+                    "index": 6,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 1,
+                    "param": [
+                        {
+                            "num": [
+                                20
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                40
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                500
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 47,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 514,
+                    "param": [
+                        {
+                            "num": [
+                                80
+                            ]
+                        },
+                        {
+                            "num": [
+                                10
+                            ]
+                        },
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20068
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 76,
+            "iconId": 3,
+            "name": "緑炎の生気吸収",
+            "text": "発動時、城壁以外の敵と前衛全ての耐久を対象の現在攻撃力の[0,0,0]%分回復し、[duration]秒間、回復と攻撃を行わなくなるが、3秒毎に対象の最大耐久の[0,2,0]%分回復する",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 240,
+            "maxFirstCoolTime": 180,
+            "minCoolTime": 300,
+            "maxCoolTime": 240,
+            "minDurationTime": 180,
+            "maxDurationTime": 180,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 38
+                },
+                {
+                    "index": 5,
+                    "timing": 38
+                },
+                {
+                    "index": 6,
+                    "timing": 0
+                },
+                {
+                    "index": 7,
+                    "timing": 0
+                },
+                {
+                    "index": 8,
+                    "timing": 0
+                },
+                {
+                    "index": 9,
+                    "timing": 0
+                },
+                {
+                    "index": 10,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        },
+                        {
+                            "num": [
+                                52
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                150
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                90
+                            ]
+                        },
+                        {
+                            "num": [
+                                52
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                150
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        },
+                        {
+                            "num": [
+                                101
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                6
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1021,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        },
+                        {
+                            "num": [
+                                101
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                6
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 40000,
+                            "num": [
+                                4
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                1
+                            ]
+                        },
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        },
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [],
+                    "activeData": [
+                        {
+                            "type": 19,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 4,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                3
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 35,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                89
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1004,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 6,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                89
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": [
+                        {
+                            "type": 19,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        },
+                        {
+                            "type": 4,
+                            "num": [
+                                0
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "talentId": 49,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 95,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1039,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2001,
+                            "num": [
+                                89
+                            ],
+                            "option": [
+                                "%"
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 77,
+            "iconId": 1,
+            "name": "万物不浄の昇華",
+            "text": "次回攻撃時のみ攻撃力+[0,0,0]%、攻撃対象数+[0,1,0]、攻撃対象数を<color=yellow><link=\"割り振る\">割り振る</link></color>魔法攻撃を行う",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 210,
+            "maxFirstCoolTime": 150,
+            "minCoolTime": 270,
+            "maxCoolTime": 210,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 0
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 0
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                },
+                {
+                    "index": 5,
+                    "timing": 0
+                },
+                {
+                    "index": 6,
+                    "timing": 0
+                },
+                {
+                    "index": 7,
+                    "timing": 38
+                },
+                {
+                    "index": 8,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 47,
+                    "param": [
+                        {
+                            "num": [
+                                4
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 520,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 69,
+                    "param": [
+                        {
+                            "num": [
+                                2
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20071
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2020,
+                            "num": [
+                                1
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20072
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2020,
+                            "num": [
+                                2
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20073
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [
+                        {
+                            "type": 2020,
+                            "num": [
+                                3
+                            ],
+                            "option": [
+                                ""
+                            ]
+                        }
+                    ],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
+            "id": 78,
+            "iconId": 2,
+            "name": "影追いの毒牙",
+            "text": "次回攻撃時のみ攻撃力+[0,0,0]%、中確率で6秒間<color=yellow><link=\"暗闇\">暗闇</link></color>状態にする（このスキルで暗闇になった場合、移動速度が60%低下する）",
+            "autoActivate": 0,
+            "maxLevel": 3,
+            "minFirstCoolTime": 210,
+            "maxFirstCoolTime": 150,
+            "minCoolTime": 270,
+            "maxCoolTime": 210,
+            "minDurationTime": -1,
+            "maxDurationTime": -1,
+            "skillRange": 0,
+            "stock": 0,
+            "activationType": 0,
+            "activationTypeParam": 0,
+            "activationPositionSortId": 1,
+            "isTargetUnnecessary": 0,
+            "triggerTimings": [
+                {
+                    "index": 0,
+                    "timing": 0
+                },
+                {
+                    "index": 1,
+                    "timing": 2
+                },
+                {
+                    "index": 2,
+                    "timing": 0
+                },
+                {
+                    "index": 3,
+                    "timing": 38
+                },
+                {
+                    "index": 4,
+                    "timing": 0
+                }
+            ],
+            "talentList": [
+                {
+                    "talentId": 6,
+                    "param": [
+                        {
+                            "num": [
+                                100
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                300
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 516,
+                    "param": [
+                        {
+                            "num": [
+                                50
+                            ]
+                        },
+                        {
+                            "num": [
+                                50
+                            ]
+                        },
+                        {
+                            "num": [
+                                60
+                            ]
+                        },
+                        {
+                            "num": [
+                                180
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 4,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 66,
+                    "param": [
+                        {
+                            "num": [
+                                20069
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1045,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                1
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        },
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                },
+                {
+                    "talentId": 1092,
+                    "param": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "maxParam": [
+                        {
+                            "num": [
+                                0
+                            ]
+                        }
+                    ],
+                    "timing": 1,
+                    "range": 1,
+                    "triggerData": [],
+                    "activeData": []
+                }
+            ]
+        },
+        {
             "id": 40001,
             "iconId": 40001,
             "name": "クトゥルフ",
