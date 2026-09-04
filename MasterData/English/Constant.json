@@ -1,0 +1,2354 @@
+[
+  {
+    "Name": "combat_version",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "战斗版本，0-旧版本，1-V3版本，2-V4版本，3-V5版本"
+  },
+  {
+    "Name": "mode_hx",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "和谐模式开关，1=开启，0=关闭"
+  },
+  {
+    "Name": "battle_energy",
+    "Value": "3,3,4,4,5,5",
+    "SyncClient": "0",
+    "Desc": "战斗时的每回合能量恢复的基础上限"
+  },
+  {
+    "Name": "battle_actioncd",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "战斗中角色行动后停顿时间"
+  },
+  {
+    "Name": "max_action",
+    "Value": "1000",
+    "SyncClient": "0",
+    "Desc": "行动条值"
+  },
+  {
+    "Name": "max_action_list_size",
+    "Value": "16",
+    "SyncClient": "0",
+    "Desc": "行动条服务器计算个数"
+  },
+  {
+    "Name": "battletime",
+    "Value": "600",
+    "SyncClient": "0",
+    "Desc": "战斗时间，单位秒"
+  },
+  {
+    "Name": "battleplaycard_time",
+    "Value": "120,120",
+    "SyncClient": "0",
+    "Desc": "出牌阶段双方出牌的基础时间，单位秒"
+  },
+  {
+    "Name": "battlecardloop",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "战斗中卡牌进入弃牌堆是否循环，0-不循环，1-循环"
+  },
+  {
+    "Name": "battleroleloop",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "战斗中角色死亡返回为手牌，0-否，1-是"
+  },
+  {
+    "Name": "battlehand_card_max",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "战斗中初始手牌上限"
+  },
+  {
+    "Name": "birthday_modify_limit",
+    "Value": "365",
+    "SyncClient": "0",
+    "Desc": "控制每次修改生日后，可再次修改的cd天数，单位：天"
+  },
+  {
+    "Name": "robot_ai_handcard",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "机器人手牌"
+  },
+  {
+    "Name": "max_battle_role_count",
+    "Value": "6",
+    "SyncClient": "0",
+    "Desc": "上阵角色（上阵角色必须大于等于1）"
+  },
+  {
+    "Name": "max_alternative_role_count",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "上阵备选角色"
+  },
+  {
+    "Name": "max_battle_public_card_count",
+    "Value": "15",
+    "SyncClient": "0",
+    "Desc": "普通卡牌数量"
+  },
+  {
+    "Name": "max_battle_card_count",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "卡牌总数"
+  },
+  {
+    "Name": "max_formation_count",
+    "Value": "6",
+    "SyncClient": "0",
+    "Desc": "最大阵容配置"
+  },
+  {
+    "Name": "team_idx_i",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "己方阵容，左边"
+  },
+  {
+    "Name": "team_idx_o",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "敌方阵容，右边"
+  },
+  {
+    "Name": "team_idx_e",
+    "Value": "2",
+    "SyncClient": "0",
+    "Desc": "我方召唤阵容"
+  },
+  {
+    "Name": "team_idx_d",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "敌方召唤阵容"
+  },
+  {
+    "Name": "summonmax",
+    "Value": "15",
+    "SyncClient": "0",
+    "Desc": "基础召唤点数"
+  },
+  {
+    "Name": "rolesummon",
+    "Value": "0,2,4,6,8",
+    "SyncClient": "0",
+    "Desc": "召唤角色消耗的能量"
+  },
+  {
+    "Name": "rolesummoncold",
+    "Value": "2",
+    "SyncClient": "0",
+    "Desc": "召唤角色冷却"
+  },
+  {
+    "Name": "commoncard",
+    "Value": "101",
+    "SyncClient": "0",
+    "Desc": "战斗中常驻卡牌ID"
+  },
+  {
+    "Name": "roleskill",
+    "Value": "1,1,1",
+    "SyncClient": "0",
+    "Desc": "角色奥义使用消耗召唤点"
+  },
+  {
+    "Name": "support_reward",
+    "Value": "5,1001005,30",
+    "SyncClient": "0",
+    "Desc": "每日通过被借用星痕可获得奖励的次数，以及奖励内容。配置格式：奖励次数，itemid，数量"
+  },
+  {
+    "Name": "first_pay",
+    "Value": "1,101;2,102;3,103;4,104;5,105;6,106",
+    "SyncClient": "0",
+    "Desc": "未进行过首次购买时，首次购买所买的商品id（关联shopitem表）。配置格式：未进行首次购买的商品id，指向的首次购买商品id"
+  },
+  {
+    "Name": "role_exp_item_id",
+    "Value": "1000008",
+    "SyncClient": "0",
+    "Desc": "玩家经验道具id"
+  },
+  {
+    "Name": "physical_strength_item_id",
+    "Value": "1000004",
+    "SyncClient": "0",
+    "Desc": "玩家体力id"
+  },
+  {
+    "Name": "physical_strength_transform",
+    "Value": "150001",
+    "SyncClient": "0",
+    "Desc": "游戏中，消耗每点体力转化为星痕之泪的数量，配置drop表id"
+  },
+  {
+    "Name": "shop_refresh_redlabel",
+    "Value": "172800",
+    "SyncClient": "0",
+    "Desc": "配置商店商品刷新剩余时间小于x秒时，使用红色标签显示。"
+  },
+  {
+    "Name": "shop_secretary_voice",
+    "Value": "8000326,8000327",
+    "SyncClient": "0",
+    "Desc": "商店点击秘书时播放的语音及文本，配置多条时随机，关联sound表"
+  },
+  {
+    "Name": "ini_music",
+    "Value": "1424",
+    "SyncClient": "0",
+    "Desc": "游戏默认音乐，配置读取LibrarySound表Id"
+  },
+  {
+    "Name": "ini_role",
+    "Value": "3000001",
+    "SyncClient": "0",
+    "Desc": "初始魔女"
+  },
+  {
+    "Name": "ini_item",
+    "Value": "101901,1;1001013,1;1017000,1;3013017,1;3013023,1;1031024,1;260101,1;260102,1;260103,1;260105,1;260107,1;260111,1;260112,1;260116,1;260201,1;260205,1;260206,1;7001,1;5010001,10;5030001,1;5030002,1",
+    "SyncClient": "0",
+    "Desc": "初始道具"
+  },
+  {
+    "Name": "ini_home_rolepet",
+    "Value": "3013017",
+    "SyncClient": "0",
+    "Desc": "默认出击界面看板星痕"
+  },
+  {
+    "Name": "ini_roleskin",
+    "Value": "3000001",
+    "SyncClient": "0",
+    "Desc": "玩家档案中初始解锁皮肤/头像，配置itemid（初始道具里需要添加此道具id）"
+  },
+  {
+    "Name": "ini_head_box",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "初始解锁头像框，配置ItemId（需在初始道具里配置对应头像框和聊天气泡）"
+  },
+  {
+    "Name": "ini_chat_box",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "初始解锁聊天气泡，配置ItemId"
+  },
+  {
+    "Name": "ini_chat_box2",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "聊天界面其他玩家发消息时显示的默认聊天气泡框，读取HeadUnlock表ID"
+  },
+  {
+    "Name": "ini_mail",
+    "Value": "102",
+    "SyncClient": "0",
+    "Desc": "创建角色后，首次登录时收到的欢迎邮件id"
+  },
+  {
+    "Name": "ini_gacha",
+    "Value": "3013017",
+    "SyncClient": "0",
+    "Desc": "创建角色后，首次抽卡获得的星痕"
+  },
+  {
+    "Name": "ini_back",
+    "Value": "101901",
+    "SyncClient": "0",
+    "Desc": "初始默认解锁（使用）的背景，配置itemid"
+  },
+  {
+    "Name": "ini_title",
+    "Value": "7001",
+    "SyncClient": "",
+    "Desc": "初始解锁称号，配置ItemId（需在初始道具里配置对应的称号）"
+  },
+  {
+    "Name": "fix_ini_item",
+    "Value": "260101,1;260102,1;260103,1;260104,1;260105,1;260106,1;260107,1;260109,1;260111,1;260112,1;260114,1;260115,1;260116,1;260201,1;260203,1;260205,1;260206,1;260210,1;7001,1;5010001,10;5030001,1;5030002,1",
+    "SyncClient": "0",
+    "Desc": "初始道具检查，没有就补发（注意是和玩家初始道具搭配使用）"
+  },
+  {
+    "Name": "comment_head",
+    "Value": "10001",
+    "SyncClient": "0",
+    "Desc": "主线中点评角色的头像，配置roleid"
+  },
+  {
+    "Name": "day_retime",
+    "Value": "5",
+    "SyncClient": "1",
+    "Desc": "每日重置时间，通用每日重置时间"
+  },
+  {
+    "Name": "ini_team_role",
+    "Value": "3000001",
+    "SyncClient": "0",
+    "Desc": "初始阵容1的角色配置，角色ID，角色位置；"
+  },
+  {
+    "Name": "ini_team_role_pet",
+    "Value": "3013023",
+    "SyncClient": "0",
+    "Desc": "初始魔女带的星痕"
+  },
+  {
+    "Name": "mail_period",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "邮件通用有效期，单位天"
+  },
+  {
+    "Name": "item_exp",
+    "Value": "1006505,600;1006506,2000;1006507,6000;1006508,20000",
+    "SyncClient": "0",
+    "Desc": "星痕升级道具经验"
+  },
+  {
+    "Name": "item_exp_money",
+    "Value": "4,1000003,1",
+    "SyncClient": "0",
+    "Desc": "每使用X点经验，转换为X点金币（本勒）参数1：经验值，参数2：道具ID，参数3：道具数量"
+  },
+  {
+    "Name": "cardlv",
+    "Value": "1,1,1,1,1",
+    "SyncClient": "0",
+    "Desc": "卡牌初始等级，对应卡牌品质，白色，绿色，蓝色，紫色，橙色"
+  },
+  {
+    "Name": "cardlvmax",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "卡牌等级上限"
+  },
+  {
+    "Name": "player_ap_buy1",
+    "Value": "1000016,1001023,1001024,1001025",
+    "SyncClient": "0",
+    "Desc": "需要显示到体力购买界面的体力药id（Item表Id）"
+  },
+  {
+    "Name": "player_ap_buy2",
+    "Value": "1003",
+    "SyncClient": "0",
+    "Desc": "通过钻石购买体力的门票id（Ticket表Id）"
+  },
+  {
+    "Name": "awakenmax",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "角色觉醒等级上限"
+  },
+  {
+    "Name": "breaklvmax",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "角色突破等级上限"
+  },
+  {
+    "Name": "role_pet_contract_up",
+    "Value": "3,3;4,3;5,3",
+    "SyncClient": "0",
+    "Desc": "心契突破上限(参数1：品质，参数2：突破上限)"
+  },
+  {
+    "Name": "breaklvmax_weapon",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "专武突破等级上限"
+  },
+  {
+    "Name": "awakenmax_weapon",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "专武觉醒等级上限"
+  },
+  {
+    "Name": "stage_droprate",
+    "Value": "10000,10000;5000,9999;1500,4999;1,1499",
+    "SyncClient": "0",
+    "Desc": "关卡掉落概率标签，从左到右分别为”固定掉落，高概率，小概率，稀有“。配置概率为万分比。"
+  },
+  {
+    "Name": "energy_filter",
+    "Value": "0,0;1,1;2,2;3,3;4,4;5,5;6,6;7,7;8,8;9,9",
+    "SyncClient": "0",
+    "Desc": "布阵界面卡牌筛选能量取值范围"
+  },
+  {
+    "Name": "laddermatc_lnitial_rankscore",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "玩家初始段位积分"
+  },
+  {
+    "Name": "laddermatc_time",
+    "Value": "8,24",
+    "SyncClient": "0",
+    "Desc": "天梯赛每日的比赛时间段，时段外无法匹配对手"
+  },
+  {
+    "Name": "laddermatc_loading_time",
+    "Value": "20,1;60,2;92,1.5",
+    "SyncClient": "0",
+    "Desc": "天梯赛加载进度分段配置，配置格式：进度百分比，等待时间"
+  },
+  {
+    "Name": "laddermatc_countdown",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "天梯赛匹配倒计时时间"
+  },
+  {
+    "Name": "laddermatc_ranking_range",
+    "Value": "200",
+    "SyncClient": "0",
+    "Desc": "天梯赛积分榜，上榜排名范围"
+  },
+  {
+    "Name": "laddermatc_ranking_maxrange",
+    "Value": "1000",
+    "SyncClient": "0",
+    "Desc": "天梯赛积分榜，最大记录排名范围"
+  },
+  {
+    "Name": "laddermatc_stage",
+    "Value": "90001,90002,90003",
+    "SyncClient": "0",
+    "Desc": "天梯赛应用的地图（随机使用）"
+  },
+  {
+    "Name": "laddermatc_voting_cycle",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "以周为单位循环，配置为1即为每周一次，周日24:00结算"
+  },
+  {
+    "Name": "laddermatc_ban_rolenum",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "最大禁用角色数"
+  },
+  {
+    "Name": "laddermatc_ban_cardnum",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "最大禁用卡牌数"
+  },
+  {
+    "Name": "laddermatc_find",
+    "Value": "10199",
+    "SyncClient": "0",
+    "Desc": "赛季段位奖励找回邮件id"
+  },
+  {
+    "Name": "laddermatc_voteinherit",
+    "Value": "11",
+    "SyncClient": "0",
+    "Desc": "下一轮投票，票数继承比例"
+  },
+  {
+    "Name": "laddermatc_votcoef_card",
+    "Value": "100,3,6;1000,2,4;10000,1,2;9999999,1,1",
+    "SyncClient": "0",
+    "Desc": "卡牌投票膨胀系数，配置格式：票数,最小随机票数,最大随机票数；"
+  },
+  {
+    "Name": "laddermatc_votcoef_role",
+    "Value": "100,3,6;1000,2,4;10000,1,2;9999999,1,1",
+    "SyncClient": "0",
+    "Desc": "角色投票膨胀系数"
+  },
+  {
+    "Name": "laddermatc_draw_count",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "天梯赛每日允许出现平局的次数"
+  },
+  {
+    "Name": "ladderduel_countdown",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "赛事2匹配倒计时时间"
+  },
+  {
+    "Name": "ladderduel_corecard",
+    "Value": "4,5",
+    "SyncClient": "0",
+    "Desc": "赛事2核心卡的稀有度配置（关联下面奖励档位id）"
+  },
+  {
+    "Name": "ladderduel_corecard_reward",
+    "Value": "6,10",
+    "SyncClient": "0",
+    "Desc": "赛事2核心卡的奖励所关联的档位id"
+  },
+  {
+    "Name": "ladderduel_role_level",
+    "Value": "50",
+    "SyncClient": "0",
+    "Desc": "赛事2角色平衡等级，配置格式：角色等级,觉醒等级"
+  },
+  {
+    "Name": "ladderduel_role_awaken",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "赛事2角色觉醒等级"
+  },
+  {
+    "Name": "ladderduel_role_break",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "赛事2角色突破等级"
+  },
+  {
+    "Name": "ladderduel_card_level",
+    "Value": "15",
+    "SyncClient": "0",
+    "Desc": "赛事2卡牌平衡等级"
+  },
+  {
+    "Name": "ladderduel_find",
+    "Value": "10200",
+    "SyncClient": "0",
+    "Desc": "赛事2奖励找回邮件id"
+  },
+  {
+    "Name": "ladderduel_draw_count",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "赛事2每日允许出现平局的次数"
+  },
+  {
+    "Name": "ladder_sort",
+    "Value": "101,103,115",
+    "SyncClient": "0",
+    "Desc": "赛事功能排序,配置unlock表的功能id"
+  },
+  {
+    "Name": "monthcard_mail",
+    "Value": "501",
+    "SyncClient": "0",
+    "Desc": "月卡每日邮件ID"
+  },
+  {
+    "Name": "monthcard_expire_mail",
+    "Value": "2,502",
+    "SyncClient": "0",
+    "Desc": "月卡即将过期提醒邮件，配置格式：剩余天数，mailid"
+  },
+  {
+    "Name": "monthcard_day",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "月卡有效天数"
+  },
+  {
+    "Name": "weeklycard_mail",
+    "Value": "601",
+    "SyncClient": "0",
+    "Desc": "体力周卡每日邮件ID"
+  },
+  {
+    "Name": "weeklycard_expire_mail",
+    "Value": "1,602",
+    "SyncClient": "0",
+    "Desc": "体力周卡即将过期提醒邮件，配置格式：剩余天数，mailid"
+  },
+  {
+    "Name": "weeklycard_day",
+    "Value": "7",
+    "SyncClient": "0",
+    "Desc": "体力周卡有效天数"
+  },
+  {
+    "Name": "reconnect",
+    "Value": "20",
+    "SyncClient": "0",
+    "Desc": "断线重连时间，单位秒"
+  },
+  {
+    "Name": "reconnect_max",
+    "Value": "600",
+    "SyncClient": "0",
+    "Desc": "断线重连（切换后台），返回登录时间，单位秒"
+  },
+  {
+    "Name": "reconnect_battle",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "断线重连战斗中使用，单位秒"
+  },
+  {
+    "Name": "ladderticket_consume",
+    "Value": "111,1",
+    "SyncClient": "0",
+    "Desc": "决斗场门票，配置格式：道具id,数量"
+  },
+  {
+    "Name": "ladderticket_diamond",
+    "Value": "150",
+    "SyncClient": "0",
+    "Desc": "决斗场门票价格"
+  },
+  {
+    "Name": "ladderticket_life",
+    "Value": "3",
+    "SyncClient": "0",
+    "Desc": "决斗场队伍生命数"
+  },
+  {
+    "Name": "ladderticket_role_level",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "决斗场角色等级"
+  },
+  {
+    "Name": "ladderticket_role_awaken",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "决斗场角色觉醒等级"
+  },
+  {
+    "Name": "ladderticket_role_break",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "决斗场角色突破等级"
+  },
+  {
+    "Name": "ladderticket_card_level",
+    "Value": "15",
+    "SyncClient": "0",
+    "Desc": "决斗场卡牌等级"
+  },
+  {
+    "Name": "ladderticke_countdown",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "决斗场匹配倒计时时间"
+  },
+  {
+    "Name": "ladderticke_lineup",
+    "Value": "1,0,2,100,101,102",
+    "SyncClient": "0",
+    "Desc": "决斗场新获得角色自动上阵顺序"
+  },
+  {
+    "Name": "ladderticke_find",
+    "Value": "10201",
+    "SyncClient": "0",
+    "Desc": "决斗场找回邮件ID"
+  },
+  {
+    "Name": "chat_system_name",
+    "Value": "ui_chatsystem_01",
+    "SyncClient": "0",
+    "Desc": "聊天中系统消息的名称，配置多语言表id"
+  },
+  {
+    "Name": "chat_push",
+    "Value": "20",
+    "SyncClient": "0",
+    "Desc": "服务器记录的用于在玩家上线时推送给玩家的世界频道聊天数量"
+  },
+  {
+    "Name": "chat_report_wordlimit",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "玩家举报时，补充内容的字数限制"
+  },
+  {
+    "Name": "chat_similarity_minlength",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "检查重复信息的最小字数，发送信息内容少于配置字数时不检查"
+  },
+  {
+    "Name": "chat_similarity_time",
+    "Value": "120",
+    "SyncClient": "0",
+    "Desc": "发送的聊天信息经过时间大于配置时间时不检查重复，单位：秒"
+  },
+  {
+    "Name": "report_feedback",
+    "Value": "10202",
+    "SyncClient": "0",
+    "Desc": "玩家提交举报时，自动发送的反馈邮件id"
+  },
+  {
+    "Name": "chat_fullremind",
+    "Value": "95",
+    "SyncClient": "0",
+    "Desc": "世界聊天频道内人数达到上限的x%时，显示“满”标签提醒"
+  },
+  {
+    "Name": "chat_full_message",
+    "Value": "",
+    "SyncClient": "0",
+    "Desc": "所有频道满人，未能自动分配进世界频道的提醒消息"
+  },
+  {
+    "Name": "logon_message",
+    "Value": "logon_message_01",
+    "SyncClient": "0",
+    "Desc": "每日首次登录游戏时发送给玩家的系统欢迎通知，配置LanguageID，字数控制在200内"
+  },
+  {
+    "Name": "muzzle_mail_01",
+    "Value": "10203",
+    "SyncClient": "0",
+    "Desc": "被禁言时收到的禁言通知邮件id（时长）"
+  },
+  {
+    "Name": "muzzle_mail_02",
+    "Value": "10204",
+    "SyncClient": "0",
+    "Desc": "被永久禁言时收到的禁言通知邮件id"
+  },
+  {
+    "Name": "chat_worldchannel_maxplayercount",
+    "Value": "1000",
+    "SyncClient": "0",
+    "Desc": "世界聊天，每个频道允许进入的最大玩家数"
+  },
+  {
+    "Name": "chat_worldchannel_recommend",
+    "Value": "50",
+    "SyncClient": "0",
+    "Desc": "世界聊天，频道人数自动分配比例，若频道内人数超过这个比例，玩家进入游戏时分配至其他频道"
+  },
+  {
+    "Name": "privatechat_close",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "自动关闭x小时未聊天的私聊对象，单位小时"
+  },
+  {
+    "Name": "aoto_report",
+    "Value": "20,30,1",
+    "SyncClient": "0",
+    "Desc": ""
+  },
+  {
+    "Name": "friend_limit",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "好友上限数量"
+  },
+  {
+    "Name": "friend_request_limit",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "好友申请数量上限"
+  },
+  {
+    "Name": "friend_recommend_limit",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "每次刷新推荐好友的数量"
+  },
+  {
+    "Name": "friend_add_daily",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "每日每个账号最多发送xx次好友请求"
+  },
+  {
+    "Name": "blacklist_limit",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "屏蔽名单数量上限"
+  },
+  {
+    "Name": "apply_cd",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "好友申请CD时间，单位：秒"
+  },
+  {
+    "Name": "debug_robot",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "用于客户端检查机器人配置的开关，1=打开，0=关闭，与机器人战斗时，uniity内搜索“服务器”查看机器人配置数据"
+  },
+  {
+    "Name": "story_aoto_speed",
+    "Value": "1,2,4",
+    "SyncClient": "0",
+    "Desc": "自动播放剧情的倍速速率配置"
+  },
+  {
+    "Name": "rename_consume",
+    "Value": "1001013,1",
+    "SyncClient": "0",
+    "Desc": "修改名字消耗的道具（优先消耗），配置格式：itemid，消耗数量"
+  },
+  {
+    "Name": "rename_diamond",
+    "Value": "1000002,100",
+    "SyncClient": "0",
+    "Desc": "修改名字的钻石需求"
+  },
+  {
+    "Name": "bulletcurtain_color",
+    "Value": "1,FFFFFF;2,ff3a3a;3,1cff91;4,1ee7ff;5,ffeb3e;6,e240ff",
+    "SyncClient": "0",
+    "Desc": "普通弹幕可选颜色，编号1的是默认颜色。配置格式：编号,颜色色值（编号为文案配置预设弹幕颜色时使用）"
+  },
+  {
+    "Name": "bulletcurtain_interval",
+    "Value": "500,1000",
+    "SyncClient": "0",
+    "Desc": "弹幕发送随机间隔时间，配置格式：随机区间,随机区间（单位毫秒）"
+  },
+  {
+    "Name": "bulletcurtain_size",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "普通弹幕字体大小"
+  },
+  {
+    "Name": "bulletcurtain_plot_limit",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "每个剧情ID允许玩家发送的弹幕数量限制"
+  },
+  {
+    "Name": "bulletcurtain_speed",
+    "Value": "5,200,20",
+    "SyncClient": "0",
+    "Desc": "弹幕的每秒移动像素距离，配置格式：基础字数,基础移动速度,比基础字数每多一个字的增速（剧情弹幕仅使用基础速度）"
+  },
+  {
+    "Name": "bulletcurtain_length",
+    "Value": "40",
+    "SyncClient": "0",
+    "Desc": "剧情弹幕可以输入的字符数"
+  },
+  {
+    "Name": "bulletcurtain_pvp_layer",
+    "Value": "1,5,1;6,10,2;11,15,3;16,20,4",
+    "SyncClient": "0",
+    "Desc": "观战时弹幕的层级（配置示例：1,5,1=1-5个字的弹幕，层级为1）层级数字越小显示优先级越高"
+  },
+  {
+    "Name": "bulletcurtain_track",
+    "Value": "100,500",
+    "SyncClient": "0",
+    "Desc": "弹幕通道配置，配置格式:弹幕离屏幕顶端距离,离屏幕底端距离（弹幕通道数量根据屏幕内剩余弹幕空间高度算出）"
+  },
+  {
+    "Name": "max_role_description_length",
+    "Value": "120",
+    "SyncClient": "0",
+    "Desc": "个人档案中，个人简介的允许输入字符数限制"
+  },
+  {
+    "Name": "library_tabexp",
+    "Value": "1,10;2,10;3,10;4,10;5,10;6,12;7,12;8,12;9,12;10,12;11,10;12,10;13,10;14,12;15,12;16,12",
+    "SyncClient": "0",
+    "Desc": "档案不同页签首次查看时奖励的阅历值。关联Library表ID，配置格式：LibraryID，值；LibraryID，值"
+  },
+  {
+    "Name": "achieve_type",
+    "Value": "1,2,3,4",
+    "SyncClient": "0",
+    "Desc": "成就类型配置，游戏内类型显示按配置顺序显示"
+  },
+  {
+    "Name": "achieve_notice",
+    "Value": "90004",
+    "SyncClient": "0",
+    "Desc": "成就用右侧弹窗提示"
+  },
+  {
+    "Name": "hero_common_skills",
+    "Value": "99999999,1000",
+    "SyncClient": "0",
+    "Desc": "英雄通用回能技能  每回合行动后+100能量（1豆）"
+  },
+  {
+    "Name": "monster_common_skills",
+    "Value": "99999999,1000,89999999",
+    "SyncClient": "",
+    "Desc": "怪通用回能技能"
+  },
+  {
+    "Name": "setting_ui_adaptation",
+    "Value": "120",
+    "SyncClient": "0",
+    "Desc": "异形界面适配，允许的最大缩进像素配置"
+  },
+  {
+    "Name": "setting_sound_se",
+    "Value": "300101",
+    "SyncClient": "0",
+    "Desc": "设置界面调整音效音量时使用的soundid"
+  },
+  {
+    "Name": "setting_sound_voice",
+    "Value": "995,996,997,998,999",
+    "SyncClient": "0",
+    "Desc": "设置界面调整语音音量时使用的soundid"
+  },
+  {
+    "Name": "critical_cure_rate",
+    "Value": "500",
+    "SyncClient": "0",
+    "Desc": "治疗效果，受到暴击伤害增益的衰减值（千分比）最终属性*（基础爆伤+增益值*衰减值）"
+  },
+  {
+    "Name": "battlepass_paylevel",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "战令功能，购买等级消耗钻石数"
+  },
+  {
+    "Name": "max_round",
+    "Value": "3000",
+    "SyncClient": "0",
+    "Desc": "战斗默认最大回合数"
+  },
+  {
+    "Name": "rolepet_positioning",
+    "Value": "role_positioning_101,role_positioning_102,role_positioning_103",
+    "SyncClient": "0",
+    "Desc": "星痕界面，筛选显示的星痕时，显示的所有星痕定位"
+  },
+  {
+    "Name": "roleequiplevelup_item",
+    "Value": "1001034,10",
+    "SyncClient": "0",
+    "Desc": "符文升级道具经验"
+  },
+  {
+    "Name": "roleequiplevelup_loss",
+    "Value": "800",
+    "SyncClient": "0",
+    "Desc": "符文装备吞噬后，保留千分比经验"
+  },
+  {
+    "Name": "weaponlevelup_item",
+    "Value": "10010,100;10011,200;10012,300;10013,400",
+    "SyncClient": "0",
+    "Desc": "武器升级道具经验"
+  },
+  {
+    "Name": "weaponlevelup_loss",
+    "Value": "800",
+    "SyncClient": "0",
+    "Desc": "武器装备吞噬后，保留千分比经验"
+  },
+  {
+    "Name": "cardboxlevelup_item",
+    "Value": "10023,100;10024,200;10025,300;10026,400",
+    "SyncClient": "0",
+    "Desc": "牌盒升级道具"
+  },
+  {
+    "Name": "cardboxlevelup_loss",
+    "Value": "800",
+    "SyncClient": "0",
+    "Desc": "牌盒吞噬后，保留千分比经验"
+  },
+  {
+    "Name": "oss_table_split_num",
+    "Value": "20000000",
+    "SyncClient": "0",
+    "Desc": ""
+  },
+  {
+    "Name": "oss_db_split_num",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": ""
+  },
+  {
+    "Name": "timeline_nextskill_min_frame",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "进入下一个技能时的最少帧数"
+  },
+  {
+    "Name": "timeline_fix_frame",
+    "Value": "5",
+    "SyncClient": "0",
+    "Desc": "技能的修正延迟"
+  },
+  {
+    "Name": "role_equip_select",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "烙印预设的装备位选择"
+  },
+  {
+    "Name": "role_equip_refresh_item",
+    "Value": "1006222,10;1006222,30;1006222,50;1006222,80",
+    "SyncClient": "0",
+    "Desc": "洗炼消耗符文(1、不锁词条，2、锁1个  3、锁2个4、锁3个)"
+  },
+  {
+    "Name": "role_equip_refresh_item_attrrlv",
+    "Value": "1006240,0;1006240,1;1006240,2;1006240,3;1006240,4",
+    "SyncClient": "0",
+    "Desc": "洗练符文锁定词条等级消耗(1、不锁词条，2、锁1个  3、锁2个4、锁3个5、锁4个)"
+  },
+  {
+    "Name": "role_equip_refresh_item_attrtype",
+    "Value": "1006241,0;1006241,1;1006241,2;1006241,3;1006241,4",
+    "SyncClient": "0",
+    "Desc": "洗练符文锁定词条类型消耗(1、不锁词条，2、锁1个  3、锁2个4、锁3个5、锁4个)"
+  },
+  {
+    "Name": "role_equip_refresh_item2",
+    "Value": "1006224,10;1006224,30;1006224,50;1006224,80",
+    "SyncClient": "0",
+    "Desc": "高级洗炼消耗符文(1、不锁词条，2、锁1个  3、锁2个4、锁3个)"
+  },
+  {
+    "Name": "role_equip_refresh_item_attrrlv2",
+    "Value": "1006240,0;1006240,1;1006240,2;1006240,3;1006240,4",
+    "SyncClient": "0",
+    "Desc": "高级洗练符文锁定词条等级消耗(1、不锁词条，2、锁1个  3、锁2个4、锁3个5、锁4个)"
+  },
+  {
+    "Name": "role_equip_refresh_item_attrtype2",
+    "Value": "1006241,0;1006241,1;1006241,2;1006241,3;1006241,4",
+    "SyncClient": "0",
+    "Desc": "高级洗练符文锁定词条类型消耗(1、不锁词条，2、锁1个  3、锁2个4、锁3个5、锁4个)"
+  },
+  {
+    "Name": "role_equip_refresh_number",
+    "Value": "4,4,5,5",
+    "SyncClient": "0",
+    "Desc": "高级洗练符文洗炼出现词条数量(1、不锁词条，2、锁1个  5、锁2个5、锁3个5)"
+  },
+  {
+    "Name": "role_equip_refresh_gold",
+    "Value": "50,35,15",
+    "SyncClient": "0",
+    "Desc": "随机到金色词条时，值分成数组的段数（3段）再随机值"
+  },
+  {
+    "Name": "role_equip_refresh_item3",
+    "Value": "1006242,1",
+    "SyncClient": "0",
+    "Desc": "符文主属性定向选择消耗的道具，道具数量"
+  },
+  {
+    "Name": "rolefavor_up",
+    "Value": "380",
+    "SyncClient": "0",
+    "Desc": "魔女每日好感度获取总上限"
+  },
+  {
+    "Name": "add_pet_favor_factor",
+    "Value": "200",
+    "SyncClient": "0",
+    "Desc": "星痕喜欢礼物额外好感度千分比加成"
+  },
+  {
+    "Name": "role_pet_contract_exp",
+    "Value": "2400",
+    "SyncClient": "0",
+    "Desc": "心契经验"
+  },
+  {
+    "Name": "task_role",
+    "Value": "90001,90002,90003",
+    "SyncClient": "0",
+    "Desc": "任务用三个角色"
+  },
+  {
+    "Name": "diamond_gacha_rate",
+    "Value": "160",
+    "SyncClient": "0",
+    "Desc": "钻石兑换抽卡券的比例"
+  },
+  {
+    "Name": "diamond_weapon_gacha_rate",
+    "Value": "80",
+    "SyncClient": "0",
+    "Desc": "专武抽卡券兑换消耗钻石比例"
+  },
+  {
+    "Name": "role_equip_main_attr",
+    "Value": "101,102,103,114,116",
+    "SyncClient": "0",
+    "Desc": "符文主属性筛选"
+  },
+  {
+    "Name": "role_equip_minor_attr",
+    "Value": "101,102,103,104,105,107,109,114,116,118,120,123,124,125,134,137,138,144,145",
+    "SyncClient": "0",
+    "Desc": "符文副属性筛选"
+  },
+  {
+    "Name": "kuroro_distance",
+    "Value": "210",
+    "SyncClient": "0",
+    "Desc": "克萝萝大冒险地图长度"
+  },
+  {
+    "Name": "kuroro_speed",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "克萝萝大冒险速度"
+  },
+  {
+    "Name": "kuroro_dice",
+    "Value": "1001011",
+    "SyncClient": "0",
+    "Desc": "骰子"
+  },
+  {
+    "Name": "kuroro_contrl_dice",
+    "Value": "1001012",
+    "SyncClient": "0",
+    "Desc": "遥控骰子"
+  },
+  {
+    "Name": "kuroro_free_dice",
+    "Value": "1001014",
+    "SyncClient": "0",
+    "Desc": "免费骰子"
+  },
+  {
+    "Name": "kuroro_total_days",
+    "Value": "13000",
+    "SyncClient": "0",
+    "Desc": "克萝萝总天数"
+  },
+  {
+    "Name": "kuroro_total_distance",
+    "Value": "13001",
+    "SyncClient": "0",
+    "Desc": "克萝萝总里程"
+  },
+  {
+    "Name": "kuroro_first_roll",
+    "Value": "0",
+    "SyncClient": "0",
+    "Desc": "克萝萝第一次扔骰子必出抽卡券"
+  },
+  {
+    "Name": "favor_like",
+    "Value": "1200,1000,800",
+    "SyncClient": "0",
+    "Desc": "星痕礼物(参数1：喜欢获取经验比例，参数2，一般获取经验比例，参数3，不喜欢获取经验比例)"
+  },
+  {
+    "Name": "favor_level",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "星痕好感度等级上限"
+  },
+  {
+    "Name": "ui_main_asset1",
+    "Value": "1000001,1000002,1000003",
+    "SyncClient": "0",
+    "Desc": "国服版本主界面显示货币"
+  },
+  {
+    "Name": "ui_main_asset2",
+    "Value": "1000004,1000001,1000003",
+    "SyncClient": "0",
+    "Desc": "日服版本主界面显示货币"
+  },
+  {
+    "Name": "main_quest_boss_nums",
+    "Value": "10",
+    "SyncClient": "0",
+    "Desc": "主线任务章节有几个BOSS就填几"
+  },
+  {
+    "Name": "font_china",
+    "Value": "SOURCE",
+    "SyncClient": "0",
+    "Desc": "中文版字体"
+  },
+  {
+    "Name": "font_japan",
+    "Value": "HGP",
+    "SyncClient": "0",
+    "Desc": "日文版字体"
+  },
+  {
+    "Name": "font_korea",
+    "Value": "SOURCE",
+    "SyncClient": "0",
+    "Desc": "韩文版字体"
+  },
+  {
+    "Name": "font_english",
+    "Value": "LIA",
+    "SyncClient": "0",
+    "Desc": "英文版字体"
+  },
+  {
+    "Name": "role_attr_show",
+    "Value": "101,102,103,105,114,116",
+    "SyncClient": "0",
+    "Desc": "魔女详情界面展示的属性"
+  },
+  {
+    "Name": "rolepet_attr_show",
+    "Value": "101,102,103,104,105,137,114,116,120,134,107,109",
+    "SyncClient": "0",
+    "Desc": "星痕详情界面展示的属性"
+  },
+  {
+    "Name": "dream_dungeon_integral",
+    "Value": "100,100",
+    "SyncClient": "0",
+    "Desc": "幻梦之境积分比例，伤害，弱破伤害  默认积分转换比是1"
+  },
+  {
+    "Name": "hard_stage",
+    "Value": "100,100",
+    "SyncClient": "0",
+    "Desc": "极难关卡积分比例，伤害，弱破伤害  默认积分转换比是1"
+  },
+  {
+    "Name": "level_partition",
+    "Value": "1,20;21,40;41,60;61,100",
+    "SyncClient": "0",
+    "Desc": "排行榜的等级划分"
+  },
+  {
+    "Name": "guild_quit_penalty",
+    "Value": "12",
+    "SyncClient": "0",
+    "Desc": "退出惩罚时间(小时)"
+  },
+  {
+    "Name": "guild_donate_gold_num",
+    "Value": "1062,3",
+    "SyncClient": "0",
+    "Desc": "捐献金币次数（每日）"
+  },
+  {
+    "Name": "guild_donate_gold_cost",
+    "Value": "1000003,1000",
+    "SyncClient": "0",
+    "Desc": "捐献金币消耗（捐赠item,数量）"
+  },
+  {
+    "Name": "guild_donate_gold_award",
+    "Value": "1001061,100;1001062,100",
+    "SyncClient": "0",
+    "Desc": "捐献金币奖励（奖励item,数量;奖励item,数量）"
+  },
+  {
+    "Name": "guild_donate_diamond_num",
+    "Value": "1063,3",
+    "SyncClient": "0",
+    "Desc": "捐献钻石次数（每日）"
+  },
+  {
+    "Name": "guild_donate_diamondcost",
+    "Value": "1000002,60",
+    "SyncClient": "0",
+    "Desc": "捐献钻石消耗（捐赠item，数量）"
+  },
+  {
+    "Name": "guild_donate_diamond_award",
+    "Value": "1001061,500;1001062,300",
+    "SyncClient": "0",
+    "Desc": "捐献钻石奖励（奖励item,数量;奖励item,数量）"
+  },
+  {
+    "Name": "guild_management_transfer",
+    "Value": "7",
+    "SyncClient": "0",
+    "Desc": "会长离线自动转让天数"
+  },
+  {
+    "Name": "guild_search_num",
+    "Value": "0,10,20,30,40,50",
+    "SyncClient": "0",
+    "Desc": "公会搜索筛选公会人数"
+  },
+  {
+    "Name": "guild_search_guild_level",
+    "Value": "0,1,2,3,4,5,6",
+    "SyncClient": "0",
+    "Desc": "公会搜索筛选公会等级"
+  },
+  {
+    "Name": "guild_search_player_level",
+    "Value": "0,20,40,60,80,100",
+    "SyncClient": "0",
+    "Desc": "公会搜索筛选侍主等级"
+  },
+  {
+    "Name": "guild_create_cost",
+    "Value": "1000002,100",
+    "SyncClient": "0",
+    "Desc": "公会创建消耗道具"
+  },
+  {
+    "Name": "guild_create_cd",
+    "Value": "12",
+    "SyncClient": "0",
+    "Desc": "公会创建后不可解散时间（小时）"
+  },
+  {
+    "Name": "guild_content_num",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "公会说明字数上限（字符）"
+  },
+  {
+    "Name": "guild_name_max_and_min",
+    "Value": "4,14",
+    "SyncClient": "0",
+    "Desc": "公会名字字数上下限（最小、最大）"
+  },
+  {
+    "Name": "guild_mail_award",
+    "Value": "801",
+    "SyncClient": "0",
+    "Desc": "公会补偿邮件id（包含临时退会与未领取奖励）"
+  },
+  {
+    "Name": "guild_like_num",
+    "Value": "1064,3",
+    "SyncClient": "0",
+    "Desc": "每日点赞次数"
+  },
+  {
+    "Name": "guild_like_award",
+    "Value": "1001061,20",
+    "SyncClient": "0",
+    "Desc": "点赞奖励道具（item,数量）"
+  },
+  {
+    "Name": "guild_exp_cost",
+    "Value": "1,10",
+    "SyncClient": "0",
+    "Desc": "公会经验转化为公会币比例（公会等级上限时触发）"
+  },
+  {
+    "Name": "guild_mail_quit",
+    "Value": "802",
+    "SyncClient": "0",
+    "Desc": "公会被踢邮件发送id"
+  },
+  {
+    "Name": "guild_role_request_limit",
+    "Value": "15",
+    "SyncClient": "0",
+    "Desc": "玩家申请公会数量上限"
+  },
+  {
+    "Name": "guild_role_request_time",
+    "Value": "24",
+    "SyncClient": "0",
+    "Desc": "玩家申请公会存在时间（小时）"
+  },
+  {
+    "Name": "guild_role_invitation_limit",
+    "Value": "15",
+    "SyncClient": "0",
+    "Desc": "玩家受邀公会数量上限"
+  },
+  {
+    "Name": "guild_request_limit",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "公会被申请数量上限"
+  },
+  {
+    "Name": "guild_invitation_limit",
+    "Value": "100",
+    "SyncClient": "0",
+    "Desc": "公会邀请数量上限"
+  },
+  {
+    "Name": "guild_massage",
+    "Value": "1,50;2,200",
+    "SyncClient": "0",
+    "Desc": "公会信息存储上限（类型对应guildmassage表）"
+  },
+  {
+    "Name": "guild_dailytask_exp",
+    "Value": "1001065,1",
+    "SyncClient": "0",
+    "Desc": "公会每日任务积分道具转化积分"
+  },
+  {
+    "Name": "guild_weektask_exp",
+    "Value": "1001066,1",
+    "SyncClient": "0",
+    "Desc": "公会每周任务积分道具转化积分"
+  },
+  {
+    "Name": "item_check_expired",
+    "Value": "1001065,1;1001066,1",
+    "SyncClient": "0",
+    "Desc": "补发类型道具当天清除（“,1”是为了方便读取）"
+  },
+  {
+    "Name": "guildrace_speed_conversion",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "公会赛马，每点速度属性提升的每帧移动距离（单位厘米），10帧≈1秒"
+  },
+  {
+    "Name": "guildrace_skill_activation_range",
+    "Value": "4000",
+    "SyncClient": "",
+    "Desc": "公会赛马，每移动多少厘米判定一次技能触发"
+  },
+  {
+    "Name": "guildrace_deactivation_range",
+    "Value": "6000",
+    "SyncClient": "",
+    "Desc": "公会赛马，设置距离终点x米时不再触发技能/陷阱事件，避免在终点线前生成陷阱或触发技能的奇怪情况发生"
+  },
+  {
+    "Name": "guildrace_percentage_fee",
+    "Value": "500",
+    "SyncClient": "",
+    "Desc": "公会赛马，配置万分比，控制玩家投注被抽掉的比率"
+  },
+  {
+    "Name": "guildrace_incentive_times",
+    "Value": "100",
+    "SyncClient": "",
+    "Desc": "公会赛马，每激励多少次，随机增加选手的一项属性"
+  },
+  {
+    "Name": "guildrace_incentive",
+    "Value": "1,2;100,500;100,500",
+    "SyncClient": "",
+    "Desc": "公会赛马，受到激励时增加的属性值，上限值。配置格式：速度增加值，上线；BP增加值，上限；幸运增加值，上限"
+  },
+  {
+    "Name": "guildrace_personal_rankings",
+    "Value": "401",
+    "SyncClient": "",
+    "Desc": "公会赛马，公会赛马个人榜单id"
+  },
+  {
+    "Name": "guildrace_rankings",
+    "Value": "402",
+    "SyncClient": "",
+    "Desc": "公会赛马，公会赛马公会榜单id"
+  },
+  {
+    "Name": "guildrace_reward_mail",
+    "Value": "401",
+    "SyncClient": "",
+    "Desc": "公会赛马，下注的选手获得冠军时，所发的奖励。配置邮件ID"
+  },
+  {
+    "Name": "guildrace_mail",
+    "Value": "402",
+    "SyncClient": "",
+    "Desc": "公会赛马，下注的选手全都没得到冠军时，发送安慰邮件"
+  },
+  {
+    "Name": "guildrace_action_frame_rate",
+    "Value": "100",
+    "SyncClient": "",
+    "Desc": "公会赛马，动作帧数换算，目前一帧为100毫秒"
+  },
+  {
+    "Name": "guildrace_bet",
+    "Value": "1,5",
+    "SyncClient": "",
+    "Desc": "公会赛马，每期比赛开始时，系统随机投注到每位选手身上的次数，配置格式【最小次数，最大次数】"
+  },
+  {
+    "Name": "occupation_talent_reset",
+    "Value": "0,50,100,150,200",
+    "SyncClient": "0",
+    "Desc": "职阶天赋重置消耗"
+  },
+  {
+    "Name": "occupation_talent_reset_time",
+    "Value": "1",
+    "SyncClient": "0",
+    "Desc": "职阶天赋重置时间(每周一重置)"
+  },
+  {
+    "Name": "occupation_talent_unlockvalve",
+    "Value": "30",
+    "SyncClient": "0",
+    "Desc": "职阶天赋每阶解锁所需要的点数"
+  },
+  {
+    "Name": "cardcollect_filter_type",
+    "Value": "71,61,51,41,31,2,1",
+    "SyncClient": "",
+    "Desc": "卡册中显示的卡牌稀有度筛选类型，配置卡牌稀有度类型ID，从第一个开始从上往下排"
+  },
+  {
+    "Name": "card_flip",
+    "Value": "0,45",
+    "SyncClient": "",
+    "Desc": "控制查看卡牌时左右角度到多少会自动翻面，配置格式：左右方向最小角度，最大角度"
+  },
+  {
+    "Name": "collection_plate_back",
+    "Value": "",
+    "SyncClient": "",
+    "Desc": "收藏板默认封面，配置关联ITEMID（需在玩家初始道具里也配上）"
+  },
+  {
+    "Name": "card_logout_password",
+    "Value": "60",
+    "SyncClient": "",
+    "Desc": "注销卡册收藏密码所需等待的时间，配置单位：秒"
+  },
+  {
+    "Name": "card_collectibles_limit",
+    "Value": "15",
+    "SyncClient": "",
+    "Desc": "允许创建的收藏册数量"
+  },
+  {
+    "Name": "card_collectibles_storage",
+    "Value": "30",
+    "SyncClient": "",
+    "Desc": "收藏册可储存的卡牌上限"
+  },
+  {
+    "Name": "cardpack_rotation_angle",
+    "Value": "0,60;0,15",
+    "SyncClient": "",
+    "Desc": "控制卡包xy轴的旋转查看角度，配置格式：左右方向最小角度，最大角度；上下方最小角度，最大角度"
+  },
+  {
+    "Name": "cardpack_flip",
+    "Value": "0,50",
+    "SyncClient": "",
+    "Desc": "控制查卡包时左右角度到多少会自动翻面，配置格式：左右方向最小角度，最大角度"
+  },
+  {
+    "Name": "cardpack_tilt_angle",
+    "Value": "0,45,90,135,180",
+    "SyncClient": "",
+    "Desc": "控制卡包的左右可倾斜角度，支持配置多个角度，配置格式：初始角度,倾斜角度1,倾斜角度2,倾斜角度3..."
+  },
+  {
+    "Name": "card_gifti_limit",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "卡牌赠送限制间隔时间，单位：分钟"
+  },
+  {
+    "Name": "sharing_rewards",
+    "Value": "3,0",
+    "SyncClient": "",
+    "Desc": "每日通过分享可获得奖励的次数，以及奖励内容。配置格式：奖励次数，Dropid"
+  },
+  {
+    "Name": "good_reviews",
+    "Value": "5,0",
+    "SyncClient": "",
+    "Desc": "每日给其他玩家的分享点赞次数，以及奖励内容。配置格式：奖励次数，Dropid"
+  },
+  {
+    "Name": "sharing_channels",
+    "Value": "1,2,5",
+    "SyncClient": "",
+    "Desc": "可分享频道ID(chat表key）"
+  },
+  {
+    "Name": "card_password_length",
+    "Value": "8,16",
+    "SyncClient": "",
+    "Desc": "收藏卡密码长度(最短,最长)"
+  },
+  {
+    "Name": "offline_max_own_card",
+    "Value": "100",
+    "SyncClient": "",
+    "Desc": "玩家处在离线状态时，最多允许收到的别人送的收藏卡的上限数量"
+  },
+  {
+    "Name": "max_own_card 100000",
+    "Value": "100000",
+    "SyncClient": "",
+    "Desc": "玩家最大允许拥有的收藏卡的数量的极限值"
+  },
+  {
+    "Name": "guide_novice",
+    "Value": "99999991",
+    "SyncClient": "",
+    "Desc": "新手引导关卡ID，用于跳过新手引导"
+  },
+  {
+    "Name": "guide_skip",
+    "Value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+    "SyncClient": "",
+    "Desc": "跳过新手关卡后，记录完成的引导"
+  },
+  {
+    "Name": "guide_prologue",
+    "Value": "1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+    "SyncClient": "",
+    "Desc": "序章引导ID，用于判断序章是否通过"
+  },
+  {
+    "Name": "guide_condition",
+    "Value": "101000,1,1",
+    "SyncClient": "",
+    "Desc": "序章引导condition，用于判断序章是否通过"
+  },
+  {
+    "Name": "banner_time",
+    "Value": "3",
+    "SyncClient": "",
+    "Desc": "主界面滚动轮盘滚动时间设置int（单位：秒）"
+  },
+  {
+    "Name": "deep_recall",
+    "Value": "0,599;1,501;2,502;3,503;4,504;5,505;6,506",
+    "SyncClient": "",
+    "Desc": "回忆深潜需要刷新的排行榜。章节ID，需要刷新的排行榜；"
+  },
+  {
+    "Name": "role_pay_refund_max_num",
+    "Value": "9000",
+    "SyncClient": "",
+    "Desc": "欧美退款封号标准金额"
+  },
+  {
+    "Name": "role_pay_refund_lock_conditions",
+    "Value": "13100,0,0;13101,0",
+    "SyncClient": "",
+    "Desc": "欧美退款功能封锁条件"
+  },
+  {
+    "Name": "role_pay_refund_lock_functions",
+    "Value": "1,1;2,1;3,1;4,1;5,1;6,1;8,1;9,1;10,1;11,1;12,1;14,1;15,1;16,1;22,1;23,1;101,1;110,1;118,1;201,1;301,1;401,1;404,1;406,1;407,1;408,1;409,1;410,1;411,1;412,1;413,1;414,1;415,1;416,1;417,1;418,1;420,1;421,1;422,1;423,1;424,1;428,1;429,1;501,1;601,1;620,1;631,1;642,1;701,1;801,1;1101,1",
+    "SyncClient": "",
+    "Desc": "欧美退款封锁功能ID"
+  },
+  {
+    "Name": "role_pay_refund_mail",
+    "Value": "104",
+    "SyncClient": "",
+    "Desc": "欧美退款警告邮件ID"
+  },
+  {
+    "Name": "break_lvup",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "突破后默认提升当前等级数量（应对日本需求，日本为1）"
+  },
+  {
+    "Name": "guide_role",
+    "Value": "3000001,3000002,3000003",
+    "SyncClient": "0",
+    "Desc": "1-3上阵魔女（新手引导专用）"
+  },
+  {
+    "Name": "guide_role_pet",
+    "Value": "3013023,0,0;3013017,0,0;0,0,0",
+    "SyncClient": "0",
+    "Desc": "1-3上阵星痕（新手引导专用）"
+  },
+  {
+    "Name": "guide_stage",
+    "Value": "10101,10102,10103,10117,10118,10112,30201,30101,10320,10127",
+    "SyncClient": "",
+    "Desc": "指定配置关卡，结算界面不显示再次挑战与下一关按钮"
+  },
+  {
+    "Name": "guide_stage_id",
+    "Value": "99999991",
+    "SyncClient": "",
+    "Desc": "序章关卡ID"
+  },
+  {
+    "Name": "privilege_card",
+    "Value": "501,501,30,3,502;502,503,30,3,504;503,505,-1,0,0;201004,601,7,1,602;504,501,30,3,502",
+    "SyncClient": "0",
+    "Desc": "欧美特权卡（往后增，不可插入）:月卡id，每日奖励邮件ID，有效天数(有效天数填-1=终身)，过期提醒天数，过期提醒邮件id；月卡id，每日奖励邮件ID，有效天数，过期提醒天数，过期提醒邮件id；……"
+  },
+  {
+    "Name": "guild_boss_reward_cd",
+    "Value": "60",
+    "SyncClient": "",
+    "Desc": "跨天4点前x分钟不可挑战每日boss"
+  },
+  {
+    "Name": "guild_boss_reward_week_cd",
+    "Value": "60",
+    "SyncClient": "",
+    "Desc": "周排行榜结束前x分钟不可挑战每日boss(周排行榜结束时间根据timecontrol控制)"
+  },
+  {
+    "Name": "guild_boss_reward",
+    "Value": "400",
+    "SyncClient": "",
+    "Desc": "公会boss首通任务及奖励（mission表的id）"
+  },
+  {
+    "Name": "battlefield_switch",
+    "Value": "10013,10014,10016",
+    "SyncClient": "",
+    "Desc": "战败界面跳转目标（对应三个按钮填写UiSwitchID）"
+  },
+  {
+    "Name": "announcement_tab_default",
+    "Value": "2",
+    "SyncClient": "",
+    "Desc": "游戏公告弹窗默认显示页签控制（int型：1为活动页签，2为系统页签）"
+  },
+  {
+    "Name": "runesuit_filter",
+    "Value": "1,2,3,4,15,18,20,21",
+    "SyncClient": "",
+    "Desc": "符文套装过滤"
+  },
+  {
+    "Name": "role_level_reset",
+    "Value": "1006246,1",
+    "SyncClient": "",
+    "Desc": "魔女等级交换消耗"
+  },
+  {
+    "Name": "rolepet_level_reset",
+    "Value": "1006245,1",
+    "SyncClient": "",
+    "Desc": "星痕等级重置消耗"
+  },
+  {
+    "Name": "rolepet_level_reset_level_limit",
+    "Value": "70",
+    "SyncClient": "",
+    "Desc": "70级以下星痕重置不消耗材料"
+  },
+  {
+    "Name": "player_journey",
+    "Value": "player_journey1,5000;player_journey2,5001;player_journey3,5002;player_journey4,5003;player_journey5,5004;player_journey6,5005;player_journey7,5006;player_journey8,5007;player_journey9,5008;player_journey10,5009;player_journey11,5010;player_journey12,5011",
+    "SyncClient": "",
+    "Desc": "侍主历练（text1,condition1;text2,condition2......)"
+  },
+  {
+    "Name": "daily_boss_recommend",
+    "Value": "10",
+    "SyncClient": "",
+    "Desc": "深渊之域BOSS每个难度推荐数量"
+  },
+  {
+    "Name": "daily_boss_rank",
+    "Value": "1001",
+    "SyncClient": "",
+    "Desc": "深渊之域排行榜"
+  },
+  {
+    "Name": "crunchyroll_mail",
+    "Value": "110001,110002,110003",
+    "SyncClient": "",
+    "Desc": "cr会员奖励邮件，参数配置：CR会员注册邮件Id,CR会员每日登录邮件id,高级CR会员每日登录邮件id"
+  },
+  {
+    "Name": "rougetower_showcard",
+    "Value": "3",
+    "SyncClient": "",
+    "Desc": "肉鸽爬塔，每关展示卡牌数量（几选一）"
+  },
+  {
+    "Name": "rougetower_refreshcardcost",
+    "Value": "1000002,0;1000002,10;1000002,20;1000002,40;1000002,80;1000002,160",
+    "SyncClient": "",
+    "Desc": "肉鸽爬塔，每关卡牌刷新消耗（1次道具，1次数量；2次道具，2次数量），配置道具数量=0就是免费，最后一个就是最大消耗"
+  },
+  {
+    "Name": "rougetower_refreshlevelcost",
+    "Value": "1000002,0;1000002,160",
+    "SyncClient": "",
+    "Desc": "肉鸽爬塔，每日关卡进度重置消耗（1次道具，1次数量；2次道具，2次数量），配置道具数量=0就是免费，最后一个就是最大消耗"
+  },
+  {
+    "Name": "rougetower_skipchapter",
+    "Value": "3",
+    "SyncClient": "",
+    "Desc": "肉鸽爬塔，每个赛季可扫荡章节，通关后前x章节均可以扫荡（具体章节id，依照这个参数x，去Timecontrol表OpenTime字段中查找前x个章节）"
+  },
+  {
+    "Name": "aplus_question_reward_mail_id",
+    "Value": "106",
+    "SyncClient": "",
+    "Desc": "Aplus调查问卷奖励邮件ID"
+  },
+  {
+    "Name": "daily_paid_amount_value",
+    "Value": "99",
+    "SyncClient": "",
+    "Desc": "每日连续充值计入金额要求，单位（美分）"
+  },
+  {
+    "Name": "monsterbattle_ticket",
+    "Value": "1001029",
+    "SyncClient": "",
+    "Desc": "魔物列阵匹配成功后消耗的道具，配置ItemID"
+  },
+  {
+    "Name": "monsterbattle_warehouse",
+    "Value": "1000",
+    "SyncClient": "",
+    "Desc": "魔物列阵魔物仓库上限"
+  },
+  {
+    "Name": "monsterbattle_dismantlelmit",
+    "Value": "100",
+    "SyncClient": "",
+    "Desc": "魔物列阵，单次分解魔物数量上限"
+  },
+  {
+    "Name": "monsterbattle_attrvalue",
+    "Value": "1,1,1,1,2",
+    "SyncClient": "",
+    "Desc": "魔物列阵，资质价值占比换算（计算星级用），配置格式：每点生命占比，攻击占比，防御占比，韧性占比，速度占比"
+  },
+  {
+    "Name": "monsterbattle_refund",
+    "Value": "1001028,4;1001028,8;1001028,12;1001028,16;1001028,20;1001028,30;1001028,40;1001028,50;1001028,100;1001028,200",
+    "SyncClient": "",
+    "Desc": "魔物列阵，每星级等级分解返还的道具（最大10级，不足10级的配置以最后一个作为最高等级配置）"
+  },
+  {
+    "Name": "monsterbattle_dismantlehint",
+    "Value": "6",
+    "SyncClient": "",
+    "Desc": "魔物列阵，达到此星级的魔物在分解时会弹出提醒"
+  },
+  {
+    "Name": "monsterbattle_starlock",
+    "Value": "6",
+    "SyncClient": "",
+    "Desc": "魔物列阵，开魔物蛋自动上锁的星级"
+  },
+  {
+    "Name": "monsterbattle_rollskill_item",
+    "Value": "1014001,1;1014001,2;1014001,3;1014001,4;1014001,5;1014001,6;1014001,7;1014001,8;1014001,9;1014001,10;1014001,11;1014001,12;1014001,13;1014001,14",
+    "SyncClient": "",
+    "Desc": "魔物列阵，特性随机消耗道具。配置格式：道具id，默认消耗；道具id，锁1词条消耗；道具id，锁2词条消耗...."
+  },
+  {
+    "Name": "monsterbattle_skill_studyprobability",
+    "Value": "100,0;90,10;80,20;70,30;60,40;50,50;40,60;30,70;20,80;10,90",
+    "SyncClient": "",
+    "Desc": "魔物列阵，特性学习是新增或随机覆盖原有特性的概率控制。配置格式：0技能新增概率，覆盖概率；1技能新增概率，覆盖概率；2技能新增概率，覆盖概率..."
+  },
+  {
+    "Name": "monsterbattle_statreforge",
+    "Value": "1006701,1;1006702,1;1006703,1",
+    "SyncClient": "",
+    "Desc": "魔物列阵，资质洗练消耗道具。配置格式：初级道具id，数量；中级道具id，数量；高级道具id，数量..."
+  },
+  {
+    "Name": "monsterbattle_statreforge_weight",
+    "Value": "50,50,100,100,200,200,150,100,44,5,1;45,45,95,95,195,195,145,95,70,10,3;40,40,90,90,190,190,140,90,100,30,5",
+    "SyncClient": "",
+    "Desc": "魔物列阵，洗练资质时的属性权重分布配比,对应上方不同的洗练道具，用分号隔开"
+  },
+  {
+    "Name": "monsterbattle_lineup",
+    "Value": "0,70,120",
+    "SyncClient": "",
+    "Desc": "魔物列阵，波次解锁魔物等级条件"
+  },
+  {
+    "Name": "monsterbattle_count",
+    "Value": "50",
+    "SyncClient": "",
+    "Desc": "魔物列阵，日志记录数量上限"
+  },
+  {
+    "Name": "monsterbattle_skill_limit",
+    "Value": "15",
+    "SyncClient": "",
+    "Desc": "魔物列阵，魔物可以拥有的特性数量上限"
+  },
+  {
+    "Name": "monsterbattle_egg_open_once_max",
+    "Value": "50",
+    "SyncClient": "",
+    "Desc": "魔物阵列，魔物蛋单次开启的蛋数上限"
+  },
+  {
+    "Name": "monsterbattle_monster_max",
+    "Value": "1000",
+    "SyncClient": "",
+    "Desc": "魔物阵列，魔物持有上限"
+  },
+  {
+    "Name": "player_level_health",
+    "Value": "50,100123",
+    "SyncClient": "",
+    "Desc": "先锋服补偿体力功能，参数1：补偿体力值，参数2：补充邮件ID"
+  },
+  {
+    "Name": "crunchyroll_pay_age",
+    "Value": "16",
+    "SyncClient": "",
+    "Desc": "cr包付费年龄限制，X岁以上才可以付费。int型，直接填年龄"
+  },
+  {
+    "Name": "aplus_register_mail",
+    "Value": "110005",
+    "SyncClient": "",
+    "Desc": "aplus账号绑定邮件，int型，配置邮件ID"
+  },
+  {
+    "Name": "cardpack_paid_gift",
+    "Value": "100;2801,1",
+    "SyncClient": "",
+    "Desc": "付费送集换卡卡包，每累计充值X美分给对应道具。配置：美分;itemId,num;itemId,num;……"
+  },
+  {
+    "Name": "weapon_unlock",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "每个星痕自身的专武解锁条件（星痕等级达到X级）"
+  },
+  {
+    "Name": "weapon_effect_show",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "每个专武3d特效解锁等级（专武等级达到X级）"
+  },
+  {
+    "Name": "weapon_storypack_unlock",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "每个专武剧情解锁（觉醒等级达到X级）"
+  },
+  {
+    "Name": "weapon_gacha_normal_show",
+    "Value": "3015002,3015004,3015006,3015007,3015008,3016009",
+    "SyncClient": "",
+    "Desc": "专武常驻卡池，展示的6个专武，对应的角色id"
+  },
+  {
+    "Name": "show_ad_switch",
+    "Value": "0",
+    "SyncClient": "1",
+    "Desc": "cr广告开关控制，0为默认开启，1为关闭"
+  },
+  {
+    "Name": "rolepet_reset_change",
+    "Value": "1006201,1,1002141;1006202,1,1002141;1006203,1,1002141;1006204,1,1002141;1006205,1,1002141;1006206,1,1002141;1006207,1,1002141;1006101,1,1002103;1006102,1,1002103;1006103,1,1002103;1006104,1,1002103;1006105,1,1002103;1006107,1,1002103;1006106,1,1002103;1006108,1,1002102;1006109,1,1002102;1006110,1,1002102;1006111,1,1002102;1006112,1,1002102;1006113,1,1002102;1006114,1,1002102;1006115,1,1002101;1006116,1,1002101;1006117,1,1002101;1006118,1,1002101;1006119,1,1002101;1006120,1,1002101;1006121,1,1002101",
+    "SyncClient": "",
+    "Desc": "星痕重置材料转化自选箱(同材料对应多个箱子的情况下开箱获得数量多的箱子放前面）"
+  },
+  {
+    "Name": "rolepet_consume_change",
+    "Value": "1006201,3,1002142,1,1002141;1006202,3,1002142,1,1002141;1006203,3,1002142,1,1002141;1006204,3,1002142,1,1002141;1006205,3,1002142,1,1002141;1006206,3,1002142,1,1002141;1006207,3,1002142,1,1002141;1006101,1,1002103;1006102,1,1002103;1006103,1,1002103;1006104,1,1002103;1006105,1,1002103;1006106,1,1002103;1006107,1,1002103;1006108,1,1002102;1006109,1,1002102;1006110,1,1002102;1006111,1,1002102;1006112,1,1002102;1006113,1,1002102;1006114,1,1002102;1006115,1,1002101;1006116,1,1002101;1006117,1,1002101;1006118,1,1002101;1006119,1,1002101;1006120,1,1002101;1006121,1,1002101",
+    "SyncClient": "",
+    "Desc": "星痕养成材料对应选择自选箱(同材料对应多个箱子的情况下开箱获得数量多的箱子放前面）"
+  },
+  {
+    "Name": "diamond_lottery_rate",
+    "Value": "60",
+    "SyncClient": "",
+    "Desc": "钻石兑换扭蛋劵的比例"
+  },
+  {
+    "Name": "lottery_premiumpoints_num",
+    "Value": "100,500,1500,3000,5000,10000,10000,10000,10000,10000,10000,10000,10000,10000,10000",
+    "SyncClient": "",
+    "Desc": "N充值积分可增加转盘抽取次数（配置：第1次需要积分，第2次需要积分,……第N次需要积分）"
+  },
+  {
+    "Name": "lottery_item",
+    "Value": "1000001,1000002",
+    "SyncClient": "",
+    "Desc": "钻石大转盘顶部资源显示（配置：itemId，itemId，……itemId）"
+  },
+  {
+    "Name": "newbie_buff",
+    "Value": "10116",
+    "SyncClient": "",
+    "Desc": "新手BUFF在哪一关弹出提示"
+  },
+  {
+    "Name": "skill_symbol",
+    "Value": ".,?;:'!，。？！：；",
+    "SyncClient": "",
+    "Desc": "技能描述中英文符号"
+  },
+  {
+    "Name": "rolefavor_stage",
+    "Value": "4",
+    "SyncClient": "",
+    "Desc": "每个消耗体力的关卡为上阵星痕增加的好感度"
+  },
+  {
+    "Name": "naomiplot_right_option",
+    "Value": "1,5",
+    "SyncClient": "",
+    "Desc": "奈奥米主题活动剧情指认凶手：配置正确选项"
+  },
+  {
+    "Name": "skin_story_qudao",
+    "Value": "0,8,9,10",
+    "SyncClient": "",
+    "Desc": "需要显示的皮肤剧情的渠道设置"
+  },
+  {
+    "Name": "assist_role_range",
+    "Value": "10000,1000,15",
+    "SyncClient": "",
+    "Desc": "随机助战范围参数（取多少个人，降序排列后取前几名，一次随机几个人）"
+  },
+  {
+    "Name": "assist_role_refresh_cd",
+    "Value": "5",
+    "SyncClient": "",
+    "Desc": "随机助战刷新cd（单位秒）"
+  },
+  {
+    "Name": "assist_role_records",
+    "Value": "30",
+    "SyncClient": "",
+    "Desc": "助战记录保留条数"
+  },
+  {
+    "Name": "assist_role_rewards",
+    "Value": "1001005,200,3",
+    "SyncClient": "",
+    "Desc": "助战奖励（每次奖励id，每次奖励数量，每日最大次数）"
+  },
+  {
+    "Name": "max_infrastructure_reward_time",
+    "Value": "144000",
+    "SyncClient": "",
+    "Desc": "神谕司建筑产出大于等于xx（秒）后，停止产出"
+  },
+  {
+    "Name": "build_reddot_time",
+    "Value": "72000",
+    "SyncClient": "",
+    "Desc": "神谕司红点提示时间"
+  },
+  {
+    "Name": "build_appoint_cd",
+    "Value": "0",
+    "SyncClient": "",
+    "Desc": "神谕司每个建筑委任间隔"
+  },
+  {
+    "Name": "build_auto_update",
+    "Value": "1001,1002,1003,1004,3001,1006",
+    "SyncClient": "",
+    "Desc": "神谕司满足条件自动0级升1级的建筑id"
+  },
+  {
+    "Name": "build_invitation_item",
+    "Value": "1000017",
+    "SyncClient": "",
+    "Desc": "神谕司邀请函道具"
+  },
+  {
+    "Name": "build_food_exp",
+    "Value": "1,100;2,200;3,300;4,500",
+    "SyncClient": "",
+    "Desc": "神谕司不同品质料理，提供的经验"
+  },
+  {
+    "Name": "build_appointment_time",
+    "Value": "6",
+    "SyncClient": "",
+    "Desc": "神谕司约会邀请魔女后，时间流速：现实1秒=游戏内x秒"
+  },
+  {
+    "Name": "build_appointment_unlockfoodfavar",
+    "Value": "5",
+    "SyncClient": "",
+    "Desc": "魔女好感度x级，喂食时直接得知魔女的喜好食物"
+  },
+  {
+    "Name": "build_appointment_inviting",
+    "Value": "7",
+    "SyncClient": "",
+    "Desc": "魔女好感度x级，邀请魔女不需要消耗邀请函"
+  },
+  {
+    "Name": "build_init_reward_mission",
+    "Value": "2100001",
+    "SyncClient": "",
+    "Desc": "神谕司初始物资奖励（进入神谕丝时，前端自动完成这个misson并领取这个奖励）"
+  },
+  {
+    "Name": "max_mark_mail_num",
+    "Value": "200",
+    "SyncClient": "",
+    "Desc": "收藏邮件最大数量"
+  },
+  {
+    "Name": "fish_turn_time",
+    "Value": "5,10",
+    "SyncClient": "",
+    "Desc": "钓鱼，每次转向间隔时间：随机下限，随机上限（秒）"
+  },
+  {
+    "Name": "fish_turn_angle",
+    "Value": "90,120",
+    "SyncClient": "",
+    "Desc": "钓鱼，每次转向变动角度：随机下限，随机上限（角度）"
+  },
+  {
+    "Name": "fish_angle_damage",
+    "Value": "10000,10000,10000;30000,30000,30000",
+    "SyncClient": "",
+    "Desc": "钓鱼伤害系数：同向体力伤害，同向韧性伤害，同向鱼线伤害；反向体力伤害，反向韧性伤害，反向鱼线伤害（万分比）"
+  },
+  {
+    "Name": "fish_wait_fish",
+    "Value": "3,10",
+    "SyncClient": "",
+    "Desc": "玩家抛竿后，等待鱼儿上钩的时间（最小，最大）秒"
+  },
+  {
+    "Name": "fish_qte_damage",
+    "Value": "10000,15000,3000",
+    "SyncClient": "",
+    "Desc": "普通系数，完美系数，失败系数（万分比）"
+  },
+  {
+    "Name": "farm_event_daily_creat",
+    "Value": "3",
+    "SyncClient": "",
+    "Desc": "每日生成随机事件数量"
+  },
+  {
+    "Name": "farm_event_daily_exist_max",
+    "Value": "3",
+    "SyncClient": "",
+    "Desc": "每个农场最大同时存在事件数量"
+  },
+  {
+    "Name": "farm_event_daily_help",
+    "Value": "3",
+    "SyncClient": "",
+    "Desc": "每日帮助奖励最大获取次数"
+  },
+  {
+    "Name": "farm_crop_energy_every_second",
+    "Value": "100",
+    "SyncClient": "",
+    "Desc": "作物每秒基础生长能量点"
+  },
+  {
+    "Name": "farm_crop_can_cheat",
+    "Value": "4000",
+    "SyncClient": "",
+    "Desc": "农场作物可被偷取数量（万分比）(向下取整)"
+  },
+  {
+    "Name": "farm_cheat_param",
+    "Value": "6000",
+    "SyncClient": "",
+    "Desc": "农场作物偷取公式参数（万分比）"
+  },
+  {
+    "Name": "farm_build_id",
+    "Value": "2001,2002,2003",
+    "SyncClient": "",
+    "Desc": "农场附属建筑id"
+  },
+  {
+    "Name": "farm_set_cd",
+    "Value": "10800",
+    "SyncClient": "",
+    "Desc": "农场中星痕或作物的设置cd（单位秒）"
+  },
+  {
+    "Name": "farm_cheat_max",
+    "Value": "200",
+    "SyncClient": "",
+    "Desc": "农场中每块地可被偷取最大次数（不论是否成功）"
+  },
+  {
+    "Name": "init_farmland_num",
+    "Value": "4",
+    "SyncClient": "",
+    "Desc": "农场初始解锁地块数量"
+  },
+  {
+    "Name": "farm_role_max",
+    "Value": "20,30",
+    "SyncClient": "",
+    "Desc": "农场同个农场内同时人数上限（前端，后端）"
+  },
+  {
+    "Name": "farm_role_cheat_succeed_max",
+    "Value": "500",
+    "SyncClient": "",
+    "Desc": "每日每个玩家最大可以偷取成功次数"
+  },
+  {
+    "Name": "cook_single_max",
+    "Value": "30",
+    "SyncClient": "",
+    "Desc": "料理单次制作上限"
+  },
+  {
+    "Name": "role_voicetext_time",
+    "Value": "2500",
+    "SyncClient": "",
+    "Desc": "无语音时字幕存续时间（毫秒）"
+  },
+  {
+    "Name": "switch_shop_hide_top",
+    "Value": "501,502,503,504",
+    "SyncClient": "",
+    "Desc": "跳转进入以下商店时，隐藏顶部的主页按钮，避免嵌套跳转出错"
+  },
+  {
+    "Name": "shop_pay_max",
+    "Value": "999",
+    "SyncClient": "",
+    "Desc": "商店道具点击max选择数量最大值"
+  },
+  {
+    "Name": "stage_type_skip_battle",
+    "Value": "2,7,8",
+    "SyncClient": "",
+    "Desc": "战斗关卡允许跳过战斗（配置的是stage表的type）"
+  },
+  {
+    "Name": "hotspring_afkreward_house_max",
+    "Value": "2",
+    "SyncClient": "",
+    "Desc": "温泉随机奖励，最多投放到几个场景中"
+  },
+  {
+    "Name": "hotspring_afkreward_count",
+    "Value": "20,20",
+    "SyncClient": "",
+    "Desc": "温泉挂机奖励（每日生成多少个，最多存在多少个）"
+  },
+  {
+    "Name": "hotspring_rename_length_max",
+    "Value": "16",
+    "SyncClient": "",
+    "Desc": "温泉改名字长度限制"
+  },
+  {
+    "Name": "mail_paid_value",
+    "Value": "200000,110",
+    "SyncClient": "",
+    "Desc": "国服玩家累计充值发送邮件（累计充值*100，邮件ID）"
+  },
+  {
+    "Name": "role_custom_limit",
+    "Value": "750,1500",
+    "SyncClient": "",
+    "Desc": "看板自定义缩放阈值"
+  },
+  {
+    "Name": "fish_skill_max",
+    "Value": "5",
+    "SyncClient": "",
+    "Desc": "钓鱼大赛技能持有数量上限"
+  },
+  {
+    "Name": "fish_bucket_max",
+    "Value": "10",
+    "SyncClient": "",
+    "Desc": "钓鱼大赛鱼桶记录鱼数量上限"
+  },
+  {
+    "Name": "guild_name_change_cost",
+    "Value": "1000002,600",
+    "SyncClient": "",
+    "Desc": "公会改名字消耗（道具id,数量；道具id，数量）"
+  },
+  {
+    "Name": "guild_name_change_cd",
+    "Value": "86400",
+    "SyncClient": "",
+    "Desc": "公会改名字冷却时间（秒）"
+  },
+  {
+    "Name": "worldboss_init_ap",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "世界boss星痕初始体力和上限（每个星痕初始的体力）"
+  },
+  {
+    "Name": "worldboss_add_ap",
+    "Value": "1",
+    "SyncClient": "",
+    "Desc": "世界boss能量包使用后给星痕增加的体力上限"
+  },
+  {
+    "Name": "worldboss_add_cd",
+    "Value": "172800",
+    "SyncClient": "",
+    "Desc": "世界boss能量包补充时间（每xx秒增加一个能量包）"
+  },
+  {
+    "Name": "worldboss_trial_level",
+    "Value": "180,50,10,3",
+    "SyncClient": "",
+    "Desc": "世界boss星痕养成试用数值（星痕等级,专武等级,技能等级,突破等级）"
+  },
+  {
+    "Name": "return_code_reward",
+    "Value": "1000002,300",
+    "SyncClient": "",
+    "Desc": "回归绑定邀请码奖励（道具id，数量;道具id，数量）"
+  },
+  {
+    "Name": "return_days_offline",
+    "Value": "5,180",
+    "SyncClient": "",
+    "Desc": "浮日寻暇开始计算值（离线天数，每天返回体力值）"
+  },
+  {
+    "Name": "return_physical_max",
+    "Value": "9999",
+    "SyncClient": "",
+    "Desc": "浮日寻暇存储体力上限(int)"
+  },
+  {
+    "Name": "return_label_days",
+    "Value": "15",
+    "SyncClient": "",
+    "Desc": "离线多少天记为回归玩家（配置天数int）"
+  },
+  {
+    "Name": "return_code_value_max",
+    "Value": "20",
+    "SyncClient": "",
+    "Desc": "同个玩家最多邀请多少玩家填写邀请码（配置人数，int）"
+  },
+  {
+    "Name": "return_login_days",
+    "Value": "1,3,5,7,10",
+    "SyncClient": "",
+    "Desc": "用于筛选回归玩家累计登录天数int（配置：累登天数1，累登天数2,……累登天数n）"
+  },
+  {
+    "Name": "return_cost_physical",
+    "Value": "800,1500,2000,2500,3000",
+    "SyncClient": "",
+    "Desc": "用于筛选回归玩家累计消耗体力数int（配置：累消体力数1，累消体力数2，……累消体力数n）"
+  }
+]

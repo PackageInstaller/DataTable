@@ -1,0 +1,3602 @@
+[
+  {
+    "ID": "101",
+    "GroupId": "1",
+    "RandomType": "1",
+    "AttrRefixId": "61002",
+    "Desc1": "攻击",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "102",
+    "GroupId": "1",
+    "RandomType": "1",
+    "AttrRefixId": "61010",
+    "Desc1": "效果命中",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "103",
+    "GroupId": "1",
+    "RandomType": "1",
+    "AttrRefixId": "61011",
+    "Desc1": "弱破效果",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "105",
+    "GroupId": "1",
+    "RandomType": "1",
+    "AttrRefixId": "61013",
+    "Desc1": "攻击加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "201",
+    "GroupId": "2",
+    "RandomType": "1",
+    "AttrRefixId": "61002",
+    "Desc1": "攻击",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "202",
+    "GroupId": "2",
+    "RandomType": "1",
+    "AttrRefixId": "61004",
+    "Desc1": "暴击率加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "203",
+    "GroupId": "2",
+    "RandomType": "1",
+    "AttrRefixId": "61005",
+    "Desc1": "暴击伤害加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "204",
+    "GroupId": "2",
+    "RandomType": "1",
+    "AttrRefixId": "61006",
+    "Desc1": "护盾效果",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "205",
+    "GroupId": "2",
+    "RandomType": "1",
+    "AttrRefixId": "61007",
+    "Desc1": "回能效率",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5101",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61003",
+    "Desc1": "防御",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5102",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61001",
+    "Desc1": "生命",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5103",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61009",
+    "Desc1": "韧性值",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5104",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61014",
+    "Desc1": "防御加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5105",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61015",
+    "Desc1": "生命加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5106",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61016",
+    "Desc1": "韧性加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5107",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61017",
+    "Desc1": "效果抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5108",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61018",
+    "Desc1": "暴击抵抗率",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5109",
+    "GroupId": "51",
+    "RandomType": "1",
+    "AttrRefixId": "61019",
+    "Desc1": "弱破抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5201",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61008",
+    "Desc1": "治疗效果",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5202",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61003",
+    "Desc1": "防御",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5203",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61001",
+    "Desc1": "生命",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5204",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61009",
+    "Desc1": "韧性值",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5205",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61014",
+    "Desc1": "防御加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5206",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61015",
+    "Desc1": "生命加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5207",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61016",
+    "Desc1": "韧性加成",
+    "Weight": "20",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5208",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61021",
+    "Desc1": "受到治疗效果",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "5209",
+    "GroupId": "52",
+    "RandomType": "1",
+    "AttrRefixId": "61020",
+    "Desc1": "受到护盾效果",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "10101",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62001,62002,62003",
+    "Desc1": "速度",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10102",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62004,62005,62006",
+    "Desc1": "攻击",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10103",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62007,62008,62009",
+    "Desc1": "防御",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10104",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62010,62011,62013",
+    "Desc1": "生命",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10105",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62015,62017,62019",
+    "Desc1": "韧性值",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10106",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62021,62023,62024",
+    "Desc1": "效果命中",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10107",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62025,62026,62030",
+    "Desc1": "效果抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10108",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62031,62032,62034",
+    "Desc1": "弱破效果",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10109",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62035,62036,62037",
+    "Desc1": "弱破抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10110",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62038,62039,62040",
+    "Desc1": "暴击概率",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10111",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62041,62042,62043",
+    "Desc1": "暴击抵抗率",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10112",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62044,62045,62046",
+    "Desc1": "暴击伤害",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10113",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62047,62048,62049",
+    "Desc1": "暴伤减免",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10114",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62050,62051,62052",
+    "Desc1": "防御穿透",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10115",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62053,62054,62055",
+    "Desc1": "穿透抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10116",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62056,62057,62058",
+    "Desc1": "回能效率",
+    "Weight": "10",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10118",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62092,62093,62094",
+    "Desc1": "反噬比例",
+    "Weight": "10",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10119",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62095,62096,62097",
+    "Desc1": "初始能量",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10120",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62098,62099,62100",
+    "Desc1": "攻击加成",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10121",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62101,62102,62103",
+    "Desc1": "防御加成",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10122",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62104,62105,62106",
+    "Desc1": "生命加成",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10123",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62107,62108,62109",
+    "Desc1": "韧性加成",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10124",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62110,62111,62112",
+    "Desc1": "治疗效果",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10125",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62113,62114,62115",
+    "Desc1": "受到护盾",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10126",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62116,62117,62118",
+    "Desc1": "受到治疗",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10127",
+    "GroupId": "101",
+    "RandomType": "1",
+    "AttrRefixId": "62119,62120,62121",
+    "Desc1": "行动后能量回复",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10201",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62001,62002,62003",
+    "Desc1": "速度",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10202",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62004,62005,62006",
+    "Desc1": "攻击",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10203",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62007,62008,62009",
+    "Desc1": "防御",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10204",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62010,62011,62013",
+    "Desc1": "生命",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10205",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62015,62017,62019",
+    "Desc1": "韧性值",
+    "Weight": "100",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10206",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62021,62023,62024",
+    "Desc1": "效果命中",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10207",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62025,62026,62030",
+    "Desc1": "效果抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10208",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62031,62032,62034",
+    "Desc1": "弱破效果",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10209",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62035,62036,62037",
+    "Desc1": "弱破抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10210",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62038,62039,62040",
+    "Desc1": "暴击概率",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10211",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62041,62042,62043",
+    "Desc1": "暴击抵抗率",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10212",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62044,62045,62046",
+    "Desc1": "暴击伤害",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10213",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62047,62048,62049",
+    "Desc1": "暴伤减免",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10214",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62050,62051,62052",
+    "Desc1": "防御穿透",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10215",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62053,62054,62055",
+    "Desc1": "穿透抵抗",
+    "Weight": "50",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10216",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62056,62057,62058",
+    "Desc1": "回能效率",
+    "Weight": "10",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10217",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62059,62060,62061",
+    "Desc1": "魔女普攻伤害小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10218",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62062,62063,62064",
+    "Desc1": "星痕技能伤害小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10219",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62065,62066,62067",
+    "Desc1": "魔女奥义伤害小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10220",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62068,62069,62070",
+    "Desc1": "魔女普攻受伤减免小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10221",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62071,62072,62073",
+    "Desc1": "星痕技能受伤减免小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10222",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62074,62075,62076",
+    "Desc1": "魔女奥义受伤减免小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10223",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62077,62078,62079",
+    "Desc1": "克制伤害倍率增加小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10224",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62080,62081,62082",
+    "Desc1": "克制伤害倍率减免小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10225",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62083,62084,62085",
+    "Desc1": "灵魂解放伤害加成小",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10227",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62113,62114,62115",
+    "Desc1": "受到护盾",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "10228",
+    "GroupId": "102",
+    "RandomType": "1",
+    "AttrRefixId": "62116,62117,62118",
+    "Desc1": "受到治疗",
+    "Weight": "25",
+    "AttrRefixIdWeight": "90,9,1"
+  },
+  {
+    "ID": "11001",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9401",
+    "Desc1": "攻击增加+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11002",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9402",
+    "Desc1": "防御增加+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11003",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9403",
+    "Desc1": "生命增加+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11004",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9404",
+    "Desc1": "侵蚀伤害+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11005",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9405",
+    "Desc1": "感电伤害+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11006",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9406",
+    "Desc1": "灼烧伤害+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11007",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9407",
+    "Desc1": "暴击率+30%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "11008",
+    "GroupId": "201",
+    "RandomType": "1",
+    "AttrRefixId": "9408",
+    "Desc1": "暴击伤害+60%",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20001",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000111",
+    "Desc1": "高级嗜血  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20002",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000112",
+    "Desc1": "中级嗜血  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20003",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000113",
+    "Desc1": "低级嗜血  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20004",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000121",
+    "Desc1": "高级攻击强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20005",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000122",
+    "Desc1": "中级攻击强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20006",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000123",
+    "Desc1": "低级攻击强化  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20007",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000131",
+    "Desc1": "高级防御强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20008",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000132",
+    "Desc1": "中级防御强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20009",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000133",
+    "Desc1": "低级防御强化  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20010",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000141",
+    "Desc1": "高级生命强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20011",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000142",
+    "Desc1": "中级生命强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20012",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000143",
+    "Desc1": "低级生命强化  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20013",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000151",
+    "Desc1": "高级韧性强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20014",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000152",
+    "Desc1": "中级韧性强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20015",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000153",
+    "Desc1": "低级韧性强化  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20016",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000161",
+    "Desc1": "高级速度强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20017",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000162",
+    "Desc1": "中级速度强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20018",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000163",
+    "Desc1": "低级速度强化  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20019",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000171",
+    "Desc1": "高级暴击精通  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20020",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000172",
+    "Desc1": "中级暴击精通  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20021",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000173",
+    "Desc1": "低级暴击精通  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20022",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000181",
+    "Desc1": "高级闪避精通  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20023",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000182",
+    "Desc1": "中级闪避精通  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20024",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000183",
+    "Desc1": "低级闪避精通  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20025",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000191",
+    "Desc1": "高级精准掌握  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20026",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000192",
+    "Desc1": "中级精准掌握  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20027",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000193",
+    "Desc1": "低级精准掌握  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20028",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000201",
+    "Desc1": "高级仇恨共鸣  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20029",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000202",
+    "Desc1": "中级仇恨共鸣  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20030",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000203",
+    "Desc1": "低级仇恨共鸣  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20031",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000211",
+    "Desc1": "高级荆棘之甲  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20032",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000212",
+    "Desc1": "中级荆棘之甲  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20033",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000213",
+    "Desc1": "低级荆棘之甲  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20034",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000221",
+    "Desc1": "高级弱点稳固  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20035",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000222",
+    "Desc1": "中级弱点稳固  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20036",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000223",
+    "Desc1": "低级弱点稳固  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20037",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000300",
+    "Desc1": "免疫侵蚀  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20038",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000310",
+    "Desc1": "免疫灼烧  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20039",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000320",
+    "Desc1": "不屈意志  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20040",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000330",
+    "Desc1": "免疫暴击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20041",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000370",
+    "Desc1": "免疫反伤  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20042",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000390",
+    "Desc1": "攻击成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20043",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000400",
+    "Desc1": "防御成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20044",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000410",
+    "Desc1": "韧性成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20045",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000420",
+    "Desc1": "生命成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20046",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000430",
+    "Desc1": "高级疗盾转化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20047",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000431",
+    "Desc1": "基础疗盾转化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20048",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000460",
+    "Desc1": "弱点稳固  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20049",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000470",
+    "Desc1": "强效愈伤共鸣",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20050",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000471",
+    "Desc1": "基础愈伤共鸣",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20051",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000480",
+    "Desc1": "强效治疗强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20052",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000481",
+    "Desc1": "基础治疗强化",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20053",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000001",
+    "Desc1": "高级侵蚀之触  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20054",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000002",
+    "Desc1": "中级侵蚀之触  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20055",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000003",
+    "Desc1": "低级侵蚀之触  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20056",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000011",
+    "Desc1": "高级灼烧之炎  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20057",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000012",
+    "Desc1": "中级灼烧之炎  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20058",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000013",
+    "Desc1": "低级灼烧之炎  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20059",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000021",
+    "Desc1": "高级混沌侵蚀  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20060",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000022",
+    "Desc1": "中级混沌侵蚀  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20061",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000023",
+    "Desc1": "低级混沌侵蚀  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20062",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000031",
+    "Desc1": "高级能量吞噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20063",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000032",
+    "Desc1": "中级能量吞噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20064",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000033",
+    "Desc1": "低级能量吞噬  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20065",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000041",
+    "Desc1": "高级反噬侵蚀  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20066",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000042",
+    "Desc1": "中级反噬侵蚀  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20067",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000043",
+    "Desc1": "低级反噬侵蚀  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20068",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000051",
+    "Desc1": "高级灼烧反噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20069",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000052",
+    "Desc1": "中级灼烧反噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20070",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000053",
+    "Desc1": "低级灼烧反噬  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20071",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000061",
+    "Desc1": "高级混沌反噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20072",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000062",
+    "Desc1": "中级混沌反噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20073",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000063",
+    "Desc1": "低级混沌反噬  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20074",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000071",
+    "Desc1": "高级能量反噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20075",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000072",
+    "Desc1": "中级能量反噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20076",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000073",
+    "Desc1": "低级能量反噬  ",
+    "Weight": "450",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20077",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000081",
+    "Desc1": "强效滞缓打击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20078",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000082",
+    "Desc1": "基础滞缓打击  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20079",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000091",
+    "Desc1": "强效挑衅  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20080",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000092",
+    "Desc1": "基础挑衅  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20081",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000101",
+    "Desc1": "强效生命虹吸  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20082",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000102",
+    "Desc1": "基础生命虹吸  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20083",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000231",
+    "Desc1": "高级引领之击",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20084",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000233",
+    "Desc1": "引领之击",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20085",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000241",
+    "Desc1": "强效净化打击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20086",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000242",
+    "Desc1": "基础净化打击  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20087",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000251",
+    "Desc1": "强效自愈循环  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20088",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000252",
+    "Desc1": "基础自愈循环  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20089",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000261",
+    "Desc1": "强效自愈循环  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20090",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000262",
+    "Desc1": "基础自愈循环  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20091",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000271",
+    "Desc1": "强效异常增幅  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20092",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000272",
+    "Desc1": "基础异常增幅  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20093",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000281",
+    "Desc1": "强效连击触发  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20094",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000282",
+    "Desc1": "基础连击触发  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20095",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000291",
+    "Desc1": "强效能量涌动  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20096",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000292",
+    "Desc1": "基础能量涌动  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20097",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000340",
+    "Desc1": "绝对命中  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20098",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000350",
+    "Desc1": "强效净化之环  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20099",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000351",
+    "Desc1": "基础净化之环  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20100",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000360",
+    "Desc1": "迅捷反应  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20101",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000380",
+    "Desc1": "高级禁疗之触  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20102",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000440",
+    "Desc1": "高级破盾强击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20103",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000441",
+    "Desc1": "基础破盾强击  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "20104",
+    "GroupId": "2001",
+    "RandomType": "1",
+    "AttrRefixId": "2000450",
+    "Desc1": "护盾驱散  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21001",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000111",
+    "Desc1": "高级嗜血  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21002",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000112",
+    "Desc1": "中级嗜血  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21003",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000113",
+    "Desc1": "低级嗜血  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21004",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000121",
+    "Desc1": "高级攻击强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21005",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000122",
+    "Desc1": "中级攻击强化  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21006",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000123",
+    "Desc1": "低级攻击强化  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21007",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000131",
+    "Desc1": "高级防御强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21008",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000132",
+    "Desc1": "中级防御强化  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21009",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000133",
+    "Desc1": "低级防御强化  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21010",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000141",
+    "Desc1": "高级生命强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21011",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000142",
+    "Desc1": "中级生命强化  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21012",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000143",
+    "Desc1": "低级生命强化  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21013",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000151",
+    "Desc1": "高级韧性强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21014",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000152",
+    "Desc1": "中级韧性强化  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21015",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000153",
+    "Desc1": "低级韧性强化  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21016",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000161",
+    "Desc1": "高级速度强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21017",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000162",
+    "Desc1": "中级速度强化  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21018",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000163",
+    "Desc1": "低级速度强化  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21019",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000171",
+    "Desc1": "高级暴击精通  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21020",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000172",
+    "Desc1": "中级暴击精通  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21021",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000173",
+    "Desc1": "低级暴击精通  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21022",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000181",
+    "Desc1": "高级闪避精通  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21023",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000182",
+    "Desc1": "中级闪避精通  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21024",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000183",
+    "Desc1": "低级闪避精通  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21025",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000191",
+    "Desc1": "高级精准掌握  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21026",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000192",
+    "Desc1": "中级精准掌握  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21027",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000193",
+    "Desc1": "低级精准掌握  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21028",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000201",
+    "Desc1": "高级仇恨共鸣  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21029",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000202",
+    "Desc1": "中级仇恨共鸣  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21030",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000203",
+    "Desc1": "低级仇恨共鸣  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21031",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000211",
+    "Desc1": "高级荆棘之甲  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21032",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000212",
+    "Desc1": "中级荆棘之甲  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21033",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000213",
+    "Desc1": "低级荆棘之甲  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21034",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000221",
+    "Desc1": "高级弱点稳固  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21035",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000222",
+    "Desc1": "中级弱点稳固  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21036",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000223",
+    "Desc1": "低级弱点稳固  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21037",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000300",
+    "Desc1": "免疫侵蚀  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21038",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000310",
+    "Desc1": "免疫灼烧  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21039",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000320",
+    "Desc1": "不屈意志  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21040",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000330",
+    "Desc1": "免疫暴击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21041",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000370",
+    "Desc1": "免疫反伤  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21042",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000390",
+    "Desc1": "攻击成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21043",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000400",
+    "Desc1": "防御成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21044",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000410",
+    "Desc1": "韧性成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21045",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000420",
+    "Desc1": "生命成长  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21046",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000430",
+    "Desc1": "高级疗盾转化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21047",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000431",
+    "Desc1": "基础疗盾转化  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21048",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000460",
+    "Desc1": "弱点稳固  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21049",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000470",
+    "Desc1": "强效愈伤共鸣",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21050",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000471",
+    "Desc1": "基础愈伤共鸣",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21051",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000480",
+    "Desc1": "强效治疗强化  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21052",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000481",
+    "Desc1": "基础治疗强化",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21053",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000001",
+    "Desc1": "高级侵蚀之触  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21054",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000002",
+    "Desc1": "中级侵蚀之触  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21055",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000003",
+    "Desc1": "低级侵蚀之触  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21056",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000011",
+    "Desc1": "高级灼烧之炎  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21057",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000012",
+    "Desc1": "中级灼烧之炎  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21058",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000013",
+    "Desc1": "低级灼烧之炎  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21059",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000021",
+    "Desc1": "高级混沌侵蚀  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21060",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000022",
+    "Desc1": "中级混沌侵蚀  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21061",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000023",
+    "Desc1": "低级混沌侵蚀  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21062",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000031",
+    "Desc1": "高级能量吞噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21063",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000032",
+    "Desc1": "中级能量吞噬  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21064",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000033",
+    "Desc1": "低级能量吞噬  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21065",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000041",
+    "Desc1": "高级反噬侵蚀  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21066",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000042",
+    "Desc1": "中级反噬侵蚀  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21067",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000043",
+    "Desc1": "低级反噬侵蚀  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21068",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000051",
+    "Desc1": "高级灼烧反噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21069",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000052",
+    "Desc1": "中级灼烧反噬  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21070",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000053",
+    "Desc1": "低级灼烧反噬  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21071",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000061",
+    "Desc1": "高级混沌反噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21072",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000062",
+    "Desc1": "中级混沌反噬  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21073",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000063",
+    "Desc1": "低级混沌反噬  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21074",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000071",
+    "Desc1": "高级能量反噬  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21075",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000072",
+    "Desc1": "中级能量反噬  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21076",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000073",
+    "Desc1": "低级能量反噬  ",
+    "Weight": "100",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21077",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000081",
+    "Desc1": "强效滞缓打击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21078",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000082",
+    "Desc1": "基础滞缓打击  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21079",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000091",
+    "Desc1": "强效挑衅  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21080",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000092",
+    "Desc1": "基础挑衅  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21081",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000101",
+    "Desc1": "强效生命虹吸  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21082",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000102",
+    "Desc1": "基础生命虹吸  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21083",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000231",
+    "Desc1": "强效误击调整  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21084",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000233",
+    "Desc1": "基础误击调整  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21085",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000241",
+    "Desc1": "强效净化打击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21086",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000242",
+    "Desc1": "基础净化打击  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21087",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000251",
+    "Desc1": "强效自愈循环  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21088",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000252",
+    "Desc1": "基础自愈循环  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21089",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000261",
+    "Desc1": "强效自愈循环  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21090",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000262",
+    "Desc1": "基础自愈循环  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21091",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000271",
+    "Desc1": "强效异常增幅  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21092",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000272",
+    "Desc1": "基础异常增幅  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21093",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000281",
+    "Desc1": "强效连击触发  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21094",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000282",
+    "Desc1": "基础连击触发  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21095",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000291",
+    "Desc1": "强效能量涌动  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21096",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000292",
+    "Desc1": "基础能量涌动  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21097",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000340",
+    "Desc1": "绝对命中  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21098",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000350",
+    "Desc1": "强效净化之环  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21099",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000351",
+    "Desc1": "基础净化之环  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21100",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000360",
+    "Desc1": "迅捷反应  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21101",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000380",
+    "Desc1": "高级禁疗之触  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21102",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000440",
+    "Desc1": "高级破盾强击  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21103",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000441",
+    "Desc1": "基础破盾强击  ",
+    "Weight": "200",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "21104",
+    "GroupId": "2011",
+    "RandomType": "1",
+    "AttrRefixId": "2000450",
+    "Desc1": "护盾驱散  ",
+    "Weight": "50",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22001",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000111",
+    "Desc1": "高级嗜血  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22002",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000112",
+    "Desc1": "中级嗜血  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22003",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000113",
+    "Desc1": "低级嗜血  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22004",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000121",
+    "Desc1": "高级攻击强化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22005",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000122",
+    "Desc1": "中级攻击强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22006",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000123",
+    "Desc1": "低级攻击强化  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22007",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000131",
+    "Desc1": "高级防御强化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22008",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000132",
+    "Desc1": "中级防御强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22009",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000133",
+    "Desc1": "低级防御强化  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22010",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000141",
+    "Desc1": "高级生命强化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22011",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000142",
+    "Desc1": "中级生命强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22012",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000143",
+    "Desc1": "低级生命强化  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22013",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000151",
+    "Desc1": "高级韧性强化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22014",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000152",
+    "Desc1": "中级韧性强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22015",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000153",
+    "Desc1": "低级韧性强化  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22016",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000161",
+    "Desc1": "高级速度强化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22017",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000162",
+    "Desc1": "中级速度强化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22018",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000163",
+    "Desc1": "低级速度强化  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22019",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000171",
+    "Desc1": "高级暴击精通  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22020",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000172",
+    "Desc1": "中级暴击精通  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22021",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000173",
+    "Desc1": "低级暴击精通  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22022",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000181",
+    "Desc1": "高级闪避精通  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22023",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000182",
+    "Desc1": "中级闪避精通  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22024",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000183",
+    "Desc1": "低级闪避精通  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22025",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000191",
+    "Desc1": "高级精准掌握  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22026",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000192",
+    "Desc1": "中级精准掌握  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22027",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000193",
+    "Desc1": "低级精准掌握  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22028",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000201",
+    "Desc1": "高级仇恨共鸣  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22029",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000202",
+    "Desc1": "中级仇恨共鸣  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22030",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000203",
+    "Desc1": "低级仇恨共鸣  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22031",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000211",
+    "Desc1": "高级荆棘之甲  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22032",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000212",
+    "Desc1": "中级荆棘之甲  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22033",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000213",
+    "Desc1": "低级荆棘之甲  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22034",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000221",
+    "Desc1": "高级弱点稳固  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22035",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000222",
+    "Desc1": "中级弱点稳固  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22036",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000223",
+    "Desc1": "低级弱点稳固  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22037",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000300",
+    "Desc1": "免疫侵蚀  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22038",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000310",
+    "Desc1": "免疫灼烧  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22039",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000320",
+    "Desc1": "不屈意志  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22040",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000330",
+    "Desc1": "免疫暴击  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22041",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000370",
+    "Desc1": "免疫反伤  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22042",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000390",
+    "Desc1": "攻击成长  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22043",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000400",
+    "Desc1": "防御成长  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22044",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000410",
+    "Desc1": "韧性成长  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22045",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000420",
+    "Desc1": "生命成长  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22046",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000430",
+    "Desc1": "高级疗盾转化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22047",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000431",
+    "Desc1": "基础疗盾转化  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22048",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000460",
+    "Desc1": "弱点稳固  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22049",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000470",
+    "Desc1": "强效愈伤共鸣",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22050",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000471",
+    "Desc1": "基础愈伤共鸣",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22051",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000480",
+    "Desc1": "强效治疗强化  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22052",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000481",
+    "Desc1": "基础治疗强化",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22053",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000001",
+    "Desc1": "高级侵蚀之触  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22054",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000002",
+    "Desc1": "中级侵蚀之触  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22055",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000003",
+    "Desc1": "低级侵蚀之触  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22056",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000011",
+    "Desc1": "高级灼烧之炎  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22057",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000012",
+    "Desc1": "中级灼烧之炎  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22058",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000013",
+    "Desc1": "低级灼烧之炎  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22059",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000021",
+    "Desc1": "高级混沌侵蚀  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22060",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000022",
+    "Desc1": "中级混沌侵蚀  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22061",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000023",
+    "Desc1": "低级混沌侵蚀  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22062",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000031",
+    "Desc1": "高级能量吞噬  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22063",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000032",
+    "Desc1": "中级能量吞噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22064",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000033",
+    "Desc1": "低级能量吞噬  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22065",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000041",
+    "Desc1": "高级反噬侵蚀  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22066",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000042",
+    "Desc1": "中级反噬侵蚀  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22067",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000043",
+    "Desc1": "低级反噬侵蚀  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22068",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000051",
+    "Desc1": "高级灼烧反噬  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22069",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000052",
+    "Desc1": "中级灼烧反噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22070",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000053",
+    "Desc1": "低级灼烧反噬  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22071",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000061",
+    "Desc1": "高级混沌反噬  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22072",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000062",
+    "Desc1": "中级混沌反噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22073",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000063",
+    "Desc1": "低级混沌反噬  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22074",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000071",
+    "Desc1": "高级能量反噬  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22075",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000072",
+    "Desc1": "中级能量反噬  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22076",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000073",
+    "Desc1": "低级能量反噬  ",
+    "Weight": "70",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22077",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000081",
+    "Desc1": "强效滞缓打击  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22078",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000082",
+    "Desc1": "基础滞缓打击  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22079",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000091",
+    "Desc1": "强效挑衅  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22080",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000092",
+    "Desc1": "基础挑衅  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22081",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000101",
+    "Desc1": "强效生命虹吸  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22082",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000102",
+    "Desc1": "基础生命虹吸  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22083",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000231",
+    "Desc1": "强效误击调整  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22084",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000233",
+    "Desc1": "基础误击调整  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22085",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000241",
+    "Desc1": "强效净化打击  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22086",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000242",
+    "Desc1": "基础净化打击  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22087",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000251",
+    "Desc1": "强效自愈循环  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22088",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000252",
+    "Desc1": "基础自愈循环  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22089",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000261",
+    "Desc1": "强效自愈循环  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22090",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000262",
+    "Desc1": "基础自愈循环  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22091",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000271",
+    "Desc1": "强效异常增幅  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22092",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000272",
+    "Desc1": "基础异常增幅  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22093",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000281",
+    "Desc1": "强效连击触发  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22094",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000282",
+    "Desc1": "基础连击触发  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22095",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000291",
+    "Desc1": "强效能量涌动  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22096",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000292",
+    "Desc1": "基础能量涌动  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22097",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000340",
+    "Desc1": "绝对命中  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22098",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000350",
+    "Desc1": "强效净化之环  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22099",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000351",
+    "Desc1": "基础净化之环  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22100",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000360",
+    "Desc1": "迅捷反应  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22101",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000380",
+    "Desc1": "高级禁疗之触  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22102",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000440",
+    "Desc1": "高级破盾强击  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22103",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000441",
+    "Desc1": "基础破盾强击  ",
+    "Weight": "150",
+    "AttrRefixIdWeight": "0"
+  },
+  {
+    "ID": "22104",
+    "GroupId": "2021",
+    "RandomType": "1",
+    "AttrRefixId": "2000450",
+    "Desc1": "护盾驱散  ",
+    "Weight": "80",
+    "AttrRefixIdWeight": "0"
+  }
+]
