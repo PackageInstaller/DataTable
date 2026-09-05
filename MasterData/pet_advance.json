@@ -1,0 +1,1702 @@
+{
+  "root": {
+    "BackMonsters": {
+      "Back": [
+        {
+          "desc": "",
+          "ID": 1,
+          "IsBack": 0,
+          "MonsterId": 3514,
+          "PerNeedCoinB": 350,
+          "TaskId": 1
+        },
+        {
+          "desc": "1|2024/12/27/10",
+          "ID": 2,
+          "IsBack": 1,
+          "MonsterId": 3704,
+          "PerNeedCoinB": 350,
+          "TaskId": 2
+        },
+        {
+          "desc": "2|2024/12/27/10",
+          "ID": 3,
+          "IsBack": 1,
+          "MonsterId": 3506,
+          "PerNeedCoinB": 400,
+          "TaskId": 3
+        },
+        {
+          "desc": "",
+          "ID": 4,
+          "IsBack": 0,
+          "MonsterId": 3388,
+          "PerNeedCoinB": 300,
+          "TaskId": 4
+        },
+        {
+          "desc": "",
+          "ID": 5,
+          "IsBack": 0,
+          "MonsterId": 3670,
+          "PerNeedCoinB": 400,
+          "TaskId": 5
+        },
+        {
+          "desc": "",
+          "ID": 6,
+          "IsBack": 0,
+          "MonsterId": 3507,
+          "PerNeedCoinB": 350,
+          "TaskId": 6
+        },
+        {
+          "desc": "",
+          "ID": 7,
+          "IsBack": 0,
+          "MonsterId": 3954,
+          "PerNeedCoinB": 300,
+          "TaskId": 7
+        },
+        {
+          "desc": "",
+          "ID": 8,
+          "IsBack": 0,
+          "MonsterId": 3724,
+          "PerNeedCoinB": 400,
+          "TaskId": 8
+        },
+        {
+          "desc": "",
+          "ID": 9,
+          "IsBack": 0,
+          "MonsterId": 3716,
+          "PerNeedCoinB": 350,
+          "TaskId": 9
+        },
+        {
+          "desc": "",
+          "ID": 10,
+          "IsBack": 0,
+          "MonsterId": 3705,
+          "PerNeedCoinB": 350,
+          "TaskId": 10
+        },
+        {
+          "desc": "3|2024/12/27/10",
+          "ID": 11,
+          "IsBack": 1,
+          "MonsterId": 3156,
+          "PerNeedCoinB": 350,
+          "TaskId": 11
+        }
+      ],
+      "free_cnt": 2,
+      "refresh_add_cost": 10,
+      "refresh_base_cost": 50,
+      "refresh_max_cost": 100
+    },
+    "Task": [
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "自身每次使用攻击技能后都会获得1支<font color='#FF7751'>灭神之箭</font>；回合开始时若自身体力高于对手则当回合所有技能先制+1且直至下回合开始时免疫所有异常状态（下场后保留），回合结束时若自身体力低于对手则吸取对手最大体力的1/3（<font color='#FF7751'>灭神之箭</font>下场后保留，最多可获得5支，boss无效）\n<font color='#FF7751'>灭神之箭</font>：使用攻击技能会忽略对手双防值的8%，且造成伤害前附加40点固定伤害",
+            "Id": 1646
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              173,
+              70,
+              110,
+              145,
+              110,
+              132
+            ],
+            "OldRace": [
+              165,
+              70,
+              106,
+              132,
+              103,
+              129
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36200,
+              28118,
+              36201
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3514
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——偶尔也确实会有让我生理不适的邪恶之辈存在。\n——我就当是在夸我了。",
+              "AllProgress": 0,
+              "BattleBoss": 3406,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——在沉如碉堡疾如迅箭的万全准备面前，无论几种元素戏法都只是花架子，可有人总是不明白。\n——略表同意。",
+              "AllProgress": 0,
+              "BattleBoss": 3396,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——魔誓者弑神猎皇，奉斯摩亚蒂大人之命前来交涉。\n——呵，够嚣张的名字。",
+              "AllProgress": 0,
+              "BattleBoss": 3414,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——套近乎之前不先忏悔一下你干过的好事吗？\n——不是，只是有点眼熟。",
+              "AllProgress": 0,
+              "BattleBoss": 3456,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——主人之前送的那份大礼，不知道你是否还满意呢？\n——可惜你没机会听到在那之后发生的故事了。",
+              "AllProgress": 0,
+              "BattleBoss": 3516,
+              "ID": 5,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20220909 神谕进阶-弑神猎皇",
+        "Exchange": {
+          "ItemID": [
+            1724856,
+            1724857,
+            1724858
+          ],
+          "ProductID": [
+            259804,
+            259805,
+            259806
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 1,
+        "OutItemKey": 123600,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "回合结束时若对手不处于能力提升状态则吸取对手最大体力的1/3且下回合自身造成的攻击伤害提升50%，<font color='#FF7751'>若对手免疫百分比伤害则增伤效果提升至100%</font>；\n回合结束时若对手处于能力提升状态则<font color='#FF7751'>100%令对手害怕</font>，若害怕未触发则恢复自身最大体力的1/3并<font color='#FF7751'>造成等量百分比伤害</font>（boss无效）",
+            "Id": 1666
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              169,
+              140,
+              113,
+              70,
+              113,
+              135
+            ],
+            "OldRace": [
+              169,
+              134,
+              110,
+              70,
+              113,
+              129
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36291,
+              28161
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3704
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——妖族的没落史里最不缺的就是你这种唯利是图的空洞躯壳。\n——而为气节舍命，就是你雌伏的缘由。",
+              "AllProgress": 0,
+              "BattleBoss": 3561,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我很欣赏你，要不要来跟着我干。\n——或许你更应该多在乎在乎手下那帮白大褂。",
+              "AllProgress": 0,
+              "BattleBoss": 4422,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——你闻不到自己身上的见风使舵有多刺鼻吗？\n——我本来还以为同类之间会有理解万岁的默契的。",
+              "AllProgress": 0,
+              "BattleBoss": 3683,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——请问心灵相通这方面……存在其他的途径吗？\n——憧憬是距离理解最遥远的感情。",
+              "AllProgress": 0,
+              "BattleBoss": 3672,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20221216 神谕进阶-狂热之诚·吉罗德",
+        "Exchange": {
+          "ItemID": [
+            1724940,
+            1724941,
+            1724942
+          ],
+          "ProductID": [
+            259875,
+            259876,
+            259877
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 2,
+        "OutItemKey": 123601,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "自身受到的攻击伤害若高于300则100%令对手冰封，自身造成的攻击伤害若高于300则下次使用技能<font color='#FF7751'>先制+3</font>；\n回合开始时若自身体力高于对手则当回合造成的攻击伤害提升100%且<font color='#FF7751'>使用技能无视对手能力提升状态</font>，若自身体力低于对手则当回合受到的攻击伤害减少50%且使用技能后吸取对手最大体力的1/3\n（boss无效）",
+            "Id": 1685
+          },
+          "exMove": {
+            "ExtraMoves": 36406
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              145,
+              111,
+              70,
+              111,
+              138
+            ],
+            "OldRace": [
+              155,
+              132,
+              108,
+              70,
+              107,
+              128
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36404,
+              28217,
+              36405
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3506
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——孩子，如今过去了这么多年，你真的做好准备了吗？\n——我会准备好的，以我自己一贯的方式。",
+              "AllProgress": 0,
+              "BattleBoss": 3443,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我们都曾不可一世过，可如今却物是人非了。\n——振作点，你主人要是看到你这般垂头丧气，肯定会不开心的。",
+              "AllProgress": 0,
+              "BattleBoss": 3979,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——许久未见，海皇大人的修为似乎又精进了几分啊。\n——比起关心我，不如还是先关心下你那位未曾露面的同僚。",
+              "AllProgress": 0,
+              "BattleBoss": 3376,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——身拥王者之力却早已不再为王的滋味不好受吧，幻天。\n——陈年旧事罢了，倒是海皇大人可不要忘了自己也曾权霸天下。",
+              "AllProgress": 0,
+              "BattleBoss": 3328,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——想不到早已加入圣光联军的你还会特意来这一趟。\n——毕竟关于归元冲的奥义，我们应该有些东西要聊。",
+              "AllProgress": 0,
+              "BattleBoss": 3482,
+              "ID": 5,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20230203 神谕进阶-惊涛海皇·波塞冬",
+        "Exchange": {
+          "ItemID": [
+            1725056,
+            1725057,
+            1725058
+          ],
+          "ProductID": [
+            259976,
+            259977,
+            259978
+          ]
+        },
+        "AllProgress": 5,
+        "BattleBoss": 0,
+        "ID": 3,
+        "OutItemKey": 123602,
+        "PerCostCoinA": 90
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "自身使用攻击技能后，若造成的攻击伤害低于300则附加对手<font color='#FF7751'>最大体力</font>1/3的百分比伤害；\n回合开始时若对手处于异常状态则当回合自身造成的攻击伤害提升100%，若对手不处于异常状态则当回合自身<font color='#FF7751'>使用技能后</font>35%令对手害怕，<font color='#FF7751'>未触发则下回合自身攻击技能先制+1</font>\n（boss无效）",
+            "Id": 1697
+          },
+          "exMove": {
+            "ExtraMoves": 36483
+          },
+          "Race": {
+            "NewRace": [
+              169,
+              140,
+              110,
+              70,
+              110,
+              136
+            ],
+            "OldRace": [
+              149,
+              130,
+              106,
+              70,
+              104,
+              126
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28253
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3388
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——我最看不惯的就是像你这种明明十恶不赦，却还要故作清高的家伙！\n——以你那桃仁般的脑容量，确实也就这种认知程度了。",
+              "AllProgress": 0,
+              "BattleBoss": 4459,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——在真正的神明面前，你们的各种行径都只不过是琐事罢了。\n——然而我心中认可的神只有一位，可惜不是你，你也不配。",
+              "AllProgress": 0,
+              "BattleBoss": 4355,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——混沌匪徒，你的罪行早已无可饶恕，吃我天威凛怒！\n——......不妨试试圣甲气魄吧，或许这招对我更管用呢。",
+              "AllProgress": 0,
+              "BattleBoss": 3056,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我听说你们骑士的准则有八大美德，可我怎么觉得你并没有很谦卑啊？\n——对你这种人保持谦卑，是对骑士之名的侮辱！",
+              "AllProgress": 0,
+              "BattleBoss": 3631,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20230317 神谕进阶-昔兰尼加",
+        "Exchange": {
+          "ItemID": [
+            1725132,
+            1725133,
+            1725134
+          ],
+          "ProductID": [
+            260037,
+            260038,
+            260039
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 4,
+        "OutItemKey": 123603,
+        "PerCostCoinA": 70
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "在圣光天马的祝福下，黄金天马的潜能得到了极限激发，每回合结束后若对手任意一项能力等级高于回合开始时则召唤持续1回合的圣辉之羽庇护自身，<font color='#FF7751'>每回合结束后若对手所有能力等级均未高于回合开始时则召唤持续1回合的圣雷华冠强化自身；\n回合开始时若自身不处于能力提升状态则100%令自身全属性+1且当回合使用攻击技能后附加对手最大体力1/3的百分比伤害，若自身处于能力提升状态则100%令对手全属性-1且当回合自身攻击技能必定打出致命一击</font>\n（boss无效）\n圣辉之羽：圣耀之光·黄金天马持有时免疫受到的异常状态和能力下降状态且将受到的攻击伤害转化为自身体力，下场不保留\n<font color='#FF7751'>圣雷华冠：圣耀之光·黄金天马持有时攻击技能先制+1且命中前若对手处于异常状态则造成的伤害提升50%，下场不保留</font>",
+            "Id": 1710
+          },
+          "exMove": {
+            "ExtraMoves": 36537
+          },
+          "Race": {
+            "NewRace": [
+              170,
+              70,
+              113,
+              144,
+              113,
+              135
+            ],
+            "OldRace": [
+              165,
+              70,
+              108,
+              134,
+              108,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36535,
+              28278,
+              36536
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3670
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——虽然过去了这么多年，你当年意气风发的样子，却仍旧恍如昨日。\n——有些东西是回不去的......相信自己的潜能吧，天马一族的未来就靠你了。",
+              "AllProgress": 0,
+              "BattleBoss": 2809,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——像你这种十恶不赦之人，果然是永远都不会改变的。\n——呵呵，你和你身上的光也还是那么虚伪至极。",
+              "AllProgress": 0,
+              "BattleBoss": 3414,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——有空你可以去拉铂尔仙境看看，我朋友曾在那里重获新生，或许也能对你起到帮助。\n——仙境昙花么......",
+              "AllProgress": 0,
+              "BattleBoss": 3803,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——对于雷电之力的使用，你还有着不小的提升空间，让我来帮助你吧！\n——多谢。",
+              "AllProgress": 0,
+              "BattleBoss": 3406,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20230421 神谕进阶-圣耀之光·黄金天马",
+        "Exchange": {
+          "ItemID": [
+            1725210,
+            1725211,
+            1725212
+          ],
+          "ProductID": [
+            260106,
+            260107,
+            260108
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 5,
+        "OutItemKey": 123604,
+        "PerCostCoinA": 90
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "回合开始时若对手不处于冰封状态，则当回合自身所有技能先制+1；\n自身<font color='#FF7751'>使用技能造成伤害前</font>50%令对手冰封，未触发则消除对手回合类效果，之后若对手处于冰封状态且本次技能为攻击技能则附加对手最大体力1/3的百分比伤害，<font color='#FF7751'>若对手不处于冰封状态且本次技能为攻击技能则吸取对手最大体力的1/3</font>\n（boss无效）",
+            "Id": 1718
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              170,
+              141,
+              112,
+              70,
+              112,
+              135
+            ],
+            "OldRace": [
+              150,
+              131,
+              109,
+              70,
+              108,
+              127
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36573,
+              36574
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3507
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——哪怕得到了新的力量，你也依旧不过如此。\n——别说大话了，这次我绝不会再让你逃脱！",
+              "AllProgress": 0,
+              "BattleBoss": 3510,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——经过一番修炼的你，不仅实力有所长进，姿色也又变美了几分。\n——您说笑了，比起这些调侃苍月还是更希望主人能在闲暇之余多关心一下我们。",
+              "AllProgress": 0,
+              "BattleBoss": 3592,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——时间能改变的东西还真是不少，很难想象曾经那般伟岸的精灵王大人如今会变成这般模样。\n——有些选择总是要做的。",
+              "AllProgress": 0,
+              "BattleBoss": 4287,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——为什么我们魔界就没有你们冥域那样的好运气呢，几个魔神全是糙汉子。\n——......",
+              "AllProgress": 0,
+              "BattleBoss": 3924,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20230519 神谕进阶-冥王·苍月影",
+        "Exchange": {
+          "ItemID": [
+            1725247,
+            1725248,
+            1725249
+          ],
+          "ProductID": [
+            260140,
+            260141,
+            260142
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 6,
+        "OutItemKey": 123605,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "回合开始时若对手处于能力提升状态则消除对手能力提升状态，消除成功则100%令对手烧伤，<font color='#FF7751'>未触发则消除对手回合类效果</font>；\n回合开始时若对手不处于能力提升状态则当回合自身攻击技能100%打出致命一击；\n回合结束时若双方任意一方处于异常状态则100%降低对手所有技能2点PP值且<font color='#FF7751'>恢复自身300点体力</font>\n（清PP效果自身体力为0时也可触发，所有特效boss无效）",
+            "Id": 1730
+          },
+          "exMove": {
+            "ExtraMoves": 36670
+          },
+          "Race": {
+            "NewRace": [
+              170,
+              70,
+              112,
+              136,
+              112,
+              135
+            ],
+            "OldRace": [
+              170,
+              70,
+              107,
+              136,
+              104,
+              133
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28341,
+              36669
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3954
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——多年未见，你的身体......怎么会变成这样......\n——别怕，或许战争改变了很多东西，但我依然还是曾经的那个松茑，我们的约定也依旧还在。",
+              "AllProgress": 0,
+              "BattleBoss": 4362,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——这些年来你姐姐一直不在身边，吃了很多苦吧......\n——没关系的！只要如今大家都能平平安安的，丝萝就心满意足啦！",
+              "AllProgress": 0,
+              "BattleBoss": 3842,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——你是，大暗黑天的常长老？为什么你会出现在......",
+              "AllProgress": 0,
+              "BattleBoss": 3673,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——姑娘你好，我是灵格星系守护者安卡，希望这份纯粹的圣灵与火之力能够帮到你！\n——好温暖的火焰，感觉浑身都充满了力量！",
+              "AllProgress": 0,
+              "BattleBoss": 4219,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20230630 神谕进阶-枫眠",
+        "Exchange": {
+          "ItemID": [
+            1725352,
+            1725353,
+            1725354
+          ],
+          "ProductID": [
+            260237,
+            260238,
+            260239
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 7,
+        "OutItemKey": 123606,
+        "PerCostCoinA": 70
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>首次登场时对方出战背包中每有1只系别中带龙系的精灵获得10层黯龙余恨，若其中存在龙神哈莫则获得层数翻倍，自身每有1层黯龙余恨造成的攻击伤害提升2%；\n每回合开始时会根据本场战斗当前总回合数刷新并获得相应层数的堕龙残怨，自身每有1层堕龙残怨攻击技能命中前附加20点固定伤害；</font>\n回合结束时若对手体力高于自身则恢复自身最大体力的1/3并造成等量百分比伤害，<font color='#FF7751'>当前黯龙余恨和堕龙残怨总层数＞30时取消触发条件，</font>\n若对手体力低于自身则下回合自身所有技能先制+1，<font color='#FF7751'>当前黯龙余恨和堕龙残怨总层数＞30时效果提升至+2\n（黯龙余恨和堕龙残怨下场保留，最多合计50层，所有效果boss无效）</font>",
+            "Id": 1756
+          },
+          "exMove": {
+            "ExtraMoves": 36745
+          },
+          "Race": {
+            "NewRace": [
+              182,
+              140,
+              113,
+              70,
+              113,
+              132
+            ],
+            "OldRace": [
+              172,
+              135,
+              113,
+              70,
+              110,
+              132
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28380,
+              28381,
+              36744
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3724
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——到底是憎恨，还是释怀？我看不清你的灵魂。",
+              "AllProgress": 0,
+              "BattleBoss": 3022,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——王权、力量、尊严、认可，向我跪拜吧，我允许你获得这一切。",
+              "AllProgress": 0,
+              "BattleBoss": 3414,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我们不会忘记过往仇恨，但同样，我们也不应忘记血脉与荣耀。",
+              "AllProgress": 0,
+              "BattleBoss": 1955,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我不奢求你的宽恕，但我希望这里可以成为你复仇的终点。",
+              "AllProgress": 0,
+              "BattleBoss": 2380,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20230908 神谕进阶-混沌哈肯萨",
+        "Exchange": {
+          "ItemID": [
+            1725463,
+            1725464,
+            1725465
+          ],
+          "ProductID": [
+            260334,
+            260335,
+            260336
+          ]
+        },
+        "AllProgress": 5,
+        "BattleBoss": 0,
+        "ID": 8,
+        "OutItemKey": 123607,
+        "PerCostCoinA": 90
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>自身天生免疫石化状态；自身护盾值高于对手时造成的攻击伤害提升50%，自身的护盾值低于对手时受到的攻击伤害、固定伤害、百分比伤害减少50%；回合结束时若自身体力高于对手则获得自身最大体力1/3的护盾，若低于对手则恢复最大体力1/3并造成等量百分比伤害；自身使用攻击技能后开启暗影护盾：2回合内闪避对手的物理攻击，使用属性技能后开启幽冥之盾：2回合内闪避对手的特殊攻击，开启任意一项后，若自身同时处于暗影护盾、幽冥之盾则对对手进行灵魂干涉：100%使对手疲惫（boss无效）</font>",
+            "Id": 1769
+          },
+          "exMove": {
+            "ExtraMoves": 36879
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              72,
+              115,
+              134,
+              115,
+              129
+            ],
+            "OldRace": [
+              172,
+              72,
+              110,
+              132,
+              110,
+              129
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28455,
+              28456,
+              36878
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3716
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——即使只是魔君大人的棋子，那也是你们一族莫大的荣幸！",
+              "AllProgress": 0,
+              "BattleBoss": 3718,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——倒不是我不想帮你，只是现在这把镰刀它不听我使唤。如果你能制造一些空隙的话，说不定我还有机会？",
+              "AllProgress": 0,
+              "BattleBoss": 2999,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——你比深渊更像深渊。",
+              "AllProgress": 0,
+              "BattleBoss": 132,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——有你们在，我就不需要消耗自己的混沌去融合虚空了。",
+              "AllProgress": 0,
+              "BattleBoss": 3745,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20231013 神谕进阶-该洛西斯",
+        "Exchange": {
+          "ItemID": [
+            1725518,
+            1725519,
+            1725520
+          ],
+          "ProductID": [
+            260378,
+            260379,
+            260380
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 9,
+        "OutItemKey": 123608,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>自身先出手时吸取对手等同于自身速度值50%的体力</font>，后出手时下回合所有技能先制+2；<font color='#FF7751'>每回合开始时自身展开千灭雷翼：依次进行如下判断并在满足条件后获得后续效果，己方已有精灵阵亡时千灭雷翼的前n条效果无视触发条件，n为己方已阵亡的精灵数：\n1.若自身为满体力则本回合攻击必定打出致命一击\n2.若自身体力值低于对手则本回合使用技能时获得300点护盾\n3.若自身处于能力提升状态则本回合使用技能时自身全属性+1\n4.若对手处于异常状态则本回合使用技能时对手全属性-1\n5.若对手处于能力下降状态则本回合使用技能后使对手害怕</font>\n（boss无效）",
+            "Id": 1781
+          },
+          "exMove": {
+            "ExtraMoves": 36944
+          },
+          "Race": {
+            "NewRace": [
+              167,
+              70,
+              112,
+              138,
+              115,
+              138
+            ],
+            "OldRace": [
+              165,
+              70,
+              110,
+              136,
+              115,
+              134
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28496,
+              28497,
+              36943
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3705
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——你的身上……看在同样都被那个混账祸害过的份上，要不你照顾一下这位快疯了的可怜人，放弃抵抗如何？作为交换，我也会放你们一条生路的。",
+              "AllProgress": 0,
+              "BattleBoss": 3820,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——为什么！我已经献上了那么多的混沌与圣灵，为什么虚空还是如此吝啬，为什么不回应我！一定是能量还不够，一定是的……我不会再出错！",
+              "AllProgress": 0,
+              "BattleBoss": 5765,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——可恶，不要被他们蛊惑了！与其让禁地的能源被他们抢走……坚持住，艾里克！",
+              "AllProgress": 0,
+              "BattleBoss": 2824,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——混沌教派近来又开始蠢蠢欲动，我必须立刻动身。艾里克，赫尔卡星就交给你们了。",
+              "AllProgress": 0,
+              "BattleBoss": 3406,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我要找的不是你，告诉我他在哪儿！帕诺一战的耻辱，我要他百倍奉还！",
+              "AllProgress": 0,
+              "BattleBoss": 3802,
+              "ID": 5,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20231124 神谕进阶-守护者艾里克",
+        "Exchange": {
+          "ItemID": [
+            1725578,
+            1725579,
+            1725580
+          ],
+          "ProductID": [
+            260432,
+            260433,
+            260434
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 10,
+        "OutItemKey": 123609,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>自身出战时将己方上只精灵所处的能力状态转移给自身；回合开始时令对手随机3项能力等级-1，然后若双方所处的能力下降总项数不低于6，</font>则消除对手回合类效果并使对手害怕，<font color='#FF7751'>未触发则令对手沉默并解除双方能力下降状态，每解除一方自身抵挡1次对手的攻击</font>（boss无效）",
+            "Id": 1819
+          },
+          "exMove": {
+            "ExtraMoves": 37168
+          },
+          "Race": {
+            "NewRace": [
+              168,
+              70,
+              114,
+              138,
+              114,
+              136
+            ],
+            "OldRace": [
+              139,
+              70,
+              95,
+              129,
+              94,
+              123
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28630,
+              28631,
+              37167
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3156
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——我们是两面，我们是一体，你带着使徒叛离天界，我于深渊带上冠冕。",
+              "AllProgress": 0,
+              "BattleBoss": 3177,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——利维坦的踪迹还没找到吗？看来你也有失手的时候。",
+              "AllProgress": 0,
+              "BattleBoss": 3165,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——你为什么会在这里？！我不是来找你的，快让开，不然那个奇形怪状的家伙要追上来了！",
+              "AllProgress": 0,
+              "BattleBoss": 3561,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——充沛的魔力，你也有邪灵的力量吗？但我现在可没功夫关心你的事情，告诉我他去了哪里？",
+              "AllProgress": 0,
+              "BattleBoss": 3580,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240308 神谕进阶-路希菲尔德",
+        "Exchange": {
+          "ItemID": [
+            1725816,
+            1725817,
+            1725818
+          ],
+          "ProductID": [
+            260637,
+            260638,
+            260639
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 11,
+        "OutItemKey": 123610,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>回合开始时，若本回合对手选择了攻击技能则对手随机1个技能PP值归零且当回合造成的攻击伤害无法超过自身最大体力的1/3，若对手选择了属性技能则自身当回合免疫受到的异常状态与能力下降状态，若对手未选择技能则自身获得1点灵茉之芯\n自身被击败后，使下只精灵获得芳馨祝福：获得500点护盾、500点护罩、500点临时体力上限且1回合免疫受到的异常状态，芳馨祝福的免疫效果下场保留，免疫效果结束后失去临时体力上限（boss有效）|灵茉之芯：每有1点自身造成的固定伤害、百分比伤害提升10%，且芳馨祝福免疫效果回合数+1，最高3点，下场保留\n（标注部分boss有效，其余无效）</font>",
+            "Id": 1825
+          },
+          "exMove": {
+            "ExtraMoves": 37195
+          },
+          "Race": {
+            "NewRace": [
+              185,
+              80,
+              125,
+              140,
+              125,
+              135
+            ],
+            "OldRace": [
+              170,
+              70,
+              110,
+              130,
+              110,
+              125
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28646,
+              37193,
+              37194
+            ]
+          },
+          "AdvType": 1,
+          "MonsterId": 3613
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——如果不是您的祝福，我恐怕已经失去了自我，被陨星议会所操纵。",
+              "AllProgress": 0,
+              "BattleBoss": 4606,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——星球的恩情，我无以为报。我谨代表我们一族，向您致以最崇高的敬意。",
+              "AllProgress": 0,
+              "BattleBoss": 3606,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——没有什么是我们无法克服的，从过去，到现在，我们一直如此。",
+              "AllProgress": 0,
+              "BattleBoss": 3333,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——我不像您一样能听清根源的旨意，但我将竭尽所能。",
+              "AllProgress": 0,
+              "BattleBoss": 4198,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240403 元素觉醒-芳馨茉蕊儿",
+        "Exchange": {
+          "ItemID": [
+            1725852,
+            1725852,
+            1725853
+          ],
+          "ProductID": [
+            260670,
+            260670,
+            260671
+          ]
+        },
+        "AllProgress": 1,
+        "BattleBoss": 0,
+        "ID": 12,
+        "OutItemKey": 123611,
+        "PerCostCoinA": 720
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>回合开始时，若自身体力高于1/2则2回合内自身免疫并以害怕的形式反弹受到的异常状态；回合结束时，若自身体力低于1/2则令对手害怕，未触发则吸取对手最大体力1/3\n自身被击败后令对手害怕，对手每有1级晦暗之因随机1个技能PP值归0并20%诅咒；自身击败对手后自身每有一层晦暗之根对方下只登场精灵随机1个技能PP值归0\n晦暗之因：晦暗之因初始等级为1，最高5级，下场保留；晦暗之因每回合结束后吸取拥有者所有技能1点PP值并成长1级，达到5级时成熟不再成长，效果改为拥有者体力恢复效果减少25%，霍德尔在场时吸取的PP值将恢复至霍德尔\n晦暗之根：每有1层，自身攻击命中时附加80点真实伤害，最多5层，下场保留\n（boss无效）</font>",
+            "Id": 1834
+          },
+          "exMove": {
+            "ExtraMoves": 37241
+          },
+          "Race": {
+            "NewRace": [
+              177,
+              80,
+              122,
+              152,
+              122,
+              137
+            ],
+            "OldRace": [
+              172,
+              70,
+              114,
+              138,
+              111,
+              135
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28668,
+              37239,
+              37240
+            ]
+          },
+          "AdvType": 1,
+          "MonsterId": 3941
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——如果可以，我希望你不要尝试理解他们\n——我想有朝一日，我还会与他们相见，那时这份力量或许能派上用场。",
+              "AllProgress": 0,
+              "BattleBoss": 5543,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——请告诉我，我到底身在镜外，还是仍在镜中？",
+              "AllProgress": 0,
+              "BattleBoss": 3200,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——这并非是你的自甘堕落，对吗？——我不能继续逃避，我必须掌控他，为了不让那个消失“我”回来。",
+              "AllProgress": 0,
+              "BattleBoss": 4004,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——精灵王大人……这混沌的力量是？——不必惊慌，格劳瑞有要事在身，不便出面，说明你的来意吧。",
+              "AllProgress": 0,
+              "BattleBoss": 3698,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240403 元素觉醒-混沌暗王霍德尔",
+        "Exchange": {
+          "ItemID": [
+            1725879,
+            1725879,
+            1725880
+          ],
+          "ProductID": [
+            260688,
+            260688,
+            260689
+          ]
+        },
+        "AllProgress": 1,
+        "BattleBoss": 0,
+        "ID": 13,
+        "OutItemKey": 123612,
+        "PerCostCoinA": 720
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>对手使用攻击技能时当回合自身受到的攻击伤害减少50%且50%闪避对手的攻击，自身体力低于对手时闪避率提升至80%，自身体力高于对手时减伤效果提升至60%\n自身使用技能时随机3项能力等级+1，若使用的技能为攻击技能则攻击、速度额外+1，若使用的技能为属性技能则对手下回合先制-2，若本回合使用的技能无效，则下回合使用技能时上述效果取消技能类型要求同时触发（boss无效）</font>",
+            "Id": 1863
+          },
+          "exMove": {
+            "ExtraMoves": 37464
+          },
+          "Race": {
+            "NewRace": [
+              167,
+              144,
+              111,
+              70,
+              111,
+              137
+            ],
+            "OldRace": [
+              165,
+              135,
+              109,
+              70,
+              111,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37461,
+              37462,
+              37463
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3623
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——我不会忘记那次背叛，我必须知道，真正的你是谁。",
+              "AllProgress": 0,
+              "BattleBoss": 3622,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——星球好不容易恢复了稳定，我绝对不允许它再次被侵犯。",
+              "AllProgress": 0,
+              "BattleBoss": 3606,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——大暗黑天的党羽，什么时候又敢如此招摇了？",
+              "AllProgress": 0,
+              "BattleBoss": 3680,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——生命……是死亡的终结，死亡……是生命的开端。",
+              "AllProgress": 0,
+              "BattleBoss": 3665,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240809 神谕进阶-鬼面幽蝶",
+        "Exchange": {
+          "ItemID": [
+            1726188,
+            1726189,
+            1726190
+          ],
+          "ProductID": [
+            260913,
+            260914,
+            260915
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 14,
+        "OutItemKey": 123613,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>对手使用攻击技能时当回合自身受到的攻击伤害减少50%且50%闪避对手的攻击，自身体力低于对手时闪避率提升至80%，自身体力高于对手时减伤效果提升至60%\n自身使用技能时随机3项能力等级+1，若使用的技能为攻击技能则攻击、速度额外+1，若使用的技能为属性技能则对手下回合先制-2，若本回合使用的技能无效，则下回合使用技能时上述效果取消技能类型要求同时触发（boss无效）</font>",
+            "Id": 1863
+          },
+          "exMove": {
+            "ExtraMoves": 37693
+          },
+          "Race": {
+            "NewRace": [
+              167,
+              144,
+              111,
+              70,
+              111,
+              137
+            ],
+            "OldRace": [
+              165,
+              135,
+              109,
+              70,
+              111,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37691,
+              37692,
+              28910
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3729
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——我不会忘记那次背叛，我必须知道，真正的你是谁。",
+              "AllProgress": 0,
+              "BattleBoss": 3622,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——星球好不容易恢复了稳定，我绝对不允许它再次被侵犯。",
+              "AllProgress": 0,
+              "BattleBoss": 3606,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——大暗黑天的党羽，什么时候又敢如此招摇了？",
+              "AllProgress": 0,
+              "BattleBoss": 3680,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——生命……是死亡的终结，死亡……是生命的开端。",
+              "AllProgress": 0,
+              "BattleBoss": 3665,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240809 神谕进阶-鬼面幽蝶",
+        "Exchange": {
+          "ItemID": [
+            1726188,
+            1726189,
+            1726190
+          ],
+          "ProductID": [
+            260913,
+            260914,
+            260915
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 15,
+        "OutItemKey": 123613,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>对手使用攻击技能时当回合自身受到的攻击伤害减少50%且50%闪避对手的攻击，自身体力低于对手时闪避率提升至80%，自身体力高于对手时减伤效果提升至60%\n自身使用技能时随机3项能力等级+1，若使用的技能为攻击技能则攻击、速度额外+1，若使用的技能为属性技能则对手下回合先制-2，若本回合使用的技能无效，则下回合使用技能时上述效果取消技能类型要求同时触发（boss无效）</font>",
+            "Id": 1863
+          },
+          "exMove": {
+            "ExtraMoves": 37761
+          },
+          "Race": {
+            "NewRace": [
+              167,
+              144,
+              111,
+              70,
+              111,
+              137
+            ],
+            "OldRace": [
+              165,
+              135,
+              109,
+              70,
+              111,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37760,
+              28947,
+              28948
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3171
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——我不会忘记那次背叛，我必须知道，真正的你是谁。",
+              "AllProgress": 0,
+              "BattleBoss": 3622,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——星球好不容易恢复了稳定，我绝对不允许它再次被侵犯。",
+              "AllProgress": 0,
+              "BattleBoss": 3606,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——大暗黑天的党羽，什么时候又敢如此招摇了？",
+              "AllProgress": 0,
+              "BattleBoss": 3680,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——生命……是死亡的终结，死亡……是生命的开端。",
+              "AllProgress": 0,
+              "BattleBoss": 3665,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240809 神谕进阶-鬼面幽蝶",
+        "Exchange": {
+          "ItemID": [
+            1726188,
+            1726189,
+            1726190
+          ],
+          "ProductID": [
+            260913,
+            260914,
+            260915
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 16,
+        "OutItemKey": 123613,
+        "PerCostCoinA": 85
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>对手使用攻击技能时当回合自身受到的攻击伤害减少50%且50%闪避对手的攻击，自身体力低于对手时闪避率提升至80%，自身体力高于对手时减伤效果提升至60%\n自身使用技能时随机3项能力等级+1，若使用的技能为攻击技能则攻击、速度额外+1，若使用的技能为属性技能则对手下回合先制-2，若本回合使用的技能无效，则下回合使用技能时上述效果取消技能类型要求同时触发（boss无效）</font>",
+            "Id": 1932
+          },
+          "exMove": {
+            "ExtraMoves": 37808
+          },
+          "Race": {
+            "NewRace": [
+              182,
+              80,
+              120,
+              153,
+              120,
+              135
+            ],
+            "OldRace": [
+              170,
+              70,
+              111,
+              136,
+              110,
+              133
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37806,
+              28972,
+              37807
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3740
+        },
+        "Battle": {
+          "Task": [
+            {
+              "Desc": "——我不会忘记那次背叛，我必须知道，真正的你是谁。",
+              "AllProgress": 0,
+              "BattleBoss": 3622,
+              "ID": 1,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——星球好不容易恢复了稳定，我绝对不允许它再次被侵犯。",
+              "AllProgress": 0,
+              "BattleBoss": 3606,
+              "ID": 2,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——大暗黑天的党羽，什么时候又敢如此招摇了？",
+              "AllProgress": 0,
+              "BattleBoss": 3680,
+              "ID": 3,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            },
+            {
+              "Desc": "——生命……是死亡的终结，死亡……是生命的开端。",
+              "AllProgress": 0,
+              "BattleBoss": 3665,
+              "ID": 4,
+              "OutItemKey": 0,
+              "PerCostCoinA": 0
+            }
+          ],
+          "FreeBattleKey": 206190
+        },
+        "Desc": "20240809 神谕进阶-鬼面幽蝶",
+        "Exchange": {
+          "ItemID": [
+            1726188,
+            1726189,
+            1726190
+          ],
+          "ProductID": [
+            260913,
+            260914,
+            260915
+          ]
+        },
+        "AllProgress": 4,
+        "BattleBoss": 0,
+        "ID": 17,
+        "OutItemKey": 123613,
+        "PerCostCoinA": 85
+      }
+    ]
+  }
+}

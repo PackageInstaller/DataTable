@@ -1,0 +1,3028 @@
+{
+  "Items": [
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "攻击时(被攻击者位置哪个范围(a_b))是否永久(c)获得+d/+e，是否(f)获得护盾",
+      "id": 10001,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "出售时随机获得a张b系精灵牌(是否当前商店等级及以下(c))",
+      "id": 10002,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "入场时随机获得a张等级b(0:任意等级\\>0指定等级)的c(0:所有系)系精灵牌(是否当前商店等级及以下(d))",
+      "id": 10003,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场时使是否(a:0:否、1:是)包含自身同排己方b系精灵获得+c/+d",
+      "id": 10004,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "入场时召唤a只b/c的精灵牌d",
+      "id": 10005,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "每召唤一只a系精灵，是否永久(b)获得+c/+d",
+      "id": 10006,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "攻击时变更造成伤害a%,变更受到伤害b%;攻击后变更造成伤害c%,变更受到伤害d%",
+      "id": 10007,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "入场时使是否(a:0:否、1:是)包含自身己方所有b系精灵获得+c/+d",
+      "id": 10008,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "阵亡：使己方随机a只b系精灵获得+c/+d",
+      "id": 10009,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场：本局游戏内，使商店中的a系(0:所有,>0某一系)精灵获得+b/+c",
+      "id": 10010,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场：己方场上每有一只a系精灵，获得+b/+c",
+      "id": 10011,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "出售本随从时，获得a张b/c的精灵牌d",
+      "id": 10012,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "入场：本局游戏内，在刷新商店后，使商店最左侧的精灵牌获得+a/+b",
+      "id": 10013,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "击败对手时，使自身和同列的己方精灵获得+a/+b",
+      "id": 10014,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：刷新商店，本次刷新的卡牌全部为a系精灵牌",
+      "id": 10015,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "阵亡时召唤a只b/c的精灵牌d",
+      "id": 10016,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "受到伤害时召唤a只b/c的精灵牌d",
+      "id": 10017,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "入场：使同列的另一个精灵获得+a/+b",
+      "id": 10018,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "攻击时获得a张b魔法卡",
+      "id": 10019,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "3",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "连击",
+      "id": 10020,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "商店结束时，使同列的另一个精灵永久获得+a/+b",
+      "id": 10021,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "攻击时使己方随机a个b系精灵永久获得+c/+d",
+      "id": 10022,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "商店结束时，与a系精灵相邻则永久获得+b/+c",
+      "id": 10023,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "战斗开始时，与a系精灵则使同排b系精灵获得+c/+d",
+      "id": 10024,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "攻击时使是否(a:0:否、1:是)包含自身同排己方b系精灵c(0:非永久、1:永久)获得+d/+e",
+      "id": 10025,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡时召唤随机a只等级b的精灵牌",
+      "id": 10026,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "11",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "嘲讽",
+      "id": 10027,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "无法攻击",
+      "id": 10028,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "入场时，本局游戏内，精灵卡牌(a)在场时，使用b系精灵牌后，使商店中的c系精灵牌在本局游戏中获得+d/+e",
+      "id": 10029,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡时随机获得a张b系精灵牌(是否当前商店等级及以下(c))",
+      "id": 10030,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "战斗开始时，对a只随机对方精灵造成b点伤害",
+      "id": 10032,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "入场：己方同列精灵为a系精灵时，招募b张c系精灵牌(是否当前商店等级及以下(d))",
+      "id": 10033,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "商店结束时，每有1只其他a系精灵相邻则自身永久获得+b/+c",
+      "id": 10034,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方a(所有系)系精灵阵亡时，对b只随机对方精灵造成c点伤害",
+      "id": 10035,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场时若自身与a系精灵相邻则获得b张魔法卡(c)",
+      "id": 10036,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d_e_f",
+      "paramDes": "入场：选择一只a(0:所有系)系精灵，使其是否(b)获得嘲讽，使其是否(c)获得连击，使其是否(d)获得强毒，使其获得+e/+f",
+      "id": 10038,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方a系精灵阵亡时，永久获得+b/+c",
+      "id": 10039,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "攻击前若自身与a系精灵相邻则对随机b个对方精灵造成c点伤害",
+      "id": 10040,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "攻击时若同列精灵为a系精灵则对攻击目标同列的精灵造成等同于自身攻击值的b倍伤害",
+      "id": 10041,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "受到攻击时获得+a/+b",
+      "id": 10042,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "相邻的a系精灵攻击时，使对象(b:0自身、b:1攻击者)是否永久(c:1攻击永久、2:血量永久、3:全部永久)获得+d/+e",
+      "id": 10043,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡时使随机a只己方b系精灵获得自身当前的属性值",
+      "id": 10044,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "12",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "护盾",
+      "id": 10045,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "4",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "强毒",
+      "id": 10046,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场时己方同排精灵均为a精灵时，获得强毒",
+      "id": 10047,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "击败对方精灵时获得强毒",
+      "id": 10048,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "每入场一只a系精灵牌，对己方赛尔造成b点伤害并获得+c/+d",
+      "id": 10049,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "同排a系精灵攻击时，获得b张随机c系精灵牌",
+      "id": 10050,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "每次商店阶段己方赛尔受到伤害时，是否回溯(a)受到的伤害值，并且是否永久(b)获得+c/+d",
+      "id": 10052,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "每有一只己方精灵触发阵亡效果，是否永久(a:1攻击永久、2:血量永久、3:全部永久)获得+b/+c",
+      "id": 10053,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "每有一只己方精灵触发阵亡效果，对随机a只对方精灵造成b点伤害，每次触发时伤害增加c点（当前伤害：X）",
+      "id": 10054,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "攻击时同时对攻击目标左右相邻的精灵发动攻击",
+      "id": 10056,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "己方a系精灵触发强毒时，使己方b系精灵永久获得+c/+d",
+      "id": 10058,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "商店阶段结束时，触发一只相邻a系精灵的入场效果",
+      "id": 10059,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "入场：获得a个刷新BUFF(ID(b)，BUFFParam(c,d,e))",
+      "id": 10061,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "每出售一只a系精灵时，获得其b倍属性值",
+      "id": 10062,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "攻击时若自身与a系精灵相邻使自身和符合要求的精灵是否永久获得(b:1攻击永久、2:血量永久、3:全部永久)+c/+d",
+      "id": 10063,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "入场：使己方每个系别的各一只精灵获得+a/+b",
+      "id": 10064,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "a(0:任意、1:同排、2:相邻、3:同列)位置己方b(0:任意)系精灵攻击后，使其获得护盾",
+      "id": 10065,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "阵亡：使同排的己方a(0:任意)系精灵获得+b/+c",
+      "id": 10066,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：对全场所有精灵造成a点伤害",
+      "id": 10067,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡：使随机a(0:全部)只b系己方精灵获得护盾",
+      "id": 10068,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "每回合商店阶段，前a次刷新会消耗己方刷新价格的赛尔生命值",
+      "id": 10069,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡：使相邻的a系精灵获得b倍自身攻击值",
+      "id": 10070,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "已方a系精灵造成伤害后，是否永久(b)获得+c/+d",
+      "id": 10071,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方a系精灵造成伤害后，使其他己方精灵获得+b/+c",
+      "id": 10072,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "5",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "复活(阵亡时召唤指定精灵牌a到原来位置)",
+      "id": 10073,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "战斗开始时，对对方前排精灵中生命值最高的精灵造成a点伤害",
+      "id": 10074,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "使用法术牌时，使己方每个系别的各一只精灵获得+a/+b",
+      "id": 10075,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "攻击时移除攻击目标的BUFF效果(a)",
+      "id": 10076,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "自身在场时，己方入场效果触发a次",
+      "id": 10077,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "入场：招募a张b系精灵牌(是否当前商店等级及以下(c))，并给招募卡牌赋予BUFF(ID(d)，BUFFParam(e))",
+      "id": 10078,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "招募后，对己方赛尔造成等同于所招募卡牌等级的伤害",
+      "id": 10079,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "入场：若自身与a系精灵相邻时，招募b张c系精灵牌(是否当前商店等级及以下(d))",
+      "id": 10080,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "被视为拥有所有系别",
+      "id": 10081,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "己方精灵的连击效果额外触发a次",
+      "id": 10082,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "受到攻击后对攻击自身的精灵造成a点伤害，每次触发时伤害永久增加b点",
+      "id": 10083,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "相邻的a系精灵受到攻击后使其获得护盾",
+      "id": 10084,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "自身在场时，己方阵亡效果额外触发a次",
+      "id": 10085,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "攻击时触发a次最靠前的己方其他精灵的阵亡效果",
+      "id": 10086,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "攻击时对攻击目标同列的精灵造成等同于自身攻击值a倍的伤害",
+      "id": 10087,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：选择1只己方精灵，使商店刷新1次，这1次刷出的卡牌全部为该系别的精灵牌",
+      "id": 10088,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "这张精灵牌在手牌中时，每回合会随机变为1张其他精灵牌",
+      "id": 10089,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "战斗开始时，对场上除a系精灵外的所有精灵造成b点伤害",
+      "id": 10090,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡：对场上除a系精灵外的所有精灵造成b点伤害",
+      "id": 10091,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "永久保留战斗阶段获得的属性和关键词效果",
+      "id": 10092,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场：选择1只己方(觉醒状态a(0:未觉醒、1:已觉醒、2:所有))可复制精灵，获得BUFF(ID(b)，BUFFParam(c))",
+      "id": 10093,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "回合开始时，变形为该精灵a复制",
+      "id": 10094,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场：选择1只己方等级a以下的b系精灵，变成该精灵觉醒状态c(0:原始、1:已觉醒)的复制",
+      "id": 10095,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "战斗开始时，立刻发动1次攻击",
+      "id": 10096,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "战斗开始时，随机选择对方1只后排精灵立刻发动1次攻击",
+      "id": 10097,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "战斗开始时，对生命值最少的对方精灵发起1次攻击",
+      "id": 10098,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "战斗开始前，击败对方精灵时获得a(0:无)回合BUFF(ID(b)，BUFFParam(c))",
+      "id": 10099,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "免疫除攻击伤害之外的所有伤害",
+      "id": 10100,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方精灵受到攻击时，是否永久(a)获得+b/+c",
+      "id": 10101,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：触发除拥有同BUFF卡外己方所有阵亡效果a次",
+      "id": 10102,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "本场战斗中阵亡效果额外触发a次",
+      "id": 10103,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：赋予己方玩家偷取卡牌BUFF(ID(10105)，BUFFParam(b(随机一个对方精灵ID)))",
+      "id": 10104,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "玩家",
+      "param": "a",
+      "paramDes": "商店开始时，获得1张对方指定精灵卡(a)原始复制，只能有效1次",
+      "id": 10105,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "同列己方精灵受到攻击时为其承担攻击",
+      "id": 10106,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：如果是援护防御导致死亡，则对同列己方精灵造成溢出部分的几(a)分之1伤害",
+      "id": 10107,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "卡牌 每次商店阶段己方赛尔受到伤害时，是否回溯(a)受到的伤害值，并使商店中的b系精灵牌在本回合游戏中获得+c/+d",
+      "id": 10108,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "玩家",
+      "param": "a_b_c",
+      "paramDes": "本回合在刷新商店后，使商店中的a系(0:所有系)精灵牌精灵牌获得+b/+c",
+      "id": 10109,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "己方精灵攻击时，此时处于战斗开始时，随机获得a张b系精灵牌，使获得的这张精灵牌获得连击效果",
+      "id": 10110,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "己方a(所有系)系精灵阵亡时和攻击时，对b只随机对方精灵造成c点伤害，本场战斗每阵亡1只d(所有系)系精灵造成的伤害提高e点",
+      "id": 10111,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "攻击时对对方前排所有精灵造成a点伤害，以上效果每次触发时增加b点伤害",
+      "id": 10112,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡：对随机对方a只精灵造成b点伤害",
+      "id": 10113,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "触发连击效果时对对方后排所有精灵造成a点伤害，以上效果每次触发时增加b点伤害",
+      "id": 10114,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "3",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "连击，回合开始时，连击效果去除",
+      "id": 10115,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "玩家",
+      "param": "a_b_c_d_e",
+      "paramDes": "刷新卡牌时，使商店中的a系精灵牌在本局游戏中获得+b/+c（来源卡牌ID:d、来源技能ID:e）",
+      "id": 10116,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：己方每存在一种系别的精灵，在嘲讽、连击、护盾、强毒和+2/+2中选择1次",
+      "id": 10117,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "选择五选一Buff效果后, 在嘲讽、连击、护盾、强毒和+2/+2中选择1次",
+      "id": 10118,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "每有一只己方精灵触发阵亡效果，使自身和同列a系精灵获得是否永久(b:1攻击永久、2:血量永久、3:全部永久)获得+c/+d",
+      "id": 10119,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "阵亡：使同排a系精灵赋予BUFF(ID(b)，BUFFParam(c))",
+      "id": 10120,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "11",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "同排嘲讽",
+      "id": 10121,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "入场：刷新1次商店，刷新的精灵牌获得+a/+b",
+      "id": 10122,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "攻击时若自身与a系精灵相邻则是否永久(b:1攻击永久、2:血量永久、3:全部永久)+b/+c",
+      "id": 10123,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "不可放置",
+      "id": 10124,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "不可出售",
+      "id": 10125,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "不可合金",
+      "id": 10126,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "阵亡：随机获得a张等级b(0:任意等级\\>0指定等级)的c(0:所有系)系精灵牌(是否当前商店等级及以下(d))",
+      "id": 10127,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "商店结束时，使己方所有a系精灵获得+b/+c",
+      "id": 10128,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "11",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：触发除拥有同BUFF卡外己方a个精灵阵亡效果",
+      "id": 10129,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "保留战斗阶段获得的属性",
+      "id": 10130,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "己方其他精灵触发连击效果时，使其永久获得+a/+b",
+      "id": 10131,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "己方精灵攻击时，此时处于战斗开始时，己方a系精灵是否永久(b)获得+c/+d",
+      "id": 10132,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "自身攻击时，此时处于战斗开始时，己方a系精灵永久获得+b/+c",
+      "id": 10133,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "选择一只己方a系精灵，使其获得b(0:无)回合BUFF(ID(c)，BUFFParam(d))",
+      "id": 10134,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方a系精灵触发强毒时，自身永久获得+b/+c",
+      "id": 10135,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "攻击时自身攻击值上升等同于己方同列其他a系精灵攻击值b倍的数值",
+      "id": 10136,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "出售a系精灵牌时永久获得+b/+c",
+      "id": 10137,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：刷新1次商店，将商店最左侧的1张精灵牌变为商店等级+1的a属性精灵牌",
+      "id": 10138,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "每次商店阶段己方赛尔受到伤害时，是否回溯(a)受到的伤害值，并且使己方生命值最高的b系精灵永久获得+c/+d",
+      "id": 10139,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：根据己方赛尔已损失的生命值获得a倍永久攻击、永久血量",
+      "id": 10140,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "商店阶段结束时，获得商店所有a系精灵b/2的永久攻击、永久血量",
+      "id": 10141,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "入场：若己方同列精灵为a系精灵，则将其移除",
+      "id": 10142,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "战斗开始时，若相邻精灵均为a系，则获得b张法术牌c",
+      "id": 10143,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "战斗开始时，若相邻精灵均为a系，则获得获得b(0:无)回合BUFF(ID(c)，BUFFParam(d))",
+      "id": 10144,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "己方无法攻击的精灵受到攻击时，使其获得+a/+b",
+      "id": 10145,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "己方无法攻击的精灵受到攻击时，自身永久获得+a/+b",
+      "id": 10146,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "战斗开始时，触发自身阵亡效果a次",
+      "id": 10147,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：选择商店中1张a系精灵牌，获得该卡牌并使其获得连击",
+      "id": 10148,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "战斗开始时，使己方攻击值最高的a只b(0:所有系)系精灵牌精灵获得c效果(护盾,连击)",
+      "id": 10149,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "[攻击时]本场战斗每阵亡1只[系a:0所有|>0指定]精灵，自身永久获得+b/+c",
+      "id": 10150,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "[入场]获得a张法术牌b",
+      "id": 10151,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "13",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "[入场]若右侧精灵为a系，则为其附加自身buff和属性值，并移除自身",
+      "id": 10152,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "[商店结束]获得a张法术牌b",
+      "id": 10153,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "[死亡]获得a张法术牌b",
+      "id": 10154,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "[出售]获得a张法术牌b",
+      "id": 10155,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "[商店结束]随机获得a张商店法术牌",
+      "id": 10156,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "[属性提升]使己方a系精灵获得+b/+c，排除同名卡(d)",
+      "id": 10157,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "a(0:任意、1:同排、2:相邻、3:同列)位置己方b(0:任意)系精灵触发强毒时，自身获得+c/+d",
+      "id": 10158,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "a(0:任意、1:同排、2:相邻、3:同列)位置己方b(0:任意)系精灵触发强毒时，自身获得c效果(护盾,连击)",
+      "id": 10159,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "己方a系精灵累计触发b次入场效果触发时，获得c张精灵卡d",
+      "id": 10160,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "攻击时对对方所有精灵造成a点伤害，若己方无其他精灵，每使用1张b系精灵牌，伤害+c，否则使用该系精灵牌伤害+d",
+      "id": 10161,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "每刷新a次商店，最左侧精灵必为b系精灵,商店结束阶段清空计数",
+      "id": 10162,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "额外攻击",
+      "id": 10163,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "战斗开始时，若自身与a系精灵相邻，则获得b效果(额外攻击)",
+      "id": 10164,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "阵亡：随机召唤不超过当期商店等级具有阵亡效果的a只b系精灵，召唤时同名的精灵最多召唤1只，使其具有原始属性",
+      "id": 10165,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "己方精灵攻击时，触发其阵亡效果",
+      "id": 10166,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "己方精灵失去护盾后，获得a张法术牌b",
+      "id": 10167,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "己方精灵失去护盾后，自身获得+a/+b",
+      "id": 10168,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方a(0:任意)系精灵攻击时，对b只随机对方精灵造成c点伤害",
+      "id": 10169,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "己方入场效果触发时，使位置a(0:任意、1:同排、2:相邻、3:同列)己方其他b系精灵获得+c/+d",
+      "id": 10170,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "出售自身时，额外获得a枚金币",
+      "id": 10171,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方其他a系精灵攻击时，使其获得+b/+c",
+      "id": 10172,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "入场：若己方a系精灵达到b只，招募c张d系精灵牌，(是否当前商店等级及以下(e))",
+      "id": 10173,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "商店结束时，己方每有1只a系精灵，则自身永久获得+b/+c",
+      "id": 10174,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "使用a系精灵牌时，获得b枚金币，最多获得c枚，商店结束阶段清空计数",
+      "id": 10175,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "阵亡：使己方随机a(0:全部)只b系精灵永久获得+c/+d",
+      "id": 10176,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：招募a张商店法术牌",
+      "id": 10177,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "每消耗a枚金币，随机获得b张c系精灵牌",
+      "id": 10178,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "若上一轮战斗a(1胜利 2失败 3平局)，出售自身可额外获得b枚金币",
+      "id": 10179,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "自身属性提升时，若来自手牌(a)，使同排b系精灵生效核心升级",
+      "id": 10180,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "入场：本局游戏内己方核心升级效果提升a倍",
+      "id": 10181,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 1
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "受到攻击时对相邻的a系精灵使用1张核心升级",
+      "id": 10182,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "自身在场时，从己方手牌中使用的核心升级会额外释放a次",
+      "id": 10183,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "己方其他精灵属性提升时，若来自卡牌a，自身获得+b/+c",
+      "id": 10184,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "攻击时，本局游戏内己方核心升级效果提升a倍，每回合最多提升b次",
+      "id": 10185,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "商店阶段结束时，对己方所有a系精灵生效核心升级，自身每有一个关键词，额外生效一次",
+      "id": 10186,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "被视为拥有电系",
+      "id": 10187,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "自身在场时，与其相邻的精灵均被视为a系精灵",
+      "id": 10188,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：消灭击败自身的精灵",
+      "id": 10189,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "商店阶段中每消耗a枚金币，自身永久获得+b/+c",
+      "id": 10190,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d",
+      "paramDes": "商店阶段中每消耗a枚金币，使己方其他b系精灵永久获得+c/+d",
+      "id": 10191,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "攻击时，自身攻击值变为a倍，自身血量变为b倍",
+      "id": 10192,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "寄生",
+      "id": 10193,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "不可被偷取",
+      "id": 10194,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "不可被复制",
+      "id": 10195,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "商店阶段开始时，额外获得a枚金币",
+      "id": 10196,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "战斗开始时，若自身与a系精灵相邻，则自身额外攻击次数增加b次",
+      "id": 10197,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "召唤a系精灵后，自身获得效果b",
+      "id": 10198,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "技能和法术牌不可被选中",
+      "id": 10199,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：使同排a(0:任意)系己方精灵获得护盾",
+      "id": 10200,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "击败对手时，使自身永久获得+a/+b",
+      "id": 10201,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "被视为拥有所有系别(可移除)",
+      "id": 10202,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "自身受到攻击后使己方a系精灵永久获得+b/+c",
+      "id": 10203,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c",
+      "paramDes": "战斗阶段开始时偷取对位精灵的强毒，连击，护盾，嘲讽中的a个，每偷取一个关键词永久获得+b/+c",
+      "id": 10204,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "2",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "阵亡：对敌方对位精灵造成致死攻击溢出部分1/a的伤害",
+      "id": 10205,
+      "IsDeathEffect": 1,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b",
+      "paramDes": "自身在场时，己方a系精灵每回合前b次失去强毒时获得1次强毒",
+      "id": 10206,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "1",
+      "object": "卡牌",
+      "param": "a_b_c_d_e",
+      "paramDes": "卡牌a在场时，使用b系精灵牌后，使己方场上的c系精灵永久获得+d/+e",
+      "id": 10207,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "卡牌",
+      "param": "a",
+      "paramDes": "自身在场时，从己方手牌中使用的电力充能会额外释放a次",
+      "id": 10208,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "获得a枚金币",
+      "id": 20001,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "下回合额外获得a枚金币",
+      "id": 20002,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "招募一只等级a的精灵",
+      "id": 20003,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b",
+      "paramDes": "将一只精灵属性值变为a/b",
+      "id": 20004,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b",
+      "paramDes": "选择一只己方精灵，使其获得+a/+b",
+      "id": 20005,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "招募一只带有阵亡效果的精灵",
+      "id": 20006,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "招募一只带有入场效果的精灵",
+      "id": 20007,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "随机获得a个商店中的精灵",
+      "id": 20008,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c",
+      "paramDes": "随机使一只精灵获得+a/+b，重复c次",
+      "id": 20009,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b",
+      "paramDes": "使每个系别的各一只己方精灵获得+a/+b",
+      "id": 20010,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "随机使商店中的一只精灵变为金色",
+      "id": 20011,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "刷新商店，使刷新的卡牌全部变为法术牌",
+      "id": 20012,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "这张法术在手牌中时，每回合会随机变为一张其他法术牌，法术的等级不超过当前商店等级",
+      "id": 20013,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c",
+      "paramDes": "选择一只己方a系精灵，若拥有连击效果，赋予其b(0:无)回合BUFF(ID(c)，BUFFParam(d))",
+      "id": 20014,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b",
+      "paramDes": "使商店的精灵在本局游戏中获得+a/+b",
+      "id": 20015,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c_d_e",
+      "paramDes": "使己方a系精灵获得回合属性+b/+c，每使用一次效果永久+d/+e",
+      "id": 20016,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "选择一只己方精灵将其移除，获得a枚金币并随机使一只己方精灵获得其属性值",
+      "id": 20017,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c_d_e",
+      "paramDes": "获得a个刷新BUFF(ID(b)，BUFFParam(c,d,e))",
+      "id": 20018,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "选择1只己方精灵，使商店刷新1次，这1次刷出的卡牌全部为该系别的精灵牌",
+      "id": 20019,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c_d_e_f",
+      "paramDes": "选择一只a(0:所有系)系精灵，使其是否(b)获得嘲讽，使其是否(c)获得连击，使其是否(d)获得强毒，使其获得+e/+f",
+      "id": 20020,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "本局游戏中金币基准值提高a",
+      "id": 20021,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b",
+      "paramDes": "商店开始阶段，若上一轮战斗a(1胜利 2失败 3平局)，获得b枚金币",
+      "id": 20022,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "招募a只己方场上最多存活精灵数系别的精灵",
+      "id": 20023,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c",
+      "paramDes": "选择一只己方精灵，对效果a(嘲讽)取反，并使其获得+b/+c",
+      "id": 20024,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b_c",
+      "paramDes": "【核心升级】选择一只己方a系精灵，使其获得+b/+c",
+      "id": 20025,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a_b",
+      "paramDes": "选择一只a系精灵，对其生效b次核心升级后，将与其相邻的a系精灵的核心升级效果转移到该精灵上",
+      "id": 20026,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "魔法",
+      "param": "a",
+      "paramDes": "直接获取商店中所有卡牌（视同购买）",
+      "id": 20027,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，使其获得护盾",
+      "id": 30001,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "获得一只比当前商店等级高1级的精灵",
+      "id": 30002,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，使其变为金色，每局游戏仅限1次",
+      "id": 30003,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，将其替换为同等级的随机精灵，每回合限1次",
+      "id": 30004,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "商店阶段结束时，使己方每个系别的各一只精灵获得等同于其等级的攻击值和生命值",
+      "id": 30005,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c",
+      "paramDes": "开局时拥有一只a/b的精灵牌c",
+      "id": 30006,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c",
+      "paramDes": "商店阶段开始时，第a回合招募b张等级c的精灵牌",
+      "id": 30007,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "商店阶段开始时，上回合结束时未使用的金币进行积累，达到a枚时招募一张等级b的精灵牌，并重置积累金币数",
+      "id": 30008,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e_f_g_h",
+      "paramDes": "商店阶段结束时，使己方随机a只精灵获得+b/+c，重复d次，每e回合额外增加+f/+g和额外增加重复h次数",
+      "id": 30009,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e_f",
+      "paramDes": "使用a系精灵时，使其获得+b/+c，使用d次后额外增加+e/+f",
+      "id": 30010,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e_f",
+      "paramDes": "使用a系精灵时，累计使用达到b张时，赋予己方玩家BUFF(ID(c)，BUFFParam(d,e,f)，并重置累计次数",
+      "id": 30011,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d",
+      "paramDes": "招募两张不高于当前商店等级的卡牌，若均为精灵牌，选择后己方随机a只精灵获得+b/+c，若均为法术牌，选择后商店升级消耗的金币数量-d",
+      "id": 30012,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "每回合开始时，从两个新赛尔技能中选择一个(排除技能a)",
+      "id": 30013,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c",
+      "paramDes": "每回合开始时，从技能a、技能b、技能c中选择一个",
+      "id": 30014,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e",
+      "paramDes": "技能选择后使己方随机a只精灵获得+b/+c，每选择1次额外获得+d/+e",
+      "id": 30015,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c",
+      "paramDes": "战斗开始时，随机使对方a只精灵攻击值变为b生命值变为c",
+      "id": 30016,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "战斗开始时，己方所有精灵获得+a/+b",
+      "id": 30017,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "每当一个赛尔被击败时，偷取招募其阵容中的一只精灵，保留所有附加效果",
+      "id": 30018,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "消灭对方a只精灵后，获得技能b",
+      "id": 30019,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "商店阶段结束时，后排最左侧和最右侧的精灵获得+a/+b",
+      "id": 30020,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "随机获得a张精灵牌，(是否当前商店等级及以下(b))",
+      "id": 30021,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "随机获得a张法术牌，(是否当前商店等级及以下(b))",
+      "id": 30022,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "下回合额外获得a枚金币",
+      "id": 30023,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "获得a张魔法牌b",
+      "id": 30024,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c",
+      "paramDes": "选择1张商店的精灵牌获得，将其属性值变为a/b且c回合内禁止放置、出售、合金",
+      "id": 30025,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "己方必定先手",
+      "id": 30026,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c",
+      "paramDes": "战斗开始时，己方最靠a(0:前，1:后)的己方b(0:任意)系精灵获得c效果(护盾,连击)",
+      "id": 30027,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d",
+      "paramDes": "使用a张b系精灵牌后，随机获得c张不超过当前商店等级的d系精灵牌（距离触发：{0}）",
+      "id": 30028,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，使其阵亡效果在下次战斗开始时触发a次",
+      "id": 30029,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "购买精灵牌等级累计达到a级之后，获得技能b",
+      "id": 30030,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "商店阶段开始时，移除场上此技能招募的精灵牌，招募一张非上次选择的4神兽精灵牌到场上，并为其附加不可合金效果",
+      "id": 30031,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "战斗开始a回合后，商店阶段开始时，偷取招募一张精灵牌，其中存在一张上一次对战的对手阵容精灵牌的普通原始复制，选择正确则获得该精灵牌，选择错误则无法获得",
+      "id": 30032,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d",
+      "paramDes": "购买a张精灵牌后，使己方b{0:所有,非0:随机}精灵获得+c/+d（距离触发：{0}）",
+      "id": 30033,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "刷新1次商店，使商店包含a只比当前商店等级高1级的精灵",
+      "id": 30034,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d",
+      "paramDes": "战斗开始时，己方最靠a(0:前，1:后)的己方b(0:任意)系精灵获得+c/+d",
+      "id": 30035,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "战斗开始时，己方最靠a(0:前，1:后)的己方b(0:任意)系精灵立即发动1次攻击",
+      "id": 30036,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e",
+      "paramDes": "放置精灵卡牌入场时，若为a系且位于手牌中位置b(0:最左侧，1:最右侧)，为其附加BUFF(ID(c)，BUFFParam(d,e,f)",
+      "id": 30037,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "本局游戏内，刷新商店时，最右侧精灵牌为a系精灵牌",
+      "id": 30038,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "免疫致死伤害后获得a枚金币",
+      "id": 30039,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e",
+      "paramDes": "选择一只己方精灵，使其获得+a/+b，每购买c张卡牌后额外获得+d/+e",
+      "id": 30040,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "受到致死伤害时，免疫该次伤害，全局生效a次",
+      "id": 30041,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，将其出售并获得其普通原始复制（游戏开始2回合后可使用）",
+      "id": 30042,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，触发其入场效果",
+      "id": 30043,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一张商店的精灵牌，获得该精灵牌并使其属性值翻倍",
+      "id": 30044,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "第一回合商店阶段，招募一张等级a的精灵牌并将其锁定，无法使用和出售，也不参与任何觉醒，累计消耗b枚金币后解除锁定",
+      "id": 30045,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d",
+      "paramDes": "战斗开始时，使己方随机a只精灵从嘲讽、护盾、连击、强毒中获得1个随机关键词，每b回合额外增加c个生效精灵，最高d只",
+      "id": 30046,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "额外拥有a点生命值",
+      "id": 30047,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b",
+      "paramDes": "每累计使用a次技能后，获得b张不超过当前商店等级觉醒状态的精灵牌（距离触发：{0}）",
+      "id": 30048,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a_b_c_d_e",
+      "paramDes": "商店中的精灵牌获得+a/+b，每购买c张牌，额外增加+d/+e",
+      "id": 30049,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "使用技能时记录选择的下一次战斗胜者，商店开始阶段，若选择正确，获得a枚金币",
+      "id": 30050,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，使其获得等同于商店等级的攻击值",
+      "id": 30051,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "选择一只己方精灵，使其获得等同于商店等级的生命值",
+      "id": 30052,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "技能",
+      "param": "a",
+      "paramDes": "非首回合商店开始阶段，将当前技能切换为技能a",
+      "id": 30053,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "商店",
+      "param": "a_b_c",
+      "paramDes": "本次刷新次数消耗a，刷新效果：商店刷新出的随从获得+b/+c",
+      "id": 40001,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "选择赛季效果后，商店等级升级至a级，刷新牌的数量固定为5张",
+      "id": 50001,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "选择赛季效果后，变更指定BUFF(a)的参数个数(b)的多个变化信息(变化位置_变化类型(1:设置、2:增加、3:加倍)_变化数字)并删除本效果",
+      "id": 50041,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "商店阶段结束时，被锁定在商店中的精灵牌获得+a/+b",
+      "id": 50042,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "商店阶段结束时，若商店中有被锁定的精灵牌，己方场上随机a只精灵获得+b/+c",
+      "id": 50043,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "每个商店阶段前a次购买被锁定的精灵牌价格减少b枚金币",
+      "id": 50044,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "商店阶段开始时，根据你当前的连胜或连败场数获得金币：连胜/连败至少a次，最大b次，获得连胜/连败数+c枚金币",
+      "id": 50045,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "商店阶段开始时，若上场战斗连胜或连败被终结时达到a场，则随机获得b张当前商店等级的c(0:所有系)系精灵牌",
+      "id": 50046,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "商店阶段结束时，己方场上每有一种不同等级的精灵牌，己方场上所有精灵获得+a/+b",
+      "id": 50047,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d_e_f",
+      "paramDes": "商店阶段结束时，己方场上等级1的精灵获得+a/+b，等级2的精灵获得+c/+d，等级3的精灵获得+e/+f",
+      "id": 50048,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "选择赛季效果后，立刻获得a张魔法牌b",
+      "id": 50049,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "出售时，等级低于当前商店等级的精灵牌时，额外获得a枚金币，每次商店阶段最多触发b次",
+      "id": 50050,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "商店阶段结束时，你每使用1枚金币，你场上随机1只精灵获得+a/+b",
+      "id": 50051,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "商店阶段开始时，第a回合获得b张魔法牌c",
+      "id": 50052,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "出售时，所出售的精灵牌带有Buff(a)，获得b张魔法牌c",
+      "id": 50053,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d",
+      "paramDes": "战斗开始时，带有Buff(a)标记的己方精灵，会抽取其镜像对称位置的敌方精灵b%的当前属性（是否永久保留c）是否移除（d）被抽取的敌方精灵持有的嘲讽、护盾、连击、强毒效果",
+      "id": 50054,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "选择赛季效果后，已获得BuffID(a)的精灵立刻获得BuffID(b)BuffParam(c)(无法重复获得)",
+      "id": 50055,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d",
+      "paramDes": "使用法术牌时，所使用的是法术牌a，则对应卡牌获得BuffID(b)BuffParam(c),并且是否获得强毒(d)",
+      "id": 50056,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "商店阶段结束时，被锁定在商店中的精灵牌从嘲讽、护盾、连击、强毒中获得a个随机关键词",
+      "id": 50057,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "击败对方精灵时，如果精灵牌带有Buff(a)并首次击败对方精灵，获得b张魔法牌c",
+      "id": 50058,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "购买后，如果所购买的精灵牌被锁定，则把这张牌上通过BUFF(a)获得的额外属性值附加给己方场上的随机(b)只精灵",
+      "id": 50059,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "刷新商店时，消耗a点生命值",
+      "id": 50060,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "游戏开始时，赛尔的初始生命值额外增加a点",
+      "id": 50061,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d_e",
+      "paramDes": "选择赛季效果后，降低a点生命值，最多降低至1点，每降低1点生命值获得b枚金币，使己方场上所有精灵获得+c/+d，并且删除赛季BUFF(e)",
+      "id": 50062,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "刷新商店后，使己方场上所有精灵获得+a/+b",
+      "id": 50063,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "刷新卡牌时，商店中的所有精灵在本局游戏中获得+a/+b",
+      "id": 50064,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "战斗开始前，玩家游戏开始时生命值与当前生命值的差值，除以a获得的次数，使己方场上精灵获得这个次数的+a/+b",
+      "id": 50065,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "战斗开始前，对对方场上所有精灵造成己方本局游戏累计刷新商店次数的伤害",
+      "id": 50066,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "购买后，如果是前a次购买，则额外获得b张该牌的未觉醒卡牌",
+      "id": 50067,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "购买后，永久触发a次额外获得b张该牌的未觉醒卡牌",
+      "id": 50068,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "商店阶段结束时，若己方手牌和场上存在同样的精灵卡，则己方场上所有精灵获得+a/+b",
+      "id": 50069,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "出售时，若所出售的精灵牌在手牌和场上没有与该牌同名的精灵牌(觉醒和非觉醒)，则额外获得a枚金币，每次商店阶段最多触发b次",
+      "id": 50070,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "使用法术牌时，若使用卡牌是觉醒奖励法术牌，则当前商店升级需要的金币数量减少a枚",
+      "id": 50071,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "使用法术牌时，若使用卡牌是觉醒奖励法术牌，则己方场上所有精灵获得+a/+b",
+      "id": 50072,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "游戏开始时，前排最左侧和最右侧位置变为【沃土】，初始养分计数为1",
+      "id": 50073,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "商店阶段结束时，位于【沃土】的精灵永久获得等同于养分层数的属性",
+      "id": 50074,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d_e",
+      "paramDes": "战斗结束时，战斗中是否包含己方(a)和是否包含对方(b)的总数量，按c倍计算后，每d只，养分计数+e",
+      "id": 50075,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "商店阶段结束时，与【沃土】相邻的普通位置的精灵，也会吸收养分并获得a%的属性加成(向下取整，最低为1)",
+      "id": 50076,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "商店阶段开始时，场上每有1种不同系别的精灵，养分计数+a",
+      "id": 50077,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "选择赛季效果后，后排最左侧和最右侧位置也变为【沃土】",
+      "id": 50078,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "战斗开始前，位于【沃土】上的精灵，被视为拥有所有系别，免疫除攻击伤害之外的所有伤害",
+      "id": 50079,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "精灵阵亡时，所阵亡的精灵是己方等级a及以下的，将其额外属性值附加给己方场上等级最高的精灵",
+      "id": 50080,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "刷新卡牌时，下a次刷新的精灵牌等级必定各不相同的精灵牌",
+      "id": 50081,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "精灵阵亡时，所阵亡的精灵是己方前排精灵，若其等级低于己方场上等级最高的精灵，则使该最高等级精灵立刻发动1次攻击",
+      "id": 50082,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a",
+      "paramDes": "选择赛季效果后，本局游戏升级商店的金币数量减少a枚，最低降为0",
+      "id": 50083,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "游戏开始时，棋盘上有a张精灵牌b",
+      "id": 50084,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "升级商店时，精灵卡牌a获得+b/+c",
+      "id": 50085,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "商店阶段开始时，精灵卡牌a获得+b/+c",
+      "id": 50086,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "商店阶段开始时，若精灵卡牌a在场上，获得b枚金币",
+      "id": 50087,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d",
+      "paramDes": "商店阶段结束时，若己方没有精灵卡牌a，则己方随机b只精灵获得+c/+d",
+      "id": 50088,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "选择赛季效果后，如果棋盘上有精灵卡牌a，则删除该卡牌，并召唤1张精灵卡牌b，属性值是精灵卡牌a的属性的c%",
+      "id": 50089,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c_d_e_f_g_h",
+      "paramDes": "刷新商店时，使商店中随机a张精灵牌永久获得+b/+c，其中d张为场上精灵最多的系别，每刷新e次，获得的属性值额外增加+f/+g，每刷新h次，所有精灵牌均获得加成",
+      "id": 50090,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b_c",
+      "paramDes": "购买精灵牌时，若卡牌有来自BuffID(a)的额外属性值，则获得b枚金币，每回合最多触发c次",
+      "id": 50091,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    },
+    {
+      "effectIcon": "",
+      "object": "赛季效果",
+      "param": "a_b",
+      "paramDes": "购买精灵牌后，将牌上通过BUFF(a)获得的额外属性值附加给己方场上的随机(b)只精灵",
+      "id": 50092,
+      "IsDeathEffect": 0,
+      "IsPlaceEffect": 0
+    }
+  ]
+}

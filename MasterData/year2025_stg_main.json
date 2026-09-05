@@ -1,0 +1,327 @@
+{
+  "Items": [
+    {
+      "bossMessages": "",
+      "skills": "",
+      "args": [
+        3
+      ],
+      "bossSpeed": 0,
+      "bossState": 0,
+      "finishCondition": 5,
+      "health": 0,
+      "id": 1,
+      "type": 3
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "bossSpeed": 0,
+      "bossState": 0,
+      "finishCondition": 6,
+      "health": 0,
+      "id": 2,
+      "type": 1
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "bossSpeed": 0,
+      "bossState": 0,
+      "finishCondition": 6,
+      "health": 0,
+      "id": 3,
+      "type": 5
+    },
+    {
+      "bossMessages": "7_没想到真的可以成功啊！\r\n2_虽然的记忆狭间的裂隙之中是无法编辑历史的。\r\n2_但是我本身是不具备任何“历史性”的存在。\r\n2_是纯粹依靠赛尔的意志驱动的。\r\n7_我已经完全理解了。\r\n2_准备好了吗赛尔？\r\n7_随时ok！",
+      "skills": "",
+      "args": [
+        10
+      ],
+      "playerSkills": [
+        1,
+        2
+      ],
+      "bossSpeed": 0,
+      "bossState": 0,
+      "finishCondition": 1,
+      "health": 50000,
+      "id": 4,
+      "type": 4
+    },
+    {
+      "bossMessages": "1_不过是雕虫小技罢了。\r\n1_就让我送给你们最纯粹的死亡吧。",
+      "skills": "9;26,10;9,12,26;11,26,12,18;10;26,11;14,26,16;18,10,26,12;9,10,26,14,13;18",
+      "args": [
+        1
+      ],
+      "bossSkillSpeed": [
+        0,
+        1500,
+        1000,
+        500,
+        0,
+        1500,
+        1000,
+        500,
+        1000,
+        0
+      ],
+      "playerSkills": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "bossSpeed": 3000,
+      "bossState": 0,
+      "finishCondition": 3,
+      "health": 0,
+      "id": 5,
+      "type": 4
+    },
+    {
+      "bossMessages": "2_好机会！赛尔，瞄准咤克斯的弱点！\r\n7_看我的！我点点点点点！\r\n2_全弹发射！",
+      "skills": "",
+      "args": [
+        2
+      ],
+      "bossSpeed": 0,
+      "bossState": 0,
+      "finishCondition": 4,
+      "health": 37500,
+      "id": 6,
+      "type": 2
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "args": [
+        1
+      ],
+      "bossSpeed": 0,
+      "bossState": 0,
+      "finishCondition": 5,
+      "health": 0,
+      "id": 7,
+      "type": 3
+    },
+    {
+      "bossMessages": "1_不得不承认，作为蚊子，你们的表现确实可圈可点。\r\n1_但是只有这样的力量就像击败我吗？\r\n7_不好，他又要复原了！\r\n4_赛尔！我们把力量借给你！\r\n5_只要破坏的速度大于他再生的速度就行了吧！\r\n7_那你们怎么办？\r\n5_不过是咤克斯的分身而已，我们还应付的过来。\r\n4_务必要让咤克斯付出代价，赛尔！\r\n7_我知道了！",
+      "skills": "9,10,26,13;10,26,11,16,12;26,14,17;12;26,16,12;14,26,13;12,10,26;16,10,14;17",
+      "args": [
+        7
+      ],
+      "bossSkillSpeed": [
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        1000,
+        0
+      ],
+      "playerSkills": [
+        1,
+        2,
+        4,
+        6,
+        7
+      ],
+      "bossSpeed": 3000,
+      "bossState": 1,
+      "finishCondition": 3,
+      "health": 0,
+      "id": 8,
+      "type": 4
+    },
+    {
+      "bossMessages": "7_就算火力升级过，还是不太够吗……\r\n7_赛尔号，你有没有更强的攻击？\r\n2_只要你想，我就会有。\r\n7_那就让他尝一发大的吧！",
+      "skills": "",
+      "args": [
+        4
+      ],
+      "bossSpeed": 0,
+      "bossState": 1,
+      "finishCondition": 4,
+      "health": 15000,
+      "id": 9,
+      "type": 2
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "args": [
+        2
+      ],
+      "bossSpeed": 0,
+      "bossState": 1,
+      "finishCondition": 5,
+      "health": 0,
+      "id": 10,
+      "type": 3
+    },
+    {
+      "bossMessages": "1_要我说几次你们才会明白。\r\n1_无论怎样的攻击，都没有意义。\r\n1_你们杀不死我的。\r\n4_那就再重复一万次！\r\n5_赛尔，你怎么样？\r\n7_火力输出稳定！\r\n5_那就来吧，我们一起，杀了它！\r\n7_咤克斯！在你击败我们之前，你绝无它路可走！",
+      "skills": "23,27",
+      "args": [
+        8
+      ],
+      "bossSkillSpeed": [
+        500
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 3000,
+      "bossState": 2,
+      "finishCondition": 2,
+      "health": 10000,
+      "id": 11,
+      "type": 4
+    },
+    {
+      "bossMessages": "7_糟了，这种弹幕密集度的话——\r\n4_赛尔，我来助你！",
+      "skills": "",
+      "args": [
+        5
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 4,
+      "health": 0,
+      "id": 12,
+      "type": 2
+    },
+    {
+      "bossMessages": "",
+      "skills": "23,27",
+      "args": [
+        9
+      ],
+      "bossSkillSpeed": [
+        500
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 3000,
+      "bossState": 2,
+      "finishCondition": 2,
+      "health": 6000,
+      "id": 13,
+      "type": 4
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "args": [
+        6
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 4,
+      "health": 0,
+      "id": 14,
+      "type": 2
+    },
+    {
+      "bossMessages": "7_是谁？！\r\n3_我们就是你，你就是我们。\r\n7_原来如此……\r\n4_和我们那时一样。\r\n5_琉梦还在努力，我们可不能掉链子啊！",
+      "skills": "",
+      "args": [
+        11
+      ],
+      "bossSkillSpeed": [
+        0
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 1,
+      "health": 0,
+      "id": 15,
+      "type": 4
+    },
+    {
+      "bossMessages": "5_只要破坏的速度大于你恢复的速度就好了吧！\r\n5_不过就是加大功率而已，我们做得到！\r\n4_为自己的罪孽付出代价吧，咤克斯！\r\n7_把琉梦给我吐出来！\r\n7_赛尔号，冲呀！\r\n3_我们一起！！",
+      "skills": "",
+      "args": [
+        1
+      ],
+      "bossSkillSpeed": [
+        0
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 7,
+      "health": 0,
+      "id": 16,
+      "type": 6
+    },
+    {
+      "bossMessages": "1_什么？你们竟然……你们竟然——！！\r\n7_琉梦！我来了！",
+      "skills": "",
+      "args": [
+        12
+      ],
+      "bossSkillSpeed": [
+        0
+      ],
+      "playerSkills": [
+        4,
+        7
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 4,
+      "health": 0,
+      "id": 17,
+      "type": 2
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "args": [
+        4
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 5,
+      "health": 0,
+      "id": 18,
+      "type": 3
+    },
+    {
+      "bossMessages": "",
+      "skills": "",
+      "args": [
+        1
+      ],
+      "bossSpeed": 0,
+      "bossState": 2,
+      "finishCondition": 8,
+      "health": 0,
+      "id": 19,
+      "type": 7
+    }
+  ]
+}

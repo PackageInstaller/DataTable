@@ -1,0 +1,554 @@
+{
+  "Items": [
+    {
+      "describe": "无",
+      "name": "液态氧罐",
+      "class": 1,
+      "id": 1,
+      "itemicon": 1,
+      "output": 2,
+      "priority": 14,
+      "rare": 1
+    },
+    {
+      "describe": "每回合有10%概率生成【<link=1><color=#666b7a>液态氧罐</color></link>】或【<link=3><color=#666b7a>加压气瓶</color></link>】",
+      "name": "燃料包",
+      "class": 1,
+      "id": 2,
+      "itemicon": 2,
+      "output": 2,
+      "priority": 5,
+      "rare": 1
+    },
+    {
+      "describe": "提升刷新到高稀有度道具的概率，概率提升至1.1倍",
+      "name": "加压气瓶",
+      "class": 1,
+      "id": 3,
+      "itemicon": 3,
+      "output": 2,
+      "priority": 16,
+      "rare": 1
+    },
+    {
+      "describe": "无",
+      "name": "碳纤维束",
+      "class": 0,
+      "id": 4,
+      "itemicon": 4,
+      "output": 2,
+      "priority": 14,
+      "rare": 1
+    },
+    {
+      "describe": "4回合后消除自身",
+      "name": "铝箔护膜 ",
+      "class": 2,
+      "id": 5,
+      "itemicon": 5,
+      "output": 3,
+      "priority": 8,
+      "rare": 1
+    },
+    {
+      "describe": "当与其他【<link=6><color=#666b7a>铜质线圈</color></link>】相邻时，当前回合的螺母产出提升1枚",
+      "name": "铜质线圈",
+      "class": 2,
+      "id": 6,
+      "itemicon": 6,
+      "output": 1,
+      "priority": 11,
+      "rare": 1
+    },
+    {
+      "describe": "与其他燃料类材料相邻时，有20%的概率使其当前回合的螺母产出提升至2倍",
+      "name": "临时引擎",
+      "class": 0,
+      "id": 7,
+      "itemicon": 7,
+      "output": 2,
+      "priority": 12,
+      "rare": 1
+    },
+    {
+      "describe": "消除相邻的【<link=4><color=#666b7a>碳纤维束</color></link>】，本回合获取15枚螺母",
+      "name": "电子涡轮",
+      "class": 3,
+      "id": 8,
+      "itemicon": 8,
+      "output": 2,
+      "priority": 10,
+      "rare": 1
+    },
+    {
+      "describe": "不在边缘位置时，获取4枚螺母",
+      "name": "铝合金锭",
+      "class": 2,
+      "id": 9,
+      "itemicon": 9,
+      "output": 1,
+      "priority": 11,
+      "rare": 1
+    },
+    {
+      "describe": "每3回合获取4枚螺母",
+      "name": "钛合金锭",
+      "class": 2,
+      "id": 10,
+      "itemicon": 10,
+      "output": 1,
+      "priority": 14,
+      "rare": 1
+    },
+    {
+      "describe": "无",
+      "name": "导电元件",
+      "class": 0,
+      "id": 11,
+      "itemicon": 11,
+      "output": 2,
+      "priority": 14,
+      "rare": 1
+    },
+    {
+      "describe": "经过16回合后，变形为【<link=50><color=#d9901a>聚变火炬</color></link>】",
+      "name": "火种",
+      "class": 0,
+      "id": 12,
+      "itemicon": 12,
+      "output": 1,
+      "priority": 3,
+      "rare": 1
+    },
+    {
+      "describe": "被消除后，生成1个【<link=46><color=#6f30b4>强能魔法</color></link>】",
+      "name": "产能魔法",
+      "class": 4,
+      "id": 13,
+      "itemicon": 13,
+      "output": 2,
+      "priority": 8,
+      "rare": 1
+    },
+    {
+      "describe": "当场上每有其他相邻【<link=14><color=#666b7a>联结魔法</color></link>】时，所有相邻的【<link=14><color=#666b7a>联结魔法</color></link>】当前回合的螺母产出提升1枚",
+      "name": "联结魔法",
+      "class": 4,
+      "id": 14,
+      "itemicon": 14,
+      "output": 1,
+      "priority": 11,
+      "rare": 1
+    },
+    {
+      "describe": "每回合有10%概率，变形为【<link=35><color=#2943a5>分裂魔法β</color></link>】",
+      "name": "分裂魔法α",
+      "class": 4,
+      "id": 15,
+      "itemicon": 15,
+      "output": 1,
+      "priority": 3,
+      "rare": 1
+    },
+    {
+      "describe": "消除相邻的【<link=2><color=#666b7a>燃料包</color></link>】和【<link=17><color=#2943a5>复合燃料箱</color></link>】，并在本回合获取10枚螺母",
+      "name": "燃料泵轮",
+      "class": 5,
+      "id": 16,
+      "itemicon": 16,
+      "output": 2,
+      "priority": 10,
+      "rare": 2
+    },
+    {
+      "describe": "每回合有20%概率生成【<link=1><color=#666b7a>液态氧罐</color></link>】或【<link=3><color=#666b7a>加压气瓶</color></link>】",
+      "name": "复合燃料箱",
+      "class": 1,
+      "id": 17,
+      "itemicon": 17,
+      "output": 3,
+      "priority": 5,
+      "rare": 2
+    },
+    {
+      "describe": "与机械类材料相邻时，本回合获取5枚螺母",
+      "name": "微型单元",
+      "class": 3,
+      "id": 18,
+      "itemicon": 18,
+      "output": 2,
+      "priority": 11,
+      "rare": 2
+    },
+    {
+      "describe": "无",
+      "name": "相控雷达",
+      "class": 3,
+      "id": 19,
+      "itemicon": 19,
+      "output": 4,
+      "priority": 14,
+      "rare": 2
+    },
+    {
+      "describe": "使所用与之相邻的【<link=6><color=#666b7a>铜质线圈</color></link>】当前回合的螺母产出提升至2倍",
+      "name": "高能电池",
+      "class": 0,
+      "id": 20,
+      "itemicon": 20,
+      "output": 3,
+      "priority": 12,
+      "rare": 2
+    },
+    {
+      "describe": "每3回合获取10枚螺母",
+      "name": "液态氢罐",
+      "class": 1,
+      "id": 21,
+      "itemicon": 21,
+      "output": 1,
+      "priority": 14,
+      "rare": 2
+    },
+    {
+      "describe": "使所用相邻的【<link=11><color=#666b7a>导电元件</color></link>】当前回合的螺母产出提升至2倍",
+      "name": "3D打印器",
+      "class": 0,
+      "id": 22,
+      "itemicon": 22,
+      "output": 2,
+      "priority": 12,
+      "rare": 2
+    },
+    {
+      "describe": "被其他材料消除时，获取3枚齿轮",
+      "name": "防烧护板",
+      "class": 2,
+      "id": 23,
+      "itemicon": 23,
+      "output": 3,
+      "priority": 8,
+      "rare": 2
+    },
+    {
+      "describe": "被其他材料消除时，获取7枚螺母",
+      "name": "平衡尾翼",
+      "class": 2,
+      "id": 24,
+      "itemicon": 24,
+      "output": 3,
+      "priority": 8,
+      "rare": 2
+    },
+    {
+      "describe": "消除相邻的【<link=11><color=#666b7a>导电元件</color></link>】【<link=27><color=#2943a5>导航芯片</color></link>】，每消除一个在本回合获取10枚螺母",
+      "name": "信号天线",
+      "class": 0,
+      "id": 25,
+      "itemicon": 25,
+      "output": 2,
+      "priority": 14,
+      "rare": 2
+    },
+    {
+      "describe": "每经过10回合后，回合螺母产出永久提升3枚",
+      "name": "信号电台",
+      "class": 3,
+      "id": 26,
+      "itemicon": 26,
+      "output": 2,
+      "priority": 11,
+      "rare": 2
+    },
+    {
+      "describe": "无",
+      "name": "导航芯片",
+      "class": 0,
+      "id": 27,
+      "itemicon": 27,
+      "output": 4,
+      "priority": 14,
+      "rare": 2
+    },
+    {
+      "describe": "回合开始时消除自身，使所有相邻材料每回合螺母产出永久提升1枚",
+      "name": "太空礼盒α",
+      "class": 0,
+      "id": 28,
+      "itemicon": 28,
+      "output": 0,
+      "priority": 8,
+      "rare": 2
+    },
+    {
+      "describe": "回合开始时消除自身，并在本回合获取10枚螺母",
+      "name": "太空礼盒β",
+      "class": 0,
+      "id": 29,
+      "itemicon": 29,
+      "output": 0,
+      "priority": 8,
+      "rare": 2
+    },
+    {
+      "describe": "回合开始时消除自身，使相邻的道具本回合螺母产出翻倍",
+      "name": "太空礼盒γ",
+      "class": 0,
+      "id": 30,
+      "itemicon": 30,
+      "output": 0,
+      "priority": 8,
+      "rare": 2
+    },
+    {
+      "describe": "提升刷新到高稀有度道具的概率，概率提升至1.3倍",
+      "name": "升阶魔法",
+      "class": 4,
+      "id": 31,
+      "itemicon": 31,
+      "output": 3,
+      "priority": 16,
+      "rare": 2
+    },
+    {
+      "describe": "降低刷新到高稀有度道具的概率，概率下降至0.7倍",
+      "name": "抑制魔法",
+      "class": 4,
+      "id": 32,
+      "itemicon": 32,
+      "output": 3,
+      "priority": 16,
+      "rare": 2
+    },
+    {
+      "describe": "每回合有10%概率生成1个【<link=46><color=#6f30b4>强能魔法</color></link>】，并有5%的概率额外生成1个【<link=46><color=#6f30b4>强能魔法</color></link>】",
+      "name": "产能魔法+",
+      "class": 4,
+      "id": 33,
+      "itemicon": 33,
+      "output": 3,
+      "priority": 5,
+      "rare": 2
+    },
+    {
+      "describe": "消除相邻的【<link=15><color=#666b7a>分裂魔法α</color></link>】【<link=35><color=#2943a5>分裂魔法β</color></link>】【<link=48><color=#6f30b4>分裂魔法γ</color></link>】，消除时生成一个【<link=46><color=#6f30b4>强能魔法</color></link>】",
+      "name": "毁灭核心",
+      "class": 4,
+      "id": 34,
+      "itemicon": 34,
+      "output": 1,
+      "priority": 10,
+      "rare": 2
+    },
+    {
+      "describe": "每回合有10%概率，变形为【<link=48><color=#6f30b4>分裂魔法γ</color></link>】",
+      "name": "分裂魔法β",
+      "class": 4,
+      "id": 35,
+      "itemicon": 35,
+      "output": 2,
+      "priority": 3,
+      "rare": 2
+    },
+    {
+      "describe": "消除相邻的【<link=1><color=#666b7a>液态氧罐</color></link>】【<link=2><color=#666b7a>燃料包</color></link>】【<link=3><color=#666b7a>加压气瓶</color></link>】【<link=17><color=#2943a5>复合燃料箱</color></link>】【<link=21><color=#2943a5>液态氢罐</color></link>】，每消除一个使自身每回合螺母产出永久提升1枚",
+      "name": "高效引擎",
+      "class": 5,
+      "id": 36,
+      "itemicon": 36,
+      "output": 3,
+      "priority": 10,
+      "rare": 3
+    },
+    {
+      "describe": "相邻时使其他所有燃料类材料，当前回合的螺母产出提升至2倍",
+      "name": "涡轮增压器",
+      "class": 5,
+      "id": 37,
+      "itemicon": 37,
+      "output": 3,
+      "priority": 12,
+      "rare": 3
+    },
+    {
+      "describe": "每回合生成一个【<link=21><color=#2943a5>液态氢罐</color></link>】，持续5回合",
+      "name": "双能燃料罐",
+      "class": 0,
+      "id": 38,
+      "itemicon": 38,
+      "output": 3,
+      "priority": 5,
+      "rare": 3
+    },
+    {
+      "describe": "使相邻的全部金属类材料和电子类材料，当前回合的螺母产出提升至2倍",
+      "name": "折叠支架",
+      "class": 5,
+      "id": 39,
+      "itemicon": 39,
+      "output": 3,
+      "priority": 12,
+      "rare": 3
+    },
+    {
+      "describe": "当与其他燃料类材料相邻时，自身每回合螺母产出永久提升1枚（每回合最多提升1枚）",
+      "name": "能量凝胶",
+      "class": 1,
+      "id": 40,
+      "itemicon": 40,
+      "output": 2,
+      "priority": 10,
+      "rare": 3
+    },
+    {
+      "describe": "每回合生成一个【<link=11><color=#666b7a>导电元件</color></link>】或【<link=27><color=#2943a5>导航芯片</color></link>】",
+      "name": "太阳能板",
+      "class": 5,
+      "id": 41,
+      "itemicon": 41,
+      "output": 3,
+      "priority": 14,
+      "rare": 3
+    },
+    {
+      "describe": "消除相邻的金属类材料，每消除一个使自身每回合螺母产出永久提升1枚",
+      "name": "合金骨架",
+      "class": 5,
+      "id": 42,
+      "itemicon": 42,
+      "output": 3,
+      "priority": 10,
+      "rare": 3
+    },
+    {
+      "describe": "使相邻的【<link=19><color=#2943a5>相控雷达</color></link>】【<link=26><color=#2943a5>信号电台</color></link>】当前回合的螺母产出提升至3倍",
+      "name": "透镜天线",
+      "class": 0,
+      "id": 43,
+      "itemicon": 43,
+      "output": 2,
+      "priority": 12,
+      "rare": 3
+    },
+    {
+      "describe": "每回合有10%概率生成【<link=4><color=#666b7a>碳纤维束</color></link>】",
+      "name": "碳纤维板",
+      "class": 0,
+      "id": 44,
+      "itemicon": 44,
+      "output": 3,
+      "priority": 5,
+      "rare": 3
+    },
+    {
+      "describe": "使相邻的【<link=11><color=#666b7a>导电元件</color></link>】【<link=27><color=#2943a5>导航芯片</color></link>】当前回合的螺母产出提升至3倍",
+      "name": "控制中枢",
+      "class": 5,
+      "id": 45,
+      "itemicon": 45,
+      "output": 2,
+      "priority": 5,
+      "rare": 3
+    },
+    {
+      "describe": "6回合后消除自身",
+      "name": "强能魔法",
+      "class": 4,
+      "id": 46,
+      "itemicon": 46,
+      "output": 5,
+      "priority": 8,
+      "rare": 3
+    },
+    {
+      "describe": "使相邻的全部魔法类材料，当前回合的螺母产出提升至2倍",
+      "name": "魔法核心",
+      "class": 4,
+      "id": 47,
+      "itemicon": 47,
+      "output": 3,
+      "priority": 12,
+      "rare": 3
+    },
+    {
+      "describe": "每回合有10%概率变形为【<link=54><color=#d9901a>分裂魔法Δ</color></link>】，变形时额外生成2个【<link=15><color=#666b7a>分裂魔法α</color></link>】",
+      "name": "分裂魔法γ",
+      "class": 4,
+      "id": 48,
+      "itemicon": 48,
+      "output": 3,
+      "priority": 3,
+      "rare": 3
+    },
+    {
+      "describe": "无",
+      "name": "离子推进器",
+      "class": 0,
+      "id": 49,
+      "itemicon": 49,
+      "output": 10,
+      "priority": 11,
+      "rare": 4
+    },
+    {
+      "describe": "每4回合获取6枚螺母",
+      "name": "聚变火炬",
+      "class": 1,
+      "id": 50,
+      "itemicon": 50,
+      "output": 5,
+      "priority": 11,
+      "rare": 4
+    },
+    {
+      "describe": "本回合获取的螺母数量，等同于相邻材料中本回合产出的最高螺母数量",
+      "name": "晶体管",
+      "class": 0,
+      "id": 51,
+      "itemicon": 51,
+      "output": 1,
+      "priority": 15,
+      "rare": 4
+    },
+    {
+      "describe": "回合开始时消除自身，获取相邻所有材料的基础回合收益之和5倍的螺母",
+      "name": "黑洞炸弹",
+      "class": 0,
+      "id": 52,
+      "itemicon": 52,
+      "output": 1,
+      "priority": 8,
+      "rare": 4
+    },
+    {
+      "describe": "消除相邻的魔法类材料，每消除一个使自身每回合螺母产出永久提升1枚",
+      "name": "吞噬魔法",
+      "class": 0,
+      "id": 53,
+      "itemicon": 53,
+      "output": 4,
+      "priority": 10,
+      "rare": 4
+    },
+    {
+      "describe": "无",
+      "name": "分裂魔法Δ",
+      "class": 4,
+      "id": 54,
+      "itemicon": 54,
+      "output": 6,
+      "priority": 14,
+      "rare": 4
+    },
+    {
+      "describe": "经过30回合后消除自身，无法通过齿轮删除",
+      "name": "太空垃圾",
+      "class": 0,
+      "id": 55,
+      "itemicon": 55,
+      "output": 1,
+      "priority": 8,
+      "rare": 1
+    }
+  ]
+}

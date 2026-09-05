@@ -1,0 +1,1067 @@
+{
+  "root": {
+    "Task": [
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "自身额外有50%几率打出致命一击<font color='#FF7751'>且致命一击造成的攻击伤害提升30%</font>，自身处于能力提升状态时效果翻倍\n<font color='#FF7751'>自身使用技能后恢复自身最大体力的1/3并造成等量百分比伤害，若打出致命一击则改为吸取对手最大体力的1/3，打出致命一击时若体力低于对手则改为二者依次触发</font>（boss无效）",
+            "Id": 1900
+          },
+          "exMove": {
+            "ExtraMoves": 37693
+          },
+          "Race": {
+            "NewRace": [
+              166,
+              142,
+              112,
+              70,
+              112,
+              138
+            ],
+            "OldRace": [
+              166,
+              133,
+              108,
+              70,
+              108,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28910,
+              37691,
+              37692
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3729
+        },
+        "ID": 1,
+        "NewEffID": 2297,
+        "OldEffID": 1305
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "在圣光天马的祝福下，黄金天马的潜能得到了极限激发，每回合结束后若对手任意一项能力等级高于回合开始时则召唤持续1回合的圣辉之羽庇护自身，<font color='#FF7751'>每回合结束后若对手所有能力等级均未高于回合开始时则召唤持续1回合的圣雷华冠强化自身；\n回合开始时若自身不处于能力提升状态则100%令自身全属性+1且当回合使用攻击技能后附加对手最大体力1/3的百分比伤害，若自身处于能力提升状态则100%令对手全属性-1且当回合自身攻击技能必定打出致命一击</font>\n（boss无效）\n圣辉之羽：圣耀之光·黄金天马持有时免疫受到的异常状态和能力下降状态且将受到的攻击伤害转化为自身体力，下场不保留\n<font color='#FF7751'>圣雷华冠：圣耀之光·黄金天马持有时攻击技能先制+1且命中前若对手处于异常状态则造成的伤害提升50%，下场不保留</font>",
+            "Id": 1710
+          },
+          "exMove": {
+            "ExtraMoves": 36537
+          },
+          "Race": {
+            "NewRace": [
+              170,
+              70,
+              113,
+              144,
+              113,
+              135
+            ],
+            "OldRace": [
+              165,
+              70,
+              108,
+              134,
+              108,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36535,
+              28278,
+              36536
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3670
+        },
+        "ID": 2,
+        "NewEffID": 2096,
+        "OldEffID": 1245
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "<font color='#FF7751'>回合开始时，若本回合对手选择了攻击技能则对手随机1个技能PP值归零且当回合造成的攻击伤害无法超过自身最大体力的1/3，若对手选择了属性技能则自身当回合免疫受到的异常状态与能力下降状态，若对手未选择技能则自身获得1点灵茉之芯\n自身被击败后，使下只精灵获得芳馨祝福：获得500点护盾、500点护罩、500点临时体力上限且1回合免疫受到的异常状态，芳馨祝福的免疫效果下场保留，免疫效果结束后失去临时体力上限（boss有效）|灵茉之芯：每有1点自身造成的固定伤害、百分比伤害提升10%，且芳馨祝福免疫效果回合数+1，最高3点，下场保留\n（标注部分boss有效，其余无效）</font>",
+            "Id": 1825
+          },
+          "exMove": {
+            "ExtraMoves": 37195
+          },
+          "Race": {
+            "NewRace": [
+              185,
+              80,
+              125,
+              140,
+              125,
+              135
+            ],
+            "OldRace": [
+              170,
+              70,
+              110,
+              130,
+              110,
+              125
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28646,
+              37193,
+              37194
+            ]
+          },
+          "AdvType": 1,
+          "MonsterId": 3613
+        },
+        "ID": 3,
+        "NewEffID": 2215,
+        "OldEffID": 1191
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "对手攻击后50%令对手冰封，未触发则50%令对手麻痹，<font color='#FF7751'>回合开始时，若对手处于异常状态则令对手当回合先制效果失效且自身当回合造成的攻击伤害提升50%\n（boss无效）</font>",
+            "Id": 1918
+          },
+          "exMove": {
+            "ExtraMoves": 37761
+          },
+          "Race": {
+            "NewRace": [
+              174,
+              133,
+              112,
+              70,
+              112,
+              134
+            ],
+            "OldRace": [
+              145,
+              130,
+              96,
+              70,
+              95,
+              124
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37760,
+              28947,
+              28948
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3171
+        },
+        "ID": 4,
+        "NewEffID": 2333,
+        "OldEffID": 804
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "回合开始时若对手处于能力提升状态则消除对手能力提升状态，消除成功则100%令对手烧伤，<font color='#FF7751'>未触发则消除对手回合类效果</font>；\n回合开始时若对手不处于能力提升状态则当回合自身攻击技能100%打出致命一击；\n回合结束时若双方任意一方处于异常状态则100%降低对手所有技能2点PP值且<font color='#FF7751'>恢复自身300点体力</font>\n（清PP效果自身体力为0时也可触发，所有特效boss无效）",
+            "Id": 1730
+          },
+          "exMove": {
+            "ExtraMoves": 36670
+          },
+          "Race": {
+            "NewRace": [
+              170,
+              70,
+              112,
+              136,
+              112,
+              135
+            ],
+            "OldRace": [
+              170,
+              70,
+              107,
+              136,
+              104,
+              133
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28341,
+              36669
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3954
+        },
+        "ID": 5,
+        "NewEffID": 2122,
+        "OldEffID": 1553
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "自身使用攻击技能后，若造成的攻击伤害低于300则附加对手<font color='#FF7751'>最大体力</font>1/3的百分比伤害；\n回合开始时若对手处于异常状态则当回合自身造成的攻击伤害提升100%，若对手不处于异常状态则当回合自身<font color='#FF7751'>使用技能后</font>35%令对手害怕，<font color='#FF7751'>未触发则下回合自身攻击技能先制+1</font>\n（boss无效）",
+            "Id": 1697
+          },
+          "exMove": {
+            "ExtraMoves": 36483
+          },
+          "Race": {
+            "NewRace": [
+              169,
+              140,
+              110,
+              70,
+              110,
+              136
+            ],
+            "OldRace": [
+              149,
+              130,
+              106,
+              70,
+              104,
+              126
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28253
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3388
+        },
+        "ID": 6,
+        "NewEffID": 2084,
+        "OldEffID": 987
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1932
+          },
+          "exMove": {
+            "ExtraMoves": 37808
+          },
+          "Race": {
+            "NewRace": [
+              182,
+              80,
+              120,
+              153,
+              120,
+              135
+            ],
+            "OldRace": [
+              170,
+              70,
+              111,
+              136,
+              110,
+              133
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28972,
+              37806,
+              37807
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3740
+        },
+        "ID": 7,
+        "NewEffID": 2343,
+        "OldEffID": 1316
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1781
+          },
+          "exMove": {
+            "ExtraMoves": 36944
+          },
+          "Race": {
+            "NewRace": [
+              167,
+              70,
+              112,
+              138,
+              115,
+              138
+            ],
+            "OldRace": [
+              165,
+              70,
+              110,
+              136,
+              115,
+              134
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28496,
+              28497,
+              36943
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3705
+        },
+        "ID": 8,
+        "NewEffID": 2174,
+        "OldEffID": 1284
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1718
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              170,
+              141,
+              112,
+              70,
+              112,
+              135
+            ],
+            "OldRace": [
+              150,
+              131,
+              109,
+              70,
+              108,
+              127
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36573,
+              36574
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3507
+        },
+        "ID": 9,
+        "NewEffID": 2109,
+        "OldEffID": 1104
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1952
+          },
+          "exMove": {
+            "ExtraMoves": 37880
+          },
+          "Race": {
+            "NewRace": [
+              168,
+              137,
+              110,
+              70,
+              115,
+              135
+            ],
+            "OldRace": [
+              168,
+              135,
+              108,
+              70,
+              115,
+              132
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              29023,
+              29024
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3766
+        },
+        "ID": 10,
+        "NewEffID": 2365,
+        "OldEffID": 1344
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1971
+          },
+          "exMove": {
+            "ExtraMoves": 37811
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              146,
+              125,
+              80,
+              125,
+              139
+            ],
+            "OldRace": [
+              169,
+              140,
+              114,
+              70,
+              112,
+              135
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37809,
+              28973,
+              37810
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3886
+        },
+        "ID": 11,
+        "NewEffID": 2341,
+        "OldEffID": 1473
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1756
+          },
+          "exMove": {
+            "ExtraMoves": 36745
+          },
+          "Race": {
+            "NewRace": [
+              182,
+              140,
+              113,
+              70,
+              113,
+              132
+            ],
+            "OldRace": [
+              172,
+              135,
+              113,
+              70,
+              110,
+              132
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28380,
+              28381,
+              36744
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3724
+        },
+        "ID": 12,
+        "NewEffID": 2141,
+        "OldEffID": 1299
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1666
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              169,
+              140,
+              113,
+              70,
+              113,
+              135
+            ],
+            "OldRace": [
+              169,
+              134,
+              110,
+              70,
+              113,
+              129
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36291,
+              28161
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3704
+        },
+        "ID": 13,
+        "NewEffID": 2049,
+        "OldEffID": 1283
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1985
+          },
+          "exMove": {
+            "ExtraMoves": 38010
+          },
+          "Race": {
+            "NewRace": [
+              168,
+              130,
+              141,
+              80,
+              141,
+              130
+            ],
+            "OldRace": [
+              166,
+              130,
+              112,
+              70,
+              109,
+              128
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              38008,
+              38009,
+              29102
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3516
+        },
+        "ID": 14,
+        "NewEffID": 2411,
+        "OldEffID": 1113
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1646
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              173,
+              70,
+              110,
+              145,
+              110,
+              132
+            ],
+            "OldRace": [
+              165,
+              70,
+              106,
+              132,
+              103,
+              129
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36200,
+              28118,
+              36201
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3514
+        },
+        "ID": 15,
+        "NewEffID": 2032,
+        "OldEffID": 1108
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1769
+          },
+          "exMove": {
+            "ExtraMoves": 36879
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              72,
+              115,
+              134,
+              115,
+              129
+            ],
+            "OldRace": [
+              172,
+              72,
+              110,
+              132,
+              110,
+              129
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28455,
+              28456,
+              36878
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3716
+        },
+        "ID": 16,
+        "NewEffID": 2160,
+        "OldEffID": 1292
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 2005
+          },
+          "exMove": {
+            "ExtraMoves": 38076
+          },
+          "Race": {
+            "NewRace": [
+              183,
+              141,
+              124,
+              80,
+              124,
+              138
+            ],
+            "OldRace": [
+              158,
+              130,
+              112,
+              75,
+              112,
+              128
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              29142,
+              38075,
+              38074
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3524
+        },
+        "ID": 17,
+        "NewEffID": 2427,
+        "OldEffID": 1116
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1834
+          },
+          "exMove": {
+            "ExtraMoves": 37241
+          },
+          "Race": {
+            "NewRace": [
+              177,
+              80,
+              122,
+              152,
+              122,
+              137
+            ],
+            "OldRace": [
+              172,
+              70,
+              114,
+              138,
+              111,
+              135
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28668,
+              37239,
+              37240
+            ]
+          },
+          "AdvType": 1,
+          "MonsterId": 3941
+        },
+        "ID": 18,
+        "NewEffID": 2220,
+        "OldEffID": 1539
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1819
+          },
+          "exMove": {
+            "ExtraMoves": 37168
+          },
+          "Race": {
+            "NewRace": [
+              168,
+              70,
+              114,
+              138,
+              114,
+              136
+            ],
+            "OldRace": [
+              139,
+              70,
+              95,
+              129,
+              94,
+              123
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              28630,
+              28631,
+              37167
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3156
+        },
+        "ID": 19,
+        "NewEffID": 2209,
+        "OldEffID": 801
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 2028
+          },
+          "exMove": {
+            "ExtraMoves": 0
+          },
+          "Race": {
+            "NewRace": [
+              199,
+              80,
+              117,
+              141,
+              117,
+              136
+            ],
+            "OldRace": [
+              175,
+              70,
+              116,
+              138,
+              116,
+              135
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              29187,
+              29188,
+              38147,
+              38148
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 4186
+        },
+        "ID": 20,
+        "NewEffID": 2447,
+        "OldEffID": 1778
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1685
+          },
+          "exMove": {
+            "ExtraMoves": 36406
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              145,
+              111,
+              70,
+              111,
+              138
+            ],
+            "OldRace": [
+              155,
+              132,
+              108,
+              70,
+              107,
+              128
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              36404,
+              28217,
+              36405
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3506
+        },
+        "ID": 21,
+        "NewEffID": 2066,
+        "OldEffID": 1103
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 1863
+          },
+          "exMove": {
+            "ExtraMoves": 37464
+          },
+          "Race": {
+            "NewRace": [
+              167,
+              144,
+              111,
+              70,
+              111,
+              137
+            ],
+            "OldRace": [
+              165,
+              135,
+              109,
+              70,
+              111,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              37461,
+              37462,
+              37463
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3623
+        },
+        "ID": 22,
+        "NewEffID": 2257,
+        "OldEffID": 1201
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 2051
+          },
+          "exMove": {
+            "ExtraMoves": 38249
+          },
+          "Race": {
+            "NewRace": [
+              177,
+              145,
+              125,
+              80,
+              125,
+              138
+            ],
+            "OldRace": [
+              171,
+              138,
+              116,
+              70,
+              116,
+              134
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              29253,
+              38247,
+              38248
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 4125
+        },
+        "ID": 23,
+        "NewEffID": 2470,
+        "OldEffID": 1715
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 2072
+          },
+          "exMove": {
+            "ExtraMoves": 38319
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              80,
+              118,
+              165,
+              118,
+              134
+            ],
+            "OldRace": [
+              167,
+              70,
+              115,
+              135,
+              113,
+              130
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              29299,
+              38317,
+              38318
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3711
+        },
+        "ID": 24,
+        "NewEffID": 2492,
+        "OldEffID": 1287
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 2093
+          },
+          "exMove": {
+            "ExtraMoves": 38409
+          },
+          "Race": {
+            "NewRace": [
+              163,
+              145,
+              132,
+              80,
+              132,
+              138
+            ],
+            "OldRace": [
+              156,
+              130,
+              113,
+              75,
+              113,
+              128
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              38407,
+              38408,
+              29361
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 3407
+        },
+        "ID": 25,
+        "NewEffID": 2511,
+        "OldEffID": 1007
+      },
+      {
+        "Advances": {
+          "AdvEffect": {
+            "Des": "",
+            "Id": 2121
+          },
+          "exMove": {
+            "ExtraMoves": 38473
+          },
+          "Race": {
+            "NewRace": [
+              175,
+              151,
+              122,
+              80,
+              122,
+              140
+            ],
+            "OldRace": [
+              170,
+              142,
+              114,
+              70,
+              114,
+              135
+            ]
+          },
+          "spMove": {
+            "SpMoves": [
+              29412,
+              38471,
+              38472
+            ]
+          },
+          "AdvType": 0,
+          "MonsterId": 4004
+        },
+        "ID": 26,
+        "NewEffID": 2532,
+        "OldEffID": 1596
+      }
+    ]
+  }
+}

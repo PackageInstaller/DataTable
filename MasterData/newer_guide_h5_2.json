@@ -1,0 +1,441 @@
+{
+  "root": {
+    "autocard": {
+      "dialog": {
+        "petId": 0,
+        "x": 600,
+        "y": -100
+      },
+      "pet": {
+        "petId": 5000,
+        "x": 600,
+        "y": -400
+      },
+      "steps": [
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "小赛尔，全新玩法《群星牌》正式上线啦！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 1,
+          "openMenu": 0
+        },
+        {
+          "align": "center_top",
+          "btnName": "",
+          "msg": "在群星牌赛场，你将带领熟悉的精灵，与另外7位小赛尔同台竞技争夺最高荣誉！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "ToolsLevel/Toolbar 1/grpActivityOffset/grpActivity/container/activity_26",
+          "position": [
+            239,
+            60,
+            70,
+            60
+          ],
+          "autoX": 1,
+          "holeType": 1,
+          "id": 2,
+          "openMenu": 0
+        },
+        {
+          "align": "center_top",
+          "btnName": "",
+          "msg": "我已经准备好啦！上船打牌，我们牌桌上见！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "ToolsLevel/Toolbar 1/grpActivityOffset/grpActivity/container/activity_26",
+          "position": [
+            239,
+            60,
+            70,
+            60
+          ],
+          "autoX": 1,
+          "holeType": 1,
+          "id": 3,
+          "openMenu": 0
+        }
+      ]
+    },
+    "brave": {
+      "dialog": {
+        "petId": 0,
+        "x": 600,
+        "y": -100
+      },
+      "pet": {
+        "petId": 5000,
+        "x": 600,
+        "y": -400
+      },
+      "steps": [
+        {
+          "align": "center_top",
+          "btnName": "",
+          "msg": "小赛尔，【传说之路】入口位置现已调整。",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "ToolsLevel/Toolbar 1/groupTop/grpBraveBannerGuide",
+          "position": [
+            239,
+            60,
+            70,
+            60
+          ],
+          "autoX": 1,
+          "holeType": 1,
+          "id": 1,
+          "openMenu": 0
+        },
+        {
+          "align": "center_top",
+          "btnName": "",
+          "msg": "助力谱尼圣灵化若暂时受阻，不妨前往【传说之路】，寻找强力伙伴与你同行！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "ToolsLevel/Toolbar 1/groupTop/grpBraveBannerGuide",
+          "position": [
+            -239,
+            60,
+            70,
+            60
+          ],
+          "autoX": 1,
+          "holeType": 1,
+          "id": 2,
+          "openMenu": 0
+        }
+      ]
+    },
+    "newer": {
+      "dialog": {
+        "petId": 0,
+        "x": 600,
+        "y": -100
+      },
+      "pet": {
+        "petId": 0,
+        "x": 600,
+        "y": -400
+      },
+      "steps": [
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "小赛尔，令人心潮澎湃的宇宙即将在你面前铺开。初次见面，我是主播纽斯，会永远给你带来最热最烫最新资讯！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 1,
+          "openMenu": 0
+        },
+        {
+          "align": "center_top",
+          "btnName": "",
+          "msg": "小赛尔可能用到的功能在这里可以找到，一起来看看吧！",
+          "strokeColor": "",
+          "targetBtn": "ToolsLevel/Toolbar 1/groupTop/groupTopLeft/btnExpressjump",
+          "position": [
+            239,
+            60,
+            50,
+            50
+          ],
+          "autoX": 1,
+          "holeType": 1,
+          "id": 2,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "如果你不确定接下来该做什么，可以查看【航行指南】。这里有丰富的每日和每周任务奖励，还有推荐的精灵获取途径！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "position": [
+            329,
+            238,
+            200,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 3,
+          "openMenu": 1
+        },
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "如果你想获得更多的强力精灵，不妨来【精灵关卡】看看，蛰伏于宇宙各个角落的强力精灵等待着成为你的伙伴！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "position": [
+            92,
+            -25,
+            80,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 3,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "如果你想让精灵变得更加强大，那就来【资源收集】看看，这里每天都有各类养成资源等你来拿！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "position": [
+            180,
+            -25,
+            80,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 4,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "当你拥有了一个成熟的精灵队伍后，那就来【巅峰圣战】和其他赛尔一决高下吧！期待在巅峰奖台上看到你的身影，到时候请务必让我做一期特别访谈！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "position": [
+            359,
+            150,
+            125,
+            90
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 5,
+          "openMenu": 0
+        }
+      ]
+    },
+    "newerpay": {
+      "dialog": {
+        "petId": 0,
+        "x": 600,
+        "y": -100
+      },
+      "pet": {
+        "petId": 5000,
+        "x": 600,
+        "y": -400
+      },
+      "steps": [
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "testtesttest",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            361,
+            45,
+            185,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 1,
+          "openMenu": 0
+        },
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "赛尔，我们又见面了！旅途有什么进展？你的冒险故事，我很期待！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 2,
+          "openMenu": 0
+        },
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "当然了，不论身在何方，强力的精灵伙伴与刻印是必不可少的，",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 3,
+          "openMenu": 0
+        },
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "受派特博士委托，现正式向你介绍飞船上的两个重要系统：【刻印之轮】【精灵招募】！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 4,
+          "openMenu": 1
+        },
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "在【刻印之轮】中，你将获得各类全能刻印，使你的精灵伙伴更加强大！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            269,
+            -25,
+            80,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 5,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "",
+          "msg": "在【精灵招募】中，你将有机会与宇宙各处的强大精灵成为伙伴，一同冒险",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            356,
+            -25,
+            80,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 6,
+          "openMenu": 0
+        },
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "介绍到此为止，来尝试一下吧！我们下次再见",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 7,
+          "openMenu": 0
+        }
+      ]
+    },
+    "normal": {
+      "dialog": {
+        "petId": 0,
+        "x": 600,
+        "y": -100
+      },
+      "pet": {
+        "petId": 5000,
+        "x": 600,
+        "y": -400
+      },
+      "steps": [
+        {
+          "align": "",
+          "btnName": "",
+          "msg": "小赛尔，令人心潮澎湃的宇宙即将在你面前铺开。初次见面，我是主播纽斯，会永远给你带来最热最烫最新资讯！",
+          "strokeColor": "",
+          "targetBtn": "",
+          "autoX": 0,
+          "holeType": 0,
+          "id": 1,
+          "openMenu": 0
+        },
+        {
+          "align": "center_top",
+          "btnName": "",
+          "msg": "小赛尔可能用到的功能在这里可以找到，一起来看看吧！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "ToolsLevel/Toolbar 1/groupTop/groupTopLeft/btnExpressjump",
+          "position": [
+            239,
+            60,
+            50,
+            50
+          ],
+          "autoX": 1,
+          "holeType": 1,
+          "id": 2,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "btnPet",
+          "msg": "如果你不确定接下来该做什么，可以查看【航行指南】。这里有丰富的每日和每周任务奖励，还有推荐的精灵获取途径！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            329,
+            238,
+            200,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 3,
+          "openMenu": 1
+        },
+        {
+          "align": "left",
+          "btnName": "btnPet",
+          "msg": "如果你想获得更多的强力精灵，不妨来【精灵关卡】看看，蛰伏于宇宙各个角落的强力精灵等待着成为你的伙伴！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            92,
+            -25,
+            80,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 3,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "btnLevel",
+          "msg": "如果你想让精灵变得更加强大，那就来【资源收集】看看，这里每天都有各类养成资源等你来拿！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            180,
+            -25,
+            80,
+            80
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 4,
+          "openMenu": 0
+        },
+        {
+          "align": "left",
+          "btnName": "btnPeak",
+          "msg": "当你拥有了一个成熟的精灵队伍后，那就来【巅峰圣战】和其他赛尔一决高下吧！期待在巅峰奖台上看到你的身影，到时候请务必让我做一期特别访谈！",
+          "strokeColor": "0xf6fcff",
+          "targetBtn": "",
+          "position": [
+            359,
+            150,
+            125,
+            90
+          ],
+          "autoX": 0,
+          "holeType": 1,
+          "id": 5,
+          "openMenu": 0
+        }
+      ]
+    },
+    "timelimit": "2023-05-29 00:00:00"
+  }
+}

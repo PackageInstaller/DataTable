@@ -1,0 +1,188 @@
+{
+  "Items": [
+    {
+      "des": "无任何效果。",
+      "name": "空",
+      "iconID": 1,
+      "id": 100,
+      "paramType": 0,
+      "relateStateID": 0
+    },
+    {
+      "des": "造成X点伤害。",
+      "name": "攻击",
+      "iconID": 2,
+      "id": 1,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "获得X点护盾。",
+      "name": "防御",
+      "iconID": 3,
+      "id": 2,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "恢复X点生命值。",
+      "name": "恢复",
+      "iconID": 4,
+      "id": 3,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即重新投掷当前手上的所有骰子。",
+      "name": "重骰",
+      "iconID": 5,
+      "id": 4,
+      "paramType": 0,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即抽取X个骰子。",
+      "name": "抽取",
+      "iconID": 6,
+      "id": 5,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即失去X点生命值。",
+      "name": "伤口",
+      "iconID": 13,
+      "id": 6,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "消耗当前准备进行的攻击伤害值，全部转变为获得护盾值。（不包含能力增幅形成的伤害）",
+      "name": "佯攻",
+      "iconID": 14,
+      "id": 7,
+      "paramType": 0,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即降低敌方25%即将造成的攻击伤害，重复X次。",
+      "name": "削弱",
+      "iconID": 17,
+      "id": 8,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即降低敌方50%的当前护盾值，重复X次。",
+      "name": "溶解",
+      "iconID": 18,
+      "id": 9,
+      "paramType": 1,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即获得X层【电气】。",
+      "name": "蓄电",
+      "iconID": 10,
+      "id": 10,
+      "paramType": 1,
+      "relateStateID": 4
+    },
+    {
+      "des": "立即将当前【电气】层数乘以X倍。",
+      "name": "超载",
+      "iconID": 10,
+      "id": 11,
+      "paramType": 2,
+      "relateStateID": 4
+    },
+    {
+      "des": "消耗当前的【电气】层数，全部转变为X倍的攻击伤害值。",
+      "name": "雷刃",
+      "iconID": 11,
+      "id": 12,
+      "paramType": 2,
+      "relateStateID": 4
+    },
+    {
+      "des": "立即获得X层【力量】。",
+      "name": "力量",
+      "iconID": 7,
+      "id": 13,
+      "paramType": 1,
+      "relateStateID": 1
+    },
+    {
+      "des": "立即获得X层【架势】。",
+      "name": "架势",
+      "iconID": 8,
+      "id": 14,
+      "paramType": 1,
+      "relateStateID": 2
+    },
+    {
+      "des": "立即获得X层【成长】。",
+      "name": "成长",
+      "iconID": 9,
+      "id": 15,
+      "paramType": 1,
+      "relateStateID": 3
+    },
+    {
+      "des": "消耗当前已拥有和即将获得的护盾值，全部转变为攻击伤害值。（不包含能力增幅形成的护盾）",
+      "name": "化劲",
+      "iconID": 15,
+      "id": 16,
+      "paramType": 0,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即获得X层【残像】。",
+      "name": "残像",
+      "iconID": 16,
+      "id": 17,
+      "paramType": 1,
+      "relateStateID": 5
+    },
+    {
+      "des": "立即向敌方施加X层【感染】。",
+      "name": "感染",
+      "iconID": 23,
+      "id": 18,
+      "paramType": 1,
+      "relateStateID": 17
+    },
+    {
+      "des": "立即获得X层【伏击】。",
+      "name": "暗算",
+      "iconID": 21,
+      "id": 19,
+      "paramType": 1,
+      "relateStateID": 18
+    },
+    {
+      "des": "将敌方意图中即将恢复的生命值和获得的护甲值转变为向对方施加对应层数的感染。",
+      "name": "变异",
+      "iconID": 22,
+      "id": 20,
+      "paramType": 0,
+      "relateStateID": 0
+    },
+    {
+      "des": "立即获得X层【矿脉】。",
+      "name": "矿脉",
+      "iconID": 25,
+      "id": 21,
+      "paramType": 1,
+      "relateStateID": 20
+    },
+    {
+      "des": "立即获得X层【闪耀】。",
+      "name": "闪耀",
+      "iconID": 26,
+      "id": 22,
+      "paramType": 1,
+      "relateStateID": 21
+    }
+  ]
+}
