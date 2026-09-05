@@ -63,7 +63,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/RezoririX` | RezoririX | レゾリリ |
 | `game/RlyehShoujotaiX` | RlyehShoujotaiX | 邪神酱(误) |
 | `game/SakunaHinuka` | SakunaHinuka | 天穗手游 |
-| `game/Seer` | Seer |
+| `game/Seer` | Seer | 赛尔号 |
 | `game/SonOfShenyin` | SonOfShenyin | 神隐之子 |
 | `game/SoulOfDragon` | SoulOfDragon | 龙魂旅人 |
 | `game/SoulTide` | SoulTide | 灵魂潮汐 |
