@@ -1,3 +1,5 @@
+# https://newseer.61.com/launcher/config.json 下游戏本体
+
 from __future__ import annotations
 
 import argparse
