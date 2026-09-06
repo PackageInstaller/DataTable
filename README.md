@@ -37,6 +37,7 @@ git clone -b game/xxxxx --single-branch --depth 1 https://github.com/PackageInst
 | `game/IllusionConnect` | IllusionConnect | 梦境链接 |
 | `game/IronSaga` | IronSaga | 机动战队大作战 |
 | `game/KalpaOfUniverse` | KalpaOfUniverse | 天地劫 |
+| `game/LegendOfAoqi` | LegendOfAoqi |
 | `game/LostSword` | LostSword | 丢剑 |
 | `game/MAkeDrama` | MAkeDrama | MAkeDrama |
 | `game/ManasisRefranin` | ManasisRefranin | 麻辣鸡丝 |
